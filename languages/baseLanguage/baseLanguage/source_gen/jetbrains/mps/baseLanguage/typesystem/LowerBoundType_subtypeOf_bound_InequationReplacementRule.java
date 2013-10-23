@@ -22,7 +22,7 @@ public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends Ab
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return MatchingUtil.matchNodes(((SNode) status.getPattern1().getFieldValue("patternVar_TYPE")), supertype);
+    return MatchingUtil.matchNodes(((SNode) (status.getPattern1().getFieldValue("patternVar_TYPE"))), supertype);
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
@@ -96,7 +96,7 @@ public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends Ab
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_TYPE = (SNode) pattern.getFieldValue("patternVar_TYPE");
+        patternVar_TYPE = (SNode) (pattern.getFieldValue("patternVar_TYPE"));
       }
     }
 

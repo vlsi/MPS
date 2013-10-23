@@ -22,11 +22,11 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
       return;
     }
 
-    SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), enumClass, "virtual_getThisType_3305065273710880775", new Object[]{});
+    SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), enumClass, "virtual_getThisType_3305065273710880775", new Object[]{});
     {
       SNode _nodeToCheck_1029348928467 = enumConstantDeclaration;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438604", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438608", true), (SNode) thisType, _info_12389875345);
+      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438608", true)), (SNode) (thisType), _info_12389875345);
     }
   }
 

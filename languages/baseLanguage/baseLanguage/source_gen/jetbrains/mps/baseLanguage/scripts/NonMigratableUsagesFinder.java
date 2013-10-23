@@ -134,7 +134,7 @@ public class NonMigratableUsagesFinder {
 
         if (method == Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, "name").equals("add") && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1;
+            return SPropertyOperations.getString(it, "name").equals("add") && (int) (ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count()) == 1;
           }
         })) {
           return true;
@@ -201,15 +201,15 @@ public class NonMigratableUsagesFinder {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
       SNode method = SNodeOperations.getAncestor(dotExpression, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((method != null)) {
-        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
       }
     }
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SNode method = SNodeOperations.getAncestor(dotExpression, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((method != null)) {
-        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.getParent(dotExpression)) {
-          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+        if (BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), method, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.getParent(dotExpression)) {
+          return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
         }
       }
     }

@@ -41,13 +41,13 @@ public class IfEqualsNullAll extends DataFlowConstructor {
       for (SNode var : vars) {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
-          if (((Program) o).contains(object)) {
+          if (((Program) (o)).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
+            int position = ((Program) ((o))).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
             Instruction instruction = new nullableInstruction(var);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1228615757308596556");
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
+            ((Program) ((o))).insert(instruction, position, true, before);
           }
         }
       }
@@ -56,13 +56,13 @@ public class IfEqualsNullAll extends DataFlowConstructor {
       for (SNode var : vars) {
         {
           Object object = ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
-          if (((Program) o).contains(object)) {
+          if (((Program) (o)).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+            int position = ((Program) ((o))).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
             Instruction instruction = new notNullInstruction(var);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1259268621398138708");
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true, before);
+            ((Program) ((o))).insert(instruction, position, true, before);
           }
         }
       }
@@ -70,13 +70,13 @@ public class IfEqualsNullAll extends DataFlowConstructor {
     for (SNode var : vars) {
       {
         Object object = SNodeOperations.getParent(var);
-        if (((Program) o).contains(object)) {
+        if (((Program) (o)).contains(object)) {
           boolean before = false;
-          int position = ((Program) (o)).getEnd(object);
+          int position = ((Program) ((o))).getEnd(object);
           Instruction instruction = new notNullInstruction(var);
           instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4258402621852112799");
           instruction.setSource(node);
-          ((Program) (o)).insert(instruction, position, true, before);
+          ((Program) ((o))).insert(instruction, position, true, before);
         }
       }
     }

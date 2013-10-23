@@ -39,16 +39,16 @@ public class RenameMethod extends BaseRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
-    if (((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
+    if (((Boolean) (refactoringContext.getParameter("refactorOverriding")))) {
       for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressMonitor()))) {
-        SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
+        SPropertyOperations.set(node, "name", ((String) (refactoringContext.getParameter("newName"))));
       }
     }
-    SPropertyOperations.set(method, "name", ((String) refactoringContext.getParameter("newName")));
+    SPropertyOperations.set(method, "name", ((String) (refactoringContext.getParameter("newName"))));
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());
+    return (List<SModel>) (refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel()));
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
@@ -56,7 +56,7 @@ public class RenameMethod extends BaseRefactoring {
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
       return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder", "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
     } else {
-      return (((Boolean) refactoringContext.getParameter("refactorOverriding")) != null && ((Boolean) refactoringContext.getParameter("refactorOverriding")) ?
+      return (((Boolean) (refactoringContext.getParameter("refactorOverriding"))) != null && ((Boolean) (refactoringContext.getParameter("refactorOverriding"))) ?
         FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder") :
         FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder")
       );

@@ -72,12 +72,12 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
     if (exceptionType == null) {
       return false;
     }
-    SNode exceptionJavaType = (SNode) SLinkOperations.getTarget(exceptionType, "classifier", false);
+    SNode exceptionJavaType = (SNode) (SLinkOperations.getTarget(exceptionType, "classifier", false));
     if (exceptionJavaType == null) {
       return false;
     }
     // check it's instance of RuntimeException 
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exceptionJavaType, "virtual_isDescendant_7165541881557222913", new Object[]{(SNode) SLinkOperations.getTarget(_quotation_createNode_7gg82q_a0a0a0j0a(), "classifier", false)}))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exceptionJavaType, "virtual_isDescendant_7165541881557222913", new Object[]{(SNode) (SLinkOperations.getTarget(_quotation_createNode_7gg82q_a0a0a0j0a(), "classifier", false))}))) {
       return false;
     }
     // check if it's not thrown by a method yet 

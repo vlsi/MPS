@@ -94,7 +94,7 @@ public class ConvertAssignmentToVariableDeclaration_Intention implements Intenti
       EditorCell selectedCell = editorContext.getSelectedCell();
       String suggestedName = null;
       if (selectedCell instanceof EditorCell_Label) {
-        suggestedName = ((EditorCell_Label) selectedCell).getRenderedText();
+        suggestedName = ((EditorCell_Label) (selectedCell)).getRenderedText();
       }
       if ("".equals(suggestedName)) {
         suggestedName = null;

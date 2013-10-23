@@ -23,7 +23,7 @@ public class typeof_ArrayClassExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = arrayClassExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1251851371723517333", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1251851371723517335", true), (SNode) _quotation_createNode_zh2v1_a0a0b(SLinkOperations.getTarget(arrayClassExpression, "arrayType", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1251851371723517335", true)), (SNode) (_quotation_createNode_zh2v1_a0a0b(SLinkOperations.getTarget(arrayClassExpression, "arrayType", true))), _info_12389875345);
     }
   }
 
@@ -49,7 +49,7 @@ public class typeof_ArrayClassExpression_InferenceRule extends AbstractInference
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Class")));
-    quotedNode_3 = (SNode) parameter_1;
+    quotedNode_3 = (SNode) (parameter_1);
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("parameter", HUtil.copyIfNecessary(quotedNode_3));
     }

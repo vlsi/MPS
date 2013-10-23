@@ -20,7 +20,7 @@ public class typeof_VariableDeclaration_InferenceRule extends AbstractInferenceR
       {
         SNode _nodeToCheck_1029348928467 = variableDeclaration;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820442", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(variableDeclaration, "initializer", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820447", false), (SNode) typeCheckingContext.typeOf(variableDeclaration, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820444", true), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(variableDeclaration, "initializer", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820447", false)), (SNode) (typeCheckingContext.typeOf(variableDeclaration, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "554301099359820444", true)), false, true, _info_12389875345);
       }
     }
   }

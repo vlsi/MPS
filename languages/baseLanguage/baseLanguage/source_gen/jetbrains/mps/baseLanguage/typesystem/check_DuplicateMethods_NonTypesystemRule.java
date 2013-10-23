@@ -19,7 +19,7 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
   }
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> ownMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getOwnMethods_1906502351318572840", new Object[]{});
+    List<SNode> ownMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), classifier, "virtual_getOwnMethods_1906502351318572840", new Object[]{});
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD);
     for (SNode ownMethod : ownMethods) {
       List<SNode> namesakes = scope.getMethodsByName(SPropertyOperations.getString(ownMethod, "name"));

@@ -14,6 +14,6 @@ public class CatchClause_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "throwable", true), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207140823404");
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "catchBody", true));
+    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "catchBody", true)));
   }
 }

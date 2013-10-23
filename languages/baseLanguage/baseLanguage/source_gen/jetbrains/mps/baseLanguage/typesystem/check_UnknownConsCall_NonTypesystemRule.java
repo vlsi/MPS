@@ -20,7 +20,7 @@ public class check_UnknownConsCall_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), call, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
+    if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) (((Class) (Object.class))), call, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(call, "Resolved constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9100188248702475686", null, errorTarget);

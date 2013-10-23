@@ -19,7 +19,7 @@ public class typeof_IYetUnresolved_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = x;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8544998713076029684", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8544998713076026884", true), (SNode) SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UndefinedType", null), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8544998713076026884", true)), (SNode) (SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UndefinedType", null)), _info_12389875345);
     }
   }
 

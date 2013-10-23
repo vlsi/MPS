@@ -20,7 +20,7 @@ public class VariableDeclaration_Behavior {
   }
 
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
+    List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) (((Class) (Object.class))), thisNode, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     if (SPropertyOperations.getBoolean(thisNode, "isFinal")) {
       markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     }
@@ -67,12 +67,12 @@ public class VariableDeclaration_Behavior {
 
   @Deprecated
   public static List<Icon> call_getMarkIcons_5039675756633082307(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) (((Class) (Object.class))), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
   }
 
   @Deprecated
   public static SNode call_createReference_1213877517482(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createReference_1213877517482", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_createReference_1213877517482", new Object[]{});
   }
 
   @Deprecated
@@ -82,7 +82,7 @@ public class VariableDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182325660(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
   }
 
   @Deprecated
@@ -97,17 +97,17 @@ public class VariableDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_getQualifiedReference_4598334504606213641(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getQualifiedReference_4598334504606213641", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_getQualifiedReference_4598334504606213641", new Object[]{});
   }
 
   @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633082307(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createReference_1213877517482(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_createReference_1213877517482", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_createReference_1213877517482", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -117,7 +117,7 @@ public class VariableDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182325660(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -132,6 +132,6 @@ public class VariableDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_getQualifiedReference_4598334504606213641(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_getQualifiedReference_4598334504606213641", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), callerConceptFqName, "virtual_getQualifiedReference_4598334504606213641", new Class[]{SNode.class}, new Object[]{});
   }
 }

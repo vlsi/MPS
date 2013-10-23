@@ -16,6 +16,6 @@ public class RemoveGivenJavaImports_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), "entries", true)).removeSequence(Sequence.fromIterable(((Iterable<SNode>) RemoveGivenJavaImports_QuickFix.this.getField("toRemove")[0])));
+    ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), "entries", true)).removeSequence(Sequence.fromIterable(((Iterable<SNode>) (RemoveGivenJavaImports_QuickFix.this.getField("toRemove")[0]))));
   }
 }

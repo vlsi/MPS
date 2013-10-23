@@ -32,20 +32,20 @@ public class MoveStaticMethod extends BaseRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    refactoringContext.setParameter("refactor", new MoveStaticMethodRefactoring(refactoringContext.getSelectedNode(), ((SNode) refactoringContext.getParameter("destination"))));
+    refactoringContext.setParameter("refactor", new MoveStaticMethodRefactoring(refactoringContext.getSelectedNode(), ((SNode) (refactoringContext.getParameter("destination")))));
     refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).setUssages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder"));
+        ((MoveStaticMethodRefactoring) (refactoringContext.getParameter("refactor"))).setUssages(FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder"));
       }
     });
     return true;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).doRefactoring();
+    ((MoveStaticMethodRefactoring) (refactoringContext.getParameter("refactor"))).doRefactoring();
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).getUsages();
+    return ((MoveStaticMethodRefactoring) (refactoringContext.getParameter("refactor"))).getUsages();
   }
 }

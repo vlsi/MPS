@@ -36,7 +36,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
+    List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) (((Class) (Object.class))), thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     if (SPropertyOperations.getBoolean(thisNode, "isFinal")) {
       markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     }
@@ -149,10 +149,10 @@ public class BaseMethodDeclaration_Behavior {
     if ((result == null)) {
       return null;
     }
-    SNode next = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), result, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
+    SNode next = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), result, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     while (next != null) {
       result = next;
-      next = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), result, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
+      next = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), result, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     }
     return result;
   }
@@ -313,7 +313,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Deprecated
   public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) (((Class) (Object.class))), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
   }
 
   @Deprecated
@@ -323,7 +323,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
   }
 
   @Deprecated
@@ -333,7 +333,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
   }
 
   @Deprecated
@@ -353,12 +353,12 @@ public class BaseMethodDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> call_getScopeVariables_2496361171403550901(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
   }
 
   @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633081786(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -368,7 +368,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -378,7 +378,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_getNearestOverriddenMethod_5358895268254685434(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -398,7 +398,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> callSuper_getScopeVariables_2496361171403550901(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SModule check_tq0gdw_a0a0k(SModel checkedDotOperand) {
@@ -416,12 +416,12 @@ public class BaseMethodDeclaration_Behavior {
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6 = (SNode) parameter_1;
+    quotedNode_6 = (SNode) (parameter_1);
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("componentType", HUtil.copyIfNecessary(quotedNode_6));
     }
     quotedNode_3.addChild("argument", quotedNode_4);
-    quotedNode_5 = (SNode) parameter_2;
+    quotedNode_5 = (SNode) (parameter_2);
     if (quotedNode_5 != null) {
       quotedNode_3.addChild("argument", HUtil.copyIfNecessary(quotedNode_5));
     }

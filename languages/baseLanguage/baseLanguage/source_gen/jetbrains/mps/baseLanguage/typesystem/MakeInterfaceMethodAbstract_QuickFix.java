@@ -17,7 +17,7 @@ public class MakeInterfaceMethodAbstract_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), "isAbstract", "" + (true));
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), "body", true), "statement", true)).clear();
+    SPropertyOperations.set(((SNode) (MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0])), "isAbstract", "" + (true));
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) (MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0])), "body", true), "statement", true)).clear();
   }
 }

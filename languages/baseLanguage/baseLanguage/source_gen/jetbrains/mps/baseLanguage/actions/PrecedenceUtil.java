@@ -7,11 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 
 public class PrecedenceUtil {
   public PrecedenceUtil() {
@@ -76,9 +76,18 @@ public class PrecedenceUtil {
         SLinkOperations.setTarget(result, "expression", contextNode, true);
         return result;
       }
+    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.CastExpression")) {
+      SNode parentCastExpression = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.CastExpression");
+      if (ParenthesisUtil.needsParensAroundCastExpression(parentCastExpression)) {
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SLinkOperations.setTarget(result, "expression", contextNode, true);
+        return result;
+      }
     }
     return contextNode;
   }
+
+
 
   private static boolean isHigherPriority(SNode firstExpression, SNode secondExpression) {
     return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)).ordinal() < getPriority(SNodeOperations.getConceptDeclaration(secondExpression)).ordinal();

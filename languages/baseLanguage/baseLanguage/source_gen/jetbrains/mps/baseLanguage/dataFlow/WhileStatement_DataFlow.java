@@ -15,7 +15,7 @@ public class WhileStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
+    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "condition", true)));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
       SNode constant = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
       if (!(SPropertyOperations.getBoolean(constant, "value"))) {
@@ -24,7 +24,7 @@ public class WhileStatement_DataFlow extends DataFlowBuilder {
     } else {
       _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206455229720");
     }
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "body", true)));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().before(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206539361128");

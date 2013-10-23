@@ -45,10 +45,10 @@ public class MakeFieldStatic extends BaseRefactoring {
         } else {
           refactoringContext.setParameter("declaration", SNodeOperations.cast(Sequence.fromIterable(SNodeOperations.getReferences(node)).first().getTargetNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         }
-        refactoringContext.setParameter("usages", FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) refactoringContext.getParameter("declaration")), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
+        refactoringContext.setParameter("usages", FindUtils.getSearchResults(new EmptyProgressMonitor(), ((SNode) (refactoringContext.getParameter("declaration"))), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder"));
         refactoringContext.setParameter("hasExternalUsages", false);
-        for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
-          if (SNodeOperations.getContainingRoot(result.getObject()) != SNodeOperations.getContainingRoot(((SNode) refactoringContext.getParameter("declaration")))) {
+        for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) (refactoringContext.getParameter("usages"))).getSearchResults())) {
+          if (SNodeOperations.getContainingRoot(result.getObject()) != SNodeOperations.getContainingRoot(((SNode) (refactoringContext.getParameter("declaration"))))) {
             refactoringContext.setParameter("hasExternalUsages", true);
           }
         }
@@ -58,10 +58,10 @@ public class MakeFieldStatic extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SNode newDeclaration = _quotation_createNode_so6etp_a0a0a(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "visibility", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "type", true)), SPropertyOperations.getString(((SNode) refactoringContext.getParameter("declaration")), "name"));
-    SNode declarationClassifier = SNodeOperations.getAncestor(((SNode) refactoringContext.getParameter("declaration")), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode newDeclaration = _quotation_createNode_so6etp_a0a0a(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) (refactoringContext.getParameter("declaration"))), "visibility", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) (refactoringContext.getParameter("declaration"))), "type", true)), SPropertyOperations.getString(((SNode) (refactoringContext.getParameter("declaration"))), "name"));
+    SNode declarationClassifier = SNodeOperations.getAncestor(((SNode) (refactoringContext.getParameter("declaration"))), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     ListSequence.fromList(SLinkOperations.getTargets(declarationClassifier, "member", true)).addElement(newDeclaration);
-    for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
+    for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) (refactoringContext.getParameter("usages"))).getSearchResults())) {
       SNode usage = result.getObject();
       SNode replacing;
       if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
@@ -77,14 +77,14 @@ public class MakeFieldStatic extends BaseRefactoring {
       }
       SNodeOperations.replaceWithAnother(replacing, newReference);
     }
-    SNodeOperations.deleteNode(((SNode) refactoringContext.getParameter("declaration")));
+    SNodeOperations.deleteNode(((SNode) (refactoringContext.getParameter("declaration"))));
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    if (!(((Boolean) refactoringContext.getParameter("hasExternalUsages")))) {
+    if (!(((Boolean) (refactoringContext.getParameter("hasExternalUsages"))))) {
       return null;
     }
-    return ((SearchResults<SNode>) refactoringContext.getParameter("usages"));
+    return ((SearchResults<SNode>) (refactoringContext.getParameter("usages")));
   }
 
   private static SNode _quotation_createNode_so6etp_a0a0a(Object parameter_1, Object parameter_2, Object parameter_3) {
@@ -93,12 +93,12 @@ public class MakeFieldStatic extends BaseRefactoring {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_3);
-    quotedNode_5 = (SNode) parameter_1;
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) (parameter_3));
+    quotedNode_5 = (SNode) (parameter_1);
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("visibility", HUtil.copyIfNecessary(quotedNode_5));
     }
-    quotedNode_6 = (SNode) parameter_2;
+    quotedNode_6 = (SNode) (parameter_2);
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
     }
@@ -109,8 +109,8 @@ public class MakeFieldStatic extends BaseRefactoring {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) (parameter_2));
     return quotedNode_3;
   }
 
@@ -118,7 +118,7 @@ public class MakeFieldStatic extends BaseRefactoring {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) (parameter_1));
     return quotedNode_2;
   }
 }

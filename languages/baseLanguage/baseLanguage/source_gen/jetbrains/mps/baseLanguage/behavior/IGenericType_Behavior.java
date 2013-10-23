@@ -35,7 +35,7 @@ public class IGenericType_Behavior {
     IGenericType_Behavior.call_walkDescendants_8203593308483669984(thisNode, expanded, new _FunctionTypes._return_P2_E0<Boolean, SNode, Queue<SNode>>() {
       public Boolean invoke(SNode desc, Queue<SNode> queue) {
         if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-          SNode next = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromListWithValues(new ArrayList<SNode>(), expTrace)});
+          SNode next = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromListWithValues(new ArrayList<SNode>(), expTrace)});
           if (next != desc) {
             SNodeOperations.replaceWithAnother(desc, SNodeOperations.copyNode(next));
             QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(desc)));
@@ -65,17 +65,17 @@ public class IGenericType_Behavior {
 
   @Deprecated
   public static SNode call_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenerics_4107091686347199582", new Object[]{substitutions});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_expandGenerics_4107091686347199582", new Object[]{substitutions});
   }
 
   @Deprecated
   public static SNode call_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
   }
 
   @Deprecated
   public static SNode call_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{expanded, substitutions, expTrace});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{expanded, substitutions, expTrace});
   }
 
   @Deprecated
@@ -85,16 +85,16 @@ public class IGenericType_Behavior {
 
   @Deprecated
   public static SNode callSuper_expandGenerics_4107091686347199582(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> substitutions) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_expandGenerics_4107091686347199582", new Class[]{SNode.class, Map.class}, new Object[]{substitutions});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_expandGenerics_4107091686347199582", new Class[]{SNode.class, Map.class}, new Object[]{substitutions});
   }
 
   @Deprecated
   public static SNode callSuper_expandGenerics_4122274986016348613(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_expandGenerics_4122274986016348613", new Class[]{SNode.class, Map.class, List.class}, new Object[]{substitutions, expTrace});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_expandGenerics_4122274986016348613", new Class[]{SNode.class, Map.class, List.class}, new Object[]{substitutions, expTrace});
   }
 
   @Deprecated
   public static SNode callSuper_expandGenericDescendants_4107091686347838550(SNode thisNode, String callerConceptFqName, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_expandGenericDescendants_4107091686347838550", new Class[]{SNode.class, SNode.class, Map.class, List.class}, new Object[]{expanded, substitutions, expTrace});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_expandGenericDescendants_4107091686347838550", new Class[]{SNode.class, SNode.class, Map.class, List.class}, new Object[]{expanded, substitutions, expTrace});
   }
 }

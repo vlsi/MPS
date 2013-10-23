@@ -23,17 +23,17 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(arrayAccess, "array", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601848462", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601850481", true), (SNode) _quotation_createNode_wq7qsi_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1175601836165)), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601850481", true)), (SNode) (_quotation_createNode_wq7qsi_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1175601836165))), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayAccess;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484976", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484981", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1175601836165), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484981", true)), (SNode) (typeCheckingContext.getRepresentative(T_typevar_1175601836165)), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(arrayAccess, "index", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175603546475", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175603547412", true), (SNode) _quotation_createNode_wq7qsi_a0d0b(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175603547412", true)), (SNode) (_quotation_createNode_wq7qsi_a0d0b()), false, true, _info_12389875345);
     }
   }
 
@@ -57,7 +57,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
+    quotedNode_3 = (SNode) (parameter_1);
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
     }

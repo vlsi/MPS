@@ -49,7 +49,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       return;
     }
     for (Instruction instruction : program.getInstructions()) {
-      SNode source = (SNode) instruction.getSource();
+      SNode source = (SNode) (instruction.getSource());
       SNode variable = source;
       if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
         variable = SLinkOperations.getTarget(SNodeOperations.cast(source, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
@@ -108,8 +108,8 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       }
       // Find Nullable assignements to NotNull variables 
       if (instruction instanceof WriteInstruction) {
-        WriteInstruction write = (WriteInstruction) instruction;
-        List<SNode> annotation = SLinkOperations.getTargets(((SNode) write.getVariable()), "annotation", true);
+        WriteInstruction write = (WriteInstruction) (instruction);
+        List<SNode> annotation = SLinkOperations.getTargets(((SNode) (write.getVariable())), "annotation", true);
         if (annotation != null && ListSequence.fromList(annotation).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "annotation", false) != null);
@@ -119,14 +119,14 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
             return SLinkOperations.getTarget(it, "annotation", false);
           }
         }).contains(SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
-          SNode value = (SNode) write.getValue();
+          SNode value = (SNode) (write.getValue());
           if (SNodeOperations.isInstanceOf(value, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
             value = SLinkOperations.getTarget(SNodeOperations.cast(value, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
           }
           if (NullableState.canBeNull(result.get(instruction).get(value))) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning((SNode) write.getValue(), "This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343702", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning((SNode) (write.getValue()), "This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343702", null, errorTarget);
             }
           }
         }
@@ -189,7 +189,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
         for (SNode returnStatement : RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(method, "body", true))) {
           RulesFunctions_BaseLanguage.checkReturningExpression(typeCheckingContext, SLinkOperations.getTarget(returnStatement, "expression", true), returnStatement, program, result);
         }
-        SNode last = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getLastStatement_1239354409446", new Object[]{});
+        SNode last = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), method, "virtual_getLastStatement_1239354409446", new Object[]{});
         if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
           RulesFunctions_BaseLanguage.checkReturningExpression(typeCheckingContext, SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), last, program, result);
         }

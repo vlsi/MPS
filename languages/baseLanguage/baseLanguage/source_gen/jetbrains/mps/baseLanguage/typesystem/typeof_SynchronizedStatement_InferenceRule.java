@@ -21,7 +21,7 @@ public class typeof_SynchronizedStatement_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = synchronizedStatement;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4663972844383684981", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4663972844383684978", true), (SNode) _quotation_createNode_u6zvkx_a0a0b(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4663972844383684978", true)), (SNode) (_quotation_createNode_u6zvkx_a0a0b()), false, false, _info_12389875345);
     }
   }
 

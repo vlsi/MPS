@@ -40,7 +40,7 @@ public class ClosuresUtil {
     if (node == null) {
       return null;
     }
-    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<SNode>() {
+    return ((SNode) (jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<SNode>() {
       public boolean met(SNode n) {
         if (!(n instanceof SNode)) {
           if (LOG.isEnabledFor(Priority.WARN)) {
@@ -48,9 +48,9 @@ public class ClosuresUtil {
           }
           return false;
         }
-        return ClosuresUtil.isClosureContextOwner(((SNode) n));
+        return ClosuresUtil.isClosureContextOwner(((SNode) (n)));
       }
-    }));
+    })));
   }
 
   public static List<SNode> getVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {
@@ -95,7 +95,7 @@ public class ClosuresUtil {
     // init ClosureContextData 
     synchronized (CLOSURE_CONTEXT_DATA) {
       GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
-      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
+      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) (sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA)));
       if (closureContexts == null) {
         closureContexts = new ConcurrentHashMap<SNode, ClosuresUtil.ClosureContextData>();
         sessionContext.putTransientObject(CLOSURE_CONTEXT_DATA, closureContexts);
@@ -173,7 +173,7 @@ public class ClosuresUtil {
 
   private static ClosuresUtil.ClosureContextData getClosureContextData(SNode contextOwner, ITemplateGenerator generator) {
     GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
-    Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
+    Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) (sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA)));
     if (closureContexts == null) {
       return null;
     }

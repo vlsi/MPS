@@ -49,7 +49,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
   protected void doFind(SNode node, SearchScope scope, final List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      SNode classifier = (SNode) SNodeOperations.getParent(node);
+      SNode classifier = (SNode) (SNodeOperations.getParent(node));
       final SNode instanceMethod = node;
       for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessors.getInstance().getDerivedClassifiers(classifier, scope))) {
         Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(derivedClassifier)).where(new IWhereFilter<SNode>() {

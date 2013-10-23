@@ -19,13 +19,13 @@ public class ConvertAnonymousClass_Target implements IRefactoringTarget {
   }
 
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    return SNodeOperations.isInstanceOf(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
   }
 
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }
-    return (SNodeOperations.getAncestor(((SNode) entity), "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
+    return (SNodeOperations.getAncestor(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
   }
 }

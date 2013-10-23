@@ -23,7 +23,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = classExpr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485115", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485120", true), (SNode) _quotation_createNode_z3vtx7_a0a0b(SLinkOperations.getTarget(classExpr, "classifier", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485120", true)), (SNode) (_quotation_createNode_z3vtx7_a0a0b(SLinkOperations.getTarget(classExpr, "classifier", false))), _info_12389875345);
     }
   }
 
@@ -49,7 +49,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule extends AbstractInfe
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Class")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) (parameter_1));
     quotedNode_2.addChild("parameter", quotedNode_3);
     return quotedNode_2;
   }

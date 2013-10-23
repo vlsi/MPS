@@ -79,7 +79,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+      this.handleAction_impl((String) (parameterObject), node, model, scope, operationContext, editorContext);
     }
 
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

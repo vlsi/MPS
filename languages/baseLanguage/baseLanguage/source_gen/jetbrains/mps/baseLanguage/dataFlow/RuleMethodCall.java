@@ -34,26 +34,26 @@ public class RuleMethodCall extends DataFlowConstructor {
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable")) {
           {
             Object object = node;
-            if (((Program) o).contains(object)) {
+            if (((Program) (o)).contains(object)) {
               boolean before = false;
-              int position = ((Program) (o)).getEnd(object);
+              int position = ((Program) ((o))).getEnd(object);
               Instruction instruction = new nullableInstruction(targetNode);
               instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432528");
               instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true, before);
+              ((Program) ((o))).insert(instruction, position, true, before);
             }
           }
         }
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
             Object object = node;
-            if (((Program) o).contains(object)) {
+            if (((Program) (o)).contains(object)) {
               boolean before = false;
-              int position = ((Program) (o)).getEnd(object);
+              int position = ((Program) ((o))).getEnd(object);
               Instruction instruction = new notNullInstruction(targetNode);
               instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432540");
               instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true, before);
+              ((Program) ((o))).insert(instruction, position, true, before);
             }
           }
         }

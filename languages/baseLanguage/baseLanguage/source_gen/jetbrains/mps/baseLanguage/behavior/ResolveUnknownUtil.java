@@ -257,7 +257,7 @@ public class ResolveUnknownUtil {
       }
 
       SNode cls = classAndPos._0();
-      tokPos = (int) classAndPos._1();
+      tokPos = (int) (classAndPos._1());
 
       if (tokPos == tokens.length) {
         // no tokens left, all of them form a class name 
@@ -398,13 +398,13 @@ public class ResolveUnknownUtil {
     Iterable<SNode> conss = ClassConcept_Behavior.call_constructors_5292274854859503373(claz);
     if (Sequence.fromIterable(conss).isEmpty()) {
       result = null;
-    } else if ((int) Sequence.fromIterable(conss).count() == 1) {
+    } else if ((int) (Sequence.fromIterable(conss).count()) == 1) {
       result = Sequence.fromIterable(conss).first();
     } else {
       final int argCount = ListSequence.fromList(args).count();
       Iterable<SNode> subset = Sequence.fromIterable(conss).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == argCount;
+          return (int) (ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count()) == argCount;
         }
       });
       result = Sequence.fromIterable(subset).first();

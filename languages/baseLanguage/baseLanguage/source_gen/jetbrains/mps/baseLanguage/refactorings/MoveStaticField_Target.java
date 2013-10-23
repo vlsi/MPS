@@ -19,7 +19,7 @@ public class MoveStaticField_Target implements IRefactoringTarget {
   }
 
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
   }
 
   public boolean isApplicable(final Object entity) {

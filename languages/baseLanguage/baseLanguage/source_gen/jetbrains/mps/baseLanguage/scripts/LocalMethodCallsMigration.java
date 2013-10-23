@@ -89,14 +89,14 @@ public class LocalMethodCallsMigration {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "conceptDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "conceptDeclaration", (SNode) (parameter_1));
     quotedNode_4.addChild("conceptArgument", quotedNode_6);
     quotedNode_3.addChild("operation", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", null, null, GlobalScope.getInstance(), false);
     quotedNode_7.setReference("link", SReference.create("link", quotedNode_7, facade.createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), facade.createNodeId("7812454656619025415")));
     quotedNode_5.addChild("operation", quotedNode_7);
-    quotedNode_8 = (SNode) parameter_2;
+    quotedNode_8 = (SNode) (parameter_2);
     if (quotedNode_8 != null) {
       quotedNode_5.addChild("operand", HUtil.copyIfNecessary(quotedNode_8));
     }

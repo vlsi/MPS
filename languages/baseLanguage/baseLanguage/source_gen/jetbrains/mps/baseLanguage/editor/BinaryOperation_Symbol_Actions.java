@@ -43,10 +43,10 @@ public class BinaryOperation_Symbol_Actions {
       EditorComponent editor = editorContext.getEditorComponent();
       EditorCell cell = editor.findNodeCell(newExpression);
       if (cell != null) {
-        EditorCell firstLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf(CellConditions.SELECTABLE);
+        EditorCell firstLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) (cell)).getFirstLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(firstLeaf);
         if (firstLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) firstLeaf).home();
+          ((EditorCell_Label) (firstLeaf)).home();
         }
       }
     }

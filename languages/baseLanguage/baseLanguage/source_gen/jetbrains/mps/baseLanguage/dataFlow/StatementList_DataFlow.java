@@ -20,7 +20,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true))) {
-        _context.getBuilder().build((SNode) param);
+        _context.getBuilder().build((SNode) (param));
       }
     }
     _context.getBuilder().emitNop("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206464445632");
@@ -28,11 +28,11 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
       SNode methodLike = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((methodLike != null)) {
-        lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{});
+        lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{});
       }
     }
     for (SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
-      _context.getBuilder().build((SNode) s);
+      _context.getBuilder().build((SNode) (s));
       if (s == lastStatement && SNodeOperations.isInstanceOf(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(SNodeOperations.cast(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
         _context.getBuilder().emitRet("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4447433352191878575");
       }

@@ -42,7 +42,7 @@ public class ClassCreator_Behavior {
       return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
     }
 
-    SModel targetModel = ((StaticReference) cRef).getTargetSModel();
+    SModel targetModel = ((StaticReference) (cRef)).getTargetSModel();
     if (targetModel == null) {
       return Collections.emptyList();
     }

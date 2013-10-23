@@ -13,8 +13,8 @@ public class AssertStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
+    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "condition", true)));
     _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207557409231");
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "message", true));
+    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "message", true)));
   }
 }

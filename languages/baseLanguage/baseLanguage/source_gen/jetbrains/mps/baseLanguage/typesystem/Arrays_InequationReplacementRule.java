@@ -24,14 +24,14 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6125943271043465197", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), false, true, inequalityIsLessThan, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) (SLinkOperations.getTarget(subtype, "componentType", true)), (SNode) (SLinkOperations.getTarget(supertype, "componentType", true)), false, true, inequalityIsLessThan, _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6125943271043532195", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) (SLinkOperations.getTarget(subtype, "componentType", true)), (SNode) (SLinkOperations.getTarget(supertype, "componentType", true)), _info_12389875345);
       }
     }
   }
@@ -39,9 +39,9 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) (SLinkOperations.getTarget(subtype, "componentType", true)), (SNode) (SLinkOperations.getTarget(supertype, "componentType", true)), true);
     } else {
-      result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) SLinkOperations.getTarget(subtype, "componentType", true), (SNode) SLinkOperations.getTarget(supertype, "componentType", true));
+      result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) (SLinkOperations.getTarget(subtype, "componentType", true)), (SNode) (SLinkOperations.getTarget(supertype, "componentType", true)));
     }
     return result_14532009;
   }

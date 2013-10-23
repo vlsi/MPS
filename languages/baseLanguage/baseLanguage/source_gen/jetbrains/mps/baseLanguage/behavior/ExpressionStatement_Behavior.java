@@ -18,7 +18,7 @@ public class ExpressionStatement_Behavior {
         return false;
       }
     }
-    SNode retType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+    SNode retType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), methodLike, "virtual_getExpectedRetType_1239354342632", new Object[]{});
     SNode methodCall = null;
     SNode expression = SLinkOperations.getTarget(thisNode, "expression", true);
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
@@ -30,6 +30,6 @@ public class ExpressionStatement_Behavior {
     if (methodCall != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return false;
     }
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{}) == thisNode && retType != null && !(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{}) == thisNode && retType != null && !(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 }

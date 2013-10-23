@@ -62,7 +62,7 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
 
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-      SNode memberConcept = (SNode) childConcept;
+      SNode memberConcept = (SNode) (childConcept);
       return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(memberConcept)), "virtual_canBeInterfaceMember_2949815620938109095", new Object[]{});
     }
     return true;

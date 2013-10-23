@@ -16,9 +16,9 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     // todo hack 
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "variable", true));
+    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "variable", true)));
     for (SNode additionalVar : SLinkOperations.getTargets(_context.getNode(), "additionalVar", true)) {
-      _context.getBuilder().build((SNode) additionalVar);
+      _context.getBuilder().build((SNode) (additionalVar));
     }
     _context.getBuilder().emitLabel("start");
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
@@ -27,14 +27,14 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
         _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3337377470784677523");
       }
     } else if ((SLinkOperations.getTarget(_context.getNode(), "condition", true) != null)) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
+      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "condition", true)));
       _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3337377470784677540");
     }
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "body", true)));
     for (final SNode iteration : SLinkOperations.getTargets(_context.getNode(), "iteration", true)) {
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {
-          _context.getBuilder().build((SNode) iteration);
+          _context.getBuilder().build((SNode) (iteration));
         }
       });
     }

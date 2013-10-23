@@ -20,7 +20,7 @@ public class ExpectedType_FactoryUtil {
   public static SNode createExpectedType(SNode contextNode) {
     SNode castType = null;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
-      castType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{contextNode});
+      castType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{contextNode});
     }
     return castType;
   }

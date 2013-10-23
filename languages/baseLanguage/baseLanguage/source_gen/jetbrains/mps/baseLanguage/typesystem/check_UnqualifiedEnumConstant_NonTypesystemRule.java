@@ -59,7 +59,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
     }
 
     // now we can try to search 
-    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
+    final String enumConstName = ((DynamicReference) (ref)).getResolveInfo();
     for (SNode singleNameImport : Sequence.fromIterable(JavaImports_Behavior.call_staticSingleName_5230012391903395274(javaImports))) {
       if (!(enumConstName.equals(Tokens_Behavior.call_lastToken_1296023605440030462(singleNameImport)))) {
         continue;

@@ -44,7 +44,7 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = defaultClassCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415942", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415946", true), (SNode) constructedType, _info_12389875345);
+      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415946", true)), (SNode) (constructedType), _info_12389875345);
     }
   }
 
@@ -76,9 +76,9 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) (parameter_1));
     {
-      List<SNode> nodes = (List<SNode>) parameter_2;
+      List<SNode> nodes = (List<SNode>) (parameter_2);
       for (SNode child : nodes) {
         quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
       }

@@ -14,11 +14,11 @@ public class ITypeApplicable_Behavior {
 
   @Deprecated
   public static List<SNode> call_getTypeApplicationParameters_8277080359323839095(SNode thisNode, int actualArgs) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{actualArgs});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{actualArgs});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getTypeApplicationParameters_8277080359323839095(SNode thisNode, String callerConceptFqName, int actualArgs) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), callerConceptFqName, "virtual_getTypeApplicationParameters_8277080359323839095", new Class[]{SNode.class, Integer.TYPE}, new Object[]{actualArgs});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ITypeApplicable"), callerConceptFqName, "virtual_getTypeApplicationParameters_8277080359323839095", new Class[]{SNode.class, Integer.TYPE}, new Object[]{actualArgs});
   }
 }

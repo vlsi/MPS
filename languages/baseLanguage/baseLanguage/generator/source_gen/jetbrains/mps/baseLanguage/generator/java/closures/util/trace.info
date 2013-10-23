@@ -138,7 +138,7 @@
     <nodeInfo nodeId="1238940574984" fileName="ClosuresUtil.java" startLine="40" startPosition="23" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6163537227498187201" fileName="ClosuresUtil.java" startLine="46" startPosition="48" endLine="47" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6163537227498181604" fileName="ClosuresUtil.java" startLine="48" startPosition="11" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7706854513804994802" fileName="ClosuresUtil.java" startLine="50" startPosition="9" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7706854513804994802" fileName="ClosuresUtil.java" startLine="50" startPosition="9" endLine="51" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238940852493" fileName="ClosuresUtil.java" startLine="56" startPosition="105" endLine="57" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238940873811" fileName="ClosuresUtil.java" startLine="57" startPosition="64" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238940962008" fileName="ClosuresUtil.java" startLine="61" startPosition="117" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -153,7 +153,7 @@
     <nodeInfo nodeId="1238942104584" fileName="ClosuresUtil.java" startLine="88" startPosition="14" endLine="89" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6017788484734288422" fileName="ClosuresUtil.java" startLine="94" startPosition="110" endLine="95" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6017788484734288424" fileName="ClosuresUtil.java" startLine="96" startPosition="41" endLine="97" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6017788484734288429" fileName="ClosuresUtil.java" startLine="97" startPosition="87" endLine="98" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6017788484734288429" fileName="ClosuresUtil.java" startLine="97" startPosition="87" endLine="98" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6017788484734288444" fileName="ClosuresUtil.java" startLine="99" startPosition="36" endLine="100" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6017788484734288451" fileName="ClosuresUtil.java" startLine="100" startPosition="90" endLine="101" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6017788484734288460" fileName="ClosuresUtil.java" startLine="102" startPosition="7" endLine="103" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -180,7 +180,7 @@
     <nodeInfo nodeId="1238944056793" fileName="ClosuresUtil.java" startLine="166" startPosition="76" endLine="167" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238944027173" fileName="ClosuresUtil.java" startLine="170" startPosition="5" endLine="171" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238941303289" fileName="ClosuresUtil.java" startLine="174" startPosition="122" endLine="175" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238941331265" fileName="ClosuresUtil.java" startLine="175" startPosition="85" endLine="176" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238941331265" fileName="ClosuresUtil.java" startLine="175" startPosition="85" endLine="176" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238941570938" fileName="ClosuresUtil.java" startLine="177" startPosition="34" endLine="178" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238941577698" fileName="ClosuresUtil.java" startLine="179" startPosition="5" endLine="180" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238944159553" fileName="ClosuresUtil.java" startLine="184" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVar2Name" />
@@ -221,7 +221,7 @@
     <nodeInfo nodeId="1238943587999" fileName="ClosuresUtil.java" startLine="145" startPosition="128" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238943833030" fileName="ClosuresUtil.java" startLine="155" startPosition="28" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238944032260" fileName="ClosuresUtil.java" startLine="165" startPosition="14" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1238941563858" fileName="ClosuresUtil.java" startLine="176" startPosition="170" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1238941563858" fileName="ClosuresUtil.java" startLine="176" startPosition="172" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238944665118" fileName="ClosuresUtil.java" startLine="191" startPosition="39" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238944713790" fileName="ClosuresUtil.java" startLine="198" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariableName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1238944765670" fileName="ClosuresUtil.java" startLine="202" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
@@ -232,7 +232,7 @@
     <nodeInfo nodeId="1238940962004" fileName="ClosuresUtil.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getVariableNameInClosureContext#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljava/lang/String;" />
     <nodeInfo nodeId="1238941047649" fileName="ClosuresUtil.java" startLine="68" startPosition="97" endLine="72" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238941081244" fileName="ClosuresUtil.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasVariablesUsedInClosure#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />
-    <nodeInfo nodeId="6017788484734288442" fileName="ClosuresUtil.java" startLine="98" startPosition="172" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6017788484734288442" fileName="ClosuresUtil.java" startLine="98" startPosition="174" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238943927298" fileName="ClosuresUtil.java" startLine="160" startPosition="168" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238944018572" fileName="ClosuresUtil.java" startLine="165" startPosition="12" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238942065469" fileName="ClosuresUtil.java" startLine="85" startPosition="118" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -251,7 +251,7 @@
     <nodeInfo nodeId="6017788484734288473" fileName="ClosuresUtil.java" startLine="95" startPosition="31" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="1238942562292" fileName="ClosuresUtil.java" startLine="118" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="processConceptFunction#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />
     <nodeInfo nodeId="1238942180118" fileName="ClosuresUtil.java" startLine="107" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="processMethodDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />
-    <nodeInfo nodeId="1238940589394" fileName="ClosuresUtil.java" startLine="42" startPosition="5" endLine="53" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238940589394" fileName="ClosuresUtil.java" startLine="42" startPosition="5" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238943869097" fileName="ClosuresUtil.java" startLine="158" startPosition="7" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6017788484734288415" fileName="ClosuresUtil.java" startLine="94" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClosureContext#(Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljava/util/Map;" />
     <nodeInfo nodeId="1238942883548" fileName="ClosuresUtil.java" startLine="129" startPosition="35" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -344,7 +344,7 @@
     <scopeInfo nodeId="1238944802681" fileName="ClosuresUtil.java" startLine="206" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="1238944815704" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="7706854513804994801" fileName="ClosuresUtil.java" startLine="44" startPosition="35" endLine="51" endPosition="63" />
+    <scopeInfo nodeId="7706854513804994801" fileName="ClosuresUtil.java" startLine="44" startPosition="35" endLine="51" endPosition="65" />
     <scopeInfo nodeId="6017788484734288475" fileName="ClosuresUtil.java" startLine="96" startPosition="41" endLine="103" endPosition="29">
       <varInfo nodeId="6017788484734288413" varName="closureContexts" />
       <varInfo nodeId="6017788484734288412" varName="sessionContext" />
@@ -391,7 +391,7 @@
       <varInfo nodeId="1238941728400" varName="generator" />
       <varInfo nodeId="1238941724555" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1238940536003" fileName="ClosuresUtil.java" startLine="39" startPosition="68" endLine="53" endPosition="8" />
+    <scopeInfo nodeId="1238940536003" fileName="ClosuresUtil.java" startLine="39" startPosition="68" endLine="53" endPosition="9" />
     <scopeInfo nodeId="1238942731338" fileName="ClosuresUtil.java" startLine="128" startPosition="127" endLine="142" endPosition="26">
       <varInfo nodeId="1238942831386" varName="outerVarsFound" />
     </scopeInfo>
@@ -420,7 +420,7 @@
       <varInfo nodeId="1238943730126" varName="localVars" />
       <varInfo nodeId="1238943722342" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7706854513804994794" fileName="ClosuresUtil.java" startLine="43" startPosition="76" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$1" />
+    <unitInfo nodeId="7706854513804994794" fileName="ClosuresUtil.java" startLine="43" startPosition="77" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$1" />
     <unitInfo nodeId="1238944138203" fileName="ClosuresUtil.java" startLine="183" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil$ClosureContextData" />
     <unitInfo nodeId="1238940012773" fileName="ClosuresUtil.java" startLine="26" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />
   </root>
@@ -438,16 +438,16 @@
     <nodeInfo nodeId="8428317315592447626" fileName="_QueriesUtil.java" startLine="29" startPosition="35" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4973731216424924573" fileName="_QueriesUtil.java" startLine="32" startPosition="5" endLine="33" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428317315592447644" fileName="_QueriesUtil.java" startLine="36" startPosition="118" endLine="37" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8428317315592447658" fileName="_QueriesUtil.java" startLine="40" startPosition="130" endLine="41" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8428317315592447658" fileName="_QueriesUtil.java" startLine="40" startPosition="130" endLine="41" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2799691424948130044" fileName="_QueriesUtil.java" startLine="42" startPosition="33" endLine="43" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428317315592447682" fileName="_QueriesUtil.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8428317315592447692" fileName="_QueriesUtil.java" startLine="48" startPosition="117" endLine="49" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8428317315592447700" fileName="_QueriesUtil.java" startLine="49" startPosition="141" endLine="50" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8428317315592447692" fileName="_QueriesUtil.java" startLine="48" startPosition="117" endLine="49" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8428317315592447700" fileName="_QueriesUtil.java" startLine="49" startPosition="143" endLine="50" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2799691424948130511" fileName="_QueriesUtil.java" startLine="53" startPosition="141" endLine="54" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8428317315592447737" fileName="_QueriesUtil.java" startLine="55" startPosition="24" endLine="56" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8428317315592447737" fileName="_QueriesUtil.java" startLine="55" startPosition="24" endLine="56" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428317315592447745" fileName="_QueriesUtil.java" startLine="57" startPosition="5" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428317315592447755" fileName="_QueriesUtil.java" startLine="61" startPosition="132" endLine="62" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8428317315592447771" fileName="_QueriesUtil.java" startLine="63" startPosition="36" endLine="64" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8428317315592447771" fileName="_QueriesUtil.java" startLine="63" startPosition="36" endLine="64" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428317315592447779" fileName="_QueriesUtil.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428317315592447803" fileName="_QueriesUtil.java" startLine="70" startPosition="117" endLine="71" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428317315592447805" fileName="_QueriesUtil.java" startLine="72" startPosition="5" endLine="73" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -461,9 +461,9 @@
     <nodeInfo nodeId="6163537227498181650" fileName="_QueriesUtil.java" startLine="100" startPosition="48" endLine="101" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6163537227498181621" fileName="_QueriesUtil.java" startLine="102" startPosition="11" endLine="103" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7706854513804995264" fileName="_QueriesUtil.java" startLine="105" startPosition="99" endLine="106" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7706854513804995266" fileName="_QueriesUtil.java" startLine="107" startPosition="9" endLine="108" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8428317315592447907" fileName="_QueriesUtil.java" startLine="110" startPosition="8" endLine="111" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8428317315592447922" fileName="_QueriesUtil.java" startLine="112" startPosition="119" endLine="113" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7706854513804995266" fileName="_QueriesUtil.java" startLine="107" startPosition="9" endLine="108" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8428317315592447907" fileName="_QueriesUtil.java" startLine="110" startPosition="9" endLine="111" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8428317315592447922" fileName="_QueriesUtil.java" startLine="112" startPosition="119" endLine="113" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8428317315592447945" fileName="_QueriesUtil.java" startLine="114" startPosition="41" endLine="115" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2799691424948130573" fileName="_QueriesUtil.java" startLine="115" startPosition="105" endLine="116" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8428317315592447956" fileName="_QueriesUtil.java" startLine="116" startPosition="130" endLine="117" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -474,7 +474,7 @@
     <nodeInfo nodeId="8428317315592447593" fileName="_QueriesUtil.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_QueriesUtil#()V" />
     <nodeInfo nodeId="8428317315592447621" fileName="_QueriesUtil.java" startLine="28" startPosition="102" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8428317315592447636" fileName="_QueriesUtil.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="find_ContextOwner_ClosureContext_generatedClass#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8428317315592447664" fileName="_QueriesUtil.java" startLine="41" startPosition="105" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8428317315592447664" fileName="_QueriesUtil.java" startLine="41" startPosition="107" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8428317315592447732" fileName="_QueriesUtil.java" startLine="54" startPosition="94" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8428317315592447766" fileName="_QueriesUtil.java" startLine="62" startPosition="92" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8428317315592447796" fileName="_QueriesUtil.java" startLine="69" startPosition="125" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -488,7 +488,7 @@
     <nodeInfo nodeId="8428317315592447820" fileName="_QueriesUtil.java" startLine="74" startPosition="47" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8428317315592447610" fileName="_QueriesUtil.java" startLine="26" startPosition="82" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6163537227498181619" fileName="_QueriesUtil.java" startLine="98" startPosition="40" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8428317315592447932" fileName="_QueriesUtil.java" startLine="113" startPosition="193" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8428317315592447932" fileName="_QueriesUtil.java" startLine="113" startPosition="195" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8428317315592447650" fileName="_QueriesUtil.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="find_ContextOwner_ClosureContext_generatedClass_constructor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8428317315592447713" fileName="_QueriesUtil.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolve_VariableDeclStmt_Variable_ClosureContext_generatedField#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8428317315592447747" fileName="_QueriesUtil.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolve_VariableReference_Variable_ClosureContext_generatedField#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -496,14 +496,14 @@
     <nodeInfo nodeId="8428317315592447597" fileName="_QueriesUtil.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="find_EnclosingContextOwner_ClosureContext_generatedClass#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7706854513804995252" fileName="_QueriesUtil.java" startLine="98" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="8428317315592447781" fileName="_QueriesUtil.java" startLine="69" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getList_ContextOwner_ifMethod_ParmsUsedInClosure#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljava/util/List;" />
-    <nodeInfo nodeId="8428317315592447877" fileName="_QueriesUtil.java" startLine="96" startPosition="55" endLine="110" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8428317315592447877" fileName="_QueriesUtil.java" startLine="96" startPosition="55" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8428317315592447869" fileName="_QueriesUtil.java" startLine="92" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="create_closureContextObject#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="8428317315592447596" fileName="_QueriesUtil.java" startLine="22" startPosition="25" endLine="22" endPosition="25" />
     <scopeInfo nodeId="8428317315592447625" fileName="_QueriesUtil.java" startLine="29" startPosition="35" endLine="30" endPosition="30" />
     <scopeInfo nodeId="8428317315592447643" fileName="_QueriesUtil.java" startLine="36" startPosition="118" endLine="37" endPosition="129" />
     <scopeInfo nodeId="8428317315592447668" fileName="_QueriesUtil.java" startLine="42" startPosition="33" endLine="43" endPosition="120" />
-    <scopeInfo nodeId="8428317315592447736" fileName="_QueriesUtil.java" startLine="55" startPosition="24" endLine="56" endPosition="134" />
-    <scopeInfo nodeId="8428317315592447770" fileName="_QueriesUtil.java" startLine="63" startPosition="36" endLine="64" endPosition="146" />
+    <scopeInfo nodeId="8428317315592447736" fileName="_QueriesUtil.java" startLine="55" startPosition="24" endLine="56" endPosition="136" />
+    <scopeInfo nodeId="8428317315592447770" fileName="_QueriesUtil.java" startLine="63" startPosition="36" endLine="64" endPosition="148" />
     <scopeInfo nodeId="8428317315592447802" fileName="_QueriesUtil.java" startLine="70" startPosition="117" endLine="71" endPosition="37" />
     <scopeInfo nodeId="8428317315592447829" fileName="_QueriesUtil.java" startLine="76" startPosition="107" endLine="77" endPosition="23" />
     <scopeInfo nodeId="8428317315592447846" fileName="_QueriesUtil.java" startLine="83" startPosition="120" endLine="84" endPosition="72" />
@@ -576,7 +576,7 @@
       <varInfo nodeId="8428317315592447602" varName="generator" />
       <varInfo nodeId="8428317315592447600" varName="inputNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7706854513804995257" fileName="_QueriesUtil.java" startLine="98" startPosition="40" endLine="108" endPosition="68" />
+    <scopeInfo nodeId="7706854513804995257" fileName="_QueriesUtil.java" startLine="98" startPosition="40" endLine="108" endPosition="70" />
     <scopeInfo nodeId="8428317315592447789" fileName="_QueriesUtil.java" startLine="69" startPosition="125" endLine="80" endPosition="17">
       <varInfo nodeId="8428317315592447814" varName="parms" />
       <varInfo nodeId="8428317315592447806" varName="variablesUsedInClosure" />
@@ -596,7 +596,7 @@
       <varInfo nodeId="8428317315592447874" varName="generator" />
       <varInfo nodeId="8428317315592447872" varName="nodeInsideClosure" />
     </scopeInfo>
-    <unitInfo nodeId="7706854513804995250" fileName="_QueriesUtil.java" startLine="97" startPosition="121" endLine="110" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil$1" />
+    <unitInfo nodeId="7706854513804995250" fileName="_QueriesUtil.java" startLine="97" startPosition="122" endLine="110" endPosition="5" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil$1" />
     <unitInfo nodeId="8428317315592447591" fileName="_QueriesUtil.java" startLine="21" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.closures.util._QueriesUtil" />
   </root>
 </debugInfo>

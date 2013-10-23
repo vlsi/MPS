@@ -112,7 +112,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) (parameter_1));
     return quotedNode_2;
   }
 
@@ -120,7 +120,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) (parameter_1));
     return quotedNode_2;
   }
 }

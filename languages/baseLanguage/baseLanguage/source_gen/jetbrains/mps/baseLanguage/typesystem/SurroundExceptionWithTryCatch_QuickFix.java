@@ -19,14 +19,14 @@ public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription(SNode node) {
-    return (((Boolean) SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0]) ?
+    return (((Boolean) (SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0])) ?
       "Surround with try/catch" :
       "Add Catch Clause(s)"
     );
   }
 
   public void execute(SNode node) {
-    if (ListSequence.fromList(((List<SNode>) SurroundExceptionWithTryCatch_QuickFix.this.getField("throwableTypes")[0])).isEmpty()) {
+    if (ListSequence.fromList(((List<SNode>) (SurroundExceptionWithTryCatch_QuickFix.this.getField("throwableTypes")[0]))).isEmpty()) {
       return;
     }
     SNode ancestorStatement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -34,13 +34,13 @@ public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
       return;
     }
 
-    SNode parentTryStatement = (((Boolean) SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0]) ?
+    SNode parentTryStatement = (((Boolean) (SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0])) ?
       null :
       SNodeOperations.getAncestor(ancestorStatement, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false, false)
     );
 
     final List<SNode> clauses = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(((List<SNode>) SurroundExceptionWithTryCatch_QuickFix.this.getField("throwableTypes")[0])).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(((List<SNode>) (SurroundExceptionWithTryCatch_QuickFix.this.getField("throwableTypes")[0]))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         if (!(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
           return;
@@ -57,7 +57,7 @@ public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
 
 
     if (parentTryStatement != null) {
-      clauses.removeAll(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentTryStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{}));
+      clauses.removeAll(BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), parentTryStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{}));
       if (SNodeOperations.isInstanceOf(parentTryStatement, "jetbrains.mps.baseLanguage.structure.TryCatchStatement")) {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parentTryStatement, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "catchClause", true)).addSequence(ListSequence.fromList(clauses));
       } else if (SNodeOperations.isInstanceOf(parentTryStatement, "jetbrains.mps.baseLanguage.structure.TryStatement")) {

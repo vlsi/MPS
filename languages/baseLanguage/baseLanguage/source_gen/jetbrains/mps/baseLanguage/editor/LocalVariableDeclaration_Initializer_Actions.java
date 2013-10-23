@@ -38,10 +38,10 @@ public class LocalVariableDeclaration_Initializer_Actions {
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
       EditorCell nodeCell = editor.findNodeCell(node);
-      EditorCell lastSelectable = ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).getLastLeaf(CellConditions.SELECTABLE);
+      EditorCell lastSelectable = ((jetbrains.mps.nodeEditor.cells.EditorCell) (nodeCell)).getLastLeaf(CellConditions.SELECTABLE);
       editor.changeSelection(lastSelectable);
       if (lastSelectable instanceof EditorCell_Label) {
-        ((EditorCell_Label) lastSelectable).end();
+        ((EditorCell_Label) (lastSelectable)).end();
       }
     }
   }

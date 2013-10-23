@@ -28,13 +28,13 @@ public class StatementList_Behavior {
     SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableReference", false, new String[]{})));
     for (SNode ref : reference) {
       boolean statementsContainsVar = false;
-      for (SNode parent : SNodeOperations.getAncestors(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref, "virtual_getVariable_1023687332192481693", new Object[]{}), null, false)) {
+      for (SNode parent : SNodeOperations.getAncestors(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), ref, "virtual_getVariable_1023687332192481693", new Object[]{}), null, false)) {
         if (parent == SNodeOperations.getParent(thisNode)) {
           statementsContainsVar = true;
         }
       }
       if (!(statementsContainsVar)) {
-        SetSequence.fromSet(declarations).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref, "virtual_getVariable_1023687332192481693", new Object[]{}));
+        SetSequence.fromSet(declarations).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), ref, "virtual_getVariable_1023687332192481693", new Object[]{}));
       }
     }
     return declarations;
@@ -55,7 +55,7 @@ public class StatementList_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() > 1) {
       return false;
     }
-    if ((int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1) {
+    if ((int) (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count()) == 1) {
       SNode statement = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).first();
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
         return false;
@@ -151,11 +151,11 @@ public class StatementList_Behavior {
 
   @Deprecated
   public static List<SNode> call_getScopeVariables_2496361171403550911(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getScopeVariables_2496361171403550911(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 }

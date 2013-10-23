@@ -89,7 +89,7 @@ public class AddCastStatement_Intention implements IntentionFactory {
       SNode instanceOfExpression = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
       SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);
       SLinkOperations.setTarget(declaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);
-      List<String> variableSuffixes = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(instanceOfExpression, "classType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+      List<String> variableSuffixes = BehaviorReflection.invokeVirtual((Class<List<String>>) (((Class) (Object.class))), SLinkOperations.getTarget(instanceOfExpression, "classType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{});
       SPropertyOperations.set(declaration, "name", ListSequence.fromList(variableSuffixes).first());
       SNode castExpression = SNodeFactoryOperations.setNewChild(declaration, "initializer", "jetbrains.mps.baseLanguage.structure.CastExpression");
       SLinkOperations.setTarget(castExpression, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);

@@ -41,12 +41,12 @@ public class IWillBeClassifier_Behavior {
 
   @Deprecated
   public static SNode call_baseClassifier_4125795553993767872(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_baseClassifier_4125795553993767872", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_baseClassifier_4125795553993767872", new Object[]{});
   }
 
   @Deprecated
   public static SNode call_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_resolve_4609636120081469956", new Object[]{targetModel});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_resolve_4609636120081469956", new Object[]{targetModel});
   }
 
   @Deprecated
@@ -56,12 +56,12 @@ public class IWillBeClassifier_Behavior {
 
   @Deprecated
   public static SNode callSuper_baseClassifier_4125795553993767872(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), callerConceptFqName, "virtual_baseClassifier_4125795553993767872", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), callerConceptFqName, "virtual_baseClassifier_4125795553993767872", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_resolve_4609636120081469956(SNode thisNode, String callerConceptFqName, SModel targetModel) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), callerConceptFqName, "virtual_resolve_4609636120081469956", new Class[]{SNode.class, SModel.class}, new Object[]{targetModel});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), callerConceptFqName, "virtual_resolve_4609636120081469956", new Class[]{SNode.class, SModel.class}, new Object[]{targetModel});
   }
 
   private static SNode _quotation_createNode_937vih_a0a0b() {

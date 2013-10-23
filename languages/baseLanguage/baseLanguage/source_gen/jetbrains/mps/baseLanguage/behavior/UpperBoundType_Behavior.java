@@ -42,13 +42,13 @@ public class UpperBoundType_Behavior {
 
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-      SNode expBound = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
+      SNode expBound = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
       if (expBound == SLinkOperations.getTarget(thisNode, "bound", true)) {
         return thisNode;
       }
       return _quotation_createNode_cv9ggd_a2a0a4(expBound);
     }
-    return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
+    return BehaviorReflection.invokeSuper((Class<SNode>) (((Class) (Object.class))), thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
   }
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
@@ -62,7 +62,7 @@ public class UpperBoundType_Behavior {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
+    quotedNode_3 = (SNode) (parameter_1);
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
     }

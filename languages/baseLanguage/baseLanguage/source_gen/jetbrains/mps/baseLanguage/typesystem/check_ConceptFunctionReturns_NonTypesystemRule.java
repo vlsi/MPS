@@ -28,7 +28,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
   }
 
   public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
+    SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, _quotation_createNode_rs2pxi_b0a0a0b0b()));
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
     if (noReturnExpected) {
@@ -42,13 +42,13 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
       }
     } else {
       boolean somethingReturned = Sequence.fromIterable(returnStatements).isNotEmpty();
-      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getLastStatement_1239354409446", new Object[]{});
+      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), func, "virtual_getLastStatement_1239354409446", new Object[]{});
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         somethingReturned = true;
       }
       if (!(somethingReturned)) {
         Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
-        StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getBody_1239354440022", new Object[]{}), throwables, true);
+        StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), func, "virtual_getBody_1239354440022", new Object[]{}), throwables, true);
         if (SetSequence.fromSet(throwables).isEmpty()) {
           String whatExpected = ((expectedRetType == null) ?
             "some value" :

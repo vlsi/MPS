@@ -76,7 +76,7 @@ public class AbstractClassifierReference_KeyMap extends KeyMapImpl {
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-      SNodeAccessUtil.setReferenceTarget(quotedNode_4, "classifier", (SNode) parameter_1);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_4, "classifier", (SNode) (parameter_1));
       quotedNode_3.addChild("type", quotedNode_4);
       quotedNode_2.addChild("localVariableDeclaration", quotedNode_3);
       return quotedNode_2;

@@ -25,13 +25,13 @@ public class RuleCreator extends DataFlowConstructor {
   public void performActions(Program o, SNode node) {
     {
       Object object = node;
-      if (((Program) o).contains(object)) {
+      if (((Program) (o)).contains(object)) {
         boolean before = false;
-        int position = ((Program) (o)).getEnd(object);
+        int position = ((Program) ((o))).getEnd(object);
         Instruction instruction = new notNullInstruction(node);
         instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432397");
         instruction.setSource(node);
-        ((Program) (o)).insert(instruction, position, true, before);
+        ((Program) ((o))).insert(instruction, position, true, before);
       }
     }
   }

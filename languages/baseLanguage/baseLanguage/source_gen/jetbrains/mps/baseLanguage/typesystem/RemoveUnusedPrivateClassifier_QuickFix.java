@@ -11,10 +11,10 @@ public class RemoveUnusedPrivateClassifier_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription(SNode node) {
-    return "Remove Unused " + ((String) RemoveUnusedPrivateClassifier_QuickFix.this.getField("classifierType")[0]);
+    return "Remove Unused " + ((String) (RemoveUnusedPrivateClassifier_QuickFix.this.getField("classifierType")[0]));
   }
 
   public void execute(SNode node) {
-    SNodeOperations.deleteNode(((SNode) RemoveUnusedPrivateClassifier_QuickFix.this.getField("classifier")[0]));
+    SNodeOperations.deleteNode(((SNode) (RemoveUnusedPrivateClassifier_QuickFix.this.getField("classifier")[0])));
   }
 }

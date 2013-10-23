@@ -20,13 +20,13 @@ public class ChangeMethodSignature_Target implements IRefactoringTarget {
   }
 
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
 
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }
-    return ChangeMethodSignatureRefactoring.isApplicable(((SNode) entity));
+    return ChangeMethodSignatureRefactoring.isApplicable(((SNode) (entity)));
   }
 }

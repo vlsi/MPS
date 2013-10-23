@@ -76,9 +76,9 @@ public class IntentionUtils {
     }
 
     SNode ternaryOperator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
-    SLinkOperations.setTarget(ternaryOperator, "condition", (SNode) CopyUtil.copy(condition), true);
-    SLinkOperations.setTarget(ternaryOperator, "ifTrue", (SNode) CopyUtil.copy(diff._0()), true);
-    SLinkOperations.setTarget(ternaryOperator, "ifFalse", (SNode) CopyUtil.copy(diff._1()), true);
+    SLinkOperations.setTarget(ternaryOperator, "condition", (SNode) (CopyUtil.copy(condition)), true);
+    SLinkOperations.setTarget(ternaryOperator, "ifTrue", (SNode) (CopyUtil.copy(diff._0())), true);
+    SLinkOperations.setTarget(ternaryOperator, "ifFalse", (SNode) (CopyUtil.copy(diff._1())), true);
 
     SNodeOperations.replaceWithAnother(diff._0(), ternaryOperator);
     return statement1;
@@ -122,14 +122,14 @@ public class IntentionUtils {
 
     // todo: use ConceptRegistry/SConcept when it will possible 
     for (SNode _property : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations())) {
-      SNode property = ((SNode) _property);
+      SNode property = ((SNode) (_property));
       if (neq_k79hya_a0b0e0g(node1.getProperty(SPropertyOperations.getString(property, "name")), node2.getProperty(SPropertyOperations.getString(property, "name")))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
 
     for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
-      SNode linkDeclaration = (SNode) _link;
+      SNode linkDeclaration = (SNode) (_link);
       if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")) {
         if (SLinkOperations.getTargetNode(SNodeOperations.getReference(node1, linkDeclaration)) != SLinkOperations.getTargetNode(SNodeOperations.getReference(node2, linkDeclaration))) {
           return MultiTuple.<SNode,SNode>from(node1, node2);
@@ -139,7 +139,7 @@ public class IntentionUtils {
 
     Tuples._2<SNode, SNode> currentResult = null;
     for (SNode _link : ListSequence.fromList(new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden())) {
-      SNode linkDeclaration = (SNode) _link;
+      SNode linkDeclaration = (SNode) (_link);
 
       if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
         List<SNode> children1 = SNodeOperations.getChildren(node1, linkDeclaration);

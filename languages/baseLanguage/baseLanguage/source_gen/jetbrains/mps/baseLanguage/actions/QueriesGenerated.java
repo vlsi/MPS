@@ -112,7 +112,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       SNode annotationInstance = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
       List<SNode> annotationMethodDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true);
-      if ((int) ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
+      if ((int) (ListSequence.fromList(annotationMethodDeclarations).count()) == 1) {
         SLinkOperations.setTarget(_context.getNewNode(), "key", ListSequence.fromList(annotationMethodDeclarations).first(), false);
       }
     }
@@ -175,7 +175,7 @@ public class QueriesGenerated {
         if ((originalExpression != null)) {
           SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
           if ((expectedType != null)) {
-            SNode abstractCreator = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expectedType, "virtual_getAbstractCreator_1213877337340", new Object[]{});
+            SNode abstractCreator = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), expectedType, "virtual_getAbstractCreator_1213877337340", new Object[]{});
             if ((abstractCreator != null)) {
               SLinkOperations.setTarget(_context.getNewNode(), "creator", abstractCreator, true);
             }
@@ -300,7 +300,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -337,7 +337,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -366,7 +366,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<Boolean> queryResult = new Computable<Iterable<Boolean>>() {
           public Iterable<Boolean> compute() {
@@ -396,7 +396,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -425,7 +425,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -454,7 +454,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -504,7 +504,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -523,9 +523,9 @@ public class QueriesGenerated {
                 }
                 SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                if (!(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), _context.getParentNode()), "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
+                if (!(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), _context.getParentNode()), "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                   SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-                  while (concept != null && !(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), concept, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
+                  while (concept != null && !(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), concept, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                     concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
                   }
                   SLinkOperations.setTarget(thisExpression, "classConcept", concept, false);
@@ -561,7 +561,7 @@ public class QueriesGenerated {
             }
           }).first();
           if (parentFunction != null) {
-            return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentFunction, "virtual_getParameters_1213877374450", new Object[]{});
+            return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), parentFunction, "virtual_getParameters_1213877374450", new Object[]{});
           } else {
             return ListSequence.fromList(new ArrayList<SNode>());
           }
@@ -610,7 +610,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -644,7 +644,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -680,7 +680,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -714,7 +714,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -757,7 +757,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -797,7 +797,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -850,7 +850,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -916,7 +916,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -943,7 +943,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -975,7 +975,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -999,12 +999,12 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             VisibleClassifiersScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
-            List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
+            List<SNode> list = (List<SNode>) (searchScope.getClassifierNodes());
             return ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass"));
@@ -1026,7 +1026,7 @@ public class QueriesGenerated {
                       return SPropertyOperations.getBoolean(it, "isAbstract");
                     }
                   }).toListSequence();
-                  for (SNode baseMethodDeclaration : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})) {
+                  for (SNode baseMethodDeclaration : BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})) {
                     ListSequence.fromList(methodsToImplement).addElement(SNodeOperations.cast(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
                   }
                 } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -1064,12 +1064,12 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreator");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             VisibleClassifiersScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
-            List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
+            List<SNode> list = (List<SNode>) (searchScope.getClassifierNodes());
             List<SNode> types = new ArrayList<SNode>();
             for (SNode classifier : ListSequence.fromList(list)) {
               SNode type = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
@@ -1120,7 +1120,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1154,7 +1154,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1175,7 +1175,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1196,7 +1196,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1217,7 +1217,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1238,7 +1238,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1259,7 +1259,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1280,7 +1280,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1309,7 +1309,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1347,15 +1347,15 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleClassesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+            return (List<SNode>) (Sequence.fromIterable(ClassifierScopes.getVisibleClassesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal"));
               }
-            }).toListSequence();
+            }).toListSequence());
           }
         }.compute();
         if (queryResult != null) {
@@ -1382,11 +1382,11 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
+            return (List<SNode>) (Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence());
           }
         }.compute();
         if (queryResult != null) {
@@ -1413,11 +1413,11 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
+            return (List<SNode>) (Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence());
           }
         }.compute();
         if (queryResult != null) {
@@ -1444,7 +1444,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -1468,11 +1468,11 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getThrowablesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
+            return (List<SNode>) (Sequence.fromIterable(ClassifierScopes.getThrowablesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence());
           }
         }.compute();
         if (queryResult != null) {
@@ -1499,7 +1499,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -1511,7 +1511,7 @@ public class QueriesGenerated {
               if ((originalExpression != null)) {
                 SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
                 if ((expectedType != null)) {
-                  return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), expectedType, "virtual_getAbstractCreators_7602110602933317830", new Object[]{_context.getModel()});
+                  return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), expectedType, "virtual_getAbstractCreators_7602110602933317830", new Object[]{_context.getModel()});
                 }
               }
             }
@@ -1550,7 +1550,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1585,7 +1585,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1659,7 +1659,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1689,7 +1689,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1723,7 +1723,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -1768,7 +1768,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1778,7 +1778,7 @@ public class QueriesGenerated {
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
               SNode annotationInstance = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               List<SNode> annotationMethodDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true);
-              if ((int) ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
+              if ((int) (ListSequence.fromList(annotationMethodDeclarations).count()) == 1) {
                 SLinkOperations.setTarget(result, "key", ListSequence.fromList(annotationMethodDeclarations).first(), false);
               }
             }
@@ -1809,7 +1809,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
@@ -1817,8 +1817,8 @@ public class QueriesGenerated {
             SModel blStructure = BootstrapLanguages.baseLanguage().getStructureModelDescriptor();
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-                SNode param = (SNode) conceptDeclaration;
-                if (isEmptyString(SPropertyOperations.getString(param, "conceptAlias")) || SConceptOperations.isSubConceptOf(((SNode) param), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault") || SPropertyOperations.getBoolean(param, "abstract")) {
+                SNode param = (SNode) (conceptDeclaration);
+                if (isEmptyString(SPropertyOperations.getString(param, "conceptAlias")) || SConceptOperations.isSubConceptOf(((SNode) (param)), "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault") || SPropertyOperations.getBoolean(param, "abstract")) {
                   continue;
                 }
                 ListSequence.fromList(result).addElement(param);
@@ -1856,7 +1856,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1885,7 +1885,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1914,7 +1914,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
@@ -1923,7 +1923,7 @@ public class QueriesGenerated {
             SNode smc = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
             String role = "baseMethodDeclaration";
             SReference sReference = SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").getReference(role);
-            smc.setReference(new StaticReference(role, smc, SNodeOperations.getModel(smc).getReference(), null, ((jetbrains.mps.smodel.SReference) sReference).getResolveInfo()).getRole(), new StaticReference(role, smc, SNodeOperations.getModel(smc).getReference(), null, ((jetbrains.mps.smodel.SReference) sReference).getResolveInfo()));
+            smc.setReference(new StaticReference(role, smc, SNodeOperations.getModel(smc).getReference(), null, ((jetbrains.mps.smodel.SReference) (sReference)).getResolveInfo()).getRole(), new StaticReference(role, smc, SNodeOperations.getModel(smc).getReference(), null, ((jetbrains.mps.smodel.SReference) (sReference)).getResolveInfo()));
             SNodeOperations.replaceWithAnother(dotExpression, smc);
             return smc;
           }
@@ -1956,7 +1956,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -1983,7 +1983,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -2055,7 +2055,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -2128,7 +2128,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -2161,7 +2161,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -2192,7 +2192,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -2222,7 +2222,7 @@ public class QueriesGenerated {
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -2261,7 +2261,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -2303,7 +2303,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      SNode childConcept = (SNode) _context.getChildConcept();
+      SNode childConcept = (SNode) (_context.getChildConcept());
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -3849,7 +3849,7 @@ __switch__:
     Iterator<SubstituteAction> actions = _context.getSideTransformActions();
     while (actions.hasNext()) {
       SubstituteAction current = actions.next();
-      if (!(SNodeOperations.isInstanceOf(((SNode) current.getOutputConcept()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      if (!(SNodeOperations.isInstanceOf(((SNode) (current.getOutputConcept())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
         continue;
       }
       final SNode concept = current.getOutputConcept();
@@ -3905,7 +3905,7 @@ __switch__:
     }.compute();
     final SNode type = new Computable<SNode>() {
       public SNode compute() {
-        return (SNode) TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true));
+        return (SNode) (TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true)));
       }
     }.compute();
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
@@ -4433,6 +4433,7 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
+        PrecedenceUtil.parenthesiseIfNecessary(targetExpression);
         return result;
       }
 
@@ -4901,7 +4902,7 @@ __switch__:
     Iterator<SubstituteAction> actions = _context.getSideTransformActions();
     while (actions.hasNext()) {
       SubstituteAction current = actions.next();
-      if (!(SNodeOperations.isInstanceOf(((SNode) current.getOutputConcept()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      if (!(SNodeOperations.isInstanceOf(((SNode) (current.getOutputConcept())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
         continue;
       }
       final SNode concept = current.getOutputConcept();
@@ -5769,7 +5770,7 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
+        AbstractModule module = (AbstractModule) (SNodeOperations.getModel(_context.getSourceNode()).getModule());
         SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a242(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
@@ -5951,7 +5952,7 @@ __switch__:
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) (parameter_1));
     return quotedNode_2;
   }
 
@@ -5963,11 +5964,11 @@ __switch__:
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = (SNode) parameter_1;
+    quotedNode_5 = (SNode) (parameter_1);
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_5));
     }
-    quotedNode_6 = (SNode) parameter_2;
+    quotedNode_6 = (SNode) (parameter_2);
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_6));
     }
@@ -5981,11 +5982,11 @@ __switch__:
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = (SNode) parameter_1;
+    quotedNode_4 = (SNode) (parameter_1);
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("type", HUtil.copyIfNecessary(quotedNode_4));
     }
-    quotedNode_5 = (SNode) parameter_2;
+    quotedNode_5 = (SNode) (parameter_2);
     if (quotedNode_5 != null) {
       quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
     }
@@ -6004,7 +6005,7 @@ __switch__:
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) (parameter_1));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("parameter", quotedNode_3);
     return quotedNode_2;
@@ -6017,7 +6018,7 @@ __switch__:
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = (SNode) parameter_1;
+    quotedNode_4 = (SNode) (parameter_1);
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("type", HUtil.copyIfNecessary(quotedNode_4));
     }
@@ -6035,7 +6036,7 @@ __switch__:
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "classifier", (SNode) (parameter_1));
     quotedNode_4.addChild("componentType", quotedNode_5);
     quotedNode_3.addChild("type", quotedNode_4);
     quotedNode_2.addChild("localVariableDeclaration", quotedNode_3);
@@ -6048,7 +6049,7 @@ __switch__:
 
   private static <T> T as_x583g4_a0a1a0a0a0a0a1a242(Object o, Class<T> type) {
     return (type.isInstance(o) ?
-      (T) o :
+      (T) (o) :
       null
     );
   }

@@ -26,13 +26,13 @@ public class typeof_AnnotationInstanceValue_InferenceRule extends AbstractInfere
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(annotationInstanceValue, "value", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4177787410910106416", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4177787410910106418", true), (SNode) _quotation_createNode_2fsed6_a0b0b0b(type, elementType), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4177787410910106418", true)), (SNode) (_quotation_createNode_2fsed6_a0b0b0b(type, elementType)), false, true, _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(annotationInstanceValue, "value", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221827926", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221904889", true), (SNode) type, false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221904889", true)), (SNode) (type), false, true, _info_12389875345);
       }
     }
   }
@@ -58,11 +58,11 @@ public class typeof_AnnotationInstanceValue_InferenceRule extends AbstractInfere
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = (SNode) parameter_1;
+    quotedNode_4 = (SNode) (parameter_1);
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("argument", HUtil.copyIfNecessary(quotedNode_4));
     }
-    quotedNode_5 = (SNode) parameter_2;
+    quotedNode_5 = (SNode) (parameter_2);
     if (quotedNode_5 != null) {
       quotedNode_3.addChild("argument", HUtil.copyIfNecessary(quotedNode_5));
     }

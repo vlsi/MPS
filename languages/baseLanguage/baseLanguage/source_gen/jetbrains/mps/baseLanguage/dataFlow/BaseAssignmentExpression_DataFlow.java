@@ -19,11 +19,11 @@ public class BaseAssignmentExpression_DataFlow extends DataFlowBuilder {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isReadAsignment_1215696236033", new Object[]{})) {
         _context.getBuilder().emitRead(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1215696303815");
       }
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rValue", true));
+      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "rValue", true)));
       _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1215696303826");
     } else {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rValue", true));
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "lValue", true));
+      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "rValue", true)));
+      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "lValue", true)));
     }
   }
 }

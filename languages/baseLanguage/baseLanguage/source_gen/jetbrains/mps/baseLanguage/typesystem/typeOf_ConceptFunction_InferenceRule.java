@@ -27,9 +27,9 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
 
   public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // function is expected to return value of any type 
-    final SNode expectedRetType = (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{})), "jetbrains.mps.baseLanguage.structure.WildCardType") ?
+    final SNode expectedRetType = (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{})), "jetbrains.mps.baseLanguage.structure.WildCardType") ?
       null :
-      BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{})
+      BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{})
     );
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, _quotation_createNode_bbraw4_b0a0a0c0b()));
     if (!(noReturnExpected)) {
@@ -47,34 +47,34 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304511", 0, null);
-            typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(LCS_typevar_1186052624152), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304515", true), false, true, _info_12389875345);
+            typeCheckingContext.createGreaterThanInequality((SNode) (typeCheckingContext.getRepresentative(LCS_typevar_1186052624152)), (SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304515", true)), false, true, _info_12389875345);
           }
           if ((expectedRetType != null)) {
             if (!(typeCheckingContext.isSingleTypeComputation())) {
               {
                 SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770735", 0, null);
-                typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7410236346363166597", true), (SNode) expectedRetType, true, true, _info_12389875345);
+                typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7410236346363166597", true)), (SNode) (expectedRetType), true, true, _info_12389875345);
               }
             }
           }
         }
       }
       // last expression statement can serve as return statement 
-      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getLastStatement_1239354409446", new Object[]{});
+      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), func, "virtual_getLastStatement_1239354409446", new Object[]{});
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         final SNode expression = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
         {
           SNode _nodeToCheck_1029348928467 = expression;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053063874", 0, null);
-          typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(LCS_typevar_1186052624152), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053084979", true), false, true, _info_12389875345);
+          typeCheckingContext.createGreaterThanInequality((SNode) (typeCheckingContext.getRepresentative(LCS_typevar_1186052624152)), (SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053084979", true)), false, true, _info_12389875345);
         }
         if ((expectedRetType != null)) {
           if (!(typeCheckingContext.isSingleTypeComputation())) {
             {
               SNode _nodeToCheck_1029348928467 = expression;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770756", 0, null);
-              typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7410236346363168757", true), (SNode) expectedRetType, true, true, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7410236346363168757", true)), (SNode) (expectedRetType), true, true, _info_12389875345);
             }
           }
         }
@@ -82,14 +82,14 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = func;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053174208", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053169643", true), (SNode) typeCheckingContext.getRepresentative(LCS_typevar_1186052624152), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053169643", true)), (SNode) (typeCheckingContext.getRepresentative(LCS_typevar_1186052624152)), _info_12389875345);
       }
       if ((expectedRetType != null)) {
         if (!(typeCheckingContext.isSingleTypeComputation())) {
           {
             SNode _nodeToCheck_1029348928467 = func;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053540847", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7410236346363168929", true), (SNode) expectedRetType, true, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7410236346363168929", true)), (SNode) (expectedRetType), true, true, _info_12389875345);
           }
         }
       }

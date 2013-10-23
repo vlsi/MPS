@@ -20,7 +20,7 @@ public class typeof_ArrayCloneOperation_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = arrayCloneOperation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5205855332950462115", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5205855332950462112", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(arrayCloneOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5205855332950472833", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5205855332950462112", true)), (SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(arrayCloneOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5205855332950472833", true)), _info_12389875345);
     }
   }
 

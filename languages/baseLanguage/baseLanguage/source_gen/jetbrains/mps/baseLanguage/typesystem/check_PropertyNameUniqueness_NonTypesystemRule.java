@@ -104,7 +104,7 @@ public class check_PropertyNameUniqueness_NonTypesystemRule extends AbstractNonT
 
   private static SNode check_5f44vd_a0a0a0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), checkedDotOperand, "virtual_getThisType_3305065273710880775", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), checkedDotOperand, "virtual_getThisType_3305065273710880775", new Object[]{});
     }
     return null;
   }

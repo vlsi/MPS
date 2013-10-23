@@ -95,8 +95,8 @@ public class IterateOverIterable_Intention implements IntentionFactory {
         if (coercedNode_6isygg_a0a != null) {
           SNode foreachStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
           SNode variableDeclaration = SNodeFactoryOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-          SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_6isygg_a0a.getFieldValue("patternVar_elem"))), true);
-          SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, ((SNode) pattern_6isygg_a0a.getFieldValue("patternVar_elem")), "virtual_getPresentation_1213877396640", new Object[]{})));
+          SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) (pattern_6isygg_a0a.getFieldValue("patternVar_elem")))), true);
+          SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, ((SNode) (pattern_6isygg_a0a.getFieldValue("patternVar_elem"))), "virtual_getPresentation_1213877396640", new Object[]{})));
           SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
           SNodeOperations.insertNextSiblingChild(node, foreachStatement);
           SNodeOperations.deleteNode(node);
@@ -149,7 +149,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_elem = (SNode) pattern.getFieldValue("patternVar_elem");
+        patternVar_elem = (SNode) (pattern.getFieldValue("patternVar_elem"));
       }
     }
 
@@ -203,7 +203,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_elem = (SNode) pattern.getFieldValue("patternVar_elem");
+        patternVar_elem = (SNode) (pattern.getFieldValue("patternVar_elem"));
       }
     }
 

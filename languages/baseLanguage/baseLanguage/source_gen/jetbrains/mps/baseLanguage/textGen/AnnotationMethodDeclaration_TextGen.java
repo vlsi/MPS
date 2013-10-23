@@ -53,7 +53,7 @@ public class AnnotationMethodDeclaration_TextGen extends SNodeTextGen {
       {
         List<SNode> scopeVariables = new ArrayList<SNode>();
         try {
-          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Priority.ERROR)) {
             LOG.error("Can't calculate scope variables for a node " + node + ".", t);

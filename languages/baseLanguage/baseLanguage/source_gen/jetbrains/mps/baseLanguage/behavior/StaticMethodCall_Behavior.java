@@ -24,7 +24,7 @@ public class StaticMethodCall_Behavior {
 
   public static Object virtual_eval_1213877519769(SNode thisNode, @NotNull SModule module) {
     if (module instanceof TransientModelsModule) {
-      module = ((TransientModelsModule) module).getOriginalModule();
+      module = ((TransientModelsModule) (module)).getOriginalModule();
     }
     Method method = BaseMethodDeclaration_Behavior.call_getMethod_1213877350393(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), module);
     Object[] actualArguments = BaseMethodCall_Behavior.call_getActualArguments_1213877339153(thisNode, module);

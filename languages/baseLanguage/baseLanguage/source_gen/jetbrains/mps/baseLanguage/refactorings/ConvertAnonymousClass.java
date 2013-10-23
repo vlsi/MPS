@@ -26,6 +26,6 @@ public class ConvertAnonymousClass extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    new ConvertAnonymousRefactoring(refactoringContext.getSelectedNode(), ((String) refactoringContext.getParameter("name"))).doRefactor();
+    new ConvertAnonymousRefactoring(refactoringContext.getSelectedNode(), ((String) (refactoringContext.getParameter("name")))).doRefactor();
   }
 }

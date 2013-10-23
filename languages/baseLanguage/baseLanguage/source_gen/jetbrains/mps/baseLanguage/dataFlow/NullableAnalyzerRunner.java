@@ -64,7 +64,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
       Instruction instruction = state.getInstruction();
       NullableState nullableState = NullableState.UNKNOWN;
       if (instruction instanceof GeneratedInstruction) {
-        SNode node = (SNode) (((GeneratedInstruction) instruction).getParameter());
+        SNode node = (SNode) ((((GeneratedInstruction) (instruction)).getParameter()));
         if (instruction instanceof notNullInstruction) {
           nullableState = NullableState.NOTNULL;
         }
@@ -82,8 +82,8 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
         }
       }
       if (instruction instanceof WriteInstruction) {
-        WriteInstruction write = (WriteInstruction) instruction;
-        SNode value = (SNode) write.getValue();
+        WriteInstruction write = (WriteInstruction) (instruction);
+        SNode value = (SNode) (write.getValue());
         if (SNodeOperations.isInstanceOf(value, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
           value = SLinkOperations.getTarget(SNodeOperations.cast(value, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         }
@@ -91,7 +91,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
         if (valueState == null) {
           valueState = NullableState.UNKNOWN;
         }
-        result.put((SNode) write.getVariable(), valueState);
+        result.put((SNode) (write.getVariable()), valueState);
       }
       return result;
     }

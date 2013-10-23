@@ -12,8 +12,8 @@ public class FixParametersInAnonymousClass_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    for (SNode parameter : SLinkOperations.getTargets(((SNode) FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), "parameter", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(((SNode) FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), "actualArgument", true)).addElement(parameter);
+    for (SNode parameter : SLinkOperations.getTargets(((SNode) (FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0])), "parameter", true)) {
+      ListSequence.fromList(SLinkOperations.getTargets(((SNode) (FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0])), "actualArgument", true)).addElement(parameter);
     }
   }
 }

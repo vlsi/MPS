@@ -38,7 +38,7 @@ public class _QueriesUtil {
   }
 
   public static SNode find_ContextOwner_ClosureContext_generatedClass_constructor(SNode inputNode, ITemplateGenerator generator) {
-    SNode generatedClass = (SNode) find_ContextOwner_ClosureContext_generatedClass(inputNode, generator);
+    SNode generatedClass = (SNode) (find_ContextOwner_ClosureContext_generatedClass(inputNode, generator));
     if (generatedClass != null) {
       return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(generatedClass)).first();
     }
@@ -46,14 +46,14 @@ public class _QueriesUtil {
   }
 
   public static SNode find_Closure_generatedClosureAdapter_constructor(SNode closure, ITemplateGenerator generator) {
-    SNode closureAdapterClass = (SNode) generator.findOutputNodeByInputNodeAndMappingName(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+    SNode closureAdapterClass = (SNode) (generator.findOutputNodeByInputNodeAndMappingName(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS));
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(closureAdapterClass)).first();
   }
 
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {
     SNode var = SLinkOperations.getTarget(localVarDeclStmt, "localVariableDeclaration", true);
     if ((var != null)) {
-      return (SNode) generator.findOutputNodeByInputNodeAndMappingName(var, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
+      return (SNode) (generator.findOutputNodeByInputNodeAndMappingName(var, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD));
     }
     return null;
   }
@@ -61,7 +61,7 @@ public class _QueriesUtil {
   public static SNode resolve_VariableReference_Variable_ClosureContext_generatedField(SNode varRef, ITemplateGenerator generator) {
     SNode variableAdapter = SLinkOperations.getTarget(varRef, "variableDeclaration", false);
     if ((variableAdapter != null)) {
-      return (SNode) generator.findOutputNodeByInputNodeAndMappingName(variableAdapter, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
+      return (SNode) (generator.findOutputNodeByInputNodeAndMappingName(variableAdapter, ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD));
     }
     return null;
   }
@@ -94,7 +94,7 @@ public class _QueriesUtil {
    */
   public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner 
-    SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.util.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
+    SNode enclosingClosureOrContextOwner = ((SNode) (jetbrains.mps.util.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
       public boolean met(SNode object) {
         if (!(object instanceof SNode)) {
           if (LOG.isEnabledFor(Priority.WARN)) {
@@ -105,12 +105,12 @@ public class _QueriesUtil {
         if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
           return true;
         }
-        return ClosuresUtil.isClosureContextOwner(((SNode) object));
+        return ClosuresUtil.isClosureContextOwner(((SNode) (object)));
       }
-    }));
+    })));
     SModel model = generator.getOutputModel();
     if (enclosingClosureOrContextOwner != null && ClosuresUtil.isClosureContextOwner(enclosingClosureOrContextOwner)) {
-      SNode varDeclStmt_output = (SNode) generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
+      SNode varDeclStmt_output = (SNode) (generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT));
       if ((varDeclStmt_output != null)) {
         SNode variable = SLinkOperations.getTarget(varDeclStmt_output, "localVariableDeclaration", true);
         SNode variableRef = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.VariableReference");

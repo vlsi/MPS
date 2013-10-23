@@ -134,8 +134,8 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
-    quotedNode_4 = (SNode) parameter_1;
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) (parameter_2));
+    quotedNode_4 = (SNode) (parameter_1);
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("returnType", HUtil.copyIfNecessary(quotedNode_4));
     }
@@ -157,7 +157,7 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "baseMethodDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "baseMethodDeclaration", (SNode) (parameter_1));
     return quotedNode_2;
   }
 }

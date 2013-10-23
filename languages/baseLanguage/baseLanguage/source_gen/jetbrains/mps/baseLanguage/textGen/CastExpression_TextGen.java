@@ -12,6 +12,8 @@ public class CastExpression_TextGen extends SNodeTextGen {
     this.append("(");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "type", true), this.getSNode());
     this.append(") ");
+    this.append("(");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
+    this.append(")");
   }
 }
