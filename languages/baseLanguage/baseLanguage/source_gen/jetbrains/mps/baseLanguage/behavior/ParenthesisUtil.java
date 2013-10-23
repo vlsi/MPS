@@ -142,12 +142,4 @@ public class ParenthesisUtil {
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}))) == ((int) (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}))));
   }
-
-
-
-  public static boolean needsParensAroundCastExpression(SNode castExpression) {
-    return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BaseMethodCall") || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.DotExpression") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"));
-  }
-
-
 }

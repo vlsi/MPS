@@ -13406,8 +13406,8 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="481464699807927350" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.481464699807923803" resolveInfo="needsParensAroundCastExpression" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpek.4830579082340999665" resolveInfo="ParenthesisUtil" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcz.1302191354693877826" resolveInfo="PrecedenceUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcz.481464699807923803" resolveInfo="needsParensAroundCastExpression" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="481464699809256324" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="481464699809256318" resolveInfo="castExpression" />
             </node>

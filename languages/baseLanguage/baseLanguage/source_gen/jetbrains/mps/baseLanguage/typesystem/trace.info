@@ -16049,7 +16049,7 @@
     <unitInfo nodeId="478744034994496655" fileName="typeof_BaseVariableReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BaseVariableReference_InferenceRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/481464699803943070">
-    <nodeInfo nodeId="481464699803970958" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="23" startPosition="80" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481464699803970958" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="23" startPosition="79" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="481464699803970958" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="24" startPosition="58" endLine="25" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="481464699803970958" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="27" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="481464699803970958" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="27" startPosition="163" endLine="28" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -16082,7 +16082,7 @@
     <scopeInfo nodeId="481464699803943070" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="481464699803943070" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="481464699803970958" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="23" startPosition="80" endLine="30" endPosition="7">
+    <scopeInfo nodeId="481464699803970958" fileName="check_CastExpressionLegalExpression_NonTypesystemRule.java" startLine="23" startPosition="79" endLine="30" endPosition="7">
       <varInfo nodeId="481464699803970958" varName="_reporter_2309309498" />
       <varInfo nodeId="481464699803970958" varName="errorTarget" />
     </scopeInfo>

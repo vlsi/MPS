@@ -14,7 +14,7 @@ import java.util.Collections;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -93,7 +93,7 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
       SNodeOperations.replaceWithAnother(node, parenthesisedCastExpression);
 
       SNode castExpression = SNodeOperations.cast(SLinkOperations.getTarget(parenthesisedCastExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.CastExpression");
-      if (ParenthesisUtil.needsParensAroundCastExpression(castExpression)) {
+      if (PrecedenceUtil.needsParensAroundCastExpression(castExpression)) {
         SNode expression = SLinkOperations.getTarget(castExpression, "expression", true);
         SNode result = SNodeFactoryOperations.replaceWithNewChild(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
         SLinkOperations.setTarget(result, "expression", expression, true);
