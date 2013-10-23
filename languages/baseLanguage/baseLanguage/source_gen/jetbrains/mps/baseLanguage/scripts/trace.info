@@ -2055,6 +2055,52 @@
     <unitInfo nodeId="7303989191347669108" fileName="NonMigratableUsagesFinder.java" startLine="135" startPosition="233" endLine="139" endPosition="9" unitName="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder$2" />
     <unitInfo nodeId="4683244688930795258" fileName="NonMigratableUsagesFinder.java" startLine="22" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/481464699838541779">
+    <nodeInfo nodeId="481464699838541779" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="15" startPosition="89" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="26" startPosition="59" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481464699838548085" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481464699809285859" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="34" startPosition="52" endLine="35" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481464699807405250" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="35" startPosition="79" endLine="36" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481464699807405256" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="36" startPosition="142" endLine="37" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="40" startPosition="42" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="481464699838541779" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="16" startPosition="56" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="16" startPosition="56" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="481464699838541779" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="15" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpdateCastExpressionParens_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="116" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="116" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="26" startPosition="59" endLine="27" endPosition="69" />
+    <scopeInfo nodeId="481464699838547403" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="220" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="40" startPosition="42" endLine="41" endPosition="21" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="481464699838546380" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="481464699838546382" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="34" startPosition="52" endLine="37" endPosition="74">
+      <varInfo nodeId="481464699809285860" varName="expression" />
+      <varInfo nodeId="481464699807405251" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="481464699838546380" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="16" startPosition="56" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="481464699838541779" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="15" startPosition="89" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="481464699838541779" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="15" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="481464699838541779" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="481464699838546380" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="17" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript$1" />
+    <unitInfo nodeId="481464699838541779" fileName="UpdateCastExpressionParens_MigrationScript.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/4898876889067052780">
     <nodeInfo nodeId="4898876889067052780" fileName="MigrateClassifierMembersNodes_MigrationScript.java" startLine="17" startPosition="92" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4898876889067061097" fileName="MigrateClassifierMembersNodes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

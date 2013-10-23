@@ -90,8 +90,7 @@ public class PrecedenceUtil {
 
 
   public static boolean needsParensAroundCastExpression(SNode castExpression) {
-    SNode firstExpression = SLinkOperations.getTarget(castExpression, "expression", true);
-    return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || getPriority(SNodeOperations.getConceptDeclaration(firstExpression)).ordinal() <= getPriority(SNodeOperations.getConceptDeclaration(castExpression)).ordinal());
+    return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression));
   }
 
 
