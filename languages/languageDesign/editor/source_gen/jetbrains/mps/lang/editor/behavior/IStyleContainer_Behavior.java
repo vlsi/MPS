@@ -5,6 +5,9 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
@@ -22,15 +25,20 @@ public class IStyleContainer_Behavior {
 
   public static List<SNode> call_getClassItems_1219419901278(SNode thisNode, SNode itemConcept) {
     List<SNode> result = new ArrayList<SNode>();
+    IStyleContainer_Behavior.call_fillClassItems_2551781846503685010(thisNode, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
+    return result;
+  }
+
+  public static void call_fillClassItems_2551781846503685010(SNode thisNode, List<SNode> classItems, SNode itemConcept, Set<SNode> visitedContainers) {
     for (SNode item : SLinkOperations.getTargets(thisNode, "styleItem", true)) {
       if (SNodeOperations.isInstanceOf(item, NameUtil.nodeFQName(itemConcept))) {
-        ListSequence.fromList(result).addElement(item);
+        ListSequence.fromList(classItems).addElement(item);
       }
     }
-    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{}) != null) && !(ListSequence.fromList(result).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{})))) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{}), itemConcept)));
+    SetSequence.fromSet(visitedContainers).addElement(thisNode);
+    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{}) != null) && !(SetSequence.fromSet(visitedContainers).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{})))) {
+      IStyleContainer_Behavior.call_fillClassItems_2551781846503685010(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{}), classItems, itemConcept, visitedContainers);
     }
-    return result;
   }
 
   @Deprecated

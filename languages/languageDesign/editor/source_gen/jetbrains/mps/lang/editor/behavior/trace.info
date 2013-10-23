@@ -1698,52 +1698,62 @@
     <unitInfo nodeId="1219409807383" fileName="CellMenuPart_Abstract_Behavior.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1219419899728">
-    <nodeInfo nodeId="1219419996772" fileName="IStyleContainer_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219419926865" fileName="IStyleContainer_Behavior.java" startLine="23" startPosition="97" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1219419976124" fileName="IStyleContainer_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219420012089" fileName="IStyleContainer_Behavior.java" startLine="30" startPosition="332" endLine="31" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1219419933638" fileName="IStyleContainer_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="37" startPosition="68" endLine="38" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="42" startPosition="101" endLine="43" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParent_1219419981626#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1219419955665" fileName="IStyleContainer_Behavior.java" startLine="25" startPosition="80" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1219420003288" fileName="IStyleContainer_Behavior.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getParent_1219419981626#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getParent_1219419981626#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1219419941001" fileName="IStyleContainer_Behavior.java" startLine="24" startPosition="48" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="23" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getClassItems_1219419901278#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="1219419899730" fileName="IStyleContainer_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1219419981628" fileName="IStyleContainer_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="1219419955666" fileName="IStyleContainer_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="55" />
-    <scopeInfo nodeId="1219420003289" fileName="IStyleContainer_Behavior.java" startLine="30" startPosition="332" endLine="31" endPosition="277" />
-    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="37" startPosition="68" endLine="38" endPosition="144" />
-    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="42" startPosition="101" endLine="43" endPosition="277" />
-    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="1219419996772" fileName="IStyleContainer_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219419926865" fileName="IStyleContainer_Behavior.java" startLine="26" startPosition="97" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2551781846503882713" fileName="IStyleContainer_Behavior.java" startLine="27" startPosition="48" endLine="28" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219419933638" fileName="IStyleContainer_Behavior.java" startLine="28" startPosition="143" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2551781846503693527" fileName="IStyleContainer_Behavior.java" startLine="34" startPosition="81" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2551781846503894716" fileName="IStyleContainer_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2551781846503863592" fileName="IStyleContainer_Behavior.java" startLine="39" startPosition="341" endLine="40" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="45" startPosition="68" endLine="46" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="50" startPosition="101" endLine="51" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParent_1219419981626#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2551781846503693525" fileName="IStyleContainer_Behavior.java" startLine="33" startPosition="80" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2551781846503693549" fileName="IStyleContainer_Behavior.java" startLine="38" startPosition="64" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getParent_1219419981626#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getParent_1219419981626#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getClassItems_1219419901278#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="2551781846503693523" fileName="IStyleContainer_Behavior.java" startLine="32" startPosition="151" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="32" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_fillClassItems_2551781846503685010#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;)V" />
+    <scopeInfo nodeId="1219419899730" fileName="IStyleContainer_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="1219419981628" fileName="IStyleContainer_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="2551781846503693526" fileName="IStyleContainer_Behavior.java" startLine="34" startPosition="81" endLine="35" endPosition="59" />
+    <scopeInfo nodeId="2551781846503693550" fileName="IStyleContainer_Behavior.java" startLine="39" startPosition="341" endLine="40" endPosition="249" />
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="45" startPosition="68" endLine="46" endPosition="144" />
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="50" startPosition="101" endLine="51" endPosition="277" />
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1219419899728" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1219419899728" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1219419941002" fileName="IStyleContainer_Behavior.java" startLine="25" startPosition="80" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1219419901280" fileName="IStyleContainer_Behavior.java" startLine="26" startPosition="97" endLine="29" endPosition="18">
+      <varInfo nodeId="1219419926866" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2551781846503693524" fileName="IStyleContainer_Behavior.java" startLine="33" startPosition="80" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1219419899728" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1219419899728" varName="callerConceptFqName" />
       <varInfo nodeId="1219419899728" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1219419941001" fileName="IStyleContainer_Behavior.java" startLine="24" startPosition="48" endLine="29" endPosition="5">
-      <varInfo nodeId="1219419941005" varName="item" />
-    </scopeInfo>
-    <scopeInfo nodeId="1219419901280" fileName="IStyleContainer_Behavior.java" startLine="23" startPosition="97" endLine="33" endPosition="18">
-      <varInfo nodeId="1219419926866" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="23" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1219419914972" varName="itemConcept" />
       <varInfo nodeId="1219419899728" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior" />
+    <scopeInfo nodeId="2551781846503693523" fileName="IStyleContainer_Behavior.java" startLine="32" startPosition="151" endLine="37" endPosition="5">
+      <varInfo nodeId="2551781846503693540" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="2551781846503685013" fileName="IStyleContainer_Behavior.java" startLine="32" startPosition="151" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="32" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="2551781846503740126" varName="classItems" />
+      <varInfo nodeId="2551781846503686810" varName="itemConcept" />
+      <varInfo nodeId="1219419899728" varName="thisNode" />
+      <varInfo nodeId="2551781846503686818" varName="visitedContainers" />
+    </scopeInfo>
+    <unitInfo nodeId="1219419899728" fileName="IStyleContainer_Behavior.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1220339770457">
     <nodeInfo nodeId="1220339781331" fileName="CellModel_Error_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
