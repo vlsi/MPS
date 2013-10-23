@@ -738,6 +738,18 @@ __switch__:
     return null;
   }
 
+
+
+  public static SNode getProperty(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"), "property", false);
+    }
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "jetbrains.mps.baseLanguage.structure.ThisExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.PropertyReference"), "property", false);
+    }
+    return null;
+  }
+
   @CheckingMethod
   public static void checkReturningExpression(final TypeCheckingContext typeCheckingContext, SNode expression, SNode statement, Program program, AnalysisResult<Map<SNode, NullableState>> result) {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {

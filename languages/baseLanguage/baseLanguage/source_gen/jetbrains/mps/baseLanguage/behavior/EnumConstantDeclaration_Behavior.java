@@ -31,7 +31,6 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
-    // todo: ? 
     return true;
   }
 

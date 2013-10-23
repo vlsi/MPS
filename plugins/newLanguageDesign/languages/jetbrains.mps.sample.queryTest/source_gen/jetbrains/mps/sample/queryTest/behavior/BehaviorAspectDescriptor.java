@@ -12,16 +12,18 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 2:
-        return new MyUnrelatedConcept_BehaviorDescriptor();
       case 0:
-        return new MyRootConcept_BehaviorDescriptor();
+        return new MyManyIfaces_BehaviorDescriptor();
+      case 3:
+        return new MyUnrelatedConcept_BehaviorDescriptor();
       case 1:
+        return new MyRootConcept_BehaviorDescriptor();
+      case 2:
         return new MySubConcept_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.sample.queryTest.structure.MyRootConcept", "jetbrains.mps.sample.queryTest.structure.MySubConcept", "jetbrains.mps.sample.queryTest.structure.MyUnrelatedConcept"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.sample.queryTest.structure.MyManyIfaces", "jetbrains.mps.sample.queryTest.structure.MyRootConcept", "jetbrains.mps.sample.queryTest.structure.MySubConcept", "jetbrains.mps.sample.queryTest.structure.MyUnrelatedConcept"};
 }

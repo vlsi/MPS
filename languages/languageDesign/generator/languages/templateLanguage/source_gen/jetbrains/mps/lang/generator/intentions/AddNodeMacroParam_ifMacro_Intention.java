@@ -117,9 +117,9 @@ public class AddNodeMacroParam_ifMacro_Intention implements IntentionFactory {
       SNodeOperations.replaceWithAnother(nodeMacro, ifMacro);
       SNode ifMacro_Condition = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.IfMacro_Condition", null);
       SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-      SNode linkAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
-      SLinkOperations.setTarget(linkAccess, "link", myParameter, false);
-      SLinkOperations.setTarget(dotExpression, "operation", linkAccess, true);
+      SNode propertyAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SPropertyAccess", null);
+      SLinkOperations.setTarget(propertyAccess, "property", myParameter, false);
+      SLinkOperations.setTarget(dotExpression, "operation", propertyAccess, true);
       SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
       SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
