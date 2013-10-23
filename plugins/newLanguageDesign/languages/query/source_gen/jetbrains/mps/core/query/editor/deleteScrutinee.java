@@ -7,7 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class deleteScrutinee {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,7 +28,8 @@ public class deleteScrutinee {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, "scrutinee", null, true);
+      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "scrutinee", true));
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "ALIAS_EDITOR_COMPONENT", -1);
     }
   }
 }

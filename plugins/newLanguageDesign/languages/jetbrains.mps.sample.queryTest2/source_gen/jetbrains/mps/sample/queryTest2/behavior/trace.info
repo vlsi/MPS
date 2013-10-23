@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.sample.queryTest2.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="Qt2Concept_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.sample.queryTest2.behavior.Qt2Concept_BehaviorDescriptor" />
+  <root nodeRef="r:f7ab31a7-7b63-4b00-aa5d-fe7522178520(jetbrains.mps.sample.queryTest2.behavior)/6925357446544699849">
+    <nodeInfo nodeId="6925357446544699856" fileName="Qt2Concept_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="24" startPosition="108" endLine="25" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_qt2query_6925357446544699852#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_qt2query_6925357446544699852#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_qt2query_6925357446544699852#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="6925357446544699851" fileName="Qt2Concept_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="6925357446544699855" fileName="Qt2Concept_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="124" />
+    <scopeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="24" startPosition="108" endLine="25" endPosition="258" />
+    <scopeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="6925357446544699849" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="6925357446544699849" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="6925357446544699849" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="6925357446544699849" varName="callerConceptFqName" />
+      <varInfo nodeId="6925357446544699849" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6925357446544699849" fileName="Qt2Concept_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.sample.queryTest2.behavior.Qt2Concept_Behavior" />
+  </root>
+</debugInfo>
+

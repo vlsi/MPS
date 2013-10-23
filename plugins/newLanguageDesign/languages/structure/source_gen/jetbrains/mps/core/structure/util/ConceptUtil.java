@@ -181,8 +181,11 @@ public class ConceptUtil {
     Iterable<T> inherited = Sequence.fromIterable(Collections.<T>emptyList());
     Iterable<SNode> interfaces;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.structure.structure.SConcept")) {
+      SNode superConcept;
       if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.core.structure.structure.SConcept"), "extends", false) != null)) {
         inherited = Sequence.<T>singleton(traverse(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.core.structure.structure.SConcept"), "extends", false), handler));
+      } else {
+        inherited = Sequence.<T>singleton(handler.invoke(ConceptUtil.getBaseConcept(), Sequence.fromIterable(Collections.<T>emptyList())));
       }
       interfaces = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.core.structure.structure.SConcept"), "implements", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -204,6 +207,11 @@ public class ConceptUtil {
           return SLinkOperations.getTarget(it, "target", false);
         }
       });
+      if (Sequence.fromIterable(interfaces).isEmpty()) {
+        // leaf: we won't traverse further 
+        inherited = Sequence.<T>singleton(handler.invoke(ConceptUtil.getBaseConcept(), Sequence.fromIterable(Collections.<T>emptyList())));
+      }
+
     } else {
       interfaces = Sequence.fromIterable(Collections.<SNode>emptyList());
     }
