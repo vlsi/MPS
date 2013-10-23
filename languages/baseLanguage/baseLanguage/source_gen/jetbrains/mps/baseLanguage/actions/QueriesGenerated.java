@@ -5850,39 +5850,6 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_9000705190101378181(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ArrayType", null);
-        SLinkOperations.setTarget(result, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "type", true), true);
-        SLinkOperations.setTarget(_context.getSourceNode(), "type", result, true);
-        return _context.getSourceNode();
-      }
-
-      public String getMatchingText(String pattern) {
-        return "[]";
-      }
-
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), null));
-      }
-    });
-    return result;
-  }
-
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_9000705190101451356(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "type", true) != null);
-  }
-
   private static SNode _quotation_createNode_ns07og_a0a0a0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

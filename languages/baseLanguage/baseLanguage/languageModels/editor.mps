@@ -20400,7 +20400,7 @@
           <property name="color" nameId="tpc2.1186403713874" value="red" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="9000705190101421761" nodeInfo="nn">
-          <property name="tag" nameId="tpc2.1214320119174" value="ext_1_RTransform" />
+          <property name="tag" nameId="tpc2.1214320119174" value="default_RTransform" />
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3609453419506287179" nodeInfo="nn" />
