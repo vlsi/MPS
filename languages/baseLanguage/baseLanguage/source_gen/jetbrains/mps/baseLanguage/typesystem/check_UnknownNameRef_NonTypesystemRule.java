@@ -27,7 +27,7 @@ public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesyste
       return;
     }
 
-    if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) (((Class) (Object.class))), unkName, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
+    if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) (Object.class)), unkName, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Resolved qualified name reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8504030010050377272", null, errorTarget);

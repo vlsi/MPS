@@ -54,7 +54,7 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) (parameter_1);
+    quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
     }

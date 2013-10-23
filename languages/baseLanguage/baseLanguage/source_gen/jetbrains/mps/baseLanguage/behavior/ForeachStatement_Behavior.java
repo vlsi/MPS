@@ -21,11 +21,11 @@ public class ForeachStatement_Behavior {
 
   @Deprecated
   public static List<SNode> call_getScopeVariables_2496361171403550949(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getScopeVariables_2496361171403550949(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 }

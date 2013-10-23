@@ -78,7 +78,7 @@ public class InstanceMethodCallOperation_Behavior {
       return false;
     }
     while (classifier != declarationClassifier) {
-      for (SNode method : Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)) {
+      for (SNode method : Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)) {
         if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
           return false;
         }
@@ -97,7 +97,7 @@ public class InstanceMethodCallOperation_Behavior {
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
     SNode de = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
     SNode methodAnc = SNodeOperations.getAncestor(de, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
-    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) == de || ((methodAnc != null) && BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), methodAnc, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) == de || ((methodAnc != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), methodAnc, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
   }
 
   public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {

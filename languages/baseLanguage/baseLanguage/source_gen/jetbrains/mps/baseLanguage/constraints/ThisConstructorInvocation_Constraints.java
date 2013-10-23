@@ -45,7 +45,7 @@ public class ThisConstructorInvocation_Constraints extends BaseConstraintsDescri
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) (SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind")));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"));
               return (scope == null ?
                 new EmptyScope() :
                 scope

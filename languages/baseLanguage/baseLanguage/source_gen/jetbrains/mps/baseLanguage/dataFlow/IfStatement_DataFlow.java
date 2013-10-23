@@ -16,7 +16,7 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "condition", true)));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
       SNode bconst = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
       if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
@@ -25,7 +25,7 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
     } else {
       _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1235407894378");
     }
-    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "ifTrue", true)));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null) || SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true) != null && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)).isNotEmpty()) {
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {
@@ -35,10 +35,10 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
     }
     _context.getBuilder().emitLabel("endOfTrue");
     for (SNode elseIf : SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)) {
-      _context.getBuilder().build((SNode) (elseIf));
+      _context.getBuilder().build((SNode) elseIf);
     }
     if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
-      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true)));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
     }
   }
 }

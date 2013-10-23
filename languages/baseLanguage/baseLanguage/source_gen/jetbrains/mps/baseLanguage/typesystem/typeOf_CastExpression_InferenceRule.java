@@ -25,7 +25,7 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485155", 0, null);
-        typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true)), (SNode) (castType), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true), (SNode) castType, _info_12389875345);
       }
 
       if (SNodeOperations.isInstanceOf(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -34,7 +34,7 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178271928127", 0, null);
-        typeCheckingContext.createComparableEquation((SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178271928128", true)), (SNode) (castType), false, _info_12389875345);
+        typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(castExpression, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178271928128", true), (SNode) castType, false, _info_12389875345);
       }
     }
   }
@@ -58,7 +58,7 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

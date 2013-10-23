@@ -54,7 +54,7 @@ public class Language extends LanguageRuntime {
       if (myEditorAspectDescriptor == null) {
         myEditorAspectDescriptor = new EditorAspectDescriptorImpl();
       }
-      return (T) (myEditorAspectDescriptor);
+      return (T) myEditorAspectDescriptor;
     }
     return null;
   }

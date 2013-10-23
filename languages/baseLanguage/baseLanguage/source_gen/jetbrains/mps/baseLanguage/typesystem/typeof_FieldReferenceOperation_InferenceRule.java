@@ -43,19 +43,19 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType") && SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
             Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
             BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
-            fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+            fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
           }
 
           {
             SNode _nodeToCheck_1029348928467 = fieldReference;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176551", 0, null);
-            typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176508", true)), (SNode) (fieldType), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176508", true), (SNode) fieldType, _info_12389875345);
           }
           if (!(typeCheckingContext.isSingleTypeComputation())) {
             {
               SNode _nodeToCheck_1029348928467 = fieldReference;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176594", 0, null);
-              typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176596", true)), (SNode) (_quotation_createNode_7hlfbz_a0e0g0b()), true, true, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "185741718243176596", true), (SNode) _quotation_createNode_7hlfbz_a0e0g0b(), true, true, _info_12389875345);
             }
           }
         }

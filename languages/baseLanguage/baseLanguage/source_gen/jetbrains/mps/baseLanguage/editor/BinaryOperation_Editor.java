@@ -98,8 +98,8 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
         @Override
         protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
-          SNode sourceNode = (SNode) (oldChild);
-          SNode result = (SNode) (newChild);
+          SNode sourceNode = (SNode) oldChild;
+          SNode result = (SNode) newChild;
           SNodeOperations.replaceWithAnother(sourceNode, result);
           SLinkOperations.setTarget(result, "lValue", SLinkOperations.getTarget(sourceNode, "leftExpression", true), true);
           SLinkOperations.setTarget(result, "rValue", SLinkOperations.getTarget(sourceNode, "rightExpression", true), true);
@@ -110,7 +110,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SubstituteAction) (parameterObject), node, model, scope, operationContext, editorContext);
+      this.handleAction_impl((SubstituteAction) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
     public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -123,7 +123,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SubstituteAction) (parameterObject));
+      return this.getMatchingText_internal((SubstituteAction) parameterObject);
     }
 
     public String getMatchingText_internal(SubstituteAction parameterObject) {
@@ -131,7 +131,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((SubstituteAction) (parameterObject));
+      return this.getDescriptionText_internal((SubstituteAction) parameterObject);
     }
 
     public String getDescriptionText_internal(SubstituteAction parameterObject) {

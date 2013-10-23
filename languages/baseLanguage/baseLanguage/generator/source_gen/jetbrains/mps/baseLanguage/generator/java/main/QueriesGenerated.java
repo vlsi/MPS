@@ -65,7 +65,7 @@ public class QueriesGenerated {
       return false;
     }
     SNode methodLike = SNodeOperations.getAncestor(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
-    if (!(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{}) == _context.getNode())) {
+    if (!(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{}) == _context.getNode())) {
       return false;
     }
     if (!(LastStatementUtil.canMakeReturnStatement(_context.getNode()))) {

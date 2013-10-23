@@ -115,10 +115,10 @@ public class Migrations {
 
       @Override
       public boolean isApplicableInstanceNode(SNode conceptDeclaration) {
-        if (!(SConceptOperations.isSubConceptOf(((SNode) (conceptDeclaration)), "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
+        if (!(SConceptOperations.isSubConceptOf(((SNode) conceptDeclaration), "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
           return false;
         }
-        SNode concept = (SNode) (conceptDeclaration);
+        SNode concept = (SNode) conceptDeclaration;
         Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
 
         if (!(Sequence.fromIterable(attributedConcepts).contains(config.sourceConcept))) {
@@ -136,7 +136,7 @@ public class Migrations {
 
       @Override
       public void doUpdateInstanceNode(SNode conceptDeclaration) {
-        SNode concept = (SNode) (conceptDeclaration);
+        SNode concept = (SNode) conceptDeclaration;
         Iterable<SNode> attributedConcepts = getAttributedConcepts(concept);
 
         if (!(Sequence.fromIterable(attributedConcepts).contains(config.targetConcept))) {
@@ -448,7 +448,7 @@ public class Migrations {
     quotedNode_3.addChild("statement", quotedNode_5);
     quotedNode_2.addChild("ifTrue", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6 = (SNode) (parameter_1);
+    quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_6));
     }
@@ -465,7 +465,7 @@ public class Migrations {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IsApplicableBlock", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = (SNode) (parameter_1);
+    quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
     }
@@ -491,7 +491,7 @@ public class Migrations {
     quotedNode_3.addChild("statement", quotedNode_5);
     quotedNode_2.addChild("ifTrue", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6 = (SNode) (parameter_1);
+    quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_6));
     }
@@ -508,7 +508,7 @@ public class Migrations {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = (SNode) (parameter_1);
+    quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
     }
@@ -521,8 +521,8 @@ public class Migrations {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptLinkDeclaration", (SNode) (parameter_2));
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "target", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptLinkDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "target", (SNode) parameter_1);
     return quotedNode_3;
   }
 
@@ -533,8 +533,8 @@ public class Migrations {
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "concept", (SNode) (parameter_1));
-    quotedNode_5 = (SNode) (parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "concept", (SNode) parameter_1);
+    quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode_5));
     }
@@ -555,19 +555,19 @@ public class Migrations {
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8 = (SNode) (parameter_1);
+    quotedNode_8 = (SNode) parameter_1;
     if (quotedNode_8 != null) {
       quotedNode_6.addChild("expression", HUtil.copyIfNecessary(quotedNode_8));
     }
     quotedNode_5.addChild("rightExpression", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9 = (SNode) (parameter_2);
+    quotedNode_9 = (SNode) parameter_2;
     if (quotedNode_9 != null) {
       quotedNode_7.addChild("operand", HUtil.copyIfNecessary(quotedNode_9));
     }
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_11, "conceptDeclaration", (SNode) (parameter_3));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_11, "conceptDeclaration", (SNode) parameter_3);
     quotedNode_10.addChild("conceptArgument", quotedNode_11);
     quotedNode_7.addChild("operation", quotedNode_10);
     quotedNode_5.addChild("leftExpression", quotedNode_7);
@@ -581,7 +581,7 @@ public class Migrations {
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptDeclaration", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptDeclaration", (SNode) parameter_1);
     quotedNode_2.addChild("conceptArgument", quotedNode_3);
     return quotedNode_2;
   }
@@ -617,19 +617,19 @@ public class Migrations {
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_13, "name", "it");
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_16, "concept", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_16, "concept", (SNode) parameter_1);
     quotedNode_13.addChild("type", quotedNode_16);
     quotedNode_9.addChild("parameter", quotedNode_13);
     quotedNode_7.addChild("closure", quotedNode_9);
     quotedNode_6.addChild("operation", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_10 = (SNode) (parameter_2);
+    quotedNode_10 = (SNode) parameter_2;
     if (quotedNode_10 != null) {
       quotedNode_8.addChild("operand", HUtil.copyIfNecessary(quotedNode_10));
     }
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation", null, null, GlobalScope.getInstance(), false);
     {
-      List<SNode> nodes = (List<SNode>) (parameter_3);
+      List<SNode> nodes = (List<SNode>) parameter_3;
       for (SNode child : nodes) {
         quotedNode_11.addChild("parameter", HUtil.copyIfNecessary(child));
       }
@@ -645,7 +645,7 @@ public class Migrations {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "applicableNode", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "applicableNode", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -662,7 +662,7 @@ public class Migrations {
     quotedNode_3.addChild("statement", quotedNode_5);
     quotedNode_2.addChild("ifTrue", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6 = (SNode) (parameter_1);
+    quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_6));
     }
@@ -678,7 +678,7 @@ public class Migrations {
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = (SNode) (parameter_1);
+    quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
     }
@@ -705,7 +705,7 @@ public class Migrations {
     quotedNode_3.addChild("statement", quotedNode_5);
     quotedNode_2.addChild("ifTrue", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6 = (SNode) (parameter_1);
+    quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_6));
     }

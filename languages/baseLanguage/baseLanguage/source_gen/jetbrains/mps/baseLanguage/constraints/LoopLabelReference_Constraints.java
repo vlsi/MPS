@@ -45,7 +45,7 @@ public class LoopLabelReference_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) (SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel")));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"));
               return (scope == null ?
                 new EmptyScope() :
                 scope

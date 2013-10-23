@@ -32,7 +32,7 @@ public class check_DynamicReference_NonTypesystemRule extends AbstractNonTypesys
     }
 
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-      if (!((SReference) (ref) instanceof DynamicReference)) {
+      if (!((SReference) ref instanceof DynamicReference)) {
         continue;
       }
       if (ref.getTargetNode() == null) {

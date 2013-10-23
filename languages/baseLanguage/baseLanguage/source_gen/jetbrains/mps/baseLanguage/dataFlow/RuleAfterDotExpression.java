@@ -27,13 +27,13 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "operation", true), "virtual_operandCanBeNull_323410281720656291", new Object[]{})) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_allowsNullOperand_4585239809762176541", new Object[]{}))) {
       {
         Object object = SLinkOperations.getTarget(node, "operand", true);
-        if (((Program) (o)).contains(object)) {
+        if (((Program) o).contains(object)) {
           boolean before = false;
-          int position = ((Program) ((o))).getEnd(object);
+          int position = ((Program) (o)).getEnd(object);
           Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "operand", true));
           instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432385");
           instruction.setSource(node);
-          ((Program) ((o))).insert(instruction, position, true, before);
+          ((Program) (o)).insert(instruction, position, true, before);
         }
       }
     }

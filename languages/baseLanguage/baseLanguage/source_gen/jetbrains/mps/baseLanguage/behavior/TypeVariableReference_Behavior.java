@@ -39,7 +39,7 @@ public class TypeVariableReference_Behavior {
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true), "virtual_getErasure_702942408396803226", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true), "virtual_getErasure_702942408396803226", new Object[]{});
     }
     return _quotation_createNode_6i211a_a1a1();
   }
@@ -49,7 +49,7 @@ public class TypeVariableReference_Behavior {
     if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(thisNode))) {
       SetSequence.fromSet(visitedTypeVariableReferences).addElement(thisNode);
       SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
-      SLinkOperations.setTarget(upperBoundType, "bound", BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), bound, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypeVariableReferences}), true);
+      SLinkOperations.setTarget(upperBoundType, "bound", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), bound, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypeVariableReferences}), true);
       SetSequence.fromSet(visitedTypeVariableReferences).removeElement(thisNode);
       return upperBoundType;
     } else {
@@ -81,7 +81,7 @@ public class TypeVariableReference_Behavior {
       }
       if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
         ListSequence.fromList(expTrace).addElement(thisNode);
-        exp = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
+        exp = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(exp, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
       }
       return exp;
     }

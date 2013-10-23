@@ -24,13 +24,13 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "iterable", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2262344491709407306", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) (_quotation_createNode_9mvp38_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext.getRepresentative(T_typevar_1176561507041))), (SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1207147193776", true)), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_9mvp38_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1176561507041), typeCheckingContext.getRepresentative(T_typevar_1176561507041)), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1207147193776", true), false, true, _info_12389875345);
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(foreachStatement, "variable", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358399", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358397", true)), (SNode) (typeCheckingContext.getRepresentative(T_typevar_1176561507041)), true, true, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358397", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1176561507041), true, true, _info_12389875345);
       }
     }
   }
@@ -60,13 +60,13 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Iterable")));
-    quotedNode_6 = (SNode) (parameter_1);
+    quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("parameter", HUtil.copyIfNecessary(quotedNode_6));
     }
     quotedNode_3.addChild("argument", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7 = (SNode) (parameter_2);
+    quotedNode_7 = (SNode) parameter_2;
     if (quotedNode_7 != null) {
       quotedNode_5.addChild("componentType", HUtil.copyIfNecessary(quotedNode_7));
     }

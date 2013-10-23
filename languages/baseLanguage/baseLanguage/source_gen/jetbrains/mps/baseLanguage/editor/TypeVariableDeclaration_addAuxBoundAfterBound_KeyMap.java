@@ -67,7 +67,7 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMap
       if (nextLeaf == null) {
         return false;
       }
-      SNode nextCellNode = (SNode) (nextLeaf.getSNode());
+      SNode nextCellNode = (SNode) nextLeaf.getSNode();
       return nextCellNode != null && nextCellNode != typeVarDeclaration;
     }
 

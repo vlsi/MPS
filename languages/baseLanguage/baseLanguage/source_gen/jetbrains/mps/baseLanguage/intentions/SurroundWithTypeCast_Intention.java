@@ -119,11 +119,11 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = (SNode) (parameter_1);
+    quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
     }
-    quotedNode_6 = (SNode) (parameter_2);
+    quotedNode_6 = (SNode) parameter_2;
     if (quotedNode_6 != null) {
       quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
     }

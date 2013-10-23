@@ -21,7 +21,7 @@ public class typeOf_ReturnStatement_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = returnStatement;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5024379200756777505", 0, null);
-        typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5024379200756777512", true)), (SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5024379200756777507", true)), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5024379200756777512", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5024379200756777507", true), _info_12389875345);
       }
     }
     typeCheckingContext.typeOf(SNodeOperations.getAncestor(returnStatement, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8658296822748110720", true);

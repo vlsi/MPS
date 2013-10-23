@@ -15,7 +15,7 @@ public class LocalVariableDeclaration_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitNop("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206990208534");
     if ((SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null)) {
-      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "initializer", true)));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "initializer", true));
       _context.getBuilder().emitWrite(_context.getNode(), SLinkOperations.getTarget(_context.getNode(), "initializer", true), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206987180651");
     }
   }

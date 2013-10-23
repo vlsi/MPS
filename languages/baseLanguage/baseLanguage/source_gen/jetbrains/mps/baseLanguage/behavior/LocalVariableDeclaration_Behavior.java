@@ -116,7 +116,7 @@ public class LocalVariableDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_getValue_4163393263914882931(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_getValue_1224857430232", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getValue_1224857430232", new Object[]{});
   }
 
   @Deprecated
@@ -131,6 +131,6 @@ public class LocalVariableDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_getValue_4163393263914882931(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getValue_1224857430232", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getValue_1224857430232", new Class[]{SNode.class}, new Object[]{});
   }
 }

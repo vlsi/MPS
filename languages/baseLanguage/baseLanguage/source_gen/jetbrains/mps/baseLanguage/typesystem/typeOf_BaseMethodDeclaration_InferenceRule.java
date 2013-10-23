@@ -31,7 +31,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         {
           SNode _nodeToCheck_1029348928467 = bmd;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", 0, null);
-          typeCheckingContext.createLessThanInequality((SNode) (throwsItem), (SNode) (_quotation_createNode_ifzhbs_a0a0a0b()), true, true, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) throwsItem, (SNode) _quotation_createNode_ifzhbs_a0a0a0b(), true, true, _info_12389875345);
         }
       }
     }
@@ -46,7 +46,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       return;
     }
     // ============= 
-    SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), bmd, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+    SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), bmd, "virtual_getExpectedRetType_1239354342632", new Object[]{});
     // ============= 
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
@@ -73,7 +73,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
             {
               SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363921400", 0, null);
-              typeCheckingContext.createLessThanInequality((SNode) (returnType), (SNode) (expectedRetType), true, true, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) returnType, (SNode) expectedRetType, true, true, _info_12389875345);
             }
           }
         }
@@ -82,14 +82,14 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
     // ============= 
     if (expectedRetType != null) {
       // last expression statement can serve as return statement 
-      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), bmd, "virtual_getLastStatement_1239354409446", new Object[]{});
+      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), bmd, "virtual_getLastStatement_1239354409446", new Object[]{});
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765601477", true);
         if (!(typeCheckingContext.isSingleTypeComputation())) {
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363855090", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) (returnType), (SNode) (expectedRetType), true, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) returnType, (SNode) expectedRetType, true, true, _info_12389875345);
           }
         }
       }

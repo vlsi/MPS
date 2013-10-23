@@ -79,7 +79,7 @@ public class check_UnneededJavaImports_NonTypesystemRule extends AbstractNonType
 
         dynRefsPresent = true;
 
-        String resolveInfo = ((DynamicReference) (ref)).getResolveInfo();
+        String resolveInfo = ((DynamicReference) ref).getResolveInfo();
         SetSequence.fromSet(retain).addElement(MapSequence.fromMap(importsByName).get(resolveInfo));
       }
     }

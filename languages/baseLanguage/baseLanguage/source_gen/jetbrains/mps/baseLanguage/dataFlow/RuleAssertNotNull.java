@@ -81,8 +81,8 @@ public class RuleAssertNotNull extends DataFlowConstructor {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_p = (SNode) (pattern.getFieldValue("patternVar_p"));
-        patternVar_action_var_5730083271929373007 = (SNode) (pattern.getFieldValue("patternVar_action_var_5730083271929373007"));
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
+        patternVar_action_var_5730083271929373007 = (SNode) pattern.getFieldValue("patternVar_action_var_5730083271929373007");
       }
     }
 
@@ -99,18 +99,18 @@ public class RuleAssertNotNull extends DataFlowConstructor {
     public void performActions(Object o) {
       {
         Object object = getFieldValue("patternVar_action_var_5730083271929373007");
-        if (((Program) (o)).contains(object)) {
+        if (((Program) o).contains(object)) {
           boolean before = false;
           int position;
           if (before) {
-            position = ((Program) ((o))).getStart(object);
+            position = ((Program) (o)).getStart(object);
           } else {
-            position = ((Program) ((o))).getEnd(object);
+            position = ((Program) (o)).getEnd(object);
           }
-          Instruction instruction = new notNullInstruction((SNode) (getFieldValue("patternVar_p")));
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
           instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1490803006783710006");
           instruction.setSource(getFieldValue("patternVar_action_var_5730083271929373007"));
-          ((Program) ((o))).insert(instruction, position, true, before);
+          ((Program) (o)).insert(instruction, position, true, before);
         }
       }
     }

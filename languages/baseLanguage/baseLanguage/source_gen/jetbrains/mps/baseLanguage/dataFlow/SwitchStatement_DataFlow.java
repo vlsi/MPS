@@ -13,14 +13,14 @@ public class SwitchStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "expression", true)));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     for (SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(switchCase), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207558714582");
     }
     _context.getBuilder().emitIfJump(_context.getBuilder().before(SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true)), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207558718604");
     for (SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {
-      _context.getBuilder().build((SNode) (switchCase));
+      _context.getBuilder().build((SNode) switchCase);
     }
-    _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true)));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true));
   }
 }

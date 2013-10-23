@@ -37,7 +37,7 @@ public class check_UnqualifiedEnumConstUnderSwitch_NonTypesystemRule extends Abs
       return;
     }
 
-    final String enumConstName = ((DynamicReference) (ref)).getResolveInfo();
+    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
 
     SNode scrutenee = SLinkOperations.getTarget(SNodeOperations.getAncestor(caseExp, "jetbrains.mps.baseLanguage.structure.SwitchStatement", false, false), "expression", true);
     if ((scrutenee == null)) {

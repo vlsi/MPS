@@ -46,10 +46,10 @@ public class BinaryOperation_RightArgument_Actions {
       EditorComponent editor = editorContext.getEditorComponent();
       EditorCell cell = editor.findNodeCell(leftExpression);
       if (cell != null) {
-        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) (cell)).getLastLeaf(CellConditions.SELECTABLE);
+        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(lastLeaf);
         if (lastLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) (lastLeaf)).end();
+          ((EditorCell_Label) lastLeaf).end();
         }
       }
     }

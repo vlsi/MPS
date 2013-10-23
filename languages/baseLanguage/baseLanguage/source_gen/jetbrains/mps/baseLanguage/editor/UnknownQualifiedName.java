@@ -72,7 +72,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
 
-      Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false, ((AbstractModule) (SNodeOperations.getModel(node).getModule())).getScope());
+      Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false, ((AbstractModule) SNodeOperations.getModel(node).getModule()).getScope());
       return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -82,7 +82,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) (parameterObject), node, model, scope, operationContext, editorContext);
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

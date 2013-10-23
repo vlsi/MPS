@@ -39,7 +39,7 @@ public class ReturnStatement_Behavior {
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         type = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
       } else {
-        SNode expectedReturnType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
+        SNode expectedReturnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
         if (SNodeOperations.isInstanceOf(expectedReturnType, "jetbrains.mps.baseLanguage.structure.Type")) {
           type = SNodeOperations.cast(SNodeOperations.copyNode(expectedReturnType), "jetbrains.mps.baseLanguage.structure.Type");
         }

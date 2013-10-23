@@ -24,7 +24,7 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
   }
 
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode superMethod = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), method, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
+    SNode superMethod = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), method, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     if ((superMethod == null)) {
       return;
     }

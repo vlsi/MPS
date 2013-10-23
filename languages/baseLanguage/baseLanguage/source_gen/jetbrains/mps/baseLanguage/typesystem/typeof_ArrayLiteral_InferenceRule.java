@@ -24,13 +24,13 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
       {
         SNode _nodeToCheck_1029348928467 = item;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221461712", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) (typeCheckingContext.getRepresentative(elementType_typevar_1188221443596)), (SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221461717", true)), false, true, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(elementType_typevar_1188221443596), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221461717", true), false, true, _info_12389875345);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayLiteral;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221467376", 0, null);
-      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221454647", true)), (SNode) (_quotation_createNode_8lb61p_a0c0b(typeCheckingContext.getRepresentative(elementType_typevar_1188221443596))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221454647", true), (SNode) _quotation_createNode_8lb61p_a0c0b(typeCheckingContext.getRepresentative(elementType_typevar_1188221443596)), _info_12389875345);
     }
   }
 
@@ -54,7 +54,7 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) (parameter_1);
+    quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
     }

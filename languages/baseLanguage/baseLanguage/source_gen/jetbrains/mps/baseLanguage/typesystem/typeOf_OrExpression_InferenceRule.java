@@ -21,17 +21,17 @@ public class typeOf_OrExpression_InferenceRule extends AbstractInferenceRule_Run
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(orExpr, "leftExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176901360178", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176901341532", true)), (SNode) (_quotation_createNode_7pa5ov_a0a0b()), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176901341532", true), (SNode) _quotation_createNode_7pa5ov_a0a0b(), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(orExpr, "rightExpression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176901371532", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176901371535", true)), (SNode) (_quotation_createNode_7pa5ov_a0b0b()), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176901371535", true), (SNode) _quotation_createNode_7pa5ov_a0b0b(), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = orExpr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484797", 0, null);
-      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484802", true)), (SNode) (_quotation_createNode_7pa5ov_a0c0b()), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484802", true), (SNode) _quotation_createNode_7pa5ov_a0c0b(), _info_12389875345);
     }
   }
 

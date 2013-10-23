@@ -180,7 +180,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
 
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return this.createReplacementNode_impl((SNode) (parameterObject), node, model, scope, operationContext, editorContext);
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

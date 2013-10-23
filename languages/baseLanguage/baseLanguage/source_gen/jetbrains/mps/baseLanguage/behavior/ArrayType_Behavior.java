@@ -29,19 +29,19 @@ public class ArrayType_Behavior {
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     SNode result = SNodeOperations.copyNode(thisNode);
-    SLinkOperations.setTarget(result, "componentType", BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SLinkOperations.getTarget(result, "componentType", true), "virtual_getErasure_702942408396803226", new Object[]{}), true);
+    SLinkOperations.setTarget(result, "componentType", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(result, "componentType", true), "virtual_getErasure_702942408396803226", new Object[]{}), true);
     return result;
   }
 
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     SNode result = SNodeOperations.copyNode(thisNode);
-    SLinkOperations.setTarget(result, "componentType", BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), SLinkOperations.getTarget(result, "componentType", true), "virtual_getJavaType_1213877337345", new Object[]{}), true);
+    SLinkOperations.setTarget(result, "componentType", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(result, "componentType", true), "virtual_getJavaType_1213877337345", new Object[]{}), true);
     return result;
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
-    SLinkOperations.setTarget(expr, "arrayType", SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_getErasure_702942408396803226", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ArrayType"), true);
+    SLinkOperations.setTarget(expr, "arrayType", SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getErasure_702942408396803226", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ArrayType"), true);
     return expr;
   }
 
@@ -49,13 +49,13 @@ public class ArrayType_Behavior {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "array");
     if ((SLinkOperations.getTarget(thisNode, "componentType", true) != null)) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) (((Class) (Object.class))), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
           if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
             ListSequence.fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) (((Class) (Object.class))), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
           ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }

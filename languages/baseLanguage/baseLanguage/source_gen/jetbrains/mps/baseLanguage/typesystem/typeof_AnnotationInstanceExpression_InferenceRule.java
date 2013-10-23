@@ -23,7 +23,7 @@ public class typeof_AnnotationInstanceExpression_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = annotationInstanceExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221689320", 0, null);
-      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221584618", true)), (SNode) (_quotation_createNode_wpw28w_a0b0b(annotation)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221584618", true), (SNode) _quotation_createNode_wpw28w_a0b0b(annotation), _info_12389875345);
     }
   }
 
@@ -46,7 +46,7 @@ public class typeof_AnnotationInstanceExpression_InferenceRule extends AbstractI
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

@@ -33,12 +33,12 @@ public class BooleanType_Behavior {
 
   @Deprecated
   public static SNode call_createDefaultTypeExpression_9011026350741579292(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createDefaultTypeExpression_9011026350741579292(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BooleanType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BooleanType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_1wwrx3_a0a0() {

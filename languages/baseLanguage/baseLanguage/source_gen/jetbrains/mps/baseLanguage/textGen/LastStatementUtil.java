@@ -44,7 +44,7 @@ public final class LastStatementUtil {
     } else
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
       SNode conceptFunction = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-      returnType = BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), conceptFunction, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
+      returnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), conceptFunction, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     }
     if (returnType != null && !(SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       canAdjust = true;

@@ -32,59 +32,59 @@ public class RuleTernaryOperation extends DataFlowConstructor {
       }
       {
         Object object = SLinkOperations.getTarget(node, "ifFalse", true);
-        if (((Program) (o)).contains(object)) {
+        if (((Program) o).contains(object)) {
           boolean before = false;
-          int position = ((Program) ((o))).getEnd(object);
+          int position = ((Program) (o)).getEnd(object);
           Instruction instruction = new nullableInstruction(other);
           instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1016339169644612767");
           instruction.setSource(node);
-          ((Program) ((o))).insert(instruction, position, true, before);
+          ((Program) (o)).insert(instruction, position, true, before);
         }
       }
       if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
-          if (((Program) (o)).contains(object)) {
+          if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) ((o))).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
             Instruction instruction = new nullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360124");
             instruction.setSource(node);
-            ((Program) ((o))).insert(instruction, position, true, before);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
         {
           Object object = SLinkOperations.getTarget(node, "ifFalse", true);
-          if (((Program) (o)).contains(object)) {
+          if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) ((o))).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
             Instruction instruction = new notNullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360110");
             instruction.setSource(node);
-            ((Program) ((o))).insert(instruction, position, true, before);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       } else {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
-          if (((Program) (o)).contains(object)) {
+          if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) ((o))).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
             Instruction instruction = new notNullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360132");
             instruction.setSource(node);
-            ((Program) ((o))).insert(instruction, position, true, before);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
         {
           Object object = SLinkOperations.getTarget(node, "ifFalse", true);
-          if (((Program) (o)).contains(object)) {
+          if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) ((o))).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
             Instruction instruction = new nullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360139");
             instruction.setSource(node);
-            ((Program) ((o))).insert(instruction, position, true, before);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       }

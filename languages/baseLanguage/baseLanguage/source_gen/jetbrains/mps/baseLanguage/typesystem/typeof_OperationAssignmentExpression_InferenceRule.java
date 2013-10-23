@@ -32,7 +32,7 @@ public class typeof_OperationAssignmentExpression_InferenceRule extends Abstract
                   {
                     SNode _nodeToCheck_1029348928467 = operation;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437227", 0, null);
-                    typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437231", true)), (SNode) (opType), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437231", true), (SNode) opType, _info_12389875345);
                   }
                 } else {
                   {

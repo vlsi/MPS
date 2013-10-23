@@ -27,14 +27,14 @@ public class supertypesOfLowerBoundType_InequationReplacementRule extends Abstra
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "963887337803943195", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createLessThanInequality((SNode) (SLinkOperations.getTarget(subtype, "bound", true)), (SNode) (SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true)), false, inequalityIsWeak, inequalityIsLessThan, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "bound", true), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), false, inequalityIsWeak, inequalityIsLessThan, _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5583776844526730218", 0, null);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createLessThanInequality((SNode) (SLinkOperations.getTarget(subtype, "bound", true)), (SNode) (supertype), false, inequalityIsWeak, inequalityIsLessThan, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "bound", true), (SNode) supertype, false, inequalityIsWeak, inequalityIsLessThan, _info_12389875345);
       }
     }
   }
@@ -42,9 +42,9 @@ public class supertypesOfLowerBoundType_InequationReplacementRule extends Abstra
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (false && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) (SLinkOperations.getTarget(subtype, "bound", true)), (SNode) (SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true)), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "bound", true), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), true);
     } else {
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) (SLinkOperations.getTarget(subtype, "bound", true)), (SNode) (supertype), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "bound", true), (SNode) supertype, true);
     }
     return result_14532009;
   }

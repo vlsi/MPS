@@ -27,7 +27,7 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1209402744151", 0, null);
-      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1209402739197", true)), (SNode) (type), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1209402739197", true), (SNode) type, _info_12389875345);
     }
   }
 
@@ -51,7 +51,7 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) (parameter_1);
+    quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
     }

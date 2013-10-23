@@ -86,7 +86,7 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
       if (nodeType != null) {
-        result = BehaviorReflection.invokeVirtual((Class<List<String>>) (((Class) (Object.class))), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+        result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }

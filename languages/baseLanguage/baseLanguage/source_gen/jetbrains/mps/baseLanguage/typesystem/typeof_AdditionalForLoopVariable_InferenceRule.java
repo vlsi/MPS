@@ -21,7 +21,7 @@ public class typeof_AdditionalForLoopVariable_InferenceRule extends AbstractInfe
       {
         SNode _nodeToCheck_1029348928467 = variable;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1830039279190455975", 0, null);
-        typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1830039279190455972", true)), (SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.ForStatement"), "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1830039279190474276", true)), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1830039279190455972", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.ForStatement"), "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1830039279190474276", true), _info_12389875345);
       }
     }
   }

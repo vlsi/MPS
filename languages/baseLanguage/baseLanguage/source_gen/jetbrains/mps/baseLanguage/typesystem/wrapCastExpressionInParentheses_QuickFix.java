@@ -18,7 +18,7 @@ public class wrapCastExpressionInParentheses_QuickFix extends QuickFix_Runtime {
 
   public void execute(SNode node) {
     SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-    SNodeOperations.replaceWithAnother(((SNode) (wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0])), parens);
-    SLinkOperations.setTarget(parens, "expression", ((SNode) (wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0])), true);
+    SNodeOperations.replaceWithAnother(((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]), parens);
+    SLinkOperations.setTarget(parens, "expression", ((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]), true);
   }
 }

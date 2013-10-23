@@ -27,6 +27,6 @@ public class MakeFieldStatic_Target implements IRefactoringTarget {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || (SNodeOperations.isInstanceOf(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) (entity)), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || (SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) entity), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
   }
 }

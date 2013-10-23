@@ -30,13 +30,13 @@ public class ForLoopNotNull extends DataFlowConstructor {
       if (notNull != null) {
         {
           Object object = SLinkOperations.getTarget(node, "body", true);
-          if (((Program) (o)).contains(object)) {
+          if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) ((o))).getStart(SLinkOperations.getTarget(node, "body", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "body", true));
             Instruction instruction = new notNullInstruction(notNull);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6371033132130114742");
             instruction.setSource(node);
-            ((Program) ((o))).insert(instruction, position, true, before);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       }

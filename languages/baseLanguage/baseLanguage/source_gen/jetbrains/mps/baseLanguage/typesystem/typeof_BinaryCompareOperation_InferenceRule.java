@@ -19,7 +19,7 @@ public class typeof_BinaryCompareOperation_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = binCompareOp;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5644986682947574712", 0, null);
-      typeCheckingContext.createComparableEquation((SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(binCompareOp, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5644986682947574725", true)), (SNode) (typeCheckingContext.typeOf(SLinkOperations.getTarget(binCompareOp, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5644986682947574723", true)), false, _info_12389875345);
+      typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(binCompareOp, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5644986682947574725", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(binCompareOp, "rightExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5644986682947574723", true), false, _info_12389875345);
     }
   }
 

@@ -66,7 +66,7 @@ public class FieldReferenceOperation_Behavior {
       return false;
     }
     while (classifier != declarationClassifier) {
-      for (SNode fieldDeclaration : Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)) {
+      for (SNode fieldDeclaration : Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)) {
         if (SPropertyOperations.getString(fieldDeclaration, "name") != null && SPropertyOperations.getString(fieldDeclaration, "name").equals(SPropertyOperations.getString(field, "name"))) {
           return false;
         }

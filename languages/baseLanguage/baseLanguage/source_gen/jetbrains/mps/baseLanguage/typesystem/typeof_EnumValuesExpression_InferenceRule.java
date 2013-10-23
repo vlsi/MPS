@@ -22,7 +22,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = expression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224574964063", 0, null);
-      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224574958606", true)), (SNode) (_quotation_createNode_pii9m7_a0a0b(SLinkOperations.getTarget(expression, "enumClass", false))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224574958606", true), (SNode) _quotation_createNode_pii9m7_a0a0b(SLinkOperations.getTarget(expression, "enumClass", false)), _info_12389875345);
     }
   }
 
@@ -47,7 +47,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
     quotedNode_2.addChild("componentType", quotedNode_3);
     return quotedNode_2;
   }

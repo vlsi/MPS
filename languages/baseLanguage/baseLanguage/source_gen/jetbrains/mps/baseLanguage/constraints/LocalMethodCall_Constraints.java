@@ -45,7 +45,7 @@ public class LocalMethodCall_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) (SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration")));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
               return (scope == null ?
                 new EmptyScope() :
                 scope

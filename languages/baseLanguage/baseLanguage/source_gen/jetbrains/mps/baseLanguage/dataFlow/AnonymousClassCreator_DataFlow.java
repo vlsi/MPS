@@ -29,13 +29,13 @@ public class AnonymousClassCreator_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitRead(var, "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1214502357422");
     }
     for (SNode expr : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "cls", true), "parameter", true)) {
-      _context.getBuilder().build((SNode) (expr));
+      _context.getBuilder().build((SNode) expr);
     }
     for (SNode expr : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "cls", true), "actualArgument", true)) {
-      _context.getBuilder().build((SNode) (expr));
+      _context.getBuilder().build((SNode) expr);
     }
     for (SNode fieldDeclaration : ClassConcept_Behavior.call_fields_5292274854859383272(SLinkOperations.getTarget(_context.getNode(), "cls", true))) {
-      _context.getBuilder().build((SNode) (fieldDeclaration));
+      _context.getBuilder().build((SNode) fieldDeclaration);
     }
   }
 }

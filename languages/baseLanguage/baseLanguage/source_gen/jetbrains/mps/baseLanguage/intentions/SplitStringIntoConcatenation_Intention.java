@@ -74,7 +74,7 @@ public class SplitStringIntoConcatenation_Intention implements IntentionFactory 
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      EditorCell_Label cell = ((EditorCell_Label) (editorContext.getContextCell()));
+      EditorCell_Label cell = ((EditorCell_Label) editorContext.getContextCell());
       int caretPosition = cell.getCaretPosition();
       String s1 = SPropertyOperations.getString(node, "value").substring(0, caretPosition);
       String s2 = SPropertyOperations.getString(node, "value").substring(caretPosition);

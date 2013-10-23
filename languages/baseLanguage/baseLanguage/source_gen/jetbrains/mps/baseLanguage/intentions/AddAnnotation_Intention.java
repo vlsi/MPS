@@ -66,7 +66,7 @@ public class AddAnnotation_Intention implements IntentionFactory {
     if (selectedNode == node) {
       return true;
     }
-    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), node, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{})).contains(selectedNode);
+    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{})).contains(selectedNode);
   }
 
   public SNodeReference getIntentionNodeReference() {

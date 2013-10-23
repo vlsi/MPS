@@ -28,7 +28,7 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
       SModule module = check_8brg4q_a0b0a0a(check_8brg4q_a0a1a0a0(node));
 
       if ((refText != null && refText.length() > 0) && module != null) {
-        SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(node, ((AbstractModule) (module)).getScope()).resolve(node, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(node, ((AbstractModule) module).getScope()).resolve(node, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
         if ((clazz != null)) {
           SNode newCreator = _quotation_createNode_8brg4q_a0a0b0d0a0a(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "typeParameter", true), clazz);
           SNodeOperations.replaceWithAnother(node, newCreator);
@@ -56,9 +56,9 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultClassCreator", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) (parameter_2));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
     {
-      List<SNode> nodes = (List<SNode>) (parameter_1);
+      List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
         quotedNode_3.addChild("typeParameter", HUtil.copyIfNecessary(child));
       }

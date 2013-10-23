@@ -44,7 +44,7 @@ public class MembersMigrationUtil {
         return linkName.equals(SPropertyOperations.getString(it, "role"));
       }
     }));
-    return ((int) (ListSequence.fromList(links).count()) == 1 ?
+    return ((int) ListSequence.fromList(links).count() == 1 ?
       ListSequence.fromList(links).getElement(0) :
       null
     );
@@ -64,7 +64,7 @@ public class MembersMigrationUtil {
         return methodName.equals(SPropertyOperations.getString(it, "name"));
       }
     }));
-    return ((int) (ListSequence.fromList(methods).count()) == 1 ?
+    return ((int) ListSequence.fromList(methods).count() == 1 ?
       ListSequence.fromList(methods).getElement(0) :
       null
     );

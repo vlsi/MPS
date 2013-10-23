@@ -38,9 +38,9 @@ public class QuickFixForDefaultClassCreator_QuickFix extends QuickFix_Runtime {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "baseMethodDeclaration", (SNode) (parameter_2));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "baseMethodDeclaration", (SNode) parameter_2);
     {
-      List<SNode> nodes = (List<SNode>) (parameter_1);
+      List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
         quotedNode_3.addChild("typeParameter", HUtil.copyIfNecessary(child));
       }

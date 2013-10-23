@@ -22,12 +22,12 @@ public class typeof_EnumValueOfExpression_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = expression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575709356", 0, null);
-      typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575703072", true)), (SNode) (_quotation_createNode_ib1j5f_a0a0b(SLinkOperations.getTarget(expression, "enumClass", false))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575703072", true), (SNode) _quotation_createNode_ib1j5f_a0a0b(SLinkOperations.getTarget(expression, "enumClass", false)), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "value", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575743684", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575743686", true)), (SNode) (_quotation_createNode_ib1j5f_a0b0b()), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1224575743686", true), (SNode) _quotation_createNode_ib1j5f_a0b0b(), false, false, _info_12389875345);
     }
   }
 
@@ -50,7 +50,7 @@ public class typeof_EnumValueOfExpression_InferenceRule extends AbstractInferenc
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) (parameter_1));
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 

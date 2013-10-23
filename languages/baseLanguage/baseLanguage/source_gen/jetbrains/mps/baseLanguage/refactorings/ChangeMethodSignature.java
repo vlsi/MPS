@@ -30,14 +30,14 @@ public class ChangeMethodSignature extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) (refactoringContext.getParameter("myRefactorings"))))) {
+    for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
       ref.doRefactoring();
     }
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults<SNode> allResults = new SearchResults();
-    for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) (refactoringContext.getParameter("myRefactorings"))))) {
+    for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
       SearchResults<SNode> curResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), ref.getDeclaration(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
       List<SNode> usages = new ArrayList<SNode>();
       for (SearchResult<SNode> result : ListSequence.fromList(curResults.getSearchResults())) {

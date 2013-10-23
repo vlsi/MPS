@@ -64,7 +64,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316721(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) (_context.getVariable("var:methodNameKey")))));
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_3987319776542716753(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -84,20 +84,20 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316688(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) (_context.getVariable("var:methodNameKey")))));
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
   }
 
   public static Object referenceMacro_GetReferent_2241002959597790075(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) (_context.getVariable("var:methodNameKey")))));
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
   }
 
   public static Object referenceMacro_GetReferent_6269300764714521734(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) (_context.getVariable("var:methodNameKey")))));
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
   }
 
   public static boolean ifMacro_Condition_6269300764715607368(final IOperationContext operationContext, final IfMacroContext _context) {
-    if (_context.getSessionObject(((String) (_context.getVariable("var:methodNameKey")))) == null) {
-      _context.putSessionObject(((String) (_context.getVariable("var:methodNameKey"))), "isNotEmptyString");
+    if (_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))) == null) {
+      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), "isNotEmptyString");
       return true;
     }
     return false;
@@ -132,8 +132,8 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6269300764714516440(final IOperationContext operationContext, final IfMacroContext _context) {
-    if (_context.getSessionObject(((String) (_context.getVariable("var:methodNameKey")))) == null) {
-      _context.putSessionObject(((String) (_context.getVariable("var:methodNameKey"))), "isEmptyString");
+    if (_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))) == null) {
+      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), "isEmptyString");
       return true;
     }
     return false;

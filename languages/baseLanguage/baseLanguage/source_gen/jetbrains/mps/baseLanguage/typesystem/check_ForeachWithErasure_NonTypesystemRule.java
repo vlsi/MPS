@@ -108,7 +108,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_p = (SNode) (pattern.getFieldValue("patternVar_p"));
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
       }
     }
 

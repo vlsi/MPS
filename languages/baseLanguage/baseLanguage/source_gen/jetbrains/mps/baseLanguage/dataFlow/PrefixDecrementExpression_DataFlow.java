@@ -15,10 +15,10 @@ public class PrefixDecrementExpression_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "expression", true)));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
       _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1503494305073290572");
     } else {
-      _context.getBuilder().build((SNode) (SLinkOperations.getTarget(_context.getNode(), "expression", true)));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     }
   }
 }

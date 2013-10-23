@@ -43,7 +43,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
+    List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
@@ -75,7 +75,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static boolean call_isSetter_1213877243896(SNode thisNode, SNode method) {
-    return (int) (ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count()) == 1 && FieldDeclaration_Behavior.call_getSetterName_1213877243861(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(thisNode, "type", true));
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && FieldDeclaration_Behavior.call_getSetterName_1213877243861(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(thisNode, "type", true));
   }
 
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
@@ -124,7 +124,7 @@ public class FieldDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
   }
 
   @Deprecated
@@ -149,7 +149,7 @@ public class FieldDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

@@ -53,8 +53,8 @@ public class ConceptFunction_Behavior {
     }
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameter")));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) (((Class) (Object.class))), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
-    return (List<SNode>) (result);
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
+    return (List<SNode>) result;
   }
 
   public static boolean call_isReturnOnly_3745452943050787634(SNode thisNode) {
@@ -151,12 +151,12 @@ public class ConceptFunction_Behavior {
 
   @Deprecated
   public static SNode call_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> call_getParameters_1213877374450(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) (((Class) (Object.class))), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
   }
 
   @Deprecated
@@ -171,12 +171,12 @@ public class ConceptFunction_Behavior {
 
   @Deprecated
   public static SNode callSuper_getExpectedReturnType_1213877374441(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getParameters_1213877374450(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getParameters_1213877374450", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getParameters_1213877374450", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

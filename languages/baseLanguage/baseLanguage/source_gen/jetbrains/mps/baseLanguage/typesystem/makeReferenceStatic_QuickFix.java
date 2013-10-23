@@ -17,17 +17,17 @@ public class makeReferenceStatic_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SReference ref = node.getReference(((String) (makeReferenceStatic_QuickFix.this.getField("role")[0])));
+    SReference ref = node.getReference(((String) makeReferenceStatic_QuickFix.this.getField("role")[0]));
     SNode target = ref.getTargetNode();
     if (target == null) {
       return;
     }
 
-    SReference staticRef = StaticReference.create(((String) (makeReferenceStatic_QuickFix.this.getField("role")[0])), node, target);
-    node.setReference(((String) (makeReferenceStatic_QuickFix.this.getField("role")[0])), staticRef);
+    SReference staticRef = StaticReference.create(((String) makeReferenceStatic_QuickFix.this.getField("role")[0]), node, target);
+    node.setReference(((String) makeReferenceStatic_QuickFix.this.getField("role")[0]), staticRef);
 
     // add model import 
-    ((SModelBase) (node.getModel())).addModelImport(target.getModel().getReference(), true);
+    ((SModelBase) node.getModel()).addModelImport(target.getModel().getReference(), true);
 
   }
 }

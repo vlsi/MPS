@@ -109,9 +109,9 @@ public class ImportsContext {
   }
 
   public static ImportsContext getInstance(TextGenBuffer buffer) {
-    ImportsContext instance = (ImportsContext) (buffer.getUserObject(USER_OBJECT_KEY));
+    ImportsContext instance = (ImportsContext) buffer.getUserObject(USER_OBJECT_KEY);
     if (instance == null) {
-      SNode rootNode = (SNode) (buffer.getUserObject(TextGenManager.ROOT_NODE));
+      SNode rootNode = (SNode) buffer.getUserObject(TextGenManager.ROOT_NODE);
       if ((rootNode == null) || !(SNodeOperations.isInstanceOf(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
         throw new IllegalStateException();
       }

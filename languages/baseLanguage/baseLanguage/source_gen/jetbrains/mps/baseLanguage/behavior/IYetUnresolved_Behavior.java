@@ -19,11 +19,11 @@ public class IYetUnresolved_Behavior {
 
   @Deprecated
   public static _FunctionTypes._return_P0_E0<? extends SNode> call_evaluateSubst_8136348407761606764(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) (((Class) (Object.class))), thisNode, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) (Object.class)), thisNode, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
   }
 
   @Deprecated
   public static _FunctionTypes._return_P0_E0<? extends SNode> callSuper_evaluateSubst_8136348407761606764(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) (((Class) (Object.class))), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), callerConceptFqName, "virtual_evaluateSubst_8136348407761606764", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), callerConceptFqName, "virtual_evaluateSubst_8136348407761606764", new Class[]{SNode.class}, new Object[]{});
   }
 }

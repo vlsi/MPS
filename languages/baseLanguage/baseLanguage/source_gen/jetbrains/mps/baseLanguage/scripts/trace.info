@@ -81,19 +81,19 @@
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="76" startPosition="164" endLine="77" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="77" startPosition="161" endLine="78" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="78" startPosition="226" endLine="79" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="79" startPosition="53" endLine="80" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="79" startPosition="53" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="81" startPosition="31" endLine="82" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="83" startPosition="5" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="84" startPosition="51" endLine="85" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="85" startPosition="176" endLine="86" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="86" startPosition="170" endLine="87" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="87" startPosition="98" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="86" startPosition="170" endLine="87" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="87" startPosition="96" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="88" startPosition="59" endLine="89" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="89" startPosition="53" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1408799705057550236" fileName="VariableUnifyingMigration.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VariableUnifyingMigration#()V" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="76" startPosition="164" endLine="79" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="76" startPosition="164" endLine="79" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="80" startPosition="41" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="80" startPosition="39" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="85" startPosition="176" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901976005" fileName="VariableUnifyingMigration.java" startLine="85" startPosition="176" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901981055" fileName="VariableUnifyingMigration.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConditionNonTrivial#()Z" />
@@ -475,9 +475,9 @@
     <nodeInfo nodeId="8602774279581197625" fileName="Migrations.java" startLine="101" startPosition="16" endLine="102" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8602774279581197645" fileName="Migrations.java" startLine="102" startPosition="91" endLine="103" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7047854634821496244" fileName="Migrations.java" startLine="112" startPosition="31" endLine="113" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7047854634821528029" fileName="Migrations.java" startLine="118" startPosition="134" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7047854634821528033" fileName="Migrations.java" startLine="120" startPosition="9" endLine="121" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7047854634821537789" fileName="Migrations.java" startLine="121" startPosition="53" endLine="122" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7047854634821528029" fileName="Migrations.java" startLine="118" startPosition="132" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7047854634821528033" fileName="Migrations.java" startLine="120" startPosition="9" endLine="121" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7047854634821537789" fileName="Migrations.java" startLine="121" startPosition="51" endLine="122" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7047854634821528615" fileName="Migrations.java" startLine="122" startPosition="76" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="901167123042946932" fileName="Migrations.java" startLine="124" startPosition="90" endLine="125" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="901167123042946935" fileName="Migrations.java" startLine="126" startPosition="9" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -485,8 +485,8 @@
     <nodeInfo nodeId="901167123042947066" fileName="Migrations.java" startLine="129" startPosition="48" endLine="130" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="901167123042947087" fileName="Migrations.java" startLine="131" startPosition="16" endLine="132" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="901167123042947080" fileName="Migrations.java" startLine="132" startPosition="43" endLine="133" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7047854634821537801" fileName="Migrations.java" startLine="138" startPosition="66" endLine="139" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7047854634821537807" fileName="Migrations.java" startLine="139" startPosition="53" endLine="140" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7047854634821537801" fileName="Migrations.java" startLine="138" startPosition="66" endLine="139" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7047854634821537807" fileName="Migrations.java" startLine="139" startPosition="51" endLine="140" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7047854634821537813" fileName="Migrations.java" startLine="140" startPosition="76" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7047854634821537886" fileName="Migrations.java" startLine="142" startPosition="90" endLine="143" endPosition="384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901167123042737603" fileName="Migrations.java" startLine="145" startPosition="32" endLine="146" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -579,7 +579,7 @@
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="447" startPosition="54" endLine="448" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="448" startPosition="53" endLine="449" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="449" startPosition="50" endLine="450" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="450" startPosition="164" endLine="451" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="450" startPosition="164" endLine="451" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="452" startPosition="31" endLine="453" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="454" startPosition="5" endLine="455" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="455" startPosition="53" endLine="456" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -591,7 +591,7 @@
     <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="464" startPosition="30" endLine="465" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="465" startPosition="171" endLine="466" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="466" startPosition="164" endLine="467" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="467" startPosition="166" endLine="468" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="467" startPosition="166" endLine="468" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="469" startPosition="31" endLine="470" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="471" startPosition="5" endLine="472" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="472" startPosition="53" endLine="473" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -612,7 +612,7 @@
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="490" startPosition="54" endLine="491" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="491" startPosition="53" endLine="492" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="492" startPosition="50" endLine="493" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="493" startPosition="164" endLine="494" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="493" startPosition="164" endLine="494" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="495" startPosition="31" endLine="496" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="497" startPosition="5" endLine="498" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="498" startPosition="53" endLine="499" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -624,7 +624,7 @@
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="507" startPosition="30" endLine="508" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="508" startPosition="188" endLine="509" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="509" startPosition="164" endLine="510" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="510" startPosition="166" endLine="511" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="510" startPosition="166" endLine="511" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="512" startPosition="31" endLine="513" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="514" startPosition="5" endLine="515" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="515" startPosition="53" endLine="516" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -632,17 +632,17 @@
     <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="520" startPosition="108" endLine="521" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="521" startPosition="63" endLine="522" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="522" startPosition="30" endLine="523" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="523" startPosition="173" endLine="524" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="524" startPosition="102" endLine="525" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="525" startPosition="86" endLine="526" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="523" startPosition="173" endLine="524" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="524" startPosition="100" endLine="525" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="525" startPosition="84" endLine="526" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="529" startPosition="107" endLine="530" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="530" startPosition="63" endLine="531" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="531" startPosition="30" endLine="532" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="532" startPosition="30" endLine="533" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="533" startPosition="30" endLine="534" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="534" startPosition="174" endLine="535" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="535" startPosition="173" endLine="536" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="87" endLine="537" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="535" startPosition="173" endLine="536" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="85" endLine="537" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="538" startPosition="31" endLine="539" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="540" startPosition="5" endLine="541" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="541" startPosition="54" endLine="542" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -658,16 +658,16 @@
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="554" startPosition="31" endLine="555" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="555" startPosition="174" endLine="556" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="556" startPosition="164" endLine="557" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="557" startPosition="174" endLine="558" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="557" startPosition="174" endLine="558" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="559" startPosition="31" endLine="560" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="561" startPosition="5" endLine="562" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="562" startPosition="59" endLine="563" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="563" startPosition="164" endLine="564" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="563" startPosition="164" endLine="564" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="565" startPosition="31" endLine="566" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="567" startPosition="5" endLine="568" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="568" startPosition="177" endLine="569" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="569" startPosition="171" endLine="570" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="570" startPosition="99" endLine="571" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="569" startPosition="171" endLine="570" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="570" startPosition="97" endLine="571" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="571" startPosition="61" endLine="572" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="572" startPosition="54" endLine="573" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="573" startPosition="58" endLine="574" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -677,8 +677,8 @@
     <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="580" startPosition="30" endLine="581" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="581" startPosition="30" endLine="582" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="582" startPosition="171" endLine="583" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="583" startPosition="170" endLine="584" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="584" startPosition="98" endLine="585" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="583" startPosition="170" endLine="584" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="584" startPosition="96" endLine="585" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="585" startPosition="59" endLine="586" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="589" startPosition="125" endLine="590" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="590" startPosition="63" endLine="591" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -710,16 +710,16 @@
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="616" startPosition="49" endLine="617" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="617" startPosition="172" endLine="618" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="618" startPosition="61" endLine="619" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="619" startPosition="160" endLine="620" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="620" startPosition="88" endLine="621" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="619" startPosition="160" endLine="620" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="620" startPosition="86" endLine="621" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="621" startPosition="50" endLine="622" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="622" startPosition="54" endLine="623" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="623" startPosition="51" endLine="624" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="624" startPosition="53" endLine="625" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="625" startPosition="164" endLine="626" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="625" startPosition="164" endLine="626" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="627" startPosition="32" endLine="628" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="629" startPosition="5" endLine="630" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="631" startPosition="5" endLine="632" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="631" startPosition="5" endLine="632" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="633" startPosition="33" endLine="634" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="636" startPosition="5" endLine="637" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="637" startPosition="54" endLine="638" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -729,8 +729,8 @@
     <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="644" startPosition="87" endLine="645" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="645" startPosition="63" endLine="646" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="646" startPosition="30" endLine="647" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="647" startPosition="177" endLine="648" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="648" startPosition="94" endLine="649" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="647" startPosition="177" endLine="648" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="648" startPosition="92" endLine="649" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="652" startPosition="85" endLine="653" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="653" startPosition="63" endLine="654" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="654" startPosition="30" endLine="655" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -743,7 +743,7 @@
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="661" startPosition="166" endLine="662" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="662" startPosition="53" endLine="663" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="663" startPosition="50" endLine="664" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="664" startPosition="164" endLine="665" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="664" startPosition="164" endLine="665" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="666" startPosition="31" endLine="667" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="668" startPosition="5" endLine="669" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="669" startPosition="53" endLine="670" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -754,7 +754,7 @@
     <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="677" startPosition="30" endLine="678" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="678" startPosition="30" endLine="679" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="679" startPosition="164" endLine="680" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="680" startPosition="166" endLine="681" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="680" startPosition="166" endLine="681" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="682" startPosition="31" endLine="683" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="684" startPosition="5" endLine="685" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="685" startPosition="53" endLine="686" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -776,7 +776,7 @@
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="704" startPosition="54" endLine="705" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="705" startPosition="53" endLine="706" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="706" startPosition="50" endLine="707" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="707" startPosition="164" endLine="708" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="707" startPosition="164" endLine="708" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="709" startPosition="31" endLine="710" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="711" startPosition="5" endLine="712" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="712" startPosition="53" endLine="713" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -790,8 +790,8 @@
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="605" startPosition="164" endLine="607" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="612" startPosition="171" endLine="614" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="612" startPosition="171" endLine="614" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="646" startPosition="30" endLine="648" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="646" startPosition="30" endLine="648" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="646" startPosition="30" endLine="648" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="646" startPosition="30" endLine="648" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="660" startPosition="164" endLine="662" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="660" startPosition="164" endLine="662" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="685" startPosition="53" endLine="687" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -811,30 +811,30 @@
     <nodeInfo nodeId="8602774279581191941" fileName="Migrations.java" startLine="411" startPosition="59" endLine="414" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="444" startPosition="166" endLine="447" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="444" startPosition="166" endLine="447" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="451" startPosition="41" endLine="454" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="468" startPosition="41" endLine="471" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="451" startPosition="39" endLine="454" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="468" startPosition="39" endLine="471" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="487" startPosition="166" endLine="490" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="487" startPosition="166" endLine="490" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="494" startPosition="41" endLine="497" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="511" startPosition="41" endLine="514" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="522" startPosition="30" endLine="525" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="522" startPosition="30" endLine="525" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="537" startPosition="41" endLine="540" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="558" startPosition="41" endLine="561" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="564" startPosition="41" endLine="567" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="494" startPosition="39" endLine="497" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="511" startPosition="39" endLine="514" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="522" startPosition="30" endLine="525" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="522" startPosition="30" endLine="525" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="537" startPosition="39" endLine="540" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="558" startPosition="39" endLine="561" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="564" startPosition="39" endLine="567" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="568" startPosition="177" endLine="571" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="568" startPosition="177" endLine="571" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="582" startPosition="171" endLine="585" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="582" startPosition="171" endLine="585" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="618" startPosition="61" endLine="621" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="618" startPosition="61" endLine="621" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="626" startPosition="42" endLine="629" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="632" startPosition="54" endLine="635" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="665" startPosition="41" endLine="668" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="681" startPosition="41" endLine="684" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="626" startPosition="40" endLine="629" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="632" startPosition="52" endLine="635" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="665" startPosition="39" endLine="668" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="681" startPosition="39" endLine="684" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="701" startPosition="166" endLine="704" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="701" startPosition="166" endLine="704" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="708" startPosition="41" endLine="711" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="708" startPosition="39" endLine="711" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6405155471901991347" fileName="Migrations.java" startLine="716" startPosition="87" endLine="719" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6405155471901991349" fileName="Migrations.java" startLine="723" startPosition="89" endLine="726" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2379275658802276382" fileName="Migrations.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
@@ -873,8 +873,8 @@
     <nodeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="493" startPosition="164" endLine="497" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="510" startPosition="166" endLine="514" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="510" startPosition="166" endLine="514" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="87" endLine="540" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="87" endLine="540" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="85" endLine="540" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="85" endLine="540" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="557" startPosition="174" endLine="561" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="557" startPosition="174" endLine="561" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="563" startPosition="164" endLine="567" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1049,7 +1049,7 @@
     <scopeInfo nodeId="8602774279581196964" fileName="Migrations.java" startLine="91" startPosition="61" endLine="92" endPosition="107" />
     <scopeInfo nodeId="8602774279581197294" fileName="Migrations.java" startLine="99" startPosition="93" endLine="100" endPosition="134" />
     <scopeInfo nodeId="7047854634821496243" fileName="Migrations.java" startLine="112" startPosition="31" endLine="113" endPosition="65" />
-    <scopeInfo nodeId="7047854634821528024" fileName="Migrations.java" startLine="118" startPosition="134" endLine="119" endPosition="23" />
+    <scopeInfo nodeId="7047854634821528024" fileName="Migrations.java" startLine="118" startPosition="132" endLine="119" endPosition="23" />
     <scopeInfo nodeId="901167123042946860" fileName="Migrations.java" startLine="124" startPosition="90" endLine="125" endPosition="23" />
     <scopeInfo nodeId="7047854634821537816" fileName="Migrations.java" startLine="142" startPosition="90" endLine="143" endPosition="384" />
     <scopeInfo nodeId="901167123042737756" fileName="Migrations.java" startLine="149" startPosition="47" endLine="150" endPosition="120" />
@@ -1118,7 +1118,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="605" startPosition="164" endLine="607" endPosition="53" />
     <scopeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="612" startPosition="171" endLine="614" endPosition="56" />
-    <scopeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="646" startPosition="30" endLine="648" endPosition="94" />
+    <scopeInfo nodeId="6405155471901925134" fileName="Migrations.java" startLine="646" startPosition="30" endLine="648" endPosition="92" />
     <scopeInfo nodeId="6405155471901930718" fileName="Migrations.java" startLine="660" startPosition="164" endLine="662" endPosition="53" />
     <scopeInfo nodeId="8602774279581236011" fileName="Migrations.java" startLine="685" startPosition="53" endLine="687" endPosition="53" />
     <scopeInfo nodeId="901167123042737755" fileName="Migrations.java" startLine="149" startPosition="0" endLine="152" endPosition="0">
@@ -1141,11 +1141,11 @@
     </scopeInfo>
     <scopeInfo nodeId="6405155471901931015" fileName="Migrations.java" startLine="444" startPosition="166" endLine="447" endPosition="54" />
     <scopeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="487" startPosition="166" endLine="490" endPosition="54" />
-    <scopeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="522" startPosition="30" endLine="525" endPosition="86" />
+    <scopeInfo nodeId="7047854634821537950" fileName="Migrations.java" startLine="522" startPosition="30" endLine="525" endPosition="84" />
     <scopeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="568" startPosition="177" endLine="571" endPosition="61" />
     <scopeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="582" startPosition="171" endLine="585" endPosition="59" />
     <scopeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="618" startPosition="61" endLine="621" endPosition="50" />
-    <scopeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="632" startPosition="54" endLine="635" endPosition="7">
+    <scopeInfo nodeId="7159297221554209363" fileName="Migrations.java" startLine="632" startPosition="52" endLine="635" endPosition="7">
       <varInfo nodeId="7159297221554209363" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="8602774279581235552" fileName="Migrations.java" startLine="701" startPosition="166" endLine="704" endPosition="54" />
@@ -1227,7 +1227,7 @@
     <scopeInfo nodeId="2379275658802309495" fileName="Migrations.java" startLine="467" startPosition="166" endLine="471" endPosition="5" />
     <scopeInfo nodeId="8602774279581197629" fileName="Migrations.java" startLine="493" startPosition="164" endLine="497" endPosition="5" />
     <scopeInfo nodeId="8602774279581197611" fileName="Migrations.java" startLine="510" startPosition="166" endLine="514" endPosition="5" />
-    <scopeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="87" endLine="540" endPosition="5" />
+    <scopeInfo nodeId="842610415962585505" fileName="Migrations.java" startLine="536" startPosition="85" endLine="540" endPosition="5" />
     <scopeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="557" startPosition="174" endLine="561" endPosition="5" />
     <scopeInfo nodeId="842610415962576078" fileName="Migrations.java" startLine="563" startPosition="164" endLine="567" endPosition="5" />
     <scopeInfo nodeId="7159297221554209347" fileName="Migrations.java" startLine="581" startPosition="30" endLine="585" endPosition="59" />
@@ -1851,7 +1851,7 @@
     <nodeInfo nodeId="7303989191347669088" fileName="NonMigratableUsagesFinder.java" startLine="130" startPosition="0" endLine="131" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7303989191347669096" fileName="NonMigratableUsagesFinder.java" startLine="132" startPosition="120" endLine="133" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7303989191347669103" fileName="NonMigratableUsagesFinder.java" startLine="133" startPosition="182" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7303989191347669110" fileName="NonMigratableUsagesFinder.java" startLine="136" startPosition="43" endLine="137" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7303989191347669110" fileName="NonMigratableUsagesFinder.java" startLine="136" startPosition="43" endLine="137" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7303989191347669132" fileName="NonMigratableUsagesFinder.java" startLine="139" startPosition="13" endLine="140" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7303989191347669134" fileName="NonMigratableUsagesFinder.java" startLine="142" startPosition="7" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7303989191347669135" fileName="NonMigratableUsagesFinder.java" startLine="143" startPosition="0" endLine="144" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1881,10 +1881,10 @@
     <nodeInfo nodeId="4683244688938082349" fileName="NonMigratableUsagesFinder.java" startLine="196" startPosition="24" endLine="197" endPosition="307" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4683244688938001888" fileName="NonMigratableUsagesFinder.java" startLine="199" startPosition="5" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4683244688938001897" fileName="NonMigratableUsagesFinder.java" startLine="201" startPosition="137" endLine="202" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4683244688938087800" fileName="NonMigratableUsagesFinder.java" startLine="203" startPosition="29" endLine="204" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4683244688938087800" fileName="NonMigratableUsagesFinder.java" startLine="203" startPosition="29" endLine="204" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4683244688938001916" fileName="NonMigratableUsagesFinder.java" startLine="206" startPosition="5" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4683244688938001925" fileName="NonMigratableUsagesFinder.java" startLine="208" startPosition="141" endLine="209" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4683244688938093529" fileName="NonMigratableUsagesFinder.java" startLine="211" startPosition="200" endLine="212" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4683244688938093529" fileName="NonMigratableUsagesFinder.java" startLine="211" startPosition="198" endLine="212" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4683244688938001953" fileName="NonMigratableUsagesFinder.java" startLine="215" startPosition="5" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4683244688938095235" fileName="NonMigratableUsagesFinder.java" startLine="217" startPosition="136" endLine="218" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4683244688938001971" fileName="NonMigratableUsagesFinder.java" startLine="219" startPosition="5" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -1956,7 +1956,7 @@
     <scopeInfo nodeId="4683244688938001840" fileName="NonMigratableUsagesFinder.java" startLine="109" startPosition="327" endLine="110" endPosition="18" />
     <scopeInfo nodeId="61463667895065705" fileName="NonMigratableUsagesFinder.java" startLine="116" startPosition="172" endLine="117" endPosition="18" />
     <scopeInfo nodeId="5909355414809178812" fileName="NonMigratableUsagesFinder.java" startLine="119" startPosition="430" endLine="120" endPosition="18" />
-    <scopeInfo nodeId="7303989191347669109" fileName="NonMigratableUsagesFinder.java" startLine="136" startPosition="43" endLine="137" endPosition="172" />
+    <scopeInfo nodeId="7303989191347669109" fileName="NonMigratableUsagesFinder.java" startLine="136" startPosition="43" endLine="137" endPosition="170" />
     <scopeInfo nodeId="7303989191347669131" fileName="NonMigratableUsagesFinder.java" startLine="139" startPosition="13" endLine="140" endPosition="22" />
     <scopeInfo nodeId="7303989191347669157" fileName="NonMigratableUsagesFinder.java" startLine="145" startPosition="243" endLine="146" endPosition="20" />
     <scopeInfo nodeId="7303989191347740583" fileName="NonMigratableUsagesFinder.java" startLine="154" startPosition="49" endLine="155" endPosition="18" />
@@ -1964,8 +1964,8 @@
     <scopeInfo nodeId="4683244688938001779" fileName="NonMigratableUsagesFinder.java" startLine="183" startPosition="24" endLine="184" endPosition="318" />
     <scopeInfo nodeId="4683244688938001813" fileName="NonMigratableUsagesFinder.java" startLine="189" startPosition="205" endLine="190" endPosition="184" />
     <scopeInfo nodeId="4683244688938001872" fileName="NonMigratableUsagesFinder.java" startLine="196" startPosition="24" endLine="197" endPosition="307" />
-    <scopeInfo nodeId="4683244688938001909" fileName="NonMigratableUsagesFinder.java" startLine="203" startPosition="29" endLine="204" endPosition="159" />
-    <scopeInfo nodeId="4683244688938001946" fileName="NonMigratableUsagesFinder.java" startLine="211" startPosition="200" endLine="212" endPosition="161" />
+    <scopeInfo nodeId="4683244688938001909" fileName="NonMigratableUsagesFinder.java" startLine="203" startPosition="29" endLine="204" endPosition="157" />
+    <scopeInfo nodeId="4683244688938001946" fileName="NonMigratableUsagesFinder.java" startLine="211" startPosition="198" endLine="212" endPosition="159" />
     <scopeInfo nodeId="4683244688938001961" fileName="NonMigratableUsagesFinder.java" startLine="217" startPosition="136" endLine="218" endPosition="172" />
     <scopeInfo nodeId="4683244688930795260" fileName="NonMigratableUsagesFinder.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="5909355414828807418" fileName="NonMigratableUsagesFinder.java" startLine="92" startPosition="352" endLine="94" endPosition="18" />
@@ -2399,14 +2399,14 @@
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="88" startPosition="30" endLine="89" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="89" startPosition="164" endLine="90" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="90" startPosition="176" endLine="91" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="91" startPosition="170" endLine="92" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="92" startPosition="98" endLine="93" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="91" startPosition="170" endLine="92" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="92" startPosition="96" endLine="93" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="93" startPosition="59" endLine="94" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="94" startPosition="53" endLine="95" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="95" startPosition="164" endLine="96" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="96" startPosition="161" endLine="97" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="97" startPosition="232" endLine="98" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="98" startPosition="53" endLine="99" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="98" startPosition="53" endLine="99" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="100" startPosition="31" endLine="101" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="102" startPosition="5" endLine="103" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="103" startPosition="51" endLine="104" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2415,7 +2415,7 @@
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="90" startPosition="176" endLine="93" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="95" startPosition="164" endLine="98" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="95" startPosition="164" endLine="98" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="99" startPosition="41" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6405155471901976042" fileName="LocalMethodCallsMigration.java" startLine="99" startPosition="39" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6405155471901981080" fileName="LocalMethodCallsMigration.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConditionNonTrivial#()Z" />
     <nodeInfo nodeId="6405155471901986155" fileName="LocalMethodCallsMigration.java" startLine="54" startPosition="34" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3151704181842846433" fileName="LocalMethodCallsMigration.java" startLine="59" startPosition="31" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -2682,19 +2682,19 @@
     <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="73" startPosition="63" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="74" startPosition="30" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="75" startPosition="30" endLine="76" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="76" startPosition="173" endLine="77" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="87" endLine="78" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="76" startPosition="173" endLine="77" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="85" endLine="78" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="79" startPosition="31" endLine="80" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="81" startPosition="5" endLine="82" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8602774279580416021" fileName="SpecialMigrations.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SpecialMigrations#()V" />
     <nodeInfo nodeId="7159297221554220085" fileName="SpecialMigrations.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="7159297221554220099" fileName="SpecialMigrations.java" startLine="32" startPosition="115" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="78" startPosition="41" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="78" startPosition="39" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7159297221554216080" fileName="SpecialMigrations.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="7159297221554216092" fileName="SpecialMigrations.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="8602774279581213758" fileName="SpecialMigrations.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="87" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="87" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="85" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="85" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7159297221554220080" fileName="SpecialMigrations.java" startLine="26" startPosition="67" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7159297221554216098" fileName="SpecialMigrations.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8602774279581213752" fileName="SpecialMigrations.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -2726,7 +2726,7 @@
     <scopeInfo nodeId="8602774279581213758" fileName="SpecialMigrations.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="8602774279581219010" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="87" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="3256144589678008887" fileName="SpecialMigrations.java" startLine="77" startPosition="85" endLine="81" endPosition="5" />
     <scopeInfo nodeId="7159297221554216098" fileName="SpecialMigrations.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7159297221554216101" varName="node" />
     </scopeInfo>

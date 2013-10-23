@@ -38,9 +38,9 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
     }
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(pastedNode), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      SNode parentDotExpression = (SNode) (SNodeOperations.getParent(pastedNode));
+      SNode parentDotExpression = (SNode) SNodeOperations.getParent(pastedNode);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parentDotExpression, "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
-        SNode fieldReferenceOperation = (SNode) (SLinkOperations.getTarget(parentDotExpression, "operation", true));
+        SNode fieldReferenceOperation = (SNode) SLinkOperations.getTarget(parentDotExpression, "operation", true);
         SReference fieldDeclarationReference = SNodeOperations.getReference(fieldReferenceOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
 
         // External reference 
@@ -56,7 +56,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
         }
 
         for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
-          if (Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) (((Class) (Object.class))), nextClassConcept, "virtual_getThisType_7405920559687254782", new Object[]{}), pastedNode)).where(new IWhereFilter<SNode>() {
+          if (Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), nextClassConcept, "virtual_getThisType_7405920559687254782", new Object[]{}), pastedNode)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.getString(it, "name").equals(resolveInfo);
             }
@@ -66,7 +66,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
             } else if (SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept")) != null) {
               SReference reference = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept"));
               SLinkOperations.setTarget(pastedNode, "classConcept", null, false);
-              ((jetbrains.mps.smodel.SReference) (reference)).setRole(null);
+              ((jetbrains.mps.smodel.SReference) reference).setRole(null);
             }
             break;
           }

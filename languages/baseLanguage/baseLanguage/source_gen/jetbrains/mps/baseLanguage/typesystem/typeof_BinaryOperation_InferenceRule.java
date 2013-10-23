@@ -34,7 +34,7 @@ public class typeof_BinaryOperation_InferenceRule extends AbstractInferenceRule_
                   {
                     SNode _nodeToCheck_1029348928467 = operation;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1387988544209571109", 0, null);
-                    typeCheckingContext.createEquation((SNode) (typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1387988544209571113", true)), (SNode) (opType), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1387988544209571113", true), (SNode) opType, _info_12389875345);
                   }
                 } else {
                   {
