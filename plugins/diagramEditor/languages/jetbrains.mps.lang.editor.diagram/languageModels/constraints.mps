@@ -101,15 +101,6 @@
       </node>
     </node>
   </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1220375669566700360" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.1220375669566347117" resolveInfo="ConnectionEndQualifier" />
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1220375669566700453" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.1220375669566347229" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1220375669566704501" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpce.5717188120689018936" resolveInfo="ReferenceLinkDeclartionScopeKind" />
-      </node>
-    </node>
-  </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1220375669567134075" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.3229274890673749551" resolveInfo="ThisEditorNodeExpression" />
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="1220375669567134127" nodeInfo="nn">
@@ -125,7 +116,7 @@
                     <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.3229274890672018080" resolveInfo="FigureParameterBLQuery" />
                   </node>
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1220375669567182121" nodeInfo="ng">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.1220375669566347117" resolveInfo="ConnectionEndQualifier" />
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.1220375669566347117" resolveInfo="ConnectionEndBLQuery" />
                   </node>
                 </node>
                 <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1220375669567158259" nodeInfo="ng" />
