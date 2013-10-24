@@ -150,6 +150,8 @@ public class JavaToMpsConverter {
     runCommand("roots creation pass", new Runnable() {
       public void run() {
 
+        SModule module;
+
         if (myModel == null) {
           ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
@@ -174,6 +176,7 @@ public class JavaToMpsConverter {
 
             ListSequence.fromList(myModels).addElement(model);
           }
+          module = myModule;
 
         } else {
           // todo maybe do something clever with packages <-> java imports 
@@ -183,9 +186,11 @@ public class JavaToMpsConverter {
             myModel.addRootNode(root);
           }
           myAttachedRoots = myRoots;
+          module = myModel.getModule();
         }
 
-        ((AbstractModule) myModule).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
 
         JavaParser.tryResolveUnknowns(myAttachedRoots);
 

@@ -2732,7 +2732,7 @@ public class QueriesGenerated {
       }
 
       public String getMatchingText(String pattern) {
-        return "[]";
+        return "[";
       }
 
       public String getVisibleMatchingText(String pattern) {

@@ -4061,6 +4061,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="sideTransforms" />
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1177505054799" nodeInfo="ng">
       <property name="description" nameId="tpdg.1158952484319" value="add initializer to variable declaration" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="default_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="1177505064891" nodeInfo="ng">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
@@ -4191,11 +4192,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="1196435278588" nodeInfo="nn">
-            <property name="text" nameId="tpdg.1196433942569" value="[]" />
-          </node>
           <node role="descriptionText" roleId="tpdg.1177498182537" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="1196435280871" nodeInfo="nn">
             <property name="text" nameId="tpdg.1196433942569" value="to array type" />
+          </node>
+          <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="2394785380242869039" nodeInfo="nn">
+            <property name="text" nameId="tpdg.1196433942569" value="[" />
           </node>
         </node>
       </node>

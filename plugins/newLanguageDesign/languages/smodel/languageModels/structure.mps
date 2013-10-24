@@ -45,6 +45,9 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="structure" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="query" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="ydsw.6195190339581766743" resolveInfo="SConceptMember" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3613277881476317462" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="bwy9.1776940314979256874" resolveInfo="IIdentifier" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6195190339581766762" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="isAbstract" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
@@ -68,9 +71,6 @@
       <property name="role" nameId="tpce.1071599776563" value="body" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="bwy9.6762883159245048012" resolveInfo="MqlExpression" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3613277881476317462" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="bwy9.1776940314979256874" resolveInfo="IIdentifier" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1907979545625841012" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1196978630214" resolveInfo="IResolveInfo" />
