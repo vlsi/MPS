@@ -103,7 +103,8 @@ public class GeneratorUtilEx {
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new ArrayList<SNode>();
-    LinkedList<SNode> queue = new LinkedList<SNode>(SNodeOperations.getChildren(template));
+    LinkedList<SNode> queue = new LinkedList<SNode>();
+    queue.addFirst(template);
     final SNode conceptTemplateFragment = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment");
     while (!(queue.isEmpty())) {
       SNode subnode = queue.removeFirst();

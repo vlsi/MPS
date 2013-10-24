@@ -822,99 +822,100 @@
     <nodeInfo nodeId="4142636298191106445" fileName="GeneratorUtilEx.java" startLine="92" startPosition="5" endLine="93" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="894226751621690877" fileName="GeneratorUtilEx.java" startLine="100" startPosition="58" endLine="101" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3381130103055954278" fileName="GeneratorUtilEx.java" startLine="104" startPosition="75" endLine="105" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8830215919955457715" fileName="GeneratorUtilEx.java" startLine="105" startPosition="59" endLine="106" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8830215919955779871" fileName="GeneratorUtilEx.java" startLine="106" startPosition="91" endLine="107" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1092206164221517636" fileName="GeneratorUtilEx.java" startLine="108" startPosition="32" endLine="109" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8830215919955595051" fileName="GeneratorUtilEx.java" startLine="109" startPosition="42" endLine="110" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8830215919955921295" fileName="GeneratorUtilEx.java" startLine="110" startPosition="91" endLine="111" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8830215919955872696" fileName="GeneratorUtilEx.java" startLine="113" startPosition="85" endLine="114" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8830215919955925738" fileName="GeneratorUtilEx.java" startLine="114" startPosition="46" endLine="115" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8830215919955917227" fileName="GeneratorUtilEx.java" startLine="115" startPosition="25" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8830215919955482776" fileName="GeneratorUtilEx.java" startLine="119" startPosition="23" endLine="120" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3381130103055954307" fileName="GeneratorUtilEx.java" startLine="122" startPosition="5" endLine="123" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3381130103055956021" fileName="GeneratorUtilEx.java" startLine="127" startPosition="30" endLine="128" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3381130103055956029" fileName="GeneratorUtilEx.java" startLine="128" startPosition="131" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3381130103055956038" fileName="GeneratorUtilEx.java" startLine="131" startPosition="31" endLine="132" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3381130103055956047" fileName="GeneratorUtilEx.java" startLine="132" startPosition="71" endLine="133" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3381130103055956053" fileName="GeneratorUtilEx.java" startLine="133" startPosition="61" endLine="134" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3381130103055956064" fileName="GeneratorUtilEx.java" startLine="135" startPosition="40" endLine="136" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3381130103055956086" fileName="GeneratorUtilEx.java" startLine="137" startPosition="116" endLine="138" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3381130103055956094" fileName="GeneratorUtilEx.java" startLine="138" startPosition="166" endLine="139" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3381130103055956096" fileName="GeneratorUtilEx.java" startLine="142" startPosition="5" endLine="143" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6651023989395454041" fileName="GeneratorUtilEx.java" startLine="147" startPosition="127" endLine="148" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651023989395458555" fileName="GeneratorUtilEx.java" startLine="149" startPosition="147" endLine="150" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651023989395464205" fileName="GeneratorUtilEx.java" startLine="151" startPosition="136" endLine="152" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651023989395470056" fileName="GeneratorUtilEx.java" startLine="153" startPosition="134" endLine="154" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651023989395479181" fileName="GeneratorUtilEx.java" startLine="155" startPosition="131" endLine="156" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651023989395484578" fileName="GeneratorUtilEx.java" startLine="157" startPosition="134" endLine="158" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651023989395492908" fileName="GeneratorUtilEx.java" startLine="159" startPosition="127" endLine="160" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651023989395495554" fileName="GeneratorUtilEx.java" startLine="161" startPosition="12" endLine="162" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4814657600604696708" fileName="GeneratorUtilEx.java" startLine="168" startPosition="182" endLine="169" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4814657600604696723" fileName="GeneratorUtilEx.java" startLine="170" startPosition="26" endLine="171" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4814657600604696888" fileName="GeneratorUtilEx.java" startLine="172" startPosition="82" endLine="173" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4814657600604696757" fileName="GeneratorUtilEx.java" startLine="173" startPosition="71" endLine="174" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4814657600604696897" fileName="GeneratorUtilEx.java" startLine="176" startPosition="84" endLine="177" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4814657600604696748" fileName="GeneratorUtilEx.java" startLine="177" startPosition="73" endLine="178" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4814657600604696905" fileName="GeneratorUtilEx.java" startLine="179" startPosition="14" endLine="180" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4814657600604696739" fileName="GeneratorUtilEx.java" startLine="180" startPosition="70" endLine="181" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4814657600604696765" fileName="GeneratorUtilEx.java" startLine="183" startPosition="5" endLine="184" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8986013878447217334" fileName="GeneratorUtilEx.java" startLine="187" startPosition="73" endLine="188" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8986013878447367512" fileName="GeneratorUtilEx.java" startLine="192" startPosition="35" endLine="193" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8986013878447366779" fileName="GeneratorUtilEx.java" startLine="193" startPosition="88" endLine="194" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8986013878447358833" fileName="GeneratorUtilEx.java" startLine="196" startPosition="89" endLine="197" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8986013878447362044" fileName="GeneratorUtilEx.java" startLine="199" startPosition="91" endLine="200" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8986013878447364500" fileName="GeneratorUtilEx.java" startLine="201" startPosition="12" endLine="202" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4744614252206859618" fileName="GeneratorUtilEx.java" startLine="208" startPosition="70" endLine="209" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="707218259217251334" fileName="GeneratorUtilEx.java" startLine="213" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inlineSwitch#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="707218259217345859" fileName="GeneratorUtilEx.java" startLine="214" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inlineTemplateWithContext#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="707218259217349857" fileName="GeneratorUtilEx.java" startLine="215" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inlineTemplate#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="707218259217349915" fileName="GeneratorUtilEx.java" startLine="216" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="templateDeclarationReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="707218259217350237" fileName="GeneratorUtilEx.java" startLine="217" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="weaveEach#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="707218259217349985" fileName="GeneratorUtilEx.java" startLine="218" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="abandonInput#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="707218259217350067" fileName="GeneratorUtilEx.java" startLine="219" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dismissTopRule#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="707218259217350343" fileName="GeneratorUtilEx.java" startLine="220" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unknown#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8830215919955457715" fileName="GeneratorUtilEx.java" startLine="105" startPosition="59" endLine="106" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5705151762431136727" fileName="GeneratorUtilEx.java" startLine="106" startPosition="54" endLine="107" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8830215919955779871" fileName="GeneratorUtilEx.java" startLine="107" startPosition="29" endLine="108" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1092206164221517636" fileName="GeneratorUtilEx.java" startLine="109" startPosition="32" endLine="110" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8830215919955595051" fileName="GeneratorUtilEx.java" startLine="110" startPosition="42" endLine="111" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8830215919955921295" fileName="GeneratorUtilEx.java" startLine="111" startPosition="91" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8830215919955872696" fileName="GeneratorUtilEx.java" startLine="114" startPosition="85" endLine="115" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8830215919955925738" fileName="GeneratorUtilEx.java" startLine="115" startPosition="46" endLine="116" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8830215919955917227" fileName="GeneratorUtilEx.java" startLine="116" startPosition="25" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8830215919955482776" fileName="GeneratorUtilEx.java" startLine="120" startPosition="23" endLine="121" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3381130103055954307" fileName="GeneratorUtilEx.java" startLine="123" startPosition="5" endLine="124" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3381130103055956021" fileName="GeneratorUtilEx.java" startLine="128" startPosition="30" endLine="129" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3381130103055956029" fileName="GeneratorUtilEx.java" startLine="129" startPosition="131" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3381130103055956038" fileName="GeneratorUtilEx.java" startLine="132" startPosition="31" endLine="133" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3381130103055956047" fileName="GeneratorUtilEx.java" startLine="133" startPosition="71" endLine="134" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3381130103055956053" fileName="GeneratorUtilEx.java" startLine="134" startPosition="61" endLine="135" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3381130103055956064" fileName="GeneratorUtilEx.java" startLine="136" startPosition="40" endLine="137" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3381130103055956086" fileName="GeneratorUtilEx.java" startLine="138" startPosition="116" endLine="139" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3381130103055956094" fileName="GeneratorUtilEx.java" startLine="139" startPosition="166" endLine="140" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3381130103055956096" fileName="GeneratorUtilEx.java" startLine="143" startPosition="5" endLine="144" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6651023989395454041" fileName="GeneratorUtilEx.java" startLine="148" startPosition="127" endLine="149" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6651023989395458555" fileName="GeneratorUtilEx.java" startLine="150" startPosition="147" endLine="151" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6651023989395464205" fileName="GeneratorUtilEx.java" startLine="152" startPosition="136" endLine="153" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6651023989395470056" fileName="GeneratorUtilEx.java" startLine="154" startPosition="134" endLine="155" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6651023989395479181" fileName="GeneratorUtilEx.java" startLine="156" startPosition="131" endLine="157" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6651023989395484578" fileName="GeneratorUtilEx.java" startLine="158" startPosition="134" endLine="159" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6651023989395492908" fileName="GeneratorUtilEx.java" startLine="160" startPosition="127" endLine="161" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6651023989395495554" fileName="GeneratorUtilEx.java" startLine="162" startPosition="12" endLine="163" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4814657600604696708" fileName="GeneratorUtilEx.java" startLine="169" startPosition="182" endLine="170" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4814657600604696723" fileName="GeneratorUtilEx.java" startLine="171" startPosition="26" endLine="172" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4814657600604696888" fileName="GeneratorUtilEx.java" startLine="173" startPosition="82" endLine="174" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4814657600604696757" fileName="GeneratorUtilEx.java" startLine="174" startPosition="71" endLine="175" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4814657600604696897" fileName="GeneratorUtilEx.java" startLine="177" startPosition="84" endLine="178" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4814657600604696748" fileName="GeneratorUtilEx.java" startLine="178" startPosition="73" endLine="179" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4814657600604696905" fileName="GeneratorUtilEx.java" startLine="180" startPosition="14" endLine="181" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4814657600604696739" fileName="GeneratorUtilEx.java" startLine="181" startPosition="70" endLine="182" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4814657600604696765" fileName="GeneratorUtilEx.java" startLine="184" startPosition="5" endLine="185" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8986013878447217334" fileName="GeneratorUtilEx.java" startLine="188" startPosition="73" endLine="189" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8986013878447367512" fileName="GeneratorUtilEx.java" startLine="193" startPosition="35" endLine="194" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8986013878447366779" fileName="GeneratorUtilEx.java" startLine="194" startPosition="88" endLine="195" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8986013878447358833" fileName="GeneratorUtilEx.java" startLine="197" startPosition="89" endLine="198" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8986013878447362044" fileName="GeneratorUtilEx.java" startLine="200" startPosition="91" endLine="201" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8986013878447364500" fileName="GeneratorUtilEx.java" startLine="202" startPosition="12" endLine="203" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4744614252206859618" fileName="GeneratorUtilEx.java" startLine="209" startPosition="70" endLine="210" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="707218259217251334" fileName="GeneratorUtilEx.java" startLine="214" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inlineSwitch#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="707218259217345859" fileName="GeneratorUtilEx.java" startLine="215" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inlineTemplateWithContext#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="707218259217349857" fileName="GeneratorUtilEx.java" startLine="216" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inlineTemplate#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="707218259217349915" fileName="GeneratorUtilEx.java" startLine="217" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="templateDeclarationReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="707218259217350237" fileName="GeneratorUtilEx.java" startLine="218" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="weaveEach#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="707218259217349985" fileName="GeneratorUtilEx.java" startLine="219" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="abandonInput#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="707218259217350067" fileName="GeneratorUtilEx.java" startLine="220" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dismissTopRule#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="707218259217350343" fileName="GeneratorUtilEx.java" startLine="221" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unknown#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="894226751621690780" fileName="GeneratorUtilEx.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorUtilEx#()V" />
     <nodeInfo nodeId="4486071501348050489" fileName="GeneratorUtilEx.java" startLine="63" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6651023989395494021" fileName="GeneratorUtilEx.java" startLine="161" startPosition="10" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8986013878447356424" fileName="GeneratorUtilEx.java" startLine="201" startPosition="10" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6651023989395494021" fileName="GeneratorUtilEx.java" startLine="162" startPosition="10" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8986013878447356424" fileName="GeneratorUtilEx.java" startLine="202" startPosition="10" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3381130103055956288" fileName="GeneratorUtilEx.java" startLine="69" startPosition="6" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4486071501348123791" fileName="GeneratorUtilEx.java" startLine="81" startPosition="6" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4142636298191099763" fileName="GeneratorUtilEx.java" startLine="89" startPosition="74" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="894226751621690784" fileName="GeneratorUtilEx.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPatternVariableName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8830215919955930547" fileName="GeneratorUtilEx.java" startLine="118" startPosition="7" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4814657600604696737" fileName="GeneratorUtilEx.java" startLine="179" startPosition="12" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8986013878447186675" fileName="GeneratorUtilEx.java" startLine="187" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGeneratorMessage_text#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4744614252206844853" fileName="GeneratorUtilEx.java" startLine="208" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceMacro#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8830215919955930547" fileName="GeneratorUtilEx.java" startLine="119" startPosition="7" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4814657600604696737" fileName="GeneratorUtilEx.java" startLine="180" startPosition="12" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8986013878447186675" fileName="GeneratorUtilEx.java" startLine="188" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGeneratorMessage_text#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4744614252206844853" fileName="GeneratorUtilEx.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceMacro#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="4486071501347741306" fileName="GeneratorUtilEx.java" startLine="39" startPosition="61" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3381130103055956357" fileName="GeneratorUtilEx.java" startLine="65" startPosition="5" endLine="69" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4486071501348123780" fileName="GeneratorUtilEx.java" startLine="77" startPosition="80" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4142636298191107245" fileName="GeneratorUtilEx.java" startLine="93" startPosition="57" endLine="97" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3381130103055956016" fileName="GeneratorUtilEx.java" startLine="126" startPosition="170" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3381130103055956070" fileName="GeneratorUtilEx.java" startLine="136" startPosition="59" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8986013878447366272" fileName="GeneratorUtilEx.java" startLine="191" startPosition="109" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3381130103055956016" fileName="GeneratorUtilEx.java" startLine="127" startPosition="170" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3381130103055956070" fileName="GeneratorUtilEx.java" startLine="137" startPosition="59" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8986013878447366272" fileName="GeneratorUtilEx.java" startLine="192" startPosition="109" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3381130103055956164" fileName="GeneratorUtilEx.java" startLine="60" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8830215919955860676" fileName="GeneratorUtilEx.java" startLine="112" startPosition="87" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8986013878447356423" fileName="GeneratorUtilEx.java" startLine="198" startPosition="10" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8830215919955722948" fileName="GeneratorUtilEx.java" startLine="111" startPosition="30" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3381130103055956059" fileName="GeneratorUtilEx.java" startLine="134" startPosition="51" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4814657600604696733" fileName="GeneratorUtilEx.java" startLine="175" startPosition="12" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8830215919955860676" fileName="GeneratorUtilEx.java" startLine="113" startPosition="87" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8986013878447356423" fileName="GeneratorUtilEx.java" startLine="199" startPosition="10" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8830215919955722948" fileName="GeneratorUtilEx.java" startLine="112" startPosition="30" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3381130103055956059" fileName="GeneratorUtilEx.java" startLine="135" startPosition="51" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4814657600604696733" fileName="GeneratorUtilEx.java" startLine="176" startPosition="12" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3381130103055826399" fileName="GeneratorUtilEx.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isTemplateLanguageElement#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3381130103055956160" fileName="GeneratorUtilEx.java" startLine="57" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8986013878447356422" fileName="GeneratorUtilEx.java" startLine="195" startPosition="5" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8986013878447356422" fileName="GeneratorUtilEx.java" startLine="196" startPosition="5" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3381130103055956156" fileName="GeneratorUtilEx.java" startLine="54" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4486071501348123691" fileName="GeneratorUtilEx.java" startLine="76" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMappingName_NodeMacro#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4142636298191035947" fileName="GeneratorUtilEx.java" startLine="88" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMappingName_TemplateFragment#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4814657600604696729" fileName="GeneratorUtilEx.java" startLine="171" startPosition="74" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3381130103055956031" fileName="GeneratorUtilEx.java" startLine="130" startPosition="5" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4814657600604696712" fileName="GeneratorUtilEx.java" startLine="169" startPosition="66" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8986013878447267539" fileName="GeneratorUtilEx.java" startLine="191" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGeneratorMessage_kind#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/generator/impl/DismissTopMappingRuleException/MessageType;" />
-    <nodeInfo nodeId="1092206164221444149" fileName="GeneratorUtilEx.java" startLine="107" startPosition="143" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4814657600604696729" fileName="GeneratorUtilEx.java" startLine="172" startPosition="74" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3381130103055956031" fileName="GeneratorUtilEx.java" startLine="131" startPosition="5" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4814657600604696712" fileName="GeneratorUtilEx.java" startLine="170" startPosition="66" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8986013878447267539" fileName="GeneratorUtilEx.java" startLine="192" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGeneratorMessage_kind#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/generator/impl/DismissTopMappingRuleException/MessageType;" />
+    <nodeInfo nodeId="1092206164221444149" fileName="GeneratorUtilEx.java" startLine="108" startPosition="143" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3381130103055956152" fileName="GeneratorUtilEx.java" startLine="49" startPosition="0" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6651023989395411271" fileName="GeneratorUtilEx.java" startLine="146" startPosition="133" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3381130103055956498" fileName="GeneratorUtilEx.java" startLine="168" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="processGeneratorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/generator/impl/DismissTopMappingRuleException/MessageType;" />
-    <nodeInfo nodeId="3381130103055956001" fileName="GeneratorUtilEx.java" startLine="126" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkIfOneOrMaryAdjacentFragments#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />
-    <nodeInfo nodeId="707218259217355210" fileName="GeneratorUtilEx.java" startLine="146" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dispatchRuleConsequence#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/impl/GeneratorUtilEx/ConsequenceDispatch;)V" />
-    <nodeInfo nodeId="3381130103055954271" fileName="GeneratorUtilEx.java" startLine="104" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTemplateFragments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="6651023989395411271" fileName="GeneratorUtilEx.java" startLine="147" startPosition="133" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3381130103055956498" fileName="GeneratorUtilEx.java" startLine="169" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="processGeneratorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljetbrains/mps/generator/impl/DismissTopMappingRuleException/MessageType;" />
+    <nodeInfo nodeId="3381130103055956001" fileName="GeneratorUtilEx.java" startLine="127" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkIfOneOrMaryAdjacentFragments#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />
+    <nodeInfo nodeId="707218259217355210" fileName="GeneratorUtilEx.java" startLine="147" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dispatchRuleConsequence#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/impl/GeneratorUtilEx/ConsequenceDispatch;)V" />
+    <nodeInfo nodeId="3381130103055954271" fileName="GeneratorUtilEx.java" startLine="104" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTemplateFragments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="3381130103055956140" fileName="GeneratorUtilEx.java" startLine="47" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMappingName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="894226751621690783" fileName="GeneratorUtilEx.java" startLine="35" startPosition="28" endLine="35" endPosition="28" />
     <scopeInfo nodeId="3381130103055956267" fileName="GeneratorUtilEx.java" startLine="50" startPosition="103" endLine="51" endPosition="160" />
@@ -927,73 +928,73 @@
     <scopeInfo nodeId="4486071501348123795" fileName="GeneratorUtilEx.java" startLine="82" startPosition="30" endLine="83" endPosition="26" />
     <scopeInfo nodeId="4142636298191099766" fileName="GeneratorUtilEx.java" startLine="90" startPosition="21" endLine="91" endPosition="26" />
     <scopeInfo nodeId="894226751621690787" fileName="GeneratorUtilEx.java" startLine="100" startPosition="58" endLine="101" endPosition="126" />
-    <scopeInfo nodeId="8830215919955930550" fileName="GeneratorUtilEx.java" startLine="119" startPosition="23" endLine="120" endPosition="59" />
-    <scopeInfo nodeId="6651023989395411272" fileName="GeneratorUtilEx.java" startLine="147" startPosition="127" endLine="148" endPosition="61" />
-    <scopeInfo nodeId="6651023989395455182" fileName="GeneratorUtilEx.java" startLine="149" startPosition="147" endLine="150" endPosition="58" />
-    <scopeInfo nodeId="6651023989395460632" fileName="GeneratorUtilEx.java" startLine="151" startPosition="136" endLine="152" endPosition="47" />
-    <scopeInfo nodeId="6651023989395466245" fileName="GeneratorUtilEx.java" startLine="153" startPosition="134" endLine="154" endPosition="45" />
-    <scopeInfo nodeId="6651023989395472115" fileName="GeneratorUtilEx.java" startLine="155" startPosition="131" endLine="156" endPosition="42" />
-    <scopeInfo nodeId="6651023989395480318" fileName="GeneratorUtilEx.java" startLine="157" startPosition="134" endLine="158" endPosition="45" />
-    <scopeInfo nodeId="6651023989395485730" fileName="GeneratorUtilEx.java" startLine="159" startPosition="127" endLine="160" endPosition="47" />
-    <scopeInfo nodeId="6651023989395494022" fileName="GeneratorUtilEx.java" startLine="161" startPosition="12" endLine="162" endPosition="40" />
-    <scopeInfo nodeId="8986013878447186679" fileName="GeneratorUtilEx.java" startLine="187" startPosition="73" endLine="188" endPosition="74" />
-    <scopeInfo nodeId="8986013878447356457" fileName="GeneratorUtilEx.java" startLine="196" startPosition="89" endLine="197" endPosition="62" />
-    <scopeInfo nodeId="8986013878447356438" fileName="GeneratorUtilEx.java" startLine="199" startPosition="91" endLine="200" endPosition="64" />
-    <scopeInfo nodeId="8986013878447356425" fileName="GeneratorUtilEx.java" startLine="201" startPosition="12" endLine="202" endPosition="61" />
-    <scopeInfo nodeId="4744614252206844856" fileName="GeneratorUtilEx.java" startLine="208" startPosition="70" endLine="209" endPosition="157" />
-    <scopeInfo nodeId="707218259217251334" fileName="GeneratorUtilEx.java" startLine="213" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="8830215919955930550" fileName="GeneratorUtilEx.java" startLine="120" startPosition="23" endLine="121" endPosition="59" />
+    <scopeInfo nodeId="6651023989395411272" fileName="GeneratorUtilEx.java" startLine="148" startPosition="127" endLine="149" endPosition="61" />
+    <scopeInfo nodeId="6651023989395455182" fileName="GeneratorUtilEx.java" startLine="150" startPosition="147" endLine="151" endPosition="58" />
+    <scopeInfo nodeId="6651023989395460632" fileName="GeneratorUtilEx.java" startLine="152" startPosition="136" endLine="153" endPosition="47" />
+    <scopeInfo nodeId="6651023989395466245" fileName="GeneratorUtilEx.java" startLine="154" startPosition="134" endLine="155" endPosition="45" />
+    <scopeInfo nodeId="6651023989395472115" fileName="GeneratorUtilEx.java" startLine="156" startPosition="131" endLine="157" endPosition="42" />
+    <scopeInfo nodeId="6651023989395480318" fileName="GeneratorUtilEx.java" startLine="158" startPosition="134" endLine="159" endPosition="45" />
+    <scopeInfo nodeId="6651023989395485730" fileName="GeneratorUtilEx.java" startLine="160" startPosition="127" endLine="161" endPosition="47" />
+    <scopeInfo nodeId="6651023989395494022" fileName="GeneratorUtilEx.java" startLine="162" startPosition="12" endLine="163" endPosition="40" />
+    <scopeInfo nodeId="8986013878447186679" fileName="GeneratorUtilEx.java" startLine="188" startPosition="73" endLine="189" endPosition="74" />
+    <scopeInfo nodeId="8986013878447356457" fileName="GeneratorUtilEx.java" startLine="197" startPosition="89" endLine="198" endPosition="62" />
+    <scopeInfo nodeId="8986013878447356438" fileName="GeneratorUtilEx.java" startLine="200" startPosition="91" endLine="201" endPosition="64" />
+    <scopeInfo nodeId="8986013878447356425" fileName="GeneratorUtilEx.java" startLine="202" startPosition="12" endLine="203" endPosition="61" />
+    <scopeInfo nodeId="4744614252206844856" fileName="GeneratorUtilEx.java" startLine="209" startPosition="70" endLine="210" endPosition="157" />
+    <scopeInfo nodeId="707218259217251334" fileName="GeneratorUtilEx.java" startLine="214" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="707218259217345832" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217345859" fileName="GeneratorUtilEx.java" startLine="214" startPosition="0" endLine="215" endPosition="0">
+    <scopeInfo nodeId="707218259217345859" fileName="GeneratorUtilEx.java" startLine="215" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="707218259217349834" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217349857" fileName="GeneratorUtilEx.java" startLine="215" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="707218259217349857" fileName="GeneratorUtilEx.java" startLine="216" startPosition="0" endLine="217" endPosition="0">
       <varInfo nodeId="707218259217349886" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217349915" fileName="GeneratorUtilEx.java" startLine="216" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="707218259217349915" fileName="GeneratorUtilEx.java" startLine="217" startPosition="0" endLine="218" endPosition="0">
       <varInfo nodeId="707218259217349950" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217350237" fileName="GeneratorUtilEx.java" startLine="217" startPosition="0" endLine="218" endPosition="0">
+    <scopeInfo nodeId="707218259217350237" fileName="GeneratorUtilEx.java" startLine="218" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="707218259217350290" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217349985" fileName="GeneratorUtilEx.java" startLine="218" startPosition="0" endLine="219" endPosition="0">
+    <scopeInfo nodeId="707218259217349985" fileName="GeneratorUtilEx.java" startLine="219" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="707218259217350026" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217350067" fileName="GeneratorUtilEx.java" startLine="219" startPosition="0" endLine="220" endPosition="0">
+    <scopeInfo nodeId="707218259217350067" fileName="GeneratorUtilEx.java" startLine="220" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="707218259217350114" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217350343" fileName="GeneratorUtilEx.java" startLine="220" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="707218259217350343" fileName="GeneratorUtilEx.java" startLine="221" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="707218259217350402" varName="ruleConsequence" />
     </scopeInfo>
     <scopeInfo nodeId="894226751621690780" fileName="GeneratorUtilEx.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="4486071501347741308" fileName="GeneratorUtilEx.java" startLine="40" startPosition="70" endLine="42" endPosition="19" />
-    <scopeInfo nodeId="3381130103055956020" fileName="GeneratorUtilEx.java" startLine="127" startPosition="30" endLine="129" endPosition="19" />
-    <scopeInfo nodeId="3381130103055956085" fileName="GeneratorUtilEx.java" startLine="137" startPosition="116" endLine="139" endPosition="23" />
-    <scopeInfo nodeId="4814657600604696756" fileName="GeneratorUtilEx.java" startLine="172" startPosition="82" endLine="174" endPosition="76" />
-    <scopeInfo nodeId="4814657600604696747" fileName="GeneratorUtilEx.java" startLine="176" startPosition="84" endLine="178" endPosition="55" />
-    <scopeInfo nodeId="4814657600604696738" fileName="GeneratorUtilEx.java" startLine="179" startPosition="14" endLine="181" endPosition="52" />
-    <scopeInfo nodeId="8986013878447366275" fileName="GeneratorUtilEx.java" startLine="192" startPosition="35" endLine="194" endPosition="18" />
+    <scopeInfo nodeId="3381130103055956020" fileName="GeneratorUtilEx.java" startLine="128" startPosition="30" endLine="130" endPosition="19" />
+    <scopeInfo nodeId="3381130103055956085" fileName="GeneratorUtilEx.java" startLine="138" startPosition="116" endLine="140" endPosition="23" />
+    <scopeInfo nodeId="4814657600604696756" fileName="GeneratorUtilEx.java" startLine="173" startPosition="82" endLine="175" endPosition="76" />
+    <scopeInfo nodeId="4814657600604696747" fileName="GeneratorUtilEx.java" startLine="177" startPosition="84" endLine="179" endPosition="55" />
+    <scopeInfo nodeId="4814657600604696738" fileName="GeneratorUtilEx.java" startLine="180" startPosition="14" endLine="182" endPosition="52" />
+    <scopeInfo nodeId="8986013878447366275" fileName="GeneratorUtilEx.java" startLine="193" startPosition="35" endLine="195" endPosition="18" />
     <scopeInfo nodeId="894226751621690784" fileName="GeneratorUtilEx.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="894226751621690789" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="8830215919955860677" fileName="GeneratorUtilEx.java" startLine="113" startPosition="85" endLine="116" endPosition="16" />
-    <scopeInfo nodeId="8986013878447186675" fileName="GeneratorUtilEx.java" startLine="187" startPosition="0" endLine="190" endPosition="0">
+    <scopeInfo nodeId="8830215919955860677" fileName="GeneratorUtilEx.java" startLine="114" startPosition="85" endLine="117" endPosition="16" />
+    <scopeInfo nodeId="8986013878447186675" fileName="GeneratorUtilEx.java" startLine="188" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="8986013878447190606" varName="generatorMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="4744614252206844853" fileName="GeneratorUtilEx.java" startLine="208" startPosition="0" endLine="211" endPosition="0">
+    <scopeInfo nodeId="4744614252206844853" fileName="GeneratorUtilEx.java" startLine="209" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="4744614252206857124" varName="linkRole" />
       <varInfo nodeId="4744614252206852278" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7006097710431499011" fileName="GeneratorUtilEx.java" startLine="28" startPosition="10" endLine="32" endPosition="94" />
-    <scopeInfo nodeId="8830215919955722949" fileName="GeneratorUtilEx.java" startLine="112" startPosition="87" endLine="117" endPosition="9" />
-    <scopeInfo nodeId="3381130103055956063" fileName="GeneratorUtilEx.java" startLine="135" startPosition="40" endLine="140" endPosition="9" />
+    <scopeInfo nodeId="8830215919955722949" fileName="GeneratorUtilEx.java" startLine="113" startPosition="87" endLine="118" endPosition="9" />
+    <scopeInfo nodeId="3381130103055956063" fileName="GeneratorUtilEx.java" startLine="136" startPosition="40" endLine="141" endPosition="9" />
     <scopeInfo nodeId="3381130103055826402" fileName="GeneratorUtilEx.java" startLine="38" startPosition="60" endLine="44" endPosition="83">
       <varInfo nodeId="7006097710431682514" varName="conceptFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="8830215919955722948" fileName="GeneratorUtilEx.java" startLine="111" startPosition="30" endLine="118" endPosition="7">
+    <scopeInfo nodeId="8830215919955722948" fileName="GeneratorUtilEx.java" startLine="112" startPosition="30" endLine="119" endPosition="7">
       <varInfo nodeId="8830215919955722952" varName="attr" />
     </scopeInfo>
-    <scopeInfo nodeId="3381130103055956059" fileName="GeneratorUtilEx.java" startLine="134" startPosition="51" endLine="141" endPosition="7">
+    <scopeInfo nodeId="3381130103055956059" fileName="GeneratorUtilEx.java" startLine="135" startPosition="51" endLine="142" endPosition="7">
       <varInfo nodeId="3381130103055956061" varName="fragment" />
     </scopeInfo>
     <scopeInfo nodeId="3381130103055826399" fileName="GeneratorUtilEx.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
@@ -1007,7 +1008,7 @@
       <varInfo nodeId="4142636298191099346" varName="ld" />
       <varInfo nodeId="4142636298191106446" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="3381130103055956037" fileName="GeneratorUtilEx.java" startLine="131" startPosition="31" endLine="141" endPosition="7">
+    <scopeInfo nodeId="3381130103055956037" fileName="GeneratorUtilEx.java" startLine="132" startPosition="31" endLine="142" endPosition="7">
       <varInfo nodeId="3381130103055956048" varName="parent" />
       <varInfo nodeId="3381130103055956054" varName="role" />
       <varInfo nodeId="3381130103055956039" varName="templateNode" />
@@ -1020,46 +1021,46 @@
       <varInfo nodeId="4142636298191043103" varName="defaultValue" />
       <varInfo nodeId="4142636298191042980" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4814657600604696716" fileName="GeneratorUtilEx.java" startLine="170" startPosition="26" endLine="182" endPosition="7">
+    <scopeInfo nodeId="4814657600604696716" fileName="GeneratorUtilEx.java" startLine="171" startPosition="26" endLine="183" endPosition="7">
       <varInfo nodeId="4814657600604696724" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="8986013878447267543" fileName="GeneratorUtilEx.java" startLine="191" startPosition="109" endLine="203" endPosition="5" />
-    <scopeInfo nodeId="1092206164221444151" fileName="GeneratorUtilEx.java" startLine="108" startPosition="32" endLine="121" endPosition="7">
+    <scopeInfo nodeId="8986013878447267543" fileName="GeneratorUtilEx.java" startLine="192" startPosition="109" endLine="204" endPosition="5" />
+    <scopeInfo nodeId="1092206164221444151" fileName="GeneratorUtilEx.java" startLine="109" startPosition="32" endLine="122" endPosition="7">
       <varInfo nodeId="1092206164221517639" varName="subnode" />
       <varInfo nodeId="8830215919955921298" varName="tfFound" />
     </scopeInfo>
-    <scopeInfo nodeId="8986013878447267539" fileName="GeneratorUtilEx.java" startLine="191" startPosition="0" endLine="205" endPosition="0">
+    <scopeInfo nodeId="8986013878447267539" fileName="GeneratorUtilEx.java" startLine="192" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="8986013878447271481" varName="generatorMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="3381130103055956501" fileName="GeneratorUtilEx.java" startLine="168" startPosition="182" endLine="184" endPosition="23">
+    <scopeInfo nodeId="3381130103055956501" fileName="GeneratorUtilEx.java" startLine="169" startPosition="182" endLine="185" endPosition="23">
       <varInfo nodeId="4814657600604696709" varName="messageType" />
     </scopeInfo>
-    <scopeInfo nodeId="3381130103055956015" fileName="GeneratorUtilEx.java" startLine="126" startPosition="170" endLine="143" endPosition="16" />
-    <scopeInfo nodeId="707218259217355214" fileName="GeneratorUtilEx.java" startLine="146" startPosition="133" endLine="163" endPosition="5" />
-    <scopeInfo nodeId="3381130103055956498" fileName="GeneratorUtilEx.java" startLine="168" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="3381130103055956015" fileName="GeneratorUtilEx.java" startLine="127" startPosition="170" endLine="144" endPosition="16" />
+    <scopeInfo nodeId="707218259217355214" fileName="GeneratorUtilEx.java" startLine="147" startPosition="133" endLine="164" endPosition="5" />
+    <scopeInfo nodeId="3381130103055956498" fileName="GeneratorUtilEx.java" startLine="169" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="4814657600604665095" varName="generator" />
       <varInfo nodeId="4814657600604665089" varName="inputNode" />
       <varInfo nodeId="4814657600604665087" varName="message" />
       <varInfo nodeId="4814657600604665093" varName="ruleNode" />
       <varInfo nodeId="4814657600604665091" varName="templateNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3381130103055954277" fileName="GeneratorUtilEx.java" startLine="104" startPosition="75" endLine="123" endPosition="29">
-      <varInfo nodeId="8830215919955779874" varName="conceptTemplateFragment" />
-      <varInfo nodeId="8830215919955457716" varName="queue" />
-      <varInfo nodeId="3381130103055954279" varName="templateFragments" />
-    </scopeInfo>
-    <scopeInfo nodeId="3381130103055956001" fileName="GeneratorUtilEx.java" startLine="126" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="3381130103055956001" fileName="GeneratorUtilEx.java" startLine="127" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="3381130103055956004" varName="fragments" />
       <varInfo nodeId="3381130103055956013" varName="generator" />
       <varInfo nodeId="3381130103055956009" varName="inputNode" />
       <varInfo nodeId="3381130103055956011" varName="ruleNode" />
       <varInfo nodeId="3381130103055956007" varName="templateContainer" />
     </scopeInfo>
-    <scopeInfo nodeId="707218259217355210" fileName="GeneratorUtilEx.java" startLine="146" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="707218259217355210" fileName="GeneratorUtilEx.java" startLine="147" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="6651023989395411013" varName="dispatch" />
       <varInfo nodeId="6651023989395411072" varName="ruleConsequence" />
     </scopeInfo>
-    <scopeInfo nodeId="3381130103055954271" fileName="GeneratorUtilEx.java" startLine="104" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="3381130103055954277" fileName="GeneratorUtilEx.java" startLine="104" startPosition="75" endLine="124" endPosition="29">
+      <varInfo nodeId="8830215919955779874" varName="conceptTemplateFragment" />
+      <varInfo nodeId="8830215919955457716" varName="queue" />
+      <varInfo nodeId="3381130103055954279" varName="templateFragments" />
+    </scopeInfo>
+    <scopeInfo nodeId="3381130103055954271" fileName="GeneratorUtilEx.java" startLine="104" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="3381130103055954275" varName="template" />
     </scopeInfo>
     <scopeInfo nodeId="3381130103055956147" fileName="GeneratorUtilEx.java" startLine="47" startPosition="72" endLine="73" endPosition="23">
@@ -1070,8 +1071,8 @@
       <varInfo nodeId="3381130103055956145" varName="defaultValue" />
       <varInfo nodeId="3381130103055956143" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="707218259217246556" fileName="GeneratorUtilEx.java" startLine="212" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.generator.impl.GeneratorUtilEx$ConsequenceDispatch" />
-    <unitInfo nodeId="894226751621690778" fileName="GeneratorUtilEx.java" startLine="23" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.generator.impl.GeneratorUtilEx" />
+    <unitInfo nodeId="707218259217246556" fileName="GeneratorUtilEx.java" startLine="213" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.generator.impl.GeneratorUtilEx$ConsequenceDispatch" />
+    <unitInfo nodeId="894226751621690778" fileName="GeneratorUtilEx.java" startLine="23" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.generator.impl.GeneratorUtilEx" />
   </root>
 </debugInfo>
 
