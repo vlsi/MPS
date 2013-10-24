@@ -106,16 +106,16 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new MqlSwitchExpression_BehaviorDescriptor();
       case 1:
         return new ExpressionSwitchBranch_BehaviorDescriptor();
-      case 42:
-        return new MqlSwitchAliasVar_BehaviorDescriptor();
       case 46:
         return new MqlSwitchScrutinee_BehaviorDescriptor();
-      case 44:
-        return new MqlSwitchAliasedScrutinee_BehaviorDescriptor();
-      case 43:
-        return new MqlSwitchAliasVarRef_BehaviorDescriptor();
       case 0:
         return new DefaultSwitchBranch_BehaviorDescriptor();
+      case 44:
+        return new MqlSwitchAliasedScrutinee_BehaviorDescriptor();
+      case 42:
+        return new MqlSwitchAliasVar_BehaviorDescriptor();
+      case 43:
+        return new MqlSwitchAliasVarRef_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
