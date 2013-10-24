@@ -4374,6 +4374,12 @@ __switch__:
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
         PrecedenceUtil.parenthesiseIfNecessary(targetExpression);
+
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.Expression")) {
+          SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+          SNodeOperations.replaceWithAnother(result, parens);
+          SLinkOperations.setTarget(parens, "expression", result, true);
+        }
         return result;
       }
 
