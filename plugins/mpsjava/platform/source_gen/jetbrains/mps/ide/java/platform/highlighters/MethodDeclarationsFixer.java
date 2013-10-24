@@ -176,10 +176,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         if (reResolvedTargets.isEmpty()) {
           return;
         }
-        Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-          editorContext.getOperationContext().getProject() :
-          null
-        );
+        Project p = (editorContext != null && editorContext.getOperationContext() != null ? editorContext.getOperationContext().getProject() : null);
         if (p == null) {
           return;
         }
@@ -215,7 +212,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
     Tuples._2<SNode, Boolean> resolveResult = resolveMethod(methodCallNode, methodName);
     SNode newTarget = resolveResult._0();
-    boolean good = (boolean) resolveResult._1();
+    boolean good = (boolean) (resolveResult._1());
 
     if (newTarget != null) {
       if (baseMethodDeclaration == null || (good && newTarget != baseMethodDeclaration)) {
@@ -315,11 +312,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
-    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) (Object.class)), methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
   }
 
   public Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
-    Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
+    Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
     assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Object[]{});
     return availableMethodDeclarations;
   }
@@ -413,9 +410,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0v(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

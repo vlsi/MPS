@@ -83,10 +83,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       }).isNotEmpty();
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenClassifier = it.next()._1();
-        tooltip.append((overrides ?
-          "Overrides" :
-          "Implements"
-        ));
+        tooltip.append((overrides ? "Overrides" : "Implements"));
         tooltip.append(" method in '");
         tooltip.append(getClassifierPresentation(overridenClassifier));
         tooltip.append("'");
@@ -110,15 +107,9 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     boolean isInterface = SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface");
     StringBuffer superClassifierTooltip = new StringBuffer();
     if (ListSequence.fromList(derivedClassifiers).count() > MAX_MESSAGE_NUMBER) {
-      superClassifierTooltip.append((isInterface ?
-        "Has implementations" :
-        "Has subclasses"
-      ));
+      superClassifierTooltip.append((isInterface ? "Has implementations" : "Has subclasses"));
     } else {
-      superClassifierTooltip.append((isInterface ?
-        "Is implemented by" :
-        "Is subclassed by"
-      ));
+      superClassifierTooltip.append((isInterface ? "Is implemented by" : "Is subclassed by"));
       for (SNode subClassifier : ListSequence.fromList(derivedClassifiers)) {
         superClassifierTooltip.append(TOOLTIP_INDENT);
         superClassifierTooltip.append(getClassifierPresentation(subClassifier));
@@ -133,7 +124,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     SetSequence.fromSet(messages).addElement(new SubclassedClassifierEditorMessage(container, this, superClassifierTooltip.toString(), isInterface));
 
     Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), container, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), container, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return OverridingMethodsFinder.canBeOverriden(it);
       }
@@ -150,10 +141,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       }
       boolean overriden = !(SPropertyOperations.getBoolean(overridenMethod, "isAbstract"));
       StringBuffer tooltip = new StringBuffer("Is ");
-      tooltip.append((overriden ?
-        "overriden" :
-        "implemented"
-      ));
+      tooltip.append((overriden ? "overriden" : "implemented"));
       tooltip.append(" in");
       int messageCounter = 0;
       for (Iterator<SNode> it = SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).get(overridenMethod)).iterator(); it.hasNext();) {

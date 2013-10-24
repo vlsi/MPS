@@ -22,7 +22,7 @@ public class MemberContainerStructureModel extends NodeTreeModel implements Stru
 
   public MemberContainerStructureModel(SNode memberContainer) {
     container = new SNodePointer(memberContainer);
-    members = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), memberContainer, "virtual_getMembers_1213877531970", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
+    members = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), memberContainer, "virtual_getMembers_1213877531970", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
       public SNodePointer select(SNode it) {
         return new SNodePointer(it);
       }

@@ -94,15 +94,15 @@ public class GenerateConstructor_Action extends BaseAction {
       if (superclass == null) {
         superclass = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
       }
-      if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).count() > 1) {
+      if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).count() > 1) {
         needsShowConstructorsDialog = true;
-        ctors = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
+        ctors = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
           public SNodePointer select(SNode it) {
             return new SNodePointer(it);
           }
         }).toGenericArray(SNodePointer.class);
       } else {
-        selectedConstructors = new SNodeReference[]{new SNodePointer(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).first())};
+        selectedConstructors = new SNodeReference[]{new SNodePointer(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), superclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).first())};
       }
       if (needsShowConstructorsDialog) {
         SelectConstructorsDialog selectConstructorsDialog = new SelectConstructorsDialog(ctors, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject());
@@ -113,17 +113,14 @@ public class GenerateConstructor_Action extends BaseAction {
           return;
         }
         List<SNodeReference> selectedElements = selectConstructorsDialog.getSelectedElements();
-        selectedConstructors = (selectedElements != null ?
-          selectedElements.toArray(new SNodeReference[selectedElements.size()]) :
-          new SNodeReference[0]
-        );
+        selectedConstructors = (selectedElements != null ? selectedElements.toArray(new SNodeReference[selectedElements.size()]) : new SNodeReference[0]);
       }
 
       boolean needsShowFieldsDialog = false;
       SNodeReference[] fields = null;
-      if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).isNotEmpty()) {
+      if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).isNotEmpty()) {
         needsShowFieldsDialog = true;
-        fields = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
+        fields = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
           public SNodePointer select(SNode it) {
             return new SNodePointer(it);
           }

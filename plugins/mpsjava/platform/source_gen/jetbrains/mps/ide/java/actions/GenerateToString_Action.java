@@ -51,7 +51,7 @@ public class GenerateToString_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateToString_Action.this.getClassConcept(_params);
-    return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).any(new IWhereFilter<SNode>() {
+    return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode method) {
         return "toString".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.StringType");
       }
@@ -94,7 +94,7 @@ public class GenerateToString_Action extends BaseAction {
       final Wrappers._T<SNodeReference[]> fields = new Wrappers._T<SNodeReference[]>();
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          fields.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
+          fields.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
             public SNodePointer select(SNode it) {
               return new SNodePointer(it);
             }
@@ -112,19 +112,13 @@ public class GenerateToString_Action extends BaseAction {
 
       SNodeReference[] selectedFields = Sequence.fromIterable(((Iterable<SNodeReference>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodeReference.class);
       final SNode rightmostExpression;
-      SNodeReference firstField = (selectedFields != null && selectedFields.length > 0 ?
-        selectedFields[0] :
-        null
-      );
+      SNodeReference firstField = (selectedFields != null && selectedFields.length > 0 ? selectedFields[0] : null);
       SNode currentExpression = null;
       for (SNodeReference fieldPtr : selectedFields) {
         SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
-        SNode item = _quotation_createNode_satqj4_a0d0p0a(((fieldPtr == firstField ?
-          "" :
-          ", "
-        )) + SPropertyOperations.getString(field, "name") + "=");
+        SNode item = _quotation_createNode_satqj4_a0d0p0a(((fieldPtr == firstField ? "" : ", ")) + SPropertyOperations.getString(field, "name") + "=");
         if (fieldPtr == firstField) {
           currentExpression = _quotation_createNode_satqj4_a0a0e0p0a(SPropertyOperations.getString(classConcept, "name") + "{", item);
           currentExpression = _quotation_createNode_satqj4_a0b0e0p0a(fieldRef, currentExpression);

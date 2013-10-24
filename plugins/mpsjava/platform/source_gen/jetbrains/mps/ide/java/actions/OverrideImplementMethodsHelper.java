@@ -45,14 +45,11 @@ public class OverrideImplementMethodsHelper {
   }
 
   public List<SNode> insertMethods(List<SNode> baseMethods) {
-    int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ?
-      ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 :
-      -1
-    );
+    int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ? ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 : -1);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SNode method = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept}), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SNode method = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept}), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       if (index != -1) {
@@ -96,7 +93,7 @@ public class OverrideImplementMethodsHelper {
     });
     SNode defaultExpr;
     if (isInterfaceMethod) {
-      defaultExpr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
+      defaultExpr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
     } else {
       defaultExpr = _quotation_createNode_tfz3o4_a0a0a7a8(baseMethod, Sequence.fromIterable(paramList).toListSequence());
     }
@@ -137,7 +134,7 @@ public class OverrideImplementMethodsHelper {
       SNode variable = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       SNode nodeType = SLinkOperations.getTarget(variable, "type", true);
       if (nodeType != null) {
-        String name = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{})).first();
+        String name = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{})).first();
         if (IdentifierConstraintsUtil.isJavaReserved(name)) {
           name = "a" + NameUtil.capitalize(NameUtil.toValidIdentifier(name));
         }
@@ -151,10 +148,7 @@ public class OverrideImplementMethodsHelper {
         }
         String prefix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getPrefix_3012473318495495520", new Object[]{myProject});
         String suffix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getSuffix_3012473318495499856", new Object[]{myProject});
-        String mainName = ((prefix == null || prefix.length() == 0) ?
-          name :
-          NameUtil.capitalize(name)
-        );
+        String mainName = ((prefix == null || prefix.length() == 0) ? name : NameUtil.capitalize(name));
         SPropertyOperations.set(variable, "name", prefix + mainName + suffix);
       }
     }
