@@ -169,17 +169,17 @@ public class MathTypeUtil {
     if (SNodeOperations.isInstanceOf(narrower, "jetbrains.mps.baseLanguage.structure.NullType")) {
       return 0;
     }
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(wider, qBCMatrix) && TypeChecker.getInstance().getSubtypingManager().isSubtype(narrower, qBCMatrix) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getElementType(narrower), "virtual_getUnboxedType_1213877337320", new Object[]{})))) {
-      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bInt)) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(wider, qBCMatrix) && TypeChecker.getInstance().getSubtypingManager().isSubtype(narrower, qBCMatrix) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), getElementType(narrower), "virtual_getUnboxedType_1213877337320", new Object[]{})))) {
+      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bInt)) {
         return 9;
       }
-      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bLong)) {
+      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bLong)) {
         return 10;
       }
-      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bFloat)) {
+      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bFloat)) {
         return 11;
       }
-      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bDouble)) {
+      if (MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), getElementType(wider), "virtual_getUnboxedType_1213877337320", new Object[]{}), bDouble)) {
         return 12;
       }
       if (SNodeOperations.isInstanceOf(getElementType(wider), "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) {
@@ -243,7 +243,7 @@ public class MathTypeUtil {
           if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
             returnType = SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true);
           } else if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
-            returnType = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Type");
+            returnType = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Type");
           }
         }
       }
@@ -312,16 +312,16 @@ public class MathTypeUtil {
   }
 
   public static SNode typeCast(SNode type, SNode parentType) {
-    if (MatchingUtil.matchNodes(parentType, bDouble) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bDouble))) {
+    if (MatchingUtil.matchNodes(parentType, bDouble) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bDouble))) {
       return _quotation_createNode_i9t80i_a0a0a82();
     }
-    if (MatchingUtil.matchNodes(parentType, bFloat) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bFloat))) {
+    if (MatchingUtil.matchNodes(parentType, bFloat) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bFloat))) {
       return _quotation_createNode_i9t80i_a0a1a82();
     }
-    if (MatchingUtil.matchNodes(parentType, bInt) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bInt))) {
+    if (MatchingUtil.matchNodes(parentType, bInt) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bInt))) {
       return _quotation_createNode_i9t80i_a0a2a82();
     }
-    if (MatchingUtil.matchNodes(parentType, bLong) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bLong))) {
+    if (MatchingUtil.matchNodes(parentType, bLong) && !(MatchingUtil.matchNodes(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getUnboxedType_1213877337320", new Object[]{}), bLong))) {
       return _quotation_createNode_i9t80i_a0a3a82();
     }
     return null;

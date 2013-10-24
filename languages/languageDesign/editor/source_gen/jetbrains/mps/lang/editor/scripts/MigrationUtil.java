@@ -26,7 +26,7 @@ public class MigrationUtil {
       md = aspect.createNew(language);
     }
     SModel model = md;
-    SNode conceptAspect = ((SNode) AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(applicableNode, aspect));
+    SNode conceptAspect = ((SNode) (AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(applicableNode, aspect)));
     if (conceptAspect != null) {
       return conceptAspect;
     }

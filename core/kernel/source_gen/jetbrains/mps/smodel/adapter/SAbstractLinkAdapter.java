@@ -47,10 +47,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
       return null;
     }
     SNode t = SLinkOperations.getTarget(link, "target", false);
-    return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ?
-      new SInterfaceConceptAdapter(NameUtil.nodeFQName(t)) :
-      SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t))
-    );
+    return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ? new SInterfaceConceptAdapter(NameUtil.nodeFQName(t)) : SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t)));
   }
 
 

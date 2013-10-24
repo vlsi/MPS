@@ -39,10 +39,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
   @Override
   public SConcept getConcept() {
     String name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
-    ClassifierKind kind = JavaStubNodeDescriptor.this.myItem.getClassifierKind(("".equals(JavaStubNodeDescriptor.this.myPName) ?
-      JavaStubNodeDescriptor.this.myCls :
-      JavaStubNodeDescriptor.this.myPName + "." + JavaStubNodeDescriptor.this.myCls
-    ));
+    ClassifierKind kind = JavaStubNodeDescriptor.this.myItem.getClassifierKind(("".equals(JavaStubNodeDescriptor.this.myPName) ? JavaStubNodeDescriptor.this.myCls : JavaStubNodeDescriptor.this.myPName + "." + JavaStubNodeDescriptor.this.myCls));
     if (kind == ClassifierKind.CLASS) {
       name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
     } else if (kind == ClassifierKind.INTERFACE) {
@@ -65,22 +62,13 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
     }
 
     JavaStubNodeDescriptor that = (JavaStubNodeDescriptor) o;
-    if ((myPName != null ?
-      !(((Object) myPName).equals(that.myPName)) :
-      that.myPName != null
-    )) {
+    if ((myPName != null ? !(((Object) myPName).equals(that.myPName)) : that.myPName != null)) {
       return false;
     }
-    if ((myCls != null ?
-      !(((Object) myCls).equals(that.myCls)) :
-      that.myCls != null
-    )) {
+    if ((myCls != null ? !(((Object) myCls).equals(that.myCls)) : that.myCls != null)) {
       return false;
     }
-    if ((myModel != null ?
-      !(myModel.equals(that.myModel)) :
-      that.myModel != null
-    )) {
+    if ((myModel != null ? !(myModel.equals(that.myModel)) : that.myModel != null)) {
       return false;
     }
 
@@ -90,18 +78,9 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((myPName != null ?
-      String.valueOf(myPName).hashCode() :
-      0
-    ));
-    result = 31 * result + ((myCls != null ?
-      String.valueOf(myCls).hashCode() :
-      0
-    ));
-    result = 31 * result + ((myModel != null ?
-      ((Object) myModel).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myPName != null ? String.valueOf(myPName).hashCode() : 0));
+    result = 31 * result + ((myCls != null ? String.valueOf(myCls).hashCode() : 0));
+    result = 31 * result + ((myModel != null ? ((Object) myModel).hashCode() : 0));
     return result;
   }
 }

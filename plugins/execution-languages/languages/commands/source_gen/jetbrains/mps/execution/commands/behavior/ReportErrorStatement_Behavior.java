@@ -32,7 +32,7 @@ public class ReportErrorStatement_Behavior {
 
   @Deprecated
   public static SNode call_getException_856705193941282181(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getException_856705193941282181", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getException_856705193941282181", new Object[]{});
   }
 
   @Deprecated
@@ -47,7 +47,7 @@ public class ReportErrorStatement_Behavior {
 
   @Deprecated
   public static SNode callSuper_getException_856705193941282181(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_getException_856705193941282181", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_getException_856705193941282181", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

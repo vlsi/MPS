@@ -19,7 +19,7 @@ public class typeof_CustomMapCreator_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = cmc;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1576845966386918991", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1576845966386918988", true), (SNode) CustomMapCreator_Behavior.call_createType_1576845966386891475(cmc), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1576845966386918988", true), (SNode) (CustomMapCreator_Behavior.call_createType_1576845966386891475(cmc)), _info_12389875345);
     }
   }
 

@@ -13,7 +13,7 @@ public class GenerationContextOp_PatternRef_Behavior {
 
   @Deprecated
   public static SNode call_getTarget_1758784108620114792(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTarget_1758784108620114792", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getTarget_1758784108620114792", new Object[]{});
   }
 
   @Deprecated
@@ -23,7 +23,7 @@ public class GenerationContextOp_PatternRef_Behavior {
 
   @Deprecated
   public static SNode callSuper_getTarget_1758784108620114792(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

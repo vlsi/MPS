@@ -149,10 +149,7 @@ public class JDOMUtil {
     //  If there were any entities, return the escaped characters 
     //  that we put in the StringBuilder. Otherwise, just return 
     //  the unmodified input string. 
-    return (buffer == null ?
-      text :
-      buffer.toString()
-    );
+    return (buffer == null ? text : buffer.toString());
   }
 
   /**
@@ -162,25 +159,13 @@ public class JDOMUtil {
   private static String escapeChar(char c, boolean escapeApostrophes, boolean escapeSpaces, boolean escapeLineEnds) {
     switch (c) {
       case '\n':
-        return (escapeLineEnds ?
-          "&#10;" :
-          null
-        );
+        return (escapeLineEnds ? "&#10;" : null);
       case '\r':
-        return (escapeLineEnds ?
-          "&#13;" :
-          null
-        );
+        return (escapeLineEnds ? "&#13;" : null);
       case '\t':
-        return (escapeLineEnds ?
-          "&#9;" :
-          null
-        );
+        return (escapeLineEnds ? "&#9;" : null);
       case ' ':
-        return (escapeSpaces ?
-          "&#20" :
-          null
-        );
+        return (escapeSpaces ? "&#20" : null);
       case '<':
         return "&lt;";
       case '>':
@@ -188,10 +173,7 @@ public class JDOMUtil {
       case '\"':
         return "&quot;";
       case '\'':
-        return (escapeApostrophes ?
-          "&apos;" :
-          null
-        );
+        return (escapeApostrophes ? "&apos;" : null);
       case '&':
         return "&amp;";
       default:
@@ -266,9 +248,6 @@ public class JDOMUtil {
     //  If there were any entities, return the escaped characters 
     //  that we put in the StringBuilder. Otherwise, just return 
     //  the unmodified input string. 
-    return (buffer == null ?
-      text :
-      buffer.toString()
-    );
+    return (buffer == null ? text : buffer.toString());
   }
 }

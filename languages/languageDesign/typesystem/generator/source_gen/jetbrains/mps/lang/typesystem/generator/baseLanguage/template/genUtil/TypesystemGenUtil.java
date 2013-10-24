@@ -52,7 +52,7 @@ public class TypesystemGenUtil {
         return false;
       }
     }
-    SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), subtypingRule, "virtual_getLastStatement_1239354409446", new Object[]{});
+    SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), subtypingRule, "virtual_getLastStatement_1239354409446", new Object[]{});
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), _quotation_createNode_y65bbo_b0a0a0d0d()))) {
         return false;

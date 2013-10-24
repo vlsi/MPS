@@ -41,7 +41,7 @@ public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDe
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // links declared in edited concept' hierarchy and not overridden 
             SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellMenuComponent", true, false);
-            SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+            SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
             return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);
           }
 

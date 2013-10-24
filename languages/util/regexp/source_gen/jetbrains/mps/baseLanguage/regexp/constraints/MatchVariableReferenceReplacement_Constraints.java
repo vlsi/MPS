@@ -48,10 +48,7 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return (_context.getSmartReference() ?
-              "\\" + SPropertyOperations.getString(_context.getParameterNode(), "name") :
-              SPropertyOperations.getString(_context.getParameterNode(), "name")
-            );
+            return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), "name") : SPropertyOperations.getString(_context.getParameterNode(), "name"));
           }
 
           @Override

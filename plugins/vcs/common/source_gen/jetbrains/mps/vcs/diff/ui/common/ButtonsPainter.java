@@ -56,18 +56,12 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public int getLeftAreaWidth() {
-    return (myHighlightLeft ?
-      0 :
-      myWidth
-    );
+    return (myHighlightLeft ? 0 : myWidth);
   }
 
   @Override
   public int getRightAreaWidth() {
-    return (myHighlightLeft ?
-      myWidth :
-      0
-    );
+    return (myHighlightLeft ? myWidth : 0);
   }
 
   @Override
@@ -85,7 +79,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
       int previousStart = Integer.MIN_VALUE;
       for (ChangeGroup cg : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
-        int y = Math.max((int) cg.getBounds(myHighlightLeft).start(), previousStart + GAP + ICON_SIZE);
+        int y = Math.max((int) (cg.getBounds(myHighlightLeft).start()), previousStart + GAP + ICON_SIZE);
         ListSequence.fromList(myButtons).addSequence(Sequence.fromIterable(createButtonsForChangeGroup(cg, y)));
         previousStart = y;
       }

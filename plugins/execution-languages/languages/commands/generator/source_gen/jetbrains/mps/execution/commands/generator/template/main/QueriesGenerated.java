@@ -126,7 +126,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233635(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getException_856705193941282181", new Object[]{}), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getException_856705193941282181", new Object[]{}), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_8980950851470008467(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -647,16 +647,10 @@ public class QueriesGenerated {
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a0w(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a98(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

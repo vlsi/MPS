@@ -60,7 +60,7 @@ public class MembersPopulatingContext {
   }
 
   public boolean enterClassifierInternal(SNode classifierType) {
-    SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
+    SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
 
     // recursion preventing 
     if (classifiers.contains(classifier)) {
@@ -69,9 +69,9 @@ public class MembersPopulatingContext {
     classifiers.add(classifier);
 
     // set types variables 
-    Iterable<SNode> typeParams = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{});
+    Iterable<SNode> typeParams = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{});
     if (Sequence.fromIterable(typeParams).isNotEmpty()) {
-      Iterator<SNode> typeVars = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "virtual_getTypeVariables_7405920559687237503", new Object[]{})).iterator();
+      Iterator<SNode> typeVars = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifier, "virtual_getTypeVariables_7405920559687237503", new Object[]{})).iterator();
       for (SNode typeParm : typeParams) {
         if (!(typeVars.hasNext())) {
           break;
@@ -95,7 +95,7 @@ public class MembersPopulatingContext {
   }
 
   public void exitClassifierInternal(SNode classifier) {
-    assert classifiers.pop() == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getClassifier_7405920559687237513", new Object[]{});
+    assert classifiers.pop() == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifier, "virtual_getClassifier_7405920559687237513", new Object[]{});
   }
 
   public boolean isPackageProtectedVisible() {

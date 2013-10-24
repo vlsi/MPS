@@ -61,7 +61,7 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
             SNode thisNode = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true);
             SNode classifier = SLinkOperations.getTarget(DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(thisNode, "debuggedType", true)), "classifier", false);
             SNode enclosingClass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-            return new SuperMethodCall_InstanceMethodScope(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), enclosingClass, "virtual_getSuperclass_1240936569950", new Object[]{}), _context.getEnclosingNode());
+            return new SuperMethodCall_InstanceMethodScope(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), enclosingClass, "virtual_getSuperclass_1240936569950", new Object[]{}), _context.getEnclosingNode());
           }
 
           @Override

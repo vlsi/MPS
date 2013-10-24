@@ -127,7 +127,7 @@ public class ClassifierScopeUtils {
         }
       }
 
-      for (SNode superType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
+      for (SNode superType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
         if (collectImplementedAndExtended(SLinkOperations.getTarget(superType, "classifier", false), subClassifiers, SLinkOperations.getTargets(superType, "parameter", true))) {
           return true;
         }

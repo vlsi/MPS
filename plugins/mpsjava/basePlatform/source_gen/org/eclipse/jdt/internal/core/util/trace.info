@@ -106,13 +106,15 @@
     <nodeInfo nodeId="1218034168005183009" fileName="CommentRecorderParser.java" startLine="238" startPosition="22" endLine="239" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1218034168005182633" fileName="CommentRecorderParser.java" startLine="239" startPosition="25" endLine="240" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218034168005183011" fileName="CommentRecorderParser.java" startLine="247" startPosition="40" endLine="248" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005182772" fileName="CommentRecorderParser.java" startLine="260" startPosition="62" endLine="261" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005182788" fileName="CommentRecorderParser.java" startLine="262" startPosition="47" endLine="263" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005182808" fileName="CommentRecorderParser.java" startLine="263" startPosition="128" endLine="264" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005182828" fileName="CommentRecorderParser.java" startLine="265" startPosition="9" endLine="266" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005182844" fileName="CommentRecorderParser.java" startLine="266" startPosition="76" endLine="267" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005182864" fileName="CommentRecorderParser.java" startLine="277" startPosition="35" endLine="278" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005182872" fileName="CommentRecorderParser.java" startLine="278" startPosition="52" endLine="279" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005182695" fileName="CommentRecorderParser.java" startLine="248" startPosition="57" endLine="249" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005182723" fileName="CommentRecorderParser.java" startLine="249" startPosition="126" endLine="250" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005182772" fileName="CommentRecorderParser.java" startLine="251" startPosition="62" endLine="252" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005182788" fileName="CommentRecorderParser.java" startLine="253" startPosition="47" endLine="254" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005182808" fileName="CommentRecorderParser.java" startLine="254" startPosition="128" endLine="255" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005182828" fileName="CommentRecorderParser.java" startLine="256" startPosition="9" endLine="257" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005182844" fileName="CommentRecorderParser.java" startLine="257" startPosition="76" endLine="258" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005182864" fileName="CommentRecorderParser.java" startLine="268" startPosition="35" endLine="269" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005182872" fileName="CommentRecorderParser.java" startLine="269" startPosition="52" endLine="270" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218034168005181955" fileName="CommentRecorderParser.java" startLine="65" startPosition="12" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218034168005181795" fileName="CommentRecorderParser.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommentRecorderParser#(Lorg/eclipse/jdt/internal/compiler/problem/ProblemReporter;Z)V" />
     <nodeInfo nodeId="1218034168005181809" fileName="CommentRecorderParser.java" startLine="41" startPosition="92" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -127,8 +129,7 @@
     <nodeInfo nodeId="1218034168005182278" fileName="CommentRecorderParser.java" startLine="165" startPosition="5" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218034168005182097" fileName="CommentRecorderParser.java" startLine="115" startPosition="58" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218034168005182552" fileName="CommentRecorderParser.java" startLine="204" startPosition="56" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1218034168005182695" fileName="CommentRecorderParser.java" startLine="248" startPosition="57" endLine="252" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005182779" fileName="CommentRecorderParser.java" startLine="261" startPosition="52" endLine="265" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005182779" fileName="CommentRecorderParser.java" startLine="252" startPosition="52" endLine="256" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218034168005181929" fileName="CommentRecorderParser.java" startLine="62" startPosition="83" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218034168005182007" fileName="CommentRecorderParser.java" startLine="78" startPosition="70" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1218034168005182046" fileName="CommentRecorderParser.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consumeClassHeader#()V" />
@@ -136,20 +137,19 @@
     <nodeInfo nodeId="1218034168005182074" fileName="CommentRecorderParser.java" startLine="103" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consumeInterfaceHeader#()V" />
     <nodeInfo nodeId="1218034168005182602" fileName="CommentRecorderParser.java" startLine="212" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initialize#(Z)V" />
     <nodeInfo nodeId="1218034168005182618" fileName="CommentRecorderParser.java" startLine="220" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initialize#()V" />
-    <nodeInfo nodeId="1218034168005182723" fileName="CommentRecorderParser.java" startLine="252" startPosition="8" endLine="259" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005182760" fileName="CommentRecorderParser.java" startLine="259" startPosition="8" endLine="268" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005182862" fileName="CommentRecorderParser.java" startLine="272" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetModifiers#()V" />
+    <nodeInfo nodeId="1218034168005182760" fileName="CommentRecorderParser.java" startLine="250" startPosition="177" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005182862" fileName="CommentRecorderParser.java" startLine="263" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetModifiers#()V" />
     <nodeInfo nodeId="1218034168005182088" fileName="CommentRecorderParser.java" startLine="111" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="endParse#(I)Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;" />
     <nodeInfo nodeId="1218034168005182188" fileName="CommentRecorderParser.java" startLine="135" startPosition="23" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1218034168005182534" fileName="CommentRecorderParser.java" startLine="199" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommentsPositions#()[[I" />
     <nodeInfo nodeId="1218034168005182277" fileName="CommentRecorderParser.java" startLine="151" startPosition="34" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1218034168005182631" fileName="CommentRecorderParser.java" startLine="228" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initializeScanner#()V" />
+    <nodeInfo nodeId="1218034168005182681" fileName="CommentRecorderParser.java" startLine="246" startPosition="56" endLine="260" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1218034168005182189" fileName="CommentRecorderParser.java" startLine="149" startPosition="67" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005182675" fileName="CommentRecorderParser.java" startLine="243" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushOnCommentsStack#(II)V" />
     <nodeInfo nodeId="1218034168005182290" fileName="CommentRecorderParser.java" startLine="171" startPosition="42" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1218034168005182681" fileName="CommentRecorderParser.java" startLine="246" startPosition="56" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1218034168005181849" fileName="CommentRecorderParser.java" startLine="50" startPosition="47" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1218034168005181858" fileName="CommentRecorderParser.java" startLine="48" startPosition="62" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218034168005182675" fileName="CommentRecorderParser.java" startLine="243" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushOnCommentsStack#(II)V" />
     <nodeInfo nodeId="1218034168005181807" fileName="CommentRecorderParser.java" startLine="40" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkComment#()V" />
     <nodeInfo nodeId="1218034168005182123" fileName="CommentRecorderParser.java" startLine="123" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flushCommentsDefinedPriorTo#(I)I" />
     <scopeInfo nodeId="1218034168005181801" fileName="CommentRecorderParser.java" startLine="36" startPosition="97" endLine="37" endPosition="51" />
@@ -172,8 +172,8 @@
     <scopeInfo nodeId="1218034168005182571" fileName="CommentRecorderParser.java" startLine="205" startPosition="48" endLine="207" endPosition="45" />
     <scopeInfo nodeId="1218034168005182605" fileName="CommentRecorderParser.java" startLine="215" startPosition="49" endLine="217" endPosition="25" />
     <scopeInfo nodeId="1218034168005182619" fileName="CommentRecorderParser.java" startLine="223" startPosition="28" endLine="225" endPosition="25" />
-    <scopeInfo nodeId="1218034168005182787" fileName="CommentRecorderParser.java" startLine="262" startPosition="47" endLine="264" endPosition="126" />
-    <scopeInfo nodeId="1218034168005182863" fileName="CommentRecorderParser.java" startLine="277" startPosition="35" endLine="279" endPosition="27" />
+    <scopeInfo nodeId="1218034168005182787" fileName="CommentRecorderParser.java" startLine="253" startPosition="47" endLine="255" endPosition="126" />
+    <scopeInfo nodeId="1218034168005182863" fileName="CommentRecorderParser.java" startLine="268" startPosition="35" endLine="270" endPosition="27" />
     <scopeInfo nodeId="1218034168005181795" fileName="CommentRecorderParser.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1218034168005181799" varName="optimizeStringLiterals" />
       <varInfo nodeId="1218034168005181797" varName="problemReporter" />
@@ -199,11 +199,11 @@
       <varInfo nodeId="1218034168005182603" varName="initializeNLS" />
     </scopeInfo>
     <scopeInfo nodeId="1218034168005182618" fileName="CommentRecorderParser.java" startLine="220" startPosition="0" endLine="227" endPosition="0" />
-    <scopeInfo nodeId="1218034168005182770" fileName="CommentRecorderParser.java" startLine="260" startPosition="62" endLine="267" endPosition="74">
+    <scopeInfo nodeId="1218034168005182770" fileName="CommentRecorderParser.java" startLine="251" startPosition="62" endLine="258" endPosition="74">
       <varInfo nodeId="1218034168005182771" varName="stackLength" />
     </scopeInfo>
     <scopeInfo nodeId="1218034168005182632" fileName="CommentRecorderParser.java" startLine="232" startPosition="35" endLine="240" endPosition="250" />
-    <scopeInfo nodeId="1218034168005182862" fileName="CommentRecorderParser.java" startLine="272" startPosition="0" endLine="281" endPosition="0" />
+    <scopeInfo nodeId="1218034168005182862" fileName="CommentRecorderParser.java" startLine="263" startPosition="0" endLine="272" endPosition="0" />
     <scopeInfo nodeId="1218034168005182154" fileName="CommentRecorderParser.java" startLine="136" startPosition="24" endLine="146" endPosition="19">
       <varInfo nodeId="1218034168005182155" varName="commentEnd" />
     </scopeInfo>
@@ -212,28 +212,28 @@
     </scopeInfo>
     <scopeInfo nodeId="1218034168005182219" fileName="CommentRecorderParser.java" startLine="152" startPosition="109" endLine="163" endPosition="16" />
     <scopeInfo nodeId="1218034168005182534" fileName="CommentRecorderParser.java" startLine="199" startPosition="0" endLine="211" endPosition="0" />
+    <scopeInfo nodeId="1218034168005182693" fileName="CommentRecorderParser.java" startLine="247" startPosition="40" endLine="259" endPosition="7">
+      <varInfo nodeId="1218034168005182722" varName="commentStart" />
+      <varInfo nodeId="1218034168005182694" varName="scannerStart" />
+    </scopeInfo>
     <scopeInfo nodeId="1218034168005182194" fileName="CommentRecorderParser.java" startLine="150" startPosition="25" endLine="164" endPosition="7">
       <varInfo nodeId="1218034168005182195" varName="immediateCommentEnd" />
     </scopeInfo>
     <scopeInfo nodeId="1218034168005182631" fileName="CommentRecorderParser.java" startLine="228" startPosition="0" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="1218034168005182680" fileName="CommentRecorderParser.java" startLine="246" startPosition="56" endLine="260" endPosition="5" />
+    <scopeInfo nodeId="1218034168005182681" fileName="CommentRecorderParser.java" startLine="246" startPosition="56" endLine="260" endPosition="5">
+      <varInfo nodeId="1218034168005182682" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218034168005182675" fileName="CommentRecorderParser.java" startLine="243" startPosition="0" endLine="262" endPosition="0">
+      <varInfo nodeId="1218034168005182678" varName="end" />
+      <varInfo nodeId="1218034168005182676" varName="start" />
+    </scopeInfo>
     <scopeInfo nodeId="1218034168005181869" fileName="CommentRecorderParser.java" startLine="52" startPosition="55" endLine="73" endPosition="24">
       <varInfo nodeId="1218034168005181917" varName="commentSourceEnd" />
       <varInfo nodeId="1218034168005181870" varName="commentSourceStart" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005182693" fileName="CommentRecorderParser.java" startLine="247" startPosition="40" endLine="268" endPosition="7">
-      <varInfo nodeId="1218034168005182722" varName="commentStart" />
-      <varInfo nodeId="1218034168005182694" varName="scannerStart" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218034168005182680" fileName="CommentRecorderParser.java" startLine="246" startPosition="56" endLine="269" endPosition="5" />
-    <scopeInfo nodeId="1218034168005182681" fileName="CommentRecorderParser.java" startLine="246" startPosition="56" endLine="269" endPosition="5">
-      <varInfo nodeId="1218034168005182682" varName="i" />
-    </scopeInfo>
     <scopeInfo nodeId="1218034168005181849" fileName="CommentRecorderParser.java" startLine="50" startPosition="47" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1218034168005181859" fileName="CommentRecorderParser.java" startLine="48" startPosition="62" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="1218034168005182675" fileName="CommentRecorderParser.java" startLine="243" startPosition="0" endLine="271" endPosition="0">
-      <varInfo nodeId="1218034168005182678" varName="end" />
-      <varInfo nodeId="1218034168005182676" varName="start" />
-    </scopeInfo>
     <scopeInfo nodeId="1218034168005181808" fileName="CommentRecorderParser.java" startLine="40" startPosition="30" endLine="84" endPosition="5">
       <varInfo nodeId="1218034168005181840" varName="checkDeprecated" />
       <varInfo nodeId="1218034168005181836" varName="deprecated" />
@@ -248,7 +248,7 @@
     <scopeInfo nodeId="1218034168005182123" fileName="CommentRecorderParser.java" startLine="123" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="1218034168005182124" varName="position" />
     </scopeInfo>
-    <unitInfo nodeId="1218034168005181764" fileName="CommentRecorderParser.java" startLine="14" startPosition="0" endLine="282" endPosition="0" unitName="org.eclipse.jdt.internal.core.util.CommentRecorderParser" />
+    <unitInfo nodeId="1218034168005181764" fileName="CommentRecorderParser.java" startLine="14" startPosition="0" endLine="273" endPosition="0" unitName="org.eclipse.jdt.internal.core.util.CommentRecorderParser" />
   </root>
   <root nodeRef="r:40e27d97-dea1-422b-91e0-3b9f3271a7f1(org.eclipse.jdt.internal.core.util)/1218034168005183012">
     <nodeInfo nodeId="1218034168005183015" fileName="RecordedParsingInformation.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="problems" />
@@ -258,24 +258,24 @@
     <nodeInfo nodeId="1218034168005183048" fileName="RecordedParsingInformation.java" startLine="29" startPosition="110" endLine="30" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218034168005183054" fileName="RecordedParsingInformation.java" startLine="30" startPosition="29" endLine="31" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218034168005183060" fileName="RecordedParsingInformation.java" startLine="31" startPosition="29" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183092" fileName="RecordedParsingInformation.java" startLine="40" startPosition="45" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183100" fileName="RecordedParsingInformation.java" startLine="41" startPosition="49" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183066" fileName="RecordedParsingInformation.java" startLine="32" startPosition="45" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183084" fileName="RecordedParsingInformation.java" startLine="39" startPosition="90" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183080" fileName="RecordedParsingInformation.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateRecordedParsingInformation#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;)V" />
-    <nodeInfo nodeId="1218034168005183035" fileName="RecordedParsingInformation.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RecordedParsingInformation#([Lorg/eclipse/jdt/core/compiler/CategorizedProblem;[I[[I)V" />
-    <scopeInfo nodeId="1218034168005183091" fileName="RecordedParsingInformation.java" startLine="40" startPosition="45" endLine="42" endPosition="48" />
-    <scopeInfo nodeId="1218034168005183083" fileName="RecordedParsingInformation.java" startLine="39" startPosition="90" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="1218034168005183080" fileName="RecordedParsingInformation.java" startLine="39" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1218034168005183081" varName="compilationResult" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218034168005183047" fileName="RecordedParsingInformation.java" startLine="29" startPosition="110" endLine="36" endPosition="6" />
-    <scopeInfo nodeId="1218034168005183035" fileName="RecordedParsingInformation.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
+    <nodeInfo nodeId="1218034168005183066" fileName="RecordedParsingInformation.java" startLine="32" startPosition="45" endLine="33" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183092" fileName="RecordedParsingInformation.java" startLine="37" startPosition="45" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183100" fileName="RecordedParsingInformation.java" startLine="38" startPosition="49" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183084" fileName="RecordedParsingInformation.java" startLine="36" startPosition="90" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183035" fileName="RecordedParsingInformation.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RecordedParsingInformation#([Lorg/eclipse/jdt/core/compiler/CategorizedProblem;[I[[I)V" />
+    <nodeInfo nodeId="1218034168005183080" fileName="RecordedParsingInformation.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateRecordedParsingInformation#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;)V" />
+    <scopeInfo nodeId="1218034168005183091" fileName="RecordedParsingInformation.java" startLine="37" startPosition="45" endLine="39" endPosition="48" />
+    <scopeInfo nodeId="1218034168005183047" fileName="RecordedParsingInformation.java" startLine="29" startPosition="110" endLine="33" endPosition="66" />
+    <scopeInfo nodeId="1218034168005183083" fileName="RecordedParsingInformation.java" startLine="36" startPosition="90" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="1218034168005183035" fileName="RecordedParsingInformation.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1218034168005183043" varName="commentPositions" />
       <varInfo nodeId="1218034168005183040" varName="lineEnds" />
       <varInfo nodeId="1218034168005183037" varName="problems" />
     </scopeInfo>
-    <unitInfo nodeId="1218034168005183012" fileName="RecordedParsingInformation.java" startLine="8" startPosition="0" endLine="46" endPosition="0" unitName="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" />
+    <scopeInfo nodeId="1218034168005183080" fileName="RecordedParsingInformation.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1218034168005183081" varName="compilationResult" />
+    </scopeInfo>
+    <unitInfo nodeId="1218034168005183012" fileName="RecordedParsingInformation.java" startLine="8" startPosition="0" endLine="43" endPosition="0" unitName="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" />
   </root>
   <root nodeRef="r:40e27d97-dea1-422b-91e0-3b9f3271a7f1(org.eclipse.jdt.internal.core.util)/1218034168005183146">
     <nodeInfo nodeId="1218034168005183149" fileName="CodeSnippetParsingUtil.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="recordedParsingInformation" />

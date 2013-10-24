@@ -51,8 +51,8 @@ public class ChangesStripActionsHelper {
       return;
     }
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    goToY(editorComponent, (int) group.getBounds(true).end());
-    goToY(editorComponent, (int) group.getBounds(true).start());
+    goToY(editorComponent, (int) (group.getBounds(true).end()));
+    goToY(editorComponent, (int) (group.getBounds(true).start()));
     check_ikrecr_a5a3(getPainter(editorContext), group);
   }
 
@@ -292,9 +292,6 @@ public class ChangesStripActionsHelper {
   }
 
   private static boolean eq_ikrecr_a0a0a0a0a0d0u0l(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

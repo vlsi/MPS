@@ -20,13 +20,7 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, QueryParameter_Editor._StyleParameter_QueryFunction_pp9zo5_a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.AUTO_DELETABLE, QueryParameter_Editor._StyleParameter_QueryFunction_pp9zo5_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

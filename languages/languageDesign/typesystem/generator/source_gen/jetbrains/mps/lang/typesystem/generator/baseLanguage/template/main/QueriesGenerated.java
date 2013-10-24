@@ -126,7 +126,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4484478261143736241(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode condition = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, false);
     SNode parent = SNodeOperations.getParent(condition);
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && condition == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && condition == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
   }
 
   public static boolean baseMappingRule_Condition_1177333630561(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -151,7 +151,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4484478261143736375(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode condition = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, false);
     SNode parent = SNodeOperations.getParent(condition);
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{}) == condition;
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{}) == condition;
   }
 
   public static boolean baseMappingRule_Condition_1196962232050(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -176,7 +176,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4484478261143736493(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode condition = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", false, false);
     SNode parent = SNodeOperations.getParent(condition);
-    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{}) == condition;
+    return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.AbstractRule") && SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(parent, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{}) == condition;
   }
 
   public static boolean baseMappingRule_Condition_1196962272510(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -2173,7 +2173,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216643035001(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1220358467477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2549,10 +2549,7 @@ parametersLoop:
     ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")));
     for (SNode node : nodesToProcess) {
       SModel originalModel = _context.getOriginalInputModel();
-      String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ?
-        jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) :
-        originalModel.getReference().toString()
-      );
+      String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ? jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) : originalModel.getReference().toString());
       String nodeId = _context.getOriginalCopiedInputNode(node).getNodeId().toString();
       SNode annotation = AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"), "jetbrains.mps.lang.typesystem.structure.OriginalNodeId");
       SPropertyOperations.set(annotation, "nodeId", nodeId);

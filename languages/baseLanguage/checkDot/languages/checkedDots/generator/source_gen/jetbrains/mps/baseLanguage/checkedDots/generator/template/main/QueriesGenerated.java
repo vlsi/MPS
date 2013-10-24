@@ -43,7 +43,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3391577739833458953(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getVariable_1023687332192481693", new Object[]{}), "name");
+    return SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getVariable_1023687332192481693", new Object[]{}), "name");
   }
 
   public static Object referenceMacro_GetReferent_5665267283159127972(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -95,7 +95,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2319519288049976964(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "virtual_getThisType_3305065273710880775", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "virtual_getThisType_3305065273710880775", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_7907427828436735258(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

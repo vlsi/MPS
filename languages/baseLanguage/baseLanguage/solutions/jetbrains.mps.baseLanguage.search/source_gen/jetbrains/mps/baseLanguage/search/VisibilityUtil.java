@@ -47,7 +47,7 @@ public final class VisibilityUtil {
           if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(context, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
             // check ExpressionName or PrimaryExpression is subclass of cls, works only with right context 
             //  will not work in the case: otherClass.method(protectedMethod()) with enclosed node as context 
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{}), _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(cls))) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(context), "jetbrains.mps.baseLanguage.structure.DotExpression"), "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{}), _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(cls))) {
               return true;
             }
           } else if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {

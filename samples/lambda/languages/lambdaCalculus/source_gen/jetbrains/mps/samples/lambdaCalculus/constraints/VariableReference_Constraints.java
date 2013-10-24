@@ -44,7 +44,7 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
             List<SNode> nodes = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner", true);
             List<SNode> result = new ArrayList<SNode>();
             for (SNode node : nodes) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getVariables_8981808925914841576", new Object[]{})));
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "virtual_getVariables_8981808925914841576", new Object[]{})));
             }
             return result;
           }

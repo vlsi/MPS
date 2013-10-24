@@ -149,29 +149,29 @@
     <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="64" startPosition="87" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="65" startPosition="47" endLine="66" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="66" startPosition="34" endLine="67" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="74" startPosition="8" endLine="75" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="75" startPosition="40" endLine="76" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="76" startPosition="34" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2638080004385070308" fileName="ExportScopeNamespace_Editor.java" startLine="80" startPosition="109" endLine="81" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="84" startPosition="98" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="85" startPosition="70" endLine="86" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="86" startPosition="76" endLine="87" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="87" startPosition="95" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="67" startPosition="54" endLine="68" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="68" startPosition="233" endLine="69" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="69" startPosition="40" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="70" startPosition="34" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2638080004385070308" fileName="ExportScopeNamespace_Editor.java" startLine="74" startPosition="109" endLine="75" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="78" startPosition="98" endLine="79" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="79" startPosition="70" endLine="80" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="80" startPosition="76" endLine="81" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="81" startPosition="95" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2638080004385070306" fileName="ExportScopeNamespace_Editor.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_p7dwc8_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2638080004385070306" fileName="ExportScopeNamespace_Editor.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_p7dwc8_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="2565736246230036181" fileName="ExportScopeNamespace_Editor.java" startLine="54" startPosition="59" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAttributedNodeCell_p7dwc8_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAttributedNodeCell_p7dwc8_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2565736246230036177" fileName="ExportScopeNamespace_Editor.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_p7dwc8_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="67" startPosition="54" endLine="74" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_p7dwc8_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="63" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_p7dwc8_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="63" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_p7dwc8_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2565736246230036181" fileName="ExportScopeNamespace_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_p7dwc8_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="29" startPosition="28" endLine="30" endPosition="81" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="81" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="91" />
-    <scopeInfo nodeId="2638080004385070307" fileName="ExportScopeNamespace_Editor.java" startLine="80" startPosition="109" endLine="81" endPosition="131" />
+    <scopeInfo nodeId="2638080004385070307" fileName="ExportScopeNamespace_Editor.java" startLine="74" startPosition="109" endLine="75" endPosition="131" />
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="2565736246230036172" varName="editorContext" />
       <varInfo nodeId="2565736246230036172" varName="node" />
@@ -180,11 +180,11 @@
       <varInfo nodeId="2565736246230036181" varName="manager" />
       <varInfo nodeId="2565736246230036181" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2638080004385070306" fileName="ExportScopeNamespace_Editor.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="2638080004385070306" fileName="ExportScopeNamespace_Editor.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="2638080004385070306" varName="editorContext" />
       <varInfo nodeId="2638080004385070306" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="84" startPosition="98" endLine="88" endPosition="22">
+    <scopeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="78" startPosition="98" endLine="82" endPosition="22">
       <varInfo nodeId="2565736246230036179" varName="editorCell" />
       <varInfo nodeId="2565736246230036179" varName="manager" />
       <varInfo nodeId="2565736246230036179" varName="opContext" />
@@ -192,7 +192,7 @@
     <scopeInfo nodeId="2565736246230036177" fileName="ExportScopeNamespace_Editor.java" startLine="37" startPosition="88" endLine="42" endPosition="22">
       <varInfo nodeId="2565736246230036177" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="2565736246230036179" fileName="ExportScopeNamespace_Editor.java" startLine="78" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="2565736246230036179" varName="editorContext" />
       <varInfo nodeId="2565736246230036179" varName="node" />
     </scopeInfo>
@@ -203,13 +203,17 @@
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="26" startPosition="89" endLine="34" endPosition="22">
       <varInfo nodeId="2565736246230036172" varName="editorCell" />
     </scopeInfo>
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="63" startPosition="88" endLine="71" endPosition="22">
+      <varInfo nodeId="2565736246230036172" varName="editorCell" />
+      <varInfo nodeId="2565736246230036172" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="2565736246230036172" varName="editorContext" />
       <varInfo nodeId="2565736246230036172" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="63" startPosition="88" endLine="77" endPosition="22">
-      <varInfo nodeId="2565736246230036172" varName="editorCell" />
-      <varInfo nodeId="2565736246230036172" varName="style" />
+    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="63" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="2565736246230036172" varName="editorContext" />
+      <varInfo nodeId="2565736246230036172" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2565736246230036181" fileName="ExportScopeNamespace_Editor.java" startLine="45" startPosition="88" endLine="60" endPosition="22">
       <varInfo nodeId="2565736246230036181" varName="attributeConcept" />
@@ -217,15 +221,11 @@
       <varInfo nodeId="2565736246230036181" varName="editorCell" />
       <varInfo nodeId="2565736246230036181" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="63" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="2565736246230036172" varName="editorContext" />
-      <varInfo nodeId="2565736246230036172" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="2565736246230036181" fileName="ExportScopeNamespace_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="2565736246230036181" varName="editorContext" />
       <varInfo nodeId="2565736246230036181" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="21" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
+    <unitInfo nodeId="2565736246230036172" fileName="ExportScopeNamespace_Editor.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/2565736246230068875">
     <nodeInfo nodeId="2565736246230068875" fileName="DeleteExportScope.java" startLine="13" startPosition="95" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

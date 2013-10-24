@@ -34,12 +34,12 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), it, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
       }
     });
     Iterable<SNode> passedParameters = ListSequence.fromList(SLinkOperations.getTargets(callAction, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), it, "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
       }
     });
     Iterable<SNode> missed = Sequence.fromIterable(requiredParameters).subtract(Sequence.fromIterable(passedParameters));

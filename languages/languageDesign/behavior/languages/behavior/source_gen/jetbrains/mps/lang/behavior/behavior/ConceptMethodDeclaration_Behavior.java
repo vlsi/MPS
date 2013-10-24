@@ -95,11 +95,11 @@ public class ConceptMethodDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_getNearestOverriddenMethod_5014346297260520836(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getNearestOverriddenMethod_5014346297260520836(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
   }
 }

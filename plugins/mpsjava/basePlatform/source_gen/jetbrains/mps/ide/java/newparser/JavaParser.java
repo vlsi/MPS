@@ -65,10 +65,7 @@ public class JavaParser {
     Map<String, String> settings = new HashMap<String, String>();
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
-    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ?
-      new ASTConverter(stubsMode) :
-      new FullASTConverter(null)
-    );
+    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverter(stubsMode) : new FullASTConverter(null));
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     String resultPackageName = null;
@@ -328,7 +325,7 @@ public class JavaParser {
       for (SNode unk : ListSequence.fromList(unknowns)) {
 
         final SNode unkNode = unk;
-        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) (Object.class)), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
         if (subst == null) {
           continue;
         }

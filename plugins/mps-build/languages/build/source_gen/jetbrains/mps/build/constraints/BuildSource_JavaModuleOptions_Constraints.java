@@ -46,10 +46,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return ((isEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ?
-              "<default options>" :
-              SPropertyOperations.getString(_context.getParameterNode(), "optionsName")
-            ));
+            return ((isEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ? "<default options>" : SPropertyOperations.getString(_context.getParameterNode(), "optionsName")));
           }
 
           @Override
@@ -61,10 +58,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaOptions"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };

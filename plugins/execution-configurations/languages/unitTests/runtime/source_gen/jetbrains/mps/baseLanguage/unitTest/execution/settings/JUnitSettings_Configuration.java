@@ -235,23 +235,14 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
 
   private static boolean eq_jtq3ac_a0c0b0a0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_jtq3ac_a0a4a61(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_jtq3ac_a0a4a61_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

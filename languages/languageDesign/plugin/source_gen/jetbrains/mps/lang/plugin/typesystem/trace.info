@@ -629,7 +629,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)/1217412011413">
     <nodeInfo nodeId="1217412036054" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1217412036054" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="20" startPosition="53" endLine="21" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217412036054" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="21" startPosition="196" endLine="22" endPosition="376" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217412036054" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="21" startPosition="196" endLine="22" endPosition="378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217412011413" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1217412011413" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1217412011413" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -648,7 +648,7 @@
     <scopeInfo nodeId="1217412011413" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
       <varInfo nodeId="1217412011413" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1217412036054" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="376">
+    <scopeInfo nodeId="1217412036054" fileName="typeof_ActionDataParameterDeclaration_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="378">
       <varInfo nodeId="1217412036054" varName="_info_12389875345" />
       <varInfo nodeId="1217412036054" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>

@@ -68,10 +68,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
 
   @Override
   protected JComponent initUIComponentAndBinding() {
-    myTable = (myDiffRow ?
-      new DiffRowTable() :
-      new JBTable()
-    );
+    myTable = (myDiffRow ? new DiffRowTable() : new JBTable());
     JTableBinding<T, List<T>, JTable> tableBinding = SwingBindings.createJTableBinding(AutoBinding.UpdateStrategy.READ_WRITE, myList, myTable);
     for (final ColumnDescriptor d : myColumns) {
       tableBinding.addColumnBinding((Property<T, ?>) BeanProperty.create(d.getName()));
@@ -107,10 +104,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       }
       i++;
     }
-    myTable.setSelectionMode((multipleChooserSet() ?
-      ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
-      ListSelectionModel.SINGLE_INTERVAL_SELECTION
-    ));
+    myTable.setSelectionMode((multipleChooserSet() ? ListSelectionModel.MULTIPLE_INTERVAL_SELECTION : ListSelectionModel.SINGLE_INTERVAL_SELECTION));
     return myTable;
   }
 
@@ -144,14 +138,8 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       }
       BoundTablePanel.this.myList.addAll((List) chosen);
       super.doAdd(e);
-      T first = ((chosen.isEmpty() ?
-        null :
-        chosen.get(0)
-      ));
-      return ((first == null) ?
-        -1 :
-        BoundTablePanel.this.myList.indexOf(first)
-      );
+      T first = ((chosen.isEmpty() ? null : chosen.get(0)));
+      return ((first == null) ? -1 : BoundTablePanel.this.myList.indexOf(first));
     }
   }
 }

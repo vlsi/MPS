@@ -31,12 +31,12 @@ public class UnrestrictedFunctionType_Behavior {
 
   public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
+    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
       sb.append("_return");
     } else {
       sb.append("_void");
     }
-    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{}) != null)) {
+    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{}) != null)) {
       sb.append("_terminate");
     } else {
       sb.append("_void");
@@ -56,10 +56,7 @@ public class UnrestrictedFunctionType_Behavior {
       List<SNode> args = SLinkOperations.getTargets(SNodeOperations.cast(tt, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
       tt = ListSequence.fromList(args).getElement(0);
     }
-    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
-      tt :
-      null
-    );
+    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ? tt : null);
   }
 
   @Deprecated

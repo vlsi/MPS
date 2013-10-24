@@ -32,7 +32,7 @@ public class NodeFactories_Behavior {
 
   @Deprecated
   public static List<SNode> call_getBaseConceptCollection_5270353093116089378(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
   }
 
   @Deprecated
@@ -42,7 +42,7 @@ public class NodeFactories_Behavior {
 
   @Deprecated
   public static List<SNode> callSuper_getBaseConceptCollection_5270353093116089378(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeFactories"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeFactories"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

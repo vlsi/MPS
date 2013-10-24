@@ -61,48 +61,12 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a1b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a2b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a3b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
-    style.set(StyleAttributes.FONT_STYLE, CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a4b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.UNDERLINED, CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a5b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.STRIKE_OUT, CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a6b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a1b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a2b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a3b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.FONT_STYLE, CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a4b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.UNDERLINED, CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a5b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.STRIKE_OUT, CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_rbbf37_a6b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

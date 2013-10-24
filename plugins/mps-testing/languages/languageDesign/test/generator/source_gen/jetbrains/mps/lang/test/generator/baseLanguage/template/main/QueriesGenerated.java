@@ -98,7 +98,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603580889(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TestsUtil.getTestBodyClassName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTestCase_1216134500045", new Object[]{}));
+    return TestsUtil.getTestBodyClassName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getTestCase_1216134500045", new Object[]{}));
   }
 
   public static Object propertyMacro_GetPropertyValue_1221573038180(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -234,7 +234,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1216995908944(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), _context.getNode(), "virtual_getTestSet_1216130724401", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), _context.getNode(), "virtual_getTestSet_1216130724401", new Object[]{});
   }
 
   public static Iterable sourceNodesQuery_1225975607726(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

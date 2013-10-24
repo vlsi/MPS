@@ -51,7 +51,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7057666463730728106(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getResultType_7057666463730718251", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getResultType_7057666463730718251", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_7057666463730783295(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -59,7 +59,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8009360033694992840(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getResultType_7057666463730718251", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getResultType_7057666463730718251", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_8009360033695057975(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -85,14 +85,14 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_5867364036373952047(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode context = Builder_Behavior.call_getContextBuilder_7057666463730306577(_context.getNode());
     SNode ref = _quotation_createNode_x583g4_a0b0o(_context.getOutputNodeByInputNodeAndMappingLabel(context, "builderVar"));
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getCreatorExpression_7057666463730727863", new Object[]{ref});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getCreatorExpression_7057666463730727863", new Object[]{ref});
   }
 
   public static SNode mapSrcMacro_mapper_5867364036373950596(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode childRef = _quotation_createNode_x583g4_a0a0p(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "builder", true), "builderVar"));
     SNode parentBuilder = Builder_Behavior.call_getContextBuilder_7057666463730306577(SLinkOperations.getTarget(_context.getNode(), "builder", true));
     SNode parentRef = _quotation_createNode_x583g4_a0c0p(_context.getOutputNodeByInputNodeAndMappingLabel(parentBuilder, "builderVar"));
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parentBuilder, "virtual_getAttachStatement_7288041816792215495", new Object[]{SLinkOperations.getTarget(_context.getNode(), "builder", true), parentRef, childRef});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), parentBuilder, "virtual_getAttachStatement_7288041816792215495", new Object[]{SLinkOperations.getTarget(_context.getNode(), "builder", true), parentRef, childRef});
   }
 
   private static SNode _quotation_createNode_x583g4_a0b0o(Object parameter_1) {

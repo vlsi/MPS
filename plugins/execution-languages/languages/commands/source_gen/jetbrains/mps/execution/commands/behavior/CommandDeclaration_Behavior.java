@@ -116,7 +116,7 @@ public class CommandDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_createType_856705193941282121(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createType_1213877527970", new Object[]{});
   }
 
   @Deprecated
@@ -126,7 +126,7 @@ public class CommandDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1, Object parameter_2) {
@@ -139,16 +139,10 @@ public class CommandDeclaration_Behavior {
   }
 
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0f(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

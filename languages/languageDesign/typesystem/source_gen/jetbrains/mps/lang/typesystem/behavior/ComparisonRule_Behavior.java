@@ -18,11 +18,11 @@ public class ComparisonRule_Behavior {
 
   @Deprecated
   public static SNode call_getSecondNodeCondition_4484478261143589913(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getSecondNodeCondition_4484478261143589913(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", new Class[]{SNode.class}, new Object[]{});
   }
 }

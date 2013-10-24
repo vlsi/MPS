@@ -18,10 +18,7 @@ public class TargetDeclaration_Behavior {
 
   public static String call_getTargetFqName_899969561582409481(SNode thisNode) {
     String ffqn = FacetDeclaration_Behavior.call_getFacetFqName_1919086248986828221(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.make.facet.structure.FacetDeclaration"));
-    return (ffqn != null ?
-      ffqn + "." + SPropertyOperations.getString(thisNode, "name") :
-      SPropertyOperations.getString(thisNode, "name")
-    );
+    return (ffqn != null ? ffqn + "." + SPropertyOperations.getString(thisNode, "name") : SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {

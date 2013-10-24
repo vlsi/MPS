@@ -27,7 +27,7 @@ public class PriorityQueueCreator_Behavior {
   }
 
   public static List<SNode> virtual_getAvailableFor_3044950653914717035(SAbstractConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "virtual_getAvailableFor_3044950653914717035", new Object[]{});
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) (Object.class)), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "virtual_getAvailableFor_3044950653914717035", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "5686963296372475025"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1151689724996"));
     return result;

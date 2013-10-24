@@ -97,10 +97,7 @@ public class RuleUtil {
       return null;
     }
     String result = SPropertyOperations.getString(mappingLabelDeclaration, "name");
-    return (result.length() == 0 ?
-      null :
-      result
-    );
+    return (result.length() == 0 ? null : result);
   }
 
   public static String getCreateRootRuleLabel(SNode rule) {

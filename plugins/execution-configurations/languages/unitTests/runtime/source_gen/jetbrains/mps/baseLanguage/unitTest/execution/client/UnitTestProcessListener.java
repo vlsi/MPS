@@ -48,17 +48,11 @@ public class UnitTestProcessListener extends ProcessAdapter {
     }
     boolean error = ProcessOutputTypes.STDERR.equals(k);
     boolean system = ProcessOutputTypes.SYSTEM.equals(k);
-    String text = (error || system ?
-      event.getText() :
-      this.getLine(event.getText())
-    );
+    String text = (error || system ? event.getText() : this.getLine(event.getText()));
     if (text == null) {
       return;
     }
-    String textTrimmed = ((text == null ?
-      null :
-      text.trim()
-    ));
+    String textTrimmed = ((text == null ? null : text.trim()));
     TestEvent testEvent = TestEvent.parse(textTrimmed);
     if (testEvent != null) {
       myLastEvent = testEvent;

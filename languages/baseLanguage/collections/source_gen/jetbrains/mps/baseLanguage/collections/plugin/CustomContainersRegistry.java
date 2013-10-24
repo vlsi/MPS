@@ -62,10 +62,7 @@ public class CustomContainersRegistry {
 
   public SModule getOwningModule(SModel model) {
     SModel fmdesc = model;
-    return (fmdesc != null ?
-      fmdesc.getModule() :
-      null
-    );
+    return (fmdesc != null ? fmdesc.getModule() : null);
   }
 
   private Iterable<SNode> primAllCustomContainers() {

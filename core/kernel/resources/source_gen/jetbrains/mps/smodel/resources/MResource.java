@@ -46,6 +46,6 @@ public class MResource extends MultiTuple._2<SModule, Iterable<SModel>> implemen
   }
 
   public IPropertiesIO getProperties() {
-    return new FlatFilePropertiesIO(((AbstractModule) this.module()).getDescriptorFile());
+    return new FlatFilePropertiesIO(((AbstractModule) (this.module())).getDescriptorFile());
   }
 }

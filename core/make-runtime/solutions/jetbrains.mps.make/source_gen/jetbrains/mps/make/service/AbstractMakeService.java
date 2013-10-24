@@ -88,20 +88,17 @@ public abstract class AbstractMakeService implements IMakeService {
         }
       }).toListSequence();
 
-      Iterable<IScript> scripts = ((defaultScript != null ?
-        Sequence.fromIterable(scriptBuilders).select(new ISelector<ScriptBuilder, IScript>() {
-          public IScript select(ScriptBuilder it) {
-            return defaultScript;
-          }
-        }) :
-        Sequence.fromIterable(scriptBuilders).select(new ISelector<ScriptBuilder, IScript>() {
-          public IScript select(ScriptBuilder scb) {
-            return toScript(scb);
-          }
-        })
-      ));
+      Iterable<IScript> scripts = ((defaultScript != null ? Sequence.fromIterable(scriptBuilders).select(new ISelector<ScriptBuilder, IScript>() {
+        public IScript select(ScriptBuilder it) {
+          return defaultScript;
+        }
+      }) : Sequence.fromIterable(scriptBuilders).select(new ISelector<ScriptBuilder, IScript>() {
+        public IScript select(ScriptBuilder scb) {
+          return toScript(scb);
+        }
+      })));
 
-      return processClusteredInput((Iterable<? extends Iterable<IResource>>) clInput.value, scripts, controller, monitor);
+      return processClusteredInput((Iterable<? extends Iterable<IResource>>) (clInput.value), scripts, controller, monitor);
     }
 
     protected IScript toScript(ScriptBuilder scriptBuilder) {

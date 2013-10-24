@@ -11,7 +11,7 @@
     <nodeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="35" startPosition="0" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5389944367239985853" fileName="QueryExpression_Constraints.java" startLine="39" startPosition="139" endLine="40" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7284872370244295072" fileName="QueryExpression_Constraints.java" startLine="41" startPosition="113" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7284872370239740852" fileName="QueryExpression_Constraints.java" startLine="44" startPosition="118" endLine="45" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7284872370239740852" fileName="QueryExpression_Constraints.java" startLine="44" startPosition="118" endLine="45" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7284872370239738311" fileName="QueryExpression_Constraints.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeAncesctorBreakingPoint" />
     <nodeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExpression_Constraints#()V" />
@@ -25,7 +25,7 @@
     <scopeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="24" startPosition="46" endLine="25" endPosition="16" />
     <scopeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="32" startPosition="51" endLine="33" endPosition="71" />
     <scopeInfo nodeId="7284872370244286875" fileName="QueryExpression_Constraints.java" startLine="41" startPosition="113" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="7284872370239729759" fileName="QueryExpression_Constraints.java" startLine="44" startPosition="118" endLine="45" endPosition="336" />
+    <scopeInfo nodeId="7284872370239729759" fileName="QueryExpression_Constraints.java" startLine="44" startPosition="118" endLine="45" endPosition="338" />
     <scopeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="7284872370239728884" fileName="QueryExpression_Constraints.java" startLine="29" startPosition="169" endLine="36" endPosition="18">

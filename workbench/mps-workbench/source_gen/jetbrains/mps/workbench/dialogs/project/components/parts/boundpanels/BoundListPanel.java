@@ -67,14 +67,8 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
       }
       BoundListPanel.this.myList.addAll(chosen);
       super.doAdd(e);
-      T first = ((chosen.isEmpty() ?
-        null :
-        chosen.get(0)
-      ));
-      return ((first == null) ?
-        -1 :
-        BoundListPanel.this.myList.indexOf(first)
-      );
+      T first = ((chosen.isEmpty() ? null : chosen.get(0)));
+      return ((first == null) ? -1 : BoundListPanel.this.myList.indexOf(first));
     }
   }
 

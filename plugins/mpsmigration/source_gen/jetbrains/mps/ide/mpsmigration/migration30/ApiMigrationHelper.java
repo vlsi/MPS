@@ -176,7 +176,7 @@ public class ApiMigrationHelper {
 
     // replace method calls 
     Set<SNode> methods = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(methods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), oldNode, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
+    SetSequence.fromSet(methods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), oldNode, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
 
     Set<SReference> musages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) methods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
 
@@ -209,7 +209,7 @@ public class ApiMigrationHelper {
     // static method calls 
     if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(smethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})));
+      SetSequence.fromSet(smethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})));
 
       Set<jetbrains.mps.smodel.SReference> smusages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) smethods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
 
@@ -302,7 +302,7 @@ public class ApiMigrationHelper {
   }
 
   private SNode getNewMethod(SNode old, SNode newClass) {
-    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), newClass, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).union(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0a91(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})))) {
+    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), newClass, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).union(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0a91(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})))) {
       if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_hasSameSignature_1213877350435", new Object[]{old})) {
         return method;
       }
@@ -514,16 +514,10 @@ public class ApiMigrationHelper {
   }
 
   private static boolean eq_yke5lt_a0c0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_yke5lt_a0d0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -80,18 +80,12 @@ public class convert_to_from_unrestricted_Intention implements IntentionFactory 
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      String type = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ?
-        "Unrestricted" :
-        "Restricted"
-      );
+      String type = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ? "Unrestricted" : "Restricted");
       return "Convert to " + type + " Closure Literal";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode cl = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ?
-        SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", null) :
-        SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null)
-      );
+      SNode cl = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ? SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", null) : SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null));
       SNodeOperations.replaceWithAnother(node, cl);
       List<SNode> params = SLinkOperations.getTargets(node, "parameter", true);
       for (SNode p : params) {

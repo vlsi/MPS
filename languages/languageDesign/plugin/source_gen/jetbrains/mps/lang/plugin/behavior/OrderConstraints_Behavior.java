@@ -13,7 +13,7 @@ public class OrderConstraints_Behavior {
 
   @Deprecated
   public static SNode call_getOrder_3038738109029048953(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOrder_3038738109029048953", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getOrder_3038738109029048953", new Object[]{});
   }
 
   @Deprecated
@@ -23,7 +23,7 @@ public class OrderConstraints_Behavior {
 
   @Deprecated
   public static SNode callSuper_getOrder_3038738109029048953(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_getOrder_3038738109029048953", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_getOrder_3038738109029048953", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

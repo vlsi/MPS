@@ -29,7 +29,7 @@ import jetbrains.mps.util.NameUtil;
   }
 
   /*package*/ EditorComponentDeclarationScope(SNode editorComponent) {
-    this(SNodeOperations.getModel(editorComponent), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));
+    this(SNodeOperations.getModel(editorComponent), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));
   }
 
   private static Collection<SModel> getModels(SModel model) {
@@ -50,6 +50,6 @@ import jetbrains.mps.util.NameUtil;
   @Override
   public boolean isExcluded(SNode node) {
     SNode editorComponent = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
-    return editorComponent == null || SLinkOperations.getTarget(editorComponent, "overridenEditorComponent", true) != null || !(SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(myConceptDeclaration)));
+    return editorComponent == null || SLinkOperations.getTarget(editorComponent, "overridenEditorComponent", true) != null || !(SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(myConceptDeclaration)));
   }
 }

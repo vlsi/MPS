@@ -34,8 +34,8 @@ public class BuildGeneratorUtil {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           model.value = solution.getModelRoots().iterator().next().createModel(modelName);
-          ((EditableSModel) model.value).setChanged(true);
-          solution.registerModel((SModelBase) model.value);
+          ((EditableSModel) (model.value)).setChanged(true);
+          solution.registerModel((SModelBase) (model.value));
         }
       });
     }

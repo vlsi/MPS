@@ -85,7 +85,7 @@ public class EditGivenNode_Action extends BaseAction {
   }
 
   public static String targetNode_State(SNodeReference object) {
-    return ((SNodePointer) object).toString();
+    return ((SNodePointer) (object)).toString();
   }
 
   public static String text_State(String object) {

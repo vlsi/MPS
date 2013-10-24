@@ -321,10 +321,7 @@ public class ConceptPropertiesHelper {
       SetSequence.fromSet(conceptLinks).removeElement(link);
     }
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a41a42(reference));
-    return (addMethodToBehavior(conceptNode, method) ?
-      method :
-      null
-    );
+    return (addMethodToBehavior(conceptNode, method) ? method : null);
 
   }
 
@@ -620,7 +617,7 @@ public class ConceptPropertiesHelper {
   }
 
   private void migrateAccess(SNode source, SNode conceptExpression, SNode expression) {
-    SNode type = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), source, "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{});
+    SNode type = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), source, "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{});
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType") || (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeType") && SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       SNodeOperations.replaceWithAnother(source, conceptExpression);
     } else {
@@ -1389,135 +1386,78 @@ public class ConceptPropertiesHelper {
   }
 
   private static boolean neq_azpnkk_a0a4b0k0n(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_azpnkk_a0a0a2a52(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0a0c0z(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0a0a2a52(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0a0a0c0z(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0a0a0c0z_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0b0e0bb(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a1a4a72(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0b1a4a72(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0c1a4a72(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0d1a4a72(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0e0fb(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0a4a13(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0b0a4a13(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0c0a4a13(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0d0a4a13(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0c0jb(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a0a2a53(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_azpnkk_a0a7a3a53(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

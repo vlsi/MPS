@@ -55,10 +55,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     }
 
     AbstractTestWrapper that = (AbstractTestWrapper) o;
-    if ((this.myNodePointer != null ?
-      !(((Object) this.myNodePointer).equals(that.myNodePointer)) :
-      that.myNodePointer != null
-    )) {
+    if ((this.myNodePointer != null ? !(((Object) this.myNodePointer).equals(that.myNodePointer)) : that.myNodePointer != null)) {
       return false;
     }
 
@@ -68,10 +65,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((this.myNodePointer != null ?
-      ((Object) this.myNodePointer).hashCode() :
-      0
-    ));
+    result = 31 * result + ((this.myNodePointer != null ? ((Object) this.myNodePointer).hashCode() : 0));
     return result;
   }
 

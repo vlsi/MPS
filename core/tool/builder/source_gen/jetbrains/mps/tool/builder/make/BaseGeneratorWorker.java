@@ -75,10 +75,7 @@ public class BaseGeneratorWorker extends MpsWorker {
       if (parallelMode) {
         GenerationSettingsProvider.getInstance().getGenerationSettings().setNumberOfParallelThreads(8);
       }
-      info("Generating in strict mode, parallel generation = " + ((parallelMode ?
-        "on" :
-        "off"
-      )));
+      info("Generating in strict mode, parallel generation = " + ((parallelMode ? "on" : "off")));
     }
   }
 
@@ -185,7 +182,7 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     }).translate(new ITranslator2<SModule, SModule>() {
       public Iterable<SModule> translate(SModule it) {
-        return (List<SModule>) (List) ((Language) it).getGenerators();
+        return (List<SModule>) ((List) ((Language) it).getGenerators());
       }
     }));
   }

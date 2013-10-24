@@ -10,15 +10,9 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public class OutputRoot_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append((SPropertyOperations.getString(node, "name") == null ?
-      "<no name>" :
-      SPropertyOperations.getString(node, "name")
-    ));
+    this.append((SPropertyOperations.getString(node, "name") == null ? "<no name>" : SPropertyOperations.getString(node, "name")));
     this.append(" : ");
-    this.append((SPropertyOperations.getString(node, "text") == null ?
-      "<no text>" :
-      SPropertyOperations.getString(node, "text")
-    ));
+    this.append((SPropertyOperations.getString(node, "text") == null ? "<no text>" : SPropertyOperations.getString(node, "text")));
     if ((SLinkOperations.getTarget(node, "specialChild", true) != null)) {
       this.appendNewLine();
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "specialChild", true), this.getSNode());

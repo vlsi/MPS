@@ -60,10 +60,10 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
     int rightOffset = getOffset(getRightViewport());
 
     for (ChangeGroup group : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
-      int leftStart = (int) group.getLeftBounds().start() + leftOffset;
-      int leftEnd = (int) group.getLeftBounds().end() + leftOffset;
-      int rightStart = (int) group.getRightBounds().start() + rightOffset;
-      int rightEnd = (int) group.getRightBounds().end() + rightOffset;
+      int leftStart = (int) (group.getLeftBounds().start()) + leftOffset;
+      int leftEnd = (int) (group.getLeftBounds().end()) + leftOffset;
+      int rightStart = (int) (group.getRightBounds().start()) + rightOffset;
+      int rightEnd = (int) (group.getRightBounds().end()) + rightOffset;
       MapSequence.fromMap(myGroupsWithBounds).put(group, MultiTuple.<Bounds,Bounds>from(new Bounds(leftStart, leftEnd), new Bounds(rightStart, rightEnd)));
     }
 
@@ -90,13 +90,13 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
         Bounds left = groupWithBounds.value()._0();
         Bounds right = groupWithBounds.value()._1();
         int[] xx = new int[]{0, getWidth(), getWidth(), 0};
-        int[] yy = new int[]{(int) left.start(), (int) right.start(), (int) right.end(), (int) left.end()};
+        int[] yy = new int[]{(int) (left.start()), (int) (right.start()), (int) (right.end()), (int) (left.end())};
 
         g.setColor(ChangeColors.get(groupWithBounds.key().getChangeType()));
         g.fillPolygon(xx, yy, 4);
         g.setColor(ChangeColors.get(groupWithBounds.key().getChangeType()).darker());
-        g.drawLine(0, (int) left.start(), getWidth() - 1, (int) right.start());
-        g.drawLine(0, (int) left.end(), getWidth() - 1, (int) right.end());
+        g.drawLine(0, (int) (left.start()), getWidth() - 1, (int) (right.start()));
+        g.drawLine(0, (int) (left.end()), getWidth() - 1, (int) (right.end()));
       }
     }
   }
@@ -130,8 +130,8 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
         public boolean accept(IMapping<ChangeGroup, Tuples._2<Bounds, Bounds>> g) {
           Bounds left = g.value()._0();
           Bounds right = g.value()._1();
-          int v1 = vectorProduct((int) left.start(), (int) right.start(), p.x, p.y);
-          int v2 = vectorProduct((int) left.end(), (int) right.end(), p.x, p.y);
+          int v1 = vectorProduct((int) (left.start()), (int) (right.start()), p.x, p.y);
+          int v2 = vectorProduct((int) (left.end()), (int) (right.end()), p.x, p.y);
           return v1 > 0 && v2 < 0;
         }
       });

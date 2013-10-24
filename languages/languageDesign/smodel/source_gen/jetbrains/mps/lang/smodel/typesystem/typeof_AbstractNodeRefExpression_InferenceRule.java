@@ -23,7 +23,7 @@ public class typeof_AbstractNodeRefExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = nodeRef;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3575813534625199214", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3575813534625199225", true), (SNode) _quotation_createNode_4ern9z_a0a0b(SNodeOperations.getConceptDeclaration(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeRef, "virtual_getTargetNode_3575813534625153815", new Object[]{}))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3575813534625199225", true), (SNode) _quotation_createNode_4ern9z_a0a0b(SNodeOperations.getConceptDeclaration(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), nodeRef, "virtual_getTargetNode_3575813534625153815", new Object[]{}))), _info_12389875345);
     }
   }
 

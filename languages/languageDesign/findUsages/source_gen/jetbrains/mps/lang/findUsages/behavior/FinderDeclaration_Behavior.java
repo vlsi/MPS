@@ -41,7 +41,7 @@ public class FinderDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_getBaseConcept_8952337903384724634(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
   }
 
   @Deprecated
@@ -51,7 +51,7 @@ public class FinderDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_getBaseConcept_8952337903384724634(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

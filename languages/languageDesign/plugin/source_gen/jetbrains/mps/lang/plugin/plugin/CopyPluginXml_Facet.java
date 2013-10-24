@@ -80,7 +80,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ehksfb_a0a = null;
-          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
+          final Iterable<TResource> input = (Iterable<TResource>) ((Iterable) rawInput);
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);
@@ -90,7 +90,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                   String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
 
                   if (dest != null) {
-                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) tres.module()).expandPath(dest));
+                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) (tres.module())).expandPath(dest));
                     if (destDir.exists() && destDir.isDirectory()) {
                       final IFile metaInf = destDir.getDescendant("META-INF");
                       if (!(metaInf.exists()) || metaInf.isDirectory()) {
@@ -222,10 +222,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
     }
 
     private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a4j(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 

@@ -28,10 +28,10 @@ public class Sample extends MultiTuple._1<Integer> implements ISample {
   }
 
   public String getSample() {
-    return "<" + (int) this.i() + ">";
+    return "<" + (int) (this.i()) + ">";
   }
 
   public int get() {
-    return (int) this.i();
+    return (int) (this.i());
   }
 }

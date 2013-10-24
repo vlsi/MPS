@@ -62,7 +62,7 @@ public class SNodeUtil {
   }
 
   public static List<SNode> findAllAspects(SNode node) {
-    return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{});
+    return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{});
   }
 
   public static int getMetaLevel(SNode node) {

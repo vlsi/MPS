@@ -136,11 +136,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2284201910209561272(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{})), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{})), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_2284201910209640652(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_8953981490813374955(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -234,10 +234,7 @@ public class QueriesGenerated {
         return SNodeOperations.cast(it, "jetbrains.mps.console.blCommand.structure.QueryParameterScope");
       }
     });
-    return (Sequence.fromIterable(results).isEmpty() ?
-      _quotation_createNode_x583g4_a0b0mb() :
-      SLinkOperations.getTarget(Sequence.fromIterable(results).first(), "value", true)
-    );
+    return (Sequence.fromIterable(results).isEmpty() ? _quotation_createNode_x583g4_a0b0mb() : SLinkOperations.getTarget(Sequence.fromIterable(results).first(), "value", true));
   }
 
   public static SNode sourceNodeQuery_4307205004142895894(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -246,10 +243,7 @@ public class QueriesGenerated {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly");
       }
     });
-    return (Sequence.fromIterable(results).isEmpty() ?
-      _quotation_createNode_x583g4_a0b0nb_0() :
-      _quotation_createNode_x583g4_a0b0nb()
-    );
+    return (Sequence.fromIterable(results).isEmpty() ? _quotation_createNode_x583g4_a0b0nb_0() : _quotation_createNode_x583g4_a0b0nb());
   }
 
   public static SNode sourceNodeQuery_8953981490812991962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

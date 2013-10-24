@@ -32,24 +32,15 @@ public class MakeActionParameters {
 
   public MakeActionParameters(IOperationContext context, Iterable<SModel> models, SModel cmodel, Iterable<SModule> modules, SModule cmodule) {
     this.context = context;
-    this.models = (models != null ?
-      ListSequence.fromListWithValues(new ArrayList<SModel>(), models) :
-      null
-    );
+    this.models = (models != null ? ListSequence.fromListWithValues(new ArrayList<SModel>(), models) : null);
     this.cmodel = cmodel;
-    this.modules = (modules != null ?
-      ListSequence.fromListWithValues(new ArrayList<SModule>(), modules) :
-      null
-    );
+    this.modules = (modules != null ? ListSequence.fromListWithValues(new ArrayList<SModule>(), modules) : null);
     this.cmodule = cmodule;
   }
 
   public String actionText(boolean cleanMake) {
     StringBuilder sb = new StringBuilder();
-    sb.append((cleanMake ?
-      "Rebuild " :
-      "Make "
-    ));
+    sb.append((cleanMake ? "Rebuild " : "Make "));
     SModule module = this.moduleToMake();
     SModel model = this.modelToMake();
     if (model != null) {

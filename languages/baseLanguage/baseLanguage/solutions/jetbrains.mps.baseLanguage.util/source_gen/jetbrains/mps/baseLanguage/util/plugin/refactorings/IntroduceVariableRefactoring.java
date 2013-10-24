@@ -54,7 +54,7 @@ public abstract class IntroduceVariableRefactoring {
       if (expectedVariableName != null) {
         ListSequence.fromList(expectedNames).addElement(NameUtil.decapitalize(expectedVariableName));
       }
-      List<String> variableSuffixes = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), myExpressionType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+      List<String> variableSuffixes = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), myExpressionType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
       if (variableSuffixes != null) {
         ListSequence.fromList(expectedNames).addSequence(ListSequence.fromList(variableSuffixes));
       }
@@ -73,7 +73,7 @@ public abstract class IntroduceVariableRefactoring {
   private SNode getExpressionType(SNode node) {
     SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(node), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.IInternalType")) {
-      expressionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.IInternalType"), "virtual_getPublicType_1213877443338", new Object[]{});
+      expressionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.IInternalType"), "virtual_getPublicType_1213877443338", new Object[]{});
     }
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode exprClassifier = SLinkOperations.getTarget(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);

@@ -17,7 +17,7 @@ public class SimpleBuilderPropertyBuilder_Behavior {
   }
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "type", true), "virtual_getJavaType_1213877337345", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "type", true), "virtual_getJavaType_1213877337345", new Object[]{});
   }
 
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
@@ -43,17 +43,17 @@ public class SimpleBuilderPropertyBuilder_Behavior {
 
   @Deprecated
   public static SNode call_getResultType_5389689214217665421(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_7057666463730718251", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getResultType_7057666463730718251", new Object[]{});
   }
 
   @Deprecated
   public static SNode call_getCreatorExpression_5389689214217665417(SNode thisNode, SNode parentRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
   }
 
   @Deprecated
   public static SNode call_getAttachStatementChild_5389689214217667234(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAttachStatementChild_4797501453850305563", new Object[]{parentBuilder, parentRef, childRef});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getAttachStatementChild_4797501453850305563", new Object[]{parentBuilder, parentRef, childRef});
   }
 
   @Deprecated
@@ -63,16 +63,16 @@ public class SimpleBuilderPropertyBuilder_Behavior {
 
   @Deprecated
   public static SNode callSuper_getResultType_5389689214217665421(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getCreatorExpression_5389689214217665417(SNode thisNode, String callerConceptFqName, SNode parentRef) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", new Class[]{SNode.class, SNode.class}, new Object[]{parentRef});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", new Class[]{SNode.class, SNode.class}, new Object[]{parentRef});
   }
 
   @Deprecated
   public static SNode callSuper_getAttachStatementChild_5389689214217667234(SNode thisNode, String callerConceptFqName, SNode parentBuilder, SNode parentRef, SNode childRef) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getAttachStatementChild_4797501453850305563", new Class[]{SNode.class, SNode.class, SNode.class, SNode.class}, new Object[]{parentBuilder, parentRef, childRef});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getAttachStatementChild_4797501453850305563", new Class[]{SNode.class, SNode.class, SNode.class, SNode.class}, new Object[]{parentBuilder, parentRef, childRef});
   }
 }

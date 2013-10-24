@@ -22,7 +22,7 @@ public class typeof_LightQuotationPropertyValue_InferenceRule extends AbstractIn
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(val, "expression", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "8182547171709457965", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "8182547171709457945", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{}), true, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "8182547171709457945", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{}), true, true, _info_12389875345);
       }
     }
   }

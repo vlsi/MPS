@@ -632,13 +632,13 @@ public class JavaToMpsConverter {
     SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
 
     final String enumConstName = ((DynamicReference) ref).getResolveInfo();
-    for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
+    for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
       if (!(enumConstName.equals(BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{})))) {
         continue;
       }
 
       String enumClassCandidateName = BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_withoutLastToken_6148840541591441572", new Object[]{});
-      SNode enumClassCandidate = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, enumClassCandidateName});
+      SNode enumClassCandidate = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, enumClassCandidateName});
       if ((enumClassCandidate == null)) {
         // seems like there is no need to continue 
         // we had import of the form: import static <class>.<ourName> 
@@ -668,8 +668,8 @@ public class JavaToMpsConverter {
       return result;
     }
 
-    for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
-      SNode claz = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, SPropertyOperations.getString(onDemandImport, "tokens")});
+    for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
+      SNode claz = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, SPropertyOperations.getString(onDemandImport, "tokens")});
       if ((claz == null)) {
         continue;
       }
@@ -904,10 +904,7 @@ public class JavaToMpsConverter {
 
   private Iterable<SReference> getFieldAndMethodTypeRefs(SNode node) {
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
-    Iterable<SNode> members = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") ?
-      SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true) :
-      Sequence.<SNode>singleton(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))
-    );
+    Iterable<SNode> members = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") ? SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true) : Sequence.<SNode>singleton(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
 
     for (SNode member : Sequence.fromIterable(members)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
@@ -1048,10 +1045,7 @@ public class JavaToMpsConverter {
   }
 
   private SModel createModel(String pkgFqName, IFile pkgDir) {
-    ModelFactory factory = (myCreatePerRoot ?
-      PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID) :
-      PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL)
-    );
+    ModelFactory factory = (myCreatePerRoot ? PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID) : PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL));
 
     ModelRoot modelRoot;
     String sourceRoot;

@@ -271,10 +271,7 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_3jn7ig_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ((SLinkOperations.getTarget(node, "concept", false) != null) ?
-          BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "concept", false), "virtual_getFqName_1213877404258", new Object[]{}) :
-          "<not specitied>"
-        );
+        return ((SLinkOperations.getTarget(node, "concept", false) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "concept", false), "virtual_getFqName_1213877404258", new Object[]{}) : "<not specitied>");
       }
 
       public void setText(String s) {

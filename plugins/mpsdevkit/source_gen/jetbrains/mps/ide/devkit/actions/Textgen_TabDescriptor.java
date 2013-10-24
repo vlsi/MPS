@@ -60,11 +60,8 @@ public class Textgen_TabDescriptor extends RelationDescriptor {
   }
 
   public SNode getNode(SNode node) {
-    List<SNode> nodes = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.TEXT_GEN});
-    return (ListSequence.fromList(nodes).isEmpty() ?
-      null :
-      ListSequence.fromList(nodes).first()
-    );
+    List<SNode> nodes = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.TEXT_GEN});
+    return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
   }
 
   public List<SNode> getConcepts(final SNode node) {

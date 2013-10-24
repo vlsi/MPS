@@ -93,9 +93,6 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
   }
 
   private static boolean neq_x6ljyw_a0a0e(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

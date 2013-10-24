@@ -77,10 +77,7 @@ public class SetWithIndent_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Append " + (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{}) ?
-        "without" :
-        "with"
-      ) + " Indent";
+      return "Append " + (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{}) ? "without" : "with") + " Indent";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

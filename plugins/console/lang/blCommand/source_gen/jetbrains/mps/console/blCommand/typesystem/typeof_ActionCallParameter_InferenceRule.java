@@ -25,7 +25,7 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
   }
 
   public void applyRule(final SNode actionCallParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), actionCallParameter, "virtual_getParameterDeclaration_119903734736614698", new Object[]{}), "type", true);
+    SNode type = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), actionCallParameter, "virtual_getParameterDeclaration_119903734736614698", new Object[]{}), "type", true);
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
         SNode _nodeToCheck_1029348928467 = actionCallParameter;
@@ -72,9 +72,6 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
   }
 
   private static boolean eq_vuymlq_a0a0c0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

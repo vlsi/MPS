@@ -31,7 +31,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
     if (language == null) {
       return;
     }
-    List<SNode> superConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cd, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
+    List<SNode> superConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), cd, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
     Set<Language> extendedLanguages = LanguageDependenciesManager.getAllExtendedLanguages(language);
     for (SNode superConcept : superConcepts) {
       Language conceptLanguage = SModelUtil.getDeclaringLanguage(superConcept);

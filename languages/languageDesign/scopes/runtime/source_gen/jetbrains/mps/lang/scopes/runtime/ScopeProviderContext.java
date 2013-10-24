@@ -11,9 +11,9 @@ public class ScopeProviderContext {
 
   public <T> T process(_FunctionTypes._return_P1_E0<? extends T, ? super SNode> ifChild, _FunctionTypes._return_P2_E0<? extends T, ? super String, ? super Integer> ifRolePlusIndex) {
     if (this instanceof ScopeProviderContext.ChildContext) {
-      return ifChild.invoke(((ScopeProviderContext.ChildContext) this).child);
+      return ifChild.invoke(((ScopeProviderContext.ChildContext) (this)).child);
     } else {
-      return ifRolePlusIndex.invoke(((ScopeProviderContext.RolePlusIndexContext) this).role, ((ScopeProviderContext.RolePlusIndexContext) this).index);
+      return ifRolePlusIndex.invoke(((ScopeProviderContext.RolePlusIndexContext) (this)).role, ((ScopeProviderContext.RolePlusIndexContext) (this)).index);
     }
   }
 

@@ -56,10 +56,7 @@ public class OverridingMethodsFinder {
   private void collectOverridingMethodsInClassifierHierarchy(SNode classifier, final Map<String, Set<SNode>> nameToMethodsMap, final Set<SNode> visitedClassifiers) {
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode clazz = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-      SNode superClass = ((SLinkOperations.getTarget(clazz, "superclass", true) != null) ?
-        SLinkOperations.getTarget(SLinkOperations.getTarget(clazz, "superclass", true), "classifier", false) :
-        SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")
-      );
+      SNode superClass = ((SLinkOperations.getTarget(clazz, "superclass", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(clazz, "superclass", true), "classifier", false) : SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
       if (addIfNotContains(visitedClassifiers, superClass)) {
         collectOverridingMethods(superClass, nameToMethodsMap, visitedClassifiers);
       }
@@ -104,7 +101,7 @@ public class OverridingMethodsFinder {
     for (String methodName : SetSequence.fromSet(MapSequence.fromMap(nameToMethodsMap).keySet())) {
       SetSequence.fromSet(safeGet(methodNameToMethodMapCopy, methodName)).addSequence(SetSequence.fromSet(MapSequence.fromMap(nameToMethodsMap).get(methodName)));
     }
-    for (final SNode classifierMethod : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).where(new IWhereFilter<SNode>() {
+    for (final SNode classifierMethod : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return canBeOverriden(it);
       }
@@ -133,7 +130,7 @@ public class OverridingMethodsFinder {
   }
 
   public static Iterable<SNode> getInstanceMethods(SNode containingClassifier) {
-    Iterable<SNode> result = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), containingClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{});
+    Iterable<SNode> result = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), containingClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{});
     if (SNodeOperations.isInstanceOf(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
       for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(containingClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true))) {
         result = Sequence.fromIterable(result).concat(ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)));

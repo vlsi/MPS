@@ -40,7 +40,7 @@ public class MpsStartupSettingsEditorComponent extends JPanel {
     configuration.setSystemPath(configuration.shinkPath(mySystemPath.getText()));
     configuration.setConfigurationPath(configuration.shinkPath(myConfigurationPath.getText()));
     Tuples._2<Boolean, String> value = myProjectChooser.getValue();
-    configuration.setOpenCurrentProject((boolean) value._0());
+    configuration.setOpenCurrentProject((boolean) (value._0()));
     configuration.setProjectToOpen(configuration.shinkPath(value._1()));
   }
 

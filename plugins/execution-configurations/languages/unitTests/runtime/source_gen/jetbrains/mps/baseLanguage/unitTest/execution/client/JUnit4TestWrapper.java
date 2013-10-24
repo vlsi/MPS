@@ -56,7 +56,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     if (SPropertyOperations.getBoolean(SNodeOperations.cast(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       return false;
     }
-    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), clazz, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{}))) {
+    for (SNode method : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), clazz, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{}))) {
       if (JUnit4MethodWrapper.isJUnit4TestMethod(method)) {
         return true;
       }

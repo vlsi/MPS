@@ -28,11 +28,11 @@ public class ITemplateCall_Behavior {
 
   @Deprecated
   public static SNode call_deriveType_1722980698497626491(SNode thisNode, SNode expression) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_deriveType_1213877435747", new Object[]{expression});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_deriveType_1213877435747", new Object[]{expression});
   }
 
   @Deprecated
   public static SNode callSuper_deriveType_1722980698497626491(SNode thisNode, String callerConceptFqName, SNode expression) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.ITemplateCall"), callerConceptFqName, "virtual_deriveType_1213877435747", new Class[]{SNode.class, SNode.class}, new Object[]{expression});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.ITemplateCall"), callerConceptFqName, "virtual_deriveType_1213877435747", new Class[]{SNode.class, SNode.class}, new Object[]{expression});
   }
 }

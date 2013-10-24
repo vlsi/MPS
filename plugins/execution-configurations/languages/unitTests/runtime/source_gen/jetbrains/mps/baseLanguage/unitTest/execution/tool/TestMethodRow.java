@@ -91,26 +91,17 @@ public class TestMethodRow implements TestStatisticsRow {
 
   @Override
   public int getSuccessful() {
-    return (myState == SUCCEED ?
-      1 :
-      0
-    );
+    return (myState == SUCCEED ? 1 : 0);
   }
 
   @Override
   public int getErrored() {
-    return (myState == ERRORED ?
-      1 :
-      0
-    );
+    return (myState == ERRORED ? 1 : 0);
   }
 
   @Override
   public int getFailed() {
-    return (myState == FAILED ?
-      1 :
-      0
-    );
+    return (myState == FAILED ? 1 : 0);
   }
 
   @Override
@@ -119,16 +110,10 @@ public class TestMethodRow implements TestStatisticsRow {
   }
 
   private static boolean eq_52sp5f_a0a0a0a0a82(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_52sp5f_a0a0a0a82(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

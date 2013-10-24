@@ -811,10 +811,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1368513600865828086(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String varname = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
-    String val = ((varname.startsWith("tnode") ?
-      "tnodepart" :
-      "tlistpart"
-    )) + ((Integer) _context.getVariable("index"));
+    String val = ((varname.startsWith("tnode") ? "tnodepart" : "tlistpart")) + ((Integer) _context.getVariable("index"));
     _context.putTransientObject(_context.getNode(), val);
     return val;
   }
@@ -2951,13 +2948,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8371596541809530209(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode typeNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
+    SNode typeNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     if (SNodeOperations.isInstanceOf(typeNode, "jetbrains.mps.baseLanguage.structure.Type")) {
       SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.cast(typeNode, "jetbrains.mps.baseLanguage.structure.Type"));
-      return ((classifierType != null) ?
-        classifierType :
-        typeNode
-      );
+      return ((classifierType != null) ? classifierType : typeNode);
     }
     return typeNode;
   }
@@ -2976,10 +2970,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5659786285834812682(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "type", true));
-    return ((classifierType != null) ?
-      classifierType :
-      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "type", true)
-    );
+    return ((classifierType != null) ? classifierType : SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "type", true));
   }
 
   public static SNode sourceNodeQuery_9191117361655150401(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2998,18 +2989,12 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5577795813925496757(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(_context.getNode(), "type", true));
-    return ((classifierType != null) ?
-      classifierType :
-      SLinkOperations.getTarget(_context.getNode(), "type", true)
-    );
+    return ((classifierType != null) ? classifierType : SLinkOperations.getTarget(_context.getNode(), "type", true));
   }
 
   public static SNode sourceNodeQuery_5577795813925496660(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(_context.getNode(), "type", true));
-    return ((classifierType != null) ?
-      classifierType :
-      SLinkOperations.getTarget(_context.getNode(), "type", true)
-    );
+    return ((classifierType != null) ? classifierType : SLinkOperations.getTarget(_context.getNode(), "type", true));
   }
 
   public static SNode sourceNodeQuery_8371596541809419427(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -3149,17 +3134,11 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_7664108699562530008(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).isNotEmpty() ?
-      "contextWithParams" :
-      "context"
-    );
+    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).isNotEmpty() ? "contextWithParams" : "context");
   }
 
   public static Object templateArgumentQuery_1368513600865828224(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false), "parameter", true)).isNotEmpty() ?
-      "contextWithParams" :
-      "context"
-    );
+    return (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false), "parameter", true)).isNotEmpty() ? "contextWithParams" : "context");
   }
 
   public static Object templateArgumentQuery_1368513600865828248(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -3207,10 +3186,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_1520710884206584289(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
-      "context" + ((int[]) _context.getVariable("varindex"))[0] :
-      ((String) _context.getVariable("contextVar"))
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ? "context" + ((int[]) _context.getVariable("varindex"))[0] : ((String) _context.getVariable("contextVar")));
   }
 
   public static Object templateArgumentQuery_1520710884206584295(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -3218,10 +3194,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_1520710884206584349(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
-      "context" + ((int[]) _context.getVariable("varindex"))[0] :
-      ((String) _context.getVariable("contextVar"))
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ? "context" + ((int[]) _context.getVariable("varindex"))[0] : ((String) _context.getVariable("contextVar")));
   }
 
   public static Object templateArgumentQuery_1520710884206584384(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -3319,10 +3292,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_99767819676503532(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) ?
-      "context" + ((int[]) _context.getVariable("varindex"))[0] :
-      ((String) _context.getVariable("contextVar"))
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name")) ? "context" + ((int[]) _context.getVariable("varindex"))[0] : ((String) _context.getVariable("contextVar")));
   }
 
   public static Object templateArgumentQuery_99767819676503560(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -3334,10 +3304,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_1520710884206582504(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
-      "context" + ((int[]) _context.getVariable("varindex"))[0] :
-      ((String) _context.getVariable("contextVar"))
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ? "context" + ((int[]) _context.getVariable("varindex"))[0] : ((String) _context.getVariable("contextVar")));
   }
 
   public static Object templateArgumentQuery_1520710884206582530(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -3349,10 +3316,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_1520710884206582440(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ?
-      "context" + ((int[]) _context.getVariable("varindex"))[0] :
-      ((String) _context.getVariable("contextVar"))
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true) != null) ? "context" + ((int[]) _context.getVariable("varindex"))[0] : ((String) _context.getVariable("contextVar")));
   }
 
   public static Object templateArgumentQuery_1520710884206582466(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -3836,10 +3800,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1147906725605332210(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> result = (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).count() > 1 ?
-      ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).tailListSequence(1) :
-      new ArrayList<SNode>()
-    );
+    List<SNode> result = (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).count() > 1 ? ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).tailListSequence(1) : new ArrayList<SNode>());
     return result;
   }
 
@@ -3929,31 +3890,19 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5577795813925668106(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ?
-      ((Iterable<SNode>) _context.getVariable("arguments")) :
-      ListSequence.fromList(new ArrayList<SNode>())
-    );
+    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ? ((Iterable<SNode>) _context.getVariable("arguments")) : ListSequence.fromList(new ArrayList<SNode>()));
   }
 
   public static Iterable sourceNodesQuery_1520710884206584190(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ?
-      ((Iterable<SNode>) _context.getVariable("arguments")) :
-      ListSequence.fromList(new ArrayList<SNode>())
-    );
+    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ? ((Iterable<SNode>) _context.getVariable("arguments")) : ListSequence.fromList(new ArrayList<SNode>()));
   }
 
   public static Iterable sourceNodesQuery_965589097447684356(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ?
-      ((Iterable<SNode>) _context.getVariable("arguments")) :
-      ListSequence.fromList(new ArrayList<SNode>())
-    );
+    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ? ((Iterable<SNode>) _context.getVariable("arguments")) : ListSequence.fromList(new ArrayList<SNode>()));
   }
 
   public static Iterable sourceNodesQuery_965589097447684451(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ?
-      ((Iterable<SNode>) _context.getVariable("arguments")) :
-      ListSequence.fromList(new ArrayList<SNode>())
-    );
+    return (Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("arguments"))).isNotEmpty() ? ((Iterable<SNode>) _context.getVariable("arguments")) : ListSequence.fromList(new ArrayList<SNode>()));
   }
 
   public static Iterable sourceNodesQuery_6389702176794111038(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -4106,7 +4055,7 @@ public class QueriesGenerated {
       // references in 'get prev input by label' 
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
       for (SNode op : ops) {
-        SNode patternVar = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), op, "virtual_getTarget_1758784108620114792", new Object[]{});
+        SNode patternVar = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), op, "virtual_getTarget_1758784108620114792", new Object[]{});
         if (patternVar == null) {
           _context.showErrorMessage(op, "reference on pattern variable is broken");
           continue;
@@ -4165,23 +4114,14 @@ public class QueriesGenerated {
   }
 
   private static boolean eq_x583g4_a0a0xp(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_x583g4_a0a0yp(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_x583g4_a0a0c0d0b0neb(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

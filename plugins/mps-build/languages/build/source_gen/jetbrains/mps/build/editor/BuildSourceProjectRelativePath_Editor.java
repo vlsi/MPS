@@ -145,11 +145,8 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_698n2d_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode parent = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getParent_8654221991637145399", new Object[]{});
-        return (parent == null ?
-          "no parent" :
-          BehaviorReflection.invokeVirtual(String.class, parent, "virtual_getRelativePath_5481553824944787371", new Object[]{})
-        );
+        SNode parent = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), node, "virtual_getParent_8654221991637145399", new Object[]{});
+        return (parent == null ? "no parent" : BehaviorReflection.invokeVirtual(String.class, parent, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       }
 
       public void setText(String s) {

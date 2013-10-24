@@ -42,7 +42,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    ((RefactoringContext) refactoringContext).setLocal(true);
+    ((RefactoringContext) (refactoringContext)).setLocal(true);
 
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {

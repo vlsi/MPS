@@ -77,6 +77,6 @@ public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, 
   }
 
   public IPropertiesIO getProperties() {
-    return new FlatFilePropertiesIO(((AbstractModule) this.module()).getDescriptorFile());
+    return new FlatFilePropertiesIO(((AbstractModule) (this.module())).getDescriptorFile());
   }
 }

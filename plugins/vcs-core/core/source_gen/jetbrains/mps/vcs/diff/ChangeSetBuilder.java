@@ -99,14 +99,8 @@ public class ChangeSetBuilder {
   public void buildForReference(SNode oldNode, SNode newNode, String role) {
     SReference oldReference = oldNode.getReference(role);
     SReference newReference = newNode.getReference(role);
-    SNodeId oldTargetId = (oldReference instanceof DynamicReference ?
-      null :
-      check_nbyrtw_a0a2a9(oldReference)
-    );
-    SNodeId newTargetId = (newReference instanceof DynamicReference ?
-      null :
-      check_nbyrtw_a0a3a9(newReference)
-    );
+    SNodeId oldTargetId = (oldReference instanceof DynamicReference ? null : check_nbyrtw_a0a2a9(oldReference));
+    SNodeId newTargetId = (newReference instanceof DynamicReference ? null : check_nbyrtw_a0a3a9(newReference));
     SModelReference oldTargetModel = check_nbyrtw_a0e0j(oldReference);
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(oldNode).getReference().equals(oldTargetModel)) {
       oldTargetModel = null;
@@ -166,14 +160,14 @@ public class ChangeSetBuilder {
     for (Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> indices : ListSequence.fromList(differentIndices)) {
       Tuples._2<Integer, Integer> oldIndices = indices._0();
       Tuples._2<Integer, Integer> newIndices = indices._1();
-      ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, parentId, role, (int) oldIndices._0(), (int) oldIndices._1(), (int) newIndices._0(), (int) newIndices._1()));
+      ListSequence.fromList(myNewChanges).addElement(new NodeGroupChange(myChangeSet, parentId, role, (int) (oldIndices._0()), (int) (oldIndices._1()), (int) (newIndices._0()), (int) (newIndices._1())));
     }
 
     // Finding changes for children 
     List<Tuples._2<Integer, Integer>> commonIndices = finder.getCommonIndices();
     ListSequence.fromList(commonIndices).select(new ISelector<Tuples._2<Integer, Integer>, SNode>() {
       public SNode select(Tuples._2<Integer, Integer> in) {
-        return ListSequence.fromList(oldChildren).getElement((int) in._0());
+        return ListSequence.fromList(oldChildren).getElement((int) (in._0()));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode child) {
@@ -390,51 +384,30 @@ public class ChangeSetBuilder {
   }
 
   private static boolean eq_nbyrtw_a0a0i0j(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_nbyrtw_a0a0i0j_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_nbyrtw_a0a8a9(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static <T> T as_nbyrtw_a0a0h0q(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_nbyrtw_a0a0h0q_0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_nbyrtw_a0a0a0v(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_nbyrtw_a0b0a0v(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -13,11 +13,11 @@ public class AbstractConsoleScript_Behavior {
 
   @Deprecated
   public static Iterable<SNode> call_getCommands_2197843344734463936(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getCommands_2197843344734463936", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getCommands_2197843344734463936", new Object[]{});
   }
 
   @Deprecated
   public static Iterable<SNode> callSuper_getCommands_2197843344734463936(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.AbstractConsoleScript"), callerConceptFqName, "virtual_getCommands_2197843344734463936", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.AbstractConsoleScript"), callerConceptFqName, "virtual_getCommands_2197843344734463936", new Class[]{SNode.class}, new Object[]{});
   }
 }

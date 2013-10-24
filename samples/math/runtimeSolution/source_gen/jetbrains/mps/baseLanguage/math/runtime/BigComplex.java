@@ -41,10 +41,7 @@ public class BigComplex extends Number {
     if (myRealPart.signum() == 0) {
       return myImagPart + "*I";
     }
-    return "(" + myRealPart + ((myImagPart.signum() > 0 ?
-      "+" :
-      "-"
-    )) + myImagPart.abs() + "*I)";
+    return "(" + myRealPart + ((myImagPart.signum() > 0 ? "+" : "-")) + myImagPart.abs() + "*I)";
   }
 
   public BigDecimal re() {

@@ -3,8 +3,8 @@
   <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.checkedName.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:f922da3a-135f-4fe9-9051-9f018bc5c1bf(jetbrains.mps.lang.checkedName.typesystem)/1628770029971140613">
     <nodeInfo nodeId="5003188907305524502" fileName="FixNamingPolicy_QuickFix.java" startLine="18" startPosition="44" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1628770029971140620" fileName="FixNamingPolicy_QuickFix.java" startLine="23" startPosition="234" endLine="24" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1628770029971140637" fileName="FixNamingPolicy_QuickFix.java" startLine="26" startPosition="257" endLine="27" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1628770029971140620" fileName="FixNamingPolicy_QuickFix.java" startLine="23" startPosition="236" endLine="24" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1628770029971140637" fileName="FixNamingPolicy_QuickFix.java" startLine="26" startPosition="259" endLine="27" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1628770029971140648" fileName="FixNamingPolicy_QuickFix.java" startLine="27" startPosition="79" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1628770029971140653" fileName="FixNamingPolicy_QuickFix.java" startLine="28" startPosition="64" endLine="29" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixNamingPolicy_QuickFix#()V" />
@@ -14,7 +14,7 @@
     <nodeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="15" startPosition="37" endLine="15" endPosition="37" />
     <scopeInfo nodeId="1628770029971140669" fileName="FixNamingPolicy_QuickFix.java" startLine="18" startPosition="44" endLine="19" endPosition="31" />
-    <scopeInfo nodeId="1628770029971140619" fileName="FixNamingPolicy_QuickFix.java" startLine="23" startPosition="234" endLine="24" endPosition="123" />
+    <scopeInfo nodeId="1628770029971140619" fileName="FixNamingPolicy_QuickFix.java" startLine="23" startPosition="236" endLine="24" endPosition="123" />
     <scopeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1628770029971140613" fileName="FixNamingPolicy_QuickFix.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1628770029971140613" varName="node" />
@@ -22,7 +22,7 @@
     <scopeInfo nodeId="1628770029971140618" fileName="FixNamingPolicy_QuickFix.java" startLine="22" startPosition="35" endLine="25" endPosition="5">
       <varInfo nodeId="1628770029971140633" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1628770029971140636" fileName="FixNamingPolicy_QuickFix.java" startLine="26" startPosition="257" endLine="29" endPosition="74">
+    <scopeInfo nodeId="1628770029971140636" fileName="FixNamingPolicy_QuickFix.java" startLine="26" startPosition="259" endLine="29" endPosition="74">
       <varInfo nodeId="1628770029971140649" varName="newValue" />
       <varInfo nodeId="1628770029971140638" varName="value" />
     </scopeInfo>
@@ -105,7 +105,7 @@
     <nodeInfo nodeId="4844813484172611479" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="89" startPosition="130" endLine="90" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611479" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="94" startPosition="30" endLine="95" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611479" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_NamingPolicy_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="4844813484172611523" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="52" startPosition="197" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4844813484172611523" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="52" startPosition="199" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4844813484172611479" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4844813484172611479" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="4844813484172611479" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="87" startPosition="68" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -118,7 +118,7 @@
     <nodeInfo nodeId="4844813484172611508" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4844813484172611544" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="57" startPosition="97" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4844813484172611556" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="67" startPosition="9" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4844813484172611489" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="174" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4844813484172611489" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="176" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4844813484172611487" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="27" startPosition="137" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4844813484172611531" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="55" startPosition="7" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4844813484172611521" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="51" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -168,14 +168,14 @@
     <scopeInfo nodeId="4844813484172611495" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="29" startPosition="93" endLine="49" endPosition="9">
       <varInfo nodeId="4844813484172611497" varName="myWarning" />
     </scopeInfo>
-    <scopeInfo nodeId="4844813484172611488" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="174" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="4844813484172611488" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="28" startPosition="176" endLine="50" endPosition="7" />
     <scopeInfo nodeId="4844813484172611537" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="56" startPosition="60" endLine="78" endPosition="9">
       <varInfo nodeId="4844813484172611539" varName="myWarning" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611487" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="27" startPosition="137" endLine="51" endPosition="5">
       <varInfo nodeId="4844813484172611519" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="4844813484172611522" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="52" startPosition="197" endLine="79" endPosition="7" />
+    <scopeInfo nodeId="4844813484172611522" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="52" startPosition="199" endLine="79" endPosition="7" />
     <scopeInfo nodeId="4844813484172611521" fileName="check_NamingPolicy_NonTypesystemRule.java" startLine="51" startPosition="5" endLine="80" endPosition="5">
       <varInfo nodeId="4844813484172611578" varName="p" />
     </scopeInfo>

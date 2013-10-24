@@ -33,14 +33,11 @@ public class MpsScopesUtil {
 
   public static List<String> getMembersSignatures(SNode classifier) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (SNode member : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IClassifierType", "call_getMembers_7405920559687277275", new Object[]{})) {
+    for (SNode member : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IClassifierType", "call_getMembers_7405920559687277275", new Object[]{})) {
       if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
         ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
       } else {
-        ListSequence.fromList(result).addElement(((BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{}) ?
-          "static " :
-          ""
-        )) + getSignature(member, classifier));
+        ListSequence.fromList(result).addElement(((BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{}) ? "static " : "")) + getSignature(member, classifier));
       }
     }
     return result;

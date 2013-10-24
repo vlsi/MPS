@@ -55,9 +55,9 @@ public class ActionParameter_NameCellComponent implements ConceptEditorComponent
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
-      SNode nodeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getType_1171743928471337193", new Object[]{});
+      SNode nodeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), node, "virtual_getType_1171743928471337193", new Object[]{});
       if (nodeType != null) {
-        result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+        result = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }

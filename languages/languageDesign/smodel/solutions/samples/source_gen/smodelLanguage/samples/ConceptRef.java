@@ -36,7 +36,7 @@ public class ConceptRef {
   }
 
   public void concept_conceptLinkTargets(SNode conceptFunctionConcept) {
-    List<SNode> applicableParams = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(conceptFunctionConcept)), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
+    List<SNode> applicableParams = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(conceptFunctionConcept)), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
   }
 
   public void concept_types() {

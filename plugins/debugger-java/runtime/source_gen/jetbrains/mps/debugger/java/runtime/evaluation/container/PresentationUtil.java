@@ -22,10 +22,7 @@ public class PresentationUtil {
     }
 
     SNode lastStatement = ListSequence.fromList(statements).last();
-    String suffix = ((ListSequence.fromList(statements).count() > 1 ?
-      "..." :
-      ""
-    ));
+    String suffix = ((ListSequence.fromList(statements).count() > 1 ? "..." : ""));
 
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       return getExpressionPresentation(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)) + suffix;
@@ -76,10 +73,7 @@ public class PresentationUtil {
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
         public String combine(String s, SNode it) {
-          return (((s == null || s.length() == 0) ?
-            "" :
-            s + ","
-          )) + getExpressionPresentation(it);
+          return (((s == null || s.length() == 0) ? "" : s + ",")) + getExpressionPresentation(it);
         }
       }) + ")";
     }

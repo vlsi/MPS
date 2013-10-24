@@ -252,7 +252,7 @@ public class QueriesGenerated {
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode concept) {
-          SNode parameterOp = (SNode) concept;
+          SNode parameterOp = (SNode) (concept);
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftOperation = null;
           if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
@@ -372,7 +372,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return ((List<SNode>) BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{}));
+          return ((List<SNode>) BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{}));
         }
       }.compute();
       if (queryResult != null) {
@@ -448,7 +448,7 @@ public class QueriesGenerated {
     if (alreadyHasParms) {
       return false;
     }
-    return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
+    return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1179535189125(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {

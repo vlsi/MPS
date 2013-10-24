@@ -124,7 +124,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
             }
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
-            for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{})) {
+            for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "virtual_getParameters_1213877374450", new Object[]{})) {
               String alias = SPropertyOperations.getString(cfp, "conceptAlias");
               String description = SPropertyOperations.getString(cfp, "shortDescription");
               if (description == null) {

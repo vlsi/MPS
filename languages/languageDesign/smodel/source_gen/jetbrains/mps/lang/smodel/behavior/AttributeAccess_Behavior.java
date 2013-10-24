@@ -25,7 +25,7 @@ public class AttributeAccess_Behavior {
   }
 
   public static boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
-    return !(AttributeDesignTimeOperations.isMultipleAttribute(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{})) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
+    return !(AttributeDesignTimeOperations.isMultipleAttribute(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{})) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
   }
 
   public static boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
@@ -33,15 +33,12 @@ public class AttributeAccess_Behavior {
   }
 
   public static SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
   }
 
   public static SNode call_getAttributeContainerType_6960953357954139822(SNode thisNode) {
     SNode result = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
-    return ((result != null) && (SLinkOperations.getTarget(result, "concept", false) == null) ?
-      _quotation_createNode_q663c8_a0b0e() :
-      result
-    );
+    return ((result != null) && (SLinkOperations.getTarget(result, "concept", false) == null) ? _quotation_createNode_q663c8_a0b0e() : result);
   }
 
   public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
@@ -68,7 +65,7 @@ public class AttributeAccess_Behavior {
 
   @Deprecated
   public static SNode call_getTargetConcept_6960953357954063543(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetConcept_4024382256428848859", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getTargetConcept_4024382256428848859", new Object[]{});
   }
 
   @Deprecated
@@ -83,7 +80,7 @@ public class AttributeAccess_Behavior {
 
   @Deprecated
   public static SNode callSuper_getTargetConcept_6960953357954063543(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_q663c8_a0b0e() {

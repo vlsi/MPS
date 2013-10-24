@@ -20,7 +20,7 @@ public class ConceptFunctionParameter_node_Behavior {
       SNode editorTab = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false);
       return _quotation_createNode_luv170_a1a0a0(SLinkOperations.getTarget(editorTab, "baseNodeConcept", false));
     } else {
-      return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "virtual_getType_2443692612523876968", new Object[]{});
+      return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) (Object.class)), thisNode, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "virtual_getType_2443692612523876968", new Object[]{});
     }
   }
 

@@ -126,9 +126,6 @@ public class ConvertToList_Intention implements IntentionFactory {
   }
 
   private static boolean eq_63cojg_a0a0k(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

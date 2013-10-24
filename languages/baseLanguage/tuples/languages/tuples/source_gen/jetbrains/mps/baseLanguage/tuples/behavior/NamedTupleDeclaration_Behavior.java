@@ -58,7 +58,7 @@ public class NamedTupleDeclaration_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "extended", true) != null)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extended", true));
     } else {
-      ListSequence.fromList(result).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_3305065273710880775", new Object[]{}));
+      ListSequence.fromList(result).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_3305065273710880775", new Object[]{}));
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)));
     return result;
@@ -107,12 +107,12 @@ public class NamedTupleDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_getThisType_6742265879766289824(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getThisType_6742265879766289824(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {

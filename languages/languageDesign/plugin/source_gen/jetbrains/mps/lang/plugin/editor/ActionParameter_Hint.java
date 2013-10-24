@@ -61,13 +61,13 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
   }
 
   private static boolean renderingCondition_xpsq7t_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}) != null;
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}) != null;
   }
 
   private EditorCell createReadOnlyModelAccessor_xpsq7t_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), "annotation", true)).where(new IWhereFilter<SNode>() {
+        SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), "annotation", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a0a(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
           }
@@ -115,7 +115,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_xpsq7t_c0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), "annotation", true)).where(new IWhereFilter<SNode>() {
+        SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), "annotation", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a2a(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
           }

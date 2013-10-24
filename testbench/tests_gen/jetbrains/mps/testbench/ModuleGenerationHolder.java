@@ -173,14 +173,8 @@ public class ModuleGenerationHolder {
       return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
     }
     int idx = path.indexOf("/");
-    idx = (idx < 0 ?
-      path.indexOf(File.separator) :
-      idx
-    );
-    String tmp = tmpPath + "/" + ((idx < 0 ?
-      path.replace(':', '_') :
-      path.substring(idx + 1)
-    ));
+    idx = (idx < 0 ? path.indexOf(File.separator) : idx);
+    String tmp = tmpPath + "/" + ((idx < 0 ? path.replace(':', '_') : path.substring(idx + 1)));
     MapSequence.fromMap(path2tmp).put(path, tmp);
     return FileSystem.getInstance().getFileByPath(tmp);
   }
@@ -296,7 +290,7 @@ public class ModuleGenerationHolder {
       }
     }).translate(new ITranslator2<SModule, SModule>() {
       public Iterable<SModule> translate(SModule it) {
-        return (List<SModule>) (List) ((Language) it).getGenerators();
+        return (List<SModule>) ((List) ((Language) it).getGenerators());
       }
     }));
   }

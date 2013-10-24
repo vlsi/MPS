@@ -316,7 +316,7 @@ public class TransformationUtil {
       }
       return "L" + realFqName + ";";
     } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return getJniSignatureFromType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "virtual_getJavaType_1213877337345", new Object[]{}));
+      return getJniSignatureFromType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "virtual_getJavaType_1213877337345", new Object[]{}));
     } else {
       LOG.error("Unknown type, assuming it's void", type);
     }
@@ -421,7 +421,7 @@ public class TransformationUtil {
     } else
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
       SNode conceptFunction = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ConceptFunction");
-      returnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptFunction, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
+      returnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), conceptFunction, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     } else if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
       SNode closure = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
       returnType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(closure), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), false), "resultType", true);

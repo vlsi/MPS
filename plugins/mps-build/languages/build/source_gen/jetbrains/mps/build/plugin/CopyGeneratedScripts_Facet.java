@@ -88,7 +88,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ixa0pj_a0a = null;
-          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
+          final Iterable<TResource> input = (Iterable<TResource>) ((Iterable) rawInput);
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);
@@ -210,7 +210,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ixa0pj_a0b = null;
-          final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
+          final Iterable<GResource> input = (Iterable<GResource>) ((Iterable) rawInput);
           switch (0) {
             case 0:
               pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination(MapSequence.fromMap(new HashMap<SModelReference, Map<String, String>>()));

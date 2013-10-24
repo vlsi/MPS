@@ -21,7 +21,7 @@ public class AbstractNodeRefExpression_Behavior {
 
   public static Iterable<SNode> call_getPossibleTargetNodes_5207260697408415741(SNode thisNode) {
     List<SNode> thisList = new ArrayList<SNode>();
-    ListSequence.fromList(thisList).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{}));
+    ListSequence.fromList(thisList).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{}));
     Iterable<SNode> children = thisList;
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
     while (Sequence.fromIterable(children).isNotEmpty()) {
@@ -50,11 +50,11 @@ public class AbstractNodeRefExpression_Behavior {
 
   @Deprecated
   public static SNode call_getTargetNode_3575813534625153815(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getTargetNode_3575813534625153815(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"), callerConceptFqName, "virtual_getTargetNode_3575813534625153815", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression"), callerConceptFqName, "virtual_getTargetNode_3575813534625153815", new Class[]{SNode.class}, new Object[]{});
   }
 }

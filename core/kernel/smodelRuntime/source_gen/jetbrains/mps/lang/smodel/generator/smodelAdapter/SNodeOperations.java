@@ -72,10 +72,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    int metaLevel = (sameMetaLevel ?
-      SModelUtil_new.getMetaLevel(node) :
-      0
-    );
+    int metaLevel = (sameMetaLevel ? SModelUtil_new.getMetaLevel(node) : 0);
 
     // look up for certain concept 
     if (root) {
@@ -128,10 +125,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    int metaLevel = (sameMetaLevel ?
-      SModelUtil_new.getMetaLevel(node) :
-      0
-    );
+    int metaLevel = (sameMetaLevel ? SModelUtil_new.getMetaLevel(node) : 0);
     if (ancestorConceptFqNames.length == 0) {
       return null;
     }
@@ -227,15 +221,12 @@ public class SNodeOperations {
         result.add(node);
       }
     }
-    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ?
-      Condition.FALSE_CONDITION :
-      new Condition<SNode>() {
-        @Override
-        public boolean met(SNode node) {
-          return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
-        }
+    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
+      @Override
+      public boolean met(SNode node) {
+        return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
       }
-    );
+    });
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
       @Override
       public boolean met(SNode node) {
@@ -260,15 +251,12 @@ public class SNodeOperations {
         result.add(node);
       }
     }
-    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ?
-      Condition.FALSE_CONDITION :
-      new Condition<SNode>() {
-        @Override
-        public boolean met(SNode node) {
-          return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
-        }
+    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
+      @Override
+      public boolean met(SNode node) {
+        return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
       }
-    );
+    });
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
       @Override
       public boolean met(SNode node) {
@@ -536,7 +524,7 @@ public class SNodeOperations {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute")) {
         String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
-        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findPropertyDeclaration_1219835742593", new Object[]{propertyName}) == null)) {
+        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findPropertyDeclaration_1219835742593", new Object[]{propertyName}) == null)) {
           // no such property in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
           continue;
@@ -544,7 +532,7 @@ public class SNodeOperations {
       }
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
         String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"));
-        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{linkRole}) == null)) {
+        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{linkRole}) == null)) {
           // no such link in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
           continue;
@@ -596,10 +584,7 @@ public class SNodeOperations {
   }
 
   public static SNode getConceptDeclaration(SNode node) {
-    return (node == null ?
-      null :
-      SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance())
-    );
+    return (node == null ? null : SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance()));
   }
 
   public static int getIndexInParent(SNode node) {

@@ -94,7 +94,7 @@ public class Binaries_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_8acy7z_a0a = null;
-          final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
+          final Iterable<MResource> input = (Iterable<MResource>) ((Iterable) rawInput);
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);

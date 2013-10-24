@@ -233,42 +233,42 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1227368650766(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.BooleanType");
   }
 
   public static boolean baseMappingRule_Condition_1227368840236(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.ByteType");
   }
 
   public static boolean baseMappingRule_Condition_1227368862991(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.CharType");
   }
 
   public static boolean baseMappingRule_Condition_1227368876149(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.DoubleType");
   }
 
   public static boolean baseMappingRule_Condition_1227368888548(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.FloatType");
   }
 
   public static boolean baseMappingRule_Condition_1227368901987(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.IntegerType");
   }
 
   public static boolean baseMappingRule_Condition_1227368916442(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.LongType");
   }
 
   public static boolean baseMappingRule_Condition_1227368937786(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{_context.getNode()});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.ShortType");
   }
 
@@ -705,7 +705,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_7880518146486520374(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode parent = SNodeOperations.getParent(((SNode) _context.getVariable("dotExpr")));
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
-      SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{((SNode) _context.getVariable("dotExpr"))});
+      SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{((SNode) _context.getVariable("dotExpr"))});
       return SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType");
     }
     return false;
@@ -2264,7 +2264,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5187796033876227958(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode dType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(((SNode) _context.getVariable("newExpr"))), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{((SNode) _context.getVariable("newExpr"))});
+    SNode dType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.as(SNodeOperations.getParent(((SNode) _context.getVariable("newExpr"))), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{((SNode) _context.getVariable("newExpr"))});
     if ((dType == null)) {
       dType = TypeChecker.getInstance().getTypeOf(((SNode) _context.getVariable("newExpr")));
     }
@@ -2605,7 +2605,7 @@ public class QueriesGenerated {
           continue;
         }
         try {
-          SNode nt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(varRef), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{varRef});
+          SNode nt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.as(SNodeOperations.getParent(varRef), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{varRef});
           if ((TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null)) {
             SNode nr = SNodeOperations.replaceWithNewChild(varRef, "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef");
             SLinkOperations.setTarget(nr, "original", varRef, true);

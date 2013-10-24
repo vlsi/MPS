@@ -14,11 +14,11 @@ public class BaseClassifierType_Behavior {
 
   @Deprecated
   public static List<SNode> call_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877402148", new Object[]{contextNode});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getMembers_1213877402148", new Object[]{contextNode});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getMembers_1213877402148(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), callerConceptFqName, "virtual_getMembers_1213877402148", new Class[]{SNode.class, SNode.class}, new Object[]{contextNode});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), callerConceptFqName, "virtual_getMembers_1213877402148", new Class[]{SNode.class, SNode.class}, new Object[]{contextNode});
   }
 }

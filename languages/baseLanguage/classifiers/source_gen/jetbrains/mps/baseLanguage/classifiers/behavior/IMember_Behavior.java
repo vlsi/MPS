@@ -24,7 +24,7 @@ public class IMember_Behavior {
   }
 
   public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
-    SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
+    SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(thisNode) + " concept");
     }
@@ -32,7 +32,7 @@ public class IMember_Behavior {
   }
 
   public static SNode virtual_createOperation_1213877353000(SNode thisNode) {
-    SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})), null);
+    SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{})), null);
     SLinkOperations.setTarget(result, "member", thisNode, false);
     return result;
   }
@@ -55,17 +55,17 @@ public class IMember_Behavior {
 
   @Deprecated
   public static SNode call_getVisiblity_1213877352965(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getVisiblity_1213877352965", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getVisiblity_1213877352965", new Object[]{});
   }
 
   @Deprecated
   public static SNode call_getOperationConcept_1213877352972(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{});
   }
 
   @Deprecated
   public static SNode call_createOperation_1213877353000(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createOperation_1213877353000", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createOperation_1213877353000", new Object[]{});
   }
 
   @Deprecated
@@ -80,17 +80,17 @@ public class IMember_Behavior {
 
   @Deprecated
   public static SNode callSuper_getVisiblity_1213877352965(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getVisiblity_1213877352965", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getVisiblity_1213877352965", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getOperationConcept_1213877352972(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getOperationConcept_1213877352972", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_getOperationConcept_1213877352972", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createOperation_1213877353000(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_createOperation_1213877353000", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_createOperation_1213877353000", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

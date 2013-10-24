@@ -103,10 +103,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
           ModuleDependencyNode node = (ModuleDependencyNode) o;
           List<SModule> from = check_jxc64t_a0b0b0c0d0e(node.getFromNode());
           if (from != null) {
-            Map<List<SModule>, List<SModule>> collection = (node.isUsedLanguage() ?
-              usedlanguages :
-              dependencies
-            );
+            Map<List<SModule>, List<SModule>> collection = (node.isUsedLanguage() ? usedlanguages : dependencies);
             if (!(MapSequence.fromMap(collection).containsKey(from))) {
               MapSequence.fromMap(collection).put(from, ListSequence.fromList(new ArrayList<SModule>()));
             }
@@ -262,16 +259,10 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
   }
 
   private static <T> T as_jxc64t_a0a0a1a0a0a0a6a01(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_jxc64t_a0a0a3a0a0a0a4a11(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

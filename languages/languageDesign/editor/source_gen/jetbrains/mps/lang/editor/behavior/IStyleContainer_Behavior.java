@@ -36,18 +36,18 @@ public class IStyleContainer_Behavior {
       }
     }
     SetSequence.fromSet(visitedContainers).addElement(thisNode);
-    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{}) != null) && !(SetSequence.fromSet(visitedContainers).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{})))) {
-      IStyleContainer_Behavior.call_fillClassItems_2551781846503685010(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{}), classItems, itemConcept, visitedContainers);
+    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getParent_1219419981626", new Object[]{}) != null) && !(SetSequence.fromSet(visitedContainers).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getParent_1219419981626", new Object[]{})))) {
+      IStyleContainer_Behavior.call_fillClassItems_2551781846503685010(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getParent_1219419981626", new Object[]{}), classItems, itemConcept, visitedContainers);
     }
   }
 
   @Deprecated
   public static SNode call_getParent_1219419981626(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getParent_1219419981626", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getParent_1219419981626(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), callerConceptFqName, "virtual_getParent_1219419981626", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), callerConceptFqName, "virtual_getParent_1219419981626", new Class[]{SNode.class}, new Object[]{});
   }
 }

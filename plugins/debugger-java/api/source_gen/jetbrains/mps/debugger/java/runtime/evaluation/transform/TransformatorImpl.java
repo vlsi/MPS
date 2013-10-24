@@ -200,7 +200,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
 
     // last statement might become return statement during generation 
-    SNode statement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluateMethod, "virtual_getLastStatement_1239354409446", new Object[]{});
+    SNode statement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), evaluateMethod, "virtual_getLastStatement_1239354409446", new Object[]{});
     if (TransformationUtil.canMakeReturnStatement(statement)) {
       TransformationUtil.replaceReturnedExpressionIfNeeded(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
     }

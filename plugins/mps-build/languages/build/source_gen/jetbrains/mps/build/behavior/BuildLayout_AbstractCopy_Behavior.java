@@ -75,16 +75,10 @@ public class BuildLayout_AbstractCopy_Behavior {
   }
 
   private static boolean eq_cz5gmx_a0a0d0b0a0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_cz5gmx_a0a0d0b0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

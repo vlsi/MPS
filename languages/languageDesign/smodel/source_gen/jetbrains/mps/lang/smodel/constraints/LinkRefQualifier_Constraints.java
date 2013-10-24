@@ -39,7 +39,7 @@ public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode qualifierContainer = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer");
-            return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), qualifierContainer, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
+            return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), qualifierContainer, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
           }
 
           @Override

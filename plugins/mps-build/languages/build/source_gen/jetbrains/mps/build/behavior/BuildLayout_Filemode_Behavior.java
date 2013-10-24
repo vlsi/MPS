@@ -27,10 +27,7 @@ public class BuildLayout_Filemode_Behavior {
     if (isNotEmptyString(SPropertyOperations.getString(thisNode, "dirmode"))) {
       name = name + "_d" + SPropertyOperations.getString(thisNode, "dirmode");
     }
-    return context.getTempPath(thisNode, name, ((nlayout != null) ?
-      SPropertyOperations.getString(nlayout, "name") :
-      "default"
-    ));
+    return context.getTempPath(thisNode, name, ((nlayout != null) ? SPropertyOperations.getString(nlayout, "name") : "default"));
   }
 
   private static boolean isNotEmptyString(String str) {

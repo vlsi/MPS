@@ -103,7 +103,7 @@ public class Generate_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0a = null;
-          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          final Iterable<IResource> input = (Iterable) ((Iterable) rawInput);
           switch (0) {
             case 0:
               if (pa.global().properties(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).project() == null) {
@@ -238,27 +238,15 @@ public class Generate_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0b = null;
-          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          final Iterable<IResource> input = (Iterable) ((Iterable) rawInput);
           switch (0) {
             case 0:
               IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions((pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() != null ?
-                pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() :
-                GenerationOptions.fromSettings(settings)
-              ));
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions((pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() != null ? pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() : GenerationOptions.fromSettings(settings)));
               Iterable<GenerationCacheContainer> caches = ExtensionPoint.<GenerationCacheContainer>generify(new ExtensionPoint("jetbrains.mps.lang.core.GeneratorCache", GenerationCacheContainer.class)).getObjects();
-              GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ?
-                null :
-                Sequence.fromIterable(caches).first()
-              );
-              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ?
-                cacheContainer :
-                null
-              ), settings.isIncremental()));
-              IGenerationTracer tracer = (pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() ?
-                pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class) :
-                new NullGenerationTracer()
-              );
+              GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ? null : Sequence.fromIterable(caches).first());
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ? cacheContainer : null), settings.isIncremental()));
+              IGenerationTracer tracer = (pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() ? pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(IGenerationTracer.class) : new NullGenerationTracer());
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions(pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().saveTransientModels(pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient()).tracing(settings.getPerformanceTracingLevel(), tracer).rebuildAll(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).cleanMake()).keepOutputModel(true));
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).parametersProvider(new DefaultGenerationParametersProvider());
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().parameters(pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).parametersProvider());
@@ -270,10 +258,7 @@ public class Generate_Facet extends IFacet.Stub {
               } catch (ClassNotFoundException ignore) {
               }
 
-              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).transientModelsProvider((tmc != null ?
-                (TransientModelsProvider) tmc :
-                new TransientModelsProvider(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), null)
-              ));
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).transientModelsProvider((tmc != null ? (TransientModelsProvider) tmc : new TransientModelsProvider(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), null)));
 
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).transientModelsProvider().removeAllTransient();
               return new IResult.SUCCESS(_output_fi61u2_a0b);
@@ -416,7 +401,7 @@ public class Generate_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0c = null;
-          final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
+          final Iterable<MResource> input = (Iterable<MResource>) ((Iterable) rawInput);
           switch (0) {
             case 0:
               int work = Sequence.fromIterable(input).count() * 100;
@@ -518,7 +503,7 @@ public class Generate_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
-          final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
+          final Iterable<MResource> input = (Iterable<MResource>) ((Iterable) rawInput);
           switch (0) {
             case 0:
               boolean generationOk = false;

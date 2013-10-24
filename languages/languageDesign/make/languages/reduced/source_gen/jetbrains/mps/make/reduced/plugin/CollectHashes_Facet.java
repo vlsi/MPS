@@ -76,7 +76,7 @@ public class CollectHashes_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_revm5v_a0a = null;
-          final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
+          final Iterable<GResource> input = (Iterable<GResource>) ((Iterable) rawInput);
           switch (0) {
             case 0:
               for (GResource gres : Sequence.fromIterable(input)) {

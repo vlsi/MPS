@@ -2377,6 +2377,7 @@
     <nodeInfo nodeId="9065176582222574729" fileName="UpdateRefactoringVersions_Action.java" startLine="122" startPosition="9" endLine="123" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574739" fileName="UpdateRefactoringVersions_Action.java" startLine="123" startPosition="119" endLine="124" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="129" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="68" endLine="132" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="43" startPosition="27" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="43" startPosition="27" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="51" startPosition="95" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2396,11 +2397,10 @@
     <nodeInfo nodeId="9065176582222574671" fileName="UpdateRefactoringVersions_Action.java" startLine="113" startPosition="68" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9065176582222574707" fileName="UpdateRefactoringVersions_Action.java" startLine="119" startPosition="75" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9065176582222574707" fileName="UpdateRefactoringVersions_Action.java" startLine="119" startPosition="75" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_hexye9_a0a0a1a7#(Ljava/lang/Object;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="68" endLine="135" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpdateRefactoringVersions_Action#()V" />
-    <nodeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_hexye9_a0a0a1a7#(Ljava/lang/Object;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="40" startPosition="89" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9065176582222574748" fileName="UpdateRefactoringVersions_Action.java" startLine="63" startPosition="9" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9065176582222574777" fileName="UpdateRefactoringVersions_Action.java" startLine="72" startPosition="7" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -2428,6 +2428,7 @@
     <scopeInfo nodeId="9065176582222574664" fileName="UpdateRefactoringVersions_Action.java" startLine="110" startPosition="30" endLine="111" endPosition="17" />
     <scopeInfo nodeId="9065176582222574671" fileName="UpdateRefactoringVersions_Action.java" startLine="114" startPosition="34" endLine="115" endPosition="172" />
     <scopeInfo nodeId="9065176582222574707" fileName="UpdateRefactoringVersions_Action.java" startLine="120" startPosition="47" endLine="121" endPosition="187" />
+    <scopeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="68" endLine="132" endPosition="47" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="29" startPosition="45" endLine="32" endPosition="41" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="43" startPosition="27" endLine="46" endPosition="7" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="83" startPosition="0" endLine="86" endPosition="7">
@@ -2439,21 +2440,20 @@
     <scopeInfo nodeId="9065176582222574621" fileName="UpdateRefactoringVersions_Action.java" startLine="99" startPosition="71" endLine="102" endPosition="7" />
     <scopeInfo nodeId="9065176582222574671" fileName="UpdateRefactoringVersions_Action.java" startLine="113" startPosition="68" endLine="116" endPosition="9" />
     <scopeInfo nodeId="9065176582222574707" fileName="UpdateRefactoringVersions_Action.java" startLine="119" startPosition="75" endLine="122" endPosition="9" />
+    <scopeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="9065176582222574655" varName="o" />
+      <varInfo nodeId="9065176582222574655" varName="type" />
+    </scopeInfo>
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="43" startPosition="0" endLine="47" endPosition="44">
       <varInfo nodeId="9065176582222574567" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="43" startPosition="27" endLine="47" endPosition="44" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="68" endLine="135" endPosition="6" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="9065176582222574590" fileName="UpdateRefactoringVersions_Action.java" startLine="93" startPosition="40" endLine="98" endPosition="29" />
     <scopeInfo nodeId="9065176582222574670" fileName="UpdateRefactoringVersions_Action.java" startLine="113" startPosition="68" endLine="118" endPosition="31" />
     <scopeInfo nodeId="9065176582222574706" fileName="UpdateRefactoringVersions_Action.java" startLine="119" startPosition="75" endLine="124" endPosition="31" />
-    <scopeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="131" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="9065176582222574655" varName="o" />
-      <varInfo nodeId="9065176582222574655" varName="type" />
-    </scopeInfo>
     <scopeInfo nodeId="9065176582222574755" fileName="UpdateRefactoringVersions_Action.java" startLine="64" startPosition="132" endLine="71" endPosition="112" />
     <scopeInfo nodeId="9065176582222574784" fileName="UpdateRefactoringVersions_Action.java" startLine="73" startPosition="132" endLine="80" endPosition="100" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="40" startPosition="89" endLine="48" endPosition="5" />
@@ -2499,7 +2499,7 @@
       <varInfo nodeId="9065176582222574567" varName="_params" />
       <varInfo nodeId="9065176582222574567" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="26" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.UpdateRefactoringVersions_Action" />
+    <unitInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="26" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.UpdateRefactoringVersions_Action" />
   </root>
   <root nodeRef="r:ac0b1498-2795-4a56-a562-d0f2d196bfe1(jetbrains.mps.ide.migration.migration25)/9164503229271455483">
     <nodeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

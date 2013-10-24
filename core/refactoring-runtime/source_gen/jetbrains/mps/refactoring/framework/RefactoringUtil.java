@@ -43,10 +43,7 @@ public class RefactoringUtil {
 
   public static IRefactoring getRefactoringByClassName(String className) {
     for (IRefactoring r : RefactoringUtil.getAllRefactorings()) {
-      Class refClass = (r instanceof OldRefactoringAdapter ?
-        ((OldRefactoringAdapter) r).getRefactoringClass() :
-        r.getClass()
-      );
+      Class refClass = (r instanceof OldRefactoringAdapter ? ((OldRefactoringAdapter) r).getRefactoringClass() : r.getClass());
       if (refClass.getName().equals(className)) {
         return r;
       }
@@ -144,10 +141,7 @@ public class RefactoringUtil {
       if (!(RefactoringUtil.isApplicableToEntities(r.getUserFriendlyName(), r.getRefactoringTarget(), entities))) {
         continue;
       }
-      Class refClass = (refactoring instanceof OldRefactoringAdapter ?
-        ((OldRefactoringAdapter) refactoring).getRefactoringClass() :
-        refactoring.getClass()
-      );
+      Class refClass = (refactoring instanceof OldRefactoringAdapter ? ((OldRefactoringAdapter) refactoring).getRefactoringClass() : refactoring.getClass());
       if (r.getOverridenRefactoringClass() == null) {
         continue;
       }

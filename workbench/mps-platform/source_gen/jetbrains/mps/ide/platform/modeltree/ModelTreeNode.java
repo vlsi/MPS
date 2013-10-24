@@ -40,10 +40,7 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
   }
 
   public Icon getIcon(boolean expanded) {
-    return (expanded && myExpandedIcon != null ?
-      myExpandedIcon :
-      myCollapsedIcon
-    );
+    return (expanded && myExpandedIcon != null ? myExpandedIcon : myCollapsedIcon);
   }
 
   private String myText;

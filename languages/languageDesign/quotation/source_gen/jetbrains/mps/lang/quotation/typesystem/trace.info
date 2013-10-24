@@ -610,7 +610,7 @@
     <nodeInfo nodeId="8182547171709457972" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="19" startPosition="116" endLine="20" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8182547171709457965" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8182547171709457965" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="23" startPosition="94" endLine="24" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8182547171709457965" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="24" startPosition="207" endLine="25" endPosition="411" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8182547171709457965" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="24" startPosition="207" endLine="25" endPosition="413" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182547171709457804" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="30" startPosition="46" endLine="31" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8182547171709457804" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="35" startPosition="5" endLine="36" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8182547171709457804" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="36" startPosition="130" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -630,7 +630,7 @@
     <scopeInfo nodeId="8182547171709457804" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="35" startPosition="5" endLine="37" endPosition="45">
       <varInfo nodeId="8182547171709457804" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8182547171709457965" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="22" startPosition="7" endLine="25" endPosition="411">
+    <scopeInfo nodeId="8182547171709457965" fileName="typeof_LightQuotationPropertyValue_InferenceRule.java" startLine="22" startPosition="7" endLine="25" endPosition="413">
       <varInfo nodeId="8182547171709457965" varName="_info_12389875345" />
       <varInfo nodeId="8182547171709457965" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
@@ -787,7 +787,7 @@
     <nodeInfo nodeId="8182547171709952867" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="31" startPosition="12" endLine="32" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182547171709952709" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="36" startPosition="9" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8182547171709952709" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="37" startPosition="48" endLine="38" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8182547171709952709" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="38" startPosition="209" endLine="39" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8182547171709952709" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="38" startPosition="209" endLine="39" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182547171709952572" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="45" startPosition="46" endLine="46" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8182547171709952572" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="50" startPosition="5" endLine="51" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8182547171709952572" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="51" startPosition="130" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -834,7 +834,7 @@
       <varInfo nodeId="8182547171709952572" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="8182547171709952774" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="62" startPosition="30" endLine="64" endPosition="85" />
-    <scopeInfo nodeId="8182547171709952709" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="36" startPosition="9" endLine="39" endPosition="283">
+    <scopeInfo nodeId="8182547171709952709" fileName="typeof_LightQuotationLinkList_InferenceRule.java" startLine="36" startPosition="9" endLine="39" endPosition="285">
       <varInfo nodeId="8182547171709952709" varName="_info_12389875345" />
       <varInfo nodeId="8182547171709952709" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>

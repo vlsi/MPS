@@ -20,7 +20,7 @@ public class check_ReportErrorStatement_NonTypesystemRule extends AbstractNonTyp
 
   public void applyRule(final SNode reportStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SNodeOperations.getAncestor(reportStatement, "jetbrains.mps.execution.commands.structure.CommandMethod", false, false) != null)) {
-      RulesFunctions_BaseLanguage.check(typeCheckingContext, SetSequence.fromSetAndArray(new HashSet<SNode>(), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), reportStatement, "virtual_getException_856705193941282181", new Object[]{})), reportStatement);
+      RulesFunctions_BaseLanguage.check(typeCheckingContext, SetSequence.fromSetAndArray(new HashSet<SNode>(), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), reportStatement, "virtual_getException_856705193941282181", new Object[]{})), reportStatement);
     }
   }
 

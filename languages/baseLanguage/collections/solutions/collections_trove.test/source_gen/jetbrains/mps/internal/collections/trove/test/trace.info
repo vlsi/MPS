@@ -225,7 +225,7 @@
     <nodeInfo nodeId="8269230326124799208" fileName="PrimSet_Test.java" startLine="108" startPosition="9" endLine="109" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8269230326124799220" fileName="PrimSet_Test.java" startLine="112" startPosition="47" endLine="113" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8269230326124799231" fileName="PrimSet_Test.java" startLine="115" startPosition="33" endLine="116" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799263" fileName="PrimSet_Test.java" startLine="120" startPosition="37" endLine="121" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8269230326124799263" fileName="PrimSet_Test.java" startLine="120" startPosition="37" endLine="121" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8269230326124799276" fileName="PrimSet_Test.java" startLine="126" startPosition="48" endLine="127" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8269230326124799282" fileName="PrimSet_Test.java" startLine="127" startPosition="90" endLine="128" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8269230326124799289" fileName="PrimSet_Test.java" startLine="128" startPosition="55" endLine="129" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -256,7 +256,7 @@
     <scopeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="73" startPosition="27" endLine="74" endPosition="36" />
     <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="96" startPosition="28" endLine="97" endPosition="37" />
     <scopeInfo nodeId="8269230326124799230" fileName="PrimSet_Test.java" startLine="115" startPosition="33" endLine="116" endPosition="46" />
-    <scopeInfo nodeId="8269230326124799262" fileName="PrimSet_Test.java" startLine="120" startPosition="37" endLine="121" endPosition="30" />
+    <scopeInfo nodeId="8269230326124799262" fileName="PrimSet_Test.java" startLine="120" startPosition="37" endLine="121" endPosition="32" />
     <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="70" startPosition="28" endLine="72" endPosition="35" />
     <scopeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="76" startPosition="42" endLine="78" endPosition="30" />
     <scopeInfo nodeId="8269230326124799195" fileName="PrimSet_Test.java" startLine="90" startPosition="27" endLine="92" endPosition="28" />

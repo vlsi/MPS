@@ -71,7 +71,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_chixuw_a0a = null;
-          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          final Iterable<IResource> input = (Iterable) ((Iterable) rawInput);
           switch (0) {
             case 0:
               pa.forResource(Sequence.fromIterable(input).first()).properties(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
@@ -178,7 +178,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_chixuw_a0b = null;
-          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          final Iterable<IResource> input = (Iterable) ((Iterable) rawInput);
           switch (0) {
             case 0:
               pa.global().properties(new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
@@ -260,7 +260,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_chixuw_a0c = null;
-          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
+          final Iterable<IResource> input = (Iterable) ((Iterable) rawInput);
           switch (0) {
             case 0:
             default:

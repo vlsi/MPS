@@ -52,7 +52,7 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
               IMatchingPattern pattern_dyvyal_c0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
               SNode coercedNode_dyvyal_c0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_c0a0);
               if (coercedNode_dyvyal_c0a0 != null) {
-                for (SNode member : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), coercedNode_dyvyal_c0a0, "virtual_getMembers_1213877402148", new Object[]{_context.getEnclosingNode()})) {
+                for (SNode member : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), coercedNode_dyvyal_c0a0, "virtual_getMembers_1213877402148", new Object[]{_context.getEnclosingNode()})) {
                   if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget())) && BehaviorReflection.invokeVirtual(Boolean.TYPE, member, "virtual_canBeReferent_8179323502814657526", new Object[]{_context.getLinkTarget()})) {
                     ListSequence.fromList(applicableMembers).addElement(member);
                   }

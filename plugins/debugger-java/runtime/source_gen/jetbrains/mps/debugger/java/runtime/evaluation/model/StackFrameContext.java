@@ -173,9 +173,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
     if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_3305065273710880775", new Object[]{})), true);
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_3305065273710880775", new Object[]{})), true);
     } else if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
-      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createType_1213877527970", new Object[]{})), true);
+      SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(highLevelNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_createType_1213877527970", new Object[]{})), true);
     } else {
       SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, null), true);
     }
@@ -381,23 +381,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   private static boolean eq_4zsmpx_a0a0a0a0a1a11(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a11(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_4zsmpx_a0c0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

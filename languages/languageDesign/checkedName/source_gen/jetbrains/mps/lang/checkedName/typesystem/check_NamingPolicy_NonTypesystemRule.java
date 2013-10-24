@@ -25,7 +25,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String warningMessage = "Naming policies violated: " + "all words except prepositions, articles and particles should be capitalized";
-    for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
+    for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
       if (!(NameUtil.satisfiesPartNamingPolicy(SPropertyOperations.getString(s, "value")))) {
         String myWarning = warningMessage + ".";
         {
@@ -49,7 +49,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
         }
       }
     }
-    for (PropertyReference p : BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) Object.class), node, "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{})) {
+    for (PropertyReference p : BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) (Object.class)), node, "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{})) {
       if (p.getValue() == null) {
         continue;
       }

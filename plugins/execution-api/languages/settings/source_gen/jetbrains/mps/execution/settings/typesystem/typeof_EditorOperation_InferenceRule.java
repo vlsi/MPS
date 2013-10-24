@@ -27,7 +27,7 @@ public class typeof_EditorOperation_InferenceRule extends AbstractInferenceRule_
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477905", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477912", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(editorOperation, "editorOperationDeclaration", false), "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235477907", true), _info_12389875345);
     }
-    List<SNode> parameters = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(editorOperation, "editorOperationDeclaration", false), "virtual_getParameters_1213877374450", new Object[]{});
+    List<SNode> parameters = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(editorOperation, "editorOperationDeclaration", false), "virtual_getParameters_1213877374450", new Object[]{});
 
     // all editor operation parameters are declared 
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(editorOperation, "arguments", true)).count(); i++) {

@@ -24,11 +24,11 @@ public class ExtractStatementListExpression_Behavior {
 
   @Deprecated
   public static List<SNode> call_getLocalVariableElements_3196918548952834932(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getLocalVariableElements_3196918548952834932(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}, new Object[]{});
   }
 }

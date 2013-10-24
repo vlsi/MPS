@@ -31,10 +31,7 @@ public class StructureModification {
   public void addDependencyModel(SModelReference modelRef) {
     if (!(MapSequence.fromMap(myDependencies).containsKey(modelRef))) {
       RefactorableSModelDescriptor model = as_hr78sn_a0a0a0a4(SModelRepository.getInstance().getModelDescriptor(modelRef), RefactorableSModelDescriptor.class);
-      MapSequence.fromMap(myDependencies).put(modelRef, (model == null ?
-        -1 :
-        model.getVersion()
-      ));
+      MapSequence.fromMap(myDependencies).put(modelRef, (model == null ? -1 : model.getVersion()));
     }
   }
 
@@ -73,15 +70,9 @@ public class StructureModification {
       if ((int) MapSequence.fromMap(aa).get(k) == (int) MapSequence.fromMap(bb).get(k)) {
         continue;
       }
-      return (MapSequence.fromMap(aa).get(k) < MapSequence.fromMap(bb).get(k) ?
-        StructureModification.Relation.BEFORE :
-        StructureModification.Relation.AFTER
-      );
+      return (MapSequence.fromMap(aa).get(k) < MapSequence.fromMap(bb).get(k) ? StructureModification.Relation.BEFORE : StructureModification.Relation.AFTER);
     }
-    return (eq ?
-      StructureModification.Relation.EQUAL :
-      StructureModification.Relation.NONE
-    );
+    return (eq ? StructureModification.Relation.EQUAL : StructureModification.Relation.NONE);
   }
 
   public static interface Entry {
@@ -195,9 +186,6 @@ public class StructureModification {
   }
 
   private static <T> T as_hr78sn_a0a0a0a4(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

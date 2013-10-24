@@ -420,7 +420,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     }
 
     public Map<String, Integer> getReadAccessMap() throws FileNotFoundException, IOException {
-      InputStream stream = ((Object) this).getClass().getResourceAsStream("/SNodeMethodReads.xml");
+      InputStream stream = ((Object) (this)).getClass().getResourceAsStream("/SNodeMethodReads.xml");
       XMLDecoder xmlDecoder = new XMLDecoder(stream);
       Map<String, Integer> map = (Map<String, Integer>) xmlDecoder.readObject();
       stream.close();
@@ -429,7 +429,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     }
 
     public Set<String> getPreviousISNodeMethodsNames() throws FileNotFoundException, IOException {
-      InputStream stream = ((Object) this).getClass().getResourceAsStream("/SNodeContract.xml");
+      InputStream stream = ((Object) (this)).getClass().getResourceAsStream("/SNodeContract.xml");
       XMLDecoder xmlDecoder = new XMLDecoder(stream);
       Set<String> set = (Set<String>) xmlDecoder.readObject();
       xmlDecoder.close();
@@ -440,10 +440,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     public Set<String> getISNodeMethodsNames(boolean fullQualified) throws FileNotFoundException, IOException {
       Set<String> set = new HashSet<String>();
       for (Method method : SNode.class.getMethods()) {
-        set.add((fullQualified ?
-          method.toGenericString() :
-          method.getName()
-        ));
+        set.add((fullQualified ? method.toGenericString() : method.getName()));
       }
       return set;
     }
@@ -456,10 +453,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
 
     public boolean isReadsCountUnChanged(int previous, int current) {
       // just check that reads doesn't appear or disappear quietly 
-      return (previous == 0 ?
-        current == 0 :
-        current > 0
-      );
+      return (previous == 0 ? current == 0 : current > 0);
     }
   }
 }

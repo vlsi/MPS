@@ -94,18 +94,18 @@ public abstract class ChangeGroupLayout {
       });
       List<ModelChange> sortedChanges = SetSequence.fromSet(s).sort(new ISelector<ModelChange, Integer>() {
         public Integer select(ModelChange ch) {
-          return (int) MapSequence.fromMap(right).get(ch).start();
+          return (int) (MapSequence.fromMap(right).get(ch).start());
         }
       }, true).sort(new ISelector<ModelChange, Integer>() {
         public Integer select(ModelChange ch) {
-          return (int) MapSequence.fromMap(left).get(ch).start();
+          return (int) (MapSequence.fromMap(left).get(ch).start());
         }
       }, true).toListSequence();
       ListSequence.fromList(myChangeGroups).addElement(new ChangeGroup(lb, rb, sortedChanges, myConflictChecker));
     }
     myChangeGroups = ListSequence.fromList(myChangeGroups).sort(new ISelector<ChangeGroup, Integer>() {
       public Integer select(ChangeGroup g) {
-        return (int) g.getLeftBounds().start();
+        return (int) (g.getLeftBounds().start());
       }
     }, true).toListSequence();
   }
@@ -171,11 +171,8 @@ public abstract class ChangeGroupLayout {
   }
 
   private static boolean areBoundsSeparate(Bounds a, Bounds b, boolean canBeAdjacent) {
-    int tolerance = (canBeAdjacent ?
-      0 :
-      1
-    );
-    return (int) a.end() - tolerance < (int) b.start() || (int) b.end() - tolerance < (int) a.start();
+    int tolerance = (canBeAdjacent ? 0 : 1);
+    return (int) (a.end()) - tolerance < (int) (b.start()) || (int) (b.end()) - tolerance < (int) (a.start());
   }
 
   private static List<ModelChange> check_cuq72k_a2a11(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {

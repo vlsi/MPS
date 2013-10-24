@@ -46,10 +46,7 @@ public class BuildMps_Module_Behavior {
 
       for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
-            SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
-            it
-          );
+          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ? SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) : it);
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -63,7 +60,7 @@ public class BuildMps_Module_Behavior {
         if ((SLinkOperations.getTarget(dep, "customLocation", true) != null)) {
           Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(dep, "customLocation", true), artifacts);
           if (dependencyTarget != null) {
-            if ((boolean) dependencyTarget._1()) {
+            if ((boolean) (dependencyTarget._1())) {
               builder.addWithContent(dependencyTarget._0());
             } else {
               builder.add(dependencyTarget._0());
@@ -90,7 +87,7 @@ public class BuildMps_Module_Behavior {
         if ((SLinkOperations.getTarget(jarRuntime, "customLocation", true) != null)) {
           Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(jarRuntime, "customLocation", true), artifacts);
           if (dependencyTarget != null) {
-            if ((boolean) dependencyTarget._1()) {
+            if ((boolean) (dependencyTarget._1())) {
               builder.addWithContent(dependencyTarget._0());
             } else {
               builder.add(dependencyTarget._0());

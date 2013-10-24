@@ -72,8 +72,8 @@
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="32" startPosition="39" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="36" startPosition="52" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="40" startPosition="39" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="883491221943683284" fileName="MoveNodes.java" startLine="44" startPosition="68" endLine="45" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4284078376668136046" fileName="MoveNodes.java" startLine="45" startPosition="61" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="883491221943683284" fileName="MoveNodes.java" startLine="44" startPosition="68" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4284078376668136046" fileName="MoveNodes.java" startLine="45" startPosition="63" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3548249452606313660" fileName="MoveNodes.java" startLine="46" startPosition="0" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2034046503361624423" fileName="MoveNodes.java" startLine="50" startPosition="84" endLine="51" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2034046503361624430" fileName="MoveNodes.java" startLine="51" startPosition="92" endLine="52" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

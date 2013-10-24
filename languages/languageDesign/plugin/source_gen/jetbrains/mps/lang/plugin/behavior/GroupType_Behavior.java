@@ -12,6 +12,6 @@ public class GroupType_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "actionGroup", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "actionGroup", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
   }
 }

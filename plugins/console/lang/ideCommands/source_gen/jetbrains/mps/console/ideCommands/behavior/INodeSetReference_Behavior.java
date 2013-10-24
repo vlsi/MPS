@@ -18,11 +18,11 @@ public class INodeSetReference_Behavior {
 
   @Deprecated
   public static Iterable<SNode> call_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getNodes_5207260697411458163", new Object[]{context});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getNodes_5207260697411458163", new Object[]{context});
   }
 
   @Deprecated
   public static Iterable<SNode> callSuper_getNodes_5207260697411458163(SNode thisNode, String callerConceptFqName, ConsoleContext context) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.INodeSetReference"), callerConceptFqName, "virtual_getNodes_5207260697411458163", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.INodeSetReference"), callerConceptFqName, "virtual_getNodes_5207260697411458163", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
   }
 }

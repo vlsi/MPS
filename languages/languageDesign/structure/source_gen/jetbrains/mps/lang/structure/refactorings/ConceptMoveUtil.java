@@ -22,7 +22,7 @@ public class ConceptMoveUtil {
   public static List<SNode> getConceptsAspects(final List<SNode> concepts, SModel aspectModel) {
     return ListSequence.fromList(SModelOperations.getRoots(aspectModel, "jetbrains.mps.lang.structure.structure.IConceptAspect")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        List<SNode> baseConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
+        List<SNode> baseConcepts = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), it, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
         return ListSequence.fromList(baseConcepts).isNotEmpty() && ListSequence.fromList(concepts).containsSequence(ListSequence.fromList(baseConcepts));
       }
     }).toListSequence();

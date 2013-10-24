@@ -29,10 +29,7 @@ public class JavaStreamHandler implements StreamHandler {
     myModel = model;
     IFile overriddenOutputDir = getOverriddenOutputDir(model);
     IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(myModel, outputDir);
-    this.myModelOutputDir = (overriddenOutputDir != null ?
-      overriddenOutputDir :
-      defaultOutputDir
-    );
+    this.myModelOutputDir = (overriddenOutputDir != null ? overriddenOutputDir : defaultOutputDir);
     this.myModelCacheOutputDir = FileGenerationUtil.getDefaultOutputDir(myModel, cachesOutputDir);
 
     this.myOutputFileDelta = new FilesDelta(myModelOutputDir, myModelCacheOutputDir);
@@ -95,10 +92,7 @@ public class JavaStreamHandler implements StreamHandler {
 
   private IFile getFile(String name, boolean isCache) {
 
-    IFile outputDir = (isCache ?
-      myModelCacheOutputDir :
-      myModelOutputDir
-    );
+    IFile outputDir = (isCache ? myModelCacheOutputDir : myModelOutputDir);
     return outputDir.getDescendant(name);
   }
 
@@ -115,10 +109,7 @@ public class JavaStreamHandler implements StreamHandler {
   }
 
   private FilesDelta getDelta(boolean isCache) {
-    return ((isCache ?
-      myCachesFileDelta :
-      myOutputFileDelta
-    ));
+    return ((isCache ? myCachesFileDelta : myOutputFileDelta));
   }
 
   public int calcApproximateSize_internal() {

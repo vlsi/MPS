@@ -84,22 +84,16 @@ public class FixBrokenReferences_Action extends BaseAction {
     try {
       ScopeResolver resolver = new ScopeResolver();
 
-      List<SModule> modulelist = (((List<SModule>) MapSequence.fromMap(_params).get("modules")) == null ?
-        ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators() :
-        ((List<SModule>) MapSequence.fromMap(_params).get("modules"))
-      );
-      List<SModel> modellist = (List<SModel>) ((((List<SModel>) MapSequence.fromMap(_params).get("models")) == null || ((List<SModel>) MapSequence.fromMap(_params).get("models")).isEmpty() ?
-        ListSequence.fromList(modulelist).translate(new ITranslator2<SModule, SModel>() {
-          public Iterable<SModel> translate(SModule it) {
-            return it.getModels();
-          }
-        }).where(new IWhereFilter<SModel>() {
-          public boolean accept(SModel m) {
-            return SModelStereotype.isUserModel(m) && !(m.isReadOnly());
-          }
-        }).toListSequence() :
-        ((List<SModel>) MapSequence.fromMap(_params).get("models"))
-      ));
+      List<SModule> modulelist = (((List<SModule>) MapSequence.fromMap(_params).get("modules")) == null ? ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators() : ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
+      List<SModel> modellist = (List<SModel>) ((((List<SModel>) MapSequence.fromMap(_params).get("models")) == null || ((List<SModel>) MapSequence.fromMap(_params).get("models")).isEmpty() ? ListSequence.fromList(modulelist).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule it) {
+          return it.getModels();
+        }
+      }).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel m) {
+          return SModelStereotype.isUserModel(m) && !(m.isReadOnly());
+        }
+      }).toListSequence() : ((List<SModel>) MapSequence.fromMap(_params).get("models"))));
 
       // reporting: 
       Map<SNodePointer, Tuples._2<SReference, SReference>> resolvedR = MapSequence.fromMap(new HashMap<SNodePointer, Tuples._2<SReference, SReference>>());
@@ -113,10 +107,7 @@ public class FixBrokenReferences_Action extends BaseAction {
           for (final SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
             if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
               SNodePointer nptr = new SNodePointer(ref.getTargetSModelReference(), ref.getTargetNodeId());
-              MapSequence.fromMap(counterR).put(nptr, (MapSequence.fromMap(counterR).get(nptr) == null ?
-                1 :
-                MapSequence.fromMap(counterR).get(nptr) + 1
-              ));
+              MapSequence.fromMap(counterR).put(nptr, (MapSequence.fromMap(counterR).get(nptr) == null ? 1 : MapSequence.fromMap(counterR).get(nptr) + 1));
               if (LOG.isEnabledFor(Priority.WARN)) {
                 LOG.warn(" reference =" + FixBrokenReferences_Action.this.refInfo(ref, _params));
               }
@@ -174,10 +165,7 @@ public class FixBrokenReferences_Action extends BaseAction {
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn(MapSequence.fromMap(resolvedR).count() + " distinct references were resolved (total " + MapSequence.fromMap(resolvedR).select(new ISelector<IMapping<SNodePointer, Tuples._2<SReference, SReference>>, Integer>() {
           public Integer select(IMapping<SNodePointer, Tuples._2<SReference, SReference>> it) {
-            return (MapSequence.fromMap(counterR).get(it.key()) == null ?
-              0 :
-              MapSequence.fromMap(counterR).get(it.key())
-            );
+            return (MapSequence.fromMap(counterR).get(it.key()) == null ? 0 : MapSequence.fromMap(counterR).get(it.key()));
           }
         }).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
           public Integer combine(Integer s, Integer ri) {
@@ -216,16 +204,10 @@ public class FixBrokenReferences_Action extends BaseAction {
   }
 
   private static boolean eq_g50bqp_a0a0a0a0a0a4a0a0a1a9a0a5(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_g50bqp_a0a1a5a0a0a1a9a0a5(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

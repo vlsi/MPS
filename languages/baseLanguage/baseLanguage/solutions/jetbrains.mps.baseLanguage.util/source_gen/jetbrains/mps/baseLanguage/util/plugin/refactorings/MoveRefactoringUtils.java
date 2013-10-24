@@ -25,7 +25,7 @@ public class MoveRefactoringUtils {
       MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.Classifier"), SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
     } else {
       SNode concept = SNodeOperations.getConceptDeclaration(node);
-      for (SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(container), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
+      for (SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.getConceptDeclaration(container), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
         if (SLinkOperations.getTarget(link, "target", false) == concept) {
           container.addChild(SPropertyOperations.getString(link, "role"), node);
         }

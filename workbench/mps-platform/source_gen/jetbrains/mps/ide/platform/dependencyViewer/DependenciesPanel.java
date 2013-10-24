@@ -100,10 +100,7 @@ public class DependenciesPanel extends JPanel {
               monitor.start(null, 100);
               List<SNode> nodes = myReferencesFinder.getNodes(sourceScope, monitor.subTask(20));
               mySourceNodes = nodes;
-              results.value = (myIsMeta ?
-                myReferencesFinder.getUsedLanguagesSearchResults(nodes, sourceScope, monitor.subTask(80)) :
-                myReferencesFinder.getTargetSearchResults(nodes, sourceScope, monitor.subTask(80))
-              );
+              results.value = (myIsMeta ? myReferencesFinder.getUsedLanguagesSearchResults(nodes, sourceScope, monitor.subTask(80)) : myReferencesFinder.getTargetSearchResults(nodes, sourceScope, monitor.subTask(80)));
             } finally {
               monitor.done();
             }
@@ -129,10 +126,7 @@ public class DependenciesPanel extends JPanel {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-        SearchResults result = (myIsMeta ?
-          myReferencesFinder.getLanguageUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor) :
-          myReferencesFinder.getUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor)
-        );
+        SearchResults result = (myIsMeta ? myReferencesFinder.getLanguageUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor) : myReferencesFinder.getUsagesSearchResults(mySourceNodes, myScope, targetScope, monitor));
         results[0] = result;
         myReferencesView.setContents(result);
 

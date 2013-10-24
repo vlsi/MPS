@@ -22,7 +22,7 @@ public class BuildModuleTestsPlugin_Behavior {
   }
 
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    BehaviorReflection.invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.build.structure.BuildPlugin", "virtual_getImportedLibraries_4101476690142937969", new Object[]{});
+    BehaviorReflection.invokeSuper((Class<Iterable<SNode>>) ((Class) (Object.class)), thisNode, "jetbrains.mps.build.structure.BuildPlugin", "virtual_getImportedLibraries_4101476690142937969", new Object[]{});
     return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_s7wj2j_a0a0b0a(), "target", false));
   }
 

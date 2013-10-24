@@ -91,10 +91,7 @@ public class ClassifierUpdater {
       return;
     }
 
-    SLinkOperations.setTarget(clsfr, "visibility", (ac.isPublic() ?
-      _quotation_createNode_ol94f8_a0a5a5(cm) :
-      null
-    ), true);
+    SLinkOperations.setTarget(clsfr, "visibility", (ac.isPublic() ? _quotation_createNode_ol94f8_a0a5a5(cm) : null), true);
   }
 
   private void updateTypeVariables(ASMClass cls, SNode result) {
@@ -503,10 +500,7 @@ public class ClassifierUpdater {
       return res;
     }
     if (LOG.isEnabledFor(Priority.ERROR)) {
-      LOG.error("couldn't create annotation value from " + ((value == null ?
-        "" :
-        value.getClass().getName()
-      )) + " : " + value);
+      LOG.error("couldn't create annotation value from " + ((value == null ? "" : value.getClass().getName())) + " : " + value);
     }
     return null;
   }
@@ -1152,9 +1146,6 @@ public class ClassifierUpdater {
   }
 
   private static boolean eq_ol94f8_a0a0a0a0a0a0a8(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

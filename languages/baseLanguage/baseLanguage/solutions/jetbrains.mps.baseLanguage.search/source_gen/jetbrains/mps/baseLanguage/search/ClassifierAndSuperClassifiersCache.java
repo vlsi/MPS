@@ -308,10 +308,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
     @Nullable
     public List<SNode> getMethodsByName(String methodName) {
-      return MapSequence.fromMap(myMethodsByName).get((methodName == null ?
-        "" :
-        methodName
-      ));
+      return MapSequence.fromMap(myMethodsByName).get((methodName == null ? "" : methodName));
     }
 
     @Override
@@ -324,9 +321,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       List<SNode> allMethods = new ArrayList<SNode>();
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
-        ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
+        ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})));
+          ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), (SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})));
         }
       }
       this.myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
@@ -466,17 +463,11 @@ forEachInAllMethods:
     }
 
     public SNode getFieldByName(String name) {
-      return MapSequence.fromMap(myFieldsByName).get((name == null ?
-        "" :
-        name
-      ));
+      return MapSequence.fromMap(myFieldsByName).get((name == null ? "" : name));
     }
 
     public SNode getStaticFieldByName(String name) {
-      return MapSequence.fromMap(myStaticFieldsByName).get((name == null ?
-        "" :
-        name
-      ));
+      return MapSequence.fromMap(myStaticFieldsByName).get((name == null ? "" : name));
     }
 
     @Override
@@ -491,7 +482,7 @@ forEachInAllMethods:
       List<SNode> allFields = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
-        Iterable<SNode> staticFields = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_staticFields_5292274854859223538", new Object[]{});
+        Iterable<SNode> staticFields = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_staticFields_5292274854859223538", new Object[]{});
         ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(staticFields));
         for (SNode staticField : staticFields) {
           String name = SPropertyOperations.getString(staticField, "name");
@@ -503,7 +494,7 @@ forEachInAllMethods:
           }
         }
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          Iterable<SNode> fields = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{});
+          Iterable<SNode> fields = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), (SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{});
           ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(fields));
           for (SNode field : fields) {
             String name = SPropertyOperations.getString(field, "name");

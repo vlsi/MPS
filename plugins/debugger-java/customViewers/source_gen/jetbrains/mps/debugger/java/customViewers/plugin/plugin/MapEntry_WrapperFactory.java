@@ -65,8 +65,8 @@ public class MapEntry_WrapperFactory extends ValueWrapperFactory {
 
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
-      IObjectValueProxy key = ((IObjectValueProxy) value.invokeMethod("getKey", "()Ljava/lang/Object;", getThreadReference()));
-      IObjectValueProxy entryValue = ((IObjectValueProxy) value.invokeMethod("getValue", "()Ljava/lang/Object;", getThreadReference()));
+      IObjectValueProxy key = ((IObjectValueProxy) (value.invokeMethod("getKey", "()Ljava/lang/Object;", getThreadReference())));
+      IObjectValueProxy entryValue = ((IObjectValueProxy) (value.invokeMethod("getValue", "()Ljava/lang/Object;", getThreadReference())));
       result.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_key(CustomViewersManager.getInstance().fromJdi(key.getJDIValue(), getThreadReference()), "key"));
       result.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_value(CustomViewersManager.getInstance().fromJdi(entryValue.getJDIValue(), getThreadReference()), "value"));
       return result;
@@ -85,15 +85,9 @@ public class MapEntry_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
-      IObjectValueProxy key = ((IObjectValueProxy) value.invokeMethod("getKey", "()Ljava/lang/Object;", getThreadReference()));
-      IObjectValueProxy entryValue = ((IObjectValueProxy) value.invokeMethod("getValue", "()Ljava/lang/Object;", getThreadReference()));
-      return "[" + ((ProxyEqualsUtil.javaEquals(key, null) ?
-        "null" :
-        (String) (((IObjectValueProxy) key.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue()
-      )) + "] = " + ((ProxyEqualsUtil.javaEquals(entryValue, null) ?
-        "null" :
-        (String) (((IObjectValueProxy) entryValue.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue()
-      ));
+      IObjectValueProxy key = ((IObjectValueProxy) (value.invokeMethod("getKey", "()Ljava/lang/Object;", getThreadReference())));
+      IObjectValueProxy entryValue = ((IObjectValueProxy) (value.invokeMethod("getValue", "()Ljava/lang/Object;", getThreadReference())));
+      return "[" + ((ProxyEqualsUtil.javaEquals(key, null) ? "null" : (String) ((((IObjectValueProxy) (key.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference())))).getJavaValue()))) + "] = " + ((ProxyEqualsUtil.javaEquals(entryValue, null) ? "null" : (String) ((((IObjectValueProxy) (entryValue.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference())))).getJavaValue())));
     }
   }
 

@@ -23,7 +23,7 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
   }
 
   public void applyRule(final SNode bmd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bmd, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+    SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), bmd, "virtual_getExpectedRetType_1239354342632", new Object[]{});
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
@@ -52,7 +52,7 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
       }
     }
     if (expectedRetType != null) {
-      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bmd, "virtual_getLastStatement_1239354409446", new Object[]{});
+      SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), bmd, "virtual_getLastStatement_1239354409446", new Object[]{});
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249794", true);
         {

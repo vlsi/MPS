@@ -71,120 +71,120 @@
     <nodeInfo nodeId="28859145781927664" fileName="DefaultOptionsContainer.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDefaultOptions" />
     <nodeInfo nodeId="28859145781927699" fileName="DefaultOptionsContainer.java" startLine="32" startPosition="68" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="28859145781927705" fileName="DefaultOptionsContainer.java" startLine="33" startPosition="56" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927722" fileName="DefaultOptionsContainer.java" startLine="38" startPosition="7" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="28859145781927732" fileName="DefaultOptionsContainer.java" startLine="42" startPosition="95" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6048862324038539160" fileName="DefaultOptionsContainer.java" startLine="43" startPosition="52" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927743" fileName="DefaultOptionsContainer.java" startLine="44" startPosition="56" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927756" fileName="DefaultOptionsContainer.java" startLine="48" startPosition="58" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927771" fileName="DefaultOptionsContainer.java" startLine="49" startPosition="61" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927778" fileName="DefaultOptionsContainer.java" startLine="50" startPosition="59" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927795" fileName="DefaultOptionsContainer.java" startLine="55" startPosition="64" endLine="56" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927800" fileName="DefaultOptionsContainer.java" startLine="56" startPosition="35" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="28859145781927969" fileName="DefaultOptionsContainer.java" startLine="60" startPosition="54" endLine="61" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361591517" fileName="DefaultOptionsContainer.java" startLine="63" startPosition="25" endLine="64" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5345717287656008481" fileName="DefaultOptionsContainer.java" startLine="66" startPosition="7" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="28859145781927808" fileName="DefaultOptionsContainer.java" startLine="70" startPosition="51" endLine="71" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927826" fileName="DefaultOptionsContainer.java" startLine="72" startPosition="9" endLine="73" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927832" fileName="DefaultOptionsContainer.java" startLine="73" startPosition="49" endLine="74" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927838" fileName="DefaultOptionsContainer.java" startLine="74" startPosition="45" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927850" fileName="DefaultOptionsContainer.java" startLine="76" startPosition="51" endLine="77" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927856" fileName="DefaultOptionsContainer.java" startLine="77" startPosition="56" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927862" fileName="DefaultOptionsContainer.java" startLine="78" startPosition="44" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927871" fileName="DefaultOptionsContainer.java" startLine="79" startPosition="59" endLine="80" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927817" fileName="DefaultOptionsContainer.java" startLine="82" startPosition="44" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927876" fileName="DefaultOptionsContainer.java" startLine="84" startPosition="5" endLine="85" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="28859145781927886" fileName="DefaultOptionsContainer.java" startLine="88" startPosition="62" endLine="89" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927891" fileName="DefaultOptionsContainer.java" startLine="89" startPosition="47" endLine="90" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927920" fileName="DefaultOptionsContainer.java" startLine="91" startPosition="9" endLine="92" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927927" fileName="DefaultOptionsContainer.java" startLine="92" startPosition="52" endLine="93" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927944" fileName="DefaultOptionsContainer.java" startLine="94" startPosition="84" endLine="95" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927951" fileName="DefaultOptionsContainer.java" startLine="95" startPosition="58" endLine="96" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927956" fileName="DefaultOptionsContainer.java" startLine="96" startPosition="50" endLine="97" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927962" fileName="DefaultOptionsContainer.java" startLine="97" startPosition="38" endLine="98" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927898" fileName="DefaultOptionsContainer.java" startLine="100" startPosition="44" endLine="101" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927907" fileName="DefaultOptionsContainer.java" startLine="101" startPosition="54" endLine="102" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927911" fileName="DefaultOptionsContainer.java" startLine="102" startPosition="31" endLine="103" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927717" fileName="DefaultOptionsContainer.java" startLine="34" startPosition="59" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927722" fileName="DefaultOptionsContainer.java" startLine="35" startPosition="81" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="28859145781927732" fileName="DefaultOptionsContainer.java" startLine="39" startPosition="95" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6048862324038539160" fileName="DefaultOptionsContainer.java" startLine="40" startPosition="52" endLine="41" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927743" fileName="DefaultOptionsContainer.java" startLine="41" startPosition="56" endLine="42" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927756" fileName="DefaultOptionsContainer.java" startLine="45" startPosition="58" endLine="46" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927771" fileName="DefaultOptionsContainer.java" startLine="46" startPosition="61" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927778" fileName="DefaultOptionsContainer.java" startLine="47" startPosition="59" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927783" fileName="DefaultOptionsContainer.java" startLine="48" startPosition="34" endLine="49" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927795" fileName="DefaultOptionsContainer.java" startLine="49" startPosition="205" endLine="50" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927800" fileName="DefaultOptionsContainer.java" startLine="50" startPosition="35" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="28859145781927969" fileName="DefaultOptionsContainer.java" startLine="54" startPosition="54" endLine="55" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361591517" fileName="DefaultOptionsContainer.java" startLine="57" startPosition="25" endLine="58" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5345717287656008481" fileName="DefaultOptionsContainer.java" startLine="60" startPosition="7" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="28859145781927808" fileName="DefaultOptionsContainer.java" startLine="64" startPosition="51" endLine="65" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927826" fileName="DefaultOptionsContainer.java" startLine="66" startPosition="9" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927832" fileName="DefaultOptionsContainer.java" startLine="67" startPosition="49" endLine="68" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927838" fileName="DefaultOptionsContainer.java" startLine="68" startPosition="45" endLine="69" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927850" fileName="DefaultOptionsContainer.java" startLine="70" startPosition="51" endLine="71" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927856" fileName="DefaultOptionsContainer.java" startLine="71" startPosition="56" endLine="72" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927862" fileName="DefaultOptionsContainer.java" startLine="72" startPosition="44" endLine="73" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927871" fileName="DefaultOptionsContainer.java" startLine="73" startPosition="59" endLine="74" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927817" fileName="DefaultOptionsContainer.java" startLine="76" startPosition="44" endLine="77" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927876" fileName="DefaultOptionsContainer.java" startLine="78" startPosition="5" endLine="79" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="28859145781927886" fileName="DefaultOptionsContainer.java" startLine="82" startPosition="62" endLine="83" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927891" fileName="DefaultOptionsContainer.java" startLine="83" startPosition="47" endLine="84" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927920" fileName="DefaultOptionsContainer.java" startLine="85" startPosition="9" endLine="86" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927927" fileName="DefaultOptionsContainer.java" startLine="86" startPosition="52" endLine="87" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927944" fileName="DefaultOptionsContainer.java" startLine="88" startPosition="84" endLine="89" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927951" fileName="DefaultOptionsContainer.java" startLine="89" startPosition="58" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="28859145781927956" fileName="DefaultOptionsContainer.java" startLine="90" startPosition="50" endLine="91" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927962" fileName="DefaultOptionsContainer.java" startLine="91" startPosition="38" endLine="92" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927898" fileName="DefaultOptionsContainer.java" startLine="94" startPosition="44" endLine="95" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927907" fileName="DefaultOptionsContainer.java" startLine="95" startPosition="54" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927911" fileName="DefaultOptionsContainer.java" startLine="96" startPosition="31" endLine="97" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="28859145781927689" fileName="DefaultOptionsContainer.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultOptionsContainer#()V" />
-    <nodeInfo nodeId="2034046503361591515" fileName="DefaultOptionsContainer.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="28859145781927717" fileName="DefaultOptionsContainer.java" startLine="34" startPosition="59" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927783" fileName="DefaultOptionsContainer.java" startLine="51" startPosition="34" endLine="55" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="28859145781927724" fileName="DefaultOptionsContainer.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDefaultSearchOptions#(Ljava/lang/String;Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;)V" />
-    <nodeInfo nodeId="2034046503361591511" fileName="DefaultOptionsContainer.java" startLine="61" startPosition="89" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="28859145781927843" fileName="DefaultOptionsContainer.java" startLine="75" startPosition="46" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="28859145781927933" fileName="DefaultOptionsContainer.java" startLine="93" startPosition="44" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="28859145781927693" fileName="DefaultOptionsContainer.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultSearchOptions#(Ljava/lang/String;)Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;" />
-    <nodeInfo nodeId="5345717287655999198" fileName="DefaultOptionsContainer.java" startLine="60" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultFindersOption#()Ljetbrains/mps/ide/findusages/view/optionseditor/options/FindersOptions;" />
-    <nodeInfo nodeId="28859145781927752" fileName="DefaultOptionsContainer.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultSearchOptions#()Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;" />
-    <nodeInfo nodeId="28859145781927814" fileName="DefaultOptionsContainer.java" startLine="71" startPosition="72" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="28859145781927895" fileName="DefaultOptionsContainer.java" startLine="90" startPosition="29" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="28859145781927802" fileName="DefaultOptionsContainer.java" startLine="70" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeOptions#(Ljetbrains/mps/project/MPSProject;)Lorg/jdom/Element;" />
-    <nodeInfo nodeId="28859145781927878" fileName="DefaultOptionsContainer.java" startLine="88" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readOptions#(Lorg/jdom/Element;Ljetbrains/mps/project/MPSProject;)V" />
+    <nodeInfo nodeId="2034046503361591515" fileName="DefaultOptionsContainer.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="28859145781927724" fileName="DefaultOptionsContainer.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDefaultSearchOptions#(Ljava/lang/String;Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;)V" />
+    <nodeInfo nodeId="2034046503361591511" fileName="DefaultOptionsContainer.java" startLine="55" startPosition="89" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="28859145781927693" fileName="DefaultOptionsContainer.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultSearchOptions#(Ljava/lang/String;)Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;" />
+    <nodeInfo nodeId="28859145781927843" fileName="DefaultOptionsContainer.java" startLine="69" startPosition="46" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="28859145781927933" fileName="DefaultOptionsContainer.java" startLine="87" startPosition="44" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="28859145781927752" fileName="DefaultOptionsContainer.java" startLine="45" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultSearchOptions#()Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;" />
+    <nodeInfo nodeId="5345717287655999198" fileName="DefaultOptionsContainer.java" startLine="54" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultFindersOption#()Ljetbrains/mps/ide/findusages/view/optionseditor/options/FindersOptions;" />
+    <nodeInfo nodeId="28859145781927814" fileName="DefaultOptionsContainer.java" startLine="65" startPosition="72" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="28859145781927895" fileName="DefaultOptionsContainer.java" startLine="84" startPosition="29" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="28859145781927802" fileName="DefaultOptionsContainer.java" startLine="64" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeOptions#(Ljetbrains/mps/project/MPSProject;)Lorg/jdom/Element;" />
+    <nodeInfo nodeId="28859145781927878" fileName="DefaultOptionsContainer.java" startLine="82" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readOptions#(Lorg/jdom/Element;Ljetbrains/mps/project/MPSProject;)V" />
     <scopeInfo nodeId="28859145781927692" fileName="DefaultOptionsContainer.java" startLine="29" startPosition="36" endLine="29" endPosition="36" />
-    <scopeInfo nodeId="2034046503361591516" fileName="DefaultOptionsContainer.java" startLine="63" startPosition="25" endLine="64" endPosition="111" />
-    <scopeInfo nodeId="28859145781927815" fileName="DefaultOptionsContainer.java" startLine="82" startPosition="0" endLine="83" endPosition="43">
+    <scopeInfo nodeId="2034046503361591516" fileName="DefaultOptionsContainer.java" startLine="57" startPosition="25" endLine="58" endPosition="111" />
+    <scopeInfo nodeId="28859145781927815" fileName="DefaultOptionsContainer.java" startLine="76" startPosition="0" endLine="77" endPosition="43">
       <varInfo nodeId="28859145781927823" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927816" fileName="DefaultOptionsContainer.java" startLine="82" startPosition="44" endLine="83" endPosition="43" />
+    <scopeInfo nodeId="28859145781927816" fileName="DefaultOptionsContainer.java" startLine="76" startPosition="44" endLine="77" endPosition="43" />
     <scopeInfo nodeId="28859145781927689" fileName="DefaultOptionsContainer.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="28859145781927731" fileName="DefaultOptionsContainer.java" startLine="42" startPosition="95" endLine="45" endPosition="88" />
-    <scopeInfo nodeId="2034046503361591515" fileName="DefaultOptionsContainer.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="28859145781927896" fileName="DefaultOptionsContainer.java" startLine="100" startPosition="0" endLine="103" endPosition="44">
+    <scopeInfo nodeId="28859145781927731" fileName="DefaultOptionsContainer.java" startLine="39" startPosition="95" endLine="42" endPosition="88" />
+    <scopeInfo nodeId="2034046503361591515" fileName="DefaultOptionsContainer.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="28859145781927896" fileName="DefaultOptionsContainer.java" startLine="94" startPosition="0" endLine="97" endPosition="44">
       <varInfo nodeId="28859145781927917" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927897" fileName="DefaultOptionsContainer.java" startLine="100" startPosition="44" endLine="103" endPosition="44" />
-    <scopeInfo nodeId="28859145781927849" fileName="DefaultOptionsContainer.java" startLine="76" startPosition="51" endLine="80" endPosition="52">
-      <varInfo nodeId="28859145781927851" varName="optionXML" />
-    </scopeInfo>
-    <scopeInfo nodeId="28859145781927943" fileName="DefaultOptionsContainer.java" startLine="94" startPosition="84" endLine="98" endPosition="38">
-      <varInfo nodeId="28859145781927945" varName="np" />
-      <varInfo nodeId="28859145781927952" varName="opt" />
-    </scopeInfo>
-    <scopeInfo nodeId="28859145781927724" fileName="DefaultOptionsContainer.java" startLine="42" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="28859145781927727" varName="concept" />
-      <varInfo nodeId="28859145781927729" varName="defaultSearchOptions" />
-    </scopeInfo>
-    <scopeInfo nodeId="28859145781927843" fileName="DefaultOptionsContainer.java" startLine="75" startPosition="46" endLine="81" endPosition="7">
-      <varInfo nodeId="28859145781927847" varName="np" />
-    </scopeInfo>
-    <scopeInfo nodeId="28859145781927933" fileName="DefaultOptionsContainer.java" startLine="93" startPosition="44" endLine="99" endPosition="7">
-      <varInfo nodeId="28859145781927941" varName="findersXML" />
-    </scopeInfo>
-    <scopeInfo nodeId="28859145781927698" fileName="DefaultOptionsContainer.java" startLine="32" startPosition="68" endLine="39" endPosition="18">
+    <scopeInfo nodeId="28859145781927897" fileName="DefaultOptionsContainer.java" startLine="94" startPosition="44" endLine="97" endPosition="44" />
+    <scopeInfo nodeId="28859145781927698" fileName="DefaultOptionsContainer.java" startLine="32" startPosition="68" endLine="36" endPosition="18">
       <varInfo nodeId="28859145781927706" varName="finders" />
       <varInfo nodeId="28859145781927700" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5345717287655999201" fileName="DefaultOptionsContainer.java" startLine="60" startPosition="54" endLine="67" endPosition="32">
-      <varInfo nodeId="28859145781927970" varName="findersOptions" />
+    <scopeInfo nodeId="28859145781927849" fileName="DefaultOptionsContainer.java" startLine="70" startPosition="51" endLine="74" endPosition="52">
+      <varInfo nodeId="28859145781927851" varName="optionXML" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927919" fileName="DefaultOptionsContainer.java" startLine="91" startPosition="9" endLine="99" endPosition="7">
-      <varInfo nodeId="28859145781927921" varName="soXML" />
+    <scopeInfo nodeId="28859145781927943" fileName="DefaultOptionsContainer.java" startLine="88" startPosition="84" endLine="92" endPosition="38">
+      <varInfo nodeId="28859145781927945" varName="np" />
+      <varInfo nodeId="28859145781927952" varName="opt" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927693" fileName="DefaultOptionsContainer.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="28859145781927724" fileName="DefaultOptionsContainer.java" startLine="39" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="28859145781927727" varName="concept" />
+      <varInfo nodeId="28859145781927729" varName="defaultSearchOptions" />
+    </scopeInfo>
+    <scopeInfo nodeId="28859145781927693" fileName="DefaultOptionsContainer.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="28859145781927696" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927755" fileName="DefaultOptionsContainer.java" startLine="48" startPosition="58" endLine="57" endPosition="18">
+    <scopeInfo nodeId="28859145781927755" fileName="DefaultOptionsContainer.java" startLine="45" startPosition="58" endLine="51" endPosition="18">
       <varInfo nodeId="28859145781927757" varName="result" />
       <varInfo nodeId="28859145781927784" varName="scopeOptions" />
       <varInfo nodeId="28859145781927772" varName="viewOptions" />
     </scopeInfo>
-    <scopeInfo nodeId="5345717287655999198" fileName="DefaultOptionsContainer.java" startLine="60" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="28859145781927825" fileName="DefaultOptionsContainer.java" startLine="72" startPosition="9" endLine="81" endPosition="7">
+    <scopeInfo nodeId="28859145781927843" fileName="DefaultOptionsContainer.java" startLine="69" startPosition="46" endLine="75" endPosition="7">
+      <varInfo nodeId="28859145781927847" varName="np" />
+    </scopeInfo>
+    <scopeInfo nodeId="28859145781927933" fileName="DefaultOptionsContainer.java" startLine="87" startPosition="44" endLine="93" endPosition="7">
+      <varInfo nodeId="28859145781927941" varName="findersXML" />
+    </scopeInfo>
+    <scopeInfo nodeId="5345717287655999201" fileName="DefaultOptionsContainer.java" startLine="54" startPosition="54" endLine="61" endPosition="32">
+      <varInfo nodeId="28859145781927970" varName="findersOptions" />
+    </scopeInfo>
+    <scopeInfo nodeId="28859145781927752" fileName="DefaultOptionsContainer.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="28859145781927919" fileName="DefaultOptionsContainer.java" startLine="85" startPosition="9" endLine="93" endPosition="7">
+      <varInfo nodeId="28859145781927921" varName="soXML" />
+    </scopeInfo>
+    <scopeInfo nodeId="5345717287655999198" fileName="DefaultOptionsContainer.java" startLine="54" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="28859145781927825" fileName="DefaultOptionsContainer.java" startLine="66" startPosition="9" endLine="75" endPosition="7">
       <varInfo nodeId="28859145781927827" varName="soXML" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927752" fileName="DefaultOptionsContainer.java" startLine="48" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="28859145781927807" fileName="DefaultOptionsContainer.java" startLine="70" startPosition="51" endLine="85" endPosition="33">
+    <scopeInfo nodeId="28859145781927807" fileName="DefaultOptionsContainer.java" startLine="64" startPosition="51" endLine="79" endPosition="33">
       <varInfo nodeId="28859145781927809" varName="defaultFindOptionsXML" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927885" fileName="DefaultOptionsContainer.java" startLine="88" startPosition="62" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="28859145781927802" fileName="DefaultOptionsContainer.java" startLine="70" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="28859145781927885" fileName="DefaultOptionsContainer.java" startLine="82" startPosition="62" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="28859145781927802" fileName="DefaultOptionsContainer.java" startLine="64" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="28859145781927805" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="28859145781927878" fileName="DefaultOptionsContainer.java" startLine="88" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="28859145781927878" fileName="DefaultOptionsContainer.java" startLine="82" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="28859145781927883" varName="project" />
       <varInfo nodeId="28859145781927881" varName="state" />
     </scopeInfo>
-    <unitInfo nodeId="2034046503361591515" fileName="DefaultOptionsContainer.java" startLine="62" startPosition="45" endLine="66" endPosition="5" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer$1" />
-    <unitInfo nodeId="28859145781927653" fileName="DefaultOptionsContainer.java" startLine="20" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
+    <unitInfo nodeId="2034046503361591515" fileName="DefaultOptionsContainer.java" startLine="56" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer$1" />
+    <unitInfo nodeId="28859145781927653" fileName="DefaultOptionsContainer.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
   </root>
 </debugInfo>
 

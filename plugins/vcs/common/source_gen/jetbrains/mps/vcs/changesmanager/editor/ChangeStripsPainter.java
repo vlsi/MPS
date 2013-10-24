@@ -69,7 +69,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     }
     for (ChangeGroup changeGroup : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
       Bounds bounds = changeGroup.getBounds(true);
-      int y = (int) bounds.start();
+      int y = (int) (bounds.start());
       g.setColor(ChangeColors.get(changeGroup.getChangeType()));
       if (bounds.length() <= 1) {
         Graphics2D g2d = ((Graphics2D) g);
@@ -137,7 +137,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       return ListSequence.fromList(myChangeGroupLayout.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup cg) {
           Bounds b = cg.getBounds(true);
-          return (int) b.start() <= p.getY() && p.getY() <= (int) b.end() || b.length() <= 1 && (int) b.start() - ARROW_HEIGHT / 2 <= p.getY() && p.getY() <= (int) b.end() + ARROW_HEIGHT / 2;
+          return (int) (b.start()) <= p.getY() && p.getY() <= (int) (b.end()) || b.length() <= 1 && (int) (b.start()) - ARROW_HEIGHT / 2 <= p.getY() && p.getY() <= (int) (b.end()) + ARROW_HEIGHT / 2;
         }
       });
     } else {
@@ -233,14 +233,14 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       final int bottomY = contextCell.getY() + contextCell.getHeight();
       return ListSequence.fromList(myChangeGroupLayout.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup g) {
-          return bottomY < (int) g.getBounds(true).start();
+          return bottomY < (int) (g.getBounds(true).start());
         }
       });
     } else {
       final int topY = contextCell.getY();
       return ListSequence.fromList(myChangeGroupLayout.getChangeGroups()).findLast(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup g) {
-          return topY > (int) g.getBounds(true).end();
+          return topY > (int) (g.getBounds(true).end());
         }
       });
     }
@@ -254,7 +254,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   /*package*/ void showPopupForGroup(@Nullable ChangeGroup group) {
     check_h84zmo_a0a52(myPopupToolbar);
     if (group != null) {
-      showPopupForGroup(group, (int) group.getBounds(true).start());
+      showPopupForGroup(group, (int) (group.getBounds(true).start()));
     }
   }
 

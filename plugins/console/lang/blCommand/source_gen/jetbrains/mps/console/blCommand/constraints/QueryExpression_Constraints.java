@@ -42,7 +42,7 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
       return true;
     }
     if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.console.blCommand.structure.QueryParameter")) {
-      return Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains((SNode) childConcept);
+      return Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains((SNode) childConcept);
     }
     return true;
   }

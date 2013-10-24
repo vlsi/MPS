@@ -23,10 +23,7 @@ public class JavaWatchpointValueWatchable extends JavaWatchable implements IWatc
 
   @Override
   public String getName() {
-    return (myIsOld ?
-      "current value" :
-      "new value"
-    );
+    return (myIsOld ? "current value" : "new value");
   }
 
   @Override

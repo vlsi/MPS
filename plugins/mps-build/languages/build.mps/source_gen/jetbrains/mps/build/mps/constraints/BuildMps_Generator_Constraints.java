@@ -35,10 +35,7 @@ public class BuildMps_Generator_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode pnode = (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_Group") ?
-      SNodeOperations.getParent(parentNode) :
-      parentNode
-    );
+    SNode pnode = (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_Group") ? SNodeOperations.getParent(parentNode) : parentNode);
     return SNodeOperations.isInstanceOf(pnode, "jetbrains.mps.build.mps.structure.BuildMps_Language") || (SNodeOperations.isInstanceOf(pnode, "jetbrains.mps.build.structure.BuildProject") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(pnode, "jetbrains.mps.build.structure.BuildProject"), "plugins", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMPSPlugin");

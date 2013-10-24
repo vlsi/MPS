@@ -217,43 +217,43 @@
     <nodeInfo nodeId="1936544640085959259" fileName="Graph.java" startLine="41" startPosition="49" endLine="42" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5772228662489719161" fileName="Graph.java" startLine="46" startPosition="106" endLine="47" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5772228662489719194" fileName="Graph.java" startLine="47" startPosition="25" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1936544640085961312" fileName="Graph.java" startLine="61" startPosition="44" endLine="62" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5772228662489718063" fileName="Graph.java" startLine="66" startPosition="37" endLine="67" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1936544640085961321" fileName="Graph.java" startLine="71" startPosition="45" endLine="72" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1936544640085959269" fileName="Graph.java" startLine="51" startPosition="36" endLine="52" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1936544640085961312" fileName="Graph.java" startLine="58" startPosition="44" endLine="59" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5772228662489718063" fileName="Graph.java" startLine="63" startPosition="37" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1936544640085961321" fileName="Graph.java" startLine="68" startPosition="45" endLine="69" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1936544640085955978" fileName="Graph.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Graph#()V" />
+    <nodeInfo nodeId="1936544640085959264" fileName="Graph.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVertices#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1936544640085959197" fileName="Graph.java" startLine="28" startPosition="56" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1936544640085959237" fileName="Graph.java" startLine="36" startPosition="58" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5772228662489719145" fileName="Graph.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sort#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Z)V" />
-    <nodeInfo nodeId="1936544640085959269" fileName="Graph.java" startLine="51" startPosition="36" endLine="55" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1936544640085959281" fileName="Graph.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forwardEdges#(null)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5772228662489717950" fileName="Graph.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="vertices#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1936544640085959305" fileName="Graph.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="backwardEdges#(null)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1936544640085959264" fileName="Graph.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVertices#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1936544640085959281" fileName="Graph.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forwardEdges#(null)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5772228662489717950" fileName="Graph.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="vertices#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1936544640085959305" fileName="Graph.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="backwardEdges#(null)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1936544640085959219" fileName="Graph.java" startLine="33" startPosition="51" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1936544640085959276" fileName="Graph.java" startLine="58" startPosition="46" endLine="74" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1936544640085959276" fileName="Graph.java" startLine="55" startPosition="46" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1936544640085959180" fileName="Graph.java" startLine="27" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEdges#(nullnull)V" />
-    <nodeInfo nodeId="1936544640085959271" fileName="Graph.java" startLine="58" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCycleDetector#()Ljetbrains/mps/internal/make/runtime/util/GraphAnalyzer;" />
+    <nodeInfo nodeId="1936544640085959271" fileName="Graph.java" startLine="55" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCycleDetector#()Ljetbrains/mps/internal/make/runtime/util/GraphAnalyzer;" />
     <scopeInfo nodeId="1936544640085955981" fileName="Graph.java" startLine="24" startPosition="18" endLine="24" endPosition="18" />
-    <scopeInfo nodeId="1936544640085959287" fileName="Graph.java" startLine="61" startPosition="44" endLine="62" endPosition="51" />
-    <scopeInfo nodeId="5772228662489717954" fileName="Graph.java" startLine="66" startPosition="37" endLine="67" endPosition="29" />
-    <scopeInfo nodeId="1936544640085959311" fileName="Graph.java" startLine="71" startPosition="45" endLine="72" endPosition="51" />
+    <scopeInfo nodeId="1936544640085959268" fileName="Graph.java" startLine="51" startPosition="36" endLine="52" endPosition="89" />
+    <scopeInfo nodeId="1936544640085959287" fileName="Graph.java" startLine="58" startPosition="44" endLine="59" endPosition="51" />
+    <scopeInfo nodeId="5772228662489717954" fileName="Graph.java" startLine="63" startPosition="37" endLine="64" endPosition="29" />
+    <scopeInfo nodeId="1936544640085959311" fileName="Graph.java" startLine="68" startPosition="45" endLine="69" endPosition="51" />
     <scopeInfo nodeId="1936544640085955978" fileName="Graph.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1936544640085959201" fileName="Graph.java" startLine="29" startPosition="21" endLine="31" endPosition="49" />
     <scopeInfo nodeId="1936544640085959241" fileName="Graph.java" startLine="37" startPosition="23" endLine="39" endPosition="51" />
     <scopeInfo nodeId="5772228662489719148" fileName="Graph.java" startLine="46" startPosition="106" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="1936544640085959264" fileName="Graph.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="5772228662489719145" fileName="Graph.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="5772228662489719188" varName="asc" />
       <varInfo nodeId="5772228662489719149" varName="sorter" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085959268" fileName="Graph.java" startLine="51" startPosition="36" endLine="55" endPosition="6" />
-    <scopeInfo nodeId="1936544640085959281" fileName="Graph.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1936544640085959281" fileName="Graph.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1936544640085959285" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="5772228662489717950" fileName="Graph.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1936544640085959305" fileName="Graph.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="5772228662489717950" fileName="Graph.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1936544640085959305" fileName="Graph.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1936544640085959309" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085959264" fileName="Graph.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1936544640085959223" fileName="Graph.java" startLine="34" startPosition="23" endLine="42" endPosition="53">
       <varInfo nodeId="1936544640085959230" varName="bk" />
     </scopeInfo>
@@ -263,14 +263,14 @@
     <scopeInfo nodeId="1936544640085959188" fileName="Graph.java" startLine="27" startPosition="41" endLine="43" endPosition="5">
       <varInfo nodeId="1936544640085959190" varName="fw" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085959275" fileName="Graph.java" startLine="58" startPosition="46" endLine="74" endPosition="6" />
+    <scopeInfo nodeId="1936544640085959275" fileName="Graph.java" startLine="55" startPosition="46" endLine="71" endPosition="6" />
     <scopeInfo nodeId="1936544640085959180" fileName="Graph.java" startLine="27" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1936544640085959183" varName="from" />
       <varInfo nodeId="1936544640085959185" varName="to" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085959271" fileName="Graph.java" startLine="58" startPosition="0" endLine="76" endPosition="0" />
-    <unitInfo nodeId="1936544640085959279" fileName="Graph.java" startLine="59" startPosition="15" endLine="74" endPosition="5" unitName="jetbrains.mps.make.unittest.Graph$1" />
-    <unitInfo nodeId="1936544640085955976" fileName="Graph.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.unittest.Graph" />
+    <scopeInfo nodeId="1936544640085959271" fileName="Graph.java" startLine="55" startPosition="0" endLine="73" endPosition="0" />
+    <unitInfo nodeId="1936544640085959279" fileName="Graph.java" startLine="56" startPosition="15" endLine="71" endPosition="5" unitName="jetbrains.mps.make.unittest.Graph$1" />
+    <unitInfo nodeId="1936544640085955976" fileName="Graph.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.make.unittest.Graph" />
   </root>
   <root nodeRef="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)/2060915483419300602">
     <nodeInfo nodeId="2060915483419300617" fileName="MockTestCase.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />

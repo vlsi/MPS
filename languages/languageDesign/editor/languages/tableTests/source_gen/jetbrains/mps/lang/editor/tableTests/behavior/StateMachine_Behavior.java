@@ -23,10 +23,7 @@ public class StateMachine_Behavior {
     }
     for (int i = 0; i < count; i++) {
       SNode sourceState = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "states", true)).getElement(i);
-      SNode targetState = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "states", true)).getElement((i + 1 == count ?
-        0 :
-        i + 1
-      ));
+      SNode targetState = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "states", true)).getElement((i + 1 == count ? 0 : i + 1));
       SNode event = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "events", true)).getElement(i);
 
       SNode transition = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Transition", null);

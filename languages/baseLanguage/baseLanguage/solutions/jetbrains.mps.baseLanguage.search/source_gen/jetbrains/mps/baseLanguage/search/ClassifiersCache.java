@@ -64,7 +64,7 @@ import jetbrains.mps.cache.CachesManager;
     }
     ListSequence.fromList(MapSequence.fromMap(myClassifiersByName).get(name)).addElement(classifier);
     MapSequence.fromMap(myNameByClassifier).put(classifier, name);
-    for (SNode innerClassifier : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})) {
+    for (SNode innerClassifier : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})) {
       this.putClassifier(innerClassifier);
     }
   }
@@ -79,7 +79,7 @@ import jetbrains.mps.cache.CachesManager;
       }
     }
     MapSequence.fromMap(myNameByClassifier).removeKey(classifier);
-    for (SNode innerClassifier : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})) {
+    for (SNode innerClassifier : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})) {
       this.removeClassifier(innerClassifier);
     }
   }
@@ -164,7 +164,7 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   private void collectInnerClasses(SNode classConcept, List<SNode> list) {
-    Iterable<SNode> inners = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{});
+    Iterable<SNode> inners = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{});
     ListSequence.fromList(list).addSequence(Sequence.fromIterable(inners));
     for (SNode inner : inners) {
       this.collectInnerClasses(inner, list);

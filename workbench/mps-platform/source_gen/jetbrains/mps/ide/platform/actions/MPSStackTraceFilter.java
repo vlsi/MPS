@@ -32,10 +32,7 @@ public class MPSStackTraceFilter implements Filter {
 
 
   private Filter.Result tryToParseLine(String line, int offset, Project project) {
-    if (((line == null ?
-      null :
-      line.trim()
-    )).indexOf(STRING_START) < 0) {
+    if (((line == null ? null : line.trim())).indexOf(STRING_START) < 0) {
       return null;
     }
 
@@ -55,10 +52,7 @@ public class MPSStackTraceFilter implements Filter {
     final String position = tmpStr.substring(parenIndex + 1, closingParenIndex);
 
     int lastDot = methodName.lastIndexOf(".");
-    final String unitName = ((lastDot == -1 ?
-      "" :
-      methodName.substring(0, lastDot)
-    ));
+    final String unitName = ((lastDot == -1 ? "" : methodName.substring(0, lastDot)));
     String[] split = position.split(":");
     if (split.length < 2) {
       return null;

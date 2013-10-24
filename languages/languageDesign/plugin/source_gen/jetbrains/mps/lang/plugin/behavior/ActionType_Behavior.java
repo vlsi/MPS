@@ -12,6 +12,6 @@ public class ActionType_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "action", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "action", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
   }
 }

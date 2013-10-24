@@ -27,7 +27,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4089647634161018296(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String tns = IterableUtils.join(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) Object.class), _context.getNode(), "virtual_testNames_4089647634160960707", new Object[]{})), ",");
+    String tns = IterableUtils.join(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) (Object.class)), _context.getNode(), "virtual_testNames_4089647634160960707", new Object[]{})), ",");
     if ((tns == null || tns.length() == 0)) {
       _context.showWarningMessage(_context.getNode(), "empty test case");
     }

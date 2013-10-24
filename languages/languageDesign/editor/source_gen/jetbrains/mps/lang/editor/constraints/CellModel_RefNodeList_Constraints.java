@@ -44,7 +44,7 @@ public class CellModel_RefNodeList_Constraints extends BaseConstraintsDescriptor
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
-            SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+            SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
             List<SNode> links = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(editedConcept);
             return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

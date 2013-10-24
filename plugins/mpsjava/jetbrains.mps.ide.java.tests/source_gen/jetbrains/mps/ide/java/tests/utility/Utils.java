@@ -68,10 +68,7 @@ public class Utils {
       JavaParser parser = new JavaParser();
       SModel mdl;
       mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
-      FeatureKind howToParse = (onlyStubs ?
-        FeatureKind.CLASS_STUB :
-        FeatureKind.CLASS
-      );
+      FeatureKind howToParse = (onlyStubs ? FeatureKind.CLASS_STUB : FeatureKind.CLASS);
       List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 

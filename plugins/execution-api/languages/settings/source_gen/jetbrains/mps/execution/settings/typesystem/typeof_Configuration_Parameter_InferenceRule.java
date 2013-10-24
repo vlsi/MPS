@@ -22,7 +22,7 @@ public class typeof_Configuration_Parameter_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = configurationParameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235497142", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235497147", true), (SNode) PersistentConfiguration_Behavior.call_getContextPersistentConfigurationType_946964771156066389(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfiguration"))), configurationParameter), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "6981317760235497147", true), (SNode) (PersistentConfiguration_Behavior.call_getContextPersistentConfigurationType_946964771156066389(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfiguration"))), configurationParameter)), _info_12389875345);
     }
   }
 

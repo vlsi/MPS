@@ -30,7 +30,7 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "runtime interface must have exactly one method", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049608", null, errorTarget);
       }
       SNode mtd = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(rt)).first();
-      if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ft, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
+      if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), ft, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
         if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(mtd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "return type expected", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049710", null, errorTarget);

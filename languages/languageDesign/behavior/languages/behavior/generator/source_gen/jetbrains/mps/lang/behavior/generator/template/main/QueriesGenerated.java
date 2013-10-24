@@ -186,10 +186,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2061371070686517040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SPropertyOperations.getBoolean(_context.getNode(), "isStatic") ?
-      "thisConcept" :
-      "thisNode"
-    );
+    return (SPropertyOperations.getBoolean(_context.getNode(), "isStatic") ? "thisConcept" : "thisNode");
   }
 
   public static Object referenceMacro_GetReferent_7923290658387314636(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -270,7 +267,7 @@ public class QueriesGenerated {
     // use smart construction not generated before all types from bl 
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isEmpty()) || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.StringType")) {
       // todo: remove getClassExpression here 
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
       return _quotation_createNode_x583g4_a0a0c0xb(returnType);
     }
@@ -288,7 +285,7 @@ public class QueriesGenerated {
     // remove this method at all 
     SNode returnType = SLinkOperations.getTarget(_context.getNode(), "returnType", true);
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isEmpty()) || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.StringType")) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
       return _quotation_createNode_x583g4_a0a0c0ac(returnType);
     }
@@ -296,7 +293,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1902094167074144918(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     try {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getClassExpression_1213877337357", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getClassExpression_1213877337357", new Object[]{});
     } catch (Exception e) {
       return _quotation_createNode_x583g4_a0a0a0bc();
     }
@@ -420,10 +417,7 @@ public class QueriesGenerated {
 
     List<SNode> methods = ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     SNode extendsNode = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "extends", false);
-    extendsNode = ((extendsNode != null) ?
-      extendsNode :
-      SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")
-    );
+    extendsNode = ((extendsNode != null) ? extendsNode : SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
 
     if (extendsNode != SLinkOperations.getTarget(_context.getNode(), "concept", false)) {
       ListSequence.fromList(methods).removeSequence(ListSequence.fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));

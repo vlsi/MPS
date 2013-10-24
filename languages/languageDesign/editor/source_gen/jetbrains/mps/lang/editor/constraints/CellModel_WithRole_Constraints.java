@@ -41,7 +41,7 @@ public class CellModel_WithRole_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // relations (links,properties etc.) declared in hierarchy of edited concept 
             SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
-            SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+            SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
             return new ConceptAndSuperConceptsScope(editedConcept);
           }
 

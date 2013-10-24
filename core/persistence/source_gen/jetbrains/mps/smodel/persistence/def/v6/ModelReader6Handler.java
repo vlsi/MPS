@@ -60,10 +60,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    ModelReader6Handler.ElementHandler current = (myHandlersStack.empty() ?
-      (ModelReader6Handler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    ModelReader6Handler.ElementHandler current = (myHandlersStack.empty() ? (ModelReader6Handler.ElementHandler) null : myHandlersStack.peek());
     if (current != null) {
       current.handleText(myValues.peek(), new String(array, start, len));
     }
@@ -86,10 +83,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    ModelReader6Handler.ElementHandler current = (myHandlersStack.empty() ?
-      (ModelReader6Handler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    ModelReader6Handler.ElementHandler current = (myHandlersStack.empty() ? (ModelReader6Handler.ElementHandler) null : myHandlersStack.peek());
     if (current == null) {
       // root 
       current = modelhandler;

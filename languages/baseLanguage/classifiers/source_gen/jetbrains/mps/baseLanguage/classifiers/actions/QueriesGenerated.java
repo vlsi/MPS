@@ -36,7 +36,7 @@ public class QueriesGenerated {
         if (SNodeOperations.isInstanceOf(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
           return SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
         } else {
-          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), "virtual_getMainClassifier_1213877255428", new Object[]{});
+          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), "virtual_getMainClassifier_1213877255428", new Object[]{});
         }
       }
     }.compute();
@@ -51,7 +51,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClassifier, "virtual_getMembers_1213877528020", new Object[]{_context.getParentNode()});
+            return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), contextClassifier, "virtual_getMembers_1213877528020", new Object[]{_context.getParentNode()});
           }
         }.compute();
         if (queryResult != null) {
@@ -63,7 +63,7 @@ public class QueriesGenerated {
                 if (multipleClassifiers) {
                   SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "operand", true), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"), "classifier", contextClassifier, false);
                 }
-                SLinkOperations.setTarget(result, "operation", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_createOperation_1213877353000", new Object[]{}), true);
+                SLinkOperations.setTarget(result, "operation", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), (item), "virtual_createOperation_1213877353000", new Object[]{}), true);
                 return result;
               }
             });

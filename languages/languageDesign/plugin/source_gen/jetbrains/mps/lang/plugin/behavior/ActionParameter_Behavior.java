@@ -13,21 +13,21 @@ public class ActionParameter_Behavior {
 
   @Deprecated
   public static SNode call_getType_1171743928471337193(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_1171743928471337193", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getType_1171743928471337193", new Object[]{});
   }
 
   @Deprecated
   public static SNode call_getFieldDeclaration_1171743928471867409(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getType_1171743928471337193(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), callerConceptFqName, "virtual_getType_1171743928471337193", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), callerConceptFqName, "virtual_getType_1171743928471337193", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getFieldDeclaration_1171743928471867409(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), callerConceptFqName, "virtual_getFieldDeclaration_1171743928471867409", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), callerConceptFqName, "virtual_getFieldDeclaration_1171743928471867409", new Class[]{SNode.class}, new Object[]{});
   }
 }

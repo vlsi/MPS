@@ -118,7 +118,7 @@ __switch__:
     });
     this.assertIterableEqualsAsSet(this.input5(), SetSequence.fromSet(ls).select(new ISelector<Long, Integer>() {
       public Integer select(Long l) {
-        return (int) (long) l;
+        return (int) ((long) l);
       }
     }));
   }

@@ -508,7 +508,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         return;
       }
       myCursor = newCursor;
-      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       setSelection();
     }
   }
@@ -534,10 +534,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
       if (!((newCursor == null))) {
         myCursor = newCursor;
-        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       } else {
         myCursor = null;
-        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       }
       setSelection();
     }
@@ -622,7 +622,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     if (executeAfter == null) {
       executeAfter = new Runnable() {
         public void run() {
-          SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
         }
       };
     } else {
@@ -675,10 +675,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          result.state = (myModel == null ?
-            null :
-            PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL)
-          );
+          result.state = (myModel == null ? null : PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL));
         } catch (Exception e) {
           if (LOG.isEnabledFor(Priority.WARN)) {
             LOG.warn("Error on console model saving", e);
@@ -686,10 +683,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         }
       }
     });
-    return (result.state == null ?
-      null :
-      result
-    );
+    return (result.state == null ? null : result);
   }
 
 
@@ -753,9 +747,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   }
 
   private static boolean eq_xg3v07_a0a1a0a0a0a0a2a1a0a0e0a0a0a0b0y(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

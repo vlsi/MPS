@@ -55,7 +55,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
 
   @Override
   public void replaceNode(SNode node, SNode declaration) {
-    SNode reference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), declaration, "virtual_createReference_1213877517482", new Object[]{});
+    SNode reference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), declaration, "virtual_createReference_1213877517482", new Object[]{});
     SNodeOperations.replaceWithAnother(node, reference);
     this.moveDeclarationIfNeed(reference, SNodeOperations.getParent(declaration));
   }

@@ -23,7 +23,7 @@ public class typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule extend
   public void applyRule(final SNode cellActionMap_FunctionParm_selectedNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(cellActionMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", false, false), "applicableConcept", false);
     if (applicableConcept == null) {
-      applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(cellActionMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+      applicableConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.getAncestor(cellActionMap_FunctionParm_selectedNode, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
     }
     {
       SNode _nodeToCheck_1029348928467 = cellActionMap_FunctionParm_selectedNode;

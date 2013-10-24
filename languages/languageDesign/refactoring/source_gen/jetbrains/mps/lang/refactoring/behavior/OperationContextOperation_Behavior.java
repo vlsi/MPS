@@ -21,12 +21,12 @@ public class OperationContextOperation_Behavior {
 
   @Deprecated
   public static SNode call_createType_7012097027058652520(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_7012097027058652452", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createType_7012097027058652452", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createType_7012097027058652520(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.OperationContextOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.OperationContextOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_h3t8x5_a0a0() {

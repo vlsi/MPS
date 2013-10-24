@@ -42,7 +42,7 @@ public class BuildPlugin_Behavior {
 
   @Deprecated
   public static Iterable<SNode> call_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getImportedLibraries_4101476690142937969", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getImportedLibraries_4101476690142937969", new Object[]{});
   }
 
   @Deprecated
@@ -57,6 +57,6 @@ public class BuildPlugin_Behavior {
 
   @Deprecated
   public static Iterable<SNode> callSuper_getImportedLibraries_4101476690142937969(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getImportedLibraries_4101476690142937969", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getImportedLibraries_4101476690142937969", new Class[]{SNode.class}, new Object[]{});
   }
 }

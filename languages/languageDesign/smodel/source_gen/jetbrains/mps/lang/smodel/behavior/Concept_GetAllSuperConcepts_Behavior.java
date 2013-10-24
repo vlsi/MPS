@@ -22,7 +22,7 @@ public class Concept_GetAllSuperConcepts_Behavior {
   }
 
   public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.smodel.structure.SNodeOperation", "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) (Object.class)), thisConcept, "jetbrains.mps.lang.smodel.structure.SNodeOperation", "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144100932627"));
     return result;
   }

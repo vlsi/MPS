@@ -53,10 +53,7 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T> {
 
   private boolean primMoveNext() {
     hasCurrent = delegate.hasNext();
-    current = (hasCurrent ?
-      delegate.next() :
-      null
-    );
+    current = (hasCurrent ? delegate.next() : null);
     return hasCurrent;
   }
 

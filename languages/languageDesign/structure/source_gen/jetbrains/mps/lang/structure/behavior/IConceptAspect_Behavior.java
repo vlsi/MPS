@@ -20,9 +20,9 @@ public class IConceptAspect_Behavior {
 
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode node = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+    SNode node = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
     if ((node != null)) {
-      ListSequence.fromList(result).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{}));
+      ListSequence.fromList(result).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{}));
     }
     return result;
   }
@@ -36,12 +36,12 @@ public class IConceptAspect_Behavior {
 
   @Deprecated
   public static SNode call_getBaseConcept_2621449412040133768(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> call_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
   }
 
   @Deprecated
@@ -56,12 +56,12 @@ public class IConceptAspect_Behavior {
 
   @Deprecated
   public static SNode callSuper_getBaseConcept_2621449412040133768(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getBaseConceptCollection_5270353093116013036(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

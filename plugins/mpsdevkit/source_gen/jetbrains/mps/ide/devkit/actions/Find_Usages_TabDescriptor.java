@@ -47,7 +47,7 @@ public class Find_Usages_TabDescriptor extends RelationDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.FIND_USAGES});
+    return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.FIND_USAGES});
   }
 
   public boolean isSingle() {

@@ -103,10 +103,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
     }
 
     private static boolean eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3c(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

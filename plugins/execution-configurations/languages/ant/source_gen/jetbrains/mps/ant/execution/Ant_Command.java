@@ -85,13 +85,7 @@ public class Ant_Command {
     if ((jdkHome == null || jdkHome.length() == 0)) {
       throw new ExecutionException("Could not find valid java home.");
     }
-    return new Java_Command().createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart("java.home", jdkHome), new PropertyCommandPart("ant.home", myAntLocation_String), new ListCommandPart(Sequence.fromIterable(Ant_Command.getMacroValues(myMacroToDefine_ListString)).toListSequence()), (((myOptions_String != null && myOptions_String.length() > 0) ?
-      myOptions_String + " " :
-      ""
-    )), new KeyValueCommandPart("-" + "f", new File(antFilePath)), (((myTargetName_String == null || myTargetName_String.length() == 0) ?
-      "" :
-      " " + myTargetName_String
-    )))), "org.apache.tools.ant.launch.Launcher", Ant_Command.getAntClassPath(myAntLocation_String));
+    return new Java_Command().createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart("java.home", jdkHome), new PropertyCommandPart("ant.home", myAntLocation_String), new ListCommandPart(Sequence.fromIterable(Ant_Command.getMacroValues(myMacroToDefine_ListString)).toListSequence()), (((myOptions_String != null && myOptions_String.length() > 0) ? myOptions_String + " " : "")), new KeyValueCommandPart("-" + "f", new File(antFilePath)), (((myTargetName_String == null || myTargetName_String.length() == 0) ? "" : " " + myTargetName_String)))), "org.apache.tools.ant.launch.Launcher", Ant_Command.getAntClassPath(myAntLocation_String));
   }
 
   private static String getDefaultAntHome() {

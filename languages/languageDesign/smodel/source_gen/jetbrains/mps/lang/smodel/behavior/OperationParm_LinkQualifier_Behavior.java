@@ -27,21 +27,18 @@ public class OperationParm_LinkQualifier_Behavior {
     final boolean acceptAggregations = SNodeOperations.isInstanceOf(OperationParm_LinkQualifier_Behavior.call_getOperation_5815925154349134240(thisNode), "jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation");
     return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(OperationParm_LinkQualifier_Behavior.call_getOperation_5815925154349134240(thisNode))), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true), "concept", false))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (acceptAggregations ?
-          SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") :
-          SPropertyOperations.hasValue(it, "metaClass", "reference", "reference")
-        );
+        return (acceptAggregations ? SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") : SPropertyOperations.hasValue(it, "metaClass", "reference", "reference"));
       }
     });
   }
 
   @Deprecated
   public static Iterable<SNode> call_getLinkAccessScope_2906110183022538865(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
   }
 
   @Deprecated
   public static Iterable<SNode> callSuper_getLinkAccessScope_2906110183022538865(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", new Class[]{SNode.class}, new Object[]{});
   }
 }

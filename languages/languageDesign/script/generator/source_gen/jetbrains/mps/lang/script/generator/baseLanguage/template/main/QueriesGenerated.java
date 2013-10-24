@@ -35,18 +35,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2598676492883187057(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String title = SPropertyOperations.getString(_context.getNode(), "description");
-    return (title != null ?
-      title :
-      ""
-    );
+    return (title != null ? title : "");
   }
 
   public static Object propertyMacro_GetPropertyValue_2598676492883187080(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String title = SPropertyOperations.getString(_context.getNode(), "description");
-    return (title != null ?
-      title :
-      ""
-    );
+    return (title != null ? title : "");
   }
 
   public static Object propertyMacro_GetPropertyValue_2598676492883187103(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -536,9 +530,6 @@ public class QueriesGenerated {
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0b0ic(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

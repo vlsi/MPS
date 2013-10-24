@@ -37,12 +37,12 @@ public class DequeType_Behavior {
 
   @Deprecated
   public static List<SNode> call_getAbstractCreators_7602110602933345651(SNode thisNode, SModel targetModel) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getAbstractCreators_7602110602933345651(SNode thisNode, String callerConceptFqName, SModel targetModel) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", new Class[]{SNode.class, SModel.class}, new Object[]{targetModel});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", new Class[]{SNode.class, SModel.class}, new Object[]{targetModel});
   }
 
   private static SNode _quotation_createNode_kzauu3_a0a1a0(Object parameter_1) {
