@@ -13,7 +13,7 @@ public class SNotation_Behavior {
 
   public static NotationContext virtual_getContext_8632884680339357870(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "context", true) != null)) {
-      return new NotationContext(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "context", true), "virtual_getContextElement_8632884680339331864", new Object[]{}), false, false);
+      return new NotationContext(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "context", true), "virtual_getContextElement_8632884680339331864", new Object[]{}), false, false);
     }
     return null;
   }

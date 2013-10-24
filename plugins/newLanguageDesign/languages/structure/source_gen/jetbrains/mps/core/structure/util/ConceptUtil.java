@@ -262,16 +262,10 @@ public class ConceptUtil {
 
 
   private static boolean eq_ensxth_a0a0a0a0a0a4a4a4(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_ensxth_a0a0a0a0a0a4a4a5(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

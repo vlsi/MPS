@@ -30,7 +30,7 @@ public class MqlClosure_Behavior {
     })) {
       ListSequence.fromList(SLinkOperations.getTargets(ftype, "parameterTypes", true)).addElement(SNodeOperations.copyNode(type));
     }
-    SLinkOperations.setTarget(ftype, "returnType", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getType_228266671027861783", new Object[]{}), true);
+    SLinkOperations.setTarget(ftype, "returnType", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getType_228266671027861783", new Object[]{}), true);
     return ftype;
   }
 

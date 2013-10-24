@@ -14,11 +14,11 @@
     <unitInfo nodeId="4188390566614790289" fileName="WflowStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.core.workflow.behavior.WflowStatement_Behavior" />
   </root>
   <root nodeRef="r:d4090e02-e0cf-4f11-86b3-9630536ff841(jetbrains.mps.core.workflow.behavior)/6711176417917954530">
-    <nodeInfo nodeId="6711176417918004915" fileName="WflowExpressionStatement_Behavior.java" startLine="13" startPosition="105" endLine="14" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6711176417918004915" fileName="WflowExpressionStatement_Behavior.java" startLine="13" startPosition="105" endLine="14" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6711176417917954530" fileName="WflowExpressionStatement_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6711176417917954530" fileName="WflowExpressionStatement_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getContainedVariableType_3435983127247055569#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="6711176417917954532" fileName="WflowExpressionStatement_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="6711176417918004909" fileName="WflowExpressionStatement_Behavior.java" startLine="13" startPosition="105" endLine="14" endPosition="194" />
+    <scopeInfo nodeId="6711176417918004909" fileName="WflowExpressionStatement_Behavior.java" startLine="13" startPosition="105" endLine="14" endPosition="196" />
     <scopeInfo nodeId="6711176417917954530" fileName="WflowExpressionStatement_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="6711176417917954530" varName="thisNode" />
     </scopeInfo>

@@ -32,7 +32,7 @@ public class check_MqlCollectionElementOp_NonTypesystemRule extends AbstractNonT
     }
 
     SNode elementType = SLinkOperations.getTarget(operandType, "inner", true);
-    SNode argType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(mqlElementOp, "argument", true), "virtual_getType_228266671027861783", new Object[]{});
+    SNode argType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(mqlElementOp, "argument", true), "virtual_getType_228266671027861783", new Object[]{});
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, argType, "virtual_isSubtypeOf_2852142168179579064", new Object[]{elementType}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

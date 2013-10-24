@@ -28,7 +28,7 @@ public class MqlExpression_Behavior {
 
   @Deprecated
   public static SNode call_getType_228266671027861783(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getType_228266671027861783", new Object[]{});
   }
 
   @Deprecated
@@ -43,7 +43,7 @@ public class MqlExpression_Behavior {
 
   @Deprecated
   public static SNode callSuper_getType_228266671027861783(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlExpression"), callerConceptFqName, "virtual_getType_228266671027861783", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlExpression"), callerConceptFqName, "virtual_getType_228266671027861783", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

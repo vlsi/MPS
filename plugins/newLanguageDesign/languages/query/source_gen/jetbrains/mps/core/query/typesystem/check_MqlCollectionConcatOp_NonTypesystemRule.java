@@ -27,7 +27,7 @@ public class check_MqlCollectionConcatOp_NonTypesystemRule extends AbstractNonTy
       return;
     }
 
-    SNode argType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(mqlConcatOp, "argument", true), "virtual_getType_228266671027861783", new Object[]{});
+    SNode argType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(mqlConcatOp, "argument", true), "virtual_getType_228266671027861783", new Object[]{});
     if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.core.query.structure.MqlCollectionType"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

@@ -28,7 +28,7 @@ public class MqlLet_Behavior {
   }
 
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "expression", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "expression", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {

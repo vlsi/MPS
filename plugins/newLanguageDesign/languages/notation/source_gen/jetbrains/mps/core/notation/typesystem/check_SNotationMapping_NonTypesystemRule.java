@@ -26,7 +26,7 @@ public class check_SNotationMapping_NonTypesystemRule extends AbstractNonTypesys
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(m, "entityRef", true), "jetbrains.mps.core.notation.structure.SStructurePropertyRef")) {
         SNode expected = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(m, "entityRef", true), "jetbrains.mps.core.notation.structure.SStructurePropertyRef"), "property", false), "type", true);
         SNode expectedType = DataTypeUtil.convertToQueryType(expected);
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(m, "value", true), "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{expectedType}))) {
+        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(m, "value", true), "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{expectedType}))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(m, "value", true), BehaviorReflection.invokeVirtual(String.class, expectedType, "virtual_getText_270269450479797040", new Object[]{}) + " is expected", "r:a890372e-633e-4844-8377-f7d3b4a35a63(jetbrains.mps.core.notation.typesystem)", "2198415040516739321", null, errorTarget);

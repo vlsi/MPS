@@ -11,6 +11,6 @@ public class WflowExpressionStatement_Behavior {
   }
 
   public static SNode virtual_getContainedVariableType_3435983127247055569(SNode thisNode, String role) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "expression", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "expression", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 }

@@ -121,7 +121,7 @@ public class ConceptQueryUtil {
     while (paramsIterator.hasNext() && argumentsIterator.hasNext()) {
       SNode param = paramsIterator.next();
       SNode expr = argumentsIterator.next();
-      SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expr, "virtual_getType_228266671027861783", new Object[]{});
+      SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), expr, "virtual_getType_228266671027861783", new Object[]{});
       if (type == null || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, type, "virtual_isSubtypeOf_2852142168179579064", new Object[]{SLinkOperations.getTarget(param, "type", true)}))) {
         return false;
       }

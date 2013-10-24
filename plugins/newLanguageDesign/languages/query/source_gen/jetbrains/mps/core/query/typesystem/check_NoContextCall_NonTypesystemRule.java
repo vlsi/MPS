@@ -30,7 +30,7 @@ public class check_NoContextCall_NonTypesystemRule extends AbstractNonTypesystem
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(mqlNoContextQueryCall, "arguments", true)).count(); i++) {
       SNode argument = ListSequence.fromList(SLinkOperations.getTargets(mqlNoContextQueryCall, "arguments", true)).getElement(i);
       SNode param = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(mqlNoContextQueryCall, "query", false), "parameters", true)).getElement(i);
-      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), argument, "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{SLinkOperations.getTarget(param, "type", true)}))) {
+      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), argument, "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{SLinkOperations.getTarget(param, "type", true)}))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(argument, "wrong type of argument", "r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)", "2852142168179589986", null, errorTarget);

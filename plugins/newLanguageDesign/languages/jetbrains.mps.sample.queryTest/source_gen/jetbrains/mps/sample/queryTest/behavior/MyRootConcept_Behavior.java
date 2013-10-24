@@ -209,17 +209,17 @@ public class MyRootConcept_Behavior {
 
   @Deprecated
   public static Set<String> call_mySet_8194562227700484021(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Set<String>>) ((Class) Object.class), thisNode, "virtual_mySet_8194562227700484021", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Set<String>>) ((Class) (Object.class)), thisNode, "virtual_mySet_8194562227700484021", new Object[]{});
   }
 
   @Deprecated
   public static Iterable<Integer> call_myList_8194562227700484039(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<Integer>>) ((Class) Object.class), thisNode, "virtual_myList_8194562227700484039", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<Integer>>) ((Class) (Object.class)), thisNode, "virtual_myList_8194562227700484039", new Object[]{});
   }
 
   @Deprecated
   public static Set<SNode> call_complexQuery_6727112993714328752(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Set<SNode>>) ((Class) Object.class), thisNode, "virtual_complexQuery_6727112993714328752", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Set<SNode>>) ((Class) (Object.class)), thisNode, "virtual_complexQuery_6727112993714328752", new Object[]{});
   }
 
   @Deprecated
@@ -289,17 +289,17 @@ public class MyRootConcept_Behavior {
 
   @Deprecated
   public static Set<String> callSuper_mySet_8194562227700484021(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Set<String>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_mySet_8194562227700484021", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Set<String>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_mySet_8194562227700484021", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static Iterable<Integer> callSuper_myList_8194562227700484039(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Integer>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_myList_8194562227700484039", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Integer>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_myList_8194562227700484039", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static Set<SNode> callSuper_complexQuery_6727112993714328752(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Set<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_complexQuery_6727112993714328752", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Set<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_complexQuery_6727112993714328752", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

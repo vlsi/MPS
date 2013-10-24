@@ -143,12 +143,12 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_5343139407541907276(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // expression is a list, using selectMany 
-    return SPropertyOperations.hasValue(_context.getNode(), "kind", "1", null) && SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "expr", true), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType");
+    return SPropertyOperations.hasValue(_context.getNode(), "kind", "1", null) && SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "expr", true), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType");
   }
 
   public static boolean baseMappingRule_Condition_5343139407542483075(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // expression inside is not a list 
-    return SPropertyOperations.hasValue(_context.getNode(), "kind", "1", null) && !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "expr", true), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"));
+    return SPropertyOperations.hasValue(_context.getNode(), "kind", "1", null) && !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "expr", true), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"));
   }
 
   public static boolean baseMappingRule_Condition_7499632464782568813(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -190,7 +190,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_9173039802028274909(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // this is a dot expression that has type OrderedSet and it's the top expression in a tree 
     // e.g. we're <longExp>.sort in expression myVar.take(10).with(newElem).sort 
-    return SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlOrderedSetType") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.query.structure.MqlDotExpression"));
+    return SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlOrderedSetType") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.query.structure.MqlDotExpression"));
   }
 
   public static boolean baseMappingRule_Condition_5343139407529823386(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -306,10 +306,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3564725181395015135(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ?
-      SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) :
-      "0..1"
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ? SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) : "0..1");
   }
 
   public static Object propertyMacro_GetPropertyValue_3564725181395014393(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -317,10 +314,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3564725181395014449(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ?
-      SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) :
-      "0..1"
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ? SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) : "0..1");
   }
 
   public static Object propertyMacro_GetPropertyValue_7587321079161041836(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -343,10 +337,7 @@ public class QueriesGenerated {
           return eq_x583g4_a0a0a0a0a0a0a0b0qc(SPropertyOperations.getString(it, "name"), "text");
         }
       }), "value", true);
-      return (SNodeOperations.isInstanceOf(value, "jetbrains.mps.core.query.structure.MqlStringLiteral") ?
-        SPropertyOperations.getString(SNodeOperations.cast(value, "jetbrains.mps.core.query.structure.MqlStringLiteral"), "value") :
-        null
-      );
+      return (SNodeOperations.isInstanceOf(value, "jetbrains.mps.core.query.structure.MqlStringLiteral") ? SPropertyOperations.getString(SNodeOperations.cast(value, "jetbrains.mps.core.query.structure.MqlStringLiteral"), "value") : null);
     }
     return null;
   }
@@ -363,10 +354,7 @@ public class QueriesGenerated {
           return eq_x583g4_a0a0a0a0a0a0a0b0rc(SPropertyOperations.getString(it, "name"), "text");
         }
       }), "value", true);
-      return (SNodeOperations.isInstanceOf(value, "jetbrains.mps.core.query.structure.MqlStringLiteral") ?
-        SPropertyOperations.getString(SNodeOperations.cast(value, "jetbrains.mps.core.query.structure.MqlStringLiteral"), "value") :
-        null
-      );
+      return (SNodeOperations.isInstanceOf(value, "jetbrains.mps.core.query.structure.MqlStringLiteral") ? SPropertyOperations.getString(SNodeOperations.cast(value, "jetbrains.mps.core.query.structure.MqlStringLiteral"), "value") : null);
     }
     return null;
   }
@@ -384,10 +372,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2848533153256397762(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ?
-      SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) :
-      "0..1"
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ? SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) : "0..1");
   }
 
   public static Object propertyMacro_GetPropertyValue_2848533153256397673(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -395,10 +380,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2848533153256397680(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ?
-      SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) :
-      "0..1"
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "cardinality", true) != null) ? SCardinality_Behavior.call_asString_3564725181395014756(SLinkOperations.getTarget(_context.getNode(), "cardinality", true)) : "0..1");
   }
 
   public static Object propertyMacro_GetPropertyValue_2848533153256393438(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -450,10 +432,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7488639813789910997(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "scrutinee", true), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee") ?
-      SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "scrutinee", true), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), "aliasVar", true), "name") :
-      "alias"
-    );
+    return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "scrutinee", true), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee") ? SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "scrutinee", true), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), "aliasVar", true), "name") : "alias");
   }
 
   public static Object referenceMacro_GetReferent_3564725181395015373(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -483,10 +462,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_3564725181395014020(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode concept = SNodeOperations.as(ResolveUtil.resolveConcept(_context, SLinkOperations.getTarget(_context.getNode(), "extends", false)), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-    return (concept == null ?
-      SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
-      concept
-    );
+    return (concept == null ? SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") : concept);
   }
 
   public static Object referenceMacro_GetReferent_3564725181395014076(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -527,10 +503,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1200500758069670144(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "default", false) != null) ?
-      _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "default", false), "enumMember") :
-      null
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "default", false) != null) ? _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "default", false), "enumMember") : null);
   }
 
   public static Object referenceMacro_GetReferent_4562783364553764821(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -543,10 +516,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7488639813810275278(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode scrutinee = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.query.structure.MqlSwitchExpression"), "scrutinee", true);
-    return (SNodeOperations.isInstanceOf(scrutinee, "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee") ?
-      SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(scrutinee, "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), "aliasVar", true), "name") :
-      "alias"
-    );
+    return (SNodeOperations.isInstanceOf(scrutinee, "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee") ? SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(scrutinee, "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), "aliasVar", true), "name") : "alias");
   }
 
   public static Object referenceMacro_GetReferent_7488639813791861969(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -770,7 +740,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1471063792878669725(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
   }
 
   public static SNode sourceNodeQuery_4562783364556447351(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -778,7 +748,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_9087630951858901616(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
   }
 
   public static SNode sourceNodeQuery_6727112993807715326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -846,7 +816,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_9173039802028459358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlOrderedSetType"), "inner", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlOrderedSetType"), "inner", true);
   }
 
   public static SNode sourceNodeQuery_9173039802028671888(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -998,19 +968,19 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_9164905593976801591(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "left", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "left", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static Object templateArgumentQuery_9164905593996166698(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "right", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "right", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static Object templateArgumentQuery_8380532975681538084(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.query.structure.MqlSwitchExpression"), "scrutinee", true), "expression", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.core.query.structure.MqlSwitchExpression"), "scrutinee", true), "expression", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static Object templateArgumentQuery_8380532975681637576(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "test", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "test", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static Object templateArgumentQuery_9164905593977357319(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1264,16 +1234,10 @@ public class QueriesGenerated {
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a0b0qc(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a0b0rc(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

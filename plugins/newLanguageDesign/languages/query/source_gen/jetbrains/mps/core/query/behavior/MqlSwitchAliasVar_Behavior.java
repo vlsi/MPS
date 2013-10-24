@@ -13,7 +13,7 @@ public class MqlSwitchAliasVar_Behavior {
 
   public static SNode call_getType_6900882940023945439(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee")) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), "expression", true), "virtual_getType_228266671027861783", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), "expression", true), "virtual_getType_228266671027861783", new Object[]{});
     }
     return null;
   }

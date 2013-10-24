@@ -60,7 +60,7 @@ public class SConceptQueryCall_Constraints extends BaseConstraintsDescriptor {
               if ((_context.getReferenceNode() != null)) {
                 type = MqlSelector_Behavior.call_getContainerType_228266671027861723(_context.getReferenceNode());
               } else if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.core.query.structure.MqlDotExpression")) {
-                type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true), "virtual_getType_228266671027861783", new Object[]{});
+                type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true), "virtual_getType_228266671027861783", new Object[]{});
               } else {
                 type = null;
               }

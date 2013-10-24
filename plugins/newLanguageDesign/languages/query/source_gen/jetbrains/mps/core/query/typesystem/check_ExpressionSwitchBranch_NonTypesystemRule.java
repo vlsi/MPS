@@ -23,7 +23,7 @@ public class check_ExpressionSwitchBranch_NonTypesystemRule extends AbstractNonT
   }
 
   public void applyRule(final SNode expressionSwitchBranch, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.hasValue(expressionSwitchBranch, "kind", "2", null) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(expressionSwitchBranch, "test", true), "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{createMqlBoolType_q0x0t8_a0a0a0a1()}))) {
+    if (SPropertyOperations.hasValue(expressionSwitchBranch, "kind", "2", null) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(expressionSwitchBranch, "test", true), "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{createMqlBoolType_q0x0t8_a0a0a0a1()}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(expressionSwitchBranch, "test", true), "Type of when-expression must be bool", "r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)", "8982157191774831916", null, errorTarget);
@@ -41,8 +41,8 @@ public class check_ExpressionSwitchBranch_NonTypesystemRule extends AbstractNonT
       if ((SLinkOperations.getTarget(switchExp, "scrutinee", true) == null)) {
         return;
       }
-      SNode scrutineeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(switchExp, "scrutinee", true), "expression", true), "virtual_getType_228266671027861783", new Object[]{});
-      SNode caseType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(expressionSwitchBranch, "test", true), "virtual_getType_228266671027861783", new Object[]{});
+      SNode scrutineeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SLinkOperations.getTarget(switchExp, "scrutinee", true), "expression", true), "virtual_getType_228266671027861783", new Object[]{});
+      SNode caseType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(expressionSwitchBranch, "test", true), "virtual_getType_228266671027861783", new Object[]{});
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, caseType, "virtual_isSubtypeOf_2852142168179579064", new Object[]{scrutineeType}))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

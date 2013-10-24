@@ -92,31 +92,31 @@
   <root nodeRef="r:22ed9718-5c5f-4a6e-a583-c048e8dfb089(jetbrains.mps.core.template.behavior)/5109194352282780042">
     <nodeInfo nodeId="5109194352282815931" fileName="MtlForeachMacro_Behavior.java" startLine="19" startPosition="110" endLine="20" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5109194352282815903" fileName="MtlForeachMacro_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5109194352282826104" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="105" endLine="26" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5109194352282826104" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="105" endLine="26" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5109194352282826096" fileName="MtlForeachMacro_Behavior.java" startLine="26" startPosition="203" endLine="27" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5109194352282812223" fileName="MtlForeachMacro_Behavior.java" startLine="18" startPosition="101" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5109194352282826096" fileName="MtlForeachMacro_Behavior.java" startLine="26" startPosition="201" endLine="30" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getContainedVariableType_3435983127247055569#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getContainedVariableType_3435983127247055569#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="5109194352282780044" fileName="MtlForeachMacro_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="5109194352282812225" fileName="MtlForeachMacro_Behavior.java" startLine="19" startPosition="110" endLine="20" endPosition="175" />
     <scopeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="5109194352282780042" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="261388556849377940" fileName="MtlForeachMacro_Behavior.java" startLine="18" startPosition="101" endLine="22" endPosition="16" />
-    <scopeInfo nodeId="5109194352282826092" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="105" endLine="30" endPosition="6">
+    <scopeInfo nodeId="5109194352282826092" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="105" endLine="27" endPosition="228">
       <varInfo nodeId="5109194352282826105" varName="eType" />
+    </scopeInfo>
+    <scopeInfo nodeId="261388556849377940" fileName="MtlForeachMacro_Behavior.java" startLine="18" startPosition="101" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="5109194352282826093" varName="role" />
+      <varInfo nodeId="5109194352282780042" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="261388556849377943" varName="child" />
       <varInfo nodeId="261388556849377941" varName="kind" />
       <varInfo nodeId="5109194352282780042" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="5109194352282826093" varName="role" />
-      <varInfo nodeId="5109194352282780042" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.core.template.behavior.MtlForeachMacro_Behavior" />
+    <unitInfo nodeId="5109194352282780042" fileName="MtlForeachMacro_Behavior.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.core.template.behavior.MtlForeachMacro_Behavior" />
   </root>
   <root nodeRef="r:22ed9718-5c5f-4a6e-a583-c048e8dfb089(jetbrains.mps.core.template.behavior)/5433095484313962444">
     <nodeInfo nodeId="261388556849377792" fileName="MtlLibrary_Behavior.java" startLine="18" startPosition="111" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -153,8 +153,8 @@
     <nodeInfo nodeId="5270931306887457728" fileName="MtlLabelNodeMacro_Behavior.java" startLine="19" startPosition="48" endLine="20" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5270931306887457714" fileName="MtlLabelNodeMacro_Behavior.java" startLine="20" startPosition="14" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8328395416353556627" fileName="MtlLabelNodeMacro_Behavior.java" startLine="24" startPosition="90" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8328395416353556820" fileName="MtlLabelNodeMacro_Behavior.java" startLine="28" startPosition="101" endLine="29" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8328395416353556826" fileName="MtlLabelNodeMacro_Behavior.java" startLine="29" startPosition="232" endLine="30" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8328395416353556820" fileName="MtlLabelNodeMacro_Behavior.java" startLine="28" startPosition="101" endLine="29" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8328395416353556826" fileName="MtlLabelNodeMacro_Behavior.java" startLine="29" startPosition="234" endLine="30" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8328395416353556829" fileName="MtlLabelNodeMacro_Behavior.java" startLine="30" startPosition="164" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="641202304629636321" fileName="MtlLabelNodeMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="641202304629636321" fileName="MtlLabelNodeMacro_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -204,8 +204,8 @@
   </root>
   <root nodeRef="r:22ed9718-5c5f-4a6e-a583-c048e8dfb089(jetbrains.mps.core.template.behavior)/8328395416353556581">
     <nodeInfo nodeId="8328395416353556580" fileName="MtlPropertyMacro_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8328395416353556799" fileName="MtlPropertyMacro_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8328395416353556805" fileName="MtlPropertyMacro_Behavior.java" startLine="21" startPosition="236" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8328395416353556799" fileName="MtlPropertyMacro_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8328395416353556805" fileName="MtlPropertyMacro_Behavior.java" startLine="21" startPosition="238" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8328395416353556808" fileName="MtlPropertyMacro_Behavior.java" startLine="22" startPosition="164" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8328395416353556581" fileName="MtlPropertyMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8328395416353556581" fileName="MtlPropertyMacro_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -228,8 +228,8 @@
   </root>
   <root nodeRef="r:22ed9718-5c5f-4a6e-a583-c048e8dfb089(jetbrains.mps.core.template.behavior)/8328395416353556605">
     <nodeInfo nodeId="8328395416353556604" fileName="MtlTemplateRoot_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8328395416353556862" fileName="MtlTemplateRoot_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8328395416353556868" fileName="MtlTemplateRoot_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8328395416353556862" fileName="MtlTemplateRoot_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8328395416353556868" fileName="MtlTemplateRoot_Behavior.java" startLine="21" startPosition="234" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8328395416353556871" fileName="MtlTemplateRoot_Behavior.java" startLine="22" startPosition="164" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8328395416353556605" fileName="MtlTemplateRoot_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8328395416353556605" fileName="MtlTemplateRoot_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -253,8 +253,8 @@
   <root nodeRef="r:22ed9718-5c5f-4a6e-a583-c048e8dfb089(jetbrains.mps.core.template.behavior)/8328395416353556636">
     <nodeInfo nodeId="8328395416353556634" fileName="MtlNodeMacro_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8328395416353556650" fileName="MtlNodeMacro_Behavior.java" startLine="20" startPosition="90" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8328395416353556841" fileName="MtlNodeMacro_Behavior.java" startLine="24" startPosition="101" endLine="25" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8328395416353556847" fileName="MtlNodeMacro_Behavior.java" startLine="25" startPosition="232" endLine="26" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8328395416353556841" fileName="MtlNodeMacro_Behavior.java" startLine="24" startPosition="101" endLine="25" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8328395416353556847" fileName="MtlNodeMacro_Behavior.java" startLine="25" startPosition="234" endLine="26" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8328395416353556850" fileName="MtlNodeMacro_Behavior.java" startLine="26" startPosition="164" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8328395416353556636" fileName="MtlNodeMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8328395416353556636" fileName="MtlNodeMacro_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_multiple_1262430001741497972#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
@@ -282,8 +282,8 @@
   </root>
   <root nodeRef="r:22ed9718-5c5f-4a6e-a583-c048e8dfb089(jetbrains.mps.core.template.behavior)/8328395416353556659">
     <nodeInfo nodeId="8328395416353556658" fileName="MtlReferenceMacro_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8328395416353556883" fileName="MtlReferenceMacro_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8328395416353556889" fileName="MtlReferenceMacro_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8328395416353556883" fileName="MtlReferenceMacro_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8328395416353556889" fileName="MtlReferenceMacro_Behavior.java" startLine="21" startPosition="234" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8328395416353556892" fileName="MtlReferenceMacro_Behavior.java" startLine="22" startPosition="164" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8328395416353556659" fileName="MtlReferenceMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8328395416353556659" fileName="MtlReferenceMacro_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
