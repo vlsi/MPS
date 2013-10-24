@@ -9,15 +9,21 @@
     <property name="useInTest" nameId="tpm0.1202243304949" value="argsInTemplDeclRef" />
     <node role="inputChild" roleId="tpm0.1195169805620" type="tpm0.InputNode_A" typeId="tpm0.1195171011194" id="4142802410168797714" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="NodeA" />
-      <node role="inputChild" roleId="tpm0.1202254005876" type="tpm0.InputNode" typeId="tpm0.1195169091918" id="4142802410168797717" nodeInfo="ng" />
     </node>
     <node role="inputChild" roleId="tpm0.1195169805620" type="tpm0.InputNode_B" typeId="tpm0.1206459872650" id="4142802410168797729" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="NodeB" />
-      <node role="inputChild" roleId="tpm0.1202254005876" type="tpm0.InputNode" typeId="tpm0.1195169091918" id="4142802410168797734" nodeInfo="ng" />
     </node>
     <node role="inputChild" roleId="tpm0.1195169805620" type="tpm0.InputNode_C" typeId="tpm0.1206462895210" id="4142802410168797742" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="NodeC" />
-      <node role="inputChild" roleId="tpm0.1202254005876" type="tpm0.InputNode" typeId="tpm0.1195169091918" id="4142802410168797749" nodeInfo="ng" />
+      <property name="name" nameId="tpck.1169194664001" value="NodeC_1" />
+      <property name="key" nameId="tpm0.4929591503636438728" value="1" />
+    </node>
+    <node role="inputChild" roleId="tpm0.1195169805620" type="tpm0.InputNode_C" typeId="tpm0.1206462895210" id="4929591503636861225" nodeInfo="ng">
+      <property name="key" nameId="tpm0.4929591503636438728" value="2" />
+      <property name="name" nameId="tpck.1169194664001" value="NodeC_2" />
+    </node>
+    <node role="inputChild" roleId="tpm0.1195169805620" type="tpm0.InputNode_C" typeId="tpm0.1206462895210" id="4929591503636861266" nodeInfo="ng">
+      <property name="key" nameId="tpm0.4929591503636438728" value="3" />
+      <property name="name" nameId="tpck.1169194664001" value="NodeC_3" />
     </node>
   </root>
 </model>

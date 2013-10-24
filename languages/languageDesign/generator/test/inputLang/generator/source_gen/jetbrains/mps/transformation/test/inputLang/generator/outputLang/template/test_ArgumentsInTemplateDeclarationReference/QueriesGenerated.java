@@ -5,7 +5,9 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -13,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
@@ -23,8 +24,28 @@ public class QueriesGenerated {
     return true;
   }
 
+  public static boolean baseMappingRule_Condition_4929591503636513204(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getInteger(_context.getNode(), "key") == 1;
+  }
+
+  public static boolean baseMappingRule_Condition_4929591503636589503(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getInteger(_context.getNode(), "key") == 2;
+  }
+
+  public static boolean baseMappingRule_Condition_4929591503636676782(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return false;
+  }
+
+  public static boolean baseMappingRule_Condition_4929591503636614138(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getInteger(_context.getNode(), "key") == 3;
+  }
+
   public static Object propertyMacro_GetPropertyValue_7496726876599876334(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "text from argument:" + ((String) _context.getVariable("p1"));
+  }
+
+  public static boolean ifMacro_Condition_4929591503636643306(final IOperationContext operationContext, final IfMacroContext _context) {
+    return false;
   }
 
   public static Object templateArgumentQuery_7496726876599916822(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -33,6 +54,14 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_7496726876599937591(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return "from within case of inline switch";
+  }
+
+  public static Object templateArgumentQuery_4929591503636646079(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return "from IF/ELSE alternative concequence";
+  }
+
+  public static Object templateArgumentQuery_4929591503636680081(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return "from within default case of in-line switch";
   }
 
   public static Iterable sourceNodesQuery_7496726876599914779(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
