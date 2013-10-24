@@ -16,13 +16,11 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new MqlLinkSelector_Constraints();
       case 3:
         return new MqlPropertySelector_Constraints();
-      case 6:
-        return new SConceptQueryCall_Constraints();
       case 5:
-        return new SConceptQuery_Constraints();
-      case 7:
+        return new SConceptQueryCall_Constraints();
+      case 6:
         return new SEnumLiteralRef_Constraints();
-      case 8:
+      case 7:
         return new SNodeCast_Constraints();
       case 0:
         return new IsInstanceOf_Constraints();
@@ -36,5 +34,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.smodel.structure.IsInstanceOf", "jetbrains.mps.core.smodel.structure.MqlLinkSelector", "jetbrains.mps.core.smodel.structure.MqlNodeNoArgOperation", "jetbrains.mps.core.smodel.structure.MqlPropertySelector", "jetbrains.mps.core.smodel.structure.OfConceptSelector", "jetbrains.mps.core.smodel.structure.SConceptQuery", "jetbrains.mps.core.smodel.structure.SConceptQueryCall", "jetbrains.mps.core.smodel.structure.SEnumLiteralRef", "jetbrains.mps.core.smodel.structure.SNodeCast"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.smodel.structure.IsInstanceOf", "jetbrains.mps.core.smodel.structure.MqlLinkSelector", "jetbrains.mps.core.smodel.structure.MqlNodeNoArgOperation", "jetbrains.mps.core.smodel.structure.MqlPropertySelector", "jetbrains.mps.core.smodel.structure.OfConceptSelector", "jetbrains.mps.core.smodel.structure.SConceptQueryCall", "jetbrains.mps.core.smodel.structure.SEnumLiteralRef", "jetbrains.mps.core.smodel.structure.SNodeCast"};
 }

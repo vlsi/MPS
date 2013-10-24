@@ -24,7 +24,7 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-bfzpl2k7fbyccc6o0e14x62lu72wfye" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <dep model="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" hash="ch6xp5kwmbtm9d1vn1u4o44nerznaqq" />
+  <dep model="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" hash="e43k0zmlzkmkcm0dknur9l3x79gjhnx" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
   <common hash="d6unhoyt6kheme9ovo1dhz9s8kjev7p" dependsOnNodes="true">
     <dep root="2059702675525965903" />
@@ -86,6 +86,7 @@
     <dep model="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" />
     <file name="BehaviorAspectDescriptor.java" />
     <file name="ExpressionSwitchBranch_BehaviorDescriptor.java" />
+    <file name="IIdentifier_BehaviorDescriptor.java" />
     <file name="MqlArithmetic_BehaviorDescriptor.java" />
     <file name="MqlAssignment_BehaviorDescriptor.java" />
     <file name="MqlBinaryExpr_BehaviorDescriptor.java" />
