@@ -140,7 +140,7 @@
     </copy>
     <mkdir dir="${build.layout}/plugins/mpsNewLanguageDesign" />
     <copy todir="${build.layout}/plugins/mpsNewLanguageDesign">
-      <fileset dir="${build.tmp}/deps/mpsNewLanguageDesign/mpsNewLanguageDesign.zip/mpsNewLanguageDesign" />
+      <fileset dir="${artifacts.mpsNewLanguageDesign}/mpsNewLanguageDesign" />
     </copy>
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
@@ -182,10 +182,7 @@
     <ant antfile="build/mpsNewLanguageDesign.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="fetchDependencies">
-    <mkdir dir="${build.tmp}/deps/mpsNewLanguageDesign/mpsNewLanguageDesign.zip" />
-    <unzip src="${artifacts.mpsNewLanguageDesign}/mpsNewLanguageDesign.zip" dest="${build.tmp}/deps/mpsNewLanguageDesign/mpsNewLanguageDesign.zip" />
-  </target>
+  <target name="fetchDependencies" />
   
   <target name="build" depends="assemble" />
   

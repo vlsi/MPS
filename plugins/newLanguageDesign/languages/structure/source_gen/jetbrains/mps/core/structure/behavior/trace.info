@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="SAbstractConcept_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SAbstractConcept_BehaviorDescriptor" />
+  <unitInfo fileName="IIdentifier_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.IIdentifier_BehaviorDescriptor" />
+  <unitInfo fileName="SAbstractConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SAbstractConcept_BehaviorDescriptor" />
   <unitInfo fileName="SAbstractLink_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SAbstractLink_BehaviorDescriptor" />
   <unitInfo fileName="SCardinalityContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SCardinalityContainer_BehaviorDescriptor" />
   <unitInfo fileName="SCardinality_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SCardinality_BehaviorDescriptor" />
   <unitInfo fileName="SChildLink_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SChildLink_BehaviorDescriptor" />
   <unitInfo fileName="SConceptAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SConceptAnnotation_BehaviorDescriptor" />
-  <unitInfo fileName="SConceptFeature_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SConceptFeature_BehaviorDescriptor" />
+  <unitInfo fileName="SConceptFeature_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SConceptFeature_BehaviorDescriptor" />
   <unitInfo fileName="SConceptMemberComment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SConceptMemberComment_BehaviorDescriptor" />
   <unitInfo fileName="SConceptMemberEmptyLine_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SConceptMemberEmptyLine_BehaviorDescriptor" />
   <unitInfo fileName="SConceptMember_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SConceptMember_BehaviorDescriptor" />
@@ -18,7 +19,7 @@
   <unitInfo fileName="SConstraints_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SConstraints_BehaviorDescriptor" />
   <unitInfo fileName="SDataType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SDataType_BehaviorDescriptor" />
   <unitInfo fileName="SEnumerationDataType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SEnumerationDataType_BehaviorDescriptor" />
-  <unitInfo fileName="SEnumerationMember_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SEnumerationMember_BehaviorDescriptor" />
+  <unitInfo fileName="SEnumerationMember_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SEnumerationMember_BehaviorDescriptor" />
   <unitInfo fileName="SEnumeration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SEnumeration_BehaviorDescriptor" />
   <unitInfo fileName="SInterfaceConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SInterfaceConcept_BehaviorDescriptor" />
   <unitInfo fileName="SInterfaceReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.structure.behavior.SInterfaceReference_BehaviorDescriptor" />
