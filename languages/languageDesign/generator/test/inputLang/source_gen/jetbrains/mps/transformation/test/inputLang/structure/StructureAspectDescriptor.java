@@ -23,7 +23,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A").parents("jetbrains.mps.transformation.test.inputLang.structure.InputNode_A").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputNode_C").super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").parents("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputNode_C").super_("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").parents("jetbrains.mps.transformation.test.inputLang.structure.InputNode_B").properties("key").create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.inputLang.structure.InputRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("useInTest").children(new String[]{"inputChild"}, new boolean[]{true}).create();
       case 6:

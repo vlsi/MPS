@@ -7,17 +7,12 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.AbandonRuleInputException" />
     <classNode dependClassName="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
     <classNode dependClassName="jetbrains.mps.generator.impl.RuleUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -26,9 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

@@ -80,6 +80,10 @@ public final class TemplateProcessor {
     initMacroMap();
   }
 
+  public TemplateExecutionEnvironment getEnvironment() {
+    return myEnv;
+  }
+
   @NotNull
   public List<SNode> apply(String mappingName, SNode templateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
@@ -594,31 +598,21 @@ public final class TemplateProcessor {
       } else {
         // alternative consequence
         SNode altConsequence = RuleUtil.getIfMacro_AlternativeConsequence(macro);
-        if (altConsequence != null) {
-          ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-          try {
-            List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(altConsequence,
-                templateContext, macro, myTemplateProcessor.myEnv);
-            if (nodeAndMappingNamePairs == null) {
-              showErrorMessage(templateContext.getInput(), null, macro, "error processing $IF$/alternative");
-              throw new TemplateProcessingFailureException();
-            }
-            for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-              SNode altTemplateNode = nodeAndMappingNamePair.o1;
-              String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-              List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(innerMappingName, altTemplateNode,
-                  templateContext.subContext(innerMappingName), null);
-              if (_outputNodes != null) {
-                outputNodes.addAll(_outputNodes);
-              }
-            }
-          } catch (AbandonRuleInputException e) {
-            // it's ok. just ignore
+        if (altConsequence == null) {
+          return Collections.emptyList();
+        }
+        try {
+          RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(myTemplateProcessor);
+          if (!rcp.prepare(altConsequence, macro, templateContext)) {
+                showErrorMessage(templateContext.getInput(), null, macro, "error processing $IF$/alternative");
+                throw new TemplateProcessingFailureException();
           }
-          return outputNodes;
+          return rcp.processRuleConsequence(mappingName);
+        } catch (AbandonRuleInputException ex) {
+          // it's ok. just ignore
+          return Collections.emptyList();
         }
       }
-      return Collections.emptyList();
     }
   }
 
@@ -747,7 +741,7 @@ public final class TemplateProcessor {
 
     @Override
     protected TemplateContext prepareContext(SNode macro, String mappingName, TemplateContext templateContext, SNode newInputNode) {
-      final TemplateContext newcontext = GeneratorUtil.createTemplateCallContext(templateContext.getInput(), templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
+      final TemplateContext newcontext = GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
       return newcontext.subContext(mappingName);
     }
   }
@@ -857,7 +851,7 @@ public final class TemplateProcessor {
 
     @Override
     protected TemplateContext prepareContext(SNode macro, SNode invokedTemplate, String mappingName, TemplateContext templateContext, SNode newInputNode) {
-      return GeneratorUtil.createTemplateCallContext(templateContext.getInput(), templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
+      return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
     }
   }
 

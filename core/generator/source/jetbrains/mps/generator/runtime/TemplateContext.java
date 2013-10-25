@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,11 +41,23 @@ public interface TemplateContext {
 
   Object getPatternVariable(String name);
 
+  /**
+   * @return new context that updates both input and {@link #getInputName() mapping label}
+   */
   TemplateContext subContext(String inputName, SNode inputNode);
 
+  /**
+   * @return new context that preserves input and gives it a new name
+   */
   TemplateContext subContext(String inputName);
 
+  /**
+   * @return new context that preserves input, but discards {@link #getInputName() mapping label}
+   */
   TemplateContext subContext(Map<String, Object> variables);
 
+  /**
+   * @return new context that preserves input, but discards {@link #getInputName() mapping label}
+   */
   TemplateContext subContext(GeneratedMatchingPattern pattern);
 }

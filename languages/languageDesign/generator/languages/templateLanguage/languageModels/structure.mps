@@ -1474,6 +1474,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="982871510068000152" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1722980698497626400" resolveInfo="ITemplateCall" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="1164688990058833095" nodeInfo="ng" />
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="982871510064032177" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
