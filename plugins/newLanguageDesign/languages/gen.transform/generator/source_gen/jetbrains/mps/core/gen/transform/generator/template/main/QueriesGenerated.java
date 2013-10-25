@@ -973,6 +973,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getVariable("typeRight")), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
   }
 
+  public static SNode sourceNodeQuery_5976680015591827693(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((SNode) _context.getVariable("typeLeft"));
+  }
+
+  public static SNode sourceNodeQuery_5976680015591849428(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((SNode) _context.getVariable("typeRight"));
+  }
+
   public static SNode sourceNodeQuery_3003531278886381195(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "scrutinee", true), "expression", true);
   }
