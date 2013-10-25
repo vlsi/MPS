@@ -270,6 +270,30 @@ public class RuleUtil {
     return SNodeOperations.cast(SLinkOperations.getTarget(ref, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
 
+  public static SNode getInlineTemplate_templateNode(SNode ruleConsequence) {
+    return SLinkOperations.getTarget(ruleConsequence, "templateNode", true);
+  }
+
+  public static SNode getInlineTemplateWithContext_contentNode(SNode ruleConsequence) {
+    return SLinkOperations.getTarget(ruleConsequence, "contentNode", true);
+  }
+
+  public static List<SNode> getInlineSwitch_case(SNode ruleConsequence) {
+    return SLinkOperations.getTargets(ruleConsequence, "case", true);
+  }
+
+  public static SNode getInlineSwitch_caseCondition(SNode inlineSwitchCase) {
+    return SLinkOperations.getTarget(inlineSwitchCase, "conditionFunction", true);
+  }
+
+  public static SNode getInlineSwitch_caseConsequence(SNode inlineSwitchCase) {
+    return SLinkOperations.getTarget(inlineSwitchCase, "caseConsequence", true);
+  }
+
+  public static SNode getInlineSwitch_defaultConsequence(SNode ruleConsequence) {
+    return SLinkOperations.getTarget(ruleConsequence, "defaultConsequence", true);
+  }
+
   public static SNode getWeaveEach_Template(SNode weaveEach) {
     return SLinkOperations.getTarget(weaveEach, "template", false);
   }
@@ -386,5 +410,9 @@ public class RuleUtil {
 
   public static SNode getVarMacro_Query(SNode macro) {
     return SLinkOperations.getTarget(macro, "value", true);
+  }
+
+  public static SNode getDismissTopRule_message(SNode dismissTopRuleConsequence) {
+    return SLinkOperations.getTarget(dismissTopRuleConsequence, "generatorMessage", true);
   }
 }

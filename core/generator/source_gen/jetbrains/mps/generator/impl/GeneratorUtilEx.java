@@ -17,11 +17,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
@@ -99,7 +94,8 @@ public class GeneratorUtilEx {
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new ArrayList<SNode>();
-    LinkedList<SNode> queue = new LinkedList<SNode>(SNodeOperations.getChildren(template));
+    LinkedList<SNode> queue = new LinkedList<SNode>();
+    queue.addFirst(template);
     final SNode conceptTemplateFragment = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment");
     while (!(queue.isEmpty())) {
       SNode subnode = queue.removeFirst();
@@ -139,62 +135,24 @@ public class GeneratorUtilEx {
     return true;
   }
 
-  public static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(SNode ruleConsequence, TemplateContext context, SNode ruleNode, TemplateExecutionEnvironment env) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
-    final ITemplateGenerator generator = env.getGenerator();
-    if (ruleConsequence == null) {
-      generator.showErrorMessage(context.getInput(), null, ruleNode, "no rule consequence");
-      return null;
-    }
-    env.getTracer().pushRuleConsequence(new SNodePointer(ruleConsequence));
-    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference") || SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
-      SNode templateContainer;
-      if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
-        templateContainer = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), "template", false);
-      } else {
-        templateContainer = ruleConsequence;
-      }
-      if (templateContainer == null) {
-        generator.showErrorMessage(context.getInput(), ruleConsequence, ruleNode, "error processing template consequence: no 'template'");
-        return null;
-      }
-      List<SNode> fragments = getTemplateFragments(templateContainer);
-      if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, context.getInput(), ruleNode, generator)) {
-        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
-        for (SNode fragment : fragments) {
-          result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), getMappingName_TemplateFragment(fragment, null)));
-        }
-        return result;
-      }
+  public static void dispatchRuleConsequence(@NotNull SNode ruleConsequence, @NotNull GeneratorUtilEx.ConsequenceDispatch dispatch) {
+    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
+      dispatch.templateDeclarationReference(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+      dispatch.inlineTemplateWithContext(ruleConsequence);
     } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
-      SNode templateNode = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), "templateNode", true);
-      if (templateNode != null) {
-        return Collections.singletonList(new Pair<SNode, String>(templateNode, null));
-      } else {
-        generator.showErrorMessage(context.getInput(), null, ruleConsequence, "no template node");
-      }
+      dispatch.inlineTemplate(ruleConsequence);
     } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")) {
-      SNode inlineSwitch = SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence");
-      for (SNode switchCase : SLinkOperations.getTargets(inlineSwitch, "case", true)) {
-        if (env.getQueryExecutor().checkCondition(SLinkOperations.getTarget(switchCase, "conditionFunction", true), true, context, switchCase)) {
-          return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(SLinkOperations.getTarget(switchCase, "caseConsequence", true), context, switchCase, env);
-        }
-      }
-      SNode defaultConsequence = SLinkOperations.getTarget(inlineSwitch, "defaultConsequence", true);
-      if (defaultConsequence == null) {
-        generator.showErrorMessage(context.getInput(), null, inlineSwitch, "no default consequence in switch");
-      } else {
-        return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context, defaultConsequence, env);
-      }
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) {
-      SNode message = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"), "generatorMessage", true);
-      DismissTopMappingRuleException.MessageType messageType = processGeneratorMessage(message, context.getInput(), null, ruleNode, generator);
-      throw new DismissTopMappingRuleException(messageType);
+      dispatch.inlineSwitch(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence")) {
+      dispatch.weaveEach(ruleConsequence);
     } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence")) {
-      throw new AbandonRuleInputException();
+      dispatch.abandonInput(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) {
+      dispatch.dismissTopRule(ruleConsequence);
     } else {
-      generator.showErrorMessage(context.getInput(), null, ruleConsequence, "unsupported rule consequence");
+      dispatch.unknown(ruleConsequence);
     }
-    return null;
   }
 
 
@@ -218,7 +176,39 @@ public class GeneratorUtilEx {
     return messageType;
   }
 
+  public static String getGeneratorMessage_text(SNode generatorMessage) {
+    return SPropertyOperations.getString(generatorMessage, "messageText");
+  }
+
+  public static DismissTopMappingRuleException.MessageType getGeneratorMessage_kind(SNode generatorMessage) {
+    if (generatorMessage == null) {
+      // this is how it used to be, although to me default to warn/info might be better 
+      return null;
+    }
+    if (SPropertyOperations.hasValue(generatorMessage, "messageType", "error", "info")) {
+      return DismissTopMappingRuleException.MessageType.error;
+    } else
+    if (SPropertyOperations.hasValue(generatorMessage, "messageType", "warning", "info")) {
+      return DismissTopMappingRuleException.MessageType.warning;
+    } else {
+      return DismissTopMappingRuleException.MessageType.info;
+    }
+  }
+
+
+
   public static SNode getReferenceMacro(SNode node, String linkRole) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole));
+  }
+
+  public static interface ConsequenceDispatch {
+    public void inlineSwitch(SNode ruleConsequence);
+    public void inlineTemplateWithContext(SNode ruleConsequence);
+    public void inlineTemplate(SNode ruleConsequence);
+    public void templateDeclarationReference(SNode ruleConsequence);
+    public void weaveEach(SNode ruleConsequence);
+    public void abandonInput(SNode ruleConsequence);
+    public void dismissTopRule(SNode ruleConsequence);
+    public void unknown(SNode ruleConsequence);
   }
 }

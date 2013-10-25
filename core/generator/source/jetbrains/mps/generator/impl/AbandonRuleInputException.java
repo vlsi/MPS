@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,5 +17,10 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.GenerationException;
 
+/**
+ * Intention: prevents input node from being copied into output model.
+ * How it works: active rule tells it got no replacement nodes (result != null but empty list), so that
+ * input node is replaced with empty list of output nodes.
+ */
 public class AbandonRuleInputException extends GenerationException {
 }

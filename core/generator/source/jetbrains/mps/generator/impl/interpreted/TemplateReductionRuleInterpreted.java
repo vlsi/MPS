@@ -135,34 +135,14 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(context.getInput(), context, environment, ruleConsequence);
 
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, conseqContext, ruleNode, environment);
-    if (nodeAndMappingNamePairs == null) {
+    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
+    if (!rcp.prepare(ruleConsequence, ruleNode, context)) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleConsequence, "error processing reduction rule consequence");
       return null;
     }
 
-    List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(environment);
-    for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-      SNode templateNode = nodeAndMappingNamePair.o1;
-      String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
-      try {
-        result.addAll(templateProcessor.apply(mappingName, templateNode, conseqContext));
-      } catch (DismissTopMappingRuleException e) {
-        throw e;
-      } catch (TemplateProcessingFailureException e) {
-        environment.getGenerator().showErrorMessage(context.getInput(), templateNode, ruleNode, "error processing reduction rule");
-      } catch (GenerationFailureException e) {
-        throw e;
-      } catch (GenerationCanceledException e) {
-        throw e;
-      } catch (Throwable t) {
-        environment.getLogger().handleException(t);
-        environment.getGenerator().showErrorMessage(context.getInput(), templateNode, ruleNode, "error processing reduction rule");
-      }
-    }
+    List<SNode> result = rcp.processRuleConsequence(ruleMappingName);
     return result;
   }
 
