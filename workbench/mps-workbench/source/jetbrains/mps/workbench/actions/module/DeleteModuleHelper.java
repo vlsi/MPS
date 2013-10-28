@@ -23,6 +23,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -61,6 +62,7 @@ public class DeleteModuleHelper {
 
     //remove from project
     if (project.isProjectModule(module)) {
+      MPSModuleRepository.getInstance().saveAll();
       project.removeModule(module.getModuleReference());
       ((StandaloneMPSProject) project).update();
       project.save();
