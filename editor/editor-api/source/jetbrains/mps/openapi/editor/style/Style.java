@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * User: shatalin
@@ -34,6 +36,8 @@ public interface Style {
   void apply(@NotNull EditorCell cell);
 
   void putAll(@NotNull Style style);
+
+  <T> void setAll(StyleAttribute<T> attribute, Map<Integer, Object> value);
 
   <T> void set(StyleAttribute<T> attribute, T value);
 

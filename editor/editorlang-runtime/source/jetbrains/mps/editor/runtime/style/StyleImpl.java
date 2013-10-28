@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -26,14 +27,18 @@ import jetbrains.mps.openapi.editor.style.StyleListener;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -43,29 +48,52 @@ import java.util.TreeSet;
 public class StyleImpl implements Style {
   private static final Logger LOG = LogManager.getLogger(StyleImpl.class);
 
-  private final EditorCell myEditorCell;
   private Style myParent;
   private List<Style> myChildren = null;
   private List<StyleListener> myStyleListeners = null;
-  private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-  private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-  private SortedSet<Pair<Integer, Style>> myPriorityGroups = new TreeSet<Pair<Integer, Style>>(new Comparator<Pair<Integer, Style>>() {
+
+  private static class AttributeValue<T> {
+    public T cached;
+    private TreeMap<Integer, T> values = new TreeMap<Integer, T>();
+    public void setValue(T value) {
+      setValue(0, value);
+    }
+    public void addValues(Map<Integer, T> valuesToAdd) {
+      values.putAll(valuesToAdd);
+    }
+    public TreeMap<Integer, T> getAll() {
+      return values;
+    }
+    public void setValue(int priority, T value) {
+      values.put(priority, value);
+    }
+    public T getTop() {
+      if (values.isEmpty()) {
+        return null;
+      } else {
+        return values.lastEntry().getValue();
+      }
+    }
+  }
+
+  private Map<Integer, AttributeValue> myAttributes = new ListMap<Integer, AttributeValue>();
+  private AttributeValue getAttribute(StyleAttribute attribute) {
+    if (! myAttributes.containsKey(attribute.getIndex())) {
+      myAttributes.put(attribute.getIndex(), new AttributeValue());
+    }
+    return myAttributes.get(attribute.getIndex());
+  }
+  //private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
+  //private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
+  /*private SortedSet<Pair<Integer, Style>> myPriorityGroups = new TreeSet<Pair<Integer, Style>>(new Comparator<Pair<Integer, Style>>() {
     @Override
     public int compare(Pair<Integer, Style> a, Pair<Integer, Style> b) {
       return a.o1.compareTo(b.o1);
     }
   });
-
+  */
   private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
     return Collections.singleton(sa);
-  }
-
-  public StyleImpl() {
-    this(null);
-  }
-
-  public StyleImpl(EditorCell contextCell) {
-    myEditorCell = contextCell;
   }
 
   @Override
@@ -79,16 +107,13 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
     Set<StyleAttribute> forcedNotSimple = new StyleAttributeSet();
     for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
-      myAttributeValues[attribute.getIndex()] = style.rawGet(attribute);
+      getAttribute(attribute).setValue(style.rawGet(attribute));
       if (StyleAttributes.isSimple(attribute)) {
-        myCachedAttributeValues[attribute.getIndex()] = null;
+        getAttribute(attribute).cached = null;
         addedSimple.add(attribute);
       } else {
         addedNotSimple.add(attribute);
       }
-    }
-    for (Pair<Integer, Style> priorityGroup : style.getPriorityGroups()) {
-      addPriorityGroup(priorityGroup.o1, priorityGroup.o2);
     }
     updateCache(addedNotSimple);
     fireStyleChanged(new StyleChangeEvent(this, addedSimple));
@@ -96,45 +121,36 @@ public class StyleImpl implements Style {
 
   @Override
   public Iterable<Pair<Integer, Style>> getPriorityGroups() {
-    return myPriorityGroups;
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public void addPriorityGroup(int priority, @NotNull Style priorityGroup) {
-    myPriorityGroups.add(new Pair<Integer, Style>(priority, priorityGroup));
-    applyPriorityGroups();
+    throw new UnsupportedOperationException();
   }
 
   private void applyPriorityGroups() {
-    for (Pair<Integer, Style> group : myPriorityGroups) {
-      Style priorityGroup = group.o2;
-      Set<StyleAttribute> addedSimple = new StyleAttributeSet();
-      Set<StyleAttribute> forcedNotSimple = new StyleAttributeSet();
-      for (StyleAttribute attribute : priorityGroup.getSpecifiedAttributes()) {
-        myAttributeValues[attribute.getIndex()] = priorityGroup.rawGet(attribute);
-        if (StyleAttributes.isSimple(attribute)) {
-          myCachedAttributeValues[attribute.getIndex()] = null;
-          addedSimple.add(attribute);
-        } else {
-          forcedNotSimple.add(attribute);
-        }
-      }
-      forceUpdateCache(forcedNotSimple);
-      fireStyleChanged(new StyleChangeEvent(this, addedSimple));
-      if (myChildren != null) {
-        for (Style style : myChildren) {
-          style.setParent(this, new StyleAttributeSet());
-        }
-      }
-    }
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public <T> void set(StyleAttribute<T> attribute, T value) {
-    myAttributeValues[attribute.getIndex()] = value;
+    getAttribute(attribute).setValue(value);
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
-      myCachedAttributeValues[attribute.getIndex()] = null;
+      getAttribute(attribute).cached = null;
+      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
+    } else {
+      updateCache(attributeSet);
+    }
+  }
+
+  @Override
+  public <T> void setAll(StyleAttribute<T> attribute, Map<Integer, Object> value) {
+    getAttribute(attribute).addValues(value);
+    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
+    if (StyleAttributes.isSimple(attribute)) {
+      getAttribute(attribute).cached = null;
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
     } else {
       updateCache(attributeSet);
@@ -145,13 +161,13 @@ public class StyleImpl implements Style {
   public <T> T get(StyleAttribute<T> attribute) {
     final int index = attribute.getIndex();
     if (StyleAttributes.isSimple(attribute)) {
-      if (myCachedAttributeValues[index] == null) {
-        T value = (T) myAttributeValues[index];
-        myCachedAttributeValues[index] = attribute.combine(null, value);
+      if (getAttribute(attribute).cached == null) {
+        T value = (T) getAttribute(attribute).getTop();
+        getAttribute(attribute).cached = attribute.combine(null, value);
       }
-      return (T) myCachedAttributeValues[index];
+      return (T) getAttribute(attribute).cached;
     }
-    T value = (T) myCachedAttributeValues[index];
+    T value = (T) getAttribute(attribute).cached;
     if (value != null) {
       return value;
     } else {
@@ -161,14 +177,15 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> boolean isSpecified(StyleAttribute<T> attribute) {
-    return myAttributeValues[attribute.getIndex()] != null;
+    return ! getAttribute(attribute).values.isEmpty();
   }
 
   @Override
   public Iterable<StyleAttribute> getSpecifiedAttributes() {
-    ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(myAttributeValues.length);
-    for (int i = 0; i < myAttributeValues.length; i++) {
-      if (myAttributeValues[i] == null) {
+    int maxSize = myAttributes.size();
+    ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(maxSize);
+    for (int i = 0; i < StyleAttributes.getAttributesCount(); i++) {
+      if (! isSpecified(StyleAttributes.getAttribute(i))) {
         continue;
       }
       result.add(StyleAttributes.getAttribute(i));
@@ -178,7 +195,7 @@ public class StyleImpl implements Style {
 
   @Override
   public Object rawGet(StyleAttribute attribute) {
-    return myAttributeValues[attribute.getIndex()];
+    return getAttribute(attribute).getTop();
   }
 
   @Override
@@ -235,15 +252,12 @@ public class StyleImpl implements Style {
   public void setParent(Style parent, Collection<StyleAttribute> inheritedAttributes) {
     myParent = parent;
     updateCache(inheritedAttributes);
-    for (Pair<Integer, Style> priorityGroup : parent.getPriorityGroups()) {
-      addPriorityGroup(priorityGroup.o1, priorityGroup.o2);
-    }
   }
 
   private Set<StyleAttribute> getNonDefaultValuedAttributes() {
     Set<StyleAttribute> result = new StyleAttributeSet();
     for (StyleAttribute attribute : StyleAttributes.getNotSimpleAttributes()) {
-      if (myCachedAttributeValues[attribute.getIndex()] != null) {
+      if (getAttribute(attribute).cached != null) {
         result.add(attribute);
       }
     }
@@ -261,13 +275,13 @@ public class StyleImpl implements Style {
 
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute attribute : attributes) {
-      Object currentValue = myAttributeValues[attribute.getIndex()];
-      Object oldValue = myCachedAttributeValues[attribute.getIndex()];
+      Object currentValue = getAttribute(attribute).getTop();
+      Object oldValue = getAttribute(attribute).cached;
 
       if (!EqualUtil.equals(currentValue, oldValue)) {
         changedAttributes.add(attribute);
       }
-      myCachedAttributeValues[attribute.getIndex()] = currentValue;
+      getAttribute(attribute).cached = currentValue;
 
     }
 
@@ -291,8 +305,8 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute attribute : attributes) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
-      Object currentValue = myAttributeValues[attribute.getIndex()];
-      Object oldValue = myCachedAttributeValues[attribute.getIndex()];
+      Object currentValue = getAttribute(attribute).getTop();
+      Object oldValue = getAttribute(attribute).cached;
 
       if (parentValue != null || currentValue != null || oldValue != null) {
 
@@ -302,7 +316,7 @@ public class StyleImpl implements Style {
           changedAttributes.add(attribute);
         }
 
-        myCachedAttributeValues[attribute.getIndex()] = newValue;
+        getAttribute(attribute).cached = newValue;
       }
     }
 
