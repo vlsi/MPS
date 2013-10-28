@@ -60,13 +60,7 @@ public class DeleteModuleHelper {
       throw new IllegalArgumentException("Non-project modules can only be deleted with files deletion enabled");
     }
 
-    //remove from project
-    if (project.isProjectModule(module)) {
-      MPSModuleRepository.getInstance().saveAll();
-      project.removeModule(module.getModuleReference());
-      ((StandaloneMPSProject) project).update();
-      project.save();
-    }
+    MPSModuleRepository.getInstance().saveAll();
 
     if (deleteFiles) {
       for (SModel model : module.getModels()) {
