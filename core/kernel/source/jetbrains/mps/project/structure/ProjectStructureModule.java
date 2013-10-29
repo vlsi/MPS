@@ -301,12 +301,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       (mySModel).setModelDescriptor(null);
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
-        notifyModelReplaced(mySModel == null ? null : mySModel.getModelDescriptor());
+        notifyModelReplaced(mySModel);
       } else {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            notifyModelReplaced(mySModel.getModelDescriptor());
+            notifyModelReplaced(mySModel);
           }
         });
       }
