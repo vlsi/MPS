@@ -58,8 +58,8 @@ public class JavaConfigurationOptions extends JBPanel {
     myVmParameters.setText(javaOptions.vmOptions());
     myJreHome.setText(javaOptions.jrePath());
     myWorkingDirectory.setText(javaOptions.workingDirectory());
-    myUseAlternativeJre.setSelected((boolean) (javaOptions.useAlternativeJre()));
-    myJreHome.setEditable((boolean) (javaOptions.useAlternativeJre()));
+    myUseAlternativeJre.setSelected((boolean) javaOptions.useAlternativeJre());
+    myJreHome.setEditable((boolean) javaOptions.useAlternativeJre());
   }
 
   public void apply(@Nullable JavaRunParameters javaOptions) {

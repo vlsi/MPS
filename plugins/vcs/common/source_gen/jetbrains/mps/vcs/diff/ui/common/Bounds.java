@@ -36,14 +36,14 @@ public class Bounds extends MultiTuple._2<Integer, Integer> {
   }
 
   public int length() {
-    return (int) (this.end()) - (int) (this.start());
+    return (int) this.end() - (int) this.start();
   }
 
   public Bounds merge(Bounds that) {
-    return new Bounds(Math.min((int) (this.start()), (int) (that.start())), Math.max((int) (this.end()), (int) (that.end())));
+    return new Bounds(Math.min((int) this.start(), (int) that.start()), Math.max((int) this.end(), (int) that.end()));
   }
 
   public boolean contains(int value) {
-    return (int) (this.start()) <= value && value < (int) (this.end());
+    return (int) this.start() <= value && value < (int) this.end();
   }
 }

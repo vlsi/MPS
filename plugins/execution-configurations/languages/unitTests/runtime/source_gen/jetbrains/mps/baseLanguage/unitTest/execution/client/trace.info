@@ -1485,7 +1485,7 @@
     <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="184" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="187" startPosition="36" endLine="188" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="189" startPosition="5" endLine="190" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="194" startPosition="36" endLine="195" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="194" startPosition="36" endLine="195" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="196" startPosition="5" endLine="197" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="201" startPosition="36" endLine="202" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="203" startPosition="5" endLine="204" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1566,7 +1566,7 @@
     <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="174" startPosition="57" endLine="175" endPosition="49" />
     <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="178" startPosition="38" endLine="179" endPosition="65" />
     <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="187" startPosition="36" endLine="188" endPosition="43" />
-    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="194" startPosition="36" endLine="195" endPosition="63" />
+    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="194" startPosition="36" endLine="195" endPosition="61" />
     <scopeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="201" startPosition="36" endLine="202" endPosition="50" />
     <scopeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="207" startPosition="52" endLine="208" endPosition="44" />
     <scopeInfo nodeId="2034046503361626352" fileName="Junit_Command.java" startLine="211" startPosition="80" endLine="212" endPosition="46" />

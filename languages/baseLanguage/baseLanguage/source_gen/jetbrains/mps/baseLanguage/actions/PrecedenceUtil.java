@@ -90,7 +90,8 @@ public class PrecedenceUtil {
 
 
   public static boolean needsParensAroundCastExpression(SNode castExpression) {
-    return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression));
+    return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.IMethodLike") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.IOperation") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression") || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression));
+
   }
 
 

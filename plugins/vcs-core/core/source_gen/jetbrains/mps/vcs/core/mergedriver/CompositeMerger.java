@@ -24,7 +24,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
   @Override
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     Tuples._2<Integer, byte[]> primaryResult = myPrimaryMerger.mergeContents(baseContent, localContent, latestContent);
-    if (primaryResult == null || (int) (primaryResult._0()) != MERGED) {
+    if (primaryResult == null || (int) primaryResult._0() != MERGED) {
       return mySecondaryMerger.mergeContents(baseContent, localContent, latestContent);
     } else {
       return primaryResult;

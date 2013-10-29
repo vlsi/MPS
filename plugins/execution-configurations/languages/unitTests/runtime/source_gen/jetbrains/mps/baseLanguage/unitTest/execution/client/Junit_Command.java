@@ -192,7 +192,7 @@ public class Junit_Command {
 
   private static boolean check_u7m9j_a0c0a0a0(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return (boolean) (checkedDotOperand.useAlternativeJre());
+      return (boolean) checkedDotOperand.useAlternativeJre();
     }
     return false;
   }

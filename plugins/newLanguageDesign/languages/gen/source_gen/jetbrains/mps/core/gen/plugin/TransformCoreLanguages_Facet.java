@@ -130,7 +130,7 @@ public class TransformCoreLanguages_Facet extends IFacet.Stub {
                 public Boolean invoke(GResource data) {
                   monitor.currentProgress().advanceWork("Transforming", 100);
                   monitor.reportFeedback(new IFeedback.MESSAGE(new Message(MessageKind.INFORMATION, "Generated " + SNodeOperations.getModelLongName(data.model()))));
-                  ListSequence.fromList(generated).addElement(new LanguageModelsMerger((Language) (data.module()), data.status().getOutputModel(), mh));
+                  ListSequence.fromList(generated).addElement(new LanguageModelsMerger((Language) data.module(), data.status().getOutputModel(), mh));
                   return true;
                 }
               });

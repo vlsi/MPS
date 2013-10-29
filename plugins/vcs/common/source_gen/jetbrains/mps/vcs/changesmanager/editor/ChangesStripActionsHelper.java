@@ -51,8 +51,8 @@ public class ChangesStripActionsHelper {
       return;
     }
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    goToY(editorComponent, (int) (group.getBounds(true).end()));
-    goToY(editorComponent, (int) (group.getBounds(true).start()));
+    goToY(editorComponent, (int) group.getBounds(true).end());
+    goToY(editorComponent, (int) group.getBounds(true).start());
     check_ikrecr_a5a3(getPainter(editorContext), group);
   }
 

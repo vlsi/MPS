@@ -9,7 +9,7 @@ import junit.framework.Assert;
 public class MPS14511_Test extends TestCase {
   public void test_accessNamedTupleInOtherPkg() throws Exception {
     Questionnable fb = new Questionnable(null, 42);
-    Assert.assertSame(42, (int) (fb.answer()));
+    Assert.assertSame(42, (int) fb.answer());
     try {
       fb.run();
       Assert.fail();

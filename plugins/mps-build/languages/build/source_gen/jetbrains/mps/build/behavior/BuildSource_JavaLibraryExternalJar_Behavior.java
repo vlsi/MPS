@@ -15,7 +15,7 @@ public class BuildSource_JavaLibraryExternalJar_Behavior {
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     Tuples._2<SNode, Boolean> artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(thisNode, "extJar", true), artifacts);
     if (artifact != null) {
-      if ((boolean) (artifact._1())) {
+      if ((boolean) artifact._1()) {
         builder.addWithContent(artifact._0());
       } else {
         builder.add(artifact._0());

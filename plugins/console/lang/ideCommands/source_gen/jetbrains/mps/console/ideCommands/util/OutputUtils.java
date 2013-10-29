@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class OutputUtils {
   public static void printStat(ConsoleStream console, Iterable<Tuples._2<String, Integer>> table) {
     for (Tuples._2<String, Integer> row : Sequence.fromIterable(table)) {
-      console.addText(row._0() + ": " + (int) (row._1()));
+      console.addText(row._0() + ": " + (int) row._1());
       console.addText("\n");
     }
   }

@@ -360,7 +360,7 @@ __switch__:
 
   @Override
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent component) {
-    return (int) (getBounds(((EditorComponent) component)).start());
+    return (int) getBounds(((EditorComponent) component)).start();
   }
 
   @Override

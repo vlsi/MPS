@@ -65,9 +65,9 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
 
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
-      IArrayValueProxy values = ((IArrayValueProxy) (value.getFieldValue("values")));
+      IArrayValueProxy values = ((IArrayValueProxy) value.getFieldValue("values"));
       for (int i = 0; i < ((IArrayValueProxy) values).getLength(); i++) {
-        result.add(new TuplesWatchables.MyWatchable_element(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) (values.getElementAt(i))).getJDIValue(), getThreadReference()), "element"));
+        result.add(new TuplesWatchables.MyWatchable_element(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) values.getElementAt(i)).getJDIValue(), getThreadReference()), "element"));
       }
       return result;
     }
@@ -85,7 +85,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
-      return "tuple " + (String) ((((IObjectValueProxy) (value.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference())))).getJavaValue());
+      return "tuple " + (String) (((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue();
     }
   }
 

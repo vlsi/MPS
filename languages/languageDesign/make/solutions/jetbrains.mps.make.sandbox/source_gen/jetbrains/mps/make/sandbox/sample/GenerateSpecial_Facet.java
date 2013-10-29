@@ -234,8 +234,8 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
         if (properties.hasProperties(name)) {
           GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.properties(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
           MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.foo", String.valueOf(props.foo()));
-          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.bar", String.valueOf((int) (props.bar())));
-          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.baz", String.valueOf((boolean) (props.baz())));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.bar", String.valueOf((int) props.bar()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.baz", String.valueOf((boolean) props.baz()));
           MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.FooFoo", String.valueOf(props.FooFoo()));
           MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BarBar", String.valueOf(props.BarBar()));
           MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BazBaz", String.valueOf(props.BazBaz()));

@@ -212,7 +212,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
     Tuples._2<SNode, Boolean> resolveResult = resolveMethod(methodCallNode, methodName);
     SNode newTarget = resolveResult._0();
-    boolean good = (boolean) (resolveResult._1());
+    boolean good = (boolean) resolveResult._1();
 
     if (newTarget != null) {
       if (baseMethodDeclaration == null || (good && newTarget != baseMethodDeclaration)) {

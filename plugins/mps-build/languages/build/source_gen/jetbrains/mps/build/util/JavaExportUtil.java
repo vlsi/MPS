@@ -69,7 +69,7 @@ public class JavaExportUtil {
       if (ListSequence.fromList(result).isNotEmpty()) {
         artifacts.needsFetch(contextNode);
         for (Tuples._2<SNode, Boolean> pair : ListSequence.fromList(result)) {
-          if ((boolean) (pair._1())) {
+          if ((boolean) pair._1()) {
             builder.addWithContent(pair._0());
           } else {
             builder.add(pair._0());
@@ -141,7 +141,7 @@ public class JavaExportUtil {
 
       Tuples._2<SNode, Boolean> jarImport = requireJar(artifacts, extJar, contextNode);
       if (jarImport != null) {
-        if ((boolean) (jarImport._1())) {
+        if ((boolean) jarImport._1()) {
           builder.addWithContent(jarImport._0());
         } else {
           builder.add(jarImport._0());

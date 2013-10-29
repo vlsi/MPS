@@ -84,7 +84,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
         }
       }
     }
-    Rectangle viewRect = new Rectangle(0, (int) (verticalBounds.value.start()), rightMost, verticalBounds.value.length());
+    Rectangle viewRect = new Rectangle(0, (int) verticalBounds.value.start(), rightMost, verticalBounds.value.length());
     viewRect.y -= 1;
     viewRect.width += 5;
     viewRect.height += 4;

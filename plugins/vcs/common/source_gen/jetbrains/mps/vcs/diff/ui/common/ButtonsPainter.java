@@ -79,7 +79,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
       int previousStart = Integer.MIN_VALUE;
       for (ChangeGroup cg : ListSequence.fromList(myChangeGroupLayout.getChangeGroups())) {
-        int y = Math.max((int) (cg.getBounds(myHighlightLeft).start()), previousStart + GAP + ICON_SIZE);
+        int y = Math.max((int) cg.getBounds(myHighlightLeft).start(), previousStart + GAP + ICON_SIZE);
         ListSequence.fromList(myButtons).addSequence(Sequence.fromIterable(createButtonsForChangeGroup(cg, y)));
         previousStart = y;
       }

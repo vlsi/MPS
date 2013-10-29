@@ -79,7 +79,7 @@ public class ChangeGroupMessages {
 
     @Override
     public int getStart(EditorComponent component) {
-      return (int) (myChangeGroup.getBounds(myLeft).start());
+      return (int) myChangeGroup.getBounds(myLeft).start();
     }
 
     @Override

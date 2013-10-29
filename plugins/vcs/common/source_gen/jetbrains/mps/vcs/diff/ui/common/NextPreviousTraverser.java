@@ -136,13 +136,13 @@ public class NextPreviousTraverser {
     if (previous) {
       changeGroup = ListSequence.fromList(changeGroups).findLast(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup cg) {
-          return (int) (cg.getBounds(left).end()) < currentY;
+          return (int) cg.getBounds(left).end() < currentY;
         }
       });
     } else {
       changeGroup = ListSequence.fromList(changeGroups).findFirst(new IWhereFilter<ChangeGroup>() {
         public boolean accept(ChangeGroup cg) {
-          return (int) (cg.getBounds(left).start()) > currentY;
+          return (int) cg.getBounds(left).start() > currentY;
         }
       });
     }
@@ -174,7 +174,7 @@ public class NextPreviousTraverser {
         max = _tmp_mf966z_a0a9a61._1();
       }
     } else {
-      if ((int) (asLeft.start()) < (int) (asRight.start())) {
+      if ((int) asLeft.start() < (int) asRight.start()) {
         {
           Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a61 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
           min = _tmp_mf966z_a0a0a9a61._0();
@@ -206,7 +206,7 @@ public class NextPreviousTraverser {
   public void goToFirstChangeLater() {
     Bounds firstGroup = getNeighbourGroupBounds(false);
     EditorCell rc = myLastEditor.getRootCell();
-    final int minY = (firstGroup == null ? rc.getY() + 1 : (int) (firstGroup.start()));
+    final int minY = (firstGroup == null ? rc.getY() + 1 : (int) firstGroup.start());
     final int maxY = rc.getY() + rc.getHeight() - 2;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -216,8 +216,8 @@ public class NextPreviousTraverser {
   }
 
   public void goToBounds(Bounds bounds) {
-    goToY((int) (bounds.end()));
-    goToY((int) (bounds.start()));
+    goToY((int) bounds.end());
+    goToY((int) bounds.start());
   }
 
   private synchronized void goToY(int y) {

@@ -29,7 +29,7 @@ public class FileMerger {
         mergeResult = MultiTuple.<Integer,byte[]>from(AbstractContentMerger.FATAL_ERROR, localContent.getData());
       }
       out.write((convertCRLF ? convert(mergeResult._1()) : mergeResult._1()));
-      return (int) (mergeResult._0());
+      return (int) mergeResult._0();
     } catch (IOException e) {
       e.printStackTrace();
       return AbstractContentMerger.FATAL_ERROR;
