@@ -238,14 +238,17 @@ public class SModel implements SModelData {
     return myDisposedStacktrace;
   }
 
+  @Deprecated
   public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
     return getModelDescriptor().resolveModel(reference);
   }
 
+  @Deprecated
   public void addModelListener(@NotNull SModelListener listener) {
     getModelDescriptor().addModelListener(listener);
   }
 
+  @Deprecated
   public void removeModelListener(@NotNull SModelListener listener) {
     getModelDescriptor().removeModelListener(listener);
   }
@@ -656,9 +659,9 @@ public class SModel implements SModelData {
     if (myModelDescriptor != null) {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
-    ImportElement importElement = SModelOperations.getImportElement(getModelDescriptor(), modelReference);
+    ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) return;
-    importElement = SModelOperations.getAdditionalModelElement(getModelDescriptor(), modelReference);
+    importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
       org.jetbrains.mps.openapi.model.SModel modelDescriptor =
           MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -687,7 +690,7 @@ public class SModel implements SModelData {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
 
-    ImportElement importElement = SModelOperations.getImportElement(getModelDescriptor(), modelReference);
+    ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) {
       myImports.remove(importElement);
       myImplicitImports.add(importElement);  // to save version and ID if model was imported implicitly
@@ -917,15 +920,15 @@ public class SModel implements SModelData {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
 
-    ImportElement importElement = SModelOperations.getImportElement(getModelDescriptor(), sModelReference);
+    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
     if (importElement == null) {
-      importElement = SModelOperations.getAdditionalModelElement(getModelDescriptor(), sModelReference);
+      importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
     }
 
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
     } else {
-      addAdditionalModelVersion(((SModelReference) sModelReference), currentVersion);
+      addAdditionalModelVersion((sModelReference), currentVersion);
     }
   }
 

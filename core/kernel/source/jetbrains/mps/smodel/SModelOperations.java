@@ -199,6 +199,16 @@ public class SModelOperations {
   }
 
   @Nullable
+  public static ImportElement getImportElement(jetbrains.mps.smodel.SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+    for (ImportElement importElement : model.importedModels()) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        return importElement;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
   public static ImportElement getImportElement(SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) model).importedModels()) {
       if (importElement.getModelReference().equals(modelReference)) {
@@ -281,6 +291,16 @@ public class SModelOperations {
     ImportElement importElement = getAdditionalModelElement(sModel, sModelReference);
     if (importElement == null) return -1;
     return importElement.getUsedVersion();
+  }
+
+  @Nullable
+  public static ImportElement getAdditionalModelElement(jetbrains.mps.smodel.SModel sModel, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+    for (ImportElement importElement : sModel.getAdditionalModelVersions()) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        return importElement;
+      }
+    }
+    return null;
   }
 
   @Nullable
