@@ -209,10 +209,10 @@ public class SModelOperations {
   }
 
   @NotNull
-  public static List<ImportElement> getAllImportElements(SModel model) {
+  public static List<ImportElement> getAllImportElements(jetbrains.mps.smodel.SModel model) {
     List<ImportElement> result = new ArrayList<ImportElement>();
-    result.addAll(((jetbrains.mps.smodel.SModelInternal) model).importedModels());
-    result.addAll(((jetbrains.mps.smodel.SModelInternal) model).getAdditionalModelVersions());
+    result.addAll(model.importedModels());
+    result.addAll(model.getAdditionalModelVersions());
     return result;
   }
 
