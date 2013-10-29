@@ -123,7 +123,7 @@ public class SModel implements SModelData {
           @Override
           public org.jetbrains.mps.openapi.model.SNode next() {
             SNode res = myIterator.next();
-            if (res!=null){
+            if (res != null) {
               res.nodeRead();
 
               res.fireNodeReadAccess();
@@ -149,11 +149,13 @@ public class SModel implements SModelData {
   @Override
   public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
-    ModelChange.assertLegalNodeRegistration(getModelDescriptor(), node);
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalNodeRegistration(myModelDescriptor, node);
+    }
     enforceFullLoad();
     if (myRoots.contains(node)) return;
     org.jetbrains.mps.openapi.model.SModel model = node.getModel();
-    if (model != null && model != getModelDescriptor() && node.getParent() == null) {
+    if (model != null && model != myModelDescriptor && node.getParent() == null) {
       model.removeRootNode(node);
     } else {
       org.jetbrains.mps.openapi.model.SNode parent = node.getParent();
@@ -177,7 +179,9 @@ public class SModel implements SModelData {
   @Override
   public void removeRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
-    ModelChange.assertLegalNodeUnRegistration(getModelDescriptor(), node);
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalNodeUnRegistration(myModelDescriptor, node);
+    }
     enforceFullLoad();
     if (myRoots.contains(node)) {
       fireBeforeRootRemovedEvent(node);
@@ -198,7 +202,7 @@ public class SModel implements SModelData {
   @Nullable
   public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     SNode res = getNode_(nodeId);
-    if (res!=null){
+    if (res != null) {
       res.nodeRead();
 
       res.fireNodeReadAccess();
@@ -266,7 +270,9 @@ public class SModel implements SModelData {
 
   private void fireModelNodesReadAccess() {
     if (!canFireEvent()) return;
-    NodeReadEventsCaster.fireModelNodesReadAccess(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      NodeReadEventsCaster.fireModelNodesReadAccess(myModelDescriptor);
+    }
   }
 
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
@@ -284,7 +290,9 @@ public class SModel implements SModelData {
   }
 
   public void dispose() {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
     if (myDisposed) return;
 
     myDisposed = true;
@@ -303,8 +311,8 @@ public class SModel implements SModelData {
 //---------listeners--------
 
   private List<SModelListener> getModelListeners() {
-    SModelInternal modelDescriptor = getModelDescriptor();
-    return ((SModelBase) modelDescriptor).getModelListeners();
+    if (myModelDescriptor == null) return Collections.emptyList();
+    return ((SModelBase) myModelDescriptor).getModelListeners();
   }
 
   //todo code in the following methods should be written w/o duplication
@@ -495,9 +503,7 @@ public class SModel implements SModelData {
   }
 
   private SModelDescriptor getDescriptorChecked() {
-    SModelDescriptor des = getModelDescriptor();
-    if (des instanceof FakeModelDescriptor) throw new IllegalStateException();
-    return des;
+    return getModelDescriptor();
   }
 
   //todo this is an external functionality. Should be implemented externally
@@ -588,7 +594,9 @@ public class SModel implements SModelData {
   }
 
   public void deleteLanguage(@NotNull SModuleReference ref) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     if (myLanguages.remove(ref)) {
       //calculateImplicitImports();
@@ -598,7 +606,10 @@ public class SModel implements SModelData {
   }
 
   public void addLanguage(SModuleReference ref) {
-    if (myModelDescriptor != null) ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
+
     if (importedLanguages().contains(ref)) return;
 
     if (ref.getModuleId() == null) {
@@ -618,7 +629,9 @@ public class SModel implements SModelData {
   }
 
   public void addDevKit(SModuleReference ref) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     if (myDevKits.add(ref)) {
       fireDevKitAddedEvent(ref);
@@ -627,7 +640,9 @@ public class SModel implements SModelData {
   }
 
   public void deleteDevKit(@NotNull SModuleReference ref) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     if (myDevKits.remove(ref)) {
       fireDevKitRemovedEvent(ref);
@@ -642,8 +657,9 @@ public class SModel implements SModelData {
   }
 
   public void addModelImport(SModelReference modelReference, boolean firstVersion) {
-    ModelChange.assertLegalChange(getModelDescriptor());
-
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
     ImportElement importElement = SModelOperations.getImportElement(getModelDescriptor(), modelReference);
     if (importElement != null) return;
     importElement = SModelOperations.getAdditionalModelElement(getModelDescriptor(), modelReference);
@@ -661,7 +677,9 @@ public class SModel implements SModelData {
   }
 
   public void addModelImport(ImportElement importElement) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
@@ -669,7 +687,9 @@ public class SModel implements SModelData {
   }
 
   public void deleteModelImport(SModelReference modelReference) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     ImportElement importElement = SModelOperations.getImportElement(getModelDescriptor(), modelReference);
     if (importElement != null) {
@@ -758,7 +778,9 @@ public class SModel implements SModelData {
   }
 
   public void addEngagedOnGenerationLanguage(SModuleReference ref) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
@@ -770,7 +792,9 @@ public class SModel implements SModelData {
   }
 
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.remove(ref);
@@ -792,7 +816,9 @@ public class SModel implements SModelData {
   }
 
   public void addAdditionalModelVersion(@NotNull ImportElement element) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
     myImplicitImports.add(element);
   }
 
@@ -886,7 +912,9 @@ public class SModel implements SModelData {
   }
 
   public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     ImportElement importElement = SModelOperations.getImportElement(getModelDescriptor(), sModelReference);
     if (importElement == null) {
@@ -901,7 +929,9 @@ public class SModel implements SModelData {
   }
 
   public boolean updateSModelReferences() {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
     enforceFullLoad();
 
     boolean changed = false;
@@ -943,7 +973,9 @@ public class SModel implements SModelData {
   }
 
   public boolean updateModuleReferences() {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
 
     boolean changed = false;
 
@@ -1178,12 +1210,12 @@ public class SModel implements SModelData {
    */
   public static class FakeModelDescriptor extends SModelBase implements org.jetbrains.mps.openapi.model.SModel {
     private SModel myModel;
-    private volatile static boolean isNotified  = false;
+    private volatile static boolean isNotified = false;
 
     public FakeModelDescriptor(@NotNull SModel md) {
       super(md.getReference(), new NullDataSource());
-      if (!isNotified){
-          isNotified = true;
+      if (!isNotified) {
+        isNotified = true;
         LOG.error("Fake model descriptor is created. " +
             "This means that SModel leaked from persistence-related code and may lead to problems later. " +
             "Fix the code using old SModel class, replace it with SModelDescriptor or SModel interface. " +
