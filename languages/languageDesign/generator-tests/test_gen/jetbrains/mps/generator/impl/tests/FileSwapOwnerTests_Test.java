@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.List;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -160,18 +162,22 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
     public void test_baseLanguageStructure() throws Exception {
       this.addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.structure", ""));
-      SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
+      jetbrains.mps.smodel.SModel resultModel = FileSwapOwner.writeAndReadModel(((SModelDescriptor) sampleModel).getSModel());
 
-      ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), SModelOperations.getRoots(resultModel, null));
+      Iterable<SNode> rootNodes = resultModel.getRootNodes();
+      List<SNode> resRoots = ListSequence.fromListWithValues(new ArrayList<SNode>(), rootNodes);
+      ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), resRoots);
       Assert.assertNull(matchNodes);
     }
 
     public void test_testOverloadedOperatorsSandbox() throws Exception {
       this.addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test", ""));
-      SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
+      jetbrains.mps.smodel.SModel resultModel = FileSwapOwner.writeAndReadModel(((SModelDescriptor) sampleModel).getSModel());
 
-      ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), SModelOperations.getRoots(resultModel, null));
+      Iterable<SNode> rootNodes = resultModel.getRootNodes();
+      List<SNode> resRoots = ListSequence.fromListWithValues(new ArrayList<SNode>(), rootNodes);
+      ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), resRoots);
       Assert.assertNull(matchNodes);
     }
 

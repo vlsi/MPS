@@ -231,7 +231,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
   }
 
   // method created for testing
-  public static SModel writeAndReadModel(SModel model) throws IOException {
+  public static jetbrains.mps.smodel.SModel writeAndReadModel(jetbrains.mps.smodel.SModel model) throws IOException {
     // write
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ModelOutputStream mos = new ModelOutputStream(os);
@@ -259,8 +259,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       resultModel.addRootNode(root.o2);
     }
 
-    SModelOperations.validateLanguagesAndImports(resultModel.getModelDescriptor(), false, false);
+    SModelOperations.validateLanguagesAndImports(resultModel, false, false);
 
-    return resultModel.getModelDescriptor();
+    return resultModel;
   }
 }
