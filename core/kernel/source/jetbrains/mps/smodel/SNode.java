@@ -801,7 +801,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    return myModel == null ? null : myModel.getModelDescriptor();
+    return myModel == null ? null : myModel.myModelDescriptor;
   }
 
   //this method is for internal checks in SReferenceBase only
