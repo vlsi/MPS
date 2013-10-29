@@ -204,7 +204,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       }
 
       // ensure imports are back
-      SModelOperations.validateLanguagesAndImports(model.getModelDescriptor(), false, false);
+      SModelOperations.validateLanguagesAndImports(model, false, false);
 
       return model;
     }
