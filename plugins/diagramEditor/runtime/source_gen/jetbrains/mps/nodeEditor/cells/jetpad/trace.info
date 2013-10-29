@@ -33,7 +33,7 @@
     <nodeInfo nodeId="2201645942108518700" fileName="ConnectorViewCell.java" startLine="69" startPosition="65" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2201645942108532323" fileName="ConnectorViewCell.java" startLine="70" startPosition="35" endLine="71" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2201645942108545174" fileName="ConnectorViewCell.java" startLine="71" startPosition="43" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8686738938027916598" fileName="ConnectorViewCell.java" startLine="74" startPosition="43" endLine="75" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8686738938027916598" fileName="ConnectorViewCell.java" startLine="74" startPosition="49" endLine="75" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8686738938027916619" fileName="ConnectorViewCell.java" startLine="76" startPosition="7" endLine="77" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8686738938027916625" fileName="ConnectorViewCell.java" startLine="77" startPosition="33" endLine="78" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8686738938027916632" fileName="ConnectorViewCell.java" startLine="78" startPosition="40" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -65,7 +65,7 @@
     <scopeInfo nodeId="5258645978834385649" fileName="ConnectorViewCell.java" startLine="46" startPosition="43" endLine="47" endPosition="60" />
     <scopeInfo nodeId="5258645978834385668" fileName="ConnectorViewCell.java" startLine="51" startPosition="23" endLine="52" endPosition="18" />
     <scopeInfo nodeId="5258645978834385705" fileName="ConnectorViewCell.java" startLine="60" startPosition="129" endLine="61" endPosition="26" />
-    <scopeInfo nodeId="8686738938027916597" fileName="ConnectorViewCell.java" startLine="74" startPosition="43" endLine="75" endPosition="107" />
+    <scopeInfo nodeId="8686738938027916597" fileName="ConnectorViewCell.java" startLine="74" startPosition="49" endLine="75" endPosition="119" />
     <scopeInfo nodeId="6277411742335784446" fileName="ConnectorViewCell.java" startLine="86" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="6277411742335784447" varName="rootCell" />
     </scopeInfo>

@@ -83,8 +83,8 @@ public class DiagramEditor extends AbstractJetpadEditor {
 
   private void createConnection(EditorCell_Collection linesCell, ConnectorViewCell connectorCell, View connectorView, View fromView, View toView, EditorContext editorContext, SNode diagramNode) {
     PolylineConnection connection = connectorCell.getConnection();
-    if (connectorView.parent() != null) {
-      connectorView.parent().children().remove(connectorView.parent().children().indexOf(connectorView));
+    if (connectorView.parent().get() != null) {
+      connectorView.parent().get().children().remove(connectorView.parent().get().children().indexOf(connectorView));
     }
     connection.view().invalidate();
     connection.toView().set(toView);

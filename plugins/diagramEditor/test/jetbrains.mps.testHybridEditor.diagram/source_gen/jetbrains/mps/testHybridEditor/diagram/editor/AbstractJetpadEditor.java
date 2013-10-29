@@ -7,7 +7,7 @@ import jetbrains.jetpad.projectional.view.View;
 
 public class AbstractJetpadEditor extends DefaultNodeEditor {
   protected void attach(View parent, View child) {
-    View oldParent = child.parent();
+    View oldParent = child.parent().get();
     if (oldParent != null) {
       oldParent.children().remove(oldParent.children().indexOf(child));
     }

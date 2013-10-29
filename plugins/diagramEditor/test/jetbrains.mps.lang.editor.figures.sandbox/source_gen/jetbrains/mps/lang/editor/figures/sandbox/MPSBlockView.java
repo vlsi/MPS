@@ -118,7 +118,7 @@ public class MPSBlockView extends GroupView {
 
   private void attach(View parent, View inputPortView) {
     if (inputPortView.parent() != null) {
-      inputPortView.parent().children().remove(inputPortView.parent().children().indexOf(inputPortView));
+      inputPortView.parent().get().children().remove(inputPortView.parent().get().children().indexOf(inputPortView));
     }
     parent.children().add(inputPortView);
   }

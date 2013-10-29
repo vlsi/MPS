@@ -71,8 +71,8 @@ public abstract class ConnectorViewCell extends GenericViewCell {
     View fromView = getInputView(rootCell);
     View toView = getOutputView(rootCell);
     if (fromView != null && toView != null) {
-      if (connectorView.parent() != null) {
-        connectorView.parent().children().remove(connectorView.parent().children().indexOf(connectorView));
+      if (connectorView.parent().get() != null) {
+        connectorView.parent().get().children().remove(connectorView.parent().get().children().indexOf(connectorView));
       }
       connectorView.invalidate();
       myConnection.toView().set(toView);

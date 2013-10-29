@@ -77,7 +77,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     parentCell.addEditorCell(childCell);
 
     View childView = childCell.getView();
-    View oldParent = childView.parent();
+    View oldParent = childView.parent().get();
     if (oldParent != null) {
       oldParent.children().remove(oldParent.children().indexOf(childView));
     }

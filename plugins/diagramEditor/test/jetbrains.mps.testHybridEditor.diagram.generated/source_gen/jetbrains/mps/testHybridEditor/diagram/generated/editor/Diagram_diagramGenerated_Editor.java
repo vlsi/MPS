@@ -125,7 +125,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       } else {
         View blockView = genericContentCell.getView();
         blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent();
+        View oldParent = blockView.parent().get();
         if (oldParent != null) {
           oldParent.children().remove(oldParent.children().indexOf(blockView));
         }
@@ -176,7 +176,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       } else {
         View blockView = genericContentCell.getView();
         blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent();
+        View oldParent = blockView.parent().get();
         if (oldParent != null) {
           oldParent.children().remove(oldParent.children().indexOf(blockView));
         }
