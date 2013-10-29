@@ -277,9 +277,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
     propertyChanged(propertyName, oldValue, propertyValue);
@@ -351,7 +349,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
 
@@ -366,10 +364,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
     nodeRemoved(child, wasRole);
+  }
+
+  private boolean needFireEvent() {
+    return myModel != null && myModel.myModelDescriptor != null && ModelChange.needFireEvents(getModel(), this);
   }
 
   /**
@@ -576,7 +578,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
     }
     nodeAdded(role, child);
@@ -1013,9 +1015,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireReferenceAddedEvent(reference);
     }
   }
@@ -1046,9 +1046,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireReferenceRemovedEvent(ref);
     }
   }
