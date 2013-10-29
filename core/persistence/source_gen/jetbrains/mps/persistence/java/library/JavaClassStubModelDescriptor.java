@@ -85,7 +85,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
-    new ASMModelLoader(((AbstractModule) myModelRoot.getModule()), cp, model.getModelDescriptor(), false).updateModel();
+    new ASMModelLoader(((AbstractModule) myModelRoot.getModule()), cp, model, false).updateModel();
     updateTimestamp();
     return model;
   }
