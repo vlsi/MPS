@@ -72,9 +72,9 @@ public class PartitioningHelper {
         TemplateModule templateModule = myRule2Generator.get(message.o1);
         msg.setHintObject(templateModule.getReference());
         messagesView.add(msg);
-        console.addText(message.o2);
+        console.addText(String.format("%s\n", message.o2));
       }
-      console.addText("=================================");
+      console.addText("=================================\n");
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     }
     // show partitioning 
