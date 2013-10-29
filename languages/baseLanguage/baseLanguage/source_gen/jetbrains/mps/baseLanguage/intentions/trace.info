@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/1193744597902">
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -7304,6 +7304,190 @@
     <unitInfo nodeId="3898325814824766814" fileName="MakeParameterFinal_Intention.java" startLine="88" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeParameterFinal_Intention$IntentionImplementation" />
     <unitInfo nodeId="3898325814824766814" fileName="MakeParameterFinal_Intention.java" startLine="20" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeParameterFinal_Intention" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/4063776913609769409">
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="35" startPosition="30" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="39" startPosition="35" endLine="40" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="43" startPosition="41" endLine="44" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="47" startPosition="37" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="51" startPosition="34" endLine="52" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="55" startPosition="44" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="60" startPosition="53" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="63" startPosition="127" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7549412628474463582" fileName="TurnEnumToClassAndBack_Intention.java" startLine="69" startPosition="91" endLine="70" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7549412628472128216" fileName="TurnEnumToClassAndBack_Intention.java" startLine="73" startPosition="112" endLine="74" endPosition="438" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="77" startPosition="53" endLine="78" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="81" startPosition="35" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="86" startPosition="37" endLine="87" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="88" startPosition="5" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609943720" fileName="TurnEnumToClassAndBack_Intention.java" startLine="107" startPosition="8" endLine="108" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610135630" fileName="TurnEnumToClassAndBack_Intention.java" startLine="108" startPosition="94" endLine="109" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610246261" fileName="TurnEnumToClassAndBack_Intention.java" startLine="109" startPosition="202" endLine="110" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610524328" fileName="TurnEnumToClassAndBack_Intention.java" startLine="110" startPosition="106" endLine="111" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610625741" fileName="TurnEnumToClassAndBack_Intention.java" startLine="111" startPosition="118" endLine="112" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610543283" fileName="TurnEnumToClassAndBack_Intention.java" startLine="112" startPosition="112" endLine="113" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610316419" fileName="TurnEnumToClassAndBack_Intention.java" startLine="113" startPosition="120" endLine="114" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610320441" fileName="TurnEnumToClassAndBack_Intention.java" startLine="114" startPosition="110" endLine="115" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549412628472034363" fileName="TurnEnumToClassAndBack_Intention.java" startLine="115" startPosition="108" endLine="116" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549412628472069088" fileName="TurnEnumToClassAndBack_Intention.java" startLine="116" startPosition="116" endLine="117" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610722358" fileName="TurnEnumToClassAndBack_Intention.java" startLine="117" startPosition="108" endLine="118" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549412628471967527" fileName="TurnEnumToClassAndBack_Intention.java" startLine="118" startPosition="196" endLine="119" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913610404541" fileName="TurnEnumToClassAndBack_Intention.java" startLine="119" startPosition="176" endLine="120" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913611645477" fileName="TurnEnumToClassAndBack_Intention.java" startLine="120" startPosition="178" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4063776913611949122" fileName="TurnEnumToClassAndBack_Intention.java" startLine="123" startPosition="37" endLine="124" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4063776913612099043" fileName="TurnEnumToClassAndBack_Intention.java" startLine="126" startPosition="45" endLine="127" endPosition="350" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913612136828" fileName="TurnEnumToClassAndBack_Intention.java" startLine="130" startPosition="46" endLine="131" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549412628472418700" fileName="TurnEnumToClassAndBack_Intention.java" startLine="134" startPosition="9" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7549412628473551932" fileName="TurnEnumToClassAndBack_Intention.java" startLine="137" startPosition="41" endLine="138" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7549412628473651954" fileName="TurnEnumToClassAndBack_Intention.java" startLine="141" startPosition="37" endLine="142" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549412628473749643" fileName="TurnEnumToClassAndBack_Intention.java" startLine="146" startPosition="41" endLine="147" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7549412628473749654" fileName="TurnEnumToClassAndBack_Intention.java" startLine="150" startPosition="37" endLine="151" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549412628473682181" fileName="TurnEnumToClassAndBack_Intention.java" startLine="153" startPosition="9" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7549412628472437117" fileName="TurnEnumToClassAndBack_Intention.java" startLine="154" startPosition="0" endLine="155" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="158" startPosition="48" endLine="159" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TurnEnumToClassAndBack_Intention#()V" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="93" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="59" startPosition="84" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="62" startPosition="5" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisibleInChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="85" startPosition="99" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4063776913612099041" fileName="TurnEnumToClassAndBack_Intention.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4063776913612325325" fileName="TurnEnumToClassAndBack_Intention.java" startLine="129" startPosition="13" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7549412628473550546" fileName="TurnEnumToClassAndBack_Intention.java" startLine="137" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7549412628473650591" fileName="TurnEnumToClassAndBack_Intention.java" startLine="141" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7549412628473749641" fileName="TurnEnumToClassAndBack_Intention.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7549412628473749652" fileName="TurnEnumToClassAndBack_Intention.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="158" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="4063776913609931563" fileName="TurnEnumToClassAndBack_Intention.java" startLine="96" startPosition="87" endLine="100" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913610008212" fileName="TurnEnumToClassAndBack_Intention.java" startLine="103" startPosition="78" endLine="107" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7549412628473566679" fileName="TurnEnumToClassAndBack_Intention.java" startLine="163" startPosition="73" endLine="167" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7549412628473749644" fileName="TurnEnumToClassAndBack_Intention.java" startLine="170" startPosition="73" endLine="174" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063776913612099032" fileName="TurnEnumToClassAndBack_Intention.java" startLine="124" startPosition="43" endLine="129" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="96" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7549412628473566679" fileName="TurnEnumToClassAndBack_Intention.java" startLine="163" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_ck6aau_a0a0a0a0a0a71a2o#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="7549412628473749644" fileName="TurnEnumToClassAndBack_Intention.java" startLine="170" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_ck6aau_a0a0a0a0a0a81a2o#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="59" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="7549412628473465783" fileName="TurnEnumToClassAndBack_Intention.java" startLine="135" startPosition="0" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7549412628473749632" fileName="TurnEnumToClassAndBack_Intention.java" startLine="144" startPosition="9" endLine="153" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913611743933" fileName="TurnEnumToClassAndBack_Intention.java" startLine="123" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4063776913611666302" fileName="TurnEnumToClassAndBack_Intention.java" startLine="121" startPosition="0" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="103" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="32" startPosition="45" endLine="32" endPosition="45" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="93" startPosition="38" endLine="93" endPosition="38" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="35" startPosition="30" endLine="36" endPosition="63" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="39" startPosition="35" endLine="40" endPosition="36" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="43" startPosition="41" endLine="44" endPosition="84" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="47" startPosition="37" endLine="48" endPosition="40" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="51" startPosition="34" endLine="52" endPosition="32" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="55" startPosition="44" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="63" startPosition="127" endLine="64" endPosition="19" />
+    <scopeInfo nodeId="7549412628474446522" fileName="TurnEnumToClassAndBack_Intention.java" startLine="69" startPosition="91" endLine="70" endPosition="161" />
+    <scopeInfo nodeId="7549412628472120241" fileName="TurnEnumToClassAndBack_Intention.java" startLine="73" startPosition="112" endLine="74" endPosition="438" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="77" startPosition="53" endLine="78" endPosition="132" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="81" startPosition="35" endLine="82" endPosition="17" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="86" startPosition="37" endLine="87" endPosition="138" />
+    <scopeInfo nodeId="4063776913612099042" fileName="TurnEnumToClassAndBack_Intention.java" startLine="126" startPosition="45" endLine="127" endPosition="350" />
+    <scopeInfo nodeId="4063776913612325326" fileName="TurnEnumToClassAndBack_Intention.java" startLine="130" startPosition="46" endLine="131" endPosition="108" />
+    <scopeInfo nodeId="7549412628473550547" fileName="TurnEnumToClassAndBack_Intention.java" startLine="137" startPosition="41" endLine="138" endPosition="104" />
+    <scopeInfo nodeId="7549412628473650592" fileName="TurnEnumToClassAndBack_Intention.java" startLine="141" startPosition="37" endLine="142" endPosition="74" />
+    <scopeInfo nodeId="7549412628473749642" fileName="TurnEnumToClassAndBack_Intention.java" startLine="146" startPosition="41" endLine="147" endPosition="102" />
+    <scopeInfo nodeId="7549412628473749653" fileName="TurnEnumToClassAndBack_Intention.java" startLine="150" startPosition="37" endLine="151" endPosition="72" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="158" startPosition="48" endLine="159" endPosition="51" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="93" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="4063776913609769409" varName="editorContext" />
+      <varInfo nodeId="4063776913609769409" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="4063776913609769409" varName="childNode" />
+      <varInfo nodeId="4063776913609769409" varName="editorContext" />
+      <varInfo nodeId="4063776913609769409" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="4063776913612099041" fileName="TurnEnumToClassAndBack_Intention.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="4063776913612099041" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7549412628473550546" fileName="TurnEnumToClassAndBack_Intention.java" startLine="137" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="7549412628473550546" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7549412628473650591" fileName="TurnEnumToClassAndBack_Intention.java" startLine="141" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="7549412628473650591" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7549412628473749641" fileName="TurnEnumToClassAndBack_Intention.java" startLine="146" startPosition="0" endLine="149" endPosition="0">
+      <varInfo nodeId="7549412628473749641" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7549412628473749652" fileName="TurnEnumToClassAndBack_Intention.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="7549412628473749652" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="158" startPosition="0" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="85" startPosition="99" endLine="89" endPosition="30" />
+    <scopeInfo nodeId="4063776913609769646" fileName="TurnEnumToClassAndBack_Intention.java" startLine="96" startPosition="87" endLine="100" endPosition="8" />
+    <scopeInfo nodeId="7549412628473566679" fileName="TurnEnumToClassAndBack_Intention.java" startLine="163" startPosition="73" endLine="167" endPosition="6" />
+    <scopeInfo nodeId="7549412628473749644" fileName="TurnEnumToClassAndBack_Intention.java" startLine="170" startPosition="73" endLine="174" endPosition="6" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="4063776913609769409" varName="context" />
+      <varInfo nodeId="4063776913609769409" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="96" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="4063776913609769409" varName="editorContext" />
+      <varInfo nodeId="4063776913609769409" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7549412628473566679" fileName="TurnEnumToClassAndBack_Intention.java" startLine="163" startPosition="0" endLine="169" endPosition="0">
+      <varInfo nodeId="7549412628473566679" varName="a" />
+      <varInfo nodeId="7549412628473566679" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="7549412628473749644" fileName="TurnEnumToClassAndBack_Intention.java" startLine="170" startPosition="0" endLine="176" endPosition="0">
+      <varInfo nodeId="7549412628473749644" varName="a" />
+      <varInfo nodeId="7549412628473749644" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="59" startPosition="84" endLine="66" endPosition="16" />
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="59" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4063776913609769409" varName="editorContext" />
+      <varInfo nodeId="4063776913609769409" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913611743934" fileName="TurnEnumToClassAndBack_Intention.java" startLine="123" startPosition="37" endLine="132" endPosition="11">
+      <varInfo nodeId="4063776913612099033" varName="foundNewSuperMethod" />
+      <varInfo nodeId="4063776913611949123" varName="superMethodCall" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913611743933" fileName="TurnEnumToClassAndBack_Intention.java" startLine="123" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="4063776913611743933" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913609769648" fileName="TurnEnumToClassAndBack_Intention.java" startLine="103" startPosition="78" endLine="155" endPosition="52">
+      <varInfo nodeId="4063776913610008213" varName="classNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="103" startPosition="0" endLine="157" endPosition="0">
+      <varInfo nodeId="4063776913609769409" varName="editorContext" />
+      <varInfo nodeId="4063776913609769409" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4063776913612099041" fileName="TurnEnumToClassAndBack_Intention.java" startLine="125" startPosition="275" endLine="129" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention$2" />
+    <unitInfo nodeId="7549412628473550546" fileName="TurnEnumToClassAndBack_Intention.java" startLine="136" startPosition="154" endLine="140" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention$2" />
+    <unitInfo nodeId="7549412628473650591" fileName="TurnEnumToClassAndBack_Intention.java" startLine="140" startPosition="22" endLine="144" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention$3" />
+    <unitInfo nodeId="7549412628473749641" fileName="TurnEnumToClassAndBack_Intention.java" startLine="145" startPosition="158" endLine="149" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention$4" />
+    <unitInfo nodeId="7549412628473749652" fileName="TurnEnumToClassAndBack_Intention.java" startLine="149" startPosition="22" endLine="153" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention$5" />
+    <unitInfo nodeId="4063776913611743933" fileName="TurnEnumToClassAndBack_Intention.java" startLine="122" startPosition="163" endLine="134" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention$1" />
+    <unitInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="92" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention$IntentionImplementation" />
+    <unitInfo nodeId="4063776913609769409" fileName="TurnEnumToClassAndBack_Intention.java" startLine="29" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/4138629533259838060">
     <nodeInfo nodeId="4138629533259838060" fileName="RemoveTVDInAnonymousClass_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4138629533259838060" fileName="RemoveTVDInAnonymousClass_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -9033,6 +9217,159 @@
     </scopeInfo>
     <unitInfo nodeId="7638980610829995124" fileName="ConvertToClosure_Intention.java" startLine="92" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToClosure_Intention$IntentionImplementation" />
     <unitInfo nodeId="7638980610829995124" fileName="ConvertToClosure_Intention.java" startLine="22" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertToClosure_Intention" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/7940428822325910682">
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="49" startPosition="84" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="57" startPosition="35" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325949035" fileName="SwapTernaryBranches_Intention.java" startLine="72" startPosition="87" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822327882986" fileName="SwapTernaryBranches_Intention.java" startLine="76" startPosition="78" endLine="77" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822327886505" fileName="SwapTernaryBranches_Intention.java" startLine="77" startPosition="199" endLine="78" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822327878473" fileName="SwapTernaryBranches_Intention.java" startLine="78" startPosition="201" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7940428822326019257" fileName="SwapTernaryBranches_Intention.java" startLine="80" startPosition="147" endLine="81" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326112618" fileName="SwapTernaryBranches_Intention.java" startLine="82" startPosition="157" endLine="83" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822326111942" fileName="SwapTernaryBranches_Intention.java" startLine="83" startPosition="123" endLine="84" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326133614" fileName="SwapTernaryBranches_Intention.java" startLine="84" startPosition="69" endLine="85" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326144942" fileName="SwapTernaryBranches_Intention.java" startLine="85" startPosition="71" endLine="86" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326209229" fileName="SwapTernaryBranches_Intention.java" startLine="87" startPosition="160" endLine="88" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822326209235" fileName="SwapTernaryBranches_Intention.java" startLine="88" startPosition="126" endLine="89" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326209247" fileName="SwapTernaryBranches_Intention.java" startLine="89" startPosition="69" endLine="90" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326209259" fileName="SwapTernaryBranches_Intention.java" startLine="90" startPosition="71" endLine="91" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326155690" fileName="SwapTernaryBranches_Intention.java" startLine="92" startPosition="160" endLine="93" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822326155696" fileName="SwapTernaryBranches_Intention.java" startLine="93" startPosition="119" endLine="94" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326155708" fileName="SwapTernaryBranches_Intention.java" startLine="94" startPosition="68" endLine="95" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326155720" fileName="SwapTernaryBranches_Intention.java" startLine="95" startPosition="70" endLine="96" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326234941" fileName="SwapTernaryBranches_Intention.java" startLine="97" startPosition="163" endLine="98" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822326234947" fileName="SwapTernaryBranches_Intention.java" startLine="98" startPosition="123" endLine="99" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326234959" fileName="SwapTernaryBranches_Intention.java" startLine="99" startPosition="69" endLine="100" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326234971" fileName="SwapTernaryBranches_Intention.java" startLine="100" startPosition="71" endLine="101" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327860588" fileName="SwapTernaryBranches_Intention.java" startLine="102" startPosition="162" endLine="103" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822327860594" fileName="SwapTernaryBranches_Intention.java" startLine="103" startPosition="130" endLine="104" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327860606" fileName="SwapTernaryBranches_Intention.java" startLine="104" startPosition="69" endLine="105" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327860618" fileName="SwapTernaryBranches_Intention.java" startLine="105" startPosition="71" endLine="106" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327903705" fileName="SwapTernaryBranches_Intention.java" startLine="107" startPosition="170" endLine="108" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822327903711" fileName="SwapTernaryBranches_Intention.java" startLine="108" startPosition="122" endLine="109" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327903718" fileName="SwapTernaryBranches_Intention.java" startLine="109" startPosition="69" endLine="110" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327903725" fileName="SwapTernaryBranches_Intention.java" startLine="110" startPosition="71" endLine="111" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327915271" fileName="SwapTernaryBranches_Intention.java" startLine="112" startPosition="159" endLine="113" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822327915277" fileName="SwapTernaryBranches_Intention.java" startLine="113" startPosition="133" endLine="114" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327915284" fileName="SwapTernaryBranches_Intention.java" startLine="114" startPosition="69" endLine="115" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327915291" fileName="SwapTernaryBranches_Intention.java" startLine="115" startPosition="71" endLine="116" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327927373" fileName="SwapTernaryBranches_Intention.java" startLine="117" startPosition="167" endLine="118" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822327927379" fileName="SwapTernaryBranches_Intention.java" startLine="118" startPosition="122" endLine="119" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327927386" fileName="SwapTernaryBranches_Intention.java" startLine="119" startPosition="69" endLine="120" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822327927393" fileName="SwapTernaryBranches_Intention.java" startLine="120" startPosition="71" endLine="121" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326091425" fileName="SwapTernaryBranches_Intention.java" startLine="122" startPosition="14" endLine="123" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822326092193" fileName="SwapTernaryBranches_Intention.java" startLine="123" startPosition="117" endLine="124" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326046321" fileName="SwapTernaryBranches_Intention.java" startLine="124" startPosition="111" endLine="125" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326174441" fileName="SwapTernaryBranches_Intention.java" startLine="126" startPosition="7" endLine="127" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7940428822326181221" fileName="SwapTernaryBranches_Intention.java" startLine="127" startPosition="95" endLine="128" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822326198414" fileName="SwapTernaryBranches_Intention.java" startLine="128" startPosition="130" endLine="129" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="132" startPosition="48" endLine="133" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SwapTernaryBranches_Intention#()V" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="61" startPosition="99" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="7940428822326045702" fileName="SwapTernaryBranches_Intention.java" startLine="122" startPosition="12" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="7940428822326010895" fileName="SwapTernaryBranches_Intention.java" startLine="79" startPosition="0" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="76" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="22" startPosition="42" endLine="22" endPosition="42" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="69" startPosition="38" endLine="69" endPosition="38" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="76" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="33" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="81" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="37" startPosition="37" endLine="38" endPosition="40" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="41" startPosition="34" endLine="42" endPosition="32" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="49" startPosition="84" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="132" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="57" startPosition="35" endLine="58" endPosition="17" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="135" />
+    <scopeInfo nodeId="7940428822325910913" fileName="SwapTernaryBranches_Intention.java" startLine="72" startPosition="87" endLine="73" endPosition="46" />
+    <scopeInfo nodeId="7940428822326010898" fileName="SwapTernaryBranches_Intention.java" startLine="80" startPosition="147" endLine="81" endPosition="234" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="132" startPosition="48" endLine="133" endPosition="48" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="7940428822325910682" varName="editorContext" />
+      <varInfo nodeId="7940428822325910682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="7940428822325910682" varName="editorContext" />
+      <varInfo nodeId="7940428822325910682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822326045703" fileName="SwapTernaryBranches_Intention.java" startLine="122" startPosition="14" endLine="125" endPosition="64">
+      <varInfo nodeId="7940428822326091426" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="132" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="61" startPosition="99" endLine="65" endPosition="30" />
+    <scopeInfo nodeId="7940428822326102757" fileName="SwapTernaryBranches_Intention.java" startLine="82" startPosition="157" endLine="86" endPosition="64">
+      <varInfo nodeId="7940428822326112619" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822326206937" fileName="SwapTernaryBranches_Intention.java" startLine="87" startPosition="160" endLine="91" endPosition="64">
+      <varInfo nodeId="7940428822326209230" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822326153406" fileName="SwapTernaryBranches_Intention.java" startLine="92" startPosition="160" endLine="96" endPosition="63">
+      <varInfo nodeId="7940428822326155691" varName="eq" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822326231806" fileName="SwapTernaryBranches_Intention.java" startLine="97" startPosition="163" endLine="101" endPosition="64">
+      <varInfo nodeId="7940428822326234942" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822327858713" fileName="SwapTernaryBranches_Intention.java" startLine="102" startPosition="162" endLine="106" endPosition="64">
+      <varInfo nodeId="7940428822327860589" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822327901765" fileName="SwapTernaryBranches_Intention.java" startLine="107" startPosition="170" endLine="111" endPosition="64">
+      <varInfo nodeId="7940428822327903706" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822327912952" fileName="SwapTernaryBranches_Intention.java" startLine="112" startPosition="159" endLine="116" endPosition="64">
+      <varInfo nodeId="7940428822327915272" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822327924675" fileName="SwapTernaryBranches_Intention.java" startLine="117" startPosition="167" endLine="121" endPosition="64">
+      <varInfo nodeId="7940428822327927374" varName="not" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="7940428822325910682" varName="context" />
+      <varInfo nodeId="7940428822325910682" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822325910915" fileName="SwapTernaryBranches_Intention.java" startLine="76" startPosition="78" endLine="129" endPosition="63">
+      <varInfo nodeId="7940428822326174442" varName="ifTrue" />
+      <varInfo nodeId="7940428822327882987" varName="left" />
+      <varInfo nodeId="7940428822327886506" varName="right" />
+    </scopeInfo>
+    <scopeInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="76" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="7940428822325910682" varName="editorContext" />
+      <varInfo nodeId="7940428822325910682" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="68" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SwapTernaryBranches_Intention$IntentionImplementation" />
+    <unitInfo nodeId="7940428822325910682" fileName="SwapTernaryBranches_Intention.java" startLine="19" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SwapTernaryBranches_Intention" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/7992933469059517022">
     <nodeInfo nodeId="7992933469059517022" fileName="AddTypeParameters_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
