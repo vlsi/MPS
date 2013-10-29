@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -99,65 +98,40 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(blockCollection);
     editorCell.addEditorCell(connectorCollection);
     List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
-    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "blocks", true))) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
-        }
-        view.itemsView.children().add(blockView);
-      }
-    }
-    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "connectors", true))) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
-        }
-        view.itemsView.children().add(blockView);
-      }
-    }
+    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "blocks", true), editorContext, connectorCellList, blockCollection, view);
+    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "connectors", true), editorContext, connectorCellList, blockCollection, view);
     for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
-      View connectorView = connectorCell.getView();
-      View fromView = connectorCell.getOutputView(editorCell);
-      View toView = connectorCell.getInputView(editorCell);
-      if (fromView != null && toView != null) {
-        PolylineConnection connection = connectorCell.getConnection();
-        if (connectorView.parent() != null) {
-          connectorView.parent().children().remove(connectorView.parent().children().indexOf(connectorView));
-        }
-        connection.view().invalidate();
-        connection.toView().set(toView);
-        connection.fromView().set(fromView);
-        view.connections.add(connection);
+      if (connectorCell.updateConnectionEnds(editorCell)) {
+        view.connections.add(connectorCell.getConnection());
         connectorCollection.addEditorCell(connectorCell);
       }
     }
     editorCell.setCellId("Diagram_tb7paq_c0");
     return editorCell;
 
+  }
+
+  public static void createDiagram_tb7paq_c0_0(List<SNode> nlist, EditorContext editorContext, List<ConnectorViewCell> connectorCellList, jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection, DiagramView view) {
+    for (SNode contentNode : ListSequence.fromList(nlist)) {
+      EditorCell contentCell = editorContext.createNodeCell(contentNode);
+      if (!(contentCell instanceof GenericViewCell)) {
+        continue;
+      }
+      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
+      if (genericContentCell instanceof ConnectorViewCell) {
+        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
+        connectorCell.removeAllCells();
+        ListSequence.fromList(connectorCellList).addElement(connectorCell);
+      } else {
+        View blockView = genericContentCell.getView();
+        blockCollection.addEditorCell(genericContentCell);
+        View oldParent = blockView.parent();
+        if (oldParent != null) {
+          oldParent.children().remove(oldParent.children().indexOf(blockView));
+        }
+        view.itemsView.children().add(blockView);
+      }
+    }
   }
 
   private EditorCell createConstant_tb7paq_d0(EditorContext editorContext, SNode node) {
@@ -175,64 +149,39 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(blockCollection);
     editorCell.addEditorCell(connectorCollection);
     List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
-    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "newBlocks", true))) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
-        }
-        view.itemsView.children().add(blockView);
-      }
-    }
-    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "newConnectors", true))) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
-        }
-        view.itemsView.children().add(blockView);
-      }
-    }
+    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, connectorCellList, blockCollection, view);
+    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, connectorCellList, blockCollection, view);
     for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
-      View connectorView = connectorCell.getView();
-      View fromView = connectorCell.getOutputView(editorCell);
-      View toView = connectorCell.getInputView(editorCell);
-      if (fromView != null && toView != null) {
-        PolylineConnection connection = connectorCell.getConnection();
-        if (connectorView.parent() != null) {
-          connectorView.parent().children().remove(connectorView.parent().children().indexOf(connectorView));
-        }
-        connection.view().invalidate();
-        connection.toView().set(toView);
-        connection.fromView().set(fromView);
-        view.connections.add(connection);
+      if (connectorCell.updateConnectionEnds(editorCell)) {
+        view.connections.add(connectorCell.getConnection());
         connectorCollection.addEditorCell(connectorCell);
       }
     }
     editorCell.setCellId("Diagram_tb7paq_e0");
     return editorCell;
 
+  }
+
+  public static void createDiagram_tb7paq_e0_0(List<SNode> nlist, EditorContext editorContext, List<ConnectorViewCell> connectorCellList, jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection, DiagramView view) {
+    for (SNode contentNode : ListSequence.fromList(nlist)) {
+      EditorCell contentCell = editorContext.createNodeCell(contentNode);
+      if (!(contentCell instanceof GenericViewCell)) {
+        continue;
+      }
+      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
+      if (genericContentCell instanceof ConnectorViewCell) {
+        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
+        connectorCell.removeAllCells();
+        ListSequence.fromList(connectorCellList).addElement(connectorCell);
+      } else {
+        View blockView = genericContentCell.getView();
+        blockCollection.addEditorCell(genericContentCell);
+        View oldParent = blockView.parent();
+        if (oldParent != null) {
+          oldParent.children().remove(oldParent.children().indexOf(blockView));
+        }
+        view.itemsView.children().add(blockView);
+      }
+    }
   }
 }

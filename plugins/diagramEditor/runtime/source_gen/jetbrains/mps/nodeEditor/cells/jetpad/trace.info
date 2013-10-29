@@ -30,8 +30,18 @@
     <nodeInfo nodeId="5258645978834385706" fileName="ConnectorViewCell.java" startLine="60" startPosition="129" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5258645978834681133" fileName="ConnectorViewCell.java" startLine="62" startPosition="9" endLine="63" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5258645978834385712" fileName="ConnectorViewCell.java" startLine="65" startPosition="5" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6277411742335784446" fileName="ConnectorViewCell.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInputView#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;)Ljetbrains/jetpad/projectional/view/View;" />
-    <nodeInfo nodeId="6277411742335784452" fileName="ConnectorViewCell.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputView#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="2201645942108518700" fileName="ConnectorViewCell.java" startLine="69" startPosition="65" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2201645942108532323" fileName="ConnectorViewCell.java" startLine="70" startPosition="35" endLine="71" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2201645942108545174" fileName="ConnectorViewCell.java" startLine="71" startPosition="43" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8686738938027916598" fileName="ConnectorViewCell.java" startLine="74" startPosition="43" endLine="75" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8686738938027916619" fileName="ConnectorViewCell.java" startLine="76" startPosition="7" endLine="77" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8686738938027916625" fileName="ConnectorViewCell.java" startLine="77" startPosition="33" endLine="78" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8686738938027916632" fileName="ConnectorViewCell.java" startLine="78" startPosition="40" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2201645942108864411" fileName="ConnectorViewCell.java" startLine="79" startPosition="44" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2201645942109047163" fileName="ConnectorViewCell.java" startLine="81" startPosition="5" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2201645942108548158" fileName="ConnectorViewCell.java" startLine="82" startPosition="17" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6277411742335784446" fileName="ConnectorViewCell.java" startLine="86" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInputView#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="6277411742335784452" fileName="ConnectorViewCell.java" startLine="88" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputView#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;)Ljetbrains/jetpad/projectional/view/View;" />
     <nodeInfo nodeId="6277411742335784400" fileName="ConnectorViewCell.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorViewCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cellLayout/CellLayout;Ljetbrains/mps/nodeEditor/cellProviders/AbstractCellListHandler;)V" />
     <nodeInfo nodeId="6277411742335784417" fileName="ConnectorViewCell.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorViewCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6277411742335784430" fileName="ConnectorViewCell.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConnection#()Ljetbrains/jetpad/projectional/diagram/view/PolylineConnection;" />
@@ -39,10 +49,13 @@
     <nodeInfo nodeId="5288989961863736569" fileName="ConnectorViewCell.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findConnectionEnd#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/projectional/view/View;" />
     <nodeInfo nodeId="5258645978834385663" fileName="ConnectorViewCell.java" startLine="50" startPosition="0" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5258645978834385694" fileName="ConnectorViewCell.java" startLine="59" startPosition="76" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8686738938027916596" fileName="ConnectorViewCell.java" startLine="73" startPosition="45" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5258645978834385645" fileName="ConnectorViewCell.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
     <nodeInfo nodeId="5258645978834385637" fileName="ConnectorViewCell.java" startLine="43" startPosition="111" endLine="49" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5258645978834385711" fileName="ConnectorViewCell.java" startLine="57" startPosition="68" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="8686738938027916588" fileName="ConnectorViewCell.java" startLine="72" startPosition="42" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5258645978834385671" fileName="ConnectorViewCell.java" startLine="54" startPosition="0" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2201645942108483463" fileName="ConnectorViewCell.java" startLine="69" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateConnectionEnds#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;)Z" />
     <nodeInfo nodeId="5258645978834381280" fileName="ConnectorViewCell.java" startLine="43" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findConnectionEnd#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/jetpad/projectional/view/View;" />
     <scopeInfo nodeId="6277411742335784410" fileName="ConnectorViewCell.java" startLine="23" startPosition="125" endLine="24" endPosition="52" />
     <scopeInfo nodeId="6277411742335784423" fileName="ConnectorViewCell.java" startLine="27" startPosition="69" endLine="28" endPosition="62" />
@@ -52,10 +65,11 @@
     <scopeInfo nodeId="5258645978834385649" fileName="ConnectorViewCell.java" startLine="46" startPosition="43" endLine="47" endPosition="60" />
     <scopeInfo nodeId="5258645978834385668" fileName="ConnectorViewCell.java" startLine="51" startPosition="23" endLine="52" endPosition="18" />
     <scopeInfo nodeId="5258645978834385705" fileName="ConnectorViewCell.java" startLine="60" startPosition="129" endLine="61" endPosition="26" />
-    <scopeInfo nodeId="6277411742335784446" fileName="ConnectorViewCell.java" startLine="69" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="8686738938027916597" fileName="ConnectorViewCell.java" startLine="74" startPosition="43" endLine="75" endPosition="107" />
+    <scopeInfo nodeId="6277411742335784446" fileName="ConnectorViewCell.java" startLine="86" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="6277411742335784447" varName="rootCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6277411742335784452" fileName="ConnectorViewCell.java" startLine="71" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="6277411742335784452" fileName="ConnectorViewCell.java" startLine="88" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="6277411742335784453" varName="rootCell" />
     </scopeInfo>
     <scopeInfo nodeId="6277411742335784400" fileName="ConnectorViewCell.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
@@ -82,8 +96,17 @@
     <scopeInfo nodeId="5258645978834385689" fileName="ConnectorViewCell.java" startLine="58" startPosition="59" endLine="63" endPosition="95">
       <varInfo nodeId="5258645978834385690" varName="nextView" />
     </scopeInfo>
+    <scopeInfo nodeId="8686738938027916589" fileName="ConnectorViewCell.java" startLine="73" startPosition="45" endLine="80" endPosition="18" />
     <scopeInfo nodeId="5258645978834385676" fileName="ConnectorViewCell.java" startLine="55" startPosition="38" endLine="64" endPosition="7">
       <varInfo nodeId="5258645978834551795" varName="queue" />
+    </scopeInfo>
+    <scopeInfo nodeId="2201645942108483466" fileName="ConnectorViewCell.java" startLine="69" startPosition="65" endLine="83" endPosition="0">
+      <varInfo nodeId="2201645942108518701" varName="connectorView" />
+      <varInfo nodeId="2201645942108532324" varName="fromView" />
+      <varInfo nodeId="2201645942108545175" varName="toView" />
+    </scopeInfo>
+    <scopeInfo nodeId="2201645942108483463" fileName="ConnectorViewCell.java" startLine="69" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="2201645942108539895" varName="rootCell" />
     </scopeInfo>
     <scopeInfo nodeId="5258645978834381283" fileName="ConnectorViewCell.java" startLine="43" startPosition="111" endLine="66" endPosition="26">
       <varInfo nodeId="5258645978834385636" varName="cell" />
@@ -94,7 +117,7 @@
       <varInfo nodeId="5258645978834382086" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="5258645978834385643" fileName="ConnectorViewCell.java" startLine="44" startPosition="88" endLine="49" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell$1" />
-    <unitInfo nodeId="6277411742335784392" fileName="ConnectorViewCell.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell" />
+    <unitInfo nodeId="6277411742335784392" fileName="ConnectorViewCell.java" startLine="20" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784468">
     <nodeInfo nodeId="6277411742335784472" fileName="GenericViewCell.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myView" />
