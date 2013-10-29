@@ -17,6 +17,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddSetElementOperation_replace_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new Add_Comparator_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertForEachStatementToForeachStatement_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertForeachStatementToForEach_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateInitializer_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new IterateOverSequence_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveAllSetElementsOperation_replace_Intention());
