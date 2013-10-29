@@ -826,6 +826,11 @@ public class SModel implements SModelData {
     return myIdToNodeMap != null ? myIdToNodeMap.size() : 0;
   }
 
+  //to use only from SNode
+  protected SRepository getRepository() {
+    return myModelDescriptor == null ? null : myModelDescriptor.getRepository();
+  }
+
   public static class ImportElement {
     private SModelReference myModelReference;
     private int myReferenceID;  // persistence related index

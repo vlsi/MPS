@@ -928,7 +928,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    SRepository repo = model.getModelDescriptor().getRepository();
+    SRepository repo = model.getRepository();
     if (repo != null) {
       attach(repo);
     }
