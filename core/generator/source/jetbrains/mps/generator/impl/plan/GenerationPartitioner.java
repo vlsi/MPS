@@ -134,13 +134,7 @@ public class GenerationPartitioner {
 
       for (TemplateMappingConfiguration lesserPriMapping : loPrio) {
         for (TemplateMappingConfiguration grtPriMapping : hiPrio) {
-          PriorityData priorityData = myPriorityMap.priorityData(lesserPriMapping, grtPriMapping);
-          if (priorityData == null) {
-            myPriorityMap.put(lesserPriMapping, grtPriMapping, new PriorityData(isStrict, rule));
-          } else {
-            if (isStrict) priorityData.myStrict = true;
-            priorityData.myCauseRules.add(rule);
-          }
+          myPriorityMap.updateLock(lesserPriMapping, grtPriMapping, new PriorityData(isStrict, rule));
         }
       }
     }

@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.util.CollectionUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,15 +38,15 @@ public final class PriorityMap {
    *   Dependencies graph. For each mapping contains a set of mappings which should be applied together or after
    *   it (PriorityData.isStrict means only after).
    */
-  private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
+  private final Map<TemplateMappingConfiguration, PriorityDataMap> myPriorityMap;
 
   PriorityMap() {
-    myPriorityMap = new HashMap<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>>();
+    myPriorityMap = new HashMap<TemplateMappingConfiguration, PriorityDataMap>();
   }
 
   public void prepare(Iterable<TemplateMappingConfiguration> configurations) {
     for (TemplateMappingConfiguration m : configurations) {
-      myPriorityMap.put(m, new HashMap<TemplateMappingConfiguration, PriorityData>());
+      myPriorityMap.put(m, new PriorityDataMap());
     }
   }
 
@@ -55,26 +56,22 @@ public final class PriorityMap {
 
   Iterable<PriorityData> priorityData() {
     ArrayList<PriorityData> rv = new ArrayList<PriorityData>();
-    for (Map<TemplateMappingConfiguration, PriorityData> locks : myPriorityMap.values()) {
-      rv.addAll(locks.values());
+    for (PriorityDataMap locks : myPriorityMap.values()) {
+      rv.addAll(locks.priorityData());
     }
     return rv;
   }
 
-  PriorityData priorityData(TemplateMappingConfiguration from, TemplateMappingConfiguration to) {
-    return myPriorityMap.get(from).get(to);
-  }
-
-  public void put(TemplateMappingConfiguration lesserPriMapping, TemplateMappingConfiguration grtPriMapping, PriorityData priorityData) {
-    myPriorityMap.get(lesserPriMapping).put(grtPriMapping, priorityData);
+  PriorityData priorityData(TemplateMappingConfiguration lockedMC, TemplateMappingConfiguration lockMC) {
+    return myPriorityMap.get(lockedMC).priorityData(lockMC);
   }
 
   List<TemplateMappingConfiguration> getWeakLockMappingsForLockedMapping(TemplateMappingConfiguration lockedMapping) {
     List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
-    Map<TemplateMappingConfiguration, PriorityData> grtPriMappings = myPriorityMap.get(lockedMapping);
-    for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : grtPriMappings.entrySet()) {
-      if (!entry.getValue().isStrict()) {
-        result.add(entry.getKey());
+    PriorityDataMap  grtPriMappings = myPriorityMap.get(lockedMapping);
+    for (TemplateMappingConfiguration mc : grtPriMappings.keys()) {
+      if (!grtPriMappings.priorityData(mc).isStrict()) {
+        result.add(mc);
       }
     }
     return result;
@@ -82,7 +79,7 @@ public final class PriorityMap {
 
   List<TemplateMappingConfiguration> getLockedMappingsForLockMapping(TemplateMappingConfiguration lockedMapping) {
     List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
-    for (Map.Entry<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> entry : myPriorityMap.entrySet()) {
+    for (Map.Entry<TemplateMappingConfiguration, PriorityDataMap> entry : myPriorityMap.entrySet()) {
       if (entry.getValue().containsKey(lockedMapping)) {
         result.add(entry.getKey());
       }
@@ -97,34 +94,25 @@ public final class PriorityMap {
    * lockedMapping -> ..., all locks from weak-lockMapping ,...
    */
   void replaceWeakLock(TemplateMappingConfiguration lockedMapping, TemplateMappingConfiguration weakLockMapping) {
-    Map<TemplateMappingConfiguration, PriorityData> locksToUpdate = myPriorityMap.get(lockedMapping);
-    PriorityData dataToKeep = locksToUpdate.remove(weakLockMapping);
+    PriorityDataMap locksToUpdate = myPriorityMap.get(lockedMapping);
+    PriorityData dataToKeep = locksToUpdate.forget(weakLockMapping);
 
-    Map<TemplateMappingConfiguration, PriorityData> locksToAdd = myPriorityMap.get(weakLockMapping);
-    for (TemplateMappingConfiguration lockMappingToAdd : locksToAdd.keySet()) {
-      PriorityData priorityData = locksToUpdate.get(lockMappingToAdd);
-      if (priorityData != null) {
-        priorityData.update(locksToAdd.get(lockMappingToAdd));
-      } else {
-        priorityData = new PriorityData(locksToAdd.get(lockMappingToAdd));
-        locksToUpdate.put(lockMappingToAdd, priorityData);
-      }
-      priorityData.update(dataToKeep);
+    PriorityDataMap locksToAdd = myPriorityMap.get(weakLockMapping);
+    for (TemplateMappingConfiguration lockMappingToAdd : locksToAdd.keys()) {
+      locksToUpdate.update(lockMappingToAdd, locksToAdd.priorityData(lockMappingToAdd));
+      locksToUpdate.update(lockMappingToAdd, dataToKeep);
     }
   }
 
-  boolean addLock(TemplateMappingConfiguration lockedMapping, TemplateMappingConfiguration lockMapping, PriorityData priorityDataToApply) {
-    PriorityData priorityData = priorityData(lockedMapping, lockMapping);
-    if (priorityData != null) {
-      priorityData.update(priorityDataToApply);
-    } else {
-      put(lockedMapping, lockMapping, new PriorityData(priorityDataToApply));
-    }
-    return priorityData == null; // true - new lock added
+  boolean updateLock(TemplateMappingConfiguration lockedMapping, TemplateMappingConfiguration lockMapping, PriorityData priorityDataToApply) {
+    return myPriorityMap.get(lockedMapping).update(lockMapping, priorityDataToApply);
   }
 
+  /**
+   * <code>true</code> means there's MC that goes 'after' specified one. IOW, the one specified one 'locks' that other dependant MC.
+   */
   boolean isLockingMapping(TemplateMappingConfiguration mapping) {
-    for (Map<TemplateMappingConfiguration, PriorityData> locks : myPriorityMap.values()) {
+    for (PriorityDataMap locks : myPriorityMap.values()) {
       if (locks.containsKey(mapping)) {
         return true;
       }
@@ -133,7 +121,7 @@ public final class PriorityMap {
   }
 
   void removeSelfLock(TemplateMappingConfiguration mapping) {
-    myPriorityMap.get(mapping).remove(mapping);
+    myPriorityMap.get(mapping).forget(mapping);
   }
 
   void removeKeys(Collection<TemplateMappingConfiguration> toRemove) {
@@ -154,27 +142,20 @@ public final class PriorityMap {
       Set<TemplateMappingConfiguration> coherentMappingSet = coherentSetData.myMappings;
       for (TemplateMappingConfiguration mapping : myPriorityMap.keySet()) {
         if (coherentMappingSet.contains(mapping)) continue;
-        Map<TemplateMappingConfiguration, PriorityData> locks = myPriorityMap.get(mapping);
-        if (locks.isEmpty()) continue;
-        List<TemplateMappingConfiguration> lockingCoherentMappings = CollectionUtil.intersect(coherentMappingSet, locks.keySet());
+        PriorityDataMap locks = myPriorityMap.get(mapping);
+        List<TemplateMappingConfiguration> lockingCoherentMappings = CollectionUtil.intersect(coherentMappingSet, locks.keys());
         if (lockingCoherentMappings.isEmpty()) continue;
         // if any one locks strictly, then all should lock strictly
         boolean isStrict = false;
         for (TemplateMappingConfiguration mapping1 : lockingCoherentMappings) {
-          if (locks.get(mapping1).isStrict()) {
+          if (locks.priorityData(mapping1).isStrict()) {
             isStrict = true;
             break;
           }
         }
         // update
         for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
-          PriorityData priorityData = locks.get(coherentMapping);
-          if (priorityData != null) {
-            priorityData.myCauseRules.addAll(coherentSetData.myCauseRules);
-            if(isStrict) priorityData.myStrict = true;
-          } else {
-            locks.put(coherentMapping, new PriorityData(isStrict, coherentSetData.myCauseRules));
-          }
+          locks.update(coherentMapping, new PriorityData(isStrict, coherentSetData.myCauseRules));
         }
       }
     }
@@ -184,12 +165,11 @@ public final class PriorityMap {
     for (CoherentSetData coherentSetData : coherentMappings) {
       Set<TemplateMappingConfiguration> coherentMappingSet = coherentSetData.myMappings;
       // collect
-      Map<TemplateMappingConfiguration, PriorityData> joinedLocks = new HashMap<TemplateMappingConfiguration, PriorityData>();
+      PriorityDataMap joinedLocks = new PriorityDataMap();
       for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
-        Map<TemplateMappingConfiguration, PriorityData> locks = myPriorityMap.get(coherentMapping);
-        for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : locks.entrySet()) {
-          TemplateMappingConfiguration lockMapping = entry.getKey();
-          PriorityData priorityData = entry.getValue();
+        PriorityDataMap locks = myPriorityMap.get(coherentMapping);
+        for (TemplateMappingConfiguration lockMapping : locks.keys()) {
+          PriorityData priorityData = locks.priorityData(lockMapping);
           // exclude coherent mappings themself
           if (coherentMappingSet.contains(lockMapping)) {
             if (priorityData.isStrict()) {
@@ -200,24 +180,54 @@ public final class PriorityMap {
             continue;
           }
 
-          PriorityData joinedPriorityData = joinedLocks.get(lockMapping);
-          if (joinedPriorityData != null) {
-            joinedPriorityData.update(priorityData);
-          } else {
-            joinedLocks.put(lockMapping, new PriorityData(priorityData));
-          }
+          joinedLocks.update(lockMapping, priorityData);
         }
       }
 
       // update
       for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
-        // make deep copy
-        Map<TemplateMappingConfiguration, PriorityData> joinedLocks_1 = new HashMap<TemplateMappingConfiguration, PriorityData>(joinedLocks.size());
-        for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : joinedLocks.entrySet()) {
-          joinedLocks_1.put(entry.getKey(), new PriorityData(entry.getValue()));
-        }
-        myPriorityMap.put(coherentMapping, joinedLocks_1);
+        myPriorityMap.put(coherentMapping, joinedLocks.deepCopy());
       }
+    }
+  }
+
+  private static class PriorityDataMap {
+    private final Map<TemplateMappingConfiguration, PriorityData> myLocks;
+
+    PriorityDataMap() {
+      myLocks = new HashMap<TemplateMappingConfiguration, PriorityData>();
+    }
+
+    Collection<PriorityData> priorityData() {
+      return myLocks.values();
+    }
+    PriorityData priorityData(TemplateMappingConfiguration mc) {
+      return myLocks.get(mc);
+    }
+    boolean containsKey(TemplateMappingConfiguration mc) {
+      return myLocks.containsKey(mc);
+    }
+    boolean update(@NotNull TemplateMappingConfiguration mc, @NotNull PriorityData pd) {
+      final PriorityData priorityData = myLocks.get(mc);
+      if (priorityData != null) {
+        priorityData.update(pd);
+      } else {
+        myLocks.put(mc, new PriorityData(pd));
+      }
+      return priorityData == null; // true - new lock added
+    }
+    Collection<TemplateMappingConfiguration> keys() {
+      return myLocks.keySet();
+    }
+    PriorityData forget(TemplateMappingConfiguration mc) {
+      return myLocks.remove(mc);
+    }
+    PriorityDataMap deepCopy() {
+      PriorityDataMap joinedLocks_1 = new PriorityDataMap();
+      for (Map.Entry<TemplateMappingConfiguration, PriorityData> entry : myLocks.entrySet()) {
+        joinedLocks_1.myLocks.put(entry.getKey(), new PriorityData(entry.getValue()));
+      }
+      return joinedLocks_1;
     }
   }
 }
