@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.build.Info.plist" file="Info.plist.xml" />
   <dependency className="jetbrains.mps.ide.build.installer.nsi" file="installer.nsi" />
+  <dependency className="jetbrains.mps.ide.build.jetpad" file="jetpad.xml" />
   <dependency className="jetbrains.mps.ide.build.mps.bat" file="mps.bat" />
   <dependency className="jetbrains.mps.ide.build.mps.sh" file="mps.sh" />
   <dependency className="jetbrains.mps.ide.build.mps.vmoptions" file="mps.vmoptions" />

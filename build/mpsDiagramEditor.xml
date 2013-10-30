@@ -7,6 +7,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
   <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore" />
+  <property name="artifacts.jetpad" location="${build.dir}/artifacts/jetpad" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
@@ -36,82 +37,6 @@
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes, declare-mps-tasks">
-    <mkdir dir="${build.layout}/jetpad" />
-    <mkdir dir="${build.layout}/jetpad/META-INF" />
-    <copy todir="${build.layout}/jetpad/META-INF">
-      <fileset file="${mps_home}/plugins/jetpad/META-INF/plugin.xml" />
-    </copy>
-    <mkdir dir="${build.layout}/jetpad/lib" />
-    <jar destfile="${build.layout}/jetpad/lib/icons.jar">
-      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
-    </jar>
-    <mkdir dir="${build.layout}/jetpad/solutions" />
-    <mkdir dir="${build.tmp}/default/Jetpad.Editor.jar" />
-    <mkdir dir="${build.tmp}/default/Jetpad.Editor.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/Jetpad.Editor.jar/META-INF/module.xml">
-      <module namespace="Jetpad.Editor" type="solution" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6">
-        <dependencies />
-        <library jar="../lib/geometry-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/model-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/diagram-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/view-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/core-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/mapper-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/base-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/values-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/grammar-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/domUtil-1.0-SNAPSHOT.jar" />
-        <library jar="../lib/event-1.0-SNAPSHOT.jar" />
-        <sources jar="Jetpad.Editor-src.jar" descriptor="Jetpad.Editor.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/jetpad/solutions/Jetpad.Editor.jar">
-      <fileset dir="${mps_home}/plugins/jetpad/solutions/Jetpad.Editor" includes="icons/**, resources/**" />
-      <fileset dir="${build.tmp}/default/Jetpad.Editor.jar" />
-    </jar>
-    <jar destfile="${build.layout}/jetpad/solutions/Jetpad.Editor-src.jar">
-      <zipfileset file="${mps_home}/plugins/jetpad/solutions/Jetpad.Editor/Jetpad.Editor.msd" prefix="module" />
-    </jar>
-    <mkdir dir="${build.layout}/jetpad/lib" />
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.war" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/jetpadBuildNumber.txt" />
-    </copy>
     <mkdir dir="${build.layout}/diagramEditor" />
     <mkdir dir="${build.layout}/diagramEditor/META-INF" />
     <copy todir="${build.layout}/diagramEditor/META-INF">
@@ -238,6 +163,7 @@
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -262,7 +188,9 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
+      <plugin path="${artifacts.jetpad}/jetpad" />
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
+      <library file="${artifacts.jetpad}/jetpad/solutions/Jetpad.Editor.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers-generator.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -320,7 +248,6 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <chunk>
-        <module file="${mps_home}/plugins/jetpad/solutions/Jetpad.Editor/Jetpad.Editor.msd" />
         <module file="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/jetbrains.mps.lang.editor.diagram.mpl" />
         <module file="${mps_home}/plugins/diagramEditor/runtime/jetbrains.mps.lang.editor.diagram.runtime.msd" />
         <module file="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/jetbrains.mps.lang.editor.figures.mpl" />
@@ -347,6 +274,10 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
+    <ant antfile="build/jetpad.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.editor.diagram.runtime" depends="fetchDependencies">
@@ -367,17 +298,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -415,17 +346,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -480,17 +411,17 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -543,17 +474,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -599,17 +530,17 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
-        <fileset file="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />

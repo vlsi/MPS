@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5app7meooiqew43pgzze0ma9098cpmn">
+<dependencies version="2" modelHash="7wvle3uqbj04p9g30xoha7j6rpr0gbp">
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="27vcgb5dvmsbnh1v92f7b6cmvnzc1d1" />
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="b3levz77xf5i5ay54ipz1d9fnhdtp28" />
@@ -55,6 +55,7 @@
   <source id="4301118715654497533" name="mpsDistribution" hash="-9wkxm37h4ujlsebl8y48kke424u0366">
     <dep root="1392391688312941958" />
     <dep root="1545517825663017278" />
+    <dep root="2405506926871158265" />
     <dep root="2569834391839970845" />
     <dep root="4301118715654192646" />
     <dep root="4301118715654819483" />
@@ -76,9 +77,10 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsDistribution.xml" />
   </source>
-  <source id="4301118715654192646" name="mps" hash="-bgoikisqnsxm7ayki6grfn6urf30chs">
+  <source id="4301118715654192646" name="mps" hash="-6g6ce42lrocv0v46ge0qgmmzlp1pg9k">
     <dep root="1392391688312941958" />
     <dep root="1545517825663017278" />
+    <dep root="2405506926871158265" />
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="4305752832749937830" />
@@ -353,7 +355,8 @@
   <source id="1731640411968857441" name="installer.nsi" hash="-9lb6tqn1uw5q1ki3bb5vo88lh3z7ros">
     <file name="installer.nsi" />
   </source>
-  <source id="4305752832749937830" name="mpsDiagramEditor" hash="234cntmegk7i2m0ekcp3z62zktww3gm">
+  <source id="4305752832749937830" name="mpsDiagramEditor" hash="-7oq8eojs56f9ifs7rt66s7t1lwx1972">
+    <dep root="2405506926871158265" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
@@ -383,6 +386,20 @@
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsNewLanguageDesign.xml" />
+  </source>
+  <source id="2405506926871158265" name="jetpad" hash="-9gqso2pzardho7zddjt9q8961rpt7g3">
+    <dep root="6503539749405386437" />
+    <dep root="7181125477683264500" />
+    <dep root="7926701909975931624" />
+    <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
+    <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
+    <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" />
+    <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
+    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
+    <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
+    <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
+    <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
+    <file name="jetpad.xml" />
   </source>
 </dependencies>
 
