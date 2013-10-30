@@ -94,17 +94,11 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass") ?
-        "Turn Enum to Class" :
-        "Turn Class to Enum"
-      );
+      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass") ? "Turn Enum to Class" : "Turn Class to Enum");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      final SNode classNode = (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass")) ?
-        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.EnumClass") :
-        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")
-      );
+      final SNode classNode = (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass")) ? SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.EnumClass") : SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       SPropertyOperations.set(classNode, "name", SPropertyOperations.getString(node, "name"));
       ListSequence.fromList(SLinkOperations.getTargets(classNode, "typeVariableDeclaration", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)));
       SPropertyOperations.set(classNode, "nestedName", SPropertyOperations.getString(node, "nestedName"));
@@ -161,16 +155,10 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
   }
 
   private static boolean eq_ck6aau_a0a0a0a0a0a71a2o(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_ck6aau_a0a0a0a0a0a81a2o(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }
