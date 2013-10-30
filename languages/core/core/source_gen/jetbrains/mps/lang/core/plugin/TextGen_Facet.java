@@ -214,10 +214,7 @@ public class TextGen_Facet extends IFacet.Stub {
                             @Override
                             public void textGenerated(GResource inputResource, List<TextGenerationResult> results) {
                               try {
-                                CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
-                                  TraceInfoCache.getInstance().getGenerator() :
-                                  null
-                                ), GenerationDependenciesCache.getInstance().getGenerator()};
+                                CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ? TraceInfoCache.getInstance().getGenerator() : null), GenerationDependenciesCache.getInstance().getGenerator()};
 
                                 ListSequence.fromList(errors).addSequence(ListSequence.fromList(TextGenerator.handleTextGenResults(inputResource.status(), results, _generateDebugInfo, MapSequence.fromMap(streamHandlers).get(inputResource), cacheGenerators)));
                               } finally {
@@ -490,10 +487,7 @@ public class TextGen_Facet extends IFacet.Stub {
                           break;
                         }
                         String ext = TextGen.getExtension(root);
-                        String fname = ((ext != null ?
-                          root.getName() + "." + ext :
-                          root.getName()
-                        ));
+                        String fname = ((ext != null ? root.getName() + "." + ext : root.getName()));
                         if (fname == null) {
                           fname = "<null> [" + root.getNodeId() + "]";
                           monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getNodeId() + "]")));

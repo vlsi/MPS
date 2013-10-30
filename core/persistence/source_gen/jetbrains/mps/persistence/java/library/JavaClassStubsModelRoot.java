@@ -31,10 +31,7 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
 
   @Override
   public String getPresentation() {
-    return ((getPath() != null ?
-      getPath() :
-      "no path"
-    )) + " (java classes)";
+    return ((getPath() != null ? getPath() : "no path")) + " (java classes)";
   }
 
   @Override
@@ -98,10 +95,7 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
   }
 
   private String child(String startPath, String prefix) {
-    IFile file = FileSystem.getInstance().getFileByPath((startPath.endsWith(".jar") ?
-      startPath + "!/" :
-      startPath
-    ));
+    IFile file = FileSystem.getInstance().getFileByPath((startPath.endsWith(".jar") ? startPath + "!/" : startPath));
     for (String child : prefix.split("\\.")) {
       file = file.getDescendant(child);
     }

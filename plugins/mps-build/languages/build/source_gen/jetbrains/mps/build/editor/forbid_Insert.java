@@ -28,10 +28,7 @@ public class forbid_Insert {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell cell = editorContext.getEditorComponent().findNodeCell(node);
-      EditorCell outerCollection = (cell != null ?
-        EditorActionUtils.getSiblingCollectionForInsert(cell, false) :
-        null
-      );
+      EditorCell outerCollection = (cell != null ? EditorActionUtils.getSiblingCollectionForInsert(cell, false) : null);
       if (outerCollection != null) {
         cell = outerCollection;
       } else {
@@ -51,10 +48,7 @@ public class forbid_Insert {
     }
 
     private static boolean neq_pledwy_a0b0a0a2a3b(Object a, Object b) {
-      return !((a != null ?
-        a.equals(b) :
-        a == b
-      ));
+      return !((a != null ? a.equals(b) : a == b));
     }
   }
 
@@ -71,10 +65,7 @@ public class forbid_Insert {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell cell = editorContext.getEditorComponent().findNodeCell(node);
-      EditorCell outerCollection = (cell != null ?
-        EditorActionUtils.getSiblingCollectionForInsert(cell, true) :
-        null
-      );
+      EditorCell outerCollection = (cell != null ? EditorActionUtils.getSiblingCollectionForInsert(cell, true) : null);
       if (outerCollection != null) {
         cell = outerCollection;
       } else {
@@ -94,10 +85,7 @@ public class forbid_Insert {
     }
 
     private static boolean neq_pledwy_a0b0a0a2a3c(Object a, Object b) {
-      return !((a != null ?
-        a.equals(b) :
-        a == b
-      ));
+      return !((a != null ? a.equals(b) : a == b));
     }
   }
 }

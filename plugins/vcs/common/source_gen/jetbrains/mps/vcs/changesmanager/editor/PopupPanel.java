@@ -42,10 +42,7 @@ import java.awt.event.FocusEvent;
     myToolbar.setTargetComponent(myPainter.getEditorComponent());
     toolbarPanel.add(myToolbar.getComponent(), BorderLayout.WEST);
     add(toolbarPanel, BorderLayout.NORTH);
-    myToolbar.getComponent().setBorder(new ColoredSideBorder(Color.BLACK, Color.BLACK, (myChangeGroup.getChangeType() != ChangeType.ADD ?
-      null :
-      Color.BLACK
-    ), Color.BLACK, 1));
+    myToolbar.getComponent().setBorder(new ColoredSideBorder(Color.BLACK, Color.BLACK, (myChangeGroup.getChangeType() != ChangeType.ADD ? null : Color.BLACK), Color.BLACK, 1));
 
     if (myChangeGroup.getChangeType() != ChangeType.ADD) {
       myBaseEditor = new BaseVersionEditorComponent(myEditor.getEditorContext().getRepository(), myChangeGroup);

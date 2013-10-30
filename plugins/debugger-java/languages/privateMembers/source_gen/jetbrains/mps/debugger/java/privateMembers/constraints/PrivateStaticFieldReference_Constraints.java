@@ -39,10 +39,7 @@ public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), "classifier", false), ((_context.getEnclosingNode() == null) ?
-              _context.getReferenceNode() :
-              _context.getEnclosingNode()
-            ), IClassifiersSearchScope.STATIC_FIELD) {
+            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), "classifier", false), ((_context.getEnclosingNode() == null) ? _context.getReferenceNode() : _context.getEnclosingNode()), IClassifiersSearchScope.STATIC_FIELD) {
               @Override
               protected boolean isVisible(SNode member) {
                 return true;

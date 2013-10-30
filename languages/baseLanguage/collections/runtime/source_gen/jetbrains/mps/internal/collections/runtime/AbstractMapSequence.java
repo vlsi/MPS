@@ -153,10 +153,7 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
   }
 
   private boolean eq(Object a, Object b) {
-    return (a == b) || (((a != null) ?
-      a.equals(b) :
-      false
-    ));
+    return (a == b) || (((a != null) ? a.equals(b) : false));
   }
 
   private class MappingIterator implements Iterator<IMapping<U, V>> {
@@ -235,10 +232,7 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
     }
 
     private boolean eq(Object a, Object b) {
-      return (a == b) || (((a != null) ?
-        a.equals(b) :
-        false
-      ));
+      return (a == b) || (((a != null) ? a.equals(b) : false));
     }
   }
 

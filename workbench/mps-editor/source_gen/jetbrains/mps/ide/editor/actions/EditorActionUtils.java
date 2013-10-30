@@ -47,10 +47,7 @@ public class EditorActionUtils {
       return null;
     }
     EditorCell editorCell = iterator.next();
-    return (editorCell instanceof EditorCell_Component ?
-      null :
-      editorCell
-    );
+    return (editorCell instanceof EditorCell_Component ? null : editorCell);
   }
 
   /**
@@ -80,15 +77,9 @@ public class EditorActionUtils {
 
   public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
     // TODO FIXME rewrite without hasSingleRolesAtLeftBoundary, cleanup ChildrenCollectionFinder 
-    EditorCell nextLeaf = (forward ?
-      CellTraversalUtil.getNextLeaf(cell) :
-      CellTraversalUtil.getPrevLeaf(cell)
-    );
+    EditorCell nextLeaf = (forward ? CellTraversalUtil.getNextLeaf(cell) : CellTraversalUtil.getPrevLeaf(cell));
 
-    if ((cell.isBig() || APICellAdapter.isLastPositionInBigCell(cell)) && ((forward ?
-      hasSingleRolesAtRightBoundary(cell) :
-      hasSingleRolesAtLeftBoundary(cell)
-    )) && nextLeaf != null) {
+    if ((cell.isBig() || APICellAdapter.isLastPositionInBigCell(cell)) && ((forward ? hasSingleRolesAtRightBoundary(cell) : hasSingleRolesAtLeftBoundary(cell))) && nextLeaf != null) {
       // Looking for the next child collection in parents 
       return new ChildrenCollectionFinder(nextLeaf, cell, forward, true).find();
     }

@@ -160,10 +160,7 @@ public class ChangesTracking {
     }
 
     boolean isConflict = ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject);
-    FileStatus status = (isConflict ?
-      FileStatus.MERGED_WITH_CONFLICTS :
-      getStatus(myModelDescriptor)
-    );
+    FileStatus status = (isConflict ? FileStatus.MERGED_WITH_CONFLICTS : getStatus(myModelDescriptor));
 
     // todo: make !force working for per-root persistence (here status==null) 
     if (status != null && myStatusOnLastUpdate == status && !(force)) {
@@ -191,10 +188,7 @@ public class ChangesTracking {
       })) {
         StringBuilder sb = new StringBuilder();
         for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())) {
-          sb.append((p.isError() ?
-            "error: " :
-            "warn: "
-          )).append(p.getText()).append("\n");
+          sb.append((p.isError() ? "error: " : "warn: ")).append(p.getText()).append("\n");
         }
         if (LOG.isEnabledFor(Priority.WARN)) {
           LOG.warn(sb.toString());
@@ -270,10 +264,7 @@ public class ChangesTracking {
   }
 
   private <C extends ModelChange> int removeChanges(SNodeId nodeId, final Class<C> changeClass, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super C> condition) {
-    Set<ModelChange> changes = (nodeId == null ?
-      myMetadataChanges :
-      myNodesToChanges.getValues(nodeId)
-    );
+    Set<ModelChange> changes = (nodeId == null ? myMetadataChanges : myNodesToChanges.getValues(nodeId));
     List<ModelChange> toRemove = SetSequence.fromSet(changes).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return changeClass.isInstance(ch) && condition.invoke((C) ch);
@@ -516,10 +507,7 @@ public class ChangesTracking {
     private void processRoot(final SModelRootEvent event) {
       SNode root = event.getRoot();
       final boolean added = event.isAdded();
-      if ((added ?
-        root.getModel() == null :
-        root.getModel() != null
-      )) {
+      if ((added ? root.getModel() == null : root.getModel() != null)) {
         return;
       }
       final SNodeId rootId = root.getNodeId();
@@ -615,9 +603,6 @@ public class ChangesTracking {
   }
 
   private static boolean neq_5iuzi5_a0a1a13(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

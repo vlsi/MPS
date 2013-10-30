@@ -72,14 +72,8 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      String name = (isEmptyString(SPropertyOperations.getString(node, "name")) ?
-        "..." :
-        SPropertyOperations.getString(node, "name")
-      );
-      return (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty() ?
-        String.format(Locale.getDefault(), "Convert to <%s></%s>", name, name) :
-        String.format(Locale.getDefault(), "Convert to <%s />", name)
-      );
+      String name = (isEmptyString(SPropertyOperations.getString(node, "name")) ? "..." : SPropertyOperations.getString(node, "name"));
+      return (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty() ? String.format(Locale.getDefault(), "Convert to <%s></%s>", name, name) : String.format(Locale.getDefault(), "Convert to <%s />", name));
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

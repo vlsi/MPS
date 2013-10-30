@@ -53,9 +53,6 @@ public class MpsStartupScript_Behavior {
   }
 
   public static String trim_p7akvg_a0a0b(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
+    return (str == null ? null : str.trim());
   }
 }

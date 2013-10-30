@@ -72,10 +72,7 @@ public class CommentHelper {
       ListIterator<String> iter = ((List<String>) result).listIterator();
       while (iter.hasNext()) {
         String line = iter.next();
-        iter.set((trimok && (line != null && line.length() > 0) ?
-          line.substring(mintrim) :
-          line
-        ));
+        iter.set((trimok && (line != null && line.length() > 0) ? line.substring(mintrim) : line));
       }
     }
     return result;
@@ -111,16 +108,10 @@ public class CommentHelper {
   }
 
   public static String trim_rf742u_a0a4a2(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
+    return (str == null ? null : str.trim());
   }
 
   public static String trim_rf742u_a0a0a6a2(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
+    return (str == null ? null : str.trim());
   }
 }

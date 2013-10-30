@@ -452,10 +452,7 @@ outer:
         g.setStroke(new BasicStroke(3));
       }
       g.drawRect(myX, myY, myWidth, myHeight);
-      Font font = myFont.deriveFont((myIsAbstract ?
-        Font.ITALIC :
-        Font.PLAIN
-      ), (float) myFont.getSize() * myComponent.myScale);
+      Font font = myFont.deriveFont((myIsAbstract ? Font.ITALIC : Font.PLAIN), (float) myFont.getSize() * myComponent.myScale);
       FontMetrics metrics = myComponent.getFontMetrics(font);
       String text = getText();
       int padding1 = (myWidth - metrics.charsWidth(text.toCharArray(), 0, text.length())) / 2;
@@ -484,10 +481,7 @@ outer:
             return "";
           }
           String name = SPropertyOperations.getString(conceptDeclaration, "name");
-          return (name != null ?
-            name :
-            ""
-          );
+          return (name != null ? name : "");
         }
       });
     }
@@ -561,10 +555,7 @@ outer:
       FontMetrics metrics = myComponent.getFontMetrics(font);
       String text = getText();
       int charsWidth1 = metrics.charsWidth(text.toCharArray(), 0, text.length());
-      int charWidth2 = (myIsOtherLanguage ?
-        metrics.charsWidth(myNamespace.toCharArray(), 0, myNamespace.length()) :
-        0
-      );
+      int charWidth2 = (myIsOtherLanguage ? metrics.charsWidth(myNamespace.toCharArray(), 0, myNamespace.length()) : 0);
       int charsHeight = metrics.getHeight();
       if (myIsOtherLanguage) {
         charsHeight = charsHeight * 2 + metrics.getAscent();

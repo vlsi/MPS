@@ -103,15 +103,9 @@ public class InstallIDEAPlugin_Action extends BaseAction {
   private File getTargetIdeaInstallDir(final Map<String, Object> _params) {
     boolean isMac = SystemInfo.isMac;
     String userHome = System.getProperty("user.home");
-    String ideaConfigRootPath = (isMac ?
-      userHome + File.separator + "Library" + File.separator + "Application Support" :
-      userHome
-    );
+    String ideaConfigRootPath = (isMac ? userHome + File.separator + "Library" + File.separator + "Application Support" : userHome);
     final VirtualFile ideaConfigRoot = VirtualFileUtils.getVirtualFile(ideaConfigRootPath);
-    final Pattern namePattern = (isMac ?
-      REGEXP_gyxeh4_a0a4a7_0 :
-      REGEXP_gyxeh4_a0a4a7
-    );
+    final Pattern namePattern = (isMac ? REGEXP_gyxeh4_a0a4a7_0 : REGEXP_gyxeh4_a0a4a7);
     List<VirtualFile> existingIdeaConfigs = ListSequence.fromList(new ArrayList<VirtualFile>());
     for (VirtualFile child : ideaConfigRoot.getChildren()) {
       if (child.isDirectory()) {
@@ -145,10 +139,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     VirtualFile[] files = dialog.choose(ideaConfigRoot, null);
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", oldShowHiddenValue);
     assert files.length <= 1;
-    return (files.length == 0 ?
-      null :
-      VirtualFileUtils.toFile(files[0])
-    );
+    return (files.length == 0 ? null : VirtualFileUtils.toFile(files[0]));
   }
 
   protected static Logger LOG = LogManager.getLogger(InstallIDEAPlugin_Action.class);

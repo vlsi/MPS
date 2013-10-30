@@ -313,56 +313,56 @@
   <root nodeRef="r:a81664cd-f084-472d-9653-5a837022f70e(jetbrains.mps.core.smodel.behavior)/4260762357824841849">
     <nodeInfo nodeId="4260762357824841855" fileName="MqlLinkSelector_Behavior.java" startLine="16" startPosition="74" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4125821269969004309" fileName="MqlLinkSelector_Behavior.java" startLine="18" startPosition="28" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="27" startPosition="66" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="28" startPosition="63" endLine="29" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="31" startPosition="153" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="31" startPosition="153" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="32" startPosition="51" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="38" startPosition="66" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="39" startPosition="63" endLine="40" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="40" startPosition="151" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="40" startPosition="151" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="41" startPosition="49" endLine="42" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4260762357824841863" fileName="MqlLinkSelector_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="24" startPosition="66" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="25" startPosition="63" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="28" startPosition="153" endLine="29" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="28" startPosition="153" endLine="29" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="29" startPosition="51" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="35" startPosition="66" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="36" startPosition="63" endLine="37" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="37" startPosition="151" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="37" startPosition="151" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="38" startPosition="49" endLine="39" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4125821269969004277" fileName="MqlLinkSelector_Behavior.java" startLine="17" startPosition="115" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4260762357824841863" fileName="MqlLinkSelector_Behavior.java" startLine="20" startPosition="5" endLine="24" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="29" startPosition="150" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createMqlNodeType_71mfo8_a0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="16" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_228266671027867010#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createMqlListType_71mfo8_a0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="26" startPosition="150" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createMqlNodeType_71mfo8_a0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_228266671027867010#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createMqlListType_71mfo8_a0c0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="4260762357824841851" fileName="MqlLinkSelector_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="4125821269969004278" fileName="MqlLinkSelector_Behavior.java" startLine="18" startPosition="28" endLine="19" endPosition="18" />
-    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="31" startPosition="153" endLine="32" endPosition="51" />
-    <scopeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="40" startPosition="151" endLine="41" endPosition="49" />
+    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="28" startPosition="153" endLine="29" endPosition="51" />
+    <scopeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="37" startPosition="151" endLine="38" endPosition="49" />
     <scopeInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="4260762357824841849" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="30" startPosition="5" endLine="33" endPosition="31">
+    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="27" startPosition="5" endLine="30" endPosition="31">
       <varInfo nodeId="4363371899537700684" varName="n2" />
     </scopeInfo>
-    <scopeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="38" startPosition="66" endLine="42" endPosition="14">
+    <scopeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="35" startPosition="66" endLine="39" endPosition="14">
       <varInfo nodeId="4363371899537700690" varName="facade" />
       <varInfo nodeId="4363371899537700690" varName="n1" />
     </scopeInfo>
-    <scopeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="4363371899537700690" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="4260762357824841854" fileName="MqlLinkSelector_Behavior.java" startLine="16" startPosition="74" endLine="24" endPosition="6">
+    <scopeInfo nodeId="4260762357824841854" fileName="MqlLinkSelector_Behavior.java" startLine="16" startPosition="74" endLine="21" endPosition="208">
       <varInfo nodeId="4260762357824841856" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="27" startPosition="66" endLine="35" endPosition="14">
+    <scopeInfo nodeId="4363371899537700690" fileName="MqlLinkSelector_Behavior.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="4363371899537700690" varName="p0" />
+    </scopeInfo>
+    <scopeInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="4260762357824841849" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="24" startPosition="66" endLine="32" endPosition="14">
       <varInfo nodeId="4363371899537700684" varName="facade" />
       <varInfo nodeId="4363371899537700684" varName="n1" />
     </scopeInfo>
-    <scopeInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="16" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="4260762357824841849" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="4363371899537700684" fileName="MqlLinkSelector_Behavior.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="4363371899537700684" varName="p0" />
     </scopeInfo>
-    <unitInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.core.smodel.behavior.MqlLinkSelector_Behavior" />
+    <unitInfo nodeId="4260762357824841849" fileName="MqlLinkSelector_Behavior.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.core.smodel.behavior.MqlLinkSelector_Behavior" />
   </root>
   <root nodeRef="r:a81664cd-f084-472d-9653-5a837022f70e(jetbrains.mps.core.smodel.behavior)/4260762357825047870">
     <nodeInfo nodeId="4260762357825047878" fileName="MqlNodeType_Behavior.java" startLine="16" startPosition="96" endLine="17" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

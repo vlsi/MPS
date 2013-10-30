@@ -75,10 +75,7 @@ public class BaseGeneratorWorker extends MpsWorker {
       if (parallelMode) {
         GenerationSettingsProvider.getInstance().getGenerationSettings().setNumberOfParallelThreads(8);
       }
-      info("Generating in strict mode, parallel generation = " + ((parallelMode ?
-        "on" :
-        "off"
-      )));
+      info("Generating in strict mode, parallel generation = " + ((parallelMode ? "on" : "off")));
     }
   }
 

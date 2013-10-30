@@ -23,10 +23,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
     final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     if (module == null) {
       String moduleName = moduleReference.getModuleName();
-      return (moduleName.equals("") ?
-        "<no name>" :
-        moduleName
-      );
+      return (moduleName.equals("") ? "<no name>" : moduleName);
     }
     if (module instanceof Generator) {
       return ((Generator) module).getAlias();

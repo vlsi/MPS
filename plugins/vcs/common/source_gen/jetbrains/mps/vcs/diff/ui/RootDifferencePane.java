@@ -181,10 +181,7 @@ public class RootDifferencePane {
     }
     isInspectorShown = show;
     PropertiesComponent.getInstance().setValue(PARAM_SHOW_INSPECTOR, show + "");
-    myPanel.setSecondComponent((isInspectorShown ?
-      myBottomPanel :
-      null
-    ));
+    myPanel.setSecondComponent((isInspectorShown ? myBottomPanel : null));
   }
 
 
@@ -197,10 +194,7 @@ public class RootDifferencePane {
     ListSequence.fromList(myChangeGroupLayouts).addElement(layout);
     DiffEditorSeparator separator = new DiffEditorSeparator(layout);
     GridBagConstraints gbc = new GridBagConstraints(1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
-    ((inspector ?
-      myBottomPanel :
-      myTopPanel
-    )).add(separator, gbc);
+    ((inspector ? myBottomPanel : myTopPanel)).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
     if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel()))) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
@@ -211,13 +205,7 @@ public class RootDifferencePane {
   private DiffEditor addEditor(int index, SModel model, String title) {
     final DiffEditor result = new DiffEditor(ProjectHelper.toMPSProject(myProject).getRepository(), model.getNode(myRootId), title, index == 0);
 
-    GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
-      5 :
-      0
-    ), 5, (index == 2 ?
-      5 :
-      0
-    )), 0, 0);
+    GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ? 5 : 0), 5, (index == 2 ? 5 : 0)), 0, 0);
     myTopPanel.add(result.getTopComponent(), gbc);
     myBottomPanel.add(result.getInspector().getExternalComponent(), gbc);
 
@@ -247,10 +235,7 @@ public class RootDifferencePane {
     myNewEditor.repaintAndRebuildEditorMessages();
 
     int count = Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId)).count();
-    myStatusBar.setText((count == 0 ?
-      "no differences" :
-      NameUtil.formatNumericalString(count, "difference")
-    ));
+    myStatusBar.setText((count == 0 ? "no differences" : NameUtil.formatNumericalString(count, "difference")));
   }
 
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {

@@ -70,10 +70,7 @@ public abstract class NodeTreeModel implements TreeModel {
 
     @Override
     public TreeElement[] getChildren() {
-      SNodeReference[] children = ((myNode == NodeTreeModel.FAKE_ROOT) ?
-        NodeTreeModel.this.getRootNodes() :
-        NodeTreeModel.this.getChildren(myNode)
-      );
+      SNodeReference[] children = ((myNode == NodeTreeModel.FAKE_ROOT) ? NodeTreeModel.this.getRootNodes() : NodeTreeModel.this.getChildren(myNode));
       TreeElement[] childrenElements = new TreeElement[children.length];
 
       for (int i = 0; i < children.length; i++) {

@@ -16,18 +16,9 @@ public class BooleanRenderer extends DefaultListCellRenderer {
 
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
-    myCheckBox.setSelected((value == null ?
-      false :
-      (Boolean) value
-    ));
-    myCheckBox.setBackground((isSelected ?
-      list.getSelectionBackground() :
-      list.getBackground()
-    ));
-    myCheckBox.setForeground((isSelected ?
-      list.getSelectionForeground() :
-      list.getForeground()
-    ));
+    myCheckBox.setSelected((value == null ? false : (Boolean) value));
+    myCheckBox.setBackground((isSelected ? list.getSelectionBackground() : list.getBackground()));
+    myCheckBox.setForeground((isSelected ? list.getSelectionForeground() : list.getForeground()));
     return myCheckBox;
   }
 }

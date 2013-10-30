@@ -213,9 +213,6 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   private static boolean eq_7kkp52_a0c0e0a0e0k0g0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

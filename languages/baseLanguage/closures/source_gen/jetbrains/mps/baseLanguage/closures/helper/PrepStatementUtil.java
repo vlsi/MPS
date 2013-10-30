@@ -217,14 +217,8 @@ public class PrepStatementUtil {
     int brLabel = -1;
     SNode node = bstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false)) != null)) {
-      SNode loopLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
-        SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "loopLabel", true) :
-        SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "switchLabel", true)
-      );
-      String depLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
-        SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") :
-        SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")
-      );
+      SNode loopLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ? SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "loopLabel", true) : SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "switchLabel", true));
+      String depLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ? SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") : SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label"));
       if ((SLinkOperations.getTarget(bstmt, "loopLabelReference", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(bstmt, "loopLabelReference", true), "loopLabel", false) == loopLabel || SPropertyOperations.getString(bstmt, "label") == depLabel || (SPropertyOperations.getString(bstmt, "label") != null && SPropertyOperations.getString(bstmt, "label").equals(depLabel))) {
         Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(genContext, node);
         brLabel = labels[labels.length - 1];

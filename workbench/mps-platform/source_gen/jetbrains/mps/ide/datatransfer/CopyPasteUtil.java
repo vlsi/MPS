@@ -175,10 +175,7 @@ public class CopyPasteUtil {
         if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") && oldTargetNode != null) {
           newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
-          String resolveInfo = (oldTargetNode == null ?
-            ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() :
-            oldTargetNode.getName()
-          );
+          String resolveInfo = (oldTargetNode == null ? ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() : oldTargetNode.getName());
           if (resolveInfo != null) {
             if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId(), resolveInfo);
@@ -413,10 +410,7 @@ public class CopyPasteUtil {
   }
 
   public static synchronized PasteNodeData getConvertedFromClipboard(SModel model, Project project) {
-    return (myDataConverter == null ?
-      null :
-      myDataConverter.getPasteNodeData(model, project)
-    );
+    return (myDataConverter == null ? null : myDataConverter.getPasteNodeData(model, project));
   }
 
   public static boolean canPasteNodes(SModel model, SNode anchor) {

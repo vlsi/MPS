@@ -37,10 +37,7 @@ public class ProjectDescriptorPersistence {
       }
     }, true)) {
       // TODO: move from MacrosFactory to PathMacroUtil 
-      XmlUtil.tagWithAttributes(projectModules, "modulePath", "path", macroHelper.shrinkPath(path.getPath()).replace("${project}", "$PROJECT_DIR$"), "folder", (path.getMPSFolder() != null ?
-        path.getMPSFolder() :
-        ""
-      ));
+      XmlUtil.tagWithAttributes(projectModules, "modulePath", "path", macroHelper.shrinkPath(path.getPath()).replace("${project}", "$PROJECT_DIR$"), "folder", (path.getMPSFolder() != null ? path.getMPSFolder() : ""));
     }
     project.addContent(projectModules);
     return project;

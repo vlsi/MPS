@@ -20,10 +20,7 @@ public class SStructureContainer_Behavior {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.core.structure.structure.SStructurePart")) {
       return new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.core.structure.structure.SStructureContainer", "structure"), NameUtil.nodeFQName(kind)) {
         public String getName(SNode child) {
-          return (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept") ?
-            SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-            null
-          );
+          return (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : null);
         }
       };
     }

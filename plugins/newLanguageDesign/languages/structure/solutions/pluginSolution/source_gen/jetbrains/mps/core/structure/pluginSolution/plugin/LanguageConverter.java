@@ -126,10 +126,7 @@ public class LanguageConverter {
     List<SNode> structureElements = ListSequence.fromList(new ArrayList());
     for (SNode root : ListSequence.fromList(SModelOperations.getRoots(structureModel, null)).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept") ?
-          SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-          SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(it), "name")
-        );
+        return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(it), "name"));
       }
     }, true)) {
       if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {

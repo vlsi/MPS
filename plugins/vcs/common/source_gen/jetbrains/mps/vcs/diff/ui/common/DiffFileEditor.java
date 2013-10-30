@@ -114,9 +114,6 @@ public class DiffFileEditor implements DocumentsEditor {
       }
     });
 
-    return (virtualFile.value == null ?
-      new Document[0] :
-      new Document[]{MPSUndoUtil.getDoc(virtualFile.value)}
-    );
+    return (virtualFile.value == null ? new Document[0] : new Document[]{MPSUndoUtil.getDoc(virtualFile.value)});
   }
 }

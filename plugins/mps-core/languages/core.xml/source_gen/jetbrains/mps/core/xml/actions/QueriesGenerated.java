@@ -91,10 +91,7 @@ public class QueriesGenerated {
             if (XmlNameUtil.isAttValue(pattern)) {
               return pattern;
             }
-            return (pattern.startsWith("?") ?
-              ":" :
-              "?"
-            );
+            return (pattern.startsWith("?") ? ":" : "?");
           }
 
           public String getVisibleMatchingText(String pattern) {
@@ -203,10 +200,7 @@ public class QueriesGenerated {
             if (XmlNameUtil.isCharData(pattern)) {
               return pattern;
             }
-            return (pattern.startsWith("?") ?
-              ":" :
-              "?"
-            );
+            return (pattern.startsWith("?") ? ":" : "?");
           }
 
           public String getVisibleMatchingText(String pattern) {
@@ -238,10 +232,7 @@ public class QueriesGenerated {
             if (XmlNameUtil.isXmlString(pattern)) {
               return pattern;
             }
-            return (pattern.startsWith("?") ?
-              ":" :
-              "?"
-            );
+            return (pattern.startsWith("?") ? ":" : "?");
           }
 
           public String getVisibleMatchingText(String pattern) {

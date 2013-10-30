@@ -94,10 +94,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
       SetSequence.fromSet(usedLanguages).addSequence(CollectionSequence.fromCollection(depManager.getUsedLanguages()));
     }
 
-    Set<SModule> allModules = (tree.isShowRuntime() ?
-      rtModules :
-      reqModules
-    );
+    Set<SModule> allModules = (tree.isShowRuntime() ? rtModules : reqModules);
     Set<SModule> depLoops = tree.getLoops();
     // Dependency manager doesn't add module itself to its dependencies, fixing this here 
     SetSequence.fromSet(allModules).addSequence(SetSequence.fromSet(depLoops).intersect(ListSequence.fromList(myModules)));

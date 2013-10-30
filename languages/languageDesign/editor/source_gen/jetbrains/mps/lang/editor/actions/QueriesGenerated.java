@@ -978,10 +978,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return ((pattern == null || pattern.length() == 0) ?
-              "\"id\"" :
-              pattern
-            );
+            return ((pattern == null || pattern.length() == 0) ? "\"id\"" : pattern);
           }
 
           public String getVisibleMatchingText(String pattern) {

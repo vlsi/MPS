@@ -323,10 +323,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myStaticTarget = (dialog.getResult() != null ?
-          ((SNodePointer) dialog.getResult()).resolve(MPSModuleRepository.getInstance()) :
-          null
-        );
+        myStaticTarget = (dialog.getResult() != null ? ((SNodePointer) dialog.getResult()).resolve(MPSModuleRepository.getInstance()) : null);
       }
     });
     if (myStaticTarget == null) {

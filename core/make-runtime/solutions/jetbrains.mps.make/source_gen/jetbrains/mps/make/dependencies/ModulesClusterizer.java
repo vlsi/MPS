@@ -66,10 +66,7 @@ public class ModulesClusterizer {
         }).toListSequence();
       }
     });
-    Iterable<? extends Iterable<IResource>> seq = (ListSequence.fromList(rest).isNotEmpty() ?
-      Sequence.<List<IResource>>singleton(rest) :
-      null
-    );
+    Iterable<? extends Iterable<IResource>> seq = (ListSequence.fromList(rest).isNotEmpty() ? Sequence.<List<IResource>>singleton(rest) : null);
 
     List<Iterable<? extends IResource>> result = ListSequence.fromList(new ArrayList<Iterable<? extends IResource>>());
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(toBuild));

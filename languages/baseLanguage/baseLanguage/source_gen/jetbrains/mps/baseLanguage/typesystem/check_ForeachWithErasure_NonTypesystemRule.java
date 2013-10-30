@@ -44,10 +44,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
         if (!(MatchingUtil.matchNodes(variableType, _quotation_createNode_aftnu9_a0a2a0c0c0b()))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((variableType != null ?
-              variableType :
-              SLinkOperations.getTarget(foreachStatement, "variable", true)
-            ), "java.lang.Object expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4312449433287189198", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((variableType != null ? variableType : SLinkOperations.getTarget(foreachStatement, "variable", true)), "java.lang.Object expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4312449433287189198", null, errorTarget);
           }
         }
       }

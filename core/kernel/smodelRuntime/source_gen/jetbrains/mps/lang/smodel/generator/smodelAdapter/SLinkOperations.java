@@ -30,10 +30,7 @@ public class SLinkOperations {
     if (node != null) {
       if (child) {
         Iterator<SNode> it = ((Iterator) node.getChildren(role).iterator());
-        return (it.hasNext() ?
-          it.next() :
-          null
-        );
+        return (it.hasNext() ? it.next() : null);
       }
       return node.getReferenceTarget(role);
     }
@@ -75,10 +72,7 @@ public class SLinkOperations {
 
   public static List<SNode> getTargets(SNode node, String role, boolean child) {
     if (node != null && role != null) {
-      return (child ?
-        new AbstractSNodeList.AggregatedSNodesList(node, role) :
-        new AbstractSNodeList.LinkedSNodesList(node, role)
-      );
+      return (child ? new AbstractSNodeList.AggregatedSNodesList(node, role) : new AbstractSNodeList.LinkedSNodesList(node, role));
     }
     return new ArrayList<SNode>();
   }
@@ -127,10 +121,7 @@ public class SLinkOperations {
       return null;
     }
     Iterator<SNode> it = ((Iterator) parent.getChildren(role).iterator());
-    SNode child = (it.hasNext() ?
-      it.next() :
-      null
-    );
+    SNode child = (it.hasNext() ? it.next() : null);
     if (child != null) {
       parent.removeChild(child);
       return child;

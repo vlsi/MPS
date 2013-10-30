@@ -23,16 +23,10 @@ public class DefaultClassifierMethodParameterInformationQuery implements Paramet
 
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
-    SNode methodCall = (selectedActualArgument != null ?
-      SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation") :
-      node
-    );
+    SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation") : node);
     Scope scope = ModelConstraints.getReferenceDescriptor(methodCall, "method").getScope();
     String name = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "member", false), "name");
-    Iterable<SNode> availableElements = scope.getAvailableElements((name != null ?
-      name :
-      ""
-    ));
+    Iterable<SNode> availableElements = scope.getAvailableElements((name != null ? name : ""));
     return Sequence.fromIterable(availableElements).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration");

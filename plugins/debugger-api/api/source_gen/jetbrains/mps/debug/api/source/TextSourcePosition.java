@@ -39,16 +39,10 @@ public class TextSourcePosition extends SourcePosition {
   }
 
   private static boolean eq_e6q8aw_a0a4a6(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_e6q8aw_a0a4a6_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

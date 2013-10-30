@@ -48,10 +48,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
 
         // Collecting possible classConcepts (this. targets) 
         List<SNode> possibleClassConcepts = new ArrayList<SNode>();
-        for (SNode clazz = containingClass; clazz != null; clazz = (Classifier_Behavior.call_isStatic_521412098689998668(clazz) ?
-          null :
-          SNodeOperations.getAncestor(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)
-        )) {
+        for (SNode clazz = containingClass; clazz != null; clazz = (Classifier_Behavior.call_isStatic_521412098689998668(clazz) ? null : SNodeOperations.getAncestor(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false))) {
           ListSequence.fromList(possibleClassConcepts).addElement(clazz);
         }
 

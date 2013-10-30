@@ -77,10 +77,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
   private EditorCell createReadOnlyModelAccessor_jky4mt_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SPropertyOperations.getString(node, "alias") != null ?
-          SPropertyOperations.getString(node, "alias") :
-          SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias")
-        );
+        return (SPropertyOperations.getString(node, "alias") != null ? SPropertyOperations.getString(node, "alias") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias"));
       }
 
       public void setText(String s) {

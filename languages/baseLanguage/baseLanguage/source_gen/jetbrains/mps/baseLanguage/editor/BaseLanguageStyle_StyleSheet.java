@@ -41,13 +41,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getTODO(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.putAll(BaseLanguageStyle_StyleSheet.getComment(editorCell));
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("TODO"));
     }
     return style;
@@ -275,13 +269,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getMPSMethodCall(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.putAll(StyleRegistry.getInstance().getStyle("METHOD_CALL"));
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1hb((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1hb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
     }
     return style;
@@ -290,40 +278,16 @@ public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getVariableName(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FINAL_FIELD"));
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FIELD"));
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
     }
     return style;
@@ -432,13 +396,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void applyTODO(Style style, EditorCell editorCell) {
     BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("TODO"));
     }
   }
@@ -576,52 +534,22 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void applyMPSMethodCall(Style style, EditorCell editorCell) {
     style.putAll(StyleRegistry.getInstance().getStyle("METHOD_CALL"));
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1hb((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1hb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
     }
   }
 
   public static void applyVariableName(Style style, EditorCell editorCell) {
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FINAL_FIELD"));
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FIELD"));
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3ib((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
     }
   }

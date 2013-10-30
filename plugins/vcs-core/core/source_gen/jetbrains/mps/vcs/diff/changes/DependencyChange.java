@@ -20,9 +20,6 @@ public abstract class DependencyChange extends MetadataChange {
   @NotNull
   @Override
   public final ChangeType getType() {
-    return (myDelete ?
-      ChangeType.DELETE :
-      ChangeType.ADD
-    );
+    return (myDelete ? ChangeType.DELETE : ChangeType.ADD);
   }
 }

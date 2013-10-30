@@ -46,10 +46,7 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return (!(_context.getSmartReference()) ?
-              SPropertyOperations.getString(_context.getParameterNode(), "name") :
-              "$" + SPropertyOperations.getString(_context.getParameterNode(), "name")
-            );
+            return (!(_context.getSmartReference()) ? SPropertyOperations.getString(_context.getParameterNode(), "name") : "$" + SPropertyOperations.getString(_context.getParameterNode(), "name"));
           }
 
           @Override
@@ -61,10 +58,7 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };

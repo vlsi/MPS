@@ -23,10 +23,7 @@ public class SelectTest_Test extends Util_Test {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISequence<Integer> test = seq.select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
-        return (Integer) (it % 2 == 1 ?
-          it * 2 :
-          it * 3
-        );
+        return (Integer) ((it % 2 == 1 ? it * 2 : it * 3));
       }
     });
     this.assertIterableEquals(Arrays.asList(2, 6, 6, 12, 10), test.toIterable());
@@ -48,10 +45,7 @@ public class SelectTest_Test extends Util_Test {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISelector<Integer, Integer> selector = new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
-        return (it % 2 == 1 ?
-          it * 2 :
-          it * 3
-        );
+        return (it % 2 == 1 ? it * 2 : it * 3);
       }
     };
     ISequence<Integer> test = seq.select(selector);

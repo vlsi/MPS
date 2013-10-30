@@ -101,10 +101,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode literal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", null);
-            SPropertyOperations.set(literal, "character", (pattern.startsWith("\\") ?
-              pattern.substring(1) :
-              pattern
-            ));
+            SPropertyOperations.set(literal, "character", (pattern.startsWith("\\") ? pattern.substring(1) : pattern));
             return literal;
           }
 
@@ -205,13 +202,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", _context.getCurrentTargetNode());
-            SPropertyOperations.set(node, "name", (pattern.endsWith(":") ?
-              pattern.substring(1, pattern.length() - 1) :
-              ((pattern == null || pattern.length() == 0) ?
-                "" :
-                pattern.substring(1)
-              )
-            ));
+            SPropertyOperations.set(node, "name", (pattern.endsWith(":") ? pattern.substring(1, pattern.length() - 1) : ((pattern == null || pattern.length() == 0) ? "" : pattern.substring(1))));
             return node;
           }
 
@@ -463,10 +454,7 @@ public class QueriesGenerated {
         }
         String s = pattern;
         if (!(s.endsWith(",}"))) {
-          s += (s.endsWith(",") ?
-            "}" :
-            ",}"
-          );
+          s += (s.endsWith(",") ? "}" : ",}");
         }
         return s;
       }

@@ -65,10 +65,7 @@ public class NewElement_Action extends BaseAction {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ActionGroup group = (((TreeNode) MapSequence.fromMap(_params).get("node")) != null ?
-            ProjectPaneActionGroups.getQuickCreateGroup((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node")), false) :
-            ((ActionGroup) MapSequence.fromMap(_params).get("group"))
-          );
+          ActionGroup group = (((TreeNode) MapSequence.fromMap(_params).get("node")) != null ? ProjectPaneActionGroups.getQuickCreateGroup((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node")), false) : ((ActionGroup) MapSequence.fromMap(_params).get("group")));
 
           if (group != null) {
             Presentation pres = new Presentation();

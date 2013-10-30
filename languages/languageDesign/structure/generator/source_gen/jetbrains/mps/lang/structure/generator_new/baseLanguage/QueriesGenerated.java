@@ -145,10 +145,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3270767985091920684(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SPropertyOperations.hasValue(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "staticScope", "none", null) ?
-      "NONE" :
-      "ROOT"
-    );
+    return (SPropertyOperations.hasValue(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "staticScope", "none", null) ? "NONE" : "ROOT");
   }
 
   public static boolean ifMacro_Condition_1212083662247(final IOperationContext operationContext, final IfMacroContext _context) {

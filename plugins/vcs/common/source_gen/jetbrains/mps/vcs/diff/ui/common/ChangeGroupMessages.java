@@ -22,10 +22,7 @@ public class ChangeGroupMessages {
   public ChangeGroupMessages(ChangeGroupLayout layout, boolean left) {
     myLayout = layout;
     myLeft = left;
-    myGutter = ((left ?
-      myLayout.getLeftComponent() :
-      myLayout.getRightComponent()
-    )).getMessagesGutter();
+    myGutter = ((left ? myLayout.getLeftComponent() : myLayout.getRightComponent())).getMessagesGutter();
   }
 
   public void startMaintaining() {

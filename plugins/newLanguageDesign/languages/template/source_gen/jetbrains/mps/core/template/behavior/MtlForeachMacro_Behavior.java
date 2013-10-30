@@ -24,9 +24,6 @@ public class MtlForeachMacro_Behavior {
 
   public static SNode virtual_getContainedVariableType_3435983127247055569(SNode thisNode, String role) {
     SNode eType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "collection", true), "virtual_getType_228266671027861783", new Object[]{});
-    return (SNodeOperations.isInstanceOf(eType, "jetbrains.mps.core.query.structure.MqlListType") ?
-      SLinkOperations.getTarget(SNodeOperations.cast(eType, "jetbrains.mps.core.query.structure.MqlListType"), "inner", true) :
-      null
-    );
+    return (SNodeOperations.isInstanceOf(eType, "jetbrains.mps.core.query.structure.MqlListType") ? SLinkOperations.getTarget(SNodeOperations.cast(eType, "jetbrains.mps.core.query.structure.MqlListType"), "inner", true) : null);
   }
 }

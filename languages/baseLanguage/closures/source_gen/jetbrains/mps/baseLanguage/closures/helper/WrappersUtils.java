@@ -57,10 +57,7 @@ public class WrappersUtils {
       } else if (ins instanceof WriteInstruction) {
         WriteInstruction wi = ((WriteInstruction) ins);
         SNode var = (SNode) wi.getVariable();
-        int writes = (MapSequence.fromMap(resMap).containsKey(var) ?
-          MapSequence.fromMap(resMap).get(var) :
-          0
-        );
+        int writes = (MapSequence.fromMap(resMap).containsKey(var) ? MapSequence.fromMap(resMap).get(var) : 0);
         writes++;
         MapSequence.fromMap(resMap).put(var, writes);
       }

@@ -14,10 +14,7 @@ package jetbrains.mps.build.plugin;
         index = -1;
       }
     }
-    return (index == -1 ?
-      "" :
-      fileName.substring(index)
-    );
+    return (index == -1 ? "" : fileName.substring(index));
   }
 
   /*package*/ static String withoutExtension(String fileName) {
@@ -27,9 +24,6 @@ package jetbrains.mps.build.plugin;
         index = -1;
       }
     }
-    return (index == -1 ?
-      fileName :
-      fileName.substring(0, index)
-    );
+    return (index == -1 ? fileName : fileName.substring(0, index));
   }
 }

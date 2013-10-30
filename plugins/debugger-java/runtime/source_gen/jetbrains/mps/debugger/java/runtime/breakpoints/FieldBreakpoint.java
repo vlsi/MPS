@@ -108,17 +108,11 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((myLocation != null ?
-      ((Object) myLocation).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
     return result;
   }
 
   private static boolean eq_he6f5h_a0d0l(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

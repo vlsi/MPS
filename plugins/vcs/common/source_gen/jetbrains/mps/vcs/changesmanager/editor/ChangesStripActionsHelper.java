@@ -292,9 +292,6 @@ public class ChangesStripActionsHelper {
   }
 
   private static boolean eq_ikrecr_a0a0a0a0a0d0u0l(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

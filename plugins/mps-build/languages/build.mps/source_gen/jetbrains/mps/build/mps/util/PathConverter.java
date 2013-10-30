@@ -51,10 +51,7 @@ public class PathConverter {
     ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(this.workingDirectory, (SNode) null));
     macros = ListSequence.fromList(result).sort(new ISelector<Tuples._2<String, SNode>, Integer>() {
       public Integer select(Tuples._2<String, SNode> it) {
-        return it._0().length() * 2 - ((it._1() == null ?
-          1 :
-          0
-        ));
+        return it._0().length() * 2 - ((it._1() == null ? 1 : 0));
       }
     }, false);
     macrosWithoutPath = withoutPath;
@@ -77,14 +74,8 @@ public class PathConverter {
     String withSlash = normalizePath(path, true);
     List<SNode> result = new ArrayList<SNode>();
     for (Tuples._2<String, SNode> m : Sequence.fromIterable(macros)) {
-      String mdir = (path.startsWith("$") && m._1() != null ?
-        "${" + SPropertyOperations.getString(m._1(), "name") + "}/" :
-        m._0()
-      );
-      String currPath = (path.length() < mdir.length() ?
-        withSlash :
-        path
-      );
+      String mdir = (path.startsWith("$") && m._1() != null ? "${" + SPropertyOperations.getString(m._1(), "name") + "}/" : m._0());
+      String currPath = (path.length() < mdir.length() ? withSlash : path);
 
       if (currPath.startsWith(mdir)) {
         currPath = currPath.substring(mdir.length());
@@ -95,10 +86,7 @@ public class PathConverter {
     }
     for (SNode m : Sequence.fromIterable(macrosWithoutPath)) {
       String mdir = "${" + SPropertyOperations.getString(m, "name") + "}/";
-      String currPath = (path.length() < mdir.length() ?
-        withSlash :
-        path
-      );
+      String currPath = (path.length() < mdir.length() ? withSlash : path);
       if (currPath.startsWith(mdir)) {
         currPath = currPath.substring(mdir.length());
       } else {
@@ -134,10 +122,7 @@ public class PathConverter {
       return null;
     }
     try {
-      path = (path.startsWith("${") ?
-        path :
-        new File(path).getCanonicalPath()
-      );
+      path = (path.startsWith("${") ? path : new File(path).getCanonicalPath());
       path = path.replace("\\", "/");
     } catch (IOException ignore) {
       // ignore 

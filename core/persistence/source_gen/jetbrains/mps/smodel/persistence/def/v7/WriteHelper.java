@@ -77,10 +77,7 @@ public class WriteHelper {
 
   @Nullable
   public String genReferenceId(@Nullable SNodeReference pointer) {
-    return (pointer == null ?
-      null :
-      genReferenceString(pointer.getModelReference(), ((SNodePointer) pointer).getNodeId().toString())
-    );
+    return (pointer == null ? null : genReferenceString(pointer.getModelReference(), ((SNodePointer) pointer).getNodeId().toString()));
   }
 
   public String genType(@NotNull SNode node) {
@@ -106,10 +103,7 @@ public class WriteHelper {
     ConceptKind conceptKind = myEnv.getConceptKind(node);
     StaticScope conceptScope = myEnv.getConceptScope(node);
     boolean unordered = myEnv.isInUnorderedRole(node);
-    char[] res = (unordered ?
-      new char[]{'n', 'g', 'u'} :
-      new char[]{'n', 'g'}
-    );
+    char[] res = (unordered ? new char[]{'n', 'g', 'u'} : new char[]{'n', 'g'});
     if (conceptKind == ConceptKind.INTERFACE) {
       res[0] = 'i';
     } else if (conceptKind == ConceptKind.IMPLEMENTATION) {
@@ -156,23 +150,14 @@ public class WriteHelper {
   }
 
   public String genTarget(@NotNull SReference ref) {
-    String target = (ref instanceof StaticReference ?
-      String.valueOf(ref.getTargetNodeId()) :
-      DYNAMIC_REFERENCE_ID
-    );
+    String target = (ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : DYNAMIC_REFERENCE_ID);
     SModelReference targetModel = ref.getTargetSModelReference();
-    return (targetModel == null ?
-      target :
-      genReferenceString(targetModel, target)
-    );
+    return (targetModel == null ? target : genReferenceString(targetModel, target));
   }
 
   public String genResolveInfo(@NotNull SReference ref) {
     if (!(MPSCore.getInstance().isMergeDriverMode())) {
-      SNode target = (ref instanceof StaticReference ?
-        ref.getTargetNode() :
-        null
-      );
+      SNode target = (ref instanceof StaticReference ? ref.getTargetNode() : null);
       if ((target != null)) {
         String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(target);
         if (resolveInfo != null) {

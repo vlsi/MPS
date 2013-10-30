@@ -830,30 +830,18 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
   }
 
   private static boolean eq_2ocuwj_a0a0a0d0a0a0a0s0a(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_2ocuwj_a0a0a0d0a0a0a0t0a(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_2ocuwj_a0a0a0d0a0a0a0z0a(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_2ocuwj_a0a0a0d0a0a0a0ab0a(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

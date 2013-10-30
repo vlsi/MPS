@@ -119,9 +119,6 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   }
 
   private static <T> T as_i3w5ys_a0a0a0a0a0a0b0c(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

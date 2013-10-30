@@ -41,10 +41,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         }
       });
       Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
-      SNode mtd = (it.hasNext() ?
-        it.next() :
-        null
-      );
+      SNode mtd = (it.hasNext() ? it.next() : null);
       if (!(it.hasNext()) && (mtd != null)) {
         List<SNode> paramTypes = new ArrayList<SNode>();
 

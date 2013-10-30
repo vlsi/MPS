@@ -219,10 +219,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
         int c = 0;
         int p = 0;
         for (byte[] buf : ListSequence.fromList(blocks)) {
-          int n = (c == blks - 1 ?
-            lastRead :
-            BUFSIZE
-          );
+          int n = (c == blks - 1 ? lastRead : BUFSIZE);
           System.arraycopy(buf, 0, wholeBuffer, p, n);
           p = p + BUFSIZE;
           c++;

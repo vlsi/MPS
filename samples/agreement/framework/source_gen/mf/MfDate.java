@@ -138,9 +138,6 @@ public class MfDate implements Comparable {
   }
 
   public static MfDate today() {
-    return ((myToday == null) ?
-      new MfDate() :
-      myToday
-    );
+    return ((myToday == null) ? new MfDate() : myToday);
   }
 }

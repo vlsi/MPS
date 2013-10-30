@@ -104,14 +104,8 @@ public class LanguageErrorsComponent {
     if (!(ErrorReportUtil.shouldReportError(errorNode))) {
       return;
     }
-    String id = (ruleNode == null ?
-      null :
-      ruleNode.getNodeId().toString()
-    );
-    String modelId = (ruleNode == null ?
-      null :
-      check_29uvfh_a0a0c0s(ruleNode.getModel()) + ""
-    );
+    String id = (ruleNode == null ? null : ruleNode.getNodeId().toString());
+    String modelId = (ruleNode == null ? null : check_29uvfh_a0a0c0s(ruleNode.getModel()) + "");
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
     if (intentionProvider != null) {
       reporter.setIntentionProvider(intentionProvider);

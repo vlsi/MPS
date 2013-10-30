@@ -189,10 +189,7 @@ public enum TestNodeWrapperFactory {
   }
 
   public static SNode findWrappableAncestor(SNode source, boolean isRoot) {
-    Iterable<SNode> concepts = (isRoot ?
-      TestNodeWrapperFactory.getWrappedRootConcepts() :
-      TestNodeWrapperFactory.getWrappedNonRootConcepts()
-    );
+    Iterable<SNode> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
     return SNodeOperations.getAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{});
@@ -208,16 +205,10 @@ public enum TestNodeWrapperFactory {
   }
 
   private static boolean eq_kl7j79_a0a0b2(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_kl7j79_a0a0b4(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

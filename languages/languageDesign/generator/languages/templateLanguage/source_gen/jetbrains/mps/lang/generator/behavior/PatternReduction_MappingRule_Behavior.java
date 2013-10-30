@@ -11,10 +11,7 @@ public class PatternReduction_MappingRule_Behavior {
   }
 
   public static SNode call_getConcept_1805153994417064763(SNode thisNode) {
-    return ((SLinkOperations.getTarget(thisNode, "pattern", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pattern", true), "patternNode", true) != null) ?
-      SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pattern", true), "patternNode", true)) :
-      null
-    );
+    return ((SLinkOperations.getTarget(thisNode, "pattern", true) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pattern", true), "patternNode", true) != null) ? SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pattern", true), "patternNode", true)) : null);
   }
 
   public static SNode call_getTemplateType_1805153994417123441(SNode thisNode) {

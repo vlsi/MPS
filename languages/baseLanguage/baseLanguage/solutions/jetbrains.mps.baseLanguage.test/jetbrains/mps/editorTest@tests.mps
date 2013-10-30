@@ -7151,10 +7151,12 @@
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3956753173913342808" nodeInfo="nn">
                 <property name="value" nameId="tpee.1068580320021" value="1" />
               </node>
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3956753173913364910" nodeInfo="nn">
-                <node role="type" roleId="tpee.1070534934091" type="tpee.Type" typeId="tpee.1068431790189" id="3956753173913364911" nodeInfo="in" />
-                <node role="expression" roleId="tpee.1070534934092" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="3956753173913342804" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1113006610751" value="2.0" />
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="137400570146732454" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="137400570146732455" nodeInfo="nn">
+                  <node role="type" roleId="tpee.1070534934091" type="tpee.Type" typeId="tpee.1068431790189" id="137400570146732456" nodeInfo="in" />
+                  <node role="expression" roleId="tpee.1070534934092" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="137400570146732457" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1113006610751" value="2.0" />
+                  </node>
                 </node>
               </node>
             </node>

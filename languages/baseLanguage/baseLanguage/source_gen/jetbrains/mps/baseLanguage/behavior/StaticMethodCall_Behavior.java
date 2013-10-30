@@ -58,9 +58,6 @@ public class StaticMethodCall_Behavior {
   }
 
   private static boolean eq_8wxa2a_a0a0a0a0a0a0a2(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

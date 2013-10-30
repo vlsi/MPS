@@ -76,10 +76,7 @@ public class GoToNodeById_Action extends BaseAction {
       if (value == null) {
         return;
       }
-      value = ((value == null ?
-        null :
-        value.trim()
-      ));
+      value = ((value == null ? null : value.trim()));
       final SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
       if (id == null) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);

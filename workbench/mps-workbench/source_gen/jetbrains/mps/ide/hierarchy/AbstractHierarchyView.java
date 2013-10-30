@@ -90,10 +90,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         }
 
         Navigatable n = new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ptr);
-        return (n.canNavigate() ?
-          n :
-          null
-        );
+        return (n.canNavigate() ? n : null);
       }
 
       @Override
@@ -233,34 +230,22 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
 
     @Override
     public String getPreviousOccurenceActionName() {
-      return (myOccurenceNavigator != null ?
-        myOccurenceNavigator.getPreviousOccurenceActionName() :
-        ""
-      );
+      return (myOccurenceNavigator != null ? myOccurenceNavigator.getPreviousOccurenceActionName() : "");
     }
 
     @Override
     public String getNextOccurenceActionName() {
-      return (myOccurenceNavigator != null ?
-        myOccurenceNavigator.getNextOccurenceActionName() :
-        ""
-      );
+      return (myOccurenceNavigator != null ? myOccurenceNavigator.getNextOccurenceActionName() : "");
     }
 
     @Override
     public OccurenceNavigator.OccurenceInfo goPreviousOccurence() {
-      return (myOccurenceNavigator != null ?
-        myOccurenceNavigator.goPreviousOccurence() :
-        null
-      );
+      return (myOccurenceNavigator != null ? myOccurenceNavigator.goPreviousOccurence() : null);
     }
 
     @Override
     public OccurenceNavigator.OccurenceInfo goNextOccurence() {
-      return (myOccurenceNavigator != null ?
-        myOccurenceNavigator.goNextOccurence() :
-        null
-      );
+      return (myOccurenceNavigator != null ? myOccurenceNavigator.goNextOccurence() : null);
     }
 
     @Override

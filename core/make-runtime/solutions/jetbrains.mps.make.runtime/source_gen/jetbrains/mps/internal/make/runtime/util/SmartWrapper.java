@@ -51,17 +51,11 @@ public class SmartWrapper<T> {
   @Override
   public int hashCode() {
     int h = 17;
-    h *= (towrap != null ?
-      towrap.hashCode() :
-      31
-    );
+    h *= (towrap != null ? towrap.hashCode() : 31);
     return h;
   }
 
   private static boolean eq_awov2t_a0c0h(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

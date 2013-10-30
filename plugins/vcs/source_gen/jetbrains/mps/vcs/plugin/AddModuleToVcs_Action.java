@@ -41,10 +41,7 @@ public class AddModuleToVcs_Action extends BaseAction {
     try {
       {
         Presentation presentation = event.getPresentation();
-        presentation.setText(String.format("Add %s to VCS", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ?
-          "Module" :
-          "Modules"
-        )));
+        presentation.setText(String.format("Add %s to VCS", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ? "Module" : "Modules")));
         boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);

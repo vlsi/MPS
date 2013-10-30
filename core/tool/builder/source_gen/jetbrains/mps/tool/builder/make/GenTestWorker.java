@@ -160,18 +160,12 @@ public class GenTestWorker extends GeneratorWorker {
 
     final _FunctionTypes._void_P1_E0<? super String> startTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        myReporter.testStarted(((msg == null ?
-          null :
-          msg.trim()
-        )));
+        myReporter.testStarted(((msg == null ? null : msg.trim())));
       }
     };
     final _FunctionTypes._void_P1_E0<? super String> finishTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        myReporter.testFinished(((msg == null ?
-          null :
-          msg.trim()
-        )));
+        myReporter.testFinished(((msg == null ? null : msg.trim())));
       }
     };
 
@@ -270,10 +264,7 @@ public class GenTestWorker extends GeneratorWorker {
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
     if (work != null && work.startsWith(prefix)) {
-      format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ?
-        null :
-        prefix.trim()
-      )));
+      format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ? null : prefix.trim())));
     }
   }
 
@@ -333,17 +324,11 @@ public class GenTestWorker extends GeneratorWorker {
     if (idx > 0) {
       throw new IllegalArgumentException("not an absolute path '" + path + "'");
     }
-    idx = (idx < 0 ?
-      path.indexOf(File.separator) :
-      idx
-    );
+    idx = (idx < 0 ? path.indexOf(File.separator) : idx);
     if (idx > "C:\\".length() && path.indexOf(":") < 0) {
       throw new IllegalArgumentException("not an absolute path '" + path + "'");
     }
-    String tmp = tmpPath + "/" + ((idx != 0 ?
-      path.replace(":", "_w_") :
-      path.substring(1)
-    ));
+    String tmp = tmpPath + "/" + ((idx != 0 ? path.replace(":", "_w_") : path.substring(1)));
     MapSequence.fromMap(path2tmp).put(path, tmp);
     return FileSystem.getInstance().getFileByPath(tmp);
   }
@@ -357,10 +342,7 @@ public class GenTestWorker extends GeneratorWorker {
     if (p.contains("_w_")) {
       return FileSystem.getInstance().getFileByPath(p.replace("_w_", ":")).getPath();
     }
-    String prefix = (File.separatorChar == '/' ?
-      "/" :
-      "\\\\"
-    );
+    String prefix = (File.separatorChar == '/' ? "/" : "\\\\");
     return FileSystem.getInstance().getFileByPath(prefix + p).getPath();
   }
 
@@ -510,10 +492,7 @@ public class GenTestWorker extends GeneratorWorker {
       }
       if (isRunningOnTeamCity()) {
         String wd = myWhatToDo.getProperty("mps.gentest.reportsDir");
-        wd = (wd == null ?
-          System.getProperty("user.dir") :
-          wd
-        );
+        wd = (wd == null ? System.getProperty("user.dir") : wd);
         gentestdir = new File(wd, ".gentest");
         if (!(gentestdir.exists())) {
           if (!(gentestdir.mkdirs())) {
@@ -540,10 +519,7 @@ public class GenTestWorker extends GeneratorWorker {
     }
 
     private void startRun(String name) {
-      this.testReporter = (isRunningOnTeamCity() ?
-        new XmlTestReporter(name) :
-        new ConsoleTestReporter()
-      );
+      this.testReporter = (isRunningOnTeamCity() ? new XmlTestReporter(name) : new ConsoleTestReporter());
     }
 
     private void finishRun() {
@@ -633,10 +609,7 @@ public class GenTestWorker extends GeneratorWorker {
         }
         Throwable thr = fdbk.getException();
         String msg = fdbk.getMessage();
-        String details = (thr == null ?
-          "(no details)" :
-          String.valueOf(MpsWorker.extractStackTrace(thr))
-        );
+        String details = (thr == null ? "(no details)" : String.valueOf(MpsWorker.extractStackTrace(thr)));
         int eol = msg.indexOf("\n");
         if (eol >= 0) {
           details = msg.substring(eol + 1) + "\n" + details;

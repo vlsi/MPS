@@ -37,10 +37,7 @@ public class MpsScopesUtil {
       if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
         ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
       } else {
-        ListSequence.fromList(result).addElement(((BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{}) ?
-          "static " :
-          ""
-        )) + getSignature(member, classifier));
+        ListSequence.fromList(result).addElement(((BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{}) ? "static " : "")) + getSignature(member, classifier));
       }
     }
     return result;

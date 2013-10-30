@@ -110,197 +110,197 @@
     <nodeInfo nodeId="6030177200825199033" fileName="ModelDiffTool.java" startLine="45" startPosition="47" endLine="46" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9220150477220493409" fileName="ModelDiffTool.java" startLine="46" startPosition="51" endLine="47" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2501322324640984602" fileName="ModelDiffTool.java" startLine="47" startPosition="49" endLine="48" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065831001804" fileName="ModelDiffTool.java" startLine="52" startPosition="6" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2668616065833481039" fileName="ModelDiffTool.java" startLine="53" startPosition="0" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2668616065833481045" fileName="ModelDiffTool.java" startLine="57" startPosition="82" endLine="58" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668616065833481055" fileName="ModelDiffTool.java" startLine="58" startPosition="53" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2668616065833593922" fileName="ModelDiffTool.java" startLine="62" startPosition="5" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2668616065834530293" fileName="ModelDiffTool.java" startLine="63" startPosition="0" endLine="64" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2668616065833675841" fileName="ModelDiffTool.java" startLine="65" startPosition="117" endLine="66" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065833729470" fileName="ModelDiffTool.java" startLine="66" startPosition="73" endLine="67" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065834442888" fileName="ModelDiffTool.java" startLine="72" startPosition="10" endLine="73" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668616065834448792" fileName="ModelDiffTool.java" startLine="73" startPosition="146" endLine="74" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199040" fileName="ModelDiffTool.java" startLine="76" startPosition="12" endLine="77" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199043" fileName="ModelDiffTool.java" startLine="77" startPosition="46" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199077" fileName="ModelDiffTool.java" startLine="79" startPosition="49" endLine="80" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668616065835040593" fileName="ModelDiffTool.java" startLine="80" startPosition="114" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065835013518" fileName="ModelDiffTool.java" startLine="83" startPosition="5" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2501322324641484974" fileName="ModelDiffTool.java" startLine="84" startPosition="0" endLine="85" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199166" fileName="ModelDiffTool.java" startLine="89" startPosition="47" endLine="90" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7659054645205722438" fileName="ModelDiffTool.java" startLine="91" startPosition="31" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7659054645205774033" fileName="ModelDiffTool.java" startLine="93" startPosition="5" endLine="94" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4930092206960011826" fileName="ModelDiffTool.java" startLine="96" startPosition="103" endLine="97" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7659054645206452929" fileName="ModelDiffTool.java" startLine="99" startPosition="5" endLine="100" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6976105926957848554" fileName="ModelDiffTool.java" startLine="105" startPosition="111" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065832159583" fileName="ModelDiffTool.java" startLine="113" startPosition="9" endLine="114" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065832159596" fileName="ModelDiffTool.java" startLine="114" startPosition="40" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2668616065832159605" fileName="ModelDiffTool.java" startLine="116" startPosition="30" endLine="117" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065832159590" fileName="ModelDiffTool.java" startLine="118" startPosition="7" endLine="119" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065832159615" fileName="ModelDiffTool.java" startLine="119" startPosition="54" endLine="120" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065832159626" fileName="ModelDiffTool.java" startLine="120" startPosition="39" endLine="121" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3486940411390314006" fileName="ModelDiffTool.java" startLine="122" startPosition="159" endLine="123" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668616065832159628" fileName="ModelDiffTool.java" startLine="124" startPosition="7" endLine="125" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="127" startPosition="45" endLine="128" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668616065832814670" fileName="ModelDiffTool.java" startLine="130" startPosition="5" endLine="131" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5764012356796929072" fileName="ModelDiffTool.java" startLine="136" startPosition="110" endLine="137" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199105" fileName="ModelDiffTool.java" startLine="137" startPosition="63" endLine="138" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8626355517233076619" fileName="ModelDiffTool.java" startLine="139" startPosition="26" endLine="140" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065832366735" fileName="ModelDiffTool.java" startLine="142" startPosition="5" endLine="143" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065832078113" fileName="ModelDiffTool.java" startLine="150" startPosition="110" endLine="151" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065834042082" fileName="ModelDiffTool.java" startLine="151" startPosition="63" endLine="152" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065834081324" fileName="ModelDiffTool.java" startLine="153" startPosition="27" endLine="154" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065832627338" fileName="ModelDiffTool.java" startLine="156" startPosition="5" endLine="157" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065833321252" fileName="ModelDiffTool.java" startLine="158" startPosition="24" endLine="159" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668616065834753469" fileName="ModelDiffTool.java" startLine="160" startPosition="5" endLine="161" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065832531372" fileName="ModelDiffTool.java" startLine="161" startPosition="85" endLine="162" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2668616065835276055" fileName="ModelDiffTool.java" startLine="166" startPosition="7" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2668616065830756838" fileName="ModelDiffTool.java" startLine="171" startPosition="74" endLine="172" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2668616065830601167" fileName="ModelDiffTool.java" startLine="172" startPosition="64" endLine="173" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065833274391" fileName="ModelDiffTool.java" startLine="174" startPosition="24" endLine="175" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7279975427908481944" fileName="ModelDiffTool.java" startLine="176" startPosition="5" endLine="177" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7279975427908183271" fileName="ModelDiffTool.java" startLine="177" startPosition="28" endLine="178" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="180" startPosition="45" endLine="181" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8935860650181109472" fileName="ModelDiffTool.java" startLine="182" startPosition="7" endLine="183" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7279975427908419378" fileName="ModelDiffTool.java" startLine="184" startPosition="5" endLine="185" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7279975427908200107" fileName="ModelDiffTool.java" startLine="185" startPosition="89" endLine="186" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="193" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2501322324640997616" fileName="ModelDiffTool.java" startLine="48" startPosition="84" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065831001804" fileName="ModelDiffTool.java" startLine="49" startPosition="61" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2668616065833481039" fileName="ModelDiffTool.java" startLine="50" startPosition="0" endLine="51" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2668616065833481045" fileName="ModelDiffTool.java" startLine="54" startPosition="82" endLine="55" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668616065833481055" fileName="ModelDiffTool.java" startLine="55" startPosition="53" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2668616065833593922" fileName="ModelDiffTool.java" startLine="59" startPosition="5" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2668616065834530293" fileName="ModelDiffTool.java" startLine="60" startPosition="0" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2668616065833675841" fileName="ModelDiffTool.java" startLine="62" startPosition="117" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065833729470" fileName="ModelDiffTool.java" startLine="63" startPosition="73" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065834337224" fileName="ModelDiffTool.java" startLine="65" startPosition="49" endLine="66" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065834442888" fileName="ModelDiffTool.java" startLine="66" startPosition="81" endLine="67" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668616065834448792" fileName="ModelDiffTool.java" startLine="67" startPosition="146" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199040" fileName="ModelDiffTool.java" startLine="70" startPosition="12" endLine="71" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199043" fileName="ModelDiffTool.java" startLine="71" startPosition="46" endLine="72" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199077" fileName="ModelDiffTool.java" startLine="73" startPosition="49" endLine="74" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668616065835040593" fileName="ModelDiffTool.java" startLine="74" startPosition="114" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065835013518" fileName="ModelDiffTool.java" startLine="77" startPosition="5" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2501322324641484974" fileName="ModelDiffTool.java" startLine="78" startPosition="0" endLine="79" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199166" fileName="ModelDiffTool.java" startLine="83" startPosition="47" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7659054645205722438" fileName="ModelDiffTool.java" startLine="85" startPosition="31" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7659054645205774033" fileName="ModelDiffTool.java" startLine="87" startPosition="5" endLine="88" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4930092206960011826" fileName="ModelDiffTool.java" startLine="90" startPosition="103" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7659054645206452929" fileName="ModelDiffTool.java" startLine="93" startPosition="5" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6976105926957848554" fileName="ModelDiffTool.java" startLine="99" startPosition="111" endLine="100" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065832159583" fileName="ModelDiffTool.java" startLine="107" startPosition="9" endLine="108" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065832159596" fileName="ModelDiffTool.java" startLine="108" startPosition="40" endLine="109" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2668616065832159605" fileName="ModelDiffTool.java" startLine="110" startPosition="30" endLine="111" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065832159590" fileName="ModelDiffTool.java" startLine="112" startPosition="7" endLine="113" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065832159615" fileName="ModelDiffTool.java" startLine="113" startPosition="54" endLine="114" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065832159626" fileName="ModelDiffTool.java" startLine="114" startPosition="39" endLine="115" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3486940411390314006" fileName="ModelDiffTool.java" startLine="116" startPosition="159" endLine="117" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668616065832159628" fileName="ModelDiffTool.java" startLine="118" startPosition="7" endLine="119" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="121" startPosition="45" endLine="122" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668616065832814670" fileName="ModelDiffTool.java" startLine="124" startPosition="5" endLine="125" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5764012356796929072" fileName="ModelDiffTool.java" startLine="130" startPosition="110" endLine="131" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199105" fileName="ModelDiffTool.java" startLine="131" startPosition="63" endLine="132" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8626355517233076619" fileName="ModelDiffTool.java" startLine="133" startPosition="26" endLine="134" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065832366735" fileName="ModelDiffTool.java" startLine="136" startPosition="5" endLine="137" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065832078113" fileName="ModelDiffTool.java" startLine="144" startPosition="110" endLine="145" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065834042082" fileName="ModelDiffTool.java" startLine="145" startPosition="63" endLine="146" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065834081324" fileName="ModelDiffTool.java" startLine="147" startPosition="27" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065832627338" fileName="ModelDiffTool.java" startLine="150" startPosition="5" endLine="151" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065833321252" fileName="ModelDiffTool.java" startLine="152" startPosition="24" endLine="153" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065834753469" fileName="ModelDiffTool.java" startLine="154" startPosition="5" endLine="155" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065832531372" fileName="ModelDiffTool.java" startLine="155" startPosition="85" endLine="156" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2668616065832464022" fileName="ModelDiffTool.java" startLine="156" startPosition="21" endLine="157" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668616065835276055" fileName="ModelDiffTool.java" startLine="157" startPosition="170" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2668616065830756838" fileName="ModelDiffTool.java" startLine="162" startPosition="74" endLine="163" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2668616065830601167" fileName="ModelDiffTool.java" startLine="163" startPosition="64" endLine="164" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668616065833274391" fileName="ModelDiffTool.java" startLine="165" startPosition="24" endLine="166" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7279975427908481944" fileName="ModelDiffTool.java" startLine="167" startPosition="5" endLine="168" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7279975427908183271" fileName="ModelDiffTool.java" startLine="168" startPosition="28" endLine="169" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="171" startPosition="45" endLine="172" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8935860650181109472" fileName="ModelDiffTool.java" startLine="173" startPosition="7" endLine="174" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7279975427908419378" fileName="ModelDiffTool.java" startLine="175" startPosition="5" endLine="176" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7279975427908200107" fileName="ModelDiffTool.java" startLine="176" startPosition="89" endLine="177" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7279975427908307283" fileName="ModelDiffTool.java" startLine="177" startPosition="21" endLine="178" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="181" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDiffTool#()V" />
-    <nodeInfo nodeId="7659054645205687583" fileName="ModelDiffTool.java" startLine="90" startPosition="51" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4930092206959936099" fileName="ModelDiffTool.java" startLine="95" startPosition="48" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065832159598" fileName="ModelDiffTool.java" startLine="115" startPosition="69" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3486940411390075969" fileName="ModelDiffTool.java" startLine="121" startPosition="92" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="126" startPosition="31" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="126" startPosition="31" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199115" fileName="ModelDiffTool.java" startLine="138" startPosition="69" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065834067205" fileName="ModelDiffTool.java" startLine="152" startPosition="65" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065833305183" fileName="ModelDiffTool.java" startLine="157" startPosition="38" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065833243697" fileName="ModelDiffTool.java" startLine="173" startPosition="79" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="179" startPosition="28" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="179" startPosition="28" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2501322324640997616" fileName="ModelDiffTool.java" startLine="48" startPosition="84" endLine="52" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668616065833481043" fileName="ModelDiffTool.java" startLine="56" startPosition="49" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065834337224" fileName="ModelDiffTool.java" startLine="68" startPosition="49" endLine="72" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2501322324641456306" fileName="ModelDiffTool.java" startLine="78" startPosition="46" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065832464022" fileName="ModelDiffTool.java" startLine="162" startPosition="21" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7279975427908307283" fileName="ModelDiffTool.java" startLine="186" startPosition="21" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7659054645206375413" fileName="ModelDiffTool.java" startLine="94" startPosition="84" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#(Ljava/lang/String;Lcom/intellij/openapi/diff/DiffRequest;Ljava/awt/Window;Lcom/intellij/openapi/Disposable;)Lcom/intellij/openapi/diff/DiffViewer;" />
-    <nodeInfo nodeId="2668616065833481041" fileName="ModelDiffTool.java" startLine="55" startPosition="23" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8935860650181096432" fileName="ModelDiffTool.java" startLine="178" startPosition="76" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065835132795" fileName="ModelDiffTool.java" startLine="76" startPosition="10" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6030177200825199092" fileName="ModelDiffTool.java" startLine="135" startPosition="55" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065832078111" fileName="ModelDiffTool.java" startLine="149" startPosition="82" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065833481032" fileName="ModelDiffTool.java" startLine="54" startPosition="39" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065833763125" fileName="ModelDiffTool.java" startLine="67" startPosition="73" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="134" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModel#(Lcom/intellij/openapi/diff/DiffContent;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="88" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="2668616065832159581" fileName="ModelDiffTool.java" startLine="112" startPosition="56" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2668616065833481079" fileName="ModelDiffTool.java" startLine="64" startPosition="36" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668616065831880709" fileName="ModelDiffTool.java" startLine="148" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelAndRoot#(Lcom/intellij/openapi/diff/DiffContent;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="2668616065832141652" fileName="ModelDiffTool.java" startLine="111" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="2668616065830580521" fileName="ModelDiffTool.java" startLine="170" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findModelAndRoot#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="44" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <nodeInfo nodeId="7659054645205687583" fileName="ModelDiffTool.java" startLine="84" startPosition="51" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4930092206959936099" fileName="ModelDiffTool.java" startLine="89" startPosition="48" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065832159598" fileName="ModelDiffTool.java" startLine="109" startPosition="69" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3486940411390075969" fileName="ModelDiffTool.java" startLine="115" startPosition="92" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="120" startPosition="31" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="120" startPosition="31" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199115" fileName="ModelDiffTool.java" startLine="132" startPosition="69" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065834067205" fileName="ModelDiffTool.java" startLine="146" startPosition="65" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065833305183" fileName="ModelDiffTool.java" startLine="151" startPosition="38" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065833243697" fileName="ModelDiffTool.java" startLine="164" startPosition="79" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="170" startPosition="28" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="170" startPosition="28" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065833481043" fileName="ModelDiffTool.java" startLine="53" startPosition="49" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2501322324641456306" fileName="ModelDiffTool.java" startLine="72" startPosition="46" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065833763125" fileName="ModelDiffTool.java" startLine="64" startPosition="73" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7659054645206375413" fileName="ModelDiffTool.java" startLine="88" startPosition="84" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#(Ljava/lang/String;Lcom/intellij/openapi/diff/DiffRequest;Ljava/awt/Window;Lcom/intellij/openapi/Disposable;)Lcom/intellij/openapi/diff/DiffViewer;" />
+    <nodeInfo nodeId="2668616065833481041" fileName="ModelDiffTool.java" startLine="52" startPosition="23" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8935860650181096432" fileName="ModelDiffTool.java" startLine="169" startPosition="76" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065835132795" fileName="ModelDiffTool.java" startLine="70" startPosition="10" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199092" fileName="ModelDiffTool.java" startLine="129" startPosition="55" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065832078111" fileName="ModelDiffTool.java" startLine="143" startPosition="82" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065833481032" fileName="ModelDiffTool.java" startLine="51" startPosition="39" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="128" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModel#(Lcom/intellij/openapi/diff/DiffContent;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="82" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="2668616065833481079" fileName="ModelDiffTool.java" startLine="61" startPosition="36" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668616065832159581" fileName="ModelDiffTool.java" startLine="106" startPosition="56" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2668616065831880709" fileName="ModelDiffTool.java" startLine="142" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelAndRoot#(Lcom/intellij/openapi/diff/DiffContent;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="2668616065830580521" fileName="ModelDiffTool.java" startLine="161" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findModelAndRoot#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="2668616065832141652" fileName="ModelDiffTool.java" startLine="105" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="44" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
     <scopeInfo nodeId="6030177200825199026" fileName="ModelDiffTool.java" startLine="41" startPosition="26" endLine="41" endPosition="26" />
-    <scopeInfo nodeId="7659054645205687586" fileName="ModelDiffTool.java" startLine="91" startPosition="31" endLine="92" endPosition="19" />
-    <scopeInfo nodeId="4930092206959936102" fileName="ModelDiffTool.java" startLine="96" startPosition="103" endLine="97" endPosition="20" />
-    <scopeInfo nodeId="6976105926957848553" fileName="ModelDiffTool.java" startLine="105" startPosition="111" endLine="106" endPosition="16" />
-    <scopeInfo nodeId="2668616065832159604" fileName="ModelDiffTool.java" startLine="116" startPosition="30" endLine="117" endPosition="74" />
-    <scopeInfo nodeId="3486940411390075972" fileName="ModelDiffTool.java" startLine="122" startPosition="159" endLine="123" endPosition="42" />
-    <scopeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="127" startPosition="45" endLine="128" endPosition="69" />
-    <scopeInfo nodeId="6030177200825199119" fileName="ModelDiffTool.java" startLine="139" startPosition="26" endLine="140" endPosition="21" />
-    <scopeInfo nodeId="2668616065834067208" fileName="ModelDiffTool.java" startLine="153" startPosition="27" endLine="154" endPosition="22" />
-    <scopeInfo nodeId="2668616065833305186" fileName="ModelDiffTool.java" startLine="158" startPosition="24" endLine="159" endPosition="18" />
-    <scopeInfo nodeId="2668616065833243700" fileName="ModelDiffTool.java" startLine="174" startPosition="24" endLine="175" endPosition="18" />
-    <scopeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="180" startPosition="45" endLine="181" endPosition="62" />
+    <scopeInfo nodeId="7659054645205687586" fileName="ModelDiffTool.java" startLine="85" startPosition="31" endLine="86" endPosition="19" />
+    <scopeInfo nodeId="4930092206959936102" fileName="ModelDiffTool.java" startLine="90" startPosition="103" endLine="91" endPosition="20" />
+    <scopeInfo nodeId="6976105926957848553" fileName="ModelDiffTool.java" startLine="99" startPosition="111" endLine="100" endPosition="16" />
+    <scopeInfo nodeId="2668616065832159604" fileName="ModelDiffTool.java" startLine="110" startPosition="30" endLine="111" endPosition="74" />
+    <scopeInfo nodeId="3486940411390075972" fileName="ModelDiffTool.java" startLine="116" startPosition="159" endLine="117" endPosition="42" />
+    <scopeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="121" startPosition="45" endLine="122" endPosition="69" />
+    <scopeInfo nodeId="6030177200825199119" fileName="ModelDiffTool.java" startLine="133" startPosition="26" endLine="134" endPosition="21" />
+    <scopeInfo nodeId="2668616065834067208" fileName="ModelDiffTool.java" startLine="147" startPosition="27" endLine="148" endPosition="22" />
+    <scopeInfo nodeId="2668616065833305186" fileName="ModelDiffTool.java" startLine="152" startPosition="24" endLine="153" endPosition="18" />
+    <scopeInfo nodeId="2668616065833243700" fileName="ModelDiffTool.java" startLine="165" startPosition="24" endLine="166" endPosition="18" />
+    <scopeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="171" startPosition="45" endLine="172" endPosition="62" />
     <scopeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2668616065833481044" fileName="ModelDiffTool.java" startLine="57" startPosition="82" endLine="59" endPosition="16" />
-    <scopeInfo nodeId="2501322324641456309" fileName="ModelDiffTool.java" startLine="79" startPosition="49" endLine="81" endPosition="15" />
-    <scopeInfo nodeId="7659054645206375416" fileName="ModelDiffTool.java" startLine="95" startPosition="48" endLine="98" endPosition="7" />
-    <scopeInfo nodeId="2668616065832159635" fileName="ModelDiffTool.java" startLine="126" startPosition="0" endLine="129" endPosition="7">
+    <scopeInfo nodeId="2668616065833481044" fileName="ModelDiffTool.java" startLine="54" startPosition="82" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="2501322324641456309" fileName="ModelDiffTool.java" startLine="73" startPosition="49" endLine="75" endPosition="15" />
+    <scopeInfo nodeId="2668616065833763128" fileName="ModelDiffTool.java" startLine="65" startPosition="49" endLine="68" endPosition="15">
+      <varInfo nodeId="2668616065834337225" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="7659054645206375416" fileName="ModelDiffTool.java" startLine="89" startPosition="48" endLine="92" endPosition="7" />
+    <scopeInfo nodeId="2668616065832159635" fileName="ModelDiffTool.java" startLine="120" startPosition="0" endLine="123" endPosition="7">
       <varInfo nodeId="2668616065832159636" varName="ioe" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065832159638" fileName="ModelDiffTool.java" startLine="126" startPosition="31" endLine="129" endPosition="7" />
-    <scopeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="126" startPosition="31" endLine="129" endPosition="7" />
-    <scopeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="179" startPosition="28" endLine="182" endPosition="7" />
-    <scopeInfo nodeId="2668616065833481042" fileName="ModelDiffTool.java" startLine="56" startPosition="49" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="8935860650181096435" fileName="ModelDiffTool.java" startLine="179" startPosition="28" endLine="183" endPosition="18" />
-    <scopeInfo nodeId="7659054645206375413" fileName="ModelDiffTool.java" startLine="94" startPosition="84" endLine="99" endPosition="5">
+    <scopeInfo nodeId="2668616065832159638" fileName="ModelDiffTool.java" startLine="120" startPosition="31" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="2668616065832782592" fileName="ModelDiffTool.java" startLine="120" startPosition="31" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="8935860650181121803" fileName="ModelDiffTool.java" startLine="170" startPosition="28" endLine="173" endPosition="7" />
+    <scopeInfo nodeId="2668616065833481042" fileName="ModelDiffTool.java" startLine="53" startPosition="49" endLine="57" endPosition="9" />
+    <scopeInfo nodeId="8935860650181096435" fileName="ModelDiffTool.java" startLine="170" startPosition="28" endLine="174" endPosition="18" />
+    <scopeInfo nodeId="7659054645206375413" fileName="ModelDiffTool.java" startLine="88" startPosition="84" endLine="93" endPosition="5">
       <varInfo nodeId="7659054645206375419" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="103" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="97" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="6976105926957848550" varName="disposable" />
       <varInfo nodeId="6976105926957848546" varName="request" />
       <varInfo nodeId="6976105926957848544" varName="string" />
       <varInfo nodeId="6976105926957848548" varName="window" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199100" fileName="ModelDiffTool.java" startLine="136" startPosition="110" endLine="141" endPosition="7">
+    <scopeInfo nodeId="6030177200825199100" fileName="ModelDiffTool.java" startLine="130" startPosition="110" endLine="135" endPosition="7">
       <varInfo nodeId="5764012356796929073" varName="file" />
       <varInfo nodeId="6030177200825199106" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065832078112" fileName="ModelDiffTool.java" startLine="150" startPosition="110" endLine="155" endPosition="7">
+    <scopeInfo nodeId="2668616065832078112" fileName="ModelDiffTool.java" startLine="144" startPosition="110" endLine="149" endPosition="7">
       <varInfo nodeId="2668616065832078114" varName="file" />
       <varInfo nodeId="2668616065834042085" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065833481038" fileName="ModelDiffTool.java" startLine="55" startPosition="23" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="2668616065833481041" fileName="ModelDiffTool.java" startLine="55" startPosition="23" endLine="61" endPosition="7">
+    <scopeInfo nodeId="2668616065833481038" fileName="ModelDiffTool.java" startLine="52" startPosition="23" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="2668616065833481041" fileName="ModelDiffTool.java" startLine="52" startPosition="23" endLine="58" endPosition="7">
       <varInfo nodeId="2668616065833481069" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065833763128" fileName="ModelDiffTool.java" startLine="68" startPosition="49" endLine="74" endPosition="15">
-      <varInfo nodeId="2668616065834337225" varName="rootId" />
-    </scopeInfo>
-    <scopeInfo nodeId="2668616065835132796" fileName="ModelDiffTool.java" startLine="76" startPosition="12" endLine="82" endPosition="7">
+    <scopeInfo nodeId="2668616065835132796" fileName="ModelDiffTool.java" startLine="70" startPosition="12" endLine="76" endPosition="7">
       <varInfo nodeId="6030177200825199044" varName="newModel" />
       <varInfo nodeId="6030177200825199041" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199091" fileName="ModelDiffTool.java" startLine="135" startPosition="55" endLine="143" endPosition="30" />
-    <scopeInfo nodeId="2668616065833481080" fileName="ModelDiffTool.java" startLine="65" startPosition="117" endLine="75" endPosition="7">
+    <scopeInfo nodeId="2668616065833481080" fileName="ModelDiffTool.java" startLine="62" startPosition="117" endLine="69" endPosition="7">
       <varInfo nodeId="2668616065833729471" varName="newModel" />
       <varInfo nodeId="2668616065833675844" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199165" fileName="ModelDiffTool.java" startLine="89" startPosition="47" endLine="100" endPosition="17">
+    <scopeInfo nodeId="6030177200825199091" fileName="ModelDiffTool.java" startLine="129" startPosition="55" endLine="137" endPosition="30" />
+    <scopeInfo nodeId="6030177200825199165" fileName="ModelDiffTool.java" startLine="83" startPosition="47" endLine="94" endPosition="17">
       <varInfo nodeId="6030177200825199167" varName="contents" />
       <varInfo nodeId="7659054645205774034" varName="types" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="134" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="128" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="6030177200825199089" varName="content" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065832159582" fileName="ModelDiffTool.java" startLine="113" startPosition="9" endLine="125" endPosition="89">
+    <scopeInfo nodeId="2668616065832159582" fileName="ModelDiffTool.java" startLine="107" startPosition="9" endLine="119" endPosition="89">
       <varInfo nodeId="2668616065832159584" varName="bytes" />
       <varInfo nodeId="2668616065832159591" varName="contentType" />
       <varInfo nodeId="2668616065832159616" varName="ext" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="88" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="82" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="6030177200825199163" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065831880712" fileName="ModelDiffTool.java" startLine="149" startPosition="82" endLine="167" endPosition="0">
+    <scopeInfo nodeId="2668616065831880712" fileName="ModelDiffTool.java" startLine="143" startPosition="82" endLine="158" endPosition="0">
       <varInfo nodeId="2668616065832627341" varName="model" />
       <varInfo nodeId="2668616065834753472" varName="size" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065832141655" fileName="ModelDiffTool.java" startLine="112" startPosition="56" endLine="131" endPosition="16" />
-    <scopeInfo nodeId="2668616065830580524" fileName="ModelDiffTool.java" startLine="171" startPosition="74" endLine="190" endPosition="7">
+    <scopeInfo nodeId="2668616065830580524" fileName="ModelDiffTool.java" startLine="162" startPosition="74" endLine="178" endPosition="174">
       <varInfo nodeId="7279975427908183274" varName="diskModel" />
       <varInfo nodeId="2668616065830601166" varName="model" />
       <varInfo nodeId="7279975427908419379" varName="size" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065831880709" fileName="ModelDiffTool.java" startLine="148" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="2668616065831880709" fileName="ModelDiffTool.java" startLine="142" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="2668616065831893091" varName="content" />
     </scopeInfo>
-    <scopeInfo nodeId="2668616065832141652" fileName="ModelDiffTool.java" startLine="111" startPosition="0" endLine="133" endPosition="0">
-      <varInfo nodeId="2668616065832154791" varName="content" />
-    </scopeInfo>
-    <scopeInfo nodeId="2668616065830580521" fileName="ModelDiffTool.java" startLine="170" startPosition="0" endLine="192" endPosition="0">
+    <scopeInfo nodeId="2668616065832141655" fileName="ModelDiffTool.java" startLine="106" startPosition="56" endLine="125" endPosition="16" />
+    <scopeInfo nodeId="2668616065830580521" fileName="ModelDiffTool.java" startLine="161" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="2668616065830593080" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199032" fileName="ModelDiffTool.java" startLine="45" startPosition="47" endLine="85" endPosition="62">
+    <scopeInfo nodeId="2668616065832141652" fileName="ModelDiffTool.java" startLine="105" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="2668616065832154791" varName="content" />
+    </scopeInfo>
+    <scopeInfo nodeId="6030177200825199032" fileName="ModelDiffTool.java" startLine="45" startPosition="47" endLine="79" endPosition="62">
       <varInfo nodeId="6030177200825199034" varName="contents" />
       <varInfo nodeId="9220150477220493410" varName="titles" />
       <varInfo nodeId="2501322324640997617" varName="type" />
       <varInfo nodeId="2501322324640984603" varName="types" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="44" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="44" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="6030177200825199030" varName="request" />
     </scopeInfo>
-    <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="38" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
+    <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="38" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199214">
     <nodeInfo nodeId="6030177200825199333" fileName="ModelMergeTool.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -349,6 +349,7 @@
     <nodeInfo nodeId="6030177200825199310" fileName="ModelMergeTool.java" startLine="140" startPosition="65" endLine="141" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6030177200825199326" fileName="ModelMergeTool.java" startLine="142" startPosition="5" endLine="143" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="146" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_705910402" />
+    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="74" endLine="149" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
     <nodeInfo nodeId="3022075688545900534" fileName="ModelMergeTool.java" startLine="88" startPosition="18" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="48" startPosition="31" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -364,11 +365,10 @@
     <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="128" startPosition="33" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="128" startPosition="33" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6030177200825199281" fileName="ModelMergeTool.java" startLine="139" startPosition="64" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="74" endLine="152" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_7qvsj_a0a0a0a1a71a1a3#(Ljava/lang/Object;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="6030177200825199469" fileName="ModelMergeTool.java" startLine="73" startPosition="103" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3022075688544977756" fileName="ModelMergeTool.java" startLine="85" startPosition="29" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6030177200825199370" fileName="ModelMergeTool.java" startLine="47" startPosition="108" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_7qvsj_a0a0a0a1a71a1a3#(Ljava/lang/Object;Ljava/lang/Class;)null" />
     <nodeInfo nodeId="4922820837620801541" fileName="ModelMergeTool.java" startLine="64" startPosition="150" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2326809944826021690" fileName="ModelMergeTool.java" startLine="85" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6030177200825199236" fileName="ModelMergeTool.java" startLine="125" startPosition="25" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -399,6 +399,7 @@
     <scopeInfo nodeId="6030177200825199237" fileName="ModelMergeTool.java" startLine="126" startPosition="13" endLine="127" endPosition="80" />
     <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="129" startPosition="59" endLine="130" endPosition="39" />
     <scopeInfo nodeId="6030177200825199282" fileName="ModelMergeTool.java" startLine="140" startPosition="65" endLine="141" endPosition="71" />
+    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="74" endLine="149" endPosition="47" />
     <scopeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="40" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="48" startPosition="31" endLine="51" endPosition="9" />
     <scopeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="65" startPosition="71" endLine="68" endPosition="9" />
@@ -408,16 +409,15 @@
     </scopeInfo>
     <scopeInfo nodeId="6030177200825199249" fileName="ModelMergeTool.java" startLine="128" startPosition="33" endLine="131" endPosition="11" />
     <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="128" startPosition="33" endLine="131" endPosition="11" />
+    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="0" endLine="151" endPosition="0">
+      <varInfo nodeId="4922820837623234680" varName="o" />
+      <varInfo nodeId="4922820837623234680" varName="type" />
+    </scopeInfo>
     <scopeInfo nodeId="6030177200825199371" fileName="ModelMergeTool.java" startLine="48" startPosition="31" endLine="52" endPosition="71" />
-    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="74" endLine="152" endPosition="6" />
     <scopeInfo nodeId="4922820837620801544" fileName="ModelMergeTool.java" startLine="65" startPosition="71" endLine="70" endPosition="15" />
     <scopeInfo nodeId="2326809944826021692" fileName="ModelMergeTool.java" startLine="85" startPosition="29" endLine="90" endPosition="13" />
     <scopeInfo nodeId="6030177200825199260" fileName="ModelMergeTool.java" startLine="138" startPosition="85" endLine="143" endPosition="16">
       <varInfo nodeId="6030177200825199268" varName="resultContent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="148" startPosition="0" endLine="154" endPosition="0">
-      <varInfo nodeId="4922820837623234680" varName="o" />
-      <varInfo nodeId="4922820837623234680" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="2326809944826021690" fileName="ModelMergeTool.java" startLine="85" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="6030177200825199235" fileName="ModelMergeTool.java" startLine="125" startPosition="25" endLine="132" endPosition="9" />
@@ -463,7 +463,7 @@
     <unitInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="74" startPosition="37" endLine="78" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$1" />
     <unitInfo nodeId="2326809944826021690" fileName="ModelMergeTool.java" startLine="84" startPosition="49" endLine="92" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$2" />
     <unitInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="124" startPosition="45" endLine="134" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$3" />
-    <unitInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="36" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />
+    <unitInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="36" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199525">
     <nodeInfo nodeId="6030177200825199528" fileName="ToolsApplicationComponent.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDiffTool" />
@@ -549,169 +549,169 @@
     <nodeInfo nodeId="6444884150137806792" fileName="ModelStorageProblemsListener.java" startLine="138" startPosition="62" endLine="139" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6444884150137304250" fileName="ModelStorageProblemsListener.java" startLine="139" startPosition="70" endLine="140" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3408442363877678584" fileName="ModelStorageProblemsListener.java" startLine="141" startPosition="11" endLine="142" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="899038469128905894" fileName="ModelStorageProblemsListener.java" startLine="148" startPosition="44" endLine="149" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="899038469128820953" fileName="ModelStorageProblemsListener.java" startLine="152" startPosition="43" endLine="153" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3950500378509769953" fileName="ModelStorageProblemsListener.java" startLine="160" startPosition="75" endLine="161" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6444884150137496569" fileName="ModelStorageProblemsListener.java" startLine="162" startPosition="15" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6444884150137504322" fileName="ModelStorageProblemsListener.java" startLine="163" startPosition="0" endLine="164" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6444884150137524242" fileName="ModelStorageProblemsListener.java" startLine="164" startPosition="72" endLine="165" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="6444884150137525741" fileName="ModelStorageProblemsListener.java" startLine="165" startPosition="33" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6444884150137695141" fileName="ModelStorageProblemsListener.java" startLine="168" startPosition="35" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6444884150137641368" fileName="ModelStorageProblemsListener.java" startLine="169" startPosition="0" endLine="170" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6444884150137690256" fileName="ModelStorageProblemsListener.java" startLine="171" startPosition="41" endLine="172" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6444884150137665759" fileName="ModelStorageProblemsListener.java" startLine="173" startPosition="19" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6444884150137625617" fileName="ModelStorageProblemsListener.java" startLine="174" startPosition="0" endLine="175" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="899038469128886326" fileName="ModelStorageProblemsListener.java" startLine="179" startPosition="13" endLine="180" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6475006189497861301" fileName="ModelStorageProblemsListener.java" startLine="180" startPosition="28" endLine="181" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="758819840111701914" fileName="ModelStorageProblemsListener.java" startLine="189" startPosition="70" endLine="190" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623190" fileName="ModelStorageProblemsListener.java" startLine="190" startPosition="70" endLine="191" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7101751311172703895" fileName="ModelStorageProblemsListener.java" startLine="193" startPosition="25" endLine="194" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7101751311172704200" fileName="ModelStorageProblemsListener.java" startLine="195" startPosition="35" endLine="196" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7101751311172703892" fileName="ModelStorageProblemsListener.java" startLine="196" startPosition="30" endLine="197" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7101751311172703900" fileName="ModelStorageProblemsListener.java" startLine="198" startPosition="9" endLine="199" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7101751311172703893" fileName="ModelStorageProblemsListener.java" startLine="199" startPosition="63" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7788464498752623207" fileName="ModelStorageProblemsListener.java" startLine="203" startPosition="32" endLine="204" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752623202" fileName="ModelStorageProblemsListener.java" startLine="205" startPosition="20" endLine="206" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503373005228" fileName="ModelStorageProblemsListener.java" startLine="212" startPosition="31" endLine="213" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373005232" fileName="ModelStorageProblemsListener.java" startLine="213" startPosition="38" endLine="214" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373003215" fileName="ModelStorageProblemsListener.java" startLine="219" startPosition="31" endLine="220" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4620756789292878092" fileName="ModelStorageProblemsListener.java" startLine="228" startPosition="88" endLine="229" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7600798193338888748" fileName="ModelStorageProblemsListener.java" startLine="229" startPosition="14" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7600798193335856039" fileName="ModelStorageProblemsListener.java" startLine="231" startPosition="46" endLine="232" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4620756789292633384" fileName="ModelStorageProblemsListener.java" startLine="233" startPosition="5" endLine="234" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623297" fileName="ModelStorageProblemsListener.java" startLine="234" startPosition="346" endLine="235" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752623311" fileName="ModelStorageProblemsListener.java" startLine="238" startPosition="100" endLine="239" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623329" fileName="ModelStorageProblemsListener.java" startLine="239" startPosition="211" endLine="240" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623345" fileName="ModelStorageProblemsListener.java" startLine="240" startPosition="45" endLine="241" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1427916163082877872" fileName="ModelStorageProblemsListener.java" startLine="242" startPosition="18" endLine="243" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7600798193339635334" fileName="ModelStorageProblemsListener.java" startLine="244" startPosition="48" endLine="245" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1427916163082608787" fileName="ModelStorageProblemsListener.java" startLine="246" startPosition="7" endLine="247" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4222852855542982181" fileName="ModelStorageProblemsListener.java" startLine="249" startPosition="15" endLine="250" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4222852855542982184" fileName="ModelStorageProblemsListener.java" startLine="250" startPosition="26" endLine="251" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4222852855542982187" fileName="ModelStorageProblemsListener.java" startLine="252" startPosition="15" endLine="253" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4222852855542982196" fileName="ModelStorageProblemsListener.java" startLine="253" startPosition="28" endLine="254" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4222852855542982200" fileName="ModelStorageProblemsListener.java" startLine="256" startPosition="16" endLine="257" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4222852855542982169" fileName="ModelStorageProblemsListener.java" startLine="257" startPosition="35" endLine="258" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623408" fileName="ModelStorageProblemsListener.java" startLine="264" startPosition="9" endLine="265" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623412" fileName="ModelStorageProblemsListener.java" startLine="265" startPosition="41" endLine="266" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623428" fileName="ModelStorageProblemsListener.java" startLine="267" startPosition="31" endLine="268" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623449" fileName="ModelStorageProblemsListener.java" startLine="269" startPosition="7" endLine="270" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623454" fileName="ModelStorageProblemsListener.java" startLine="270" startPosition="74" endLine="271" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623460" fileName="ModelStorageProblemsListener.java" startLine="271" startPosition="39" endLine="272" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623464" fileName="ModelStorageProblemsListener.java" startLine="272" startPosition="33" endLine="273" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623467" fileName="ModelStorageProblemsListener.java" startLine="273" startPosition="27" endLine="274" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="276" startPosition="45" endLine="277" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="108123521074039906" fileName="ModelStorageProblemsListener.java" startLine="278" startPosition="7" endLine="279" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7788464498752623478" fileName="ModelStorageProblemsListener.java" startLine="283" startPosition="72" endLine="284" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623501" fileName="ModelStorageProblemsListener.java" startLine="284" startPosition="57" endLine="285" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623509" fileName="ModelStorageProblemsListener.java" startLine="285" startPosition="130" endLine="286" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623527" fileName="ModelStorageProblemsListener.java" startLine="288" startPosition="25" endLine="289" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623519" fileName="ModelStorageProblemsListener.java" startLine="291" startPosition="7" endLine="292" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623247" fileName="ModelStorageProblemsListener.java" startLine="299" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
-    <nodeInfo nodeId="7788464498752623256" fileName="ModelStorageProblemsListener.java" startLine="301" startPosition="46" endLine="302" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623264" fileName="ModelStorageProblemsListener.java" startLine="306" startPosition="31" endLine="307" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7600798193330633559" fileName="ModelStorageProblemsListener.java" startLine="312" startPosition="0" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourTestImplementation" />
-    <nodeInfo nodeId="7600798193332294767" fileName="ModelStorageProblemsListener.java" startLine="314" startPosition="63" endLine="315" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7600798193332807236" fileName="ModelStorageProblemsListener.java" startLine="316" startPosition="30" endLine="317" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7600798193332294784" fileName="ModelStorageProblemsListener.java" startLine="318" startPosition="5" endLine="319" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7600798193332294787" fileName="ModelStorageProblemsListener.java" startLine="319" startPosition="48" endLine="320" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7600798193332294791" fileName="ModelStorageProblemsListener.java" startLine="320" startPosition="37" endLine="321" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7600798193336885862" fileName="ModelStorageProblemsListener.java" startLine="324" startPosition="62" endLine="325" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7600798193336885866" fileName="ModelStorageProblemsListener.java" startLine="325" startPosition="72" endLine="326" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752623152" fileName="ModelStorageProblemsListener.java" startLine="329" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3408442363877912055" fileName="ModelStorageProblemsListener.java" startLine="144" startPosition="27" endLine="145" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="899038469128905894" fileName="ModelStorageProblemsListener.java" startLine="145" startPosition="143" endLine="146" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="899038469128820953" fileName="ModelStorageProblemsListener.java" startLine="149" startPosition="43" endLine="150" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3950500378509769953" fileName="ModelStorageProblemsListener.java" startLine="154" startPosition="75" endLine="155" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6444884150137496569" fileName="ModelStorageProblemsListener.java" startLine="156" startPosition="15" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6444884150137504322" fileName="ModelStorageProblemsListener.java" startLine="157" startPosition="0" endLine="158" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6444884150137524242" fileName="ModelStorageProblemsListener.java" startLine="158" startPosition="72" endLine="159" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="6444884150137525741" fileName="ModelStorageProblemsListener.java" startLine="159" startPosition="33" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6444884150137695141" fileName="ModelStorageProblemsListener.java" startLine="162" startPosition="35" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6444884150137641368" fileName="ModelStorageProblemsListener.java" startLine="163" startPosition="0" endLine="164" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6444884150137690256" fileName="ModelStorageProblemsListener.java" startLine="165" startPosition="41" endLine="166" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6444884150137665759" fileName="ModelStorageProblemsListener.java" startLine="167" startPosition="19" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6444884150137625617" fileName="ModelStorageProblemsListener.java" startLine="168" startPosition="0" endLine="169" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="899038469128886326" fileName="ModelStorageProblemsListener.java" startLine="173" startPosition="13" endLine="174" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6475006189497861301" fileName="ModelStorageProblemsListener.java" startLine="174" startPosition="28" endLine="175" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="758819840111701914" fileName="ModelStorageProblemsListener.java" startLine="183" startPosition="70" endLine="184" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623190" fileName="ModelStorageProblemsListener.java" startLine="184" startPosition="70" endLine="185" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7101751311172703895" fileName="ModelStorageProblemsListener.java" startLine="187" startPosition="25" endLine="188" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7101751311172704200" fileName="ModelStorageProblemsListener.java" startLine="189" startPosition="35" endLine="190" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7101751311172703892" fileName="ModelStorageProblemsListener.java" startLine="190" startPosition="30" endLine="191" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7101751311172703900" fileName="ModelStorageProblemsListener.java" startLine="192" startPosition="9" endLine="193" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7101751311172703893" fileName="ModelStorageProblemsListener.java" startLine="193" startPosition="63" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7788464498752623207" fileName="ModelStorageProblemsListener.java" startLine="197" startPosition="32" endLine="198" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752623202" fileName="ModelStorageProblemsListener.java" startLine="199" startPosition="20" endLine="200" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2034046503373005228" fileName="ModelStorageProblemsListener.java" startLine="206" startPosition="31" endLine="207" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373005232" fileName="ModelStorageProblemsListener.java" startLine="207" startPosition="38" endLine="208" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373003215" fileName="ModelStorageProblemsListener.java" startLine="213" startPosition="31" endLine="214" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4620756789292878092" fileName="ModelStorageProblemsListener.java" startLine="222" startPosition="88" endLine="223" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7600798193338888748" fileName="ModelStorageProblemsListener.java" startLine="223" startPosition="14" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7600798193335856039" fileName="ModelStorageProblemsListener.java" startLine="225" startPosition="46" endLine="226" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4620756789292633384" fileName="ModelStorageProblemsListener.java" startLine="227" startPosition="5" endLine="228" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623297" fileName="ModelStorageProblemsListener.java" startLine="228" startPosition="346" endLine="229" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752623311" fileName="ModelStorageProblemsListener.java" startLine="232" startPosition="100" endLine="233" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623329" fileName="ModelStorageProblemsListener.java" startLine="233" startPosition="211" endLine="234" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623345" fileName="ModelStorageProblemsListener.java" startLine="234" startPosition="45" endLine="235" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1427916163082877872" fileName="ModelStorageProblemsListener.java" startLine="236" startPosition="18" endLine="237" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7600798193339635334" fileName="ModelStorageProblemsListener.java" startLine="238" startPosition="48" endLine="239" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1427916163082608787" fileName="ModelStorageProblemsListener.java" startLine="240" startPosition="7" endLine="241" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4222852855542982181" fileName="ModelStorageProblemsListener.java" startLine="243" startPosition="15" endLine="244" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4222852855542982184" fileName="ModelStorageProblemsListener.java" startLine="244" startPosition="26" endLine="245" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4222852855542982187" fileName="ModelStorageProblemsListener.java" startLine="246" startPosition="15" endLine="247" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4222852855542982196" fileName="ModelStorageProblemsListener.java" startLine="247" startPosition="28" endLine="248" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4222852855542982200" fileName="ModelStorageProblemsListener.java" startLine="250" startPosition="16" endLine="251" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4222852855542982169" fileName="ModelStorageProblemsListener.java" startLine="251" startPosition="35" endLine="252" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623408" fileName="ModelStorageProblemsListener.java" startLine="258" startPosition="9" endLine="259" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623412" fileName="ModelStorageProblemsListener.java" startLine="259" startPosition="41" endLine="260" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623428" fileName="ModelStorageProblemsListener.java" startLine="261" startPosition="31" endLine="262" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623449" fileName="ModelStorageProblemsListener.java" startLine="263" startPosition="7" endLine="264" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623454" fileName="ModelStorageProblemsListener.java" startLine="264" startPosition="74" endLine="265" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623460" fileName="ModelStorageProblemsListener.java" startLine="265" startPosition="39" endLine="266" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623464" fileName="ModelStorageProblemsListener.java" startLine="266" startPosition="33" endLine="267" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623467" fileName="ModelStorageProblemsListener.java" startLine="267" startPosition="27" endLine="268" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="270" startPosition="45" endLine="271" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="108123521074039906" fileName="ModelStorageProblemsListener.java" startLine="272" startPosition="7" endLine="273" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7788464498752623478" fileName="ModelStorageProblemsListener.java" startLine="277" startPosition="72" endLine="278" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623501" fileName="ModelStorageProblemsListener.java" startLine="278" startPosition="57" endLine="279" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623509" fileName="ModelStorageProblemsListener.java" startLine="279" startPosition="130" endLine="280" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623527" fileName="ModelStorageProblemsListener.java" startLine="282" startPosition="25" endLine="283" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623519" fileName="ModelStorageProblemsListener.java" startLine="285" startPosition="7" endLine="286" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623247" fileName="ModelStorageProblemsListener.java" startLine="293" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
+    <nodeInfo nodeId="7788464498752623256" fileName="ModelStorageProblemsListener.java" startLine="295" startPosition="46" endLine="296" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623264" fileName="ModelStorageProblemsListener.java" startLine="300" startPosition="31" endLine="301" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7600798193330633559" fileName="ModelStorageProblemsListener.java" startLine="306" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourTestImplementation" />
+    <nodeInfo nodeId="7600798193332294767" fileName="ModelStorageProblemsListener.java" startLine="308" startPosition="63" endLine="309" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7600798193332807236" fileName="ModelStorageProblemsListener.java" startLine="310" startPosition="30" endLine="311" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7600798193332294784" fileName="ModelStorageProblemsListener.java" startLine="312" startPosition="5" endLine="313" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7600798193332294787" fileName="ModelStorageProblemsListener.java" startLine="313" startPosition="48" endLine="314" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7600798193332294791" fileName="ModelStorageProblemsListener.java" startLine="314" startPosition="37" endLine="315" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7600798193336885862" fileName="ModelStorageProblemsListener.java" startLine="318" startPosition="62" endLine="319" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7600798193336885866" fileName="ModelStorageProblemsListener.java" startLine="319" startPosition="72" endLine="320" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752623152" fileName="ModelStorageProblemsListener.java" startLine="323" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7788464498752623266" fileName="ModelStorageProblemsListener.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelStorageProblemsListener#()V" />
-    <nodeInfo nodeId="7788464498752623200" fileName="ModelStorageProblemsListener.java" startLine="205" startPosition="18" endLine="207" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752623200" fileName="ModelStorageProblemsListener.java" startLine="199" startPosition="18" endLine="201" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6444884150138016405" fileName="ModelStorageProblemsListener.java" startLine="113" startPosition="78" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3408442363875250775" fileName="ModelStorageProblemsListener.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel/Problem;)Z" />
     <nodeInfo nodeId="3408442363877889724" fileName="ModelStorageProblemsListener.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel/Problem;)Z" />
     <nodeInfo nodeId="3408442363877631264" fileName="ModelStorageProblemsListener.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel/Problem;)Z" />
-    <nodeInfo nodeId="899038469128818972" fileName="ModelStorageProblemsListener.java" startLine="151" startPosition="27" endLine="154" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3950500378509661215" fileName="ModelStorageProblemsListener.java" startLine="159" startPosition="94" endLine="162" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6444884150137687506" fileName="ModelStorageProblemsListener.java" startLine="170" startPosition="82" endLine="173" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503373003213" fileName="ModelStorageProblemsListener.java" startLine="219" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7600798193335856035" fileName="ModelStorageProblemsListener.java" startLine="230" startPosition="0" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7600798193339635331" fileName="ModelStorageProblemsListener.java" startLine="243" startPosition="16" endLine="246" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752623423" fileName="ModelStorageProblemsListener.java" startLine="266" startPosition="261" endLine="269" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="275" startPosition="29" endLine="278" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="275" startPosition="29" endLine="278" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752623525" fileName="ModelStorageProblemsListener.java" startLine="288" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623250" fileName="ModelStorageProblemsListener.java" startLine="301" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictVersion#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7600798193332294771" fileName="ModelStorageProblemsListener.java" startLine="315" startPosition="66" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="899038469128818972" fileName="ModelStorageProblemsListener.java" startLine="148" startPosition="27" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3950500378509661215" fileName="ModelStorageProblemsListener.java" startLine="153" startPosition="94" endLine="156" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6444884150137687506" fileName="ModelStorageProblemsListener.java" startLine="164" startPosition="82" endLine="167" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503373003213" fileName="ModelStorageProblemsListener.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7600798193335856035" fileName="ModelStorageProblemsListener.java" startLine="224" startPosition="0" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7600798193339635331" fileName="ModelStorageProblemsListener.java" startLine="237" startPosition="16" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752623423" fileName="ModelStorageProblemsListener.java" startLine="260" startPosition="261" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="269" startPosition="29" endLine="272" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="269" startPosition="29" endLine="272" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752623525" fileName="ModelStorageProblemsListener.java" startLine="282" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623250" fileName="ModelStorageProblemsListener.java" startLine="295" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiskMemoryConflictVersion#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7600798193332294771" fileName="ModelStorageProblemsListener.java" startLine="309" startPosition="66" endLine="312" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7770198149431208783" fileName="ModelStorageProblemsListener.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startListening#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <nodeInfo nodeId="7770198149431208794" fileName="ModelStorageProblemsListener.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopListening#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <nodeInfo nodeId="6444884150137272839" fileName="ModelStorageProblemsListener.java" startLine="137" startPosition="27" endLine="141" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3408442363877912055" fileName="ModelStorageProblemsListener.java" startLine="144" startPosition="27" endLine="148" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7101751311172703847" fileName="ModelStorageProblemsListener.java" startLine="194" startPosition="87" endLine="198" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503373005225" fileName="ModelStorageProblemsListener.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623260" fileName="ModelStorageProblemsListener.java" startLine="305" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7600798193336885859" fileName="ModelStorageProblemsListener.java" startLine="324" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicationInUnitTestOrHeadless#()Z" />
+    <nodeInfo nodeId="7101751311172703847" fileName="ModelStorageProblemsListener.java" startLine="188" startPosition="87" endLine="192" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503373005225" fileName="ModelStorageProblemsListener.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623260" fileName="ModelStorageProblemsListener.java" startLine="299" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7600798193336885859" fileName="ModelStorageProblemsListener.java" startLine="318" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicationInUnitTestOrHeadless#()Z" />
     <nodeInfo nodeId="899038469128969106" fileName="ModelStorageProblemsListener.java" startLine="85" startPosition="27" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3408442363877865114" fileName="ModelStorageProblemsListener.java" startLine="123" startPosition="9" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623196" fileName="ModelStorageProblemsListener.java" startLine="202" startPosition="36" endLine="207" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503373003209" fileName="ModelStorageProblemsListener.java" startLine="217" startPosition="16" endLine="222" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623523" fileName="ModelStorageProblemsListener.java" startLine="286" startPosition="152" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373005221" fileName="ModelStorageProblemsListener.java" startLine="210" startPosition="23" endLine="216" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623229" fileName="ModelStorageProblemsListener.java" startLine="217" startPosition="14" endLine="223" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752623196" fileName="ModelStorageProblemsListener.java" startLine="196" startPosition="36" endLine="201" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503373003209" fileName="ModelStorageProblemsListener.java" startLine="211" startPosition="16" endLine="216" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623523" fileName="ModelStorageProblemsListener.java" startLine="280" startPosition="152" endLine="285" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373005221" fileName="ModelStorageProblemsListener.java" startLine="204" startPosition="23" endLine="210" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623229" fileName="ModelStorageProblemsListener.java" startLine="211" startPosition="14" endLine="217" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="899038469128966842" fileName="ModelStorageProblemsListener.java" startLine="85" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7770198149431255532" fileName="ModelStorageProblemsListener.java" startLine="98" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="conflictDetected#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <nodeInfo nodeId="6444884150137990687" fileName="ModelStorageProblemsListener.java" startLine="110" startPosition="104" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752623175" fileName="ModelStorageProblemsListener.java" startLine="202" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="7788464498752623175" fileName="ModelStorageProblemsListener.java" startLine="196" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
     <nodeInfo nodeId="3408442363877675434" fileName="ModelStorageProblemsListener.java" startLine="136" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel/Problem;)Ljava/lang/String;" />
     <nodeInfo nodeId="899038469128966622" fileName="ModelStorageProblemsListener.java" startLine="83" startPosition="58" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6444884150137534538" fileName="ModelStorageProblemsListener.java" startLine="168" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623169" fileName="ModelStorageProblemsListener.java" startLine="200" startPosition="0" endLine="209" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623270" fileName="ModelStorageProblemsListener.java" startLine="228" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDeletedFromDiskQuestion#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
-    <nodeInfo nodeId="7600798193332294762" fileName="ModelStorageProblemsListener.java" startLine="314" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setTestDialog#(Lcom/intellij/openapi/ui/TestDialog;)Lcom/intellij/openapi/ui/TestDialog;" />
+    <nodeInfo nodeId="6444884150137534538" fileName="ModelStorageProblemsListener.java" startLine="162" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623169" fileName="ModelStorageProblemsListener.java" startLine="194" startPosition="0" endLine="203" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752623270" fileName="ModelStorageProblemsListener.java" startLine="222" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDeletedFromDiskQuestion#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
+    <nodeInfo nodeId="7600798193332294762" fileName="ModelStorageProblemsListener.java" startLine="308" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setTestDialog#(Lcom/intellij/openapi/ui/TestDialog;)Lcom/intellij/openapi/ui/TestDialog;" />
     <nodeInfo nodeId="899038469128958668" fileName="ModelStorageProblemsListener.java" startLine="82" startPosition="44" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6444884150137528796" fileName="ModelStorageProblemsListener.java" startLine="166" startPosition="0" endLine="177" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623470" fileName="ModelStorageProblemsListener.java" startLine="283" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDiffDialog#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="4222852855542982165" fileName="ModelStorageProblemsListener.java" startLine="247" startPosition="177" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="6444884150137528796" fileName="ModelStorageProblemsListener.java" startLine="160" startPosition="0" endLine="171" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623470" fileName="ModelStorageProblemsListener.java" startLine="277" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDiffDialog#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="4222852855542982165" fileName="ModelStorageProblemsListener.java" startLine="241" startPosition="177" endLine="253" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="6989360587248026904" fileName="ModelStorageProblemsListener.java" startLine="130" startPosition="55" endLine="144" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752623212" fileName="ModelStorageProblemsListener.java" startLine="209" startPosition="11" endLine="223" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752623212" fileName="ModelStorageProblemsListener.java" startLine="203" startPosition="11" endLine="217" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="899038469128798048" fileName="ModelStorageProblemsListener.java" startLine="80" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelSaved#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="108123521074039873" fileName="ModelStorageProblemsListener.java" startLine="263" startPosition="66" endLine="280" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4222852855542982160" fileName="ModelStorageProblemsListener.java" startLine="241" startPosition="94" endLine="260" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7788464498752623400" fileName="ModelStorageProblemsListener.java" startLine="263" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doBackup#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/io/File;" />
-    <nodeInfo nodeId="6444884150137186283" fileName="ModelStorageProblemsListener.java" startLine="159" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hyperlinkUpdate#(Lcom/intellij/notification/Notification;Ljavax/swing/event/HyperlinkEvent;)V" />
-    <nodeInfo nodeId="7788464498752623301" fileName="ModelStorageProblemsListener.java" startLine="238" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiskMemoryQuestion#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
-    <nodeInfo nodeId="899038469128826677" fileName="ModelStorageProblemsListener.java" startLine="154" startPosition="11" endLine="179" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="899038469128756686" fileName="ModelStorageProblemsListener.java" startLine="151" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752623167" fileName="ModelStorageProblemsListener.java" startLine="193" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="899038469128693182" fileName="ModelStorageProblemsListener.java" startLine="149" startPosition="55" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623163" fileName="ModelStorageProblemsListener.java" startLine="191" startPosition="50" endLine="225" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752623153" fileName="ModelStorageProblemsListener.java" startLine="189" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Lorg/jetbrains/mps/openapi/model/EditableSModel;)V" />
-    <nodeInfo nodeId="3408442363875236522" fileName="ModelStorageProblemsListener.java" startLine="118" startPosition="0" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3408442363875165177" fileName="ModelStorageProblemsListener.java" startLine="106" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="problemsDetected#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="108123521074039873" fileName="ModelStorageProblemsListener.java" startLine="257" startPosition="66" endLine="274" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4222852855542982160" fileName="ModelStorageProblemsListener.java" startLine="235" startPosition="94" endLine="254" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7788464498752623400" fileName="ModelStorageProblemsListener.java" startLine="257" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doBackup#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/io/File;" />
+    <nodeInfo nodeId="6444884150137186283" fileName="ModelStorageProblemsListener.java" startLine="153" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hyperlinkUpdate#(Lcom/intellij/notification/Notification;Ljavax/swing/event/HyperlinkEvent;)V" />
+    <nodeInfo nodeId="899038469128826677" fileName="ModelStorageProblemsListener.java" startLine="151" startPosition="11" endLine="173" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623301" fileName="ModelStorageProblemsListener.java" startLine="232" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDiskMemoryQuestion#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/io/File;)Z" />
+    <nodeInfo nodeId="899038469128756686" fileName="ModelStorageProblemsListener.java" startLine="148" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="899038469128693182" fileName="ModelStorageProblemsListener.java" startLine="146" startPosition="55" endLine="177" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623167" fileName="ModelStorageProblemsListener.java" startLine="187" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752623163" fileName="ModelStorageProblemsListener.java" startLine="185" startPosition="50" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752623153" fileName="ModelStorageProblemsListener.java" startLine="183" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveDiskMemoryConflict#(Lorg/jetbrains/mps/openapi/model/EditableSModel;)V" />
+    <nodeInfo nodeId="3408442363875236522" fileName="ModelStorageProblemsListener.java" startLine="118" startPosition="0" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3408442363875165177" fileName="ModelStorageProblemsListener.java" startLine="106" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="problemsDetected#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/Iterable;)V" />
     <scopeInfo nodeId="7788464498752623269" fileName="ModelStorageProblemsListener.java" startLine="63" startPosition="41" endLine="63" endPosition="41" />
-    <scopeInfo nodeId="4222852855542982204" fileName="ModelStorageProblemsListener.java" startLine="255" startPosition="15" endLine="255" endPosition="15" />
+    <scopeInfo nodeId="4222852855542982204" fileName="ModelStorageProblemsListener.java" startLine="249" startPosition="15" endLine="249" endPosition="15" />
     <scopeInfo nodeId="7770198149431208789" fileName="ModelStorageProblemsListener.java" startLine="69" startPosition="47" endLine="70" endPosition="33" />
     <scopeInfo nodeId="7770198149431208800" fileName="ModelStorageProblemsListener.java" startLine="74" startPosition="46" endLine="75" endPosition="36" />
     <scopeInfo nodeId="6444884150138016408" fileName="ModelStorageProblemsListener.java" startLine="114" startPosition="61" endLine="115" endPosition="40" />
     <scopeInfo nodeId="3408442363875250776" fileName="ModelStorageProblemsListener.java" startLine="120" startPosition="48" endLine="121" endPosition="28" />
     <scopeInfo nodeId="3408442363877889725" fileName="ModelStorageProblemsListener.java" startLine="125" startPosition="50" endLine="126" endPosition="74" />
     <scopeInfo nodeId="3408442363877631265" fileName="ModelStorageProblemsListener.java" startLine="132" startPosition="50" endLine="133" endPosition="30" />
-    <scopeInfo nodeId="899038469128818975" fileName="ModelStorageProblemsListener.java" startLine="152" startPosition="43" endLine="153" endPosition="40" />
-    <scopeInfo nodeId="3950500378509661216" fileName="ModelStorageProblemsListener.java" startLine="160" startPosition="75" endLine="161" endPosition="23" />
-    <scopeInfo nodeId="6444884150137687509" fileName="ModelStorageProblemsListener.java" startLine="171" startPosition="41" endLine="172" endPosition="27" />
-    <scopeInfo nodeId="7788464498752623206" fileName="ModelStorageProblemsListener.java" startLine="203" startPosition="32" endLine="204" endPosition="69" />
-    <scopeInfo nodeId="7788464498752623201" fileName="ModelStorageProblemsListener.java" startLine="205" startPosition="20" endLine="206" endPosition="68" />
-    <scopeInfo nodeId="2034046503373003214" fileName="ModelStorageProblemsListener.java" startLine="219" startPosition="31" endLine="220" endPosition="39" />
-    <scopeInfo nodeId="7600798193335856038" fileName="ModelStorageProblemsListener.java" startLine="231" startPosition="46" endLine="232" endPosition="49" />
-    <scopeInfo nodeId="7600798193339635333" fileName="ModelStorageProblemsListener.java" startLine="244" startPosition="48" endLine="245" endPosition="51" />
-    <scopeInfo nodeId="7788464498752623427" fileName="ModelStorageProblemsListener.java" startLine="267" startPosition="31" endLine="268" endPosition="223" />
-    <scopeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="276" startPosition="45" endLine="277" endPosition="133" />
-    <scopeInfo nodeId="7788464498752623526" fileName="ModelStorageProblemsListener.java" startLine="288" startPosition="25" endLine="289" endPosition="25" />
-    <scopeInfo nodeId="7788464498752623255" fileName="ModelStorageProblemsListener.java" startLine="301" startPosition="46" endLine="302" endPosition="24" />
-    <scopeInfo nodeId="7788464498752623263" fileName="ModelStorageProblemsListener.java" startLine="306" startPosition="31" endLine="307" endPosition="22" />
-    <scopeInfo nodeId="7600798193332294776" fileName="ModelStorageProblemsListener.java" startLine="316" startPosition="30" endLine="317" endPosition="86" />
+    <scopeInfo nodeId="899038469128818975" fileName="ModelStorageProblemsListener.java" startLine="149" startPosition="43" endLine="150" endPosition="40" />
+    <scopeInfo nodeId="3950500378509661216" fileName="ModelStorageProblemsListener.java" startLine="154" startPosition="75" endLine="155" endPosition="23" />
+    <scopeInfo nodeId="6444884150137687509" fileName="ModelStorageProblemsListener.java" startLine="165" startPosition="41" endLine="166" endPosition="27" />
+    <scopeInfo nodeId="7788464498752623206" fileName="ModelStorageProblemsListener.java" startLine="197" startPosition="32" endLine="198" endPosition="69" />
+    <scopeInfo nodeId="7788464498752623201" fileName="ModelStorageProblemsListener.java" startLine="199" startPosition="20" endLine="200" endPosition="68" />
+    <scopeInfo nodeId="2034046503373003214" fileName="ModelStorageProblemsListener.java" startLine="213" startPosition="31" endLine="214" endPosition="39" />
+    <scopeInfo nodeId="7600798193335856038" fileName="ModelStorageProblemsListener.java" startLine="225" startPosition="46" endLine="226" endPosition="49" />
+    <scopeInfo nodeId="7600798193339635333" fileName="ModelStorageProblemsListener.java" startLine="238" startPosition="48" endLine="239" endPosition="51" />
+    <scopeInfo nodeId="7788464498752623427" fileName="ModelStorageProblemsListener.java" startLine="261" startPosition="31" endLine="262" endPosition="223" />
+    <scopeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="270" startPosition="45" endLine="271" endPosition="133" />
+    <scopeInfo nodeId="7788464498752623526" fileName="ModelStorageProblemsListener.java" startLine="282" startPosition="25" endLine="283" endPosition="25" />
+    <scopeInfo nodeId="7788464498752623255" fileName="ModelStorageProblemsListener.java" startLine="295" startPosition="46" endLine="296" endPosition="24" />
+    <scopeInfo nodeId="7788464498752623263" fileName="ModelStorageProblemsListener.java" startLine="300" startPosition="31" endLine="301" endPosition="22" />
+    <scopeInfo nodeId="7600798193332294776" fileName="ModelStorageProblemsListener.java" startLine="310" startPosition="30" endLine="311" endPosition="86" />
     <scopeInfo nodeId="7788464498752623266" fileName="ModelStorageProblemsListener.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="6444884150137272842" fileName="ModelStorageProblemsListener.java" startLine="138" startPosition="62" endLine="140" endPosition="85" />
-    <scopeInfo nodeId="7101751311172703848" fileName="ModelStorageProblemsListener.java" startLine="195" startPosition="35" endLine="197" endPosition="17" />
-    <scopeInfo nodeId="2034046503373005226" fileName="ModelStorageProblemsListener.java" startLine="212" startPosition="31" endLine="214" endPosition="27" />
-    <scopeInfo nodeId="4222852855542982175" fileName="ModelStorageProblemsListener.java" startLine="249" startPosition="15" endLine="251" endPosition="23" />
-    <scopeInfo nodeId="4222852855542982179" fileName="ModelStorageProblemsListener.java" startLine="252" startPosition="15" endLine="254" endPosition="22" />
-    <scopeInfo nodeId="4222852855542982167" fileName="ModelStorageProblemsListener.java" startLine="256" startPosition="16" endLine="258" endPosition="46" />
-    <scopeInfo nodeId="7600798193336885860" fileName="ModelStorageProblemsListener.java" startLine="324" startPosition="62" endLine="326" endPosition="104">
+    <scopeInfo nodeId="7101751311172703848" fileName="ModelStorageProblemsListener.java" startLine="189" startPosition="35" endLine="191" endPosition="17" />
+    <scopeInfo nodeId="2034046503373005226" fileName="ModelStorageProblemsListener.java" startLine="206" startPosition="31" endLine="208" endPosition="27" />
+    <scopeInfo nodeId="4222852855542982175" fileName="ModelStorageProblemsListener.java" startLine="243" startPosition="15" endLine="245" endPosition="23" />
+    <scopeInfo nodeId="4222852855542982179" fileName="ModelStorageProblemsListener.java" startLine="246" startPosition="15" endLine="248" endPosition="22" />
+    <scopeInfo nodeId="4222852855542982167" fileName="ModelStorageProblemsListener.java" startLine="250" startPosition="16" endLine="252" endPosition="46" />
+    <scopeInfo nodeId="7600798193336885860" fileName="ModelStorageProblemsListener.java" startLine="318" startPosition="62" endLine="320" endPosition="104">
       <varInfo nodeId="7600798193336885861" varName="application" />
     </scopeInfo>
     <scopeInfo nodeId="899038469128969107" fileName="ModelStorageProblemsListener.java" startLine="86" startPosition="65" endLine="89" endPosition="31" />
@@ -724,10 +724,10 @@
     <scopeInfo nodeId="3408442363877631264" fileName="ModelStorageProblemsListener.java" startLine="132" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="3408442363877631264" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503373003213" fileName="ModelStorageProblemsListener.java" startLine="219" startPosition="0" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="275" startPosition="29" endLine="278" endPosition="7" />
-    <scopeInfo nodeId="7788464498752623525" fileName="ModelStorageProblemsListener.java" startLine="288" startPosition="0" endLine="291" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623250" fileName="ModelStorageProblemsListener.java" startLine="301" startPosition="0" endLine="304" endPosition="0">
+    <scopeInfo nodeId="2034046503373003213" fileName="ModelStorageProblemsListener.java" startLine="213" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="108123521074039899" fileName="ModelStorageProblemsListener.java" startLine="269" startPosition="29" endLine="272" endPosition="7" />
+    <scopeInfo nodeId="7788464498752623525" fileName="ModelStorageProblemsListener.java" startLine="282" startPosition="0" endLine="285" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623250" fileName="ModelStorageProblemsListener.java" startLine="295" startPosition="0" endLine="298" endPosition="0">
       <varInfo nodeId="7788464498752623253" varName="suffix" />
     </scopeInfo>
     <scopeInfo nodeId="7770198149431208783" fileName="ModelStorageProblemsListener.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
@@ -739,35 +739,35 @@
     <scopeInfo nodeId="7770198149431255538" fileName="ModelStorageProblemsListener.java" startLine="99" startPosition="46" endLine="103" endPosition="33">
       <varInfo nodeId="7770198149431268401" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503373005225" fileName="ModelStorageProblemsListener.java" startLine="212" startPosition="0" endLine="216" endPosition="0" />
-    <scopeInfo nodeId="108123521074039876" fileName="ModelStorageProblemsListener.java" startLine="275" startPosition="0" endLine="279" endPosition="36">
+    <scopeInfo nodeId="2034046503373005225" fileName="ModelStorageProblemsListener.java" startLine="206" startPosition="0" endLine="210" endPosition="0" />
+    <scopeInfo nodeId="108123521074039876" fileName="ModelStorageProblemsListener.java" startLine="269" startPosition="0" endLine="273" endPosition="36">
       <varInfo nodeId="108123521074039877" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="108123521074039879" fileName="ModelStorageProblemsListener.java" startLine="275" startPosition="29" endLine="279" endPosition="36" />
-    <scopeInfo nodeId="7788464498752623260" fileName="ModelStorageProblemsListener.java" startLine="305" startPosition="0" endLine="309" endPosition="0" />
-    <scopeInfo nodeId="7600798193336885859" fileName="ModelStorageProblemsListener.java" startLine="324" startPosition="0" endLine="328" endPosition="0" />
+    <scopeInfo nodeId="108123521074039879" fileName="ModelStorageProblemsListener.java" startLine="269" startPosition="29" endLine="273" endPosition="36" />
+    <scopeInfo nodeId="7788464498752623260" fileName="ModelStorageProblemsListener.java" startLine="299" startPosition="0" endLine="303" endPosition="0" />
+    <scopeInfo nodeId="7600798193336885859" fileName="ModelStorageProblemsListener.java" startLine="318" startPosition="0" endLine="322" endPosition="0" />
     <scopeInfo nodeId="899038469128966843" fileName="ModelStorageProblemsListener.java" startLine="85" startPosition="27" endLine="90" endPosition="11" />
     <scopeInfo nodeId="6444884150137990690" fileName="ModelStorageProblemsListener.java" startLine="111" startPosition="32" endLine="116" endPosition="7">
       <varInfo nodeId="6444884150138014324" varName="openProjects" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623176" fileName="ModelStorageProblemsListener.java" startLine="202" startPosition="36" endLine="207" endPosition="13" />
-    <scopeInfo nodeId="7788464498752623230" fileName="ModelStorageProblemsListener.java" startLine="217" startPosition="16" endLine="222" endPosition="13" />
+    <scopeInfo nodeId="7788464498752623176" fileName="ModelStorageProblemsListener.java" startLine="196" startPosition="36" endLine="201" endPosition="13" />
+    <scopeInfo nodeId="7788464498752623230" fileName="ModelStorageProblemsListener.java" startLine="211" startPosition="16" endLine="216" endPosition="13" />
     <scopeInfo nodeId="3408442363877675435" fileName="ModelStorageProblemsListener.java" startLine="136" startPosition="49" endLine="142" endPosition="49">
       <varInfo nodeId="6444884150136810730" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623213" fileName="ModelStorageProblemsListener.java" startLine="210" startPosition="23" endLine="216" endPosition="13" />
+    <scopeInfo nodeId="7788464498752623213" fileName="ModelStorageProblemsListener.java" startLine="204" startPosition="23" endLine="210" endPosition="13" />
     <scopeInfo nodeId="899038469128966842" fileName="ModelStorageProblemsListener.java" startLine="85" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="7770198149431255532" fileName="ModelStorageProblemsListener.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="7770198149431255536" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="6444884150137534539" fileName="ModelStorageProblemsListener.java" startLine="168" startPosition="35" endLine="175" endPosition="125">
+    <scopeInfo nodeId="6444884150137534539" fileName="ModelStorageProblemsListener.java" startLine="162" startPosition="35" endLine="169" endPosition="125">
       <varInfo nodeId="6444884150137641369" varName="resolved" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623175" fileName="ModelStorageProblemsListener.java" startLine="202" startPosition="0" endLine="209" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623277" fileName="ModelStorageProblemsListener.java" startLine="228" startPosition="88" endLine="235" endPosition="23">
+    <scopeInfo nodeId="7788464498752623175" fileName="ModelStorageProblemsListener.java" startLine="196" startPosition="0" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623277" fileName="ModelStorageProblemsListener.java" startLine="222" startPosition="88" endLine="229" endPosition="23">
       <varInfo nodeId="4620756789292633385" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7600798193332294765" fileName="ModelStorageProblemsListener.java" startLine="314" startPosition="63" endLine="321" endPosition="20">
+    <scopeInfo nodeId="7600798193332294765" fileName="ModelStorageProblemsListener.java" startLine="308" startPosition="63" endLine="315" endPosition="20">
       <varInfo nodeId="7600798193332294766" varName="application" />
       <varInfo nodeId="7600798193332294783" varName="oldValue" />
     </scopeInfo>
@@ -775,24 +775,24 @@
       <varInfo nodeId="3408442363877675434" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="899038469128958671" fileName="ModelStorageProblemsListener.java" startLine="83" startPosition="58" endLine="92" endPosition="9" />
-    <scopeInfo nodeId="6444884150137534538" fileName="ModelStorageProblemsListener.java" startLine="168" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623270" fileName="ModelStorageProblemsListener.java" startLine="228" startPosition="0" endLine="237" endPosition="0">
+    <scopeInfo nodeId="6444884150137534538" fileName="ModelStorageProblemsListener.java" startLine="162" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623270" fileName="ModelStorageProblemsListener.java" startLine="222" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="7788464498752623275" varName="backupFile" />
       <varInfo nodeId="7788464498752623273" varName="inMemory" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623477" fileName="ModelStorageProblemsListener.java" startLine="283" startPosition="72" endLine="292" endPosition="18">
+    <scopeInfo nodeId="7788464498752623477" fileName="ModelStorageProblemsListener.java" startLine="277" startPosition="72" endLine="286" endPosition="18">
       <varInfo nodeId="7788464498752623510" varName="dialog" />
       <varInfo nodeId="7788464498752623479" varName="onDisk" />
       <varInfo nodeId="7788464498752623502" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7600798193332294762" fileName="ModelStorageProblemsListener.java" startLine="314" startPosition="0" endLine="323" endPosition="0">
+    <scopeInfo nodeId="7600798193332294762" fileName="ModelStorageProblemsListener.java" startLine="308" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="7600798193332294763" varName="newValue" />
     </scopeInfo>
-    <scopeInfo nodeId="108123521074039874" fileName="ModelStorageProblemsListener.java" startLine="264" startPosition="9" endLine="274" endPosition="21">
+    <scopeInfo nodeId="108123521074039874" fileName="ModelStorageProblemsListener.java" startLine="258" startPosition="9" endLine="268" endPosition="21">
       <varInfo nodeId="7788464498752623409" varName="tmp" />
       <varInfo nodeId="7788464498752623450" varName="zipfile" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623470" fileName="ModelStorageProblemsListener.java" startLine="283" startPosition="0" endLine="294" endPosition="0">
+    <scopeInfo nodeId="7788464498752623470" fileName="ModelStorageProblemsListener.java" startLine="277" startPosition="0" endLine="288" endPosition="0">
       <varInfo nodeId="7788464498752623475" varName="inMemory" />
       <varInfo nodeId="7788464498752623473" varName="modelFile" />
     </scopeInfo>
@@ -802,45 +802,45 @@
     <scopeInfo nodeId="899038469128798048" fileName="ModelStorageProblemsListener.java" startLine="80" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="899038469128798052" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4222852855542982162" fileName="ModelStorageProblemsListener.java" startLine="242" startPosition="18" endLine="259" endPosition="7">
+    <scopeInfo nodeId="4222852855542982162" fileName="ModelStorageProblemsListener.java" startLine="236" startPosition="18" endLine="253" endPosition="7">
       <varInfo nodeId="1427916163082608788" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623407" fileName="ModelStorageProblemsListener.java" startLine="263" startPosition="66" endLine="280" endPosition="5" />
-    <scopeInfo nodeId="6444884150137186293" fileName="ModelStorageProblemsListener.java" startLine="159" startPosition="94" endLine="177" endPosition="17">
+    <scopeInfo nodeId="7788464498752623407" fileName="ModelStorageProblemsListener.java" startLine="257" startPosition="66" endLine="274" endPosition="5" />
+    <scopeInfo nodeId="6444884150137186293" fileName="ModelStorageProblemsListener.java" startLine="153" startPosition="94" endLine="171" endPosition="17">
       <varInfo nodeId="6444884150137504323" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623400" fileName="ModelStorageProblemsListener.java" startLine="263" startPosition="0" endLine="282" endPosition="0">
+    <scopeInfo nodeId="7788464498752623400" fileName="ModelStorageProblemsListener.java" startLine="257" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="7788464498752623405" varName="inMemory" />
       <varInfo nodeId="7788464498752623403" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="6444884150137186283" fileName="ModelStorageProblemsListener.java" startLine="159" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="6444884150137186283" fileName="ModelStorageProblemsListener.java" startLine="153" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="6444884150137186290" varName="e" />
       <varInfo nodeId="6444884150137186287" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623310" fileName="ModelStorageProblemsListener.java" startLine="238" startPosition="100" endLine="260" endPosition="5">
+    <scopeInfo nodeId="7788464498752623310" fileName="ModelStorageProblemsListener.java" startLine="232" startPosition="100" endLine="254" endPosition="5">
       <varInfo nodeId="7788464498752623312" varName="message" />
       <varInfo nodeId="7788464498752623346" varName="options" />
       <varInfo nodeId="7788464498752623330" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623301" fileName="ModelStorageProblemsListener.java" startLine="238" startPosition="0" endLine="262" endPosition="0">
+    <scopeInfo nodeId="7788464498752623301" fileName="ModelStorageProblemsListener.java" startLine="232" startPosition="0" endLine="256" endPosition="0">
       <varInfo nodeId="7788464498752623308" varName="backupFile" />
       <varInfo nodeId="7788464498752623306" varName="inMemory" />
       <varInfo nodeId="7788464498752623304" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="899038469128756687" fileName="ModelStorageProblemsListener.java" startLine="151" startPosition="27" endLine="181" endPosition="55" />
-    <scopeInfo nodeId="7788464498752623168" fileName="ModelStorageProblemsListener.java" startLine="193" startPosition="25" endLine="223" endPosition="9">
+    <scopeInfo nodeId="899038469128756687" fileName="ModelStorageProblemsListener.java" startLine="148" startPosition="27" endLine="175" endPosition="55" />
+    <scopeInfo nodeId="899038469128756686" fileName="ModelStorageProblemsListener.java" startLine="148" startPosition="0" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623168" fileName="ModelStorageProblemsListener.java" startLine="187" startPosition="25" endLine="217" endPosition="9">
       <varInfo nodeId="7788464498752623170" varName="needSave" />
     </scopeInfo>
-    <scopeInfo nodeId="899038469128756686" fileName="ModelStorageProblemsListener.java" startLine="151" startPosition="0" endLine="183" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623167" fileName="ModelStorageProblemsListener.java" startLine="193" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="7788464498752623162" fileName="ModelStorageProblemsListener.java" startLine="189" startPosition="70" endLine="225" endPosition="7">
+    <scopeInfo nodeId="7788464498752623167" fileName="ModelStorageProblemsListener.java" startLine="187" startPosition="0" endLine="219" endPosition="0" />
+    <scopeInfo nodeId="7788464498752623162" fileName="ModelStorageProblemsListener.java" startLine="183" startPosition="70" endLine="219" endPosition="7">
       <varInfo nodeId="7788464498752623191" varName="backupFile" />
       <varInfo nodeId="758819840111701915" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752623153" fileName="ModelStorageProblemsListener.java" startLine="189" startPosition="0" endLine="227" endPosition="0">
+    <scopeInfo nodeId="7788464498752623153" fileName="ModelStorageProblemsListener.java" startLine="183" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="7788464498752623158" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3408442363875236525" fileName="ModelStorageProblemsListener.java" startLine="123" startPosition="9" endLine="183" endPosition="9">
+    <scopeInfo nodeId="3408442363875236525" fileName="ModelStorageProblemsListener.java" startLine="123" startPosition="9" endLine="177" endPosition="9">
       <varInfo nodeId="6444884150137197854" varName="errMap" />
       <varInfo nodeId="6444884150137235932" varName="index" />
       <varInfo nodeId="3408442363877865117" varName="isSave" />
@@ -848,30 +848,30 @@
       <varInfo nodeId="6989360587248026905" varName="problemText" />
       <varInfo nodeId="899038469128905895" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="3408442363875165186" fileName="ModelStorageProblemsListener.java" startLine="107" startPosition="81" endLine="184" endPosition="5">
+    <scopeInfo nodeId="3408442363875165186" fileName="ModelStorageProblemsListener.java" startLine="107" startPosition="81" endLine="178" endPosition="5">
       <varInfo nodeId="3408442363875234938" varName="pr" />
       <varInfo nodeId="6444884150137918297" varName="project" />
       <varInfo nodeId="6444884150137876003" varName="repository" />
     </scopeInfo>
-    <scopeInfo nodeId="3408442363875165177" fileName="ModelStorageProblemsListener.java" startLine="106" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="3408442363875165177" fileName="ModelStorageProblemsListener.java" startLine="106" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="3408442363875165181" varName="model" />
       <varInfo nodeId="3408442363875165183" varName="problems" />
     </scopeInfo>
     <unitInfo nodeId="3408442363875250775" fileName="ModelStorageProblemsListener.java" startLine="119" startPosition="42" endLine="123" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$6" />
     <unitInfo nodeId="3408442363877889724" fileName="ModelStorageProblemsListener.java" startLine="124" startPosition="63" endLine="128" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$2" />
     <unitInfo nodeId="3408442363877631264" fileName="ModelStorageProblemsListener.java" startLine="131" startPosition="82" endLine="135" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$3" />
-    <unitInfo nodeId="2034046503373003213" fileName="ModelStorageProblemsListener.java" startLine="218" startPosition="52" endLine="222" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
-    <unitInfo nodeId="7788464498752623525" fileName="ModelStorageProblemsListener.java" startLine="287" startPosition="35" endLine="291" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
-    <unitInfo nodeId="2034046503373005225" fileName="ModelStorageProblemsListener.java" startLine="211" startPosition="61" endLine="216" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
+    <unitInfo nodeId="2034046503373003213" fileName="ModelStorageProblemsListener.java" startLine="212" startPosition="52" endLine="216" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
+    <unitInfo nodeId="7788464498752623525" fileName="ModelStorageProblemsListener.java" startLine="281" startPosition="35" endLine="285" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
+    <unitInfo nodeId="2034046503373005225" fileName="ModelStorageProblemsListener.java" startLine="205" startPosition="61" endLine="210" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
     <unitInfo nodeId="899038469128966842" fileName="ModelStorageProblemsListener.java" startLine="84" startPosition="37" endLine="92" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$1" />
-    <unitInfo nodeId="7788464498752623175" fileName="ModelStorageProblemsListener.java" startLine="201" startPosition="75" endLine="209" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
+    <unitInfo nodeId="7788464498752623175" fileName="ModelStorageProblemsListener.java" startLine="195" startPosition="75" endLine="203" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$8" />
     <unitInfo nodeId="3408442363877675434" fileName="ModelStorageProblemsListener.java" startLine="135" startPosition="20" endLine="144" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$4" />
-    <unitInfo nodeId="6444884150137534538" fileName="ModelStorageProblemsListener.java" startLine="167" startPosition="55" endLine="177" endPosition="15" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7" />
-    <unitInfo nodeId="7788464498752623240" fileName="ModelStorageProblemsListener.java" startLine="295" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$DiskMemoryConflictVersion" />
-    <unitInfo nodeId="6444884150137186281" fileName="ModelStorageProblemsListener.java" startLine="158" startPosition="52" endLine="179" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$6" />
-    <unitInfo nodeId="899038469128756686" fileName="ModelStorageProblemsListener.java" startLine="150" startPosition="37" endLine="183" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$5" />
-    <unitInfo nodeId="7788464498752623167" fileName="ModelStorageProblemsListener.java" startLine="192" startPosition="56" endLine="225" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7" />
-    <unitInfo nodeId="7788464498752623152" fileName="ModelStorageProblemsListener.java" startLine="58" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" />
+    <unitInfo nodeId="6444884150137534538" fileName="ModelStorageProblemsListener.java" startLine="161" startPosition="55" endLine="171" endPosition="15" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7" />
+    <unitInfo nodeId="7788464498752623240" fileName="ModelStorageProblemsListener.java" startLine="289" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$DiskMemoryConflictVersion" />
+    <unitInfo nodeId="6444884150137186281" fileName="ModelStorageProblemsListener.java" startLine="152" startPosition="152" endLine="173" endPosition="11" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$6" />
+    <unitInfo nodeId="899038469128756686" fileName="ModelStorageProblemsListener.java" startLine="147" startPosition="37" endLine="177" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$5" />
+    <unitInfo nodeId="7788464498752623167" fileName="ModelStorageProblemsListener.java" startLine="186" startPosition="56" endLine="219" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7" />
+    <unitInfo nodeId="7788464498752623152" fileName="ModelStorageProblemsListener.java" startLine="58" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7788464498752650651">
     <nodeInfo nodeId="7788464498752650700" fileName="ConflictingModelsWarnings.java" startLine="29" startPosition="92" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

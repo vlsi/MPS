@@ -30,10 +30,7 @@ public class MqlListLiteral_Behavior {
   }
 
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
-    SNode inner = (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).count() > 0 ?
-      SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).first(), "virtual_getType_228266671027861783", new Object[]{})) :
-      SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlNullType", null)
-    );
+    SNode inner = (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).count() > 0 ? SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).first(), "virtual_getType_228266671027861783", new Object[]{})) : SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlNullType", null));
     return createMqlListType_j7h8uc_a1a1(inner);
   }
 

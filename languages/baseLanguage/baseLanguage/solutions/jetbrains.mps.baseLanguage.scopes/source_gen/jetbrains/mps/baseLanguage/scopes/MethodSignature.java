@@ -68,9 +68,6 @@ public class MethodSignature implements Signature {
   }
 
   private static boolean eq_1fkaqj_a0c0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

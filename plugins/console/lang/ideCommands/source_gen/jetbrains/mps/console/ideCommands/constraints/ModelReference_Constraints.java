@@ -37,9 +37,6 @@ public class ModelReference_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636627213167");
 
   private static boolean eq_3fc5vw_a0a0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

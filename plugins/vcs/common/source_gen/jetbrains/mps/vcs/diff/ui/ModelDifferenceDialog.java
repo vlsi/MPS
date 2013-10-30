@@ -200,10 +200,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
-    return (myTree.isShowing() ?
-      myTree :
-      super.getPreferredFocusedComponent()
-    );
+    return (myTree.isShowing() ? myTree : super.getPreferredFocusedComponent());
   }
 
   @Nullable
@@ -265,14 +262,8 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     myRootId = rootId;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ModelChangeSet changeSet = (rootId == null ?
-          myMetadataChangeSet :
-          myChangeSet
-        );
-        SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() :
-          rootId
-        );
+        ModelChangeSet changeSet = (rootId == null ? myMetadataChangeSet : myChangeSet);
+        SNodeId nodeId = (rootId == null ? ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() : rootId);
         if (myRootDifferencePane == null) {
           myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
           DefaultActionGroup actionGroup = new DefaultActionGroup();
@@ -324,10 +315,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
           if (node == null) {
             node = oldModel.getNode(rootId);
           }
-          String rootName = (node == null ?
-            "root" :
-            node.getPresentation()
-          );
+          String rootName = (node == null ? "root" : node.getPresentation());
           dialog.setTitle("Difference for " + rootName);
           dialog.myRootDifferencePane.navigateInitial(scrollTo);
         }
@@ -399,10 +387,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
               }
             });
             if ((int) Sequence.fromIterable(roots).count() == 1) {
-              return (Sequence.fromIterable(roots).first() == null ?
-                "Properties" :
-                "Root"
-              );
+              return (Sequence.fromIterable(roots).first() == null ? "Properties" : "Root");
             } else if (Sequence.fromIterable(roots).any(new IWhereFilter<SNodeId>() {
               public boolean accept(SNodeId r) {
                 return r == null;
@@ -432,10 +417,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
           compositeChangeType = null;
         }
       }
-      rootTreeNode.setColor((compositeChangeType == null ?
-        null :
-        ChangeColors.getForTree(compositeChangeType)
-      ));
+      rootTreeNode.setColor((compositeChangeType == null ? null : ChangeColors.getForTree(compositeChangeType)));
     }
 
     @Override

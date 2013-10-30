@@ -27,10 +27,7 @@ public class ControlAbstractionContainer_Constraints extends BaseConstraintsDesc
     return new BaseReferenceScopeProvider() {
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new VisibleClassifiersScope((_context.getReferenceNode() == null ?
-          _context.getEnclosingNode() :
-          _context.getReferenceNode()
-        ), IClassifiersSearchScope.CLASS, operationContext.getScope());
+        return new VisibleClassifiersScope((_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode()), IClassifiersSearchScope.CLASS, operationContext.getScope());
       }
 
       @Override

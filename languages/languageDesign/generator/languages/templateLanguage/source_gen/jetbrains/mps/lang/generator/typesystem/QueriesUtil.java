@@ -54,10 +54,7 @@ public class QueriesUtil {
           }
         }
       }
-      SNode enclosingNodeMacro = (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.NodeMacro") ?
-        enclosingMacro :
-        null
-      );
+      SNode enclosingNodeMacro = (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.NodeMacro") ? enclosingMacro : null);
       SNode macroOwner = SNodeOperations.getParent(enclosingMacro);
       SNode prevSourceSubstituteMacro = QueriesUtil.getEnclosing_SourceSubstituteMacro(macroOwner, enclosingNodeMacro);
       if (prevSourceSubstituteMacro != null) {
@@ -85,10 +82,7 @@ public class QueriesUtil {
         return null;
       }
     }
-    List<SNode> attributes = (currMacroNode == null ?
-      AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()) :
-      SNodeOperations.getPrevSiblings(currMacroNode, false)
-    );
+    List<SNode> attributes = (currMacroNode == null ? AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()) : SNodeOperations.getPrevSiblings(currMacroNode, false));
     SNode prevMacro = SNodeOperations.as(ListSequence.fromList(attributes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if (!(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"))) {

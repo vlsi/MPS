@@ -129,9 +129,6 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(UpdateRefactoringVersions_Action.class);
 
   private static <T> T as_hexye9_a0a0a1a7(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

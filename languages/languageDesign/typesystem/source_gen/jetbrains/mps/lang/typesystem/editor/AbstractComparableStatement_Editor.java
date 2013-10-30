@@ -75,13 +75,7 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_2gd5o_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractComparableStatement_Editor._StyleParameter_QueryFunction_2gd5o_a0b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractComparableStatement_Editor._StyleParameter_QueryFunction_2gd5o_a0b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractComparableStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_2gd5o_a0b0()}));
     return editorCell;

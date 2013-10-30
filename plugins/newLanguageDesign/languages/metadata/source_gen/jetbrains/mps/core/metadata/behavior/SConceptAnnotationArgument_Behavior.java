@@ -27,9 +27,6 @@ public class SConceptAnnotationArgument_Behavior {
   }
 
   private static boolean eq_a97394_a0a0a0a0a0a0d0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

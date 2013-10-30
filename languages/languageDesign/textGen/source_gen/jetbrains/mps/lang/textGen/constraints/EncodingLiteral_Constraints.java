@@ -51,9 +51,6 @@ public class EncodingLiteral_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static String trim_p9uqyx_a0a0a1a1a0b0a1a1(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
+    return (str == null ? null : str.trim());
   }
 }

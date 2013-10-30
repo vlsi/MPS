@@ -78,10 +78,7 @@ public class ChangeOrientationList_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node) ?
-        "Make Horizontal" :
-        "Make Vertical"
-      );
+      return (CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node) ? "Make Horizontal" : "Make Vertical");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

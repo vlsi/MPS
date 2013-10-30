@@ -49,10 +49,7 @@ public class DebugInfo {
   }
 
   private SNodeReference getRef(SNode node) {
-    return (node == null ?
-      null :
-      node.getReference()
-    );
+    return (node == null ? null : node.getReference());
   }
 
   /*package*/ void addPosition(TraceablePositionInfo position, SNode containingRoot) {
@@ -293,30 +290,18 @@ public class DebugInfo {
   }
 
   private static boolean eq_exfyrk_a0a0b0n(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_exfyrk_a0a0a0a0a0d0o(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_exfyrk_a0a0a0a0a0b0b0p(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_exfyrk_a0a0a0a0a0a0a2a71(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

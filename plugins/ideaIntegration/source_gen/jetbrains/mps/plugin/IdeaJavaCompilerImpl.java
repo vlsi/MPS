@@ -75,10 +75,7 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
     try {
       CompilationResult cr = myIdeaProjectHandler.buildModules(SetSequence.fromSet(modulePaths).toGenericArray(String.class));
       if (cr != null) {
-        return new MPSCompilationResult(cr.getErrors(), cr.getWarnings(), cr.isAborted(), (cr.isCompiledAnything() ?
-          Arrays.asList(modules) :
-          Collections.<SModule>emptySet()
-        ));
+        return new MPSCompilationResult(cr.getErrors(), cr.getWarnings(), cr.isAborted(), (cr.isCompiledAnything() ? Arrays.asList(modules) : Collections.<SModule>emptySet()));
       }
     } catch (RemoteException e) {
       e.printStackTrace();

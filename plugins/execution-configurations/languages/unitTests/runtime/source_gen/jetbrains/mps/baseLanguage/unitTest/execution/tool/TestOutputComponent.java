@@ -196,10 +196,7 @@ public class TestOutputComponent implements TestView {
       if (myCachedSize < 0) {
         myCachedSize = ListSequence.fromList(myChildren).foldLeft(0, new ILeftCombinator<TestOutputComponent.IMessage, Integer>() {
           public Integer combine(Integer s, TestOutputComponent.IMessage it) {
-            return ((it instanceof TestOutputComponent.CompositeMessage) ?
-              s + ((TestOutputComponent.CompositeMessage) it).size() :
-              s + 1
-            );
+            return ((it instanceof TestOutputComponent.CompositeMessage) ? s + ((TestOutputComponent.CompositeMessage) it).size() : s + 1);
           }
         });
       }
@@ -373,44 +370,26 @@ public class TestOutputComponent implements TestView {
   protected static Logger LOG = LogManager.getLogger(TestOutputComponent.class);
 
   private static boolean neq_r62oz9_a0a0a11(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_r62oz9_a0a0a11_0(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_r62oz9_a0a0a0b0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_r62oz9_a0a0b0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_r62oz9_a0a0e02(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_r62oz9_a0a0f12(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -66,10 +66,7 @@ public class NewFile_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ?
-        ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) :
-        ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent()
-      );
+      final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ? ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) : ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent());
       final VirtualFile[] result = new VirtualFile[1];
       InputValidator validator = new InputValidator() {
         @Override

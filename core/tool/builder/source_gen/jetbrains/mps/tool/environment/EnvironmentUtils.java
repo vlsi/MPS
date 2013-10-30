@@ -20,10 +20,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 public class EnvironmentUtils {
   public static void setSystemProperties(boolean loadIdeaPlugins) {
     String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
+    System.setProperty("idea.is.internal", (mpsInternal == null ? "false" : mpsInternal));
     System.setProperty("idea.no.jre.check", "true");
     if (!(loadIdeaPlugins)) {
       System.setProperty("idea.load.plugins", "false");
