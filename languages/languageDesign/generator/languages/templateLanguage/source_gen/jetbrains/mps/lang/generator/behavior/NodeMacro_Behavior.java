@@ -18,7 +18,7 @@ public class NodeMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     SNode prevNodeMacro = NodeMacro_Behavior.call_getPreviousNodeMacro_1213877290823(thisNode);
     if (prevNodeMacro != null) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), prevNodeMacro, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), prevNodeMacro, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
     } else {
       return NodeMacro_Behavior.call_getInputNodeTypeFromEnvironment_1213877290892(thisNode);
     }
@@ -79,11 +79,11 @@ public class NodeMacro_Behavior {
 
   @Deprecated
   public static SNode call_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.NodeMacro"), callerConceptFqName, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.NodeMacro"), callerConceptFqName, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Class[]{SNode.class}, new Object[]{});
   }
 }

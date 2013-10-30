@@ -87,7 +87,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
-    for (SNode c : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), baseClass, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", "call_getAllSuperBehaviors_1818770337282950280", new Object[]{})) {
+    for (SNode c : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", "call_getAllSuperBehaviors_1818770337282950280", new Object[]{})) {
       MapSequence.fromMap(containerIndex).put(c, i++);
     }
     return Sequence.fromIterable(methods).sort(new Comparator<SNode>() {

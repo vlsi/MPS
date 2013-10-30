@@ -449,7 +449,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       String conceptName = InternUtil.intern(fieldhelper.readType(attrs.getValue("type")));
       jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(conceptName) : new jetbrains.mps.smodel.SNode(conceptName));
-      fieldlinkMap.addNodeMetainfo(parsed._0(), parsed._1(), (boolean) (parsed._2()), result);
+      fieldlinkMap.addNodeMetainfo(parsed._0(), parsed._1(), (boolean) parsed._2(), result);
       return result;
     }
 

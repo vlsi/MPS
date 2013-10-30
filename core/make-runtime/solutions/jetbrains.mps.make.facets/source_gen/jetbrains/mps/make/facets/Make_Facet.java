@@ -81,7 +81,7 @@ public class Make_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_pm9z_a0a = null;
-          final Iterable<DResource> input = (Iterable<DResource>) ((Iterable) rawInput);
+          final Iterable<DResource> input = (Iterable<DResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(pa.global().properties(Target_reconcile.this.getName(), Make_Facet.Target_reconcile.Parameters.class).skipReconcile())) {
@@ -238,7 +238,7 @@ public class Make_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_pm9z_a0b = null;
-          final Iterable<IResource> input = (Iterable<IResource>) ((Iterable) rawInput);
+          final Iterable<IResource> input = (Iterable<IResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
             default:

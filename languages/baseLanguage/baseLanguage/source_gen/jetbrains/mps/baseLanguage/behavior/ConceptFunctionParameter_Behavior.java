@@ -35,7 +35,7 @@ public class ConceptFunctionParameter_Behavior {
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(thisNode);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), it, "virtual_getParameters_1213877374450", new Object[]{})).contains(ourConcept);
+        return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getParameters_1213877374450", new Object[]{})).contains(ourConcept);
       }
     }).first();
   }
@@ -82,7 +82,7 @@ public class ConceptFunctionParameter_Behavior {
 
   @Deprecated
   public static SNode call_getType_2443692612523876968(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getType_2443692612523876968", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_2443692612523876968", new Object[]{});
   }
 
   @Deprecated
@@ -102,6 +102,6 @@ public class ConceptFunctionParameter_Behavior {
 
   @Deprecated
   public static SNode callSuper_getType_2443692612523876968(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getType_2443692612523876968", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getType_2443692612523876968", new Class[]{SNode.class}, new Object[]{});
   }
 }

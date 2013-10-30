@@ -19,11 +19,11 @@ public class BaseExtensionMethodContainer_Behavior {
 
   @Deprecated
   public static List<SNode> call_getMembers_8578055449697886101(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getMembers_1213877531970", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877531970", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getMembers_8578055449697886101(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), callerConceptFqName, "virtual_getMembers_1213877531970", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), callerConceptFqName, "virtual_getMembers_1213877531970", new Class[]{SNode.class}, new Object[]{});
   }
 }

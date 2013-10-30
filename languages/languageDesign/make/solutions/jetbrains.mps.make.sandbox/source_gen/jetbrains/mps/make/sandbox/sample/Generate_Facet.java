@@ -67,7 +67,7 @@ public class Generate_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0a = null;
-          final Iterable<CResource> input = (Iterable<CResource>) ((Iterable) rawInput);
+          final Iterable<CResource> input = (Iterable<CResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
             default:

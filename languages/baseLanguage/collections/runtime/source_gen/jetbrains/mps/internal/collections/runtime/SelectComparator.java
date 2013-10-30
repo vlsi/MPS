@@ -22,8 +22,8 @@ public class SelectComparator<T> implements Comparator<T> {
     if (a == null || b == null) {
       return (a == null ? -1 : 1);
     }
-    Comparable<Object> cmpa = (Comparable<Object>) (selector.invoke(a));
-    Comparable<Object> cmpb = (Comparable<Object>) (selector.invoke(b));
+    Comparable<Object> cmpa = (Comparable<Object>) selector.invoke(a);
+    Comparable<Object> cmpb = (Comparable<Object>) selector.invoke(b);
     if (cmpa == cmpb) {
       return 0;
     }

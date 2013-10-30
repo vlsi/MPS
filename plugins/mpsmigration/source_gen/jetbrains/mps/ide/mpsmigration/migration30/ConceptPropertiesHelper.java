@@ -617,7 +617,7 @@ public class ConceptPropertiesHelper {
   }
 
   private void migrateAccess(SNode source, SNode conceptExpression, SNode expression) {
-    SNode type = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), source, "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{});
+    SNode type = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), source, "jetbrains.mps.baseLanguage.structure.DotExpression", "call_getOperandType_8871623299328377715", new Object[]{});
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType") || (SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeType") && SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       SNodeOperations.replaceWithAnother(source, conceptExpression);
     } else {

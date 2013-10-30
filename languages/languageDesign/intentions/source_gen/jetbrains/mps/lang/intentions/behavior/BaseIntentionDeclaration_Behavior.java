@@ -33,7 +33,7 @@ public class BaseIntentionDeclaration_Behavior {
   }
 
   public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
-    return BehaviorReflection.invokeSuper((Class<List<PropertyReference>>) ((Class) (Object.class)), thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{});
+    return BehaviorReflection.invokeSuper((Class<List<PropertyReference>>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{});
   }
 
   public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
@@ -73,7 +73,7 @@ public class BaseIntentionDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_getBaseConcept_6263518417926802384(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
   }
 
   @Deprecated
@@ -93,7 +93,7 @@ public class BaseIntentionDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_getBaseConcept_6263518417926802384(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

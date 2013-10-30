@@ -65,7 +65,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     for (SNode aspectConcept : SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
-      if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), aspectConcept, "virtual_getBaseConcept_2621449412040133768", new Object[]{}) != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), aspectConcept, "virtual_getBaseConcept_2621449412040133768", new Object[]{}) == thisNode) {
+      if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), aspectConcept, "virtual_getBaseConcept_2621449412040133768", new Object[]{}) != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), aspectConcept, "virtual_getBaseConcept_2621449412040133768", new Object[]{}) == thisNode) {
         return aspectConcept;
       }
     }
@@ -77,7 +77,7 @@ public class AbstractConceptDeclaration_Behavior {
       return;
     }
     for (SNode aspectConcept : SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
-      if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), aspectConcept, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{})).contains(thisNode)) {
+      if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), aspectConcept, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{})).contains(thisNode)) {
         ListSequence.fromList(collection).addElement(aspectConcept);
       }
     }
@@ -287,7 +287,7 @@ public class AbstractConceptDeclaration_Behavior {
       return;
     }
     SetSequence.fromSet(result).addElement(concept);
-    for (SNode superConcept : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), concept, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{}))) {
+    for (SNode superConcept : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), concept, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{}))) {
       AbstractConceptDeclaration_Behavior.call_collectSuperConcepts_2992811758677933293(thisNode, superConcept, result);
     }
   }
@@ -338,11 +338,11 @@ public class AbstractConceptDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", new Class[]{SNode.class}, new Object[]{});
   }
 }

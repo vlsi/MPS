@@ -13,7 +13,7 @@ public class MqlDotExpression_Behavior {
   }
 
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "right", true), "virtual_getType_228266671027867010", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "right", true), "virtual_getType_228266671027867010", new Object[]{});
   }
 
   public static int virtual_getPriority_7352592509980890960(SNode thisNode) {

@@ -33,7 +33,7 @@ public class MqlCollectionSelector_Behavior {
     } else if (SPropertyOperations.hasValue(thisNode, "kind", "8", null)) {
       return createMqlListType_6kvg7a_a0a0a0a(MqlSelector_Behavior.call_getContainerType_228266671027861723(thisNode));
     } else if (SPropertyOperations.hasValue(thisNode, "kind", "1", null) || SPropertyOperations.hasValue(thisNode, "kind", "2", null)) {
-      SNode node = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "expr", true), "virtual_getType_228266671027861783", new Object[]{});
+      SNode node = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "expr", true), "virtual_getType_228266671027861783", new Object[]{});
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.query.structure.MqlListType")) {
         return node;
       }

@@ -18,11 +18,11 @@ public class AbstractComponent_Behavior {
 
   @Deprecated
   public static SNode call_getConceptDeclaration_7055725856388417603(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getConceptDeclaration_7055725856388417603(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), callerConceptFqName, "virtual_getConceptDeclaration_7055725856388417603", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), callerConceptFqName, "virtual_getConceptDeclaration_7055725856388417603", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -22,7 +22,7 @@ public class ExecuteConfiguration_Function_Behavior {
   }
 
   public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getLocalVariableElements_1238805763253", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
 
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
@@ -42,22 +42,22 @@ public class ExecuteConfiguration_Function_Behavior {
 
   @Deprecated
   public static List<SNode> call_getLocalVariableElements_6538811202682334478(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> call_getParameters_3091009652595815824(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getLocalVariableElements_6538811202682334478(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getParameters_3091009652595815824(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getParameters_1213877374450", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), callerConceptFqName, "virtual_getParameters_1213877374450", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_cw5ucd_a0a2() {

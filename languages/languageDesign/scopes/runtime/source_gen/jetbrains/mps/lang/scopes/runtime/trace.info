@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)/2995585510566823852">
-    <nodeInfo nodeId="2995585510566824020" fileName="ScopeProviderContext.java" startLine="13" startPosition="60" endLine="14" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566824029" fileName="ScopeProviderContext.java" startLine="15" startPosition="12" endLine="16" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995585510566824020" fileName="ScopeProviderContext.java" startLine="13" startPosition="60" endLine="14" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2995585510566824029" fileName="ScopeProviderContext.java" startLine="15" startPosition="12" endLine="16" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995585510566823923" fileName="ScopeProviderContext.java" startLine="20" startPosition="64" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995585510566823940" fileName="ScopeProviderContext.java" startLine="24" startPosition="83" endLine="25" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995585510566823984" fileName="ScopeProviderContext.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="child" />
@@ -20,8 +20,8 @@
     <nodeInfo nodeId="2995585510566823974" fileName="ScopeProviderContext.java" startLine="12" startPosition="182" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2995585510566823953" fileName="ScopeProviderContext.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P2_E0;)null" />
     <scopeInfo nodeId="2995585510566823914" fileName="ScopeProviderContext.java" startLine="9" startPosition="34" endLine="9" endPosition="34" />
-    <scopeInfo nodeId="2995585510566823976" fileName="ScopeProviderContext.java" startLine="13" startPosition="60" endLine="14" endPosition="80" />
-    <scopeInfo nodeId="2995585510566823983" fileName="ScopeProviderContext.java" startLine="15" startPosition="12" endLine="16" endPosition="155" />
+    <scopeInfo nodeId="2995585510566823976" fileName="ScopeProviderContext.java" startLine="13" startPosition="60" endLine="14" endPosition="78" />
+    <scopeInfo nodeId="2995585510566823983" fileName="ScopeProviderContext.java" startLine="15" startPosition="12" endLine="16" endPosition="151" />
     <scopeInfo nodeId="2995585510566823919" fileName="ScopeProviderContext.java" startLine="20" startPosition="64" endLine="21" endPosition="56" />
     <scopeInfo nodeId="2995585510566823933" fileName="ScopeProviderContext.java" startLine="24" startPosition="83" endLine="25" endPosition="70" />
     <scopeInfo nodeId="2995585510566823893" fileName="ScopeProviderContext.java" startLine="31" startPosition="38" endLine="32" endPosition="25" />

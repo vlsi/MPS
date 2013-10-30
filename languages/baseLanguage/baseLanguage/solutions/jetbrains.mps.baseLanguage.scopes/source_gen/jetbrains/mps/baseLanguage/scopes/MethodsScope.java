@@ -103,7 +103,7 @@ public class MethodsScope extends Scope {
   }
 
   private static Map<SNode, SNode> calcTypeBindings(SNode classifierType) {
-    SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
-    return ((classifier != null) ? MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) : new HashMap<SNode, SNode>());
+    SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
+    return ((classifier != null) ? MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) : new HashMap<SNode, SNode>());
   }
 }

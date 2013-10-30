@@ -529,7 +529,7 @@
     <unitInfo nodeId="8234001627574081536" fileName="typeof_PropertyCommandPart_InferenceRule.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.execution.commands.typesystem.typeof_PropertyCommandPart_InferenceRule" />
   </root>
   <root nodeRef="r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)/8294204555084580553">
-    <nodeInfo nodeId="8294204555084580574" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="22" startPosition="139" endLine="23" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8294204555084580574" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="22" startPosition="139" endLine="23" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="27" startPosition="46" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="32" startPosition="5" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="33" startPosition="130" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -542,7 +542,7 @@
     <nodeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <nodeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <scopeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="18" startPosition="57" endLine="18" endPosition="57" />
-    <scopeInfo nodeId="8294204555084580558" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="22" startPosition="139" endLine="23" endPosition="280" />
+    <scopeInfo nodeId="8294204555084580558" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="22" startPosition="139" endLine="23" endPosition="278" />
     <scopeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="27" startPosition="46" endLine="28" endPosition="77" />
     <scopeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
     <scopeInfo nodeId="8294204555084580553" fileName="check_ReportErrorStatement_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />

@@ -79,7 +79,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
   public List<SNode> getNodes(SNode node) {
     Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findGeneratorFragments_6409339300305625383", new Object[]{})));
+    SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findGeneratorFragments_6409339300305625383", new Object[]{})));
     return SetSequence.fromSet(nodes).toListSequence();
   }
 
@@ -95,7 +95,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     boolean isInterface = SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
     if (rootable || isInterface) {
       boolean isNeedRootTemplate = true;
-      for (SNode genFragment : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findGeneratorFragments_6409339300305625383", new Object[]{})) {
+      for (SNode genFragment : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findGeneratorFragments_6409339300305625383", new Object[]{})) {
         if ((AttributeOperations.getAttribute(genFragment, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null)) {
           isNeedRootTemplate = false;
           break;

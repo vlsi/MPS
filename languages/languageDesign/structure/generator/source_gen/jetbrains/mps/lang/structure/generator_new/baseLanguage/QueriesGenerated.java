@@ -381,7 +381,7 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_2225291943437352919(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
   }
 
   private static boolean isNotEmptyString(String str) {

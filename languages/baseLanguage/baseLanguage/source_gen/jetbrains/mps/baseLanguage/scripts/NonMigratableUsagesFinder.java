@@ -201,15 +201,15 @@ public class NonMigratableUsagesFinder {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
       SNode method = SNodeOperations.getAncestor(dotExpression, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((method != null)) {
-        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
       }
     }
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SNode method = SNodeOperations.getAncestor(dotExpression, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((method != null)) {
-        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), method, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.getParent(dotExpression)) {
-          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.getParent(dotExpression)) {
+          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getExpectedRetType_1239354342632", new Object[]{});
         }
       }
     }

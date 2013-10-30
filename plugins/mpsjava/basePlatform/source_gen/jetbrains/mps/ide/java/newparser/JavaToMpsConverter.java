@@ -632,13 +632,13 @@ public class JavaToMpsConverter {
     SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
 
     final String enumConstName = ((DynamicReference) ref).getResolveInfo();
-    for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
+    for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
       if (!(enumConstName.equals(BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{})))) {
         continue;
       }
 
       String enumClassCandidateName = BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_withoutLastToken_6148840541591441572", new Object[]{});
-      SNode enumClassCandidate = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, enumClassCandidateName});
+      SNode enumClassCandidate = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, enumClassCandidateName});
       if ((enumClassCandidate == null)) {
         // seems like there is no need to continue 
         // we had import of the form: import static <class>.<ourName> 
@@ -668,8 +668,8 @@ public class JavaToMpsConverter {
       return result;
     }
 
-    for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
-      SNode claz = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, SPropertyOperations.getString(onDemandImport, "tokens")});
+    for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
+      SNode claz = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, SPropertyOperations.getString(onDemandImport, "tokens")});
       if ((claz == null)) {
         continue;
       }

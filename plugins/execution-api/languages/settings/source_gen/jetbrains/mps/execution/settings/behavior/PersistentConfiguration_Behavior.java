@@ -64,11 +64,11 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
-    List<SNode> allMemebers = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "virtual_getMembers_1213877528020", new Object[]{contextNode});
+    List<SNode> allMemebers = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "virtual_getMembers_1213877528020", new Object[]{contextNode});
     if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
       return ListSequence.fromList(allMemebers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod")) || !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), it, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod")) || !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
         }
       }).toListSequence();
     }
@@ -100,12 +100,12 @@ public class PersistentConfiguration_Behavior {
 
   @Deprecated
   public static SNode call_createType_946964771156066501(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createType_1213877527970", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_4ves9l_a0a3(Object parameter_1) {

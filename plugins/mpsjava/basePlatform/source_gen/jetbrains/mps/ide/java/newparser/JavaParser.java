@@ -325,7 +325,7 @@ public class JavaParser {
       for (SNode unk : ListSequence.fromList(unknowns)) {
 
         final SNode unkNode = unk;
-        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) (Object.class)), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
         if (subst == null) {
           continue;
         }

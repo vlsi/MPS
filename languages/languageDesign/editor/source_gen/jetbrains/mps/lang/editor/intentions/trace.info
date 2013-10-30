@@ -2027,7 +2027,7 @@
     <nodeInfo nodeId="1237651470440" fileName="IndentLayoutUtil.java" startLine="73" startPosition="60" endLine="74" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238689884094" fileName="IndentLayoutUtil.java" startLine="77" startPosition="59" endLine="78" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238689884104" fileName="IndentLayoutUtil.java" startLine="79" startPosition="25" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238689993059" fileName="IndentLayoutUtil.java" startLine="82" startPosition="392" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238689993059" fileName="IndentLayoutUtil.java" startLine="82" startPosition="390" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238690000734" fileName="IndentLayoutUtil.java" startLine="84" startPosition="5" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237486188247" fileName="IndentLayoutUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IndentLayoutUtil#()V" />
     <nodeInfo nodeId="1237633972381" fileName="IndentLayoutUtil.java" startLine="34" startPosition="170" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
@@ -2052,7 +2052,7 @@
     <scopeInfo nodeId="1237566645872" fileName="IndentLayoutUtil.java" startLine="39" startPosition="108" endLine="40" endPosition="149" />
     <scopeInfo nodeId="1237563331730" fileName="IndentLayoutUtil.java" startLine="62" startPosition="111" endLine="63" endPosition="181" />
     <scopeInfo nodeId="1238689884103" fileName="IndentLayoutUtil.java" startLine="79" startPosition="25" endLine="80" endPosition="19" />
-    <scopeInfo nodeId="1238689884110" fileName="IndentLayoutUtil.java" startLine="82" startPosition="392" endLine="83" endPosition="19" />
+    <scopeInfo nodeId="1238689884110" fileName="IndentLayoutUtil.java" startLine="82" startPosition="390" endLine="83" endPosition="19" />
     <scopeInfo nodeId="1237486188247" fileName="IndentLayoutUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4361271942420983099" fileName="IndentLayoutUtil.java" startLine="44" startPosition="238" endLine="46" endPosition="107">
       <varInfo nodeId="4361271942420996796" varName="classItem" />

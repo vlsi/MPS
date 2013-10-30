@@ -98,7 +98,7 @@ public abstract class AbstractMakeService implements IMakeService {
         }
       })));
 
-      return processClusteredInput((Iterable<? extends Iterable<IResource>>) (clInput.value), scripts, controller, monitor);
+      return processClusteredInput((Iterable<? extends Iterable<IResource>>) clInput.value, scripts, controller, monitor);
     }
 
     protected IScript toScript(ScriptBuilder scriptBuilder) {

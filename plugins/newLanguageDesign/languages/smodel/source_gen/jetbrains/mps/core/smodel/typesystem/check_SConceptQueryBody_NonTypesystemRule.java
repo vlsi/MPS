@@ -25,7 +25,7 @@ public class check_SConceptQueryBody_NonTypesystemRule extends AbstractNonTypesy
     if ((SLinkOperations.getTarget(sConceptQuery, "type", true) == null)) {
       return;
     }
-    SNode bodyType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(sConceptQuery, "body", true), "virtual_getType_228266671027861783", new Object[]{});
+    SNode bodyType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(sConceptQuery, "body", true), "virtual_getType_228266671027861783", new Object[]{});
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, bodyType, "virtual_isSubtypeOf_2852142168179579064", new Object[]{SLinkOperations.getTarget(sConceptQuery, "type", true)}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

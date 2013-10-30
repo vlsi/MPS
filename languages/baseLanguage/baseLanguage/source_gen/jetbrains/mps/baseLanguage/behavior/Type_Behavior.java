@@ -57,7 +57,7 @@ public class Type_Behavior {
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     // all 'JavaType's should have getErasure() implemented 
     SNode javaType = Type_Behavior.call_getJavaType_1213877337345(thisNode);
-    return ((javaType == null) ? null : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), javaType, "virtual_getErasure_702942408396803226", new Object[]{}));
+    return ((javaType == null) ? null : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), javaType, "virtual_getErasure_702942408396803226", new Object[]{}));
   }
 
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
@@ -137,7 +137,7 @@ public class Type_Behavior {
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     SNode looseType = SNodeOperations.copyNode(thisNode);
     for (SNode varRef : SNodeOperations.getDescendants(looseType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
-      SNodeOperations.replaceWithAnother(varRef, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), varRef, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
+      SNodeOperations.replaceWithAnother(varRef, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), varRef, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
     }
     return looseType;
   }
@@ -152,7 +152,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), thisNode, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), thisNode, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
   }
 
   @Deprecated
@@ -167,7 +167,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode call_getErasure_702942408396803226(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getErasure_702942408396803226", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getErasure_702942408396803226", new Object[]{});
   }
 
   @Deprecated
@@ -182,27 +182,27 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode call_getUnboxedType_1213877337320(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getUnboxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   @Deprecated
   public static SNode call_getAbstractCreator_1213877337340(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getAbstractCreator_1213877337340", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAbstractCreator_1213877337340", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> call_getAbstractCreators_1226945293888(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getAbstractCreators_1226945293888", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_1226945293888", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> call_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});
   }
 
   @Deprecated
   public static SNode call_getJavaType_1213877337345(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getJavaType_1213877337345", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaType_1213877337345", new Object[]{});
   }
 
   @Deprecated
@@ -212,7 +212,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode call_getClassExpression_1213877337357(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getClassExpression_1213877337357", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getClassExpression_1213877337357", new Object[]{});
   }
 
   @Deprecated
@@ -222,7 +222,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode call_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
   }
 
   @Deprecated
@@ -232,7 +232,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode call_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes});
   }
 
   @Deprecated
@@ -247,7 +247,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static List<String> callSuper_getVariableSuffixes_1213877337304(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<String>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<String>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -262,7 +262,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode callSuper_getErasure_702942408396803226(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getErasure_702942408396803226", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getErasure_702942408396803226", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -277,27 +277,27 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode callSuper_getUnboxedType_1213877337320(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getUnboxedType_1213877337320", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getUnboxedType_1213877337320", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getAbstractCreator_1213877337340(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getAbstractCreator_1213877337340", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getAbstractCreator_1213877337340", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getAbstractCreators_1226945293888(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getAbstractCreators_1226945293888", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getAbstractCreators_1226945293888", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getAbstractCreators_7602110602933317830(SNode thisNode, String callerConceptFqName, SModel targetModel) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", new Class[]{SNode.class, SModel.class}, new Object[]{targetModel});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", new Class[]{SNode.class, SModel.class}, new Object[]{targetModel});
   }
 
   @Deprecated
   public static SNode callSuper_getJavaType_1213877337345(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getJavaType_1213877337345", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getJavaType_1213877337345", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -307,7 +307,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode callSuper_getClassExpression_1213877337357(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getClassExpression_1213877337357", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getClassExpression_1213877337357", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -317,7 +317,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode callSuper_createDefaultTypeExpression_3359611512358152580(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -327,7 +327,7 @@ public class Type_Behavior {
 
   @Deprecated
   public static SNode callSuper_getLooseType_5744862332972792015(SNode thisNode, String callerConceptFqName, @NotNull Set<SNode> visitedTypes) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getLooseType_5744862332972792015", new Class[]{SNode.class, Set.class}, new Object[]{visitedTypes});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getLooseType_5744862332972792015", new Class[]{SNode.class, Set.class}, new Object[]{visitedTypes});
   }
 
   @Deprecated

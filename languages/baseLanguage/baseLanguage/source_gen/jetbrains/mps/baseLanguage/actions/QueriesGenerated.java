@@ -175,7 +175,7 @@ public class QueriesGenerated {
         if ((originalExpression != null)) {
           SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
           if ((expectedType != null)) {
-            SNode abstractCreator = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), expectedType, "virtual_getAbstractCreator_1213877337340", new Object[]{});
+            SNode abstractCreator = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), expectedType, "virtual_getAbstractCreator_1213877337340", new Object[]{});
             if ((abstractCreator != null)) {
               SLinkOperations.setTarget(_context.getNewNode(), "creator", abstractCreator, true);
             }
@@ -523,9 +523,9 @@ public class QueriesGenerated {
                 }
                 SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                if (!(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), _context.getParentNode()), "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
+                if (!(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), _context.getParentNode()), "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                   SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-                  while (concept != null && !(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), concept, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
+                  while (concept != null && !(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), concept, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                     concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
                   }
                   SLinkOperations.setTarget(thisExpression, "classConcept", concept, false);
@@ -561,7 +561,7 @@ public class QueriesGenerated {
             }
           }).first();
           if (parentFunction != null) {
-            return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), parentFunction, "virtual_getParameters_1213877374450", new Object[]{});
+            return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentFunction, "virtual_getParameters_1213877374450", new Object[]{});
           } else {
             return ListSequence.fromList(new ArrayList<SNode>());
           }
@@ -1014,7 +1014,7 @@ public class QueriesGenerated {
                       return SPropertyOperations.getBoolean(it, "isAbstract");
                     }
                   }).toListSequence();
-                  for (SNode baseMethodDeclaration : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})) {
+                  for (SNode baseMethodDeclaration : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})) {
                     ListSequence.fromList(methodsToImplement).addElement(SNodeOperations.cast(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
                   }
                 } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -1490,7 +1490,7 @@ public class QueriesGenerated {
               if ((originalExpression != null)) {
                 SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
                 if ((expectedType != null)) {
-                  return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), expectedType, "virtual_getAbstractCreators_7602110602933317830", new Object[]{_context.getModel()});
+                  return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), expectedType, "virtual_getAbstractCreators_7602110602933317830", new Object[]{_context.getModel()});
                 }
               }
             }

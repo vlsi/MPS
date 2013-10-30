@@ -93,7 +93,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_n7yf1e_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), "name");
+        return SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}), "name");
       }
 
       public void setText(String s) {

@@ -23,7 +23,7 @@ public class ShowBrokenReferences_Behavior {
   public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SReference> brokenReferences = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getNodes_5207260697411458163", new Object[]{context})).translate(new ITranslator2<SNode, SReference>() {
+        Iterable<SReference> brokenReferences = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getNodes_5207260697411458163", new Object[]{context})).translate(new ITranslator2<SNode, SReference>() {
           public Iterable<SReference> translate(SNode it) {
             return SNodeOperations.getReferences(it);
           }

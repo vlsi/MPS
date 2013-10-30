@@ -32,8 +32,8 @@ public class EnumClass_Behavior {
   }
 
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
-    List<SNode> extended = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
-    SNode enumType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getThisType_3305065273710880775", new Object[]{});
+    List<SNode> extended = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
+    SNode enumType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getThisType_3305065273710880775", new Object[]{});
     if (!(ListSequence.fromList(extended).contains(enumType))) {
       // todo: WTF??? 
       ListSequence.fromList(extended).addElement(enumType);
@@ -42,7 +42,7 @@ public class EnumClass_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMembers_1213877531970", new Object[]{});
+    List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMembers_1213877531970", new Object[]{});
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)));
     return members;
   }

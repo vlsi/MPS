@@ -359,7 +359,7 @@
     <nodeInfo nodeId="1360822408787142224" fileName="ReferencesFinder.java" startLine="128" startPosition="5" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925457699" fileName="ReferencesFinder.java" startLine="132" startPosition="90" endLine="133" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1961512995692885954" fileName="ReferencesFinder.java" startLine="136" startPosition="55" endLine="137" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1961512995692886080" fileName="ReferencesFinder.java" startLine="141" startPosition="53" endLine="142" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1961512995692886080" fileName="ReferencesFinder.java" startLine="141" startPosition="53" endLine="142" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925457708" fileName="ReferencesFinder.java" startLine="144" startPosition="86" endLine="145" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1961512995692886205" fileName="ReferencesFinder.java" startLine="146" startPosition="55" endLine="147" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1961512995692907304" fileName="ReferencesFinder.java" startLine="148" startPosition="35" endLine="149" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -417,7 +417,7 @@
     <scopeInfo nodeId="1360822408787142208" fileName="ReferencesFinder.java" startLine="121" startPosition="35" endLine="122" endPosition="25" />
     <scopeInfo nodeId="1360822408787142219" fileName="ReferencesFinder.java" startLine="126" startPosition="15" endLine="127" endPosition="21" />
     <scopeInfo nodeId="1961512995692885951" fileName="ReferencesFinder.java" startLine="136" startPosition="55" endLine="137" endPosition="32" />
-    <scopeInfo nodeId="1961512995692886077" fileName="ReferencesFinder.java" startLine="141" startPosition="53" endLine="142" endPosition="66" />
+    <scopeInfo nodeId="1961512995692886077" fileName="ReferencesFinder.java" startLine="141" startPosition="53" endLine="142" endPosition="64" />
     <scopeInfo nodeId="1961512995692907174" fileName="ReferencesFinder.java" startLine="148" startPosition="35" endLine="149" endPosition="24" />
     <scopeInfo nodeId="8294989614925457785" fileName="ReferencesFinder.java" startLine="153" startPosition="15" endLine="154" endPosition="21" />
     <scopeInfo nodeId="8294989614925457974" fileName="ReferencesFinder.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />

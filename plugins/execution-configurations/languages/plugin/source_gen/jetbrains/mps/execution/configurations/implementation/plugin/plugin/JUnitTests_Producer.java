@@ -219,7 +219,7 @@ public class JUnitTests_Producer {
       setSourceElement(new MPSPsiElement(source));
       boolean containsTest = false;
       for (SNode testCase : source) {
-        if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), testCase, "virtual_getTestMethods_2148145109766218395", new Object[]{})).isNotEmpty()) {
+        if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), testCase, "virtual_getTestMethods_2148145109766218395", new Object[]{})).isNotEmpty()) {
           containsTest = true;
           break;
         }

@@ -16,7 +16,7 @@ public class typeOf_ConceptFunctionParameter_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode conceptFunctionParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), conceptFunctionParameter, "virtual_getType_2443692612523876968", new Object[]{});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptFunctionParameter, "virtual_getType_2443692612523876968", new Object[]{});
     if ((type != null)) {
       {
         SNode _nodeToCheck_1029348928467 = conceptFunctionParameter;

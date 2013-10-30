@@ -312,11 +312,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
-    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) (Object.class)), methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
   }
 
   public Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
-    Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
+    Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
     assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Object[]{});
     return availableMethodDeclarations;
   }

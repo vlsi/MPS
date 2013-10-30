@@ -48,11 +48,11 @@ public class ModuleReferenceExpression_Behavior {
 
   @Deprecated
   public static List<SModule> call_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
-    return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) (Object.class)), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
+    return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
   }
 
   @Deprecated
   public static List<SModule> callSuper_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName, IScope scope) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SModule>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", new Class[]{SNode.class, IScope.class}, new Object[]{scope});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SModule>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", new Class[]{SNode.class, IScope.class}, new Object[]{scope});
   }
 }

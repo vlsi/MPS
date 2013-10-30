@@ -161,7 +161,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
 
     for (SNode classifier : classifiers) {
       try {
-        ListSequence.fromList(result).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IClassifierType", "call_getMembers_7405920559687277275", new Object[]{})));
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IClassifierType", "call_getMembers_7405920559687277275", new Object[]{})));
       } catch (Exception e) {
         System.out.println(e);
       }

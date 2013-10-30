@@ -107,9 +107,9 @@
     <nodeInfo nodeId="66132694723506363" fileName="MethodDeclarationsFixer.java" startLine="306" startPosition="9" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2235828751986251191" fileName="MethodDeclarationsFixer.java" startLine="307" startPosition="0" endLine="308" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="66132694723504106" fileName="MethodDeclarationsFixer.java" startLine="308" startPosition="206" endLine="309" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2235828751986251372" fileName="MethodDeclarationsFixer.java" startLine="314" startPosition="64" endLine="315" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1397613075471492797" fileName="MethodDeclarationsFixer.java" startLine="318" startPosition="86" endLine="319" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1397613075471492807" fileName="MethodDeclarationsFixer.java" startLine="319" startPosition="234" endLine="320" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2235828751986251372" fileName="MethodDeclarationsFixer.java" startLine="314" startPosition="64" endLine="315" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1397613075471492797" fileName="MethodDeclarationsFixer.java" startLine="318" startPosition="86" endLine="319" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1397613075471492807" fileName="MethodDeclarationsFixer.java" startLine="319" startPosition="232" endLine="320" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="2235828751986251384" fileName="MethodDeclarationsFixer.java" startLine="320" startPosition="261" endLine="321" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2235828751986251399" fileName="MethodDeclarationsFixer.java" startLine="324" startPosition="93" endLine="325" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="683976173696109127" fileName="MethodDeclarationsFixer.java" startLine="326" startPosition="88" endLine="327" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -264,7 +264,7 @@
     <scopeInfo nodeId="2235828751986251226" fileName="MethodDeclarationsFixer.java" startLine="296" startPosition="51" endLine="297" endPosition="123" />
     <scopeInfo nodeId="2235828751986251213" fileName="MethodDeclarationsFixer.java" startLine="301" startPosition="53" endLine="302" endPosition="125" />
     <scopeInfo nodeId="66132694723506274" fileName="MethodDeclarationsFixer.java" startLine="304" startPosition="36" endLine="305" endPosition="116" />
-    <scopeInfo nodeId="2235828751986251371" fileName="MethodDeclarationsFixer.java" startLine="314" startPosition="64" endLine="315" endPosition="174" />
+    <scopeInfo nodeId="2235828751986251371" fileName="MethodDeclarationsFixer.java" startLine="314" startPosition="64" endLine="315" endPosition="172" />
     <scopeInfo nodeId="683976173696109100" fileName="MethodDeclarationsFixer.java" startLine="326" startPosition="88" endLine="327" endPosition="55" />
     <scopeInfo nodeId="683976173696109062" fileName="MethodDeclarationsFixer.java" startLine="332" startPosition="37" endLine="333" endPosition="67" />
     <scopeInfo nodeId="683976173696108882" fileName="MethodDeclarationsFixer.java" startLine="336" startPosition="48" endLine="337" endPosition="26" />
@@ -1010,7 +1010,7 @@
     </scopeInfo>
     <unitInfo nodeId="8432634623182578876" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="181" endLine="53" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$1" />
     <unitInfo nodeId="8432634623182579005" fileName="OverrideMethodsChecker.java" startLine="79" startPosition="140" endLine="83" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$2" />
-    <unitInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="258" endLine="131" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$3" />
+    <unitInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="256" endLine="131" endPosition="5" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$3" />
     <unitInfo nodeId="8432634623182579483" fileName="OverrideMethodsChecker.java" startLine="164" startPosition="144" endLine="168" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$5" />
     <unitInfo nodeId="8432634623182579422" fileName="OverrideMethodsChecker.java" startLine="173" startPosition="82" endLine="177" endPosition="9" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$4" />
     <unitInfo nodeId="8432634623182578830" fileName="OverrideMethodsChecker.java" startLine="38" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" />

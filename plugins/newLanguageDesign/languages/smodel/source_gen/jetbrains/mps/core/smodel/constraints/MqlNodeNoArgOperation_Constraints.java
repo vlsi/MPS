@@ -34,7 +34,7 @@ public class MqlNodeNoArgOperation_Constraints extends BaseConstraintsDescriptor
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.core.query.structure.MqlDotExpression") && SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.smodel.structure.MqlNodeType");
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.core.query.structure.MqlDotExpression") && SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.smodel.structure.MqlNodeType");
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a3118036-be6c-4f13-a069-b1078aa590d5(jetbrains.mps.core.smodel.constraints)", "3868630583607364287");

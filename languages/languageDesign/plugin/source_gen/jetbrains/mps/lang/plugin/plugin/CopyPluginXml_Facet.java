@@ -80,7 +80,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ehksfb_a0a = null;
-          final Iterable<TResource> input = (Iterable<TResource>) ((Iterable) rawInput);
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);
@@ -90,7 +90,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                   String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
 
                   if (dest != null) {
-                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) (tres.module())).expandPath(dest));
+                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) tres.module()).expandPath(dest));
                     if (destDir.exists() && destDir.isDirectory()) {
                       final IFile metaInf = destDir.getDescendant("META-INF");
                       if (!(metaInf.exists()) || metaInf.isDirectory()) {

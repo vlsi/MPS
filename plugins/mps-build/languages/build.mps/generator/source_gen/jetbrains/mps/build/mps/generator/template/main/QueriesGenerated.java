@@ -767,7 +767,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_4101476690146989263(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "project", false), "plugins", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), it, "virtual_getImportedLibraries_4101476690142937969", new Object[]{})).contains(BuildMPSPlugin_Behavior.call_getMpsLibrary_4101476690147447822(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMPSPlugin")))));
+        return Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getImportedLibraries_4101476690142937969", new Object[]{})).contains(BuildMPSPlugin_Behavior.call_getMpsLibrary_4101476690147447822(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMPSPlugin")))));
       }
     }) != null;
   }
@@ -801,7 +801,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8654221991637113346(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getParent_8654221991637145399", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getParent_8654221991637145399", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_8654221991637263395(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -809,7 +809,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2540145662854694242(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getParent_8654221991637145399", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "module", false), "path", true), "virtual_getParent_8654221991637145399", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_2540145662854694674(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1501,7 +1501,7 @@ public class QueriesGenerated {
       SNode current = SNodeOperations.as(path, "jetbrains.mps.build.structure.BuildRelativePath");
       if (current != null) {
         suffix.append("/").append(BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{null}));
-        current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
+        current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
       }
       SNode containingRoot = SNodeOperations.getContainingRoot(path);
       while (current != null) {
@@ -1511,7 +1511,7 @@ public class QueriesGenerated {
         }
 
         suffix.insert(0, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getLastSegment_1368030936106771141", new Object[]{null})).insert(0, "/");
-        current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
+        current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
       }
     }
 

@@ -21,7 +21,7 @@ public class OfConceptSelector_Behavior {
       return null;
     }
 
-    SNode concept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "argument", true), "virtual_getConcept_3868630583617739768", new Object[]{});
+    SNode concept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "argument", true), "virtual_getConcept_3868630583617739768", new Object[]{});
     if ((concept == null)) {
       return colType;
     } else {

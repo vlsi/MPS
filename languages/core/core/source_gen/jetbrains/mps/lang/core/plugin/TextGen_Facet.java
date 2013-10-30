@@ -110,7 +110,7 @@ public class TextGen_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_21gswx_a0a = null;
-          final Iterable<GResource> input = (Iterable<GResource>) ((Iterable) rawInput);
+          final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               long textGenStartTime = System.currentTimeMillis();
@@ -461,7 +461,7 @@ public class TextGen_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_21gswx_a0b = null;
-          final Iterable<GResource> input = (Iterable<GResource>) ((Iterable) rawInput);
+          final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               for (final GResource resource : Sequence.fromIterable(input)) {

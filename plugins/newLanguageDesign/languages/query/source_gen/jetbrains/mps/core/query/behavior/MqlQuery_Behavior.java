@@ -18,7 +18,7 @@ public class MqlQuery_Behavior {
   }
 
   public static SNode call_getType_2059702675525965906(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static Object virtual_evaluate_1671449901154581077(SNode thisNode, EvaluationEnvironment env, EvaluationContext context, Object[] arguments) {

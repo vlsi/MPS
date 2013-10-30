@@ -15,7 +15,7 @@ public class MqlThis_Behavior {
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.core.query.structure.MqlThisProvider", false, false);
     if (ancestor != null) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), ancestor, "virtual_getThisType_4125821269968916020", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ancestor, "virtual_getThisType_4125821269968916020", new Object[]{});
     }
     return null;
   }

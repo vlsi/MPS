@@ -420,7 +420,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     }
 
     public Map<String, Integer> getReadAccessMap() throws FileNotFoundException, IOException {
-      InputStream stream = ((Object) (this)).getClass().getResourceAsStream("/SNodeMethodReads.xml");
+      InputStream stream = ((Object) this).getClass().getResourceAsStream("/SNodeMethodReads.xml");
       XMLDecoder xmlDecoder = new XMLDecoder(stream);
       Map<String, Integer> map = (Map<String, Integer>) xmlDecoder.readObject();
       stream.close();
@@ -429,7 +429,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     }
 
     public Set<String> getPreviousISNodeMethodsNames() throws FileNotFoundException, IOException {
-      InputStream stream = ((Object) (this)).getClass().getResourceAsStream("/SNodeContract.xml");
+      InputStream stream = ((Object) this).getClass().getResourceAsStream("/SNodeContract.xml");
       XMLDecoder xmlDecoder = new XMLDecoder(stream);
       Set<String> set = (Set<String>) xmlDecoder.readObject();
       xmlDecoder.close();

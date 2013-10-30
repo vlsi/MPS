@@ -62,7 +62,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     for (SNode cref : ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
       SNode type = SLinkOperations.getTarget(SLinkOperations.getTarget(cref, "componentDeclaration", false), "type", true);
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+        type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
       }
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cref, "value", true);

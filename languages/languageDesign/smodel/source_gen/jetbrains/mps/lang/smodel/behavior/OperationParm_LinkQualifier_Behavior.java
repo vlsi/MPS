@@ -34,11 +34,11 @@ public class OperationParm_LinkQualifier_Behavior {
 
   @Deprecated
   public static Iterable<SNode> call_getLinkAccessScope_2906110183022538865(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
   }
 
   @Deprecated
   public static Iterable<SNode> callSuper_getLinkAccessScope_2906110183022538865(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", new Class[]{SNode.class}, new Object[]{});
   }
 }

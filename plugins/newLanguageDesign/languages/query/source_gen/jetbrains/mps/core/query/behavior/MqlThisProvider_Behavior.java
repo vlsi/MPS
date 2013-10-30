@@ -13,11 +13,11 @@ public class MqlThisProvider_Behavior {
 
   @Deprecated
   public static SNode call_getThisType_4125821269968916020(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getThisType_4125821269968916020", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_4125821269968916020", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getThisType_4125821269968916020(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlThisProvider"), callerConceptFqName, "virtual_getThisType_4125821269968916020", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlThisProvider"), callerConceptFqName, "virtual_getThisType_4125821269968916020", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -68,7 +68,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
-      IObjectValueProxy node = (IObjectValueProxy) (value);
+      IObjectValueProxy node = (IObjectValueProxy) value;
 
       result.add(new SNodeWatchables.MyWatchable_text(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.invokeMethod("getPresentation", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
       result.add(new SNodeWatchables.MyWatchable_id(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
@@ -114,7 +114,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
-      IObjectValueProxy node = (IObjectValueProxy) (value);
+      IObjectValueProxy node = (IObjectValueProxy) value;
 
       IObjectValueProxy containingRole = ((IObjectValueProxy) node.getFieldValue("myRoleInParent"));
       if (!(ProxyEqualsUtil.javaEquals(containingRole, null))) {

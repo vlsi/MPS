@@ -311,7 +311,7 @@
     <nodeInfo nodeId="946964771156067159" fileName="EditorOperationCall_Constraints.java" startLine="50" startPosition="177" endLine="51" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="946964771156067169" fileName="EditorOperationCall_Constraints.java" startLine="52" startPosition="114" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="203908296139531197" fileName="EditorOperationCall_Constraints.java" startLine="54" startPosition="13" endLine="55" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="203908296139531247" fileName="EditorOperationCall_Constraints.java" startLine="57" startPosition="47" endLine="58" endPosition="473" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="203908296139531247" fileName="EditorOperationCall_Constraints.java" startLine="57" startPosition="47" endLine="58" endPosition="469" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156067148" fileName="EditorOperationCall_Constraints.java" startLine="64" startPosition="63" endLine="65" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156067148" fileName="EditorOperationCall_Constraints.java" startLine="69" startPosition="7" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156067148" fileName="EditorOperationCall_Constraints.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_ow8wt3_a0a1a0a0a1a0b0a1a1" />
@@ -329,7 +329,7 @@
     <scopeInfo nodeId="946964771156067148" fileName="EditorOperationCall_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="76" />
     <scopeInfo nodeId="946964771156067148" fileName="EditorOperationCall_Constraints.java" startLine="40" startPosition="44" endLine="41" endPosition="20" />
     <scopeInfo nodeId="946964771156067168" fileName="EditorOperationCall_Constraints.java" startLine="52" startPosition="114" endLine="53" endPosition="75" />
-    <scopeInfo nodeId="203908296139531237" fileName="EditorOperationCall_Constraints.java" startLine="57" startPosition="47" endLine="58" endPosition="473" />
+    <scopeInfo nodeId="203908296139531237" fileName="EditorOperationCall_Constraints.java" startLine="57" startPosition="47" endLine="58" endPosition="469" />
     <scopeInfo nodeId="946964771156067148" fileName="EditorOperationCall_Constraints.java" startLine="64" startPosition="63" endLine="65" endPosition="58" />
     <scopeInfo nodeId="946964771156067148" fileName="EditorOperationCall_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="203908296139531236" fileName="EditorOperationCall_Constraints.java" startLine="57" startPosition="0" endLine="60" endPosition="0">

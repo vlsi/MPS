@@ -51,14 +51,14 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         for (SNode p : SLinkOperations.getTargets(mtd, "parameter", true)) {
           SNode pt = SLinkOperations.getTarget(p, "type", true);
           if (SNodeOperations.isInstanceOf(pt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-            pt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(pt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+            pt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(pt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
           }
           ListSequence.fromList(paramTypes).addElement(pt);
         }
 
         SNode rt = SLinkOperations.getTarget(mtd, "returnType", true);
         if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-          rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+          rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
         }
         supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0e0c0b(paramTypes, rt));
       }

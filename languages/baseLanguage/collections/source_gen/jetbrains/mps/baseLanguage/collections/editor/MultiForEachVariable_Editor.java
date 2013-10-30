@@ -66,7 +66,7 @@ public class MultiForEachVariable_Editor extends DefaultNodeEditor {
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
-        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", new Object[]{})));
+        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", new Object[]{})));
       }
       return postfixes;
     }

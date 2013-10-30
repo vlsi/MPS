@@ -19,11 +19,11 @@ public class IStatisticsTarget_Behavior {
 
   @Deprecated
   public static Iterable<Tuples._2<String, Integer>> call_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) (Object.class)), thisNode, "virtual_getStat_7490254719527247609", new Object[]{context});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), thisNode, "virtual_getStat_7490254719527247609", new Object[]{context});
   }
 
   @Deprecated
   public static Iterable<Tuples._2<String, Integer>> callSuper_getStat_7490254719527247609(SNode thisNode, String callerConceptFqName, ConsoleContext context) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget"), callerConceptFqName, "virtual_getStat_7490254719527247609", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget"), callerConceptFqName, "virtual_getStat_7490254719527247609", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
   }
 }

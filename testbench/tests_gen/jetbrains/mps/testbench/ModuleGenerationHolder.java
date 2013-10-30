@@ -290,7 +290,7 @@ public class ModuleGenerationHolder {
       }
     }).translate(new ITranslator2<SModule, SModule>() {
       public Iterable<SModule> translate(SModule it) {
-        return (List<SModule>) ((List) ((Language) it).getGenerators());
+        return (List<SModule>) (List) ((Language) it).getGenerators();
       }
     }));
   }

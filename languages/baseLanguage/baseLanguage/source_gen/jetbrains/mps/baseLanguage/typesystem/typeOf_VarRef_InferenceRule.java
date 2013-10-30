@@ -40,13 +40,13 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         return;
       }
 
-      SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), contextClassifier, "virtual_getThisType_3305065273710880775", new Object[]{});
+      SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifier, "virtual_getThisType_3305065273710880775", new Object[]{});
       SNode fieldType = SLinkOperations.getTarget(fieldDecl, "type", true);
       if (SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
         Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
         BehaviorReflection.invokeVirtual(Void.class, thisType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
         BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
-        fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+        fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
       }
       {
         SNode _nodeToCheck_1029348928467 = varRef;

@@ -38,10 +38,10 @@ public class OverrideConceptMethodsHelper {
     int index = (myContextMethod != null && SNodeOperations.getParent(myContextMethod) == myClassConcept ? ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1 : -1);
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
-      SNode method = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept}), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
+      SNode method = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept}), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
       SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      SLinkOperations.setTarget(method, "overriddenMethod", BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}), false);
+      SLinkOperations.setTarget(method, "overriddenMethod", BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}), false);
       SPropertyOperations.set(method, "isVirtual", "" + (false));
 
       if (index != -1) {
@@ -65,7 +65,7 @@ public class OverrideConceptMethodsHelper {
 
     SNode defaultExpr;
     if (isInterfaceMethod) {
-      defaultExpr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
+      defaultExpr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
     } else {
       SNode sourceMethodConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false);
       if (SNodeOperations.isInstanceOf(sourceMethodConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
@@ -76,7 +76,7 @@ public class OverrideConceptMethodsHelper {
           return _quotation_createNode_7wts1u_a0a0a0a2a0e0g(it);
         }
       });
-      defaultExpr = _quotation_createNode_7wts1u_a0d0a4a6(sourceMethodConcept, BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}), Sequence.fromIterable(paramList).toListSequence());
+      defaultExpr = _quotation_createNode_7wts1u_a0d0a4a6(sourceMethodConcept, BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}), Sequence.fromIterable(paramList).toListSequence());
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {

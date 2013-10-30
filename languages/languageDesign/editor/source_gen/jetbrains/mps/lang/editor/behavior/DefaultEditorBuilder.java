@@ -32,7 +32,7 @@ public class DefaultEditorBuilder {
 
   public DefaultEditorBuilder(SNode node) {
     editorNode = node;
-    conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
+    conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
   }
 
   public void buildStatementLike() {

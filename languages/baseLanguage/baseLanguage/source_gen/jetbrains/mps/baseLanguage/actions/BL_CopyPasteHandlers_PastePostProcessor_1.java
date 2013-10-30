@@ -53,7 +53,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
         }
 
         for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
-          if (Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), nextClassConcept, "virtual_getThisType_7405920559687254782", new Object[]{}), pastedNode)).where(new IWhereFilter<SNode>() {
+          if (Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nextClassConcept, "virtual_getThisType_7405920559687254782", new Object[]{}), pastedNode)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.getString(it, "name").equals(resolveInfo);
             }

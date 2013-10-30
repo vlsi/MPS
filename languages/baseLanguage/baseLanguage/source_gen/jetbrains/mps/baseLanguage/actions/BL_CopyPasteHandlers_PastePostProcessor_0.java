@@ -19,9 +19,9 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
   public void postProcesNode(SNode pastedNode) {
     // todo: not working for IVariableReference. Unify and fix it. 
     if (Scope.parent(pastedNode) != null) {
-      if (Scope.getScope(Scope.parent(pastedNode), pastedNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}))) {
+      if (Scope.getScope(Scope.parent(pastedNode), pastedNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}))) {
         SNode variableReference = SNodeFactoryOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.VariableReference");
-        SLinkOperations.setTarget(variableReference, "variableDeclaration", SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), false);
+        SLinkOperations.setTarget(variableReference, "variableDeclaration", SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), pastedNode, "virtual_getVariable_1023687332192481693", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), false);
       }
     }
   }

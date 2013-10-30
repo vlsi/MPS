@@ -24,7 +24,7 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) (Object.class)), thisNode, "jetbrains.mps.lang.core.structure.BaseConcept", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
+    List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.core.structure.BaseConcept", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     return markIcons;
@@ -58,7 +58,7 @@ public class EnumConstantDeclaration_Behavior {
 
   @Deprecated
   public static List<Icon> call_getMarkIcons_5039675756633083396(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) (Object.class)), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
   }
 
   @Deprecated
@@ -78,7 +78,7 @@ public class EnumConstantDeclaration_Behavior {
 
   @Deprecated
   public static List<Icon> callSuper_getMarkIcons_5039675756633083396(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

@@ -41,7 +41,7 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
     if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")) {
-      if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
         return;
       }
 

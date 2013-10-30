@@ -77,7 +77,7 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
 
             Set<String> names = SetSequence.fromSet(new HashSet<String>());
             while (classifier != null) {
-              Iterable<SNode> methods = Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getEnclosingNode());
+              Iterable<SNode> methods = Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getEnclosingNode());
 
               for (SNode method : methods) {
                 if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {

@@ -32,7 +32,7 @@ public class CellUtil {
   }
 
   public static SNode getConceptPropertyDeclaration(SNode node, final String conceptPropertyName) {
-    return ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getConceptPropertyDeclarations_1213877394562", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getConceptPropertyDeclarations_1213877394562", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return conceptPropertyName.equals(SPropertyOperations.getString(it, "name"));
       }

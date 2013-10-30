@@ -1544,7 +1544,7 @@
     <nodeInfo nodeId="7376433222636453427" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="115" startPosition="129" endLine="116" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1239463555272" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="116" startPosition="51" endLine="117" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239463555276" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="117" startPosition="26" endLine="118" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239463555284" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="119" startPosition="29" endLine="120" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1239463555284" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="119" startPosition="29" endLine="120" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239463555295" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="121" startPosition="14" endLine="122" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7376433222636454387" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="123" startPosition="7" endLine="124" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7376433222636454287" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="124" startPosition="45" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1584,7 +1584,7 @@
     <scopeInfo nodeId="1239463226387" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" />
     <scopeInfo nodeId="1240400933908" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="66" startPosition="111" endLine="67" endPosition="57" />
     <scopeInfo nodeId="1239463516032" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="76" startPosition="39" endLine="77" endPosition="33" />
-    <scopeInfo nodeId="1239463555283" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="119" startPosition="29" endLine="120" endPosition="169" />
+    <scopeInfo nodeId="1239463555283" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="119" startPosition="29" endLine="120" endPosition="167" />
     <scopeInfo nodeId="1239463555294" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="121" startPosition="14" endLine="122" endPosition="64" />
     <scopeInfo nodeId="1239463555304" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="126" startPosition="64" endLine="127" endPosition="94" />
     <scopeInfo nodeId="8856861289654164814" fileName="NamedTupleComponentDeclaration_Editor.java" startLine="50" startPosition="89" endLine="52" endPosition="22">

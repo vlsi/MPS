@@ -22,7 +22,7 @@ public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_
   }
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode attr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(operation, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
+    SNode attr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(operation, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{});
     if (AttributeDesignTimeOperations.isMultipleAttribute(attr) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")) {
       {
         SNode _nodeToCheck_1029348928467 = operation;

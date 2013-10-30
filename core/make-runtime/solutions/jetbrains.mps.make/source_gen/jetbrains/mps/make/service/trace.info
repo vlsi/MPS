@@ -22,7 +22,7 @@
     <nodeInfo nodeId="4671800353872688670" fileName="AbstractMakeService.java" startLine="92" startPosition="49" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688682" fileName="AbstractMakeService.java" startLine="96" startPosition="50" endLine="97" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688687" fileName="AbstractMakeService.java" startLine="99" startPosition="11" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4671800353872688688" fileName="AbstractMakeService.java" startLine="100" startPosition="0" endLine="101" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872688688" fileName="AbstractMakeService.java" startLine="100" startPosition="0" endLine="101" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7260781342054441601" fileName="AbstractMakeService.java" startLine="104" startPosition="61" endLine="105" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688476" fileName="AbstractMakeService.java" startLine="109" startPosition="160" endLine="110" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4671800353872688408" fileName="AbstractMakeService.java" startLine="110" startPosition="41" endLine="111" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -130,7 +130,7 @@
     <scopeInfo nodeId="4671800353872688597" fileName="AbstractMakeService.java" startLine="69" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="4671800353872688597" varName="langs" />
     </scopeInfo>
-    <scopeInfo nodeId="4671800353872688534" fileName="AbstractMakeService.java" startLine="49" startPosition="192" endLine="101" endPosition="124">
+    <scopeInfo nodeId="4671800353872688534" fileName="AbstractMakeService.java" startLine="49" startPosition="192" endLine="101" endPosition="122">
       <varInfo nodeId="4671800353872688536" varName="clInput" />
       <varInfo nodeId="4671800353872688590" varName="scriptBuilders" />
       <varInfo nodeId="4671800353872688660" varName="scripts" />

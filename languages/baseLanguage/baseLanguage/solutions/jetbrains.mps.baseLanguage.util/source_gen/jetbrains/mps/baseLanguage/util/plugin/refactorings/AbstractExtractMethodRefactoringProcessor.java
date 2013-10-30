@@ -59,7 +59,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
       return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
     }
     if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
-      return TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{}), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
+      return TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Object[]{}), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     }
     return null;
   }

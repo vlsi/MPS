@@ -35,7 +35,7 @@ public class typeof_BaseMappingRule_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1200922039515", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_dxi99s_a0b0a0b(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), nodeToCheck, "virtual_getTemplateType_1213877498511", new Object[]{})), (SNode) _quotation_createNode_dxi99s_a0b0a0b_0(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "labelDeclaration", false), "targetConcept", false)), false, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_dxi99s_a0b0a0b(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getTemplateType_1213877498511", new Object[]{})), (SNode) _quotation_createNode_dxi99s_a0b0a0b_0(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "labelDeclaration", false), "targetConcept", false)), false, false, _info_12389875345);
       }
     }
   }

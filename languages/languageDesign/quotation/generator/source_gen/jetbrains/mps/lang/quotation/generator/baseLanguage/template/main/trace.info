@@ -4747,7 +4747,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/429601079676709776">
     <nodeInfo nodeId="429601079676781348" fileName="QueriesGenerated.java" startLine="125" startPosition="153" endLine="126" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="429601079676781982" fileName="QueriesGenerated.java" startLine="129" startPosition="153" endLine="130" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="429601079676781982" fileName="QueriesGenerated.java" startLine="129" startPosition="153" endLine="130" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="429601079676785701" fileName="QueriesGenerated.java" startLine="133" startPosition="153" endLine="134" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="429601079676786581" fileName="QueriesGenerated.java" startLine="137" startPosition="153" endLine="138" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="429601079676786264" fileName="QueriesGenerated.java" startLine="141" startPosition="153" endLine="142" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6774,7 +6774,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="249" startPosition="110" endLine="2406" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="248" startPosition="0" endLine="2409" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="429601079676781347" fileName="QueriesGenerated.java" startLine="125" startPosition="153" endLine="126" endPosition="174" />
-    <scopeInfo nodeId="429601079676781981" fileName="QueriesGenerated.java" startLine="129" startPosition="153" endLine="130" endPosition="93" />
+    <scopeInfo nodeId="429601079676781981" fileName="QueriesGenerated.java" startLine="129" startPosition="153" endLine="130" endPosition="91" />
     <scopeInfo nodeId="429601079676785700" fileName="QueriesGenerated.java" startLine="133" startPosition="153" endLine="134" endPosition="115" />
     <scopeInfo nodeId="429601079676786580" fileName="QueriesGenerated.java" startLine="137" startPosition="153" endLine="138" endPosition="115" />
     <scopeInfo nodeId="429601079676786263" fileName="QueriesGenerated.java" startLine="141" startPosition="153" endLine="142" endPosition="115" />

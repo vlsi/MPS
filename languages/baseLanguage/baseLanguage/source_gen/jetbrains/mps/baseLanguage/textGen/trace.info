@@ -642,7 +642,7 @@
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="47" startPosition="49" endLine="48" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="50" startPosition="9" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="53" startPosition="7" endLine="54" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="55" startPosition="13" endLine="56" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="55" startPosition="13" endLine="56" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="58" startPosition="49" endLine="59" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="61" startPosition="9" endLine="62" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -669,7 +669,7 @@
     <scopeInfo nodeId="1237556329188" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="39" startPosition="21" endLine="40" endPosition="25" />
     <scopeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="44" startPosition="13" endLine="45" endPosition="232" />
     <scopeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="47" startPosition="49" endLine="48" endPosition="88" />
-    <scopeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="55" startPosition="13" endLine="56" endPosition="255" />
+    <scopeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="55" startPosition="13" endLine="56" endPosition="253" />
     <scopeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="58" startPosition="49" endLine="59" endPosition="85" />
     <scopeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="23" startPosition="44" endLine="25" endPosition="58" />
     <scopeInfo nodeId="2580416627845164852" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="35" startPosition="74" endLine="37" endPosition="156" />
@@ -1240,7 +1240,7 @@
     <nodeInfo nodeId="1237463992862" fileName="CatchClause_TextGen.java" startLine="26" startPosition="25" endLine="27" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236684911349" fileName="CatchClause_TextGen.java" startLine="27" startPosition="151" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="30" startPosition="7" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="35" startPosition="49" endLine="36" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="38" startPosition="9" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1256,7 +1256,7 @@
     <scopeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="20" startPosition="44" endLine="21" endPosition="58" />
     <scopeInfo nodeId="1237463992173" fileName="CatchClause_TextGen.java" startLine="23" startPosition="39" endLine="24" endPosition="151" />
     <scopeInfo nodeId="1237463992862" fileName="CatchClause_TextGen.java" startLine="26" startPosition="25" endLine="27" endPosition="151" />
-    <scopeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="255" />
+    <scopeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="253" />
     <scopeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="35" startPosition="49" endLine="36" endPosition="85" />
     <scopeInfo nodeId="1237463992173" fileName="CatchClause_TextGen.java" startLine="22" startPosition="5" endLine="25" endPosition="23" />
     <scopeInfo nodeId="1236684911349" fileName="CatchClause_TextGen.java" startLine="25" startPosition="23" endLine="28" endPosition="25" />
@@ -1758,7 +1758,7 @@
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="93" startPosition="49" endLine="94" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="96" startPosition="9" endLine="97" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="99" startPosition="7" endLine="100" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="101" startPosition="13" endLine="102" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="101" startPosition="13" endLine="102" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="104" startPosition="49" endLine="105" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="107" startPosition="9" endLine="108" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="113" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1815,7 +1815,7 @@
     <scopeInfo nodeId="1237463992058" fileName="InstanceMethodDeclaration_TextGen.java" startLine="76" startPosition="68" endLine="77" endPosition="150" />
     <scopeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="90" startPosition="13" endLine="91" endPosition="232" />
     <scopeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="93" startPosition="49" endLine="94" endPosition="88" />
-    <scopeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="101" startPosition="13" endLine="102" endPosition="255" />
+    <scopeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="101" startPosition="13" endLine="102" endPosition="253" />
     <scopeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="104" startPosition="49" endLine="105" endPosition="85" />
     <scopeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="24" startPosition="44" endLine="26" endPosition="58" />
     <scopeInfo nodeId="1237560364567" fileName="InstanceMethodDeclaration_TextGen.java" startLine="30" startPosition="5" endLine="32" endPosition="104" />
@@ -2404,7 +2404,7 @@
     <nodeInfo nodeId="1237463992395" fileName="StatementList_TextGen.java" startLine="26" startPosition="153" endLine="27" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992395" fileName="StatementList_TextGen.java" startLine="26" startPosition="153" endLine="27" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="30" startPosition="7" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="35" startPosition="49" endLine="36" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="38" startPosition="9" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -2418,7 +2418,7 @@
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="20" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="21" startPosition="44" endLine="22" endPosition="58" />
     <scopeInfo nodeId="1237463992395" fileName="StatementList_TextGen.java" startLine="26" startPosition="153" endLine="27" endPosition="112" />
-    <scopeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="255" />
+    <scopeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="32" startPosition="13" endLine="33" endPosition="253" />
     <scopeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="35" startPosition="49" endLine="36" endPosition="85" />
     <scopeInfo nodeId="1235131230776" fileName="StatementList_TextGen.java" startLine="25" startPosition="36" endLine="27" endPosition="112">
       <varInfo nodeId="1235131415879" varName="statement" />
@@ -2588,7 +2588,7 @@
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="85" startPosition="49" endLine="86" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="88" startPosition="9" endLine="89" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="91" startPosition="7" endLine="92" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="93" startPosition="13" endLine="94" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="93" startPosition="13" endLine="94" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="96" startPosition="49" endLine="97" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="99" startPosition="9" endLine="100" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -2639,7 +2639,7 @@
     <scopeInfo nodeId="1237463993385" fileName="StaticMethodDeclaration_TextGen.java" startLine="69" startPosition="66" endLine="70" endPosition="148" />
     <scopeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="82" startPosition="13" endLine="83" endPosition="232" />
     <scopeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="85" startPosition="49" endLine="86" endPosition="88" />
-    <scopeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="93" startPosition="13" endLine="94" endPosition="255" />
+    <scopeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="93" startPosition="13" endLine="94" endPosition="253" />
     <scopeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="96" startPosition="49" endLine="97" endPosition="85" />
     <scopeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="24" startPosition="44" endLine="26" endPosition="58" />
     <scopeInfo nodeId="1237561497661" fileName="StaticMethodDeclaration_TextGen.java" startLine="30" startPosition="5" endLine="32" endPosition="104" />
@@ -3579,7 +3579,7 @@
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="80" startPosition="49" endLine="81" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="83" startPosition="9" endLine="84" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="86" startPosition="7" endLine="87" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="88" startPosition="13" endLine="89" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="88" startPosition="13" endLine="89" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="91" startPosition="49" endLine="92" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="94" startPosition="9" endLine="95" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="100" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -3626,7 +3626,7 @@
     <scopeInfo nodeId="1237557317974" fileName="ConstructorDeclaration_TextGen.java" startLine="67" startPosition="66" endLine="68" endPosition="148" />
     <scopeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="77" startPosition="13" endLine="78" endPosition="232" />
     <scopeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="80" startPosition="49" endLine="81" endPosition="88" />
-    <scopeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="88" startPosition="13" endLine="89" endPosition="255" />
+    <scopeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="88" startPosition="13" endLine="89" endPosition="253" />
     <scopeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="91" startPosition="49" endLine="92" endPosition="85" />
     <scopeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="24" startPosition="44" endLine="26" endPosition="58" />
     <scopeInfo nodeId="1237465322986" fileName="ConstructorDeclaration_TextGen.java" startLine="70" startPosition="25" endLine="73" endPosition="25" />
@@ -4178,7 +4178,7 @@
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="52" startPosition="49" endLine="53" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="55" startPosition="9" endLine="56" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="58" startPosition="7" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="60" startPosition="13" endLine="61" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="60" startPosition="13" endLine="61" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="63" startPosition="49" endLine="64" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="66" startPosition="9" endLine="67" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -4205,7 +4205,7 @@
     <scopeInfo nodeId="1237463992527" fileName="ForeachStatement_TextGen.java" startLine="41" startPosition="25" endLine="42" endPosition="146" />
     <scopeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="49" startPosition="13" endLine="50" endPosition="232" />
     <scopeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="52" startPosition="49" endLine="53" endPosition="88" />
-    <scopeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="60" startPosition="13" endLine="61" endPosition="255" />
+    <scopeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="60" startPosition="13" endLine="61" endPosition="253" />
     <scopeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="63" startPosition="49" endLine="64" endPosition="85" />
     <scopeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="21" startPosition="44" endLine="23" endPosition="58" />
     <scopeInfo nodeId="1237465639440" fileName="ForeachStatement_TextGen.java" startLine="43" startPosition="25" endLine="45" endPosition="31" />
@@ -4283,7 +4283,7 @@
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="73" startPosition="49" endLine="74" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="76" startPosition="9" endLine="77" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="79" startPosition="7" endLine="80" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="81" startPosition="13" endLine="82" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="81" startPosition="13" endLine="82" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="84" startPosition="49" endLine="85" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="87" startPosition="9" endLine="88" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -4328,7 +4328,7 @@
     <scopeInfo nodeId="1237463992627" fileName="ForStatement_TextGen.java" startLine="62" startPosition="25" endLine="63" endPosition="146" />
     <scopeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="70" startPosition="13" endLine="71" endPosition="232" />
     <scopeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="73" startPosition="49" endLine="74" endPosition="88" />
-    <scopeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="81" startPosition="13" endLine="82" endPosition="255" />
+    <scopeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="81" startPosition="13" endLine="82" endPosition="253" />
     <scopeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="84" startPosition="49" endLine="85" endPosition="85" />
     <scopeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="22" startPosition="44" endLine="24" endPosition="58" />
     <scopeInfo nodeId="1032195626824972360" fileName="ForStatement_TextGen.java" startLine="41" startPosition="89" endLine="43" endPosition="116" />
@@ -5048,7 +5048,7 @@
     <nodeInfo nodeId="4555902841936368860" fileName="LastStatementUtil.java" startLine="41" startPosition="109" endLine="42" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4555902841936368865" fileName="LastStatementUtil.java" startLine="42" startPosition="123" endLine="43" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4555902841936368844" fileName="LastStatementUtil.java" startLine="45" startPosition="103" endLine="46" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4555902841936368849" fileName="LastStatementUtil.java" startLine="46" startPosition="115" endLine="47" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4555902841936368849" fileName="LastStatementUtil.java" startLine="46" startPosition="115" endLine="47" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4555902841936368886" fileName="LastStatementUtil.java" startLine="49" startPosition="125" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5245668348356342495" fileName="LastStatementUtil.java" startLine="51" startPosition="5" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5245668348356342302" fileName="LastStatementUtil.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LastStatementUtil#()V" />
@@ -5070,7 +5070,7 @@
     <scopeInfo nodeId="4555902841936368859" fileName="LastStatementUtil.java" startLine="41" startPosition="109" endLine="43" endPosition="84">
       <varInfo nodeId="4555902841936368861" varName="methodDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="4555902841936368843" fileName="LastStatementUtil.java" startLine="45" startPosition="103" endLine="47" endPosition="173">
+    <scopeInfo nodeId="4555902841936368843" fileName="LastStatementUtil.java" startLine="45" startPosition="103" endLine="47" endPosition="171">
       <varInfo nodeId="4555902841936368845" varName="conceptFunction" />
     </scopeInfo>
     <scopeInfo nodeId="4555902841936342310" fileName="LastStatementUtil.java" startLine="26" startPosition="103" endLine="31" endPosition="9">
@@ -5241,7 +5241,7 @@
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="29" startPosition="49" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="32" startPosition="9" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="35" startPosition="7" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="37" startPosition="13" endLine="38" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="37" startPosition="13" endLine="38" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="40" startPosition="49" endLine="41" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="43" startPosition="9" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -5259,7 +5259,7 @@
     <scopeInfo nodeId="6227066020986645916" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="21" startPosition="5" endLine="22" endPosition="25" />
     <scopeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="26" startPosition="13" endLine="27" endPosition="232" />
     <scopeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="29" startPosition="49" endLine="30" endPosition="88" />
-    <scopeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="37" startPosition="13" endLine="38" endPosition="255" />
+    <scopeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="37" startPosition="13" endLine="38" endPosition="253" />
     <scopeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="40" startPosition="49" endLine="41" endPosition="85" />
     <scopeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="18" startPosition="44" endLine="20" endPosition="58" />
     <scopeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="28" startPosition="0" endLine="31" endPosition="11">

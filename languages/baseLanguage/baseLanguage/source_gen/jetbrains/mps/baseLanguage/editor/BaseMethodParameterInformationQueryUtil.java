@@ -23,9 +23,9 @@ public class BaseMethodParameterInformationQueryUtil {
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
     Iterable<SNode> members;
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      members = IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_7405920559687254782", new Object[]{}), methodCall);
+      members = IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_7405920559687254782", new Object[]{}), methodCall);
     } else {
-      members = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), classifier, "virtual_getMembers_1213877531970", new Object[]{});
+      members = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getMembers_1213877531970", new Object[]{});
     }
     List<SNode> methodsToShow = new ArrayList<SNode>();
     for (SNode member : Sequence.fromIterable(members)) {

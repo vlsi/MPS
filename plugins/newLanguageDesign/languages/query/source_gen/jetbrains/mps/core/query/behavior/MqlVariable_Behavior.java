@@ -11,6 +11,6 @@ public class MqlVariable_Behavior {
   }
 
   public static SNode call_getType_3435983127247055576(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.query.structure.MqlVariableContainer"), "virtual_getContainedVariableType_3435983127247055569", new Object[]{thisNode.getRoleInParent()});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.query.structure.MqlVariableContainer"), "virtual_getContainedVariableType_3435983127247055569", new Object[]{thisNode.getRoleInParent()});
   }
 }

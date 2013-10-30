@@ -508,7 +508,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         return;
       }
       myCursor = newCursor;
-      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       setSelection();
     }
   }
@@ -534,10 +534,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
       if (!((newCursor == null))) {
         myCursor = newCursor;
-        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       } else {
         myCursor = null;
-        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       }
       setSelection();
     }
@@ -622,7 +622,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     if (executeAfter == null) {
       executeAfter = new Runnable() {
         public void run() {
-          SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
         }
       };
     } else {

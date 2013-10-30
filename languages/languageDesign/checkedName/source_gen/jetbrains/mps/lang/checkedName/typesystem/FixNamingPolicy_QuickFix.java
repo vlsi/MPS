@@ -20,10 +20,10 @@ public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
+    for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
       SPropertyOperations.set(s, "value", NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(s, "value")));
     }
-    for (PropertyReference p : BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) (Object.class)), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{})) {
+    for (PropertyReference p : BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{})) {
       String value = SNodeAccessUtil.getProperty(p.getNode(), p.getProperty());
       String newValue = NameUtil.captionWithNamingPolicy(value);
       SNodeAccessUtil.setProperty(p.getNode(), p.getProperty(), newValue);

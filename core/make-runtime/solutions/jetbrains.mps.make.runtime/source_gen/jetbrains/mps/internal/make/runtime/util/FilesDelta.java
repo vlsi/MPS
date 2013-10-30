@@ -97,7 +97,7 @@ public class FilesDelta implements IDelta {
     if (!(this.contains(toMerge))) {
       throw new IllegalArgumentException();
     }
-    return new FilesDelta((FilesDelta) (this)).copy((FilesDelta) toMerge);
+    return new FilesDelta((FilesDelta) this).copy((FilesDelta) toMerge);
   }
 
   private boolean acceptFilesVisitor(final FilesDelta.Visitor visitor) {

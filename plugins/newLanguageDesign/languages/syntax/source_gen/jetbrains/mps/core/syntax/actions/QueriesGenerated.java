@@ -417,7 +417,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.syntax.structure.SSymbol"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode val = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getTypeConcept_4242261035235367602", new Object[]{});
+        SNode val = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getTypeConcept_4242261035235367602", new Object[]{});
         SLinkOperations.setTarget(_context.getSourceNode(), "type", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(val), null), true);
         return _context.getSourceNode();
       }
@@ -446,14 +446,14 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SSymbol_4242261035235370674(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "type", true) == null) && (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true) != null) && (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getTypeConcept_4242261035235367602", new Object[]{}) != null);
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "type", true) == null) && (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true) != null) && (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getTypeConcept_4242261035235367602", new Object[]{}) != null);
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_SSymbolRef_5989029785192054881(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.syntax.structure.SAction"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode val = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getActionConcept_4242261035235367595", new Object[]{});
+        SNode val = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getActionConcept_4242261035235367595", new Object[]{});
         SNode act = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(val), null);
         return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), act);
       }
@@ -482,7 +482,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SSymbolRef_5989029785192054888(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getSourceNode()), "jetbrains.mps.core.syntax.structure.SAction")) && (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true) != null) && (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getActionConcept_4242261035235367595", new Object[]{}) != null);
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(_context.getSourceNode()), "jetbrains.mps.core.syntax.structure.SAction")) && (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true) != null) && (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.core.syntax.structure.SSource", false, false), "targetLanguage", true), "virtual_getActionConcept_4242261035235367595", new Object[]{}) != null);
   }
 
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a1 = Pattern.compile("^([a-zA-Z_][\\w\\-]*|'(?:[^'\\n\\\\]|\\\\.)+')\\s*:?$", 0);

@@ -492,13 +492,13 @@
     <nodeInfo nodeId="4972886494893402206" fileName="LongestCommonSubsequenceFinder.java" startLine="107" startPosition="40" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="109" startPosition="30" endLine="110" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="112" startPosition="33" endLine="113" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4972886494893402231" fileName="LongestCommonSubsequenceFinder.java" startLine="120" startPosition="60" endLine="121" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893402246" fileName="LongestCommonSubsequenceFinder.java" startLine="122" startPosition="9" endLine="123" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4972886494893402254" fileName="LongestCommonSubsequenceFinder.java" startLine="123" startPosition="31" endLine="124" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893402231" fileName="LongestCommonSubsequenceFinder.java" startLine="120" startPosition="56" endLine="121" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893402246" fileName="LongestCommonSubsequenceFinder.java" startLine="122" startPosition="9" endLine="123" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4972886494893402254" fileName="LongestCommonSubsequenceFinder.java" startLine="123" startPosition="29" endLine="124" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4972886494893402148" fileName="LongestCommonSubsequenceFinder.java" startLine="126" startPosition="5" endLine="127" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4972886494893402297" fileName="LongestCommonSubsequenceFinder.java" startLine="131" startPosition="79" endLine="132" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4972886494893402299" fileName="LongestCommonSubsequenceFinder.java" startLine="132" startPosition="74" endLine="133" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4972886494893402354" fileName="LongestCommonSubsequenceFinder.java" startLine="136" startPosition="133" endLine="137" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4972886494893402354" fileName="LongestCommonSubsequenceFinder.java" startLine="136" startPosition="133" endLine="137" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4972886494893402312" fileName="LongestCommonSubsequenceFinder.java" startLine="140" startPosition="5" endLine="141" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4972886494893401792" fileName="LongestCommonSubsequenceFinder.java" startLine="42" startPosition="16" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4972886494893402061" fileName="LongestCommonSubsequenceFinder.java" startLine="69" startPosition="16" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -535,8 +535,8 @@
     <scopeInfo nodeId="4972886494893402057" fileName="LongestCommonSubsequenceFinder.java" startLine="67" startPosition="67" endLine="68" endPosition="16" />
     <scopeInfo nodeId="4972886494893402062" fileName="LongestCommonSubsequenceFinder.java" startLine="69" startPosition="18" endLine="70" endPosition="16" />
     <scopeInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="109" startPosition="30" endLine="110" endPosition="39" />
-    <scopeInfo nodeId="4972886494893402230" fileName="LongestCommonSubsequenceFinder.java" startLine="120" startPosition="60" endLine="121" endPosition="243" />
-    <scopeInfo nodeId="4972886494893402353" fileName="LongestCommonSubsequenceFinder.java" startLine="136" startPosition="133" endLine="137" endPosition="220" />
+    <scopeInfo nodeId="4972886494893402230" fileName="LongestCommonSubsequenceFinder.java" startLine="120" startPosition="56" endLine="121" endPosition="239" />
+    <scopeInfo nodeId="4972886494893402353" fileName="LongestCommonSubsequenceFinder.java" startLine="136" startPosition="133" endLine="137" endPosition="212" />
     <scopeInfo nodeId="4972886494893373487" fileName="LongestCommonSubsequenceFinder.java" startLine="25" startPosition="81" endLine="27" endPosition="12" />
     <scopeInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="99" startPosition="30" endLine="101" endPosition="37" />
     <scopeInfo nodeId="4972886494893402206" fileName="LongestCommonSubsequenceFinder.java" startLine="106" startPosition="29" endLine="108" endPosition="30" />
@@ -551,7 +551,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4972886494893401771" fileName="LongestCommonSubsequenceFinder.java" startLine="39" startPosition="74" endLine="44" endPosition="11" />
     <scopeInfo nodeId="4972886494893402055" fileName="LongestCommonSubsequenceFinder.java" startLine="66" startPosition="16" endLine="71" endPosition="11" />
-    <scopeInfo nodeId="4972886494893402216" fileName="LongestCommonSubsequenceFinder.java" startLine="119" startPosition="21" endLine="124" endPosition="31" />
+    <scopeInfo nodeId="4972886494893402216" fileName="LongestCommonSubsequenceFinder.java" startLine="119" startPosition="21" endLine="124" endPosition="29" />
     <scopeInfo nodeId="4972886494893402303" fileName="LongestCommonSubsequenceFinder.java" startLine="134" startPosition="42" endLine="139" endPosition="26" />
     <scopeInfo nodeId="4972886494893401766" fileName="LongestCommonSubsequenceFinder.java" startLine="38" startPosition="72" endLine="45" endPosition="9" />
     <scopeInfo nodeId="4972886494893401767" fileName="LongestCommonSubsequenceFinder.java" startLine="38" startPosition="72" endLine="45" endPosition="9">

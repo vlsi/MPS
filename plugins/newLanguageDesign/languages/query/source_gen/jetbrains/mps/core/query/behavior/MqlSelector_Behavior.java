@@ -19,7 +19,7 @@ public class MqlSelector_Behavior {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.query.structure.MqlDotExpression")) {
       SNode left = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true);
       if ((left != null)) {
-        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), left, "virtual_getType_228266671027861783", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), left, "virtual_getType_228266671027861783", new Object[]{});
       }
     }
     return null;
@@ -42,7 +42,7 @@ public class MqlSelector_Behavior {
 
   @Deprecated
   public static SNode call_getType_228266671027867010(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getType_228266671027867010", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_228266671027867010", new Object[]{});
   }
 
   @Deprecated
@@ -52,7 +52,7 @@ public class MqlSelector_Behavior {
 
   @Deprecated
   public static SNode callSuper_getType_228266671027867010(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlSelector"), callerConceptFqName, "virtual_getType_228266671027867010", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlSelector"), callerConceptFqName, "virtual_getType_228266671027867010", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

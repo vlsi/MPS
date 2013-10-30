@@ -13,7 +13,7 @@ public class ResolvedUnknownNode_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    _FunctionTypes._return_P0_E0<? extends SNode> nodeBuilder = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) (Object.class)), ((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+    _FunctionTypes._return_P0_E0<? extends SNode> nodeBuilder = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), ((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), "virtual_evaluateSubst_8136348407761606764", new Object[]{});
     if (nodeBuilder != null) {
       SNode theRightNode = nodeBuilder.invoke();
       SNodeOperations.replaceWithAnother(((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), theRightNode);

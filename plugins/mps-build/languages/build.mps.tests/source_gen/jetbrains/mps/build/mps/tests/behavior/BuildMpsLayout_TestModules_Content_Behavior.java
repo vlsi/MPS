@@ -23,7 +23,7 @@ public class BuildMpsLayout_TestModules_Content_Behavior {
 
   @Deprecated
   public static Iterable<SNode> call_getModules_4560297596904469651(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getModules_4560297596904469651", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getModules_4560297596904469651", new Object[]{});
   }
 
   @Deprecated
@@ -33,6 +33,6 @@ public class BuildMpsLayout_TestModules_Content_Behavior {
 
   @Deprecated
   public static Iterable<SNode> callSuper_getModules_4560297596904469651(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"), callerConceptFqName, "virtual_getModules_4560297596904469651", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"), callerConceptFqName, "virtual_getModules_4560297596904469651", new Class[]{SNode.class}, new Object[]{});
   }
 }

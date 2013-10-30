@@ -2948,7 +2948,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8371596541809530209(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode typeNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
+    SNode typeNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "query", true), "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     if (SNodeOperations.isInstanceOf(typeNode, "jetbrains.mps.baseLanguage.structure.Type")) {
       SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.cast(typeNode, "jetbrains.mps.baseLanguage.structure.Type"));
       return ((classifierType != null) ? classifierType : typeNode);
@@ -4055,7 +4055,7 @@ public class QueriesGenerated {
       // references in 'get prev input by label' 
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
       for (SNode op : ops) {
-        SNode patternVar = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), op, "virtual_getTarget_1758784108620114792", new Object[]{});
+        SNode patternVar = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), op, "virtual_getTarget_1758784108620114792", new Object[]{});
         if (patternVar == null) {
           _context.showErrorMessage(op, "reference on pattern variable is broken");
           continue;

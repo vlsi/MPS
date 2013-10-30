@@ -43,7 +43,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType") && SNodeOperations.isInstanceOf(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
             Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
             BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(typeCheckingContext.getExpandedNode(OT), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
-            fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
+            fieldType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(fieldType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
           }
 
           {

@@ -81,7 +81,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
-        List<String> names = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
+        List<String> names = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{});
         Project project = operationContext.getProject();
         for (String name : names) {
           String prefix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPrefix_3012473318495495520", new Object[]{project});

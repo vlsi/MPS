@@ -173,7 +173,7 @@ public class QueriesGenerated {
     if (dataType == null) {
       return null;
     }
-    SNode bltype = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
+    SNode bltype = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
     if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
       return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0f0fb(), "baseMethodDeclaration", false);
     }

@@ -9,7 +9,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895903c2(jetbrains.mps.baseLanguage.collections.unittest.simple_operations)" hash="-5z5tr7av6ydpfnwm160i8sorl1jkreq" />
   <dep model="r:00000000-0000-4000-0000-011c895903c3(jetbrains.mps.baseLanguage.collections.unittest.skip_take_test)" hash="c6ld47jxxpztenyri4seb0qzkoao6z2" />
   <dep model="r:00000000-0000-4000-0000-011c895903ed(jetbrains.mps.internalCollections.test.basicOperations)" hash="-5tdu7n9wjd043l32fg9932dsklxgzd1" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" hash="3zfigsaw7vyin6dtn1i0wy725ms393k" />
+  <dep model="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" hash="3590kh5d37ej3jcj6je3efhk6yphf4x" />
   <dep model="r:00000000-0000-4000-0000-011c895903ef(jetbrains.mps.internalCollections.test.compareOperations)" hash="-5imidyu20787o6sdxnv16kpgxdqoe0y" />
   <dep model="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)" hash="-4sofeaimyifebsrzn8eqhnl2284yo57" />
   <dep model="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)" hash="3rt1k4ulfxxq8bzffetrbivtb6vo7ur" />

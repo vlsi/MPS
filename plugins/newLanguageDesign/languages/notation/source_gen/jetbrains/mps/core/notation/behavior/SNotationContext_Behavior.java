@@ -22,7 +22,7 @@ public class SNotationContext_Behavior {
 
   @Deprecated
   public static SNode call_getContextElement_8632884680339331864(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getContextElement_8632884680339331864", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getContextElement_8632884680339331864", new Object[]{});
   }
 
   @Deprecated
@@ -32,7 +32,7 @@ public class SNotationContext_Behavior {
 
   @Deprecated
   public static SNode callSuper_getContextElement_8632884680339331864(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.core.notation.structure.SNotationContext"), callerConceptFqName, "virtual_getContextElement_8632884680339331864", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.notation.structure.SNotationContext"), callerConceptFqName, "virtual_getContextElement_8632884680339331864", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

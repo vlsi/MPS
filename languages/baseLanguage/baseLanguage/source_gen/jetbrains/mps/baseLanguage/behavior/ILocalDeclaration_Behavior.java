@@ -20,7 +20,7 @@ public class ILocalDeclaration_Behavior {
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), ref_var, "virtual_getDeclaration_3262277503800831941", new Object[]{}) == thisNode) {
+        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref_var, "virtual_getDeclaration_3262277503800831941", new Object[]{}) == thisNode) {
           SNode referenceContainer = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
           while (referenceContainer != null) {
             if (referenceContainer == container) {
@@ -44,7 +44,7 @@ public class ILocalDeclaration_Behavior {
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), ref_var, "virtual_getDeclaration_3262277503800831941", new Object[]{}) == thisNode) {
+        if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ref_var, "virtual_getDeclaration_3262277503800831941", new Object[]{}) == thisNode) {
           SNode interrupter = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);
           if (interrupter == container || ListSequence.fromList(SNodeOperations.getAncestors(interrupter, null, false)).contains(container)) {
             return true;

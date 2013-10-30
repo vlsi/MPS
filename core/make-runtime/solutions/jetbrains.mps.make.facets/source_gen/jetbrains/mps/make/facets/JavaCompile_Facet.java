@@ -87,7 +87,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0a = null;
-          final Iterable<TResource> input = (Iterable<TResource>) ((Iterable) rawInput);
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {
@@ -252,7 +252,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0b = null;
-          final Iterable<TResource> input = (Iterable<TResource>) ((Iterable) rawInput);
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {

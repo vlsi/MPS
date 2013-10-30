@@ -23,9 +23,9 @@ public class check_CollectionElementTypes_NonTypesystemRule extends AbstractNonT
     if (ListSequence.fromList(SLinkOperations.getTargets(mqlCollectionLiteral, "elements", true)).isEmpty()) {
       return;
     }
-    SNode firstElementType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), ListSequence.fromList(SLinkOperations.getTargets(mqlCollectionLiteral, "elements", true)).first(), "virtual_getType_228266671027861783", new Object[]{});
+    SNode firstElementType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ListSequence.fromList(SLinkOperations.getTargets(mqlCollectionLiteral, "elements", true)).first(), "virtual_getType_228266671027861783", new Object[]{});
     for (SNode e : ListSequence.fromList(SLinkOperations.getTargets(mqlCollectionLiteral, "elements", true)).skip(1)) {
-      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), e, "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{firstElementType}))) {
+      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), e, "virtual_getType_228266671027861783", new Object[]{}), "virtual_isSubtypeOf_2852142168179579064", new Object[]{firstElementType}))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(e, "all elements in a collection must have the same type", "r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)", "8194562227701262117", null, errorTarget);

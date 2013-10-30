@@ -115,7 +115,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     MPSTreeNode result = new TextMPSTreeNode((ListSequence.fromList(myAllDependencies).isEmpty() ? "No Dependencies Selected" : "Found Dependencies:"), null);
     for (Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean> dep : ListSequence.fromList(myAllDependencies)) {
       for (SModule m : SetSequence.fromSet(dep._0())) {
-        MPSTreeNode node = buildTree(m, dep._1(), dep._2(), (boolean) (dep._3()));
+        MPSTreeNode node = buildTree(m, dep._1(), dep._2(), (boolean) dep._3());
         if (node != null) {
           result.add(node);
         }

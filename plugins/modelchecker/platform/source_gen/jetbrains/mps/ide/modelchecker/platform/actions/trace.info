@@ -1102,7 +1102,7 @@
     <nodeInfo nodeId="3719390199793467376" fileName="ConstraintsChecker.java" startLine="53" startPosition="184" endLine="65" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3719390199793467469" fileName="ConstraintsChecker.java" startLine="73" startPosition="11" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3719390199793467452" fileName="ConstraintsChecker.java" startLine="68" startPosition="0" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3719390199793467303" fileName="ConstraintsChecker.java" startLine="42" startPosition="274" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3719390199793467303" fileName="ConstraintsChecker.java" startLine="42" startPosition="272" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3719390199793467301" fileName="ConstraintsChecker.java" startLine="41" startPosition="21" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3719390199793467281" fileName="ConstraintsChecker.java" startLine="34" startPosition="53" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3719390199793467253" fileName="ConstraintsChecker.java" startLine="30" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
@@ -1144,7 +1144,7 @@
     <scopeInfo nodeId="3719390199793467452" fileName="ConstraintsChecker.java" startLine="68" startPosition="0" endLine="86" endPosition="7">
       <varInfo nodeId="3719390199793467453" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="3719390199793467302" fileName="ConstraintsChecker.java" startLine="42" startPosition="274" endLine="66" endPosition="9" />
+    <scopeInfo nodeId="3719390199793467302" fileName="ConstraintsChecker.java" startLine="42" startPosition="272" endLine="66" endPosition="9" />
     <scopeInfo nodeId="3719390199793467301" fileName="ConstraintsChecker.java" startLine="41" startPosition="21" endLine="67" endPosition="7">
       <varInfo nodeId="3719390199793467450" varName="link" />
     </scopeInfo>

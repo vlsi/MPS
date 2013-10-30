@@ -179,7 +179,7 @@
     <unitInfo nodeId="3715237098669909852" fileName="TraceInfoTest.java" startLine="35" startPosition="42" endLine="39" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$2" />
     <unitInfo nodeId="3715237098669909871" fileName="TraceInfoTest.java" startLine="49" startPosition="42" endLine="53" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$3" />
     <unitInfo nodeId="3715237098669909906" fileName="TraceInfoTest.java" startLine="63" startPosition="42" endLine="67" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$4" />
-    <unitInfo nodeId="2112637535491845083" fileName="TraceInfoTest.java" startLine="107" startPosition="375" endLine="111" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
+    <unitInfo nodeId="2112637535491845083" fileName="TraceInfoTest.java" startLine="107" startPosition="373" endLine="111" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
     <unitInfo nodeId="2112637535491845079" fileName="TraceInfoTest.java" startLine="111" startPosition="21" endLine="115" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
     <unitInfo nodeId="2112637535491845079" fileName="TraceInfoTest.java" startLine="115" startPosition="22" endLine="119" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
     <unitInfo nodeId="2112637535491845078" fileName="TraceInfoTest.java" startLine="119" startPosition="25" endLine="123" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />

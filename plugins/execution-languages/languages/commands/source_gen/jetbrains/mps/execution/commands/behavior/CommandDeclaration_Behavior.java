@@ -116,7 +116,7 @@ public class CommandDeclaration_Behavior {
 
   @Deprecated
   public static SNode call_createType_856705193941282121(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createType_1213877527970", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
   }
 
   @Deprecated
@@ -126,7 +126,7 @@ public class CommandDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1, Object parameter_2) {

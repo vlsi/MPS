@@ -18,7 +18,7 @@ public class ITestRef_Behavior {
 
   @Deprecated
   public static Iterable<String> call_testNames_4089647634160960707(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) (Object.class)), thisNode, "virtual_testNames_4089647634160960707", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) Object.class), thisNode, "virtual_testNames_4089647634160960707", new Object[]{});
   }
 
   @Deprecated
@@ -28,6 +28,6 @@ public class ITestRef_Behavior {
 
   @Deprecated
   public static Iterable<String> callSuper_testNames_4089647634160960707(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<String>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_testNames_4089647634160960707", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<String>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_testNames_4089647634160960707", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -112,7 +112,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
 
   private void tryToImport(final SNode evaluatorNode, List<SNodeReference> nodesToImport) {
     BaseLanguagesImportHelper helper = new EvaluationWithContextContainer.MyBaseLanguagesImportHelper(evaluatorNode);
-    helper.tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
+    helper.tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
   }
 
   @Override

@@ -127,7 +127,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_429601079676781980(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "n" + (int) (((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._1());
+    return "n" + (int) ((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._1();
   }
 
   public static Object propertyMacro_GetPropertyValue_429601079676785699(final IOperationContext operationContext, final PropertyMacroContext _context) {

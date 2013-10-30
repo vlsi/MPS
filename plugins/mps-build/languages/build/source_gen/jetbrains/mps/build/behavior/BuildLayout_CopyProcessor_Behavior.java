@@ -79,7 +79,7 @@ public class BuildLayout_CopyProcessor_Behavior {
 
   @Deprecated
   public static Map<String, String> call_getTaskArguments_7918752904805535914(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Map<String, String>>) ((Class) (Object.class)), thisNode, "virtual_getTaskArguments_7918752904805535914", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<Map<String, String>>) ((Class) Object.class), thisNode, "virtual_getTaskArguments_7918752904805535914", new Object[]{});
   }
 
   @Deprecated
@@ -89,6 +89,6 @@ public class BuildLayout_CopyProcessor_Behavior {
 
   @Deprecated
   public static Map<String, String> callSuper_getTaskArguments_7918752904805535914(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Map<String, String>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor"), callerConceptFqName, "virtual_getTaskArguments_7918752904805535914", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<Map<String, String>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor"), callerConceptFqName, "virtual_getTaskArguments_7918752904805535914", new Class[]{SNode.class}, new Object[]{});
   }
 }

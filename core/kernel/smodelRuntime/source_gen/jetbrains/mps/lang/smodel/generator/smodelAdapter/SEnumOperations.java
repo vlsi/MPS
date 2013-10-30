@@ -50,7 +50,7 @@ public class SEnumOperations {
 
   public static SNode enumMemberForValue(SNode enumm, final String value) {
     if (value == null) {
-      return ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "call_getDefaultMember_1213877397785", new Object[]{}));
+      return ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "call_getDefaultMember_1213877397785", new Object[]{}));
     }
     return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumm, "member", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

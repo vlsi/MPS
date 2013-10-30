@@ -106,10 +106,10 @@
   <root nodeRef="r:634291dd-a0fe-4158-8c6d-71668d515dab(jetbrains.mps.core.syntax.behavior)/4242261035235367592">
     <nodeInfo nodeId="4242261035235367599" fileName="STargetLanguage_Behavior.java" startLine="14" startPosition="84" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4242261035235367606" fileName="STargetLanguage_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="28" startPosition="79" endLine="29" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="33" startPosition="114" endLine="34" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="38" startPosition="112" endLine="39" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="28" startPosition="79" endLine="29" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="33" startPosition="114" endLine="34" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="38" startPosition="112" endLine="39" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getActionConcept_4242261035235367595#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTypeConcept_4242261035235367602#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -120,10 +120,10 @@
     <scopeInfo nodeId="4242261035235367594" fileName="STargetLanguage_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="4242261035235367598" fileName="STargetLanguage_Behavior.java" startLine="14" startPosition="84" endLine="15" endPosition="16" />
     <scopeInfo nodeId="4242261035235367605" fileName="STargetLanguage_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="159" />
-    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="28" startPosition="79" endLine="29" endPosition="157" />
-    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="33" startPosition="114" endLine="34" endPosition="292" />
-    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="38" startPosition="112" endLine="39" endPosition="290" />
+    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="157" />
+    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="28" startPosition="79" endLine="29" endPosition="155" />
+    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="33" startPosition="114" endLine="34" endPosition="290" />
+    <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="38" startPosition="112" endLine="39" endPosition="288" />
     <scopeInfo nodeId="4242261035235367592" fileName="STargetLanguage_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="4242261035235367592" varName="thisNode" />
     </scopeInfo>

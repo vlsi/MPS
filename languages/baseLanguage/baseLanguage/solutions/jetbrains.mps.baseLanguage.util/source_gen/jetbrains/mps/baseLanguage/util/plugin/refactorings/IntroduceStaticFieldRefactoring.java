@@ -44,7 +44,7 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     }
     if (this.myFieldInitialization == FieldInitializationPlace.STATICINIT) {
       SNode declaration = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      Iterable<SNode> staticInitializers = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), declaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticInitializers_3136320261464948039", new Object[]{});
+      Iterable<SNode> staticInitializers = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), declaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticInitializers_3136320261464948039", new Object[]{});
       SNode initializer;
       if (Sequence.fromIterable(staticInitializers).isNotEmpty()) {
         initializer = Sequence.fromIterable(staticInitializers).first();

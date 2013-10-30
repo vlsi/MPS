@@ -25,7 +25,7 @@ public class MigrationUtil {
       md = aspect.createNew(language);
     }
     SModel model = md;
-    SNode conceptAspect = ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), applicableNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{aspect}));
+    SNode conceptAspect = ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), applicableNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{aspect}));
     if (conceptAspect != null) {
       return conceptAspect;
     }

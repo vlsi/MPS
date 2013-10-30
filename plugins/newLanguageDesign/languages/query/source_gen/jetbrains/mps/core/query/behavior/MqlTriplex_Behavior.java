@@ -15,7 +15,7 @@ public class MqlTriplex_Behavior {
 
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
     // TODO common supertype for then/else 
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "thenexpr", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "thenexpr", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static int virtual_getPriority_7352592509980890960(SNode thisNode) {

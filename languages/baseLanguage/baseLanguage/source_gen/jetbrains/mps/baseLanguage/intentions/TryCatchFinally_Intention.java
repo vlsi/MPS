@@ -96,7 +96,7 @@ public class TryCatchFinally_Intention implements IntentionFactory {
 
       Iterable<SNode> caughtExceptions = ListSequence.fromList(SNodeOperations.getAncestors(tryStatement, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), it, "virtual_getCatchClauses_3718132079121388582", new Object[]{})).where(new IWhereFilter<SNode>() {
+          return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getCatchClauses_3718132079121388582", new Object[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return (SLinkOperations.getTarget(it, "throwable", true) != null);
             }
@@ -120,7 +120,7 @@ public class TryCatchFinally_Intention implements IntentionFactory {
         }
       });
 
-      Iterable<SNode> thrownExceptions = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.getAncestor(tryStatement, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false), "virtual_getThrowableTypes_6204026822016975623", new Object[]{})).select(new ISelector<SNode, SNode>() {
+      Iterable<SNode> thrownExceptions = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getAncestor(tryStatement, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false), "virtual_getThrowableTypes_6204026822016975623", new Object[]{})).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
         }

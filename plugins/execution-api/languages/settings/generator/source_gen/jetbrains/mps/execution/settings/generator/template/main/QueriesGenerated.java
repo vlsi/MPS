@@ -345,9 +345,9 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_5041115067675811558(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if ((SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "editorOperationDeclaration", false), "virtual_getJavaMethod_946964771156066991", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "editorOperationDeclaration", false), "virtual_getJavaMethod_946964771156066991", new Object[]{});
     } else {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "editorOperationDeclaration", false), "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "editorOperationDeclaration", false), "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
     }
   }
 

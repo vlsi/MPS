@@ -139,7 +139,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       }).concat(CollectionSequence.fromCollection(scope.getModels()));
       List<SNode> roots = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
-          return (Iterable<SNode>) ((Iterable) it.getRootNodes());
+          return (Iterable<SNode>) (Iterable) it.getRootNodes();
         }
       }).concat(CollectionSequence.fromCollection(scope.getRoots())).toListSequence();
       monitor.start("searching references in " + scope.getPresentation(), ListSequence.fromList(roots).count());

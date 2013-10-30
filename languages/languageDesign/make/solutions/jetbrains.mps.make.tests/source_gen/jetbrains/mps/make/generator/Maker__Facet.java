@@ -66,7 +66,7 @@ public class Maker__Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_izvplp_a0a = null;
-          final Iterable<IResource> input = (Iterable) ((Iterable) rawInput);
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
             default:

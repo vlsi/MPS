@@ -19,7 +19,7 @@ public class check_ConceptFunction_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(nodeToCheck, "body", true) != null) {
       boolean checkReturns = false;
-      if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), nodeToCheck, "virtual_getExpectedReturnType_1213877374441", new Object[]{}) != null && !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), nodeToCheck, "virtual_getExpectedReturnType_1213877374441", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+      if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedReturnType_1213877374441", new Object[]{}) != null && !(SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedReturnType_1213877374441", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         checkReturns = true;
       }
       DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true), checkReturns);

@@ -26,13 +26,13 @@ public class VariableArityType_Behavior {
     List<String> variableSuffixes = ListSequence.fromList(new ArrayList<String>());
     if ((SLinkOperations.getTarget(thisNode, "componentType", true) != null)) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
           if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
             ListSequence.fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
           ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }
@@ -41,7 +41,7 @@ public class VariableArityType_Behavior {
   }
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    return _quotation_createNode_mwp9ln_a0a2(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getErasure_702942408396803226", new Object[]{}));
+    return _quotation_createNode_mwp9ln_a0a2(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getErasure_702942408396803226", new Object[]{}));
   }
 
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {

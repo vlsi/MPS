@@ -102,7 +102,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
   }
 
   private void _populateLocalVariablesFromList(SNode statementList, SNode beforeStatement, List<SNode> result) {
-    for (SNode sNode : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), statementList, "virtual_getLocalVariableElements_1238805763253", new Object[]{})) {
+    for (SNode sNode : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), statementList, "virtual_getLocalVariableElements_1238805763253", new Object[]{})) {
       // todo: bad code =( 
       if (ListSequence.fromList(SNodeOperations.getAncestors(beforeStatement, null, false)).contains(sNode)) {
         break;
@@ -114,7 +114,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
       if (!(SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"))) {
         continue;
       }
-      SNode declNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), sNode, "virtual_getLocalVariableDeclaration_1238803857389", new Object[]{});
+      SNode declNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), sNode, "virtual_getLocalVariableDeclaration_1238803857389", new Object[]{});
       if (declNode != null) {
         result.add(declNode);
       }

@@ -28,7 +28,7 @@ public class ITestCase_Behavior {
 
   @Deprecated
   public static List<SNode> call_getTestSet_1216130724401(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getTestSet_1216130724401", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTestSet_1216130724401", new Object[]{});
   }
 
   @Deprecated
@@ -43,12 +43,12 @@ public class ITestCase_Behavior {
 
   @Deprecated
   public static List<SNode> call_getTestMethods_2148145109766218395(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getTestMethods_2148145109766218395", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTestMethods_2148145109766218395", new Object[]{});
   }
 
   @Deprecated
   public static List<SNode> callSuper_getTestSet_1216130724401(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestSet_1216130724401", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestSet_1216130724401", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -63,6 +63,6 @@ public class ITestCase_Behavior {
 
   @Deprecated
   public static List<SNode> callSuper_getTestMethods_2148145109766218395(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestMethods_2148145109766218395", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestMethods_2148145109766218395", new Class[]{SNode.class}, new Object[]{});
   }
 }

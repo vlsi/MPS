@@ -37,11 +37,11 @@ public class BaseMappingRule_Behavior {
 
   @Deprecated
   public static SNode call_getTemplateType_1213877498511(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getTemplateType_1213877498511", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTemplateType_1213877498511", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getTemplateType_1213877498511(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), callerConceptFqName, "virtual_getTemplateType_1213877498511", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), callerConceptFqName, "virtual_getTemplateType_1213877498511", new Class[]{SNode.class}, new Object[]{});
   }
 }

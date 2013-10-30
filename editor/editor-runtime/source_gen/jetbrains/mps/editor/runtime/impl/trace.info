@@ -50,7 +50,7 @@
       <varInfo nodeId="5031719587736625220" varName="conceptPropertyName" />
       <varInfo nodeId="5031719587736609121" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="35" startPosition="314" endLine="39" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.CellUtil$1" />
+    <unitInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="35" startPosition="312" endLine="39" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.CellUtil$1" />
     <unitInfo nodeId="1182113674817158574" fileName="CellUtil.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.CellUtil" />
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817458489">

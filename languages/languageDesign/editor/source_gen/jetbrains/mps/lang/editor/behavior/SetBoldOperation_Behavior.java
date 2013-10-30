@@ -20,7 +20,7 @@ public class SetBoldOperation_Behavior {
   }
 
   public static List<SNode> virtual_getOperationArgumentType_6575219246652510406(SAbstractConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) (Object.class)), thisConcept, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
     ListSequence.fromList(result).addElement(_quotation_createNode_s26y4o_a0a1a1());
     return result;
   }

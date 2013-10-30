@@ -267,7 +267,7 @@ public class QueriesGenerated {
     // use smart construction not generated before all types from bl 
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isEmpty()) || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.StringType")) {
       // todo: remove getClassExpression here 
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
       return _quotation_createNode_x583g4_a0a0c0xb(returnType);
     }
@@ -285,7 +285,7 @@ public class QueriesGenerated {
     // remove this method at all 
     SNode returnType = SLinkOperations.getTarget(_context.getNode(), "returnType", true);
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isEmpty()) || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.StringType")) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
       return _quotation_createNode_x583g4_a0a0c0ac(returnType);
     }
@@ -293,7 +293,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1902094167074144918(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     try {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getClassExpression_1213877337357", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getClassExpression_1213877337357", new Object[]{});
     } catch (Exception e) {
       return _quotation_createNode_x583g4_a0a0a0bc();
     }

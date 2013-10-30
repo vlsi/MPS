@@ -216,8 +216,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/1235133131950">
     <nodeInfo nodeId="1235136293835" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="29" startPosition="115" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237222095942" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="31" startPosition="27" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235136330931" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="33" startPosition="5" endLine="34" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235136357248" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="34" startPosition="183" endLine="35" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235136330931" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="33" startPosition="5" endLine="34" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235136357248" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="34" startPosition="181" endLine="35" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1235136450723" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="36" startPosition="46" endLine="37" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6060783635544711535" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="38" startPosition="36" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1235136520823" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="42" startPosition="9" endLine="43" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -400,7 +400,7 @@
     <nodeInfo nodeId="6519915829969176786" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="38" startPosition="72" endLine="39" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6519915829969195390" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="41" startPosition="40" endLine="42" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6519915829969195406" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="44" startPosition="11" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6519915829969195408" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="46" startPosition="7" endLine="47" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6519915829969195408" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="46" startPosition="7" endLine="47" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2823239769520680200" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="49" startPosition="5" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2823239769520680200" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="50" startPosition="58" endLine="51" endPosition="353" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="55" startPosition="46" endLine="56" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -441,7 +441,7 @@
     <scopeInfo nodeId="6519915829969160778" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6519915829969160778" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="6519915829969176706" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="37" startPosition="59" endLine="47" endPosition="227">
+    <scopeInfo nodeId="6519915829969176706" fileName="check_EditorForNonAbstractConcept_NonTypesystemRule.java" startLine="37" startPosition="59" endLine="47" endPosition="225">
       <varInfo nodeId="6519915829969176729" varName="acd" />
       <varInfo nodeId="6519915829969176787" varName="aspects" />
     </scopeInfo>

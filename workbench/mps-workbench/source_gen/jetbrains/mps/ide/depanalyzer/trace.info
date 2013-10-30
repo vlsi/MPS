@@ -801,7 +801,7 @@
     <nodeInfo nodeId="5483656719609571933" fileName="DependencyPathTree.java" startLine="107" startPosition="23" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5483656719609571943" fileName="DependencyPathTree.java" startLine="109" startPosition="5" endLine="110" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="691189692235678828" fileName="DependencyPathTree.java" startLine="114" startPosition="35" endLine="115" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8427130069758290957" fileName="DependencyPathTree.java" startLine="117" startPosition="55" endLine="118" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8427130069758290957" fileName="DependencyPathTree.java" startLine="117" startPosition="55" endLine="118" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7732415541001107698" fileName="DependencyPathTree.java" startLine="119" startPosition="27" endLine="120" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4693357630797912898" fileName="DependencyPathTree.java" startLine="123" startPosition="5" endLine="124" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1804267686594753027" fileName="DependencyPathTree.java" startLine="124" startPosition="71" endLine="125" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -843,7 +843,7 @@
     <nodeInfo nodeId="7596036446944204021" fileName="DependencyPathTree.java" startLine="84" startPosition="60" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5483656719609571905" fileName="DependencyPathTree.java" startLine="102" startPosition="59" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5483656719609571931" fileName="DependencyPathTree.java" startLine="106" startPosition="60" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8427130069758291346" fileName="DependencyPathTree.java" startLine="118" startPosition="82" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8427130069758291346" fileName="DependencyPathTree.java" startLine="118" startPosition="80" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4691887782450489184" fileName="DependencyPathTree.java" startLine="137" startPosition="95" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="866755926374577588" fileName="DependencyPathTree.java" startLine="140" startPosition="5" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="866755926374577600" fileName="DependencyPathTree.java" startLine="143" startPosition="5" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

@@ -21,7 +21,7 @@ public class MqlSwitchExpression_Behavior {
 
   public static SNode virtual_getType_228266671027861783(SNode thisNode) {
     // TODO compute upper bound of all branch result types 
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "branches", true)).first(), "result", true), "virtual_getType_228266671027861783", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "branches", true)).first(), "result", true), "virtual_getType_228266671027861783", new Object[]{});
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {

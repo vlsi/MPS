@@ -23,7 +23,7 @@ public class TemplateCallMacro_Behavior {
       } else {
       }
     }
-    return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) (Object.class)), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
+    return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
   }
 
   public static SNode call_getTemplate_982871510068205176(SNode thisNode) {

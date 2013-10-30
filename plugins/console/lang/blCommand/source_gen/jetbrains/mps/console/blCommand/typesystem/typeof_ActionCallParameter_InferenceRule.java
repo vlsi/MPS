@@ -25,7 +25,7 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
   }
 
   public void applyRule(final SNode actionCallParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), actionCallParameter, "virtual_getParameterDeclaration_119903734736614698", new Object[]{}), "type", true);
+    SNode type = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), actionCallParameter, "virtual_getParameterDeclaration_119903734736614698", new Object[]{}), "type", true);
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
         SNode _nodeToCheck_1029348928467 = actionCallParameter;

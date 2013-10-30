@@ -184,7 +184,7 @@ public class ClassifierType_Behavior {
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", SLinkOperations.getTarget(thisNode, "classifier", false), false);
     for (SNode typeParam : SLinkOperations.getTargets(thisNode, "parameter", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), typeParam, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
+      ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), typeParam, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
     }
     return classifierType;
   }
@@ -264,7 +264,7 @@ public class ClassifierType_Behavior {
 
     // traverse all extended/implemented classifiers 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-      BehaviorReflection.invokeVirtual(Void.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getSuperclass_1240936569950", new Object[]{}), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+      BehaviorReflection.invokeVirtual(Void.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getSuperclass_1240936569950", new Object[]{}), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
       for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
@@ -300,12 +300,12 @@ public class ClassifierType_Behavior {
 
   @Deprecated
   public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_createDefaultTypeExpression_9011026350741578236(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class Pattern_hz3823_a0a1a1a0a0a01 extends GeneratedMatchingPattern implements IMatchingPattern {

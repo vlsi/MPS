@@ -110,7 +110,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         } else {
           for (SNode thr : ListSequence.fromList(SNodeOperations.getDescendants(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer"})).translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode it) {
-              return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
+              return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
             }
           })) {
             ListSequence.fromList(allThrows).addElement(SNodeOperations.copyNode(thr));
@@ -213,7 +213,7 @@ with_allThrows:
       }
     }
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true);
-    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).isNotEmpty() ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), closure, "virtual_getLastStatement_1239354409446", new Object[]{}) : null);
+    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).isNotEmpty() ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), closure, "virtual_getLastStatement_1239354409446", new Object[]{}) : null);
     boolean returnsValue = !(ListSequence.fromList(allRets).isEmpty());
     boolean returnsFromLast = !(isVoid) && SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, closure, "virtual_isExecuteSynchronous_1230212745736", new Object[]{}));
     boolean yieldsValue = !(ListSequence.fromList(allYlds).isEmpty());
@@ -293,20 +293,20 @@ with_allThrows:
       {
         SNode _nodeToCheck_1029348928467 = closure;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718163909", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718156828", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), closure, "virtual_getType_1229718192182", new Object[]{paramTypes, typeCheckingContext.getRepresentative(RESULT_typevar_1221579592331), typeCheckingContext.getRepresentative(RETURN_typevar_1232125235963), typeCheckingContext.getRepresentative(TERMINATE_typevar_1232105622932), realThrows}), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718156828", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), closure, "virtual_getType_1229718192182", new Object[]{paramTypes, typeCheckingContext.getRepresentative(RESULT_typevar_1221579592331), typeCheckingContext.getRepresentative(RETURN_typevar_1232125235963), typeCheckingContext.getRepresentative(TERMINATE_typevar_1232105622932), realThrows}), _info_12389875345);
       }
     } else
     if (yieldsValue) {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718256918", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718251100", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), closure, "virtual_getType_1229718192182", new Object[]{paramTypes, _quotation_createNode_nx7618_b0a0a0a0eb0b(typeCheckingContext.getRepresentative(YLCS_typevar_1221579075693)), null, null, realThrows}), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718251100", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), closure, "virtual_getType_1229718192182", new Object[]{paramTypes, _quotation_createNode_nx7618_b0a0a0a0eb0b(typeCheckingContext.getRepresentative(YLCS_typevar_1221579075693)), null, null, realThrows}), _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718281813", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718277155", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), closure, "virtual_getType_1229718192182", new Object[]{paramTypes, _quotation_createNode_nx7618_b0a0a0a0a03a1(), _quotation_createNode_nx7618_c0a0a0a0a03a1(), _quotation_createNode_nx7618_d0a0a0a0a03a1(), realThrows}), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718277155", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), closure, "virtual_getType_1229718192182", new Object[]{paramTypes, _quotation_createNode_nx7618_b0a0a0a0a03a1(), _quotation_createNode_nx7618_c0a0a0a0a03a1(), _quotation_createNode_nx7618_d0a0a0a0a03a1(), realThrows}), _info_12389875345);
       }
     }
   }

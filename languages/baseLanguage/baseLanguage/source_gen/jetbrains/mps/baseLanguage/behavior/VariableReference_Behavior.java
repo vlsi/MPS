@@ -18,7 +18,7 @@ public class VariableReference_Behavior {
   }
 
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "virtual_getTypeAnnotation_1233920952262", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "virtual_getTypeAnnotation_1233920952262", new Object[]{});
   }
 
   public static SNode virtual_getVariable_1023687332192481693(SNode thisNode) {

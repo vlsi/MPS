@@ -91,7 +91,7 @@ public class TransformCoreLanguages_Facet extends IFacet.Stub {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           final Wrappers._T<Iterable<IResource>> _output_kp7j54_a0a = new Wrappers._T<Iterable<IResource>>(null);
-          final Iterable<IMResource> input = (Iterable<IMResource>) ((Iterable) rawInput);
+          final Iterable<IMResource> input = (Iterable<IMResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();

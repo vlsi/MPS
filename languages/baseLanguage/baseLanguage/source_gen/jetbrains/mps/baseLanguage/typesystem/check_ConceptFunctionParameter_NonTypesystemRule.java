@@ -33,7 +33,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       }
     } else {
       final SNode parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
-      Iterable<SNode> seq = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), conceptFunction, "virtual_getParameters_1213877374450", new Object[]{})).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> seq = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), conceptFunction, "virtual_getParameters_1213877374450", new Object[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(it));
         }

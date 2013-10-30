@@ -763,11 +763,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3038738109029045740(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(_context.getNode(), "order", true), "virtual_getOrder_3038738109029048953", new Object[]{}), "map_OrderConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "order", true), "virtual_getOrder_3038738109029048953", new Object[]{}), "map_OrderConstructor");
   }
 
   public static Object referenceMacro_GetReferent_2401501559171673384(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(((SNode) (_context.getNode())), "baseNodeConcept", false);
+    return SLinkOperations.getTarget(((SNode) _context.getNode()), "baseNodeConcept", false);
   }
 
   public static Object referenceMacro_GetReferent_8147690884614614125(final IOperationContext operationContext, final ReferenceMacroContext _context) {

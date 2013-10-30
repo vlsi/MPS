@@ -136,11 +136,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2284201910209561272(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{})), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{})), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_2284201910209640652(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_8953981490813374955(final IOperationContext operationContext, final ReferenceMacroContext _context) {

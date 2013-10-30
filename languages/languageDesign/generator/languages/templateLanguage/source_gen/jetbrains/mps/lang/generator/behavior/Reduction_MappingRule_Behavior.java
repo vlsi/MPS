@@ -11,6 +11,6 @@ public class Reduction_MappingRule_Behavior {
   }
 
   public static SNode virtual_getTemplateType_1213877498511(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "ruleConsequence", true), "virtual_getTemplateType_7933327286924651185", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "ruleConsequence", true), "virtual_getTemplateType_7933327286924651185", new Object[]{});
   }
 }

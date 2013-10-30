@@ -39,7 +39,7 @@ public class SimpleBuilderParameterReference_Constraints extends BaseConstraints
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", true, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{}), "parameter", true);
+            return SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", true, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{}), "parameter", true);
           }
 
           @Override

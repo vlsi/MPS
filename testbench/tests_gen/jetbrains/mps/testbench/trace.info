@@ -357,7 +357,7 @@
     <nodeInfo nodeId="6607750055058402186" fileName="ModuleGenerationHolder.java" startLine="276" startPosition="9" endLine="277" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6085445418775290702" fileName="ModuleGenerationHolder.java" startLine="282" startPosition="55" endLine="283" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3767231643656643806" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="41" endLine="289" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6663830059446823701" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="54" endLine="293" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6663830059446823701" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="54" endLine="293" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3037398679707966202" fileName="ModuleGenerationHolder.java" startLine="298" startPosition="104" endLine="299" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3730996872184513717" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="46" endLine="305" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3037398679707992883" fileName="ModuleGenerationHolder.java" startLine="312" startPosition="41" endLine="313" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -497,7 +497,7 @@
     <scopeInfo nodeId="6607750055058402183" fileName="ModuleGenerationHolder.java" startLine="273" startPosition="58" endLine="274" endPosition="24" />
     <scopeInfo nodeId="5460949978728582634" fileName="ModuleGenerationHolder.java" startLine="282" startPosition="55" endLine="283" endPosition="333" />
     <scopeInfo nodeId="3767231643656643805" fileName="ModuleGenerationHolder.java" startLine="288" startPosition="41" endLine="289" endPosition="38" />
-    <scopeInfo nodeId="3767231643656643814" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="54" endLine="293" endPosition="72" />
+    <scopeInfo nodeId="3767231643656643814" fileName="ModuleGenerationHolder.java" startLine="292" startPosition="54" endLine="293" endPosition="70" />
     <scopeInfo nodeId="3730996872184513714" fileName="ModuleGenerationHolder.java" startLine="304" startPosition="46" endLine="305" endPosition="55" />
     <scopeInfo nodeId="3037398679707992882" fileName="ModuleGenerationHolder.java" startLine="312" startPosition="41" endLine="313" endPosition="49" />
     <scopeInfo nodeId="8597743085639790698" fileName="ModuleGenerationHolder.java" startLine="333" startPosition="18" endLine="334" endPosition="50" />

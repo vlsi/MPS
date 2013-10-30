@@ -38,7 +38,7 @@ public class IApplicableToNothing_Behavior {
         }
       });
     } else {
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
       implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "extends", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "intfc", false);
@@ -50,7 +50,7 @@ public class IApplicableToNothing_Behavior {
       });
     }
     for (SNode impl : Sequence.fromIterable(implementList)) {
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) impl))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) impl))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
     }
     return result;
   }
@@ -75,11 +75,11 @@ public class IApplicableToNothing_Behavior {
 
   @Deprecated
   public static SNode call_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_expectedOperandType_6368025520509018230", new Object[]{elementType});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expectedOperandType_6368025520509018230", new Object[]{elementType});
   }
 
   @Deprecated
   public static SNode callSuper_expectedOperandType_6368025520509018230(SNode thisNode, String callerConceptFqName, SNode elementType) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"), callerConceptFqName, "virtual_expectedOperandType_6368025520509018230", new Class[]{SNode.class, SNode.class}, new Object[]{elementType});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"), callerConceptFqName, "virtual_expectedOperandType_6368025520509018230", new Class[]{SNode.class, SNode.class}, new Object[]{elementType});
   }
 }

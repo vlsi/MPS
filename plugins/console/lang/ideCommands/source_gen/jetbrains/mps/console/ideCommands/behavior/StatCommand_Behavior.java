@@ -18,7 +18,7 @@ public class StatCommand_Behavior {
   public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getStat_7490254719527247609", new Object[]{context}));
+        OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getStat_7490254719527247609", new Object[]{context}));
       }
     });
 

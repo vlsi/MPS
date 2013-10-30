@@ -21,8 +21,8 @@
     <nodeInfo nodeId="1193744816673" fileName="AddCastStatement_Intention.java" startLine="88" startPosition="144" endLine="89" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1193745177419" fileName="AddCastStatement_Intention.java" startLine="89" startPosition="169" endLine="90" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1193744778860" fileName="AddCastStatement_Intention.java" startLine="90" startPosition="100" endLine="91" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193744878630" fileName="AddCastStatement_Intention.java" startLine="91" startPosition="153" endLine="92" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1193744836458" fileName="AddCastStatement_Intention.java" startLine="92" startPosition="248" endLine="93" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193744878630" fileName="AddCastStatement_Intention.java" startLine="91" startPosition="153" endLine="92" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1193744836458" fileName="AddCastStatement_Intention.java" startLine="92" startPosition="246" endLine="93" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1193745192361" fileName="AddCastStatement_Intention.java" startLine="93" startPosition="100" endLine="94" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1193745195029" fileName="AddCastStatement_Intention.java" startLine="94" startPosition="147" endLine="95" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1193745218961" fileName="AddCastStatement_Intention.java" startLine="95" startPosition="156" endLine="96" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -118,7 +118,7 @@
     <nodeInfo nodeId="4025276038182315808" fileName="AddAnnotation_Intention.java" startLine="62" startPosition="122" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4025276038182319371" fileName="AddAnnotation_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4025276038182319129" fileName="AddAnnotation_Intention.java" startLine="66" startPosition="31" endLine="67" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4025276038182319193" fileName="AddAnnotation_Intention.java" startLine="68" startPosition="5" endLine="69" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4025276038182319193" fileName="AddAnnotation_Intention.java" startLine="68" startPosition="5" endLine="69" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195647284978" fileName="AddAnnotation_Intention.java" startLine="72" startPosition="53" endLine="73" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195647284978" fileName="AddAnnotation_Intention.java" startLine="76" startPosition="35" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195647284978" fileName="AddAnnotation_Intention.java" startLine="81" startPosition="37" endLine="82" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -197,7 +197,7 @@
       <varInfo nodeId="1195647284978" varName="context" />
       <varInfo nodeId="1195647284978" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1195647285037" fileName="AddAnnotation_Intention.java" startLine="58" startPosition="91" endLine="69" endPosition="220">
+    <scopeInfo nodeId="1195647285037" fileName="AddAnnotation_Intention.java" startLine="58" startPosition="91" endLine="69" endPosition="218">
       <varInfo nodeId="4025276038182319372" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="1195647284978" fileName="AddAnnotation_Intention.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
@@ -6554,12 +6554,12 @@
       <varInfo nodeId="3366354716707825944" varName="editorContext" />
       <varInfo nodeId="3366354716707825944" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="98" startPosition="197" endLine="102" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
+    <unitInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="98" startPosition="195" endLine="102" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
     <unitInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="102" startPosition="24" endLine="106" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
     <unitInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="106" startPosition="23" endLine="110" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
     <unitInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="110" startPosition="24" endLine="114" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
     <unitInfo nodeId="1459141168120638852" fileName="SuroundWithTryCatch_Intention.java" startLine="116" startPosition="20" endLine="120" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
-    <unitInfo nodeId="1459141168120816405" fileName="SuroundWithTryCatch_Intention.java" startLine="122" startPosition="334" endLine="126" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$3" />
+    <unitInfo nodeId="1459141168120816405" fileName="SuroundWithTryCatch_Intention.java" startLine="122" startPosition="332" endLine="126" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$3" />
     <unitInfo nodeId="1459141168113649163" fileName="SuroundWithTryCatch_Intention.java" startLine="133" startPosition="61" endLine="146" endPosition="9" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$4" />
     <unitInfo nodeId="1459141168117402918" fileName="SuroundWithTryCatch_Intention.java" startLine="96" startPosition="192" endLine="116" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$1" />
     <unitInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="81" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$IntentionImplementation" />
@@ -6821,12 +6821,12 @@
       <varInfo nodeId="3366354716707929765" varName="editorContext" />
       <varInfo nodeId="3366354716707929765" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="99" startPosition="197" endLine="103" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
+    <unitInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="99" startPosition="195" endLine="103" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
     <unitInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="103" startPosition="24" endLine="107" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
     <unitInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="107" startPosition="23" endLine="111" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
     <unitInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="111" startPosition="24" endLine="115" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
     <unitInfo nodeId="1459141168122400440" fileName="TryCatchFinally_Intention.java" startLine="117" startPosition="20" endLine="121" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
-    <unitInfo nodeId="1459141168122400471" fileName="TryCatchFinally_Intention.java" startLine="123" startPosition="329" endLine="127" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$3" />
+    <unitInfo nodeId="1459141168122400471" fileName="TryCatchFinally_Intention.java" startLine="123" startPosition="327" endLine="127" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$3" />
     <unitInfo nodeId="1459141168115870849" fileName="TryCatchFinally_Intention.java" startLine="134" startPosition="61" endLine="147" endPosition="9" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$4" />
     <unitInfo nodeId="1459141168122400427" fileName="TryCatchFinally_Intention.java" startLine="97" startPosition="187" endLine="117" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$1" />
     <unitInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="81" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$IntentionImplementation" />

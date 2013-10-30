@@ -51,7 +51,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
     QueueSequence.fromQueue(toCheck).addLastElement(conceptDeclaration);
     while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
       SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
-      List<SNode> aspects = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) (Object.class)), acd, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.EDITOR});
+      List<SNode> aspects = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), acd, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.EDITOR});
       if (!(SConceptOperations.isExactly(acd, "jetbrains.mps.lang.core.structure.BaseConcept")) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode a) {
           return SNodeOperations.isInstanceOf(a, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
@@ -59,7 +59,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
       })) {
         return false;
       }
-      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), acd, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})));
+      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), acd, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})));
     }
     return true;
   }

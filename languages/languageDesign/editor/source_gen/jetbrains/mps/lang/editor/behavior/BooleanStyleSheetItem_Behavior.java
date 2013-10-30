@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BooleanStyleSheetItem_Behavior {
   public static void init(SNode thisNode) {
-    StyleAttribute<Boolean> sa = BehaviorReflection.invokeVirtual((Class<StyleAttribute<Boolean>>) ((Class) (Object.class)), thisNode, "virtual_getStyleAttribute_3639065570239132541", new Object[]{});
+    StyleAttribute<Boolean> sa = BehaviorReflection.invokeVirtual((Class<StyleAttribute<Boolean>>) ((Class) Object.class), thisNode, "virtual_getStyleAttribute_3639065570239132541", new Object[]{});
     if (sa == null) {
       return;
     }
@@ -29,7 +29,7 @@ public class BooleanStyleSheetItem_Behavior {
 
   @Deprecated
   public static StyleAttribute<Boolean> call_getStyleAttribute_3639065570239132541(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<StyleAttribute<Boolean>>) ((Class) (Object.class)), thisNode, "virtual_getStyleAttribute_3639065570239132541", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<StyleAttribute<Boolean>>) ((Class) Object.class), thisNode, "virtual_getStyleAttribute_3639065570239132541", new Object[]{});
   }
 
   @Deprecated
@@ -39,6 +39,6 @@ public class BooleanStyleSheetItem_Behavior {
 
   @Deprecated
   public static StyleAttribute<Boolean> callSuper_getStyleAttribute_3639065570239132541(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<StyleAttribute<Boolean>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_getStyleAttribute_3639065570239132541", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<StyleAttribute<Boolean>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_getStyleAttribute_3639065570239132541", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -39,7 +39,7 @@ public class FunctionTypeUtil {
       return null;
     }
     if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "virtual_getResultType_1230475757059", new Object[]{});
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "virtual_getResultType_1230475757059", new Object[]{});
     } else if (SNodeOperations.isInstanceOf(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode meth = FunctionTypeUtil.getFunctionMethod(functionTypeOrClassifier);
       return ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(meth, "returnType", true), SNodeOperations.cast(functionTypeOrClassifier, "jetbrains.mps.baseLanguage.structure.ClassifierType"));

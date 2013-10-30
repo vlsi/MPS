@@ -16,7 +16,7 @@ public class _LinkAccessT_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getPublicType_1213877443338", new Object[]{}), "virtual_getClassExpression_1213877337357", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getPublicType_1213877443338", new Object[]{}), "virtual_getClassExpression_1213877337357", new Object[]{});
   }
 
   public static SNode virtual_getPublicType_1213877443338(SNode thisNode) {

@@ -12,7 +12,7 @@ public class ToolType_Behavior {
   }
 
   public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "tool", false), "virtual_getMembers_1213877528124", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "tool", false), "virtual_getMembers_1213877528124", new Object[]{});
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {

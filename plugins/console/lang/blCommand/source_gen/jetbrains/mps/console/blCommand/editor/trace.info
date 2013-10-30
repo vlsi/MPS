@@ -1489,7 +1489,7 @@
     <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="50" startPosition="7" endLine="51" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="54" startPosition="60" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="55" startPosition="62" endLine="56" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307205004141752568" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="127" endLine="60" endPosition="454" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004141752568" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="127" endLine="60" endPosition="452" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4307205004140263012" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="121" endLine="64" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="67" startPosition="34" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="25" startPosition="24" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1509,7 +1509,7 @@
     <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="41" startPosition="34" endLine="42" endPosition="21" />
     <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="45" startPosition="32" endLine="46" endPosition="21" />
     <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="48" startPosition="157" endLine="49" endPosition="21" />
-    <scopeInfo nodeId="4307205004141751594" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="127" endLine="60" endPosition="454" />
+    <scopeInfo nodeId="4307205004141751594" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="127" endLine="60" endPosition="452" />
     <scopeInfo nodeId="4307205004140167196" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="121" endLine="64" endPosition="166" />
     <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="67" startPosition="34" endLine="68" endPosition="18" />
     <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="25" startPosition="24" endLine="27" endPosition="39" />

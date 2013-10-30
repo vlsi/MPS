@@ -76,6 +76,6 @@ public class EditorCellIdScope extends FilteringScope {
       return true;
     }
     SNode conceptAspect = SNodeOperations.getAncestor(editorCellId, "jetbrains.mps.lang.structure.structure.IConceptAspect", false, false);
-    return conceptAspect == null || !(SConceptOperations.isSubConceptOf(myConceptDeclaration, NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{}))));
+    return conceptAspect == null || !(SConceptOperations.isSubConceptOf(myConceptDeclaration, NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{}))));
   }
 }

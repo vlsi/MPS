@@ -1628,7 +1628,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7918752904805774009(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(((Iterable<Map.Entry<String, String>>) BehaviorReflection.invokeVirtual((Class<Map<String, String>>) ((Class) (Object.class)), _context.getNode(), "virtual_getTaskArguments_7918752904805535914", new Object[]{}).entrySet())).select(new ISelector<Map.Entry<String, String>, SNode>() {
+    return Sequence.fromIterable(((Iterable<Map.Entry<String, String>>) BehaviorReflection.invokeVirtual((Class<Map<String, String>>) ((Class) Object.class), _context.getNode(), "virtual_getTaskArguments_7918752904805535914", new Object[]{}).entrySet())).select(new ISelector<Map.Entry<String, String>, SNode>() {
       public SNode select(Map.Entry<String, String> it) {
         SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         loopnode.setProperty("key", it.getKey());
@@ -1928,7 +1928,7 @@ public class QueriesGenerated {
     Map<SNode, SNode> participantForTask = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode participant : ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.structure.IWorkflowParticipant", false, new String[]{})).reversedList()) {
-      SNode targetTask = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), participant, "virtual_getTargetTask_6854204111265837872", new Object[]{});
+      SNode targetTask = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), participant, "virtual_getTargetTask_6854204111265837872", new Object[]{});
       if (MapSequence.fromMap(participantForTask).get(targetTask) == null) {
         MapSequence.fromMap(participantForTask).put(targetTask, SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants", null));
         SLinkOperations.setTarget(MapSequence.fromMap(participantForTask).get(targetTask), "for", targetTask, false);

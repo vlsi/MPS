@@ -60,7 +60,7 @@ public class AddOperationParameter_Intention implements IntentionFactory {
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty()) {
-      return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
+      return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
     }
     return false;
   }
@@ -89,7 +89,7 @@ public class AddOperationParameter_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) (Object.class)), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
+      List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
       if (ListSequence.fromList(applicableParms).count() == 1) {
         ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
       } else {

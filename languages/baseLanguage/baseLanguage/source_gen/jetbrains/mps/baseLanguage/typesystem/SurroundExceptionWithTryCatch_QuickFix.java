@@ -51,7 +51,7 @@ public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
 
 
     if (parentTryStatement != null) {
-      clauses.removeAll(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), parentTryStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{}));
+      clauses.removeAll(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentTryStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{}));
       if (SNodeOperations.isInstanceOf(parentTryStatement, "jetbrains.mps.baseLanguage.structure.TryCatchStatement")) {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parentTryStatement, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "catchClause", true)).addSequence(ListSequence.fromList(clauses));
       } else if (SNodeOperations.isInstanceOf(parentTryStatement, "jetbrains.mps.baseLanguage.structure.TryStatement")) {

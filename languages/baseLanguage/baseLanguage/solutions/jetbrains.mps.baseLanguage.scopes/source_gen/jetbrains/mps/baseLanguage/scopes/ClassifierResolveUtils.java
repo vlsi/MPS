@@ -580,7 +580,7 @@ public class ClassifierResolveUtils {
           continue;
         }
 
-        Iterable<SNode> neededMembers = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> neededMembers = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.getConceptDeclaration(it) == neededConcept;
           }
@@ -600,7 +600,7 @@ public class ClassifierResolveUtils {
         }
 
         // or findAll instead of findFirst ? 
-        SNode neededMember = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+        SNode neededMember = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.getConceptDeclaration(it) == neededConcept;
           }

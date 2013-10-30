@@ -19,7 +19,7 @@ public class typeof_ContextMemberOperation_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = contextMemberOperation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7012097027058652464", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7012097027058652461", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), contextMemberOperation, "virtual_createType_7012097027058652452", new Object[]{}), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "7012097027058652461", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextMemberOperation, "virtual_createType_7012097027058652452", new Object[]{}), _info_12389875345);
     }
   }
 

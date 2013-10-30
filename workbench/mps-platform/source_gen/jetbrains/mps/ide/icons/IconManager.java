@@ -128,7 +128,7 @@ public class IconManager {
         if (!(withoutAdditional)) {
           result.setIcon(BehaviorReflection.invokeVirtual(Icon.class, node, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{}), 1);
         }
-        List<Icon> markIcons = BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) (Object.class)), node, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
+        List<Icon> markIcons = BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), node, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
         if (markIcons != null) {
           LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
           layeredIcon.setIcon(result, 0);

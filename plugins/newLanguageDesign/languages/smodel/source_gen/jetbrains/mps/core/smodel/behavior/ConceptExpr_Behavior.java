@@ -12,7 +12,7 @@ public class ConceptExpr_Behavior {
   }
 
   public static SNode virtual_getConcept_3868630583617739768(SNode thisNode) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "expression", true), "virtual_getType_228266671027861783", new Object[]{});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "expression", true), "virtual_getType_228266671027861783", new Object[]{});
     // null if type is ot MqlConceptType 
     return SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.core.smodel.structure.MqlConceptType"), "concept", false);
   }

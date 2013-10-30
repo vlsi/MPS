@@ -89,7 +89,7 @@ public abstract class ExtractMethodRefactoring {
   private void correctThrowsList(SNode method) {
     List<SNode> throwables = new ArrayList<SNode>();
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
-      ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(BehaviorReflection.invokeNonVirtual((Class<Set<SNode>>) ((Class) (Object.class)), statement, "jetbrains.mps.baseLanguage.structure.Statement", "call_uncaughtThrowables_5412515780383108857", new Object[]{false})));
+      ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(BehaviorReflection.invokeNonVirtual((Class<Set<SNode>>) ((Class) Object.class), statement, "jetbrains.mps.baseLanguage.structure.Statement", "call_uncaughtThrowables_5412515780383108857", new Object[]{false})));
     }
     ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -117,7 +117,7 @@ public abstract class ExtractMethodRefactoring {
       SNode newDeclaration = _quotation_createNode_jq3ovj_a0a0c0l(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), _quotation_createNode_jq3ovj_a0a1a2a11(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
-        SNodeOperations.replaceWithAnother(reference, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), newDeclaration, "virtual_createReference_1213877517482", new Object[]{}));
+        SNodeOperations.replaceWithAnother(reference, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), newDeclaration, "virtual_createReference_1213877517482", new Object[]{}));
       }
     }
   }
@@ -180,7 +180,7 @@ public abstract class ExtractMethodRefactoring {
         }
       }
       for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
-        SNode declaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), parameter, "virtual_getDeclaration_1225282371351", new Object[]{});
+        SNode declaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parameter, "virtual_getDeclaration_1225282371351", new Object[]{});
         if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(declaration)) {
           MapSequence.fromMap(mapping).put(parameter, MapSequence.fromMap(variableDeclarationToParameter).get(declaration));
         }
@@ -190,7 +190,7 @@ public abstract class ExtractMethodRefactoring {
   }
 
   protected SNode createReference(SNode variable) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), variable, "virtual_createReference_1213877517482", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), variable, "virtual_createReference_1213877517482", new Object[]{});
   }
 
   protected List<SNode> createCallParameters() {

@@ -251,7 +251,7 @@ public class ResolveUnknownUtil {
       }
 
       SNode cls = classAndPos._0();
-      tokPos = (int) (classAndPos._1());
+      tokPos = (int) classAndPos._1();
 
       if (tokPos == tokens.length) {
         // no tokens left, all of them form a class name 

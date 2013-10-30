@@ -1545,19 +1545,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1232140975415(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_1232141024321(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_1232141409462(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_1232141456167(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_1232624140224(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1568,31 +1568,31 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_8665905049776863470(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlMethod", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776863535(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlMethod", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776863647(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlMethod", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776863712(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlMethod", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776864033(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlMethod", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776864121(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1611,35 +1611,35 @@ public class QueriesGenerated {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "baseMethodDeclaration", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776865423(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "baseMethodDeclaration", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776865562(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "baseMethodDeclaration", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776865652(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "baseMethodDeclaration", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776865971(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> siblings = SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "actualArgument", true);
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "baseMethodDeclaration", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true);
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), type, "virtual_getResultType_1230475757059", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_8665905049776866077(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1655,7 +1655,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7246115176735005221(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_7246115176735005714(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1683,7 +1683,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7246115176735007564(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "function", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "function", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "virtual_getTerminateType_1232032188607", new Object[]{}) != null);
   }
 
   public static boolean ifMacro_Condition_7246115176735007637(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -3476,7 +3476,7 @@ public class QueriesGenerated {
         for (SNode pdecl : pdecls) {
           if (argsItr.hasNext()) {
             SNode arg = argsItr.next();
-            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), bmc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bmc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
           }
         }
       }
@@ -3493,7 +3493,7 @@ public class QueriesGenerated {
         for (SNode pdecl : pdecls) {
           if (idx < ListSequence.fromList(args).count()) {
             SNode arg = ListSequence.fromList(args).getElement(idx);
-            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), bmc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bmc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
           }
           idx++;
         }
@@ -3686,7 +3686,7 @@ public class QueriesGenerated {
         for (SNode pdecl : pdecls) {
           if (argsItr.hasNext()) {
             SNode arg = argsItr.next();
-            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), cc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), cc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
           }
         }
       }
@@ -3702,7 +3702,7 @@ public class QueriesGenerated {
         for (SNode pdecl : pdecls) {
           if (idx < ListSequence.fromList(args).count()) {
             SNode arg = ListSequence.fromList(args).getElement(idx);
-            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), cc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), cc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
           }
           idx++;
         }
@@ -3790,7 +3790,7 @@ public class QueriesGenerated {
       for (SNode pdecl : pdecls) {
         if (idx < ListSequence.fromList(args).count()) {
           SNode arg = ListSequence.fromList(args).getElement(idx);
-          FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), ac, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+          FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ac, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
         }
         idx++;
       }
@@ -3809,7 +3809,7 @@ public class QueriesGenerated {
       for (SNode pdecl : pdecls) {
         if (idx < ListSequence.fromList(args).count()) {
           SNode arg = ListSequence.fromList(args).getElement(idx);
-          FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), emc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+          FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), emc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
         }
         idx++;
       }

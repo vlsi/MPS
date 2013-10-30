@@ -27,7 +27,7 @@ public class AbstractTextGenDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> call_getAvailableOperations_1234781444746(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), thisNode, "virtual_getAvailableOperations_1234781444746", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableOperations_1234781444746", new Object[]{});
   }
 
   @Deprecated
@@ -37,6 +37,6 @@ public class AbstractTextGenDeclaration_Behavior {
 
   @Deprecated
   public static List<SNode> callSuper_getAvailableOperations_1234781444746(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getAvailableOperations_1234781444746", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getAvailableOperations_1234781444746", new Class[]{SNode.class}, new Object[]{});
   }
 }

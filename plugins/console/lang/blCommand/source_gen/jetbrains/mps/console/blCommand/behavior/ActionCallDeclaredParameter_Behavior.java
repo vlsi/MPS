@@ -11,6 +11,6 @@ public class ActionCallDeclaredParameter_Behavior {
   }
 
   public static SNode virtual_getParameterDeclaration_119903734736614698(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(thisNode, "declaration", false), "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "declaration", false), "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
   }
 }

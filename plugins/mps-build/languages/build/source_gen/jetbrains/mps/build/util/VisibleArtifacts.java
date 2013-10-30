@@ -212,7 +212,7 @@ public class VisibleArtifacts {
     SNode current = SNodeOperations.as(path, "jetbrains.mps.build.structure.BuildRelativePath");
     if (current != null) {
       suffix.append("/").append(BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{null}));
-      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
+      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
     }
     SNode containingRoot = SNodeOperations.getContainingRoot(path);
     while (current != null) {
@@ -222,7 +222,7 @@ public class VisibleArtifacts {
       }
 
       suffix.insert(0, BehaviorReflection.invokeVirtual(String.class, current, "virtual_getLastSegment_1368030936106771141", new Object[]{null})).insert(0, "/");
-      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
+      current = SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getParent_8654221991637145399", new Object[]{}), "jetbrains.mps.build.structure.BuildRelativePath");
     }
 
     return MultiTuple.<SNode,String>from((SNode) null, (String) null);

@@ -41,7 +41,7 @@ public class BuildMpsLayout_TestModules_Behavior {
     ModulePlugins plugins = new ModulePlugins(project, genContext);
     plugins.collect(new MPSModulesClosure(genContext, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modules", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), it, "virtual_getModules_4560297596904469651", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
       }
     })).trackDevkits().runtimeClosure());
     for (SNode plugin : Sequence.fromIterable(plugins.getDependency())) {
@@ -59,7 +59,7 @@ public class BuildMpsLayout_TestModules_Behavior {
     // fetch modules 
     Iterable<SNode> originalModules = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modules", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), it, "virtual_getModules_4560297596904469651", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
       }
     });
     Iterable<SNode> modules = Sequence.fromIterable(new MPSModulesClosure(genContext, originalModules).trackDevkits().designtimeClosure().getAllModules()).union(Sequence.fromIterable(originalModules));

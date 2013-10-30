@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ef91bf702xk4bnhpi1kgdqwlucik6bi">
+<dependencies version="2" modelHash="-3mwi2ozuug0jguu2mju6xi5183150ap">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
   <common hash="-7fw1iww88ydy79n1saw1te8iyl8m8d1" />
   <source id="7241381882860002146" name="ASMArrayType" hash="-9ez6hkiojzacyh43cao952gt5v9vidn">
@@ -15,7 +15,7 @@
   <source id="7241381882860006706" name="ASMPrimitiveType" hash="-e9493wu91lrksmg22rd1v6qhdky3mnq">
     <file name="ASMPrimitiveType.java" />
   </source>
-  <source id="7241381882860006793" name="ASMField" hash="6081flwl6bk7qz0cctrxvvhvptb51w9">
+  <source id="7241381882860006793" name="ASMField" hash="-299cp9502r9tz17u9hgxqwpzcrhphtm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMField.java" />
   </source>
@@ -47,18 +47,18 @@
   <source id="7241381882860008734" name="ASMSuperType" hash="ejavnst6or7yi7mduq1efglv6f7cm7c">
     <file name="ASMSuperType.java" />
   </source>
-  <source id="7241381882860008759" name="ASMFormalTypeParameter" hash="-9u6f06tu1rymmgbofevx3fr083zldf1">
+  <source id="7241381882860008759" name="ASMFormalTypeParameter" hash="58t26enix0216moyz24gj9ss8bnmb2e">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMFormalTypeParameter.java" />
   </source>
   <source id="7241381882860008819" name="ASMExtendsType" hash="81728bta6qemfrkcdgwh8zx1ao66t6t">
     <file name="ASMExtendsType.java" />
   </source>
-  <source id="7241381882860009267" name="ASMParameterizedType" hash="6ab5zmob7hrmmu7rggu6zce0cecmpo6">
+  <source id="7241381882860009267" name="ASMParameterizedType" hash="-epbdza14v2alvxrdasmlsrsq9r3nn1b">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMParameterizedType.java" />
   </source>
-  <source id="7241381882860009362" name="ASMClass" hash="-1bpzyeqtvjuof5eppn57nkho36e6nph">
+  <source id="7241381882860009362" name="ASMClass" hash="2nah5nm17u065rrc7lmdwvkqk55iy83">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ASMClass.java" />
   </source>

@@ -662,7 +662,7 @@
     <nodeInfo nodeId="1203556587912" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="31" startPosition="62" endLine="32" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="35" startPosition="7" endLine="36" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="36" startPosition="55" endLine="37" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="37" startPosition="201" endLine="38" endPosition="443" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="37" startPosition="201" endLine="38" endPosition="441" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="43" startPosition="46" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="48" startPosition="5" endLine="49" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200921388036" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="49" startPosition="130" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -706,7 +706,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1200922167817" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="60" startPosition="30" endLine="62" endPosition="85" />
     <scopeInfo nodeId="1200922044207" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="68" startPosition="30" endLine="70" endPosition="85" />
-    <scopeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="35" startPosition="7" endLine="38" endPosition="443">
+    <scopeInfo nodeId="1200922039515" fileName="typeof_BaseMappingRule_InferenceRule.java" startLine="35" startPosition="7" endLine="38" endPosition="441">
       <varInfo nodeId="1200922039515" varName="_info_12389875345" />
       <varInfo nodeId="1200922039515" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>

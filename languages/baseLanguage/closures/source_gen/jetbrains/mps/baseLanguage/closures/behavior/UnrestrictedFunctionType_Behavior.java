@@ -31,12 +31,12 @@ public class UnrestrictedFunctionType_Behavior {
 
   public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
+    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
       sb.append("_return");
     } else {
       sb.append("_void");
     }
-    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{}) != null)) {
+    if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{}) != null)) {
       sb.append("_terminate");
     } else {
       sb.append("_void");

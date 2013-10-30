@@ -108,7 +108,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_4608161086085543486(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ModuleFinder.findModules(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "modules", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), it, "virtual_getModules_4560297596904469651", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
       }
     }), _context, _context.getNode());
   }
@@ -148,7 +148,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_4005526075833130408(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return new MPSModulesClosure(_context, ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "modules", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), SNodeOperations.as(it, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"), "virtual_getModules_4560297596904469651", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.as(it, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"), "virtual_getModules_4560297596904469651", new Object[]{});
       }
     })).trackDevkits().designtimeClosure();
   }

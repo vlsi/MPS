@@ -13,11 +13,11 @@ public class ILocalReference_Behavior {
 
   @Deprecated
   public static SNode call_getDeclaration_3262277503800831941(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getDeclaration_3262277503800831941", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDeclaration_3262277503800831941", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getDeclaration_3262277503800831941(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", new Class[]{SNode.class}, new Object[]{});
   }
 }

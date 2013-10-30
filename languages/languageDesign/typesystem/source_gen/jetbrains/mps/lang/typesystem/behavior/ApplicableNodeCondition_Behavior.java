@@ -13,11 +13,11 @@ public class ApplicableNodeCondition_Behavior {
 
   @Deprecated
   public static SNode call_getApplicableConcept_1213877307633(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), thisNode, "virtual_getApplicableConcept_1213877307633", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getApplicableConcept_1213877307633", new Object[]{});
   }
 
   @Deprecated
   public static SNode callSuper_getApplicableConcept_1213877307633(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"), callerConceptFqName, "virtual_getApplicableConcept_1213877307633", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"), callerConceptFqName, "virtual_getApplicableConcept_1213877307633", new Class[]{SNode.class}, new Object[]{});
   }
 }

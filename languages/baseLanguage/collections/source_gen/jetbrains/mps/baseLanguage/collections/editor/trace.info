@@ -1562,7 +1562,7 @@
     <nodeInfo nodeId="1184766078651" fileName="ForEachVariable_Editor.java" startLine="56" startPosition="78" endLine="57" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184766078651" fileName="ForEachVariable_Editor.java" startLine="58" startPosition="10" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184772415114" fileName="ForEachVariable_Editor.java" startLine="66" startPosition="129" endLine="67" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1184772415123" fileName="ForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1184772415123" fileName="ForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184772415139" fileName="ForEachVariable_Editor.java" startLine="70" startPosition="7" endLine="71" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184772415111" fileName="ForEachVariable_Editor.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ForEachVariable_name_postfixCellMenu_ufuydf_a0a0#()V" />
     <nodeInfo nodeId="1184766078651" fileName="ForEachVariable_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -1574,7 +1574,7 @@
     <scopeInfo nodeId="1184772415111" fileName="ForEachVariable_Editor.java" startLine="63" startPosition="63" endLine="63" endPosition="63" />
     <scopeInfo nodeId="1184766078651" fileName="ForEachVariable_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="1184766078651" fileName="ForEachVariable_Editor.java" startLine="39" startPosition="40" endLine="40" endPosition="81" />
-    <scopeInfo nodeId="1184772415122" fileName="ForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="329" />
+    <scopeInfo nodeId="1184772415122" fileName="ForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="327" />
     <scopeInfo nodeId="1184772415111" fileName="ForEachVariable_Editor.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="1184766078651" fileName="ForEachVariable_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1184766078651" varName="editorContext" />
@@ -11333,7 +11333,7 @@
     <nodeInfo nodeId="9042586985346099741" fileName="MultiForEachVariable_Editor.java" startLine="56" startPosition="78" endLine="57" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9042586985346099741" fileName="MultiForEachVariable_Editor.java" startLine="58" startPosition="10" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9042586985346099750" fileName="MultiForEachVariable_Editor.java" startLine="66" startPosition="129" endLine="67" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9042586985346099759" fileName="MultiForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9042586985346099759" fileName="MultiForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9042586985346099775" fileName="MultiForEachVariable_Editor.java" startLine="70" startPosition="7" endLine="71" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9042586985346099747" fileName="MultiForEachVariable_Editor.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultiForEachVariable_name_postfixCellMenu_bqabhr_a0a0#()V" />
     <nodeInfo nodeId="9042586985346099741" fileName="MultiForEachVariable_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -11345,7 +11345,7 @@
     <scopeInfo nodeId="9042586985346099747" fileName="MultiForEachVariable_Editor.java" startLine="63" startPosition="68" endLine="63" endPosition="68" />
     <scopeInfo nodeId="9042586985346099741" fileName="MultiForEachVariable_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="9042586985346099741" fileName="MultiForEachVariable_Editor.java" startLine="39" startPosition="40" endLine="40" endPosition="81" />
-    <scopeInfo nodeId="9042586985346099758" fileName="MultiForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="329" />
+    <scopeInfo nodeId="9042586985346099758" fileName="MultiForEachVariable_Editor.java" startLine="68" startPosition="129" endLine="69" endPosition="327" />
     <scopeInfo nodeId="9042586985346099747" fileName="MultiForEachVariable_Editor.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="9042586985346099741" fileName="MultiForEachVariable_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="9042586985346099741" varName="editorContext" />

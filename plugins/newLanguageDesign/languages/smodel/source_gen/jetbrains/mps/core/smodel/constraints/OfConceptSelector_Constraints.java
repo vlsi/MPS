@@ -37,7 +37,7 @@ public class OfConceptSelector_Constraints extends BaseConstraintsDescriptor {
     if (!(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.core.query.structure.MqlDotExpression"))) {
       return false;
     }
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true), "virtual_getType_228266671027861783", new Object[]{});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true), "virtual_getType_228266671027861783", new Object[]{});
     return SNodeOperations.isInstanceOf(type, "jetbrains.mps.core.query.structure.MqlCollectionType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true), "jetbrains.mps.core.smodel.structure.MqlNodeType");
   }
 

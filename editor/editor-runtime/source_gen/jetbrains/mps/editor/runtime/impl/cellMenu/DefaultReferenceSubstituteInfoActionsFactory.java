@@ -34,7 +34,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
   public DefaultReferenceSubstituteInfoActionsFactory(SNode sourceNode, SNode linkDeclaration, DefaultReferenceSubstituteInfo substituteInfo) {
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
-    SNode genuineLinkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) (Object.class)), myLinkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_getGenuineLink_1213877254523", new Object[]{});
+    SNode genuineLinkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), myLinkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_getGenuineLink_1213877254523", new Object[]{});
     if (genuineLinkDeclaration == null) {
       return;
     }

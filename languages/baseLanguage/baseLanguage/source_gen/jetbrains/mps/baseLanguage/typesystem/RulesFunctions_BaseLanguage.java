@@ -421,7 +421,7 @@ __switch__:
           {
             SNode _nodeToCheck_1029348928467 = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8531167801199654648", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) ListSequence.fromList(nodes).first(), (SNode) (TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(tvd)), false, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) ListSequence.fromList(nodes).first(), (SNode) TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(tvd), false, true, _info_12389875345);
           }
         }
       }
@@ -626,13 +626,13 @@ __switch__:
                 }
               }
             } else {
-              if (ListSequence.fromList(ancSLs).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getBody_1239354440022", new Object[]{}))) {
+              if (ListSequence.fromList(ancSLs).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getBody_1239354440022", new Object[]{}))) {
                 SNode methodLike = SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike");
                 supportsCheckedExceptions = BehaviorReflection.invokeVirtual(Boolean.TYPE, methodLike, "virtual_supportsCheckedExceptions_8510677279630867629", new Object[]{});
                 if (BehaviorReflection.invokeVirtual(Boolean.TYPE, methodLike, "virtual_implicitThrows_4989157187872658723", new Object[]{})) {
                   ListSequence.fromList(throwTypes).clear();
                 } else {
-                  for (final SNode thr : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), methodLike, "virtual_getThrowableTypes_6204026822016975623", new Object[]{})) {
+                  for (final SNode thr : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), methodLike, "virtual_getThrowableTypes_6204026822016975623", new Object[]{})) {
                     ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                       public boolean accept(SNode tt) {
                         return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);

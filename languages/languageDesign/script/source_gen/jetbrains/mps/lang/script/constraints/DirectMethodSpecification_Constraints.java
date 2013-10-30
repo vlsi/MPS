@@ -55,7 +55,7 @@ public class DirectMethodSpecification_Constraints extends BaseConstraintsDescri
               SNode ancestor = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", true, false);
               SNode classifierSpecification = SNodeOperations.as(SLinkOperations.getTarget(ancestor, "oldClassifier", true), "jetbrains.mps.lang.script.structure.DirectClassifierSpecification");
               if (classifierSpecification != null) {
-                return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SLinkOperations.getTarget(classifierSpecification, "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+                return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(classifierSpecification, "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
                   }

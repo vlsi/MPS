@@ -256,7 +256,7 @@ public class CommandUtil {
 
   public static void executeScript(ConsoleContext context, SNode script) {
     final ConsoleTool consoleTool = check_1pinza_a0a0lb(ProjectHelper.toIdeaProject(context.getProject()));
-    final Iterable<SNode> commands = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), script, "virtual_getCommands_2197843344734463936", new Object[]{});
+    final Iterable<SNode> commands = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), script, "virtual_getCommands_2197843344734463936", new Object[]{});
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         executeCommands(consoleTool, Sequence.fromIterable(commands).toListSequence(), 0);

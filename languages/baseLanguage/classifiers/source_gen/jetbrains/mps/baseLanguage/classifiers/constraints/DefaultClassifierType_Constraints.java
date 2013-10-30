@@ -46,7 +46,7 @@ public class DefaultClassifierType_Constraints extends BaseConstraintsDescriptor
             List<SNode> classifiers = SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
             classifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SNodeOperations.getConceptDeclaration(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), it, "virtual_createType_1213877527970", new Object[]{})) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType");
+                return SNodeOperations.getConceptDeclaration(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_createType_1213877527970", new Object[]{})) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType");
               }
             }).toListSequence();
             return classifiers;

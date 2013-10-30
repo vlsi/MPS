@@ -45,7 +45,7 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
     if (classifier == null) {
       return false;
     }
-    boolean hasSuper = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), classifier, "virtual_createSuperType_1217433657148", new Object[]{}) != null;
+    boolean hasSuper = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_createSuperType_1217433657148", new Object[]{}) != null;
     if (!(hasSuper)) {
       return false;
     }

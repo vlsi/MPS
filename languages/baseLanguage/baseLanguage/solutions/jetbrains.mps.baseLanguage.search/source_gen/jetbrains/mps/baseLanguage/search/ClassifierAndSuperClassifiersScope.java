@@ -109,7 +109,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> list = super.getNodes(condition);
     if (SNodeOperations.isInstanceOf(myTopClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && (this.myOriginalConstraint & IClassifiersSearchScope.CONSTRUCTOR) == IClassifiersSearchScope.CONSTRUCTOR) {
-      for (SNode constructor : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) (Object.class)), (SNodeOperations.cast(myTopClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})) {
+      for (SNode constructor : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(myTopClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})) {
         if (condition.met(constructor)) {
           list.add(constructor);
         }

@@ -50,7 +50,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   public ITestNodeWrapper getTestCase() {
     if (check_9og6tg_a0a3(getNode(), this)) {
-      return TestNodeWrapperFactory.tryToWrap(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestCase_1216134500045", new Object[]{}));
+      return TestNodeWrapperFactory.tryToWrap(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestCase_1216134500045", new Object[]{}));
     }
     if (isTestCase()) {
       return null;
@@ -68,7 +68,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     if (node == null) {
       return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
     }
-    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) (Object.class)), SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestMethods_2148145109766218395", new Object[]{})).select(new ISelector<SNode, ITestNodeWrapper>() {
+    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestMethods_2148145109766218395", new Object[]{})).select(new ISelector<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper select(SNode it) {
         return TestNodeWrapperFactory.tryToWrap(it);
       }

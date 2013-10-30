@@ -21,7 +21,7 @@ public class check_SNotationPredicate_NonTypesystemRule extends AbstractNonTypes
   }
 
   public void applyRule(final SNode sNotationPredicate, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), SLinkOperations.getTarget(sNotationPredicate, "expr", true), "virtual_getType_228266671027861783", new Object[]{});
+    SNode type = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(sNotationPredicate, "expr", true), "virtual_getType_228266671027861783", new Object[]{});
     if (type != null && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, type, "virtual_isSubtypeOf_2852142168179579064", new Object[]{createMqlBoolType_1y4mja_a0a0a1a1()}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
