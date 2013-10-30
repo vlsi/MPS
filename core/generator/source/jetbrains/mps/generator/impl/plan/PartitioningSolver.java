@@ -19,8 +19,6 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
-import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.*;
 
@@ -77,7 +75,7 @@ public class PartitioningSolver {
 //          for (TemplateMappingConfiguration lockedMapping_1 : lockedMappings_1) {
 //            Map<TemplateMappingConfiguration, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
 //            PriorityData priorityDataToApply = locks_1.get(lockedMapping);
-//            PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
+//            PriorityMapUtil.updateLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
 //            checkSelfLocking(lockedMapping_1);
 //          }
 
@@ -86,7 +84,7 @@ public class PartitioningSolver {
             List<TemplateMappingConfiguration> lockedMappings_1 = myPriorityMap.getLockedMappingsForLockMapping(lockedMapping);
             for (TemplateMappingConfiguration lockedMapping_1 : lockedMappings_1) {
               PriorityData priorityDataToApply = myPriorityMap.priorityData(lockedMapping_1, lockedMapping);
-              boolean newLockAdded = myPriorityMap.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply);
+              boolean newLockAdded = myPriorityMap.updateLock(lockedMapping_1, weakLockMapping, priorityDataToApply);
               checkSelfLocking(lockedMapping_1);
               if (newLockAdded) {
                 // if new lock is a weak lock, then better start all over again (weak locks cleaning)
@@ -160,7 +158,7 @@ public class PartitioningSolver {
   }
 
   private List<TemplateMappingConfiguration> createMappingSet(boolean topPriorityGroup) {
-    // add all not-locking-mappinds to set
+    // add all not-locking-mappings to set
     List<TemplateMappingConfiguration> mappingSet = new ArrayList<TemplateMappingConfiguration>();
     for (TemplateMappingConfiguration mapping : myPriorityMap.keys()) {
       if (mapping.isTopPriority() != topPriorityGroup) continue;
