@@ -60,13 +60,13 @@ public class GenerationPartitioner {
   private final Map<SModelReference, TemplateModel> myModelMap;
 
   // result
-  private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
+  private final PriorityMap myPriorityMap;
   private final List<CoherentSetData> myCoherentMappings;
   private Set<TemplateMappingPriorityRule> myConflictingRules;
 
   public GenerationPartitioner(Collection<TemplateModule> generators) {
     myGenerators = generators;
-    myPriorityMap = new HashMap<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>>();
+    myPriorityMap = new PriorityMap();
     myCoherentMappings = new ArrayList<CoherentSetData>();
     myConflictingRules = new HashSet<TemplateMappingPriorityRule>();
 
@@ -84,9 +84,7 @@ public class GenerationPartitioner {
   public List<List<TemplateMappingConfiguration>> createMappingSets() {
     for (TemplateModule generator : myGenerators) {
       for (TemplateModel model : generator.getModels()) {
-        for (TemplateMappingConfiguration m : model.getConfigurations()) {
-          myPriorityMap.put(m, new HashMap<TemplateMappingConfiguration, PriorityData>());
-        }
+        myPriorityMap.prepare(model.getConfigurations());
       }
     }
 
@@ -105,18 +103,6 @@ public class GenerationPartitioner {
       }
       for (TemplateMappingPriorityRule rule : priorities) {
         processRule((MappingPriorityRule) rule, generator);
-      }
-    }
-  }
-
-  private void printRules() {
-    for (TemplateMappingConfiguration left : myPriorityMap.keySet()) {
-      Map<TemplateMappingConfiguration, PriorityData> right = myPriorityMap.get(left);
-
-      System.out.println(left.getName() + " (" + left.getModel().getLongName() + ")");
-      for (Entry<TemplateMappingConfiguration, PriorityData> entry : right.entrySet()) {
-        System.out.println("\t\t" + (entry.getValue().isStrict() ? "<   " :
-            "<= ") + entry.getKey().getName() + " (" + entry.getKey().getModel().getLongName() + ")");
       }
     }
   }
@@ -147,13 +133,11 @@ public class GenerationPartitioner {
       boolean isStrict = rule.getType() == RuleType.STRICTLY_BEFORE || rule.getType() == RuleType.STRICTLY_AFTER;
 
       for (TemplateMappingConfiguration lesserPriMapping : loPrio) {
-        Map<TemplateMappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
-
         for (TemplateMappingConfiguration grtPriMapping : hiPrio) {
-          if (!grtPriMappingsFromMap.containsKey(grtPriMapping)) {
-            grtPriMappingsFromMap.put(grtPriMapping, new PriorityData(isStrict, rule));
+          PriorityData priorityData = myPriorityMap.priorityData(lesserPriMapping, grtPriMapping);
+          if (priorityData == null) {
+            myPriorityMap.put(lesserPriMapping, grtPriMapping, new PriorityData(isStrict, rule));
           } else {
-            PriorityData priorityData = grtPriMappingsFromMap.get(grtPriMapping);
             if (isStrict) priorityData.myStrict = true;
             priorityData.myCauseRules.add(rule);
           }
@@ -165,7 +149,7 @@ public class GenerationPartitioner {
   private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator,
       String sourceGeneratorID) {
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
-      return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keySet());
+      return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keys());
     }
 
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
@@ -284,6 +268,11 @@ public class GenerationPartitioner {
       myMappings = mappings;
       myCauseRules = new HashSet<MappingPriorityRule>();
       myCauseRules.add(rule);
+    }
+
+    void merge(CoherentSetData other) {
+      myMappings.addAll(other.myMappings);
+      myCauseRules.addAll(other.myCauseRules);
     }
   } // class CoherentSetData
 }
