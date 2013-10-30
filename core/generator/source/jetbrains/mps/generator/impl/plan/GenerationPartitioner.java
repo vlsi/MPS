@@ -62,13 +62,13 @@ public class GenerationPartitioner {
   // result
   private final PriorityMap myPriorityMap;
   private final List<CoherentSetData> myCoherentMappings;
-  private Set<TemplateMappingPriorityRule> myConflictingRules;
+  private PriorityConflicts myConflicts;
 
   public GenerationPartitioner(Collection<TemplateModule> generators) {
     myGenerators = generators;
     myPriorityMap = new PriorityMap();
     myCoherentMappings = new ArrayList<CoherentSetData>();
-    myConflictingRules = new HashSet<TemplateMappingPriorityRule>();
+    myConflicts = new PriorityConflicts();
 
     myModulesMap = new HashMap<SModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
@@ -92,7 +92,7 @@ public class GenerationPartitioner {
     loadRules();
 
     // solve
-    return new PartitioningSolver(myPriorityMap, myCoherentMappings, myConflictingRules).solve();
+    return new PartitioningSolver(myPriorityMap, myCoherentMappings, myConflicts).solve();
   }
 
   private void loadRules() {
@@ -211,10 +211,9 @@ public class GenerationPartitioner {
     return Collections.emptyList();
   }
 
-  public Set<TemplateMappingPriorityRule> getConflictingPriorityRules() {
-    return myConflictingRules;
+  public PriorityConflicts getConflictingPriorityRules() {
+    return myConflicts;
   }
-
 
   static class PriorityData {
     boolean myStrict;
