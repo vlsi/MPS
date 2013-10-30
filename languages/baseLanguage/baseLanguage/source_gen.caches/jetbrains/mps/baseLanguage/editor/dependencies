@@ -959,6 +959,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.CastExpression_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.CastExpression_KeyMap" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.CastExpression_typeAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -986,6 +987,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.CastExpression_typeAction" file="CastExpression_typeAction.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.CatchClause_Editor" file="CatchClause_Editor.java">
     <classNode dependClassName="java.lang.Class" />

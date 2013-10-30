@@ -5410,211 +5410,215 @@
     </scopeInfo>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/4920206213429821380">
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="112" startPosition="175" endLine="112" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4920206213429823708" fileName="AlterStatementListContainerFactoryUtils.java" startLine="22" startPosition="51" endLine="23" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4920206213429823728" fileName="AlterStatementListContainerFactoryUtils.java" startLine="26" startPosition="49" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4920206213429823739" fileName="AlterStatementListContainerFactoryUtils.java" startLine="29" startPosition="39" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4920206213431854464" fileName="AlterStatementListContainerFactoryUtils.java" startLine="37" startPosition="35" endLine="38" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4920206213431854491" fileName="AlterStatementListContainerFactoryUtils.java" startLine="41" startPosition="60" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8176191621197432044" fileName="AlterStatementListContainerFactoryUtils.java" startLine="43" startPosition="38" endLine="44" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895711298917" fileName="AlterStatementListContainerFactoryUtils.java" startLine="47" startPosition="101" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895798512938" fileName="AlterStatementListContainerFactoryUtils.java" startLine="48" startPosition="26" endLine="49" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895711326842" fileName="AlterStatementListContainerFactoryUtils.java" startLine="50" startPosition="110" endLine="51" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895798514579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="51" startPosition="185" endLine="52" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895711400823" fileName="AlterStatementListContainerFactoryUtils.java" startLine="53" startPosition="129" endLine="54" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895798529557" fileName="AlterStatementListContainerFactoryUtils.java" startLine="54" startPosition="202" endLine="55" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895711412391" fileName="AlterStatementListContainerFactoryUtils.java" startLine="56" startPosition="14" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2442451895711032757" fileName="AlterStatementListContainerFactoryUtils.java" startLine="58" startPosition="7" endLine="59" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895711118466" fileName="AlterStatementListContainerFactoryUtils.java" startLine="59" startPosition="110" endLine="60" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895711078840" fileName="AlterStatementListContainerFactoryUtils.java" startLine="60" startPosition="126" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895711150912" fileName="AlterStatementListContainerFactoryUtils.java" startLine="61" startPosition="62" endLine="62" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895794305189" fileName="AlterStatementListContainerFactoryUtils.java" startLine="62" startPosition="97" endLine="63" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895711650111" fileName="AlterStatementListContainerFactoryUtils.java" startLine="63" startPosition="193" endLine="64" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8743384850618103030" fileName="AlterStatementListContainerFactoryUtils.java" startLine="64" startPosition="91" endLine="65" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8743384850618114333" fileName="AlterStatementListContainerFactoryUtils.java" startLine="65" startPosition="27" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2442451895711029708" fileName="AlterStatementListContainerFactoryUtils.java" startLine="66" startPosition="16" endLine="67" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895711821097" fileName="AlterStatementListContainerFactoryUtils.java" startLine="67" startPosition="69" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2442451895711821768" fileName="AlterStatementListContainerFactoryUtils.java" startLine="68" startPosition="0" endLine="69" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895792689353" fileName="AlterStatementListContainerFactoryUtils.java" startLine="69" startPosition="105" endLine="70" endPosition="349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797062782" fileName="AlterStatementListContainerFactoryUtils.java" startLine="70" startPosition="349" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2442451895797064681" fileName="AlterStatementListContainerFactoryUtils.java" startLine="71" startPosition="0" endLine="72" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895797063721" fileName="AlterStatementListContainerFactoryUtils.java" startLine="72" startPosition="140" endLine="73" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797110049" fileName="AlterStatementListContainerFactoryUtils.java" startLine="73" startPosition="124" endLine="74" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797149627" fileName="AlterStatementListContainerFactoryUtils.java" startLine="74" startPosition="168" endLine="75" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797246850" fileName="AlterStatementListContainerFactoryUtils.java" startLine="75" startPosition="158" endLine="76" endPosition="380" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895796734503" fileName="AlterStatementListContainerFactoryUtils.java" startLine="76" startPosition="380" endLine="77" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895798443987" fileName="AlterStatementListContainerFactoryUtils.java" startLine="77" startPosition="151" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2442451895798504233" fileName="AlterStatementListContainerFactoryUtils.java" startLine="80" startPosition="41" endLine="81" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2442451895798563612" fileName="AlterStatementListContainerFactoryUtils.java" startLine="84" startPosition="37" endLine="85" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895798587420" fileName="AlterStatementListContainerFactoryUtils.java" startLine="89" startPosition="41" endLine="90" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2442451895798599466" fileName="AlterStatementListContainerFactoryUtils.java" startLine="93" startPosition="37" endLine="94" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4540366540229612038" fileName="AlterStatementListContainerFactoryUtils.java" startLine="101" startPosition="114" endLine="102" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="106" startPosition="62" endLine="107" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="107" startPosition="63" endLine="108" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="109" startPosition="5" endLine="110" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="110" startPosition="160" endLine="111" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="110" startPosition="160" endLine="111" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="111" startPosition="246" endLine="112" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="112" startPosition="175" endLine="113" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="113" startPosition="33" endLine="114" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="115" startPosition="5" endLine="116" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="119" startPosition="63" endLine="120" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="120" startPosition="63" endLine="121" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="121" startPosition="155" endLine="122" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="121" startPosition="155" endLine="122" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="122" startPosition="221" endLine="123" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="126" startPosition="63" endLine="127" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="127" startPosition="63" endLine="128" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="129" startPosition="5" endLine="130" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="130" startPosition="160" endLine="131" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="130" startPosition="160" endLine="131" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="131" startPosition="246" endLine="132" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="132" startPosition="170" endLine="133" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="132" startPosition="170" endLine="133" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="133" startPosition="263" endLine="134" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="134" startPosition="33" endLine="135" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="136" startPosition="5" endLine="137" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="140" startPosition="63" endLine="141" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="141" startPosition="63" endLine="142" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="143" startPosition="5" endLine="144" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="144" startPosition="160" endLine="145" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="144" startPosition="160" endLine="145" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="145" startPosition="246" endLine="146" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="146" startPosition="170" endLine="147" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="146" startPosition="170" endLine="147" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="147" startPosition="269" endLine="148" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="148" startPosition="33" endLine="149" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="150" startPosition="5" endLine="151" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2442451895711412139" fileName="AlterStatementListContainerFactoryUtils.java" startLine="56" startPosition="12" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4920206213429823706" fileName="AlterStatementListContainerFactoryUtils.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasCondition#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4920206213429823737" fileName="AlterStatementListContainerFactoryUtils.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4920206213431854462" fileName="AlterStatementListContainerFactoryUtils.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4920206213431854496" fileName="AlterStatementListContainerFactoryUtils.java" startLine="42" startPosition="57" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2442451895798503113" fileName="AlterStatementListContainerFactoryUtils.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2442451895798563103" fileName="AlterStatementListContainerFactoryUtils.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2442451895798587418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2442451895798587429" fileName="AlterStatementListContainerFactoryUtils.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4540366540229612032" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="80" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4920206213429823731" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="30" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4920206213431854459" fileName="AlterStatementListContainerFactoryUtils.java" startLine="35" startPosition="77" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4540366540229612052" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildContainerIfPossible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4920206213431854484" fileName="AlterStatementListContainerFactoryUtils.java" startLine="40" startPosition="7" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="119" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createClassifierType_kz5t2g_a0a8a2a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="108" startPosition="154" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4920206213429823726" fileName="AlterStatementListContainerFactoryUtils.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCondition#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="128" startPosition="154" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="142" startPosition="154" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2442451895711296933" fileName="AlterStatementListContainerFactoryUtils.java" startLine="49" startPosition="71" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2442451895798444446" fileName="AlterStatementListContainerFactoryUtils.java" startLine="78" startPosition="0" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895798587407" fileName="AlterStatementListContainerFactoryUtils.java" startLine="87" startPosition="9" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="106" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDotExpression_kz5t2g_a0a6a2a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="126" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDotExpression_kz5t2g_a0a31a2a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="140" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDotExpression_kz5t2g_a0a91a2a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2442451895700259638" fileName="AlterStatementListContainerFactoryUtils.java" startLine="46" startPosition="5" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4920206213431823415" fileName="AlterStatementListContainerFactoryUtils.java" startLine="35" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildContainer#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="112" startPosition="175" endLine="112" endPosition="175" />
-    <scopeInfo nodeId="4920206213429823707" fileName="AlterStatementListContainerFactoryUtils.java" startLine="22" startPosition="51" endLine="23" endPosition="286" />
-    <scopeInfo nodeId="4920206213429823738" fileName="AlterStatementListContainerFactoryUtils.java" startLine="29" startPosition="39" endLine="30" endPosition="99" />
-    <scopeInfo nodeId="4920206213431854463" fileName="AlterStatementListContainerFactoryUtils.java" startLine="37" startPosition="35" endLine="38" endPosition="196" />
-    <scopeInfo nodeId="4920206213431854500" fileName="AlterStatementListContainerFactoryUtils.java" startLine="43" startPosition="38" endLine="44" endPosition="111" />
-    <scopeInfo nodeId="2442451895711412140" fileName="AlterStatementListContainerFactoryUtils.java" startLine="56" startPosition="14" endLine="57" endPosition="15" />
-    <scopeInfo nodeId="2442451895798503114" fileName="AlterStatementListContainerFactoryUtils.java" startLine="80" startPosition="41" endLine="81" endPosition="99" />
-    <scopeInfo nodeId="2442451895798563104" fileName="AlterStatementListContainerFactoryUtils.java" startLine="84" startPosition="37" endLine="85" endPosition="135" />
-    <scopeInfo nodeId="2442451895798587419" fileName="AlterStatementListContainerFactoryUtils.java" startLine="89" startPosition="41" endLine="90" endPosition="88" />
-    <scopeInfo nodeId="2442451895798587430" fileName="AlterStatementListContainerFactoryUtils.java" startLine="93" startPosition="37" endLine="94" endPosition="237" />
-    <scopeInfo nodeId="4540366540229612037" fileName="AlterStatementListContainerFactoryUtils.java" startLine="101" startPosition="114" endLine="102" endPosition="127" />
-    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="110" startPosition="160" endLine="111" endPosition="246" />
-    <scopeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="121" startPosition="155" endLine="122" endPosition="221" />
-    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="130" startPosition="160" endLine="131" endPosition="246" />
-    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="132" startPosition="170" endLine="133" endPosition="263" />
-    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="144" startPosition="160" endLine="145" endPosition="246" />
-    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="146" startPosition="170" endLine="147" endPosition="269" />
-    <scopeInfo nodeId="2442451895711296936" fileName="AlterStatementListContainerFactoryUtils.java" startLine="50" startPosition="110" endLine="52" endPosition="164" />
-    <scopeInfo nodeId="2442451895711344911" fileName="AlterStatementListContainerFactoryUtils.java" startLine="53" startPosition="129" endLine="55" endPosition="176" />
-    <scopeInfo nodeId="4920206213429823706" fileName="AlterStatementListContainerFactoryUtils.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="124" startPosition="175" endLine="124" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4920206213429823708" fileName="AlterStatementListContainerFactoryUtils.java" startLine="23" startPosition="51" endLine="24" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4920206213429823728" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="49" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4920206213429823739" fileName="AlterStatementListContainerFactoryUtils.java" startLine="30" startPosition="39" endLine="31" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4920206213431854464" fileName="AlterStatementListContainerFactoryUtils.java" startLine="38" startPosition="35" endLine="39" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4920206213431854491" fileName="AlterStatementListContainerFactoryUtils.java" startLine="42" startPosition="60" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8176191621197432044" fileName="AlterStatementListContainerFactoryUtils.java" startLine="44" startPosition="38" endLine="45" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895711298917" fileName="AlterStatementListContainerFactoryUtils.java" startLine="48" startPosition="101" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895798512938" fileName="AlterStatementListContainerFactoryUtils.java" startLine="49" startPosition="26" endLine="50" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1133024909335113909" fileName="AlterStatementListContainerFactoryUtils.java" startLine="50" startPosition="71" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="990584741373186851" fileName="AlterStatementListContainerFactoryUtils.java" startLine="51" startPosition="20" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895711326842" fileName="AlterStatementListContainerFactoryUtils.java" startLine="53" startPosition="110" endLine="54" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895798514579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="54" startPosition="185" endLine="55" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1133024909335114486" fileName="AlterStatementListContainerFactoryUtils.java" startLine="55" startPosition="164" endLine="56" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="990584741373188889" fileName="AlterStatementListContainerFactoryUtils.java" startLine="56" startPosition="194" endLine="57" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895711400823" fileName="AlterStatementListContainerFactoryUtils.java" startLine="58" startPosition="129" endLine="59" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895798529557" fileName="AlterStatementListContainerFactoryUtils.java" startLine="59" startPosition="202" endLine="60" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1133024909335143684" fileName="AlterStatementListContainerFactoryUtils.java" startLine="60" startPosition="176" endLine="61" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="990584741373207381" fileName="AlterStatementListContainerFactoryUtils.java" startLine="61" startPosition="269" endLine="62" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895711412391" fileName="AlterStatementListContainerFactoryUtils.java" startLine="63" startPosition="14" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2442451895711032757" fileName="AlterStatementListContainerFactoryUtils.java" startLine="65" startPosition="7" endLine="66" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895711118466" fileName="AlterStatementListContainerFactoryUtils.java" startLine="66" startPosition="110" endLine="67" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895711078840" fileName="AlterStatementListContainerFactoryUtils.java" startLine="67" startPosition="134" endLine="68" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895711150912" fileName="AlterStatementListContainerFactoryUtils.java" startLine="68" startPosition="70" endLine="69" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895794305189" fileName="AlterStatementListContainerFactoryUtils.java" startLine="69" startPosition="105" endLine="70" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="990584741371505989" fileName="AlterStatementListContainerFactoryUtils.java" startLine="70" startPosition="201" endLine="71" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="990584741372753255" fileName="AlterStatementListContainerFactoryUtils.java" startLine="72" startPosition="107" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="990584741371513473" fileName="AlterStatementListContainerFactoryUtils.java" startLine="74" startPosition="14" endLine="75" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1133024909336900629" fileName="AlterStatementListContainerFactoryUtils.java" startLine="75" startPosition="183" endLine="76" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8743384850617859286" fileName="AlterStatementListContainerFactoryUtils.java" startLine="76" startPosition="64" endLine="77" endPosition="357" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895711029708" fileName="AlterStatementListContainerFactoryUtils.java" startLine="77" startPosition="357" endLine="78" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895711821097" fileName="AlterStatementListContainerFactoryUtils.java" startLine="78" startPosition="79" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2442451895711821768" fileName="AlterStatementListContainerFactoryUtils.java" startLine="79" startPosition="0" endLine="80" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895792689353" fileName="AlterStatementListContainerFactoryUtils.java" startLine="80" startPosition="109" endLine="81" endPosition="359" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797062782" fileName="AlterStatementListContainerFactoryUtils.java" startLine="81" startPosition="359" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2442451895797064681" fileName="AlterStatementListContainerFactoryUtils.java" startLine="82" startPosition="0" endLine="83" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895797063721" fileName="AlterStatementListContainerFactoryUtils.java" startLine="83" startPosition="142" endLine="84" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797110049" fileName="AlterStatementListContainerFactoryUtils.java" startLine="84" startPosition="126" endLine="85" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797149627" fileName="AlterStatementListContainerFactoryUtils.java" startLine="85" startPosition="170" endLine="86" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797246850" fileName="AlterStatementListContainerFactoryUtils.java" startLine="86" startPosition="163" endLine="87" endPosition="390" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895796734503" fileName="AlterStatementListContainerFactoryUtils.java" startLine="87" startPosition="390" endLine="88" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="990584741372770783" fileName="AlterStatementListContainerFactoryUtils.java" startLine="88" startPosition="153" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2442451895798504233" fileName="AlterStatementListContainerFactoryUtils.java" startLine="91" startPosition="43" endLine="92" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2442451895798563612" fileName="AlterStatementListContainerFactoryUtils.java" startLine="95" startPosition="39" endLine="96" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895798587420" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="43" endLine="101" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2442451895798599466" fileName="AlterStatementListContainerFactoryUtils.java" startLine="104" startPosition="39" endLine="105" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4540366540229612038" fileName="AlterStatementListContainerFactoryUtils.java" startLine="113" startPosition="114" endLine="114" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="118" startPosition="62" endLine="119" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="119" startPosition="63" endLine="120" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="121" startPosition="5" endLine="122" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="122" startPosition="160" endLine="123" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="122" startPosition="160" endLine="123" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="123" startPosition="246" endLine="124" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="124" startPosition="175" endLine="125" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="125" startPosition="33" endLine="126" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="127" startPosition="5" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="131" startPosition="65" endLine="132" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="132" startPosition="63" endLine="133" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="134" startPosition="5" endLine="135" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="135" startPosition="160" endLine="136" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="135" startPosition="160" endLine="136" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="136" startPosition="246" endLine="137" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="137" startPosition="170" endLine="138" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="137" startPosition="170" endLine="138" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="138" startPosition="263" endLine="139" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="139" startPosition="33" endLine="140" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="141" startPosition="5" endLine="142" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="145" startPosition="66" endLine="146" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="146" startPosition="63" endLine="147" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="148" startPosition="5" endLine="149" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="149" startPosition="160" endLine="150" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="149" startPosition="160" endLine="150" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="150" startPosition="246" endLine="151" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="151" startPosition="170" endLine="152" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="151" startPosition="170" endLine="152" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="152" startPosition="269" endLine="153" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="153" startPosition="33" endLine="154" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="155" startPosition="5" endLine="156" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2442451895711412139" fileName="AlterStatementListContainerFactoryUtils.java" startLine="63" startPosition="12" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4920206213429823706" fileName="AlterStatementListContainerFactoryUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasCondition#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4920206213429823737" fileName="AlterStatementListContainerFactoryUtils.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4920206213431854462" fileName="AlterStatementListContainerFactoryUtils.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4920206213431854496" fileName="AlterStatementListContainerFactoryUtils.java" startLine="43" startPosition="57" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2442451895798503113" fileName="AlterStatementListContainerFactoryUtils.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2442451895798563103" fileName="AlterStatementListContainerFactoryUtils.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2442451895798587418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2442451895798587429" fileName="AlterStatementListContainerFactoryUtils.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4540366540229612032" fileName="AlterStatementListContainerFactoryUtils.java" startLine="112" startPosition="80" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4920206213429823731" fileName="AlterStatementListContainerFactoryUtils.java" startLine="28" startPosition="30" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4920206213431854459" fileName="AlterStatementListContainerFactoryUtils.java" startLine="36" startPosition="77" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4540366540229612052" fileName="AlterStatementListContainerFactoryUtils.java" startLine="112" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildContainerIfPossible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4920206213431854484" fileName="AlterStatementListContainerFactoryUtils.java" startLine="41" startPosition="7" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="120" startPosition="154" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4920206213429823726" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCondition#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="133" startPosition="154" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="147" startPosition="154" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2442451895798444446" fileName="AlterStatementListContainerFactoryUtils.java" startLine="89" startPosition="0" endLine="98" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895798587407" fileName="AlterStatementListContainerFactoryUtils.java" startLine="98" startPosition="11" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="118" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDotExpression_kz5t2g_a0a8a2a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2442451895711296933" fileName="AlterStatementListContainerFactoryUtils.java" startLine="52" startPosition="27" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="131" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDotExpression_kz5t2g_a0a5a0l0c0c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="145" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDotExpression_kz5t2g_a0a11a0l0c0c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="990584741372753973" fileName="AlterStatementListContainerFactoryUtils.java" startLine="74" startPosition="12" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="990584741372746736" fileName="AlterStatementListContainerFactoryUtils.java" startLine="71" startPosition="114" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2442451895700259638" fileName="AlterStatementListContainerFactoryUtils.java" startLine="47" startPosition="5" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4920206213431823415" fileName="AlterStatementListContainerFactoryUtils.java" startLine="36" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildContainer#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="124" startPosition="175" endLine="124" endPosition="175" />
+    <scopeInfo nodeId="4920206213429823707" fileName="AlterStatementListContainerFactoryUtils.java" startLine="23" startPosition="51" endLine="24" endPosition="286" />
+    <scopeInfo nodeId="4920206213429823738" fileName="AlterStatementListContainerFactoryUtils.java" startLine="30" startPosition="39" endLine="31" endPosition="99" />
+    <scopeInfo nodeId="4920206213431854463" fileName="AlterStatementListContainerFactoryUtils.java" startLine="38" startPosition="35" endLine="39" endPosition="196" />
+    <scopeInfo nodeId="4920206213431854500" fileName="AlterStatementListContainerFactoryUtils.java" startLine="44" startPosition="38" endLine="45" endPosition="111" />
+    <scopeInfo nodeId="2442451895711412140" fileName="AlterStatementListContainerFactoryUtils.java" startLine="63" startPosition="14" endLine="64" endPosition="15" />
+    <scopeInfo nodeId="990584741372746739" fileName="AlterStatementListContainerFactoryUtils.java" startLine="72" startPosition="107" endLine="73" endPosition="37" />
+    <scopeInfo nodeId="2442451895798503114" fileName="AlterStatementListContainerFactoryUtils.java" startLine="91" startPosition="43" endLine="92" endPosition="101" />
+    <scopeInfo nodeId="2442451895798563104" fileName="AlterStatementListContainerFactoryUtils.java" startLine="95" startPosition="39" endLine="96" endPosition="137" />
+    <scopeInfo nodeId="2442451895798587419" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="43" endLine="101" endPosition="90" />
+    <scopeInfo nodeId="2442451895798587430" fileName="AlterStatementListContainerFactoryUtils.java" startLine="104" startPosition="39" endLine="105" endPosition="239" />
+    <scopeInfo nodeId="4540366540229612037" fileName="AlterStatementListContainerFactoryUtils.java" startLine="113" startPosition="114" endLine="114" endPosition="127" />
+    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="122" startPosition="160" endLine="123" endPosition="246" />
+    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="135" startPosition="160" endLine="136" endPosition="246" />
+    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="137" startPosition="170" endLine="138" endPosition="263" />
+    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="149" startPosition="160" endLine="150" endPosition="246" />
+    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="151" startPosition="170" endLine="152" endPosition="269" />
+    <scopeInfo nodeId="4920206213429823706" fileName="AlterStatementListContainerFactoryUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4920206213429823724" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4920206213429823737" fileName="AlterStatementListContainerFactoryUtils.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="4920206213429823737" fileName="AlterStatementListContainerFactoryUtils.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4920206213429823737" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4920206213431854462" fileName="AlterStatementListContainerFactoryUtils.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="4920206213431854462" fileName="AlterStatementListContainerFactoryUtils.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4920206213431854462" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895798503113" fileName="AlterStatementListContainerFactoryUtils.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="2442451895798503113" fileName="AlterStatementListContainerFactoryUtils.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="2442451895798503113" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895798563103" fileName="AlterStatementListContainerFactoryUtils.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="2442451895798563103" fileName="AlterStatementListContainerFactoryUtils.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="2442451895798563103" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895798587418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="2442451895798587418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="2442451895798587418" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895798587429" fileName="AlterStatementListContainerFactoryUtils.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="2442451895798587429" fileName="AlterStatementListContainerFactoryUtils.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="2442451895798587429" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4540366540229612031" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="80" endLine="103" endPosition="5" />
-    <scopeInfo nodeId="4920206213431854490" fileName="AlterStatementListContainerFactoryUtils.java" startLine="41" startPosition="60" endLine="45" endPosition="7">
+    <scopeInfo nodeId="4540366540229612031" fileName="AlterStatementListContainerFactoryUtils.java" startLine="112" startPosition="80" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="4920206213431854490" fileName="AlterStatementListContainerFactoryUtils.java" startLine="42" startPosition="60" endLine="46" endPosition="7">
       <varInfo nodeId="4920206213431854492" varName="originalCondition" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="119" startPosition="63" endLine="123" endPosition="14">
-      <varInfo nodeId="2442451895711677981" varName="facade" />
-      <varInfo nodeId="2442451895711677981" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="4540366540229612052" fileName="AlterStatementListContainerFactoryUtils.java" startLine="100" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="2442451895711296936" fileName="AlterStatementListContainerFactoryUtils.java" startLine="53" startPosition="110" endLine="57" endPosition="197" />
+    <scopeInfo nodeId="2442451895711344911" fileName="AlterStatementListContainerFactoryUtils.java" startLine="58" startPosition="129" endLine="62" endPosition="214" />
+    <scopeInfo nodeId="4540366540229612052" fileName="AlterStatementListContainerFactoryUtils.java" startLine="112" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="4540366540229612045" varName="newNode" />
       <varInfo nodeId="4540366540229612043" varName="sampleNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="109" startPosition="5" endLine="114" endPosition="35">
+    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="121" startPosition="5" endLine="126" endPosition="35">
       <varInfo nodeId="2442451895794050061" varName="n2" />
       <varInfo nodeId="2442451895794050061" varName="n3" />
     </scopeInfo>
-    <scopeInfo nodeId="4920206213429823727" fileName="AlterStatementListContainerFactoryUtils.java" startLine="26" startPosition="49" endLine="32" endPosition="67" />
-    <scopeInfo nodeId="2442451895711677981" fileName="AlterStatementListContainerFactoryUtils.java" startLine="119" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="129" startPosition="5" endLine="135" endPosition="35">
+    <scopeInfo nodeId="4920206213429823727" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="49" endLine="33" endPosition="67" />
+    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="134" startPosition="5" endLine="140" endPosition="35">
       <varInfo nodeId="2442451895712162579" varName="n2" />
       <varInfo nodeId="2442451895712162579" varName="n3" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="143" startPosition="5" endLine="149" endPosition="35">
+    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="148" startPosition="5" endLine="154" endPosition="35">
       <varInfo nodeId="2442451895797178057" varName="n2" />
       <varInfo nodeId="2442451895797178057" varName="n3" />
     </scopeInfo>
-    <scopeInfo nodeId="4920206213429823726" fileName="AlterStatementListContainerFactoryUtils.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="4920206213429823726" fileName="AlterStatementListContainerFactoryUtils.java" startLine="27" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="4920206213429823750" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="106" startPosition="62" endLine="116" endPosition="14">
+    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="118" startPosition="62" endLine="128" endPosition="14">
       <varInfo nodeId="2442451895794050061" varName="facade" />
       <varInfo nodeId="2442451895794050061" varName="n1" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="126" startPosition="63" endLine="137" endPosition="14">
+    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="131" startPosition="65" endLine="142" endPosition="14">
       <varInfo nodeId="2442451895712162579" varName="facade" />
       <varInfo nodeId="2442451895712162579" varName="n1" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="140" startPosition="63" endLine="151" endPosition="14">
+    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="145" startPosition="66" endLine="156" endPosition="14">
       <varInfo nodeId="2442451895797178057" varName="facade" />
       <varInfo nodeId="2442451895797178057" varName="n1" />
     </scopeInfo>
-    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="106" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="126" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="140" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="2442451895700259641" fileName="AlterStatementListContainerFactoryUtils.java" startLine="47" startPosition="101" endLine="96" endPosition="9">
-      <varInfo nodeId="2442451895711032758" varName="forStatement" />
-      <varInfo nodeId="2442451895711298920" varName="inputSequence" />
-      <varInfo nodeId="2442451895798512941" varName="loopVariable" />
-      <varInfo nodeId="2442451895711118467" varName="var" />
+    <scopeInfo nodeId="2442451895794050061" fileName="AlterStatementListContainerFactoryUtils.java" startLine="118" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="2442451895712162579" fileName="AlterStatementListContainerFactoryUtils.java" startLine="131" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="145" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="990584741372753974" fileName="AlterStatementListContainerFactoryUtils.java" startLine="74" startPosition="14" endLine="107" endPosition="11">
       <varInfo nodeId="2442451895797064682" varName="vd" />
     </scopeInfo>
-    <scopeInfo nodeId="4920206213431823418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="35" startPosition="77" endLine="97" endPosition="5" />
-    <scopeInfo nodeId="4920206213431823415" fileName="AlterStatementListContainerFactoryUtils.java" startLine="35" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="2442451895700259641" fileName="AlterStatementListContainerFactoryUtils.java" startLine="48" startPosition="101" endLine="108" endPosition="7">
+      <varInfo nodeId="990584741373186854" varName="collectionType" />
+      <varInfo nodeId="990584741371505990" varName="f" />
+      <varInfo nodeId="2442451895711032758" varName="forStatement" />
+      <varInfo nodeId="2442451895711298920" varName="inputSequence" />
+      <varInfo nodeId="2442451895711118467" varName="iteratorVar" />
+      <varInfo nodeId="2442451895798512941" varName="loopVariable" />
+      <varInfo nodeId="1133024909335113912" varName="varType" />
+    </scopeInfo>
+    <scopeInfo nodeId="4920206213431823418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="36" startPosition="77" endLine="109" endPosition="5" />
+    <scopeInfo nodeId="4920206213431823415" fileName="AlterStatementListContainerFactoryUtils.java" startLine="36" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="4920206213431828559" varName="newNode" />
       <varInfo nodeId="4920206213431824990" varName="sampleNode" />
     </scopeInfo>
-    <unitInfo nodeId="4920206213429823737" fileName="AlterStatementListContainerFactoryUtils.java" startLine="28" startPosition="99" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$1" />
-    <unitInfo nodeId="4920206213431854462" fileName="AlterStatementListContainerFactoryUtils.java" startLine="36" startPosition="167" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$2" />
-    <unitInfo nodeId="2442451895798503113" fileName="AlterStatementListContainerFactoryUtils.java" startLine="79" startPosition="206" endLine="83" endPosition="7" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$3" />
-    <unitInfo nodeId="2442451895798563103" fileName="AlterStatementListContainerFactoryUtils.java" startLine="83" startPosition="22" endLine="87" endPosition="7" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$4" />
-    <unitInfo nodeId="2442451895798587418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="88" startPosition="225" endLine="92" endPosition="7" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$5" />
-    <unitInfo nodeId="2442451895798587429" fileName="AlterStatementListContainerFactoryUtils.java" startLine="92" startPosition="22" endLine="96" endPosition="7" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$6" />
-    <unitInfo nodeId="4920206213429821380" fileName="AlterStatementListContainerFactoryUtils.java" startLine="21" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils" />
+    <unitInfo nodeId="4920206213429823737" fileName="AlterStatementListContainerFactoryUtils.java" startLine="29" startPosition="99" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$1" />
+    <unitInfo nodeId="4920206213431854462" fileName="AlterStatementListContainerFactoryUtils.java" startLine="37" startPosition="167" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$2" />
+    <unitInfo nodeId="2442451895798503113" fileName="AlterStatementListContainerFactoryUtils.java" startLine="90" startPosition="208" endLine="94" endPosition="9" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$3" />
+    <unitInfo nodeId="2442451895798563103" fileName="AlterStatementListContainerFactoryUtils.java" startLine="94" startPosition="24" endLine="98" endPosition="9" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$4" />
+    <unitInfo nodeId="2442451895798587418" fileName="AlterStatementListContainerFactoryUtils.java" startLine="99" startPosition="227" endLine="103" endPosition="9" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$5" />
+    <unitInfo nodeId="2442451895798587429" fileName="AlterStatementListContainerFactoryUtils.java" startLine="103" startPosition="24" endLine="107" endPosition="9" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils$6" />
+    <unitInfo nodeId="4920206213429821380" fileName="AlterStatementListContainerFactoryUtils.java" startLine="22" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/4972241301747233312">
     <nodeInfo nodeId="4972241301747233856" fileName="QueriesGenerated.java" startLine="4751" startPosition="94" endLine="4752" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
