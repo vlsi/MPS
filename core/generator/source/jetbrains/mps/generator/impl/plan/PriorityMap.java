@@ -161,7 +161,7 @@ public final class PriorityMap {
     }
   }
 
-  void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, Set<TemplateMappingPriorityRule> conflictingRules) {
+  void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, PriorityConflicts conflicts) {
     for (CoherentSetData coherentSetData : coherentMappings) {
       Set<TemplateMappingConfiguration> coherentMappingSet = coherentSetData.myMappings;
       // collect
@@ -174,8 +174,8 @@ public final class PriorityMap {
           if (coherentMappingSet.contains(lockMapping)) {
             if (priorityData.isStrict()) {
               // error
-              conflictingRules.addAll(priorityData.myCauseRules);
-              conflictingRules.addAll(coherentSetData.myCauseRules);
+              conflicts.register(priorityData.myCauseRules);
+              conflicts.register(coherentSetData.myCauseRules);
             }
             continue;
           }
@@ -187,6 +187,20 @@ public final class PriorityMap {
       // update
       for (TemplateMappingConfiguration coherentMapping : coherentMappingSet) {
         myPriorityMap.put(coherentMapping, joinedLocks.deepCopy());
+      }
+    }
+  }
+
+  void checkTopPriMappingsAreNotLockedByNonTopPri(PriorityConflicts conflicts) {
+    for (TemplateMappingConfiguration locked : myPriorityMap.keySet()) {
+      if (!locked.isTopPriority()) {
+        continue;
+      }
+      PriorityDataMap pdm = myPriorityMap.get(locked);
+      for (TemplateMappingConfiguration lock : pdm.keys()) {
+        if (!lock.isTopPriority()) {
+          conflicts.register(pdm.priorityData(lock).myCauseRules);
+        }
       }
     }
   }

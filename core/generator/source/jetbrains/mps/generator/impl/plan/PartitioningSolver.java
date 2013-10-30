@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -37,12 +38,12 @@ public class PartitioningSolver {
   /*
    *   result: Contains rules which caused conflicts.
    */
-  private final Set<TemplateMappingPriorityRule> myConflictingRules;
+  private final PriorityConflicts myConflicts;
 
-  public PartitioningSolver(PriorityMap priorityMap, List<CoherentSetData> coherentMappings, Set<TemplateMappingPriorityRule> conflictingRules) {
+  public PartitioningSolver(@NotNull PriorityMap priorityMap, @NotNull List<CoherentSetData> coherentMappings, @NotNull PriorityConflicts conflicts) {
     myPriorityMap = priorityMap;
     myCoherentMappings = coherentMappings;
-    myConflictingRules = conflictingRules;
+    myConflicts = conflicts;
   }
 
   List<List<TemplateMappingConfiguration>> solve() {
@@ -54,7 +55,7 @@ public class PartitioningSolver {
     // process coherent mappings
     PriorityMapUtil.joinIntersectingCoherentMappings(myCoherentMappings);
     myPriorityMap.makeLockedByAllCoherentIfLockedByOne(myCoherentMappings);
-    myPriorityMap.makeLocksEqualsForCoherentMappings(myCoherentMappings, myConflictingRules);
+    myPriorityMap.makeLocksEqualsForCoherentMappings(myCoherentMappings, myConflicts);
 
     // remove 'weak' priorities
     boolean need_more_passes = true;
@@ -107,12 +108,13 @@ public class PartitioningSolver {
         throw new RuntimeException("Unexpected weak priority");
       }
     }
+    myPriorityMap.checkTopPriMappingsAreNotLockedByNonTopPri(myConflicts);
 
     // create mappings partitioning
     List<List<TemplateMappingConfiguration>> mappingSets = createMappingSets();
     // if the priority map is still not empty, then there are some conflicting rules
     for (PriorityData priorityData : myPriorityMap.priorityData()) {
-      myConflictingRules.addAll(priorityData.myCauseRules);
+      myConflicts.register(priorityData.myCauseRules);
     }
     return mappingSets;
   }
@@ -122,7 +124,7 @@ public class PartitioningSolver {
     if (priorityData != null) {
       if (priorityData.isStrict()) {
         // error
-        myConflictingRules.addAll(priorityData.myCauseRules);
+        myConflicts.register(priorityData.myCauseRules);
       }
       myPriorityMap.removeSelfLock(mapping);
     }
