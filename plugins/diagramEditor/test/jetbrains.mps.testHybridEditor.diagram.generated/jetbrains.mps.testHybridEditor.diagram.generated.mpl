@@ -31,7 +31,7 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(Jetpad.Editor)</dependency>
+    <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetpad)</dependency>
     <dependency reexport="false">961e4f4d-48cb-4bb7-8176-73dd2ac5c8a5(jetbrains.mps.lang.editor.figures.sandbox)</dependency>
   </dependencies>
   <usedLanguages>
