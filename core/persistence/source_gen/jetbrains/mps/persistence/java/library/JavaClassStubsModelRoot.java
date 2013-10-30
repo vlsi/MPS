@@ -13,6 +13,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -21,6 +23,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 
 public class JavaClassStubsModelRoot extends FileBasedModelRoot {
@@ -61,9 +64,52 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     final Collection<String> files = getFiles(FileBasedModelRoot.SOURCE_ROOTS);
     final Collection<String> excludedFiles = getFiles(FileBasedModelRoot.EXCLUDED);
     for (String file : files) {
+      // Find all jar (zip) files recursively 
+      Set<IFile> jarFiles = new HashSet<IFile>();
+      collectJarFiles(FileSystem.getInstance().getFileByPath(file), jarFiles);
+      for (IFile jarFile : jarFiles) {
+        findAndAddModels(jarFile.getPath(), result, excludedFiles);
+      }
+
+      /*
+        // Find all class files recursively 
+        Set<IFile> classFiles = new HashSet<IFile>();
+        collectClassFiles(FileSystem.getInstance().getFileByPath(file), classFiles);
+        for (IFile classFile : classFiles) {
+          findAndAddModels(classFile.getPath(), result, excludedFiles);
+        }
+      */
+
+      // TODO: use commended code above Need to implement IClassPathItem for *.class files, that can get package from such files to create model ref Add it to ClassPathFactory      PS this code only works if variable file contains FQ named package dir structure 
       findAndAddModels(file, result, excludedFiles);
     }
     return result;
+  }
+
+  private void collectJarFiles(final IFile file, final Set<IFile> files) {
+    if (file.getPath().endsWith(".jar") || file.getPath().endsWith(".zip")) {
+      files.add(file);
+      return;
+    }
+    if (!(file.isDirectory())) {
+      return;
+    }
+    for (IFile child : file.getChildren()) {
+      collectJarFiles(child, files);
+    }
+  }
+
+  private void collectClassFiles(final IFile file, final Set<IFile> files) {
+    if (file.getPath().endsWith(".class")) {
+      files.add(file);
+      return;
+    }
+    if (!(file.isDirectory())) {
+      return;
+    }
+    for (IFile child : file.getChildren()) {
+      collectClassFiles(child, files);
+    }
   }
 
   private void findAndAddModels(String file, final List<SModel> result, final Collection<String> excludedFiles) {
@@ -72,17 +118,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     }
     IClassPathItem cp = create(file);
     getModelDescriptors(result, file, cp, "", LanguageID.JAVA, getModule());
-    final IFile fileByPath = FileSystem.getInstance().getFileByPath(file);
-    if (fileByPath.isDirectory()) {
-      for (IFile child : fileByPath.getChildren()) {
-        if (child.getName().endsWith(".jar") || child.isDirectory()) {
-          findAndAddModels(child.getPath(), result, excludedFiles);
-        }
-      }
-    }
   }
-
-
 
   @Override
   public boolean canCreateModels() {
@@ -109,16 +145,28 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     return null;
   }
 
-  public void getModelDescriptors(List<SModel> result, String startPath, IClassPathItem cp, String prefix, String languageId, SModule module) {
+  public void getModelDescriptors(final List<SModel> result, String startPath, IClassPathItem cp, String prefix, String languageId, SModule module) {
     for (String subpackage : cp.getSubpackages(prefix)) {
       if (cp.getRootClasses(subpackage).iterator().hasNext()) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, module.getModuleReference());
+        final SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, module.getModuleReference());
         JavaClassStubModelDescriptor smd;
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
           assert descriptor instanceof JavaClassStubModelDescriptor;
           smd = (JavaClassStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);
+        } else if (ListSequence.fromList(result).any(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return it.getReference().equals(modelReference);
+          }
+        })) {
+          SModel descriptor = ListSequence.fromList(result).findFirst(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return it.getReference().equals(modelReference);
+            }
+          });
+          assert descriptor instanceof JavaClassStubModelDescriptor;
+          smd = (JavaClassStubModelDescriptor) descriptor;
         } else {
           smd = new JavaClassStubModelDescriptor(modelReference, new FolderSetDataSource(), this);
           smd.setModelRoot(this);

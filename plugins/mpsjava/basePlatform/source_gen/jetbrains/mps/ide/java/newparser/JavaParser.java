@@ -27,6 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -50,13 +51,11 @@ public class JavaParser {
 
   @NotNull
   public JavaParser.JavaParseResult parseCompilationUnit(String code) throws JavaParseException {
-    // temp thing: peek at the package name 
-    String pkg = peekPackage(code);
-    return parse(code, pkg, FeatureKind.CLASS, null, true);
+    return parse(code, FeatureKind.CLASS, null, true);
   }
 
   @NotNull
-  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, SNode context, boolean recovery) throws JavaParseException {
+  public JavaParser.JavaParseResult parse(String code, FeatureKind what, SNode context, boolean recovery) throws JavaParseException {
     // in eclipse there is full recovery and statement recovery 
     // TODO use full recovery 
 
@@ -277,7 +276,8 @@ public class JavaParser {
     }
   }
 
-  private String peekPackage(String source) {
+  @Nullable
+  public static String peekPackage(String source) {
     // WILL GO AWAY COMPLETELY 
     final String str = "package ";
     StringBuilder packageName = new StringBuilder();
@@ -288,7 +288,10 @@ public class JavaParser {
       }
       packageName.append(c);
     }
-    return packageName.toString();
+    return (packageName.length() == 0 ?
+      null :
+      packageName.toString()
+    );
   }
 
   public static class JavaParseResult {

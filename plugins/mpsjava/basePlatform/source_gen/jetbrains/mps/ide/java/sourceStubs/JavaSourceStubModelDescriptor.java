@@ -43,16 +43,14 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
   private SModelReference myModelRef;
   private SModel myModel;
-  private String myJavaPackage;
   private Map<String, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
 
 
 
-  public JavaSourceStubModelDescriptor(SModelReference modelRef, MultiStreamDataSource dataSource, String javaPackage) {
+  public JavaSourceStubModelDescriptor(SModelReference modelRef, MultiStreamDataSource dataSource) {
     super(modelRef, dataSource);
     myModelRef = modelRef;
-    myJavaPackage = javaPackage;
   }
 
 
@@ -153,7 +151,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
           LOG.warning("failed to close file " + fileName, e);
         }
 
-        JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, null, true);
+        JavaParser.JavaParseResult parseResult = parser.parse(code, FeatureKind.CLASS_STUB, null, true);
         if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
           for (SNode newNode : ListSequence.fromList(parseResult.getNodes())) {
             final SNodeId newNodeId = newNode.getNodeId();
