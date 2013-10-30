@@ -265,7 +265,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
         NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
           @Override
           public void run() {
-            new ProjectStructureBuilder(moduleDescriptor, file, model.getModelDescriptor()) {
+            new ProjectStructureBuilder(moduleDescriptor, file, model) {
               @Override
               public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
                 SModule module = moduleDescriptor == descriptor ? myModule :
