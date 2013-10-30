@@ -84,17 +84,11 @@ public class OrToAndAndBack_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") ?
-        "Turn to Or" :
-        "Turn to And"
-      );
+      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") ? "Turn to Or" : "Turn to And");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode operation = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") ?
-        SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.OrExpression", null) :
-        SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AndExpression", null)
-      );
+      SNode operation = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.OrExpression", null) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AndExpression", null));
       SNode leftCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, "leftExpression", true));
       SNode rightCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, "rightExpression", true));
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
@@ -120,9 +114,6 @@ public class OrToAndAndBack_Intention implements IntentionFactory {
   }
 
   private static boolean eq_x6eozt_a0a0k(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }
