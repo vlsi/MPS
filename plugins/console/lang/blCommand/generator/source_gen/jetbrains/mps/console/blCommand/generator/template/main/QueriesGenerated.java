@@ -234,10 +234,7 @@ public class QueriesGenerated {
         return SNodeOperations.cast(it, "jetbrains.mps.console.blCommand.structure.QueryParameterScope");
       }
     });
-    return (Sequence.fromIterable(results).isEmpty() ?
-      _quotation_createNode_x583g4_a0b0mb() :
-      SLinkOperations.getTarget(Sequence.fromIterable(results).first(), "value", true)
-    );
+    return (Sequence.fromIterable(results).isEmpty() ? _quotation_createNode_x583g4_a0b0mb() : SLinkOperations.getTarget(Sequence.fromIterable(results).first(), "value", true));
   }
 
   public static SNode sourceNodeQuery_4307205004142895894(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -246,10 +243,7 @@ public class QueriesGenerated {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly");
       }
     });
-    return (Sequence.fromIterable(results).isEmpty() ?
-      _quotation_createNode_x583g4_a0b0nb_0() :
-      _quotation_createNode_x583g4_a0b0nb()
-    );
+    return (Sequence.fromIterable(results).isEmpty() ? _quotation_createNode_x583g4_a0b0nb_0() : _quotation_createNode_x583g4_a0b0nb());
   }
 
   public static SNode sourceNodeQuery_8953981490812991962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

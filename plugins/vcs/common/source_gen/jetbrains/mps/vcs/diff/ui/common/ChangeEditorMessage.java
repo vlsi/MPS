@@ -67,10 +67,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   @Override
   public Color getColor() {
-    return ChangeColors.get((isConflicted() ?
-      ChangeType.CONFLICTED :
-      myChange.getType()
-    ));
+    return ChangeColors.get((isConflicted() ? ChangeType.CONFLICTED : myChange.getType()));
   }
 
   public ModelChange getChange() {
@@ -106,14 +103,8 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       if (myMessageTarget.getTarget() == MessageTargetEnum.DELETED_CHILD) {
         drawDeletedChild(graphics, cell);
       } else {
-        Rectangle bounds = (isIndirectRoot(editor) ?
-          getFirstPseudoLineBounds(editor) :
-          GeometryUtil.getBounds(cell)
-        );
-        graphics.setColor(ChangeColors.get((isConflicted() ?
-          ChangeType.CONFLICTED :
-          ChangeType.CHANGE
-        )));
+        Rectangle bounds = (isIndirectRoot(editor) ? getFirstPseudoLineBounds(editor) : GeometryUtil.getBounds(cell));
+        graphics.setColor(ChangeColors.get((isConflicted() ? ChangeType.CONFLICTED : ChangeType.CHANGE)));
         graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
       }
     }
@@ -354,17 +345,11 @@ __switch__:
     int maxY;
     if (childCell == null) {
       EditorCell lastCell = cell.lastCell();
-      minY = (isVertical(cell) ?
-        lastCell.getBottom() :
-        lastCell.getY()
-      );
+      minY = (isVertical(cell) ? lastCell.getBottom() : lastCell.getY());
       maxY = Math.max(lastCell.getBottom(), minY + 1);
     } else {
       minY = childCell.getY();
-      maxY = (isVertical(cell) ?
-        minY + 1 :
-        childCell.getBottom()
-      );
+      maxY = (isVertical(cell) ? minY + 1 : childCell.getBottom());
     }
     return new Bounds(minY, maxY);
   }
@@ -462,16 +447,10 @@ __switch__:
   }
 
   private static <T> T as_myu41h_a0a0a41(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_myu41h_a0a0a0a0a41(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

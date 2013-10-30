@@ -37,13 +37,7 @@ public class JUnit3TestCaseRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "TestCase");
     editorCell.setCellId("Constant_oadaxc_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.STRIKE_OUT, JUnit3TestCaseRef_Editor._StyleParameter_QueryFunction_oadaxc_a0a0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.STRIKE_OUT, JUnit3TestCaseRef_Editor._StyleParameter_QueryFunction_oadaxc_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

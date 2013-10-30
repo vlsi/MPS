@@ -73,10 +73,7 @@ public class NewSolution_Action extends BaseAction {
 
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
-          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
-            "" :
-            ((String) MapSequence.fromMap(_params).get("namespace"))
-          ));
+          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ? "" : ((String) MapSequence.fromMap(_params).get("namespace"))));
         }
       });
 

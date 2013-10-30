@@ -164,10 +164,7 @@ public class MergeSession {
   }
 
   public Iterable<SNodeId> getAffectedRoots() {
-    return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
-      MapSequence.fromMap(myRootToChanges).keySet() :
-      SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
-    );
+    return (ListSequence.fromList(myMetadataChanges).isEmpty() ? MapSequence.fromMap(myRootToChanges).keySet() : SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null))));
   }
 
   public List<ModelChange> getChangesForRoot(@NotNull SNodeId rootId) {
@@ -215,13 +212,7 @@ public class MergeSession {
         // sort out nonconflicting changes to the end of list, so they will be ignored if other connected changes exists 
         boolean aa = a.isNonConflicting();
         boolean bb = b.isNonConflicting();
-        return (aa == bb ?
-          0 :
-          (aa ?
-            1 :
-            -1
-          )
-        );
+        return (aa == bb ? 0 : (aa ? 1 : -1));
       }
     }, true)) {
       applyChange(c);
@@ -445,14 +436,8 @@ public class MergeSession {
 
     private void invalidateChildrenChanges(SModelChildEvent event, int offset) {
       int index = SNodeOperations.getIndexInParent(event.getChild()) + offset;
-      int beginOffset = (offset == 1 ?
-        0 :
-        -1
-      );
-      int endOffset = (offset == -1 ?
-        0 :
-        1
-      );
+      int beginOffset = (offset == 1 ? 0 : -1);
+      int endOffset = (offset == -1 ? 0 : 1);
       invalidateChildrenChanges(event.getParent(), event.getChildRole(), index, beginOffset, endOffset);
     }
 
@@ -496,30 +481,18 @@ public class MergeSession {
   }
 
   private static <T> T as_bow6nj_a0a0a1a31(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_bow6nj_a0a0a71(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static boolean eq_bow6nj_a0a0a0a0a0a0b0d84(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_bow6nj_a0a0a0a0a0a0b0l84(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

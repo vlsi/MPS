@@ -147,10 +147,7 @@ public class TargetsView extends UsagesView {
         presentation = "the left tree scope selection";
       }
 
-      return ((myParent.isMeta() ?
-        "Used languages in " :
-        "Dependencies of "
-      )) + presentation;
+      return ((myParent.isMeta() ? "Used languages in " : "Dependencies of ")) + presentation;
     }
 
     @NotNull
@@ -169,30 +166,18 @@ public class TargetsView extends UsagesView {
   }
 
   private static <T> T as_w7qo2b_a0a0a2a4(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a3f(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a3f(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a3f(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

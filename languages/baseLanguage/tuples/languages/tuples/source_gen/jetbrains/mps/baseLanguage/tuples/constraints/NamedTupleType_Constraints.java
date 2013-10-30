@@ -42,10 +42,7 @@ public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
+            return new VisibleClassifiersScope(((_context.getReferenceNode() == null) ? _context.getEnclosingNode() : _context.getReferenceNode()), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
               @Override
               protected List<SNode> getNodesFormClassifiersList(List<SNode> classifiers, int constraint, Condition<SNode> condition) {
                 List<SNode> result = new ArrayList<SNode>();

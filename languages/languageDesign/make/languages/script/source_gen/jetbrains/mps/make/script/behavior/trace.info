@@ -127,21 +127,21 @@
     <unitInfo nodeId="4125795553994047765" fileName="OptionType_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.script.behavior.OptionType_Behavior" />
   </root>
   <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/4902420588995682280">
-    <nodeInfo nodeId="4902420588995705917" fileName="ResourceType_Behavior.java" startLine="19" startPosition="6" endLine="20" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589012821708" fileName="ResourceType_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995705917" fileName="ResourceType_Behavior.java" startLine="16" startPosition="263" endLine="17" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4902420589012821708" fileName="ResourceType_Behavior.java" startLine="15" startPosition="78" endLine="19" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="4902420588995682501" fileName="ResourceType_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="4902420588995682280" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420588995682917" fileName="ResourceType_Behavior.java" startLine="15" startPosition="78" endLine="20" endPosition="126">
+    <scopeInfo nodeId="4902420588995682917" fileName="ResourceType_Behavior.java" startLine="15" startPosition="78" endLine="17" endPosition="126">
       <varInfo nodeId="4902420589012821709" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4902420588995682280" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ResourceType_Behavior" />
+    <unitInfo nodeId="4902420588995682280" fileName="ResourceType_Behavior.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ResourceType_Behavior" />
   </root>
   <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/8486446835277382810">
     <nodeInfo nodeId="8486446835277382823" fileName="QueryDefinition_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -6,12 +6,21 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 
 public class CastExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("(");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "type", true), this.getSNode());
     this.append(") ");
+    boolean needsParensAroundCastExpression = PrecedenceUtil.needsParensAroundCastExpression(node);
+    if (needsParensAroundCastExpression) {
+      this.append("(");
+    }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
+    if (needsParensAroundCastExpression) {
+      this.append(")");
+    }
+
   }
 }

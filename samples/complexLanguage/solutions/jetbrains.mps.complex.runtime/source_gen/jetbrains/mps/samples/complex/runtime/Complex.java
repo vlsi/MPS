@@ -46,15 +46,9 @@ public class Complex {
       return this.myReal + "";
     }
     if (this.myReal == 0) {
-      return ((this.myImaginary >= 0 ?
-        "" :
-        "-"
-      )) + Math.abs(this.myImaginary) + "i";
+      return ((this.myImaginary >= 0 ? "" : "-")) + Math.abs(this.myImaginary) + "i";
     }
-    return this.myReal + ((this.myImaginary >= 0 ?
-      " + " :
-      " - "
-    )) + Math.abs(this.myImaginary) + "i";
+    return this.myReal + ((this.myImaginary >= 0 ? " + " : " - ")) + Math.abs(this.myImaginary) + "i";
   }
 
   public Complex getConjugative() {

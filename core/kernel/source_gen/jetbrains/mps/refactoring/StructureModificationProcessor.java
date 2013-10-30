@@ -162,16 +162,10 @@ lfind:
   protected static Logger LOG = LogManager.getLogger(StructureModificationProcessor.class);
 
   private static <T> T as_etzqsh_a0a0a1a5(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_etzqsh_a0a0a0a0a8(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

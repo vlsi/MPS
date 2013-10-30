@@ -22,19 +22,13 @@ public class FileMerger {
       FileContent localContent = new FileContent(localFile);
       FileContent latestContent = new FileContent(latestFile);
 
-      out = (overwrite ?
-        new FileOutputStream(localFile) :
-        System.out
-      );
+      out = (overwrite ? new FileOutputStream(localFile) : System.out);
 
       Tuples._2<Integer, byte[]> mergeResult = contentMerger.mergeContents(baseContent, localContent, latestContent);
       if (mergeResult == null) {
         mergeResult = MultiTuple.<Integer,byte[]>from(AbstractContentMerger.FATAL_ERROR, localContent.getData());
       }
-      out.write((convertCRLF ?
-        convert(mergeResult._1()) :
-        mergeResult._1()
-      ));
+      out.write((convertCRLF ? convert(mergeResult._1()) : mergeResult._1()));
       return (int) mergeResult._0();
     } catch (IOException e) {
       e.printStackTrace();

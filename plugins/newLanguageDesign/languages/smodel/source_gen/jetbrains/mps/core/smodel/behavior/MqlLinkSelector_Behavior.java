@@ -18,10 +18,7 @@ public class MqlLinkSelector_Behavior {
     if ((concept == null)) {
       return null;
     }
-    return (SAbstractLink_Behavior.call_isMultiple_4125821269969003167(SLinkOperations.getTarget(thisNode, "link", false)) ?
-      createMqlListType_71mfo8_a0c0a(concept) :
-      createMqlNodeType_71mfo8_a0c0a(concept)
-    );
+    return (SAbstractLink_Behavior.call_isMultiple_4125821269969003167(SLinkOperations.getTarget(thisNode, "link", false)) ? createMqlListType_71mfo8_a0c0a(concept) : createMqlNodeType_71mfo8_a0c0a(concept));
   }
 
   private static SNode createMqlListType_71mfo8_a0c0a(Object p0) {

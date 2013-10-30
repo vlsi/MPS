@@ -212,9 +212,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
   }
 
   private static boolean eq_ds6c8y_a0a0a0d0a0a0a0h0a(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

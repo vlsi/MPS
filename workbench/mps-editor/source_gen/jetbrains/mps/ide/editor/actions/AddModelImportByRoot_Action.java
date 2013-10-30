@@ -97,10 +97,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
 
       ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
         public void importForRootAdded(String rootName) {
-          String textToMatch = (rootName != null ?
-            rootName :
-            initialText.value
-          );
+          String textToMatch = (rootName != null ? rootName : initialText.value);
           if (textToMatch.length() == 0) {
             return;
           }

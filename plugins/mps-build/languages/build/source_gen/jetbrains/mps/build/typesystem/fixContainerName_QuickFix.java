@@ -27,10 +27,7 @@ public class fixContainerName_QuickFix extends QuickFix_Runtime {
     if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.build.structure.BuildTextStringPart")) {
       SNode text = SNodeOperations.cast(last, "jetbrains.mps.build.structure.BuildTextStringPart");
       int dot = SPropertyOperations.getString(text, "text").indexOf('.');
-      SPropertyOperations.set(text, "text", ((dot >= 0 ?
-        SPropertyOperations.getString(text, "text").substring(0, dot) :
-        SPropertyOperations.getString(text, "text")
-      )) + ((String) fixContainerName_QuickFix.this.getField("newExtension")[0]));
+      SPropertyOperations.set(text, "text", ((dot >= 0 ? SPropertyOperations.getString(text, "text").substring(0, dot) : SPropertyOperations.getString(text, "text"))) + ((String) fixContainerName_QuickFix.this.getField("newExtension")[0]));
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(containerName, "parts", true)).addElement(_quotation_createNode_8v9hl7_a0a0a0c0a(((String) fixContainerName_QuickFix.this.getField("newExtension")[0])));
     }

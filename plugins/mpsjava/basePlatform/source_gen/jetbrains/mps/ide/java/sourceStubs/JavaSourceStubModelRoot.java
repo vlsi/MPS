@@ -125,10 +125,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
     });
 
     for (IFile subDir : Sequence.fromIterable(subDirs)) {
-      String subPkg = (pkg.equals("") ?
-        subDir.getName() :
-        pkg + "." + subDir.getName()
-      );
+      String subPkg = (pkg.equals("") ? subDir.getName() : pkg + "." + subDir.getName());
       Set<SModel> set = getModels(subDir, subPkg);
       SetSequence.fromSet(models).addSequence(SetSequence.fromSet(set));
     }

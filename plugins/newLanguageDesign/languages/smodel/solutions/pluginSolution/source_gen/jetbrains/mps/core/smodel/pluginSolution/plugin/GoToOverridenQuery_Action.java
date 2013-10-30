@@ -78,10 +78,7 @@ public class GoToOverridenQuery_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode query = GoToOverridenQuery_Action.this.getConceptQuery(_params);
-      SNode overriddenQuery = ((query != null) ?
-        ConceptQueryUtil.getOverriddenQuery(query) :
-        null
-      );
+      SNode overriddenQuery = ((query != null) ? ConceptQueryUtil.getOverriddenQuery(query) : null);
       if ((overriddenQuery == null)) {
         return;
       }

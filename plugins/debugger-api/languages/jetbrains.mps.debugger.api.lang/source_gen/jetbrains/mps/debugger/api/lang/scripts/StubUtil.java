@@ -100,16 +100,10 @@ public class StubUtil {
   }
 
   private static boolean eq_g10q2g_a0a0e0c(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_g10q2g_a0a0d0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

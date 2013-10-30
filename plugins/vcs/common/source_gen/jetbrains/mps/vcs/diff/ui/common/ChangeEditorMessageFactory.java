@@ -57,35 +57,17 @@ public class ChangeEditorMessageFactory {
       }
       List<? extends SNode> changeChildren = IterableUtil.asList(parentNode.getChildren(role));
 
-      int changeBegin = (reversed ?
-        ngc.getBegin() :
-        ngc.getResultBegin()
-      );
-      int changeEnd = (reversed ?
-        ngc.getEnd() :
-        ngc.getResultEnd()
-      );
+      int changeBegin = (reversed ? ngc.getBegin() : ngc.getResultBegin());
+      int changeEnd = (reversed ? ngc.getEnd() : ngc.getResultEnd());
 
       // We need to check change models because current edited model can have different indices 
       // (for instance, when some changes are already applied) 
-      SNodeId beginId = (changeBegin < ListSequence.fromList(changeChildren).count() ?
-        ListSequence.fromList(changeChildren).getElement(changeBegin).getNodeId() :
-        null
-      );
-      SNodeId endId = (changeEnd < ListSequence.fromList(changeChildren).count() ?
-        ListSequence.fromList(changeChildren).getElement(changeEnd).getNodeId() :
-        null
-      );
+      SNodeId beginId = (changeBegin < ListSequence.fromList(changeChildren).count() ? ListSequence.fromList(changeChildren).getElement(changeBegin).getNodeId() : null);
+      SNodeId endId = (changeEnd < ListSequence.fromList(changeChildren).count() ? ListSequence.fromList(changeChildren).getElement(changeEnd).getNodeId() : null);
       int currentChildrenSize = ListSequence.fromList(changeChildren).count();
 
-      int beginIndex = (beginId == null ?
-        currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(beginId)))
-      );
-      int endIndex = (endId == null ?
-        currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(endId)))
-      );
+      int beginIndex = (beginId == null ? currentChildrenSize : SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(beginId))));
+      int endIndex = (endId == null ? currentChildrenSize : SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(endId))));
 
       if (!(0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize)) {
         return null;

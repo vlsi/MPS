@@ -104,13 +104,7 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
       for (String modelName : SetSequence.fromSet(otherStubModels)) {
         otherStubsMsg += "  " + modelName + "\n";
       }
-      String message = ((SetSequence.fromSet(langStubModels).isEmpty() ?
-        "No language stub models" :
-        "Language stub models: \n" + langStubsMsg
-      )) + "\n" + ((SetSequence.fromSet(otherStubModels).isEmpty() ?
-        "No other stub models" :
-        "Other stub models: \n" + otherStubsMsg
-      ));
+      String message = ((SetSequence.fromSet(langStubModels).isEmpty() ? "No language stub models" : "Language stub models: \n" + langStubsMsg)) + "\n" + ((SetSequence.fromSet(otherStubModels).isEmpty() ? "No other stub models" : "Other stub models: \n" + otherStubsMsg));
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), message);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

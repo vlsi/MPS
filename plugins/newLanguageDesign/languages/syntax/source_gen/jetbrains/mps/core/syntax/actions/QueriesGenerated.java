@@ -60,10 +60,7 @@ public class QueriesGenerated {
           public String getMatchingText(String pattern) {
             Matcher _matcher_x583g4_a0a2a0a0a0a2a0a1a1;
             if ((_matcher_x583g4_a0a2a0a0a0a2a0a1a1 = REGEXP_x583g4_a0a0a1a2a0a0a0a2a0a1a1.matcher(pattern)).find()) {
-              return (pattern.endsWith(":") ?
-                pattern :
-                StringUtils.stripEnd(pattern, " \n\r\t") + " :"
-              );
+              return (pattern.endsWith(":") ? pattern : StringUtils.stripEnd(pattern, " \n\r\t") + " :");
             }
             return "lexem:";
           }
@@ -95,10 +92,7 @@ public class QueriesGenerated {
           public String getMatchingText(String pattern) {
             Matcher _matcher_x583g4_a0a2a0a0a0a2a1a1a1;
             if ((_matcher_x583g4_a0a2a0a0a0a2a1a1a1 = REGEXP_x583g4_a0a0a1a2a0a0a0a2a1a1a1.matcher(pattern)).find()) {
-              return (pattern.endsWith("=") ?
-                pattern :
-                StringUtils.stripEnd(pattern, " \n\r\t") + " ="
-              );
+              return (pattern.endsWith("=") ? pattern : StringUtils.stripEnd(pattern, " \n\r\t") + " =");
             }
             return "pattern = /regexp/";
           }
@@ -135,10 +129,7 @@ public class QueriesGenerated {
           public String getMatchingText(String pattern) {
             Matcher _matcher_x583g4_a0a2a0a0a0a2a0a1a2;
             if ((_matcher_x583g4_a0a2a0a0a0a2a0a1a2 = REGEXP_x583g4_a0a0a1a2a0a0a0a2a0a1a2.matcher(pattern)).find()) {
-              return (pattern.endsWith("::=") ?
-                pattern :
-                _matcher_x583g4_a0a2a0a0a0a2a0a1a2.group(1) + " ::="
-              );
+              return (pattern.endsWith("::=") ? pattern : _matcher_x583g4_a0a2a0a0a0a2a0a1a2.group(1) + " ::=");
             }
             return "non-term ::=";
           }
@@ -314,10 +305,7 @@ public class QueriesGenerated {
           return "=";
         }
         if ((_matcher_x583g4_a1a1a0a0a0a1a01 = REGEXP_x583g4_a0a0a2a1a0a0a0a1a01.matcher(pattern)).find()) {
-          return (pattern.endsWith("=") ?
-            pattern :
-            pattern + "="
-          );
+          return (pattern.endsWith("=") ? pattern : pattern + "=");
         }
         return "alias=";
       }

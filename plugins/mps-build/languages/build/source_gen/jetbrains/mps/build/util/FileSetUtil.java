@@ -129,10 +129,7 @@ public class FileSetUtil {
       parent = SNodeOperations.getParent(parent);
     }
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{})) {
-      return (dirmode != null || filemode != null ?
-        new Pair(dirmode, filemode) :
-        null
-      );
+      return (dirmode != null || filemode != null ? new Pair(dirmode, filemode) : null);
     }
     return null;
   }

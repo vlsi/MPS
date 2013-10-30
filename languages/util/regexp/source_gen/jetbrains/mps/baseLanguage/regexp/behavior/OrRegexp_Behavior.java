@@ -15,10 +15,7 @@ public class OrRegexp_Behavior {
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "left", true), "virtual_getString_1222432436326", new Object[]{vars}) + "|" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "right", true), "virtual_getString_1222432436326", new Object[]{vars});
-    return (OrRegexp_Behavior.call_inParentheses_1353467374623956858(thisNode) ?
-      Regexp_Behavior.call_par_1222433790846(thisNode, s) :
-      s
-    );
+    return (OrRegexp_Behavior.call_inParentheses_1353467374623956858(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s);
   }
 
   public static boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {

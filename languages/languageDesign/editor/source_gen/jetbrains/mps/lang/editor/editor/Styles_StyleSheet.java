@@ -18,27 +18,9 @@ public class Styles_StyleSheet {
   @Deprecated
   public static Style getRootCellModelStyle(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.DRAW_BORDER, true);
     return style;
   }
@@ -113,13 +95,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     return style;
   }
 
@@ -131,27 +107,9 @@ public class Styles_StyleSheet {
   }
 
   public static void applyRootCellModelStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.DRAW_BORDER, true);
   }
 
@@ -199,13 +157,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
   }
 
   public static void applyString(Style style, EditorCell editorCell) {

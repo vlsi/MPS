@@ -20,10 +20,7 @@ public class RuleTypeRenderer extends DefaultTableCellRenderer {
 
   @Override
   public Component getTableCellRendererComponent(final JTable table, Object value, boolean isSelected, boolean hasFocus, final int row, final int column) {
-    String caption = (value instanceof RuleType ?
-      ((RuleType) value).getPresentation() :
-      "null"
-    );
+    String caption = (value instanceof RuleType ? ((RuleType) value).getPresentation() : "null");
     JComponent comp = (JComponent) super.getTableCellRendererComponent(table, caption, isSelected, hasFocus, row, column);
     if (hasFocus && table.isRowSelected(row)) {
       SwingUtilities.invokeLater(new Runnable() {

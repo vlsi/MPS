@@ -68,10 +68,7 @@ public class BuildProject_Behavior {
   }
 
   public static String call_getOutputFileName_4915877860351551360(SNode thisNode) {
-    return (isEmptyString(SPropertyOperations.getString(thisNode, "fileName")) ?
-      "build.xml" :
-      SPropertyOperations.getString(thisNode, "fileName")
-    );
+    return (isEmptyString(SPropertyOperations.getString(thisNode, "fileName")) ? "build.xml" : SPropertyOperations.getString(thisNode, "fileName"));
   }
 
   public static String call_getBasePathRelativeToScriptsPath_5178006408628632053(SNode thisNode, Context context) {
@@ -245,16 +242,10 @@ public class BuildProject_Behavior {
   }
 
   private static boolean neq_save77_a0e0l(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_save77_a0a0a0a0a1a0b0c0f0l(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

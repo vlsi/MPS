@@ -35,9 +35,6 @@ public class NodeSourcePosition extends SourcePosition {
   }
 
   private static boolean eq_1z1n6b_a0e0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

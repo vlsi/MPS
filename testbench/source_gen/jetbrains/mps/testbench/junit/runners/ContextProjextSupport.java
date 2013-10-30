@@ -70,10 +70,7 @@ public class ContextProjextSupport {
     } else {
       System.clearProperty(PROJECT_PATH_PROPERTY);
     }
-    return (previous != null ?
-      new File(previous) :
-      null
-    );
+    return (previous != null ? new File(previous) : null);
   }
 
   @Nullable

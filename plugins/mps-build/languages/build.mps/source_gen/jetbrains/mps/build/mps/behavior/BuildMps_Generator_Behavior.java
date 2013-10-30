@@ -11,9 +11,6 @@ public class BuildMps_Generator_Behavior {
   }
 
   public static SNode call_getSourceLanguage_9200313594510517119(SNode thisNode) {
-    return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") ?
-      SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") :
-      SLinkOperations.getTarget(thisNode, "sourceLanguage", false)
-    );
+    return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") ? SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") : SLinkOperations.getTarget(thisNode, "sourceLanguage", false));
   }
 }

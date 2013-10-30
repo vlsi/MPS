@@ -32,10 +32,7 @@ public class DefaultOptionsContainer {
   public FindUsagesOptions getDefaultSearchOptions(String concept) {
     FindUsagesOptions result = myDefaultOptions.clone();
     FindersOptions finders = myDefaultFinders.get(concept);
-    result.setOption((finders != null ?
-      finders :
-      createDefaultFindersOption()
-    ));
+    result.setOption((finders != null ? finders : createDefaultFindersOption()));
     return result;
   }
 
@@ -49,10 +46,7 @@ public class DefaultOptionsContainer {
     final FindUsagesOptions result = new FindUsagesOptions();
     ViewOptions viewOptions = new ViewOptions(true, false);
     result.setOption(viewOptions);
-    ScopeOptions scopeOptions = new ScopeOptions(((InternalFlag.isInternalMode() ?
-      ScopeOptions.ScopeType.GLOBAL :
-      ScopeOptions.ScopeType.PROJECT
-    )), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
+    ScopeOptions scopeOptions = new ScopeOptions(((InternalFlag.isInternalMode() ? ScopeOptions.ScopeType.GLOBAL : ScopeOptions.ScopeType.PROJECT)), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
     result.setOption(scopeOptions);
     return result;
   }

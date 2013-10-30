@@ -38,10 +38,7 @@ import java.io.IOException;
       }
     }
     myConfigFile = new File(myConfigDir, "config");
-    myScriptFile = new File(myConfigDir, "mps-merger." + ((SystemInfo.isWindows ?
-      "bat" :
-      "sh"
-    )));
+    myScriptFile = new File(myConfigDir, "mps-merger." + ((SystemInfo.isWindows ? "bat" : "sh")));
   }
 
   @NotNull
@@ -180,10 +177,7 @@ import java.io.IOException;
 
   @Override
   public String getActionTitle() {
-    return String.format("Subversion custom diff3 cmd (%s, %s)", (myUseIdeConfig ?
-      "MPS config" :
-      "common"
-    ), myConfigFile.getAbsolutePath());
+    return String.format("Subversion custom diff3 cmd (%s, %s)", (myUseIdeConfig ? "MPS config" : "common"), myConfigFile.getAbsolutePath());
   }
 
   @Override
@@ -196,23 +190,14 @@ import java.io.IOException;
   }
 
   private static boolean neq_k2wvr2_a0a2a2a3a1a01a5(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_k2wvr2_a0a0a71a5(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_k2wvr2_a0a0i(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

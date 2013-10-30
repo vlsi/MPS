@@ -209,55 +209,55 @@
   <root nodeRef="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)/3700100223624426201">
     <nodeInfo nodeId="3700100223624426221" fileName="CompositeWithParentScope.java" startLine="14" startPosition="68" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3700100223624426235" fileName="CompositeWithParentScope.java" startLine="15" startPosition="19" endLine="16" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8317913688490453151" fileName="CompositeWithParentScope.java" startLine="40" startPosition="42" endLine="41" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7362994916699063533" fileName="CompositeWithParentScope.java" startLine="46" startPosition="59" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7362994916699063518" fileName="CompositeWithParentScope.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parentScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="3700100223624426241" fileName="CompositeWithParentScope.java" startLine="16" startPosition="69" endLine="20" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7362994916699063561" fileName="CompositeWithParentScope.java" startLine="23" startPosition="78" endLine="27" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7362994916699063358" fileName="CompositeWithParentScope.java" startLine="30" startPosition="67" endLine="34" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8317913688490453133" fileName="CompositeWithParentScope.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="213885436671338177" fileName="CompositeWithParentScope.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="from#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="213885436671338216" fileName="CompositeWithParentScope.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="from#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="8317913688490453114" fileName="CompositeWithParentScope.java" startLine="37" startPosition="68" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3700100223624426216" fileName="CompositeWithParentScope.java" startLine="14" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="from#(Ljetbrains/mps/scope/Scope;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="8317913688490453068" fileName="CompositeWithParentScope.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="8317913688490453138" fileName="CompositeWithParentScope.java" startLine="40" startPosition="42" endLine="41" endPosition="133" />
-    <scopeInfo nodeId="7362994916699063521" fileName="CompositeWithParentScope.java" startLine="46" startPosition="59" endLine="47" endPosition="58" />
-    <scopeInfo nodeId="7362994916699063518" fileName="CompositeWithParentScope.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="7362994916699063525" varName="kind" />
-      <varInfo nodeId="7362994916699063523" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="213885436671338180" fileName="CompositeWithParentScope.java" startLine="23" startPosition="78" endLine="27" endPosition="6" />
-    <scopeInfo nodeId="213885436671338219" fileName="CompositeWithParentScope.java" startLine="30" startPosition="67" endLine="34" endPosition="6" />
-    <scopeInfo nodeId="8317913688490453133" fileName="CompositeWithParentScope.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="8317913688490453136" varName="child" />
-    </scopeInfo>
-    <scopeInfo nodeId="3700100223624426219" fileName="CompositeWithParentScope.java" startLine="14" startPosition="68" endLine="20" endPosition="6">
+    <nodeInfo nodeId="3700100223624426241" fileName="CompositeWithParentScope.java" startLine="16" startPosition="69" endLine="17" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7362994916699063561" fileName="CompositeWithParentScope.java" startLine="20" startPosition="78" endLine="21" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7362994916699063358" fileName="CompositeWithParentScope.java" startLine="24" startPosition="67" endLine="25" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8317913688490453151" fileName="CompositeWithParentScope.java" startLine="31" startPosition="42" endLine="32" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7362994916699063533" fileName="CompositeWithParentScope.java" startLine="37" startPosition="59" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="213885436671338177" fileName="CompositeWithParentScope.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="from#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="213885436671338216" fileName="CompositeWithParentScope.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="from#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="7362994916699063518" fileName="CompositeWithParentScope.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parentScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="8317913688490453133" fileName="CompositeWithParentScope.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3700100223624426216" fileName="CompositeWithParentScope.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="from#(Ljetbrains/mps/scope/Scope;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="8317913688490453114" fileName="CompositeWithParentScope.java" startLine="28" startPosition="68" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8317913688490453068" fileName="CompositeWithParentScope.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="213885436671338180" fileName="CompositeWithParentScope.java" startLine="20" startPosition="78" endLine="21" endPosition="109" />
+    <scopeInfo nodeId="213885436671338219" fileName="CompositeWithParentScope.java" startLine="24" startPosition="67" endLine="25" endPosition="109" />
+    <scopeInfo nodeId="8317913688490453138" fileName="CompositeWithParentScope.java" startLine="31" startPosition="42" endLine="32" endPosition="133" />
+    <scopeInfo nodeId="7362994916699063521" fileName="CompositeWithParentScope.java" startLine="37" startPosition="59" endLine="38" endPosition="58" />
+    <scopeInfo nodeId="3700100223624426219" fileName="CompositeWithParentScope.java" startLine="14" startPosition="68" endLine="17" endPosition="84">
       <varInfo nodeId="3700100223624426236" varName="nextScope" />
     </scopeInfo>
-    <scopeInfo nodeId="213885436671338177" fileName="CompositeWithParentScope.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="213885436671338177" fileName="CompositeWithParentScope.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="213885436671338182" varName="elements" />
       <varInfo nodeId="213885436671338187" varName="kind" />
       <varInfo nodeId="213885436671338184" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="213885436671338216" fileName="CompositeWithParentScope.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="213885436671338216" fileName="CompositeWithParentScope.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="213885436671338221" varName="element" />
       <varInfo nodeId="213885436671338234" varName="kind" />
       <varInfo nodeId="213885436671338225" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8317913688490453071" fileName="CompositeWithParentScope.java" startLine="37" startPosition="68" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="3700100223624426216" fileName="CompositeWithParentScope.java" startLine="14" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="7362994916699063518" fileName="CompositeWithParentScope.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="7362994916699063525" varName="kind" />
+      <varInfo nodeId="7362994916699063523" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8317913688490453133" fileName="CompositeWithParentScope.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8317913688490453136" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="3700100223624426216" fileName="CompositeWithParentScope.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="3700100223624426229" varName="kind" />
       <varInfo nodeId="3700100223624426226" varName="node" />
       <varInfo nodeId="3700100223624426224" varName="original" />
     </scopeInfo>
-    <scopeInfo nodeId="8317913688490453068" fileName="CompositeWithParentScope.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="8317913688490453071" fileName="CompositeWithParentScope.java" startLine="28" startPosition="68" endLine="34" endPosition="19" />
+    <scopeInfo nodeId="8317913688490453068" fileName="CompositeWithParentScope.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="8317913688490453096" varName="kind" />
       <varInfo nodeId="8401916545537277562" varName="link" />
       <varInfo nodeId="8317913688490453078" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8317913688490453131" fileName="CompositeWithParentScope.java" startLine="38" startPosition="20" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope$1" />
-    <unitInfo nodeId="3700100223624426201" fileName="CompositeWithParentScope.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope" />
+    <unitInfo nodeId="8317913688490453131" fileName="CompositeWithParentScope.java" startLine="29" startPosition="20" endLine="34" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope$1" />
+    <unitInfo nodeId="3700100223624426201" fileName="CompositeWithParentScope.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope" />
   </root>
   <root nodeRef="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)/4819084825497241580">
     <nodeInfo nodeId="4819084825497241597" fileName="LazyScope.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="scopePromise" />
@@ -368,27 +368,27 @@
     <nodeInfo nodeId="4143990013474874199" fileName="HidingByNameScope.java" startLine="67" startPosition="39" endLine="68" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5815802410604953933" fileName="HidingByNameScope.java" startLine="70" startPosition="8" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7567863696934695785" fileName="HidingByNameScope.java" startLine="76" startPosition="68" endLine="77" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5910513706165665362" fileName="HidingByNameScope.java" startLine="86" startPosition="74" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2889239041433323171" fileName="HidingByNameScope.java" startLine="92" startPosition="198" endLine="93" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="467175318509926267" fileName="HidingByNameScope.java" startLine="95" startPosition="31" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="467175318509926282" fileName="HidingByNameScope.java" startLine="98" startPosition="62" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="467175318509926286" fileName="HidingByNameScope.java" startLine="100" startPosition="5" endLine="101" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4143990013474874461" fileName="HidingByNameScope.java" startLine="77" startPosition="31" endLine="78" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5910513706165665362" fileName="HidingByNameScope.java" startLine="83" startPosition="74" endLine="84" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2889239041433323171" fileName="HidingByNameScope.java" startLine="89" startPosition="198" endLine="90" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="467175318509926267" fileName="HidingByNameScope.java" startLine="92" startPosition="31" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="467175318509926282" fileName="HidingByNameScope.java" startLine="95" startPosition="62" endLine="96" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="467175318509926286" fileName="HidingByNameScope.java" startLine="97" startPosition="5" endLine="98" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5815802410604953831" fileName="HidingByNameScope.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HidingByNameScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/scope/Scope;Ljetbrains/mps/scope/Scope;)V" />
     <nodeInfo nodeId="26272194522282586" fileName="HidingByNameScope.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HidingByNameScope#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/scope/Scope;Ljetbrains/mps/scope/Scope;)V" />
     <nodeInfo nodeId="5151813541030601300" fileName="HidingByNameScope.java" startLine="47" startPosition="57" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4143990013474874081" fileName="HidingByNameScope.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="4143990013474874137" fileName="HidingByNameScope.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="4143990013474874195" fileName="HidingByNameScope.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2889239041433323139" fileName="HidingByNameScope.java" startLine="91" startPosition="39" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="467175318509926238" fileName="HidingByNameScope.java" startLine="94" startPosition="5" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="467175318509926271" fileName="HidingByNameScope.java" startLine="97" startPosition="5" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4143990013474874461" fileName="HidingByNameScope.java" startLine="77" startPosition="31" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2889239041433323139" fileName="HidingByNameScope.java" startLine="88" startPosition="39" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="467175318509926238" fileName="HidingByNameScope.java" startLine="91" startPosition="5" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="467175318509926271" fileName="HidingByNameScope.java" startLine="94" startPosition="5" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5151813541030601296" fileName="HidingByNameScope.java" startLine="46" startPosition="79" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4143990013474873953" fileName="HidingByNameScope.java" startLine="56" startPosition="48" endLine="61" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5815802410604953949" fileName="HidingByNameScope.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5815802410604953949" fileName="HidingByNameScope.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5815802410604953935" fileName="HidingByNameScope.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="4143990013474874007" fileName="HidingByNameScope.java" startLine="61" startPosition="8" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5815802410604953935" fileName="HidingByNameScope.java" startLine="74" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2889239041433323109" fileName="HidingByNameScope.java" startLine="90" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2889239041433323109" fileName="HidingByNameScope.java" startLine="87" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="5151813541030601241" fileName="HidingByNameScope.java" startLine="37" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HidingByNameScope#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/scope/Scope;Ljetbrains/mps/scope/Scope;)V" />
     <nodeInfo nodeId="5815802410604953879" fileName="HidingByNameScope.java" startLine="54" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="5815802410604953834" fileName="HidingByNameScope.java" startLine="29" startPosition="108" endLine="30" endPosition="89" />
@@ -397,10 +397,11 @@
     <scopeInfo nodeId="4143990013474874082" fileName="HidingByNameScope.java" startLine="58" startPosition="39" endLine="59" endPosition="106" />
     <scopeInfo nodeId="4143990013474874138" fileName="HidingByNameScope.java" startLine="63" startPosition="39" endLine="64" endPosition="106" />
     <scopeInfo nodeId="4143990013474874196" fileName="HidingByNameScope.java" startLine="67" startPosition="39" endLine="68" endPosition="171" />
-    <scopeInfo nodeId="5815802410604953958" fileName="HidingByNameScope.java" startLine="86" startPosition="74" endLine="87" endPosition="26" />
-    <scopeInfo nodeId="2889239041433323140" fileName="HidingByNameScope.java" startLine="92" startPosition="198" endLine="93" endPosition="19" />
-    <scopeInfo nodeId="467175318509926239" fileName="HidingByNameScope.java" startLine="95" startPosition="31" endLine="96" endPosition="18" />
-    <scopeInfo nodeId="467175318509926272" fileName="HidingByNameScope.java" startLine="98" startPosition="62" endLine="99" endPosition="19" />
+    <scopeInfo nodeId="5815802410604953958" fileName="HidingByNameScope.java" startLine="83" startPosition="74" endLine="84" endPosition="26" />
+    <scopeInfo nodeId="2889239041433323140" fileName="HidingByNameScope.java" startLine="89" startPosition="198" endLine="90" endPosition="19" />
+    <scopeInfo nodeId="467175318509926239" fileName="HidingByNameScope.java" startLine="92" startPosition="31" endLine="93" endPosition="18" />
+    <scopeInfo nodeId="467175318509926272" fileName="HidingByNameScope.java" startLine="95" startPosition="62" endLine="96" endPosition="19" />
+    <scopeInfo nodeId="5815802410604953944" fileName="HidingByNameScope.java" startLine="76" startPosition="68" endLine="78" endPosition="140" />
     <scopeInfo nodeId="5815802410604953831" fileName="HidingByNameScope.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4143990013474873781" varName="hidingRoot" />
       <varInfo nodeId="4143990013474873773" varName="kind" />
@@ -426,17 +427,16 @@
     <scopeInfo nodeId="5151813541030601296" fileName="HidingByNameScope.java" startLine="46" startPosition="79" endLine="51" endPosition="5">
       <varInfo nodeId="5151813541030601297" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5815802410604953944" fileName="HidingByNameScope.java" startLine="76" startPosition="68" endLine="81" endPosition="6" />
-    <scopeInfo nodeId="5815802410604953949" fileName="HidingByNameScope.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="5815802410604953949" fileName="HidingByNameScope.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="5815802410604953952" varName="contextNode" />
       <varInfo nodeId="5815802410604953954" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5815802410604953935" fileName="HidingByNameScope.java" startLine="74" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="5815802410604953935" fileName="HidingByNameScope.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="5815802410604953938" varName="contextNode" />
       <varInfo nodeId="5815802410604953940" varName="refText" />
     </scopeInfo>
-    <scopeInfo nodeId="2889239041433323128" fileName="HidingByNameScope.java" startLine="91" startPosition="39" endLine="101" endPosition="38" />
-    <scopeInfo nodeId="2889239041433323109" fileName="HidingByNameScope.java" startLine="90" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="2889239041433323128" fileName="HidingByNameScope.java" startLine="88" startPosition="39" endLine="98" endPosition="38" />
+    <scopeInfo nodeId="2889239041433323109" fileName="HidingByNameScope.java" startLine="87" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="2889239041433323112" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5151813541030601244" fileName="HidingByNameScope.java" startLine="37" startPosition="136" endLine="51" endPosition="5">
@@ -457,7 +457,7 @@
     <unitInfo nodeId="4143990013474874081" fileName="HidingByNameScope.java" startLine="57" startPosition="114" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.HidingByNameScope$1" />
     <unitInfo nodeId="4143990013474874137" fileName="HidingByNameScope.java" startLine="62" startPosition="120" endLine="66" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.HidingByNameScope$2" />
     <unitInfo nodeId="4143990013474874195" fileName="HidingByNameScope.java" startLine="66" startPosition="17" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.HidingByNameScope$3" />
-    <unitInfo nodeId="5815802410604953815" fileName="HidingByNameScope.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.scopes.runtime.HidingByNameScope" />
+    <unitInfo nodeId="5815802410604953815" fileName="HidingByNameScope.java" startLine="22" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.scopes.runtime.HidingByNameScope" />
   </root>
 </debugInfo>
 

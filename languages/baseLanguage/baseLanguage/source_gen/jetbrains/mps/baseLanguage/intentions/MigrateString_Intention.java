@@ -91,9 +91,6 @@ public class MigrateString_Intention implements IntentionFactory {
   }
 
   private static boolean eq_8h3uxw_a0a0j(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

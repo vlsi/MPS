@@ -25,14 +25,8 @@ public class ClasspathCache {
   public List<Loader> getLoaders(String resourcePath) {
     boolean isClassFile = resourcePath.endsWith(UrlClassLoader.CLASS_EXTENSION);
     final int idx = resourcePath.lastIndexOf('/');
-    String packageName = (idx > 0 ?
-      resourcePath.substring(0, idx) :
-      ""
-    );
-    Map<String, List<Loader>> map = (isClassFile ?
-      myClassPackagesCache :
-      myResourcePackagesCache
-    );
+    String packageName = (idx > 0 ? resourcePath.substring(0, idx) : "");
+    Map<String, List<Loader>> map = (isClassFile ? myClassPackagesCache : myResourcePackagesCache);
     List<Loader> list = map.get(packageName);
     if (list == null) {
       list = new ArrayList<Loader>(1);

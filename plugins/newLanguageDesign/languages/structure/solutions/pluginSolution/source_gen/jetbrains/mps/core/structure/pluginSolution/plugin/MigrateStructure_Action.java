@@ -162,9 +162,6 @@ public class MigrateStructure_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(MigrateStructure_Action.class);
 
   private static boolean eq_5hzyna_a0a0a0a0a0a3a8a0a6(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

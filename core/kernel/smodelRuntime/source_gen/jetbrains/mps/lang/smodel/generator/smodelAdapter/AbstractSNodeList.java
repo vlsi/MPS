@@ -47,10 +47,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
   private void addReference(int index, SNode node) {
     if (node != null) {
-      SNode anchorNode = (index > 0 ?
-        get(index - 1) :
-        null
-      );
+      SNode anchorNode = (index > 0 ? get(index - 1) : null);
       insertAfter(node, anchorNode);
     }
   }
@@ -81,10 +78,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
   @Override
   public boolean addAll(int index, Collection<? extends SNode> c) {
-    SNode anchorNode = (index > 0 ?
-      get(index - 1) :
-      null
-    );
+    SNode anchorNode = (index > 0 ? get(index - 1) : null);
     for (SNode nextNode : c) {
       if (nextNode == null) {
         continue;

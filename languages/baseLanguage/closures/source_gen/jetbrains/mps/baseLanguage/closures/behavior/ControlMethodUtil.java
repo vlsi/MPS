@@ -76,10 +76,7 @@ public class ControlMethodUtil {
           return null;
         }
       }
-      return (inf.isInitialized() ?
-        inf :
-        null
-      );
+      return (inf.isInitialized() ? inf : null);
     }
     return null;
   }

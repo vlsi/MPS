@@ -75,10 +75,7 @@ public class ProcessHandlerBuilder {
       Process process = builder.start();
       DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(myCommandLine).foldLeft("", new ILeftCombinator<String, String>() {
         public String combine(String s, String it) {
-          return ((s == null || s.length() == 0) ?
-            it :
-            s + " " + it
-          );
+          return ((s == null || s.length() == 0) ? it : s + " " + it);
         }
       }));
       return processHandler;

@@ -128,10 +128,7 @@ public class TLongArrayListDecorator extends AbstractList<Long> implements List<
 
   @Override
   public boolean remove(Object e) {
-    return (e instanceof Long ?
-      this.removePrim(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Long ? this.removePrim(this.unwrap(e)) : false);
   }
 
   @Override
@@ -146,10 +143,7 @@ public class TLongArrayListDecorator extends AbstractList<Long> implements List<
 
   @Override
   public boolean contains(Object e) {
-    return (e instanceof Long ?
-      this.primList.contains(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Long ? this.primList.contains(this.unwrap(e)) : false);
   }
 
   @Override

@@ -15,6 +15,7 @@
     <nodeInfo nodeId="5842819808956911427" fileName="MpsStartupScript_Behavior.java" startLine="41" startPosition="37" endLine="42" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5842819808956911450" fileName="MpsStartupScript_Behavior.java" startLine="47" startPosition="88" endLine="48" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5842819808956911490" fileName="MpsStartupScript_Behavior.java" startLine="51" startPosition="87" endLine="52" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="56" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5842819808956653678" fileName="MpsStartupScript_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="5842819808956653688" fileName="MpsStartupScript_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -23,8 +24,7 @@
     <nodeInfo nodeId="5842819808956911423" fileName="MpsStartupScript_Behavior.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathToVmOptionsFile_5842819808956911442#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVmOptionsExtension_5842819808956911479#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_p7akvg_a0a0b#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_p7akvg_a0a0b#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="5842819808956911353" fileName="MpsStartupScript_Behavior.java" startLine="35" startPosition="90" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="35" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCommentedOptions_5842819808956911345#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="5842819808956701278" fileName="MpsStartupScript_Behavior.java" startLine="19" startPosition="85" endLine="32" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -37,6 +37,7 @@
     <scopeInfo nodeId="5842819808956911424" fileName="MpsStartupScript_Behavior.java" startLine="41" startPosition="37" endLine="42" endPosition="97" />
     <scopeInfo nodeId="5842819808956911445" fileName="MpsStartupScript_Behavior.java" startLine="47" startPosition="88" endLine="48" endPosition="215" />
     <scopeInfo nodeId="5842819808956911482" fileName="MpsStartupScript_Behavior.java" startLine="51" startPosition="87" endLine="52" endPosition="23" />
+    <scopeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="56" endPosition="45" />
     <scopeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="5842819808956701264" varName="thisNode" />
     </scopeInfo>
@@ -62,8 +63,7 @@
     <scopeInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5842819808956701264" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="54" endLine="59" endPosition="6" />
-    <scopeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="5842819808956701314" fileName="MpsStartupScript_Behavior.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="5842819808956701314" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="5842819808956911348" fileName="MpsStartupScript_Behavior.java" startLine="35" startPosition="90" endLine="44" endPosition="24" />
@@ -79,7 +79,7 @@
     <unitInfo nodeId="5842819808956701287" fileName="MpsStartupScript_Behavior.java" startLine="28" startPosition="25" endLine="32" endPosition="5" unitName="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$3" />
     <unitInfo nodeId="5842819808956911365" fileName="MpsStartupScript_Behavior.java" startLine="36" startPosition="100" endLine="40" endPosition="5" unitName="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$4" />
     <unitInfo nodeId="5842819808956911423" fileName="MpsStartupScript_Behavior.java" startLine="40" startPosition="18" endLine="44" endPosition="5" unitName="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior$5" />
-    <unitInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior" />
+    <unitInfo nodeId="5842819808956701264" fileName="MpsStartupScript_Behavior.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.MpsStartupScript_Behavior" />
   </root>
 </debugInfo>
 

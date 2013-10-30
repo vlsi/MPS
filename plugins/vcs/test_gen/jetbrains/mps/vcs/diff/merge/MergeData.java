@@ -181,13 +181,7 @@ public class MergeData {
   private static boolean check(String what, String expected, String actual) {
     if (expected == null || actual == null) {
       if (expected != null || actual != null) {
-        System.err.printf("Expected %s: %s, but actual is %s\n", what, (expected == null ?
-          "null" :
-          "not null"
-        ), (actual == null ?
-          "null" :
-          "not null"
-        ));
+        System.err.printf("Expected %s: %s, but actual is %s\n", what, (expected == null ? "null" : "not null"), (actual == null ? "null" : "not null"));
         return false;
       } else {
         return true;
@@ -208,9 +202,6 @@ public class MergeData {
   }
 
   private static <T> T as_u0rai9_a0a0a2a8a71(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

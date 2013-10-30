@@ -27,18 +27,12 @@ public class ExportScope_Behavior {
 
   public static boolean call_checkExport_2565736246230031479(SAbstractConcept thisConcept, boolean isConcept, SNode node, String namespace) {
     SNode exp = ExportScope_Behavior.call_getExportScope_4075196924244445285(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node);
-    return namespace == null || (((exp == null) ?
-      ExportScope_Behavior.call_checkExportDefault_8259195909097980935(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), isConcept, node, namespace) :
-      BehaviorReflection.invokeVirtual(Boolean.TYPE, exp, "virtual_checkExport_2565736246230026584", new Object[]{namespace, node})
-    ));
+    return namespace == null || (((exp == null) ? ExportScope_Behavior.call_checkExportDefault_8259195909097980935(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), isConcept, node, namespace) : BehaviorReflection.invokeVirtual(Boolean.TYPE, exp, "virtual_checkExport_2565736246230026584", new Object[]{namespace, node})));
   }
 
   public static boolean call_checkExportDefault_8259195909097980935(SAbstractConcept thisConcept, boolean isConcept, SNode node, String namespace) {
     /*
-      return (isConcept ?
-        true :
-        namespace.equals(ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node))
-      );
+      return (isConcept ? true : namespace.equals(ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node)));
     */
     String targetNamespace = ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node);
     if (isConcept || targetNamespace == null || namespace.equals(targetNamespace)) {

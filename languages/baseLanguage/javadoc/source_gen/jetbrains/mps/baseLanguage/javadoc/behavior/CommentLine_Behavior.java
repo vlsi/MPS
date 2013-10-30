@@ -19,13 +19,7 @@ public class CommentLine_Behavior {
       int offset = SPropertyOperations.getString(leftPart, "text").length();
       SNode rightPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
 
-      String text = ((isEmptyString(SPropertyOperations.getString(leftPart, "text")) ?
-        "" :
-        SPropertyOperations.getString(leftPart, "text")
-      )) + ((isEmptyString(SPropertyOperations.getString(rightPart, "text")) ?
-        "" :
-        SPropertyOperations.getString(rightPart, "text")
-      ));
+      String text = ((isEmptyString(SPropertyOperations.getString(leftPart, "text")) ? "" : SPropertyOperations.getString(leftPart, "text"))) + ((isEmptyString(SPropertyOperations.getString(rightPart, "text")) ? "" : SPropertyOperations.getString(rightPart, "text")));
       SPropertyOperations.set(leftPart, "text", text);
       SNodeOperations.deleteNode(rightPart);
       return new NodeCaretPair(leftPart, offset);

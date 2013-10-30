@@ -51,10 +51,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        operationNode.value = (cell == null ?
-          node :
-          APICellAdapter.getSNodeWRTReference(cell)
-        );
+        operationNode.value = (cell == null ? node : APICellAdapter.getSNodeWRTReference(cell));
         concept.value = operationNode.value.getConcept().getQualifiedName();
       }
     });

@@ -43,13 +43,7 @@ public class NewSolutionDialog extends DialogWrapper {
   @Nullable
   public JComponent createCenterPanel() {
     if (mySolutionSettings == null) {
-      mySolutionSettings = new NewSolutionSettings((myProject != null ?
-        ((((ProjectEx) ProjectHelper.toIdeaProject(myProject)).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED ?
-          myProject.getProjectFile().getParentFile().getAbsolutePath() :
-          myProject.getProjectFile().getAbsolutePath()
-        )) :
-        null
-      ));
+      mySolutionSettings = new NewSolutionSettings((myProject != null ? ((((ProjectEx) ProjectHelper.toIdeaProject(myProject)).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
       mySolutionSettings.setListener(new NewSolutionSettings.SolutionSettingsChangedListener() {
         @Override
         public void changed() {

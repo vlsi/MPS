@@ -74,9 +74,6 @@ public class check_UnusedPrivateClassifier_NonTypesystemRule extends AbstractNon
   }
 
   private static boolean eq_kryfz9_a0a0a0a0a0a0a0a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

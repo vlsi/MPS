@@ -68,10 +68,7 @@ public class SetUniqueNameInFile_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "uniqNameInFile") ?
-        "Unset" :
-        "Set" + " Unique Name in File"
-      );
+      return (SPropertyOperations.getBoolean(node, "uniqNameInFile") ? "Unset" : "Set" + " Unique Name in File");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

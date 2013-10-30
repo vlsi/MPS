@@ -45,10 +45,7 @@ public class OverrideImplementMethodsHelper {
   }
 
   public List<SNode> insertMethods(List<SNode> baseMethods) {
-    int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ?
-      ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 :
-      -1
-    );
+    int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ? ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 : -1);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
@@ -151,10 +148,7 @@ public class OverrideImplementMethodsHelper {
         }
         String prefix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getPrefix_3012473318495495520", new Object[]{myProject});
         String suffix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getSuffix_3012473318495499856", new Object[]{myProject});
-        String mainName = ((prefix == null || prefix.length() == 0) ?
-          name :
-          NameUtil.capitalize(name)
-        );
+        String mainName = ((prefix == null || prefix.length() == 0) ? name : NameUtil.capitalize(name));
         SPropertyOperations.set(variable, "name", prefix + mainName + suffix);
       }
     }

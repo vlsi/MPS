@@ -99,10 +99,7 @@ public class BaseVersionUtil {
         return null;
       }
       String ext = vFile.getExtension();
-      return (content instanceof String ?
-        PersistenceUtil.loadModel((String) content, ext) :
-        PersistenceUtil.loadModel((byte[]) content, ext)
-      );
+      return (content instanceof String ? PersistenceUtil.loadModel((String) content, ext) : PersistenceUtil.loadModel((byte[]) content, ext));
     } else if (ds instanceof FilePerRootDataSource) {
       FilePerRootDataSource rds = (FilePerRootDataSource) ds;
       Map<String, Object> content = MapSequence.fromMap(new HashMap<String, Object>());

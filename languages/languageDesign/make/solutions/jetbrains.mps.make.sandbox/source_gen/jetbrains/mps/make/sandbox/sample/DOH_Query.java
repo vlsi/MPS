@@ -33,9 +33,6 @@ public class DOH_Query implements IQuery<what_Option> {
   }
 
   public what_Option defaultOption() {
-    return (defaultOption >= 0 ?
-      what_Option.class.getEnumConstants()[defaultOption] :
-      null
-    );
+    return (defaultOption >= 0 ? what_Option.class.getEnumConstants()[defaultOption] : null);
   }
 }

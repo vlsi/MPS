@@ -19,9 +19,6 @@ public class ContextUtil {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.notation.structure.SNotationMapping") && !("presentation".equals(role))) {
       node = SNodeOperations.getParent(node);
     }
-    return (node != null ?
-      BehaviorReflection.invokeVirtual(NotationContext.class, SNodeOperations.cast(node, "jetbrains.mps.core.notation.structure.SNotationContextProvider"), "virtual_getContext_8632884680339357870", new Object[]{}) :
-      null
-    );
+    return (node != null ? BehaviorReflection.invokeVirtual(NotationContext.class, SNodeOperations.cast(node, "jetbrains.mps.core.notation.structure.SNotationContextProvider"), "virtual_getContext_8632884680339357870", new Object[]{}) : null);
   }
 }

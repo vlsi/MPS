@@ -720,6 +720,7 @@
     <nodeInfo nodeId="6531435794299652563" fileName="MfDate.java" startLine="128" startPosition="60" endLine="129" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6531435794299652587" fileName="MfDate.java" startLine="132" startPosition="61" endLine="133" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299652600" fileName="MfDate.java" startLine="136" startPosition="43" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531435794299652608" fileName="MfDate.java" startLine="140" startPosition="32" endLine="141" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6531435794299652268" fileName="MfDate.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MfDate#()V" />
     <nodeInfo nodeId="6531435794299652275" fileName="MfDate.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MfDate#(III)V" />
     <nodeInfo nodeId="6531435794299652356" fileName="MfDate.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MfDate#(Ljava/util/GregorianCalendar;)V" />
@@ -738,15 +739,14 @@
     <nodeInfo nodeId="6531435794299652567" fileName="MfDate.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rawString#()Ljava/lang/String;" />
     <nodeInfo nodeId="6531435794299652577" fileName="MfDate.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setToday#(III)V" />
     <nodeInfo nodeId="6531435794299652594" fileName="MfDate.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setToday#(Lmf/MfDate;)V" />
+    <nodeInfo nodeId="6531435794299652604" fileName="MfDate.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="today#()Lmf/MfDate;" />
     <nodeInfo nodeId="6531435794299652497" fileName="MfDate.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMediumString#()Ljava/lang/String;" />
     <nodeInfo nodeId="6531435794299652520" fileName="MfDate.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSqlString#()Ljava/lang/String;" />
     <nodeInfo nodeId="6531435794299652543" fileName="MfDate.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
     <nodeInfo nodeId="6531435794299652617" fileName="MfDate.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="6531435794299652551" fileName="MfDate.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="past#()Lmf/MfDate;" />
-    <nodeInfo nodeId="6531435794299652608" fileName="MfDate.java" startLine="140" startPosition="32" endLine="144" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6531435794299652337" fileName="MfDate.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MfDate#(Ljava/util/Date;)V" />
     <nodeInfo nodeId="6531435794299652417" fileName="MfDate.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljava/lang/Object;)I" />
-    <nodeInfo nodeId="6531435794299652604" fileName="MfDate.java" startLine="140" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="today#()Lmf/MfDate;" />
     <nodeInfo nodeId="6531435794299652305" fileName="MfDate.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="trimToDays#(Ljava/util/GregorianCalendar;)Ljava/util/GregorianCalendar;" />
     <nodeInfo nodeId="6531435794299652436" fileName="MfDate.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="6531435794299652271" fileName="MfDate.java" startLine="18" startPosition="19" endLine="19" endPosition="34" />
@@ -769,6 +769,7 @@
     <scopeInfo nodeId="6531435794299652620" fileName="MfDate.java" startLine="123" startPosition="28" endLine="124" endPosition="29" />
     <scopeInfo nodeId="6531435794299652586" fileName="MfDate.java" startLine="132" startPosition="61" endLine="133" endPosition="50" />
     <scopeInfo nodeId="6531435794299652599" fileName="MfDate.java" startLine="136" startPosition="43" endLine="137" endPosition="18" />
+    <scopeInfo nodeId="6531435794299652607" fileName="MfDate.java" startLine="140" startPosition="32" endLine="141" endPosition="56" />
     <scopeInfo nodeId="6531435794299652422" fileName="MfDate.java" startLine="65" startPosition="36" endLine="67" endPosition="48">
       <varInfo nodeId="6531435794299652424" varName="other" />
     </scopeInfo>
@@ -821,12 +822,12 @@
     <scopeInfo nodeId="6531435794299652594" fileName="MfDate.java" startLine="136" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="6531435794299652597" varName="arg" />
     </scopeInfo>
+    <scopeInfo nodeId="6531435794299652604" fileName="MfDate.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="6531435794299652497" fileName="MfDate.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="6531435794299652520" fileName="MfDate.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
     <scopeInfo nodeId="6531435794299652543" fileName="MfDate.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="6531435794299652617" fileName="MfDate.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="6531435794299652551" fileName="MfDate.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="6531435794299652607" fileName="MfDate.java" startLine="140" startPosition="32" endLine="144" endPosition="6" />
     <scopeInfo nodeId="6531435794299652337" fileName="MfDate.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="6531435794299652340" varName="arg" />
     </scopeInfo>
@@ -837,14 +838,13 @@
     <scopeInfo nodeId="6531435794299652441" fileName="MfDate.java" startLine="71" startPosition="37" endLine="76" endPosition="41">
       <varInfo nodeId="6531435794299652452" varName="other" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299652604" fileName="MfDate.java" startLine="140" startPosition="0" endLine="146" endPosition="0" />
     <scopeInfo nodeId="6531435794299652305" fileName="MfDate.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="6531435794299652308" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="6531435794299652436" fileName="MfDate.java" startLine="70" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="6531435794299652439" varName="arg" />
     </scopeInfo>
-    <unitInfo nodeId="6531435794299652233" fileName="MfDate.java" startLine="11" startPosition="0" endLine="147" endPosition="0" unitName="mf.MfDate" />
+    <unitInfo nodeId="6531435794299652233" fileName="MfDate.java" startLine="11" startPosition="0" endLine="144" endPosition="0" unitName="mf.MfDate" />
   </root>
   <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299652623">
     <nodeInfo nodeId="6531435794299652626" fileName="Currency.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USD" />
@@ -1449,91 +1449,94 @@
     <nodeInfo nodeId="6531435794299655617" fileName="Quantity.java" startLine="15" startPosition="22" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299655629" fileName="Quantity.java" startLine="19" startPosition="42" endLine="20" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="6531435794299655642" fileName="Quantity.java" startLine="23" startPosition="51" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="6531435794299655666" fileName="Quantity.java" startLine="34" startPosition="37" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6531435794299655669" fileName="Quantity.java" startLine="35" startPosition="28" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655681" fileName="Quantity.java" startLine="39" startPosition="32" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655690" fileName="Quantity.java" startLine="43" startPosition="38" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655709" fileName="Quantity.java" startLine="49" startPosition="39" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655711" fileName="Quantity.java" startLine="51" startPosition="5" endLine="52" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6531435794299655717" fileName="Quantity.java" startLine="52" startPosition="36" endLine="53" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655736" fileName="Quantity.java" startLine="56" startPosition="29" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655744" fileName="Quantity.java" startLine="60" startPosition="46" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6531435794299655747" fileName="Quantity.java" startLine="61" startPosition="28" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655757" fileName="Quantity.java" startLine="65" startPosition="55" endLine="66" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6531435794299655760" fileName="Quantity.java" startLine="66" startPosition="28" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655770" fileName="Quantity.java" startLine="70" startPosition="43" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6531435794299655773" fileName="Quantity.java" startLine="71" startPosition="28" endLine="72" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655785" fileName="Quantity.java" startLine="75" startPosition="52" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6531435794299655788" fileName="Quantity.java" startLine="76" startPosition="28" endLine="77" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655798" fileName="Quantity.java" startLine="80" startPosition="31" endLine="81" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655807" fileName="Quantity.java" startLine="84" startPosition="27" endLine="85" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655813" fileName="Quantity.java" startLine="88" startPosition="31" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655848" fileName="Quantity.java" startLine="106" startPosition="40" endLine="107" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655862" fileName="Quantity.java" startLine="110" startPosition="58" endLine="111" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655873" fileName="Quantity.java" startLine="114" startPosition="42" endLine="115" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655890" fileName="Quantity.java" startLine="119" startPosition="22" endLine="120" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6531435794299655911" fileName="Quantity.java" startLine="125" startPosition="39" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6531435794299655920" fileName="Quantity.java" startLine="130" startPosition="42" endLine="131" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6531435794299655923" fileName="Quantity.java" startLine="131" startPosition="28" endLine="132" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655935" fileName="Quantity.java" startLine="136" startPosition="28" endLine="137" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655948" fileName="Quantity.java" startLine="140" startPosition="22" endLine="141" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655651" fileName="Quantity.java" startLine="27" startPosition="25" endLine="28" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655666" fileName="Quantity.java" startLine="31" startPosition="37" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531435794299655669" fileName="Quantity.java" startLine="32" startPosition="28" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655681" fileName="Quantity.java" startLine="36" startPosition="32" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655690" fileName="Quantity.java" startLine="40" startPosition="38" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655709" fileName="Quantity.java" startLine="46" startPosition="39" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655711" fileName="Quantity.java" startLine="48" startPosition="5" endLine="49" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6531435794299655717" fileName="Quantity.java" startLine="49" startPosition="36" endLine="50" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655736" fileName="Quantity.java" startLine="53" startPosition="29" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655744" fileName="Quantity.java" startLine="57" startPosition="46" endLine="58" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531435794299655747" fileName="Quantity.java" startLine="58" startPosition="28" endLine="59" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655757" fileName="Quantity.java" startLine="62" startPosition="55" endLine="63" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531435794299655760" fileName="Quantity.java" startLine="63" startPosition="28" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655770" fileName="Quantity.java" startLine="67" startPosition="43" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531435794299655773" fileName="Quantity.java" startLine="68" startPosition="28" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655785" fileName="Quantity.java" startLine="72" startPosition="52" endLine="73" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531435794299655788" fileName="Quantity.java" startLine="73" startPosition="28" endLine="74" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655798" fileName="Quantity.java" startLine="77" startPosition="31" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655807" fileName="Quantity.java" startLine="81" startPosition="27" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655813" fileName="Quantity.java" startLine="85" startPosition="31" endLine="86" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655822" fileName="Quantity.java" startLine="89" startPosition="37" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655835" fileName="Quantity.java" startLine="93" startPosition="37" endLine="94" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655848" fileName="Quantity.java" startLine="97" startPosition="40" endLine="98" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655862" fileName="Quantity.java" startLine="101" startPosition="58" endLine="102" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655873" fileName="Quantity.java" startLine="105" startPosition="42" endLine="106" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655890" fileName="Quantity.java" startLine="110" startPosition="22" endLine="111" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6531435794299655911" fileName="Quantity.java" startLine="116" startPosition="39" endLine="117" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6531435794299655920" fileName="Quantity.java" startLine="121" startPosition="42" endLine="122" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531435794299655923" fileName="Quantity.java" startLine="122" startPosition="28" endLine="123" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655935" fileName="Quantity.java" startLine="127" startPosition="28" endLine="128" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6531435794299655948" fileName="Quantity.java" startLine="131" startPosition="22" endLine="132" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6531435794299655598" fileName="Quantity.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Quantity#()V" />
     <nodeInfo nodeId="6531435794299655621" fileName="Quantity.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Quantity#(ILmf/Unit;)V" />
     <nodeInfo nodeId="6531435794299655634" fileName="Quantity.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Quantity#(Ljava/lang/String;Lmf/Unit;)V" />
-    <nodeInfo nodeId="6531435794299655677" fileName="Quantity.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="amountString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6531435794299655684" fileName="Quantity.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="divide#(D)Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655702" fileName="Quantity.java" startLine="48" startPosition="37" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6531435794299655732" fileName="Quantity.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAmount#()D" />
-    <nodeInfo nodeId="6531435794299655794" fileName="Quantity.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNegative#()Z" />
-    <nodeInfo nodeId="6531435794299655803" fileName="Quantity.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNull#()Z" />
-    <nodeInfo nodeId="6531435794299655809" fileName="Quantity.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPositive#()Z" />
-    <nodeInfo nodeId="6531435794299655842" fileName="Quantity.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="multiply#(D)Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655854" fileName="Quantity.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="newObject#(DLmf/Unit;)Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655867" fileName="Quantity.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notEquals#(Lmf/Quantity;)Z" />
-    <nodeInfo nodeId="6531435794299655885" fileName="Quantity.java" startLine="118" startPosition="45" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6531435794299655902" fileName="Quantity.java" startLine="124" startPosition="51" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6531435794299655944" fileName="Quantity.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unit#()Lmf/Unit;" />
-    <nodeInfo nodeId="6531435794299655651" fileName="Quantity.java" startLine="27" startPosition="25" endLine="31" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655660" fileName="Quantity.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Lmf/Quantity;)Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655738" fileName="Quantity.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGreaterThan#(Lmf/Quantity;)Z" />
-    <nodeInfo nodeId="6531435794299655751" fileName="Quantity.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGreaterThanOrEqualTo#(Lmf/Quantity;)Z" />
-    <nodeInfo nodeId="6531435794299655764" fileName="Quantity.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLessThan#(Lmf/Quantity;)Z" />
-    <nodeInfo nodeId="6531435794299655779" fileName="Quantity.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLessThanOrEqualTo#(Lmf/Quantity;)Z" />
-    <nodeInfo nodeId="6531435794299655822" fileName="Quantity.java" startLine="92" startPosition="37" endLine="96" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655835" fileName="Quantity.java" startLine="99" startPosition="37" endLine="103" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6531435794299655914" fileName="Quantity.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="subtract#(Lmf/Quantity;)Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655931" fileName="Quantity.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6531435794299655647" fileName="Quantity.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="abs#()Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655677" fileName="Quantity.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="amountString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6531435794299655684" fileName="Quantity.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="divide#(D)Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655702" fileName="Quantity.java" startLine="45" startPosition="37" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6531435794299655732" fileName="Quantity.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAmount#()D" />
+    <nodeInfo nodeId="6531435794299655794" fileName="Quantity.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNegative#()Z" />
+    <nodeInfo nodeId="6531435794299655803" fileName="Quantity.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNull#()Z" />
+    <nodeInfo nodeId="6531435794299655809" fileName="Quantity.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPositive#()Z" />
+    <nodeInfo nodeId="6531435794299655816" fileName="Quantity.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="max#(Lmf/Quantity;)Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655829" fileName="Quantity.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="min#(Lmf/Quantity;)Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655842" fileName="Quantity.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="multiply#(D)Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655854" fileName="Quantity.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="newObject#(DLmf/Unit;)Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655867" fileName="Quantity.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notEquals#(Lmf/Quantity;)Z" />
+    <nodeInfo nodeId="6531435794299655885" fileName="Quantity.java" startLine="109" startPosition="45" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6531435794299655902" fileName="Quantity.java" startLine="115" startPosition="51" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6531435794299655944" fileName="Quantity.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unit#()Lmf/Unit;" />
+    <nodeInfo nodeId="6531435794299655660" fileName="Quantity.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Lmf/Quantity;)Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655738" fileName="Quantity.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGreaterThan#(Lmf/Quantity;)Z" />
+    <nodeInfo nodeId="6531435794299655751" fileName="Quantity.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGreaterThanOrEqualTo#(Lmf/Quantity;)Z" />
+    <nodeInfo nodeId="6531435794299655764" fileName="Quantity.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLessThan#(Lmf/Quantity;)Z" />
+    <nodeInfo nodeId="6531435794299655779" fileName="Quantity.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLessThanOrEqualTo#(Lmf/Quantity;)Z" />
+    <nodeInfo nodeId="6531435794299655914" fileName="Quantity.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="subtract#(Lmf/Quantity;)Lmf/Quantity;" />
+    <nodeInfo nodeId="6531435794299655931" fileName="Quantity.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="6531435794299655602" fileName="Quantity.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Quantity#(DLmf/Unit;)V" />
-    <nodeInfo nodeId="6531435794299655879" fileName="Quantity.java" startLine="118" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requireNonNull#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="6531435794299655896" fileName="Quantity.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requireSameUnitsAs#(Lmf/Quantity;)V" />
-    <nodeInfo nodeId="6531435794299655647" fileName="Quantity.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="abs#()Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655816" fileName="Quantity.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="max#(Lmf/Quantity;)Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655829" fileName="Quantity.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="min#(Lmf/Quantity;)Lmf/Quantity;" />
-    <nodeInfo nodeId="6531435794299655696" fileName="Quantity.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6531435794299655879" fileName="Quantity.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requireNonNull#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="6531435794299655896" fileName="Quantity.java" startLine="115" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requireSameUnitsAs#(Lmf/Quantity;)V" />
+    <nodeInfo nodeId="6531435794299655696" fileName="Quantity.java" startLine="44" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="6531435794299655601" fileName="Quantity.java" startLine="10" startPosition="24" endLine="10" endPosition="24" />
     <scopeInfo nodeId="6531435794299655628" fileName="Quantity.java" startLine="19" startPosition="42" endLine="20" endPosition="32" />
     <scopeInfo nodeId="6531435794299655641" fileName="Quantity.java" startLine="23" startPosition="51" endLine="24" endPosition="41" />
-    <scopeInfo nodeId="6531435794299655680" fileName="Quantity.java" startLine="39" startPosition="32" endLine="40" endPosition="39" />
-    <scopeInfo nodeId="6531435794299655689" fileName="Quantity.java" startLine="43" startPosition="38" endLine="44" endPosition="48" />
-    <scopeInfo nodeId="6531435794299655708" fileName="Quantity.java" startLine="49" startPosition="39" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="6531435794299655735" fileName="Quantity.java" startLine="56" startPosition="29" endLine="57" endPosition="20" />
-    <scopeInfo nodeId="6531435794299655797" fileName="Quantity.java" startLine="80" startPosition="31" endLine="81" endPosition="29" />
-    <scopeInfo nodeId="6531435794299655806" fileName="Quantity.java" startLine="84" startPosition="27" endLine="85" endPosition="17" />
-    <scopeInfo nodeId="6531435794299655812" fileName="Quantity.java" startLine="88" startPosition="31" endLine="89" endPosition="27" />
-    <scopeInfo nodeId="6531435794299655847" fileName="Quantity.java" startLine="106" startPosition="40" endLine="107" endPosition="48" />
-    <scopeInfo nodeId="6531435794299655861" fileName="Quantity.java" startLine="110" startPosition="58" endLine="111" endPosition="38" />
-    <scopeInfo nodeId="6531435794299655872" fileName="Quantity.java" startLine="114" startPosition="42" endLine="115" endPosition="31" />
-    <scopeInfo nodeId="6531435794299655889" fileName="Quantity.java" startLine="119" startPosition="22" endLine="120" endPosition="67" />
-    <scopeInfo nodeId="6531435794299655910" fileName="Quantity.java" startLine="125" startPosition="39" endLine="126" endPosition="43" />
-    <scopeInfo nodeId="6531435794299655934" fileName="Quantity.java" startLine="136" startPosition="28" endLine="137" endPosition="65" />
-    <scopeInfo nodeId="6531435794299655947" fileName="Quantity.java" startLine="140" startPosition="22" endLine="141" endPosition="18" />
+    <scopeInfo nodeId="6531435794299655650" fileName="Quantity.java" startLine="27" startPosition="25" endLine="28" endPosition="78" />
+    <scopeInfo nodeId="6531435794299655680" fileName="Quantity.java" startLine="36" startPosition="32" endLine="37" endPosition="39" />
+    <scopeInfo nodeId="6531435794299655689" fileName="Quantity.java" startLine="40" startPosition="38" endLine="41" endPosition="48" />
+    <scopeInfo nodeId="6531435794299655708" fileName="Quantity.java" startLine="46" startPosition="39" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="6531435794299655735" fileName="Quantity.java" startLine="53" startPosition="29" endLine="54" endPosition="20" />
+    <scopeInfo nodeId="6531435794299655797" fileName="Quantity.java" startLine="77" startPosition="31" endLine="78" endPosition="29" />
+    <scopeInfo nodeId="6531435794299655806" fileName="Quantity.java" startLine="81" startPosition="27" endLine="82" endPosition="17" />
+    <scopeInfo nodeId="6531435794299655812" fileName="Quantity.java" startLine="85" startPosition="31" endLine="86" endPosition="27" />
+    <scopeInfo nodeId="6531435794299655821" fileName="Quantity.java" startLine="89" startPosition="37" endLine="90" endPosition="47" />
+    <scopeInfo nodeId="6531435794299655834" fileName="Quantity.java" startLine="93" startPosition="37" endLine="94" endPosition="44" />
+    <scopeInfo nodeId="6531435794299655847" fileName="Quantity.java" startLine="97" startPosition="40" endLine="98" endPosition="48" />
+    <scopeInfo nodeId="6531435794299655861" fileName="Quantity.java" startLine="101" startPosition="58" endLine="102" endPosition="38" />
+    <scopeInfo nodeId="6531435794299655872" fileName="Quantity.java" startLine="105" startPosition="42" endLine="106" endPosition="31" />
+    <scopeInfo nodeId="6531435794299655889" fileName="Quantity.java" startLine="110" startPosition="22" endLine="111" endPosition="67" />
+    <scopeInfo nodeId="6531435794299655910" fileName="Quantity.java" startLine="116" startPosition="39" endLine="117" endPosition="43" />
+    <scopeInfo nodeId="6531435794299655934" fileName="Quantity.java" startLine="127" startPosition="28" endLine="128" endPosition="65" />
+    <scopeInfo nodeId="6531435794299655947" fileName="Quantity.java" startLine="131" startPosition="22" endLine="132" endPosition="18" />
     <scopeInfo nodeId="6531435794299655598" fileName="Quantity.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655665" fileName="Quantity.java" startLine="34" startPosition="37" endLine="36" endPosition="60" />
-    <scopeInfo nodeId="6531435794299655743" fileName="Quantity.java" startLine="60" startPosition="46" endLine="62" endPosition="39" />
-    <scopeInfo nodeId="6531435794299655756" fileName="Quantity.java" startLine="65" startPosition="55" endLine="67" endPosition="30" />
-    <scopeInfo nodeId="6531435794299655769" fileName="Quantity.java" startLine="70" startPosition="43" endLine="72" endPosition="41" />
-    <scopeInfo nodeId="6531435794299655784" fileName="Quantity.java" startLine="75" startPosition="52" endLine="77" endPosition="42" />
-    <scopeInfo nodeId="6531435794299655919" fileName="Quantity.java" startLine="130" startPosition="42" endLine="132" endPosition="60" />
+    <scopeInfo nodeId="6531435794299655665" fileName="Quantity.java" startLine="31" startPosition="37" endLine="33" endPosition="60" />
+    <scopeInfo nodeId="6531435794299655743" fileName="Quantity.java" startLine="57" startPosition="46" endLine="59" endPosition="39" />
+    <scopeInfo nodeId="6531435794299655756" fileName="Quantity.java" startLine="62" startPosition="55" endLine="64" endPosition="30" />
+    <scopeInfo nodeId="6531435794299655769" fileName="Quantity.java" startLine="67" startPosition="43" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="6531435794299655784" fileName="Quantity.java" startLine="72" startPosition="52" endLine="74" endPosition="42" />
+    <scopeInfo nodeId="6531435794299655919" fileName="Quantity.java" startLine="121" startPosition="42" endLine="123" endPosition="60" />
     <scopeInfo nodeId="6531435794299655609" fileName="Quantity.java" startLine="13" startPosition="45" endLine="16" endPosition="18" />
     <scopeInfo nodeId="6531435794299655621" fileName="Quantity.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="6531435794299655624" varName="amount" />
@@ -1543,73 +1546,70 @@
       <varInfo nodeId="6531435794299655637" varName="amountString" />
       <varInfo nodeId="6531435794299655639" varName="unit" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655677" fileName="Quantity.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655684" fileName="Quantity.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="6531435794299655647" fileName="Quantity.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655677" fileName="Quantity.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655684" fileName="Quantity.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="6531435794299655687" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655732" fileName="Quantity.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655794" fileName="Quantity.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655803" fileName="Quantity.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655809" fileName="Quantity.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655842" fileName="Quantity.java" startLine="106" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="6531435794299655732" fileName="Quantity.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655794" fileName="Quantity.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655803" fileName="Quantity.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655809" fileName="Quantity.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655816" fileName="Quantity.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="6531435794299655819" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="6531435794299655829" fileName="Quantity.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="6531435794299655832" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="6531435794299655842" fileName="Quantity.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="6531435794299655845" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655854" fileName="Quantity.java" startLine="110" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="6531435794299655854" fileName="Quantity.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="6531435794299655857" varName="amount" />
       <varInfo nodeId="6531435794299655859" varName="unit" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655867" fileName="Quantity.java" startLine="114" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="6531435794299655867" fileName="Quantity.java" startLine="105" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="6531435794299655870" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655884" fileName="Quantity.java" startLine="118" startPosition="45" endLine="121" endPosition="5" />
-    <scopeInfo nodeId="6531435794299655901" fileName="Quantity.java" startLine="124" startPosition="51" endLine="127" endPosition="5" />
-    <scopeInfo nodeId="6531435794299655944" fileName="Quantity.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655650" fileName="Quantity.java" startLine="27" startPosition="25" endLine="31" endPosition="6" />
-    <scopeInfo nodeId="6531435794299655660" fileName="Quantity.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="6531435794299655884" fileName="Quantity.java" startLine="109" startPosition="45" endLine="112" endPosition="5" />
+    <scopeInfo nodeId="6531435794299655901" fileName="Quantity.java" startLine="115" startPosition="51" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="6531435794299655944" fileName="Quantity.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655660" fileName="Quantity.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="6531435794299655663" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655738" fileName="Quantity.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6531435794299655738" fileName="Quantity.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6531435794299655741" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655751" fileName="Quantity.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="6531435794299655751" fileName="Quantity.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="6531435794299655754" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655764" fileName="Quantity.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="6531435794299655764" fileName="Quantity.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="6531435794299655767" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655779" fileName="Quantity.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="6531435794299655779" fileName="Quantity.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="6531435794299655782" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655821" fileName="Quantity.java" startLine="92" startPosition="37" endLine="96" endPosition="6" />
-    <scopeInfo nodeId="6531435794299655834" fileName="Quantity.java" startLine="99" startPosition="37" endLine="103" endPosition="6" />
-    <scopeInfo nodeId="6531435794299655914" fileName="Quantity.java" startLine="130" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="6531435794299655914" fileName="Quantity.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="6531435794299655917" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655931" fileName="Quantity.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="6531435794299655931" fileName="Quantity.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
     <scopeInfo nodeId="6531435794299655602" fileName="Quantity.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6531435794299655605" varName="amount" />
       <varInfo nodeId="6531435794299655607" varName="unit" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655701" fileName="Quantity.java" startLine="48" startPosition="37" endLine="53" endPosition="79">
+    <scopeInfo nodeId="6531435794299655701" fileName="Quantity.java" startLine="45" startPosition="37" endLine="50" endPosition="79">
       <varInfo nodeId="6531435794299655712" varName="other" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655879" fileName="Quantity.java" startLine="118" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="6531435794299655879" fileName="Quantity.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="6531435794299655882" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655896" fileName="Quantity.java" startLine="124" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="6531435794299655896" fileName="Quantity.java" startLine="115" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="6531435794299655899" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="6531435794299655647" fileName="Quantity.java" startLine="27" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6531435794299655816" fileName="Quantity.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="6531435794299655819" varName="arg" />
-    </scopeInfo>
-    <scopeInfo nodeId="6531435794299655829" fileName="Quantity.java" startLine="99" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="6531435794299655832" varName="arg" />
-    </scopeInfo>
-    <scopeInfo nodeId="6531435794299655696" fileName="Quantity.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="6531435794299655696" fileName="Quantity.java" startLine="44" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="6531435794299655699" varName="arg" />
     </scopeInfo>
-    <unitInfo nodeId="6531435794299655590" fileName="Quantity.java" startLine="6" startPosition="0" endLine="144" endPosition="0" unitName="mf.Quantity" />
+    <unitInfo nodeId="6531435794299655590" fileName="Quantity.java" startLine="6" startPosition="0" endLine="135" endPosition="0" unitName="mf.Quantity" />
   </root>
   <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299655950">
     <nodeInfo nodeId="6531435794299655953" fileName="QuantityTester.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCm" />

@@ -46,10 +46,7 @@ public class RefTestMethodCall_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };

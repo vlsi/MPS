@@ -216,10 +216,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
       if (myConnectionSettings.isServerMode()) {
         LOG.debug("Virtual Machine creation: server mode.");
-        ListeningConnector connector = (ListeningConnector) findConnector((myConnectionSettings.isUseSockets() ?
-          SOCKET_LISTENING_CONNECTOR_NAME :
-          SHMEM_LISTENING_CONNECTOR_NAME
-        ));
+        ListeningConnector connector = (ListeningConnector) findConnector((myConnectionSettings.isUseSockets() ? SOCKET_LISTENING_CONNECTOR_NAME : SHMEM_LISTENING_CONNECTOR_NAME));
         fillConnectorArguments(connector);
         LOG.debug("Start listening");
         connector.startListening(myArguments);
@@ -241,10 +238,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
           }
         }
       } else {
-        AttachingConnector connector = (AttachingConnector) findConnector((myConnectionSettings.isUseSockets() ?
-          SOCKET_ATTACHING_CONNECTOR_NAME :
-          SHMEM_ATTACHING_CONNECTOR_NAME
-        ));
+        AttachingConnector connector = (AttachingConnector) findConnector((myConnectionSettings.isUseSockets() ? SOCKET_ATTACHING_CONNECTOR_NAME : SHMEM_ATTACHING_CONNECTOR_NAME));
         fillConnectorArguments(connector);
         try {
           return connector.attach(myArguments);
@@ -271,10 +265,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
     }
 
     //  negative port number means the caller leaves to debugger to decide at which hport to listen 
-    Connector.Argument portArg = (myConnectionSettings.isUseSockets() ?
-      myArguments.get("port") :
-      myArguments.get("name")
-    );
+    Connector.Argument portArg = (myConnectionSettings.isUseSockets() ? myArguments.get("port") : myArguments.get("name"));
     if (portArg != null) {
       portArg.setValue(Integer.toString(myConnectionSettings.getPort()));
     }

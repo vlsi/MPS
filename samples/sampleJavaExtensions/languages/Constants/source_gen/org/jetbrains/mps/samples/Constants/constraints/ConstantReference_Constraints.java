@@ -46,10 +46,7 @@ public class ConstantReference_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.Constants.structure.Constant"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };

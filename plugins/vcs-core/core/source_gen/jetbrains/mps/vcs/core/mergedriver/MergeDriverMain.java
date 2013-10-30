@@ -67,10 +67,7 @@ public class MergeDriverMain {
     File[] files = {baseFile, currentFile, otherFile};
     AbstractContentMerger merger = selectMerger(filetype, files);
     if (merger == null) {
-      merger = (SVN_OPTION.equals(args[1]) ?
-        new TextMerger() :
-        new SimpleMerger()
-      );
+      merger = (SVN_OPTION.equals(args[1]) ? new TextMerger() : new SimpleMerger());
     }
 
     boolean convertCRLF = GIT_OPTION.equals(args[1]) && !(hasCRLF(Sequence.fromIterable(Sequence.fromArray(files)).findFirst(new IWhereFilter<File>() {
@@ -120,10 +117,7 @@ public class MergeDriverMain {
       case MODEL_HEADER:
       case MODEL_ROOT:
       case MODEL:
-        return new CompositeMerger(new ModelMerger((filetype != null ?
-          filetype :
-          fileType.getSuffix()
-        )), new SimpleMerger());
+        return new CompositeMerger(new ModelMerger((filetype != null ? filetype : fileType.getSuffix())), new SimpleMerger());
       case LANGUAGE:
       case SOLUTION:
       case DEVKIT:

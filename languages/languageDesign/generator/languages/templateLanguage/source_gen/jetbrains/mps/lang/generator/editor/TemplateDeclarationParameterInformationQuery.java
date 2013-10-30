@@ -49,10 +49,7 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
       styledText.append("<no name>");
     }
 
-    int argumentIndex = (selectedActualArgument != null ?
-      SNodeOperations.getIndexInParent(selectedActualArgument) :
-      -1
-    );
+    int argumentIndex = (selectedActualArgument != null ? SNodeOperations.getIndexInParent(selectedActualArgument) : -1);
     styledText.append("(");
     for (SNode param : SLinkOperations.getTargets(templateDeclaration, "parameter", true)) {
       if (SNodeOperations.getIndexInParent(param) > 0) {

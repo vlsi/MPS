@@ -178,10 +178,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
 
     for (T elem : elems) {
-      String nodeId = (id == null ?
-        elem.toString() :
-        id.value(elem)
-      );
+      String nodeId = (id == null ? elem.toString() : id.value(elem));
       // filter files with usages 
       ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
       Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);

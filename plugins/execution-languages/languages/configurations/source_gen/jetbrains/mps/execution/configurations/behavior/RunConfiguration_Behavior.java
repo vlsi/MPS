@@ -36,9 +36,6 @@ public class RunConfiguration_Behavior {
   }
 
   private static boolean neq_g3syr7_a0b0c(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

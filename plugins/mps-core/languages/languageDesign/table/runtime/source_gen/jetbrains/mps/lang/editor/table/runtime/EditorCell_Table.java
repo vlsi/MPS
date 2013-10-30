@@ -127,10 +127,7 @@ public class EditorCell_Table extends EditorCell_Collection {
           editorCell.setRightGap(4);
           if (!(editorCell.getStyle().isSpecified(StyleAttributes.MAX_WIDTH))) {
             int maxColumnWidth = myModel.getMaxColumnWidth(column);
-            editorCell.getStyle().set(StyleAttributes.MAX_WIDTH, (maxColumnWidth < 0 ?
-              averageColumnWidth :
-              maxColumnWidth
-            ));
+            editorCell.getStyle().set(StyleAttributes.MAX_WIDTH, (maxColumnWidth < 0 ? averageColumnWidth : maxColumnWidth));
           }
 
           rowCell.addEditorCell(editorCell);
@@ -243,10 +240,7 @@ public class EditorCell_Table extends EditorCell_Collection {
         myModel.insertRow(rowNumber);
       }
     });
-    emptyCell.setCellId(cellId + ((beggining ?
-      "_firstCell" :
-      "_lastCell"
-    )));
+    emptyCell.setCellId(cellId + ((beggining ? "_firstCell" : "_lastCell")));
     return emptyCell;
   }
 

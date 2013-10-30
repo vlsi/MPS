@@ -52,9 +52,11 @@
     <nodeInfo nodeId="2182758403694683639" fileName="Differ.java" startLine="148" startPosition="5" endLine="149" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2182758403694683651" fileName="Differ.java" startLine="152" startPosition="42" endLine="153" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2182758403694683657" fileName="Differ.java" startLine="153" startPosition="41" endLine="154" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2182758403694683674" fileName="Differ.java" startLine="158" startPosition="6" endLine="159" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2182758403694683691" fileName="Differ.java" startLine="162" startPosition="42" endLine="163" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2182758403694683719" fileName="Differ.java" startLine="173" startPosition="58" endLine="174" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2182758403694683663" fileName="Differ.java" startLine="154" startPosition="55" endLine="155" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2182758403694683674" fileName="Differ.java" startLine="155" startPosition="37" endLine="156" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2182758403694683691" fileName="Differ.java" startLine="159" startPosition="42" endLine="160" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2182758403694683703" fileName="Differ.java" startLine="163" startPosition="37" endLine="164" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2182758403694683719" fileName="Differ.java" startLine="167" startPosition="58" endLine="168" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2182758403694683258" fileName="Differ.java" startLine="59" startPosition="12" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2182758403694683302" fileName="Differ.java" startLine="66" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2182758403694683499" fileName="Differ.java" startLine="113" startPosition="14" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -70,20 +72,18 @@
     <nodeInfo nodeId="2182758403694683539" fileName="Differ.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ignoredFile#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2182758403694683560" fileName="Differ.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="excluded#(Ljava/io/File;)Z" />
     <nodeInfo nodeId="2182758403694683600" fileName="Differ.java" startLine="135" startPosition="18" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2182758403694683687" fileName="Differ.java" startLine="162" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="straighten#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2182758403694683715" fileName="Differ.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startsWith#(Ljava/lang/String;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2182758403694683687" fileName="Differ.java" startLine="159" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="straighten#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2182758403694683699" fileName="Differ.java" startLine="163" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asDir#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2182758403694683715" fileName="Differ.java" startLine="167" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startsWith#(Ljava/lang/String;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2182758403694683626" fileName="Differ.java" startLine="142" startPosition="23" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2182758403694683663" fileName="Differ.java" startLine="154" startPosition="55" endLine="158" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2182758403694683703" fileName="Differ.java" startLine="166" startPosition="37" endLine="170" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2182758403694683391" fileName="Differ.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="2182758403694683351" fileName="Differ.java" startLine="77" startPosition="38" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2182758403694683458" fileName="Differ.java" startLine="106" startPosition="53" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2182758403694683624" fileName="Differ.java" startLine="141" startPosition="15" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2182758403694683699" fileName="Differ.java" startLine="166" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="asDir#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2182758403694683646" fileName="Differ.java" startLine="152" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRetained#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2182758403694683384" fileName="Differ.java" startLine="85" startPosition="9" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2182758403694683349" fileName="Differ.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="2182758403694683760" fileName="Differ.java" startLine="31" startPosition="73" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2182758403694683646" fileName="Differ.java" startLine="152" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRetained#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2182758403694683342" fileName="Differ.java" startLine="75" startPosition="96" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2182758403694683751" fileName="Differ.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Differ#(Ljava/util/Set;Ljava/util/Set;)V" />
     <nodeInfo nodeId="2182758403694683444" fileName="Differ.java" startLine="103" startPosition="55" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -125,8 +125,9 @@
     </scopeInfo>
     <scopeInfo nodeId="2182758403694683618" fileName="Differ.java" startLine="139" startPosition="29" endLine="140" endPosition="26" />
     <scopeInfo nodeId="2182758403694683627" fileName="Differ.java" startLine="143" startPosition="13" endLine="144" endPosition="21" />
-    <scopeInfo nodeId="2182758403694683690" fileName="Differ.java" startLine="162" startPosition="42" endLine="163" endPosition="56" />
-    <scopeInfo nodeId="2182758403694683718" fileName="Differ.java" startLine="173" startPosition="58" endLine="174" endPosition="145" />
+    <scopeInfo nodeId="2182758403694683690" fileName="Differ.java" startLine="159" startPosition="42" endLine="160" endPosition="56" />
+    <scopeInfo nodeId="2182758403694683702" fileName="Differ.java" startLine="163" startPosition="37" endLine="164" endPosition="56" />
+    <scopeInfo nodeId="2182758403694683718" fileName="Differ.java" startLine="167" startPosition="58" endLine="168" endPosition="145" />
     <scopeInfo nodeId="2182758403694683771" fileName="Differ.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="2182758403694683771" varName="it" />
     </scopeInfo>
@@ -141,10 +142,13 @@
     <scopeInfo nodeId="2182758403694683560" fileName="Differ.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="2182758403694683569" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="2182758403694683687" fileName="Differ.java" startLine="162" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="2182758403694683687" fileName="Differ.java" startLine="159" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="2182758403694683697" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="2182758403694683715" fileName="Differ.java" startLine="173" startPosition="0" endLine="176" endPosition="0">
+    <scopeInfo nodeId="2182758403694683699" fileName="Differ.java" startLine="163" startPosition="0" endLine="166" endPosition="0">
+      <varInfo nodeId="2182758403694683713" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="2182758403694683715" fileName="Differ.java" startLine="167" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="2182758403694683747" varName="path" />
       <varInfo nodeId="2182758403694683749" varName="prefix" />
     </scopeInfo>
@@ -155,7 +159,10 @@
       <varInfo nodeId="2182758403694683461" varName="patch" />
     </scopeInfo>
     <scopeInfo nodeId="2182758403694683625" fileName="Differ.java" startLine="142" startPosition="23" endLine="146" endPosition="9" />
-    <scopeInfo nodeId="2182758403694683702" fileName="Differ.java" startLine="166" startPosition="37" endLine="170" endPosition="6" />
+    <scopeInfo nodeId="2182758403694683650" fileName="Differ.java" startLine="152" startPosition="42" endLine="156" endPosition="78">
+      <varInfo nodeId="2182758403694683658" varName="idx" />
+      <varInfo nodeId="2182758403694683652" varName="path" />
+    </scopeInfo>
     <scopeInfo nodeId="2182758403694683391" fileName="Differ.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="2182758403694683391" varName="it" />
     </scopeInfo>
@@ -164,12 +171,8 @@
     </scopeInfo>
     <scopeInfo nodeId="2182758403694683350" fileName="Differ.java" startLine="77" startPosition="38" endLine="83" endPosition="11" />
     <scopeInfo nodeId="2182758403694683623" fileName="Differ.java" startLine="141" startPosition="15" endLine="147" endPosition="7" />
-    <scopeInfo nodeId="2182758403694683699" fileName="Differ.java" startLine="166" startPosition="0" endLine="172" endPosition="0">
-      <varInfo nodeId="2182758403694683713" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="2182758403694683650" fileName="Differ.java" startLine="152" startPosition="42" endLine="159" endPosition="78">
-      <varInfo nodeId="2182758403694683658" varName="idx" />
-      <varInfo nodeId="2182758403694683652" varName="path" />
+    <scopeInfo nodeId="2182758403694683646" fileName="Differ.java" startLine="152" startPosition="0" endLine="158" endPosition="0">
+      <varInfo nodeId="2182758403694683647" varName="dir" />
     </scopeInfo>
     <scopeInfo nodeId="2182758403694683349" fileName="Differ.java" startLine="77" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="2182758403694683349" varName="it" />
@@ -177,9 +180,6 @@
     <scopeInfo nodeId="2182758403694683445" fileName="Differ.java" startLine="104" startPosition="37" endLine="112" endPosition="11">
       <varInfo nodeId="2182758403694683447" varName="olines" />
       <varInfo nodeId="2182758403694683453" varName="rlines" />
-    </scopeInfo>
-    <scopeInfo nodeId="2182758403694683646" fileName="Differ.java" startLine="152" startPosition="0" endLine="161" endPosition="0">
-      <varInfo nodeId="2182758403694683647" varName="dir" />
     </scopeInfo>
     <scopeInfo nodeId="2182758403694683759" fileName="Differ.java" startLine="31" startPosition="73" endLine="41" endPosition="39" />
     <scopeInfo nodeId="2182758403694683751" fileName="Differ.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
@@ -226,7 +226,7 @@
     <unitInfo nodeId="2182758403694683779" fileName="Differ.java" startLine="36" startPosition="16" endLine="40" endPosition="5" unitName="jetbrains.mps.tool.gentest.plugin.Differ$2" />
     <unitInfo nodeId="2182758403694683391" fileName="Differ.java" startLine="86" startPosition="89" endLine="92" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Differ$4" />
     <unitInfo nodeId="2182758403694683349" fileName="Differ.java" startLine="76" startPosition="89" endLine="85" endPosition="7" unitName="jetbrains.mps.tool.gentest.plugin.Differ$3" />
-    <unitInfo nodeId="2182758403694683132" fileName="Differ.java" startLine="24" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Differ" />
+    <unitInfo nodeId="2182758403694683132" fileName="Differ.java" startLine="24" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.tool.gentest.plugin.Differ" />
   </root>
   <root nodeRef="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.tool.gentest.plugin)/2182758403694683800">
     <nodeInfo nodeId="2182758403694683801" fileName="ITestResource.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildCommandLine#()Ljava/util/List;" />

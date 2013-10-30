@@ -171,10 +171,7 @@ public class ScriptData {
   }
 
   public Element getData(String key) {
-    return (myData.containsKey(key) ?
-      myData.get(key) :
-      null
-    );
+    return (myData.containsKey(key) ? myData.get(key) : null);
   }
 
   public void setData(String key, Element data) {

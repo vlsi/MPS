@@ -72,10 +72,7 @@ public class TeamCityMessageFormat implements IMessageFormat {
 
   @Override
   public int hasContinuation(@NotNull String message) {
-    return (message.endsWith("\\") ?
-      1 :
-      0
-    );
+    return (message.endsWith("\\") ? 1 : 0);
   }
 
   public boolean isTestFailMessage(CharSequence text) {

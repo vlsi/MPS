@@ -97,10 +97,7 @@ __switch__:
       }
     }).foldLeft("", new ILeftCombinator<String, String>() {
       public String combine(String s, String it) {
-        return ((s == null || s.length() == 0) ?
-          it :
-          s + "\n" + it
-        );
+        return ((s == null || s.length() == 0) ? it : s + "\n" + it);
       }
     }));
   }

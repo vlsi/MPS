@@ -19,10 +19,7 @@ public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription(SNode node) {
-    return (((Boolean) SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0]) ?
-      "Surround with try/catch" :
-      "Add Catch Clause(s)"
-    );
+    return (((Boolean) SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0]) ? "Surround with try/catch" : "Add Catch Clause(s)");
   }
 
   public void execute(SNode node) {
@@ -34,10 +31,7 @@ public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
       return;
     }
 
-    SNode parentTryStatement = (((Boolean) SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0]) ?
-      null :
-      SNodeOperations.getAncestor(ancestorStatement, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false, false)
-    );
+    SNode parentTryStatement = (((Boolean) SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0]) ? null : SNodeOperations.getAncestor(ancestorStatement, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false, false));
 
     final List<SNode> clauses = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(((List<SNode>) SurroundExceptionWithTryCatch_QuickFix.this.getField("throwableTypes")[0])).visitAll(new IVisitor<SNode>() {

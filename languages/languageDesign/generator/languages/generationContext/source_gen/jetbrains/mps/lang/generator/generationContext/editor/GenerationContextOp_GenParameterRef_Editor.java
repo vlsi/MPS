@@ -77,10 +77,7 @@ public class GenerationContextOp_GenParameterRef_Editor extends DefaultNodeEdito
     private EditorCell createReadOnlyModelAccessor_h52dks_a0a0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return ((SLinkOperations.getTarget(node, "declaration", false) != null) ?
-            SPropertyOperations.getString(SLinkOperations.getTarget(node, "declaration", false), "name") :
-            "<unknown>"
-          );
+          return ((SLinkOperations.getTarget(node, "declaration", false) != null) ? SPropertyOperations.getString(SLinkOperations.getTarget(node, "declaration", false), "name") : "<unknown>");
         }
 
         public void setText(String s) {

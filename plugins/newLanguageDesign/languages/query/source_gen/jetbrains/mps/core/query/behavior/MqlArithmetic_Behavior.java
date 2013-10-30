@@ -50,10 +50,7 @@ public class MqlArithmetic_Behavior {
   }
 
   public static int call_evaluateAsInt_1671449901154581993(SNode thisNode, boolean left, EvaluationEnvironment env, EvaluationContext context) {
-    Object result = env.evaluate((left ?
-      SLinkOperations.getTarget(thisNode, "left", true) :
-      SLinkOperations.getTarget(thisNode, "right", true)
-    ), context, false);
+    Object result = env.evaluate((left ? SLinkOperations.getTarget(thisNode, "left", true) : SLinkOperations.getTarget(thisNode, "right", true)), context, false);
     if (result instanceof Integer) {
       return (Integer) result;
     }

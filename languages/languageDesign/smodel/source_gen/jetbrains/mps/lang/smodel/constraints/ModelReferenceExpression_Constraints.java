@@ -31,10 +31,7 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
         if (isEmptyString(SPropertyOperations.getString(node, "name"))) {
           return null;
         }
-        return SPropertyOperations.getString(node, "name") + ((isEmptyString(SPropertyOperations.getString(node, "stereotype")) ?
-          "" :
-          "@" + SPropertyOperations.getString(node, "stereotype")
-        ));
+        return SPropertyOperations.getString(node, "name") + ((isEmptyString(SPropertyOperations.getString(node, "stereotype")) ? "" : "@" + SPropertyOperations.getString(node, "stereotype")));
       }
     });
     return properties;

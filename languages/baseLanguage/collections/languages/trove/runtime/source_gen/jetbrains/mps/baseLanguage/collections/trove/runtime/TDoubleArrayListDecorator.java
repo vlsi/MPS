@@ -128,10 +128,7 @@ public class TDoubleArrayListDecorator extends AbstractList<Double> implements L
 
   @Override
   public boolean remove(Object e) {
-    return (e instanceof Double ?
-      this.removePrim(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Double ? this.removePrim(this.unwrap(e)) : false);
   }
 
   @Override
@@ -146,10 +143,7 @@ public class TDoubleArrayListDecorator extends AbstractList<Double> implements L
 
   @Override
   public boolean contains(Object e) {
-    return (e instanceof Double ?
-      this.primList.contains(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Double ? this.primList.contains(this.unwrap(e)) : false);
   }
 
   @Override
