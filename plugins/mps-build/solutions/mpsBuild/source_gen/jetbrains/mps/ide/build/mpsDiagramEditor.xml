@@ -190,7 +190,7 @@
     <generate parallelMode="true" fork="true">
       <plugin path="${artifacts.jetpad}/jetpad" />
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
-      <library file="${artifacts.jetpad}/jetpad/solutions/Jetpad.Editor.jar" />
+      <library file="${artifacts.jetpad}/jetpad/solutions/jetpad.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers-generator.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />

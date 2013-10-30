@@ -28,10 +28,10 @@
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/jetpad/solutions" />
-    <mkdir dir="${build.tmp}/default/Jetpad.Editor.jar" />
-    <mkdir dir="${build.tmp}/default/Jetpad.Editor.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/Jetpad.Editor.jar/META-INF/module.xml">
-      <module namespace="Jetpad.Editor" type="solution" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6">
+    <mkdir dir="${build.tmp}/default/jetpad.jar" />
+    <mkdir dir="${build.tmp}/default/jetpad.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetpad.jar/META-INF/module.xml">
+      <module namespace="jetpad" type="solution" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6">
         <dependencies />
         <library jar="../lib/geometry-1.0-SNAPSHOT.jar" />
         <library jar="../lib/model-1.0-SNAPSHOT.jar" />
@@ -44,15 +44,15 @@
         <library jar="../lib/grammar-1.0-SNAPSHOT.jar" />
         <library jar="../lib/domUtil-1.0-SNAPSHOT.jar" />
         <library jar="../lib/event-1.0-SNAPSHOT.jar" />
-        <sources jar="Jetpad.Editor-src.jar" descriptor="Jetpad.Editor.msd" />
+        <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/jetpad/solutions/Jetpad.Editor.jar">
-      <fileset dir="${mps_home}/plugins/jetpad/solutions/Jetpad.Editor" includes="icons/**, resources/**" />
-      <fileset dir="${build.tmp}/default/Jetpad.Editor.jar" />
+    <jar destfile="${build.layout}/jetpad/solutions/jetpad.jar">
+      <fileset dir="${mps_home}/plugins/jetpad/solutions/jetpad" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetpad.jar" />
     </jar>
-    <jar destfile="${build.layout}/jetpad/solutions/Jetpad.Editor-src.jar">
-      <zipfileset file="${mps_home}/plugins/jetpad/solutions/Jetpad.Editor/Jetpad.Editor.msd" prefix="module" />
+    <jar destfile="${build.layout}/jetpad/solutions/jetpad-src.jar">
+      <zipfileset file="${mps_home}/plugins/jetpad/solutions/jetpad/jetpad.msd" prefix="module" />
     </jar>
     <mkdir dir="${build.layout}/jetpad/lib" />
     <copy todir="${build.layout}/jetpad/lib">
@@ -130,7 +130,7 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
       <chunk>
-        <module file="${mps_home}/plugins/jetpad/solutions/Jetpad.Editor/Jetpad.Editor.msd" />
+        <module file="${mps_home}/plugins/jetpad/solutions/jetpad/jetpad.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
