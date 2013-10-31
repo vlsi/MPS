@@ -314,8 +314,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests.data/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/jetpad/solutions/Jetpad.Editor/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/jetpad/solutions/Jetpad.Editor/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/jetpad/solutions/jetpad/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/jetpad/solutions/jetpad/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.mps/generator/source_gen" includeSubdirectories="true" />
