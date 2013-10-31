@@ -122,11 +122,11 @@
     <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="19" startPosition="60" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="20" startPosition="63" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="22" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="22" startPosition="165" endLine="23" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="23" startPosition="276" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="22" startPosition="165" endLine="23" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="23" startPosition="269" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6306886970785262220" fileName="QueryFunction_Color_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6306886970785262220" fileName="QueryFunction_Color_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_f41rqu_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="6306886970785262373" fileName="QueryFunction_Color_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
@@ -134,7 +134,7 @@
     <scopeInfo nodeId="6306886970785262220" fileName="QueryFunction_Color_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="6306886970785262220" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="276" />
+    <scopeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="269" />
     <scopeInfo nodeId="6306886970785262220" fileName="QueryFunction_Color_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6306886970785262220" varName="thisNode" />
     </scopeInfo>
@@ -150,11 +150,11 @@
     <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="19" startPosition="60" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="20" startPosition="63" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="21" startPosition="30" endLine="22" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="22" startPosition="165" endLine="23" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="23" startPosition="281" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="22" startPosition="165" endLine="23" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="23" startPosition="274" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6306886970790137071" fileName="QueryFunction_Dimension_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6306886970790137071" fileName="QueryFunction_Dimension_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_2kokh1_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="6306886970790137073" fileName="QueryFunction_Dimension_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
@@ -162,7 +162,7 @@
     <scopeInfo nodeId="6306886970790137071" fileName="QueryFunction_Dimension_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="6306886970790137071" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="281" />
+    <scopeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="274" />
     <scopeInfo nodeId="6306886970790137071" fileName="QueryFunction_Dimension_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6306886970790137071" varName="thisNode" />
     </scopeInfo>
