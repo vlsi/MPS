@@ -80,10 +80,7 @@ public class AddRemoveFigureAttribute_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute")) == null ?
-        "Add figure attribute" :
-        "Remove figure attribute"
-      );
+      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureAttribute")) == null ? "Add figure attribute" : "Remove figure attribute");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

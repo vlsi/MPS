@@ -97,10 +97,7 @@ public class AddRemoveFigureParameterAttribute_Intention implements IntentionFac
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute")) == null ?
-        "Add figure parameter attribute" :
-        "Remove figure parameter attribute"
-      );
+      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute")) == null ? "Add figure parameter attribute" : "Remove figure parameter attribute");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

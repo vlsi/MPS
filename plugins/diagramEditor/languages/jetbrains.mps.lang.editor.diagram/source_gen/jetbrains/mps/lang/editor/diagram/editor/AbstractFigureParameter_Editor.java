@@ -49,13 +49,7 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NAVIGATABLE_NODE, AbstractFigureParameter_Editor._StyleParameter_QueryFunction_ook5es_a0a0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, AbstractFigureParameter_Editor._StyleParameter_QueryFunction_ook5es_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     editorCell.getStyle().putAll(style);
     AbstractFigureParameterName_Actions.setCellActions(editorCell, node, editorContext);

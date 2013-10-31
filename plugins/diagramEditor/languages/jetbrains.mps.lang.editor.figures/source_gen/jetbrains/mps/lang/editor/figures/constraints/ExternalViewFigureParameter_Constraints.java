@@ -69,10 +69,7 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };

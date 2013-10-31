@@ -39,16 +39,10 @@ public class ExternalViewFigureParameter_Behavior {
 
   public static String call_getSuffix_3748979635600238774(SNode thisNode) {
     String prefix = "my";
-    return (SPropertyOperations.getString(thisNode, "name").startsWith(prefix) ?
-      SPropertyOperations.getString(thisNode, "name").substring(prefix.length()) :
-      SPropertyOperations.getString(thisNode, "name")
-    );
+    return (SPropertyOperations.getString(thisNode, "name").startsWith(prefix) ? SPropertyOperations.getString(thisNode, "name").substring(prefix.length()) : SPropertyOperations.getString(thisNode, "name"));
   }
 
   private static boolean eq_g8zu1a_a0a0a0a0a0b0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }
