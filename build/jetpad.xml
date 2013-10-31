@@ -80,10 +80,19 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />

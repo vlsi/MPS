@@ -11,9 +11,12 @@
       <include name="event-1.0-SNAPSHOT" ext="jar"/>
       <include name="geometry-1.0-SNAPSHOT" ext="jar"/>
       <include name="grammar-1.0-SNAPSHOT" ext="jar"/>
+      <include name="gwt-util-1.0-SNAPSHOT" ext="jar"/>
       <include name="jetpadBuildNumber" ext="txt"/>
+      <include name="json-1.0-SNAPSHOT" ext="jar"/>
       <include name="mapper-1.0-SNAPSHOT" ext="jar"/>
       <include name="model-1.0-SNAPSHOT" ext="jar"/>
+      <include name="test-1.0-SNAPSHOT" ext="jar"/>
       <include name="values-1.0-SNAPSHOT" ext="jar"/>
       <include name="view-1.0-SNAPSHOT" ext="jar"/>
     </dependency>

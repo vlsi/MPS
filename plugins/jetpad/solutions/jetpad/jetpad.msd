@@ -12,6 +12,9 @@
     <modelRoot path="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" type="java_classes" />
     <modelRoot path="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" type="java_classes" />
     <modelRoot path="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" type="java_classes" />
   </models>
   <facets>
     <facet type="java" />

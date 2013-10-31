@@ -134,6 +134,9 @@
       <fileset dir="${artifacts.mpsBuildUI}/mps-build" />
     </copy>
     <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.jetpad}" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsDiagramEditor}" />
     </copy>
     <copy todir="${build.layout}/plugins">
