@@ -112,19 +112,13 @@ public class GenerateToString_Action extends BaseAction {
 
       SNodeReference[] selectedFields = Sequence.fromIterable(((Iterable<SNodeReference>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodeReference.class);
       final SNode rightmostExpression;
-      SNodeReference firstField = (selectedFields != null && selectedFields.length > 0 ?
-        selectedFields[0] :
-        null
-      );
+      SNodeReference firstField = (selectedFields != null && selectedFields.length > 0 ? selectedFields[0] : null);
       SNode currentExpression = null;
       for (SNodeReference fieldPtr : selectedFields) {
         SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
-        SNode item = _quotation_createNode_satqj4_a0d0p0a(((fieldPtr == firstField ?
-          "" :
-          ", "
-        )) + SPropertyOperations.getString(field, "name") + "=");
+        SNode item = _quotation_createNode_satqj4_a0d0p0a(((fieldPtr == firstField ? "" : ", ")) + SPropertyOperations.getString(field, "name") + "=");
         if (fieldPtr == firstField) {
           currentExpression = _quotation_createNode_satqj4_a0a0e0p0a(SPropertyOperations.getString(classConcept, "name") + "{", item);
           currentExpression = _quotation_createNode_satqj4_a0b0e0p0a(fieldRef, currentExpression);

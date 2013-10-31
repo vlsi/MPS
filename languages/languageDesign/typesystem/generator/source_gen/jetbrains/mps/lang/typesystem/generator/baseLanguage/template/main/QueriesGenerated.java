@@ -2549,10 +2549,7 @@ parametersLoop:
     ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")));
     for (SNode node : nodesToProcess) {
       SModel originalModel = _context.getOriginalInputModel();
-      String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ?
-        jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) :
-        originalModel.getReference().toString()
-      );
+      String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ? jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) : originalModel.getReference().toString());
       String nodeId = _context.getOriginalCopiedInputNode(node).getNodeId().toString();
       SNode annotation = AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"), "jetbrains.mps.lang.typesystem.structure.OriginalNodeId");
       SPropertyOperations.set(annotation, "nodeId", nodeId);

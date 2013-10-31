@@ -375,10 +375,7 @@ public class FullASTConverter extends ASTConverter {
             if ((switchCase != null)) {
               ListSequence.fromList(SLinkOperations.getTargets(result, "case", true)).addElement(switchCase);
             }
-            currentSwitchCase = ((switchCase == null) ?
-              null :
-              SLinkOperations.getTarget(switchCase, "body", true)
-            );
+            currentSwitchCase = ((switchCase == null) ? null : SLinkOperations.getTarget(switchCase, "body", true));
           }
         } else
         if ((currentSwitchCase != null)) {

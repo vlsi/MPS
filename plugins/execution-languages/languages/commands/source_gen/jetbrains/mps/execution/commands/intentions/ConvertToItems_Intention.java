@@ -104,9 +104,6 @@ public class ConvertToItems_Intention implements IntentionFactory {
   }
 
   private static boolean eq_icoqxr_a0a0k(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

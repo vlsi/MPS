@@ -169,10 +169,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3796137614137206957(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), "globalReplace") ?
-      "replaceAll" :
-      "replaceFirst"
-    );
+    return (SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), "globalReplace") ? "replaceAll" : "replaceFirst");
   }
 
   public static boolean ifMacro_Condition_3731567766880801943(final IOperationContext operationContext, final IfMacroContext _context) {

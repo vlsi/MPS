@@ -147,16 +147,10 @@ public class LanguageUsagesFinder implements IFinder {
   }
 
   private static <T> T as_m2sz3c_a0a0a0j0i(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_m2sz3c_a0a0b0a9a8(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -28,9 +28,6 @@ public class MemberInsertingUtils {
 
   private static int getMemberRank(SNode member) {
     int memberRank = ListSequence.fromList(MEMBERS_ORDER).indexOf(member.getConcept().getQualifiedName());
-    return (memberRank != -1 ?
-      memberRank :
-      ListSequence.fromList(MEMBERS_ORDER).count()
-    );
+    return (memberRank != -1 ? memberRank : ListSequence.fromList(MEMBERS_ORDER).count());
   }
 }

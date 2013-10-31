@@ -24,10 +24,7 @@ public class typeof_SSymbolRefExpression_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = refExpr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:6d6aef8a-6633-4789-b993-98497e90be36(jetbrains.mps.core.syntax.java.typesystem)", "5989029785192121555", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:6d6aef8a-6633-4789-b993-98497e90be36(jetbrains.mps.core.syntax.java.typesystem)", "5989029785192121546", true), (SNode) ((t != null) ?
-        SLinkOperations.getTarget(t, "type", true) :
-        _quotation_createNode_ndx2rm_a0a1a1()
-      ), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:6d6aef8a-6633-4789-b993-98497e90be36(jetbrains.mps.core.syntax.java.typesystem)", "5989029785192121546", true), (SNode) (((t != null) ? SLinkOperations.getTarget(t, "type", true) : _quotation_createNode_ndx2rm_a0a1a1())), _info_12389875345);
     }
   }
 

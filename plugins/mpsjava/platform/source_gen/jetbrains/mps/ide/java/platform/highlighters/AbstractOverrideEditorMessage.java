@@ -28,10 +28,7 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
     EditorCell returnTypeCell = CellFinderUtil.findChildByCondition(bigCell, myReturnTypeCellCondition, true);
-    return (returnTypeCell != null ?
-      returnTypeCell :
-      bigCell
-    );
+    return (returnTypeCell != null ? returnTypeCell : bigCell);
   }
 
   @Override

@@ -91,10 +91,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       return null;
     }
 
-    return (d.hasProperty(name) ?
-      new SPropertyAdapter(myConceptName, name) :
-      null
-    );
+    return (d.hasProperty(name) ? new SPropertyAdapter(myConceptName, name) : null);
   }
 
 

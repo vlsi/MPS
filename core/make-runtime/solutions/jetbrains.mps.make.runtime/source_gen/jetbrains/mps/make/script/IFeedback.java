@@ -105,10 +105,7 @@ public interface IFeedback {
     @Override
     public String toString() {
       String msg = getSeverity().toString() + " - " + getMessage().toString();
-      return (getException() != null ?
-        msg + " (" + getException().toString() + ")" :
-        msg
-      );
+      return (getException() != null ? msg + " (" + getException().toString() + ")" : msg);
     }
 
     @Override

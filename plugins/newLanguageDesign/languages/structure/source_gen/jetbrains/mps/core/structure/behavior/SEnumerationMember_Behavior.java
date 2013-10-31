@@ -12,9 +12,6 @@ public class SEnumerationMember_Behavior {
 
   public static String call_getQualifiedName_2198415040519620472(SNode thisNode) {
     SNode parent = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.structure.structure.SEnumeration");
-    return ((parent != null) ?
-      SPropertyOperations.getString(parent, "name") + "." + SPropertyOperations.getString(thisNode, "name") :
-      "$." + SPropertyOperations.getString(thisNode, "name")
-    );
+    return ((parent != null) ? SPropertyOperations.getString(parent, "name") + "." + SPropertyOperations.getString(thisNode, "name") : "$." + SPropertyOperations.getString(thisNode, "name"));
   }
 }

@@ -46,10 +46,7 @@ public class BuildMps_ModuleSolutionRuntime_Constraints extends BaseConstraintsD
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };

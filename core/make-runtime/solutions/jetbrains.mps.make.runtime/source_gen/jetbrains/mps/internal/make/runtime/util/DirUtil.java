@@ -31,10 +31,7 @@ public class DirUtil {
   public static int findPrefixAsDir(String dirPath, String[] sortedPaths) {
     String dir = asDir(straighten(urlToPath(dirPath)));
     int idx = Arrays.binarySearch(sortedPaths, dir);
-    int absIdx = (idx < 0 ?
-      -2 - idx :
-      idx
-    );
+    int absIdx = (idx < 0 ? -2 - idx : idx);
     if (absIdx >= 0 && absIdx < sortedPaths.length && startsWith(dir, sortedPaths[absIdx])) {
       return absIdx;
     }
@@ -50,18 +47,12 @@ public class DirUtil {
   }
 
   public static String asDir(String path) {
-    return (path.endsWith(SLASH) ?
-      path :
-      path + SLASH
-    );
+    return (path.endsWith(SLASH) ? path : path + SLASH);
   }
 
   public static String urlToPath(String maybeUrl) {
     Matcher m = URL.matcher(maybeUrl);
-    return (m.matches() ?
-      m.group(1) :
-      maybeUrl
-    );
+    return (m.matches() ? m.group(1) : maybeUrl);
   }
 
   public static String straighten(String syspath) {

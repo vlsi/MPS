@@ -44,10 +44,7 @@ public class BuildRelativePath_Behavior {
   }
 
   public static String virtual_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {
-    return ((SLinkOperations.getTarget(thisNode, "compositePart", true) != null) ?
-      BuildCompositePath_Behavior.call_getLastSegment_1368030936106771152(SLinkOperations.getTarget(thisNode, "compositePart", true), helper) :
-      null
-    );
+    return ((SLinkOperations.getTarget(thisNode, "compositePart", true) != null) ? BuildCompositePath_Behavior.call_getLastSegment_1368030936106771152(SLinkOperations.getTarget(thisNode, "compositePart", true), helper) : null);
   }
 
   public static SNode virtual_getParent_8654221991637145399(SNode thisNode) {

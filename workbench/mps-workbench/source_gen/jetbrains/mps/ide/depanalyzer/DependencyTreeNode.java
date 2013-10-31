@@ -17,10 +17,7 @@ public class DependencyTreeNode extends MPSTreeNode {
     super(link, operationContext);
     myLink = link;
     setIcon(IconManager.getIconFor(getModule()));
-    String linktype = (link.linktype == null ?
-      "" :
-      "<i>" + link.linktype.toString() + "</i> "
-    );
+    String linktype = (link.linktype == null ? "" : "<i>" + link.linktype.toString() + "</i> ");
     setNodeIdentifier(link.linktype + link.module.getModuleName());
     setText("<html>" + linktype + link.module.getModuleName() + "</html>");
   }
@@ -34,19 +31,13 @@ public class DependencyTreeNode extends MPSTreeNode {
   }
 
   public void setDepLeaf() {
-    String linktype = (myLink.linktype == null ?
-      "" :
-      "<i>" + myLink.linktype.toString() + "</i> "
-    );
+    String linktype = (myLink.linktype == null ? "" : "<i>" + myLink.linktype.toString() + "</i> ");
     setText("<html>" + linktype + "<b>" + myLink.module.getModuleName() + "</b></html>");
   }
 
   public void setLinkLeaf(DependencyTreeNode linkedNode) {
     myLinkedNode = linkedNode;
-    String linktype = (myLink.linktype == null ?
-      "" :
-      "<i>" + myLink.linktype.toString() + "</i> "
-    );
+    String linktype = (myLink.linktype == null ? "" : "<i>" + myLink.linktype.toString() + "</i> ");
     setText("<html>" + linktype + myLink.module.getModuleName() + "... <b>--></b></html>");
   }
 

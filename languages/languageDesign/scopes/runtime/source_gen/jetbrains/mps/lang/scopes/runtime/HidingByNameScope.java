@@ -75,10 +75,7 @@ public class HidingByNameScope extends Scope {
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     // todo: recheck this code 
-    return (SetSequence.fromSet(names).contains(refText) ?
-      scope.resolve(contextNode, refText) :
-      parentScope.resolve(contextNode, refText)
-    );
+    return (SetSequence.fromSet(names).contains(refText) ? scope.resolve(contextNode, refText) : parentScope.resolve(contextNode, refText));
   }
 
   @Nullable

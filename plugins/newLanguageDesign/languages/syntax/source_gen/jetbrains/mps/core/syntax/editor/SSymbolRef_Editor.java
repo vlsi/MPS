@@ -132,22 +132,13 @@ public class SSymbolRef_Editor extends DefaultNodeEditor {
         editorCell.setRole("ref");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(SSymbolRef_Editor._Inline_mdkd4i_a1a._StyleParameter_QueryFunction_mdkd4i_a0a0b0((editorCell == null ?
-        null :
-        editorCell.getContext()
-      ), (editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ))));
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(SSymbolRef_Editor._Inline_mdkd4i_a1a._StyleParameter_QueryFunction_mdkd4i_a0a0b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
 
     private static Color _StyleParameter_QueryFunction_mdkd4i_a0a0b0(EditorContext editorContext, SNode node) {
-      return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.syntax.structure.SLexem") ?
-        Color.BLUE :
-        Color.BLACK
-      );
+      return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.syntax.structure.SLexem") ? Color.BLUE : Color.BLACK);
     }
   }
 

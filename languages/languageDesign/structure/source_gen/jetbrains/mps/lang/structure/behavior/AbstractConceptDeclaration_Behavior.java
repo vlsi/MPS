@@ -124,10 +124,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static String call_getPresentation_2450081617266859256(SNode thisNode) {
-    return (SPropertyOperations.getString(thisNode, "conceptAlias") != null ?
-      SPropertyOperations.getString(thisNode, "conceptAlias") :
-      SPropertyOperations.getString(thisNode, "name")
-    );
+    return (SPropertyOperations.getString(thisNode, "conceptAlias") != null ? SPropertyOperations.getString(thisNode, "conceptAlias") : SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static List<SNode> call_getAvailableConceptMethods_1213877394200(SNode thisNode, SNode context) {

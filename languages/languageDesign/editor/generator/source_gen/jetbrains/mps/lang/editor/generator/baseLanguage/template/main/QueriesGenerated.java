@@ -332,10 +332,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2038074438869176261(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), "applicableConcept", false);
-    return NameUtil.nodeFQName((applicableConcept != null ?
-      applicableConcept :
-      SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")
-    ));
+    return NameUtil.nodeFQName((applicableConcept != null ? applicableConcept : SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")));
   }
 
   public static Object propertyMacro_GetPropertyValue_1184928403781(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -689,10 +686,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198506186309(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SPropertyOperations.getString(_context.getNode(), "openBrace") != null) ?
-      SPropertyOperations.getString(_context.getNode(), "openBrace") :
-      "{"
-    );
+    return ((SPropertyOperations.getString(_context.getNode(), "openBrace") != null) ? SPropertyOperations.getString(_context.getNode(), "openBrace") : "{");
   }
 
   public static Object propertyMacro_GetPropertyValue_1198506850274(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -700,10 +694,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198506850324(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SPropertyOperations.getString(_context.getNode(), "closeBrace") != null) ?
-      SPropertyOperations.getString(_context.getNode(), "closeBrace") :
-      "}"
-    );
+    return ((SPropertyOperations.getString(_context.getNode(), "closeBrace") != null) ? SPropertyOperations.getString(_context.getNode(), "closeBrace") : "}");
   }
 
   public static Object propertyMacro_GetPropertyValue_1198509093263(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1034,10 +1025,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5298401719293469283(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES") != null ?
-      SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES").toUpperCase() :
-      "SPACES"
-    );
+    return (SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES") != null ? SPropertyOperations.getString_def(_context.getNode(), "measure", "SPACES").toUpperCase() : "SPACES");
   }
 
   public static Object referenceMacro_GetReferent_5298401719292596957(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2450,10 +2438,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_2467262375110794919(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return (SLinkOperations.getTarget(it, "overridenEditorComponent", true) == null ?
-          it :
-          SLinkOperations.getTarget(SLinkOperations.getTarget(it, "overridenEditorComponent", true), "editorComponent", false)
-        );
+        return (SLinkOperations.getTarget(it, "overridenEditorComponent", true) == null ? it : SLinkOperations.getTarget(SLinkOperations.getTarget(it, "overridenEditorComponent", true), "editorComponent", false));
       }
     }).distinct().sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -2722,9 +2707,6 @@ public class QueriesGenerated {
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0b0ri(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

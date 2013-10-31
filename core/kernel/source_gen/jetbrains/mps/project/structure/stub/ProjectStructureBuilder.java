@@ -112,14 +112,8 @@ public abstract class ProjectStructureBuilder {
     SPropertyOperations.set(result, "uuid", source.getModelId().toString());
     String modelName = source.getModelName();
     int atIndex = modelName.indexOf('@');
-    SPropertyOperations.set(result, "qualifiedName", (atIndex == -1 ?
-      modelName :
-      modelName.substring(0, atIndex)
-    ));
-    SPropertyOperations.set(result, "stereotype", (atIndex == -1 ?
-      "" :
-      modelName.substring(atIndex + 1)
-    ));
+    SPropertyOperations.set(result, "qualifiedName", (atIndex == -1 ? modelName : modelName.substring(0, atIndex)));
+    SPropertyOperations.set(result, "stereotype", (atIndex == -1 ? "" : modelName.substring(atIndex + 1)));
     return result;
   }
 
@@ -177,10 +171,7 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, "namespace", (isNotEmptyString(source.getNamespace()) ?
-      source.getNamespace() :
-      null
-    ));
+    SPropertyOperations.set(generator, "namespace", (isNotEmptyString(source.getNamespace()) ? source.getNamespace() : null));
     for (MappingPriorityRule rule : source.getPriorityRules()) {
       SLinkOperations.getTargets(generator, "priorityRules", true).add(convert(rule));
     }
@@ -219,10 +210,7 @@ public abstract class ProjectStructureBuilder {
       return null;
     }
     SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModuleReference");
-    SPropertyOperations.set(result, "uuid", (ref.getModuleId() != null ?
-      ref.getModuleId().toString() :
-      null
-    ));
+    SPropertyOperations.set(result, "uuid", (ref.getModuleId() != null ? ref.getModuleId().toString() : null));
     SPropertyOperations.set(result, "qualifiedName", ref.getModuleName());
     return result;
   }

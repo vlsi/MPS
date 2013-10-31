@@ -25,13 +25,7 @@ public class DecisionSample {
 
     Money discount;
     discount = create(person);
-    if ((discount.getAmount().compareTo(new Money(40, "USD").getAmount()) > 0 ?
-      true :
-      false
-    ) || (discount.getAmount().compareTo(new Money(30, "EUR").getAmount()) >= 0 ?
-      true :
-      false
-    )) {
+    if ((discount.getAmount().compareTo(new Money(40, "USD").getAmount()) > 0 ? true : false) || (discount.getAmount().compareTo(new Money(30, "EUR").getAmount()) >= 0 ? true : false)) {
       discount = new Money(30, "EUR");
     }
 
@@ -136,10 +130,7 @@ public class DecisionSample {
         return new Money(10, "EUR").plus(this.seasonalBonus());
       }
       if (isRetired(person)) {
-        return new Money(10, "EUR").plus(((MapSequence.fromMap(person).get("name") == "Susan") ?
-          this.seasonalBonus() :
-          new Money(40, "EUR")
-        ));
+        return new Money(10, "EUR").plus(((MapSequence.fromMap(person).get("name") == "Susan") ? this.seasonalBonus() : new Money(40, "EUR")));
       }
     }
     return new Money(0, "EUR");

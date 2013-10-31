@@ -21,7 +21,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   @Override
   protected void update(double frac) {
     if (myName != null) {
-      double currFrac = 1. - (double) myJobMonitor.currentProgress().workLeft() / WORK_AMOUNT;
+      double currFrac = 1. - (double) (myJobMonitor.currentProgress().workLeft() / WORK_AMOUNT);
       myJobMonitor.currentProgress().advanceWork(myName, (int) (WORK_AMOUNT * (Math.max(0., frac - currFrac))), this.comment());
     }
   }
@@ -64,21 +64,9 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   }
 
   private String comment() {
-    String currsubtitle = ((myTitle == null || myTitle.length() == 0) || myTitle.startsWith(myName) ?
-      "" :
-      myTitle
-    );
-    String currstep = ((myStep != null && myStep.length() > 0) ?
-      myStep :
-      ""
-    );
-    return ((currsubtitle == null || currsubtitle.length() == 0) ?
-      currstep :
-      currsubtitle + (((currstep == null || currstep.length() == 0) ?
-        "" :
-        " " + currstep
-      ))
-    );
+    String currsubtitle = ((myTitle == null || myTitle.length() == 0) || myTitle.startsWith(myName) ? "" : myTitle);
+    String currstep = ((myStep != null && myStep.length() > 0) ? myStep : "");
+    return ((currsubtitle == null || currsubtitle.length() == 0) ? currstep : currsubtitle + (((currstep == null || currstep.length() == 0) ? "" : " " + currstep)));
   }
 
   @Override

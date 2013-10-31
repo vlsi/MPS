@@ -28,10 +28,7 @@ public class check_SConceptQueryCall_NonTypesystemRule extends AbstractNonTypesy
     if (!(SNodeOperations.isInstanceOf(containerType, "jetbrains.mps.core.smodel.structure.MqlNodeType"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(queryCall, "cannot apply query call to " + (((containerType != null) ?
-          BehaviorReflection.invokeVirtual(String.class, containerType, "virtual_getText_270269450479797040", new Object[]{}) :
-          "<no type>"
-        )), "r:51081164-5cb8-4581-b1a7-d92a2d5fc7da(jetbrains.mps.core.smodel.typesystem)", "4524748913103430548", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(queryCall, "cannot apply query call to " + (((containerType != null) ? BehaviorReflection.invokeVirtual(String.class, containerType, "virtual_getText_270269450479797040", new Object[]{}) : "<no type>")), "r:51081164-5cb8-4581-b1a7-d92a2d5fc7da(jetbrains.mps.core.smodel.typesystem)", "4524748913103430548", null, errorTarget);
       }
       return;
     }

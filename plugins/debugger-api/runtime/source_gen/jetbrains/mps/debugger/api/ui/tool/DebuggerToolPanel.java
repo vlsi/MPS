@@ -118,10 +118,7 @@ public class DebuggerToolPanel {
             String typename = location.getUnitName();
             int lastDot = typename.lastIndexOf(".");
             String className = typename.substring(lastDot + 1);
-            String pckgName = (lastDot > 0 ?
-              typename.substring(0, lastDot) :
-              ""
-            );
+            String pckgName = (lastDot > 0 ? typename.substring(0, lastDot) : "");
             framePresentation = location.getRoutineName() + "():" + location.getLineNumber() + " " + className + "(" + pckgName + ")";
           }
           setText(framePresentation);

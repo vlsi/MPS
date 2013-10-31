@@ -55,13 +55,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Error_Editor._StyleParameter_QueryFunction_xkqo7y_a1b0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Error_Editor._StyleParameter_QueryFunction_xkqo7y_a1b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
     editorCell.getStyle().putAll(style);

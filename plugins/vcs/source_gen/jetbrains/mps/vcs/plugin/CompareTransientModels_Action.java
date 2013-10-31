@@ -96,9 +96,6 @@ public class CompareTransientModels_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(CompareTransientModels_Action.class);
 
   private static boolean eq_5whyyr_a0a0a3(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

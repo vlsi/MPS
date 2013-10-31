@@ -62,10 +62,7 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_n2wc8f_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SPropertyOperations.getString(node, "alias") != null ?
-          SPropertyOperations.getString(node, "alias") :
-          SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias")
-        );
+        return (SPropertyOperations.getString(node, "alias") != null ? SPropertyOperations.getString(node, "alias") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias"));
       }
 
       public void setText(String s) {

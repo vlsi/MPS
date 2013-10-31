@@ -75,10 +75,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
         }
       });
     } else {
-      tree.setBackground((incomplete[0] ?
-        Color.PINK :
-        table.getBackground()
-      ));
+      tree.setBackground((incomplete[0] ? Color.PINK : table.getBackground()));
       tree.setForeground(table.getForeground());
       tree.setCellRenderer(new DefaultTreeCellRenderer() {
         @Override
@@ -89,10 +86,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       });
       tree.clearSelection();
     }
-    tree.setBorder((hasFocus ?
-      new DottedBorder(new Insets(1, 1, 1, 1), Color.BLACK) :
-      new EmptyBorder(1, 1, 1, 1)
-    ));
+    tree.setBorder((hasFocus ? new DottedBorder(new Insets(1, 1, 1, 1), Color.BLACK) : new EmptyBorder(1, 1, 1, 1)));
     MapSequence.fromMap(myRenderersCache).put(value, tree);
     return tree;
   }

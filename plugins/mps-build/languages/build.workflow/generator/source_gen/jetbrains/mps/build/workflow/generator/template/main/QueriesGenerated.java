@@ -146,10 +146,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2059109515400317575(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
-      "javac2" :
-      "javac"
-    );
+    return (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ? "javac2" : "javac");
   }
 
   public static Object propertyMacro_GetPropertyValue_6647099934207240060(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -177,10 +174,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6896005762093592339(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SPropertyOperations.getBoolean(_context.getNode(), "isLocation") ?
-      SPropertyOperations.getString(_context.getNode(), "name") + ".relative" :
-      SPropertyOperations.getString(_context.getNode(), "name")
-    );
+    return (SPropertyOperations.getBoolean(_context.getNode(), "isLocation") ? SPropertyOperations.getString(_context.getNode(), "name") + ".relative" : SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_6896005762093592358(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -35,9 +35,6 @@ public class ModelVersionChange extends MetadataChange {
   }
 
   private static <T> T as_7exgcv_a0a0a0a0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

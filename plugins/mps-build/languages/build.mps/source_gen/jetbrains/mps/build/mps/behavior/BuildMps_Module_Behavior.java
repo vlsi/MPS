@@ -46,10 +46,7 @@ public class BuildMps_Module_Behavior {
 
       for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
-            SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
-            it
-          );
+          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ? SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) : it);
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

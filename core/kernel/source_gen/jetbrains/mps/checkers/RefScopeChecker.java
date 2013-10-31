@@ -58,15 +58,9 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());
         SNode ruleNode = null;
         if (scopeProvider != null) {
-          ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ?
-            ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).resolve(MPSModuleRepository.getInstance()) :
-            null
-          );
+          ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ? ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).resolve(MPSModuleRepository.getInstance()) : null);
         }
-        component.addError(node, "reference" + ((name == null ?
-          "" :
-          " " + name
-        )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), new RefScopeChecker.ResolveReferenceQuickFix(ref, operationContext));
+        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), new RefScopeChecker.ResolveReferenceQuickFix(ref, operationContext));
       }
     }
   }

@@ -39,10 +39,7 @@ public class PrivateStaticMethodCall_Constraints extends BaseConstraintsDescript
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false), ((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ), IClassifiersSearchScope.STATIC_METHOD) {
+            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), "classConcept", false), ((_context.getReferenceNode() == null) ? _context.getEnclosingNode() : _context.getReferenceNode()), IClassifiersSearchScope.STATIC_METHOD) {
               @Override
               protected boolean isVisible(SNode node) {
                 return true;

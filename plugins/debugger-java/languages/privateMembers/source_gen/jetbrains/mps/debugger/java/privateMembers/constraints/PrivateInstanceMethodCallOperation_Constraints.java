@@ -48,10 +48,7 @@ public class PrivateInstanceMethodCallOperation_Constraints extends BaseConstrai
             }
             SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
             SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-            return new ClassifierVisibleMembersScope(classifierType, ((_context.getReferenceNode() == null) ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            ), IClassifiersSearchScope.INSTANCE_METHOD) {
+            return new ClassifierVisibleMembersScope(classifierType, ((_context.getReferenceNode() == null) ? _context.getEnclosingNode() : _context.getReferenceNode()), IClassifiersSearchScope.INSTANCE_METHOD) {
               @Override
               protected boolean isVisible(SNode member) {
                 return !(super.isVisible(member));

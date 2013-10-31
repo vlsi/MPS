@@ -72,9 +72,6 @@ public class BuildStringPart_Behavior {
   }
 
   private static boolean eq_cuvs1r_a0b0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -12,25 +12,19 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 6:
-        return new SStructurePart_Constraints();
-      case 0:
-        return new SAbstractConcept_Constraints();
-      case 2:
-        return new SConceptMember_Constraints();
-      case 5:
-        return new SProperty_Constraints();
-      case 1:
-        return new SAbstractLink_Constraints();
-      case 4:
-        return new SEnumerationMember_Constraints();
       case 3:
+        return new SStructurePart_Constraints();
+      case 1:
+        return new SConceptMember_Constraints();
+      case 2:
         return new SConstraintsPart_Constraints();
+      case 0:
+        return new IIdentifier_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.structure.structure.SAbstractConcept", "jetbrains.mps.core.structure.structure.SAbstractLink", "jetbrains.mps.core.structure.structure.SConceptMember", "jetbrains.mps.core.structure.structure.SConstraintsPart", "jetbrains.mps.core.structure.structure.SEnumerationMember", "jetbrains.mps.core.structure.structure.SProperty", "jetbrains.mps.core.structure.structure.SStructurePart"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.structure.structure.IIdentifier", "jetbrains.mps.core.structure.structure.SConceptMember", "jetbrains.mps.core.structure.structure.SConstraintsPart", "jetbrains.mps.core.structure.structure.SStructurePart"};
 }

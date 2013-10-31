@@ -87,10 +87,7 @@ public class FieldDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getFieldSuffix() == null ?
-      "" :
-      settings.getFieldSuffix()
-    );
+    return (settings.getFieldSuffix() == null ? "" : settings.getFieldSuffix());
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
@@ -98,10 +95,7 @@ public class FieldDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getFieldPrefix() == null ?
-      "" :
-      settings.getFieldPrefix()
-    );
+    return (settings.getFieldPrefix() == null ? "" : settings.getFieldPrefix());
   }
 
   @Nullable

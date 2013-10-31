@@ -82,10 +82,7 @@ import org.apache.log4j.LogManager;
   }
 
   private static String getCoreAutocrlfValue() {
-    return (SystemInfo.isWindows ?
-      "true" :
-      "input"
-    );
+    return (SystemInfo.isWindows ? "true" : "input");
   }
 
   protected static Logger LOG = LogManager.getLogger(GitGlobalConfigFixesInstaller.class);

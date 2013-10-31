@@ -80,34 +80,34 @@
     <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="30" startPosition="56" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5911785528834372382" fileName="ExtensionDeclaration_Constraints.java" startLine="32" startPosition="9" endLine="33" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="40" startPosition="7" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5911785528834372392" fileName="ExtensionDeclaration_Constraints.java" startLine="33" startPosition="90" endLine="34" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="37" startPosition="7" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtensionDeclaration_Constraints#()V" />
     <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
-    <nodeInfo nodeId="5911785528834372392" fileName="ExtensionDeclaration_Constraints.java" startLine="33" startPosition="90" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="31" startPosition="37" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="29" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="22" startPosition="74" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="31" startPosition="37" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="22" startPosition="74" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
     <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="16" startPosition="45" endLine="17" endPosition="73" />
     <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5911785528834372350" fileName="ExtensionDeclaration_Constraints.java" startLine="32" startPosition="9" endLine="37" endPosition="28">
+    <scopeInfo nodeId="5911785528834372350" fileName="ExtensionDeclaration_Constraints.java" startLine="32" startPosition="9" endLine="34" endPosition="138">
       <varInfo nodeId="5911785528834372383" varName="extensionPoint" />
     </scopeInfo>
-    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="30" startPosition="56" endLine="38" endPosition="9">
+    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="30" startPosition="56" endLine="35" endPosition="9">
       <varInfo nodeId="5911785528834372341" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5911785528834372341" varName="node" />
       <varInfo nodeId="5911785528834372341" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="21" startPosition="82" endLine="41" endPosition="22">
+    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="21" startPosition="82" endLine="38" endPosition="22">
       <varInfo nodeId="5911785528834372341" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="23" startPosition="31" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.extension.constraints.ExtensionDeclaration_Constraints$1" />
-    <unitInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.extension.constraints.ExtensionDeclaration_Constraints" />
+    <scopeInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="20" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="23" startPosition="31" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.extension.constraints.ExtensionDeclaration_Constraints$1" />
+    <unitInfo nodeId="5911785528834372341" fileName="ExtensionDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.extension.constraints.ExtensionDeclaration_Constraints" />
   </root>
   <root nodeRef="r:34afaabb-1c5b-40d4-ae6d-6f5312d7475d(jetbrains.mps.lang.extension.constraints)/7036359038356141331">
     <nodeInfo nodeId="7036359038356141331" fileName="ExtensionFieldDeclaration_Constraints.java" startLine="16" startPosition="50" endLine="17" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

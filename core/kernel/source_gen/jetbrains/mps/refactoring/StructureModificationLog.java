@@ -28,9 +28,6 @@ public class StructureModificationLog {
       return -1;
     }
     Map<SModelReference, Integer> deps = ListSequence.fromList(myDataList).last().getDependencies();
-    return (MapSequence.fromMap(deps).containsKey(modelRef) ?
-      MapSequence.fromMap(deps).get(modelRef) + 1 :
-      -1
-    );
+    return (MapSequence.fromMap(deps).containsKey(modelRef) ? MapSequence.fromMap(deps).get(modelRef) + 1 : -1);
   }
 }

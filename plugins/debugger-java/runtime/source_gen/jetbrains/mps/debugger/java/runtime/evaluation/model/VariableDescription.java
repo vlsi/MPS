@@ -36,20 +36,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   }
 
   private SNode createDebuggedType() {
-    return createDebuggedType(myLowLevelType, (myIsHighLevelInfoAvailable ?
-      myHighLevelType :
-      null
-    ));
+    return createDebuggedType(myLowLevelType, (myIsHighLevelInfoAvailable ? myHighLevelType : null));
   }
 
   public void setHighLevelNode(SNode node) {
     myIsHighLevelInfoAvailable = true;
     myHighLevelNode = new SNodePointer(node);
     myHighLevelType = SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"));
-    myHighLevelName = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept") ?
-      SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-      myLowLevelName
-    );
+    myHighLevelName = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : myLowLevelName);
   }
 
   public void setHighLevelName(String highLevelName) {
@@ -78,9 +72,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   }
 
   private static boolean eq_5ytd5s_a0a0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

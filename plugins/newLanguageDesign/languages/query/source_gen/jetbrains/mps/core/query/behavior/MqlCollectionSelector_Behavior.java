@@ -64,10 +64,7 @@ public class MqlCollectionSelector_Behavior {
 
   public static Collection<Object> call_collect_7862448911997425406(SNode thisNode, boolean unique, Iterable<Object> input, EvaluationEnvironment env, EvaluationContext context) {
     String varname = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "var", true), "name");
-    Collection<Object> result = (unique ?
-      new LinkedHashSet<Object>() :
-      new ArrayList<Object>()
-    );
+    Collection<Object> result = (unique ? new LinkedHashSet<Object>() : new ArrayList<Object>());
     for (Object o : input) {
       EvaluationContext innerContext = new EvaluationContext(context.getThis(), context);
       innerContext.setValue(varname, o);
@@ -92,10 +89,7 @@ public class MqlCollectionSelector_Behavior {
       EvaluationContext innerContext = new EvaluationContext(context.getThis(), context);
       innerContext.setValue(varname, o);
       Object val = env.evaluate(SLinkOperations.getTarget(thisNode, "expr", true), innerContext, true);
-      boolean boolVal = ((val instanceof Boolean) ?
-        (Boolean) val :
-        val != null
-      );
+      boolean boolVal = ((val instanceof Boolean) ? (Boolean) val : val != null);
       if (boolVal ^ isReject) {
         result.add(o);
       }
@@ -109,18 +103,12 @@ public class MqlCollectionSelector_Behavior {
       EvaluationContext innerContext = new EvaluationContext(context.getThis(), context);
       innerContext.setValue(varname, o);
       Object val = env.evaluate(SLinkOperations.getTarget(thisNode, "expr", true), innerContext, true);
-      boolean boolVal = ((val instanceof Boolean) ?
-        (Boolean) val :
-        val != null
-      );
+      boolean boolVal = ((val instanceof Boolean) ? (Boolean) val : val != null);
       if (forAll ^ boolVal) {
         return boolVal;
       }
     }
-    return (forAll ?
-      true :
-      false
-    );
+    return (forAll ? true : false);
   }
 
   public static List<Object> call_sort_1495482807929828329(final SNode thisNode, Iterable<Object> input, final EvaluationEnvironment env, final EvaluationContext context) {
@@ -139,10 +127,7 @@ public class MqlCollectionSelector_Behavior {
         Comparable left = MqlCollectionSelector_Behavior.call_sortEvaluate_1495482807929828370(thisNode, o1, cache, env, context);
         Comparable right = MqlCollectionSelector_Behavior.call_sortEvaluate_1495482807929828370(thisNode, o2, cache, env, context);
         if (left == null) {
-          return (right == null ?
-            0 :
-            -1
-          );
+          return (right == null ? 0 : -1);
         }
         if (right == null) {
           return 1;

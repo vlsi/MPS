@@ -190,10 +190,7 @@ public class MethodResolveUtil {
       for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
         typeByTypeVar.put(tvd, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null));
       }
-      SNode typeOfParam = (varArg ?
-        SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) :
-        SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), "type", true)
-      );
+      SNode typeOfParam = (varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), "type", true));
       if ((typeOfParam == null)) {
         continue;
       }

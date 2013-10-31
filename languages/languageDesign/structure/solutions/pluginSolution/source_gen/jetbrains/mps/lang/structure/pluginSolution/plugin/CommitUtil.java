@@ -32,20 +32,8 @@ public class CommitUtil {
     modelAccess.runReadInEDT(new Runnable() {
       public void run() {
         IRefactoring refactoring;
-        SNode refactoringNode = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?
-          SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781517") :
-          (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration") ?
-            SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781764") :
-            (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration") ?
-              SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781638") :
-              null
-            )
-          )
-        );
-        refactoring = (refactoringNode != null ?
-          RefactoringUtil.getRefactoringByClassName(BehaviorReflection.invokeVirtual(String.class, refactoringNode, "virtual_getFqName_1213877404258", new Object[]{})) :
-          null
-        );
+        SNode refactoringNode = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ? SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781517") : (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration") ? SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781764") : (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration") ? SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781638") : null)));
+        refactoring = (refactoringNode != null ? RefactoringUtil.getRefactoringByClassName(BehaviorReflection.invokeVirtual(String.class, refactoringNode, "virtual_getFqName_1213877404258", new Object[]{})) : null);
         if (refactoring == null) {
           return;
         }

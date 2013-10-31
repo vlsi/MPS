@@ -241,10 +241,7 @@ public class DefaultEditorBuilder {
 
   private void setBooleanStyle(SNode concept) {
     SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
-    SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
-      collection :
-      ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
-    );
+    SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ? collection : ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last());
     SNode classItem = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
     SPropertyOperations.set(classItem, "flag", "" + (true));
     ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(classItem);
@@ -252,10 +249,7 @@ public class DefaultEditorBuilder {
 
   public void setStyle(SNode style) {
     SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
-    SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ?
-      collection :
-      ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
-    );
+    SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ? collection : ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last());
     ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(style);
   }
 
@@ -352,22 +346,10 @@ public class DefaultEditorBuilder {
         continue;
       }
       String name = SPropertyOperations.getString(property, "name");
-      int prio = (name.equals("name") ?
-        10000 :
-        0
-      );
-      prio += (name.toLowerCase().indexOf("identifier") >= 0 ?
-        1700 :
-        0
-      );
-      prio += (name.toLowerCase().indexOf("name") >= 0 ?
-        1000 :
-        0
-      );
-      prio += (name.toLowerCase().indexOf("qualified") >= 0 ?
-        200 :
-        0
-      );
+      int prio = (name.equals("name") ? 10000 : 0);
+      prio += (name.toLowerCase().indexOf("identifier") >= 0 ? 1700 : 0);
+      prio += (name.toLowerCase().indexOf("name") >= 0 ? 1000 : 0);
+      prio += (name.toLowerCase().indexOf("qualified") >= 0 ? 200 : 0);
       MapSequence.fromMap(idProperties).put(property, prio);
     }
     return SetSequence.fromSet(MapSequence.fromMap(idProperties).keySet()).sort(new ISelector<SNode, Integer>() {
@@ -408,16 +390,10 @@ public class DefaultEditorBuilder {
   }
 
   private static boolean eq_xgdobq_a0a1a42(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_xgdobq_a0a1a52(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

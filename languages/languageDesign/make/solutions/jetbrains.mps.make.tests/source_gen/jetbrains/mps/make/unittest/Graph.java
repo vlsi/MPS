@@ -49,10 +49,7 @@ public class Graph<V> {
   }
 
   public Iterable<V> getVertices() {
-    return (sorter != null ?
-      SetSequence.fromSet(vertices).sort(sorter, asc) :
-      vertices
-    );
+    return (sorter != null ? SetSequence.fromSet(vertices).sort(sorter, asc) : vertices);
   }
 
   public GraphAnalyzer<V> getCycleDetector() {

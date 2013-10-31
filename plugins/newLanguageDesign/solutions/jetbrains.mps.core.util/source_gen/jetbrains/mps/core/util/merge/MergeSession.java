@@ -117,10 +117,7 @@ public class MergeSession {
     Sequence.fromIterable(created).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         String signature = getSignature(it);
-        SNode existingNode = (MapSequence.fromMap(existingNodes).containsKey(signature) ?
-          ListSequence.fromList(MapSequence.fromMap(existingNodes).get(signature)).removeElementAt(0) :
-          null
-        );
+        SNode existingNode = (MapSequence.fromMap(existingNodes).containsKey(signature) ? ListSequence.fromList(MapSequence.fromMap(existingNodes).get(signature)).removeElementAt(0) : null);
         ListSequence.fromList(result).addElement(merge(existingNode, it, newmodel));
       }
     });
@@ -139,10 +136,7 @@ public class MergeSession {
     if (existing != null) {
       ((jetbrains.mps.smodel.SNode) result).setId(existing.getNodeId());
     }
-    for (SNode child : mergeLists((existing == null ?
-      Sequence.fromIterable(Collections.<SNode>emptyList()) :
-      jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(existing)
-    ), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(node), newmodel)) {
+    for (SNode child : mergeLists((existing == null ? Sequence.fromIterable(Collections.<SNode>emptyList()) : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(existing)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(node), newmodel)) {
       String role = MapSequence.fromMap(reverseMapping).get(child).getRoleInParent();
       assert role != null;
       result.addChild(role, child);
@@ -151,10 +145,7 @@ public class MergeSession {
   }
 
   protected String getSignature(SNode node) {
-    String signature = ((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(node) == null) ?
-      "{root}" :
-      jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkRole(node)
-    );
+    String signature = ((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(node) == null) ? "{root}" : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkRole(node));
     assert signature != null;
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       signature = "#" + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");

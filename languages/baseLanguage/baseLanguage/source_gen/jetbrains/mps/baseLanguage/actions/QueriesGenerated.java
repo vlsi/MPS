@@ -628,10 +628,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -664,10 +661,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -698,10 +692,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -732,10 +723,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1138,10 +1126,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1298,10 +1283,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1327,10 +1309,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1592,16 +1571,10 @@ public class QueriesGenerated {
             SNode cast = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.CastExpression", null);
             SNode parens = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
             SLinkOperations.setTarget(parens, "expression", cast, true);
-            SNode instanceOf = ExpectedType_FactoryUtil.getCorrespondingInstanceOf((_context.getCurrentTargetNode() != null && SNodeOperations.getParent(_context.getCurrentTargetNode()) == _context.getParentNode() ?
-              _context.getCurrentTargetNode() :
-              _context.getParentNode()
-            ));
+            SNode instanceOf = ExpectedType_FactoryUtil.getCorrespondingInstanceOf((_context.getCurrentTargetNode() != null && SNodeOperations.getParent(_context.getCurrentTargetNode()) == _context.getParentNode() ? _context.getCurrentTargetNode() : _context.getParentNode()));
             if ((instanceOf != null)) {
               SLinkOperations.setTarget(cast, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOf, "classType", true)), true);
-              SLinkOperations.setTarget(cast, "expression", (_context.getCurrentTargetNode() == null || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
-                SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOf, "leftExpression", true)) :
-                null
-              ), true);
+              SLinkOperations.setTarget(cast, "expression", (_context.getCurrentTargetNode() == null || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ? SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOf, "leftExpression", true)) : null), true);
               if ((SLinkOperations.getTarget(cast, "expression", true) == null) && SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
                 SLinkOperations.setTarget(cast, "expression", SNodeOperations.copyNode(_context.getCurrentTargetNode()), true);
               }
@@ -1619,19 +1592,13 @@ public class QueriesGenerated {
             if (pattern.startsWith("(")) {
               String typeName = "type";
               String varName = "expr";
-              SNode instanceOf = ExpectedType_FactoryUtil.getCorrespondingInstanceOf((_context.getCurrentTargetNode() != null && SNodeOperations.getParent(_context.getCurrentTargetNode()) == _context.getParentNode() ?
-                _context.getCurrentTargetNode() :
-                _context.getParentNode()
-              ));
+              SNode instanceOf = ExpectedType_FactoryUtil.getCorrespondingInstanceOf((_context.getCurrentTargetNode() != null && SNodeOperations.getParent(_context.getCurrentTargetNode()) == _context.getParentNode() ? _context.getCurrentTargetNode() : _context.getParentNode()));
               SNode var;
               if (instanceOf != null) {
                 if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
                   typeName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SLinkOperations.getTarget(instanceOf, "classType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_getPresentation_1213877396640", new Object[]{});
                 }
-                var = (_context.getCurrentTargetNode() == null || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ?
-                  SLinkOperations.getTarget(instanceOf, "leftExpression", true) :
-                  _context.getCurrentTargetNode()
-                );
+                var = (_context.getCurrentTargetNode() == null || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), "abstract") ? SLinkOperations.getTarget(instanceOf, "leftExpression", true) : _context.getCurrentTargetNode());
               } else {
                 var = _context.getCurrentTargetNode();
               }
@@ -1793,10 +1760,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1874,10 +1838,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1903,10 +1864,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1936,10 +1894,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -1964,10 +1919,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            return (pattern.equals("if(") ?
-              pattern :
-              "if"
-            );
+            return (pattern.equals("if(") ? pattern : "if");
           }
 
           public String getVisibleMatchingText(String pattern) {
@@ -2019,10 +1971,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ?
-              "static method" :
-              "method"
-            );
+            return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ? "static method" : "method");
           }
 
           public String getMatchingText(String pattern) {
@@ -2093,10 +2042,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ?
-              "static field" :
-              "field"
-            );
+            return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ? "static field" : "field");
           }
 
           public String getMatchingText(String pattern) {
@@ -2110,10 +2056,7 @@ public class QueriesGenerated {
                 name = name.substring(0, name.length() - 1);
               }
               if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                return name + ((pattern.endsWith("=") ?
-                  "=" :
-                  ";"
-                ));
+                return name + ((pattern.endsWith("=") ? "=" : ";"));
               }
             }
             return null;
@@ -2267,10 +2210,7 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode current = SNodeOperations.as(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
             SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-            SLinkOperations.setTarget(result, "visibility", ((current == null) ?
-              SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null) :
-              SLinkOperations.getTarget(current, "visibility", true)
-            ), true);
+            SLinkOperations.setTarget(result, "visibility", ((current == null) ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null) : SLinkOperations.getTarget(current, "visibility", true)), true);
             return result;
           }
 
@@ -2732,7 +2672,7 @@ public class QueriesGenerated {
       }
 
       public String getMatchingText(String pattern) {
-        return "[]";
+        return "[";
       }
 
       public String getVisibleMatchingText(String pattern) {
@@ -4433,6 +4373,13 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
+        PrecedenceUtil.parenthesiseIfNecessary(targetExpression);
+
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.Expression")) {
+          SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+          SNodeOperations.replaceWithAnother(result, parens);
+          SLinkOperations.setTarget(parens, "expression", result, true);
+        }
         return result;
       }
 
@@ -4720,10 +4667,7 @@ __switch__:
       }
 
       public String getMatchingText(String pattern) {
-        return ((pattern == null ?
-          null :
-          pattern.trim()
-        ));
+        return ((pattern == null ? null : pattern.trim()));
       }
 
       public String getVisibleMatchingText(String pattern) {
@@ -6047,10 +5991,7 @@ __switch__:
   }
 
   private static <T> T as_x583g4_a0a1a0a0a0a0a1a242(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a03 = Pattern.compile("-?\\d+", 0);

@@ -270,27 +270,27 @@
     <nodeInfo nodeId="742486944792833440" fileName="ExceptionChooserDialog.java" startLine="33" startPosition="173" endLine="34" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="742486944792833450" fileName="ExceptionChooserDialog.java" startLine="35" startPosition="5" endLine="36" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2816410937774688222" fileName="ExceptionChooserDialog.java" startLine="42" startPosition="45" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2034046503361578204" fileName="ExceptionChooserDialog.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="742486944792833424" fileName="ExceptionChooserDialog.java" startLine="32" startPosition="22" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="50" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_lt001m_a0a0a1a2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="2034046503361578200" fileName="ExceptionChooserDialog.java" startLine="21" startPosition="61" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2816410937774688213" fileName="ExceptionChooserDialog.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_lt001m_a0a0a1a2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="742486944792833414" fileName="ExceptionChooserDialog.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="742486944792833389" fileName="ExceptionChooserDialog.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExceptionChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
     <scopeInfo nodeId="2034046503361578205" fileName="ExceptionChooserDialog.java" startLine="23" startPosition="25" endLine="24" endPosition="127" />
     <scopeInfo nodeId="742486944792833439" fileName="ExceptionChooserDialog.java" startLine="33" startPosition="173" endLine="34" endPosition="188" />
     <scopeInfo nodeId="2816410937774688218" fileName="ExceptionChooserDialog.java" startLine="42" startPosition="45" endLine="43" endPosition="50" />
+    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="47" endPosition="46" />
     <scopeInfo nodeId="2034046503361578204" fileName="ExceptionChooserDialog.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="50" endPosition="6" />
+    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="742486944792924580" varName="a" />
+      <varInfo nodeId="742486944792924580" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="742486944792833419" fileName="ExceptionChooserDialog.java" startLine="31" startPosition="41" endLine="36" endPosition="117">
       <varInfo nodeId="742486944792833421" varName="base" />
     </scopeInfo>
     <scopeInfo nodeId="2816410937774688213" fileName="ExceptionChooserDialog.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="742486944792924580" varName="a" />
-      <varInfo nodeId="742486944792924580" varName="b" />
-    </scopeInfo>
     <scopeInfo nodeId="742486944792833396" fileName="ExceptionChooserDialog.java" startLine="19" startPosition="89" endLine="27" endPosition="39">
       <varInfo nodeId="742486944792924452" varName="node" />
     </scopeInfo>
@@ -302,7 +302,7 @@
       <varInfo nodeId="742486944792833394" varName="title" />
     </scopeInfo>
     <unitInfo nodeId="2034046503361578204" fileName="ExceptionChooserDialog.java" startLine="22" startPosition="45" endLine="26" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog$1" />
-    <unitInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" />
+    <unitInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" />
   </root>
 </debugInfo>
 

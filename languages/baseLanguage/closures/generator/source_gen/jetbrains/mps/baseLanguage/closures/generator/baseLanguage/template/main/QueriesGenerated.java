@@ -417,10 +417,7 @@ public class QueriesGenerated {
     SNode cl = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
     List<SNode> allYAS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
     List<SNode> allYS = SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"});
-    return (ListSequence.fromList(allYS).isEmpty() ?
-      ((int) ListSequence.fromList(allYAS).count() == 1 && ListSequence.fromList(allYAS).first() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true)).last()) :
-      false
-    );
+    return (ListSequence.fromList(allYS).isEmpty() ? ((int) ListSequence.fromList(allYAS).count() == 1 && ListSequence.fromList(allYAS).first() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true)).last()) : false);
   }
 
   public static boolean baseMappingRule_Condition_7001216437968756006(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -609,10 +606,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1201275469014(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
     Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
-    return labels[(labels[2] != -1 ?
-      2 :
-      3
-    )];
+    return labels[(labels[2] != -1 ? 2 : 3)];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201291955078(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2368,10 +2362,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1219916707161(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation") ?
-      ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).skip(1) :
-      SLinkOperations.getTargets(_context.getNode(), "statement", true)
-    );
+    return (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation") ? ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).skip(1) : SLinkOperations.getTargets(_context.getNode(), "statement", true));
   }
 
   public static Iterable sourceNodesQuery_1215446400341(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2405,10 +2396,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_4314010248456881346(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode trg = new AdaptableClassifierTarget(_context).getTarget(_context.getNode());
     SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
-    ntype = (ntype == null ?
-      TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) :
-      ntype
-    );
+    ntype = (ntype == null ? TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) : ntype);
     final Map<SNode, SNode> theMap = FunctionTypeUtil.mapAdaptableTargetTVDs(SLinkOperations.getTarget(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), trg);
     final List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
 
@@ -2576,18 +2564,12 @@ public class QueriesGenerated {
         cstmt = StatementListUtil.nextSibling(lastStmt);
       } else {
         List<SNode> allstmts = (List<SNode>) SLinkOperations.getTargets(_context.getNode(), "statement", true);
-        cstmt = (ListSequence.fromList(allstmts).isNotEmpty() ?
-          ListSequence.fromList(allstmts).getElement(0) :
-          null
-        );
+        cstmt = (ListSequence.fromList(allstmts).isNotEmpty() ? ListSequence.fromList(allstmts).getElement(0) : null);
       }
       stmts = null;
       if ((cstmt != null)) {
         labels = (Integer[]) Values.CLOSURE_DATA.get(_context, cstmt);
-        endLabel = (labels != null ?
-          labels[0] :
-          -1
-        );
+        endLabel = (labels != null ? labels[0] : -1);
         lastStmt = StatementListUtil.nextSibling(cstmt);
         while ((lastStmt != null)) {
           stmts = StatementListUtil.selectStatementsUntilControlStatement(_context.getNode(), lastStmt);
@@ -2596,10 +2578,7 @@ public class QueriesGenerated {
             lastStmt = StatementListUtil.nextSibling(lastStmt);
           } else {
             labels = (Integer[]) Values.CLOSURE_DATA.get(_context, cstmt);
-            BEGIN = (labels != null ?
-              labels[labels.length - 1] :
-              -1
-            );
+            BEGIN = (labels != null ? labels[labels.length - 1] : -1);
             break;
           }
         }

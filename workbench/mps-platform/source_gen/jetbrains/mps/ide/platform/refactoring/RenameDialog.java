@@ -49,9 +49,6 @@ public class RenameDialog extends StringChooserDialog {
   }
 
   public static String trim_x29nvn_a0a1a3(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
+    return (str == null ? null : str.trim());
   }
 }

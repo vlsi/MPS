@@ -81,16 +81,10 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(ShowModuleDependencyLoop_Action.class);
 
   private static <T> T as_hir9am_a0a0a3(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_hir9am_a0a0a0a0g(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

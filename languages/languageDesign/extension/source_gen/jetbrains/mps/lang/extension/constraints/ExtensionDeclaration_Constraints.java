@@ -31,10 +31,7 @@ public class ExtensionDeclaration_Constraints extends BaseConstraintsDescriptor 
         String propertyName = "name";
         {
           SNode extensionPoint = SLinkOperations.getTarget(node, "extensionPoint", false);
-          return ((extensionPoint != null ?
-            SPropertyOperations.getString(extensionPoint, "extensionName") :
-            "<unknown>"
-          )) + "_extension";
+          return ((extensionPoint != null ? SPropertyOperations.getString(extensionPoint, "extensionName") : "<unknown>")) + "_extension";
         }
       }
     });

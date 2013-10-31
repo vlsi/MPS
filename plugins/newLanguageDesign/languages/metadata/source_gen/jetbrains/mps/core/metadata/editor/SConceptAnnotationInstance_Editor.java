@@ -233,10 +233,7 @@ public class SConceptAnnotationInstance_Editor extends DefaultNodeEditor {
     }
 
     private static boolean eq_2h5qu1_a0c0d0c7(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 

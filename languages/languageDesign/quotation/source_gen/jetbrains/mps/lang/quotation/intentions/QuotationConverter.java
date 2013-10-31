@@ -85,13 +85,7 @@ public class QuotationConverter {
         SLinkOperations.setTarget(pval, "expression", SLinkOperations.getTarget(attribute, "expression", true), true);
       } else {
         SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(pval, "property", false), "dataType", false);
-        SLinkOperations.setTarget(pval, "expression", (DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(dataType) ?
-          _quotation_createNode_aytayy_a0a1a0d0l0d(quotationNode.getProperty(property)) :
-          (DataTypeDeclaration_Behavior.call_isSimpleInteger_1220268868375(dataType) ?
-            _quotation_createNode_aytayy_a0a0b0a3a11a3(quotationNode.getProperty(property)) :
-            _quotation_createNode_aytayy_a0a0b0a3a11a3_0(NameUtil.escapeString(quotationNode.getProperty(property)))
-          )
-        ), true);
+        SLinkOperations.setTarget(pval, "expression", (DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(dataType) ? _quotation_createNode_aytayy_a0a1a0d0l0d(quotationNode.getProperty(property)) : (DataTypeDeclaration_Behavior.call_isSimpleInteger_1220268868375(dataType) ? _quotation_createNode_aytayy_a0a0b0a3a11a3(quotationNode.getProperty(property)) : _quotation_createNode_aytayy_a0a0b0a3a11a3_0(NameUtil.escapeString(quotationNode.getProperty(property))))), true);
       }
       ListSequence.fromList(SLinkOperations.getTargets(result, "values", true)).addElement(pval);
     }

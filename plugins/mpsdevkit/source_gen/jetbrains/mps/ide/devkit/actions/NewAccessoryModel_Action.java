@@ -41,10 +41,7 @@ public class NewAccessoryModel_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ?
-        "" :
-        "New "
-      )) + "Accesory Model");
+      event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);

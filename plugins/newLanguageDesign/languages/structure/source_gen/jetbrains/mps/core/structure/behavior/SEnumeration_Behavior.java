@@ -30,9 +30,6 @@ public class SEnumeration_Behavior {
   }
 
   private static boolean eq_sppiy6_a0b0c(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

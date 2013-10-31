@@ -25,10 +25,7 @@ public class ReplaceByConditionDialog extends BaseQQDialog {
 
 
   protected SNode createQuery(SNode concept) {
-    return _quotation_createNode_6vpr30_a0a2((concept == null ?
-      SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") :
-      concept
-    ));
+    return _quotation_createNode_6vpr30_a0a2((concept == null ? SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626") : concept));
   }
 
 

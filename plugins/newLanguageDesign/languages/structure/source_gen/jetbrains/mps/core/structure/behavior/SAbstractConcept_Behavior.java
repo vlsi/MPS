@@ -26,10 +26,7 @@ public class SAbstractConcept_Behavior {
       return new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.core.structure.structure.SAbstractConcept", "members"), NameUtil.nodeFQName(kind)) {
         public String getName(SNode child) {
           SNode n = SNodeOperations.as(child, "jetbrains.mps.lang.core.structure.INamedConcept");
-          return (n != null ?
-            SPropertyOperations.getString(n, "name") :
-            null
-          );
+          return (n != null ? SPropertyOperations.getString(n, "name") : null);
         }
       };
     }
@@ -55,9 +52,6 @@ public class SAbstractConcept_Behavior {
   }
 
   private static boolean eq_kbeznz_a0b0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

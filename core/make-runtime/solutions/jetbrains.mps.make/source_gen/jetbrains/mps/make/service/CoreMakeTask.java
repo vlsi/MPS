@@ -113,10 +113,7 @@ public class CoreMakeTask {
           IResource timeStatResource = Sequence.fromIterable(((CompositeResult) this.myResult).getResult(Script.TIME_STATISTIC_RESULT_NAME).output()).first();
           Map<ITarget.Name, Long> currentStatistic = ((TimeStatisticResource) timeStatResource).getStatistic();
           for (ITarget.Name targetName : SetSequence.fromSet(MapSequence.fromMap(currentStatistic).keySet())) {
-            MapSequence.fromMap(timeStatistic).put(targetName, ((MapSequence.fromMap(timeStatistic).containsKey(targetName) ?
-              MapSequence.fromMap(timeStatistic).get(targetName) :
-              0
-            )) + MapSequence.fromMap(currentStatistic).get(targetName));
+            MapSequence.fromMap(timeStatistic).put(targetName, ((MapSequence.fromMap(timeStatistic).containsKey(targetName) ? MapSequence.fromMap(timeStatistic).get(targetName) : 0)) + MapSequence.fromMap(currentStatistic).get(targetName));
           }
         }
         if (!(this.myResult.isSucessful()) || monitor.isCanceled()) {
@@ -189,10 +186,7 @@ public class CoreMakeTask {
     private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
       @Override
       protected IMessageHandler initialValue() {
-        return (CoreMakeTask.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ?
-          CoreMakeTask.RelayingLoggingHandler.GROUP_HANDLER._1() :
-          null
-        );
+        return (CoreMakeTask.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ? CoreMakeTask.RelayingLoggingHandler.GROUP_HANDLER._1() : null);
       }
     };
 

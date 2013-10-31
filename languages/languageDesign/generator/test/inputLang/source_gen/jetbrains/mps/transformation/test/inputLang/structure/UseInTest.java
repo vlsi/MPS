@@ -14,6 +14,7 @@ public enum UseInTest {
   dontApplyReductionTwice("dontApplyReductionTwice", "dontApplyReductionTwice"),
   weaveManyToSingularChild("weaveManyToSingularChild", "weaveManyToSingularChild"),
   reduceOneToMany("reduceOneToMany", "reduceOneToMany"),
+  argsInTemplDeclRef("argsInTemplDeclRef", "argsInTemplDeclRef"),
   none("none", "none");
 
   private String myName;
@@ -35,6 +36,7 @@ public enum UseInTest {
     ListSequence.fromList(list).addElement(UseInTest.dontApplyReductionTwice);
     ListSequence.fromList(list).addElement(UseInTest.weaveManyToSingularChild);
     ListSequence.fromList(list).addElement(UseInTest.reduceOneToMany);
+    ListSequence.fromList(list).addElement(UseInTest.argsInTemplDeclRef);
     ListSequence.fromList(list).addElement(UseInTest.none);
     return list;
   }
@@ -67,6 +69,9 @@ public enum UseInTest {
     }
     if (value.equals(UseInTest.reduceOneToMany.getValueAsString())) {
       return UseInTest.reduceOneToMany;
+    }
+    if (value.equals(UseInTest.argsInTemplDeclRef.getValueAsString())) {
+      return UseInTest.argsInTemplDeclRef;
     }
     if (value.equals(UseInTest.none.getValueAsString())) {
       return UseInTest.none;

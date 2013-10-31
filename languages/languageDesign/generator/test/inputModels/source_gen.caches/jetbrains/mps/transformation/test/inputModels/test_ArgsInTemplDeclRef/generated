@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="d51v0zvusn8rmioubywnhjnggqrv9h6">
+  <common hash="-3jevj04ihfjnhsgojyvx73g4ax2dpiq">
+    <dep root="7496726876599962828" />
+  </common>
+  <source id="7496726876599962828" name="MyInputRoot1" hash="6l7pdtdfjn2ps0h0z6xfyd0e6q9ustq">
+    <file name="MyOutputRoot1" />
+  </source>
+</dependencies>
+

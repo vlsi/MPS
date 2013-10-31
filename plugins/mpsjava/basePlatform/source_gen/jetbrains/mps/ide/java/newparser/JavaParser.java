@@ -65,10 +65,7 @@ public class JavaParser {
     Map<String, String> settings = new HashMap<String, String>();
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
-    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ?
-      new ASTConverter(stubsMode) :
-      new FullASTConverter(null)
-    );
+    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverter(stubsMode) : new FullASTConverter(null));
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     String resultPackageName = null;

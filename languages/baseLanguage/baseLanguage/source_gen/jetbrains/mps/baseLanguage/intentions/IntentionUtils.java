@@ -33,10 +33,7 @@ public class IntentionUtils {
           }
         }
         if (matches_k79hya_a0a1) {
-          return (ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).count() == 1 ?
-            optimizeNode(ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).getElement(0)) :
-            null
-          );
+          return (ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).count() == 1 ? optimizeNode(ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).getElement(0)) : null);
         } else {
           boolean matches_k79hya_b0a1 = false;
           {
@@ -98,10 +95,7 @@ public class IntentionUtils {
       currentDiff = MultiTuple.<SNode,SNode>from(SNodeOperations.getParent(currentDiff._0()), SNodeOperations.getParent(currentDiff._1()));
     }
 
-    return (isDiffCanBeConvertedToTernary(currentDiff) ?
-      currentDiff :
-      null
-    );
+    return (isDiffCanBeConvertedToTernary(currentDiff) ? currentDiff : null);
   }
 
   /*package*/ static boolean isDiffCanBeConvertedToTernary(Tuples._2<SNode, SNode> diff) {
@@ -174,16 +168,10 @@ public class IntentionUtils {
   }
 
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_k79hya_a0b0e0g(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

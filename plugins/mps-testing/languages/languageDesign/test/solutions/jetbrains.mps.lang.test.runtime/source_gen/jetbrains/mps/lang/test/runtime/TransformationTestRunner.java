@@ -48,10 +48,7 @@ public class TransformationTestRunner {
   }
 
   public void initTest(final TransformationTest test, @NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
-    IdeMain.setTestMode((uiTest ?
-      IdeMain.TestMode.UI_TEST :
-      IdeMain.TestMode.CORE_TEST
-    ));
+    IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
     if (reOpenProject) {
       // close all projects before run test 
       TestMain.PROJECT_CONTAINER.clear();

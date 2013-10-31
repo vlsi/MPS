@@ -152,10 +152,7 @@ public class Differ {
   private boolean isRetained(String dir) {
     String path = asDir(straighten(dir));
     int idx = Arrays.binarySearch(retainedPaths, path);
-    idx = (idx < 0 ?
-      -1 - idx :
-      idx
-    );
+    idx = (idx < 0 ? -1 - idx : idx);
     return idx < retainedPaths.length && startsWith(retainedPaths[idx], path);
   }
 
@@ -164,10 +161,7 @@ public class Differ {
   }
 
   private String asDir(String path) {
-    return (path.endsWith(SLASH) ?
-      path :
-      path + SLASH
-    );
+    return (path.endsWith(SLASH) ? path : path + SLASH);
   }
 
   private boolean startsWith(String path, String prefix) {

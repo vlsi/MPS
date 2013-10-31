@@ -87,10 +87,7 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
   public ConceptKind getConceptKind(SNode node) {
     String conceptName = node.getConcept().getQualifiedName();
     ConceptKind kind = MapSequence.fromMap(myConceptKind).get(conceptName);
-    return (kind != null ?
-      kind :
-      ConceptKind.NORMAL
-    );
+    return (kind != null ? kind : ConceptKind.NORMAL);
   }
 
   @Override
@@ -109,10 +106,7 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
   public StaticScope getConceptScope(SNode node) {
     String conceptName = node.getConcept().getQualifiedName();
     StaticScope scope = MapSequence.fromMap(myConceptScope).get(conceptName);
-    return (scope != null ?
-      scope :
-      StaticScope.GLOBAL
-    );
+    return (scope != null ? scope : StaticScope.GLOBAL);
   }
 
   @Override
@@ -135,9 +129,6 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
   }
 
   private static boolean eq_7gzj8n_a0a0a0a0k(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -67,9 +67,6 @@ public class ModelCheckerUtils {
   }
 
   public static boolean isDeclaredLink(SNode linkDeclaration, boolean child) {
-    return ((linkDeclaration != null) && child ?
-      SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference") :
-      SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")
-    );
+    return ((linkDeclaration != null) && child ? SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference") : SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference"));
   }
 }

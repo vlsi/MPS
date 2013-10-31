@@ -69,10 +69,7 @@ public class ResolveUnknownUtil {
     // success 
     return new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode result = (SPropertyOperations.getBoolean(x, "isSuper") ?
-          SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null) :
-          SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null)
-        );
+        SNode result = (SPropertyOperations.getBoolean(x, "isSuper") ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null));
         reattachMethodArguments(x, result);
         SLinkOperations.setTarget(result, "baseMethodDeclaration", foundCons, false);
         return result;
@@ -182,10 +179,7 @@ public class ResolveUnknownUtil {
     }
 
     if (SNodeOperations.isInstanceOf(operand, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      final SNode target = ((operand == null) ?
-        null :
-        SNodeOperations.cast(operand, "jetbrains.mps.baseLanguage.structure.Classifier")
-      );
+      final SNode target = ((operand == null) ? null : SNodeOperations.cast(operand, "jetbrains.mps.baseLanguage.structure.Classifier"));
 
       if ((target != null) && !(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         return null;
