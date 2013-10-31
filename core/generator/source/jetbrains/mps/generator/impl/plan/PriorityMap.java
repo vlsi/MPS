@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
+import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.util.CollectionUtil;
@@ -174,8 +175,7 @@ public final class PriorityMap {
           if (coherentMappingSet.contains(lockMapping)) {
             if (priorityData.isStrict()) {
               // error
-              conflicts.register(priorityData.myCauseRules);
-              conflicts.register(coherentSetData.myCauseRules);
+              conflicts.register(Kind.CoherentWithStrict, CollectionUtil.union(priorityData.myCauseRules, coherentSetData.myCauseRules));
             }
             continue;
           }
@@ -199,7 +199,7 @@ public final class PriorityMap {
       PriorityDataMap pdm = myPriorityMap.get(locked);
       for (TemplateMappingConfiguration lock : pdm.keys()) {
         if (!lock.isTopPriority()) {
-          conflicts.register(pdm.priorityData(lock).myCauseRules);
+          conflicts.register(Kind.LoPriLocksHiPri, pdm.priorityData(lock).myCauseRules);
         }
       }
     }

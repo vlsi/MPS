@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
+import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import org.jetbrains.annotations.NotNull;
@@ -114,7 +115,7 @@ public class PartitioningSolver {
     List<List<TemplateMappingConfiguration>> mappingSets = createMappingSets();
     // if the priority map is still not empty, then there are some conflicting rules
     for (PriorityData priorityData : myPriorityMap.priorityData()) {
-      myConflicts.register(priorityData.myCauseRules);
+      myConflicts.register(Kind.PastTopPri, priorityData.myCauseRules);
     }
     return mappingSets;
   }
@@ -124,7 +125,7 @@ public class PartitioningSolver {
     if (priorityData != null) {
       if (priorityData.isStrict()) {
         // error
-        myConflicts.register(priorityData.myCauseRules);
+        myConflicts.register(Kind.SelfLock, priorityData.myCauseRules);
       }
       myPriorityMap.removeSelfLock(mapping);
     }
