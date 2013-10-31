@@ -20,10 +20,7 @@ public class AbstractFigureParameter_Behavior {
 
   public static String call_getSuffix_3748979635600238774(SNode thisNode) {
     String prefix = "my";
-    return (SPropertyOperations.getString(thisNode, "name").startsWith(prefix) ?
-      SPropertyOperations.getString(thisNode, "name").substring(prefix.length()) :
-      SPropertyOperations.getString(thisNode, "name")
-    );
+    return (SPropertyOperations.getString(thisNode, "name").startsWith(prefix) ? SPropertyOperations.getString(thisNode, "name").substring(prefix.length()) : SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static SNode call_getDiagramNodeCell_1491555030355957123(SNode thisNode) {

@@ -31,9 +31,6 @@ public class ExternalFigureReference_Behavior {
   }
 
   private static boolean eq_eglddm_a0a0a0a0a0a0c(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

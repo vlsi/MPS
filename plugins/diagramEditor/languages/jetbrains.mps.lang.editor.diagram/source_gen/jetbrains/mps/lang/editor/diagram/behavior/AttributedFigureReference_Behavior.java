@@ -33,9 +33,6 @@ public class AttributedFigureReference_Behavior {
   }
 
   private static boolean eq_godh5_a0a0a0a0a0a0c(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }
