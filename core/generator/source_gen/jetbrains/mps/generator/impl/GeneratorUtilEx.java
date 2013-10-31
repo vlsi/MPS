@@ -63,10 +63,7 @@ public class GeneratorUtilEx {
     } else {
       LOG.errorWithTrace("unexpected input " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
-    String mappingName = (mappingLabel != null ?
-      SPropertyOperations.getString(mappingLabel, "name") :
-      null
-    );
+    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, "name") : null);
     if (mappingName == null) {
       return defaultValue;
     }
@@ -75,10 +72,7 @@ public class GeneratorUtilEx {
 
   public static String getMappingName_NodeMacro(SNode node, String defaultValue) {
     SNode mappingLabel = SLinkOperations.getTarget(node, "mappingLabel", false);
-    String mappingName = (mappingLabel != null ?
-      SPropertyOperations.getString(mappingLabel, "name") :
-      null
-    );
+    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, "name") : null);
     if (mappingName == null) {
       return defaultValue;
     }
@@ -91,10 +85,7 @@ public class GeneratorUtilEx {
       return defaultValue;
     }
     String v = SPropertyOperations.getString(ld, "name");
-    return (v == null ?
-      defaultValue :
-      v
-    );
+    return (v == null ? defaultValue : v);
   }
 
   public static String getPatternVariableName(SNode ref) {

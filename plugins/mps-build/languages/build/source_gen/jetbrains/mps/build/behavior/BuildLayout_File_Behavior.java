@@ -70,16 +70,10 @@ public class BuildLayout_File_Behavior {
   }
 
   private static boolean eq_iewd47_a0b0b0a0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_iewd47_a0a0b0b0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -49,10 +49,7 @@ public class ParenthesisUtil {
       return parExpr;
     }
     // rotate 
-    SNode subtree = (opening ?
-      SLinkOperations.getTarget(binOp, "leftExpression", true) :
-      SLinkOperations.getTarget(binOp, "rightExpression", true)
-    );
+    SNode subtree = (opening ? SLinkOperations.getTarget(binOp, "leftExpression", true) : SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
     SNodeOperations.replaceWithAnother(current, parExpr);
     SNodeOperations.replaceWithAnother(subtree, current);
@@ -72,10 +69,7 @@ public class ParenthesisUtil {
       return;
     }
     SNode binOp = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    SNode sideExpr = (isRight ?
-      SLinkOperations.getTarget(binOp, "rightExpression", true) :
-      SLinkOperations.getTarget(binOp, "leftExpression", true)
-    );
+    SNode sideExpr = (isRight ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true));
     if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode sideChild = SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       if (isBadPriority(sideChild, binOp, isRight)) {
@@ -125,10 +119,7 @@ public class ParenthesisUtil {
   }
 
   public static void rotateTree(SNode child, SNode op, boolean isRight) {
-    SNode backsideExpr = (isRight ?
-      SLinkOperations.getTarget(child, "leftExpression", true) :
-      SLinkOperations.getTarget(child, "rightExpression", true)
-    );
+    SNode backsideExpr = (isRight ? SLinkOperations.getTarget(child, "leftExpression", true) : SLinkOperations.getTarget(child, "rightExpression", true));
     SNodeOperations.detachNode(child);
     SNodeOperations.replaceWithAnother(op, child);
     SNodeOperations.replaceWithAnother(backsideExpr, op);

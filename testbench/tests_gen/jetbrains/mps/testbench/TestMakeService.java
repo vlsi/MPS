@@ -112,10 +112,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
         if (cmon2delegate.value != null) {
           opt = cmon2delegate.value.relayQuery(query);
         }
-        return (opt != null ?
-          opt :
-          query.defaultOption()
-        );
+        return (opt != null ? opt : query.defaultOption());
       }
     };
     final IJobMonitor jmon = new IJobMonitor.Stub() {

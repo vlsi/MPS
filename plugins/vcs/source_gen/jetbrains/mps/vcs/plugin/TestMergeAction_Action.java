@@ -127,9 +127,6 @@ public class TestMergeAction_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
 
   private static <T> T as_81bq2k_a0a0a0c0a0a0a0a0j0a0a0a4a0a5(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

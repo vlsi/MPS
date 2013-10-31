@@ -80,10 +80,7 @@ public class ConcurrencyUtil {
       return v;
     }
     V prev = map.putIfAbsent(key, defaultValue);
-    return (prev == null ?
-      defaultValue :
-      prev
-    );
+    return (prev == null ? defaultValue : prev);
   }
 
   @NotNull

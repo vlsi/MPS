@@ -27,17 +27,11 @@ public class ClassifierSuccessors implements CoreComponent {
   }
 
   public boolean isIndexReady(Project project) {
-    return (myFastFinder != null ?
-      myFastFinder.isIndexReady(project) :
-      false
-    );
+    return (myFastFinder != null ? myFastFinder.isIndexReady(project) : false);
   }
 
   public List<SNode> getDerivedClassifiers(SNode classifier, SearchScope scope) {
-    return (myFastFinder != null ?
-      myFastFinder.getDerivedClassifiers(classifier, scope) :
-      new ArrayList<SNode>()
-    );
+    return (myFastFinder != null ? myFastFinder.getDerivedClassifiers(classifier, scope) : new ArrayList<SNode>());
   }
 
   public void setFinder(ClassifierSuccessors.Finder finder) {

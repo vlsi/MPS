@@ -40,10 +40,7 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             IScope ms = ModuleSuite_Behavior.call_scope_1280144168199518341(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
-            return new ModelAndImportedModelsScope(_context.getModel(), true, (ms != null ?
-              ms :
-              operationContext.getScope()
-            ));
+            return new ModelAndImportedModelsScope(_context.getModel(), true, (ms != null ? ms : operationContext.getScope()));
           }
 
           @Override

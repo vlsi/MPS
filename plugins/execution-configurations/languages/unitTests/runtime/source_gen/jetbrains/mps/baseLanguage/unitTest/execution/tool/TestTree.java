@@ -167,10 +167,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = myMap.get(testCase.getFqName(), method.getName());
         TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(myOperationContext, method);
-        TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ?
-          newMethodTreeNode :
-          oldMethodTreeNode
-        );
+        TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ? newMethodTreeNode : oldMethodTreeNode);
         boolean isFailedMethod = isFailed(methodTreeNode);
         hasFailedTest = hasFailedTest || isFailedMethod;
         if (isAllTree || isFailedMethod) {

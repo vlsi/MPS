@@ -22,10 +22,7 @@ public abstract class AbstractProgressStrategy {
   }
 
   protected AbstractProgressStrategy.Work popProgress(AbstractProgressStrategy.Work wrk) {
-    return this.last = (wrk.prev != null ?
-      wrk.prev :
-      wrk
-    );
+    return this.last = (wrk.prev != null ? wrk.prev : wrk);
   }
 
   protected AbstractProgressStrategy.Work lastProgress() {
@@ -192,9 +189,6 @@ public abstract class AbstractProgressStrategy {
   }
 
   private static boolean eq_idfyc1_a0a0b0u01(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

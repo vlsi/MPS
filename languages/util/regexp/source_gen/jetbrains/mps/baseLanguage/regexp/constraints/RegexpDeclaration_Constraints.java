@@ -28,10 +28,7 @@ public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "shortDescription";
-        return (isNotEmptyString(SPropertyOperations.getString(node, "description")) ?
-          SPropertyOperations.getString(node, "description") :
-          "regular expression"
-        );
+        return (isNotEmptyString(SPropertyOperations.getString(node, "description")) ? SPropertyOperations.getString(node, "description") : "regular expression");
       }
     });
     return properties;

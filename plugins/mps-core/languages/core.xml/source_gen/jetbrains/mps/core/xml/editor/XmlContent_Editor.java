@@ -51,13 +51,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_91idit_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, XmlContent_Editor._StyleParameter_QueryFunction_91idit_a0a0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, XmlContent_Editor._StyleParameter_QueryFunction_91idit_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

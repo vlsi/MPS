@@ -158,9 +158,6 @@ public abstract class JavaUiStateImpl extends JavaUiState {
   }
 
   private static boolean eq_vkri5_a0a0d0j(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

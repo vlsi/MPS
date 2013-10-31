@@ -124,10 +124,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((myLocation != null ?
-      ((Object) myLocation).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
     return result;
   }
 
@@ -136,9 +133,6 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   }
 
   private static boolean eq_owwtjm_a0d0k(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

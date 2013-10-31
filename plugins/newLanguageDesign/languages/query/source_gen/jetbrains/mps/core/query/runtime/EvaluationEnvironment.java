@@ -31,10 +31,7 @@ public class EvaluationEnvironment {
     if (result != null) {
       return result;
     }
-    return (MapSequence.fromMap(cache).containsKey(key) ?
-      null :
-      MISSED
-    );
+    return (MapSequence.fromMap(cache).containsKey(key) ? null : MISSED);
   }
 
   public EvaluationRuntime getRuntime() {

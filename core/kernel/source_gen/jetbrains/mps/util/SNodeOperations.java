@@ -176,10 +176,7 @@ public class SNodeOperations {
       return;
     }
     Iterator<? extends SNode> it = parent.getChildren().iterator();
-    parent.insertChildBefore(role, child, (it.hasNext() ?
-      it.next() :
-      null
-    ));
+    parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
   }
 
   /**
@@ -324,10 +321,7 @@ public class SNodeOperations {
   public static String getModelStereotype(SModel model) {
     String name = model.getModelName();
     int index = name.indexOf("@");
-    return (index == -1 ?
-      "" :
-      name.substring(index + 1)
-    );
+    return (index == -1 ? "" : name.substring(index + 1));
   }
 
   public static String getModelLongName(SModel model) {

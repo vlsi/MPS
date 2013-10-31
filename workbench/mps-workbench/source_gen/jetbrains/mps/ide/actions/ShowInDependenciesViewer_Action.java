@@ -98,9 +98,6 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
   }
 
   private static <T> T as_nkoo1o_a0a0b0a0g(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

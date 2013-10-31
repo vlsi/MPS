@@ -29,10 +29,7 @@ public class NodeTabColorProvider implements TabColorProvider {
     final List<FileStatus> statuses = Sequence.fromIterable(nodePointers).select(new ISelector<SNodeReference, FileStatus>() {
       public FileStatus select(SNodeReference np) {
         FileStatus s = myFileStatusMapping.getStatus(np);
-        return (s != null ?
-          s :
-          FileStatus.NOT_CHANGED
-        );
+        return (s != null ? s : FileStatus.NOT_CHANGED);
       }
     }).toListSequence();
     if (ListSequence.fromList(statuses).all(new IWhereFilter<FileStatus>() {

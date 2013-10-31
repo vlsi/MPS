@@ -13,10 +13,7 @@ public class DefaultGeneratorParameter_Behavior {
   }
 
   public static String virtual_getUniqueId_650531548511609559(SNode thisNode) {
-    String containerName = ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept") ?
-      SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-      "default"
-    );
+    String containerName = ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : "default");
     return SNodeOperations.getModel(thisNode).getModelId() + "." + containerName + "." + SPropertyOperations.getString(thisNode, "name");
   }
 

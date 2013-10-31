@@ -37,10 +37,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
       @Override
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean selected, boolean focus) {
         ModelRootManager manager = ((ModelRootManager) value);
-        String managerName = (manager == null ?
-          "Default" :
-          NameUtil.shortNameFromLongName(manager.getClassName())
-        );
+        String managerName = (manager == null ? "Default" : NameUtil.shortNameFromLongName(manager.getClassName()));
         return super.getListCellRendererComponent(list, managerName, index, selected, focus);
       }
     });

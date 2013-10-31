@@ -146,9 +146,6 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
   protected static Logger LOG = LogManager.getLogger(BaseMpsBeforeTaskProvider.class);
 
   private static boolean eq_xh6sei_a0a0a0a0a0a3a0a01(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

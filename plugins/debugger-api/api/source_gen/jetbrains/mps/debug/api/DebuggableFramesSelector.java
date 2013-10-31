@@ -69,9 +69,6 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
   }
 
   private static boolean eq_xhry8p_a0d0h(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -86,10 +86,7 @@ public class MissingDependenciesFixer {
           }
           SModel sm = modelImport.resolve(repository);
           if (sm == null) {
-            sm = (modelImport.getModelName() != null ?
-              SModelRepository.getInstance().getModelDescriptor(modelImport.getModelName()) :
-              null
-            );
+            sm = (modelImport.getModelName() != null ? SModelRepository.getInstance().getModelDescriptor(modelImport.getModelName()) : null);
             if (sm == null) {
               continue;
             }

@@ -46,13 +46,7 @@ public class NewLanguageDialog extends DialogWrapper {
   @Nullable
   protected JComponent createCenterPanel() {
     if (myLanguageSettings == null) {
-      myLanguageSettings = new NewLanguageSettings((myProject != null ?
-        ((((ProjectEx) ProjectHelper.toIdeaProject(myProject)).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED ?
-          myProject.getProjectFile().getParentFile().getAbsolutePath() :
-          myProject.getProjectFile().getAbsolutePath()
-        )) :
-        null
-      ));
+      myLanguageSettings = new NewLanguageSettings((myProject != null ? ((((ProjectEx) ProjectHelper.toIdeaProject(myProject)).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
       myLanguageSettings.setListener(new NewLanguageSettings.LangSettingsChangedListener() {
         @Override
         public void changed() {

@@ -12,14 +12,14 @@
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="41" endLine="28" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="34" endLine="32" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="37" endLine="36" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Askfoo_Query#()V" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/script/IQuery/Name;" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="options#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voidOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="37" endLine="39" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
+    <nodeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/make/generator/Bar_Option;" />
     <nodeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="text" />
     <nodeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="14" startPosition="27" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -95,14 +95,14 @@
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="18" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="41" endLine="28" endPosition="97" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="34" endLine="32" endPosition="97" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="37" endLine="36" endPosition="92" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="37" endLine="39" endPosition="6" />
-    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="14" startPosition="27" endLine="15" endPosition="21" />
     <scopeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="18" startPosition="27" endLine="19" endPosition="16" />
     <scopeInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
@@ -199,7 +199,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="80" startPosition="35" endLine="97" endPosition="8" />
     <scopeInfo nodeId="2551169102353069015" fileName="TextGen__Facet.java" startLine="80" startPosition="0" endLine="99" endPosition="0" />
-    <unitInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.generator.Askfoo_Query" />
+    <unitInfo nodeId="2551169102353069017" fileName="Askfoo_Query.java" startLine="8" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.make.generator.Askfoo_Query" />
     <unitInfo nodeId="2551169102353069018" fileName="Bar_Option.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.generator.Bar_Option" />
     <unitInfo nodeId="2551169102353069024" fileName="TextGen__Facet.java" startLine="66" startPosition="17" endLine="77" endPosition="7" unitName="jetbrains.mps.make.generator.TextGen__Facet$1" />
     <unitInfo nodeId="2551169102353069011" fileName="TextGen__Facet.java" startLine="150" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.make.generator.TextGen__Facet$TargetProperties" />

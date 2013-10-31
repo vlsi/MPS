@@ -32,10 +32,7 @@ public class VisibleArtifacts {
   public VisibleArtifacts(SNode project, @Nullable TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
-    this.dependenciesHelper = (genContext != null ?
-      new DependenciesHelper(genContext, project) :
-      null
-    );
+    this.dependenciesHelper = (genContext != null ? new DependenciesHelper(genContext, project) : null);
     if (genContext == null && SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       throw new IllegalArgumentException("cannot instantiate VisibleArtifacts for transient model without generation context");
     }
@@ -73,10 +70,7 @@ public class VisibleArtifacts {
   }
 
   protected void collectInProject(SNode parent, SNode target) {
-    target = (target != project ?
-      SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject") :
-      project
-    );
+    target = (target != project ? SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject") : project);
     if (target == null) {
       return;
     }

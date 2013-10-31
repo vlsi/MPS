@@ -297,10 +297,7 @@ import jetbrains.mps.ide.messages.Icons;
     }
 
     public ErrorTreeNode(IEvaluationContainer model, Throwable t) {
-      this(model, (t.getMessage() == null ?
-        t.toString() :
-        t.getMessage()
-      ), EvaluationTree.getStackTrace(t));
+      this(model, (t.getMessage() == null ? t.toString() : t.getMessage()), EvaluationTree.getStackTrace(t));
       myThrowable = t;
     }
 

@@ -72,9 +72,6 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
   }
 
   private static boolean eq_vuymlq_a0a0c0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

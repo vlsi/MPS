@@ -182,10 +182,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     HierarchyTreeNode rootNode = null;
     Set<SNode> visited = new HashSet<SNode>();
     for (int i = parentHierarchy.size() - 1; i >= 0; i--) {
-      hierarchyTreeNode = (i > 0 ?
-        (new HierarchyTreeNode(parentHierarchy.get(i), myOperationContext, this)) :
-        new ChildHierarchyTreeNode(parentHierarchy.get(i), myOperationContext, this, visited)
-      );
+      hierarchyTreeNode = (i > 0 ? (new HierarchyTreeNode(parentHierarchy.get(i), myOperationContext, this)) : new ChildHierarchyTreeNode(parentHierarchy.get(i), myOperationContext, this, visited));
       if (i == parentHierarchy.size() - 1) {
         rootNode = hierarchyTreeNode;
       }

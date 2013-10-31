@@ -36,10 +36,7 @@ public class DefaultMakeTask extends Task.Modal {
     final boolean[] reloadingNeeded = new boolean[1];
     final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
 
-    monitor.start("", (needClean ?
-      10 :
-      9
-    ));
+    monitor.start("", (needClean ? 10 : 9));
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

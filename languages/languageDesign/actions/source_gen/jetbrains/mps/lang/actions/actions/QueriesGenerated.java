@@ -22,10 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_SNodeCreatorAndInitializer_3757480014665236946(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototypeNode", true) != null) ?
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototypeNode", true) :
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototype", true)
-      ), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototypeNode", true) != null) ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototypeNode", true) : SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototype", true)), true);
     } else if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "prototypeNode", true), true);
     }
@@ -33,10 +30,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_NF_Concept_NewInstance_3757480014665236934(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototypeNode", true) != null) ?
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototypeNode", true) :
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototype", true)
-      ), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototypeNode", true) != null) ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototypeNode", true) : SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototype", true)), true);
     } else if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance")) {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance"), "prototypeNode", true), true);
     }
@@ -44,10 +38,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_NF_Model_CreateNewNodeOperation_3757480014665236937(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototypeNode", true) != null) ?
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototypeNode", true) :
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototype", true)
-      ), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototypeNode", true) != null) ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototypeNode", true) : SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototype", true)), true);
     } else if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation")) {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), "prototypeNode", true), true);
     }
@@ -55,10 +46,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_NF_Model_CreateNewRootNodeOperation_3757480014665236943(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototypeNode", true) != null) ?
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototypeNode", true) :
-        SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototype", true)
-      ), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototypeNode", true) != null) ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototypeNode", true) : SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototype", true)), true);
     } else if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation")) {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation"), "prototypeNode", true), true);
     }

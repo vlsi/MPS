@@ -39,10 +39,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
     }
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(mae, "index", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
       Object idxValue = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(mae, "index", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(SLinkOperations.getTarget(mae, "index", true)).getModule()});
-      final int index = (idxValue instanceof Integer ?
-        ((Integer) idxValue).intValue() :
-        -1
-      );
+      final int index = (idxValue instanceof Integer ? ((Integer) idxValue).intValue() : -1);
       {
         final SNode tupleType = typeCheckingContext.typeOf(SLinkOperations.getTarget(mae, "tuple", true), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864035483", true);
         typeCheckingContext.whenConcrete(tupleType, new Runnable() {

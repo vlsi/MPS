@@ -195,31 +195,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1237469474662(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static Object referenceMacro_GetReferent_1237468698117(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static Object referenceMacro_GetReferent_1237468739820(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static Object referenceMacro_GetReferent_1237469665271(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static boolean ifMacro_Condition_2352568442779188165(final IOperationContext operationContext, final IfMacroContext _context) {

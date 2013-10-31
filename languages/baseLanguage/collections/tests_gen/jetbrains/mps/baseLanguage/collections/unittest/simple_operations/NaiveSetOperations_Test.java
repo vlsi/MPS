@@ -604,10 +604,7 @@ __switch__:
     HashMap<T, Integer> cardMap = new HashMap<T, Integer>();
     for (T e : exp) {
       Integer card = cardMap.get(e);
-      cardMap.put(e, (card != null ?
-        card + 1 :
-        1
-      ));
+      cardMap.put(e, (card != null ? card + 1 : 1));
     }
     Iterator<T> testIt = test.iterator();
     while (testIt.hasNext()) {

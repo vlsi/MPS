@@ -75,9 +75,6 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
   }
 
   private static boolean eq_oirmva_a0a0a0a0a0a0a0a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

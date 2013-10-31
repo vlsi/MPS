@@ -12,22 +12,13 @@ import java.util.HashMap;
 
   public int card(U u) {
     Integer c = map.get(u);
-    return (c != null ?
-      c :
-      0
-    );
+    return (c != null ? c : 0);
   }
 
   public int postInc(U u) {
     Integer c = map.get(u);
-    map.put(u, (c != null ?
-      c + 1 :
-      1
-    ));
-    return (c != null ?
-      c :
-      0
-    );
+    map.put(u, (c != null ? c + 1 : 1));
+    return (c != null ? c : 0);
   }
 
   public int postDec(U u) {

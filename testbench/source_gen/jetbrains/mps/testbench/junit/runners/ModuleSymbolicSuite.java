@@ -32,10 +32,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     String[] tests = getAnnotatedTests(klass);
     String[] classes = getAnnotatedClassNames(klass);
     for (int i = 0; i < tests.length && i < classes.length; i++) {
-      myRunners.add(new ModuleSymbolicSuite.DelegatingRunner(classes[i], (tests[i].length() > 0 ?
-        tests[i].split(",") :
-        null
-      )));
+      myRunners.add(new ModuleSymbolicSuite.DelegatingRunner(classes[i], (tests[i].length() > 0 ? tests[i].split(",") : null)));
     }
     this.myModuleRef = getAnnotatedModule(klass);
   }

@@ -90,13 +90,7 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
 
   @Override
   public int hashCode() {
-    return ((myContext == null ?
-      0 :
-      myContext.hashCode()
-    )) + 10 * ((mySourceElement == null ?
-      0 :
-      mySourceElement.hashCode()
-    )) + 20 * getClass().getName().hashCode();
+    return ((myContext == null ? 0 : myContext.hashCode())) + 10 * ((mySourceElement == null ? 0 : mySourceElement.hashCode())) + 20 * getClass().getName().hashCode();
   }
 
   @Override

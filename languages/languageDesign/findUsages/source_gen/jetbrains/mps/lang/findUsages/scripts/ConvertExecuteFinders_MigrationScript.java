@@ -41,10 +41,7 @@ public class ConvertExecuteFinders_MigrationScript extends BaseMigrationScript {
           SLinkOperations.setTarget(finderRef, "finder", SLinkOperations.getTarget(finder, "finderDeclaration", false), false);
           ListSequence.fromList(SLinkOperations.getTargets(replacer, "finder", true)).addElement(finderRef);
         }
-        SLinkOperations.setTarget(replacer, "queryNode", ((SLinkOperations.getTarget(node, "searchNode", true) == null) ?
-          _quotation_createNode_zgd2jp_a0a2a0a() :
-          SLinkOperations.getTarget(node, "searchNode", true)
-        ), true);
+        SLinkOperations.setTarget(replacer, "queryNode", ((SLinkOperations.getTarget(node, "searchNode", true) == null) ? _quotation_createNode_zgd2jp_a0a2a0a() : SLinkOperations.getTarget(node, "searchNode", true)), true);
         SLinkOperations.setTarget(replacer, "scope", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "searchScope", true)), true);
         SNodeOperations.replaceWithAnother(node, replacer);
       }

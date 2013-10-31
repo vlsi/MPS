@@ -79,10 +79,7 @@ public class NewDevKit_Action extends BaseAction {
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(devkit, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
-            "" :
-            ((String) MapSequence.fromMap(_params).get("namespace"))
-          ));
+          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(devkit, (((String) MapSequence.fromMap(_params).get("namespace")) == null ? "" : ((String) MapSequence.fromMap(_params).get("namespace"))));
         }
       });
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));

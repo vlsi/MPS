@@ -70,10 +70,7 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     if (stackFrame != null) {
       ILocation location = stackFrame.getLocation();
       SourcePosition position = PositionProvider.getInstance(myProject).getPosition(location, session);
-      return (position instanceof NodeSourcePosition ?
-        ((NodeSourcePosition) position).getNode() :
-        null
-      );
+      return (position instanceof NodeSourcePosition ? ((NodeSourcePosition) position).getNode() : null);
     }
     return null;
   }

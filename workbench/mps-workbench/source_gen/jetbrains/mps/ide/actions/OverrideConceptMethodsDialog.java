@@ -63,14 +63,8 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
 
   @Override
   protected void customizeOptionsPanel() {
-    myAddReturn.setSelected((myOptions != null ?
-      myOptions.getStateObject().addReturnsOnImplement :
-      false
-    ));
-    myRemoveAttributes.setSelected((myOptions != null ?
-      myOptions.getStateObject().removeAttributes :
-      true
-    ));
+    myAddReturn.setSelected((myOptions != null ? myOptions.getStateObject().addReturnsOnImplement : false));
+    myRemoveAttributes.setSelected((myOptions != null ? myOptions.getStateObject().removeAttributes : true));
   }
 
   public boolean isAddReturn() {
@@ -110,14 +104,8 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
 
           return new Integer(IterableUtil.asList(parentA.getChildren(aRole)).indexOf(a)).compareTo(IterableUtil.asList(parentB.getChildren(bRole)).indexOf(b));
         }
-        int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ?
-          MapSequence.fromMap(containerIndex).get(parentA) :
-          0
-        );
-        int iB = (parentB != null && MapSequence.fromMap(containerIndex).containsKey(parentB) ?
-          MapSequence.fromMap(containerIndex).get(parentB) :
-          0
-        );
+        int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ? MapSequence.fromMap(containerIndex).get(parentA) : 0);
+        int iB = (parentB != null && MapSequence.fromMap(containerIndex).containsKey(parentB) ? MapSequence.fromMap(containerIndex).get(parentB) : 0);
         return new Integer(iA).compareTo(iB);
       }
     }, true);
@@ -132,9 +120,6 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   }
 
   private static boolean neq_6zqknj_a0d0c0a0a0a0d0l(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

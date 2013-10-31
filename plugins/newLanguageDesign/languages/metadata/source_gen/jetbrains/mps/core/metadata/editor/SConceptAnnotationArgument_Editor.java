@@ -134,9 +134,6 @@ public class SConceptAnnotationArgument_Editor extends DefaultNodeEditor {
   }
 
   private static boolean neq_hdpymd_a0a0a3(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

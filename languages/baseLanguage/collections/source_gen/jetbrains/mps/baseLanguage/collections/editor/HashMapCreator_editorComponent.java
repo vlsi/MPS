@@ -62,10 +62,7 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_s4nv53_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SPropertyOperations.getString(node, "alias") != null ?
-          SPropertyOperations.getString(node, "alias") :
-          SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias")
-        );
+        return (SPropertyOperations.getString(node, "alias") != null ? SPropertyOperations.getString(node, "alias") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias"));
       }
 
       public void setText(String s) {

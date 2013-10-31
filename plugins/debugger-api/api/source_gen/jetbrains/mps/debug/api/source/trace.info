@@ -16,34 +16,34 @@
     <nodeInfo nodeId="4701043456212926063" fileName="NodeSourcePosition.java" startLine="28" startPosition="68" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4701043456212926064" fileName="NodeSourcePosition.java" startLine="29" startPosition="0" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7048882195103648385" fileName="NodeSourcePosition.java" startLine="33" startPosition="26" endLine="34" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="62" endLine="38" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4701043456212926017" fileName="NodeSourcePosition.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeSourcePosition#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
     <nodeInfo nodeId="4701043456212926043" fileName="NodeSourcePosition.java" startLine="23" startPosition="40" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7048882195103614407" fileName="NodeSourcePosition.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_1z1n6b_a0e0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4701043456212926028" fileName="NodeSourcePosition.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="62" endLine="41" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_1z1n6b_a0e0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4701043456212926037" fileName="NodeSourcePosition.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="4701043456212926020" fileName="NodeSourcePosition.java" startLine="13" startPosition="50" endLine="14" endPosition="18" />
     <scopeInfo nodeId="4701043456212926031" fileName="NodeSourcePosition.java" startLine="18" startPosition="25" endLine="19" endPosition="46" />
     <scopeInfo nodeId="4701043456212926052" fileName="NodeSourcePosition.java" startLine="24" startPosition="68" endLine="25" endPosition="19" />
     <scopeInfo nodeId="7048882195103614410" fileName="NodeSourcePosition.java" startLine="33" startPosition="26" endLine="34" endPosition="78" />
+    <scopeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="62" endLine="38" endPosition="46" />
     <scopeInfo nodeId="4701043456212926017" fileName="NodeSourcePosition.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4701043456212926025" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7048882195103614407" fileName="NodeSourcePosition.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4701043456212926028" fileName="NodeSourcePosition.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="62" endLine="41" endPosition="6" />
-    <scopeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="4701043456212926065" fileName="NodeSourcePosition.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4701043456212926065" varName="a" />
       <varInfo nodeId="4701043456212926065" varName="b" />
     </scopeInfo>
+    <scopeInfo nodeId="4701043456212926028" fileName="NodeSourcePosition.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="4701043456212926042" fileName="NodeSourcePosition.java" startLine="23" startPosition="40" endLine="30" endPosition="56">
       <varInfo nodeId="4701043456212926057" varName="nodePosition" />
     </scopeInfo>
     <scopeInfo nodeId="4701043456212926037" fileName="NodeSourcePosition.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4701043456212926040" varName="object" />
     </scopeInfo>
-    <unitInfo nodeId="4701043456212926012" fileName="NodeSourcePosition.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.api.source.NodeSourcePosition" />
+    <unitInfo nodeId="4701043456212926012" fileName="NodeSourcePosition.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debug.api.source.NodeSourcePosition" />
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/4701043456212926071">
     <nodeInfo nodeId="4701043456212926072" fileName="TextSourcePosition.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
@@ -58,45 +58,45 @@
     <nodeInfo nodeId="4734679785304758114" fileName="TextSourcePosition.java" startLine="35" startPosition="0" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4734679785304758124" fileName="TextSourcePosition.java" startLine="36" startPosition="64" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4734679785304758126" fileName="TextSourcePosition.java" startLine="37" startPosition="0" endLine="38" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="63" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="45" startPosition="65" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4701043456212941523" fileName="TextSourcePosition.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Lcom/intellij/openapi/vfs/VirtualFile;" />
     <nodeInfo nodeId="4701043456212941530" fileName="TextSourcePosition.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineNumber#()I" />
     <nodeInfo nodeId="4734679785304758053" fileName="TextSourcePosition.java" startLine="31" startPosition="40" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_e6q8aw_a0a4a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_e6q8aw_a0a4a6_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4701043456212926079" fileName="TextSourcePosition.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextSourcePosition#(Lcom/intellij/openapi/vfs/VirtualFile;I)V" />
     <nodeInfo nodeId="4734679785304757942" fileName="TextSourcePosition.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="63" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="48" startPosition="65" endLine="52" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_e6q8aw_a0a4a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_e6q8aw_a0a4a6_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4734679785304757949" fileName="TextSourcePosition.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="4701043456212941526" fileName="TextSourcePosition.java" startLine="17" startPosition="32" endLine="18" endPosition="18" />
     <scopeInfo nodeId="4701043456212941533" fileName="TextSourcePosition.java" startLine="21" startPosition="30" endLine="22" endPosition="18" />
     <scopeInfo nodeId="4734679785304757945" fileName="TextSourcePosition.java" startLine="26" startPosition="25" endLine="27" endPosition="43" />
     <scopeInfo nodeId="4734679785304758055" fileName="TextSourcePosition.java" startLine="32" startPosition="68" endLine="33" endPosition="19" />
+    <scopeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="63" endLine="42" endPosition="46" />
+    <scopeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="45" startPosition="65" endLine="46" endPosition="46" />
     <scopeInfo nodeId="4701043456212926082" fileName="TextSourcePosition.java" startLine="12" startPosition="66" endLine="14" endPosition="18" />
     <scopeInfo nodeId="4701043456212941523" fileName="TextSourcePosition.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4701043456212941530" fileName="TextSourcePosition.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4734679785304758217" varName="a" />
+      <varInfo nodeId="4734679785304758217" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4734679785304758147" varName="a" />
+      <varInfo nodeId="4734679785304758147" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="4701043456212926079" fileName="TextSourcePosition.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4701043456212926083" varName="file" />
       <varInfo nodeId="4701043456212926086" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="4734679785304757942" fileName="TextSourcePosition.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="63" endLine="45" endPosition="6" />
-    <scopeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="48" startPosition="65" endLine="52" endPosition="6" />
-    <scopeInfo nodeId="4734679785304758217" fileName="TextSourcePosition.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="4734679785304758217" varName="a" />
-      <varInfo nodeId="4734679785304758217" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="4734679785304758147" fileName="TextSourcePosition.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="4734679785304758147" varName="a" />
-      <varInfo nodeId="4734679785304758147" varName="b" />
-    </scopeInfo>
     <scopeInfo nodeId="4734679785304757954" fileName="TextSourcePosition.java" startLine="31" startPosition="40" endLine="38" endPosition="100">
       <varInfo nodeId="4734679785304758115" varName="position" />
     </scopeInfo>
     <scopeInfo nodeId="4734679785304757949" fileName="TextSourcePosition.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4734679785304757952" varName="object" />
     </scopeInfo>
-    <unitInfo nodeId="4701043456212926071" fileName="TextSourcePosition.java" startLine="8" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debug.api.source.TextSourcePosition" />
+    <unitInfo nodeId="4701043456212926071" fileName="TextSourcePosition.java" startLine="8" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debug.api.source.TextSourcePosition" />
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103542592">
     <nodeInfo nodeId="7576820355142635290" fileName="IPositionProvider.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />

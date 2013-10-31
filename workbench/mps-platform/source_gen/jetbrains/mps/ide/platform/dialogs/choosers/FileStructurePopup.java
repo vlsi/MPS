@@ -297,10 +297,7 @@ public class FileStructurePopup implements Disposable {
         public void run() {
           alarm.cancelAllRequests();
           String prefix = mySpeedSearch.getEnteredPrefix();
-          myTree.getEmptyText().setText((StringUtil.isEmpty(prefix) ?
-            "Nothing to show" :
-            "Can't find '" + prefix + "'"
-          ));
+          myTree.getEmptyText().setText((StringUtil.isEmpty(prefix) ? "Nothing to show" : "Can't find '" + prefix + "'"));
           if (prefix == null) {
             prefix = "";
           }
@@ -544,36 +541,21 @@ public class FileStructurePopup implements Disposable {
   }
 
   private void addCheckbox(final JPanel panel, final TreeAction action) {
-    String text = (action instanceof FileStructureFilter ?
-      ((FileStructureFilter) action).getCheckBoxText() :
-      (action instanceof FileStructureNodeProvider ?
-        ((FileStructureNodeProvider) action).getCheckBoxText() :
-        null
-      )
-    );
+    String text = (action instanceof FileStructureFilter ? ((FileStructureFilter) action).getCheckBoxText() : (action instanceof FileStructureNodeProvider ? ((FileStructureNodeProvider) action).getCheckBoxText() : null));
     if (text == null) {
       return;
     }
-    Shortcut[] shortcuts = (action instanceof FileStructureFilter ?
-      ((FileStructureFilter) action).getShortcut() :
-      ((FileStructureNodeProvider) action).getShortcut()
-    );
+    Shortcut[] shortcuts = (action instanceof FileStructureFilter ? ((FileStructureFilter) action).getShortcut() : ((FileStructureNodeProvider) action).getShortcut());
     final JCheckBox chkFilter = new JCheckBox();
     final boolean selected = FileStructurePopup.getDefaultValue(action);
     chkFilter.setSelected(selected);
-    myTreeActionsOwner.setActionIncluded(action, (action instanceof FileStructureFilter ?
-      !(selected) :
-      selected
-    ));
+    myTreeActionsOwner.setActionIncluded(action, (action instanceof FileStructureFilter ? !(selected) : selected));
     chkFilter.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(final ActionEvent e) {
         final boolean state = chkFilter.isSelected();
         FileStructurePopup.saveState(action, state);
-        myTreeActionsOwner.setActionIncluded(action, (action instanceof FileStructureFilter ?
-          !(state) :
-          state
-        ));
+        myTreeActionsOwner.setActionIncluded(action, (action instanceof FileStructureFilter ? !(state) : state));
         // final String filter = mySpeedSearch.isPopupActive() ? mySpeedSearch.getEnteredPrefix() : null; 
         // mySpeedSearch.hidePopup(); 
         Object selection = ContainerUtil.getFirstItem(myAbstractTreeBuilder.getSelectedElements());
@@ -658,10 +640,7 @@ public class FileStructurePopup implements Disposable {
     if (ApplicationManager.getApplication().isUnitTestMode()) {
       return myTestSearchFilter;
     }
-    return (mySpeedSearch != null && !(StringUtil.isEmpty(mySpeedSearch.getEnteredPrefix())) ?
-      mySpeedSearch.getEnteredPrefix() :
-      null
-    );
+    return (mySpeedSearch != null && !(StringUtil.isEmpty(mySpeedSearch.getEnteredPrefix())) ? mySpeedSearch.getEnteredPrefix() : null);
   }
 
   private static Set<PsiElement> getAllParents(PsiElement element) {
@@ -829,10 +808,7 @@ public class FileStructurePopup implements Disposable {
           current.add(cur);
         }
       }
-      return (current.isEmpty() ?
-        null :
-        findClosestTo(myInitialPsiElement, current)
-      );
+      return (current.isEmpty() ? null : findClosestTo(myInitialPsiElement, current));
     }
 
     @Nullable
@@ -855,10 +831,7 @@ public class FileStructurePopup implements Disposable {
             node = node.getParentNode();
           }
           final int size = ContainerUtil.intersection(parents, elements).size();
-          if (size == elements.size() - 1 && size == parents.size() - ((myInitialNodeIsLeaf ?
-            1 :
-            0
-          )) && candidate.children().isEmpty()) {
+          if (size == elements.size() - 1 && size == parents.size() - ((myInitialNodeIsLeaf ? 1 : 0)) && candidate.children().isEmpty()) {
             return p.node;
           }
           if (size > max) {
@@ -875,16 +848,10 @@ public class FileStructurePopup implements Disposable {
         @Override
         public int compare(FileStructurePopup.MyTreeSpeedSearch.ObjectWithWeight o1, FileStructurePopup.MyTreeSpeedSearch.ObjectWithWeight o2) {
           final int i = o1.compareWith(o2);
-          return (i != 0 ?
-            i :
-            ((TreePath) o2.node).getPathCount() - ((TreePath) o1.node).getPathCount()
-          );
+          return (i != 0 ? i : ((TreePath) o2.node).getPathCount() - ((TreePath) o1.node).getPathCount());
         }
       });
-      return (cur.isEmpty() ?
-        null :
-        cur.get(0).node
-      );
+      return (cur.isEmpty() ? null : cur.get(0).node);
     }
 
     /*package*/ class ObjectWithWeight {

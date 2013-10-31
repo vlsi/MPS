@@ -105,9 +105,6 @@ public class InstanceMethodCallOperation_Behavior {
   }
 
   private static boolean eq_xykbjj_a0a0a0a0a0a0a4(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

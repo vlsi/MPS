@@ -367,17 +367,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4013739085301446323(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ?
-      SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a77(), "concept", false) :
-      SLinkOperations.getTarget(_context.getNode(), "concept", false)
-    );
+    return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ? SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a77(), "concept", false) : SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
 
   public static Object referenceMacro_GetReferent_4013739085301455090(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ?
-      SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a87(), "concept", false) :
-      SLinkOperations.getTarget(_context.getNode(), "concept", false)
-    );
+    return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ? SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a87(), "concept", false) : SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
 
   public static Object referenceMacro_GetReferent_4013739085301519676(final IOperationContext operationContext, final ReferenceMacroContext _context) {

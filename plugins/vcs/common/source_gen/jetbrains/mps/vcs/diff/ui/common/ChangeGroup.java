@@ -27,10 +27,7 @@ public class ChangeGroup {
       }
     }).reduceLeft(new ILeftCombinator<ChangeType, ChangeType>() {
       public ChangeType combine(ChangeType a, ChangeType b) {
-        return (a == b ?
-          a :
-          ChangeType.CHANGE
-        );
+        return (a == b ? a : ChangeType.CHANGE);
       }
     });
     if (conflictChecker != null && ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
@@ -51,10 +48,7 @@ public class ChangeGroup {
   }
 
   public Bounds getBounds(boolean left) {
-    return (left ?
-      myLeftBounds :
-      myRightBounds
-    );
+    return (left ? myLeftBounds : myRightBounds);
   }
 
   public List<ModelChange> getChanges() {

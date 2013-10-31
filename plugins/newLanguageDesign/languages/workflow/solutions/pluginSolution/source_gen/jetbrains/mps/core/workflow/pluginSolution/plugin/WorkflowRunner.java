@@ -31,10 +31,7 @@ public class WorkflowRunner {
     EvaluationEnvironment env = new EvaluationEnvironment() {
       @Override
       public void report(int kind, String message, SNode hintNode) {
-        WorkflowRunner.this.report((kind == EvaluationEnvironment.KIND_ERR ?
-          MessageKind.ERROR :
-          MessageKind.WARNING
-        ), message, hintNode);
+        WorkflowRunner.this.report((kind == EvaluationEnvironment.KIND_ERR ? MessageKind.ERROR : MessageKind.WARNING), message, hintNode);
       }
     };
     EvaluationContext rootContext = new EvaluationContext(null, null);
@@ -49,10 +46,7 @@ public class WorkflowRunner {
 
         } catch (Exception ex) {
           Throwable thr = unwrap(ex);
-          report(MessageKind.ERROR, thr.toString(), (thr instanceof EvaluationException ?
-            ((EvaluationException) thr).getQuery() :
-            null
-          ));
+          report(MessageKind.ERROR, thr.toString(), (thr instanceof EvaluationException ? ((EvaluationException) thr).getQuery() : null));
         }
       } else if (SNodeOperations.isInstanceOf(st, "jetbrains.mps.core.workflow.structure.WflowAssert")) {
         try {
@@ -67,10 +61,7 @@ public class WorkflowRunner {
 
         } catch (Exception ex) {
           Throwable thr = unwrap(ex);
-          report(MessageKind.ERROR, thr.toString(), (thr instanceof EvaluationException ?
-            ((EvaluationException) thr).getQuery() :
-            null
-          ));
+          report(MessageKind.ERROR, thr.toString(), (thr instanceof EvaluationException ? ((EvaluationException) thr).getQuery() : null));
         }
       }
     }

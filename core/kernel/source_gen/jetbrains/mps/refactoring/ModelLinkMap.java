@@ -241,10 +241,7 @@ public class ModelLinkMap {
         for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
           ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode n) {
-              boolean unordered = (MapSequence.fromMap(myRoleMetainfo).containsKey(n) ?
-                MapSequence.fromMap(myRoleMetainfo).get(n) :
-                false
-              );
+              boolean unordered = (MapSequence.fromMap(myRoleMetainfo).containsKey(n) ? MapSequence.fromMap(myRoleMetainfo).get(n) : false);
               info.nodeRoleRead(n, ptr, unordered);
             }
           });
@@ -253,13 +250,7 @@ public class ModelLinkMap {
           ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode n) {
               Tuples._2<ConceptKind, StaticScope> pair = MapSequence.fromMap(myMetainfo).get(n);
-              info.conceptRead(n, ptr, (pair == null ?
-                StaticScope.GLOBAL :
-                pair._1()
-              ), (pair == null ?
-                ConceptKind.NORMAL :
-                pair._0()
-              ));
+              info.conceptRead(n, ptr, (pair == null ? StaticScope.GLOBAL : pair._1()), (pair == null ? ConceptKind.NORMAL : pair._0()));
             }
           });
         }
@@ -345,16 +336,10 @@ public class ModelLinkMap {
   }
 
   private static SNodeReference ptr(SNode node) {
-    return ((node == null) ?
-      null :
-      new SNodePointer(node)
-    );
+    return ((node == null) ? null : new SNodePointer(node));
   }
 
   private static <T> T as_1o71zw_a0a0a22(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

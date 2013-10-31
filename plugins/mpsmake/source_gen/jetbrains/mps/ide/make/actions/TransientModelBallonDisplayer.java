@@ -120,10 +120,7 @@ public class TransientModelBallonDisplayer implements Disposable {
 
   public static void setShowPopup(boolean show) {
     NotificationSettings settings = NotificationsConfigurationImpl.getSettings(ID);
-    settings.setDisplayType((show ?
-      NotificationDisplayType.BALLOON :
-      NotificationDisplayType.NONE
-    ));
+    settings.setDisplayType((show ? NotificationDisplayType.BALLOON : NotificationDisplayType.NONE));
   }
 
   private class MyMakeNotificationListener implements IMakeNotificationListener {

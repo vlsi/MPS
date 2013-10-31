@@ -20,10 +20,7 @@ public class SelectComparator<T> implements Comparator<T> {
       return 0;
     }
     if (a == null || b == null) {
-      return (a == null ?
-        -1 :
-        1
-      );
+      return (a == null ? -1 : 1);
     }
     Comparable<Object> cmpa = (Comparable<Object>) selector.invoke(a);
     Comparable<Object> cmpb = (Comparable<Object>) selector.invoke(b);
@@ -31,10 +28,7 @@ public class SelectComparator<T> implements Comparator<T> {
       return 0;
     }
     if (cmpa == null || cmpb == null) {
-      return (cmpa == null ?
-        -1 :
-        1
-      );
+      return (cmpa == null ? -1 : 1);
     }
     return cmpa.compareTo(cmpb);
   }

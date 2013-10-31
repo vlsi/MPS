@@ -135,10 +135,7 @@ public class GoToRulesHelper {
   private static class MyMenu extends JPopupMenu {
     public MyMenu(List<SNode> list, final IOperationContext operationContext) {
       setBackground(Color.WHITE);
-      String caption = (list.isEmpty() ?
-        "No Rules" :
-        "Rules :"
-      );
+      String caption = (list.isEmpty() ? "No Rules" : "Rules :");
       JLabel label = new JLabel(caption, SwingConstants.CENTER);
       label.setBorder(new EmptyBorder(0, 20, 0, 0));
       label.setBackground(Color.LIGHT_GRAY);

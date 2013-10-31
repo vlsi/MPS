@@ -12,10 +12,7 @@ public class OptionDialog {
 
   public static int showDialog(Project project, String text, String title, boolean initialValue) {
     String[] options = {"Yes", "No", "Cancel"};
-    int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(project), text, title, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[(initialValue ?
-      0 :
-      1
-    )]);
+    int option = JOptionPane.showOptionDialog(ProjectHelper.toMainFrame(project), text, title, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[(initialValue ? 0 : 1)]);
     return option;
   }
 }

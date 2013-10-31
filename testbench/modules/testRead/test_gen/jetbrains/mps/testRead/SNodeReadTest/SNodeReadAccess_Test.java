@@ -440,10 +440,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
     public Set<String> getISNodeMethodsNames(boolean fullQualified) throws FileNotFoundException, IOException {
       Set<String> set = new HashSet<String>();
       for (Method method : SNode.class.getMethods()) {
-        set.add((fullQualified ?
-          method.toGenericString() :
-          method.getName()
-        ));
+        set.add((fullQualified ? method.toGenericString() : method.getName()));
       }
       return set;
     }
@@ -456,10 +453,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
 
     public boolean isReadsCountUnChanged(int previous, int current) {
       // just check that reads doesn't appear or disappear quietly 
-      return (previous == 0 ?
-        current == 0 :
-        current > 0
-      );
+      return (previous == 0 ? current == 0 : current > 0);
     }
   }
 }

@@ -48,22 +48,13 @@ public class SSymbolRefExpression_Constraints extends BaseConstraintsDescriptor 
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            String name = (isNotEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "refalias")) ?
-              SPropertyOperations.getString(_context.getParameterNode(), "refalias") :
-              ((SPropertyOperations.getBoolean(_context.getParameterNode(), "isOptional") ?
-                SPropertyOperations.getString(SLinkOperations.getTarget(_context.getParameterNode(), "ref", false), "name") + "opt" :
-                SPropertyOperations.getString(SLinkOperations.getTarget(_context.getParameterNode(), "ref", false), "name")
-              ))
-            );
+            String name = (isNotEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "refalias")) ? SPropertyOperations.getString(_context.getParameterNode(), "refalias") : ((SPropertyOperations.getBoolean(_context.getParameterNode(), "isOptional") ? SPropertyOperations.getString(SLinkOperations.getTarget(_context.getParameterNode(), "ref", false), "name") + "opt" : SPropertyOperations.getString(SLinkOperations.getTarget(_context.getParameterNode(), "ref", false), "name"))));
             return "$" + name;
           }
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode action = SNodeOperations.getAncestor(((_context.getReferenceNode() != null ?
-              _context.getReferenceNode() :
-              _context.getEnclosingNode()
-            )), "jetbrains.mps.core.syntax.java.structure.SJavaAction", true, false);
+            SNode action = SNodeOperations.getAncestor(((_context.getReferenceNode() != null ? _context.getReferenceNode() : _context.getEnclosingNode())), "jetbrains.mps.core.syntax.java.structure.SJavaAction", true, false);
             if (action == null) {
               return null;
             }

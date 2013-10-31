@@ -13,10 +13,7 @@ public class AcceptYoursTheirs extends BaseAction implements DumbAware {
   private boolean myAcceptMine;
 
   private AcceptYoursTheirs(MergeModelsDialog mergeModelsDialog, boolean acceptMine) {
-    super("Accept " + ((acceptMine ?
-      "Yours" :
-      "Theirs"
-    )), null, EmptyIcon.create(1));
+    super("Accept " + ((acceptMine ? "Yours" : "Theirs")), null, EmptyIcon.create(1));
     myMergeModelsDialog = mergeModelsDialog;
     myAcceptMine = acceptMine;
     setDisableOnNoProject(false);

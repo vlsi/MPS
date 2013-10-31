@@ -122,17 +122,11 @@ public class BreakpointLocation {
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((myNodePointer != null ?
-      ((Object) myNodePointer).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myNodePointer != null ? ((Object) myNodePointer).hashCode() : 0));
     return result;
   }
 
   private static boolean eq_ei108j_a0d0n(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

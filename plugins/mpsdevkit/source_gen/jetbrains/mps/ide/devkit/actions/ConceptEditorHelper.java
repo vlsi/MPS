@@ -69,10 +69,7 @@ public class ConceptEditorHelper {
     return ListSequence.fromList(roots).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode root) {
         int conceptIndex = Sequence.fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConceptDeclaration(root));
-        return (conceptIndex == -1 ?
-          conceptOrder.length :
-          conceptIndex
-        );
+        return (conceptIndex == -1 ? conceptOrder.length : conceptIndex);
       }
     }, true).toListSequence();
   }

@@ -11,17 +11,10 @@ public class TernaryOperatorExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("(");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
-    this.append(" ?");
-    this.appendNewLine();
-    this.increaseDepth();
-    this.indentBuffer();
+    this.append(" ? ");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "ifTrue", true), this.getSNode());
-    this.append(" :");
-    this.appendNewLine();
-    this.indentBuffer();
+    this.append(" : ");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "ifFalse", true), this.getSNode());
-    this.appendNewLine();
-    this.decreaseDepth();
-    this.appendWithIndent(")");
+    this.append(")");
   }
 }

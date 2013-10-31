@@ -202,14 +202,11 @@ public class QueriesGenerated {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{jobcls}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(imd), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{cfgcls});
       }
     });
-    return (imd != null ?
-      ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode p) {
-          return ipacls == SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(p, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
-        }
-      }) :
-      null
-    );
+    return (imd != null ? ListSequence.fromList(SLinkOperations.getTargets(imd, "parameter", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode p) {
+        return ipacls == SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(p, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+      }
+    }) : null);
   }
 
   public static Object referenceMacro_GetReferent_8486446835277407047(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -354,10 +351,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4902420589288254114(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode rct = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), "jetbrains.mps.make.facet.structure.TargetDeclaration"), "input", true), "resourceType", true)).first();
-    return (rct != null ?
-      _quotation_createNode_x583g4_a0b0zc_0(SLinkOperations.getTarget(rct, "classifier", false)) :
-      _quotation_createNode_x583g4_a0b0zc()
-    );
+    return (rct != null ? _quotation_createNode_x583g4_a0b0zc_0(SLinkOperations.getTarget(rct, "classifier", false)) : _quotation_createNode_x583g4_a0b0zc());
   }
 
   public static Iterable sourceNodesQuery_7877690107352923852(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

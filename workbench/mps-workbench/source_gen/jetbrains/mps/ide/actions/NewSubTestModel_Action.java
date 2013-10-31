@@ -128,10 +128,7 @@ public class NewSubTestModel_Action extends BaseAction {
       if (!(SModelStereotype.TESTS.equals(SModelStereotype.getStereotype(md)))) {
         continue;
       }
-      String name = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ?
-        "" :
-        testModelCount
-      ));
+      String name = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ? "" : testModelCount));
       if (name.equals(SNodeOperations.getModelLongName(md))) {
         testModelCount++;
       }

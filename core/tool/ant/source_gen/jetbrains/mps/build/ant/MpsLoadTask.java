@@ -164,10 +164,7 @@ public abstract class MpsLoadTask extends Task {
       List<URL> classPathUrls = new ArrayList<URL>();
       for (File path : classPaths) {
         try {
-          classPathUrls.add(new URL("file:///" + path + ((path.isDirectory() ?
-            "/" :
-            ""
-          ))));
+          classPathUrls.add(new URL("file:///" + path + ((path.isDirectory() ? "/" : ""))));
         } catch (MalformedURLException e) {
           throw new BuildException(e);
         }

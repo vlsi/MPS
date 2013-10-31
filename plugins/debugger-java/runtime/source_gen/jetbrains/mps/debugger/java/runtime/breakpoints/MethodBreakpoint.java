@@ -149,17 +149,11 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((myLocation != null ?
-      ((Object) myLocation).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
     return result;
   }
 
   private static boolean eq_spo82x_a0d0p(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

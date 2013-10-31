@@ -113,9 +113,6 @@ public class ConsoleFileEditor implements DocumentsEditor {
       }
     });
 
-    return (virtualFile[0] == null ?
-      new Document[0] :
-      new Document[]{MPSUndoUtil.getDoc(virtualFile[0])}
-    );
+    return (virtualFile[0] == null ? new Document[0] : new Document[]{MPSUndoUtil.getDoc(virtualFile[0])});
   }
 }

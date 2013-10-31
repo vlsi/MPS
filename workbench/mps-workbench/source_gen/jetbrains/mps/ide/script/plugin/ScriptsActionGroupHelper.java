@@ -99,10 +99,7 @@ public class ScriptsActionGroupHelper {
       BaseGroup categoryGroup = createGroup(cat, ownerGroup);
       _FunctionTypes._return_P1_E0<? extends String, ? super SNode> getBuildClosure = new _FunctionTypes._return_P1_E0<String, SNode>() {
         public String invoke(SNode script) {
-          return (SPropertyOperations.getString(script, "toBuild") == null ?
-            "" :
-            SPropertyOperations.getString(script, "toBuild")
-          );
+          return (SPropertyOperations.getString(script, "toBuild") == null ? "" : SPropertyOperations.getString(script, "toBuild"));
         }
       };
       Map<String, List<SNode>> byBuild = groupBy(MapSequence.fromMap(byCategory).get(cat), getBuildClosure);

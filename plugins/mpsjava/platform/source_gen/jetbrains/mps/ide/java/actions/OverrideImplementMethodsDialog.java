@@ -42,14 +42,8 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     myAddReturn.setMnemonic('r');
     myRemoveAttributes = new NonFocusableCheckBox("Remove Attributes");
     myRemoveAttributes.setMnemonic('t');
-    myInsertOverride = (showInsertOverride() ?
-      new NonFocusableCheckBox("Insert @Override") :
-      null
-    );
-    myOptionControls = (showInsertOverride() ?
-      new JCheckBox[]{myAddReturn, myRemoveAttributes, myInsertOverride} :
-      new JCheckBox[]{myAddReturn, myRemoveAttributes}
-    );
+    myInsertOverride = (showInsertOverride() ? new NonFocusableCheckBox("Insert @Override") : null);
+    myOptionControls = (showInsertOverride() ? new JCheckBox[]{myAddReturn, myRemoveAttributes, myInsertOverride} : new JCheckBox[]{myAddReturn, myRemoveAttributes});
     if (myInsertOverride != null) {
       myInsertOverride.setMnemonic('O');
     }
@@ -69,27 +63,15 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
 
   @Override
   protected void customizeOptionsPanel() {
-    myAddReturn.setSelected((myOptions != null ?
-      myOptions.addReturnsOnImplement :
-      false
-    ));
-    myRemoveAttributes.setSelected((myOptions != null ?
-      myOptions.removeAttributes :
-      true
-    ));
+    myAddReturn.setSelected((myOptions != null ? myOptions.addReturnsOnImplement : false));
+    myRemoveAttributes.setSelected((myOptions != null ? myOptions.removeAttributes : true));
     if (myInsertOverride != null) {
-      myInsertOverride.setSelected((myOptions != null ?
-        myOptions.addOverrideAnnotation :
-        true
-      ));
+      myInsertOverride.setSelected((myOptions != null ? myOptions.addOverrideAnnotation : true));
     }
   }
 
   public boolean isInsertOverrideAnnotation() {
-    return (myInsertOverride != null ?
-      myInsertOverride.isSelected() :
-      false
-    );
+    return (myInsertOverride != null ? myInsertOverride.isSelected() : false);
   }
 
   public boolean isAddReturn() {
@@ -132,14 +114,8 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
 
           return new Integer(IterableUtil.asList(parentA.getChildren(aRole)).indexOf(a)).compareTo(IterableUtil.asList(parentB.getChildren(bRole)).indexOf(b));
         }
-        int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ?
-          MapSequence.fromMap(containerIndex).get(parentA) :
-          0
-        );
-        int iB = (parentB != null && MapSequence.fromMap(containerIndex).containsKey(parentB) ?
-          MapSequence.fromMap(containerIndex).get(parentB) :
-          0
-        );
+        int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ? MapSequence.fromMap(containerIndex).get(parentA) : 0);
+        int iB = (parentB != null && MapSequence.fromMap(containerIndex).containsKey(parentB) ? MapSequence.fromMap(containerIndex).get(parentB) : 0);
         return new Integer(iA).compareTo(iB);
       }
     }, true);
@@ -154,9 +130,6 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   }
 
   private static boolean neq_sivw9t_a0d0c0a0a0a0d0n(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

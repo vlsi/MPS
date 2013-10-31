@@ -39,15 +39,9 @@ public class StatCountNodeReadAccessInEditorListener extends NodeReadAccessInEdi
           break;
         }
       }
-      String methodName = traceElements[(i < traceElements.length ?
-        i :
-        0
-      )].getMethodName();
+      String methodName = traceElements[(i < traceElements.length ? i : 0)].getMethodName();
       myCallerMethods.add(methodName);
-      ourStatistics.put(methodName, (ourStatistics.containsKey(methodName) ?
-        ourStatistics.get(methodName) + 1 :
-        1
-      ));
+      ourStatistics.put(methodName, (ourStatistics.containsKey(methodName) ? ourStatistics.get(methodName) + 1 : 1));
     }
   }
 

@@ -256,9 +256,6 @@ public class SModelUtil {
   protected static Logger LOG = LogManager.getLogger(SModelUtil.class);
 
   private static boolean eq_74see4_a0a0q(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -171,10 +171,7 @@ public abstract class ChangeGroupLayout {
   }
 
   private static boolean areBoundsSeparate(Bounds a, Bounds b, boolean canBeAdjacent) {
-    int tolerance = (canBeAdjacent ?
-      0 :
-      1
-    );
+    int tolerance = (canBeAdjacent ? 0 : 1);
     return (int) a.end() - tolerance < (int) b.start() || (int) b.end() - tolerance < (int) a.start();
   }
 

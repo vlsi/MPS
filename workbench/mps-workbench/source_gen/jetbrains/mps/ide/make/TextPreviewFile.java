@@ -105,10 +105,7 @@ public class TextPreviewFile extends StubVirtualFile {
 
   @Override
   public long getLength() {
-    return (myFileContent instanceof String ?
-      ((String) myFileContent).getBytes(getCharset()).length :
-      0
-    );
+    return (myFileContent instanceof String ? ((String) myFileContent).getBytes(getCharset()).length : 0);
   }
 
   @NotNull

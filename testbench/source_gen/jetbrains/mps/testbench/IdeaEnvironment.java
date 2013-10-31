@@ -72,10 +72,7 @@ public class IdeaEnvironment implements Environment {
     EnvironmentUtils.setSystemProperties(true);
 
     String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
+    System.setProperty("idea.is.internal", (mpsInternal == null ? "false" : mpsInternal));
     System.setProperty("idea.no.jre.check", "true");
     // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors() 
     System.setProperty("idea.platform.prefix", "Idea");

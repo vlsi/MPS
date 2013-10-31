@@ -514,16 +514,10 @@ public class ApiMigrationHelper {
   }
 
   private static boolean eq_yke5lt_a0c0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_yke5lt_a0d0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -76,10 +76,7 @@ public class PrecedenceUtil {
 
   private static void rotate(SNode expr, SNode child) {
     boolean isRight = SLinkOperations.getTarget(expr, "right", true) == child;
-    SNode backsideExpr = (isRight ?
-      SLinkOperations.getTarget(child, "left", true) :
-      SLinkOperations.getTarget(child, "right", true)
-    );
+    SNode backsideExpr = (isRight ? SLinkOperations.getTarget(child, "left", true) : SLinkOperations.getTarget(child, "right", true));
     SNodeOperations.detachNode(child);
     SNodeOperations.replaceWithAnother(expr, child);
     if ((backsideExpr != null)) {

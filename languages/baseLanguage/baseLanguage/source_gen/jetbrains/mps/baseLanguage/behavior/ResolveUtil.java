@@ -171,10 +171,7 @@ public class ResolveUtil {
 
       while (pTypesItr.hasNext()) {
         SNode parameterType = pTypesItr.next();
-        SNode argument = (argumentsItr.hasNext() ?
-          argumentsItr.next() :
-          null
-        );
+        SNode argument = (argumentsItr.hasNext() ? argumentsItr.next() : null);
 
         if (parameterType == varArgType) {
           // vararg reached 
@@ -192,10 +189,7 @@ public class ResolveUtil {
               if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), varArgComponentType))) {
                 return false;
               }
-              argument = (argumentsItr.hasNext() ?
-                argumentsItr.next() :
-                null
-              );
+              argument = (argumentsItr.hasNext() ? argumentsItr.next() : null);
             }
             return true;
           }

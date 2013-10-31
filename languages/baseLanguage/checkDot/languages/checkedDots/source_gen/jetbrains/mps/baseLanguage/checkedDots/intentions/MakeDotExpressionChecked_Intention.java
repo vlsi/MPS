@@ -70,10 +70,7 @@ public class MakeDotExpressionChecked_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression") ?
-        "Make Dot Expression Not Checked" :
-        "Make Dot Expression Checked"
-      );
+      return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression") ? "Make Dot Expression Not Checked" : "Make Dot Expression Checked");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

@@ -28,10 +28,7 @@ public class MPSPlugin {
     MPSPlugin.assertNotInEDT();
     IProjectStore projectStore = ((ProjectEx) project).getStateStore();
     File mpsProject = project.getComponent(MPSProject.class).getProjectFile();
-    File projectFile = (projectStore.getStorageScheme() == StorageScheme.DEFAULT ?
-      mpsProject.getParentFile() :
-      mpsProject
-    );
+    File projectFile = (projectStore.getStorageScheme() == StorageScheme.DEFAULT ? mpsProject.getParentFile() : mpsProject);
     String projectPath = projectFile.getAbsolutePath();
     return getProjectHandler(projectPath);
   }

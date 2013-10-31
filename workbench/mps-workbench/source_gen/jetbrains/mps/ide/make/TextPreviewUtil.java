@@ -68,14 +68,8 @@ public class TextPreviewUtil {
           if (result.isSucessful()) {
             FResource fres = (FResource) Sequence.fromIterable(result.output()).first();
 
-            String fileToOpen = (contextNode != null ?
-              MapSequence.fromMap(fres.rootNodeNames()).get(contextRootNode) :
-              null
-            );
-            final TextPreviewFile[] previewFiles = new TextPreviewFile[(fileToOpen != null ?
-              1 :
-              MapSequence.fromMap(fres.contents()).count()
-            )];
+            String fileToOpen = (contextNode != null ? MapSequence.fromMap(fres.rootNodeNames()).get(contextRootNode) : null);
+            final TextPreviewFile[] previewFiles = new TextPreviewFile[(fileToOpen != null ? 1 : MapSequence.fromMap(fres.contents()).count())];
             if (fileToOpen != null) {
               previewFiles[0] = new TextPreviewFile(fileToOpen, MapSequence.fromMap(fres.contents()).get(fileToOpen), NameUtil.compactNamespace(md.getModelName()));
             } else {

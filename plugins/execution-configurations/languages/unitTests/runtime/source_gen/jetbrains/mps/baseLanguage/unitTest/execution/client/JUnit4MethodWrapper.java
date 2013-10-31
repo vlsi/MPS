@@ -88,16 +88,10 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   }
 
   private static boolean eq_lclll2_a0a0b0a0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_lclll2_a0a1a1a0a3(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

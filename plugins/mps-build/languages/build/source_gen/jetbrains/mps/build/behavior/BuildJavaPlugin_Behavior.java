@@ -30,10 +30,7 @@ public class BuildJavaPlugin_Behavior {
         @Override
         public String getName(SNode jo) {
           String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName");
-          return ((optionsName == null || optionsName.length() == 0) ?
-            "<default options>" :
-            optionsName
-          );
+          return ((optionsName == null || optionsName.length() == 0) ? "<default options>" : optionsName);
         }
       }, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
