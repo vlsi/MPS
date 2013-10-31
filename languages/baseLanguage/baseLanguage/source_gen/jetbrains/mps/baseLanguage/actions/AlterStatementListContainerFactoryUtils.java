@@ -24,6 +24,8 @@ public class AlterStatementListContainerFactoryUtils {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.WhileStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DoWhileStatement");
   }
 
+
+
   private static SNode getCondition(SNode node) {
     assert hasCondition(node);
     return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
@@ -32,6 +34,8 @@ public class AlterStatementListContainerFactoryUtils {
       }
     }).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
+
+
 
   private static void buildContainer(SNode sampleNode, final SNode newNode) {
     ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(sampleNode), "statement", true)).visitAll(new IVisitor<SNode>() {
@@ -80,17 +84,17 @@ public class AlterStatementListContainerFactoryUtils {
       }
       if (SNodeOperations.isInstanceOf(collectionType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
         SPropertyOperations.set(iteratorVar, "name", "index");
-        SLinkOperations.setTarget(iteratorVar, "initializer", createIntegerConstant_kz5t2g_a0a1a01a2a2(), true);
-        SLinkOperations.setTarget(iteratorVar, "type", createIntegerType_kz5t2g_a0a2a01a2a2(), true);
+        SLinkOperations.setTarget(iteratorVar, "initializer", createIntegerConstant_kz5t2g_a0a1a01a2a4(), true);
+        SLinkOperations.setTarget(iteratorVar, "type", createIntegerType_kz5t2g_a0a2a01a2a4(), true);
         SLinkOperations.setTarget(forStatement, "variable", iteratorVar, true);
-        SLinkOperations.setTarget(forStatement, "condition", createLessThanExpression_kz5t2g_a0a4a01a2a2(), true);
-        ListSequence.fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).addElement(createPostfixIncrementExpression_kz5t2g_a0a5a01a2a2());
+        SLinkOperations.setTarget(forStatement, "condition", createLessThanExpression_kz5t2g_a0a4a01a2a4(), true);
+        ListSequence.fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).addElement(createPostfixIncrementExpression_kz5t2g_a0a5a01a2a4());
         SNode cond = SNodeOperations.cast(SLinkOperations.getTarget(forStatement, "condition", true), "jetbrains.mps.baseLanguage.structure.LessThanExpression");
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(cond, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", iteratorVar, false);
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(cond, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", inputSequenceDeclaration, false);
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).first(), "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", iteratorVar, false);
 
-        final SNode a = createArrayAccessExpression_kz5t2g_a0l0k0c0c();
+        final SNode a = createArrayAccessExpression_kz5t2g_a0l0k0c0e();
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(a, "array", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", inputSequenceDeclaration, false);
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(a, "index", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", iteratorVar, false);
         ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(forStatement, "body", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -114,7 +118,7 @@ public class AlterStatementListContainerFactoryUtils {
 
       } else {
         SPropertyOperations.set(iteratorVar, "name", "loopIterator");
-        SLinkOperations.setTarget(iteratorVar, "initializer", createDotExpression_kz5t2g_a0a1a0k0c0c(), true);
+        SLinkOperations.setTarget(iteratorVar, "initializer", createDotExpression_kz5t2g_a0a1a0k0c0e(), true);
         SNode r = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(r, "variableDeclaration", inputSequenceDeclaration, false);
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(iteratorVar, "initializer", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", r, true);
@@ -124,13 +128,13 @@ public class AlterStatementListContainerFactoryUtils {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(iteratorVar, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), varType, "virtual_getUnboxedType_1213877337320", new Object[]{}));
         SLinkOperations.setTarget(forStatement, "variable", iteratorVar, true);
 
-        SLinkOperations.setTarget(forStatement, "condition", createDotExpression_kz5t2g_a0a11a0k0c0c(), true);
+        SLinkOperations.setTarget(forStatement, "condition", createDotExpression_kz5t2g_a0a11a0k0c0e(), true);
         SLinkOperations.setTarget(SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(forStatement, "condition", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null), true), "variableDeclaration", iteratorVar, false);
 
         final SNode vd = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
         SPropertyOperations.set(SLinkOperations.getTarget(vd, "localVariableDeclaration", true), "name", "localLoopVariable");
         SLinkOperations.setTarget(SLinkOperations.getTarget(vd, "localVariableDeclaration", true), "type", TypeChecker.getInstance().getTypeOf(loopVariable.value), true);
-        SLinkOperations.setTarget(SLinkOperations.getTarget(vd, "localVariableDeclaration", true), "initializer", createDotExpression_kz5t2g_a0a71a0k0c0c(), true);
+        SLinkOperations.setTarget(SLinkOperations.getTarget(vd, "localVariableDeclaration", true), "initializer", createDotExpression_kz5t2g_a0a71a0k0c0e(), true);
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vd, "localVariableDeclaration", true), "initializer", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", iteratorVar, false);
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(forStatement, "body", true), "statement", true)).insertElement(0, vd);
 
@@ -162,29 +166,29 @@ public class AlterStatementListContainerFactoryUtils {
     }
   }
 
-  private static SNode createIntegerConstant_kz5t2g_a0a1a01a2a2() {
+  private static SNode createIntegerConstant_kz5t2g_a0a1a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, GlobalScope.getInstance(), false);
     n1.setProperty("value", "" + 0);
     return n1;
   }
 
-  private static SNode createIntegerType_kz5t2g_a0a2a01a2a2() {
+  private static SNode createIntegerType_kz5t2g_a0a2a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, GlobalScope.getInstance(), false);
     return n1;
   }
 
-  private static SNode createLessThanExpression_kz5t2g_a0a4a01a2a2() {
+  private static SNode createLessThanExpression_kz5t2g_a0a4a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LessThanExpression", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
+      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
       SNode n3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
       {
         SNode n4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-        n4.setReference("variableDeclaration", SReference.create("variableDeclaration", n4, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("5310486143850834762")));
+        n4.setReference("variableDeclaration", SReference.create("variableDeclaration", n4, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("5310486143850834762")));
         SNode n5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", null, GlobalScope.getInstance(), false);
         n3.addChild("operand", n4);
         n3.addChild("operation", n5);
@@ -195,37 +199,37 @@ public class AlterStatementListContainerFactoryUtils {
     return n1;
   }
 
-  private static SNode createPostfixIncrementExpression_kz5t2g_a0a5a01a2a2() {
+  private static SNode createPostfixIncrementExpression_kz5t2g_a0a5a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
+      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
       n1.addChild("expression", n2);
     }
     return n1;
   }
 
-  private static SNode createArrayAccessExpression_kz5t2g_a0l0k0c0c() {
+  private static SNode createArrayAccessExpression_kz5t2g_a0l0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("5310486143850834762")));
+      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("5310486143850834762")));
       SNode n3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-      n3.setReference("variableDeclaration", SReference.create("variableDeclaration", n3, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
+      n3.setReference("variableDeclaration", SReference.create("variableDeclaration", n3, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
       n1.addChild("array", n2);
       n1.addChild("index", n3);
     }
     return n1;
   }
 
-  private static SNode createDotExpression_kz5t2g_a0a1a0k0c0c() {
+  private static SNode createDotExpression_kz5t2g_a0a1a0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("5310486143850834762")));
+      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("5310486143850834762")));
       SNode n3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation", null, GlobalScope.getInstance(), false);
       n1.addChild("operand", n2);
       n1.addChild("operation", n3);
@@ -233,12 +237,12 @@ public class AlterStatementListContainerFactoryUtils {
     return n1;
   }
 
-  private static SNode createDotExpression_kz5t2g_a0a11a0k0c0c() {
+  private static SNode createDotExpression_kz5t2g_a0a11a0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
+      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
       SNode n3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
       n3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", n3, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~Iterator.hasNext():boolean")));
       n1.addChild("operand", n2);
@@ -247,12 +251,12 @@ public class AlterStatementListContainerFactoryUtils {
     return n1;
   }
 
-  private static SNode createDotExpression_kz5t2g_a0a71a0k0c0c() {
+  private static SNode createDotExpression_kz5t2g_a0a71a0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, GlobalScope.getInstance(), false);
-      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:558b640e-6b32-4a17-bba5-363677310b8d(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
+      n2.setReference("variableDeclaration", SReference.create("variableDeclaration", n2, facade.createModelReference("r:bc342ba5-ec01-4749-a973-d98129f6fdcd(jetbrains.mps.baseLanguage.actions@1_1)"), facade.createNodeId("2442451895711118467")));
       SNode n3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
       n3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", n3, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~Iterator.next():java.lang.Object")));
       n1.addChild("operand", n2);
