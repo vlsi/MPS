@@ -26,6 +26,7 @@
   <import index="d2v5" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(jetbrains.mps.persistence@java_stub)" version="-1" />
   <import index="51te" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(jetbrains.mps.extapi.model@java_stub)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
+  <import index="yyt9" modelUID="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -600,6 +601,9 @@
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="445606167100352090" nodeInfo="in">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zofx.~ModelReadException" resolveInfo="ModelReadException" />
       </node>
+    </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6214685324844555051" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yyt9.694564436393193873" resolveInfo="WorkbenchMpsTest" />
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="445606167100287301" nodeInfo="ig">

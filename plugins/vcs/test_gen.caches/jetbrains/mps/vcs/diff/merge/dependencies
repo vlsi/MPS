@@ -23,6 +23,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.runners.Parameterized" />
+    <classNode extendsClassName="jetbrains.mps.WorkbenchMpsTest" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.merge.MergeData" file="MergeData.java">
     <classNode dependClassName="java.io.File" />
