@@ -106,6 +106,54 @@ public class Styles_StyleSheet {
     return style;
   }
 
+  @Deprecated
+  public static Style getAnyBracket(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
+  }
+
+  @Deprecated
+  public static Style getParenthesis(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(Styles_StyleSheet.getAnyBracket(editorCell));
+    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
+    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
+    return style;
+  }
+
+  @Deprecated
+  public static Style getLeftParen(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    return style;
+  }
+
+  @Deprecated
+  public static Style getRightParen(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
+  }
+
+  @Deprecated
+  public static Style getLeftParenAfterName(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(Styles_StyleSheet.getLeftParen(editorCell));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
+  }
+
+  @Deprecated
+  public static Style getKeyWord(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
+    return style;
+  }
+
   public static void applyRootCellModelStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
@@ -162,6 +210,36 @@ public class Styles_StyleSheet {
 
   public static void applyString(Style style, EditorCell editorCell) {
     style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
+  }
+
+  public static void applyAnyBracket(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+  }
+
+  public static void applyParenthesis(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.applyAnyBracket(style, editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
+    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
+  }
+
+  public static void applyLeftParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.applyParenthesis(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+  }
+
+  public static void applyRightParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.applyParenthesis(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+  }
+
+  public static void applyLeftParenAfterName(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.applyLeftParen(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+  }
+
+  public static void applyKeyWord(Style style, EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
   }
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {

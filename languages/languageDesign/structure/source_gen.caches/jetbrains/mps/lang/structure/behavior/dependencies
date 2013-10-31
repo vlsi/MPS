@@ -62,6 +62,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.ConceptLink_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.behavior.AggregationLinkDeclarationScopeKind_BehaviorDescriptor" file="AggregationLinkDeclarationScopeKind_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.structure.behavior.AnnotationLinkDeclaration_Behavior" file="AnnotationLinkDeclaration_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -486,6 +487,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.ConceptLink_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.behavior.ReferenceLinkDeclartionScopeKind_BehaviorDescriptor" file="ReferenceLinkDeclartionScopeKind_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.structure.behavior.StringConceptPropertyDeclaration_BehaviorDescriptor" file="StringConceptPropertyDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -3,7 +3,7 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="48" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" />
   <root nodeRef="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)/1570228009930756802">
-    <nodeInfo nodeId="4469912675310094122" fileName="QueriesGenerated.java" startLine="78" startPosition="152" endLine="79" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4469912675310094122" fileName="QueriesGenerated.java" startLine="78" startPosition="152" endLine="79" endPosition="423" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4565427742314942288" fileName="QueriesGenerated.java" startLine="156" startPosition="154" endLine="157" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1570228009930756802" fileName="SwitchlanguageAspectDescriptorVariable.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
     <nodeInfo nodeId="1570228009930756802" fileName="SwitchlanguageAspectDescriptorVariable.java" startLine="29" startPosition="51" endLine="30" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,7 +86,7 @@
     <nodeInfo nodeId="1570228009930756802" fileName="SwitchlanguageAspectDescriptorVariable.java" startLine="92" startPosition="115" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1570228009930756802" fileName="SwitchlanguageAspectDescriptorVariable.java" startLine="88" startPosition="38" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1570228009930756802" fileName="SwitchlanguageAspectDescriptorVariable.java" startLine="86" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="4565427742314546854" fileName="QueriesGenerated.java" startLine="78" startPosition="152" endLine="79" endPosition="220" />
+    <scopeInfo nodeId="4565427742314546854" fileName="QueriesGenerated.java" startLine="78" startPosition="152" endLine="79" endPosition="423" />
     <scopeInfo nodeId="4565427742314939783" fileName="QueriesGenerated.java" startLine="156" startPosition="154" endLine="157" endPosition="110" />
     <scopeInfo nodeId="1570228009930756802" fileName="SwitchlanguageAspectDescriptorVariable.java" startLine="51" startPosition="125" endLine="51" endPosition="125" />
     <scopeInfo nodeId="1570228009930756802" fileName="SwitchlanguageAspectDescriptorVariable.java" startLine="55" startPosition="29" endLine="55" endPosition="29" />
@@ -3618,7 +3618,7 @@
     <unitInfo nodeId="1698302279987411125" fileName="Templatedescriptor.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.main.Templatedescriptor" />
   </root>
   <root nodeRef="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)/8131497994927289969">
-    <nodeInfo nodeId="4469912675310105980" fileName="QueriesGenerated.java" startLine="74" startPosition="152" endLine="75" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4469912675310105980" fileName="QueriesGenerated.java" startLine="74" startPosition="152" endLine="75" endPosition="423" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4565427742315565555" fileName="QueriesGenerated.java" startLine="152" startPosition="154" endLine="153" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4565427742316041110" fileName="QueriesGenerated.java" startLine="164" startPosition="151" endLine="165" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4565427742316083206" fileName="QueriesGenerated.java" startLine="168" startPosition="151" endLine="169" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3914,7 +3914,7 @@
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="141" startPosition="9" endLine="408" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="90" startPosition="108" endLine="412" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="88" startPosition="0" endLine="415" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="1570228009929814974" fileName="QueriesGenerated.java" startLine="74" startPosition="152" endLine="75" endPosition="220" />
+    <scopeInfo nodeId="1570228009929814974" fileName="QueriesGenerated.java" startLine="74" startPosition="152" endLine="75" endPosition="423" />
     <scopeInfo nodeId="4565427742315554125" fileName="QueriesGenerated.java" startLine="152" startPosition="154" endLine="153" endPosition="110" />
     <scopeInfo nodeId="4565427742316037866" fileName="QueriesGenerated.java" startLine="164" startPosition="151" endLine="165" endPosition="107" />
     <scopeInfo nodeId="4565427742316079241" fileName="QueriesGenerated.java" startLine="168" startPosition="151" endLine="169" endPosition="107" />

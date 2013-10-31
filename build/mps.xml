@@ -21,6 +21,7 @@
   <property name="artifacts.mpsBuildUI" location="${build.dir}/artifacts/mpsBuildUI" />
   <property name="artifacts.mpsVcs" location="${build.dir}/artifacts/mpsVcs" />
   <property name="artifacts.mpsDebuggerPlugin" location="${build.dir}/artifacts/mpsDebuggerPlugin" />
+  <property name="artifacts.jetpad" location="${build.dir}/artifacts/jetpad" />
   <property name="artifacts.mpsExecutionPlugin" location="${build.dir}/artifacts/mpsExecutionPlugin" />
   <property name="artifacts.mpsTesting" location="${build.dir}/artifacts/mpsTesting" />
   <property name="artifacts.mpsNewLanguageDesign" location="${build.dir}/artifacts/mpsNewLanguageDesign" />
@@ -132,6 +133,9 @@
       <fileset dir="${artifacts.mpsBuildUI}/mps-build" />
     </copy>
     <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.jetpad}" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsDebuggerPlugin}" />
     </copy>
     <mkdir dir="${build.layout}/plugins/mps-testing" />
@@ -179,6 +183,7 @@
     <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsNewLanguageDesign.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

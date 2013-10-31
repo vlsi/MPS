@@ -1,45 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:db5137e2-4fb5-4a7c-926a-237f59e67877(jetbrains.mps.lang.descriptor.generator.template.utils)/4586246778193290019">
-    <nodeInfo nodeId="4586246778193290032" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="147" endLine="25" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4586246778193290044" fileName="LanguageRuntimeGeneratorUtils.java" startLine="26" startPosition="27" endLine="27" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4586246778193290054" fileName="LanguageRuntimeGeneratorUtils.java" startLine="27" startPosition="163" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4586246778193290056" fileName="LanguageRuntimeGeneratorUtils.java" startLine="29" startPosition="5" endLine="30" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4586246778193290063" fileName="LanguageRuntimeGeneratorUtils.java" startLine="30" startPosition="217" endLine="31" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4586246778193290073" fileName="LanguageRuntimeGeneratorUtils.java" startLine="32" startPosition="33" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4586246778193290083" fileName="LanguageRuntimeGeneratorUtils.java" startLine="33" startPosition="130" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4586246778193290088" fileName="LanguageRuntimeGeneratorUtils.java" startLine="35" startPosition="5" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4586246778193290112" fileName="LanguageRuntimeGeneratorUtils.java" startLine="37" startPosition="134" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4586246778193290114" fileName="LanguageRuntimeGeneratorUtils.java" startLine="39" startPosition="5" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4586246778193290137" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="39" endLine="43" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4586246778193290095" fileName="LanguageRuntimeGeneratorUtils.java" startLine="36" startPosition="52" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4586246778193290135" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4586246778193290039" fileName="LanguageRuntimeGeneratorUtils.java" startLine="25" startPosition="134" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4586246778193290071" fileName="LanguageRuntimeGeneratorUtils.java" startLine="31" startPosition="110" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4586246778193290123" fileName="LanguageRuntimeGeneratorUtils.java" startLine="40" startPosition="80" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4586246778193290021" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAspectOfLanguage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="4586246778193290111" fileName="LanguageRuntimeGeneratorUtils.java" startLine="37" startPosition="134" endLine="38" endPosition="19" />
-    <scopeInfo nodeId="4586246778193290136" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="39" endLine="43" endPosition="126" />
-    <scopeInfo nodeId="4586246778193290043" fileName="LanguageRuntimeGeneratorUtils.java" startLine="26" startPosition="27" endLine="28" endPosition="19" />
-    <scopeInfo nodeId="4586246778193290072" fileName="LanguageRuntimeGeneratorUtils.java" startLine="32" startPosition="33" endLine="34" endPosition="19" />
-    <scopeInfo nodeId="4586246778193290135" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="4586246778193290135" varName="it" />
+    <nodeInfo nodeId="725186580885286579" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="151" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="725186580885308437" fileName="LanguageRuntimeGeneratorUtils.java" startLine="26" startPosition="30" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4586246778193290114" fileName="LanguageRuntimeGeneratorUtils.java" startLine="28" startPosition="5" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2178507174410770184" fileName="LanguageRuntimeGeneratorUtils.java" startLine="33" startPosition="127" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2178507174410790270" fileName="LanguageRuntimeGeneratorUtils.java" startLine="36" startPosition="9" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885324059" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="112" endLine="43" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="725186580885357331" fileName="LanguageRuntimeGeneratorUtils.java" startLine="44" startPosition="30" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580884194035" fileName="LanguageRuntimeGeneratorUtils.java" startLine="46" startPosition="5" endLine="47" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="725186580885050982" fileName="LanguageRuntimeGeneratorUtils.java" startLine="49" startPosition="39" endLine="50" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885209802" fileName="LanguageRuntimeGeneratorUtils.java" startLine="55" startPosition="118" endLine="56" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="725186580885209814" fileName="LanguageRuntimeGeneratorUtils.java" startLine="57" startPosition="27" endLine="58" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="725186580885209824" fileName="LanguageRuntimeGeneratorUtils.java" startLine="58" startPosition="163" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885209826" fileName="LanguageRuntimeGeneratorUtils.java" startLine="60" startPosition="5" endLine="61" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="725186580885209835" fileName="LanguageRuntimeGeneratorUtils.java" startLine="61" startPosition="217" endLine="62" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="725186580885209845" fileName="LanguageRuntimeGeneratorUtils.java" startLine="63" startPosition="33" endLine="64" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="725186580885209855" fileName="LanguageRuntimeGeneratorUtils.java" startLine="64" startPosition="130" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885209860" fileName="LanguageRuntimeGeneratorUtils.java" startLine="66" startPosition="5" endLine="67" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="725186580885257533" fileName="LanguageRuntimeGeneratorUtils.java" startLine="67" startPosition="52" endLine="68" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885295208" fileName="LanguageRuntimeGeneratorUtils.java" startLine="25" startPosition="76" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2178507174410754280" fileName="LanguageRuntimeGeneratorUtils.java" startLine="32" startPosition="48" endLine="35" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="725186580885357329" fileName="LanguageRuntimeGeneratorUtils.java" startLine="43" startPosition="91" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="725186580885039686" fileName="LanguageRuntimeGeneratorUtils.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="725186580885209809" fileName="LanguageRuntimeGeneratorUtils.java" startLine="56" startPosition="134" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="725186580885209843" fileName="LanguageRuntimeGeneratorUtils.java" startLine="62" startPosition="110" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2178507174410691254" fileName="LanguageRuntimeGeneratorUtils.java" startLine="31" startPosition="39" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="725186580884256001" fileName="LanguageRuntimeGeneratorUtils.java" startLine="47" startPosition="127" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2178507174410563899" fileName="LanguageRuntimeGeneratorUtils.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2178507174410107804" fileName="LanguageRuntimeGeneratorUtils.java" startLine="29" startPosition="80" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580884192681" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasManualEditorAspectDescriptor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
+    <nodeInfo nodeId="725186580885202869" fileName="LanguageRuntimeGeneratorUtils.java" startLine="55" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAspectModel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/generator/template/TemplateQueryContext;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="4586246778193290021" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAspectOfLanguage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/generator/template/TemplateQueryContext;null)Z" />
+    <scopeInfo nodeId="725186580885295211" fileName="LanguageRuntimeGeneratorUtils.java" startLine="26" startPosition="30" endLine="27" endPosition="19" />
+    <scopeInfo nodeId="2178507174410754281" fileName="LanguageRuntimeGeneratorUtils.java" startLine="33" startPosition="127" endLine="34" endPosition="24" />
+    <scopeInfo nodeId="725186580885357330" fileName="LanguageRuntimeGeneratorUtils.java" startLine="44" startPosition="30" endLine="45" endPosition="19" />
+    <scopeInfo nodeId="725186580885039687" fileName="LanguageRuntimeGeneratorUtils.java" startLine="49" startPosition="39" endLine="50" endPosition="94" />
+    <scopeInfo nodeId="725186580885209813" fileName="LanguageRuntimeGeneratorUtils.java" startLine="57" startPosition="27" endLine="59" endPosition="18" />
+    <scopeInfo nodeId="725186580885209844" fileName="LanguageRuntimeGeneratorUtils.java" startLine="63" startPosition="33" endLine="65" endPosition="18" />
+    <scopeInfo nodeId="2178507174410691257" fileName="LanguageRuntimeGeneratorUtils.java" startLine="32" startPosition="48" endLine="35" endPosition="11" />
+    <scopeInfo nodeId="725186580885039686" fileName="LanguageRuntimeGeneratorUtils.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="725186580885039686" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4586246778193290031" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="147" endLine="45" endPosition="21">
-      <varInfo nodeId="4586246778193290089" varName="aspectModel" />
-      <varInfo nodeId="4586246778193290033" varName="language" />
-      <varInfo nodeId="4586246778193290064" varName="languageModule" />
-      <varInfo nodeId="4586246778193290057" varName="moduleReference" />
+    <scopeInfo nodeId="2178507174410691254" fileName="LanguageRuntimeGeneratorUtils.java" startLine="31" startPosition="39" endLine="36" endPosition="9">
+      <varInfo nodeId="2178507174410691255" varName="rootConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="2178507174410563900" fileName="LanguageRuntimeGeneratorUtils.java" startLine="31" startPosition="39" endLine="37" endPosition="21" />
+    <scopeInfo nodeId="2178507174410563899" fileName="LanguageRuntimeGeneratorUtils.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2178507174410563899" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="725186580884192684" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="112" endLine="52" endPosition="7">
+      <varInfo nodeId="725186580885324060" varName="editorModel" />
+      <varInfo nodeId="725186580884194036" varName="roots" />
+    </scopeInfo>
+    <scopeInfo nodeId="725186580884192681" fileName="LanguageRuntimeGeneratorUtils.java" startLine="42" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="725186580884193392" varName="genContext" />
+      <varInfo nodeId="725186580884193388" varName="modelReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="725186580885202872" fileName="LanguageRuntimeGeneratorUtils.java" startLine="55" startPosition="118" endLine="68" endPosition="158">
+      <varInfo nodeId="725186580885209861" varName="aspectModel" />
+      <varInfo nodeId="725186580885209803" varName="language" />
+      <varInfo nodeId="725186580885209836" varName="languageModule" />
+      <varInfo nodeId="725186580885209827" varName="moduleReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="4586246778193290031" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="151" endLine="39" endPosition="16">
+      <varInfo nodeId="725186580885286582" varName="aspectModel" />
       <varInfo nodeId="4586246778193290115" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="4586246778193290021" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="725186580885202869" fileName="LanguageRuntimeGeneratorUtils.java" startLine="55" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="725186580885216420" varName="aspect" />
+      <varInfo nodeId="725186580885216422" varName="genContext" />
+      <varInfo nodeId="725186580885216418" varName="modelReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="4586246778193290021" fileName="LanguageRuntimeGeneratorUtils.java" startLine="24" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4586246778193290025" varName="aspect" />
       <varInfo nodeId="4586246778193290027" varName="genContext" />
       <varInfo nodeId="4586246778193290023" varName="modelReference" />
-      <varInfo nodeId="4586246778193290029" varName="rootConcept" />
+      <varInfo nodeId="4586246778193290029" varName="rootConcepts" />
     </scopeInfo>
-    <unitInfo nodeId="4586246778193290135" fileName="LanguageRuntimeGeneratorUtils.java" startLine="41" startPosition="117" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils$1" />
-    <unitInfo nodeId="4586246778193290019" fileName="LanguageRuntimeGeneratorUtils.java" startLine="23" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils" />
+    <unitInfo nodeId="725186580885039686" fileName="LanguageRuntimeGeneratorUtils.java" startLine="48" startPosition="48" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils$2" />
+    <unitInfo nodeId="2178507174410563899" fileName="LanguageRuntimeGeneratorUtils.java" startLine="30" startPosition="126" endLine="39" endPosition="5" unitName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils$1" />
+    <unitInfo nodeId="4586246778193290019" fileName="LanguageRuntimeGeneratorUtils.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils" />
   </root>
 </debugInfo>
 

@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -48,6 +49,7 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
     }
     {
       MessageTarget errorTarget = new NodeMessageTarget();
+      errorTarget = new PropertyMessageTarget("name");
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(conceptDeclaration, "Editor for concept " + SPropertyOperations.getString(conceptDeclaration, "name") + " is not defined. Default editor will be used.", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2823239769520680200", null, errorTarget);
     }
   }
