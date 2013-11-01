@@ -68,8 +68,8 @@ public abstract class ConnectorViewCell extends GenericViewCell {
 
   public boolean updateConnectionEnds(DiagramViewCell rootCell) {
     View connectorView = getView();
-    View fromView = getInputView(rootCell);
-    View toView = getOutputView(rootCell);
+    View fromView = getOutputView(rootCell);
+    View toView = getInputView(rootCell);
     if (fromView != null && toView != null) {
       if (connectorView.parent().get() != null) {
         connectorView.parent().get().children().remove(connectorView.parent().get().children().indexOf(connectorView));

@@ -580,7 +580,7 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4to0.~View" resolveInfo="View" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="2201645942108545065" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6277411742335784446" resolveInfo="getInputView" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6277411742335784452" resolveInfo="getOutputView" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2201645942108545109" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2201645942108539895" resolveInfo="rootCell" />
               </node>
@@ -594,7 +594,7 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4to0.~View" resolveInfo="View" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="2201645942108547975" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6277411742335784452" resolveInfo="getOutputView" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6277411742335784446" resolveInfo="getInputView" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2201645942108548089" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2201645942108539895" resolveInfo="rootCell" />
               </node>
