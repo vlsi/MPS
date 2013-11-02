@@ -5949,15 +5949,12 @@
                                           </node>
                                         </node>
                                       </node>
-                                      <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="4246614868164066745" nodeInfo="nn">
-                                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4246614868164066746" nodeInfo="nn">
-                                          <property name="value" nameId="tpee.1068580123138" value="true" />
+                                      <node role="condition" roleId="tpee.1068580123160" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="363289430852161190" nodeInfo="nn">
+                                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="363289430852161224" nodeInfo="nn">
+                                          <property name="value" nameId="tpee.1068580320021" value="5" />
                                         </node>
-                                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4246614868164066747" nodeInfo="nn">
-                                          <property name="value" nameId="tpee.1068580123138" value="true" />
-                                        </node>
-                                        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2127158265270942598" nodeInfo="ng">
-                                          <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="2127158265270942599" nodeInfo="ng" />
+                                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="363289430852146783" nodeInfo="nn">
+                                          <property name="value" nameId="tpee.1068580320021" value="1" />
                                         </node>
                                       </node>
                                       <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4246614868164066748" nodeInfo="nn">
@@ -6144,13 +6141,12 @@
                   </node>
                 </node>
               </node>
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="4246614868164066824" nodeInfo="nn">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4246614868164066825" nodeInfo="nn" />
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4246614868164066826" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1068580123138" value="false" />
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.GreaterThanExpression" typeId="tpee.1081506762703" id="363289430852169361" nodeInfo="nn">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="363289430852169372" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="5" />
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2127158265270945792" nodeInfo="ng">
-                  <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="2127158265270945793" nodeInfo="ng" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="363289430852163014" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="1" />
                 </node>
               </node>
               <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4246614868164066827" nodeInfo="nn">
