@@ -110,6 +110,18 @@ public class Classifier_Behavior {
     }
   }
 
+  public static List<SNode> call_getAllExtendedClassifiersRecursively_8302934035226655182(SNode thisNode) {
+    List<SNode> superTypes = new ArrayList<SNode>();
+    ListSequence.fromList(superTypes).addElement(thisNode);
+    Iterable<SNode> extended = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getSuperTypes_7405920559687237523", new Object[]{});
+    while (Sequence.fromIterable(extended).isNotEmpty()) {
+      SNode firstExtendedClassifier = SLinkOperations.getTarget(SNodeOperations.cast(Sequence.fromIterable(extended).first(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+      ListSequence.fromList(superTypes).addElement(firstExtendedClassifier);
+      extended = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), firstExtendedClassifier, "virtual_getSuperTypes_7405920559687237523", new Object[]{});
+    }
+    return superTypes;
+  }
+
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(final SNode thisNode) {
     // todo: maybe use typesystem instead of this method??? 
     // <node> 
@@ -274,7 +286,7 @@ public class Classifier_Behavior {
   }
 
   public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
-    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a52(ancestor), true);
+    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a62(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType, method, baseMethod);
     } else {
@@ -367,12 +379,12 @@ public class Classifier_Behavior {
     }
 
     {
-      SNode concept_j0bb;
-      concept_j0bb = kind;
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
+      SNode concept_j0cb;
+      concept_j0cb = kind;
+      if (SConceptOperations.isSubConceptOf(concept_j0cb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
         return CompositeWithParentScope.from(thisNode, thisNode, kind);
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0cb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
         // todo: Classifier should be ClassifierMember! 
         if (!(isStaticContext)) {
           return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
@@ -380,7 +392,7 @@ public class Classifier_Behavior {
           return ScopeUtils.lazyParentScope(thisNode, kind);
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0cb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         // add instance fields + static fields 
         if (!(isStaticContext)) {
           Scope instanceMethods = BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getMembers_2201875424515824604", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")});
@@ -402,14 +414,14 @@ public class Classifier_Behavior {
         }
 
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0cb, "jetbrains.mps.baseLanguage.structure.Classifier")) {
         if (SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
           return ClassifierScopes.getVisibleClassifiersScope(child, false);
         }
         return ClassifierScopes.getVisibleClassifiersScope(child, true);
 
       }
-      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0cb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         {
           // in other cases - hide everything by name... 
           // todo: change! 
@@ -705,26 +717,26 @@ public class Classifier_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static class Pattern_qw8l7c_a1a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_qw8l7c_a1a0a0a62 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_foo;
-    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a42;
+    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a52;
 
-    public Pattern_qw8l7c_a1a0a0a52(Object parameter_qw8l7c_a0a0a0a0a42) {
-      this.AntiquotationField_qw8l7c_a0a0a0a0a42 = parameter_qw8l7c_a0a0a0a0a42;
+    public Pattern_qw8l7c_a1a0a0a62(Object parameter_qw8l7c_a0a0a0a0a52) {
+      this.AntiquotationField_qw8l7c_a0a0a0a0a52 = parameter_qw8l7c_a0a0a0a0a52;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42;
-        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a52;
+        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a52 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a52.getConcept().getQualifiedName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a42;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferenceTarget("classifier") != referent) {
+          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a52;
+          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a52.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
@@ -732,7 +744,7 @@ public class Classifier_Behavior {
           String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_foo = null;
-          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
+          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a52.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
