@@ -168,6 +168,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramElementBLQuery_Editor" file="DiagramElementBLQuery_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramNodeParameters" file="DiagramNodeParameters.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -202,6 +214,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementBLQuery_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.FigureColorStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.FigureDimensionStyleClassItem_Editor" />

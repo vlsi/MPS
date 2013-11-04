@@ -34,20 +34,8 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private EditorCell createDiagramNode_16y7ix_a(final EditorContext editorContext, final SNode node) {
     final RectView view = new RectView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
-    view.background().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    view.dimension().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a1a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    view.background().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    view.dimension().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     view.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
       @Override
       public void handle(View v, MouseEvent e) {

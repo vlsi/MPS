@@ -86,15 +86,15 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_7br2q0_e0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CellModel_Diagram_Editor.contentListHandler_7br2q0_e0(node, "content", editorContext);
+    AbstractCellListHandler handler = new CellModel_Diagram_Editor.diagramElementsListHandler_7br2q0_e0(node, "diagramElements", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
-    editorCell.setCellId("refNodeList_content");
+    editorCell.setCellId("refNodeList_diagramElements");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class contentListHandler_7br2q0_e0 extends RefNodeListHandler {
-    public contentListHandler_7br2q0_e0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class diagramElementsListHandler_7br2q0_e0 extends RefNodeListHandler {
+    public diagramElementsListHandler_7br2q0_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -134,7 +134,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), contentListHandler_7br2q0_e0.this.getSeparatorText(editorContext, prevNode));
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), diagramElementsListHandler_7br2q0_e0.this.getSeparatorText(editorContext, prevNode));
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");

@@ -92,10 +92,6 @@ public class QueriesGenerated {
     return FigureParameterAttribute_Behavior.call_getParameterField_5422656561931910498(_context.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_2201645942109566148(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "link", false);
-  }
-
   public static Object referenceMacro_GetReferent_2201645942109770503(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram"), "createChildCellsFatoryMethod");
   }
@@ -188,6 +184,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "pointID", true);
   }
 
+  public static SNode sourceNodeQuery_5355858557209539150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "query", true);
+  }
+
   public static Iterable sourceNodesQuery_6306886970789042347(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
   }
@@ -205,6 +205,6 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_2201645942109707941(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "content", true);
+    return SLinkOperations.getTargets(_context.getNode(), "diagramElements", true);
   }
 }

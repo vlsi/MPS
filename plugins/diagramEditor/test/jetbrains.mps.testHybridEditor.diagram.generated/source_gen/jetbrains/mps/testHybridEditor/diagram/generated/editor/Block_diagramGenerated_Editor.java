@@ -45,13 +45,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
       createViewForChildNode(child, editorCell, view.outputs, editorContext);
     }
-    view.dimension().set(Block_diagramGenerated_Editor._StyleParameter_QueryFunction_70mnj_a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    view.dimension().set(Block_diagramGenerated_Editor._StyleParameter_QueryFunction_70mnj_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     view.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
       @Override
       public void handle(View v, MouseEvent e) {
