@@ -29,6 +29,10 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends MethodDeclarat
     return InstanceMethodDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
+  public SNode virtual_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode) {
+    return InstanceMethodDeclaration_Behavior.virtual_getImplementedInterfaceMethod_8302934035201331324(thisNode);
+  }
+
   public SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_getNearestOverriddenMethod_5358895268254685434(thisNode);
   }
