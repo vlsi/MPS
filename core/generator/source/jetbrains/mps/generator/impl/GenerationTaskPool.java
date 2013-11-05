@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,6 +169,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       } else if (th instanceof RuntimeException) {
         throw (RuntimeException) th;
       }
+      throw new GenerationFailureException(th);
     }
   }
 
