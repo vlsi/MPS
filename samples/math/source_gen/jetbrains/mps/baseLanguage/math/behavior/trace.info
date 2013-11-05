@@ -193,13 +193,13 @@
     <nodeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="214" startPosition="7" endLine="215" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="216" startPosition="9" endLine="217" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="218" startPosition="49" endLine="219" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2705856473428697730" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2705856473428697730" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="224" startPosition="16" endLine="225" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="226" startPosition="11" endLine="227" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="228" startPosition="51" endLine="229" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2705856473428697739" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2705856473428697739" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2705856473428697745" fileName="MathUtil.java" startLine="234" startPosition="16" endLine="235" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2705856473428697763" fileName="MathUtil.java" startLine="242" startPosition="138" endLine="243" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2705856473428697774" fileName="MathUtil.java" startLine="245" startPosition="138" endLine="246" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -811,11 +811,11 @@
     <scopeInfo nodeId="1300076822026748045" fileName="MathUtil.java" startLine="204" startPosition="13" endLine="205" endPosition="54" />
     <scopeInfo nodeId="1300076822026748052" fileName="MathUtil.java" startLine="206" startPosition="14" endLine="207" endPosition="20" />
     <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="218" startPosition="49" endLine="219" endPosition="183" />
-    <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="217" />
-    <scopeInfo nodeId="2705856473428697729" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="217" />
+    <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="215" />
+    <scopeInfo nodeId="2705856473428697729" fileName="MathUtil.java" startLine="222" startPosition="34" endLine="223" endPosition="215" />
     <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="228" startPosition="51" endLine="229" endPosition="185" />
-    <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="219" />
-    <scopeInfo nodeId="2705856473428697738" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="219" />
+    <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="217" />
+    <scopeInfo nodeId="2705856473428697738" fileName="MathUtil.java" startLine="232" startPosition="36" endLine="233" endPosition="217" />
     <scopeInfo nodeId="2705856473428697762" fileName="MathUtil.java" startLine="242" startPosition="138" endLine="243" endPosition="15" />
     <scopeInfo nodeId="2705856473428697773" fileName="MathUtil.java" startLine="245" startPosition="138" endLine="246" endPosition="15" />
     <scopeInfo nodeId="2705856473428697784" fileName="MathUtil.java" startLine="248" startPosition="138" endLine="249" endPosition="15" />
