@@ -45,10 +45,15 @@ public class TemporaryModels {
 
   private Map<TempModel, TempModuleOptions> myCreatedModels = new THashMap<TempModel, TempModuleOptions>();
 
+  //todo convert possible parameter sets to "sensivity" enum: read-only (no read-events), read-only (with events), editable, editable with events, editable with undo tracked
   public SModel create(boolean readOnly, @NotNull TempModuleOptions mp) {
+    return create(readOnly, true, mp);
+  }
+
+  public SModel create(boolean readOnly, boolean trackUndo, @NotNull TempModuleOptions mp) {
     SModuleBase module = (SModuleBase) mp.createModule();
 
-    TempModel model = new TempModel(readOnly);
+    TempModel model = new TempModel(readOnly, trackUndo);
     myCreatedModels.put(model, mp);
     module.registerModel(model);
     return model;
