@@ -105,9 +105,9 @@ public class StyleImpl implements Style {
   public void putAll(@NotNull Style style) {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
-    Set<StyleAttribute> forcedNotSimple = new StyleAttributeSet();
     for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
-      getAttribute(attribute).setValue(style.rawGet(attribute));
+      getAttribute(attribute).addValues(style.getAll(attribute));
+      //getAttribute(attribute).setValue(style.rawGet(attribute));
       if (StyleAttributes.isSimple(attribute)) {
         getAttribute(attribute).cached = null;
         addedSimple.add(attribute);
@@ -134,8 +134,8 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public <T> void set(StyleAttribute<T> attribute, T value) {
-    getAttribute(attribute).setValue(value);
+  public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
+    getAttribute(attribute).setValue(priority, value);
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
       getAttribute(attribute).cached = null;
@@ -146,6 +146,11 @@ public class StyleImpl implements Style {
   }
 
   @Override
+  public <T> void set(StyleAttribute<T> attribute, T value) {
+    set(attribute, 0, value);
+  }
+
+  /*@Override
   public <T> void setAll(StyleAttribute<T> attribute, Map<Integer, Object> value) {
     getAttribute(attribute).addValues(value);
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
@@ -155,7 +160,7 @@ public class StyleImpl implements Style {
     } else {
       updateCache(attributeSet);
     }
-  }
+  }*/
 
   @Override
   public <T> T get(StyleAttribute<T> attribute) {
@@ -173,6 +178,11 @@ public class StyleImpl implements Style {
     } else {
       return attribute.combine(null, null);
     }
+  }
+
+  @Override
+  public <T> Map<Integer, T> getAll(StyleAttribute<T> attribute) {
+    return getAttribute(attribute).values;
   }
 
   @Override
@@ -268,35 +278,6 @@ public class StyleImpl implements Style {
     return myParent;
   }
 
-  private void forceUpdateCache(Collection<StyleAttribute> attributes) {
-    if (attributes.isEmpty()) {
-      return;
-    }
-
-    Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
-    for (StyleAttribute attribute : attributes) {
-      Object currentValue = getAttribute(attribute).getTop();
-      Object oldValue = getAttribute(attribute).cached;
-
-      if (!EqualUtil.equals(currentValue, oldValue)) {
-        changedAttributes.add(attribute);
-      }
-      getAttribute(attribute).cached = currentValue;
-
-    }
-
-    if (!changedAttributes.isEmpty()) {
-      if (myChildren != null) {
-        for (Style style : myChildren) {
-          style.setParent(this, changedAttributes);
-        }
-      }
-
-      fireStyleChanged(new StyleChangeEvent(this, changedAttributes));
-    }
-
-  }
-
   private void updateCache(Collection<StyleAttribute> attributes) {
     if (attributes.isEmpty()) {
       return;
@@ -304,19 +285,33 @@ public class StyleImpl implements Style {
 
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute attribute : attributes) {
-      Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
-      Object currentValue = getAttribute(attribute).getTop();
-      Object oldValue = getAttribute(attribute).cached;
 
-      if (parentValue != null || currentValue != null || oldValue != null) {
+      Map<Integer, Object> parentValues = getParentStyle() == null ? new TreeMap<Integer, Object>() : getParentStyle().getAll(attribute);
+      Map<Integer, Object> currentValues = getAttribute(attribute).getAll();
+      Object cachedValue = getAttribute(attribute).cached;
 
-        Object newValue = attribute.combine(parentValue, currentValue);
+      if (parentValues != null || currentValues != null || cachedValue != null) {
 
-        if (!EqualUtil.equals(newValue, oldValue)) {
-          changedAttributes.add(attribute);
+        for (Integer priority : parentValues.keySet()) {
+          if (currentValues.containsKey(priority)) {
+            Object parentValue = parentValues.get(priority);
+            Object currentValue = currentValues.get(priority);
+
+            Object newValue = attribute.combine(parentValue, currentValue);
+            getAttribute(attribute).setValue(priority, newValue);
+            if (!EqualUtil.equals(newValue, currentValue)) {
+              changedAttributes.add(attribute);
+            }
+          } else {
+            getAttribute(attribute).setValue(priority, parentValues.get(priority));
+            changedAttributes.add(attribute);
+          }
         }
 
-        getAttribute(attribute).cached = newValue;
+        getAttribute(attribute).cached = getAttribute(attribute).getTop();
+        if (!EqualUtil.equals(getAttribute(attribute).cached, cachedValue)) {
+          changedAttributes.add(attribute);
+        }
       }
     }
 

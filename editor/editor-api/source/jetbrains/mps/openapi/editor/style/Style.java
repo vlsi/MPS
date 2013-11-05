@@ -37,15 +37,18 @@ public interface Style {
 
   void putAll(@NotNull Style style);
 
-  <T> void setAll(StyleAttribute<T> attribute, Map<Integer, Object> value);
+  //<T> void setAll(StyleAttribute<T> attribute, Map<Integer, Object> value);
 
   <T> void set(StyleAttribute<T> attribute, T value);
+  <T> void set(StyleAttribute<T> attribute, int priority, T value);
 
   void addPriorityGroup(int priority, @NotNull Style style);
 
   Iterable<Pair<Integer, Style>> getPriorityGroups();
 
   <T> T get(StyleAttribute<T> attribute);
+
+  <T> Map<Integer, T> getAll(StyleAttribute<T> attribute);
 
   <T> boolean isSpecified(StyleAttribute<T> attribute);
 
