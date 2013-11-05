@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
+import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -164,6 +165,9 @@ public abstract class DeltaBuilder {
   }
 
   public void enterNestedCopySrc(@NotNull SNode node) {
+    if (!isInsideCopyRoot()) {
+      return;
+    }
     if (getNestedCopyRoots().isEmpty()) {
       assert getCurrentRoot() != null;
       getCurrentFragments().add(new SubTree(node));
@@ -173,10 +177,24 @@ public abstract class DeltaBuilder {
 
   public void leaveNestedCopySrc(@NotNull SNode node) {
     assert node != null;
+    if (!isInsideCopyRoot()) {
+      return;
+    }
     SNode n = getNestedCopyRoots().pop();
     if (n != node) {
       throw new IllegalStateException();
     }
+  }
+
+  /**
+   * With parallel generation and in-place at any step, there are chances COPY_SRC from root mapping rule is executed
+   * after TemplateGenerator.myDeltaBuilder have been initialized, interleaved with root copying.
+   * This check is a sort of quick-n-dirty fix, as there seems to be the only place (TEE.copyNodes and eventually TemplateGenerator.copySrc)
+   * and I don't have time to refactor TG in a way DeltaBuilder is not instance field but lives inside root copy facility
+   * (although copy facility might be the field, and TG#copySRC might extract DeltaBuilder from it, if present)
+   */
+  private boolean isInsideCopyRoot() {
+    return getCurrentRoot() != null;
   }
 
   public void registerSubTree(@NotNull SNode replacedNode, @NotNull String roleInParent, @NotNull Collection<SNode> subTree) {
@@ -242,6 +260,18 @@ public abstract class DeltaBuilder {
               break; // while target
             }
             target = target.getParent();
+          }
+        }
+      }
+      // make references to point to node directly, not (ModelId+NodeId)
+      // as it would be impossible to resolve model once root is detached
+      for (SNode rn : replacedNodes) {
+        for (SNode n : SNodeUtil.getDescendants(rn)) {
+          for (SReference r : n.getReferences()) {
+            if (!inputModelRef.equals(r.getTargetSModelReference()) || ! (r instanceof StaticReference)) {
+              continue;
+            }
+            ((StaticReference) r).makeDirect();
           }
         }
       }
