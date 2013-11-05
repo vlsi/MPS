@@ -371,7 +371,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private boolean needFireEvent() {
-    return myModel != null && myModel.myModelDescriptor != null && ModelChange.needFireEvents(getModel(), this);
+    return myModel != null && myModel.getModelDescriptorPure() != null && ModelChange.needFireEvents(getModel(), this);
   }
 
   /**
@@ -801,7 +801,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    return myModel == null ? null : myModel.myModelDescriptor;
+    return myModel == null ? null : myModel.getModelDescriptorPure();
   }
 
   //this method is for internal checks in SReferenceBase only
@@ -815,7 +815,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SModel persistentModel = getPersistentModel();
     if (persistentModel == null) return null;
 
-    SModelDescriptor modelDescriptor = persistentModel.myModelDescriptor;
+    SModelDescriptor modelDescriptor = persistentModel.getModelDescriptorPure();
     if (!(modelDescriptor instanceof SModelBase)) return null;
 
     return (SModelBase) modelDescriptor;

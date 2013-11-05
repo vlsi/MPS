@@ -264,6 +264,10 @@ public class SModel implements SModelData {
     return myFakeModelDescriptor;
   }
 
+  public SModelDescriptor getModelDescriptorPure(){
+    return myModelDescriptor;
+  }
+
   public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     myModelDescriptor = ((SModelDescriptor) modelDescriptor);
   }
