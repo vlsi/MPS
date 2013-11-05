@@ -104,7 +104,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     return false;
   }
 
-  protected void notifyModelReplaced(SModel oldSModel) {
+  protected void notifyModelReplaced(jetbrains.mps.smodel.SModel oldSModel) {
     SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
   }
 

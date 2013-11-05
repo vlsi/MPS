@@ -24,7 +24,7 @@ public class GoToEditorDeclarationHelper {
     SNode editorDeclaration = ModelAccess.instance().runReadAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return findEditorDeclaration(languageEditor, concept);
+        return GoToEditorDeclarationHelper.findEditorDeclaration(languageEditor, concept);
       }
     });
     if (editorDeclaration != null) {
