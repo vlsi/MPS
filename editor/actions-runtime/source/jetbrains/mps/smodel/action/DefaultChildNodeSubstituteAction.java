@@ -19,6 +19,8 @@ import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -107,6 +109,17 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   @Override
   public SNode getActionType(String pattern) {
     SNode node = createChildNode(getParameterObject(), null, pattern);
-    return ActionsUtil.isInstanceOfIType(node) ? node : TypeChecker.getInstance().getTypeOf(node);
+    if (ActionsUtil.isInstanceOfIType(node)) return node;
+
+    //the following is for smart-type completion
+
+    SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
+    try {
+      model.addRootNode(node);
+      TemporaryModels.getInstance().addMissingImports(model);
+      return TypeChecker.getInstance().getTypeOf(node);
+    } finally {
+      TemporaryModels.getInstance().dispose(model);
+    }
   }
 }
