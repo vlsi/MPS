@@ -48,7 +48,17 @@ public interface Style {
 
   <T> T get(StyleAttribute<T> attribute);
 
-  <T> Map<Integer, T> getAll(StyleAttribute<T> attribute);
+  public static class IntPair<T> {
+    public int index;
+    public T value;
+
+    public IntPair(int index, T value) {
+      this.index = index;
+      this.value = value;
+    }
+  }
+
+  <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);
 
   <T> boolean isSpecified(StyleAttribute<T> attribute);
 

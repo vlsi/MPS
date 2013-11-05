@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import gnu.trove.TIntArrayList;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
@@ -27,19 +28,17 @@ import jetbrains.mps.openapi.editor.style.StyleListener;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.AbstractMap;
+import javax.management.Query;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
-import java.util.PriorityQueue;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 /**
  * User: shatalin
@@ -52,27 +51,55 @@ public class StyleImpl implements Style {
   private List<Style> myChildren = null;
   private List<StyleListener> myStyleListeners = null;
 
-  private static class AttributeValue<T> {
+
+  private static class AttributeValue<T> extends IntObjectMap<T> {
     public T cached;
-    private TreeMap<Integer, T> values = new TreeMap<Integer, T>();
+  }
+
+  private static class IntObjectMap<T> {
+
+    public LinkedList<IntPair<T>> values;
+
     public void setValue(T value) {
       setValue(0, value);
     }
-    public void addValues(Map<Integer, T> valuesToAdd) {
-      values.putAll(valuesToAdd);
-    }
-    public TreeMap<Integer, T> getAll() {
+
+    public Collection<IntPair<T>> getAll() {
       return values;
     }
-    public void setValue(int priority, T value) {
-      values.put(priority, value);
+
+    public void addValues(Collection<IntPair<T>> values) {
+      for (IntPair<T> pair : values) {
+        setValue(pair.index, pair.value);
+      }
+    }
+
+    public void setValue(int index, T value) {
+      if (values == null) {
+        values = new LinkedList<IntPair<T>>();
+      }
+
+      if (values.size() == 0) {
+        values.add(new IntPair<T>(index, value));
+      } else if (values.get(0).index > index) {
+        values.add(0, new IntPair<T>(index, value));
+      } else if (values.get(values.size() - 1).index < index) {
+        values.add(values.size(), new IntPair<T>(index, value));
+      } else {
+        ListIterator<IntPair<T>> iterator = values.listIterator();
+        while (iterator.next().index < index);
+        if (iterator.previous().index == index) {
+          iterator.set(new IntPair<T>(index, value));
+        } else {
+          iterator.add(new IntPair<T>(index, value));
+        }
+      }
     }
     public T getTop() {
-      if (values.isEmpty()) {
+      if (values == null || values.isEmpty()) {
         return null;
-      } else {
-        return values.lastEntry().getValue();
       }
+      return values.getLast().value;
     }
   }
 
@@ -181,13 +208,13 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public <T> Map<Integer, T> getAll(StyleAttribute<T> attribute) {
-    return getAttribute(attribute).values;
+  public <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute) {
+    return getAttribute(attribute).getAll();
   }
 
   @Override
   public <T> boolean isSpecified(StyleAttribute<T> attribute) {
-    return ! getAttribute(attribute).values.isEmpty();
+    return getAttribute(attribute).getTop() != null;
   }
 
   @Override
@@ -286,8 +313,8 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute attribute : attributes) {
 
-      Map<Integer, Object> parentValues = getParentStyle() == null ? new TreeMap<Integer, Object>() : getParentStyle().getAll(attribute);
-      Map<Integer, Object> currentValues = getAttribute(attribute).getAll();
+      Collection<IntPair<Object>> parentValues = getParentStyle() == null ? new LinkedList<IntPair<Object>>() : getParentStyle().getAll(attribute);
+      Collection<IntPair<Object>> currentValues = getAttribute(attribute).getAll();
       Object cachedValue = getAttribute(attribute).cached;
 
       if (parentValues != null || currentValues != null || cachedValue != null) {
