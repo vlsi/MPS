@@ -3700,15 +3700,7 @@ __switch__:
             ListSequence.fromList(SLinkOperations.getTargets(cls, "typeParameter", true)).addElement(it);
           }
         });
-        // todo fix this 
-        SNode constructor = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-        SLinkOperations.setNewChild(constructor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
-        SLinkOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StubStatementList");
-        SLinkOperations.setNewChild(constructor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
-        SPropertyOperations.set(constructor, "name", SPropertyOperations.getString(SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false), "name"));
-        SPropertyOperations.set(constructor, "nestedName", SPropertyOperations.getString(SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false), "name"));
-        SNode dummyDeclaration = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", null);
-        SLinkOperations.setTarget(cls, "baseMethodDeclaration", dummyDeclaration, false);
+        SLinkOperations.setTarget(cls, "baseMethodDeclaration", Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))).first(), false);
         SLinkOperations.setTarget(cls, "classifier", SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false), false);
         SLinkOperations.setTarget(creator, "cls", cls, true);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), creator);
