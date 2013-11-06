@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import gnu.trove.TIntArrayList;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
@@ -27,18 +26,16 @@ import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
 import jetbrains.mps.openapi.editor.style.StyleListener;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.management.Query;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 /**
  * User: shatalin
@@ -115,22 +112,21 @@ public class StyleImpl implements Style {
     }
   }
 
-  private Map<Integer, AttributeValue> myAttributes = new ListMap<Integer, AttributeValue>();
+  private Map<Integer, AttributeValue<Object>> myAttributes = new ListMap<Integer, AttributeValue<Object>>();
+
   private AttributeValue getAttribute(StyleAttribute attribute) {
-    if (! myAttributes.containsKey(attribute.getIndex())) {
-      myAttributes.put(attribute.getIndex(), new AttributeValue());
-    }
     return myAttributes.get(attribute.getIndex());
   }
-  //private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-  //private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-  /*private SortedSet<Pair<Integer, Style>> myPriorityGroups = new TreeSet<Pair<Integer, Style>>(new Comparator<Pair<Integer, Style>>() {
-    @Override
-    public int compare(Pair<Integer, Style> a, Pair<Integer, Style> b) {
-      return a.o1.compareTo(b.o1);
-    }
-  });
-  */
+  private <T> T getCached(StyleAttribute<T> attribute) {
+    AttributeValue<T> attributeValue = getAttribute(attribute);
+    return attributeValue == null ? null : attributeValue.cached;
+  }
+
+  private <T> T getTop(StyleAttribute<T> attribute) {
+    AttributeValue<T> attributeValue = getAttribute(attribute);
+    return attributeValue == null ? null : attributeValue.getTop();
+  }
+
   private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
     return Collections.singleton(sa);
   }
@@ -145,8 +141,10 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
     for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
+      if (getAttribute(attribute) == null) {
+        myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
+      }
       getAttribute(attribute).addValues(style.getAll(attribute));
-      //getAttribute(attribute).setValue(style.rawGet(attribute));
       if (StyleAttributes.isSimple(attribute)) {
         getAttribute(attribute).cached = null;
         addedSimple.add(attribute);
@@ -159,21 +157,10 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public Iterable<Pair<Integer, Style>> getPriorityGroups() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public void addPriorityGroup(int priority, @NotNull Style priorityGroup) {
-    throw new UnsupportedOperationException();
-  }
-
-  private void applyPriorityGroups() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
+    if (getAttribute(attribute) == null) {
+      myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
+    }
     getAttribute(attribute).setValue(priority, value);
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
@@ -189,29 +176,19 @@ public class StyleImpl implements Style {
     set(attribute, 0, value);
   }
 
-  /*@Override
-  public <T> void setAll(StyleAttribute<T> attribute, Map<Integer, Object> value) {
-    getAttribute(attribute).addValues(value);
-    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
-    if (StyleAttributes.isSimple(attribute)) {
-      getAttribute(attribute).cached = null;
-      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
-    } else {
-      updateCache(attributeSet);
-    }
-  }*/
-
   @Override
   public <T> T get(StyleAttribute<T> attribute) {
-    final int index = attribute.getIndex();
     if (StyleAttributes.isSimple(attribute)) {
-      if (getAttribute(attribute).cached == null) {
-        T value = (T) getAttribute(attribute).getTop();
+      if (getCached(attribute) == null) {
+        T value = getTop(attribute);
+        if (getAttribute(attribute) == null) {
+          myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
+        }
         getAttribute(attribute).cached = attribute.combine(null, value);
       }
-      return (T) getAttribute(attribute).cached;
+      return getCached(attribute);
     }
-    T value = (T) getAttribute(attribute).cached;
+    T value = getCached(attribute);
     if (value != null) {
       return value;
     } else {
@@ -220,13 +197,15 @@ public class StyleImpl implements Style {
   }
 
   @Override
+  @Nullable
   public <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute) {
-    return getAttribute(attribute).getAll();
+    AttributeValue<T> attributeValue = getAttribute(attribute);
+    return attributeValue == null ? null : attributeValue.getAll();
   }
 
   @Override
   public <T> boolean isSpecified(StyleAttribute<T> attribute) {
-    return getAttribute(attribute).getTop() != null;
+    return getTop(attribute) != null;
   }
 
   @Override
@@ -243,8 +222,9 @@ public class StyleImpl implements Style {
   }
 
   @Override
+  @Deprecated
   public Object rawGet(StyleAttribute attribute) {
-    return getAttribute(attribute).getTop();
+    return getTop(attribute);
   }
 
   @Override
@@ -306,7 +286,7 @@ public class StyleImpl implements Style {
   private Set<StyleAttribute> getNonDefaultValuedAttributes() {
     Set<StyleAttribute> result = new StyleAttributeSet();
     for (StyleAttribute attribute : StyleAttributes.getNotSimpleAttributes()) {
-      if (getAttribute(attribute).cached != null) {
+      if (getCached(attribute) != null) {
         result.add(attribute);
       }
     }
@@ -323,11 +303,15 @@ public class StyleImpl implements Style {
     }
 
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
-    for (StyleAttribute attribute : attributes) {
+    for (StyleAttribute<Object> attribute : attributes) {
+
+      if (getAttribute(attribute) == null) {
+        myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
+      }
 
       Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAll(attribute);
       AttributeValue<Object> currentValues = getAttribute(attribute);
-      Object cachedValue = getAttribute(attribute).cached;
+      Object cachedValue = getCached(attribute);
 
       if (parentValues != null) {
         if (currentValues == null || currentValues.values == null || currentValues.values.isEmpty()) {
@@ -351,8 +335,8 @@ public class StyleImpl implements Style {
           }
         }
       }
-      getAttribute(attribute).cached = getAttribute(attribute).getTop();
-      if (!EqualUtil.equals(getAttribute(attribute).cached, cachedValue)) {
+      getAttribute(attribute).cached = getTop(attribute);
+      if (!EqualUtil.equals(getCached(attribute), cachedValue)) {
         changedAttributes.add(attribute);
       }
     }

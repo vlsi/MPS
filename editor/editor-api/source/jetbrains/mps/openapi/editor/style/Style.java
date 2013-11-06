@@ -18,6 +18,7 @@ package jetbrains.mps.openapi.editor.style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,14 +38,8 @@ public interface Style {
 
   void putAll(@NotNull Style style);
 
-  //<T> void setAll(StyleAttribute<T> attribute, Map<Integer, Object> value);
-
   <T> void set(StyleAttribute<T> attribute, T value);
   <T> void set(StyleAttribute<T> attribute, int priority, T value);
-
-  void addPriorityGroup(int priority, @NotNull Style style);
-
-  Iterable<Pair<Integer, Style>> getPriorityGroups();
 
   <T> T get(StyleAttribute<T> attribute);
 
@@ -70,12 +65,14 @@ public interface Style {
    * @param <T>
    * @return sorted by index
    */
+  @Nullable
   <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);
 
   <T> boolean isSpecified(StyleAttribute<T> attribute);
 
   Iterable<StyleAttribute> getSpecifiedAttributes();
 
+  @Deprecated
   Object rawGet(StyleAttribute attribute);
 
   void addListener(StyleListener l);
