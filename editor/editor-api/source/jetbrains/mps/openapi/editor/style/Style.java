@@ -51,20 +51,8 @@ public interface Style {
       this.index = index;
       this.value = value;
     }
-
-    @Override
-    public boolean equals(Object o) {
-      return o instanceof IntPair && index == ((IntPair) o).index;
-    }
-
   }
 
-  /**
-   *
-   * @param attribute
-   * @param <T>
-   * @return sorted by index
-   */
   @Nullable
   <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);
 

@@ -49,11 +49,11 @@ public class StyleImpl implements Style {
   private List<StyleListener> myStyleListeners = null;
 
 
-  private static class AttributeValue<T> extends IntObjectMap<T> {
+  private static class AttributeValue<T> extends IntObjectSortedListMap<T> {
     public T cached;
   }
 
-  private static class IntObjectMap<T> {
+  private static class IntObjectSortedListMap<T> {
 
     public LinkedList<IntPair<T>> values;
 
@@ -114,8 +114,16 @@ public class StyleImpl implements Style {
 
   private Map<Integer, AttributeValue<Object>> myAttributes = new ListMap<Integer, AttributeValue<Object>>();
 
-  private AttributeValue getAttribute(StyleAttribute attribute) {
-    return myAttributes.get(attribute.getIndex());
+  @Nullable
+  private <T> AttributeValue<T> getAttribute(StyleAttribute<T> attribute) {
+    return (AttributeValue<T>) myAttributes.get(attribute.getIndex());
+  }
+  @NotNull
+  public <T> AttributeValue<T> ensureGetAttribute(StyleAttribute<T> attribute) {
+    if (getAttribute(attribute) == null) {
+      myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
+    }
+    return getAttribute(attribute);
   }
   private <T> T getCached(StyleAttribute<T> attribute) {
     AttributeValue<T> attributeValue = getAttribute(attribute);
@@ -141,12 +149,9 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
     for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
-      if (getAttribute(attribute) == null) {
-        myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
-      }
-      getAttribute(attribute).addValues(style.getAll(attribute));
+      ensureGetAttribute(attribute).addValues(style.getAll(attribute));
       if (StyleAttributes.isSimple(attribute)) {
-        getAttribute(attribute).cached = null;
+        ensureGetAttribute(attribute).cached = null;
         addedSimple.add(attribute);
       } else {
         addedNotSimple.add(attribute);
@@ -158,13 +163,10 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
-    if (getAttribute(attribute) == null) {
-      myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
-    }
-    getAttribute(attribute).setValue(priority, value);
+    ensureGetAttribute(attribute).setValue(priority, value);
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
-      getAttribute(attribute).cached = null;
+      ensureGetAttribute(attribute).cached = null;
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
     } else {
       updateCache(attributeSet);
@@ -181,10 +183,7 @@ public class StyleImpl implements Style {
     if (StyleAttributes.isSimple(attribute)) {
       if (getCached(attribute) == null) {
         T value = getTop(attribute);
-        if (getAttribute(attribute) == null) {
-          myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
-        }
-        getAttribute(attribute).cached = attribute.combine(null, value);
+        ensureGetAttribute(attribute).cached = attribute.combine(null, value);
       }
       return getCached(attribute);
     }
@@ -305,12 +304,8 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute<Object> attribute : attributes) {
 
-      if (getAttribute(attribute) == null) {
-        myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
-      }
-
       Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAll(attribute);
-      AttributeValue<Object> currentValues = getAttribute(attribute);
+      AttributeValue<Object> currentValues = ensureGetAttribute(attribute);
       Object cachedValue = getCached(attribute);
 
       if (parentValues != null) {
