@@ -125,7 +125,7 @@ public class AlterStatementListContainerFactoryUtils {
         SNode f = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SLinkOperations.setTarget(f, "classifier", SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator"), false);
         SLinkOperations.setTarget(iteratorVar, "type", f, true);
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(iteratorVar, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), varType, "virtual_getUnboxedType_1213877337320", new Object[]{}));
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(iteratorVar, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), varType, "virtual_getBoxedType_1213877337320", new Object[]{}));
         SLinkOperations.setTarget(forStatement, "variable", iteratorVar, true);
 
         SLinkOperations.setTarget(forStatement, "condition", createDotExpression_kz5t2g_a0a11a0k0c0e(), true);
