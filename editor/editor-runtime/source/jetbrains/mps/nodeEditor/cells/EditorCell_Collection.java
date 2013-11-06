@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -523,6 +524,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
     while (!children.isEmpty()) {
       EditorCell child = children.poll();
+      if (child instanceof EditorCell_WithComponent) {
+        ((EditorCell_WithComponent) child).getComponent().setVisible(true);
+      }
       if (!(child instanceof EditorCell_Collection)) {
         continue;
       }
@@ -539,6 +543,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
     while (!children.isEmpty()) {
       EditorCell child = children.poll();
+      if (child instanceof EditorCell_WithComponent) {
+        ((EditorCell_WithComponent) child).getComponent().setVisible(false);
+      }
       if (!(child instanceof EditorCell_Collection)) {
         continue;
       }
