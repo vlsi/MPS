@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -34,7 +33,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -112,16 +110,18 @@ public class StyleImpl implements Style {
     }
   }
 
-  private Map<Integer, AttributeValue<Object>> myAttributes = new ListMap<Integer, AttributeValue<Object>>();
+  private IntObjectSortedListMap<AttributeValue<Object>> myAttributes = new IntObjectSortedListMap<AttributeValue<Object>>();
 
   @Nullable
   private <T> AttributeValue<T> getAttribute(StyleAttribute<T> attribute) {
-    return (AttributeValue<T>) myAttributes.get(attribute.getIndex());
+    Pair<Boolean, ListIterator<IntPair<AttributeValue<Object>>>> searchResult = myAttributes.search(attribute.getIndex());
+    boolean found = searchResult.o1;
+    return found ? (AttributeValue<T>) searchResult.o2.next().value : null;
   }
   @NotNull
   public <T> AttributeValue<T> ensureGetAttribute(StyleAttribute<T> attribute) {
     if (getAttribute(attribute) == null) {
-      myAttributes.put(attribute.getIndex(), new AttributeValue<Object>());
+      myAttributes.setValue(attribute.getIndex(), new AttributeValue<Object>());
     }
     return getAttribute(attribute);
   }
@@ -209,7 +209,7 @@ public class StyleImpl implements Style {
 
   @Override
   public Iterable<StyleAttribute> getSpecifiedAttributes() {
-    int maxSize = myAttributes.size();
+    int maxSize = myAttributes.values.size();
     ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(maxSize);
     for (int i = 0; i < StyleAttributes.getAttributesCount(); i++) {
       if (! isSpecified(StyleAttributes.getAttribute(i))) {
