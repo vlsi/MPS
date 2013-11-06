@@ -66,7 +66,7 @@ public class MergeSession {
 
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
-    jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_bow6nj_a0a0a1a31(base, SModelBase.class).getSModelInternal());
+    jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) base).getSModel());
     if (resModel instanceof DefaultSModel) {
       int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
       ((DefaultSModel) resModel).setPersistenceVersion(pv);
@@ -493,13 +493,6 @@ public class MergeSession {
       checkedDotOperand.someChangesInvalidated();
     }
 
-  }
-
-  private static <T> T as_bow6nj_a0a0a1a31(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   private static <T> T as_bow6nj_a0a0a71(Object o, Class<T> type) {

@@ -31,9 +31,9 @@
     <nodeInfo nodeId="7057947030097950205" fileName="PartitioningHelper.java" startLine="68" startPosition="91" endLine="69" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7057947030097950209" fileName="PartitioningHelper.java" startLine="69" startPosition="73" endLine="70" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7057947030097950212" fileName="PartitioningHelper.java" startLine="70" startPosition="57" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7057947030100467719" fileName="PartitioningHelper.java" startLine="71" startPosition="30" endLine="72" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7057947030100582826" fileName="PartitioningHelper.java" startLine="73" startPosition="7" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7057947030097950221" fileName="PartitioningHelper.java" startLine="74" startPosition="59" endLine="75" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7057947030100467719" fileName="PartitioningHelper.java" startLine="71" startPosition="30" endLine="72" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7057947030100582826" fileName="PartitioningHelper.java" startLine="73" startPosition="7" endLine="74" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7057947030097950221" fileName="PartitioningHelper.java" startLine="74" startPosition="61" endLine="75" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7057947030097950380" fileName="PartitioningHelper.java" startLine="76" startPosition="5" endLine="77" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7057947030097950233" fileName="PartitioningHelper.java" startLine="77" startPosition="25" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7057947030097950250" fileName="PartitioningHelper.java" startLine="79" startPosition="60" endLine="80" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -110,7 +110,7 @@
     <scopeInfo nodeId="7057947030097950140" fileName="PartitioningHelper.java" startLine="53" startPosition="106" endLine="58" endPosition="7">
       <varInfo nodeId="7057947030097950157" varName="string" />
     </scopeInfo>
-    <scopeInfo nodeId="7057947030097950195" fileName="PartitioningHelper.java" startLine="67" startPosition="70" endLine="72" endPosition="36">
+    <scopeInfo nodeId="7057947030097950195" fileName="PartitioningHelper.java" startLine="67" startPosition="70" endLine="72" endPosition="59">
       <varInfo nodeId="7057947030097950196" varName="msg" />
       <varInfo nodeId="7057947030097950204" varName="templateModule" />
     </scopeInfo>

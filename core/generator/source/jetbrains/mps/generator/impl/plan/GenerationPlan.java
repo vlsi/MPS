@@ -43,7 +43,7 @@ public class GenerationPlan {
 
   //  private Set<Language> myLanguages = new HashSet<Language>();
   private final List<List<TemplateMappingConfiguration>> myPlan;
-  private final Set<TemplateMappingPriorityRule> myConflictingPriorityRules;
+  private final PriorityConflicts myConflictingPriorityRules;
   private final String myInputName;
   private TemplateSwitchGraph myTemplateSwitchGraph;
 
@@ -86,7 +86,7 @@ public class GenerationPlan {
     if (myPlan.isEmpty()) {
       myPlan.add(new ArrayList<TemplateMappingConfiguration>());
     }
-    myConflictingPriorityRules = Collections.emptySet();
+    myConflictingPriorityRules = new PriorityConflicts();
   }
 
   public Collection<TemplateModule> getGenerators() {
@@ -126,11 +126,11 @@ public class GenerationPlan {
   }
 
   public boolean hasConflictingPriorityRules() {
-    return !myConflictingPriorityRules.isEmpty();
+    return myConflictingPriorityRules.hasConflicts();
   }
 
   public List<Pair<MappingPriorityRule, String>> getConflictingPriorityRulesAsStrings() {
-    return GenerationPartitioningUtil.toStrings(myConflictingPriorityRules, true);
+    return myConflictingPriorityRules.describe();
   }
 
   public String getSignature() {

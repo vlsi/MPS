@@ -46,7 +46,7 @@ public class StructureModificationProcessor {
 
   public boolean updateModelOnLoad() {
     // should be called in loading state 
-    if (!(refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(myModel.getModelDescriptor()))) {
+    if (!(refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(myModel.getReference().getModelName()))) {
       return false;
     }
     boolean played = false;
@@ -58,7 +58,7 @@ public class StructureModificationProcessor {
 
   public List<StructureModification> getApplicableModifications() {
     List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
-    for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel.getModelDescriptor()))) {
+    for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
       RefactorableSModelDescriptor usedModel = as_etzqsh_a0a0a1a5(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
         continue;
@@ -144,8 +144,8 @@ lfind:
   }
 
   public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
-    if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model.getModelDescriptor())) {
-      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getModelDescriptor()))) {
+    if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model.getReference().getModelName())) {
+      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model))) {
         RefactorableSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a8(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
         if (usedModel != null && importElement.getUsedVersion() < usedModel.getVersion()) {
           return true;

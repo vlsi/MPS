@@ -37,6 +37,10 @@ public class SModelStereotype {
     return isUserModelStereotype(getStereotype(model));
   }
 
+  public static boolean isUserModel(@NotNull String modelFqName) {
+    return isUserModelStereotype(getStereotype(modelFqName));
+  }
+
   private static boolean isUserModelStereotype(String stereotype) {
     return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TESTS.equals(stereotype) || DESCRIPTOR.equals(stereotype);
   }

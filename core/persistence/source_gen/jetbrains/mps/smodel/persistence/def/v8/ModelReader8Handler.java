@@ -182,7 +182,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldmodel.setPersistenceVersion(8);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper(fieldmodel.getReference());
-      fieldlinkMap = new ModelLinkMap(fieldmodel.getModelDescriptor());
+      fieldlinkMap = new ModelLinkMap(fieldmodel);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
 
