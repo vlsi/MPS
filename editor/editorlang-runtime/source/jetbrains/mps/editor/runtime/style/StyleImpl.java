@@ -64,8 +64,30 @@ public class StyleImpl implements Style {
       setValue(0, value);
     }
 
-    public Collection<IntPair<T>> getAll() {
+    public LinkedList<IntPair<T>> getAll() {
       return values;
+    }
+
+    public Pair<Boolean, ListIterator<IntPair<T>>> search(int index) {
+      if (values == null) {
+        values = new LinkedList<IntPair<T>>();
+      }
+
+      ListIterator<IntPair<T>> iterator = values.listIterator();
+      if (! iterator.hasNext()) {
+        return new Pair<Boolean, ListIterator<IntPair<T>>>(false, iterator);
+      } else {
+        while (iterator.hasNext() && iterator.next().index < index);
+        int prevIndex = iterator.previous().index;
+        if (prevIndex == index) {
+          return new Pair<Boolean, ListIterator<IntPair<T>>>(true, iterator);
+        } else if (prevIndex < index) {
+          iterator.next();
+          return new Pair<Boolean, ListIterator<IntPair<T>>>(false, iterator);
+        } else {
+          return new Pair<Boolean, ListIterator<IntPair<T>>>(false, iterator);
+        }
+      }
     }
 
     public void addValues(Collection<IntPair<T>> values) {
@@ -75,24 +97,14 @@ public class StyleImpl implements Style {
     }
 
     public void setValue(int index, T value) {
-      if (values == null) {
-        values = new LinkedList<IntPair<T>>();
-      }
+      Pair<Boolean, ListIterator<IntPair<T>>> searchResult = search(index);
+      boolean found = searchResult.o1;
+      ListIterator<IntPair<T>> iterator = searchResult.o2;
 
-      if (values.size() == 0) {
-        values.add(new IntPair<T>(index, value));
-      } else if (values.get(0).index > index) {
-        values.add(0, new IntPair<T>(index, value));
-      } else if (values.get(values.size() - 1).index < index) {
-        values.add(values.size(), new IntPair<T>(index, value));
+      if (found) {
+        iterator.set(new IntPair<T>(index, value));
       } else {
-        ListIterator<IntPair<T>> iterator = values.listIterator();
-        while (iterator.next().index < index);
-        if (iterator.previous().index == index) {
-          iterator.set(new IntPair<T>(index, value));
-        } else {
-          iterator.add(new IntPair<T>(index, value));
-        }
+        iterator.add(new IntPair<T>(index, value));
       }
     }
     public T getTop() {
@@ -313,32 +325,35 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute attribute : attributes) {
 
-      Collection<IntPair<Object>> parentValues = getParentStyle() == null ? new LinkedList<IntPair<Object>>() : getParentStyle().getAll(attribute);
-      Collection<IntPair<Object>> currentValues = getAttribute(attribute).getAll();
+      Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAll(attribute);
+      AttributeValue<Object> currentValues = getAttribute(attribute);
       Object cachedValue = getAttribute(attribute).cached;
 
-      if (parentValues != null || currentValues != null || cachedValue != null) {
-
-        for (Integer priority : parentValues.keySet()) {
-          if (currentValues.containsKey(priority)) {
-            Object parentValue = parentValues.get(priority);
-            Object currentValue = currentValues.get(priority);
-
-            Object newValue = attribute.combine(parentValue, currentValue);
-            getAttribute(attribute).setValue(priority, newValue);
-            if (!EqualUtil.equals(newValue, currentValue)) {
+      if (parentValues != null) {
+        if (currentValues == null || currentValues.values == null || currentValues.values.isEmpty()) {
+          getAttribute(attribute).addValues(parentValues);
+        } else {
+          for (IntPair<Object> pValue : parentValues) {
+            Pair<Boolean, ListIterator<IntPair<Object>>> searchResult = currentValues.search(pValue.index);
+            boolean found = searchResult.o1;
+            ListIterator<IntPair<Object>> iterator = searchResult.o2;
+            if (found) {
+              Object currentValue = iterator.next().value;
+              Object newValue = attribute.combine(pValue.value, currentValue);
+              iterator.previous().value = newValue;
+              if (!EqualUtil.equals(newValue, currentValue)) {
+                changedAttributes.add(attribute);
+              }
+            } else {
+              iterator.add(new IntPair<Object>(pValue.index, pValue.value));
               changedAttributes.add(attribute);
             }
-          } else {
-            getAttribute(attribute).setValue(priority, parentValues.get(priority));
-            changedAttributes.add(attribute);
           }
         }
-
-        getAttribute(attribute).cached = getAttribute(attribute).getTop();
-        if (!EqualUtil.equals(getAttribute(attribute).cached, cachedValue)) {
-          changedAttributes.add(attribute);
-        }
+      }
+      getAttribute(attribute).cached = getAttribute(attribute).getTop();
+      if (!EqualUtil.equals(getAttribute(attribute).cached, cachedValue)) {
+        changedAttributes.add(attribute);
       }
     }
 
