@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -15,121 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
-  @Deprecated
-  public static Style getRootCellModelStyle(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getStyle(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getItem(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getHeader(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getProperty(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getBordered(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getBorderedCollection(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getTag(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.MATCHING_LABEL, "tag");
-    return style;
-  }
-
-  @Deprecated
-  public static Style getAttributedCellLabel(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getString(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
-    return style;
-  }
-
   public static void applyRootCellModelStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
       null :
@@ -211,6 +95,8 @@ public class Styles_StyleSheet {
   public static void applyString(Style style, EditorCell editorCell) {
     style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
   }
+
+
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {

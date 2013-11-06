@@ -4,93 +4,12 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Styles_StyleSheet {
-  @Deprecated
-  public static Style getGeneratorKeyWord(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getConstant(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getLiteral(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMacroStart(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.EDITABLE, true);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getNodeUnderMacro(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMappingLabelReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMacroDescriptionText(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMappingRuleDeclaration(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getMappingRuleReference(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(Styles_StyleSheet.getMappingRuleDeclaration(editorCell));
-    return style;
-  }
-
   public static void applyGeneratorKeyWord(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -140,4 +59,6 @@ public class Styles_StyleSheet {
   public static void applyMappingRuleReference(Style style, EditorCell editorCell) {
     Styles_StyleSheet.applyMappingRuleDeclaration(style, editorCell);
   }
+
+
 }

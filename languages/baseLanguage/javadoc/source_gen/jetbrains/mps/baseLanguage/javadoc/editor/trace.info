@@ -4939,62 +4939,30 @@
     <unitInfo nodeId="6962838954693749205" fileName="ValueInlineDocTag_Editor.java" startLine="23" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.ValueInlineDocTag_Editor" />
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/7344646339284548672">
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="16" startPosition="63" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="17" startPosition="44" endLine="18" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="18" startPosition="59" endLine="19" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="19" startPosition="102" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="24" startPosition="66" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="25" startPosition="44" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="26" startPosition="73" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="31" startPosition="70" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="32" startPosition="44" endLine="33" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="33" startPosition="83" endLine="34" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="34" startPosition="64" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="38" startPosition="71" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="39" startPosition="59" endLine="40" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="43" startPosition="74" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="47" startPosition="78" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="48" startPosition="78" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyCommentTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyComment#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyCommentHTMLTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommentTag#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getComment#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommentHTMLTag#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="43" startPosition="74" endLine="44" endPosition="68" />
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="38" startPosition="71" endLine="40" endPosition="102" />
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="47" startPosition="78" endLine="49" endPosition="64" />
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="24" startPosition="66" endLine="27" endPosition="17">
-      <varInfo nodeId="7344646339284548672" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="14" startPosition="71" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="15" startPosition="59" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="19" startPosition="74" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="23" startPosition="78" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="24" startPosition="78" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyCommentTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyComment#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyCommentHTMLTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="19" startPosition="74" endLine="20" endPosition="68" />
+    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="14" startPosition="71" endLine="16" endPosition="102" />
+    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="23" startPosition="78" endLine="25" endPosition="64" />
+    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="7344646339284548672" varName="editorCell" />
       <varInfo nodeId="7344646339284548672" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="16" startPosition="63" endLine="20" endPosition="17">
-      <varInfo nodeId="7344646339284548672" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="31" startPosition="70" endLine="35" endPosition="17">
-      <varInfo nodeId="7344646339284548672" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="7344646339284548672" varName="editorCell" />
       <varInfo nodeId="7344646339284548672" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="7344646339284548672" varName="editorCell" />
       <varInfo nodeId="7344646339284548672" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="7344646339284548672" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="7344646339284548672" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="7344646339284548672" varName="editorCell" />
-    </scopeInfo>
-    <unitInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocumentationCommentStyleSheet_StyleSheet" />
+    <unitInfo nodeId="7344646339284548672" fileName="DocumentationCommentStyleSheet_StyleSheet.java" startLine="13" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.DocumentationCommentStyleSheet_StyleSheet" />
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/8465538089690324386">
     <nodeInfo nodeId="8465538089690324386" fileName="VersionBlockDocTag_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

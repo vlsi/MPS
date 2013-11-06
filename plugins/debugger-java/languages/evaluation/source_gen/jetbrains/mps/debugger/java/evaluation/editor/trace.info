@@ -54,45 +54,23 @@
     <unitInfo nodeId="1707366700950402061" fileName="GenerationHelperAnnotation_Editor.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.GenerationHelperAnnotation_Editor" />
   </root>
   <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/2205814982759307967">
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="15" startPosition="70" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="16" startPosition="44" endLine="17" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="17" startPosition="58" endLine="18" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="18" startPosition="110" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="23" startPosition="62" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="24" startPosition="44" endLine="25" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="25" startPosition="57" endLine="26" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="26" startPosition="108" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="30" startPosition="78" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="31" startPosition="58" endLine="32" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="35" startPosition="70" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="36" startPosition="57" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyContextKeyword#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyHeader#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContextKeyword#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getHeader#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="30" startPosition="78" endLine="32" endPosition="110" />
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="35" startPosition="70" endLine="37" endPosition="108" />
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="15" startPosition="70" endLine="19" endPosition="17">
-      <varInfo nodeId="2205814982759307967" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="23" startPosition="62" endLine="27" endPosition="17">
-      <varInfo nodeId="2205814982759307967" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="13" startPosition="78" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="14" startPosition="58" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="18" startPosition="70" endLine="19" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="19" startPosition="57" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyContextKeyword#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyHeader#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="13" startPosition="78" endLine="15" endPosition="110" />
+    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="18" startPosition="70" endLine="20" endPosition="108" />
+    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2205814982759307967" varName="editorCell" />
       <varInfo nodeId="2205814982759307967" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="2205814982759307967" varName="editorCell" />
       <varInfo nodeId="2205814982759307967" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="2205814982759307967" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="2205814982759307967" varName="editorCell" />
-    </scopeInfo>
-    <unitInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.EvaluationStyles_StyleSheet" />
+    <unitInfo nodeId="2205814982759307967" fileName="EvaluationStyles_StyleSheet.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.EvaluationStyles_StyleSheet" />
   </root>
   <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/4336756357323803642">
     <nodeInfo nodeId="4336756357323803642" fileName="UnitNode_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

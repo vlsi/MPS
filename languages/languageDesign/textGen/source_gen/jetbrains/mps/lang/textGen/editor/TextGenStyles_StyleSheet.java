@@ -4,28 +4,12 @@ package jetbrains.mps.lang.textGen.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TextGenStyles_StyleSheet {
-  @Deprecated
-  public static Style getTextGenOperation(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getAppendPart(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    return style;
-  }
-
   public static void applyTextGenOperation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -34,4 +18,6 @@ public class TextGenStyles_StyleSheet {
   public static void applyAppendPart(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
+
+
 }

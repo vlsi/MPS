@@ -595,43 +595,22 @@
     <unitInfo nodeId="1233670266779" fileName="ConceptTextGenDeclaration_Editor.java" startLine="36" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.ConceptTextGenDeclaration_Editor" />
   </root>
   <root nodeRef="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)/1233677132994">
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="15" startPosition="72" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="16" startPosition="44" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="17" startPosition="110" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="18" startPosition="57" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="23" startPosition="66" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="24" startPosition="44" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="25" startPosition="58" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="29" startPosition="80" endLine="30" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="30" startPosition="110" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="34" startPosition="74" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyAppendPart#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyTextGenOperation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAppendPart#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTextGenOperation#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="34" startPosition="74" endLine="35" endPosition="58" />
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="29" startPosition="80" endLine="31" endPosition="57" />
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="23" startPosition="66" endLine="26" endPosition="17">
-      <varInfo nodeId="1233677132994" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="13" startPosition="80" endLine="14" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="14" startPosition="110" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="18" startPosition="74" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyAppendPart#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyTextGenOperation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="18" startPosition="74" endLine="19" endPosition="58" />
+    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="13" startPosition="80" endLine="15" endPosition="57" />
+    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1233677132994" varName="editorCell" />
       <varInfo nodeId="1233677132994" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="15" startPosition="72" endLine="19" endPosition="17">
-      <varInfo nodeId="1233677132994" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1233677132994" varName="editorCell" />
       <varInfo nodeId="1233677132994" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1233677132994" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1233677132994" varName="editorCell" />
-    </scopeInfo>
-    <unitInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet" />
+    <unitInfo nodeId="1233677132994" fileName="TextGenStyles_StyleSheet.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.TextGenStyles_StyleSheet" />
   </root>
   <root nodeRef="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)/1233751668642">
     <nodeInfo nodeId="1233751668642" fileName="SimpleTextGenOperation_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

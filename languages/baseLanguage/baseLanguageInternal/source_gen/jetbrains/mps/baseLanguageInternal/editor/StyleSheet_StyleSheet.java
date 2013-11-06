@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguageInternal.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -12,30 +11,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class StyleSheet_StyleSheet {
-  @Deprecated
-  public static Style getInternalKeyword(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getInternalName(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getSquareBracket(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(editorCell));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.SELECTABLE, false);
-    return style;
-  }
-
   public static void applyInternalKeyword(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -50,4 +25,6 @@ public class StyleSheet_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.SELECTABLE, false);
   }
+
+
 }

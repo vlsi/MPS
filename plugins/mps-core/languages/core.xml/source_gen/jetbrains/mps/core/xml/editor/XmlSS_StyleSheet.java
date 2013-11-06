@@ -4,119 +4,12 @@ package jetbrains.mps.core.xml.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class XmlSS_StyleSheet {
-  @Deprecated
-  public static Style getXmlTagName(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(128)));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlExtensionName(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(16448)));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlTagPunctuation(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(3158064)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlAttributeName(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(255)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlAttributeValue(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlAttrEntityRefValue(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlAttrCharRefValue(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlNoNewLine(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(4210816)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlEntityRef(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(6684672)));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlCharRef(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(6684672)));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlComment(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(8421504)));
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlPI(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlPITarget(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    return style;
-  }
-
-  @Deprecated
-  public static Style getXmlPIData(final EditorCell editorCell) {
-    Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    return style;
-  }
-
   public static void applyXmlTagName(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(128)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -180,4 +73,6 @@ public class XmlSS_StyleSheet {
   public static void applyXmlPIData(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
+
+
 }

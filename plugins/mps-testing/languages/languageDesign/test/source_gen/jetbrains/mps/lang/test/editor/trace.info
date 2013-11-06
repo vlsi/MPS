@@ -743,77 +743,36 @@
     <unitInfo nodeId="1211979400462" fileName="AssertMatch_Editor.java" startLine="25" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AssertMatch_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/1214842776812">
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="14" startPosition="67" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="15" startPosition="44" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="16" startPosition="102" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="21" startPosition="70" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="22" startPosition="44" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="23" startPosition="48" endLine="24" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="24" startPosition="108" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="29" startPosition="68" endLine="30" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="30" startPosition="44" endLine="31" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="36" startPosition="71" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="37" startPosition="44" endLine="38" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="38" startPosition="110" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="42" startPosition="75" endLine="43" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="46" startPosition="78" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="47" startPosition="48" endLine="48" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="51" startPosition="76" endLine="52" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="55" startPosition="79" endLine="56" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyAssertStyle#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyNodeProperty#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyEditorOperation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyNodeAnnotation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="13" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAssertStyle#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeProperty#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEditorOperation#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeAnnotation#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="42" startPosition="75" endLine="43" endPosition="102" />
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="51" startPosition="76" endLine="52" endPosition="108" />
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="55" startPosition="79" endLine="56" endPosition="110" />
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="46" startPosition="78" endLine="48" endPosition="108" />
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="14" startPosition="67" endLine="17" endPosition="17">
-      <varInfo nodeId="1214842776812" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="29" startPosition="68" endLine="32" endPosition="17">
-      <varInfo nodeId="1214842776812" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="36" startPosition="71" endLine="39" endPosition="17">
-      <varInfo nodeId="1214842776812" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="12" startPosition="75" endLine="13" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="16" startPosition="78" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="17" startPosition="48" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="21" startPosition="76" endLine="22" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="25" startPosition="79" endLine="26" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyAssertStyle#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyNodeProperty#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyEditorOperation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applyNodeAnnotation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="12" startPosition="75" endLine="13" endPosition="102" />
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="21" startPosition="76" endLine="22" endPosition="108" />
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="25" startPosition="79" endLine="26" endPosition="110" />
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="16" startPosition="78" endLine="18" endPosition="108" />
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1214842776812" varName="editorCell" />
       <varInfo nodeId="1214842776812" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1214842776812" varName="editorCell" />
       <varInfo nodeId="1214842776812" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1214842776812" varName="editorCell" />
       <varInfo nodeId="1214842776812" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="21" startPosition="70" endLine="25" endPosition="17">
-      <varInfo nodeId="1214842776812" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1214842776812" varName="editorCell" />
       <varInfo nodeId="1214842776812" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="13" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1214842776812" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="1214842776812" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="1214842776812" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="1214842776812" varName="editorCell" />
-    </scopeInfo>
-    <unitInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.test.editor.transformationTest_StyleSheet" />
+    <unitInfo nodeId="1214842776812" fileName="transformationTest_StyleSheet.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.test.editor.transformationTest_StyleSheet" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/1215076060697">
     <nodeInfo nodeId="1215076060697" fileName="CheckNodeForErrors_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

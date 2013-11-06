@@ -544,24 +544,14 @@
     <unitInfo nodeId="5989029785192113718" fileName="SSymbolRefExpression_Editor.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.core.syntax.java.editor.SSymbolRefExpression_Editor" />
   </root>
   <root nodeRef="r:7ec26ee7-b99c-48f6-9850-811b7d91fc37(jetbrains.mps.core.syntax.java.editor)/5989029785192122025">
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="13" startPosition="62" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="14" startPosition="44" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="15" startPosition="59" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="19" startPosition="70" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applySymRef#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSymRef#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/style/Style;" />
-    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="19" startPosition="70" endLine="20" endPosition="59" />
-    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="13" startPosition="62" endLine="16" endPosition="17">
-      <varInfo nodeId="5989029785192122025" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="70" endLine="12" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applySymRef#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="70" endLine="12" endPosition="59" />
+    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="5989029785192122025" varName="editorCell" />
       <varInfo nodeId="5989029785192122025" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="12" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="5989029785192122025" varName="editorCell" />
-    </scopeInfo>
-    <unitInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.core.syntax.java.editor.SyntaxJavaSS_StyleSheet" />
+    <unitInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.core.syntax.java.editor.SyntaxJavaSS_StyleSheet" />
   </root>
 </debugInfo>
 
