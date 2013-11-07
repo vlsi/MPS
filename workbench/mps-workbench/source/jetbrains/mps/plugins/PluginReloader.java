@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -55,6 +56,8 @@ public class PluginReloader implements ApplicationComponent {
   private ApplicationPluginManager myPluginManager;
 
   private List<PluginContributor> myContributors = new ArrayList<PluginContributor>();
+
+  private Collection<Project> myOpenProjects = new ArrayList<Project>();
 
   @SuppressWarnings({"UnusedDeclaration"})
   public PluginReloader(MPSCoreComponents coreComponents, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
@@ -100,7 +103,7 @@ public class PluginReloader implements ApplicationComponent {
   private void loadPlugins(List<PluginContributor> contributors) {
     myPluginManager.loadPlugins(contributors);
 
-    for (Project p : myProjectManager.getOpenProjects()) {
+    for (Project p : myOpenProjects) {
       ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
       pm.loadPlugins(contributors);
     }
@@ -115,7 +118,7 @@ public class PluginReloader implements ApplicationComponent {
       l.beforePluginsDisposed();
     }
 
-    for (Project p : myProjectManager.getOpenProjects()) {
+    for (Project p : myOpenProjects) {
       ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
       pm.unloadPlugins(contributors);
     }
@@ -155,12 +158,12 @@ public class PluginReloader implements ApplicationComponent {
   @Override
   public void initComponent() {
     myClassLoaderManager.addClassesHandler(myReloadListener);
-    ProjectManager.getInstance().addProjectManagerListener(myProjectListener);
+    myProjectManager.addProjectManagerListener(myProjectListener);
   }
 
   @Override
   public void disposeComponent() {
-    ProjectManager.getInstance().removeProjectManagerListener(myProjectListener);
+    myProjectManager.removeProjectManagerListener(myProjectListener);
     myClassLoaderManager.removeClassesHandler(myReloadListener);
 
     myClassLoaderManager = null;
@@ -182,11 +185,13 @@ public class PluginReloader implements ApplicationComponent {
           project.getComponent(ProjectPluginManager.class).loadPlugins(myContributors);
         }
       });
+      myOpenProjects.add(project);
     }
 
     @Override
     public void projectClosing(final Project project) {
       assert SwingUtilities.isEventDispatchThread();
+      myOpenProjects.remove(project);
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
