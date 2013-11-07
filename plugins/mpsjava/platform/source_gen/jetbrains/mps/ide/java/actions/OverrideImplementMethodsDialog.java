@@ -10,10 +10,10 @@ import com.intellij.ui.NonFocusableCheckBox;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.util.IterableUtil;
@@ -94,10 +94,10 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     super.dispose();
   }
 
-  public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
+  public static Iterable<SNode> sortMethods(List<SNode> allSuperClassifiers, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
-    for (SNode c : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{})) {
+    for (SNode c : allSuperClassifiers) {
       MapSequence.fromMap(containerIndex).put(c, i++);
     }
     return Sequence.fromIterable(methods).sort(new Comparator<SNode>() {
@@ -120,6 +120,14 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
       }
     }, true);
   }
+
+
+
+  public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
+    return sortMethods(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{}), methods);
+  }
+
+
 
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {
     return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodePointer>() {

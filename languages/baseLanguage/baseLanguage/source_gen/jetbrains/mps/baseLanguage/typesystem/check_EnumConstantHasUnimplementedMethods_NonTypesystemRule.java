@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,7 +24,6 @@ public class check_EnumConstantHasUnimplementedMethods_NonTypesystemRule extends
     if ((SNodeOperations.getParent(enumConstant) == null)) {
       return;
     }
-    System.out.println("AAAAAAAA " + BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), enumConstant, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{}));
     if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), enumConstant, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
