@@ -38,6 +38,7 @@ public class check_ClassifierOverridingMethods_NonTypesystemRule extends Abstrac
         if (SNodeOperations.isInstanceOf(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.Classifier"), returnType, ancestor, overridingMethod, overridenMethod);
         } else if (SNodeOperations.isInstanceOf(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+          // todo fix the enum constant case 
           resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")), "jetbrains.mps.baseLanguage.structure.EnumClass"), returnType, ancestor, overridingMethod, overridenMethod);
         } else {
           {

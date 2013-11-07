@@ -9,6 +9,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -18,7 +19,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -39,6 +41,12 @@ public class OverrideMethod_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+    if (SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      SNode enumConstant = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", true, false);
+      if ((enumConstant != null)) {
+        return !(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).isInspector()) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), enumConstant, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{})).isNotEmpty();
+      }
+    }
     return (classConcept != null) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classConcept, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{})).isNotEmpty();
   }
 
@@ -83,7 +91,16 @@ public class OverrideMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
+      final boolean isInEnumConstant = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", true, false) != null);
+        }
+      });
+      if (isInEnumConstant) {
+        new OverrideImplementMethodInEnumConstantAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
+      } else {
+        new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);

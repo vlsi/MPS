@@ -88,6 +88,30 @@ public class EnumConstantDeclaration_Behavior {
     return methods;
   }
 
+  public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(final SNode thisNode) {
+    if ((SNodeOperations.getParent(thisNode) == null)) {
+      return null;
+    }
+
+    List<SNode> methods = new ArrayList<SNode>();
+    List<SNode> methodsToOverride = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
+    ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getBoolean(it, "isAbstract")) && !(SPropertyOperations.getBoolean(it, "isFinal")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+      }
+    }));
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(methodsToOverride).where(new IWhereFilter<SNode>() {
+      public boolean accept(final SNode method) {
+        return !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode constantBelongingMethod) {
+            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(constantBelongingMethod, method);
+          }
+        }));
+      }
+    }));
+    return methods;
+  }
+
   @Deprecated
   public static List<Icon> call_getMarkIcons_5039675756633083396(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});

@@ -13396,82 +13396,83 @@
     <nodeInfo nodeId="6207253590661734316" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="35" startPosition="141" endLine="36" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3305065273710882390" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="36" startPosition="83" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6207253590662480568" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="38" startPosition="118" endLine="39" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6207253590662503585" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="40" startPosition="138" endLine="41" endPosition="366" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="43" startPosition="11" endLine="44" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="44" startPosition="64" endLine="45" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6207253590662524067" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="46" startPosition="11" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6207253590662520538" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="48" startPosition="9" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="51" startPosition="11" endLine="52" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="52" startPosition="64" endLine="53" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2792291462223216225" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="54" startPosition="11" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6207253590662514509" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="62" startPosition="46" endLine="63" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="67" startPosition="5" endLine="68" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="68" startPosition="130" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="73" startPosition="30" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366038183556275670" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="40" startPosition="138" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6207253590662503585" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="41" startPosition="45" endLine="42" endPosition="366" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="44" startPosition="11" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="45" startPosition="64" endLine="46" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6207253590662524067" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="47" startPosition="11" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6207253590662520538" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="49" startPosition="9" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="52" startPosition="11" endLine="53" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="53" startPosition="64" endLine="54" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2792291462223216225" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="55" startPosition="11" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6207253590662514509" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="57" startPosition="9" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="63" startPosition="46" endLine="64" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="68" startPosition="5" endLine="69" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="69" startPosition="130" endLine="70" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="74" startPosition="30" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_ClassifierOverridingMethods_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="42" startPosition="16" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="50" startPosition="160" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="66" startPosition="68" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6207253590661758440" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="42" startPosition="14" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="2792291462223192919" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="49" startPosition="0" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6207253590661747499" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="37" startPosition="33" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2792291462223192885" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="31" startPosition="99" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2792291462223192837" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="29" startPosition="77" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="43" startPosition="16" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="51" startPosition="160" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="67" startPosition="68" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6207253590661758440" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="43" startPosition="14" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2792291462223192919" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6207253590661747499" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="37" startPosition="33" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2792291462223192885" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="31" startPosition="99" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="2792291462223192837" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="29" startPosition="77" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="25" startPosition="64" endLine="25" endPosition="64" />
     <scopeInfo nodeId="6207253590661747502" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="38" startPosition="118" endLine="39" endPosition="254" />
-    <scopeInfo nodeId="6207253590661755110" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="40" startPosition="138" endLine="41" endPosition="366" />
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="62" startPosition="46" endLine="63" endPosition="61" />
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="73" startPosition="30" endLine="74" endPosition="17" />
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="63" startPosition="46" endLine="64" endPosition="61" />
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="74" startPosition="30" endLine="75" endPosition="17" />
     <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="43" startPosition="11" endLine="45" endPosition="282">
+    <scopeInfo nodeId="6207253590661755110" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="40" startPosition="138" endLine="42" endPosition="366" />
+    <scopeInfo nodeId="6207253590661761584" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="44" startPosition="11" endLine="46" endPosition="282">
       <varInfo nodeId="6207253590661761584" varName="_reporter_2309309498" />
       <varInfo nodeId="6207253590661761584" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="51" startPosition="11" endLine="53" endPosition="338">
+    <scopeInfo nodeId="2792291462223216211" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="52" startPosition="11" endLine="54" endPosition="338">
       <varInfo nodeId="2792291462223216211" varName="_reporter_2309309498" />
       <varInfo nodeId="2792291462223216211" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="67" startPosition="5" endLine="69" endPosition="45">
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="68" startPosition="5" endLine="70" endPosition="45">
       <varInfo nodeId="2792291462223192819" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="66" startPosition="68" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="6207253590661758441" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="42" startPosition="16" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="2792291462223192920" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="50" startPosition="160" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="67" startPosition="68" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="6207253590661758441" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="43" startPosition="16" endLine="48" endPosition="17" />
+    <scopeInfo nodeId="2792291462223192920" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="51" startPosition="160" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="2792291462223192819" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192886" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="32" startPosition="116" endLine="57" endPosition="0">
+    <scopeInfo nodeId="2792291462223192886" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="32" startPosition="116" endLine="58" endPosition="0">
       <varInfo nodeId="3305065273710881336" varName="ancestor" />
       <varInfo nodeId="2792291462223206073" varName="overridenMethod" />
       <varInfo nodeId="6207253590661734317" varName="overridingMethodParent" />
       <varInfo nodeId="3305065273710882391" varName="resolvedReturnType" />
       <varInfo nodeId="3305065273710881319" varName="returnType" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192885" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="31" startPosition="99" endLine="58" endPosition="7">
+    <scopeInfo nodeId="2792291462223192885" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="31" startPosition="99" endLine="59" endPosition="7">
       <varInfo nodeId="2792291462223192941" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192842" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="30" startPosition="87" endLine="58" endPosition="7">
+    <scopeInfo nodeId="2792291462223192842" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="30" startPosition="87" endLine="59" endPosition="7">
       <varInfo nodeId="2792291462223192853" varName="overridenMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192837" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="29" startPosition="77" endLine="59" endPosition="5">
+    <scopeInfo nodeId="2792291462223192837" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="29" startPosition="77" endLine="60" endPosition="5">
       <varInfo nodeId="2792291462223192838" varName="overridingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192820" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="28" startPosition="123" endLine="59" endPosition="5">
+    <scopeInfo nodeId="2792291462223192820" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="28" startPosition="123" endLine="60" endPosition="5">
       <varInfo nodeId="2792291462223192832" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="2792291462223192819" varName="classifier" />
       <varInfo nodeId="2792291462223192819" varName="status" />
       <varInfo nodeId="2792291462223192819" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ClassifierOverridingMethods_NonTypesystemRule" />
+    <unitInfo nodeId="2792291462223192819" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ClassifierOverridingMethods_NonTypesystemRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/2792650810919436247">
     <nodeInfo nodeId="2792650810919441670" fileName="typevar_comparable_with_classifier_type_ComparisonRule.java" startLine="15" startPosition="86" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

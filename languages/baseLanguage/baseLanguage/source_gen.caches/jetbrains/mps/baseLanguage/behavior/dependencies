@@ -1745,7 +1745,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall_BehaviorDescriptor" />

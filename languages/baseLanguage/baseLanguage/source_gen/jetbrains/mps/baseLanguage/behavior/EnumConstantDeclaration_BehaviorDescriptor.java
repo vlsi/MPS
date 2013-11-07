@@ -65,7 +65,7 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
   }
 
   public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    return IMemberContainer_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
+    return EnumConstantDeclaration_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
   }
 
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
