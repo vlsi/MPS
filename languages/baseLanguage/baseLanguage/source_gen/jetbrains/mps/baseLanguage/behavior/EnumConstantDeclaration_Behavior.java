@@ -12,6 +12,9 @@ import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.FieldSignature;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EnumConstantDeclaration_Behavior {
@@ -54,6 +57,29 @@ public class EnumConstantDeclaration_Behavior {
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
+  }
+
+  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "method", true);
+  }
+
+  public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(final SNode thisNode) {
+    if ((SNodeOperations.getParent(thisNode) == null)) {
+      return null;
+    }
+
+    List<SNode> methods = new ArrayList<SNode>();
+    List<SNode> methodsToImplement = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
+      public boolean accept(final SNode method) {
+        return !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode constantBelongingMethod) {
+            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(constantBelongingMethod, method);
+          }
+        }));
+      }
+    }));
+    return methods;
   }
 
   @Deprecated

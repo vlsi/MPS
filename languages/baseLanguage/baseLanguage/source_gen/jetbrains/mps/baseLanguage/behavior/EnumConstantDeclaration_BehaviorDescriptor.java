@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
+public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor {
   public EnumConstantDeclaration_BehaviorDescriptor() {
   }
 
@@ -54,6 +54,18 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
+  }
+
+  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+    return EnumConstantDeclaration_Behavior.virtual_getMembers_1213877531970(thisNode);
+  }
+
+  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+    return EnumConstantDeclaration_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  }
+
+  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+    return IMemberContainer_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
   }
 
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
