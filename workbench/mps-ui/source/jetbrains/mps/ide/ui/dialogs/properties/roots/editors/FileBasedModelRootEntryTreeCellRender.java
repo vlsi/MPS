@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import javax.swing.Icon;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.Color;
 import java.util.Collection;
 
 public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
@@ -47,10 +48,16 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
         final Object element = ((NodeDescriptor)userObject).getElement();
         if (element instanceof FileElement) {
           final VirtualFile file = ((FileElement)element).getFile();
-          if (file != null && file.isDirectory()) {
+          if(file != null) {
             final FileBasedModelRoot modelRoot = (FileBasedModelRoot)entry.getModelRoot();
             if (modelRoot != null) {
-              setIcon(updateIcon(modelRoot, file, getIcon()));
+              if (file.isDirectory()) {
+                setIcon(updateIcon(modelRoot, file, getIcon()));
+              } else if(file != null && !file.isDirectory()) {
+                final Color colorForFile = getColorForFile(modelRoot, file);
+                if(colorForFile != null)
+                  setForeground(colorForFile);
+              }
             }
           }
         }
@@ -73,5 +80,20 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
     if(file.getPath().equals(modelRoot.getContentRoot()))
       return Nodes.HomeFolder;
     return originalIcon;
+  }
+
+  private Color getColorForFile(FileBasedModelRoot modelRoot, VirtualFile file) {
+    Collection<String> kinds = modelRoot.getSupportedFileKinds();
+    for (String kind : kinds) {
+      if(modelRoot.containsFile(kind, file.getPath())) {
+        return myModelRootEditor.getFileBasedModelRootEntry().getKindColor(kind);
+      }
+      Collection<String> kindFiles = modelRoot.getFiles(kind);
+      for(String kindFile : kindFiles) {
+        if(file.getPath().startsWith(kindFile + "/"))
+          return myModelRootEditor.getFileBasedModelRootEntry().getKindColor(kind);
+      }
+    }
+    return null;
   }
 }

@@ -105,7 +105,7 @@ public abstract class ReloadableSModelBase extends SModelBase {
     }
 
     if (oldSModel != null) {
-      notifyModelReplaced(oldSModel.getModelDescriptor());
+      notifyModelReplaced(oldSModel);
     }
 
     fireModelReplaced();

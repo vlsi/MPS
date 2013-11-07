@@ -26,7 +26,6 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -37,15 +36,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 /**
  * The single purpose of this class's existance is the private modifier on <code>createFile</code> in the superclass.
 * User: fyodor
 * Date: 3/8/13
 */
 public abstract class MPSSingleRootFileViewProvider extends SingleRootFileViewProvider {
-  private AtomicReference<PsiFile> myPsiFile  = new AtomicReference<PsiFile>();
 
   public MPSSingleRootFileViewProvider(PsiManager manager, VirtualFile file, boolean physical) {
     super(manager, file, physical);
@@ -61,16 +57,10 @@ public abstract class MPSSingleRootFileViewProvider extends SingleRootFileViewPr
     if (target != MPSLanguage.INSTANCE) {
       return null;
     }
-    PsiFile psiFile = myPsiFile.get();
-    /*if(psiFile != null && psiFile instanceof MPSPsiRootNode) {
-      psiFile = psiFile.getViewProvider().getPsi(target);
-    }*/
+    PsiFile psiFile = getCachedPsi(MPSLanguage.INSTANCE);
     if (psiFile == null) {
       psiFile = createFile();
-      boolean set = myPsiFile.compareAndSet(null, psiFile);
-      if (!set) {
-        psiFile = myPsiFile.get();
-      }
+      forceCachedPsi(psiFile);
     }
     return psiFile;
   }
