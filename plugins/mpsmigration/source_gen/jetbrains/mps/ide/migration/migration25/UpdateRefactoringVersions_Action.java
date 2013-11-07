@@ -14,12 +14,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelInternal;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -65,6 +65,9 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
         if (!(model instanceof RefactorableSModelDescriptor)) {
           continue;
         }
+        if (!(model instanceof SModelDescriptor)) {
+          continue;
+        }
         if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
           continue;
         }
@@ -72,6 +75,9 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
       }
       for (SModel model : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
         if (!(model instanceof EditableSModel)) {
+          continue;
+        }
+        if (!(model instanceof SModelDescriptor)) {
           continue;
         }
         if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
@@ -104,7 +110,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
   }
 
   /*package*/ void updateImportVersions(EditableSModel model, final Map<String, Object> _params) {
-    SModel m = (model);
+    jetbrains.mps.smodel.SModel m = ((SModelDescriptor) model).getSModel();
     for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(m))) {
       RefactorableSModelDescriptor usedModel = as_hexye9_a0a0a1a7(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
@@ -114,13 +120,13 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
         if (LOG.isInfoEnabled()) {
           LOG.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
         }
-        ((SModelInternal) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
+        m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       } else if (importElement.getUsedVersion() > usedModel.getVersion()) {
         if (LOG.isEnabledFor(Priority.ERROR)) {
           LOG.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
         }
-        ((SModelInternal) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
+        m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       }
     }

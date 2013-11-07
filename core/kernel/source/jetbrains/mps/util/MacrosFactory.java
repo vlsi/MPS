@@ -304,6 +304,7 @@ public class MacrosFactory {
 
   @Deprecated //remove when language descriptor is fully in xml file
   public static boolean containsNonMPSMacros(String path) {
+    if(path == null) return false;
     return path.contains("${") && !(path.contains("${solution_descriptor}") ||
       path.contains("${language_descriptor}") ||
       path.contains("${module_descriptor}") ||

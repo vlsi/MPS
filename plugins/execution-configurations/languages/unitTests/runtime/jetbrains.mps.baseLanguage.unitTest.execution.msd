@@ -4,7 +4,9 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />
     </modelRoot>
-    <modelRoot path="${module}/classes_gen" type="java_classes" />
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="classes_gen" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="jetbrains.mps.execution.configurations" type="ideaPlugin" />

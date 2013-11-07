@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Iterator;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class IntentionUtils {
   private IntentionUtils() {
@@ -165,6 +166,49 @@ public class IntentionUtils {
     }
 
     return currentResult;
+  }
+
+
+
+  public static SNode negateBooleanNodes(SNode node) {
+    SNode clone = SNodeOperations.copyNode(node);
+    if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
+      SPropertyOperations.set(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value", "" + (!(SPropertyOperations.getBoolean(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value"))));
+      return clone;
+    }
+    if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.NotExpression"), "expression", true);
+    }
+    if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      SNode replacement;
+      if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.OrExpression", null);
+      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AndExpression", null);
+      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null);
+      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
+      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", null);
+      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LessThanExpression", null);
+      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.LessThanExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", null);
+      } else if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression")) {
+        replacement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GreaterThanExpression", null);
+      } else {
+        SNode notNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
+        SLinkOperations.setTarget(notNode, "expression", clone, true);
+        return notNode;
+      }
+      SLinkOperations.setTarget(replacement, "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), true);
+      SLinkOperations.setTarget(replacement, "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(clone, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), true);
+      return replacement;
+    }
+    SNode notNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
+    SLinkOperations.setTarget(notNode, "expression", clone, true);
+    return notNode;
   }
 
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {

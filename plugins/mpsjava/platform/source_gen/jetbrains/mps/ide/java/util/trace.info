@@ -83,8 +83,8 @@
     <nodeInfo nodeId="2537348641689779819" fileName="JavaPaster.java" startLine="85" startPosition="41" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4731776099750108113" fileName="JavaPaster.java" startLine="87" startPosition="9" endLine="88" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4731776099750510426" fileName="JavaPaster.java" startLine="89" startPosition="58" endLine="90" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420336731" fileName="JavaPaster.java" startLine="91" startPosition="7" endLine="92" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2537348641689790421" fileName="JavaPaster.java" startLine="92" startPosition="126" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5646944109420336731" fileName="JavaPaster.java" startLine="91" startPosition="7" endLine="92" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2537348641689790421" fileName="JavaPaster.java" startLine="92" startPosition="88" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5646944109420336745" fileName="JavaPaster.java" startLine="94" startPosition="51" endLine="95" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646944109420336751" fileName="JavaPaster.java" startLine="95" startPosition="108" endLine="96" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1418985936284183501" fileName="JavaPaster.java" startLine="101" startPosition="43" endLine="102" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

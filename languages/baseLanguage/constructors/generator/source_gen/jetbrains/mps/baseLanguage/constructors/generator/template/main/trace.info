@@ -33,9 +33,9 @@
   </root>
   <root nodeRef="r:4585c4f5-78b3-42ea-9ce3-0cb556c61190(jetbrains.mps.baseLanguage.constructors.generator.template.main@generator)/4563030478604494205">
     <nodeInfo nodeId="4739047193854102164" fileName="QueriesGenerated.java" startLine="47" startPosition="154" endLine="48" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4563030478604494222" fileName="QueriesGenerated.java" startLine="111" startPosition="150" endLine="112" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4563030478604494222" fileName="QueriesGenerated.java" startLine="111" startPosition="150" endLine="112" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4739047193854099887" fileName="QueriesGenerated.java" startLine="47" startPosition="154" endLine="48" endPosition="69" />
-    <scopeInfo nodeId="4563030478604494221" fileName="QueriesGenerated.java" startLine="111" startPosition="150" endLine="112" endPosition="200" />
+    <scopeInfo nodeId="4563030478604494221" fileName="QueriesGenerated.java" startLine="111" startPosition="150" endLine="112" endPosition="198" />
   </root>
   <root nodeRef="r:4585c4f5-78b3-42ea-9ce3-0cb556c61190(jetbrains.mps.baseLanguage.constructors.generator.template.main@generator)/4563030478605333860">
     <nodeInfo nodeId="4563030478605372025" fileName="QueriesGenerated.java" startLine="51" startPosition="154" endLine="52" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -60,7 +60,7 @@
     <nodeInfo nodeId="7451562887563468800" fileName="QueriesGenerated.java" startLine="95" startPosition="150" endLine="96" endPosition="433" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7451562887563468817" fileName="QueriesGenerated.java" startLine="99" startPosition="150" endLine="100" endPosition="592" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7451562887563468837" fileName="QueriesGenerated.java" startLine="103" startPosition="150" endLine="104" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7451562887563468854" fileName="QueriesGenerated.java" startLine="107" startPosition="150" endLine="108" endPosition="437" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7451562887563468854" fileName="QueriesGenerated.java" startLine="107" startPosition="150" endLine="108" endPosition="435" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7451562887563468842" fileName="QueriesGenerated.java" startLine="131" startPosition="155" endLine="132" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="606143069297663193" fileName="QueriesGenerated.java" startLine="39" startPosition="153" endLine="40" endPosition="313" />
     <scopeInfo nodeId="606143069297663235" fileName="QueriesGenerated.java" startLine="43" startPosition="153" endLine="44" endPosition="124" />
@@ -68,7 +68,7 @@
     <scopeInfo nodeId="7451562887563468799" fileName="QueriesGenerated.java" startLine="95" startPosition="150" endLine="96" endPosition="433" />
     <scopeInfo nodeId="7451562887563468816" fileName="QueriesGenerated.java" startLine="99" startPosition="150" endLine="100" endPosition="592" />
     <scopeInfo nodeId="7451562887563468836" fileName="QueriesGenerated.java" startLine="103" startPosition="150" endLine="104" endPosition="30" />
-    <scopeInfo nodeId="7451562887563468853" fileName="QueriesGenerated.java" startLine="107" startPosition="150" endLine="108" endPosition="437" />
+    <scopeInfo nodeId="7451562887563468853" fileName="QueriesGenerated.java" startLine="107" startPosition="150" endLine="108" endPosition="435" />
     <scopeInfo nodeId="7451562887563468841" fileName="QueriesGenerated.java" startLine="131" startPosition="155" endLine="132" endPosition="75" />
   </root>
 </debugInfo>

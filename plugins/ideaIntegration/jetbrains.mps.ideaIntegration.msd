@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ideaIntegration" uuid="7c96448b-2b97-4f89-b563-f04172a4b83a" compileInMPS="false">
   <models>
-    <modelRoot path="${module}/classes" type="java_classes" />
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="classes" />
+    </modelRoot>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>

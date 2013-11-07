@@ -71,7 +71,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
   protected DefaultActionGroup myEditingActionsGroup;
 
   private FileBasedModelRootEntry myFileBasedModelRootEntry;
-  private final FileChooserDescriptor myDescriptor;
+  private FileChooserDescriptor myDescriptor;
 
   public FileBasedModelRootEditor() {
     myTree = new Tree();
@@ -139,12 +139,6 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     VirtualFile file = VirtualFileManager.getInstance().findFileByUrl(
       VirtualFileManager.constructUrl("file", path)
     );
-    /*if(file == null && myFileBasedModelRootEntry.getModelRoot().getModule() != null) {
-      path = MPSModuleRepository.getInstance().getModuleById(myFileBasedModelRootEntry.getModelRoot().getModule().getModuleId()).getBundleHome().getPath();
-      file = VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl("file", path)
-      );
-    }*/
     setRoot(file);
 
     final VirtualFile file2Runnable = file;
@@ -200,6 +194,19 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
 
   public FileBasedModelRootEntry getFileBasedModelRootEntry() {
     return myFileBasedModelRootEntry;
+  }
+
+  public FileChooserDescriptor getDescriptor() {
+    return myDescriptor;
+  }
+
+  public void setDescriptor(FileChooserDescriptor descriptor) {
+    myDescriptor = descriptor;
+
+    //TODO: find better way to update
+    final FileBasedModelRootEntry entry = myFileBasedModelRootEntry;
+    setFileBasedModelRootEntry(null);
+    setFileBasedModelRootEntry(entry);
   }
 
   @Override

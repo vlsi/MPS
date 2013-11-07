@@ -85,7 +85,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
-    new ASMModelLoader(((AbstractModule) myModelRoot.getModule()), cp, model.getModelDescriptor(), false).updateModel();
+    new ASMModelLoader(((AbstractModule) myModelRoot.getModule()), cp, model, false).updateModel();
     updateTimestamp();
     return model;
   }
@@ -95,7 +95,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     SetSequence.fromSet(moduleIds).addElement(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)").getModuleId().toString());
     Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
       public Language select(String it) {
-        return ((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(it)));
+        return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.fromString(it)));
       }
     });
     return SetSequence.fromSetWithValues(new HashSet<Language>(), languages);
@@ -103,7 +103,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
 
   private CompositeClassPathItem createClassPath() {
     CompositeClassPathItem cp = new CompositeClassPathItem();
-    for (String dir : ((FolderSetDataSource) getSource()).getPaths()) {
+    for (String dir : getSource().getPaths()) {
       try {
         if (dir.indexOf("!") != -1) {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));

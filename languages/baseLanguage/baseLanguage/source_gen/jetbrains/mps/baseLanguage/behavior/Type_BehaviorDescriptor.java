@@ -35,6 +35,10 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return Type_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
   }
 
+  public SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
+    return Type_Behavior.virtual_getBoxedType_1213877337320(thisNode);
+  }
+
   @Deprecated
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return Type_Behavior.virtual_getClassExpression_1213877337357(thisNode);
@@ -54,10 +58,6 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
 
   public SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     return Type_Behavior.virtual_getLooseType_5744862332972792015(thisNode, visitedTypes);
-  }
-
-  public SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return Type_Behavior.virtual_getUnboxedType_1213877337320(thisNode);
   }
 
   public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {

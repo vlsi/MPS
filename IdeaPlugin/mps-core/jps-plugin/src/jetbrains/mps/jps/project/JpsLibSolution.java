@@ -1,5 +1,6 @@
 package jetbrains.mps.jps.project;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -73,7 +74,8 @@ public class JpsLibSolution extends Solution {
 
       MPSCompilerUtil.debug(context, "@@@@ path = " + path);
 
-      ((JavaClassStubsModelRoot)modelRoot).setPath(path);
+      ((JavaClassStubsModelRoot)modelRoot).setContentRoot(path);
+      ((JavaClassStubsModelRoot)modelRoot).addFile(FileBasedModelRoot.SOURCE_ROOTS, path);
       modelRoots.add(modelRoot);
     }
 

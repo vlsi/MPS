@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.TransientSModel;
@@ -29,6 +30,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.ByteArrayInputStream;
@@ -204,7 +206,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       }
 
       // ensure imports are back
-      SModelOperations.validateLanguagesAndImports(model.getModelDescriptor(), false, false);
+      SModelOperations.validateLanguagesAndImports(model, false, false);
 
       return model;
     }
@@ -231,7 +233,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
   }
 
   // method created for testing
-  public static SModel writeAndReadModel(SModel model) throws IOException {
+  public static SModel writeAndReadModel(jetbrains.mps.smodel.SModel model) throws IOException {
     // write
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ModelOutputStream mos = new ModelOutputStream(os);
@@ -244,7 +246,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     new NodesWriter(model.getReference(), null).writeNodes(roots, mos);
     mos.close();
 
-    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(
+    final jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(
         PersistenceFacade.getInstance().createModelReference("smodel.long.name.for.testing"));
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
     ModelInputStream mis = new ModelInputStream(is);
@@ -259,8 +261,26 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       resultModel.addRootNode(root.o2);
     }
 
-    SModelOperations.validateLanguagesAndImports(resultModel.getModelDescriptor(), false, false);
+    SModelOperations.validateLanguagesAndImports(resultModel, false, false);
 
-    return resultModel.getModelDescriptor();
+    SModelBase result = new SModelBase(resultModel.getReference(), new NullDataSource()) {
+      @Override
+      public jetbrains.mps.smodel.SModel getSModelInternal() {
+        return resultModel;
+      }
+
+      @Override
+      public boolean isLoaded() {
+        return true;
+      }
+
+      @Override
+      public void unload() {
+
+      }
+    };
+
+    resultModel.setModelDescriptor(result);
+    return result;
   }
 }

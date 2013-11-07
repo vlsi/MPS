@@ -105,11 +105,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7451562887563468852(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "customConstructor", false), "arguments", true), "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), "list", true), "type", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "customConstructor", false), "arguments", true), "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), "list", true), "type", true), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_4563030478604494220(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "type", true), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_4563030478605372033(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

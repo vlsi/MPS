@@ -130,7 +130,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         @Override
         public void visitChildEvent(SModelChildEvent event) {
           SNode child = event.getChild();
-          if (event.isAdded()) {
+          if (event.isAdded() && child.getModel() != null) {
             nodeAdded(child, reResolvedTargets);
           } else {
             nodeRemoved(child, event.getParent(), event.getModel(), reResolvedTargets);

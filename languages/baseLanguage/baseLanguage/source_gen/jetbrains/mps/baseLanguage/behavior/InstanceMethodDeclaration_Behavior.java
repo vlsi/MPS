@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
@@ -48,6 +49,24 @@ public class InstanceMethodDeclaration_Behavior {
     return true;
   }
 
+  public static SNode virtual_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode) {
+    SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    if ((containingClassifier == null)) {
+      return null;
+    }
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(containingClassifier, IClassifiersSearchScope.INTERFACE);
+    for (SNode method : ListSequence.fromList(((List<SNode>) scope.getNodes())).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return Classifier_Behavior.call_methods_5292274854859311639(it);
+      }
+    })) {
+      if (eq_4b3xw6_a0a0a0d0h(SPropertyOperations.getString(method, "name"), SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, thisNode)) {
+        return method;
+      }
+    }
+    return null;
+  }
+
   public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
     SNode parent = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
@@ -58,7 +77,7 @@ public class InstanceMethodDeclaration_Behavior {
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(parent, IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = (List<SNode>) scope.getNodes(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
     for (SNode methodCandidate : methodDeclarations) {
-      if (methodCandidate != thisNode && eq_4b3xw6_a0a0a0e0h(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
+      if (methodCandidate != thisNode && eq_4b3xw6_a0a0a0e0i(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
           return methodCandidate;
         }
@@ -95,6 +114,11 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getImplementedInterfaceMethod_8302934035201331324", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode call_getNearestOverriddenMethod_5014346297260520665(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
   }
@@ -110,11 +134,20 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   @Deprecated
+  public static SNode callSuper_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getImplementedInterfaceMethod_8302934035201331324", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getNearestOverriddenMethod_5014346297260520665(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static boolean eq_4b3xw6_a0a0a0e0h(Object a, Object b) {
+  private static boolean eq_4b3xw6_a0a0a0d0h(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_4b3xw6_a0a0a0e0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
