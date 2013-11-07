@@ -34,7 +34,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public static final String SOURCE_ROOTS = "sourceRoot";
 
   private String contentRoot;
-  private Map<String, List<String>> filesForKind = new HashMap<String, List<String>>();
+  protected Map<String, List<String>> filesForKind = new LinkedHashMap<String, List<String>>();
   private final List<PathListener> myListeners = new ArrayList<PathListener>();
 
   protected FileBasedModelRoot() {
@@ -113,7 +113,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @Override
   public String getPresentation() {
-    return (getContentRoot() != null ? getContentRoot() : "no path") + " (" + getType() + ")";
+    return "(" + getType() + ") " + (getContentRoot() != null ? getContentRoot() : "no path");
   }
 
   public boolean supportsFiles(String kind) {
@@ -122,9 +122,9 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   public String getKindText(String kind) {
     if (kind.equals(EXCLUDED)) {
-      return "Excluded Folders";
+      return "Excluded";
     } else if (kind.equals(SOURCE_ROOTS)) {
-      return "Model Folders";
+      return "Models";
     }
     return null;
   }
@@ -150,7 +150,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public final void load(Memento memento) {
+  public void load(Memento memento) {
     checkNotRegistered();
 
     contentRoot = FileUtil.stripLastSlashes(memento.get("contentPath"));

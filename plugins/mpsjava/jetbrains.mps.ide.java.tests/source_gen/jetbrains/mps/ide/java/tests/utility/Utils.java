@@ -18,10 +18,10 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -69,7 +69,7 @@ public class Utils {
       SModel mdl;
       mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
       FeatureKind howToParse = (onlyStubs ? FeatureKind.CLASS_STUB : FeatureKind.CLASS);
-      List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), howToParse, null, true).getNodes();
+      List<SNode> res = parser.parse(code, howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
       SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -99,7 +99,8 @@ public class Utils {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule(getModule());
-    mr.setPath(path);
+    mr.setContentRoot(path);
+    mr.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, path);
 
     Iterator<SModel> models = mr.loadModels().iterator();
     Assert.assertTrue("No models returned from model root", models.hasNext());
@@ -129,7 +130,9 @@ public class Utils {
 
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule(getModule());
-    mr.setPath(dirPath);
+    mr.setContentRoot(dirPath);
+    mr.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, dirPath);
+
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     for (SModel md : Sequence.fromIterable(mr.loadModels())) {
@@ -186,7 +189,8 @@ public class Utils {
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
     JavaClassStubsModelRoot binSRoot = new JavaClassStubsModelRoot();
     binSRoot.setModule(mod1);
-    binSRoot.setPath(binPath);
+    binSRoot.setContentRoot(binPath);
+    binSRoot.addFile(JavaClassStubsModelRoot.SOURCE_ROOTS, binPath);
     Iterable<SModel> binStubModels = binSRoot.loadModels();
     for (SModel md : Sequence.fromIterable(binStubModels)) {
       SModel m = md;
@@ -209,7 +213,8 @@ public class Utils {
     List<SModel> srcModelsX = ListSequence.fromList(new ArrayList<SModel>());
 
     src2.setModule(mod2);
-    src2.setPath(sourcePath);
+    src2.setContentRoot(sourcePath);
+    src2.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, sourcePath);
     srcModels = src2.loadModels();
 
     for (SModel m : Sequence.fromIterable(srcModels)) {

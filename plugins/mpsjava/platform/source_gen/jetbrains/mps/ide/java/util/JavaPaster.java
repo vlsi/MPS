@@ -18,10 +18,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
@@ -89,7 +89,7 @@ public class JavaPaster {
       if (FeatureKind.CLASS_CONTENT.equals(featureKind)) {
         context = SNodeOperations.getAncestor(anchor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       }
-      List<SNode> nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, context, true).getNodes();
+      List<SNode> nodes = parser.parse(javaCode, featureKind, context, true).getNodes();
 
       if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
