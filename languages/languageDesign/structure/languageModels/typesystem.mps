@@ -1376,9 +1376,6 @@
             <property name="value" nameId="tpee.1070475926801" value=" is not defined. Default editor will be used." />
           </node>
         </node>
-        <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.PropertyMessageTarget" typeId="tpd4.1227096498176" id="8288068497635052476" nodeInfo="ng">
-          <link role="propertyDeclaration" roleId="tpd4.1227096521710" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-        </node>
       </node>
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6519915829969160817" nodeInfo="ig">

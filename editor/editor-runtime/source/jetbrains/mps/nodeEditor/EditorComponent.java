@@ -1201,15 +1201,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return p == null ? null : new ProjectOperationContext(p);
   }
 
-  private EditorCell_WithComponent findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
-    if (root instanceof EditorCell_WithComponent && ((EditorCell_WithComponent) root).getComponent() == component) {
-      return (EditorCell_WithComponent) root;
+  private EditorCell_Component findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
+    if (root instanceof EditorCell_Component && ((EditorCell_Component) root).getComponent() == component) {
+      return (EditorCell_Component) root;
     }
 
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (jetbrains.mps.openapi.editor.cells.EditorCell cell : collection) {
-        EditorCell_WithComponent result = findCellForComponent(component, cell);
+        EditorCell_Component result = findCellForComponent(component, cell);
         if (result != null) return result;
       }
     }
@@ -1287,7 +1287,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void selectComponentCell(Component component) {
-    EditorCell_WithComponent cell = findCellForComponent(component, myRootCell);
+    EditorCell_Component cell = findCellForComponent(component, myRootCell);
     if (cell == null) return;
     changeSelection(cell);
   }
@@ -1906,7 +1906,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         getEditorContext().popTracerTask();
 
-        for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
+        for (EditorCell_Component component : getCellTracker().getComponentCells()) {
           EditorComponent.this.add(component.getComponent());
         }
 

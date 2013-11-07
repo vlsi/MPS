@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -31,7 +30,7 @@ import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class EditorCell_Component extends EditorCell_Basic implements EditorCell_WithComponent {
+public class EditorCell_Component extends EditorCell_Basic {
   private JComponent myComponent;
 
   public EditorCell_Component(EditorContext editorContext, SNode node, JComponent component) {
