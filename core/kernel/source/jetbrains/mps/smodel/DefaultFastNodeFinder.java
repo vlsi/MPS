@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -40,6 +41,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
 
   private final Map<String, Set<SNode>> myNodes = new THashMap<String, Set<SNode>>();
+  private final NodeByIdComparator myComparator = new NodeByIdComparator();
 
   public DefaultFastNodeFinder(SModel model) {
     myModel = model;
@@ -93,12 +95,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
         }
       }
 
-      Collections.sort(result, new Comparator<SNode>() {
-        @Override
-        public int compare(SNode o1, SNode o2) {
-          return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
-        }
-      });
+//      Collections.sort(result, myComparator);
 
       return result;
     }
@@ -140,7 +137,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private void add(String conceptFqName, SNode node) {
     Set<SNode> set = myNodes.get(conceptFqName);
     if (set == null) {
-      set = new THashSet<SNode>(1);
+      set = new LinkedHashSet<SNode>(4);
       myNodes.put(conceptFqName, set);
     }
     set.add(node);
@@ -209,6 +206,13 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
           myNodes.clear();
         }
       }
+    }
+  }
+
+  public static class NodeByIdComparator implements Comparator<SNode> {
+    @Override
+    public int compare(SNode o1, SNode o2) {
+      return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
     }
   }
 }
