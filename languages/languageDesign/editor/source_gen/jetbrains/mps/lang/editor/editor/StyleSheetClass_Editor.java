@@ -72,7 +72,9 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    StyleSheetClass_RT.setCellActions(editorCell, node, editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

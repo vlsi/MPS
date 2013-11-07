@@ -1194,7 +1194,7 @@ public class QueriesGenerated {
       }
 
       public String getMatchingText(String pattern) {
-        return " ex";
+        return "extends";
       }
 
       public String getVisibleMatchingText(String pattern) {
@@ -1220,7 +1220,7 @@ public class QueriesGenerated {
       }
 
       public String getMatchingText(String pattern) {
-        return " ex";
+        return "extends";
       }
 
       public String getVisibleMatchingText(String pattern) {

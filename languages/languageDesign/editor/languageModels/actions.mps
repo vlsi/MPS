@@ -3407,6 +3407,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <property name="name" nameId="tpck.1169194664001" value="addExtendedClass" />
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="3383245079143155344" nodeInfo="ng">
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="3383245079143157182" nodeInfo="ng">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
@@ -3427,12 +3428,13 @@
             </node>
           </node>
           <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="3383245079143157289" nodeInfo="nn">
-            <property name="text" nameId="tpdg.1196433942569" value=" ex" />
+            <property name="text" nameId="tpdg.1196433942569" value="extends" />
           </node>
         </node>
       </node>
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="3383245079143186822" nodeInfo="ng">
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="3383245079143186840" nodeInfo="ng">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
@@ -3453,7 +3455,7 @@
             </node>
           </node>
           <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="3383245079143194603" nodeInfo="nn">
-            <property name="text" nameId="tpdg.1196433942569" value=" ex" />
+            <property name="text" nameId="tpdg.1196433942569" value="extends" />
           </node>
         </node>
       </node>

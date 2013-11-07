@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9a7vtuzbj6z1gbsrrdoc5pug24vz8dg">
+<dependencies version="2" modelHash="-74sngbhfogqyxzi4wd9r2zbf6h0h048">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -92,7 +92,7 @@
   <source id="4323500428127332367" name="EditorCellIdSubstitutions" hash="a68y07pehbyzdb1vo1i6ep5dd7jmkgm">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3383245079143155343" name="addExtendedClass" hash="-ms2dx5ma9px6n4hnz48utp9wnri37m">
+  <source id="3383245079143155343" name="addExtendedClass" hash="-d6ozyykjwtxq11f0u2w4mjdznnd79om">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
