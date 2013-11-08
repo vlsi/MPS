@@ -1074,15 +1074,6 @@ public class SModel implements SModelData {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public SModelId getSModelId() {
-    return myReference.getModelId();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
   public SModelFqName getSModelFqName() {
     return SModelFqName.fromString(myReference.getModelName());
   }
@@ -1113,97 +1104,7 @@ public class SModel implements SModelData {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public boolean isTransient() {
-    return getModelDescriptor().getModule() instanceof TransientModelsModule;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
-    return getRootNodes();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Iterator<org.jetbrains.mps.openapi.model.SNode> rootsIterator() {
-    return getRootNodes().iterator();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    addRootNode(node);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void removeRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    removeRootNode(node);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public int rootsCount() {
-    return IterableUtil.asCollection(getRootNodes()).size();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
   public final Iterable<org.jetbrains.mps.openapi.model.SNode> nodes() {
     return SNodeUtil.getDescendants(getModelDescriptor());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
-    return SNodeUtil.getDescendants(getModelDescriptor()).iterator();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public int registeredNodesCount() {
-    return jetbrains.mps.util.SNodeOperations.nodesCount(getModelDescriptor());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @Nullable
-  public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    return getNode(nodeId);
-  }
-
-  @Deprecated
-  @Nullable
-  public SNode getNodeById(String idString) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(idString);
-    assert nodeId != null : "wrong node id string";
-    return getNode(nodeId);
   }
 }
