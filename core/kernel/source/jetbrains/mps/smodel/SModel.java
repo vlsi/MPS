@@ -86,7 +86,6 @@ public class SModel implements SModelData {
 
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
-  private FakeModelDescriptor myFakeModelDescriptor;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -256,12 +255,7 @@ public class SModel implements SModelData {
   //todo will migrate after SModel is migrated
   @NotNull
   public SModelDescriptor getModelDescriptor() {
-    if (myModelDescriptor != null) return myModelDescriptor;
-
-    if (myFakeModelDescriptor == null) {
-      myFakeModelDescriptor = new FakeModelDescriptor(this);
-    }
-    return myFakeModelDescriptor;
+    return myModelDescriptor;
   }
 
   public SModelDescriptor getModelDescriptorPure(){
@@ -1211,97 +1205,5 @@ public class SModel implements SModelData {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(idString);
     assert nodeId != null : "wrong node id string";
     return getNode(nodeId);
-  }
-
-  /**
-   * This is for migration purposes, until we get rid of SModel class
-   */
-  public static class FakeModelDescriptor extends SModelBase implements org.jetbrains.mps.openapi.model.SModel {
-    private SModel myModel;
-
-    public FakeModelDescriptor(@NotNull SModel md) {
-      super(md.getReference(), new NullDataSource());
-      myModel = md;
-    }
-
-    @Override
-    public void setModule(SModule container) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean isRegistered() {
-      return false;
-    }
-
-    @Override
-    public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-      getSModelInternal().addRootNode(node);
-    }
-
-    @Override
-    public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-      getSModelInternal().removeRootNode(node);
-    }
-
-    @Override
-    public void addModelListener(@NotNull SModelListener listener) {
-
-    }
-
-    @Override
-    public void removeModelListener(@NotNull SModelListener listener) {
-
-    }
-
-    @Override
-    public SRepository getRepository() {
-      return null;
-    }
-
-    @Override
-    public void setModelRoot(ModelRoot mr) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void attach(SRepository repo) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean isReadOnly() {
-      return false;
-    }
-
-    @Override
-    public boolean isLoaded() {
-      return true;
-    }
-
-    @Override
-    public void load() {
-    }
-
-    @NotNull
-    @Override
-    public Iterable<Problem> getProblems() {
-      return Collections.emptySet();
-    }
-
-    @Override
-    public void unload() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public SModel getSModelInternal() {
-      return myModel;
-    }
-
-    @Override
-    public void dispose() {
-      myModel.dispose();
-    }
   }
 }

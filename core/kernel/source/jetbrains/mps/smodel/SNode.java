@@ -23,7 +23,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -371,7 +370,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private boolean needFireEvent() {
-    return myModel != null && myModel.getModelDescriptorPure() != null && ModelChange.needFireEvents(getModel(), this);
+    return myModel != null && myModel.getModelDescriptor() != null && ModelChange.needFireEvents(getModel(), this);
   }
 
   /**
@@ -815,7 +814,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SModel persistentModel = getPersistentModel();
     if (persistentModel == null) return null;
 
-    SModelDescriptor modelDescriptor = persistentModel.getModelDescriptorPure();
+    SModelDescriptor modelDescriptor = persistentModel.getModelDescriptor();
     if (!(modelDescriptor instanceof SModelBase)) return null;
 
     return (SModelBase) modelDescriptor;
@@ -845,7 +844,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void referenceChanged(String role, org.jetbrains.mps.openapi.model.SReference reference, org.jetbrains.mps.openapi.model.SReference newValue) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireReferenceChanged(this, role, reference, newValue);
   }
@@ -853,7 +852,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void propertyChanged(String propertyName, String oldValue, String newValue) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.firePropertyChanged(this, propertyName, oldValue, newValue);
   }
@@ -861,7 +860,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void nodeAdded(String role, org.jetbrains.mps.openapi.model.SNode child) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireNodeAdded(this, role, child);
   }
@@ -869,7 +868,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireNodeRemoved(this, role, child);
   }
