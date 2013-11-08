@@ -20,7 +20,7 @@ public class MergeTemporaryModel extends EditableSModelBase {
   }
 
   public MergeTemporaryModel(SModel model, boolean readonly) {
-    this(model.getSModelReference(), readonly);
+    this(model.getReference(), readonly);
     mySModel = model;
     model.setModelDescriptor(this);
   }

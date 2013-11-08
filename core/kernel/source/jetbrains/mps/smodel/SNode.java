@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
@@ -36,28 +35,18 @@ import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.migration.annotations.LongTermMigration;
-import org.jetbrains.mps.migration.annotations.MigrationScript;
-import org.jetbrains.mps.migration.annotations.ShortTermMigration;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
@@ -492,7 +481,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
-        return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
+        return "?" + NameUtil.shortNameFromLongName(myConceptFqName) + "?";
       }
       return "?" + persistentName + "?";
     }
@@ -558,7 +547,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     //if child is in unregistered nodes, add this one too to track undo for it
     UnregisteredNodes un = UnregisteredNodes.instance();
     if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
-      startUndoTracking(getTopmostAncestor(), ((SNode) child).myRepository);
+      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
     }
 
     if (myModel == null) {
@@ -803,13 +792,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return myModel == null ? null : myModel.getModelDescriptor();
   }
 
-  //this method is for internal checks in SReferenceBase only
-  //note it does not have a read action as it doesn't add a result dependency when called
-  //it also does not check model access as it's already "synchronized" by volatile modifier of myRepo
-  public boolean wasDetached() {
-    return myRepository instanceof DisposedRepository;
-  }
-
   private SModelBase getRealModel() {
     SModel persistentModel = getPersistentModel();
     if (persistentModel == null) return null;
@@ -914,7 +896,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     myModel.unregisterNode(this);
 
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+    for (SNode child = firstChild(); child != null; child = child.treeNext()) {
       child.unRegisterFromModel();
     }
 
@@ -954,7 +936,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    return (SNode) SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
+    return (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
   }
 
   public SNode getPropertyDeclaration(String propertyName) {
@@ -1326,7 +1308,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     myModel = newModel;
     myModelForUndo = newModel;
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+    for (SNode child = firstChild(); child != null; child = child.treeNext()) {
       child.changeModel(newModel);
     }
   }
@@ -1344,64 +1326,24 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode getTopmostAncestor() {
-    return getContainingRoot();
-  }
-
-  @Deprecated
-  public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Use smodel language instead
-   * @Deprecated in 3.0
-   */
-  public List<SNode> getAncestors(boolean includeThis) {
-    List<SNode> result = new ArrayList<SNode>();
-    if (includeThis) {
-      result.add(this);
-    }
-    SNode parent = getParent();
-    if (parent != null) {
-      result.addAll(parent.getAncestors(true));
-    }
-    return result;
-  }
-
-  @Deprecated
-  /**
    * Not supposed to be used. Concept properties were eliminated in MPS 3.0
    * by converting to BaseConcept properties mostly, and considering other
    * cases individually
    * @Deprecated in 3.0
    */
   public String getConceptProperty(String propertyName) {
-    SNode conceptProperty = findConceptProperty(propertyName);
-    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
-    return o != null ? o.toString() : null;
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
-   * by converting to BaseConcept properties mostly, and considering other
-   * cases individually
-   * @Deprecated in 3.0
-   */
-  public SNode findConceptProperty(String propertyName) {
     SNode conceptDeclaration;
     if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
       conceptDeclaration = this;
     } else {
       conceptDeclaration = (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-    return (SNode) SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+    SNode conceptProperty = (SNode) SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
+    return o != null ? o.toString() : null;
   }
 
-   @Deprecated
+  @Deprecated
   /**
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
@@ -1420,39 +1362,5 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    */
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Access to children is now provided in by-role manner and through parent node.
-   * Most probably, by calling this method you want to know a sibling in the same role.
-   * E.g. if you need a next sibling in the same role, use getParent().getNextChild(node)
-   * @Deprecated in 3.0
-   */
-  public SNode nextSibling() {
-    return treeNext();
-  }
-
-  @NotNull
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getConceptFqName() {
-    return getConcept().getQualifiedName();
-  }
-
-  private static class MyTransformingCondition implements Condition<org.jetbrains.mps.openapi.model.SNode> {
-    private final Condition<SNode> myCondition;
-
-    public MyTransformingCondition(Condition<SNode> condition) {
-      myCondition = condition;
-    }
-
-    @Override
-    public boolean met(org.jetbrains.mps.openapi.model.SNode object) {
-      return object instanceof SNode && myCondition.met((SNode) object);
-    }
   }
 }

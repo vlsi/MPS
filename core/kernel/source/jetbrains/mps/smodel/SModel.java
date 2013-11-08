@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -35,7 +34,7 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -49,9 +48,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -97,7 +93,7 @@ public class SModel implements SModelData {
   }
 
   public SModelId getModelId() {
-    return getSModelReference().getModelId();
+    return myReference.getModelId();
   }
 
   @NotNull
@@ -222,7 +218,7 @@ public class SModel implements SModelData {
 
   @NotNull
   public String toString() {
-    return getSModelReference().toString();
+    return myReference.toString();
   }
 
   //--------------IMPLEMENTATION-------------------
@@ -252,8 +248,6 @@ public class SModel implements SModelData {
     getModelDescriptor().removeModelListener(listener);
   }
 
-  //todo will migrate after SModel is migrated
-  @NotNull
   public SModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
@@ -610,7 +604,7 @@ public class SModel implements SModelData {
     if (importedLanguages().contains(ref)) return;
 
     if (ref.getModuleId() == null) {
-      LOG.warn("Attempt to add language reference to a language without id in model " + getSModelFqName() + ". Language = " + ref);
+      LOG.warn("Attempt to add language reference to a language without id in model " + getReference().getModelName() + ". Language = " + ref);
     }
 
     if (myLanguages.add(ref)) {
@@ -700,7 +694,7 @@ public class SModel implements SModelData {
   @NotNull
   public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
-    for (org.jetbrains.mps.openapi.model.SNode n1 : model.nodes()) {
+    for (org.jetbrains.mps.openapi.model.SNode n1 : model.myIdToNodeMap.values()) {
       SNode node = ((SNode) n1);
       SNodeReference ptrConcept = env.getConceptId(node);
       if (ptrConcept == null) {
@@ -744,7 +738,7 @@ public class SModel implements SModelData {
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
-    if (!(getLongName().endsWith(LanguageAspect.STRUCTURE.getName())))
+    if (!(NameUtil.getModelLongName(getReference().getModelName()).endsWith(LanguageAspect.STRUCTURE.getName())))
       usedModels.remove(myReference);   // do not import self if not structure
     for (ImportElement elem : myImports) {
       usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
@@ -1026,16 +1020,6 @@ public class SModel implements SModelData {
     return changed;
   }
 
-  //--------------DEPRECATED-------------------
-  @Deprecated
-  /**
-   * Not supposed to be used. Inline
-   * @Deprecated in 3.0
-   */
-  public boolean isRegistered() {
-    return myModelDescriptor != null && getReference().resolve(MPSModuleRepository.getInstance()) == myModelDescriptor;
-  }
-
   public SModel createEmptyCopy() {
     return new jetbrains.mps.smodel.SModel(getReference());
   }
@@ -1057,54 +1041,5 @@ public class SModel implements SModelData {
       to.addEngagedOnGenerationLanguage(mr);
     }
     to.setVersion(getVersion());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @NotNull
-  public SModelReference getSModelReference() {
-    return myReference;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SModelFqName getSModelFqName() {
-    return SModelFqName.fromString(myReference.getModelName());
-  }
-
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @NotNull
-  public String getStereotype() {
-    return jetbrains.mps.util.SNodeOperations.getModelStereotype(getModelDescriptor());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @NotNull
-  public String getLongName() {
-    return jetbrains.mps.util.SNodeOperations.getModelLongName(getModelDescriptor());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public final Iterable<org.jetbrains.mps.openapi.model.SNode> nodes() {
-    return SNodeUtil.getDescendants(getModelDescriptor());
   }
 }
