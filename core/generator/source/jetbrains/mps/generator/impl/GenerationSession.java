@@ -203,7 +203,7 @@ class GenerationSession {
         mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, myOriginalInputModel, myGenerationPlan,
             myParameters, null);
         SModel currInputModel = createTransientModel("0");
-        CloneUtil.cloneModelWithImports(myOriginalInputModel, currInputModel, true);
+        new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
         for (Iterator<SNode> it1 = myOriginalInputModel.getRootNodes().iterator(), it2 = currInputModel.getRootNodes().iterator(); ;) {
           final boolean b1 = it1.hasNext(), b2 = it2.hasNext();
@@ -507,7 +507,7 @@ class GenerationSession {
         myLogger.info(
             "clone model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentInputModel_clone.getReference().getModelName() + "'");
       }
-      CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
+      new CloneUtil(currentInputModel, currentInputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getScripts().getPreMappingScripts());
@@ -557,7 +557,7 @@ class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentModel.getReference().getModelName() + "' --> '" + currentOutputModel_clone.getReference().getModelName() + "'");
       }
-      CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
+      new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getScripts().getPostMappingScripts());
