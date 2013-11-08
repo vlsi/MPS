@@ -15,6 +15,7 @@ import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -38,8 +39,10 @@ public class check_ClassifierOverridingMethods_NonTypesystemRule extends Abstrac
         if (SNodeOperations.isInstanceOf(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.Classifier"), returnType, ancestor, overridingMethod, overridenMethod);
         } else if (SNodeOperations.isInstanceOf(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-          // todo fix the enum constant case 
-          resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")), "jetbrains.mps.baseLanguage.structure.EnumClass"), returnType, ancestor, overridingMethod, overridenMethod);
+          SNode enumClass = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")), "jetbrains.mps.baseLanguage.structure.EnumClass");
+          SNode dummy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
+          SLinkOperations.setTarget(dummy, "classifier", enumClass, false);
+          resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(dummy, returnType, ancestor, overridingMethod, overridenMethod);
         } else {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
