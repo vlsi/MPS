@@ -1299,22 +1299,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   /**
-   * Not supposed to be used
-   * @Deprecated in 3.0
-   */
-  public void changeModel(SModel newModel) {
-    if (myModel == newModel) return;
-    LOG.assertLog(myModel == null, "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
-
-    myModel = newModel;
-    myModelForUndo = newModel;
-    for (SNode child = firstChild(); child != null; child = child.treeNext()) {
-      child.changeModel(newModel);
-    }
-  }
-
-  @Deprecated
-  /**
    * Not supposed to be used. Concept properties were eliminated in MPS 3.0
    * by converting to BaseConcept properties mostly, and considering other
    * cases individually
