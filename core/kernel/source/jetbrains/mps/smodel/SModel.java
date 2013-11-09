@@ -1024,7 +1024,7 @@ public class SModel implements SModelData {
     return new jetbrains.mps.smodel.SModel(getReference());
   }
 
-  public void copyPropertiesTo(SModelInternal to) {
+  public void copyPropertiesTo(SModel to) {
     for (ImportElement ie : getAdditionalModelVersions()) {
       to.addAdditionalModelVersion(ie.copy());
     }

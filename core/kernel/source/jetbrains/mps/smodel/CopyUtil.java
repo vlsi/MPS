@@ -62,19 +62,15 @@ public final class CopyUtil {
     ((jetbrains.mps.smodel.SModelInternal) model).calculateImplicitImports();
   }
 
-  public static void copyModelProperties(SModel from, SModel to) {
-    ((jetbrains.mps.smodel.SModelInternal) from).copyPropertiesTo(((jetbrains.mps.smodel.SModelInternal) to));
+  public static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+    from.copyPropertiesTo(to);
   }
 
   public static jetbrains.mps.smodel.SModel copyModel(jetbrains.mps.smodel.SModel model) {
     jetbrains.mps.smodel.SModel copy = model.createEmptyCopy();
     copyModelContentAndPreserveIds(model.getModelDescriptor(), copy.getModelDescriptor());
-    copyModelProperties(model.getModelDescriptor(), copy.getModelDescriptor());
+    copyModelProperties(model, copy);
     return copy;
-  }
-
-  public static void changeModelReference(SModel model, SModelReference modelReference) {
-    ((jetbrains.mps.smodel.SModelInternal) model).changeModelReference(modelReference);
   }
 
   public static List<SNode> copy(List<SNode> nodes) {

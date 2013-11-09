@@ -352,9 +352,4 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   public void changeModelReference(SModelReference newModelReference) {
     getSModelInternal().changeModelReference(newModelReference);
   }
-
-  @Override
-  public final void copyPropertiesTo(SModelInternal to) {
-    getSModelInternal().copyPropertiesTo(to);
-  }
 }
