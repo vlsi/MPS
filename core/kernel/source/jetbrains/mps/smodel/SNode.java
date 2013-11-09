@@ -342,7 +342,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     children_remove(wasChild);
-    wasChild.setRoleInParent(null);
+    wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
     performUndoableAction(new Computable<SNodeUndoableAction>() {
@@ -542,7 +542,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     children_insertBefore(((SNode) anchor), schild);
-    schild.setRoleInParent(role);
+    schild.myRoleInParent = role;
 
     //if child is in unregistered nodes, add this one too to track undo for it
     UnregisteredNodes un = UnregisteredNodes.instance();
@@ -1295,13 +1295,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     node.parent = null;
   }
 
-  //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
-
-  @Deprecated
-  /**
-   * Users are not supposed to use this in past
-   * @Deprecated in 3.0
-   */
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
