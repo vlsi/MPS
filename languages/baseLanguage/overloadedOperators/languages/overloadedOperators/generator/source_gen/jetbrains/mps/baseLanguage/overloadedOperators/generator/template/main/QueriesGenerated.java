@@ -24,7 +24,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_3100399657864717070(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getOriginalInputModel(), _context.getScope(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getInputModel(), _context.getScope(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "operators", true);
       }
