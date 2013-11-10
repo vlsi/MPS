@@ -8,7 +8,7 @@
   <dep model="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)" hash="60932ouhiysnu1hhpctjz5ve3ceuahh" />
   <dep model="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" hash="9wh5rpyottcn0psvmj19vq8kv4km5y" />
   <common hash="-5ie4tabpx6fy2dcw8n3bruwyw6li6kf" />
-  <source id="7057666463730252450" name="Abc" hash="3pqbbadendtigc3phqoyrhe8c3lov8f" dependsOnNodes="true">
+  <source id="7057666463730252450" name="Abc" hash="3pqbbadendtigc3phqoyrhe8c3lov8f">
     <dep root="3816167865390667291" />
     <dep root="3816167865390946785" />
     <dep root="5199967550912605229" />
@@ -26,7 +26,7 @@
   <source id="3816167865390946785" name="Node" hash="-d2n4hwgfzomrrctr9s7snba46l5axie">
     <file name="Node.java" />
   </source>
-  <source id="8009360033695026859" name="As" hash="-h1uvs5a8v1hts0fbjb42ercfxf0ac1" dependsOnNodes="true">
+  <source id="8009360033695026859" name="As" hash="-h1uvs5a8v1hts0fbjb42ercfxf0ac1">
     <dep root="3816167865390667291" />
     <dep root="3816167865390946785" />
     <dep root="5199967550912605229" />
