@@ -3,7 +3,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
   <dep model="r:e587899c-2e4a-4564-b2b6-e21e3ba9b101(jetbrains.mps.core.workflow.typesystem)" hash="-6pae6wv1jcmt1um244j91ll7zjh2cc1" />
   <dep model="r:fe4d607e-da97-41cf-b865-9f14d57a6e75(jetbrains.mps.core.workflow.editor)" hash="z3nttpsa4ukqrfslal0blkyqxgo7z3" />
-  <common>
+  <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:e587899c-2e4a-4564-b2b6-e21e3ba9b101(jetbrains.mps.core.workflow.typesystem)" />
     <dep model="r:fe4d607e-da97-41cf-b865-9f14d57a6e75(jetbrains.mps.core.workflow.editor)" />
