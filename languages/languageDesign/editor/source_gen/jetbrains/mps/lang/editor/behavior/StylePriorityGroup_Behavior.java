@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class StylePriorityGroup_Behavior {
   public static void init(SNode thisNode) {
@@ -21,21 +20,6 @@ public class StylePriorityGroup_Behavior {
       }
     }
     return i;
-  }
-
-  public static String call_getPriorityConstName_3918924352676970752(SNode thisNode) {
-    StringBuffer bufferName = new StringBuffer();
-    bufferName.append("PRIORITY_");
-    for (int i = 0; i < SPropertyOperations.getString(thisNode, "name").length(); i++) {
-      char ch = SPropertyOperations.getString(thisNode, "name").charAt(i);
-      if (Character.isUpperCase(ch)) {
-        bufferName.append('_');
-        bufferName.append(Character.toUpperCase(ch));
-      } else {
-        bufferName.append(Character.toUpperCase(ch));
-      }
-    }
-    return bufferName.toString();
   }
 
   private static boolean eq_4c3u2b_a0c0c0b(Object a, Object b) {

@@ -22,7 +22,7 @@ public class AddExtendsClause_Intention implements IntentionFactory {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.lang.editor.structure.StyleSheetClass";
+    return "jetbrains.mps.lang.editor.structure.StylePriorityGroup";
   }
 
   public String getPresentation() {
@@ -50,7 +50,7 @@ public class AddExtendsClause_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1239735706419");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1707191813404431435");
   }
 
   public boolean isSurroundWith() {
@@ -73,7 +73,7 @@ public class AddExtendsClause_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "extendedClass", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleSheetClassReference", null), true);
+      SLinkOperations.setTarget(node, "extendedGroup", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StylePriorityGroupReference", null), true);
     }
 
     public IntentionDescriptor getDescriptor() {
