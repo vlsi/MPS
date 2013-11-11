@@ -2607,68 +2607,62 @@
     <unitInfo nodeId="1262585326111608161" fileName="IndentLayoutOnNewLineStyleClassItem_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IndentLayoutOnNewLineStyleClassItem_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1938068300780663539">
-    <nodeInfo nodeId="1938068300781330867" fileName="StylePriorityGroup_Behavior.java" startLine="16" startPosition="74" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1938068300781331943" fileName="StylePriorityGroup_Behavior.java" startLine="17" startPosition="23" endLine="18" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1938068300781388571" fileName="StylePriorityGroup_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1938068300781412434" fileName="StylePriorityGroup_Behavior.java" startLine="20" startPosition="118" endLine="21" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1938068300781547149" fileName="StylePriorityGroup_Behavior.java" startLine="23" startPosition="47" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1950447826681026121" fileName="StylePriorityGroup_Behavior.java" startLine="25" startPosition="9" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1938068300781417464" fileName="StylePriorityGroup_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3918924352677029172" fileName="StylePriorityGroup_Behavior.java" startLine="32" startPosition="86" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3918924352677029177" fileName="StylePriorityGroup_Behavior.java" startLine="33" startPosition="49" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3918924352677029184" fileName="StylePriorityGroup_Behavior.java" startLine="35" startPosition="88" endLine="36" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3918924352677676886" fileName="StylePriorityGroup_Behavior.java" startLine="37" startPosition="38" endLine="38" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3918924352677657334" fileName="StylePriorityGroup_Behavior.java" startLine="38" startPosition="31" endLine="39" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3918924352679651250" fileName="StylePriorityGroup_Behavior.java" startLine="40" startPosition="14" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3918924352677029223" fileName="StylePriorityGroup_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3918924352677029204" fileName="StylePriorityGroup_Behavior.java" startLine="40" startPosition="12" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1938068300781547149" fileName="StylePriorityGroup_Behavior.java" startLine="22" startPosition="43" endLine="25" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1938068300781547149" fileName="StylePriorityGroup_Behavior.java" startLine="22" startPosition="43" endLine="25" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="49" startPosition="64" endLine="53" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1938068300781420458" fileName="StylePriorityGroup_Behavior.java" startLine="21" startPosition="10" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3918924352677029193" fileName="StylePriorityGroup_Behavior.java" startLine="36" startPosition="74" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_4c3u2b_a0c0c0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="3918924352677029182" fileName="StylePriorityGroup_Behavior.java" startLine="34" startPosition="35" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1938068300781354972" fileName="StylePriorityGroup_Behavior.java" startLine="18" startPosition="14" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="32" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPriorityConstName_3918924352676970752#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="16" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPriority_1938068300780663696#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-    <scopeInfo nodeId="1938068300780663695" fileName="StylePriorityGroup_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1938068300781547149" fileName="StylePriorityGroup_Behavior.java" startLine="23" startPosition="47" endLine="24" endPosition="61" />
-    <scopeInfo nodeId="3918924352677029205" fileName="StylePriorityGroup_Behavior.java" startLine="40" startPosition="14" endLine="41" endPosition="53" />
-    <scopeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1938068300781330867" fileName="StylePriorityGroup_Behavior.java" startLine="13" startPosition="74" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1938068300781331943" fileName="StylePriorityGroup_Behavior.java" startLine="14" startPosition="23" endLine="15" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1938068300781388571" fileName="StylePriorityGroup_Behavior.java" startLine="16" startPosition="75" endLine="17" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1938068300781412434" fileName="StylePriorityGroup_Behavior.java" startLine="17" startPosition="118" endLine="18" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1950447826681026121" fileName="StylePriorityGroup_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1938068300781417464" fileName="StylePriorityGroup_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3918924352677029172" fileName="StylePriorityGroup_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3918924352677029177" fileName="StylePriorityGroup_Behavior.java" startLine="27" startPosition="49" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3918924352677029184" fileName="StylePriorityGroup_Behavior.java" startLine="29" startPosition="88" endLine="30" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3918924352677676886" fileName="StylePriorityGroup_Behavior.java" startLine="31" startPosition="38" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3918924352677657334" fileName="StylePriorityGroup_Behavior.java" startLine="32" startPosition="31" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3918924352679651250" fileName="StylePriorityGroup_Behavior.java" startLine="34" startPosition="14" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3918924352677029223" fileName="StylePriorityGroup_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3918924352677029204" fileName="StylePriorityGroup_Behavior.java" startLine="34" startPosition="12" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1938068300781420458" fileName="StylePriorityGroup_Behavior.java" startLine="18" startPosition="10" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="41" startPosition="64" endLine="45" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3918924352677029193" fileName="StylePriorityGroup_Behavior.java" startLine="30" startPosition="74" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_4c3u2b_a0c0c0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1938068300781354972" fileName="StylePriorityGroup_Behavior.java" startLine="15" startPosition="14" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3918924352677029182" fileName="StylePriorityGroup_Behavior.java" startLine="28" startPosition="35" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="13" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPriority_1938068300780663696#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+    <nodeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="26" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPriorityConstName_3918924352676970752#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1938068300780663695" fileName="StylePriorityGroup_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1938068300781420461" fileName="StylePriorityGroup_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="18" />
+    <scopeInfo nodeId="3918924352677029205" fileName="StylePriorityGroup_Behavior.java" startLine="34" startPosition="14" endLine="35" endPosition="53" />
+    <scopeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="1938068300780663539" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3918924352677029194" fileName="StylePriorityGroup_Behavior.java" startLine="37" startPosition="38" endLine="39" endPosition="53" />
-    <scopeInfo nodeId="1938068300781547149" fileName="StylePriorityGroup_Behavior.java" startLine="22" startPosition="43" endLine="25" endPosition="9" />
-    <scopeInfo nodeId="1938068300781420461" fileName="StylePriorityGroup_Behavior.java" startLine="22" startPosition="43" endLine="26" endPosition="17" />
-    <scopeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="49" startPosition="64" endLine="53" endPosition="6" />
-    <scopeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="3918924352677029194" fileName="StylePriorityGroup_Behavior.java" startLine="31" startPosition="38" endLine="33" endPosition="53" />
+    <scopeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="41" startPosition="64" endLine="45" endPosition="6" />
+    <scopeInfo nodeId="1938068300781354974" fileName="StylePriorityGroup_Behavior.java" startLine="16" startPosition="75" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="1938068300781443940" fileName="StylePriorityGroup_Behavior.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1938068300781443940" varName="a" />
       <varInfo nodeId="1938068300781443940" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="3918924352677029183" fileName="StylePriorityGroup_Behavior.java" startLine="35" startPosition="88" endLine="42" endPosition="7">
+    <scopeInfo nodeId="3918924352677029183" fileName="StylePriorityGroup_Behavior.java" startLine="29" startPosition="88" endLine="36" endPosition="7">
       <varInfo nodeId="3918924352677029185" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="1938068300781354974" fileName="StylePriorityGroup_Behavior.java" startLine="19" startPosition="75" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="3918924352677029182" fileName="StylePriorityGroup_Behavior.java" startLine="34" startPosition="35" endLine="43" endPosition="5">
+    <scopeInfo nodeId="3918924352677029182" fileName="StylePriorityGroup_Behavior.java" startLine="28" startPosition="35" endLine="37" endPosition="5">
       <varInfo nodeId="3918924352677029211" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="3918924352676970906" fileName="StylePriorityGroup_Behavior.java" startLine="32" startPosition="86" endLine="44" endPosition="33">
-      <varInfo nodeId="3918924352677029173" varName="bufferName" />
-    </scopeInfo>
-    <scopeInfo nodeId="1938068300780663699" fileName="StylePriorityGroup_Behavior.java" startLine="16" startPosition="74" endLine="29" endPosition="13">
+    <scopeInfo nodeId="1938068300780663699" fileName="StylePriorityGroup_Behavior.java" startLine="13" startPosition="74" endLine="23" endPosition="13">
       <varInfo nodeId="1938068300781331946" varName="i" />
       <varInfo nodeId="1938068300781330870" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="32" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="13" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1938068300780663539" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="16" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="3918924352676970906" fileName="StylePriorityGroup_Behavior.java" startLine="26" startPosition="86" endLine="38" endPosition="33">
+      <varInfo nodeId="3918924352677029173" varName="bufferName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="26" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1938068300780663539" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StylePriorityGroup_Behavior" />
+    <unitInfo nodeId="1938068300780663539" fileName="StylePriorityGroup_Behavior.java" startLine="9" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StylePriorityGroup_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/2214947816754235464">
     <nodeInfo nodeId="2214947816754242630" fileName="CellModel_Indent_Behavior.java" startLine="11" startPosition="83" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

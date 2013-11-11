@@ -4,10 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.log4j.Priority;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class StylePriorityGroup_Behavior {
   public static void init(SNode thisNode) {
@@ -20,10 +17,7 @@ public class StylePriorityGroup_Behavior {
       p = SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedGroup", true), "stylePriorityGroup", false);
       i++;
       if (eq_4c3u2b_a0c0c0b(p, thisNode)) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
-          LOG.error("Cyclic StylePriorityGroup inheritance");
-        }
-        return 1;
+        return -1;
       }
     }
     return i;
@@ -43,8 +37,6 @@ public class StylePriorityGroup_Behavior {
     }
     return bufferName.toString();
   }
-
-  protected static Logger LOG = LogManager.getLogger(StylePriorityGroup_Behavior.class);
 
   private static boolean eq_4c3u2b_a0c0c0b(Object a, Object b) {
     return (a != null ?
