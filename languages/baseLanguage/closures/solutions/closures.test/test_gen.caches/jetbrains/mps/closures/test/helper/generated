@@ -11,7 +11,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-7c144kqc2jnjr4hoi06x3ow7i4x04cl" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="7cf5mbs6r7l7w6l3mzm1xim6xwzt321" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-zttxhpc4iix3xpfv1j0msfpvjln643" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="7o5pkyvrfird86kg26ei7c77jbt6zyh" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-h7l8al7gendgvizvpx5caoaarj34lr" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="-7oi8r2fqvizex88l48gmlfkvtdiol25" />
   <source id="7178287329507395260" name="MockTemplateQueryContext" hash="-9tntkx1gi9dik54yj1914zhem97agcq">
@@ -20,7 +20,7 @@
     <file name="MockTemplateQueryContext.java" />
   </source>
   <source id="4402508398720854500" hash="68buriyiqsosvqhk0s6q2oajxovshs6" />
-  <source id="7178287329507546162" name="ClosureLiteraltargetIface" hash="-8hf87k0piywcrs59nyzao8wypqj3gmc" dependsOnNodes="true">
+  <source id="7178287329507546162" name="ClosureLiteraltargetIface" hash="-8hf87k0piywcrs59nyzao8wypqj3gmc">
     <dep root="4402508398720854500" />
     <dep root="6374750171056867477" />
     <dep root="7178287329507395260" />
@@ -37,7 +37,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClosureLiteraltargetIface_Test.java" />
   </source>
-  <source id="6374750171056867477" name="ClosureLiteraltargetFunType" hash="-191xfb5z3brxjekq7ws8st2aqxjv6y6" dependsOnNodes="true">
+  <source id="6374750171056867477" name="ClosureLiteraltargetFunType" hash="-191xfb5z3brxjekq7ws8st2aqxjv6y6">
     <dep root="4402508398720854500" />
     <dep root="7178287329507395260" />
     <dep root="7178287329507546162" />

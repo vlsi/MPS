@@ -4,8 +4,10 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />
     </modelRoot>
-    <modelRoot path="${module}/classes_gen" type="java_classes" />
-    <modelRoot path="${module}/lib/trove-2.1.0.jar" type="java_classes" />
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="classes_gen" />
+      <sourceRoot location="lib/trove-2.1.0.jar" />
+    </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/trove-2.1.0.jar" />

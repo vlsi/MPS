@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-8wj0irx8idbx1kwa959skwtdfcm8q7d">
-  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="dm75q7vc5em4qh6zjrvka04g9q7s08c" />
   <common hash="2x8i7skc1856vlndkm2r0ptvbzmwfee" />
   <source id="3432969378036015499" name="JavaUiState" hash="-5pf0w35ip7zt67hzgy4b5xd38hndsnj">
-    <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <file name="JavaUiState.java" />
   </source>
 </dependencies>

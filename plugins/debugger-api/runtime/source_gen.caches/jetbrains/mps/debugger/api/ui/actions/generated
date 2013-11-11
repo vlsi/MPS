@@ -49,7 +49,7 @@
   <dep model="r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)" hash="-e2j9cveu1067ih3fsl0vtigvuvq4x8y" />
   <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="-9qrajupymsnswkebd17m1zwrd5snuyg" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="bllc8ysc8azk40hsfaxb3nfoi53e8xf" dependsOnNodes="true">
+  <common hash="bllc8ysc8azk40hsfaxb3nfoi53e8xf">
     <dep root="2392684134639444998" />
     <dep root="4073774232572770202" />
     <dep root="418270182880363898" />

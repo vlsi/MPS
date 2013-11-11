@@ -4,16 +4,18 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot path="${module}/classes" type="java_classes" />
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="classes" />
+    </modelRoot>
   </models>
   <facets>
     <facet type="java" />
-    <facet pluginId="com.intellij" type="ideaPlugin" />
     <facet type="tests" />
     <facet pluginId="jetbrains.mps.ide.make" type="ideaPlugin" />
     <facet type="java" />
     <facet pluginId="com.intellij" type="ideaPlugin" />
     <facet type="tests" />
+    <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>
