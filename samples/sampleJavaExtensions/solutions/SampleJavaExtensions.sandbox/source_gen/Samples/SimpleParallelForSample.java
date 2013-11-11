@@ -9,10 +9,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import utils.ParallelLoopException;
-import java.io.IOException;
-import java.io.EOFException;
 
-public abstract class SimpleParallelForSample {
+public abstract class SimpleParallelForSample<T> {
   public SimpleParallelForSample() {
   }
 
@@ -68,22 +66,9 @@ public abstract class SimpleParallelForSample {
 
 
 
-  public void foo() throws IOException {
-  }
-
-  public static class Logger extends SimpleParallelForSample implements Runnable {
-    public Logger() {
-    }
-
+  public static class Logger {
     private static synchronized void log(String msg) {
       System.out.println(msg);
-    }
-
-    public void run() throws RuntimeException {
-    }
-
-    @Override
-    public void foo() throws EOFException {
     }
   }
 }

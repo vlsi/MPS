@@ -705,103 +705,91 @@
     <unitInfo nodeId="3385910400465407946" fileName="SidewaysIfSample.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="Samples.SidewaysIfSample" />
   </root>
   <root nodeRef="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)/4120418308310980273">
-    <nodeInfo nodeId="4120418308311049471" fileName="SimpleParallelForSample.java" startLine="19" startPosition="42" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4120418308310980286" fileName="SimpleParallelForSample.java" startLine="20" startPosition="0" endLine="21" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4723123923088182030" fileName="SimpleParallelForSample.java" startLine="21" startPosition="109" endLine="22" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4120418308311049470" fileName="SimpleParallelForSample.java" startLine="22" startPosition="104" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="24" startPosition="5" endLine="25" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="25" startPosition="98" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="26" startPosition="83" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="28" startPosition="35" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="29" startPosition="0" endLine="30" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="30" startPosition="29" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4120418308310980313" fileName="SimpleParallelForSample.java" startLine="34" startPosition="17" endLine="35" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4697196167066005441" fileName="SimpleParallelForSample.java" startLine="35" startPosition="77" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3988640388184820767" fileName="SimpleParallelForSample.java" startLine="36" startPosition="0" endLine="37" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3988640388184817665" fileName="SimpleParallelForSample.java" startLine="37" startPosition="95" endLine="38" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088182036" fileName="SimpleParallelForSample.java" startLine="38" startPosition="33" endLine="39" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1404827149555729972" fileName="SimpleParallelForSample.java" startLine="39" startPosition="29" endLine="40" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="41" startPosition="42" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="43" startPosition="46" endLine="44" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="45" startPosition="23" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="49" startPosition="10" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="50" startPosition="0" endLine="51" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="51" startPosition="37" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="54" startPosition="11" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="56" startPosition="40" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="59" startPosition="63" endLine="60" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="61" startPosition="7" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3988640388184820764" fileName="SimpleParallelForSample.java" startLine="63" startPosition="5" endLine="64" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8374756414439034526" fileName="SimpleParallelForSample.java" startLine="64" startPosition="103" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396746989" fileName="SimpleParallelForSample.java" startLine="65" startPosition="50" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4120418308311047828" fileName="SimpleParallelForSample.java" startLine="78" startPosition="54" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4120418308310980275" fileName="SimpleParallelForSample.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleParallelForSample#()V" />
-    <nodeInfo nodeId="8302934035192276799" fileName="SimpleParallelForSample.java" startLine="71" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foo#()V" />
-    <nodeInfo nodeId="1404827149555729960" fileName="SimpleParallelForSample.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Logger#()V" />
-    <nodeInfo nodeId="8302934035197570944" fileName="SimpleParallelForSample.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="58" startPosition="7" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4120418308311047821" fileName="SimpleParallelForSample.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="log#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8302934035197865787" fileName="SimpleParallelForSample.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foo#()V" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="53" startPosition="7" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="33" startPosition="29" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="33" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="31" startPosition="0" endLine="49" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="27" startPosition="0" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="23" startPosition="0" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4120418308310980279" fileName="SimpleParallelForSample.java" startLine="19" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="4120418308310980278" fileName="SimpleParallelForSample.java" startLine="16" startPosition="36" endLine="16" endPosition="36" />
-    <scopeInfo nodeId="8302934035192276802" fileName="SimpleParallelForSample.java" startLine="71" startPosition="40" endLine="71" endPosition="40" />
-    <scopeInfo nodeId="1404827149555729963" fileName="SimpleParallelForSample.java" startLine="75" startPosition="21" endLine="75" endPosition="21" />
-    <scopeInfo nodeId="8302934035197570948" fileName="SimpleParallelForSample.java" startLine="82" startPosition="47" endLine="82" endPosition="47" />
-    <scopeInfo nodeId="8302934035197865791" fileName="SimpleParallelForSample.java" startLine="86" startPosition="43" endLine="86" endPosition="43" />
+    <nodeInfo nodeId="4120418308311049471" fileName="SimpleParallelForSample.java" startLine="17" startPosition="42" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4120418308310980286" fileName="SimpleParallelForSample.java" startLine="18" startPosition="0" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4723123923088182030" fileName="SimpleParallelForSample.java" startLine="19" startPosition="109" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4120418308311049470" fileName="SimpleParallelForSample.java" startLine="20" startPosition="104" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="22" startPosition="5" endLine="23" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="23" startPosition="98" endLine="24" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="24" startPosition="83" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="26" startPosition="35" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="27" startPosition="0" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="28" startPosition="29" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4120418308310980313" fileName="SimpleParallelForSample.java" startLine="32" startPosition="17" endLine="33" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4697196167066005441" fileName="SimpleParallelForSample.java" startLine="33" startPosition="77" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3988640388184820767" fileName="SimpleParallelForSample.java" startLine="34" startPosition="0" endLine="35" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3988640388184817665" fileName="SimpleParallelForSample.java" startLine="35" startPosition="95" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088182036" fileName="SimpleParallelForSample.java" startLine="36" startPosition="33" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1404827149555729972" fileName="SimpleParallelForSample.java" startLine="37" startPosition="29" endLine="38" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="39" startPosition="42" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="41" startPosition="46" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="43" startPosition="23" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="47" startPosition="10" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="48" startPosition="0" endLine="49" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="49" startPosition="37" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="52" startPosition="11" endLine="53" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="54" startPosition="40" endLine="55" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="57" startPosition="63" endLine="58" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="59" startPosition="7" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3988640388184820764" fileName="SimpleParallelForSample.java" startLine="61" startPosition="5" endLine="62" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8374756414439034526" fileName="SimpleParallelForSample.java" startLine="62" startPosition="103" endLine="63" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3540747636396746989" fileName="SimpleParallelForSample.java" startLine="63" startPosition="50" endLine="64" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4120418308311047828" fileName="SimpleParallelForSample.java" startLine="70" startPosition="54" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4120418308310980275" fileName="SimpleParallelForSample.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleParallelForSample#()V" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="56" startPosition="7" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4120418308311047821" fileName="SimpleParallelForSample.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="log#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="51" startPosition="7" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="31" startPosition="29" endLine="45" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="31" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="29" startPosition="0" endLine="47" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="25" startPosition="0" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="21" startPosition="0" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4120418308310980279" fileName="SimpleParallelForSample.java" startLine="17" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="4120418308310980278" fileName="SimpleParallelForSample.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="39" startPosition="0" endLine="40" endPosition="66">
+      <varInfo nodeId="4723123923088169155" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="39" startPosition="42" endLine="40" endPosition="66" />
     <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="41" startPosition="0" endLine="42" endPosition="66">
       <varInfo nodeId="4723123923088169155" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="41" startPosition="42" endLine="42" endPosition="66" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="43" startPosition="0" endLine="44" endPosition="66">
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="41" startPosition="46" endLine="42" endPosition="66" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="43" startPosition="23" endLine="44" endPosition="36" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="52" startPosition="11" endLine="53" endPosition="26" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="54" startPosition="0" endLine="55" endPosition="60">
       <varInfo nodeId="4723123923088169155" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="43" startPosition="46" endLine="44" endPosition="66" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="45" startPosition="23" endLine="46" endPosition="36" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="54" startPosition="11" endLine="55" endPosition="26" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="56" startPosition="0" endLine="57" endPosition="60">
-      <varInfo nodeId="4723123923088169155" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="56" startPosition="40" endLine="57" endPosition="60" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="59" startPosition="63" endLine="60" endPosition="93" />
-    <scopeInfo nodeId="4120418308311047824" fileName="SimpleParallelForSample.java" startLine="78" startPosition="54" endLine="79" endPosition="30" />
-    <scopeInfo nodeId="4120418308310980275" fileName="SimpleParallelForSample.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="8302934035192276799" fileName="SimpleParallelForSample.java" startLine="71" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1404827149555729960" fileName="SimpleParallelForSample.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="8302934035197570944" fileName="SimpleParallelForSample.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="4120418308311047821" fileName="SimpleParallelForSample.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="54" startPosition="40" endLine="55" endPosition="60" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="57" startPosition="63" endLine="58" endPosition="93" />
+    <scopeInfo nodeId="4120418308311047824" fileName="SimpleParallelForSample.java" startLine="70" startPosition="54" endLine="71" endPosition="30" />
+    <scopeInfo nodeId="4120418308310980275" fileName="SimpleParallelForSample.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4120418308311047821" fileName="SimpleParallelForSample.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="4120418308311047825" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="8302934035197865787" fileName="SimpleParallelForSample.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="34" startPosition="17" endLine="40" endPosition="72" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="33" startPosition="29" endLine="47" endPosition="13" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="28" startPosition="35" endLine="52" endPosition="0">
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="32" startPosition="17" endLine="38" endPosition="72" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="31" startPosition="29" endLine="45" endPosition="13" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="31" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="26" startPosition="35" endLine="50" endPosition="0">
       <varInfo nodeId="4723123923088169155" varName="localA" />
       <varInfo nodeId="4723123923088169155" varName="runnable" />
     </scopeInfo>
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="27" startPosition="0" endLine="53" endPosition="7">
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="25" startPosition="0" endLine="51" endPosition="7">
       <varInfo nodeId="4723123923088169155" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="24" startPosition="5" endLine="62" endPosition="0">
+    <scopeInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="22" startPosition="5" endLine="60" endPosition="0">
       <varInfo nodeId="4723123923088169155" varName="exceptions_e0b" />
       <varInfo nodeId="4723123923088169155" varName="latch_e0b" />
     </scopeInfo>
-    <scopeInfo nodeId="4120418308310980282" fileName="SimpleParallelForSample.java" startLine="19" startPosition="42" endLine="66" endPosition="32">
+    <scopeInfo nodeId="4120418308310980282" fileName="SimpleParallelForSample.java" startLine="17" startPosition="42" endLine="64" endPosition="32">
       <varInfo nodeId="4120418308310980287" varName="numbers" />
       <varInfo nodeId="4723123923088182031" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="4120418308310980279" fileName="SimpleParallelForSample.java" startLine="19" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="4120418308310980279" fileName="SimpleParallelForSample.java" startLine="17" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="4120418308310980283" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1404827149555729958" fileName="SimpleParallelForSample.java" startLine="74" startPosition="0" endLine="89" endPosition="0" unitName="Samples.SimpleParallelForSample$Logger" />
-    <unitInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="32" startPosition="38" endLine="49" endPosition="9" unitName="Samples.SimpleParallelForSample$1" />
-    <unitInfo nodeId="4120418308310980273" fileName="SimpleParallelForSample.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="Samples.SimpleParallelForSample" />
+    <unitInfo nodeId="1404827149555729958" fileName="SimpleParallelForSample.java" startLine="69" startPosition="0" endLine="74" endPosition="0" unitName="Samples.SimpleParallelForSample$Logger" />
+    <unitInfo nodeId="4723123923088169155" fileName="SimpleParallelForSample.java" startLine="30" startPosition="38" endLine="47" endPosition="9" unitName="Samples.SimpleParallelForSample$1" />
+    <unitInfo nodeId="4120418308310980273" fileName="SimpleParallelForSample.java" startLine="13" startPosition="0" endLine="75" endPosition="0" unitName="Samples.SimpleParallelForSample" />
   </root>
 </debugInfo>
 
