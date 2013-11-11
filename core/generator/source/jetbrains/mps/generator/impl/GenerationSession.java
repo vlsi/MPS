@@ -422,6 +422,7 @@ class GenerationSession {
         currentOutputModel = createTransientModel();
       } else {
         assert currentInputModel == realOutputModel;
+        myDependenciesBuilder.dropModel();
         // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
         recycleWasteModel(currentOutputModel, true);
         currentOutputModel = createTransientModel();
