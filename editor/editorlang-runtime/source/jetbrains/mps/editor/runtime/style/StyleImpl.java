@@ -317,9 +317,10 @@ public class StyleImpl implements Style {
             boolean found = searchResult.o1;
             ListIterator<IntPair<Object>> iterator = searchResult.o2;
             if (found) {
-              Object currentValue = iterator.next().value;
+              IntPair<Object> next = iterator.next();
+              Object currentValue = next.value;
               Object newValue = attribute.combine(pValue.value, currentValue);
-              iterator.previous().value = newValue;
+              next.value = newValue;
               if (!EqualUtil.equals(newValue, currentValue)) {
                 changedAttributes.add(attribute);
               }
