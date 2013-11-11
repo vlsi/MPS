@@ -357,7 +357,7 @@ public class UsagesTree extends MPSTree {
     }
 
     BaseNodeData data = root.getData();
-    if (nodeCategories.contains(data.getRole())) {
+    if (nodeCategories.contains(data.getRole()) || data.isResultNode()) {
       UsagesTreeNode node = new UsagesTreeNode("");
       node.setNodeIdentifier(data.getPlainText());
       node.setUserObject(root);
