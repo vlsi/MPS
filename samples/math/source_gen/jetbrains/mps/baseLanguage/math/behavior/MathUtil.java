@@ -220,7 +220,7 @@ public class MathUtil {
           }
         }
         if (matches_30uc9x_a0a6) {
-          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(matchedNode_30uc9x_a0g, "elementType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(matchedNode_30uc9x_a0g, "elementType", true), "virtual_getBoxedType_1213877337320", new Object[]{});
         } else {
           boolean matches_30uc9x_b0a6 = false;
           {
@@ -230,7 +230,7 @@ public class MathUtil {
             }
           }
           if (matches_30uc9x_b0a6) {
-            return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(matchedNode_30uc9x_a0g, "elementType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+            return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(matchedNode_30uc9x_a0g, "elementType", true), "virtual_getBoxedType_1213877337320", new Object[]{});
           } else
           return null;
         }

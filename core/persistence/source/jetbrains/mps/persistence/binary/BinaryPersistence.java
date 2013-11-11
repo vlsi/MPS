@@ -183,7 +183,7 @@ public class BinaryPersistence {
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
     os.writeInt((model).getVersion());
-    SModelDescriptor md = model.getModelDescriptor();
+    SModelDescriptor md = model.getModelDescriptorPure();
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 

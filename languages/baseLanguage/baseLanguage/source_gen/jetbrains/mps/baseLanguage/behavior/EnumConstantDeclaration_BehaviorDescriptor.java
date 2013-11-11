@@ -5,14 +5,17 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import javax.swing.Icon;
 import java.util.List;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
+public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public EnumConstantDeclaration_BehaviorDescriptor() {
   }
 
@@ -54,6 +57,26 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
+  }
+
+  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+    return EnumConstantDeclaration_Behavior.virtual_getMembers_1213877531970(thisNode);
+  }
+
+  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+    return EnumConstantDeclaration_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  }
+
+  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+    return EnumConstantDeclaration_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return EnumConstantDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  }
+
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
 
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {

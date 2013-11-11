@@ -4,10 +4,12 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />
     </modelRoot>
-    <modelRoot path="${mps_home}/lib/icons.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/lib/resources.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/lib/resources_en.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/lib/trove4j.jar" type="java_classes" />
+    <modelRoot contentPath="${mps_home}/lib" type="java_classes">
+      <sourceRoot location="icons.jar" />
+      <sourceRoot location="resources.jar" />
+      <sourceRoot location="resources_en.jar" />
+      <sourceRoot location="trove4j.jar" />
+    </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/lib/icons.jar" />

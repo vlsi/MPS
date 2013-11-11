@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9w3qr9urmxjeomh2nzsmblp6se3yqsw">
+<dependencies version="2" modelHash="388bhc3nauc1azv7ynws7luhhgbyqu8">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
@@ -64,9 +64,9 @@
   <dep model="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" hash="-5f3jhcbl0g2uqdudy9jva0gpxjtjj69" />
   <dep model="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" hash="exa3epq3w0agyoo47o5yr8qod6qtoar" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <dep model="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)" hash="-c0pyh6new33mtnmt7hwq7o9jir389ff" />
+  <dep model="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)" hash="4i735qy88hc0iq1ubqa8kzyqwl77nuo" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="bc0jdljprudszzvcikc6hzk25adqiha" />
+  <common hash="-1rghawsv9tin5jfhrljf2t139alj36e" />
   <source id="2899596005953728721" name="Migrations25" hash="cufuimei8b4ure2ymzmyqz16tp4dyei" />
   <source id="3805125895591795071" name="AddSourcesToModelRoots" hash="ec79o1tsotnvrx9ekfnuos31nr264qv">
     <dep root="175734484443895487" />
@@ -867,7 +867,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MethodCallChecker.java" />
   </source>
-  <source id="9065176582222574567" name="UpdateRefactoringVersions" hash="-3shd6ekyi6kblnfumm960whdlxj2tbf">
+  <source id="9065176582222574567" name="UpdateRefactoringVersions" hash="7q1yk4hrfk14eefzb4348sqwn89q5xc">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />

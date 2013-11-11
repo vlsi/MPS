@@ -8,8 +8,8 @@ public class VoidType_BehaviorDescriptor extends PrimitiveType_BehaviorDescripto
   public VoidType_BehaviorDescriptor() {
   }
 
-  public SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return VoidType_Behavior.virtual_getUnboxedType_1213877337320(thisNode);
+  public SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
+    return VoidType_Behavior.virtual_getBoxedType_1213877337320(thisNode);
   }
 
   public String virtual_jniSignature_8847328628797633411(SNode thisNode) {

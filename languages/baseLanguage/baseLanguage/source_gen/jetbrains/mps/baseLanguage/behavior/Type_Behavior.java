@@ -68,7 +68,7 @@ public class Type_Behavior {
     return true;
   }
 
-  public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
+  public static SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
     return SNodeOperations.copyNode(thisNode);
   }
 
@@ -181,8 +181,8 @@ public class Type_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getUnboxedType_1213877337320(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getUnboxedType_1213877337320", new Object[]{});
+  public static SNode call_getBoxedType_1213877337320(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBoxedType_1213877337320", new Object[]{});
   }
 
   @Deprecated
@@ -276,8 +276,8 @@ public class Type_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getUnboxedType_1213877337320(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getUnboxedType_1213877337320", new Class[]{SNode.class}, new Object[]{});
+  public static SNode callSuper_getBoxedType_1213877337320(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getBoxedType_1213877337320", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

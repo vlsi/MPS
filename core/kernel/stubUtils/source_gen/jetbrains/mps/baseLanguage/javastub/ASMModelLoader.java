@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.javastub;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.reloading.IClassPathItem;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -27,7 +27,7 @@ public class ASMModelLoader {
 
   public void updateModel() {
     try {
-      String pack = SNodeOperations.getModelLongName(myModel);
+      String pack = NameUtil.getModelLongName(myModel.getReference().getModelName());
       ClassifierUpdater updater = new ClassifierUpdater(mySkipPrivate, new SReferenceCreator(myModule, myModel));
       ClassifierLoader loader = new ClassifierLoader(myCpItem, updater);
 

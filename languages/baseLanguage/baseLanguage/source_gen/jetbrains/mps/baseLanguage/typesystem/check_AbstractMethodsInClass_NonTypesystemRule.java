@@ -42,6 +42,13 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
             }
           }
         }
+      } else {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "abstract methods not allowed in enum constants", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1962660292854020345", null, errorTarget);
+          }
+        }
       }
     }
   }

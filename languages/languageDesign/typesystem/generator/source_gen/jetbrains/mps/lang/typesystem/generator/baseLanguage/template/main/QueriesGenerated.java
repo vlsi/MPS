@@ -2173,7 +2173,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216643035001(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1220358467477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

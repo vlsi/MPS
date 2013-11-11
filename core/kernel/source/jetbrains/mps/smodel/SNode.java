@@ -277,9 +277,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
     propertyChanged(propertyName, oldValue, propertyValue);
@@ -351,7 +349,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
 
@@ -366,10 +364,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
     nodeRemoved(child, wasRole);
+  }
+
+  private boolean needFireEvent() {
+    return myModel != null && myModel.getModelDescriptorPure() != null && ModelChange.needFireEvents(getModel(), this);
   }
 
   /**
@@ -576,7 +578,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
     }
     nodeAdded(role, child);
@@ -799,7 +801,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    return myModel == null ? null : myModel.getModelDescriptor();
+    return myModel == null ? null : myModel.getModelDescriptorPure();
   }
 
   //this method is for internal checks in SReferenceBase only
@@ -813,7 +815,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SModel persistentModel = getPersistentModel();
     if (persistentModel == null) return null;
 
-    SModelDescriptor modelDescriptor = persistentModel.getModelDescriptor();
+    SModelDescriptor modelDescriptor = persistentModel.getModelDescriptorPure();
     if (!(modelDescriptor instanceof SModelBase)) return null;
 
     return (SModelBase) modelDescriptor;
@@ -928,7 +930,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    SRepository repo = model.getModelDescriptor().getRepository();
+    SRepository repo = model.getRepository();
     if (repo != null) {
       attach(repo);
     }
@@ -1013,9 +1015,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireReferenceAddedEvent(reference);
     }
   }
@@ -1046,9 +1046,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireReferenceRemovedEvent(ref);
     }
   }

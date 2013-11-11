@@ -4,7 +4,9 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="solution" />
     </modelRoot>
-    <modelRoot path="${module}/classes" type="java_classes" />
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="classes" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="jetbrains.mps.ide.devkit" type="ideaPlugin" />

@@ -29,7 +29,7 @@
 
     <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
-    <bundledColorSchemesProvider implementation="com.intellij.codeStyle.IdeaColorSchemesProvider"/>
+    <bundledColorScheme path="/colorSchemes/Darcula"/>
 
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"
                     serviceImplementation="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"/>

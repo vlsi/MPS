@@ -870,9 +870,8 @@ public final class TemplateProcessor {
       if (!_outputNodes.isEmpty()) {
         SNode inputNode = getNewInputNode(macro, templateContext);
         if (inputNode != null) {
-          final boolean originalInput = getGeneratorSessionContext().getOriginalInputModel() == inputNode.getModel();
           for (SNode outputNode : _outputNodes) {
-            TracingUtil.fillOriginalNode(inputNode, outputNode, originalInput);
+            TracingUtil.fillOriginalNode(inputNode, outputNode, false);
           }
         }
       }

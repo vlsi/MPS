@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelInternal;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
@@ -31,32 +32,54 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 public class CloneUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(CloneUtil.class));
 
+  private final SModel myInputModel;
+  private final SModel myOutputModel;
+  private final SModelReference myOutputModelRef;
+  private boolean myTraceOriginalInput = false;
+
+  public CloneUtil(SModel inputModel, SModel outputModel) {
+    myInputModel = inputModel;
+    myOutputModel = outputModel;
+    myOutputModelRef = outputModel.getReference();
+  }
+
+  /**
+   * Record origin of copied node with TracingUtil
+   * @return <code>this</code> for convenience
+   */
+  public CloneUtil traceOriginalInput() {
+    myTraceOriginalInput = true;
+    return this;
+  }
+
   /**
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
    * it allows to resolve internal references much faster
    */
-  public static void cloneModelWithImports(SModel inputModel, SModel outputModel, boolean originalInput) {
+  public void cloneModelWithImports() {
     //copy model with imports, used languages and devkits
-    cloneModel(inputModel, outputModel, originalInput);
-    for (ImportElement model : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedModels()) {
-      ((jetbrains.mps.smodel.SModelInternal) outputModel).addModelImport(model.getModelReference(), false);
+    cloneModel();
+    SModelInternal inputModel = (jetbrains.mps.smodel.SModelInternal) myInputModel;
+    SModelInternal outputModel = (jetbrains.mps.smodel.SModelInternal) myOutputModel;
+    for (ImportElement model : inputModel.importedModels()) {
+      outputModel.addModelImport(model.getModelReference(), false);
     }
-    for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedLanguages()) {
-      ((jetbrains.mps.smodel.SModelInternal) outputModel).addLanguage(lang);
+    for (SModuleReference lang : inputModel.importedLanguages()) {
+      outputModel.addLanguage(lang);
     }
-    for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedDevkits()) {
-      ((jetbrains.mps.smodel.SModelInternal) outputModel).addDevKit(devKit);
-    }
-  }
-
-  public static void cloneModel(SModel inputModel, SModel outputModel, boolean originalInput) {
-    for (SNode node : inputModel.getRootNodes()) {
-      SNode outputNode = clone(node, outputModel, originalInput);
-      outputModel.addRootNode(outputNode);
+    for (SModuleReference devKit : inputModel.importedDevkits()) {
+      outputModel.addDevKit(devKit);
     }
   }
 
-  public static SNode clone(SNode inputNode, SModel outputModel, boolean originalInput) {
+  public void cloneModel() {
+    for (SNode node : myInputModel.getRootNodes()) {
+      SNode outputNode = clone(node);
+      myOutputModel.addRootNode(outputNode);
+    }
+  }
+
+  public SNode clone(SNode inputNode) {
     // new jetbrains.mps.smodel.SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
     // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
     final jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getQualifiedName());
@@ -65,12 +88,12 @@ public class CloneUtil {
     jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
     jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
-    if (originalInput) {
+    if (myTraceOriginalInput) {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
     for (SReference reference : inputNode.getReferences()) {
       boolean ext = inputNode.getModel() == null || !inputNode.getModel().getReference().equals(reference.getTargetSModelReference());
-      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : outputModel.getReference();
+      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : myOutputModelRef;
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
           LOG.warning("broken reference '" + reference.getRole() + "' in " + SNodeUtil.getDebugText(inputNode), inputNode);
@@ -100,7 +123,7 @@ public class CloneUtil {
     for (SNode child : inputNode.getChildren()) {
       String role = child.getRoleInParent();
       assert role != null;
-      outputNode.addChild(role, clone(child, outputModel, originalInput));
+      outputNode.addChild(role, clone(child));
     }
     return outputNode;
   }

@@ -354,13 +354,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
         // we copy user objects in reduction rules, root mapping rules are no different
+        // in addition, this copies TracingUtil.ORIGINAL_INPUT_NODE, so that outputNodes
+        // are marked as originating at inputNode's origin
         jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
-      }
-
-      if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-        for (SNode outputNode : outputNodes) {
-          TracingUtil.putInputNode(outputNode, inputNode);
-        }
       }
 
     } catch (DismissTopMappingRuleException e) {
@@ -464,10 +460,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         // preserve user objects
         if (TracingUtil.getInput(reducedNode) == null) {
           jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
-        }
-        // keep track of 'original input node'
-        if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-          TracingUtil.putInputNode(reducedNode, inputNode);
+          // keep track of 'original input node'
+          TracingUtil.fillOriginalNode(inputNode, reducedNode, false);
         }
       }
       return outputNodes;
@@ -863,10 +857,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
       jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
-      // keep track of 'original input node'
-      if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
-        TracingUtil.putInputNode(outputNode, inputNode);
-      }
+
       for (SReference inputReference : inputNode.getReferences()) {
         if (inputNode.getModel() != null) {
           boolean external = true;

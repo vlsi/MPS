@@ -189,15 +189,33 @@ class GenerationSession {
       myNewCache = incrementalHandler.createNewCache();
       ttrace.pop();
       try {
-        SModel currInputModel;
-        if (Boolean.FALSE.booleanValue() && myGenerationOptions.applyTransformationsInplace()) {
-          mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, myOriginalInputModel, myGenerationPlan,
-              myParameters, null);
-          currInputModel = createTransientModel();
-          CloneUtil.cloneModelWithImports(myOriginalInputModel, currInputModel, true);
-        } else {
-          currInputModel = myOriginalInputModel;
+        // prepare input model: make a clone so that rest of generator always works with transient model.
+        // This ensures each node got correct TracingUtil.ORIGINAL_INPUT_NODE (for traceInfo) in SNode.userObjects - there
+        // are templates out there that perform .copy on input nodes, and we have no chances to trace such nodes back. This used to work
+        // (with fallback to parent nodes) until in-place transformations brought cases when either regular model or a transient one
+        // serve as an input, which lead to different traceInfo (being more specific with transient model as input, as each node in transient does keep
+        // reference to origin)
+        // Another benefit is that FastNodeFinder (used throughout generator e.g. with model.nodes(Concept)) gives nodes in different order for
+        // regular and transient SModel (sorted by nodeid from DefaultFastNodeFinder, natural iteration order for TransientModelNodeFinder).
+        // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
+        // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
+        // and we'll need to switch to 'transient' (generator) model here anyway
+        mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, myOriginalInputModel, myGenerationPlan,
+            myParameters, null);
+        SModel currInputModel = createTransientModel("0");
+        new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
+        // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
+        for (Iterator<SNode> it1 = myOriginalInputModel.getRootNodes().iterator(), it2 = currInputModel.getRootNodes().iterator(); ;) {
+          final boolean b1 = it1.hasNext(), b2 = it2.hasNext();
+          if ((b1 && !b2) || (b2 && !b1)) {
+            throw new IllegalStateException("Number of root nodes shall match for original model and its clone");
+          }
+          if (!b1 && !b2) {
+            break;
+          }
+          myDependenciesBuilder.registerRoot(it2.next(), it1.next());
         }
+        myDependenciesBuilder.updateModel(currInputModel);
         SModel currOutput = null;
 
         ttrace.push("steps", false);
@@ -484,7 +502,7 @@ class GenerationSession {
         myLogger.info(
             "clone model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentInputModel_clone.getReference().getModelName() + "'");
       }
-      CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
+      new CloneUtil(currentInputModel, currentInputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getScripts().getPreMappingScripts());
@@ -534,7 +552,7 @@ class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentModel.getReference().getModelName() + "' --> '" + currentOutputModel_clone.getReference().getModelName() + "'");
       }
-      CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
+      new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getScripts().getPostMappingScripts());
@@ -569,14 +587,13 @@ class GenerationSession {
     return currentModel;
   }
 
-
   private SModel createTransientModel() {
-    return createTransientModel(mySessionContext.getModule());
+    return createTransientModel(Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep);
   }
 
-  private SModel createTransientModel(TransientModelsModule module) {
+  private SModel createTransientModel(String stereotype) {
+    TransientModelsModule module = mySessionContext.getModule();
     String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
-    String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
     return module.createTransientModel(longName, stereotype);
   }
 
