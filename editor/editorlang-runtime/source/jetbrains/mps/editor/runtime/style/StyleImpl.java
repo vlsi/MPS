@@ -46,41 +46,80 @@ public class StyleImpl implements Style {
   private List<Style> myChildren = null;
   private List<StyleListener> myStyleListeners = null;
 
-
-  private static class AttributeValue<T> extends IntObjectSortedListMap<T> {
-    public T cached;
+  private static class IntMapPointer<T> {
+    private ListIterator<IntPair<T>> myIterator;
+    private boolean myEmpty;
+    private int myIndex;
+    public IntMapPointer(boolean empty, ListIterator<IntPair<T>> iterator, int index) {
+      myEmpty = empty;
+      myIterator = iterator;
+      myIndex = index;
+    }
+    public boolean isEmpty() {
+      return myEmpty;
+    }
+    private IntPair<T> getPair() {
+      if (isEmpty()) {
+        throw new IllegalStateException();
+      }
+      IntPair<T> result = myIterator.next();
+      myIterator.previous();
+      return result;
+    }
+    public T get() {
+      if (isEmpty()) {
+        return null;
+      } else {
+        return getPair().value;
+      }
+    }
+    public void set(T value) {
+      if (value == null) {
+        if (!isEmpty()) {
+          delete();
+        }
+      } else {
+        if (isEmpty()) {
+          myIterator.add(new IntPair<T>(myIndex, value));
+        } else {
+          getPair().value = value;
+        }
+      }
+    }
+    public void delete() {
+      if (isEmpty()) {
+        throw new IllegalStateException();
+      }
+      myIterator.remove();
+    }
   }
 
   private static class IntObjectSortedListMap<T> {
 
-    public LinkedList<IntPair<T>> values;
-
-    public void setValue(T value) {
-      setValue(0, value);
-    }
+    private LinkedList<IntPair<T>> values;
 
     public LinkedList<IntPair<T>> getAll() {
       return values;
     }
 
-    public Pair<Boolean, ListIterator<IntPair<T>>> search(int index) {
+    public IntMapPointer<T> search(int index) {
       if (values == null) {
         values = new LinkedList<IntPair<T>>();
       }
 
       ListIterator<IntPair<T>> iterator = values.listIterator();
       if (! iterator.hasNext()) {
-        return new Pair<Boolean, ListIterator<IntPair<T>>>(false, iterator);
+        return new IntMapPointer<T>(true, iterator, index);
       } else {
         while (iterator.hasNext() && iterator.next().index < index);
         int prevIndex = iterator.previous().index;
         if (prevIndex == index) {
-          return new Pair<Boolean, ListIterator<IntPair<T>>>(true, iterator);
+          return new IntMapPointer<T>(false, iterator, index);
         } else if (prevIndex < index) {
           iterator.next();
-          return new Pair<Boolean, ListIterator<IntPair<T>>>(false, iterator);
+          return new IntMapPointer<T>(true, iterator, index);
         } else {
-          return new Pair<Boolean, ListIterator<IntPair<T>>>(false, iterator);
+          return new IntMapPointer<T>(true, iterator, index);
         }
       }
     }
@@ -91,16 +130,13 @@ public class StyleImpl implements Style {
       }
     }
 
-    public void setValue(int index, T value) {
-      Pair<Boolean, ListIterator<IntPair<T>>> searchResult = search(index);
-      boolean found = searchResult.o1;
-      ListIterator<IntPair<T>> iterator = searchResult.o2;
+    public void setValue(T value) {
+      setValue(0, value);
+    }
 
-      if (found) {
-        iterator.set(new IntPair<T>(index, value));
-      } else {
-        iterator.add(new IntPair<T>(index, value));
-      }
+    public void setValue(int index, T value) {
+      IntMapPointer<T> searchResult = search(index);
+      searchResult.set(value);
     }
     public T getTop() {
       if (values == null || values.isEmpty()) {
@@ -110,29 +146,35 @@ public class StyleImpl implements Style {
     }
   }
 
-  private IntObjectSortedListMap<AttributeValue<Object>> myAttributes = new IntObjectSortedListMap<AttributeValue<Object>>();
+  private IntObjectSortedListMap<IntObjectSortedListMap<Object>> myAttributes = new IntObjectSortedListMap<IntObjectSortedListMap<Object>>();
+  private IntObjectSortedListMap<IntObjectSortedListMap<Object>> myCachedAttributes = new IntObjectSortedListMap<IntObjectSortedListMap<Object>>();
 
-  @Nullable
-  private <T> AttributeValue<T> getAttribute(StyleAttribute<T> attribute) {
-    Pair<Boolean, ListIterator<IntPair<AttributeValue<Object>>>> searchResult = myAttributes.search(attribute.getIndex());
-    boolean found = searchResult.o1;
-    return found ? (AttributeValue<T>) searchResult.o2.next().value : null;
-  }
   @NotNull
-  public <T> AttributeValue<T> ensureGetAttribute(StyleAttribute<T> attribute) {
-    if (getAttribute(attribute) == null) {
-      myAttributes.setValue(attribute.getIndex(), new AttributeValue<Object>());
+  private <T> IntMapPointer<IntObjectSortedListMap<T>> getAttribute(StyleAttribute<T> attribute) {
+    return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myAttributes.search(attribute.getIndex());
+  }
+
+  @NotNull
+  private <T> IntMapPointer<IntObjectSortedListMap<T>> getCachedAttribute(StyleAttribute<T> attribute) {
+    return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myAttributes.search(attribute.getIndex());
+  }
+
+  @NotNull
+  public <T> IntObjectSortedListMap<T> ensureGetAttribute(StyleAttribute<T> attribute) {
+    if (getAttribute(attribute).isEmpty()) {
+      myAttributes.setValue(attribute.getIndex(), new IntObjectSortedListMap<Object>());
     }
-    return getAttribute(attribute);
+    IntMapPointer<IntObjectSortedListMap<T>> attribute1 = getAttribute(attribute);
+    return attribute1.get();
   }
-  private <T> T getCached(StyleAttribute<T> attribute) {
-    AttributeValue<T> attributeValue = getAttribute(attribute);
+  /*private <T> T getCached(StyleAttribute<T> attribute) {
+    IntObjectSortedListMap<T> attributeValue = getAttribute(attribute);
     return attributeValue == null ? null : attributeValue.cached;
-  }
+  }*/
 
   private <T> T getTop(StyleAttribute<T> attribute) {
-    AttributeValue<T> attributeValue = getAttribute(attribute);
-    return attributeValue == null ? null : attributeValue.getTop();
+    IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
+    return attributeValue.isEmpty() ? null : attributeValue.get().getTop();
   }
 
   private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
@@ -149,9 +191,12 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
     for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
-      ensureGetAttribute(attribute).addValues(style.getAll(attribute));
+      Collection<IntPair<Object>> putAttributes = style.getAll(attribute);
+      if (putAttributes != null) {
+        ensureGetAttribute(attribute).addValues(style.getAll(attribute));
+      }
       if (StyleAttributes.isSimple(attribute)) {
-        ensureGetAttribute(attribute).cached = null;
+        myCachedAttributes.search(attribute.getIndex()).set(null);
         addedSimple.add(attribute);
       } else {
         addedNotSimple.add(attribute);
@@ -166,7 +211,18 @@ public class StyleImpl implements Style {
     ensureGetAttribute(attribute).setValue(priority, value);
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
-      ensureGetAttribute(attribute).cached = null;
+      myCachedAttributes.search(attribute.getIndex()).set(null);
+      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
+    } else {
+      updateCache(attributeSet);
+    }
+  }
+
+  public <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
+    ensureGetAttribute(attribute).setValue(priority, value);
+    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
+    if (StyleAttributes.isSimple(attribute)) {
+      myCachedAttributes.search(attribute.getIndex()).set(null);
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
     } else {
       updateCache(attributeSet);
@@ -178,28 +234,44 @@ public class StyleImpl implements Style {
     set(attribute, 0, value);
   }
 
+  public <T> T getCached(StyleAttribute<T> attribute, int priority) {
+    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getCachedAttribute(attribute);
+    if (attributeValues.isEmpty()) {
+      return null;
+    } else {
+      return attributeValues.get().search(priority).get();
+    }
+  }
+
+  public <T> T getRaw(StyleAttribute<T> attribute, int priority) {
+    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getAttribute(attribute);
+    if (attributeValues.isEmpty()) {
+      return null;
+    } else {
+      return attributeValues.get().search(priority).get();
+    }
+  }
+
+  public <T> int getHighestPriority(StyleAttribute<T> attribute) {
+    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getAttribute(attribute);
+    if (attributeValues.isEmpty()) {
+      return -1;
+    } else {
+      return attributeValues.get().values.getLast().index;
+    }
+  }
+
   @Override
   public <T> T get(StyleAttribute<T> attribute) {
-    if (StyleAttributes.isSimple(attribute)) {
-      if (getCached(attribute) == null) {
-        T value = getTop(attribute);
-        ensureGetAttribute(attribute).cached = attribute.combine(null, value);
-      }
-      return getCached(attribute);
-    }
-    T value = getCached(attribute);
-    if (value != null) {
-      return value;
-    } else {
-      return attribute.combine(null, null);
-    }
+    IntObjectSortedListMap<T> attributeValues = getCachedAttribute(attribute).get();
+    return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTop();
   }
 
   @Override
   @Nullable
   public <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute) {
-    AttributeValue<T> attributeValue = getAttribute(attribute);
-    return attributeValue == null ? null : attributeValue.getAll();
+    IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
+    return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
   }
 
   @Override
@@ -285,7 +357,7 @@ public class StyleImpl implements Style {
   private Set<StyleAttribute> getNonDefaultValuedAttributes() {
     Set<StyleAttribute> result = new StyleAttributeSet();
     for (StyleAttribute attribute : StyleAttributes.getNotSimpleAttributes()) {
-      if (getCached(attribute) != null) {
+      if (! getCachedAttribute(attribute).isEmpty()) {
         result.add(attribute);
       }
     }
@@ -305,35 +377,29 @@ public class StyleImpl implements Style {
     for (StyleAttribute<Object> attribute : attributes) {
 
       Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAll(attribute);
-      AttributeValue<Object> currentValues = ensureGetAttribute(attribute);
-      Object cachedValue = getCached(attribute);
+      IntMapPointer<IntObjectSortedListMap<Object>> currentValues = getAttribute(attribute);
+      IntMapPointer<IntObjectSortedListMap<Object>> cachedAttribute = getCachedAttribute(attribute);
+      Object cachedValue = cachedAttribute.isEmpty() ? null : cachedAttribute.get().getAll();
 
       if (parentValues != null) {
-        if (currentValues == null || currentValues.values == null || currentValues.values.isEmpty()) {
-          getAttribute(attribute).addValues(parentValues);
+        if (currentValues.isEmpty()) {
+          ensureGetAttribute(attribute).addValues(parentValues);
         } else {
-          for (IntPair<Object> pValue : parentValues) {
-            Pair<Boolean, ListIterator<IntPair<Object>>> searchResult = currentValues.search(pValue.index);
-            boolean found = searchResult.o1;
-            ListIterator<IntPair<Object>> iterator = searchResult.o2;
-            if (found) {
-              IntPair<Object> next = iterator.next();
-              Object currentValue = next.value;
-              Object newValue = attribute.combine(pValue.value, currentValue);
-              next.value = newValue;
+          for (IntPair<Object> parentValue : parentValues) {
+            IntMapPointer<Object> searchResult = currentValues.get().search(parentValue.index);
+            if (! searchResult.isEmpty()) {
+              Object currentValue = searchResult.get();
+              Object newValue = attribute.combine(parentValue.value, currentValue);
+              setCached(attribute, parentValue.index, newValue);
               if (!EqualUtil.equals(newValue, currentValue)) {
                 changedAttributes.add(attribute);
               }
             } else {
-              iterator.add(new IntPair<Object>(pValue.index, pValue.value));
+              searchResult.set(parentValue.value);
               changedAttributes.add(attribute);
             }
           }
         }
-      }
-      getAttribute(attribute).cached = getTop(attribute);
-      if (!EqualUtil.equals(getCached(attribute), cachedValue)) {
-        changedAttributes.add(attribute);
       }
     }
 
