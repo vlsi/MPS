@@ -225,13 +225,11 @@ public abstract class DeltaBuilder {
         allReplacedNodes.addAll(root.getReplacedNodes());
       }
     }
+    // update references between changed model elements
     for (CopyRoot root : roots) {
       if (root.deleted) {
-        assert root.myRoot.getModel() == inputModel;
-        inputModel.removeRootNode(root.myRoot);
         continue;
       }
-      // update references
       final SModelReference inputModelRef = inputModel.getReference();
       final Set<SNode> replacedNodes = root.getReplacedNodes();
       TreeIterator<SNode> it = (TreeIterator<SNode>) SNodeUtil.getDescendants(root.myRoot).iterator();
@@ -274,6 +272,14 @@ public abstract class DeltaBuilder {
             ((StaticReference) r).makeDirect();
           }
         }
+      }
+    }
+    // make the structure change, at last
+    for (CopyRoot root : roots) {
+      if (root.deleted) {
+        assert root.myRoot.getModel() == inputModel;
+        inputModel.removeRootNode(root.myRoot);
+        continue;
       }
       // replace nodes
       for (SubTree tree : root.mySubTrees) {
