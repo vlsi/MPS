@@ -24,8 +24,10 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -44,6 +46,12 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     super(outputSourceNode, role, context.getInput());
     myContext = context;
     myExecContext = executionContext;
+  }
+
+  @Nullable
+  @Override
+  public SModelReference getTargetModelReference(TemplateGenerator generator) {
+    return null;
   }
 
   @Override
