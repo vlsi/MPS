@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -224,6 +225,12 @@ public abstract class DeltaBuilder {
       if (!root.deleted) {
         allReplacedNodes.addAll(root.getReplacedNodes());
       }
+    }
+    // FastNodeFinder update mechanism performs poorly (badly, in fact) with massive in-place updates.
+    // It's faster to rebuild FNF completely than to update it. E.g step 4 for lang.editor/editor
+    // spent 90 seconds out of 105 in replace of 9k children
+    if (inputModel instanceof SModelInternal) {
+      ((SModelInternal) inputModel).getFastNodeFinder().dispose();
     }
     // update references between changed model elements
     for (CopyRoot root : roots) {

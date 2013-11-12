@@ -150,6 +150,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     if (myDeltaBuilder != null) {
+      ttrace.push("apply delta changes", false);
 //      myDeltaBuilder.dump();
       myInplaceModelChange = true;
       if (myDeltaBuilder.hasChanges()) {
@@ -157,6 +158,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
       myOutputRoots.clear();
       myDeltaBuilder = null;
+      ttrace.pop();
     }
 
     myAreMappingsReady = true;
