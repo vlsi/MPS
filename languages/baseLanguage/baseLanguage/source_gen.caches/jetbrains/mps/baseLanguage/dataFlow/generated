@@ -32,7 +32,7 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
   <dep model="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)" hash="-62do7qoma9bbzvsw9ggk8wwdhgwigoi" />
-  <common hash="8r68dphj0y41tkgrgajfwnikv0iih1k">
+  <common hash="8r68dphj0y41tkgrgajfwnikv0iih1k" dependsOnNodes="true">
     <dep root="1206454554507" />
     <dep root="1206455216234" />
     <dep root="1206459403819" />
@@ -719,7 +719,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DataFlowTryCatchUtil.java" />
   </source>
-  <source id="6868777471677432036" name="Nullable" hash="-en4wl7vnbtpju3eqg3i14d8r9uqpjrf">
+  <source id="6868777471677432036" name="Nullable" hash="-en4wl7vnbtpju3eqg3i14d8r9uqpjrf" dependsOnNodes="true">
     <dep root="1206454554507" />
     <dep root="1206455216234" />
     <dep root="1206459403819" />

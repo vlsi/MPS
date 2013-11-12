@@ -20,10 +20,17 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,6 +43,12 @@ import java.util.Map;
  * Time: Oct 29, 2003 2:17:38 PM
  */
 public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
+  private static SModel ourModelForTypechecking = null;
+
+  public static SModel getModelForTypechecking() {
+    return ourModelForTypechecking;
+  }
+
   private List<SubstituteAction> myCachedActionList;
   private Map<String, List<SubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
   private Map<String, List<SubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
@@ -103,14 +116,25 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
     List<SubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
     if (inequalitiesSystem == null) return substituteActionList;
 
-    List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-    // In case this becomes a performance bottleneck, use the SubtypingCache
-    for (SubstituteAction nodeSubstituteAction : substituteActionList) {
-      SNode type = nodeSubstituteAction.getActionType(pattern, contextCell);
-      if (type != null && inequalitiesSystem.satisfies(type)) {
-        result.add(nodeSubstituteAction);
-      }
+    ourModelForTypechecking =  TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
+    for (SModuleReference l: ((SModelDescriptor) getEditorContext().getModel()).getSModel().getModelDepsManager().getAllImportedLanguages()){
+      ((SModelDescriptor) ourModelForTypechecking).getSModel().addLanguage(l);
     }
+
+    List<SubstituteAction> result = new ArrayList<SubstituteAction>();
+    try {
+      // In case this becomes a performance bottleneck, use the SubtypingCache
+      for (SubstituteAction nodeSubstituteAction : substituteActionList) {
+        SNode type = nodeSubstituteAction.getActionType(pattern, contextCell);
+        if (type != null && inequalitiesSystem.satisfies(type)) {
+          result.add(nodeSubstituteAction);
+        }
+      }
+    } finally {
+      TemporaryModels.getInstance().dispose(ourModelForTypechecking);
+      ourModelForTypechecking = null;
+    }
+
     return result;
   }
 
