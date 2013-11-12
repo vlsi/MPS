@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="csucy5oys0n0rw3y4tim6vlojrg9bvl">
   <dep model="r:3070aac9-1c0b-4f50-b881-edf2b86db293(jetbrains.mps.samples.generator_demo.demoLang4.editor)" hash="19f2vsft898zunadn8h5huvvrb8bds3" />
   <dep model="r:bc30aea7-c17d-42a0-af8e-6f3f612ebf6c(jetbrains.mps.samples.generator_demo.demoLang4.typesystem)" hash="-62jti1je8s50s4kj5f5tuxyu5u9odx3" />
-  <common>
+  <common dependsOnNodes="true">
     <dep model="r:3070aac9-1c0b-4f50-b881-edf2b86db293(jetbrains.mps.samples.generator_demo.demoLang4.editor)" />
     <dep model="r:bc30aea7-c17d-42a0-af8e-6f3f612ebf6c(jetbrains.mps.samples.generator_demo.demoLang4.typesystem)" />
     <file name="Language.java" />

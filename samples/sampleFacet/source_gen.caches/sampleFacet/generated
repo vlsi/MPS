@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="e8z4kq6siu97ql3kjm3f8v41l8ozd5y">
   <dep model="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)" hash="-avkvnnxf2ab425d051rx0ok4p6pmvp0" />
   <dep model="r:39f8657b-b535-46e0-8816-0d372df2609d(sampleFacet.typesystem)" hash="-4i6ppa7pc3rhdoln5twymppt5bpu7h" />
-  <common>
+  <common dependsOnNodes="true">
     <dep model="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)" />
     <dep model="r:39f8657b-b535-46e0-8816-0d372df2609d(sampleFacet.typesystem)" />
     <file name="Language.java" />
