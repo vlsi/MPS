@@ -27,11 +27,13 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.codeStyle.MinusculeMatcher;
 import com.intellij.psi.codeStyle.NameUtil;
+import com.intellij.psi.search.EverythingGlobalScope;
 import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.Processor;
 import com.intellij.util.SmartList;
 import com.intellij.util.containers.ContainerUtil;
+import com.intellij.util.indexing.FindSymbolParameters;
 import gnu.trove.THashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -47,7 +49,7 @@ import java.util.Set;
 /**
  * This is copied from com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider, the change is
  * that this one considers the whole pattern as a name (see http://youtrack.jetbrains.com/issue/MPS-16902)
-  */
+ */
 public class MPSNodeItemProvider implements ChooseByNameItemProvider {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ChooseByNameIdea");
   private WeakReference<PsiElement> myContext;
@@ -58,10 +60,10 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
   @Override
   public boolean filterElements(@NotNull ChooseByNameBase base,
-                                @NotNull String pattern,
-                                boolean everywhere,
-                                @NotNull ProgressIndicator indicator,
-                                @NotNull Processor<Object> consumer) {
+      @NotNull String pattern,
+      boolean everywhere,
+      @NotNull ProgressIndicator indicator,
+      @NotNull Processor<Object> consumer) {
     //change beginning
     String namePattern = pattern;
     String qualifierPattern = "";
@@ -69,7 +71,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
     ChooseByNameModel model = base.getModel();
     boolean empty = namePattern.isEmpty() ||
-      namePattern.equals("@") && model instanceof GotoClassModel2;    // TODO[yole]: remove implicit dependency
+        namePattern.equals("@") && model instanceof GotoClassModel2;    // TODO[yole]: remove implicit dependency
     if (empty && !base.canShowListForEmptyPattern()) return true;
 
     Set<String> names = new THashSet<String>(Arrays.asList(base.getNames(everywhere)));
@@ -79,25 +81,25 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
       // consume elements matching by prefix case-sensitively
       Integer elementsConsumed = consumeElements(base, everywhere, indicator, consumer, namePattern, qualifierPattern, names,
-        NameUtil.MatchingCaseSensitivity.ALL, false);
+          NameUtil.MatchingCaseSensitivity.ALL, false);
       if (elementsConsumed == null) return false;
 
       if (elementsConsumed == 0) {
         // search with original pattern without case sensitivity, don't add separator before found items
         // result: items matched by prefix will always be above middle-matched items
         elementsConsumed = consumeElements(base, everywhere, indicator, consumer, namePattern,
-          qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE, false);
+            qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE, false);
         if (elementsConsumed == null) return false;
       }
 
       // search with broadest criteria - middle match pattern, without case sensitivity
       elementsConsumed = consumeElements(base, everywhere, indicator, consumer, middleMatchPattern,
-        qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE, elementsConsumed > 0);
+          qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE, elementsConsumed > 0);
       return elementsConsumed != null;
     }
     else {
       Integer elementsConsumed = consumeElements(base, everywhere, indicator, consumer, namePattern, qualifierPattern, names,
-        NameUtil.MatchingCaseSensitivity.NONE, false);
+          NameUtil.MatchingCaseSensitivity.NONE, false);
       return elementsConsumed != null;
     }
   }
@@ -106,14 +108,14 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
    * @return null if consumer returned false, number of consumed elements otherwise.
    */
   private Integer consumeElements(ChooseByNameBase base,
-                                  boolean everywhere,
-                                  ProgressIndicator indicator,
-                                  Processor<Object> consumer,
-                                  String namePattern,
-                                  String qualifierPattern,
-                                  Set<String> allNames,
-                                  NameUtil.MatchingCaseSensitivity sensitivity,
-                                  boolean needSeparator) {
+      boolean everywhere,
+      ProgressIndicator indicator,
+      Processor<Object> consumer,
+      String namePattern,
+      String qualifierPattern,
+      Set<String> allNames,
+      NameUtil.MatchingCaseSensitivity sensitivity,
+      boolean needSeparator) {
     ChooseByNameModel model = base.getModel();
     List<String> namesList = new ArrayList<String>();
     getNamesByPattern(base, new ArrayList<String>(allNames), indicator, namesList, namePattern, sensitivity);
@@ -129,10 +131,13 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
     for (String name : namesList) {
       indicator.checkCanceled();
 
+      //TODO: use FindSymbolParameters.wrap(namePattern, ???, everywhere)
+      final FindSymbolParameters findSymbolParameters = new FindSymbolParameters(namePattern, namePattern, new EverythingGlobalScope(), null);
+
       // use interruptible call if possible
       Object[] elements = model instanceof ContributorsBasedGotoByModel ?
-        ((ContributorsBasedGotoByModel)model).getElementsByName(name, everywhere, namePattern, indicator)
-        : model.getElementsByName(name, everywhere, namePattern);
+          ((ContributorsBasedGotoByModel)model).getElementsByName(name, findSymbolParameters, indicator)
+          : model.getElementsByName(name, everywhere, namePattern);
       if (elements.length > 1) {
         sameNameElements.clear();
         for (final Object element : elements) {
@@ -210,8 +215,8 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
   }
 
   private static boolean matchesQualifier(final Object element,
-                                          @NotNull final ChooseByNameBase base,
-                                          @NotNull List<Pair<String, MinusculeMatcher>> patternsAndMatchers) {
+      @NotNull final ChooseByNameBase base,
+      @NotNull List<Pair<String, MinusculeMatcher>> patternsAndMatchers) {
     final String name = base.getModel().getFullName(element);
     if (name == null) return false;
 
@@ -264,11 +269,11 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
   }
 
   private static void getNamesByPattern(@NotNull final ChooseByNameBase base,
-                                        @NotNull List<String> names,
-                                        @Nullable ProgressIndicator indicator,
-                                        @NotNull final List<String> list,
-                                        @NotNull String pattern,
-                                        @NotNull NameUtil.MatchingCaseSensitivity caseSensitivity) throws ProcessCanceledException {
+      @NotNull List<String> names,
+      @Nullable ProgressIndicator indicator,
+      @NotNull final List<String> list,
+      @NotNull String pattern,
+      @NotNull NameUtil.MatchingCaseSensitivity caseSensitivity) throws ProcessCanceledException {
     if (!base.canShowListForEmptyPattern()) {
       LOG.assertTrue(!pattern.isEmpty(), base);
     }
@@ -294,9 +299,9 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
   }
 
   private static boolean matches(@NotNull ChooseByNameBase base,
-                                 @NotNull String pattern,
-                                 @NotNull MinusculeMatcher matcher,
-                                 @Nullable String name) {
+      @NotNull String pattern,
+      @NotNull MinusculeMatcher matcher,
+      @Nullable String name) {
     if (name == null) {
       return false;
     }

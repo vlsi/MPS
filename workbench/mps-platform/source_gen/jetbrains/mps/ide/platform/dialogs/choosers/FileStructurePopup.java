@@ -184,22 +184,7 @@ public class FileStructurePopup implements Disposable {
       }
     };
     myTree = new FileStructurePopup.FileStructureTree(myTreeStructure.getRootElement(), Registry.is("fast.tree.expand.in.structure.view"));
-    myTree.setCellRenderer(new NodeRenderer() {
-      @Override
-      protected void doAppend(@NotNull @Nls String fragment, @NotNull SimpleTextAttributes attributes, boolean isMainText, boolean selected) {
-        SpeedSearchUtil.appendFragmentsForSpeedSearch(myTree, fragment, attributes, selected, this);
-      }
-
-      @Override
-      public void doAppend(@NotNull String fragment, @NotNull SimpleTextAttributes attributes, boolean selected) {
-        SpeedSearchUtil.appendFragmentsForSpeedSearch(myTree, fragment, attributes, selected, this);
-      }
-
-      @Override
-      public void doAppend(String fragment, boolean selected) {
-        SpeedSearchUtil.appendFragmentsForSpeedSearch(myTree, fragment, SimpleTextAttributes.REGULAR_ATTRIBUTES, selected, this);
-      }
-    });
+    myTree.setCellRenderer(new NodeRenderer());
     mySpeedSearch = new FileStructurePopup.MyTreeSpeedSearch();
     mySpeedSearch.setComparator(new SpeedSearchComparator(false, true));
     final FileStructurePopup.FileStructurePopupFilter filter = new FileStructurePopup.FileStructurePopupFilter();
