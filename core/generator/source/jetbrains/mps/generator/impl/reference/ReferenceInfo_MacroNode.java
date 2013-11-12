@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.InternUtil;
 
 /**
  * Evgeny Gryaznov, 11/18/10
@@ -32,13 +30,9 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
   private final SNode myReferenceMacro;
 
   public ReferenceInfo_MacroNode(SNode outputSourceNode, SNode macro, SNode templateReferenceNode, TemplateContext context,  @NotNull QueryExecutionContext executionContext) {
-    super(outputSourceNode, InternUtil.intern(getReferenceRole(macro)), context, executionContext);
+    super(outputSourceNode, AttributeOperations.getLinkRole(macro), context, executionContext);
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = macro;
-  }
-
-  private static String getReferenceRole(SNode macro) {
-    return AttributeOperations.getLinkRole(macro);
   }
 
   @Override
