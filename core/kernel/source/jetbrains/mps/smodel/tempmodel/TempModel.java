@@ -18,7 +18,9 @@ package jetbrains.mps.smodel.tempmodel;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
@@ -29,10 +31,12 @@ import java.io.IOException;
 class TempModel extends EditableSModelBase {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
   private boolean myReadOnly;
+  private boolean myTrackUndo;
 
-  protected TempModel(boolean readOnly) {
+  protected TempModel(boolean readOnly, boolean trackUndo) {
     super(createModelRef("TempModel_" + System.nanoTime()), new NullDataSource());
     myReadOnly = readOnly;
+    myTrackUndo = trackUndo;
     updateTimestamp();
   }
 
@@ -43,7 +47,13 @@ class TempModel extends EditableSModelBase {
     }
     synchronized (this) {
       if (mySModel == null) {
-        mySModel = new jetbrains.mps.smodel.SModel(getReference());
+        mySModel = new jetbrains.mps.smodel.SModel(getReference()) {
+          @Override
+          protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
+            if (!myTrackUndo) return;
+            super.performUndoableAction(action);
+          }
+        };
         mySModel.setModelDescriptor(this);
         fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
       }
