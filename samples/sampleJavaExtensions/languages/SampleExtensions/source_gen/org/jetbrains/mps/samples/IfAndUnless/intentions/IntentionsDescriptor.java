@@ -13,9 +13,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertIfToMyIf_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertMyIfToIf_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SplitIf_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithUnless_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new TurnToIfStatement_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UnwrapUnlessBlock_Intention());
