@@ -40,12 +40,16 @@
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.cell.TextCell" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.cell.support.TextEditing" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.cell.view.CellView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.base.GridDirection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.MoveHandler" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.RootTrait" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.TextView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertyKind" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertySpec" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockViewPortLayouter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectionPointView" />

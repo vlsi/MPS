@@ -5,13 +5,17 @@ package jetbrains.mps.lang.editor.figures.sandbox;
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.projectional.diagram.base.GridDirection;
 import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.jetpad.projectional.view.TextView;
+import jetbrains.jetpad.projectional.cell.view.CellView;
+import jetbrains.jetpad.projectional.cell.TextCell;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
-import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.projectional.view.ViewPropertySpec;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.projectional.view.ViewPropertyKind;
+import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.projectional.cell.support.TextEditing;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
@@ -31,13 +35,14 @@ public class BlockInstanceView extends GroupView {
   public GroupView inputs = new GroupView();
   public GroupView outputs = new GroupView();
   private RectView myRectView;
-  private TextView myTextView = new TextView();
-
+  private CellView myCellView;
+  private TextCell myTextCell;
   public Property<Integer> x = new ValueProperty<Integer>(0);
   public Property<Integer> y = new ValueProperty<Integer>(0);
   public Property<String> text = new ValueProperty<String>("");
   public ObservableList<String> inputPortNames = new ObservableArrayList<String>();
   public ObservableList<String> outputPortNames = new ObservableArrayList<String>();
+  /*package*/ static final ViewPropertySpec<Vector> MINIMAL_SIZE = new ViewPropertySpec<Vector>("minimalSize", ViewPropertyKind.RELAYOUT, new Vector(75, 75));
 
 
 
@@ -45,7 +50,7 @@ public class BlockInstanceView extends GroupView {
     children().add(inputs);
     children().add(outputs);
     children().add(myRectView = createRectView());
-    children().add(myTextView);
+    children().add(myCellView = createCellView());
 
     initSynchronizers();
     initMoveFeedbackHandler();
@@ -56,6 +61,14 @@ public class BlockInstanceView extends GroupView {
     rectView.background().set(Color.LIGHT_GRAY);
     rectView.dimension().set(new Vector(75, 75));
     return rectView;
+  }
+
+  private CellView createCellView() {
+    CellView cellView = new CellView(new GroupView());
+    myTextCell = new TextCell();
+    myTextCell.addTrait(TextEditing.textEditing());
+    cellView.cell.set(myTextCell);
+    return cellView;
   }
 
   private void initSynchronizers() {
@@ -75,7 +88,8 @@ public class BlockInstanceView extends GroupView {
           }
         }));
 
-        configuration.add(Synchronizers.forProperty(getSource().text, getSource().myTextView.text()));
+
+        configuration.add(Synchronizers.forProperties(getSource().text, getSource().myTextCell.text()));
 
         configuration.add(Synchronizers.forObservableRole(this, getSource().inputPortNames, getTarget().inputs.children(), new MapperFactory<String, View>() {
           public Mapper<? extends String, ? extends View> createMapper(String inputName) {
@@ -108,8 +122,8 @@ public class BlockInstanceView extends GroupView {
   @Override
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
-    Rectangle labelRect = myTextView.bounds().get();
-    myRectView.dimension().set(myRectView.dimension().get().max(labelRect.dimension));
+    Rectangle labelRect = myCellView.bounds().get();
+    myRectView.dimension().set(prop(MINIMAL_SIZE).get().max(labelRect.dimension));
     layoutPorts(inputs.children(), myDir.opposite());
     layoutPorts(outputs.children(), myDir);
     super.doValidate(context);

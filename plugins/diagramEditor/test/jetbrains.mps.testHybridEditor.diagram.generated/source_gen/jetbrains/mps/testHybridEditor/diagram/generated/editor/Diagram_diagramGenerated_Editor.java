@@ -47,6 +47,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createDiagram_tb7paq_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tb7paq_d0(editorContext, node));
     editorCell.addEditorCell(this.createDiagram_tb7paq_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_tb7paq_f0(editorContext, node));
     return editorCell;
   }
 
@@ -183,5 +184,12 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         view.itemsView.children().add(blockView);
       }
     }
+  }
+
+  private EditorCell createConstant_tb7paq_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "blablabla");
+    editorCell.setCellId("Constant_tb7paq_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }

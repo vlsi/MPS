@@ -10,15 +10,16 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.figures.sandbox.AttributedMPSBlockView;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
-import jetbrains.jetpad.projectional.view.ViewEvents;
-import jetbrains.jetpad.projectional.view.ViewEventHandler;
-import jetbrains.jetpad.event.MouseEvent;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.jetpad.model.property.Property;
+import jetbrains.mps.nodeEditor.cells.jetpad.PropertyViewCell;
 import jetbrains.jetpad.geometry.Vector;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -36,9 +37,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private EditorCell createDiagramNode_70mnj_a(final EditorContext editorContext, final SNode node) {
     final AttributedMPSBlockView view = new AttributedMPSBlockView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
-    view.text.set(SPropertyOperations.getString(node, "name"));
-    view.x.set(SPropertyOperations.getInteger(node, "x"));
-    view.y.set(SPropertyOperations.getInteger(node, "y"));
+    createDiagramNode_70mnj_a0(editorCell, editorContext, node, view.text);
+    createDiagramNode_70mnj_b0(editorCell, editorContext, node, view.x);
+    createDiagramNode_70mnj_c0(editorCell, editorContext, node, view.y);
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
       createViewForChildNode(child, editorCell, view.inputs, editorContext);
     }
@@ -46,19 +47,42 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       createViewForChildNode(child, editorCell, view.outputs, editorContext);
     }
     view.dimension().set(Block_diagramGenerated_Editor._StyleParameter_QueryFunction_70mnj_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    view.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
-      @Override
-      public void handle(View v, MouseEvent e) {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-          public void run() {
-            SPropertyOperations.set(node, "name", view.text.get());
-            SPropertyOperations.set(node, "x", "" + (view.x.get()));
-            SPropertyOperations.set(node, "y", "" + (view.y.get()));
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      public void run() {
+        new Mapper<View, SNode>(view, node) {
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            configuration.add(Synchronizers.forProperty(view.text, new Runnable() {
+              public void run() {
+                ModelAccess.instance().executeCommand(new Runnable() {
+                  public void run() {
+                    SPropertyOperations.set(node, "name", view.text.get());
+                  }
+                }, editorContext.getOperationContext().getProject());
+              }
+            }));
+            configuration.add(Synchronizers.forProperty(view.x, new Runnable() {
+              public void run() {
+                ModelAccess.instance().executeCommand(new Runnable() {
+                  public void run() {
+                    SPropertyOperations.set(node, "x", "" + (view.x.get()));
+                  }
+                }, editorContext.getOperationContext().getProject());
+              }
+            }));
+            configuration.add(Synchronizers.forProperty(view.y, new Runnable() {
+              public void run() {
+                ModelAccess.instance().executeCommand(new Runnable() {
+                  public void run() {
+                    SPropertyOperations.set(node, "y", "" + (view.y.get()));
+                  }
+                }, editorContext.getOperationContext().getProject());
+              }
+            }));
           }
-        }, editorContext.getOperationContext().getProject());
+        }.attachRoot();
       }
-    }).build());
-
+    }, editorContext.getOperationContext().getProject());
     view.visible().set(true);
     editorCell.setCellId("DiagramNode_70mnj_a");
     editorCell.setBig(true);
@@ -76,6 +100,33 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       oldParent.children().remove(oldParent.children().indexOf(childView));
     }
     parentView.children().add(childView);
+  }
+
+  private static void createDiagramNode_70mnj_a0(EditorCell_Collection editorCell, EditorContext editorContext, final SNode node, Property property) {
+    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property) {
+      protected void synchronizePropertyWithModel() {
+        myProperty.set(SPropertyOperations.getString(node, "name"));
+      }
+    };
+    editorCell.addEditorCell(propertyCell);
+  }
+
+  private static void createDiagramNode_70mnj_b0(EditorCell_Collection editorCell, EditorContext editorContext, final SNode node, Property property) {
+    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property) {
+      protected void synchronizePropertyWithModel() {
+        myProperty.set(SPropertyOperations.getInteger(node, "x"));
+      }
+    };
+    editorCell.addEditorCell(propertyCell);
+  }
+
+  private static void createDiagramNode_70mnj_c0(EditorCell_Collection editorCell, EditorContext editorContext, final SNode node, Property property) {
+    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property) {
+      protected void synchronizePropertyWithModel() {
+        myProperty.set(SPropertyOperations.getInteger(node, "y"));
+      }
+    };
+    editorCell.addEditorCell(propertyCell);
   }
 
   private static Vector _StyleParameter_QueryFunction_70mnj_a0a(EditorContext editorContext, SNode node) {

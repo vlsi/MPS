@@ -10,12 +10,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
-import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
-import jetbrains.jetpad.projectional.view.ViewEvents;
-import jetbrains.jetpad.projectional.view.ViewEventHandler;
-import jetbrains.jetpad.event.MouseEvent;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 
@@ -36,16 +33,15 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
     view.background().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     view.dimension().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    view.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
-      @Override
-      public void handle(View v, MouseEvent e) {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-          public void run() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      public void run() {
+        new Mapper<View, SNode>(view, node) {
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           }
-        }, editorContext.getOperationContext().getProject());
+        }.attachRoot();
       }
-    }).build());
-
+    }, editorContext.getOperationContext().getProject());
     view.visible().set(true);
     editorCell.setCellId("DiagramNode_16y7ix_a");
     editorCell.setBig(true);
