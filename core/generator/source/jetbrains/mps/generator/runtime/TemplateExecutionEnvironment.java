@@ -60,6 +60,8 @@ public interface TemplateExecutionEnvironment {
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
+  // FIXME remove mappingName parameter where TemlateContext is available
+
   /**
    * Copies nodes from input model, trying to apply reduction rules
    * @param inputNodes nodes to copy

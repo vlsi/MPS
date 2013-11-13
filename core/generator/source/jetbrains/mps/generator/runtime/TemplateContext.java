@@ -70,4 +70,12 @@ public interface TemplateContext {
    * @return context with un-named input (same as current context), with hierarchy of contexts preserved (i.e. #getInputHistory() would provide one)
    */
   TemplateContext subContext();
+
+  /**
+   * Shorthand for {@link #subContext(String, org.jetbrains.mps.openapi.model.SNode) ctx.subContext(ctx.getInputName(), newInputNode)},
+   * to update input node while preserving current input name
+   * @param newInputNode new input
+   * @return context with desired input and
+   */
+  TemplateContext subContext(SNode newInputNode);
 }
