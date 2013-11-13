@@ -776,7 +776,7 @@ public final class TemplateProcessor {
       List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(invokedTemplate);
 
       if (!GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, invokedTemplate, newInputNode, macro, getGenerator())) {
-        showErrorMessage(newInputNode, null, macro, String.format("error processing %s"));
+        showErrorMessage(newInputNode, null, macro, String.format("error processing %s", myName));
         throw new TemplateProcessingFailureException();
       }
 
