@@ -42,11 +42,14 @@ public interface TemplateContext {
   Object getPatternVariable(String name);
 
   /**
+   * @param inputName new name for input, or <code>null</code> to keep the old one
+   * @param inputNode new input node
    * @return new context that updates both input and {@link #getInputName() mapping label}
    */
   TemplateContext subContext(String inputName, SNode inputNode);
 
   /**
+   * @param inputName new name for input, or <code>null</code> to keep the old one
    * @return new context that preserves input and gives it a new name
    */
   TemplateContext subContext(String inputName);
@@ -60,4 +63,19 @@ public interface TemplateContext {
    * @return new context that preserves input, but discards {@link #getInputName() mapping label}
    */
   TemplateContext subContext(GeneratedMatchingPattern pattern);
+
+  /**
+   * Reset input name, unlike {@link #subContext(String)} and {@link #subContext(String, org.jetbrains.mps.openapi.model.SNode)} that
+   * treat <code>null</code> input name as indicator to keep the old one.
+   * @return context with un-named input (same as current context), with hierarchy of contexts preserved (i.e. #getInputHistory() would provide one)
+   */
+  TemplateContext subContext();
+
+  /**
+   * Shorthand for {@link #subContext(String, org.jetbrains.mps.openapi.model.SNode) ctx.subContext(ctx.getInputName(), newInputNode)},
+   * to update input node while preserving current input name
+   * @param newInputNode new input
+   * @return context with desired input and
+   */
+  TemplateContext subContext(SNode newInputNode);
 }

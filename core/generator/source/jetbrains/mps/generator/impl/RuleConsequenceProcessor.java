@@ -73,7 +73,7 @@ public class RuleConsequenceProcessor {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
       try {
-        List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(innerMappingName, templateNode, myConsequenceContext.subContext(innerMappingName), null);
+        List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, myConsequenceContext.subContext(innerMappingName), null);
         if (_outputNodes != null) {
           outputNodes.addAll(_outputNodes);
         }
