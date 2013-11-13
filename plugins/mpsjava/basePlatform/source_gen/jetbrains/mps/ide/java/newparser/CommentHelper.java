@@ -57,14 +57,14 @@ public class CommentHelper {
     // find common indent for nonempty lines 
     if (ListSequence.fromList(result).isNotEmpty()) {
       int mintrim = ListSequence.fromList(result).first().length();
-      for (String line : ListSequence.fromList(result)) {
+      for (String line : result) {
         if ((line != null && line.length() > 0)) {
           mintrim = Math.min(mintrim, whitespaceOrStar(line));
         }
       }
       boolean trimok = mintrim > 0;
       String prefix = ListSequence.fromList(result).first().substring(0, mintrim);
-      for (String line : ListSequence.fromList(result)) {
+      for (String line : result) {
         if ((line != null && line.length() > 0)) {
           trimok = trimok && line.startsWith(prefix);
         }

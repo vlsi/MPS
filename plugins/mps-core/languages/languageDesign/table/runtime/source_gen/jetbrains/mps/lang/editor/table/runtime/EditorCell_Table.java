@@ -181,14 +181,14 @@ public class EditorCell_Table extends EditorCell_Collection {
     assert ListSequence.fromList(positionsX).count() > 1;
     int firstX = ListSequence.fromList(positionsX).first();
     int lastX = ListSequence.fromList(positionsX).last();
-    for (int y : ListSequence.fromList(positionsY)) {
+    for (int y : positionsY) {
       graphics.drawLine(firstX, y, lastX, y);
     }
 
     assert ListSequence.fromList(positionsY).count() > 1;
     int firstY = ListSequence.fromList(positionsY).first();
     int lastY = ListSequence.fromList(positionsY).last();
-    for (int x : ListSequence.fromList(positionsX)) {
+    for (int x : positionsX) {
       graphics.drawLine(x, firstY, x, lastY);
     }
   }

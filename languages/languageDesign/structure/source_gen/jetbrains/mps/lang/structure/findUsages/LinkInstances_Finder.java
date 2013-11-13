@@ -59,7 +59,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
       boolean isChild = SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference");
       // find instances and link examples 
       for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor))) {
-        for (String role : SetSequence.fromSet(roles)) {
+        for (String role : roles) {
           if (isChild) {
             for (SNode child : Sequence.fromIterable(instance.getChildren(role))) {
               ListSequence.fromList(_results).addElement(child);

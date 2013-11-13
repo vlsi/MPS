@@ -90,7 +90,7 @@ public abstract class MergeDriverPacker {
   }
 
   private void internalPack(Iterable<String> classpathDirs, File tmpDir, boolean isForZip) {
-    for (String classpathDir : Sequence.fromIterable(classpathDirs)) {
+    for (String classpathDir : classpathDirs) {
       File file = new File(classpathDir);
       if (file.exists()) {
         if (file.isDirectory()) {
