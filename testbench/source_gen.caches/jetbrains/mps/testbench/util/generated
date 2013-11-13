@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="ek0dc645sp0tj9ha57b8sn3iad4kx3s">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="8dqs6igc9hn1ly75zrcfr8gtbpzclw5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <common hash="8dqs6igc9hn1ly75zrcfr8gtbpzclw5" dependsOnNodes="true" />
   <source id="5294483648489409095" name="ThreadWatcher" hash="-ai723ocuk88h1c5utews8ipot9gbmdl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ThreadWatcher.java" />
