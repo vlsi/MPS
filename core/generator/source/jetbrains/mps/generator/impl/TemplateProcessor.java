@@ -572,8 +572,10 @@ public final class TemplateProcessor {
           templateContext);
       TemplateContext newContext = templateContext.subContext(Collections.singletonMap(varName, varValue));
 
-      List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, newContext, macro);
-      return _outputNodes;
+      // tc.subContext(Map props) doesn't save mapping label, so "LABEL aaa VAR bb <templateNode>" fails to
+      // establish mapping aaa:templateNode. However, instead of passing ML here once again, shall consider updating subContext(Map)
+      // contract to preserve mapping label. Can't do it without thorough check of the method usage in generated templates
+      return myTemplateProcessor.applyTemplate(templateNode, newContext.subContext(templateContext.getInputName()), macro);
     }
   }
 
