@@ -123,7 +123,7 @@ public class NodeEditorComponent extends EditorComponent {
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
-      return new EditorCell_Constant(editorContext, getEditedNode(), "<no editor info>");
+      return new EditorCell_Constant(editorContext, getEditedNode(), getEditedNode() == null ? "<no edited node>" : "<edited node is not inside a model>");
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
