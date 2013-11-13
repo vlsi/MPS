@@ -244,6 +244,7 @@ public final class TemplateProcessor {
     }
 
     // process children
+    context = context.subContext();
     try {
       for (SNode templateChildNode : templateChildNodes) {
         List<SNode> outputChildNodes = applyTemplate(templateChildNode, context, null);

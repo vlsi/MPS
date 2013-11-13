@@ -210,4 +210,12 @@ public class DefaultTemplateContext implements TemplateContext {
     // TODO parent = this
     return new DefaultTemplateContext(pattern, null, getInput());
   }
+
+  @Override
+  public TemplateContext subContext() {
+    if (getInputName() == null) {
+      return this;
+    }
+    return new DefaultTemplateContext(this, (String) null, getInput());
+  }
 }
