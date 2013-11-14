@@ -6,12 +6,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 
 public abstract class PropertyViewCell extends EditorCell_Basic {
@@ -21,19 +21,11 @@ public abstract class PropertyViewCell extends EditorCell_Basic {
     super(editorContext, node);
   }
 
-  public PropertyViewCell(EditorContext editorContext, SNode node, Property property) {
+  public PropertyViewCell(EditorContext editorContext, SNode node, Property property, String propertyName) {
     this(editorContext, node);
-    NodeReadAccessInEditorListener listener = NodeReadAccessCasterInEditor.getReadAccessListener();
-    if (listener != null) {
-      listener.clearCleanlyReadAccessProperties();
-    }
     this.myProperty = property;
     synchronizeViewWithModel();
-    if (listener != null) {
-      for (Pair<SNodeReference, String> pair : listener.popCleanlyReadAccessedProperties()) {
-        getEditor().addCellDependentOnNodeProperty(this, pair);
-      }
-    }
+    getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), propertyName));
 
   }
 

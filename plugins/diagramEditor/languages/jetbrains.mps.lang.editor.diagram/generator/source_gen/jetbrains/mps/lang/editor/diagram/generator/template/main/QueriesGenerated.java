@@ -8,10 +8,11 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_Behavior;
@@ -23,7 +24,6 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior;
 import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 @Generated
@@ -46,6 +46,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2201645942108114748(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8998921453054046871(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "property", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_7383712866230183426(final IOperationContext operationContext, final PropertyMacroContext _context) {

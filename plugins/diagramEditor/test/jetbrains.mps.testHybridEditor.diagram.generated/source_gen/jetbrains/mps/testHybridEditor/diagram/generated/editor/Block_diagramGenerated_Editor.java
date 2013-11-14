@@ -103,7 +103,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private static void createDiagramNode_70mnj_a0(EditorCell_Collection editorCell, EditorContext editorContext, final SNode node, Property property) {
-    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property) {
+    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property, "name") {
       protected void synchronizePropertyWithModel() {
         myProperty.set(SPropertyOperations.getString(node, "name"));
       }
@@ -112,7 +112,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private static void createDiagramNode_70mnj_b0(EditorCell_Collection editorCell, EditorContext editorContext, final SNode node, Property property) {
-    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property) {
+    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property, "x") {
       protected void synchronizePropertyWithModel() {
         myProperty.set(SPropertyOperations.getInteger(node, "x"));
       }
@@ -121,7 +121,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private static void createDiagramNode_70mnj_c0(EditorCell_Collection editorCell, EditorContext editorContext, final SNode node, Property property) {
-    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property) {
+    PropertyViewCell propertyCell = new PropertyViewCell(editorContext, node, property, "y") {
       protected void synchronizePropertyWithModel() {
         myProperty.set(SPropertyOperations.getInteger(node, "y"));
       }
