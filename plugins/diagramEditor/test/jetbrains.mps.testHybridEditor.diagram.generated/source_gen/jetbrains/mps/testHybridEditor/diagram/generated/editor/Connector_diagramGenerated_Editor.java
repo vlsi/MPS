@@ -8,7 +8,7 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
@@ -27,7 +27,7 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramConnector_9iys9b_a(final EditorContext editorContext, final SNode node) {
-    PolylineConnection connection = new PolylineConnection();
+    PolyLineConnection connection = new PolyLineConnection();
     final ConnectorViewCell editorCell = new ConnectorViewCell(editorContext, node) {
       public View getInputView(DiagramViewCell diagramCell) {
         final SNode connectionEnd = SLinkOperations.getTarget(node, "inputPort", false);

@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8klnq1c562x3o60yx8eia2uxkq73n87" />
+<dependencies version="2" modelHash="8klnq1c562x3o60yx8eia2uxkq73n87">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
+  <dep model="r:9a5893cf-7e85-4b42-81a9-a1d12ecd35f7(jetbrains.mps.testHybridEditor.diagram.generated.structure)" hash="9bwyjwwozj53vxjxf08n82fttvk5sw0" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
+  <common hash="8klnq1c562x3o60yx8eia2uxkq73n87" dependsOnNodes="true">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:9a5893cf-7e85-4b42-81a9-a1d12ecd35f7(jetbrains.mps.testHybridEditor.diagram.generated.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="BehaviorAspectDescriptor.java" />
+  </common>
+</dependencies>
 

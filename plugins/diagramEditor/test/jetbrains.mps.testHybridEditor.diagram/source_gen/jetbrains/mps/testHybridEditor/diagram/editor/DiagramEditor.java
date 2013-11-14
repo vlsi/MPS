@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
-import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.LineView;
 
 public class DiagramEditor extends AbstractJetpadEditor {
@@ -82,7 +82,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
   }
 
   private void createConnection(EditorCell_Collection linesCell, ConnectorViewCell connectorCell, View connectorView, View fromView, View toView, EditorContext editorContext, SNode diagramNode) {
-    PolylineConnection connection = connectorCell.getConnection();
+    PolyLineConnection connection = connectorCell.getConnection();
     if (connectorView.parent().get() != null) {
       connectorView.parent().get().children().remove(connectorView.parent().get().children().indexOf(connectorView));
     }

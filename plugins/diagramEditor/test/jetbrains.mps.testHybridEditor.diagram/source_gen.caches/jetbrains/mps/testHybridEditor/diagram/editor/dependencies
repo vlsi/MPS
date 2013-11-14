@@ -29,7 +29,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolylineConnection" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell" />
@@ -49,7 +49,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolylineConnection" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.LineView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
