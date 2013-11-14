@@ -16,7 +16,6 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
  * evgeny, 3/21/13
@@ -42,10 +42,11 @@ public abstract class ReloadableSModelBase extends SModelBase {
     }
   };
 
-  private long mySourceTimestamp = -1;
+  private long mySourceTimestamp;
 
   protected ReloadableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
+    mySourceTimestamp = source.getTimestamp();
   }
 
   /*
