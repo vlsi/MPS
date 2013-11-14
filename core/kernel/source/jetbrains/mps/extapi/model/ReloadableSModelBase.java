@@ -65,7 +65,7 @@ public abstract class ReloadableSModelBase extends SModelBase {
   }
 
   public boolean needsReloading() {
-    return isLoaded() && getSource().getTimestamp() != mySourceTimestamp;
+    return getSource().getTimestamp() != mySourceTimestamp;
   }
 
   @Override
