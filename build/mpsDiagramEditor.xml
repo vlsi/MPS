@@ -309,6 +309,7 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -357,6 +358,7 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -422,6 +424,7 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -485,6 +488,7 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -541,6 +545,7 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
