@@ -44,6 +44,7 @@
         <library jar="../lib/grammar-1.0-SNAPSHOT.jar" />
         <library jar="../lib/domUtil-1.0-SNAPSHOT.jar" />
         <library jar="../lib/event-1.0-SNAPSHOT.jar" />
+        <library jar="../lib/dataflow-1.0-SNAPSHOT.jar" />
         <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
       </module>
     </echoxml>
@@ -62,7 +63,7 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.war" />
+      <fileset file="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />

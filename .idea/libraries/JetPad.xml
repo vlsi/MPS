@@ -12,11 +12,11 @@
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.war!/" />
-      <root url="file://$PROJECT_DIR$/plugins/jetpad/lib" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -31,13 +31,11 @@
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.war!/WEB-INF/classes" />
-      <root url="file://$PROJECT_DIR$/plugins/jetpad/lib" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar!/" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/plugins/jetpad/lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/plugins/jetpad/lib" recursive="false" type="SOURCES" />
   </library>
 </component>
