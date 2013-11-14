@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetpad" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6" compileInMPS="true">
   <models>
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot contentPath="${mps_home}/plugins/jetpad/lib" type="java_classes">
+      <sourceRoot location="base-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="core-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="dataflow-1.0-SNAPSHOT.war" />
+      <sourceRoot location="diagram-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="domUtil-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="event-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="geometry-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="grammar-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="gwt-util-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="json-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="mapper-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="model-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="modelUtil-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="test-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="values-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="view-1.0-SNAPSHOT.jar" />
+    </modelRoot>
   </models>
   <facets>
     <facet type="java" />
     <facet type="tests" />
-    <facet type="java" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet type="tests" />
     <facet type="tests" />
     <facet type="java" />
     <facet type="tests" />
@@ -33,23 +31,19 @@
     <facet type="java" />
     <facet type="tests" />
     <facet type="java" />
-    <facet type="java" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet type="tests" />
   </facets>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

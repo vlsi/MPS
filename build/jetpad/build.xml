@@ -1,7 +1,7 @@
 <project name="Get JetPad" default="resolve" xmlns:ivy="antlib:org.apache.ivy.ant">
 
   <property name="ivy.jar.dir" value="${basedir}/../ivy" />
-  <property name="jetpad.version" value="19" />
+  <property name="jetpad.version" value="2" />
 
 
   <target name="install-ivy">

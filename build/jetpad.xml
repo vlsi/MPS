@@ -92,6 +92,9 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
