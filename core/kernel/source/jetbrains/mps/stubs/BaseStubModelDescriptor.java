@@ -113,9 +113,4 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
       }
     });
   }
-
-  // FIXME temporary solution
-  public void reparseOneFile(String content) {
-  }
-
 }
