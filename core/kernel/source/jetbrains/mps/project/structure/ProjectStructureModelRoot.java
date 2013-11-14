@@ -195,11 +195,11 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
         return;
       }
       reload();
+      updateTimestamp();
     }
 
     private void reload() {
       if (myModel == null) {
-        updateTimestamp();
         return;
       }
       final jetbrains.mps.smodel.SModel result = createModel();

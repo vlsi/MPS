@@ -55,9 +55,7 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
   }
 
   private jetbrains.mps.smodel.SModel createModel() {
-    jetbrains.mps.smodel.SModel model = getSource().loadSModel((SModule) myModule, this);
-    updateTimestamp();
-    return model;
+    return getSource().loadSModel(myModule, this);
   }
 
   @Override
@@ -96,16 +94,15 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
     }
 
     reload();
+    updateTimestamp();
     LOG.assertLog(!needsReloading(), "Model needs reloading just after reload.");
   }
 
   private void reload() {
     if (mySModel == null) {
-      updateTimestamp();
       return;
     }
-    final jetbrains.mps.smodel.SModel result = (getSource().loadSModel((SModule) myModule, this));
-    updateTimestamp();
+    final jetbrains.mps.smodel.SModel result = getSource().loadSModel(myModule, this);
     replaceModel(new Runnable() {
       @Override
       public void run() {

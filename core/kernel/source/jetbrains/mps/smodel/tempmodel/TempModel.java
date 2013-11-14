@@ -37,7 +37,6 @@ class TempModel extends EditableSModelBase {
     super(createModelRef("TempModel_" + System.nanoTime()), new NullDataSource());
     myReadOnly = readOnly;
     myTrackUndo = trackUndo;
-    updateTimestamp();
   }
 
   @Override
