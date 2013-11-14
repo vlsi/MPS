@@ -21,7 +21,7 @@ public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypes
     SNode p = stylePriorityGroup;
     while ((SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedGroup", true), "stylePriorityGroup", false) != null)) {
       p = SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedGroup", true), "stylePriorityGroup", false);
-      if (eq_dnfqve_a0b0b0b(p.getReference(), stylePriorityGroup.getReference())) {
+      if (p == stylePriorityGroup) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stylePriorityGroup, "Cyclic priority group inheritance", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1938068300781546064", null, errorTarget);
@@ -44,12 +44,5 @@ public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypes
 
   public boolean overrides() {
     return false;
-  }
-
-  private static boolean eq_dnfqve_a0b0b0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }
