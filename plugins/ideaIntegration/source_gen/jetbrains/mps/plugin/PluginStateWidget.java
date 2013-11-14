@@ -18,7 +18,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.Icon;
 import jetbrains.mps.ide.ThreadUtils;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.plugin.icons.Icons;
+import jetbrains.mps.icons.MPSIcons;
 import javax.swing.Timer;
 
 public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconPresentation {
@@ -198,10 +198,10 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   }
 
   private static   enum State {
-    DISCONNECTED(Icons.DISCONNECTED, "Not connected to IDEA. Click to reconnect.", PluginStateWidget.INITIAL_DELAY),
-    TRYING_TO_CONNECT(Icons.TRYING_TO_CONNECT, "Connecting to IDEA...", PluginStateWidget.INITIAL_DELAY),
-    CONNECTED_BAD_PROJECT(Icons.CONNECTED_ERRORS, "Connected to IDEA, Project does not match", PluginStateWidget.CRITICAL_DELAY),
-    CONNECTED(Icons.CONNECTED, "Connected to IDEA", PluginStateWidget.INITIAL_DELAY);
+    DISCONNECTED(MPSIcons.IdeaIntegration.Disconnected, "Not connected to IDEA. Click to reconnect.", PluginStateWidget.INITIAL_DELAY),
+    TRYING_TO_CONNECT(MPSIcons.IdeaIntegration.TryingToConnect, "Connecting to IDEA...", PluginStateWidget.INITIAL_DELAY),
+    CONNECTED_BAD_PROJECT(MPSIcons.IdeaIntegration.ConnectedWithErrors, "Connected to IDEA, Project does not match", PluginStateWidget.CRITICAL_DELAY),
+    CONNECTED(MPSIcons.IdeaIntegration.Connected, "Connected to IDEA", PluginStateWidget.INITIAL_DELAY);
 
     private final Icon myIcon;
     private final String myHelpText;

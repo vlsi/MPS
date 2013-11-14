@@ -65,7 +65,7 @@
     <scopeInfo nodeId="3100399657864717071" fileName="QueriesGenerated.java" startLine="26" startPosition="152" endLine="32" endPosition="342">
       <varInfo nodeId="3100399657865298825" varName="operators" />
     </scopeInfo>
-    <unitInfo nodeId="3100399657865298804" fileName="QueriesGenerated.java" startLine="27" startPosition="255" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main.QueriesGenerated$1" />
+    <unitInfo nodeId="3100399657865298804" fileName="QueriesGenerated.java" startLine="27" startPosition="247" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main.QueriesGenerated$1" />
   </root>
   <root nodeRef="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)/6677452554240268192">
     <nodeInfo nodeId="6677452554240269756" fileName="QueriesGenerated.java" startLine="35" startPosition="154" endLine="36" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

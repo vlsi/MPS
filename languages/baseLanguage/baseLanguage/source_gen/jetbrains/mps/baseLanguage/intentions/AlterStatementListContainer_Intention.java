@@ -97,7 +97,17 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Change to " + SPropertyOperations.getString(myParameter, "conceptAlias") + ((SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.ForeachStatement") ? "each" : "")) + (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.DoWhileStatement") ? "-While" : "") + " statement";
+      String targetName;
+      if (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement")) {
+        targetName = "'for (var in iterable)'";
+      } else if (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
+        targetName = "'for Type var: iterable)'";
+      } else {
+        targetName = SPropertyOperations.getString(myParameter, "conceptAlias") + ((SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.DoWhileStatement") ? "-While" : ""));
+      }
+      targetName += " statement";
+      targetName = "Change to " + targetName;
+      return targetName;
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

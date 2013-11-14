@@ -116,15 +116,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
       synchronized (EVENTS_LOCK) {
-        for (SModel modelDescriptor : replacedModels) {
-          myLastEvents.add(new SModelReplacedEvent(modelDescriptor));
-          if (!jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
+        for (SModel sModel : replacedModels) {
+          myLastEvents.add(new SModelReplacedEvent(sModel));
+          if (!jetbrains.mps.util.SNodeOperations.isRegistered(sModel)) {
             continue;
           }
           for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
-            SNode sNode = editorComponent.getEditedNode();
-            if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) &&
-                sNode.getModel().getReference().equals(modelDescriptor.getReference())) {
+            if (editorComponent.getEditorContext() != null && editorComponent.getEditorContext().getModel() != null &&
+                editorComponent.getEditorContext().getModel().getReference().equals(sModel.getReference())) {
               myCheckedOnceEditors.remove(editorComponent);
             }
           }

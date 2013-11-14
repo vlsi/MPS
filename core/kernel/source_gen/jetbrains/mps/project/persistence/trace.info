@@ -336,7 +336,6 @@
     <nodeInfo nodeId="2184872129967230485" fileName="GeneratorDescriptorPersistence.java" startLine="92" startPosition="11" endLine="93" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1772246947774056115" fileName="GeneratorDescriptorPersistence.java" startLine="94" startPosition="33" endLine="95" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1772246947774056115" fileName="GeneratorDescriptorPersistence.java" startLine="95" startPosition="132" endLine="96" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1772246947774056060" fileName="GeneratorDescriptorPersistence.java" startLine="97" startPosition="11" endLine="98" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1772246947774055941" fileName="GeneratorDescriptorPersistence.java" startLine="99" startPosition="9" endLine="100" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1772246947774056148" fileName="GeneratorDescriptorPersistence.java" startLine="102" startPosition="15" endLine="103" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842994667883030504" fileName="GeneratorDescriptorPersistence.java" startLine="103" startPosition="63" endLine="104" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1746,6 +1745,9 @@
     </scopeInfo>
     <unitInfo nodeId="842994667883032881" fileName="SolutionDescriptorPersistence.java" startLine="39" startPosition="23" endLine="90" endPosition="7" unitName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence$1" />
     <unitInfo nodeId="842994667883032842" fileName="SolutionDescriptorPersistence.java" startLine="22" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
+  </root>
+  <root nodeRef="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)/9015822011646764006">
+    <nodeInfo nodeId="9015822011646764013" fileName="GeneratorDescriptorPersistence.java" startLine="97" startPosition="11" endLine="98" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
 </debugInfo>
 

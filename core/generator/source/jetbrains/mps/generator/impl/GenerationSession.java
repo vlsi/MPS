@@ -189,7 +189,33 @@ class GenerationSession {
       myNewCache = incrementalHandler.createNewCache();
       ttrace.pop();
       try {
-        SModel currInputModel = myOriginalInputModel;
+        // prepare input model: make a clone so that rest of generator always works with transient model.
+        // This ensures each node got correct TracingUtil.ORIGINAL_INPUT_NODE (for traceInfo) in SNode.userObjects - there
+        // are templates out there that perform .copy on input nodes, and we have no chances to trace such nodes back. This used to work
+        // (with fallback to parent nodes) until in-place transformations brought cases when either regular model or a transient one
+        // serve as an input, which lead to different traceInfo (being more specific with transient model as input, as each node in transient does keep
+        // reference to origin)
+        // Another benefit is that FastNodeFinder (used throughout generator e.g. with model.nodes(Concept)) gives nodes in different order for
+        // regular and transient SModel (sorted by nodeid from DefaultFastNodeFinder, natural iteration order for TransientModelNodeFinder).
+        // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
+        // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
+        // and we'll need to switch to 'transient' (generator) model here anyway
+        mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, myOriginalInputModel, myGenerationPlan,
+            myParameters, null);
+        SModel currInputModel = createTransientModel("0");
+        new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
+        // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
+        for (Iterator<SNode> it1 = myOriginalInputModel.getRootNodes().iterator(), it2 = currInputModel.getRootNodes().iterator(); ;) {
+          final boolean b1 = it1.hasNext(), b2 = it2.hasNext();
+          if ((b1 && !b2) || (b2 && !b1)) {
+            throw new IllegalStateException("Number of root nodes shall match for original model and its clone");
+          }
+          if (!b1 && !b2) {
+            break;
+          }
+          myDependenciesBuilder.registerRoot(it2.next(), it1.next());
+        }
+        myDependenciesBuilder.updateModel(currInputModel);
         SModel currOutput = null;
 
         ttrace.push("steps", false);
@@ -349,78 +375,58 @@ class GenerationSession {
     ttrace.pop();
 
     SModel currentOutputModel = createTransientModel();
-    tracer.startTracing(currentInputModel, currentOutputModel);
 
-    // -----------------------
-    // primary mapping
-    // -----------------------
     if (myLogger.needsInfo()) {
       myLogger.info(
           "generating model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentOutputModel.getReference().getModelName() + "'");
     }
-    boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager).o1;
-    if (!somethingHasBeenGenerated) {
-      SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
-      myDependenciesBuilder.updateModel(currentOutputModel);
-      recycleWasteModel(currentInputModel);
-      return currentOutputModel;
-    }
-
-    // -----------------------
-    // secondary mapping (infinite cycle until 'exit condition' is true)
-    // -----------------------
-    int secondaryMappingRepeatCount = 1;
+    boolean isPrimary = true;
+    // exit condition for secondary mapping
+    int secondaryMappingRepeatCount = 0;
     while (true) {
-      SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
-      myDependenciesBuilder.updateModel(currentOutputModel);
-
-      // apply mapping to the output model
-      mySessionContext.clearTransientObjects();
-      // probably we can forget about former input model here
-      if (currentInputModel != currentOutputModel) {
-        recycleWasteModel(currentInputModel);
-      }
-      currentInputModel = currentOutputModel;
-      ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder();
-
-      SModel transientModel = createTransientModel();
-      if (myLogger.needsInfo()) {
+      if (myLogger.needsInfo() && !isPrimary /*only for 1+ minor steps*/) {
         myLogger.info("next minor step '" + SModelStereotype.getStereotype(
-            currentInputModel.getReference().getModelName()) + "' --> '" + SModelStereotype.getStereotype(transientModel.getReference().getModelName()) + "'");
+            currentInputModel.getReference().getModelName()) + "' --> '" + SModelStereotype.getStereotype(currentOutputModel.getReference().getModelName()) + "'");
       }
-      tracer.startTracing(currentInputModel, transientModel);
-      final Pair<Boolean, SModel> applied = applyRules(currentInputModel, transientModel, false, ruleManager);
-      if (!applied.o1) {
+      tracer.startTracing(currentInputModel, currentOutputModel);
+      final Pair<Boolean, SModel> applied = applyRules(currentInputModel, currentOutputModel, isPrimary, ruleManager);
+      boolean somethingHasBeenGenerated = applied.o1;
+      SModel realOutputModel = applied.o2;
+      if (!somethingHasBeenGenerated) {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
-        tracer.discardTracing(currentInputModel, transientModel);
-        mySessionContext.getModule().removeModel(transientModel);
-        myMinorStep--;
+        tracer.discardTracing(currentInputModel, currentOutputModel);
+        recycleWasteModel(currentOutputModel, true);
+        myMinorStep--; // what for?!
         if (myLogger.needsInfo()) {
-          myLogger.info("unchanged, empty model '" + SModelStereotype.getStereotype(transientModel.getReference().getModelName()) + "' removed");
+          myLogger.info("unchanged, empty model '" + SModelStereotype.getStereotype(currentOutputModel.getReference().getModelName()) + "' removed");
         }
+        currentOutputModel = currentInputModel;
         break;
       }
-      SModel realOutputModel = applied.o2;
 
       if (++secondaryMappingRepeatCount > 10) {
-        myLogger.error("failed to generate output after 10 repeated mappings");
-        if (tracer.isTracing()) {
-          myLogger.error("last rules applied:");
-          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(realOutputModel.getReference());
-          for (Pair<SNode, SNode> pair : pairs) {
-            myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
-                GeneratorUtil.describe(pair.o2, "input"));
-          }
-        } else {
-          myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
-        }
-        myLogger.error("failed to generate output after 10 repeated mappings");
+        logTenMinorStepsCountReached(realOutputModel);
         throw new GenerationFailureException();
       }
 
       // next iteration ...
-      currentOutputModel = realOutputModel;
+      mySessionContext.clearTransientObjects();
+      isPrimary = false;
+      if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
+        SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
+        myDependenciesBuilder.updateModel(currentOutputModel);
+        recycleWasteModel(currentInputModel, false); // we can forget about former input model here
+        currentInputModel = currentOutputModel;
+        ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder(); // why?!
+        currentOutputModel = createTransientModel();
+      } else {
+        assert currentInputModel == realOutputModel;
+        myDependenciesBuilder.dropModel();
+        // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
+        recycleWasteModel(currentOutputModel, true);
+        currentOutputModel = createTransientModel();
+      }
     }
 
     // -----------------------
@@ -431,6 +437,22 @@ class GenerationSession {
     ttrace.pop();
 
     return currentOutputModel;
+  }
+
+  private void logTenMinorStepsCountReached(SModel realOutputModel) {
+    myLogger.error("failed to generate output after 10 repeated mappings");
+    IGenerationTracer tracer = mySessionContext.getGenerationTracer();
+    if (tracer.isTracing()) {
+      myLogger.error("last rules applied:");
+      List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(realOutputModel.getReference());
+      for (Pair<SNode, SNode> pair : pairs) {
+        myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
+            GeneratorUtil.describe(pair.o2, "input"));
+      }
+    } else {
+      myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
+    }
+    myLogger.error("failed to generate output after 10 repeated mappings");
   }
 
   private Pair<Boolean, SModel> applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
@@ -481,7 +503,7 @@ class GenerationSession {
         myLogger.info(
             "clone model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentInputModel_clone.getReference().getModelName() + "'");
       }
-      CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
+      new CloneUtil(currentInputModel, currentInputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getScripts().getPreMappingScripts());
@@ -510,7 +532,7 @@ class GenerationSession {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
-      recycleWasteModel(toRecycle);
+      recycleWasteModel(toRecycle, false);
     }
     if (myLogger.needsInfo() && preProcessed) {
       myLogger.info("pre-processing finished");
@@ -531,7 +553,7 @@ class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentModel.getReference().getModelName() + "' --> '" + currentOutputModel_clone.getReference().getModelName() + "'");
       }
-      CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
+      new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getScripts().getPostMappingScripts());
@@ -558,7 +580,7 @@ class GenerationSession {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
-      recycleWasteModel(toRecycle);
+      recycleWasteModel(toRecycle, false);
     }
     if (myLogger.needsInfo() && postProcessed) {
       myLogger.info("post-processing finished");
@@ -566,20 +588,26 @@ class GenerationSession {
     return currentModel;
   }
 
-
   private SModel createTransientModel() {
-    String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
-    String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
-    SModel transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
-    return transientModel;
+    return createTransientModel(Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep);
   }
 
-  private void recycleWasteModel(@NotNull SModel model) {
+  private SModel createTransientModel(String stereotype) {
+    TransientModelsModule module = mySessionContext.getModule();
+    String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
+    return module.createTransientModel(longName, stereotype);
+  }
+
+  /**
+   * Dispose model and associated resources. If force is <code>true</code>, the model
+   * is discarded even if transient models are persisted (useful for output models without changes)
+   */
+  private void recycleWasteModel(@NotNull SModel model, boolean force) {
     SModel md = model;
     if (model.getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();
-      if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
+      if (force || (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model))) {
         mySessionContext.getModule().removeModel(md);
       }
       ttrace.pop();

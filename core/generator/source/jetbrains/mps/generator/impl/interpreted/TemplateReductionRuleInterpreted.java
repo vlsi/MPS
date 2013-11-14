@@ -26,6 +26,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.NameUtil;
@@ -47,18 +48,26 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
   private final SNode ruleNode;
   private final String applicableConcept;
   private final SNode baseRuleCondition;
+  private final String myConditionMethodName;
   private final String ruleMappingName;
+  private final SNode myRuleConsequence;
+  private final boolean myApplyToInheritors;
+  private final SNodePointer myNodePointer;
 
   public TemplateReductionRuleInterpreted(SNode ruleNode) {
     this.ruleNode = ruleNode;
     this.applicableConcept = NameUtil.nodeFQName(RuleUtil.getBaseRuleApplicableConcept(ruleNode));
     this.baseRuleCondition = RuleUtil.getBaseRuleCondition(ruleNode);
     this.ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
+    myConditionMethodName = baseRuleCondition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(baseRuleCondition);
+    myRuleConsequence = RuleUtil.getReductionRuleConsequence(ruleNode);
+    myApplyToInheritors = RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode);
+    myNodePointer = new SNodePointer(ruleNode);
   }
 
   @Override
   public SNodeReference getRuleNode() {
-    return new jetbrains.mps.smodel.SNodePointer(ruleNode);
+    return myNodePointer;
   }
 
   @Override
@@ -68,17 +77,16 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
 
   @Override
   public boolean applyToInheritors() {
-    return RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode);
+    return myApplyToInheritors;
   }
 
   @Override
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    if (!checkCondition(baseRuleCondition, false, context, environment.getGenerator())) {
+    if (!checkCondition(context, environment.getGenerator())) {
       return null;
     }
 
-    SNodeReference ruleNodeId = new jetbrains.mps.smodel.SNodePointer(ruleNode);
-    environment.getTracer().pushRule(ruleNodeId);
+    environment.getTracer().pushRule(myNodePointer);
     try {
       if (environment.getGenerator().isIncremental()) {
         // turn off tracing
@@ -93,34 +101,32 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
         // restore tracing
         NodeReadEventsCaster.removeNodesReadListener();
       }
-      environment.getTracer().closeRule(ruleNodeId);
+      environment.getTracer().closeRule(myNodePointer);
     }
   }
 
-  private boolean checkCondition(SNode condition, boolean required, TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
-    if (condition == null) {
-      if (required) {
-        generator.showErrorMessage(context.getInput(), null, ruleNode, "rule condition required");
-        return false;
-      }
+  private boolean checkCondition(TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
+    if (baseRuleCondition == null) {
       return true;
     }
 
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
     try {
       return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
+        myConditionMethodName,
         generator.getGeneratorSessionContext(),
         new ReductionRuleQueryContext(context, ruleNode, generator),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      String msg = String.format("cannot find condition method '%s' : evaluate to FALSE", myConditionMethodName);
+      generator.getLogger().warning(baseRuleCondition, msg);
     } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      String msg = String.format("cannot find condition method '%s' : evaluate to FALSE", myConditionMethodName);
+      generator.getLogger().warning(baseRuleCondition, msg);
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
-      generator.getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
+      String msg = String.format("error executing condition '%s', see exception", myConditionMethodName);
+      generator.getLogger().error(baseRuleCondition, msg);
       throw new GenerationFailureException(t);
     }
     return false;
@@ -130,15 +136,14 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
   private Collection<SNode> apply(TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
-    SNode ruleConsequence = RuleUtil.getReductionRuleConsequence(ruleNode);
-    if (ruleConsequence == null) {
+    if (myRuleConsequence == null) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
 
     RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
-    if (!rcp.prepare(ruleConsequence, ruleNode, context)) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleConsequence, "error processing reduction rule consequence");
+    if (!rcp.prepare(myRuleConsequence, ruleNode, context)) {
+      environment.getGenerator().showErrorMessage(context.getInput(), null, myRuleConsequence, "error processing reduction rule consequence");
       return null;
     }
 

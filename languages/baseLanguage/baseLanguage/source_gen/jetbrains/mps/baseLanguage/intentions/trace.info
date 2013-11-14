@@ -9771,13 +9771,20 @@
     <nodeInfo nodeId="8176191621228971770" fileName="AlterStatementListContainer_Intention.java" startLine="88" startPosition="5" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameter" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="95" startPosition="53" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8176191621190308905" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="87" endLine="100" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8176191621192704064" fileName="AlterStatementListContainer_Intention.java" startLine="103" startPosition="78" endLine="104" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4061007358865319399" fileName="AlterStatementListContainer_Intention.java" startLine="104" startPosition="206" endLine="105" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8176191621192980856" fileName="AlterStatementListContainer_Intention.java" startLine="105" startPosition="101" endLine="106" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8176191621193594004" fileName="AlterStatementListContainer_Intention.java" startLine="106" startPosition="71" endLine="107" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8960718351593892153" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="87" endLine="100" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8960718351593921906" fileName="AlterStatementListContainer_Intention.java" startLine="101" startPosition="123" endLine="102" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8960718351593976100" fileName="AlterStatementListContainer_Intention.java" startLine="103" startPosition="118" endLine="104" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8960718351594019244" fileName="AlterStatementListContainer_Intention.java" startLine="105" startPosition="14" endLine="106" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8960718351594084859" fileName="AlterStatementListContainer_Intention.java" startLine="107" startPosition="7" endLine="108" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8960718351594099676" fileName="AlterStatementListContainer_Intention.java" startLine="108" startPosition="33" endLine="109" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8960718351594125107" fileName="AlterStatementListContainer_Intention.java" startLine="109" startPosition="45" endLine="110" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8176191621192704064" fileName="AlterStatementListContainer_Intention.java" startLine="113" startPosition="78" endLine="114" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4061007358865319399" fileName="AlterStatementListContainer_Intention.java" startLine="114" startPosition="206" endLine="115" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8176191621192980856" fileName="AlterStatementListContainer_Intention.java" startLine="115" startPosition="101" endLine="116" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8176191621193594004" fileName="AlterStatementListContainer_Intention.java" startLine="116" startPosition="71" endLine="117" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="120" startPosition="48" endLine="121" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AlterStatementListContainer_Intention#()V" />
+    <nodeInfo nodeId="8960718351594017019" fileName="AlterStatementListContainer_Intention.java" startLine="105" startPosition="12" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -9790,14 +9797,15 @@
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="74" startPosition="28" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="2442451895699487503" fileName="AlterStatementListContainer_Intention.java" startLine="84" startPosition="91" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="73" startPosition="53" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="103" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8960718351593912827" fileName="AlterStatementListContainer_Intention.java" startLine="100" startPosition="24" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="82" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameter#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="71" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="25" startPosition="50" endLine="25" endPosition="50" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="73" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="41" />
@@ -9811,8 +9819,10 @@
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="67" startPosition="35" endLine="68" endPosition="17" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="75" startPosition="37" endLine="76" endPosition="121" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="95" startPosition="53" endLine="96" endPosition="30" />
-    <scopeInfo nodeId="8176191621190087531" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="87" endLine="100" endPosition="340" />
-    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="56" />
+    <scopeInfo nodeId="8960718351593912830" fileName="AlterStatementListContainer_Intention.java" startLine="101" startPosition="123" endLine="102" endPosition="47" />
+    <scopeInfo nodeId="8960718351593930574" fileName="AlterStatementListContainer_Intention.java" startLine="103" startPosition="118" endLine="104" endPosition="49" />
+    <scopeInfo nodeId="8960718351594017020" fileName="AlterStatementListContainer_Intention.java" startLine="105" startPosition="14" endLine="106" endPosition="201" />
+    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="120" startPosition="48" endLine="121" endPosition="56" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="2442451895699487506" fileName="AlterStatementListContainer_Intention.java" startLine="85" startPosition="209" endLine="87" endPosition="160" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
@@ -9834,20 +9844,16 @@
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="8176191621190087466" varName="parameter" />
     </scopeInfo>
-    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="8176191621190087466" varName="editorContext" />
-      <varInfo nodeId="8176191621190087466" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="120" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="8176191621190087533" fileName="AlterStatementListContainer_Intention.java" startLine="103" startPosition="78" endLine="107" endPosition="65">
+    <scopeInfo nodeId="8176191621190087533" fileName="AlterStatementListContainer_Intention.java" startLine="113" startPosition="78" endLine="117" endPosition="65">
       <varInfo nodeId="8176191621192704065" varName="newInitializedInstance" />
     </scopeInfo>
     <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="8176191621190087466" varName="editorContext" />
       <varInfo nodeId="8176191621190087466" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="103" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="8176191621190087466" varName="editorContext" />
       <varInfo nodeId="8176191621190087466" varName="node" />
     </scopeInfo>
@@ -9866,8 +9872,15 @@
       <varInfo nodeId="8176191621190087466" varName="context" />
       <varInfo nodeId="8176191621190087466" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="92" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AlterStatementListContainer_Intention$IntentionImplementation" />
-    <unitInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="24" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AlterStatementListContainer_Intention" />
+    <scopeInfo nodeId="8176191621190087531" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="87" endLine="110" endPosition="24">
+      <varInfo nodeId="8960718351593892156" varName="targetName" />
+    </scopeInfo>
+    <scopeInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="99" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="8176191621190087466" varName="editorContext" />
+      <varInfo nodeId="8176191621190087466" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="92" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AlterStatementListContainer_Intention$IntentionImplementation" />
+    <unitInfo nodeId="8176191621190087466" fileName="AlterStatementListContainer_Intention.java" startLine="24" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AlterStatementListContainer_Intention" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/8606350594693687997">
     <nodeInfo nodeId="8606350594693687997" fileName="MakeFieldTransient_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,6 +183,9 @@ public class DefaultTemplateContext implements TemplateContext {
 
   @Override
   public TemplateContext subContext(String inputName, SNode inputNode) {
+    // this method seems to be flawed. inputNode different from present one gives new context with
+    // updated input name, while different inputName gives updated context only when it's != null, so that
+    // calling #subContext(null, probablyNewInputNode) gives no confidence whether we've *cleared* mappingLabel or not.
     if (inputNode == getInput() && (inputName == null || inputName.equals(getInputName()))) {
       return this;
     }
@@ -209,5 +212,21 @@ public class DefaultTemplateContext implements TemplateContext {
   public TemplateContext subContext(GeneratedMatchingPattern pattern) {
     // TODO parent = this
     return new DefaultTemplateContext(pattern, null, getInput());
+  }
+
+  @Override
+  public TemplateContext subContext() {
+    if (getInputName() == null) {
+      return this;
+    }
+    return new DefaultTemplateContext(this, null, getInput());
+  }
+
+  @Override
+  public TemplateContext subContext(SNode newInputNode) {
+    if (newInputNode == getInput()) {
+      return this;
+    }
+    return new DefaultTemplateContext(this, getInputName(), newInputNode);
   }
 }

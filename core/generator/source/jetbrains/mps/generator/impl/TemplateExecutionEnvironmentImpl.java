@@ -334,7 +334,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       return;
     }
 
-    fillOriginalNode(inputNode, outputNodeToWeave);
+    TracingUtil.fillOriginalNode(inputNode, outputNodeToWeave, false);
 
     // check child
     RoleValidator v = generator.getChildRoleValidator(contextParentNode, childRole);
@@ -362,9 +362,5 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         contextParentNode.addChild(childRole, outputNodeToWeave);
       }
     }
-  }
-
-  private void fillOriginalNode(SNode inputNode, SNode outputNode) {
-    TracingUtil.fillOriginalNode(inputNode, outputNode, inputNode.getModel() == getGenerator().getGeneratorSessionContext().getOriginalInputModel());
   }
 }

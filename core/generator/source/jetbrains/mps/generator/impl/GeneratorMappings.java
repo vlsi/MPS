@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -38,7 +39,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Evgeny Gryaznov, Feb 16, 2010
  */
-public class GeneratorMappings {
+public final class GeneratorMappings {
 
   /* mapping,input -> output */
   private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<String, Map<SNode, Object>>();
@@ -108,12 +109,16 @@ public class GeneratorMappings {
     myTemplateNodeIdAndInputNodeToOutputNodeMap.put(new Pair(templateNodeId, inputNode), outputNode);
   }
 
-  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, String templateNodeId, SNode outputNode) {
+  void addOutputNodeForContext(TemplateContext templateContext, String templateNodeId, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should report error on attempt to obtain not unique output-node
-    Pair key = new Pair(templateNodeId, inditectInputNode);
-    myTemplateNodeIdAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
+    addOutputNodeByInputAndTemplateNode(templateContext.getInput(), templateNodeId, outputNode);
+    for (SNode historyInputNode : templateContext.getInputHistory()) {
+      Pair key = new Pair(templateNodeId, historyInputNode);
+      myTemplateNodeIdAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
+    }
+    addOutputNodeByTemplateNode(templateNodeId, outputNode);
   }
 
   // find methods
