@@ -1,15 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bxmfqz3ld6662xwddi001odj8jym0t5">
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <dep model="r:4dcea71f-f582-4941-a6f1-d7f579f1f13a(jetbrains.mps.testHybridEditor.diagram.typesystem)" hash="9igsn01giyvvw5ht3kiful388t5z7es" />
-  <dep model="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)" hash="47yon7bhd3hfub1s5304j8l5t2zqt6c" />
-  <common>
-    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:4dcea71f-f582-4941-a6f1-d7f579f1f13a(jetbrains.mps.testHybridEditor.diagram.typesystem)" />
-    <dep model="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="-bxmfqz3ld6662xwddi001odj8jym0t5" />
 
