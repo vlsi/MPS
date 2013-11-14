@@ -4,7 +4,7 @@
     <modelRoot contentPath="${mps_home}/plugins/jetpad/lib" type="java_classes">
       <sourceRoot location="base-1.0-SNAPSHOT.jar" />
       <sourceRoot location="core-1.0-SNAPSHOT.jar" />
-      <sourceRoot location="dataflow-1.0-SNAPSHOT.war" />
+      <sourceRoot location="dataflow-1.0-SNAPSHOT.jar" />
       <sourceRoot location="diagram-1.0-SNAPSHOT.jar" />
       <sourceRoot location="domUtil-1.0-SNAPSHOT.jar" />
       <sourceRoot location="event-1.0-SNAPSHOT.jar" />
@@ -23,18 +23,11 @@
   <facets>
     <facet type="java" />
     <facet type="tests" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet type="tests" />
-    <facet type="java" />
   </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
