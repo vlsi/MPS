@@ -2,7 +2,7 @@
   <info organisation="org.jetbrains.mps" module="mps"/>
 
   <dependencies>
-    <dependency org="org" name="MPS_31_JetPadEditor" rev="${jetpad.version}">
+    <dependency org="org" name="MPS_31_JetPad_JetPadArtifacts" rev="${jetpad.version}">
       <include name="base-1.0-SNAPSHOT" ext="jar"/>
       <include name="core-1.0-SNAPSHOT" ext="jar"/>
       <include name="dataflow-1.0-SNAPSHOT" ext="war"/>
@@ -16,6 +16,7 @@
       <include name="json-1.0-SNAPSHOT" ext="jar"/>
       <include name="mapper-1.0-SNAPSHOT" ext="jar"/>
       <include name="model-1.0-SNAPSHOT" ext="jar"/>
+      <include name="modelUtil-1.0-SNAPSHOT" ext="jar"/>
       <include name="test-1.0-SNAPSHOT" ext="jar"/>
       <include name="values-1.0-SNAPSHOT" ext="jar"/>
       <include name="view-1.0-SNAPSHOT" ext="jar"/>

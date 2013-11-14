@@ -20,7 +20,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Queue" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolylineConnection" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
