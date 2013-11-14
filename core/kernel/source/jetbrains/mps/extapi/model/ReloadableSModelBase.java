@@ -33,7 +33,12 @@ public abstract class ReloadableSModelBase extends SModelBase {
   private DataSourceListener mySourceListener = new DataSourceListener() {
     @Override
     public void changed(DataSource source) {
-      processChanged(new EmptyProgressMonitor());
+      ProgressMonitor monitor = new EmptyProgressMonitor();
+      if (!needsReloading()) return;
+
+      monitor.start("Reloading " + getModelName(), 1);
+      reloadFromDiskSafe();
+      monitor.done();
     }
   };
 
@@ -54,14 +59,6 @@ public abstract class ReloadableSModelBase extends SModelBase {
 
   public void updateTimestamp() {
     mySourceTimestamp = getSource().getTimestamp();
-  }
-
-  protected void processChanged(ProgressMonitor monitor) {
-    if (!needsReloading()) return;
-
-    monitor.start("Reloading " + getModelName(), 1);
-    reloadFromDiskSafe();
-    monitor.done();
   }
 
   public boolean needsReloading() {
