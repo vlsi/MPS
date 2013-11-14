@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-c6a3lc7f6n8nfawiyukyzac4ahieuaa">
   <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="dyg43t30is9w08tjvcbay58rympar4z" />
-  <common hash="d6w1aq1qylk1a4b6y0j991sir4kvoni" dependsOnNodes="true">
+  <common hash="d6w1aq1qylk1a4b6y0j991sir4kvoni">
     <dep root="4474271214083117745" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconContainer.java" />

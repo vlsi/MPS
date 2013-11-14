@@ -29,8 +29,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class OverrideImplementMethodsHelper {
   private Project myProject;
-  private SNode myClassConcept;
-  private SNode myContextMember;
+  /*package*/ SNode myClassConcept;
+  /*package*/ SNode myContextMember;
   private boolean myRemoveAttributes;
   private boolean myInsertOverride;
   private boolean myNeedReturnKW;
@@ -63,7 +63,7 @@ public class OverrideImplementMethodsHelper {
     return result;
   }
 
-  private void update(SNode method, SNode baseMethod) {
+  /*package*/ void update(SNode method, SNode baseMethod) {
     if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(baseMethod)))) {
       setVariableNames(method, MapSequence.fromMap(new HashMap<String, Integer>()));
     }

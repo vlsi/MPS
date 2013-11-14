@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,15 @@ public class TransientSModel extends SModel {
   @Override
   protected FastNodeFinder createFastNodeFinder() {
     return new TransientModelNodeFinder(getModelDescriptor());
+  }
+
+  /**
+   * As far as I'm concerned, canFireEvent() is actually #canFireWriteEvent() for smodel.event.SModelListener. Since
+   * generator doesn't care about such changes in transient models, answer the question fast.
+   */
+  @Override
+  public boolean canFireEvent() {
+    return false;
   }
 
   @Override

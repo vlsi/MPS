@@ -105,6 +105,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private boolean myInplaceModelChange = false;
   private WeavingProcessor myWeavingProcessor;
   private final boolean myInplaceChangeEnabled;
+  /**
+   * This is a hack, to avoid using DeltaBuilder when new roots are added into the model. Can't use myIsChanged (as I used to)
+   * because for parallel generation there are chances myIsChanged is not yet set (root is not yet created) when I get to DeltaBuilder
+   * instantiation. The right way, to make DeltaBuilder aware of root creation, seems too demanding (time/effort) right now.
+   * Note, rootsConsumed (root mappings) shall be fixed as well then (now it's ok as parallel generator jumps in after rootsConsumed is populated)
+   */
+  private boolean myNewRootsAreAdded = false;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
@@ -143,6 +150,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     if (myDeltaBuilder != null) {
+      ttrace.push("apply delta changes", false);
 //      myDeltaBuilder.dump();
       myInplaceModelChange = true;
       if (myDeltaBuilder.hasChanges()) {
@@ -150,6 +158,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
       myOutputRoots.clear();
       myDeltaBuilder = null;
+      ttrace.pop();
     }
 
     myAreMappingsReady = true;
@@ -237,24 +246,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       checkMonitorCanceled();
       applyRootRule(rule, rootsConsumed);
     }
-    ArrayList<SNode> rootsToCopy = new ArrayList<SNode>();
-    for (SNode root : myInputModel.getRootNodes()) {
-      rootsToCopy.add(root);
-    }
-    rootsToCopy.removeAll(rootsConsumed);
     ttrace.pop();
 
-    if (myInplaceChangeEnabled && !isPrimary && !myChanged && rootsConsumed.isEmpty()) {
+    if (myInplaceChangeEnabled && !myNewRootsAreAdded && rootsConsumed.isEmpty()) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
         myLogger.info("Could have had delta builder here, but can't due to active weavings");
       } else {
+        myLogger.info("Active in-place model transformation");
         myDeltaBuilder = createDeltaBuilder();
       }
     }
     // copy roots
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
-    for (SNode rootToCopy : rootsToCopy) {
+    for (SNode rootToCopy : myInputModel.getRootNodes()) {
+      if (rootsConsumed.contains(rootToCopy)) {
+        continue;
+      }
       QueryExecutionContext context = getExecutionContext(rootToCopy);
       if (context != null) {
         TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, context, new ReductionContext());
@@ -266,6 +274,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     try {
       if (environment.getQueryExecutor().isApplicable(rule, environment, null)) {
+        myNewRootsAreAdded = true;
         myGenerationTracer.pushRule(rule.getRuleNode());
         try {
           createRootNodeByRule(rule, environment);
@@ -354,13 +363,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
         // we copy user objects in reduction rules, root mapping rules are no different
+        // in addition, this copies TracingUtil.ORIGINAL_INPUT_NODE, so that outputNodes
+        // are marked as originating at inputNode's origin
         jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
-      }
-
-      if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-        for (SNode outputNode : outputNodes) {
-          TracingUtil.putInputNode(outputNode, inputNode);
-        }
       }
 
     } catch (DismissTopMappingRuleException e) {
@@ -464,10 +469,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         // preserve user objects
         if (TracingUtil.getInput(reducedNode) == null) {
           jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
-        }
-        // keep track of 'original input node'
-        if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
-          TracingUtil.putInputNode(reducedNode, inputNode);
+          // keep track of 'original input node'
+          TracingUtil.fillOriginalNode(inputNode, reducedNode, false);
         }
       }
       return outputNodes;
@@ -863,10 +866,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
       jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
-      // keep track of 'original input node'
-      if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
-        TracingUtil.putInputNode(outputNode, inputNode);
-      }
+
       for (SReference inputReference : inputNode.getReferences()) {
         if (inputNode.getModel() != null) {
           boolean external = true;

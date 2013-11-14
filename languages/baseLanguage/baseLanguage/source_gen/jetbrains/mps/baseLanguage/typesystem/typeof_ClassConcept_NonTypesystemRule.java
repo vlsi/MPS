@@ -41,7 +41,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
     for (SNode m : Classifier_Behavior.call_methods_5292274854859311639(cls)) {
       typeCheckingContext.addDependencyForCurrent(m);
     }
-    if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cls, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {
+    if (!(SPropertyOperations.getBoolean(cls, "abstractClass") || (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).isNotEmpty())) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cls, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cls, "Class has unimplemented methods (press Ctrl/Cmd+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", null, errorTarget);

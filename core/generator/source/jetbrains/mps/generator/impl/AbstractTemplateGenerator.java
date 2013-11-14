@@ -192,11 +192,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
-    addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
-    for (SNode historyInputNode : context.getInputHistory()) {
-      myMappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNodeId, outputNode);
-    }
-    myMappings.addOutputNodeByTemplateNode(templateNodeId, outputNode);
+    myMappings.addOutputNodeForContext(context, templateNodeId, outputNode);
   }
 
   public SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {

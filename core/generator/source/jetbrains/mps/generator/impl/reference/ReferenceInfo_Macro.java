@@ -17,18 +17,18 @@ package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public abstract class ReferenceInfo_Macro extends ReferenceInfo {
@@ -41,7 +41,6 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   private boolean myMacroProcessed;
   private String myResolveInfoForDynamicResolve;
   private SNode myOutputTargetNode;
-  private SModelReference myExternalTargetModelReference;
 
   public ReferenceInfo_Macro(SNode outputSourceNode, String role, TemplateContext context, @NotNull QueryExecutionContext executionContext) {
     super(outputSourceNode, role, context.getInput());
@@ -49,10 +48,10 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     myExecContext = executionContext;
   }
 
+  @Nullable
   @Override
   public SModelReference getTargetModelReference(TemplateGenerator generator) {
-    ensureMacroProcessed(generator);
-    return myExternalTargetModelReference;
+    return null;
   }
 
   @Override

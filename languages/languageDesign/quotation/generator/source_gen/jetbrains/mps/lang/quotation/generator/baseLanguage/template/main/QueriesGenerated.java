@@ -30,6 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
@@ -475,8 +476,13 @@ public class QueriesGenerated {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      referenceNode.setProperty("targetModel", ((SModelReference) ((jetbrains.mps.smodel.SReference) ref).getTargetSModelReference()).update().toString());
       referenceNode.setProperty("role", ref.getRole());
+      if (targetNode != null && TracingUtil.getInput(targetNode) != null) {
+        referenceNode.setProperty("targetModel", TracingUtil.getInput(targetNode).getModelReference().toString());
+        targetNode = TracingUtil.getInputNode(targetNode);
+      } else {
+        referenceNode.setProperty("targetModel", ((SModelReference) ((jetbrains.mps.smodel.SReference) ref).getTargetSModelReference()).update().toString());
+      }
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());
       }

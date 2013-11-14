@@ -33,6 +33,10 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(enumConstant, "no constructor is declared", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4909195013914035846", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SetDefaultEnumConstructurToEnumConstant_QuickFix", true);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       } else {
         {

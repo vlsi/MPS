@@ -8,13 +8,14 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -27,9 +28,32 @@ import java.util.LinkedHashSet;
 public class OverridingMethodsFinder {
   private Map<SNode, Set<Tuples._2<SNode, SNode>>> myOverridingToOverridenMethodsMap = MapSequence.fromMap(new HashMap<SNode, Set<Tuples._2<SNode, SNode>>>());
 
+
   public OverridingMethodsFinder(SNode container) {
     this(container, getInstanceMethods(container));
   }
+
+
+
+  public OverridingMethodsFinder(SNode container, SNode enumConstant) {
+    Iterable<SNode> result = SLinkOperations.getTargets(enumConstant, "method", true);
+
+    Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+    for (SNode methodToCheck : Sequence.fromIterable(result).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return canOverride(it);
+      }
+    })) {
+      SetSequence.fromSet(safeGet(nameToMethodsMap, SPropertyOperations.getString(methodToCheck, "name"))).addElement(methodToCheck);
+    }
+    if (MapSequence.fromMap(nameToMethodsMap).isNotEmpty()) {
+      SNode dummy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
+      SLinkOperations.setTarget(dummy, "classifier", container, false);
+      collectOverridingMethodsInClassifierHierarchy(dummy, nameToMethodsMap, SetSequence.fromSet(new HashSet<SNode>()));
+    }
+  }
+
+
 
   public OverridingMethodsFinder(SNode container, Iterable<SNode> methods) {
     Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
@@ -44,6 +68,8 @@ public class OverridingMethodsFinder {
       collectOverridingMethodsInClassifierHierarchy(container, nameToMethodsMap, SetSequence.fromSet(new HashSet<SNode>()));
     }
   }
+
+
 
   public Set<SNode> getOverridingMethods() {
     return MapSequence.fromMap(this.myOverridingToOverridenMethodsMap).keySet();

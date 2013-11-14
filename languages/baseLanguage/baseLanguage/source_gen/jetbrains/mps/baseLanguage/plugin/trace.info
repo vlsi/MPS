@@ -3,9 +3,9 @@
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IconContainer" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)/2990235398088186554">
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="5" endLine="14" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="14" startPosition="48" endLine="15" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="15" startPosition="49" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="5" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="14" startPosition="46" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="15" startPosition="47" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="23" startPosition="37" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="27" startPosition="39" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="31" startPosition="59" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -19,7 +19,7 @@
     <scopeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="27" startPosition="39" endLine="28" endPosition="26" />
     <scopeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="31" startPosition="59" endLine="32" endPosition="48" />
     <scopeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="5" endLine="16" endPosition="51" />
+    <scopeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="5" endLine="16" endPosition="49" />
     <scopeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="2990235398088186554" varName="key" />
@@ -30,10 +30,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)/349375443596798661">
     <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="13" startPosition="5" endLine="14" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="14" startPosition="50" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="15" startPosition="43" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="16" startPosition="44" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="13" startPosition="5" endLine="14" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="14" startPosition="52" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="15" startPosition="45" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="16" startPosition="46" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="24" startPosition="37" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="28" startPosition="39" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="349375443596798661" fileName="IconResourceBundle_Visibility.java" startLine="32" startPosition="61" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

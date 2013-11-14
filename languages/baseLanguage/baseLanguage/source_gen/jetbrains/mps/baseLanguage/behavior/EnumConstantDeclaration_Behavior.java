@@ -12,6 +12,14 @@ import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.FieldSignature;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.ListScope;
+import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EnumConstantDeclaration_Behavior {
@@ -54,6 +62,76 @@ public class EnumConstantDeclaration_Behavior {
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
+  }
+
+  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "method", true);
+  }
+
+  public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(final SNode thisNode) {
+    if ((SNodeOperations.getParent(thisNode) == null)) {
+      return null;
+    }
+
+    List<SNode> methods = new ArrayList<SNode>();
+    List<SNode> methodsToImplement = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
+    ListSequence.fromList(methodsToImplement).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "isAbstract");
+      }
+    }));
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
+      public boolean accept(final SNode method) {
+        return !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode constantBelongingMethod) {
+            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(constantBelongingMethod, method);
+          }
+        }));
+      }
+    }));
+    return methods;
+  }
+
+  public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(final SNode thisNode) {
+    if ((SNodeOperations.getParent(thisNode) == null)) {
+      return null;
+    }
+
+    List<SNode> methods = new ArrayList<SNode>();
+    List<SNode> methodsToOverride = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
+    ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getBoolean(it, "isAbstract")) && !(SPropertyOperations.getBoolean(it, "isFinal")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+      }
+    }));
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(methodsToOverride).where(new IWhereFilter<SNode>() {
+      public boolean accept(final SNode method) {
+        return !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode constantBelongingMethod) {
+            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(constantBelongingMethod, method);
+          }
+        }));
+      }
+    }));
+    return methods;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
+      Scope visibleMembers = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});
+      Iterable<SNode> methods = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isAbstract_1232982539764", new Object[]{})) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+        }
+      });
+      Scope visibleEumMembers = new ListScope(methods) {
+        public String getName(SNode child) {
+          return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+        }
+      };
+      return new CompositeScope(visibleMembers, visibleEumMembers);
+    }
+    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
 
   @Deprecated
