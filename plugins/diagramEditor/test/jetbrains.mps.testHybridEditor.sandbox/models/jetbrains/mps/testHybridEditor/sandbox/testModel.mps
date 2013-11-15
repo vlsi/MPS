@@ -116,5 +116,56 @@
       <property name="name" nameId="tpck.1169194664001" value="producerOutput" />
     </node>
   </root>
+  <root type="adck.Diagram" typeId="adck.725186580883451585" id="5368079267489881313" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="otherDiagram" />
+    <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="5368079267489881429" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="outside" />
+      <property name="x" nameId="adck.6279035160242221415" value="50" />
+      <property name="y" nameId="adck.6279035160242221911" value="50" />
+      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="5368079267489881439" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="Exit Door" />
+      </node>
+      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="5368079267489881437" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="Entrance Door" />
+      </node>
+    </node>
+    <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="5368079267489881418" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="toClerk1" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="5368079267489881405" resolveInfo="door" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="5368079267489881414" resolveInfo="door" />
+    </node>
+    <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="5368079267489881426" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="leaving" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="5368079267489881416" resolveInfo="door" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="5368079267489881439" resolveInfo="Exit Door" />
+    </node>
+    <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="5368079267489881441" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="incoming" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="5368079267489881437" resolveInfo="Entrance Door" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="5368079267489881407" resolveInfo="entrance" />
+    </node>
+    <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="5368079267489881343" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Reception" />
+      <property name="x" nameId="adck.6279035160242221415" value="100" />
+      <property name="y" nameId="adck.6279035160242221911" value="200" />
+      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="5368079267489881407" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="entrance" />
+      </node>
+      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="5368079267489881405" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="door" />
+      </node>
+    </node>
+    <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="5368079267489881409" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Clerk 1" />
+      <property name="x" nameId="adck.6279035160242221415" value="200" />
+      <property name="y" nameId="adck.6279035160242221911" value="20" />
+      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="5368079267489881416" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="door" />
+      </node>
+      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="5368079267489881414" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="door" />
+      </node>
+    </node>
+  </root>
 </model>
 
