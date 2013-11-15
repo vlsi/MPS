@@ -413,8 +413,8 @@ class GenerationSession {
       // next iteration ...
       mySessionContext.clearTransientObjects();
       isPrimary = false;
+      SModelOperations.validateLanguagesAndImports(realOutputModel, false, false);
       if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
-        SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
         myDependenciesBuilder.updateModel(currentOutputModel);
         recycleWasteModel(currentInputModel, false); // we can forget about former input model here
         currentInputModel = currentOutputModel;
