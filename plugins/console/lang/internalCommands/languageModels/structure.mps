@@ -65,5 +65,10 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="requiredOnly" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544565" resolveInfo="QueryParameter" />
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5582028874770305469" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ConsoleModelExpression" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#consoleModel" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544317" resolveInfo="QueryExpression" />
+  </root>
 </model>
 

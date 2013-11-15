@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9j6t5897d4v2xo1behe34r8siuoedu3">
+<dependencies version="2" modelHash="-7anr5mswgkahr4o3336ktthxh0w6uwc">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-2b7a2rppfq1uhvwub5utjsuj27e8nm" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="wgwqeiq1xltr1rv55oo8yuwdevzaba" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-6nwae3z6k63dfb9q6c54i4of09zaowz" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-dpgargh7wvbx60g2p10ey3a8z8qp0n3" dependsOnNodes="true">
+  <common hash="-bu5pkhbgulfnz3iqbavdukx9lukkf4e" dependsOnNodes="true">
     <dep root="2087237500458009228" />
     <dep root="2087237500458473003" />
     <dep root="3894227536041114995" />
     <dep root="473081947985174289" />
     <dep root="5207260697411458113" />
+    <dep root="5582028874769074087" />
+    <dep root="5582028874769074089" />
+    <dep root="5582028874769074091" />
+    <dep root="5582028874769074093" />
+    <dep root="5582028874769074096" />
+    <dep root="5582028874769074099" />
     <dep root="7057947030097724900" />
     <dep root="7490254719522540696" />
     <dep root="7490254719522675890" />
@@ -49,5 +55,11 @@
   <source id="473081947985174289" name="IDECommandHelp" hash="d3cg3pfcp91x08nj0c15bp3s0u4acr3" />
   <source id="7057947030097724900" name="ShowGenPlan" hash="-6tgmb3hzcxwzclubr4gdttqefsffhh" />
   <source id="3894227536041114995" name="ClickableGenerator" hash="-2b9dmemvxqrwtzk5l8jrr9k5p3q8yoe" />
+  <source id="5582028874769074087" name="ActionCallDeclaredParameter" hash="-825r87d29ek67pzb5ixbw5h6fv8sg0i" />
+  <source id="5582028874769074089" name="ActionCallGlobalParameter" hash="-2vknwq1o7wyarqvkxce6768ojzx3dec" />
+  <source id="5582028874769074091" name="ActionCallParameter" hash="-7s28d1k82ll0yw4bcrbzgs771es6d2q" />
+  <source id="5582028874769074093" name="CallActionExpression" hash="-apoxu0uulsq00v0q6f0l4fr0jos4ljb" />
+  <source id="5582028874769074096" name="ModelProperties" hash="-2px27ew5d2mqdyhx40oiy2onz76kee0" />
+  <source id="5582028874769074099" name="ModuleProperties" hash="81dhs1y3v5ijbaok8qqo9oohl6sam7m" />
 </dependencies>
 
