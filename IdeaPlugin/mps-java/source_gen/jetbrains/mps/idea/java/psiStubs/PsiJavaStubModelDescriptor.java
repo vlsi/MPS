@@ -31,7 +31,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.JavaPsiListener;
 import com.intellij.psi.PsiFile;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import com.intellij.psi.PsiImportStatementBase;
 import com.intellij.psi.PsiJavaCodeReferenceElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -234,8 +233,8 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
 
 
   @Override
-  protected void processChanged(ProgressMonitor monitor) {
-    // ignoring, we handle PSI changes ourselves 
+  public boolean needsReloading() {
+    return false;
   }
 
   public void reloadFromDiskSafe() {

@@ -1,345 +1,343 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)/3118313698925873538">
-    <nodeInfo nodeId="6632570505820995656" fileName="PsiJavaStubModelDescriptor.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6954894869197912899" fileName="PsiJavaStubModelDescriptor.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRef" />
-    <nodeInfo nodeId="4489382664561166473" fileName="PsiJavaStubModelDescriptor.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="3118313698926201527" fileName="PsiJavaStubModelDescriptor.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDataSource" />
-    <nodeInfo nodeId="5735787482189895601" fileName="PsiJavaStubModelDescriptor.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootsPerFile" />
-    <nodeInfo nodeId="3609737829697227052" fileName="PsiJavaStubModelDescriptor.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAllNodesPerFile" />
-    <nodeInfo nodeId="7414633741298594825" fileName="PsiJavaStubModelDescriptor.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalMps2PsiMapping" />
-    <nodeInfo nodeId="7414633741301483970" fileName="PsiJavaStubModelDescriptor.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMps2PsiMapper" />
-    <nodeInfo nodeId="3787279355017530249" fileName="PsiJavaStubModelDescriptor.java" startLine="58" startPosition="91" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6954894869197916013" fileName="PsiJavaStubModelDescriptor.java" startLine="59" startPosition="32" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3118313698926211493" fileName="PsiJavaStubModelDescriptor.java" startLine="60" startPosition="26" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1221012164057510537" fileName="PsiJavaStubModelDescriptor.java" startLine="66" startPosition="38" endLine="67" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6632570505821958935" fileName="PsiJavaStubModelDescriptor.java" startLine="71" startPosition="46" endLine="72" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4423331261408489368" fileName="PsiJavaStubModelDescriptor.java" startLine="72" startPosition="29" endLine="73" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6632570505821962319" fileName="PsiJavaStubModelDescriptor.java" startLine="77" startPosition="25" endLine="78" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4423331261408411795" fileName="PsiJavaStubModelDescriptor.java" startLine="78" startPosition="20" endLine="79" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4489382664562003560" fileName="PsiJavaStubModelDescriptor.java" startLine="85" startPosition="29" endLine="86" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6632570505820820665" fileName="PsiJavaStubModelDescriptor.java" startLine="93" startPosition="26" endLine="94" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2477939527846467193" fileName="PsiJavaStubModelDescriptor.java" startLine="94" startPosition="40" endLine="95" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4489382664561170836" fileName="PsiJavaStubModelDescriptor.java" startLine="95" startPosition="22" endLine="96" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6632570505820855030" fileName="PsiJavaStubModelDescriptor.java" startLine="96" startPosition="33" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6632570505820858378" fileName="PsiJavaStubModelDescriptor.java" startLine="97" startPosition="0" endLine="98" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4489382664561168717" fileName="PsiJavaStubModelDescriptor.java" startLine="99" startPosition="5" endLine="100" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3114726504304316909" fileName="PsiJavaStubModelDescriptor.java" startLine="105" startPosition="24" endLine="106" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3114726504304321715" fileName="PsiJavaStubModelDescriptor.java" startLine="106" startPosition="35" endLine="107" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3114726504304326069" fileName="PsiJavaStubModelDescriptor.java" startLine="108" startPosition="27" endLine="109" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3114726504304330888" fileName="PsiJavaStubModelDescriptor.java" startLine="109" startPosition="40" endLine="110" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3114726504304332614" fileName="PsiJavaStubModelDescriptor.java" startLine="110" startPosition="21" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6632570505820399116" fileName="PsiJavaStubModelDescriptor.java" startLine="115" startPosition="42" endLine="116" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6632570505820502767" fileName="PsiJavaStubModelDescriptor.java" startLine="116" startPosition="76" endLine="117" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6632570505820643554" fileName="PsiJavaStubModelDescriptor.java" startLine="117" startPosition="81" endLine="118" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6632570505820222347" fileName="PsiJavaStubModelDescriptor.java" startLine="118" startPosition="78" endLine="119" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6632570505820374062" fileName="PsiJavaStubModelDescriptor.java" startLine="119" startPosition="100" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8368676337723391877" fileName="PsiJavaStubModelDescriptor.java" startLine="122" startPosition="58" endLine="123" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3609737829698142273" fileName="PsiJavaStubModelDescriptor.java" startLine="123" startPosition="84" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3609737829697884147" fileName="PsiJavaStubModelDescriptor.java" startLine="124" startPosition="0" endLine="125" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5735787482189904038" fileName="PsiJavaStubModelDescriptor.java" startLine="125" startPosition="67" endLine="126" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5735787482189906044" fileName="PsiJavaStubModelDescriptor.java" startLine="126" startPosition="73" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3118313698926127089" fileName="PsiJavaStubModelDescriptor.java" startLine="128" startPosition="46" endLine="129" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8368676337725194339" fileName="PsiJavaStubModelDescriptor.java" startLine="130" startPosition="102" endLine="131" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5735787482190122944" fileName="PsiJavaStubModelDescriptor.java" startLine="132" startPosition="11" endLine="133" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5735787482190123033" fileName="PsiJavaStubModelDescriptor.java" startLine="133" startPosition="101" endLine="134" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4189694690332309675" fileName="PsiJavaStubModelDescriptor.java" startLine="134" startPosition="51" endLine="135" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5735787482189943993" fileName="PsiJavaStubModelDescriptor.java" startLine="135" startPosition="33" endLine="136" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5735787482189908331" fileName="PsiJavaStubModelDescriptor.java" startLine="137" startPosition="9" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5735787482189923790" fileName="PsiJavaStubModelDescriptor.java" startLine="139" startPosition="54" endLine="140" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6632570505820039834" fileName="PsiJavaStubModelDescriptor.java" startLine="142" startPosition="7" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6632570505820069269" fileName="PsiJavaStubModelDescriptor.java" startLine="144" startPosition="27" endLine="145" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6632570505821335549" fileName="PsiJavaStubModelDescriptor.java" startLine="145" startPosition="115" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6632570505820347441" fileName="PsiJavaStubModelDescriptor.java" startLine="147" startPosition="15" endLine="148" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6954894869196986124" fileName="PsiJavaStubModelDescriptor.java" startLine="153" startPosition="42" endLine="154" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5507346265626867637" fileName="PsiJavaStubModelDescriptor.java" startLine="154" startPosition="48" endLine="155" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1639340979885799610" fileName="PsiJavaStubModelDescriptor.java" startLine="159" startPosition="85" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="300395514908454153" fileName="PsiJavaStubModelDescriptor.java" startLine="160" startPosition="0" endLine="161" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="300395514908438585" fileName="PsiJavaStubModelDescriptor.java" startLine="161" startPosition="56" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1639340979885857760" fileName="PsiJavaStubModelDescriptor.java" startLine="162" startPosition="0" endLine="163" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1639340979885856768" fileName="PsiJavaStubModelDescriptor.java" startLine="164" startPosition="26" endLine="165" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4055355515237801520" fileName="PsiJavaStubModelDescriptor.java" startLine="166" startPosition="5" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4055355515237822640" fileName="PsiJavaStubModelDescriptor.java" startLine="167" startPosition="0" endLine="168" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5998430924367299863" fileName="PsiJavaStubModelDescriptor.java" startLine="168" startPosition="59" endLine="169" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5998430924367312913" fileName="PsiJavaStubModelDescriptor.java" startLine="169" startPosition="32" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4993605534473753626" fileName="PsiJavaStubModelDescriptor.java" startLine="172" startPosition="25" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4993605534473637670" fileName="PsiJavaStubModelDescriptor.java" startLine="173" startPosition="0" endLine="174" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5998430924367102426" fileName="PsiJavaStubModelDescriptor.java" startLine="174" startPosition="30" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7414633741303241581" fileName="PsiJavaStubModelDescriptor.java" startLine="176" startPosition="50" endLine="177" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7024035785990328685" fileName="PsiJavaStubModelDescriptor.java" startLine="178" startPosition="9" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7024035785990362629" fileName="PsiJavaStubModelDescriptor.java" startLine="180" startPosition="65" endLine="181" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7024035785990373194" fileName="PsiJavaStubModelDescriptor.java" startLine="181" startPosition="42" endLine="182" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5998430924366963337" fileName="PsiJavaStubModelDescriptor.java" startLine="183" startPosition="9" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5507346265627009532" fileName="PsiJavaStubModelDescriptor.java" startLine="186" startPosition="34" endLine="187" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5507346265627009544" fileName="PsiJavaStubModelDescriptor.java" startLine="187" startPosition="85" endLine="188" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2227425914098988364" fileName="PsiJavaStubModelDescriptor.java" startLine="188" startPosition="64" endLine="189" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2227425914098988382" fileName="PsiJavaStubModelDescriptor.java" startLine="191" startPosition="73" endLine="192" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2227425914098988388" fileName="PsiJavaStubModelDescriptor.java" startLine="192" startPosition="39" endLine="193" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5507346265627009556" fileName="PsiJavaStubModelDescriptor.java" startLine="196" startPosition="11" endLine="197" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2227425914098988402" fileName="PsiJavaStubModelDescriptor.java" startLine="198" startPosition="34" endLine="199" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8368676338074535998" fileName="PsiJavaStubModelDescriptor.java" startLine="200" startPosition="11" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1526594102710725247" fileName="PsiJavaStubModelDescriptor.java" startLine="201" startPosition="0" endLine="202" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1526594102711294514" fileName="PsiJavaStubModelDescriptor.java" startLine="202" startPosition="52" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8368676338074570535" fileName="PsiJavaStubModelDescriptor.java" startLine="203" startPosition="0" endLine="204" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6954894869194119674" fileName="PsiJavaStubModelDescriptor.java" startLine="204" startPosition="88" endLine="205" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3609737829698241602" fileName="PsiJavaStubModelDescriptor.java" startLine="205" startPosition="69" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5735787482190047593" fileName="PsiJavaStubModelDescriptor.java" startLine="206" startPosition="0" endLine="207" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5735787482190053144" fileName="PsiJavaStubModelDescriptor.java" startLine="207" startPosition="75" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6954894869194114729" fileName="PsiJavaStubModelDescriptor.java" startLine="209" startPosition="50" endLine="210" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8368676338074676430" fileName="PsiJavaStubModelDescriptor.java" startLine="211" startPosition="104" endLine="212" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1526594102711024690" fileName="PsiJavaStubModelDescriptor.java" startLine="213" startPosition="13" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1526594102711025231" fileName="PsiJavaStubModelDescriptor.java" startLine="214" startPosition="0" endLine="215" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5735787482190053362" fileName="PsiJavaStubModelDescriptor.java" startLine="215" startPosition="38" endLine="216" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5735787482190088212" fileName="PsiJavaStubModelDescriptor.java" startLine="218" startPosition="56" endLine="219" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4993605534473688477" fileName="PsiJavaStubModelDescriptor.java" startLine="221" startPosition="9" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4993605534473624843" fileName="PsiJavaStubModelDescriptor.java" startLine="224" startPosition="7" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="300395514909653970" fileName="PsiJavaStubModelDescriptor.java" startLine="225" startPosition="0" endLine="226" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5998430924367471663" fileName="PsiJavaStubModelDescriptor.java" startLine="226" startPosition="32" endLine="227" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5998430924367459711" fileName="PsiJavaStubModelDescriptor.java" startLine="227" startPosition="14" endLine="228" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5998430924367447876" fileName="PsiJavaStubModelDescriptor.java" startLine="228" startPosition="14" endLine="229" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="300395514908544912" fileName="PsiJavaStubModelDescriptor.java" startLine="229" startPosition="14" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4993605534473521494" fileName="PsiJavaStubModelDescriptor.java" startLine="237" startPosition="58" endLine="238" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4993605534473462248" fileName="PsiJavaStubModelDescriptor.java" startLine="241" startPosition="36" endLine="242" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4993605534473427022" fileName="PsiJavaStubModelDescriptor.java" startLine="245" startPosition="46" endLine="246" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8368676337723713643" fileName="PsiJavaStubModelDescriptor.java" startLine="251" startPosition="62" endLine="252" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8368676337723760572" fileName="PsiJavaStubModelDescriptor.java" startLine="252" startPosition="115" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7053458875162107836" fileName="PsiJavaStubModelDescriptor.java" startLine="254" startPosition="48" endLine="255" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7053458875162111988" fileName="PsiJavaStubModelDescriptor.java" startLine="256" startPosition="24" endLine="257" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7053458875162112023" fileName="PsiJavaStubModelDescriptor.java" startLine="258" startPosition="7" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8368676337723568948" fileName="PsiJavaStubModelDescriptor.java" startLine="259" startPosition="0" endLine="260" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8368676337723640719" fileName="PsiJavaStubModelDescriptor.java" startLine="260" startPosition="115" endLine="261" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8368676337724117389" fileName="PsiJavaStubModelDescriptor.java" startLine="261" startPosition="79" endLine="262" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8368676337724152836" fileName="PsiJavaStubModelDescriptor.java" startLine="262" startPosition="100" endLine="263" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7927476882004877278" fileName="PsiJavaStubModelDescriptor.java" startLine="263" startPosition="44" endLine="264" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7927476882004886042" fileName="PsiJavaStubModelDescriptor.java" startLine="264" startPosition="59" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8368676337723773167" fileName="PsiJavaStubModelDescriptor.java" startLine="265" startPosition="0" endLine="266" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8368676337723916901" fileName="PsiJavaStubModelDescriptor.java" startLine="267" startPosition="5" endLine="268" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741302268784" fileName="PsiJavaStubModelDescriptor.java" startLine="273" startPosition="46" endLine="274" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741301836528" fileName="PsiJavaStubModelDescriptor.java" startLine="281" startPosition="55" endLine="282" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7414633741301829126" fileName="PsiJavaStubModelDescriptor.java" startLine="282" startPosition="27" endLine="283" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7414633741301300490" fileName="PsiJavaStubModelDescriptor.java" startLine="283" startPosition="35" endLine="284" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1526594102710867713" fileName="PsiJavaStubModelDescriptor.java" startLine="284" startPosition="81" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7414633741301853251" fileName="PsiJavaStubModelDescriptor.java" startLine="285" startPosition="0" endLine="286" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7414633741301930816" fileName="PsiJavaStubModelDescriptor.java" startLine="286" startPosition="49" endLine="287" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7414633741301969514" fileName="PsiJavaStubModelDescriptor.java" startLine="288" startPosition="31" endLine="289" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7414633741301986355" fileName="PsiJavaStubModelDescriptor.java" startLine="289" startPosition="65" endLine="290" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7414633741302008745" fileName="PsiJavaStubModelDescriptor.java" startLine="291" startPosition="7" endLine="292" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3491142982977987988" fileName="PsiJavaStubModelDescriptor.java" startLine="297" startPosition="49" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4055355515240159058" fileName="PsiJavaStubModelDescriptor.java" startLine="301" startPosition="41" endLine="302" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4055355515240424096" fileName="PsiJavaStubModelDescriptor.java" startLine="302" startPosition="45" endLine="303" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3491142982977995562" fileName="PsiJavaStubModelDescriptor.java" startLine="305" startPosition="11" endLine="306" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3491142982977995475" fileName="PsiJavaStubModelDescriptor.java" startLine="307" startPosition="7" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7414633741302653589" fileName="PsiJavaStubModelDescriptor.java" startLine="308" startPosition="0" endLine="309" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8309805082178881585" fileName="PsiJavaStubModelDescriptor.java" startLine="310" startPosition="31" endLine="311" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7414633741302704403" fileName="PsiJavaStubModelDescriptor.java" startLine="312" startPosition="7" endLine="313" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7414633741302756665" fileName="PsiJavaStubModelDescriptor.java" startLine="314" startPosition="39" endLine="315" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8368676337725128052" fileName="PsiJavaStubModelDescriptor.java" startLine="129" startPosition="51" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5735787482189908451" fileName="PsiJavaStubModelDescriptor.java" startLine="138" startPosition="0" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1639340979885815445" fileName="PsiJavaStubModelDescriptor.java" startLine="163" startPosition="52" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8876418788323960070" fileName="PsiJavaStubModelDescriptor.java" startLine="175" startPosition="0" endLine="178" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2227425914098988396" fileName="PsiJavaStubModelDescriptor.java" startLine="197" startPosition="34" endLine="200" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8368676338074676424" fileName="PsiJavaStubModelDescriptor.java" startLine="210" startPosition="53" endLine="213" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5735787482190072341" fileName="PsiJavaStubModelDescriptor.java" startLine="217" startPosition="11" endLine="220" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4993605534473427011" fileName="PsiJavaStubModelDescriptor.java" startLine="241" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFromDiskSafe#()V" />
-    <nodeInfo nodeId="4993605534473427016" fileName="PsiJavaStubModelDescriptor.java" startLine="245" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentModelInternal#()Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="7053458875162108790" fileName="PsiJavaStubModelDescriptor.java" startLine="255" startPosition="65" endLine="258" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5193526959107574916" fileName="PsiJavaStubModelDescriptor.java" startLine="273" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPsiSource#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/psi/PsiElement;" />
-    <nodeInfo nodeId="8309805082178879857" fileName="PsiJavaStubModelDescriptor.java" startLine="309" startPosition="85" endLine="312" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8876418788323976062" fileName="PsiJavaStubModelDescriptor.java" startLine="313" startPosition="65" endLine="316" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4489382664562003549" fileName="PsiJavaStubModelDescriptor.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLoaded#()Z" />
-    <nodeInfo nodeId="7024035785990328710" fileName="PsiJavaStubModelDescriptor.java" startLine="179" startPosition="0" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2227425914098988371" fileName="PsiJavaStubModelDescriptor.java" startLine="190" startPosition="59" endLine="194" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4993605534473483431" fileName="PsiJavaStubModelDescriptor.java" startLine="236" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processChanged#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-    <nodeInfo nodeId="7414633741301962964" fileName="PsiJavaStubModelDescriptor.java" startLine="287" startPosition="91" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3491142982977995549" fileName="PsiJavaStubModelDescriptor.java" startLine="301" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
-    <nodeInfo nodeId="3118313698925873540" fileName="PsiJavaStubModelDescriptor.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PsiJavaStubModelDescriptor#(Lorg/jetbrains/mps/openapi/model/SModelReference;Ljetbrains/mps/idea/java/psiStubs/JavaFilesHolder;)V" />
-    <nodeInfo nodeId="1221012164057476018" fileName="PsiJavaStubModelDescriptor.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/idea/java/psiStubs/JavaFilesHolder;" />
-    <nodeInfo nodeId="4423331261408452510" fileName="PsiJavaStubModelDescriptor.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attach#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-    <nodeInfo nodeId="4423331261408349098" fileName="PsiJavaStubModelDescriptor.java" startLine="76" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="3114726504304324745" fileName="PsiJavaStubModelDescriptor.java" startLine="107" startPosition="30" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6954894869194087225" fileName="PsiJavaStubModelDescriptor.java" startLine="152" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changed#(Lorg/jetbrains/mps/openapi/persistence/DataSource;)V" />
-    <nodeInfo nodeId="2227425914098988368" fileName="PsiJavaStubModelDescriptor.java" startLine="189" startPosition="41" endLine="195" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3491142982977995546" fileName="PsiJavaStubModelDescriptor.java" startLine="299" startPosition="70" endLine="305" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4489382664561168315" fileName="PsiJavaStubModelDescriptor.java" startLine="92" startPosition="50" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3114726504304240037" fileName="PsiJavaStubModelDescriptor.java" startLine="105" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
-    <nodeInfo nodeId="8876418788323973843" fileName="PsiJavaStubModelDescriptor.java" startLine="208" startPosition="0" endLine="217" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3491142982978010049" fileName="PsiJavaStubModelDescriptor.java" startLine="298" startPosition="0" endLine="307" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8876418788323952459" fileName="PsiJavaStubModelDescriptor.java" startLine="127" startPosition="0" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4489382664561163178" fileName="PsiJavaStubModelDescriptor.java" startLine="91" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelInternal#()Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="2227425914098988357" fileName="PsiJavaStubModelDescriptor.java" startLine="185" startPosition="54" endLine="196" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8876418788323974844" fileName="PsiJavaStubModelDescriptor.java" startLine="253" startPosition="0" endLine="267" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7414633741301299406" fileName="PsiJavaStubModelDescriptor.java" startLine="280" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Ljetbrains/mps/util/Pair;)V" />
-    <nodeInfo nodeId="8368676337723509379" fileName="PsiJavaStubModelDescriptor.java" startLine="251" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImports#([Lcom/intellij/psi/PsiImportStatementBase;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8876418788323951171" fileName="PsiJavaStubModelDescriptor.java" startLine="121" startPosition="9" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7414633741302646664" fileName="PsiJavaStubModelDescriptor.java" startLine="297" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearFile#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6632570505820334258" fileName="PsiJavaStubModelDescriptor.java" startLine="120" startPosition="0" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3118313698925888135" fileName="PsiJavaStubModelDescriptor.java" startLine="115" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadContents#(Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="8876418788323967047" fileName="PsiJavaStubModelDescriptor.java" startLine="184" startPosition="0" endLine="221" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4993605534473637543" fileName="PsiJavaStubModelDescriptor.java" startLine="172" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4993605534473612301" fileName="PsiJavaStubModelDescriptor.java" startLine="170" startPosition="0" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6954894869194087235" fileName="PsiJavaStubModelDescriptor.java" startLine="158" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changed#(Lorg/jetbrains/mps/openapi/persistence/DataSource;Ljetbrains/mps/idea/java/psiStubs/PsiJavaStubEvent;)V" />
-    <scopeInfo nodeId="1221012164057476021" fileName="PsiJavaStubModelDescriptor.java" startLine="66" startPosition="38" endLine="67" endPosition="24" />
-    <scopeInfo nodeId="4489382664562003558" fileName="PsiJavaStubModelDescriptor.java" startLine="85" startPosition="29" endLine="86" endPosition="27" />
-    <scopeInfo nodeId="8368676337725128054" fileName="PsiJavaStubModelDescriptor.java" startLine="130" startPosition="102" endLine="131" endPosition="272" />
-    <scopeInfo nodeId="5735787482189908453" fileName="PsiJavaStubModelDescriptor.java" startLine="139" startPosition="54" endLine="140" endPosition="71" />
-    <scopeInfo nodeId="6632570505820334261" fileName="PsiJavaStubModelDescriptor.java" startLine="147" startPosition="15" endLine="148" endPosition="21" />
-    <scopeInfo nodeId="1639340979885815447" fileName="PsiJavaStubModelDescriptor.java" startLine="164" startPosition="26" endLine="165" endPosition="13" />
-    <scopeInfo nodeId="6954894869194090294" fileName="PsiJavaStubModelDescriptor.java" startLine="176" startPosition="50" endLine="177" endPosition="52" />
-    <scopeInfo nodeId="2227425914098988401" fileName="PsiJavaStubModelDescriptor.java" startLine="198" startPosition="34" endLine="199" endPosition="21" />
-    <scopeInfo nodeId="8368676338074676429" fileName="PsiJavaStubModelDescriptor.java" startLine="211" startPosition="104" endLine="212" endPosition="274" />
-    <scopeInfo nodeId="5735787482190072343" fileName="PsiJavaStubModelDescriptor.java" startLine="218" startPosition="56" endLine="219" endPosition="75" />
-    <scopeInfo nodeId="4993605534473483437" fileName="PsiJavaStubModelDescriptor.java" startLine="237" startPosition="58" endLine="238" endPosition="49" />
-    <scopeInfo nodeId="4993605534473427015" fileName="PsiJavaStubModelDescriptor.java" startLine="241" startPosition="36" endLine="242" endPosition="16" />
-    <scopeInfo nodeId="4993605534473427020" fileName="PsiJavaStubModelDescriptor.java" startLine="245" startPosition="46" endLine="246" endPosition="19" />
-    <scopeInfo nodeId="7053458875162108793" fileName="PsiJavaStubModelDescriptor.java" startLine="256" startPosition="24" endLine="257" endPosition="17" />
-    <scopeInfo nodeId="5193526959107574919" fileName="PsiJavaStubModelDescriptor.java" startLine="273" startPosition="46" endLine="274" endPosition="77" />
-    <scopeInfo nodeId="8309805082178879860" fileName="PsiJavaStubModelDescriptor.java" startLine="310" startPosition="31" endLine="311" endPosition="15" />
-    <scopeInfo nodeId="7414633741302724873" fileName="PsiJavaStubModelDescriptor.java" startLine="314" startPosition="39" endLine="315" endPosition="68" />
-    <scopeInfo nodeId="4423331261408452513" fileName="PsiJavaStubModelDescriptor.java" startLine="71" startPosition="46" endLine="73" endPosition="35" />
-    <scopeInfo nodeId="4423331261408349101" fileName="PsiJavaStubModelDescriptor.java" startLine="77" startPosition="25" endLine="79" endPosition="38" />
-    <scopeInfo nodeId="6632570505820039836" fileName="PsiJavaStubModelDescriptor.java" startLine="144" startPosition="0" endLine="146" endPosition="0">
+    <nodeInfo nodeId="6632570505820995656" fileName="PsiJavaStubModelDescriptor.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6954894869197912899" fileName="PsiJavaStubModelDescriptor.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRef" />
+    <nodeInfo nodeId="4489382664561166473" fileName="PsiJavaStubModelDescriptor.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="3118313698926201527" fileName="PsiJavaStubModelDescriptor.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDataSource" />
+    <nodeInfo nodeId="5735787482189895601" fileName="PsiJavaStubModelDescriptor.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootsPerFile" />
+    <nodeInfo nodeId="3609737829697227052" fileName="PsiJavaStubModelDescriptor.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAllNodesPerFile" />
+    <nodeInfo nodeId="7414633741298594825" fileName="PsiJavaStubModelDescriptor.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalMps2PsiMapping" />
+    <nodeInfo nodeId="7414633741301483970" fileName="PsiJavaStubModelDescriptor.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMps2PsiMapper" />
+    <nodeInfo nodeId="3787279355017530249" fileName="PsiJavaStubModelDescriptor.java" startLine="57" startPosition="91" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6954894869197916013" fileName="PsiJavaStubModelDescriptor.java" startLine="58" startPosition="32" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3118313698926211493" fileName="PsiJavaStubModelDescriptor.java" startLine="59" startPosition="26" endLine="60" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221012164057510537" fileName="PsiJavaStubModelDescriptor.java" startLine="65" startPosition="38" endLine="66" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6632570505821958935" fileName="PsiJavaStubModelDescriptor.java" startLine="70" startPosition="46" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4423331261408489368" fileName="PsiJavaStubModelDescriptor.java" startLine="71" startPosition="29" endLine="72" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6632570505821962319" fileName="PsiJavaStubModelDescriptor.java" startLine="76" startPosition="25" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4423331261408411795" fileName="PsiJavaStubModelDescriptor.java" startLine="77" startPosition="20" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4489382664562003560" fileName="PsiJavaStubModelDescriptor.java" startLine="84" startPosition="29" endLine="85" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6632570505820820665" fileName="PsiJavaStubModelDescriptor.java" startLine="92" startPosition="26" endLine="93" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2477939527846467193" fileName="PsiJavaStubModelDescriptor.java" startLine="93" startPosition="40" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4489382664561170836" fileName="PsiJavaStubModelDescriptor.java" startLine="94" startPosition="22" endLine="95" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6632570505820855030" fileName="PsiJavaStubModelDescriptor.java" startLine="95" startPosition="33" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6632570505820858378" fileName="PsiJavaStubModelDescriptor.java" startLine="96" startPosition="0" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4489382664561168717" fileName="PsiJavaStubModelDescriptor.java" startLine="98" startPosition="5" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3114726504304316909" fileName="PsiJavaStubModelDescriptor.java" startLine="104" startPosition="24" endLine="105" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3114726504304321715" fileName="PsiJavaStubModelDescriptor.java" startLine="105" startPosition="35" endLine="106" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3114726504304326069" fileName="PsiJavaStubModelDescriptor.java" startLine="107" startPosition="27" endLine="108" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3114726504304330888" fileName="PsiJavaStubModelDescriptor.java" startLine="108" startPosition="40" endLine="109" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3114726504304332614" fileName="PsiJavaStubModelDescriptor.java" startLine="109" startPosition="21" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6632570505820399116" fileName="PsiJavaStubModelDescriptor.java" startLine="114" startPosition="42" endLine="115" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6632570505820502767" fileName="PsiJavaStubModelDescriptor.java" startLine="115" startPosition="76" endLine="116" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6632570505820643554" fileName="PsiJavaStubModelDescriptor.java" startLine="116" startPosition="81" endLine="117" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6632570505820222347" fileName="PsiJavaStubModelDescriptor.java" startLine="117" startPosition="78" endLine="118" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6632570505820374062" fileName="PsiJavaStubModelDescriptor.java" startLine="118" startPosition="100" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8368676337723391877" fileName="PsiJavaStubModelDescriptor.java" startLine="121" startPosition="58" endLine="122" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3609737829698142273" fileName="PsiJavaStubModelDescriptor.java" startLine="122" startPosition="84" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3609737829697884147" fileName="PsiJavaStubModelDescriptor.java" startLine="123" startPosition="0" endLine="124" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5735787482189904038" fileName="PsiJavaStubModelDescriptor.java" startLine="124" startPosition="67" endLine="125" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5735787482189906044" fileName="PsiJavaStubModelDescriptor.java" startLine="125" startPosition="73" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3118313698926127089" fileName="PsiJavaStubModelDescriptor.java" startLine="127" startPosition="46" endLine="128" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8368676337725194339" fileName="PsiJavaStubModelDescriptor.java" startLine="129" startPosition="102" endLine="130" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5735787482190122944" fileName="PsiJavaStubModelDescriptor.java" startLine="131" startPosition="11" endLine="132" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5735787482190123033" fileName="PsiJavaStubModelDescriptor.java" startLine="132" startPosition="101" endLine="133" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4189694690332309675" fileName="PsiJavaStubModelDescriptor.java" startLine="133" startPosition="51" endLine="134" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5735787482189943993" fileName="PsiJavaStubModelDescriptor.java" startLine="134" startPosition="33" endLine="135" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5735787482189908331" fileName="PsiJavaStubModelDescriptor.java" startLine="136" startPosition="9" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5735787482189923790" fileName="PsiJavaStubModelDescriptor.java" startLine="138" startPosition="54" endLine="139" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6632570505820039834" fileName="PsiJavaStubModelDescriptor.java" startLine="141" startPosition="7" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6632570505820069269" fileName="PsiJavaStubModelDescriptor.java" startLine="143" startPosition="27" endLine="144" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6632570505821335549" fileName="PsiJavaStubModelDescriptor.java" startLine="144" startPosition="115" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6632570505820347441" fileName="PsiJavaStubModelDescriptor.java" startLine="146" startPosition="15" endLine="147" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6954894869196986124" fileName="PsiJavaStubModelDescriptor.java" startLine="152" startPosition="42" endLine="153" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5507346265626867637" fileName="PsiJavaStubModelDescriptor.java" startLine="153" startPosition="48" endLine="154" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1639340979885799610" fileName="PsiJavaStubModelDescriptor.java" startLine="158" startPosition="85" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="300395514908454153" fileName="PsiJavaStubModelDescriptor.java" startLine="159" startPosition="0" endLine="160" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="300395514908438585" fileName="PsiJavaStubModelDescriptor.java" startLine="160" startPosition="56" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1639340979885857760" fileName="PsiJavaStubModelDescriptor.java" startLine="161" startPosition="0" endLine="162" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1639340979885856768" fileName="PsiJavaStubModelDescriptor.java" startLine="163" startPosition="26" endLine="164" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4055355515237801520" fileName="PsiJavaStubModelDescriptor.java" startLine="165" startPosition="5" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4055355515237822640" fileName="PsiJavaStubModelDescriptor.java" startLine="166" startPosition="0" endLine="167" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5998430924367299863" fileName="PsiJavaStubModelDescriptor.java" startLine="167" startPosition="59" endLine="168" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5998430924367312913" fileName="PsiJavaStubModelDescriptor.java" startLine="168" startPosition="32" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4993605534473753626" fileName="PsiJavaStubModelDescriptor.java" startLine="171" startPosition="25" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4993605534473637670" fileName="PsiJavaStubModelDescriptor.java" startLine="172" startPosition="0" endLine="173" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5998430924367102426" fileName="PsiJavaStubModelDescriptor.java" startLine="173" startPosition="30" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7414633741303241581" fileName="PsiJavaStubModelDescriptor.java" startLine="175" startPosition="50" endLine="176" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7024035785990328685" fileName="PsiJavaStubModelDescriptor.java" startLine="177" startPosition="9" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7024035785990362629" fileName="PsiJavaStubModelDescriptor.java" startLine="179" startPosition="65" endLine="180" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7024035785990373194" fileName="PsiJavaStubModelDescriptor.java" startLine="180" startPosition="42" endLine="181" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5998430924366963337" fileName="PsiJavaStubModelDescriptor.java" startLine="182" startPosition="9" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5507346265627009532" fileName="PsiJavaStubModelDescriptor.java" startLine="185" startPosition="34" endLine="186" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5507346265627009544" fileName="PsiJavaStubModelDescriptor.java" startLine="186" startPosition="85" endLine="187" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2227425914098988364" fileName="PsiJavaStubModelDescriptor.java" startLine="187" startPosition="64" endLine="188" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2227425914098988382" fileName="PsiJavaStubModelDescriptor.java" startLine="190" startPosition="73" endLine="191" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2227425914098988388" fileName="PsiJavaStubModelDescriptor.java" startLine="191" startPosition="39" endLine="192" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5507346265627009556" fileName="PsiJavaStubModelDescriptor.java" startLine="195" startPosition="11" endLine="196" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2227425914098988402" fileName="PsiJavaStubModelDescriptor.java" startLine="197" startPosition="34" endLine="198" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8368676338074535998" fileName="PsiJavaStubModelDescriptor.java" startLine="199" startPosition="11" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1526594102710725247" fileName="PsiJavaStubModelDescriptor.java" startLine="200" startPosition="0" endLine="201" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1526594102711294514" fileName="PsiJavaStubModelDescriptor.java" startLine="201" startPosition="52" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8368676338074570535" fileName="PsiJavaStubModelDescriptor.java" startLine="202" startPosition="0" endLine="203" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6954894869194119674" fileName="PsiJavaStubModelDescriptor.java" startLine="203" startPosition="88" endLine="204" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3609737829698241602" fileName="PsiJavaStubModelDescriptor.java" startLine="204" startPosition="69" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5735787482190047593" fileName="PsiJavaStubModelDescriptor.java" startLine="205" startPosition="0" endLine="206" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5735787482190053144" fileName="PsiJavaStubModelDescriptor.java" startLine="206" startPosition="75" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6954894869194114729" fileName="PsiJavaStubModelDescriptor.java" startLine="208" startPosition="50" endLine="209" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8368676338074676430" fileName="PsiJavaStubModelDescriptor.java" startLine="210" startPosition="104" endLine="211" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1526594102711024690" fileName="PsiJavaStubModelDescriptor.java" startLine="212" startPosition="13" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1526594102711025231" fileName="PsiJavaStubModelDescriptor.java" startLine="213" startPosition="0" endLine="214" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5735787482190053362" fileName="PsiJavaStubModelDescriptor.java" startLine="214" startPosition="38" endLine="215" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5735787482190088212" fileName="PsiJavaStubModelDescriptor.java" startLine="217" startPosition="56" endLine="218" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4993605534473688477" fileName="PsiJavaStubModelDescriptor.java" startLine="220" startPosition="9" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4993605534473624843" fileName="PsiJavaStubModelDescriptor.java" startLine="223" startPosition="7" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="300395514909653970" fileName="PsiJavaStubModelDescriptor.java" startLine="224" startPosition="0" endLine="225" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5998430924367471663" fileName="PsiJavaStubModelDescriptor.java" startLine="225" startPosition="32" endLine="226" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5998430924367459711" fileName="PsiJavaStubModelDescriptor.java" startLine="226" startPosition="14" endLine="227" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5998430924367447876" fileName="PsiJavaStubModelDescriptor.java" startLine="227" startPosition="14" endLine="228" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="300395514908544912" fileName="PsiJavaStubModelDescriptor.java" startLine="228" startPosition="14" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5726387233345667316" fileName="PsiJavaStubModelDescriptor.java" startLine="236" startPosition="35" endLine="237" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4993605534473462248" fileName="PsiJavaStubModelDescriptor.java" startLine="240" startPosition="36" endLine="241" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4993605534473427022" fileName="PsiJavaStubModelDescriptor.java" startLine="244" startPosition="46" endLine="245" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8368676337723713643" fileName="PsiJavaStubModelDescriptor.java" startLine="250" startPosition="62" endLine="251" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8368676337723760572" fileName="PsiJavaStubModelDescriptor.java" startLine="251" startPosition="115" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7053458875162107836" fileName="PsiJavaStubModelDescriptor.java" startLine="253" startPosition="48" endLine="254" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7053458875162111988" fileName="PsiJavaStubModelDescriptor.java" startLine="255" startPosition="24" endLine="256" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7053458875162112023" fileName="PsiJavaStubModelDescriptor.java" startLine="257" startPosition="7" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8368676337723568948" fileName="PsiJavaStubModelDescriptor.java" startLine="258" startPosition="0" endLine="259" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8368676337723640719" fileName="PsiJavaStubModelDescriptor.java" startLine="259" startPosition="115" endLine="260" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8368676337724117389" fileName="PsiJavaStubModelDescriptor.java" startLine="260" startPosition="79" endLine="261" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8368676337724152836" fileName="PsiJavaStubModelDescriptor.java" startLine="261" startPosition="100" endLine="262" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7927476882004877278" fileName="PsiJavaStubModelDescriptor.java" startLine="262" startPosition="44" endLine="263" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7927476882004886042" fileName="PsiJavaStubModelDescriptor.java" startLine="263" startPosition="59" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8368676337723773167" fileName="PsiJavaStubModelDescriptor.java" startLine="264" startPosition="0" endLine="265" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8368676337723916901" fileName="PsiJavaStubModelDescriptor.java" startLine="266" startPosition="5" endLine="267" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741302268784" fileName="PsiJavaStubModelDescriptor.java" startLine="272" startPosition="46" endLine="273" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741301836528" fileName="PsiJavaStubModelDescriptor.java" startLine="280" startPosition="55" endLine="281" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741301829126" fileName="PsiJavaStubModelDescriptor.java" startLine="281" startPosition="27" endLine="282" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741301300490" fileName="PsiJavaStubModelDescriptor.java" startLine="282" startPosition="35" endLine="283" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1526594102710867713" fileName="PsiJavaStubModelDescriptor.java" startLine="283" startPosition="81" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7414633741301853251" fileName="PsiJavaStubModelDescriptor.java" startLine="284" startPosition="0" endLine="285" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741301930816" fileName="PsiJavaStubModelDescriptor.java" startLine="285" startPosition="49" endLine="286" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7414633741301969514" fileName="PsiJavaStubModelDescriptor.java" startLine="287" startPosition="31" endLine="288" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7414633741301986355" fileName="PsiJavaStubModelDescriptor.java" startLine="288" startPosition="65" endLine="289" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7414633741302008745" fileName="PsiJavaStubModelDescriptor.java" startLine="290" startPosition="7" endLine="291" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3491142982977987988" fileName="PsiJavaStubModelDescriptor.java" startLine="296" startPosition="49" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4055355515240159058" fileName="PsiJavaStubModelDescriptor.java" startLine="300" startPosition="41" endLine="301" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4055355515240424096" fileName="PsiJavaStubModelDescriptor.java" startLine="301" startPosition="45" endLine="302" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3491142982977995562" fileName="PsiJavaStubModelDescriptor.java" startLine="304" startPosition="11" endLine="305" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3491142982977995475" fileName="PsiJavaStubModelDescriptor.java" startLine="306" startPosition="7" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7414633741302653589" fileName="PsiJavaStubModelDescriptor.java" startLine="307" startPosition="0" endLine="308" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8309805082178881585" fileName="PsiJavaStubModelDescriptor.java" startLine="309" startPosition="31" endLine="310" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7414633741302704403" fileName="PsiJavaStubModelDescriptor.java" startLine="311" startPosition="7" endLine="312" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7414633741302756665" fileName="PsiJavaStubModelDescriptor.java" startLine="313" startPosition="39" endLine="314" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8368676337725128052" fileName="PsiJavaStubModelDescriptor.java" startLine="128" startPosition="51" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5735787482189908451" fileName="PsiJavaStubModelDescriptor.java" startLine="137" startPosition="0" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1639340979885815445" fileName="PsiJavaStubModelDescriptor.java" startLine="162" startPosition="52" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8876418788323960070" fileName="PsiJavaStubModelDescriptor.java" startLine="174" startPosition="0" endLine="177" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2227425914098988396" fileName="PsiJavaStubModelDescriptor.java" startLine="196" startPosition="34" endLine="199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8368676338074676424" fileName="PsiJavaStubModelDescriptor.java" startLine="209" startPosition="53" endLine="212" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5735787482190072341" fileName="PsiJavaStubModelDescriptor.java" startLine="216" startPosition="11" endLine="219" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4993605534473427011" fileName="PsiJavaStubModelDescriptor.java" startLine="240" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFromDiskSafe#()V" />
+    <nodeInfo nodeId="4993605534473427016" fileName="PsiJavaStubModelDescriptor.java" startLine="244" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentModelInternal#()Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="7053458875162108790" fileName="PsiJavaStubModelDescriptor.java" startLine="254" startPosition="65" endLine="257" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5193526959107574916" fileName="PsiJavaStubModelDescriptor.java" startLine="272" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPsiSource#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/psi/PsiElement;" />
+    <nodeInfo nodeId="8309805082178879857" fileName="PsiJavaStubModelDescriptor.java" startLine="308" startPosition="85" endLine="311" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8876418788323976062" fileName="PsiJavaStubModelDescriptor.java" startLine="312" startPosition="65" endLine="315" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4489382664562003549" fileName="PsiJavaStubModelDescriptor.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLoaded#()Z" />
+    <nodeInfo nodeId="7024035785990328710" fileName="PsiJavaStubModelDescriptor.java" startLine="178" startPosition="0" endLine="182" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2227425914098988371" fileName="PsiJavaStubModelDescriptor.java" startLine="189" startPosition="59" endLine="193" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5726387233345634912" fileName="PsiJavaStubModelDescriptor.java" startLine="235" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsReloading#()Z" />
+    <nodeInfo nodeId="7414633741301962964" fileName="PsiJavaStubModelDescriptor.java" startLine="286" startPosition="91" endLine="290" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3491142982977995549" fileName="PsiJavaStubModelDescriptor.java" startLine="300" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
+    <nodeInfo nodeId="3118313698925873540" fileName="PsiJavaStubModelDescriptor.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PsiJavaStubModelDescriptor#(Lorg/jetbrains/mps/openapi/model/SModelReference;Ljetbrains/mps/idea/java/psiStubs/JavaFilesHolder;)V" />
+    <nodeInfo nodeId="1221012164057476018" fileName="PsiJavaStubModelDescriptor.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/idea/java/psiStubs/JavaFilesHolder;" />
+    <nodeInfo nodeId="4423331261408452510" fileName="PsiJavaStubModelDescriptor.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attach#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+    <nodeInfo nodeId="4423331261408349098" fileName="PsiJavaStubModelDescriptor.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3114726504304324745" fileName="PsiJavaStubModelDescriptor.java" startLine="106" startPosition="30" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6954894869194087225" fileName="PsiJavaStubModelDescriptor.java" startLine="151" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changed#(Lorg/jetbrains/mps/openapi/persistence/DataSource;)V" />
+    <nodeInfo nodeId="2227425914098988368" fileName="PsiJavaStubModelDescriptor.java" startLine="188" startPosition="41" endLine="194" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3491142982977995546" fileName="PsiJavaStubModelDescriptor.java" startLine="298" startPosition="70" endLine="304" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4489382664561168315" fileName="PsiJavaStubModelDescriptor.java" startLine="91" startPosition="50" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3114726504304240037" fileName="PsiJavaStubModelDescriptor.java" startLine="104" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
+    <nodeInfo nodeId="8876418788323973843" fileName="PsiJavaStubModelDescriptor.java" startLine="207" startPosition="0" endLine="216" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3491142982978010049" fileName="PsiJavaStubModelDescriptor.java" startLine="297" startPosition="0" endLine="306" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8876418788323952459" fileName="PsiJavaStubModelDescriptor.java" startLine="126" startPosition="0" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4489382664561163178" fileName="PsiJavaStubModelDescriptor.java" startLine="90" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelInternal#()Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="2227425914098988357" fileName="PsiJavaStubModelDescriptor.java" startLine="184" startPosition="54" endLine="195" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8876418788323974844" fileName="PsiJavaStubModelDescriptor.java" startLine="252" startPosition="0" endLine="266" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7414633741301299406" fileName="PsiJavaStubModelDescriptor.java" startLine="279" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Ljetbrains/mps/util/Pair;)V" />
+    <nodeInfo nodeId="8368676337723509379" fileName="PsiJavaStubModelDescriptor.java" startLine="250" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImports#([Lcom/intellij/psi/PsiImportStatementBase;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8876418788323951171" fileName="PsiJavaStubModelDescriptor.java" startLine="120" startPosition="9" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7414633741302646664" fileName="PsiJavaStubModelDescriptor.java" startLine="296" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearFile#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6632570505820334258" fileName="PsiJavaStubModelDescriptor.java" startLine="119" startPosition="0" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="3118313698925888135" fileName="PsiJavaStubModelDescriptor.java" startLine="114" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadContents#(Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="8876418788323967047" fileName="PsiJavaStubModelDescriptor.java" startLine="183" startPosition="0" endLine="220" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4993605534473637543" fileName="PsiJavaStubModelDescriptor.java" startLine="171" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4993605534473612301" fileName="PsiJavaStubModelDescriptor.java" startLine="169" startPosition="0" endLine="223" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6954894869194087235" fileName="PsiJavaStubModelDescriptor.java" startLine="157" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changed#(Lorg/jetbrains/mps/openapi/persistence/DataSource;Ljetbrains/mps/idea/java/psiStubs/PsiJavaStubEvent;)V" />
+    <scopeInfo nodeId="1221012164057476021" fileName="PsiJavaStubModelDescriptor.java" startLine="65" startPosition="38" endLine="66" endPosition="24" />
+    <scopeInfo nodeId="4489382664562003558" fileName="PsiJavaStubModelDescriptor.java" startLine="84" startPosition="29" endLine="85" endPosition="27" />
+    <scopeInfo nodeId="8368676337725128054" fileName="PsiJavaStubModelDescriptor.java" startLine="129" startPosition="102" endLine="130" endPosition="272" />
+    <scopeInfo nodeId="5735787482189908453" fileName="PsiJavaStubModelDescriptor.java" startLine="138" startPosition="54" endLine="139" endPosition="71" />
+    <scopeInfo nodeId="6632570505820334261" fileName="PsiJavaStubModelDescriptor.java" startLine="146" startPosition="15" endLine="147" endPosition="21" />
+    <scopeInfo nodeId="1639340979885815447" fileName="PsiJavaStubModelDescriptor.java" startLine="163" startPosition="26" endLine="164" endPosition="13" />
+    <scopeInfo nodeId="6954894869194090294" fileName="PsiJavaStubModelDescriptor.java" startLine="175" startPosition="50" endLine="176" endPosition="52" />
+    <scopeInfo nodeId="2227425914098988401" fileName="PsiJavaStubModelDescriptor.java" startLine="197" startPosition="34" endLine="198" endPosition="21" />
+    <scopeInfo nodeId="8368676338074676429" fileName="PsiJavaStubModelDescriptor.java" startLine="210" startPosition="104" endLine="211" endPosition="274" />
+    <scopeInfo nodeId="5735787482190072343" fileName="PsiJavaStubModelDescriptor.java" startLine="217" startPosition="56" endLine="218" endPosition="75" />
+    <scopeInfo nodeId="5726387233345634916" fileName="PsiJavaStubModelDescriptor.java" startLine="236" startPosition="35" endLine="237" endPosition="17" />
+    <scopeInfo nodeId="4993605534473427015" fileName="PsiJavaStubModelDescriptor.java" startLine="240" startPosition="36" endLine="241" endPosition="16" />
+    <scopeInfo nodeId="4993605534473427020" fileName="PsiJavaStubModelDescriptor.java" startLine="244" startPosition="46" endLine="245" endPosition="19" />
+    <scopeInfo nodeId="7053458875162108793" fileName="PsiJavaStubModelDescriptor.java" startLine="255" startPosition="24" endLine="256" endPosition="17" />
+    <scopeInfo nodeId="5193526959107574919" fileName="PsiJavaStubModelDescriptor.java" startLine="272" startPosition="46" endLine="273" endPosition="77" />
+    <scopeInfo nodeId="8309805082178879860" fileName="PsiJavaStubModelDescriptor.java" startLine="309" startPosition="31" endLine="310" endPosition="15" />
+    <scopeInfo nodeId="7414633741302724873" fileName="PsiJavaStubModelDescriptor.java" startLine="313" startPosition="39" endLine="314" endPosition="68" />
+    <scopeInfo nodeId="4423331261408452513" fileName="PsiJavaStubModelDescriptor.java" startLine="70" startPosition="46" endLine="72" endPosition="35" />
+    <scopeInfo nodeId="4423331261408349101" fileName="PsiJavaStubModelDescriptor.java" startLine="76" startPosition="25" endLine="78" endPosition="38" />
+    <scopeInfo nodeId="6632570505820039836" fileName="PsiJavaStubModelDescriptor.java" startLine="143" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="6632570505820039838" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6632570505820039842" fileName="PsiJavaStubModelDescriptor.java" startLine="144" startPosition="27" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="6954894869194087234" fileName="PsiJavaStubModelDescriptor.java" startLine="153" startPosition="42" endLine="155" endPosition="58" />
-    <scopeInfo nodeId="7024035785990328713" fileName="PsiJavaStubModelDescriptor.java" startLine="180" startPosition="65" endLine="182" endPosition="45">
+    <scopeInfo nodeId="6632570505820039842" fileName="PsiJavaStubModelDescriptor.java" startLine="143" startPosition="27" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="6954894869194087234" fileName="PsiJavaStubModelDescriptor.java" startLine="152" startPosition="42" endLine="154" endPosition="58" />
+    <scopeInfo nodeId="7024035785990328713" fileName="PsiJavaStubModelDescriptor.java" startLine="179" startPosition="65" endLine="181" endPosition="45">
       <varInfo nodeId="7024035785990362632" varName="oldName" />
     </scopeInfo>
-    <scopeInfo nodeId="2227425914098988381" fileName="PsiJavaStubModelDescriptor.java" startLine="191" startPosition="73" endLine="193" endPosition="22" />
-    <scopeInfo nodeId="7414633741301962966" fileName="PsiJavaStubModelDescriptor.java" startLine="288" startPosition="31" endLine="290" endPosition="79" />
-    <scopeInfo nodeId="3491142982977995550" fileName="PsiJavaStubModelDescriptor.java" startLine="301" startPosition="41" endLine="303" endPosition="41">
+    <scopeInfo nodeId="2227425914098988381" fileName="PsiJavaStubModelDescriptor.java" startLine="190" startPosition="73" endLine="192" endPosition="22" />
+    <scopeInfo nodeId="7414633741301962966" fileName="PsiJavaStubModelDescriptor.java" startLine="287" startPosition="31" endLine="289" endPosition="79" />
+    <scopeInfo nodeId="3491142982977995550" fileName="PsiJavaStubModelDescriptor.java" startLine="300" startPosition="41" endLine="302" endPosition="41">
       <varInfo nodeId="4055355515240159061" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3118313698925873543" fileName="PsiJavaStubModelDescriptor.java" startLine="58" startPosition="91" endLine="61" endPosition="30" />
-    <scopeInfo nodeId="3114726504304324748" fileName="PsiJavaStubModelDescriptor.java" startLine="108" startPosition="27" endLine="111" endPosition="58" />
-    <scopeInfo nodeId="8876418788323960070" fileName="PsiJavaStubModelDescriptor.java" startLine="175" startPosition="0" endLine="178" endPosition="9">
+    <scopeInfo nodeId="3118313698925873543" fileName="PsiJavaStubModelDescriptor.java" startLine="57" startPosition="91" endLine="60" endPosition="30" />
+    <scopeInfo nodeId="3114726504304324748" fileName="PsiJavaStubModelDescriptor.java" startLine="107" startPosition="27" endLine="110" endPosition="58" />
+    <scopeInfo nodeId="8876418788323960070" fileName="PsiJavaStubModelDescriptor.java" startLine="174" startPosition="0" endLine="177" endPosition="9">
       <varInfo nodeId="8876418788323960250" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4993605534473427011" fileName="PsiJavaStubModelDescriptor.java" startLine="241" startPosition="0" endLine="244" endPosition="0" />
-    <scopeInfo nodeId="4993605534473427016" fileName="PsiJavaStubModelDescriptor.java" startLine="245" startPosition="0" endLine="248" endPosition="0" />
-    <scopeInfo nodeId="5193526959107574916" fileName="PsiJavaStubModelDescriptor.java" startLine="273" startPosition="0" endLine="276" endPosition="0">
+    <scopeInfo nodeId="4993605534473427011" fileName="PsiJavaStubModelDescriptor.java" startLine="240" startPosition="0" endLine="243" endPosition="0" />
+    <scopeInfo nodeId="4993605534473427016" fileName="PsiJavaStubModelDescriptor.java" startLine="244" startPosition="0" endLine="247" endPosition="0" />
+    <scopeInfo nodeId="5193526959107574916" fileName="PsiJavaStubModelDescriptor.java" startLine="272" startPosition="0" endLine="275" endPosition="0">
       <varInfo nodeId="5193526959107613546" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8876418788323976062" fileName="PsiJavaStubModelDescriptor.java" startLine="313" startPosition="65" endLine="316" endPosition="7">
+    <scopeInfo nodeId="8876418788323976062" fileName="PsiJavaStubModelDescriptor.java" startLine="312" startPosition="65" endLine="315" endPosition="7">
       <varInfo nodeId="8876418788323976106" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4489382664562003549" fileName="PsiJavaStubModelDescriptor.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="7024035785990328710" fileName="PsiJavaStubModelDescriptor.java" startLine="179" startPosition="0" endLine="183" endPosition="9">
+    <scopeInfo nodeId="4489382664562003549" fileName="PsiJavaStubModelDescriptor.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="7024035785990328710" fileName="PsiJavaStubModelDescriptor.java" startLine="178" startPosition="0" endLine="182" endPosition="9">
       <varInfo nodeId="7024035785990328716" varName="rename" />
     </scopeInfo>
-    <scopeInfo nodeId="2227425914098988370" fileName="PsiJavaStubModelDescriptor.java" startLine="190" startPosition="59" endLine="194" endPosition="15" />
-    <scopeInfo nodeId="4993605534473483431" fileName="PsiJavaStubModelDescriptor.java" startLine="236" startPosition="0" endLine="240" endPosition="0">
-      <varInfo nodeId="4993605534473483435" varName="monitor" />
-    </scopeInfo>
-    <scopeInfo nodeId="3491142982977995549" fileName="PsiJavaStubModelDescriptor.java" startLine="301" startPosition="0" endLine="305" endPosition="0">
+    <scopeInfo nodeId="2227425914098988370" fileName="PsiJavaStubModelDescriptor.java" startLine="189" startPosition="59" endLine="193" endPosition="15" />
+    <scopeInfo nodeId="5726387233345634912" fileName="PsiJavaStubModelDescriptor.java" startLine="235" startPosition="0" endLine="239" endPosition="0" />
+    <scopeInfo nodeId="3491142982977995549" fileName="PsiJavaStubModelDescriptor.java" startLine="300" startPosition="0" endLine="304" endPosition="0">
       <varInfo nodeId="3491142982977995549" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3118313698925873540" fileName="PsiJavaStubModelDescriptor.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="3118313698925873540" fileName="PsiJavaStubModelDescriptor.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3118313698926201058" varName="dataSource" />
       <varInfo nodeId="3118313698925920044" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="1221012164057476018" fileName="PsiJavaStubModelDescriptor.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="4423331261408452510" fileName="PsiJavaStubModelDescriptor.java" startLine="70" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="1221012164057476018" fileName="PsiJavaStubModelDescriptor.java" startLine="63" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4423331261408452510" fileName="PsiJavaStubModelDescriptor.java" startLine="69" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="7810916565571229877" varName="repository" />
     </scopeInfo>
-    <scopeInfo nodeId="4423331261408349098" fileName="PsiJavaStubModelDescriptor.java" startLine="76" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="4489382664561168316" fileName="PsiJavaStubModelDescriptor.java" startLine="93" startPosition="26" endLine="98" endPosition="18">
+    <scopeInfo nodeId="4423331261408349098" fileName="PsiJavaStubModelDescriptor.java" startLine="75" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="4489382664561168316" fileName="PsiJavaStubModelDescriptor.java" startLine="92" startPosition="26" endLine="97" endPosition="18">
       <varInfo nodeId="6632570505820820666" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="6954894869194087225" fileName="PsiJavaStubModelDescriptor.java" startLine="152" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="6954894869194087225" fileName="PsiJavaStubModelDescriptor.java" startLine="151" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="6954894869194087229" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="2227425914098988368" fileName="PsiJavaStubModelDescriptor.java" startLine="189" startPosition="41" endLine="195" endPosition="13">
+    <scopeInfo nodeId="2227425914098988368" fileName="PsiJavaStubModelDescriptor.java" startLine="188" startPosition="41" endLine="194" endPosition="13">
       <varInfo nodeId="2227425914098988389" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3114726504304240046" fileName="PsiJavaStubModelDescriptor.java" startLine="105" startPosition="24" endLine="112" endPosition="5">
+    <scopeInfo nodeId="3114726504304240046" fileName="PsiJavaStubModelDescriptor.java" startLine="104" startPosition="24" endLine="111" endPosition="5">
       <varInfo nodeId="3114726504304321716" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6954894869194114728" fileName="PsiJavaStubModelDescriptor.java" startLine="209" startPosition="50" endLine="216" endPosition="68">
+    <scopeInfo nodeId="6954894869194114728" fileName="PsiJavaStubModelDescriptor.java" startLine="208" startPosition="50" endLine="215" endPosition="68">
       <varInfo nodeId="6954894869194114730" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3491142982978010052" fileName="PsiJavaStubModelDescriptor.java" startLine="299" startPosition="70" endLine="306" endPosition="64" />
-    <scopeInfo nodeId="4489382664561163181" fileName="PsiJavaStubModelDescriptor.java" startLine="92" startPosition="50" endLine="100" endPosition="19" />
-    <scopeInfo nodeId="3118313698926038327" fileName="PsiJavaStubModelDescriptor.java" startLine="128" startPosition="46" endLine="136" endPosition="66">
+    <scopeInfo nodeId="3491142982978010052" fileName="PsiJavaStubModelDescriptor.java" startLine="298" startPosition="70" endLine="305" endPosition="64" />
+    <scopeInfo nodeId="4489382664561163181" fileName="PsiJavaStubModelDescriptor.java" startLine="91" startPosition="50" endLine="99" endPosition="19" />
+    <scopeInfo nodeId="3118313698926038327" fileName="PsiJavaStubModelDescriptor.java" startLine="127" startPosition="46" endLine="135" endPosition="66">
       <varInfo nodeId="3118313698926127092" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3114726504304240037" fileName="PsiJavaStubModelDescriptor.java" startLine="105" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="2227425914098988362" fileName="PsiJavaStubModelDescriptor.java" startLine="186" startPosition="34" endLine="195" endPosition="13">
+    <scopeInfo nodeId="3114726504304240037" fileName="PsiJavaStubModelDescriptor.java" startLine="104" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="2227425914098988362" fileName="PsiJavaStubModelDescriptor.java" startLine="185" startPosition="34" endLine="194" endPosition="13">
       <varInfo nodeId="2227425914098988363" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8876418788323973843" fileName="PsiJavaStubModelDescriptor.java" startLine="208" startPosition="0" endLine="217" endPosition="11">
+    <scopeInfo nodeId="8876418788323973843" fileName="PsiJavaStubModelDescriptor.java" startLine="207" startPosition="0" endLine="216" endPosition="11">
       <varInfo nodeId="8876418788323973995" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="8876418788323952459" fileName="PsiJavaStubModelDescriptor.java" startLine="127" startPosition="0" endLine="137" endPosition="9">
+    <scopeInfo nodeId="8876418788323952459" fileName="PsiJavaStubModelDescriptor.java" startLine="126" startPosition="0" endLine="136" endPosition="9">
       <varInfo nodeId="8876418788323952663" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="4489382664561163178" fileName="PsiJavaStubModelDescriptor.java" startLine="91" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="7414633741301299415" fileName="PsiJavaStubModelDescriptor.java" startLine="281" startPosition="55" endLine="292" endPosition="67">
+    <scopeInfo nodeId="4489382664561163178" fileName="PsiJavaStubModelDescriptor.java" startLine="90" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="7414633741301299415" fileName="PsiJavaStubModelDescriptor.java" startLine="280" startPosition="55" endLine="291" endPosition="67">
       <varInfo nodeId="7414633741301829127" varName="element" />
       <varInfo nodeId="7414633741301853252" varName="file" />
       <varInfo nodeId="7414633741301930817" varName="mapForFile" />
       <varInfo nodeId="7414633741301836529" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8368676337723543849" fileName="PsiJavaStubModelDescriptor.java" startLine="254" startPosition="48" endLine="266" endPosition="109">
+    <scopeInfo nodeId="8368676337723543849" fileName="PsiJavaStubModelDescriptor.java" startLine="253" startPosition="48" endLine="265" endPosition="109">
       <varInfo nodeId="8368676337723568951" varName="javaImport" />
       <varInfo nodeId="8368676337724152839" varName="qName" />
       <varInfo nodeId="7053458875162107837" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="8876418788323974844" fileName="PsiJavaStubModelDescriptor.java" startLine="253" startPosition="0" endLine="267" endPosition="5">
+    <scopeInfo nodeId="8876418788323974844" fileName="PsiJavaStubModelDescriptor.java" startLine="252" startPosition="0" endLine="266" endPosition="5">
       <varInfo nodeId="8876418788323975158" varName="imp" />
     </scopeInfo>
-    <scopeInfo nodeId="7414633741301299406" fileName="PsiJavaStubModelDescriptor.java" startLine="280" startPosition="0" endLine="294" endPosition="0">
+    <scopeInfo nodeId="7414633741301299406" fileName="PsiJavaStubModelDescriptor.java" startLine="279" startPosition="0" endLine="293" endPosition="0">
       <varInfo nodeId="7414633741301299410" varName="pair" />
     </scopeInfo>
-    <scopeInfo nodeId="8368676337723509382" fileName="PsiJavaStubModelDescriptor.java" startLine="251" startPosition="62" endLine="268" endPosition="23">
+    <scopeInfo nodeId="8368676337723509382" fileName="PsiJavaStubModelDescriptor.java" startLine="250" startPosition="62" endLine="267" endPosition="23">
       <varInfo nodeId="8368676337723713646" varName="javaImports" />
     </scopeInfo>
-    <scopeInfo nodeId="3118313698926043935" fileName="PsiJavaStubModelDescriptor.java" startLine="122" startPosition="58" endLine="141" endPosition="9">
+    <scopeInfo nodeId="3118313698926043935" fileName="PsiJavaStubModelDescriptor.java" startLine="121" startPosition="58" endLine="140" endPosition="9">
       <varInfo nodeId="3118313698926121458" varName="converter" />
       <varInfo nodeId="8368676337723391880" varName="javaImports" />
       <varInfo nodeId="5735787482189904041" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="8368676337723509379" fileName="PsiJavaStubModelDescriptor.java" startLine="251" startPosition="0" endLine="270" endPosition="0">
+    <scopeInfo nodeId="8368676337723509379" fileName="PsiJavaStubModelDescriptor.java" startLine="250" startPosition="0" endLine="269" endPosition="0">
       <varInfo nodeId="8368676337723536215" varName="imports" />
     </scopeInfo>
-    <scopeInfo nodeId="7414633741302646667" fileName="PsiJavaStubModelDescriptor.java" startLine="297" startPosition="49" endLine="316" endPosition="7">
+    <scopeInfo nodeId="7414633741302646667" fileName="PsiJavaStubModelDescriptor.java" startLine="296" startPosition="49" endLine="315" endPosition="7">
       <varInfo nodeId="7414633741302653590" varName="mapForFile" />
     </scopeInfo>
-    <scopeInfo nodeId="8876418788323951171" fileName="PsiJavaStubModelDescriptor.java" startLine="121" startPosition="9" endLine="142" endPosition="7">
+    <scopeInfo nodeId="8876418788323951171" fileName="PsiJavaStubModelDescriptor.java" startLine="120" startPosition="9" endLine="141" endPosition="7">
       <varInfo nodeId="8876418788323951551" varName="jf" />
     </scopeInfo>
-    <scopeInfo nodeId="7414633741302646664" fileName="PsiJavaStubModelDescriptor.java" startLine="297" startPosition="0" endLine="318" endPosition="0">
+    <scopeInfo nodeId="7414633741302646664" fileName="PsiJavaStubModelDescriptor.java" startLine="296" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="7414633741302648216" varName="fileName" />
     </scopeInfo>
-    <scopeInfo nodeId="6632570505820039835" fileName="PsiJavaStubModelDescriptor.java" startLine="121" startPosition="9" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="3118313698925888139" fileName="PsiJavaStubModelDescriptor.java" startLine="115" startPosition="42" endLine="149" endPosition="5">
+    <scopeInfo nodeId="6632570505820039835" fileName="PsiJavaStubModelDescriptor.java" startLine="120" startPosition="9" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="3118313698925888139" fileName="PsiJavaStubModelDescriptor.java" startLine="114" startPosition="42" endLine="148" endPosition="5">
       <varInfo nodeId="6632570505820222348" varName="section" />
     </scopeInfo>
-    <scopeInfo nodeId="6954894869194111548" fileName="PsiJavaStubModelDescriptor.java" startLine="185" startPosition="54" endLine="220" endPosition="11">
+    <scopeInfo nodeId="6954894869194111548" fileName="PsiJavaStubModelDescriptor.java" startLine="184" startPosition="54" endLine="219" endPosition="11">
       <varInfo nodeId="6954894869194119675" varName="converter" />
       <varInfo nodeId="8368676338074570536" varName="javaImports" />
       <varInfo nodeId="5735787482190047596" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="3118313698925888135" fileName="PsiJavaStubModelDescriptor.java" startLine="115" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="3118313698925888135" fileName="PsiJavaStubModelDescriptor.java" startLine="114" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="6632570505820879856" varName="into" />
     </scopeInfo>
-    <scopeInfo nodeId="8876418788323967047" fileName="PsiJavaStubModelDescriptor.java" startLine="184" startPosition="0" endLine="221" endPosition="9">
+    <scopeInfo nodeId="8876418788323967047" fileName="PsiJavaStubModelDescriptor.java" startLine="183" startPosition="0" endLine="220" endPosition="9">
       <varInfo nodeId="8876418788323967615" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4993605534473637544" fileName="PsiJavaStubModelDescriptor.java" startLine="172" startPosition="25" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="4993605534473637543" fileName="PsiJavaStubModelDescriptor.java" startLine="172" startPosition="0" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="6954894869194087243" fileName="PsiJavaStubModelDescriptor.java" startLine="159" startPosition="85" endLine="230" endPosition="0">
+    <scopeInfo nodeId="4993605534473637544" fileName="PsiJavaStubModelDescriptor.java" startLine="171" startPosition="25" endLine="221" endPosition="0" />
+    <scopeInfo nodeId="4993605534473637543" fileName="PsiJavaStubModelDescriptor.java" startLine="171" startPosition="0" endLine="223" endPosition="0" />
+    <scopeInfo nodeId="6954894869194087243" fileName="PsiJavaStubModelDescriptor.java" startLine="158" startPosition="85" endLine="229" endPosition="0">
       <varInfo nodeId="4055355515237822641" varName="myModelCopy" />
       <varInfo nodeId="5998430924367299864" varName="myOldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6954894869194087235" fileName="PsiJavaStubModelDescriptor.java" startLine="158" startPosition="0" endLine="232" endPosition="0">
+    <scopeInfo nodeId="6954894869194087235" fileName="PsiJavaStubModelDescriptor.java" startLine="157" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="6954894869194087239" varName="event" />
       <varInfo nodeId="5507346265626731815" varName="source" />
     </scopeInfo>
-    <unitInfo nodeId="3491142982977995549" fileName="PsiJavaStubModelDescriptor.java" startLine="300" startPosition="92" endLine="305" endPosition="9" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor$1" />
-    <unitInfo nodeId="7414633741301275281" fileName="PsiJavaStubModelDescriptor.java" startLine="279" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor$MyMps2PsiMapper" />
-    <unitInfo nodeId="4993605534473637543" fileName="PsiJavaStubModelDescriptor.java" startLine="171" startPosition="21" endLine="224" endPosition="5" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor$1" />
-    <unitInfo nodeId="3118313698925873538" fileName="PsiJavaStubModelDescriptor.java" startLine="45" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" />
+    <unitInfo nodeId="3491142982977995549" fileName="PsiJavaStubModelDescriptor.java" startLine="299" startPosition="92" endLine="304" endPosition="9" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor$1" />
+    <unitInfo nodeId="7414633741301275281" fileName="PsiJavaStubModelDescriptor.java" startLine="278" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor$MyMps2PsiMapper" />
+    <unitInfo nodeId="4993605534473637543" fileName="PsiJavaStubModelDescriptor.java" startLine="170" startPosition="21" endLine="223" endPosition="5" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor$1" />
+    <unitInfo nodeId="3118313698925873538" fileName="PsiJavaStubModelDescriptor.java" startLine="44" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" />
   </root>
   <root nodeRef="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)/3118313698926052818">
     <nodeInfo nodeId="6589029741397642387" fileName="ASTConverter.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
