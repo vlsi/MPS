@@ -89,6 +89,8 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
       e.getPresentation().setEnabled(false);
       e.getPresentation().setVisible(false);
     } else {
+      e.getPresentation().setEnabled(true);
+      e.getPresentation().setVisible(true);
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
