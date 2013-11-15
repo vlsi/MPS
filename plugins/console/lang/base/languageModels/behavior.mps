@@ -409,6 +409,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3002373989556540709" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.351968380916615243" resolveInfo="CommandHolder" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="5211727872447036782" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getGeneratedName" />
@@ -459,7 +460,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8517397753921951854" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="response.interactive" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.8517397753921951830" resolveInfo="IActionHolder" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="8517397753922085153" nodeInfo="ng">
       <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
@@ -488,7 +489,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3939645998855102457" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="response.interactive" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.3939645998855102389" resolveInfo="INodeWithReference" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3939645998855102458" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3939645998855102459" nodeInfo="sn" />
@@ -637,7 +638,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5842059399443118726" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="input" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="command.input" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.5842059399443118718" resolveInfo="PastedNodeReference" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5842059399443118727" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5842059399443118728" nodeInfo="sn" />
@@ -769,7 +770,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2348043250037383206" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="response.interactive" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.2348043250037383180" resolveInfo="NodeReferencePresentation" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2348043250037383207" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2348043250037383208" nodeInfo="sn">
@@ -938,6 +939,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="691634242167805890" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="history" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.691634242167120039" resolveInfo="ModifiedCommandHistoryItem" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="5802999594247323765" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getCommandToEdit" />
@@ -962,7 +964,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="328850564593930191" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="response.interactive" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.2348043250036118117" resolveInfo="NodeReferenceString" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="328850564593930192" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="328850564593930193" nodeInfo="sn" />
@@ -982,7 +984,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="473081947980701637" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="help" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.473081947980701568" resolveInfo="HelpCommand" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="473081947980701789" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="473081947980701790" nodeInfo="sn" />
@@ -1341,6 +1343,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="473081947982699336" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="help" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.473081947981012231" resolveInfo="ConsoleHelpProvider" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="473081947982699339" nodeInfo="ng">
       <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
@@ -1356,7 +1359,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3894227536041770958" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="response.interactive" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.1111629987770987206" resolveInfo="NodeWithClosure" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3894227536041771145" nodeInfo="ng">
       <property name="isAbstract" nameId="1i04.1225194472834" value="false" />
@@ -1416,6 +1419,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2197843344734463728" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="scripts" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.2197843344733570260" resolveInfo="AbstractConsoleScript" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="2197843344734463936" nodeInfo="ng">
       <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
@@ -1434,6 +1438,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2197843344734489082" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="scripts" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.2197843344733553097" resolveInfo="ConsoleDump" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2197843344734489083" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2197843344734489084" nodeInfo="sn" />
@@ -1469,6 +1474,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2197843344734523527" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="scripts" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="eynw.2197843344734522794" resolveInfo="ConsoleScript" />
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2197843344734523528" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2197843344734523529" nodeInfo="sn" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="wgwqeiq1xltr1rv55oo8yuwdevzaba">
+<dependencies version="2" modelHash="7b2ep8ma56ny1h99fycz8utn5sto8yg">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -26,6 +26,11 @@
     <dep root="529843215038987946" />
     <dep root="529843215038987949" />
     <dep root="529843215038987955" />
+    <dep root="5637103006918228482" />
+    <dep root="5637103006919120956" />
+    <dep root="5637103006919121940" />
+    <dep root="5637103006919121976" />
+    <dep root="5637103006919122224" />
     <dep root="5842059399443118718" />
     <dep root="6852607286009167343" />
     <dep root="6854397602732214175" />
@@ -42,30 +47,35 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="757553790980850366" name="History" hash="-13go87crjj4ni5gprg1qp64b9j84y98" />
-  <source id="6852607286009167343" name="HistoryItem" hash="dlif0wau9hueaaghit74jbjlbwbxji9" />
+  <source id="757553790980850366" name="History" hash="6wet5r0fnvwqesgvpwviqny0r6gbs0o" />
+  <source id="6852607286009167343" name="HistoryItem" hash="5xd90ecsoabrj4nqr4yzzeous6l2g5a" />
   <source id="1769790395579407461" name="InterpretedCommand" hash="7gm0fs7bpxkwefhbdhnp4npi1o9f67y" />
   <source id="1769790395579407473" name="GeneratedCommand" hash="bfobapwkm3tkhx4q9vb2ukap0btfaot" />
-  <source id="529843215038987946" name="CommandResult" hash="-11xivesyi2ogawips97hj7t9eenhukq" />
-  <source id="529843215038987949" name="CommandResultLine" hash="-8z2oqq11kmi8qq8l2opfgxggic4m6ns" />
-  <source id="529843215038987955" name="TextResultPart" hash="-5g7e0n0ytnqak3b2uupe7vk56rf0a4g" />
-  <source id="351968380916615243" name="CommandHolder" hash="-9e2hm9pc6rj2jlfsq2yfokbnk4aknkl" />
-  <source id="1111629987770987206" name="NodeWithClosure" hash="-687wjkq91ummt7nw3bsb1v8opjcsi3s" />
-  <source id="8517397753921951830" name="IActionHolder" hash="efrhqh0fn7tbkoj2pzb90l2er4ppxym" />
-  <source id="8927119896327927090" name="NodeResultPart" hash="28a4csv0qooqhm39jfqmdxovc9pgcks" />
-  <source id="3939645998855102389" name="INodeWithReference" hash="2y2l1955jizz4aa5ftpwlsb202cd1uy" />
-  <source id="5842059399443118718" name="PastedNodeReference" hash="-7uy1br4ia8a8gl2iiqf3ut9wf9tibpf" />
-  <source id="2699636778859335853" name="CommandResultPart" hash="-5o12cnqu3zp87a2yyftjlo7criw9pzt" />
+  <source id="529843215038987946" name="CommandResult" hash="-66vfzwlj3y3qs5ljku1y9qp82ktnubc" />
+  <source id="529843215038987949" name="CommandResultLine" hash="autz8g3xq6dqmv98nguvv1ypaz4ehcv" />
+  <source id="529843215038987955" name="TextResultPart" hash="-dvhslprgel1yd9oxwb6n3k99y7t9yih" />
+  <source id="351968380916615243" name="CommandHolder" hash="407ni3oiis31yhxn9bwntn6o4gflz3j" />
+  <source id="1111629987770987206" name="NodeWithClosure" hash="-7rvma8bsj5jvt5yhcbtifn6hxrrxp94" />
+  <source id="8517397753921951830" name="IActionHolder" hash="767v92g1lepr36k69kib1pasyy33uwh" />
+  <source id="8927119896327927090" name="NodeResultPart" hash="7f0gvdssnybx3dywc9gmks0kfkbar1o" />
+  <source id="3939645998855102389" name="INodeWithReference" hash="-edr51ol6ors917o5ws70ukgxot3uepc" />
+  <source id="5842059399443118718" name="PastedNodeReference" hash="-7ylfzna86dkd481gw1z2st41ukcdilk" />
+  <source id="2699636778859335853" name="CommandResultPart" hash="-5xt07gpt6l1ps3q8z3ehwxd3c06o7qn" />
   <source id="6854397602732214175" name="Command" hash="58gs6uiezrgsc66igyj7jfphfrqkxik" />
-  <source id="2348043250036118117" name="NodeReferenceString" hash="-dc975jf94zhnw4ht9j3fa7iix4bv6kk" />
-  <source id="2348043250037290416" name="IClickable" hash="-ch99aggezy7ypnnhlgtkhdkl9bnvibf" />
-  <source id="2348043250037383180" name="NodeReferencePresentation" hash="-cljq52bot9ylxclp03oe2eymjwn4yed" />
-  <source id="691634242167120039" name="ModifiedCommandHistoryItem" hash="-bdnr69lniifn9qqn8j7q3ifw3ph40bw" />
-  <source id="473081947980701568" name="HelpCommand" hash="-nycqdzzz6aa72ve36h2bhga0vhboxn" />
-  <source id="473081947981012231" name="ConsoleHelpProvider" hash="-3mt4kyk78vwo7h6g7a445yhpixjxubp" />
+  <source id="2348043250036118117" name="NodeReferenceString" hash="-9j6ikt5axxhx09ds8fs4c7khii62i09" />
+  <source id="2348043250037290416" name="IClickable" hash="5t38auiw1m9di83dfwe3vuomsn0zk4y" />
+  <source id="2348043250037383180" name="NodeReferencePresentation" hash="de9hqhtovgluamibv4xw2qs7tajp7ac" />
+  <source id="691634242167120039" name="ModifiedCommandHistoryItem" hash="3ykzrjhll9xhzemojb0nfkd724tvpuf" />
+  <source id="473081947980701568" name="HelpCommand" hash="8e5jp3cjvivdp5g1lmkgpbeq06sajsc" />
+  <source id="473081947981012231" name="ConsoleHelpProvider" hash="5yzbavfc87xs5e2wcv6916mpaqg0kzx" />
   <source id="1583916890557930028" name="ConsoleRoot" hash="1h1zaivgfywkci8fdca6cdi3cyifvjm" />
-  <source id="2197843344733553097" name="ConsoleDump" hash="jl87z94v2eij0aik4c83pdism299h8" />
-  <source id="2197843344733570260" name="AbstractConsoleScript" hash="8obwa2omf4jctvqgxr7w4m5aej5hej6" />
-  <source id="2197843344734522794" name="ConsoleScript" hash="46dic8xso6hj9v0137zacz26xwb17gz" />
+  <source id="2197843344733553097" name="ConsoleDump" hash="-22xcrpsl2malg4r404di9iivvr1oql2" />
+  <source id="2197843344733570260" name="AbstractConsoleScript" hash="ermzde3gzr01ddx6g2eg357kt1aigm1" />
+  <source id="2197843344734522794" name="ConsoleScript" hash="e7hy6im6lw2v8mqfjresinot4pfovgn" />
+  <source id="5637103006918228482" name="Response" hash="6ua37a84rbzctpv8tom1u51snzk4g7x" />
+  <source id="5637103006919120956" name="ResponceItem" hash="dpwkhtg0a2hg4zbhgz62mrpwqxvehod" />
+  <source id="5637103006919121940" name="NodeResponceItem" hash="-aliks3ta94d4wewq3jwjkv34e3c4q0" />
+  <source id="5637103006919121976" name="TextResponceItem" hash="-ds62wa6tvkvyzur7mctrkddn6dybzwz" />
+  <source id="5637103006919122224" name="NewLineResponceItem" hash="9if5x6yt1f0ei4qkvgzl5g6ew2lkdc" />
 </dependencies>
 

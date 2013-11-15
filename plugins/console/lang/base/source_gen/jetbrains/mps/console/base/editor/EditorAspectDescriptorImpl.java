@@ -35,10 +35,18 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 9:
         return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new NewLineResponceItem_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeResponceItem_Editor());
       case 12:
+        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
+      case 13:
+        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new Response_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new TextResponceItem_Editor());
+      case 16:
         return Collections.<ConceptEditor>singletonList(new TextResultPart_Editor());
       default:
     }
@@ -69,6 +77,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.ConsoleDump", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.ConsoleScript", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.ConsoleDump", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.ConsoleScript", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NewLineResponceItem", "jetbrains.mps.console.base.structure.NodeResponceItem", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponceItem", "jetbrains.mps.console.base.structure.TextResultPart"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference"};
 }

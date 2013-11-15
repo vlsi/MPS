@@ -14,6 +14,7 @@
   <import index="zyb2" modelUID="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7820875636624865058" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="eynw.351968380916615243" resolveInfo="CommandHolder" />
     <node role="canBeAncestor" roleId="tp1t.7852712695066883424" type="tp1t.ConstraintFunction_CanBeAnAncestor" typeId="tp1t.7855321458717464197" id="7820875636624865126" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7820875636624865127" nodeInfo="sn">
@@ -59,7 +60,7 @@
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="328850564594282261" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="response.interactive" />
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="eynw.2348043250036118117" resolveInfo="NodeReferenceString" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="328850564594282333" nodeInfo="ng">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="eynw.328850564588043375" />
@@ -78,7 +79,7 @@
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="328850564594334290" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="input" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="command.input" />
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="eynw.5842059399443118718" resolveInfo="PastedNodeReference" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="328850564594334291" nodeInfo="ng">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="eynw.328850564588043375" />
