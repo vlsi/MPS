@@ -7,6 +7,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
+  <import index="3xdn" modelUID="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="caxt" modelUID="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" version="-1" implicit="yes" />
@@ -248,6 +249,24 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5582028874771853091" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="Make" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#make" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="make" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544317" resolveInfo="QueryExpression" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5582028874771853092" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="argument" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5582028874771853093" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="RequiredOnly" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="requiredOnly" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="make" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544565" resolveInfo="QueryParameter" />
   </root>
 </model>
 
