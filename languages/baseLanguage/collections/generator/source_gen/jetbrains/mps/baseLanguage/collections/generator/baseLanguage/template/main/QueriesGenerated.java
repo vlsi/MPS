@@ -776,7 +776,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2063877164996195529(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode componentType = ((SNode) _context.getVariable("var:arrayComponentType"));          ¡
+    SNode componentType = ((SNode) _context.getVariable("var:arrayComponentType"));
     if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(componentType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
       for (SNode arg : arguments) {
