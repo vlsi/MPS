@@ -776,7 +776,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2063877164996195529(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode componentType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
+    SNode componentType = ((SNode) _context.getVariable("var:arrayComponentType"));
     if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(componentType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
       for (SNode arg : arguments) {
@@ -832,7 +832,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7392128331043440267(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"));
+    return !(SNodeOperations.isInstanceOf(((SNode) _context.getVariable("var:arrayComponentType")), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"));
   }
 
   public static boolean ifMacro_Condition_7880518146485543905(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1095,7 +1095,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7392128331043466693(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
+    return ((SNode) _context.getVariable("var:arrayComponentType"));
   }
 
   public static SNode sourceNodeQuery_1848858642722978903(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2616,6 +2616,10 @@ public class QueriesGenerated {
         }
       }
     }
+  }
+
+  public static Object insertMacro_varValue_5180156240566846019(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
   }
 
   public static class Pattern_x583g4_a1a0a0a0h extends GeneratedMatchingPattern implements IMatchingPattern {
