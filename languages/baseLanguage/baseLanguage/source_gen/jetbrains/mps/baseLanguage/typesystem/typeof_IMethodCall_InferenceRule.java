@@ -18,6 +18,7 @@ import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -93,6 +94,8 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
         type_var = type_it.next();
         arg_var = arg_it.next();
         final SNode _type = type_var;
+        final SNode _arg = arg_var;
+
         if (SNodeOperations.isInstanceOf(_type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
           {
             final SNode A = typeCheckingContext.typeOf(arg_var, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9033423951295792137", true);
@@ -101,6 +104,13 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
                 {
                   SNode _nodeToCheck_1029348928467 = mcall;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9033423951293505964", 0, null);
+                  {
+                    BaseQuickFixProvider intentionProvider = null;
+                    intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix", false);
+                    intentionProvider.putArgument("desiredType", _type);
+                    intentionProvider.putArgument("expression", _arg);
+                    _info_12389875345.addIntentionProvider(intentionProvider);
+                  }
                   typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
                 }
               }
@@ -111,6 +121,13 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
             {
               SNode _nodeToCheck_1029348928467 = arg_var;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9033423951293505984", 0, null);
+              {
+                BaseQuickFixProvider intentionProvider = null;
+                intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix", false);
+                intentionProvider.putArgument("desiredType", _type);
+                intentionProvider.putArgument("expression", _arg);
+                _info_12389875345.addIntentionProvider(intentionProvider);
+              }
               typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9033423951293505986", true), true, true, _info_12389875345);
             }
           }
