@@ -31,7 +31,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-4m6iuuqzi8s7hayyrolnq78eph2ba93" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="2warf9wz9zr88u4nnjvoe96w6bynxhi" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="7b2ep8ma56ny1h99fycz8utn5sto8yg" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-6nwae3z6k63dfb9q6c54i4of09zaowz" />
   <dep model="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)" hash="8vdnlq22rranumszm8pxk9f1m8rtgqb" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-bfzpl2k7fbyccc6o0e14x62lu72wfye" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
@@ -72,9 +72,6 @@
     <file name="AbstractConsoleScript_BehaviorDescriptor.java" />
     <file name="BehaviorAspectDescriptor.java" />
     <file name="CommandHolder_BehaviorDescriptor.java" />
-    <file name="CommandResultLine_BehaviorDescriptor.java" />
-    <file name="CommandResultPart_BehaviorDescriptor.java" />
-    <file name="CommandResult_BehaviorDescriptor.java" />
     <file name="Command_BehaviorDescriptor.java" />
     <file name="ConsoleDump_BehaviorDescriptor.java" />
     <file name="ConsoleHelpProvider_BehaviorDescriptor.java" />
@@ -93,13 +90,11 @@
     <file name="NodeReferencePresentation_BehaviorDescriptor.java" />
     <file name="NodeReferenceString_BehaviorDescriptor.java" />
     <file name="NodeResponceItem_BehaviorDescriptor.java" />
-    <file name="NodeResultPart_BehaviorDescriptor.java" />
     <file name="NodeWithClosure_BehaviorDescriptor.java" />
     <file name="PastedNodeReference_BehaviorDescriptor.java" />
     <file name="ResponceItem_BehaviorDescriptor.java" />
     <file name="Response_BehaviorDescriptor.java" />
     <file name="TextResponceItem_BehaviorDescriptor.java" />
-    <file name="TextResultPart_BehaviorDescriptor.java" />
   </common>
   <source id="1769790395579662700" name="GeneratedCommand_Behavior" hash="-10syywgo9yt41qodwqbua7lphi7dtou">
     <dep root="3002373989556540709" />

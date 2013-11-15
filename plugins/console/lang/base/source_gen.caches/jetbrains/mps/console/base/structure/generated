@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7b2ep8ma56ny1h99fycz8utn5sto8yg">
+<dependencies version="2" modelHash="-6nwae3z6k63dfb9q6c54i4of09zaowz">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -18,14 +18,10 @@
     <dep root="2348043250036118117" />
     <dep root="2348043250037290416" />
     <dep root="2348043250037383180" />
-    <dep root="2699636778859335853" />
     <dep root="351968380916615243" />
     <dep root="3939645998855102389" />
     <dep root="473081947980701568" />
     <dep root="473081947981012231" />
-    <dep root="529843215038987946" />
-    <dep root="529843215038987949" />
-    <dep root="529843215038987955" />
     <dep root="5637103006918228482" />
     <dep root="5637103006919120956" />
     <dep root="5637103006919121940" />
@@ -37,7 +33,6 @@
     <dep root="691634242167120039" />
     <dep root="757553790980850366" />
     <dep root="8517397753921951830" />
-    <dep root="8927119896327927090" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -51,16 +46,11 @@
   <source id="6852607286009167343" name="HistoryItem" hash="5xd90ecsoabrj4nqr4yzzeous6l2g5a" />
   <source id="1769790395579407461" name="InterpretedCommand" hash="7gm0fs7bpxkwefhbdhnp4npi1o9f67y" />
   <source id="1769790395579407473" name="GeneratedCommand" hash="bfobapwkm3tkhx4q9vb2ukap0btfaot" />
-  <source id="529843215038987946" name="CommandResult" hash="-66vfzwlj3y3qs5ljku1y9qp82ktnubc" />
-  <source id="529843215038987949" name="CommandResultLine" hash="autz8g3xq6dqmv98nguvv1ypaz4ehcv" />
-  <source id="529843215038987955" name="TextResultPart" hash="-dvhslprgel1yd9oxwb6n3k99y7t9yih" />
   <source id="351968380916615243" name="CommandHolder" hash="407ni3oiis31yhxn9bwntn6o4gflz3j" />
   <source id="1111629987770987206" name="NodeWithClosure" hash="-7rvma8bsj5jvt5yhcbtifn6hxrrxp94" />
   <source id="8517397753921951830" name="IActionHolder" hash="767v92g1lepr36k69kib1pasyy33uwh" />
-  <source id="8927119896327927090" name="NodeResultPart" hash="7f0gvdssnybx3dywc9gmks0kfkbar1o" />
   <source id="3939645998855102389" name="INodeWithReference" hash="-edr51ol6ors917o5ws70ukgxot3uepc" />
   <source id="5842059399443118718" name="PastedNodeReference" hash="-7ylfzna86dkd481gw1z2st41ukcdilk" />
-  <source id="2699636778859335853" name="CommandResultPart" hash="-5xt07gpt6l1ps3q8z3ehwxd3c06o7qn" />
   <source id="6854397602732214175" name="Command" hash="58gs6uiezrgsc66igyj7jfphfrqkxik" />
   <source id="2348043250036118117" name="NodeReferenceString" hash="-9j6ikt5axxhx09ds8fs4c7khii62i09" />
   <source id="2348043250037290416" name="IClickable" hash="5t38auiw1m9di83dfwe3vuomsn0zk4y" />
@@ -72,10 +62,10 @@
   <source id="2197843344733553097" name="ConsoleDump" hash="-22xcrpsl2malg4r404di9iivvr1oql2" />
   <source id="2197843344733570260" name="AbstractConsoleScript" hash="ermzde3gzr01ddx6g2eg357kt1aigm1" />
   <source id="2197843344734522794" name="ConsoleScript" hash="e7hy6im6lw2v8mqfjresinot4pfovgn" />
-  <source id="5637103006918228482" name="Response" hash="6ua37a84rbzctpv8tom1u51snzk4g7x" />
-  <source id="5637103006919120956" name="ResponceItem" hash="dpwkhtg0a2hg4zbhgz62mrpwqxvehod" />
-  <source id="5637103006919121940" name="NodeResponceItem" hash="-aliks3ta94d4wewq3jwjkv34e3c4q0" />
-  <source id="5637103006919121976" name="TextResponceItem" hash="-ds62wa6tvkvyzur7mctrkddn6dybzwz" />
-  <source id="5637103006919122224" name="NewLineResponceItem" hash="9if5x6yt1f0ei4qkvgzl5g6ew2lkdc" />
+  <source id="5637103006918228482" name="Response" hash="65v39cd8zo3noo4prebjp4vmfjv6gdx" />
+  <source id="5637103006919120956" name="ResponceItem" hash="bdp9t247ctxjp1lcv5i9bi8mbrwnlmv" />
+  <source id="5637103006919121940" name="NodeResponceItem" hash="4nzztwnbth6qmuma282xu6uh2ujo6lm" />
+  <source id="5637103006919121976" name="TextResponceItem" hash="-2flbw5dsfauyldclw7hinan2nmuwu8i" />
+  <source id="5637103006919122224" name="NewLineResponceItem" hash="qovkn3u964alczcmf78x65kvsr7p9p" />
 </dependencies>
 
