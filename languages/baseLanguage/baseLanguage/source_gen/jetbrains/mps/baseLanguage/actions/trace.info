@@ -5534,7 +5534,7 @@
     <nodeInfo nodeId="4920206213429823708" fileName="AlterStatementListContainerFactoryUtils.java" startLine="23" startPosition="51" endLine="24" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4920206213429823728" fileName="AlterStatementListContainerFactoryUtils.java" startLine="29" startPosition="49" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4920206213429823739" fileName="AlterStatementListContainerFactoryUtils.java" startLine="32" startPosition="39" endLine="33" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4920206213431854464" fileName="AlterStatementListContainerFactoryUtils.java" startLine="42" startPosition="35" endLine="43" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4920206213431854464" fileName="AlterStatementListContainerFactoryUtils.java" startLine="42" startPosition="35" endLine="43" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4920206213431854491" fileName="AlterStatementListContainerFactoryUtils.java" startLine="46" startPosition="60" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8176191621197432044" fileName="AlterStatementListContainerFactoryUtils.java" startLine="48" startPosition="38" endLine="49" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2442451895711298917" fileName="AlterStatementListContainerFactoryUtils.java" startLine="52" startPosition="101" endLine="53" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5721,7 +5721,7 @@
     <scopeInfo nodeId="2442451895797178057" fileName="AlterStatementListContainerFactoryUtils.java" startLine="251" startPosition="160" endLine="251" endPosition="160" />
     <scopeInfo nodeId="4920206213429823707" fileName="AlterStatementListContainerFactoryUtils.java" startLine="23" startPosition="51" endLine="24" endPosition="286" />
     <scopeInfo nodeId="4920206213429823738" fileName="AlterStatementListContainerFactoryUtils.java" startLine="32" startPosition="39" endLine="33" endPosition="99" />
-    <scopeInfo nodeId="4920206213431854463" fileName="AlterStatementListContainerFactoryUtils.java" startLine="42" startPosition="35" endLine="43" endPosition="196" />
+    <scopeInfo nodeId="4920206213431854463" fileName="AlterStatementListContainerFactoryUtils.java" startLine="42" startPosition="35" endLine="43" endPosition="170" />
     <scopeInfo nodeId="4920206213431854500" fileName="AlterStatementListContainerFactoryUtils.java" startLine="48" startPosition="38" endLine="49" endPosition="111" />
     <scopeInfo nodeId="2442451895711412140" fileName="AlterStatementListContainerFactoryUtils.java" startLine="67" startPosition="14" endLine="68" endPosition="15" />
     <scopeInfo nodeId="5310486143851317763" fileName="AlterStatementListContainerFactoryUtils.java" startLine="74" startPosition="114" endLine="75" endPosition="186" />
