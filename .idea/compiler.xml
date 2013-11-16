@@ -258,6 +258,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/blCommandRuntime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/ideCommands/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/ideCommands/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/lang/ideCommandsRuntime/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/lang/ideCommandsRuntime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/internalCommands/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/internalCommands/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/internalCommandsRuntime/source_gen" includeSubdirectories="true" />
