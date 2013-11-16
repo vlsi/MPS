@@ -590,20 +590,23 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   public void executeCommand(final SNode command, @Nullable Runnable executeAfter) {
+    final Wrappers._T<SNode> newCommand = new Wrappers._T<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myNewCommand = SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, "commandHolder", true));
+        newCommand.value = SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, "commandHolder", true));
         SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(command), true);
       }
     });
     if (executeAfter == null) {
       executeAfter = new Runnable() {
         public void run() {
-          SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), newCommand.value, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+            }
+          });
         }
       };
-    } else {
-      myNewCommand = null;
     }
     execute(executeAfter);
   }
