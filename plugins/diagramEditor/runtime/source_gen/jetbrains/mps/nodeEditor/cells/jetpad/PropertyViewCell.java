@@ -26,11 +26,10 @@ public abstract class PropertyViewCell extends EditorCell_Basic {
     this.myProperty = property;
     synchronizeViewWithModel();
     getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), propertyName));
-
   }
 
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
+  public void paintContent(Graphics g, ParentSettings parentSettingssss) {
   }
 
 
