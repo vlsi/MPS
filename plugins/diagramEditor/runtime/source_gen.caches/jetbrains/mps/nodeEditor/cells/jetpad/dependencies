@@ -54,12 +54,10 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" file="GenericViewCell.java">
-    <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler" />
