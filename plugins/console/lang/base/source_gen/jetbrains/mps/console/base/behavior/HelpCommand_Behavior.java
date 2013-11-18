@@ -16,14 +16,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.Priority;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -68,7 +73,7 @@ __switch__:
         };
       }
     })).concat(Sequence.fromIterable(consoleLanguages));
-    console.addText(Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(consoleLanguages).translate(new ITranslator2<Language, SModel>() {
+    Iterable<? extends Iterable<String>> result = Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(consoleLanguages).translate(new ITranslator2<Language, SModel>() {
       public Iterable<SModel> translate(Language it) {
         return it.getModels();
       }
@@ -78,36 +83,84 @@ __switch__:
       }
     }), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getTargets(it, "implements", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "intfc", false) == SNodeOperations.getNode("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "473081947981012231");
-          }
-        });
+        return !(SPropertyOperations.getBoolean(it, "abstract")) && SConceptOperations.isSubConceptOf(it, "jetbrains.mps.console.base.structure.ConsoleHelpProvider");
       }
-    }).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
+    }).toListSequence().select(new ISelector<SNode, IListSequence<String>>() {
+      public IListSequence<String> select(SNode it) {
         try {
-          return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) it))), "virtual_getHelp_473081947982699339", new Object[]{});
+          SNode chp = (SNode) it;
+          return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
         } catch (RuntimeException e) {
           if (LOG.isEnabledFor(Priority.WARN)) {
             LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
           }
-          return "";
+          try {
+            return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) it))), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "", "");
+          } catch (RuntimeException e1) {
+            return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, "name"), "", "");
+          }
         }
       }
-    }).foldLeft("", new ILeftCombinator<String, String>() {
-      public String combine(String s, String it) {
-        return ((s == null || s.length() == 0) ? it : s + "\n" + it);
+    }).toListSequence();
+    List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), Sequence.fromIterable(result).select(new ISelector<Iterable<String>, IListSequence<String>>() {
+      public IListSequence<String> select(Iterable<String> it) {
+        return Sequence.fromIterable(it).toListSequence();
       }
     }));
+
+    List<Integer> maxLens = ListSequence.fromList(new LinkedList<Integer>());
+    for (int i = 0; i < ListSequence.fromList(resultList).select(new ISelector<List<String>, Integer>() {
+      public Integer select(List<String> it) {
+        return ListSequence.fromList(it).count();
+      }
+    }).foldRight(0, new IRightCombinator<Integer, Integer>() {
+      public Integer combine(Integer it, Integer s) {
+        return Math.max(s, it);
+      }
+    }); i++) {
+      int maxLength = 0;
+      for (List<String> row : ListSequence.fromList(resultList)) {
+        int length = check_x46ur7_a0a0b0h0a(ListSequence.fromList(row).getElement(i));
+        if (length > maxLength) {
+          maxLength = length;
+        }
+      }
+      ListSequence.fromList(maxLens).addElement(maxLength);
+    }
+
+    StringBuilder output = new StringBuilder();
+    for (List<String> row : ListSequence.fromList(resultList)) {
+      for (int i = 0; i < ListSequence.fromList(maxLens).count(); i++) {
+        output.append((ListSequence.fromList(row).getElement(i) == null ? "" : ListSequence.fromList(row).getElement(i)));
+        if (i < ListSequence.fromList(maxLens).count() - 1) {
+          for (int j = check_x46ur7_a0a0b0a0k0a(ListSequence.fromList(row).getElement(i)); j < ListSequence.fromList(maxLens).getElement(i) + 2; j++) {
+            output.append(" ");
+          }
+        }
+      }
+      output.append("\n");
+    }
+    console.addText("Constructions available in console:\n\n");
+    console.addText(output.toString());
   }
 
-  public static String virtual_getHelp_473081947982699339(SAbstractConcept thisConcept) {
-    String result = "Constructions available in console:\n\n";
-    result += "?                       command       display this help\n";
-    return result;
-
+  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
+    return "display this help";
   }
 
   protected static Logger LOG = LogManager.getLogger(HelpCommand_Behavior.class);
+
+  private static int check_x46ur7_a0a0b0h0a(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.length();
+    }
+    return 0;
+  }
+
+  private static int check_x46ur7_a0a0b0a0k0a(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.length();
+    }
+    return 0;
+  }
 }

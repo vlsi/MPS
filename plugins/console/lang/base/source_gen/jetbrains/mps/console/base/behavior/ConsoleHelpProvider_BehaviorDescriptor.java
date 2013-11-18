@@ -5,5 +5,8 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public interface ConsoleHelpProvider_BehaviorDescriptor {
-  public String virtual_getHelp_473081947982699339(SConcept thisConcept);
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept);
+  public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept);
+  public String virtual_getKind_7006261637493126084(SConcept thisConcept);
+  public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept);
 }

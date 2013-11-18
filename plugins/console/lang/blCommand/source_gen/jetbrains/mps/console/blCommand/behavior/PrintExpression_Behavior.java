@@ -5,15 +5,11 @@ package jetbrains.mps.console.blCommand.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class ProjectExpression_Behavior {
+public class PrintExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
-    return null;
-  }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "current project";
+    return "print into console";
   }
 }

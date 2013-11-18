@@ -4,7 +4,7 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ConsoleDump_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.ConsoleDump_BehaviorDescriptor" />
   <unitInfo fileName="ConsoleScript_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" />
-  <unitInfo fileName="Execute_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
+  <unitInfo fileName="Execute_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475490598258" />
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475490598266" />
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475490598281" />
@@ -56,6 +56,20 @@
       <varInfo nodeId="1734392475491235576" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1734392475491235576" fileName="ConsoleScript_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.ConsoleScript_Behavior" />
+  </root>
+  <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/748410583119789988">
+    <nodeInfo nodeId="748410583119790123" fileName="Execute_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="748410583119789990" fileName="Execute_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="748410583119790116" fileName="Execute_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="28" />
+    <scopeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="748410583119789988" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="748410583119789988" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.Execute_Behavior" />
   </root>
 </debugInfo>
 

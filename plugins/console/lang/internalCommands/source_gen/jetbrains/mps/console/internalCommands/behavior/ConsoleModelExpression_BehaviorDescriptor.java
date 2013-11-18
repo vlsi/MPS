@@ -6,7 +6,7 @@ import jetbrains.mps.console.blCommand.behavior.QueryExpression_BehaviorDescript
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class ConsoleModelExpression_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor {
+public abstract class ConsoleModelExpression_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor {
   public ConsoleModelExpression_BehaviorDescriptor() {
   }
 

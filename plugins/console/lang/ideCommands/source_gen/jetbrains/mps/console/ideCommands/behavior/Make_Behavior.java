@@ -18,4 +18,8 @@ public class Make_Behavior {
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
     return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.RequiredOnly"));
   }
+
+  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
+    return "make custom models";
+  }
 }

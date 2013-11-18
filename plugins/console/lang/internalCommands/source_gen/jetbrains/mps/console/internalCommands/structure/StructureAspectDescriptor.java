@@ -14,21 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("#consoleModel", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").abstract_().alias("#consoleModel", "").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalCommandHelp").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.ConsoleHelpProvider").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalMode").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").alias("#internalMode", "").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalMode").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("#internalMode", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("aspect").abstract_().alias("#rebuild aspect", "").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("aspect").alias("#rebuild aspect", "").create();
-      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").alias("#reload classes", "").create();
-      case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("#show repository", "").create();
+      case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").abstract_().alias("#show repository", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression", "jetbrains.mps.console.internalCommands.structure.InternalCommandHelp", "jetbrains.mps.console.internalCommands.structure.InternalMode", "jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand", "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression", "jetbrains.mps.console.internalCommands.structure.InternalMode", "jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand", "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"};
 }
