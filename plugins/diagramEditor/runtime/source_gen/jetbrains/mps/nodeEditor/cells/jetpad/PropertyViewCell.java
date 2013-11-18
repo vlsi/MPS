@@ -40,7 +40,7 @@ public abstract class PropertyViewCell extends EditorCell_Basic {
     NodeReadAccessCasterInEditor.runCleanPropertyAccessAction(new Computable<String>() {
       public String compute() {
         synchronizePropertyWithModel();
-        return myProperty.get().toString();
+        return (myProperty.get() == null ? null : myProperty.get().toString());
       }
     });
     requestRelayout();

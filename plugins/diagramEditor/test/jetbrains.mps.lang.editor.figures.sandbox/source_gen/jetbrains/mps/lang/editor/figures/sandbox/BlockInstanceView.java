@@ -80,11 +80,13 @@ public class BlockInstanceView extends GroupView {
         configuration.add(Synchronizers.forProperty(getSource().x, new Runnable() {
           public void run() {
             getTarget().moveTo(new Vector(getSource().x.get(), getSource().y.get()));
+            BlockInstanceView.this.invalidate();
           }
         }));
         configuration.add(Synchronizers.forProperty(getSource().y, new Runnable() {
           public void run() {
             getTarget().moveTo(new Vector(getSource().x.get(), getSource().y.get()));
+            BlockInstanceView.this.invalidate();
           }
         }));
 
@@ -110,7 +112,6 @@ public class BlockInstanceView extends GroupView {
       public void move(Vector delta) {
         x.set(x.get() + delta.x);
         y.set(y.get() + delta.y);
-        BlockInstanceView.this.invalidate();
       }
     });
   }
