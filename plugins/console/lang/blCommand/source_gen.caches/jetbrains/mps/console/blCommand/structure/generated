@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="479qslt5i16zdx4z2ytdmz3vqhxr2i5">
+<dependencies version="2" modelHash="-9ywguupeh0vjgmsecrvyql2iofx7wi3">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="2ml8qbfwxwuf9dd7cfthivs5ihbqovw" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-c7n9sg0jytzyalnj7rch2accdmtyqf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="2wtsdvradg0xsyni6xobjj9y9lg6i15" dependsOnNodes="true">
     <dep root="2755216049126692157" />
@@ -60,7 +60,7 @@
   <source id="6864030874027862829" name="ModelsExpression" hash="pr5nk3uwr8y078verkx2smgqox0cqa" />
   <source id="6864030874028745314" name="ModulesExpression" hash="23njvzfq6mrtlsyg4qmi5008vahjgad" />
   <source id="6558068108107691796" name="ExceptionHolder" hash="dmf1t187xki53h092wwewmnc3yjk48v" />
-  <source id="4307205004131544317" name="QueryExpression" hash="7yxcshz70v8ohb5ym4pbnkfh0u2d7u" />
+  <source id="4307205004131544317" name="QueryExpression" hash="bp4was11tcnx9f774ptow2fmldblgvc" />
   <source id="4307205004131544565" name="QueryParameter" hash="-8bpjgk0sykhy1hp8ushe81ehv5yeu0d" />
   <source id="4307205004132277753" name="QueryParameterList" hash="29qst68lp2vsuk2klg9a8eblapherh7" />
   <source id="4307205004132412550" name="QueryParameterIncludeReadOnly" hash="50bhd4027p1jsr3s0b0uqwjg68wa87t" />

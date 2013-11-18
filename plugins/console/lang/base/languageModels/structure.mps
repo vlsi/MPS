@@ -147,6 +147,11 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="473081947983367592" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="473081947981012231" resolveInfo="ConsoleHelpProvider" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6928665434433788203" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="target" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6928665434433761801" resolveInfo="HelpConceptReference" />
+    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="473081947981012231" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ConsoleHelpProvider" />
@@ -222,6 +227,17 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5637103006919122593" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5637103006919120956" resolveInfo="ResponceItem" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6928665434433761801" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="help" />
+    <property name="name" nameId="tpck.1169194664001" value="HelpConceptReference" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6928665434433779926" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="command" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
 </model>

@@ -19,8 +19,12 @@ public class HelpCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorD
     return ConsoleHelpProvider_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
   }
 
+  public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
+  }
+
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
-    return ConsoleHelpProvider_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
+    return HelpCommand_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
 
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {

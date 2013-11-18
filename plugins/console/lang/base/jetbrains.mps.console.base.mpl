@@ -3,6 +3,7 @@
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
+      <sourceRoot path="${module}/languageAccessories" />
     </modelRoot>
   </models>
   <accessoryModels />
@@ -47,6 +48,7 @@
   <usedLanguages>
     <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>
     <usedLanguage>63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)</usedLanguage>
+    <usedLanguage>13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>

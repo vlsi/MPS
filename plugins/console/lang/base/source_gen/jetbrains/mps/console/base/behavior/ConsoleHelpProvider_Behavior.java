@@ -4,8 +4,9 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConsoleHelpProvider_Behavior {
   public static void init(SNode thisNode) {
@@ -15,7 +16,16 @@ public class ConsoleHelpProvider_Behavior {
     return null;
   }
 
+  public static String virtual_getGroup_6928665434441162387(SAbstractConcept thisConcept) {
+    return SNodeOperations.getModel(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())).getModule().getModuleName();
+  }
+
   public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
-    return SPropertyOperations.getString(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "conceptAlias");
+    String alias = SPropertyOperations.getString(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()), "conceptAlias");
+    if ((alias != null && alias.length() > 0)) {
+      return alias;
+    } else {
+      return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()), "name");
+    }
   }
 }

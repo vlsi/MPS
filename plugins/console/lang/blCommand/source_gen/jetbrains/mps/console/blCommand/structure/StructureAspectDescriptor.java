@@ -54,7 +54,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ProjectScope").super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").alias("project", "").create();
       case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").children(new String[]{"parameter"}, new boolean[]{false}).abstract_().alias("#query", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").children(new String[]{"parameter"}, new boolean[]{false}).abstract_().create();
       case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 22:

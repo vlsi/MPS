@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2ml8qbfwxwuf9dd7cfthivs5ihbqovw">
+<dependencies version="2" modelHash="-c7n9sg0jytzyalnj7rch2accdmtyqf">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -28,6 +28,7 @@
     <dep root="6852607286009167343" />
     <dep root="6854397602732214175" />
     <dep root="691634242167120039" />
+    <dep root="6928665434433761801" />
     <dep root="757553790980850366" />
     <dep root="8517397753921951830" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -53,7 +54,7 @@
   <source id="2348043250037290416" name="IClickable" hash="5t38auiw1m9di83dfwe3vuomsn0zk4y" />
   <source id="2348043250037383180" name="NodeReferencePresentation" hash="de9hqhtovgluamibv4xw2qs7tajp7ac" />
   <source id="691634242167120039" name="ModifiedCommandHistoryItem" hash="3ykzrjhll9xhzemojb0nfkd724tvpuf" />
-  <source id="473081947980701568" name="HelpCommand" hash="8e5jp3cjvivdp5g1lmkgpbeq06sajsc" />
+  <source id="473081947980701568" name="HelpCommand" hash="-87n9b82zss1xzlcrbppzylw4s0ytpdn" />
   <source id="473081947981012231" name="ConsoleHelpProvider" hash="5yzbavfc87xs5e2wcv6916mpaqg0kzx" />
   <source id="1583916890557930028" name="ConsoleRoot" hash="1h1zaivgfywkci8fdca6cdi3cyifvjm" />
   <source id="5637103006918228482" name="Response" hash="65v39cd8zo3noo4prebjp4vmfjv6gdx" />
@@ -61,5 +62,6 @@
   <source id="5637103006919121940" name="NodeResponceItem" hash="4nzztwnbth6qmuma282xu6uh2ujo6lm" />
   <source id="5637103006919121976" name="TextResponceItem" hash="-2flbw5dsfauyldclw7hinan2nmuwu8i" />
   <source id="5637103006919122224" name="NewLineResponceItem" hash="qovkn3u964alczcmf78x65kvsr7p9p" />
+  <source id="6928665434433761801" name="HelpConceptReference" hash="-ebyy9cbdoelas1e4juws8x3y59h3ixr" />
 </dependencies>
 

@@ -17,6 +17,10 @@ public class InternalMode_BehaviorDescriptor extends Expression_BehaviorDescript
     return ConsoleHelpProvider_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
   }
 
+  public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
+  }
+
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }

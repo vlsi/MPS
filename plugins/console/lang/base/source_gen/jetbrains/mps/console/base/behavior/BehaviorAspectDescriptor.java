@@ -12,36 +12,38 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 3:
+      case 4:
         return new History_BehaviorDescriptor();
       case 0:
         return new CommandHolder_BehaviorDescriptor();
-      case 9:
-        return new NodeWithClosure_BehaviorDescriptor();
       case 10:
+        return new NodeWithClosure_BehaviorDescriptor();
+      case 11:
         return new PastedNodeReference_BehaviorDescriptor();
-      case 7:
+      case 8:
         return new NodeReferenceString_BehaviorDescriptor();
-      case 6:
+      case 7:
         return new NodeReferencePresentation_BehaviorDescriptor();
-      case 4:
+      case 5:
         return new ModifiedCommandHistoryItem_BehaviorDescriptor();
       case 2:
         return new HelpCommand_BehaviorDescriptor();
       case 1:
         return new ConsoleRoot_BehaviorDescriptor();
-      case 11:
-        return new Response_BehaviorDescriptor();
-      case 8:
-        return new NodeResponceItem_BehaviorDescriptor();
       case 12:
+        return new Response_BehaviorDescriptor();
+      case 9:
+        return new NodeResponceItem_BehaviorDescriptor();
+      case 13:
         return new TextResponceItem_BehaviorDescriptor();
-      case 5:
+      case 6:
         return new NewLineResponceItem_BehaviorDescriptor();
+      case 3:
+        return new HelpConceptReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", "jetbrains.mps.console.base.structure.NewLineResponceItem", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResponceItem", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponceItem"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", "jetbrains.mps.console.base.structure.NewLineResponceItem", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResponceItem", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponceItem"};
 }
