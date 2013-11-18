@@ -1299,25 +1299,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   /**
-   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
-   * by converting to BaseConcept properties mostly, and considering other
-   * cases individually
-   * @Deprecated in 3.0
-   */
-  public String getConceptProperty(String propertyName) {
-    SNode conceptDeclaration;
-    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-      conceptDeclaration = this;
-    } else {
-      conceptDeclaration = (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
-    }
-    SNode conceptProperty = (SNode) SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
-    return o != null ? o.toString() : null;
-  }
-
-  @Deprecated
-  /**
    * Users are not supposed to use this in past
    * @Deprecated in 3.0
    */
