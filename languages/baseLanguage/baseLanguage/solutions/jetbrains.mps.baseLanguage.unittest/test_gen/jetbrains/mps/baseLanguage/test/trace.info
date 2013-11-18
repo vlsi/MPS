@@ -886,6 +886,22 @@
     <unitInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test$TestBody" />
     <unitInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6640766779615010044">
+    <nodeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck6640766779615226140#()V" />
+    <nodeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck6640766779615226140#()V" />
+    <scopeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="129" />
+    <scopeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
+      <varInfo nodeId="6640766779615010044" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody" />
+    <unitInfo nodeId="6640766779615010044" fileName="FieldCanBeLocalVar_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7187651930235347758">
     <nodeInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="15" startPosition="54" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7187651930235347758" fileName="TestGenerationMode_Test.java" startLine="16" startPosition="114" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
