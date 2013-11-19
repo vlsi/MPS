@@ -907,7 +907,7 @@
     <nodeInfo nodeId="1650638035896359812" fileName="FieldDeclaration_Behavior.java" startLine="96" startPosition="95" endLine="97" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3012473318495506795" fileName="FieldDeclaration_Behavior.java" startLine="98" startPosition="27" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2496361171403550865" fileName="FieldDeclaration_Behavior.java" startLine="108" startPosition="89" endLine="109" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7405920559687857482" fileName="FieldDeclaration_Behavior.java" startLine="113" startPosition="50" endLine="114" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7405920559687857482" fileName="FieldDeclaration_Behavior.java" startLine="113" startPosition="107" endLine="114" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7405920559687857483" fileName="FieldDeclaration_Behavior.java" startLine="115" startPosition="5" endLine="116" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7405920559687857493" fileName="FieldDeclaration_Behavior.java" startLine="116" startPosition="101" endLine="117" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="121" startPosition="81" endLine="122" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -973,7 +973,7 @@
     <scopeInfo nodeId="3012473318495506769" fileName="FieldDeclaration_Behavior.java" startLine="87" startPosition="27" endLine="88" endPosition="16" />
     <scopeInfo nodeId="3012473318495506794" fileName="FieldDeclaration_Behavior.java" startLine="98" startPosition="27" endLine="99" endPosition="16" />
     <scopeInfo nodeId="2496361171403550864" fileName="FieldDeclaration_Behavior.java" startLine="108" startPosition="89" endLine="109" endPosition="59" />
-    <scopeInfo nodeId="7405920559687857481" fileName="FieldDeclaration_Behavior.java" startLine="113" startPosition="50" endLine="114" endPosition="13" />
+    <scopeInfo nodeId="7405920559687857481" fileName="FieldDeclaration_Behavior.java" startLine="113" startPosition="107" endLine="114" endPosition="13" />
     <scopeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="121" startPosition="81" endLine="122" endPosition="131" />
     <scopeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="126" startPosition="100" endLine="127" endPosition="176" />
     <scopeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="131" startPosition="92" endLine="132" endPosition="132" />
