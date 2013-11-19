@@ -65,31 +65,24 @@ public class ModelDependenciesManager {
   private MyModuleWatcher myModuleWatcher;
   private MySModelWatcher myModelWatcher;
 
-  private final AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
   private volatile Collection<SModuleReference> myCachedDeps;
-  // a one-time synchronization helper for the cache
-  private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
 
   public ModelDependenciesManager(SModel model) {
     myModel = model;
   }
 
   public Collection<SModuleReference> getAllImportedLanguages() {
-    if (myModel == null) throw new IllegalStateException("access after disposal");
+    final SModel model = myModel;
+    if (model == null) throw new IllegalStateException("access after disposal");
 
-    if (myInvalidatedFlag.compareAndSet(true, false)) {
-      final Collection<SModuleReference> languages = buildAllLanguages(myModel, new LinkedHashSet<SModuleReference>());
-      myCachedDeps = Collections.unmodifiableCollection(languages);
-      myCacheInitGuard.countDown();
+    Collection<SModuleReference> tlVal = myCachedDeps;
+    if (tlVal == null) {
+      // I can live with expense of two+ threads building identical set simultaneously (microseconds)
+      // and competing to set it to save use of synchronization primitives
+      tlVal = buildAllLanguages(model, new LinkedHashSet<SModuleReference>());
+      myCachedDeps = tlVal = Collections.unmodifiableCollection(tlVal);
     }
-    while (true) {
-      try {
-        myCacheInitGuard.await();
-        break;
-      } catch (InterruptedException e) {
-      }
-    }
-    return myCachedDeps;
+    return tlVal;
   }
 
   public void dispose() {
@@ -101,6 +94,7 @@ public class ModelDependenciesManager {
       myModuleWatcher.dispose();
       myModuleWatcher = null;
     }
+    myCachedDeps = null;
     myModel = null;
   }
 
@@ -114,7 +108,7 @@ public class ModelDependenciesManager {
   }
 
   public void invalidate() {
-    myInvalidatedFlag.set(true);
+    myCachedDeps = null;
   }
 
   protected Collection<SModuleReference> buildAllLanguages(@NotNull SModel model, @NotNull Collection<SModuleReference> result) {
