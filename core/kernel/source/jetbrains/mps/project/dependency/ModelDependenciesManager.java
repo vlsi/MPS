@@ -32,8 +32,6 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Build (and optionally maintain) set of all languages, imported directly and indirectly.
