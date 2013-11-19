@@ -16,7 +16,7 @@ public abstract class ChangeModel {
   public void change(SModel model) {
     this.myModel = new DefaultSModel(model.getReference());
     CopyUtil.copyModelContentAndPreserveIds(model, myModel.getModelDescriptor());
-    CopyUtil.copyModelProperties(model, myModel.getModelDescriptor());
+    CopyUtil.copyModelProperties(((SModelBase) model).getSModel(), myModel);
   }
 
   public void rollback(SModel model) {

@@ -53,7 +53,7 @@ public class MergeSession {
     }
 
     final jetbrains.mps.smodel.SModel newmodel = existing.createEmptyCopy();
-    existing.copyPropertiesTo(newmodel.getModelDescriptor());
+    existing.copyPropertiesTo(newmodel);
     Sequence.fromIterable(mergeLists((Iterable<SNode>) model.getRootNodes(), roots, newmodel.getModelDescriptor())).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         newmodel.addRootNode(it);
