@@ -234,15 +234,13 @@ public class ModelDependenciesManager {
     }
 
     @Override
-    public void repositoryChanged() {
-      myDepManager.invalidate();
-      unsubscribeFrom(myRepository);
+    public void modelAdded(SModule module, SModel model) {
+      invalidateIfWatching(module.getModuleReference());
     }
 
     private void invalidateIfWatching(SModuleReference moduleRef) {
       if (myDepManager.isDependency(moduleRef)) {
         myDepManager.invalidate();
-        unsubscribeFrom(myRepository);
       }
     }
 
