@@ -276,6 +276,13 @@ public class StyleImpl implements Style {
   }
 
   @Override
+  @Nullable
+  public <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute) {
+    IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getCachedAttribute(attribute);
+    return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
+  }
+
+  @Override
   public <T> boolean isSpecified(StyleAttribute<T> attribute) {
     return getTop(attribute) != null;
   }
@@ -295,7 +302,7 @@ public class StyleImpl implements Style {
 
   @Override
   @Deprecated
-  public Object rawGet(StyleAttribute attribute) {
+  public Object getRaw(StyleAttribute attribute) {
     return getTop(attribute);
   }
 
@@ -377,7 +384,7 @@ public class StyleImpl implements Style {
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute<Object> attribute : attributes) {
 
-      Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAll(attribute);
+      Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAllCached(attribute);
       Collection<IntPair<Object>> currentValues = getAttribute(attribute).isEmpty() ? null : getAttribute(attribute).get().getAll();
       Collection<IntPair<Object>> oldValues = getCachedAttribute(attribute).isEmpty() ? null : getCachedAttribute(attribute).get().getAll();
 

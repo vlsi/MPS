@@ -43,6 +43,9 @@ public interface Style {
 
   <T> T get(StyleAttribute<T> attribute);
 
+  //todo: return collection
+  <T> T getRaw(StyleAttribute<T> attribute);
+
   public static class IntPair<T> {
     public int index;
     public T value;
@@ -58,12 +61,13 @@ public interface Style {
   @Nullable
   <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);
 
+  @Nullable
+  <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute);
+
+
   <T> boolean isSpecified(StyleAttribute<T> attribute);
 
   Iterable<StyleAttribute> getSpecifiedAttributes();
-
-  @Deprecated
-  Object rawGet(StyleAttribute attribute);
 
   void addListener(StyleListener l);
 

@@ -149,9 +149,9 @@ public class BracesHighlighter {
   }
 
   private void copyStyleAttributes(Style fromStyle, Style toStyle) {
-    toStyle.set(StyleAttributes.TEXT_COLOR, (Color) fromStyle.rawGet(StyleAttributes.TEXT_COLOR));
-    toStyle.set(StyleAttributes.TEXT_BACKGROUND_COLOR, (Color) fromStyle.rawGet(StyleAttributes.TEXT_BACKGROUND_COLOR));
-    toStyle.set(StyleAttributes.FONT_STYLE, (Integer) fromStyle.rawGet(StyleAttributes.FONT_STYLE));
+    toStyle.set(StyleAttributes.TEXT_COLOR, (Color) fromStyle.getRaw(StyleAttributes.TEXT_COLOR));
+    toStyle.set(StyleAttributes.TEXT_BACKGROUND_COLOR, (Color) fromStyle.getRaw(StyleAttributes.TEXT_BACKGROUND_COLOR));
+    toStyle.set(StyleAttributes.FONT_STYLE, (Integer) fromStyle.getRaw(StyleAttributes.FONT_STYLE));
   }
 
   private static Style getMatchedBraceAttributes() {
