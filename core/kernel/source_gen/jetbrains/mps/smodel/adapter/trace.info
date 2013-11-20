@@ -65,14 +65,13 @@
     <nodeInfo nodeId="2601097456319901341" fileName="SAbstractLinkAdapter.java" startLine="49" startPosition="63" endLine="50" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9029962061611739271" fileName="SAbstractLinkAdapter.java" startLine="55" startPosition="39" endLine="56" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9029962061611767655" fileName="SAbstractLinkAdapter.java" startLine="57" startPosition="28" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9029962061611731465" fileName="SAbstractLinkAdapter.java" startLine="59" startPosition="5" endLine="60" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9029962061611811471" fileName="SAbstractLinkAdapter.java" startLine="60" startPosition="98" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8803966612818545004" fileName="SAbstractLinkAdapter.java" startLine="59" startPosition="5" endLine="60" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9029962061611866590" fileName="SAbstractLinkAdapter.java" startLine="35" startPosition="31" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9029962061611885667" fileName="SAbstractLinkAdapter.java" startLine="45" startPosition="31" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9029962061611760579" fileName="SAbstractLinkAdapter.java" startLine="56" startPosition="94" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2075824672078462517" fileName="SAbstractLinkAdapter.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SAbstractLinkAdapter#(Ljava/lang/String;Ljava/lang/String;)V" />
     <nodeInfo nodeId="2075824672078462533" fileName="SAbstractLinkAdapter.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRole#()Ljava/lang/String;" />
-    <nodeInfo nodeId="9029962061611753998" fileName="SAbstractLinkAdapter.java" startLine="55" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLinkNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="9029962061611753998" fileName="SAbstractLinkAdapter.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLinkNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="2075824672078462551" fileName="SAbstractLinkAdapter.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
     <nodeInfo nodeId="2075824672078462557" fileName="SAbstractLinkAdapter.java" startLine="42" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
     <scopeInfo nodeId="2075824672078462536" fileName="SAbstractLinkAdapter.java" startLine="28" startPosition="27" endLine="29" endPosition="16" />
@@ -85,21 +84,20 @@
       <varInfo nodeId="9029962061609431402" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="2075824672078462533" fileName="SAbstractLinkAdapter.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="9029962061611754001" fileName="SAbstractLinkAdapter.java" startLine="55" startPosition="39" endLine="60" endPosition="104">
+      <varInfo nodeId="9029962061611739272" varName="concept" />
+    </scopeInfo>
     <scopeInfo nodeId="2075824672078462554" fileName="SAbstractLinkAdapter.java" startLine="33" startPosition="31" endLine="39" endPosition="158">
       <varInfo nodeId="9029962061611859169" varName="link" />
-    </scopeInfo>
-    <scopeInfo nodeId="9029962061611754001" fileName="SAbstractLinkAdapter.java" startLine="55" startPosition="39" endLine="61" endPosition="54">
-      <varInfo nodeId="9029962061611739272" varName="concept" />
-      <varInfo nodeId="9029962061611731468" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="2075824672078462560" fileName="SAbstractLinkAdapter.java" startLine="43" startPosition="46" endLine="50" endPosition="240">
       <varInfo nodeId="9029962061611825908" varName="link" />
       <varInfo nodeId="2601097456319901244" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="9029962061611753998" fileName="SAbstractLinkAdapter.java" startLine="55" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="9029962061611753998" fileName="SAbstractLinkAdapter.java" startLine="55" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="2075824672078462551" fileName="SAbstractLinkAdapter.java" startLine="32" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="2075824672078462557" fileName="SAbstractLinkAdapter.java" startLine="42" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="2075824672078462511" fileName="SAbstractLinkAdapter.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.smodel.adapter.SAbstractLinkAdapter" />
+    <unitInfo nodeId="2075824672078462511" fileName="SAbstractLinkAdapter.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.smodel.adapter.SAbstractLinkAdapter" />
   </root>
   <root nodeRef="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)/2601097456319836723">
     <nodeInfo nodeId="5691494193750519575" fileName="SInterfaceConceptAdapter.java" startLine="18" startPosition="64" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
