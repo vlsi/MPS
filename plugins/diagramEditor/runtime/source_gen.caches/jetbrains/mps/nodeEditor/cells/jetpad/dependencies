@@ -80,7 +80,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell" file="DiagramViewCell.java">
-    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
@@ -97,12 +96,10 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" file="GenericViewCell.java">
-    <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler" />

@@ -41,8 +41,8 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
     Rectangle bounds = myView.bounds().get();
     myX = myComponent.getX();
     myY = myComponent.getY();
-    myWidth = Math.abs(bounds.origin.x) + bounds.dimension.x;
-    myHeight = Math.abs(bounds.origin.y) + bounds.dimension.y;
+    myWidth = bounds.origin.x + bounds.dimension.x;
+    myHeight = bounds.origin.y + bounds.dimension.y;
     myComponent.setBounds(myComponent.getX(), myComponent.getY(), myWidth, myHeight);
   }
 

@@ -51,11 +51,18 @@ public class BlockViewPortLayouter {
         childrenLen = childrenLen.add(mulCoord(dim, borderDir));
       }
       Vector space = border.end.sub(border.start).sub(childrenLen);
+      space = new Vector(space.x / (portDimensions.size() - 1), space.y / (portDimensions.size() - 1));
       Vector offset = Vector.ZERO;
-      for (Vector dim : portDimensions) {
+      Vector fullOffset = new Vector(border.end.x - border.start.x, border.end.y - border.start.y);
+      for (int i = 0; i < portDimensions.size(); i++) {
+        Vector dim = portDimensions.get(i);
         Vector portLocation = border.start.add(offset);
+        offset = offset.add(mulCoord(dim, borderDir));
+        if (i == portDimensions.size() - 1 && !(offset.equals(fullOffset))) {
+          portLocation = portLocation.add(fullOffset.sub(offset));
+        }
+        offset = offset.add(space);
         portOrigins.add(portLocation.add(mulCoord(SHIFT_TO_ORIGIN[dir.ordinal()], dim)));
-        offset = offset.add(space).add(mulCoord(dim, borderDir));
       }
     }
     if (reverted) {

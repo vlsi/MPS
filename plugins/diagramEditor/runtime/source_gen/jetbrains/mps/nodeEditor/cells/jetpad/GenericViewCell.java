@@ -4,8 +4,6 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.jetpad.projectional.view.View;
-import java.awt.Font;
-import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -21,7 +19,6 @@ import jetbrains.jetpad.geometry.Rectangle;
  */
 public class GenericViewCell extends EditorCell_Collection {
   protected View myView;
-  private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
 
   protected GenericViewCell(EditorContext editorContext, SNode node, CellLayout cellLayout, AbstractCellListHandler handler) {
     super(editorContext, node, cellLayout, handler);
