@@ -239,13 +239,10 @@ public class TransientModelsModule extends AbstractModule {
 
   public class TransientSModelDescriptor extends EditableSModelBase {
     protected volatile jetbrains.mps.smodel.SModel mySModel;
-    private final String myLongName;
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(String modelName) {
       super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName), new NullDataSource());
-      myLongName = SModelStereotype.withoutStereotype(modelName);
-      updateTimestamp();
     }
 
     @Override

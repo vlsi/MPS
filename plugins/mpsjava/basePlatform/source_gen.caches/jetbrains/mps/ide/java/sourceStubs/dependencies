@@ -55,7 +55,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.extapi.model.ReloadableSModelBase" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener" />
   </dependency>
