@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:9c5ec99c-3ab2-4ad1-81ca-75dd87673112(jetbrains.mps.nodeEditor.cells.jetpad.model)/9070483889460175779">
+    <nodeInfo nodeId="6365639112242975261" fileName="MPSDiagram.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiagramCell" />
+    <nodeInfo nodeId="6365639112242976185" fileName="MPSDiagram.java" startLine="12" startPosition="46" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112242979059" fileName="MPSDiagram.java" startLine="16" startPosition="39" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9070483889460550628" fileName="MPSDiagram.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSDiagram#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)V" />
+    <nodeInfo nodeId="6365639112242978764" fileName="MPSDiagram.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDiagramCell#()Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;" />
+    <scopeInfo nodeId="9070483889460550632" fileName="MPSDiagram.java" startLine="12" startPosition="46" endLine="13" endPosition="32" />
+    <scopeInfo nodeId="6365639112242978767" fileName="MPSDiagram.java" startLine="16" startPosition="39" endLine="17" endPosition="25" />
+    <scopeInfo nodeId="9070483889460550628" fileName="MPSDiagram.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="9070483889460550643" varName="diagramCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6365639112242978764" fileName="MPSDiagram.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="9070483889460175779" fileName="MPSDiagram.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSDiagram" />
+  </root>
+  <root nodeRef="r:9c5ec99c-3ab2-4ad1-81ca-75dd87673112(jetbrains.mps.nodeEditor.cells.jetpad.model)/9070483889460271851">
+    <nodeInfo nodeId="6365639112242949616" fileName="MPSBlock.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBlockCell" />
+    <nodeInfo nodeId="6365639112242963812" fileName="MPSBlock.java" startLine="13" startPosition="40" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112246625751" fileName="MPSBlock.java" startLine="14" startPosition="28" endLine="15" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112242972005" fileName="MPSBlock.java" startLine="18" startPosition="35" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6365639112242971597" fileName="MPSBlock.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBlockCell#()Ljetbrains/mps/nodeEditor/cells/jetpad/BlockCell;" />
+    <nodeInfo nodeId="9070483889460834289" fileName="MPSBlock.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSBlock#(Ljetbrains/mps/nodeEditor/cells/jetpad/BlockCell;)V" />
+    <scopeInfo nodeId="6365639112242971600" fileName="MPSBlock.java" startLine="18" startPosition="35" endLine="19" endPosition="23" />
+    <scopeInfo nodeId="9070483889460834293" fileName="MPSBlock.java" startLine="13" startPosition="40" endLine="15" endPosition="27" />
+    <scopeInfo nodeId="6365639112242971597" fileName="MPSBlock.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="9070483889460834289" fileName="MPSBlock.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="9070483889460834305" varName="blockCell" />
+    </scopeInfo>
+    <unitInfo nodeId="9070483889460271851" fileName="MPSBlock.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSBlock" />
+  </root>
+  <root nodeRef="r:9c5ec99c-3ab2-4ad1-81ca-75dd87673112(jetbrains.mps.nodeEditor.cells.jetpad.model)/9070483889460271875">
+    <nodeInfo nodeId="6365639112244166915" fileName="MPSConnector.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConnectorCell" />
+    <nodeInfo nodeId="6365639112244167092" fileName="MPSConnector.java" startLine="12" startPosition="51" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112244168495" fileName="MPSConnector.java" startLine="16" startPosition="43" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6365639112244166067" fileName="MPSConnector.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSConnector#(Ljetbrains/mps/nodeEditor/cells/jetpad/ConnectorCell;)V" />
+    <nodeInfo nodeId="6365639112244168493" fileName="MPSConnector.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConnectorCell#()Ljetbrains/mps/nodeEditor/cells/jetpad/ConnectorCell;" />
+    <scopeInfo nodeId="6365639112244166071" fileName="MPSConnector.java" startLine="12" startPosition="51" endLine="13" endPosition="35" />
+    <scopeInfo nodeId="6365639112244168494" fileName="MPSConnector.java" startLine="16" startPosition="43" endLine="17" endPosition="27" />
+    <scopeInfo nodeId="6365639112244166067" fileName="MPSConnector.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="6365639112244167030" varName="connetorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6365639112244168493" fileName="MPSConnector.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="9070483889460271875" fileName="MPSConnector.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSConnector" />
+  </root>
+</debugInfo>
+

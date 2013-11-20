@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.mappers.MPSBlockMapper" file="MPSBlockMapper.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSBlock" />
+    <classNode extendsClassName="jetbrains.mps.diagram.dataflow.mapper.BlockMapper" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.mappers.MPSDiagramMapper" file="MPSDiagramMapper.java">
+    <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.MapperFactory" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.mps.diagram.dataflow.model.Block" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.mappers.MPSBlockMapper" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSBlock" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSDiagram" />
+    <classNode extendsClassName="jetbrains.mps.diagram.dataflow.mapper.DiagramMapper" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper" file="RootMapper.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.MapperFactory" />
+    <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewContainer" />
+    <classNode dependClassName="jetbrains.mps.diagram.dataflow.mapper.RootDiagramMapper" />
+    <classNode dependClassName="jetbrains.mps.diagram.dataflow.model.Diagram" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.mappers.MPSDiagramMapper" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSDiagram" />
+    <classNode extendsClassName="jetbrains.jetpad.mapper.Mapper" />
+  </dependency>
+</dependenciesRoot>
+

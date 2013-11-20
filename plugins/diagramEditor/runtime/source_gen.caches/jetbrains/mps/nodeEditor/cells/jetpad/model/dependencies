@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSBlock" file="MPSBlock.java">
+    <classNode dependClassName="jetbrains.jetpad.values.Color" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
+    <classNode extendsClassName="jetbrains.mps.diagram.dataflow.model.Block" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSConnector" file="MPSConnector.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
+    <classNode extendsClassName="jetbrains.mps.diagram.dataflow.model.Connector" />
+  </dependency>
+  <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.model.MPSDiagram" file="MPSDiagram.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
+    <classNode extendsClassName="jetbrains.mps.diagram.dataflow.model.Diagram" />
+  </dependency>
+</dependenciesRoot>
+
