@@ -39,9 +39,8 @@ import java.util.List;
  */
 public class RuleConsequenceProcessor {
   private final TemplateProcessor myTemplateProcessor;
-  private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
+  private TemplateContainer myTemplateContainer;
   private TemplateContext myConsequenceContext;
-  private SNode myRuleNode;
 
   public RuleConsequenceProcessor(TemplateExecutionEnvironment env) {
     this(new TemplateProcessor(env));
@@ -53,55 +52,38 @@ public class RuleConsequenceProcessor {
 
   // XXX GenerationFailureException is thrown from GeneratorUtilEx.getTNFRC to check query in inline switch cases - perhaps,
   // can extract switch and perform case selection in {@link #processRuleConsequence()} later?
-  public boolean prepare(SNode ruleConsequence, SNode ruleNode, TemplateContext templateContext) throws DismissTopMappingRuleException,
+  public boolean prepare(@NotNull SNode ruleConsequence, @Nullable SNode ruleNode, @NotNull TemplateContext templateContext) throws DismissTopMappingRuleException,
       AbandonRuleInputException, GenerationFailureException {
-    myRuleNode = ruleNode;
-    ConsequenceHandler h = new ConsequenceHandler(templateContext);
+    ConsequenceHandler h = new ConsequenceHandler(templateContext, ruleNode);
     h.dispatch(ruleConsequence);
     h.checkExceptions();
     myConsequenceContext = h.getUltimateContext();
-    myNodeAndMappingNamePairs = h.getNodeAndMappingNamePairs();
-    return h.actualRuleConsequence() != null && myNodeAndMappingNamePairs != null;
+    myTemplateContainer = h.getNodeAndMappingNamePairs();
+    if (h.actualRuleConsequence() != null && myTemplateContainer != null) {
+      return myTemplateContainer.initialize(myConsequenceContext, ruleNode);
+    }
+    return false;
   }
 
   // XXX Does DismissTopMappingRuleException get thrown from within TemplateProcessor, or it's solely GeneratorUtilEx realm (i.e. whether it's rule
   // level or lower, template level). Remove from throws here if can't happen from within TP (the only suspicious location is switch.tryDefault (macro).
   public List<SNode> processRuleConsequence(@Nullable String mappingName) throws DismissTopMappingRuleException,
       GenerationFailureException, GenerationCanceledException {
-    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
-      SNode templateNode = nodeAndMappingNamePair.o1;
-      String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-      try {
-        List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, myConsequenceContext.subContext(innerMappingName), null);
-        if (_outputNodes != null) {
-          outputNodes.addAll(_outputNodes);
-        }
-      } catch (TemplateProcessingFailureException ex) {
-        TemplateExecutionEnvironment env = myTemplateProcessor.getEnvironment();
-        env.getGenerator().showErrorMessage(myConsequenceContext.getInput(), myRuleNode, "error processing template fragment");
-      } catch (Throwable t) {
-        // XXX I got no idea why Throwable was catched in Reduction[Pattern]RuleInterpreted
-        // but silently propagated in IfMacro.else and in switch.default. Use it here
-        // for consistency (and likely for later removal)
-        TemplateExecutionEnvironment env = myTemplateProcessor.getEnvironment();
-        env.getLogger().handleException(t);
-        env.getGenerator().showErrorMessage(myConsequenceContext.getInput(), templateNode, myRuleNode, "error processing template fragment");
-      }
-    }
-    return outputNodes;
+    return myTemplateContainer.apply(mappingName);
   }
 
   private class ConsequenceHandler implements ConsequenceDispatch {
-    private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
+    private final SNode myRuleNode;
+    private TemplateContainer myTemplateContainer;
     private AbandonRuleInputException myAbandonRuleException;
     private DismissTopMappingRuleException myDismissRuleException;
     private GenerationFailureException myFailureException;
     private TemplateContext myTemplateContext;
     private SNode myRuleConsequenceInUse;
 
-    public ConsequenceHandler(@NotNull TemplateContext ctx) {
+    public ConsequenceHandler(@NotNull TemplateContext ctx, @Nullable SNode ruleNode) {
       myTemplateContext = ctx;
+      myRuleNode = ruleNode;
     }
 
     public void dispatch(@NotNull SNode ruleConsequence) {
@@ -117,8 +99,8 @@ public class RuleConsequenceProcessor {
       return myTemplateContext;
     }
 
-    public List<Pair<SNode, String>> getNodeAndMappingNamePairs() {
-      return myNodeAndMappingNamePairs;
+    public TemplateContainer getNodeAndMappingNamePairs() {
+      return myTemplateContainer;
     }
 
     @Override
@@ -152,7 +134,7 @@ public class RuleConsequenceProcessor {
     public void inlineTemplate(SNode ruleConsequence) {
       SNode templateNode = RuleUtil.getInlineTemplate_templateNode(ruleConsequence);
       if (templateNode != null) {
-        myNodeAndMappingNamePairs = Collections.singletonList(new Pair<SNode, String>(templateNode, null));
+        myTemplateContainer = new TemplateContainer(myTemplateProcessor, new Pair<SNode, String>(templateNode, null));
       } else {
         showErrorMessage(ruleConsequence, "no template node");
       }
@@ -169,14 +151,7 @@ public class RuleConsequenceProcessor {
         showErrorMessage(ruleConsequence, "error processing template consequence: no 'template'");
         return;
       }
-      List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(templateContainer);
-      if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, myTemplateContext.getInput(), myRuleNode, getGenerator())) {
-        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
-        for (SNode fragment : fragments) {
-          result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
-        }
-        myNodeAndMappingNamePairs = result;
-      }
+      myTemplateContainer = new TemplateContainer(myTemplateProcessor, templateContainer);
     }
 
     @Override

@@ -775,10 +775,8 @@ public final class TemplateProcessor {
         throw new TemplateProcessingFailureException();
       }
 
-      List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(invokedTemplate);
-
-      if (!GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, invokedTemplate, newInputNode, macro, getGenerator())) {
-        showErrorMessage(newInputNode, null, macro, String.format("error processing %s", myName));
+      TemplateContainer tc = new TemplateContainer(myTemplateProcessor, invokedTemplate);
+      if (!tc.initialize(newcontext, macro)) {
         throw new TemplateProcessingFailureException();
       }
 
@@ -788,20 +786,13 @@ public final class TemplateProcessor {
       }
       myTracer.pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(invokedTemplate));
 
-      ArrayList<SNode> outputNodes = new ArrayList<SNode>();
       try {
-        for (SNode fragment : fragments) {
-          SNode templateForInclude = fragment.getParent();
-          String mappingName = GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null);
-          List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateForInclude, newcontext.subContext(mappingName), null);
-          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
-        }
+        return tc.applyFailFast();
       } finally {
         if (inputChanged) {
           myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
         }
       }
-      return outputNodes;
     }
   }
 
