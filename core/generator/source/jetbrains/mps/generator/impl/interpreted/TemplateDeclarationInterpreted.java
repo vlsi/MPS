@@ -24,6 +24,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
@@ -73,9 +74,13 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
         return null;
       }
 
-      environment.getTracer().pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(myTemplateNode));
-
-      return tc.applyFailFast();
+      final SNodePointer templateNodeRef = new SNodePointer(myTemplateNode);
+      environment.getTracer().pushTemplateNode(templateNodeRef);
+      try {
+        return tc.applyFailFast();
+      } finally {
+        environment.getTracer().closeTemplateNode(templateNodeRef);
+      }
     } else {
       return new TemplateProcessor(environment).apply(null, myTemplateNode, applyContext);
     }

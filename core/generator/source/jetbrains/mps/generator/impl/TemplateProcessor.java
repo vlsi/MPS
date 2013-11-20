@@ -784,7 +784,8 @@ public final class TemplateProcessor {
       if (inputChanged) {
         myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
       }
-      myTracer.pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(invokedTemplate));
+      final SNodePointer invokedTemplateRef = new SNodePointer(invokedTemplate);
+      myTracer.pushTemplateNode(invokedTemplateRef);
 
       try {
         return tc.applyFailFast();
@@ -792,6 +793,7 @@ public final class TemplateProcessor {
         if (inputChanged) {
           myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
         }
+        myTracer.closeTemplateNode(invokedTemplateRef);
       }
     }
   }
