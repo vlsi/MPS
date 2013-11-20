@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.TemplateGenerator;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by: Sergey Dmitriev
@@ -90,19 +89,16 @@ public abstract class ReferenceInfo {
     String role = getReferenceRole();
     SNode sourceNode = getOutputSourceNode();
 
-    SNode cd = SModelUtil.findConceptDeclaration(sourceNode.getConcept().getQualifiedName(), GlobalScope.getInstance());
-    SNode link = SModelSearchUtil.findMostSpecificLinkDeclaration(cd, role);
+    SAbstractLink link = sourceNode.getConcept().getLink(role);
     if (link == null) {
-      errorLog.error(sourceNode, "couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConcept().getQualifiedName() + "'");
+      errorLog.error(sourceNode, String.format("couldn't find link declaration '%s' in concept '%s'", role, sourceNode.getConcept().getQualifiedName()));
       return false;
     }
-
-    SNode target = SModelUtil.getLinkDeclarationTarget(link);
-    if (target == null) {
-      errorLog.error(link, "link target is not defined");
-      return false;
+    if (!link.isReference()) {
+      errorLog.error(sourceNode,
+          String.format("link '%s' in '%s' is containment link, can't be subject for dynamic resolve", role, sourceNode.getConcept().getQualifiedName()));
     }
-
-    return SModelUtil.isAssignableConcept(target, jetbrains.mps.smodel.SNodeUtil.concept_IResolveInfo);
+    SAbstractConcept resolveInfoConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_IResolveInfo);
+    return link.getTargetConcept().isSubConceptOf(resolveInfoConcept);
   }
 }
