@@ -636,7 +636,7 @@ public final class TemplateProcessor {
         try {
           TemplateContext newcontext = templateContext.subContext(newInputNode);
           if (macro_mapperFunction != null) {
-            SNode childToReplaceLater = new jetbrains.mps.smodel.SNode(templateNode.getConcept().getQualifiedName());
+            SNode childToReplaceLater = myTemplateProcessor.myOutputModel.createNode(templateNode.getConcept());
             myTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later

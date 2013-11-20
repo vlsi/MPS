@@ -27,6 +27,8 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -69,7 +71,10 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public SNode createOutputNode(String conceptName) {
-    return new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptName));
+    // I use getInstanceConcept because it doesn't return null for unknown concepts
+    // Another alternative is to check getConcept for null and instantiate BaseConcept then
+    SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptName);
+    return generator.getOutputModel().createNode(c);
   }
 
   @Override
@@ -317,7 +322,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   */
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    SNode childToReplaceLater = new jetbrains.mps.smodel.SNode(mapper.getConceptFqName());
+    SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());
     getTracer().pushOutputNodeToReplaceLater(childToReplaceLater);
     generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, getQueryExecutor());
     return childToReplaceLater;

@@ -39,7 +39,7 @@ public interface TemplateExecutionEnvironment {
 
   SModel getOutputModel();
 
-  SNode createOutputNode(String conceptName);
+  SNode createOutputNode(@NotNull String conceptName);
 
   @NotNull
   TemplateGenerator getGenerator();
