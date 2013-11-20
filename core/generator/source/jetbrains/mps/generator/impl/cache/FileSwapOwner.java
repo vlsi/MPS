@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -200,7 +200,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         return null;
       }
 
-      List<Pair<String, SNode>> roots = new NodesReader(modelReference, null, false).readNodes(model, is);
+      List<Pair<String, SNode>> roots = new NodesReader(modelReference, false).readNodes(is);
       for (Pair<String, SNode> r : roots) {
         model.addRootNode(r.o2);
       }
@@ -226,10 +226,10 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     writer.writeNode(node, mos);
     mos.close();
 
-    NodesReader reader = new NodesReader(node.getModel().getReference(), null, false);
+    NodesReader reader = new NodesReader(node.getModel().getReference(), false);
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
-    return reader.readNode(((jetbrains.mps.smodel.SNode) node).getPersistentModel(), new ModelInputStream(is)).o2;
+    return reader.readNode(new ModelInputStream(is)).o2;
   }
 
   // method created for testing
@@ -256,7 +256,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     if (version != 44) {
       return null;
     }
-    List<Pair<String, SNode>> resultRoots = new NodesReader(resultModel.getReference(), null, false).readNodes(resultModel, mis);
+    List<Pair<String, SNode>> resultRoots = new NodesReader(resultModel.getReference(), false).readNodes(mis);
     for (Pair<String, SNode> root : resultRoots) {
       resultModel.addRootNode(root.o2);
     }
