@@ -25,11 +25,12 @@ import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.SNodeUtil;
-import org.jetbrains.mps.openapi.model.*;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
@@ -46,15 +47,12 @@ public class DelayedChanges {
   private List<Change> myExecuteMapSrcNodeMacroChanges = new ArrayList<Change>();
   private List<Change> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<Change>();
 
-  private jetbrains.mps.smodel.SNode attrsHolder = new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept);
-
   private IGeneratorLogger myLogger;
   private TemplateGenerator myGenerator;
 
   public DelayedChanges(TemplateGenerator generator) {
     myGenerator = generator;
     myLogger = generator.getLogger();
-    attrsHolder.putUserObject(MAP_SRC_TEMP_NODE, MAP_SRC_TEMP_NODE);
   }
 
   public boolean isEmpty() {
@@ -62,14 +60,14 @@ public class DelayedChanges {
   }
 
   public void addExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
-    jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
+    markNodeAsTemp(childToReplace);
     synchronized (this) {
       myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context, execContext));
     }
   }
 
   public void addExecuteNodeMapper(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
-    jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
+    markNodeAsTemp(childToReplace);
     myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, execContext));
   }
 
@@ -95,6 +93,10 @@ public class DelayedChanges {
     for (Change executeMapSrcNodeMacroPostProcChange : myExecuteMapSrcNodeMacroPostProcChanges) {
       executeMapSrcNodeMacroPostProcChange.doChange();
     }
+  }
+
+  private void markNodeAsTemp(SNode childToReplace) {
+    childToReplace.putUserObject(MAP_SRC_TEMP_NODE, MAP_SRC_TEMP_NODE);
   }
 
   private interface Change {

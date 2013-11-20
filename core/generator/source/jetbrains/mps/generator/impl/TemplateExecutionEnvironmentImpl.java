@@ -343,15 +343,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       status.reportProblem(false, contextParentNode, "",
         GeneratorUtil.describe(inputNode, "input"),
         GeneratorUtil.describe(templateNode.resolve(MPSModuleRepository.getInstance()), "template"));
-    }
-
-    // add
-    SNode/*LinkDeclaration*/ childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(((jetbrains.mps.smodel.SNode) contextParentNode).getConceptDeclarationNode(), childRole);
-    if (childLinkDeclaration == null) {
-      // there should have been warning about that
+      // spit out the warning, but try to add anyway
       contextParentNode.addChild(childRole, outputNodeToWeave);
     } else {
-      if (SModelUtil.isMultipleLinkDeclaration(childLinkDeclaration)) {
+      // add
+      if (v.isMultipleSource()) {
         contextParentNode.addChild(childRole, outputNodeToWeave);
       } else {
         SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(contextParentNode, childRole);

@@ -20,7 +20,9 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -88,8 +90,8 @@ public abstract class ReferenceInfo {
     String role = getReferenceRole();
     SNode sourceNode = getOutputSourceNode();
 
-    SNode link = new ConceptAndSuperConceptsScope(
-        ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
+    SNode cd = SModelUtil.findConceptDeclaration(sourceNode.getConcept().getQualifiedName(), GlobalScope.getInstance());
+    SNode link = SModelSearchUtil.findMostSpecificLinkDeclaration(cd, role);
     if (link == null) {
       errorLog.error(sourceNode, "couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConcept().getQualifiedName() + "'");
       return false;

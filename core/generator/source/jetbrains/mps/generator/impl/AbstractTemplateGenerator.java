@@ -275,6 +275,13 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     public RoleValidationStatus validate(SNode targetNode) {
       return myStatus;
     }
+
+    /**
+     * @return <code>true</code> if source cardinality is 0..* or 1..*
+     */
+    public boolean isMultipleSource() {
+      return false;
+    }
   }
 
   private static class AcceptableTargetValidator extends RoleValidator {
@@ -306,6 +313,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       String relationKind = child ? "child" : "referent";
       String msg = String.format("%s '%s' is expected for role '%s' but was '%s'", relationKind, expected, myRole, was);
       return new RoleValidationStatus(myLogger, msg, GeneratorUtil.describe(targetNode, relationKind));
+    }
+
+    @Override
+    public boolean isMultipleSource() {
+      return SModelUtil.isMultipleLinkDeclaration(myLink);
     }
   }
 
