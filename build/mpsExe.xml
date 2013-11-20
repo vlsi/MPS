@@ -89,10 +89,16 @@
     </copy>
   </target>
 
+  <taskdef name="jet-sign" classname="jetbrains.sign.JetSignTask">
+    <classpath path="${mps.sign}/jet-sign.jar"/>
+  </taskdef>
+
   <target name="sign" if="windows">
-    <exec executable="${mps.sign}/signtool.exe" osfamily="windows" failonerror="false" dir="${output.dir}">
-      <arg line="sign /f ${mps.sign}/cs_cert2011.pfx /ac ${mps.sign}/path.cer /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
-    </exec>
+    <jet-sign>
+      <fileset dir="${output.dir}">
+        <include name="${buildMPS.build.number}-windows.exe"/>
+      </fileset>
+    </jet-sign>
   </target>
 
 </project>

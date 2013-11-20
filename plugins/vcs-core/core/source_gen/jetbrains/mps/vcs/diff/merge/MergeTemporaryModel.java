@@ -17,7 +17,6 @@ public class MergeTemporaryModel extends EditableSModelBase {
   public MergeTemporaryModel(SModelReference modelRef, boolean readonly) {
     super(modelRef, new NullDataSource());
     myReadOnly = readonly;
-    updateTimestamp();
   }
 
   public MergeTemporaryModel(SModel model, boolean readonly) {
