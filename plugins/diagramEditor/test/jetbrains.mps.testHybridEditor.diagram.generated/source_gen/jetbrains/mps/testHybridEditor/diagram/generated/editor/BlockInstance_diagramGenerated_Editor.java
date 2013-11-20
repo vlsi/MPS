@@ -63,6 +63,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     return editorCell.getCellId() + "_" + node.getNodeId().toString();
                   }
                 });
+                editorCell.getContext().flushEvents();
                 ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                   public void run() {
                     SPropertyOperations.set(node, "x", "" + (view.x.get()));
@@ -77,6 +78,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     return editorCell.getCellId() + "_" + node.getNodeId().toString();
                   }
                 });
+                editorCell.getContext().flushEvents();
                 ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                   public void run() {
                     SPropertyOperations.set(node, "y", "" + (view.y.get()));
@@ -91,6 +93,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     return editorCell.getCellId() + "_" + node.getNodeId().toString();
                   }
                 });
+                editorCell.getContext().flushEvents();
                 ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                   public void run() {
                     SPropertyOperations.set(node, "name", view.text.get());
