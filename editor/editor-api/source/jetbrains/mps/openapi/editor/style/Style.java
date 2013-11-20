@@ -53,6 +53,8 @@ public interface Style {
     }
   }
 
+  <T> int getHighestPriority(StyleAttribute<T> attribute);
+
   @Nullable
   <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);
 

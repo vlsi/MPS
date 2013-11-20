@@ -16,6 +16,7 @@
 package jetbrains.mps.editor.runtime.style;
 
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.containers.EmptyIterator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -30,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -156,7 +158,7 @@ public class StyleImpl implements Style {
 
   @NotNull
   private <T> IntMapPointer<IntObjectSortedListMap<T>> getCachedAttribute(StyleAttribute<T> attribute) {
-    return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myAttributes.search(attribute.getIndex());
+    return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myCachedAttributes.search(attribute.getIndex());
   }
 
   @NotNull
@@ -219,14 +221,10 @@ public class StyleImpl implements Style {
   }
 
   public <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
-    ensureGetAttribute(attribute).setValue(priority, value);
-    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
-    if (StyleAttributes.isSimple(attribute)) {
-      myCachedAttributes.search(attribute.getIndex()).set(null);
-      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
-    } else {
-      updateCache(attributeSet);
+    if (getCachedAttribute(attribute).isEmpty()) {
+      myCachedAttributes.setValue(attribute.getIndex(), new IntObjectSortedListMap<Object>());
     }
+    getCachedAttribute(attribute).get().setValue(priority, value);
   }
 
   @Override
@@ -264,6 +262,9 @@ public class StyleImpl implements Style {
   @Override
   public <T> T get(StyleAttribute<T> attribute) {
     IntObjectSortedListMap<T> attributeValues = getCachedAttribute(attribute).get();
+    if (attributeValues == null && StyleAttributes.isSimple(attribute)) {
+      return getAttribute(attribute).get() == null ? attribute.combine(null, null) : getAttribute(attribute).get().getTop();
+    }
     return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTop();
   }
 
@@ -377,29 +378,64 @@ public class StyleImpl implements Style {
     for (StyleAttribute<Object> attribute : attributes) {
 
       Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAll(attribute);
-      IntMapPointer<IntObjectSortedListMap<Object>> currentValues = getAttribute(attribute);
-      IntMapPointer<IntObjectSortedListMap<Object>> cachedAttribute = getCachedAttribute(attribute);
-      Object cachedValue = cachedAttribute.isEmpty() ? null : cachedAttribute.get().getAll();
+      Collection<IntPair<Object>> currentValues = getAttribute(attribute).isEmpty() ? null : getAttribute(attribute).get().getAll();
+      Collection<IntPair<Object>> oldValues = getCachedAttribute(attribute).isEmpty() ? null : getCachedAttribute(attribute).get().getAll();
 
-      if (parentValues != null) {
-        if (currentValues.isEmpty()) {
-          ensureGetAttribute(attribute).addValues(parentValues);
+      Iterator<IntPair<Object>> parentIterator = parentValues == null ? new EmptyIterator<IntPair<Object>>() : parentValues.iterator();
+      Iterator<IntPair<Object>> currentIterator = currentValues == null ? new EmptyIterator<IntPair<Object>>() : currentValues.iterator();
+      Iterator<IntPair<Object>> oldIterator = oldValues == null ? new EmptyIterator<IntPair<Object>>() : oldValues.iterator();
+
+      IntPair<Object> parentValue;
+      IntPair<Object> currentValue;
+      IntPair<Object> oldValue;
+
+      Object newValue;
+      int newIndex;
+
+      parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+      currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+      oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
+      while (parentValue != null || currentValue != null || oldValue != null) {
+        if (oldValue != null && (parentValue == null || oldValue.index < parentValue.index) && (currentValue == null || oldValue.index < currentValue.index)) {
+          newValue = null;
+          newIndex = oldValue.index;
+          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
+        } else if (parentValue != null && (currentValue == null || parentValue.index < currentValue.index) && (oldValue == null || parentValue.index < oldValue.index)) {
+          newValue = attribute.combine(parentValue.value, null);
+          newIndex = parentValue.index;
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+        } else if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index) && (oldValue == null || currentValue.index < oldValue.index)) {
+          newValue = attribute.combine(null, currentValue.value);
+          newIndex = currentValue.index;
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+        } else if (parentValue != null && currentValue != null && oldValue != null && parentValue.index == oldValue.index && currentValue.index == oldValue.index) {
+          newValue = attribute.combine(parentValue.value, currentValue.value);
+          newIndex = currentValue.index;
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
+        } else if (parentValue != null && currentValue != null && parentValue.index == currentValue.index) {
+          newValue = attribute.combine(parentValue.value, currentValue.value);
+          newIndex = currentValue.index;
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+        } else if (parentValue != null && oldValue != null && parentValue.index == oldValue.index) {
+          newValue = attribute.combine(parentValue.value, null);
+          newIndex = parentValue.index;
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
+        } else if (currentValue != null && oldValue != null && currentValue.index == oldValue.index) {
+          newValue = attribute.combine(null, currentValue.value);
+          newIndex = currentValue.index;
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
         } else {
-          for (IntPair<Object> parentValue : parentValues) {
-            IntMapPointer<Object> searchResult = currentValues.get().search(parentValue.index);
-            if (! searchResult.isEmpty()) {
-              Object currentValue = searchResult.get();
-              Object newValue = attribute.combine(parentValue.value, currentValue);
-              setCached(attribute, parentValue.index, newValue);
-              if (!EqualUtil.equals(newValue, currentValue)) {
-                changedAttributes.add(attribute);
-              }
-            } else {
-              searchResult.set(parentValue.value);
-              changedAttributes.add(attribute);
-            }
-          }
+          throw new IllegalStateException();
         }
+        if (!EqualUtil.equals(newValue, getCached(attribute, newIndex))) {
+          changedAttributes.add(attribute);
+        }
+        setCached(attribute, newIndex, newValue);
       }
     }
 
