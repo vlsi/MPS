@@ -21598,89 +21598,111 @@
     <unitInfo nodeId="8218132442157478804" fileName="check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/8263928360994498928">
-    <nodeInfo nodeId="8263928360994499411" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="57" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8263928360994499420" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8263928360994499347" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="37" startPosition="12" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8263928360994499352" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="39" startPosition="105" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8263928360994499362" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="41" startPosition="115" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8263928360994499372" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="43" startPosition="112" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8263928360994499382" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="45" startPosition="16" endLine="46" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="48" startPosition="9" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="49" startPosition="62" endLine="50" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="51" startPosition="11" endLine="52" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="52" startPosition="165" endLine="53" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="53" startPosition="68" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="54" startPosition="65" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="62" startPosition="46" endLine="63" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="67" startPosition="5" endLine="68" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="68" startPosition="130" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="73" startPosition="30" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8263928360994499421" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="77" startPosition="73" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9154098648325895303" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="41" endLine="31" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8263928360994499411" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="57" endLine="35" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9154098648325945458" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="40" startPosition="45" endLine="41" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9154098648325866277" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="45" startPosition="12" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8263928360994499347" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8263928360994499352" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="48" startPosition="105" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8263928360994499362" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="50" startPosition="115" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8263928360994499372" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="52" startPosition="112" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8263928360994499382" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="54" startPosition="16" endLine="55" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="57" startPosition="9" endLine="58" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="58" startPosition="62" endLine="59" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="60" startPosition="11" endLine="61" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="61" startPosition="165" endLine="62" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="62" startPosition="68" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="63" startPosition="65" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="71" startPosition="46" endLine="72" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="76" startPosition="5" endLine="77" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="77" startPosition="130" endLine="78" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="82" startPosition="30" endLine="83" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9154098648325945459" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="86" startPosition="82" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9154098648325945464" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="90" startPosition="74" endLine="91" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_UnusedPackageClassifier_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="8263928360994499380" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="45" startPosition="14" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8263928360994499409" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8263928360994499418" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="8263928360994499421" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_oirmva_a0a0a0a0a0a0a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="66" startPosition="68" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="50" startPosition="264" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8263928360994499350" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="38" startPosition="19" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="47" startPosition="9" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8263928360994499345" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="28" startPosition="78" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8263928360994499343" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="123" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="8263928360994499380" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="54" startPosition="14" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9154098648325890043" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8263928360994499409" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="9154098648325945456" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="9154098648325945459" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="9154098648325945464" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_oirmva_a0a0a0a0a0a0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="75" startPosition="68" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9154098648325945445" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="38" startPosition="46" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="59" startPosition="264" endLine="65" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="9154098648325945443" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
+    <nodeInfo nodeId="8263928360994499350" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="47" startPosition="19" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8263928360994499345" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="28" startPosition="78" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8263928360994499343" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="123" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="24" endPosition="60" />
-    <scopeInfo nodeId="8263928360994499410" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="57" endLine="31" endPosition="51" />
-    <scopeInfo nodeId="8263928360994499419" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="91" />
-    <scopeInfo nodeId="8263928360994499351" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="39" startPosition="105" endLine="40" endPosition="23" />
-    <scopeInfo nodeId="8263928360994499361" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="41" startPosition="115" endLine="42" endPosition="24" />
-    <scopeInfo nodeId="8263928360994499371" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="43" startPosition="112" endLine="44" endPosition="28" />
-    <scopeInfo nodeId="8263928360994499381" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="45" startPosition="16" endLine="46" endPosition="29" />
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="62" startPosition="46" endLine="63" endPosition="61" />
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="73" startPosition="30" endLine="74" endPosition="17" />
-    <scopeInfo nodeId="8263928360994499421" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="77" startPosition="73" endLine="78" endPosition="46" />
+    <scopeInfo nodeId="9154098648325890044" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="41" endLine="31" endPosition="148" />
+    <scopeInfo nodeId="8263928360994499410" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="57" endLine="35" endPosition="51" />
+    <scopeInfo nodeId="9154098648325945457" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="40" startPosition="45" endLine="41" endPosition="73" />
+    <scopeInfo nodeId="8263928360994499351" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="48" startPosition="105" endLine="49" endPosition="23" />
+    <scopeInfo nodeId="8263928360994499361" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="50" startPosition="115" endLine="51" endPosition="24" />
+    <scopeInfo nodeId="8263928360994499371" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="52" startPosition="112" endLine="53" endPosition="28" />
+    <scopeInfo nodeId="8263928360994499381" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="54" startPosition="16" endLine="55" endPosition="29" />
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="71" startPosition="46" endLine="72" endPosition="61" />
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="82" startPosition="30" endLine="83" endPosition="17" />
+    <scopeInfo nodeId="9154098648325945459" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="86" startPosition="82" endLine="87" endPosition="46" />
+    <scopeInfo nodeId="9154098648325945464" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="90" startPosition="74" endLine="91" endPosition="46" />
     <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="67" startPosition="5" endLine="69" endPosition="45">
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="76" startPosition="5" endLine="78" endPosition="45">
       <varInfo nodeId="8263928360994498928" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994499409" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="9154098648325890043" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="9154098648325890043" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8263928360994499409" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="8263928360994499409" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994499418" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="8263928360994499418" varName="it" />
+    <scopeInfo nodeId="9154098648325945456" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="9154098648325945456" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="8263928360994499421" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="8263928360994499421" varName="a" />
-      <varInfo nodeId="8263928360994499421" varName="b" />
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="82" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="9154098648325945459" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="9154098648325945459" varName="a" />
+      <varInfo nodeId="9154098648325945459" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="51" startPosition="11" endLine="55" endPosition="73">
+    <scopeInfo nodeId="9154098648325945464" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="9154098648325945464" varName="a" />
+      <varInfo nodeId="9154098648325945464" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="60" startPosition="11" endLine="64" endPosition="73">
       <varInfo nodeId="8263928360994499386" varName="intentionProvider" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="66" startPosition="68" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="75" startPosition="68" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="9154098648325945444" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="38" startPosition="46" endLine="43" endPosition="13" />
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="75" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="8263928360994498928" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="48" startPosition="9" endLine="56" endPosition="11">
+    <scopeInfo nodeId="9154098648325945443" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="9154098648325945443" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8263928360994499386" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="57" startPosition="9" endLine="65" endPosition="11">
       <varInfo nodeId="8263928360994499386" varName="_reporter_2309309498" />
       <varInfo nodeId="8263928360994499386" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994499346" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="37" startPosition="12" endLine="57" endPosition="9">
+    <scopeInfo nodeId="8263928360994499346" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="45" startPosition="12" endLine="66" endPosition="9">
       <varInfo nodeId="8263928360994499348" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="8263928360994499344" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="28" startPosition="78" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="8263928360994498929" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="123" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="8263928360994499344" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="28" startPosition="78" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="8263928360994498929" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="123" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="8263928360994498928" varName="classifier" />
       <varInfo nodeId="8263928360994498928" varName="status" />
       <varInfo nodeId="8263928360994498928" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="8263928360994499409" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="29" startPosition="119" endLine="33" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$1" />
-    <unitInfo nodeId="8263928360994499418" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="33" startPosition="17" endLine="37" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$2" />
-    <unitInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule" />
+    <unitInfo nodeId="9154098648325890043" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="29" startPosition="115" endLine="33" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$1" />
+    <unitInfo nodeId="8263928360994499409" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="33" startPosition="23" endLine="37" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$2" />
+    <unitInfo nodeId="9154098648325945456" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="39" startPosition="248" endLine="43" endPosition="11" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$4" />
+    <unitInfo nodeId="9154098648325945443" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="37" startPosition="17" endLine="45" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule$3" />
+    <unitInfo nodeId="8263928360994498928" fileName="check_UnusedPackageClassifier_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/8302934035192370548">
     <nodeInfo nodeId="8302934035192773205" fileName="check_TypeVariableDeclarationForwardReferences_NonTypesystemRule.java" startLine="28" startPosition="37" endLine="29" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
