@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9vrfj1zvi680t96tqnujwmv77dmpzkz">
+<dependencies version="2" modelHash="-emkdr0wyrnzxo1cvobyyi0yef2tlrvq">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -61,8 +61,8 @@
   <source id="5582028874769074089" name="ActionCallGlobalParameter" hash="-2vknwq1o7wyarqvkxce6768ojzx3dec" />
   <source id="5582028874769074091" name="ActionCallParameter" hash="-7s28d1k82ll0yw4bcrbzgs771es6d2q" />
   <source id="5582028874769074093" name="CallActionExpression" hash="-29dxqhys9eqqasxlb9f1h7lgwouqikf" />
-  <source id="5582028874769074096" name="ModelProperties" hash="-2px27ew5d2mqdyhx40oiy2onz76kee0" />
-  <source id="5582028874769074099" name="ModuleProperties" hash="81dhs1y3v5ijbaok8qqo9oohl6sam7m" />
+  <source id="5582028874769074096" name="ModelProperties" hash="-ch4szd531swm0r0erk6idceqbdo2jv7" />
+  <source id="5582028874769074099" name="ModuleProperties" hash="cixzqajh0r30gab0a5izgda3y3p20na" />
   <source id="5582028874771853091" name="Make" hash="-ko43i93kfv06llbus5j53nxiplp2t5" />
   <source id="5582028874771853093" name="RequiredOnly" hash="85dwfpsi5mlt8nle8tqu7tlvi9br5nh" />
 </dependencies>

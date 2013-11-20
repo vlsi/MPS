@@ -38,7 +38,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.INodeSetReference").children(new String[]{"target"}, new boolean[]{false}).alias("model", "").create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ModuleProperties").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"targetModule"}, new boolean[]{false}).alias("#moduleProperties", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ModuleProperties").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"targetModule"}, new boolean[]{false}).alias("#moduleProperties", "").create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.NodeReference").super_("jetbrains.mps.lang.smodel.structure.NodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.NodeRefExpression").alias("node", "").create();
       case 14:

@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").abstract_().alias("#consoleModel", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("#consoleModel", "").create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalMode").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").alias("#internalMode", "").create();
       case 2:

@@ -50,9 +50,12 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5582028874770305469" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ConsoleModelExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#consoleModel" />
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3xdn.4307205004131544317" resolveInfo="QueryExpression" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7185170375692959306" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
   </root>
 </model>
 
