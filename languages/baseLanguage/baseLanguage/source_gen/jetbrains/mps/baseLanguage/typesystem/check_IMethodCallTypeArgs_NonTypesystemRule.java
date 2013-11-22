@@ -23,7 +23,7 @@ public class check_IMethodCallTypeArgs_NonTypesystemRule extends AbstractNonType
   }
 
   public void applyRule(final SNode iMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(iMethodCall, "typeArgument", true)).count()) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(iMethodCall, "typeArgument", true)).count() > 0 && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(iMethodCall, "typeArgument", true)).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iMethodCall, "Incorrect number of type arguments for a generic method.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7430872850880720443", null, errorTarget);

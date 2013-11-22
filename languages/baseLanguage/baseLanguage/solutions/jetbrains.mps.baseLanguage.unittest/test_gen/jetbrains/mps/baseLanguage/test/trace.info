@@ -930,6 +930,38 @@
     <unitInfo nodeId="7209837885462471125" fileName="ReturnFromTry_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReturnFromTry_Test$TestBody" />
     <unitInfo nodeId="7209837885462471125" fileName="ReturnFromTry_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReturnFromTry_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7430872850884066230">
+    <nodeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7430872850884083577#()V" />
+    <nodeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7430872850884083577#()V" />
+    <scopeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="135" />
+    <scopeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
+      <varInfo nodeId="7430872850884066230" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodTypeArgumentsMatch_Test$TestBody" />
+    <unitInfo nodeId="7430872850884066230" fileName="MethodTypeArgumentsMatch_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodTypeArgumentsMatch_Test" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7430872850884076050">
+    <nodeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7430872850884076184#()V" />
+    <nodeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck7430872850884076184#()V" />
+    <scopeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="146" />
+    <scopeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
+      <varInfo nodeId="7430872850884076050" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody" />
+    <unitInfo nodeId="7430872850884076050" fileName="UnusedMethodTypeVariableDeclaration_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7868761255934329294">
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7868761255934329294" fileName="Validation_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
