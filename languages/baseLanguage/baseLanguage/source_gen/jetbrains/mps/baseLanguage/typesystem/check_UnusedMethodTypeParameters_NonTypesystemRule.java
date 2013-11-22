@@ -10,8 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,9 +25,13 @@ public class check_UnusedMethodTypeParameters_NonTypesystemRule extends Abstract
   public void applyRule(final SNode baseMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode typeVarDeclaration) {
-        boolean unused = ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).all(new IWhereFilter<SNode>() {
-          public boolean accept(SNode parameter) {
-            return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameter, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) || neq_bz72ua_a0a0a0a0a0a0a0a0a0a0a0b(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameter, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), typeVarDeclaration);
+        boolean unused = ListSequence.fromList(SNodeOperations.getDescendants(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ListSequence.fromList(SNodeOperations.getAncestors(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false)).isEmpty();
+          }
+        }).all(new IWhereFilter<SNode>() {
+          public boolean accept(SNode ref) {
+            return neq_bz72ua_a0a0a0a0a0a0a0a0a0a0a1(SLinkOperations.getTarget(ref, "typeVariableDeclaration", false), typeVarDeclaration);
           }
         });
         if (unused) {
@@ -59,7 +63,7 @@ public class check_UnusedMethodTypeParameters_NonTypesystemRule extends Abstract
     return false;
   }
 
-  private static boolean neq_bz72ua_a0a0a0a0a0a0a0a0a0a0a0b(Object a, Object b) {
+  private static boolean neq_bz72ua_a0a0a0a0a0a0a0a0a0a0a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
 }
