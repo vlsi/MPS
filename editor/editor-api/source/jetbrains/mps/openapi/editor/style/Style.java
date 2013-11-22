@@ -43,9 +43,6 @@ public interface Style {
 
   <T> T get(StyleAttribute<T> attribute);
 
-  //todo: return collection
-  <T> T getRaw(StyleAttribute<T> attribute);
-
   public static class IntPair<T> {
     public int index;
     public T value;
@@ -58,6 +55,9 @@ public interface Style {
 
   <T> int getHighestPriority(StyleAttribute<T> attribute);
 
+  /**
+   * @return null if no values specified
+   */
   @Nullable
   <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);
 

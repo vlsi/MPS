@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -25,21 +24,22 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class BracesHighlighter {
   // COLORS: Remove hardcoded colors
   private static final Color BRACES_LEFT_HIGHTLIGHT_COLOR = new Color(107, 142, 178);
   private static Style ourMatchedBraceAttributes;
 
-  private Map<EditorCell, Style> myHighlightedCellStyles = new HashMap<EditorCell, Style>();
+  private Set<EditorCell> myHighlightedCells = new HashSet<EditorCell>();
   private EditorComponent myEditorComponent;
   private SelectionListener mySelectionListener = new SelectionListener() {
     @Override
@@ -104,12 +104,20 @@ public class BracesHighlighter {
   }
 
   private void clearBracesSelection() {
-    for (EditorCell editorCell : myHighlightedCellStyles.keySet()) {
-      Style originalStyle = myHighlightedCellStyles.get(editorCell);
-      copyStyleAttributes(originalStyle, editorCell.getStyle());
+    for (EditorCell editorCell : myHighlightedCells) {
+
+      Style cellStyle = editorCell.getStyle();
+      int highestPriority = 0;
+      for (StyleAttribute attribute : getMatchedBraceAttributes().getSpecifiedAttributes()) {
+        highestPriority = Math.max(editorCell.getStyle().getHighestPriority(attribute), highestPriority);
+      }
+      for (StyleAttribute attribute : getMatchedBraceAttributes().getSpecifiedAttributes()) {
+        cellStyle.set(attribute, highestPriority, null);
+      }
+
       myEditorComponent.leftUnhighlightCell((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
     }
-    myHighlightedCellStyles.clear();
+    myHighlightedCells.clear();
   }
 
   private void selectBraces(final EditorCell selectedCell) {
@@ -129,29 +137,23 @@ public class BracesHighlighter {
             ((EditorComponent) matchigCell.getEditorComponent()).leftHighlightCells((jetbrains.mps.nodeEditor.cells.EditorCell) matchigCell,
                 (jetbrains.mps.nodeEditor.cells.EditorCell) editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
           }
-          hightlightCell(editorCell);
-          hightlightCell(matchigCell);
+          highlightCell(editorCell);
+          highlightCell(matchigCell);
         }
       }
     }
   }
 
-  private void hightlightCell(EditorCell editorCell) {
+  private void highlightCell(EditorCell editorCell) {
     Style cellStyle = editorCell.getStyle();
-    Style cellStyleCopy = new StyleImpl();
-    copyStyleAttributes(cellStyle, cellStyleCopy);
-    myHighlightedCellStyles.put(editorCell, cellStyleCopy);
-
-    //TODO: editorCell.getStyle().putAll(getMatchedBraceAttributes());
-    cellStyle.set(StyleAttributes.TEXT_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_COLOR));
-    cellStyle.set(StyleAttributes.TEXT_BACKGROUND_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
-    cellStyle.set(StyleAttributes.FONT_STYLE, getMatchedBraceAttributes().get(StyleAttributes.FONT_STYLE));
-  }
-
-  private void copyStyleAttributes(Style fromStyle, Style toStyle) {
-    toStyle.set(StyleAttributes.TEXT_COLOR, (Color) fromStyle.getRaw(StyleAttributes.TEXT_COLOR));
-    toStyle.set(StyleAttributes.TEXT_BACKGROUND_COLOR, (Color) fromStyle.getRaw(StyleAttributes.TEXT_BACKGROUND_COLOR));
-    toStyle.set(StyleAttributes.FONT_STYLE, (Integer) fromStyle.getRaw(StyleAttributes.FONT_STYLE));
+    int highestPriority = 0;
+    for (StyleAttribute attribute : getMatchedBraceAttributes().getSpecifiedAttributes()) {
+      highestPriority = Math.max(editorCell.getStyle().getHighestPriority(attribute), highestPriority);
+    }
+    for (StyleAttribute attribute : getMatchedBraceAttributes().getSpecifiedAttributes()) {
+      cellStyle.set(attribute, highestPriority + 1, getMatchedBraceAttributes().get(attribute));
+    }
+    myHighlightedCells.add(editorCell);
   }
 
   private static Style getMatchedBraceAttributes() {
