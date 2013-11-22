@@ -16,14 +16,9 @@
 package jetbrains.mps.openapi.editor.style;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * User: shatalin
@@ -41,8 +36,6 @@ public interface Style {
   <T> void set(StyleAttribute<T> attribute, T value);
   <T> void set(StyleAttribute<T> attribute, int priority, T value);
 
-  <T> T get(StyleAttribute<T> attribute);
-
   public static class IntPair<T> {
     public int index;
     public T value;
@@ -55,6 +48,9 @@ public interface Style {
 
   <T> int getHighestPriority(StyleAttribute<T> attribute);
 
+  @Nullable
+  <T> T get(StyleAttribute<T> attribute);
+
   /**
    * @return null if no values specified
    */
@@ -63,7 +59,6 @@ public interface Style {
 
   @Nullable
   <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute);
-
 
   <T> boolean isSpecified(StyleAttribute<T> attribute);
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.EmptyIterator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -158,6 +157,7 @@ public class StyleImpl implements Style {
 
   @NotNull
   private <T> IntMapPointer<IntObjectSortedListMap<T>> getCachedAttribute(StyleAttribute<T> attribute) {
+    assert !StyleAttributes.isSimple(attribute);
     return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myCachedAttributes.search(attribute.getIndex());
   }
 
@@ -202,12 +202,9 @@ public class StyleImpl implements Style {
         ensureGetAttribute(attribute).addValues(style.getAll(attribute));
       }
       if (StyleAttributes.isSimple(attribute)) {
-        if (putAttributes != null) {
-          ensureGetCachedAttribute(attribute).addValues(style.getAll(attribute));
-        }
         addedSimple.add(attribute);
       } else {
-      addedNotSimple.add(attribute);
+        addedNotSimple.add(attribute);
       }
     }
     updateCache(addedNotSimple);
@@ -231,7 +228,6 @@ public class StyleImpl implements Style {
     }
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
-      setCached(attribute, priority, value);
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
     } else {
       updateCache(attributeSet);
@@ -239,6 +235,7 @@ public class StyleImpl implements Style {
   }
 
   public <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
+    assert !StyleAttributes.isSimple(attribute);
     if (value == null) {
       if (! getCachedAttribute(attribute).isEmpty()) {
         if (getCachedAttribute(attribute).get().search(priority) != null) {
@@ -260,6 +257,7 @@ public class StyleImpl implements Style {
   }
 
   public <T> T getCached(StyleAttribute<T> attribute, int priority) {
+    assert !StyleAttributes.isSimple(attribute);
     IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getCachedAttribute(attribute);
     if (attributeValues.isEmpty()) {
       return null;
@@ -279,8 +277,13 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> T get(StyleAttribute<T> attribute) {
-    IntObjectSortedListMap<T> attributeValues = getCachedAttribute(attribute).get();
-    return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTop();
+    if (StyleAttributes.isSimple(attribute)) {
+      IntObjectSortedListMap<T> attributeValues = getAttribute(attribute).get();
+      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTop();
+    } else {
+      IntObjectSortedListMap<T> attributeValues = getCachedAttribute(attribute).get();
+      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTop();
+    }
   }
 
   @Override
@@ -293,8 +296,13 @@ public class StyleImpl implements Style {
   @Override
   @Nullable
   public <T> Collection<IntPair<T>> getAllCached(StyleAttribute<T> attribute) {
-    IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getCachedAttribute(attribute);
-    return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
+    if (StyleAttributes.isSimple(attribute)) {
+      IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
+      return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
+    } else {
+      IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getCachedAttribute(attribute);
+      return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
+    }
   }
 
   @Override
@@ -392,6 +400,7 @@ public class StyleImpl implements Style {
 
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute<Object> attribute : attributes) {
+      assert !StyleAttributes.isSimple(attribute);
 
       Collection<IntPair<Object>> parentValues = getParentStyle() == null ? null : getParentStyle().getAllCached(attribute);
       Collection<IntPair<Object>> currentValues = getAttribute(attribute).isEmpty() ? null : getAttribute(attribute).get().getAll();
