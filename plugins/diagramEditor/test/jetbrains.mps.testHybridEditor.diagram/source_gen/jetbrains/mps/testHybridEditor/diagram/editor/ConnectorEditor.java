@@ -7,39 +7,52 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.OutputPortCell;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.jetpad.InputPortCell;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.projectional.view.View;
 import java.util.Collection;
 import java.util.Collections;
 
 public class ConnectorEditor extends AbstractJetpadEditor {
   @Override
   public EditorCell createEditorCell(EditorContext context, final SNode node) {
-    ConnectorCell cell = new ConnectorCell(context, node) {
-      public boolean connectWithEnds(DiagramCell diagramCell) {
-        OutputPortCell outputPort = CellFinderUtil.findChildByConditionAndClass(diagramCell, new Condition<EditorCell>() {
-          public boolean met(EditorCell cell) {
-            return cell.isBig() && cell.getSNode().equals(SLinkOperations.getTarget(node, "outputPort", false));
+    final ConnectorCell cell = new ConnectorCell(context, node) {
+
+
+
+      public Mapper<SNode, PolyLineConnection> getMapper() {
+        return new Mapper<SNode, PolyLineConnection>(node, new PolyLineConnection()) {
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            ReadableProperty<SNode> inputPort = modelProperty(new Computable<SNode>() {
+              public SNode compute() {
+                return SLinkOperations.getTarget(node, "inputPort", false);
+              }
+            });
+            ReadableProperty<SNode> outputPort = modelProperty(new Computable<SNode>() {
+              public SNode compute() {
+                return SLinkOperations.getTarget(node, "outputPort", false);
+              }
+            });
+            configuration.add(Synchronizers.forProperty(inputPort, new WritableProperty<SNode>() {
+              public void set(SNode port) {
+                getTarget().toView().set((port == null ? null : ((View) getParent().getDescendantMapper(port).getTarget())));
+              }
+            }));
+            configuration.add(Synchronizers.forProperty(outputPort, new WritableProperty<SNode>() {
+              public void set(SNode port) {
+                getTarget().fromView().set((port == null ? null : ((View) getParent().getDescendantMapper(port).getTarget())));
+
+              }
+            }));
           }
-        }, OutputPortCell.class, true);
-
-        InputPortCell inputPort = CellFinderUtil.findChildByConditionAndClass(diagramCell, new Condition<EditorCell>() {
-          public boolean met(EditorCell cell) {
-            return cell.isBig() && cell.getSNode().equals(SLinkOperations.getTarget(node, "inputPort", false));
-          }
-        }, InputPortCell.class, true);
-
-        if (inputPort == null || outputPort == null) {
-          return false;
-        }
-
-        getConnector().input.set(inputPort.getPort());
-        getConnector().output.set(outputPort.getPort());
-        return true;
+        };
       }
     };
     cell.setBig(true);

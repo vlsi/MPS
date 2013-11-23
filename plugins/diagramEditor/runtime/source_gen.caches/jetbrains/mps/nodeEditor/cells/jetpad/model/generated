@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3h62ykeh4epygehdpsb566q8xjduguv" />
+<dependencies version="2" modelHash="-3h62ykeh4epygehdpsb566q8xjduguv">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <common hash="dnz41bo2ytzsqfbtzfwh83evh2aa0ph" dependsOnNodes="true" />
+  <source id="9070483889460175779" name="MPSDiagram" hash="2hvencozeunru4qyvruybhe8mvcsm1p">
+    <file name="MPSDiagram.java" />
+  </source>
+  <source id="9070483889460271851" name="MPSBlock" hash="9j5rkhqetwq9rtljdslv7k6n6w3n3ku">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MPSBlock.java" />
+  </source>
+  <source id="9070483889460271875" name="MPSConnector" hash="69zhcj35daynyfkw42384plu0u8p8w1">
+    <file name="MPSConnector.java" />
+  </source>
+</dependencies>
 

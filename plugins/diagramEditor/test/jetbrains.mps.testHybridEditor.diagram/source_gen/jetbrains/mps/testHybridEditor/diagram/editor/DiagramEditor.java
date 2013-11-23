@@ -6,49 +6,76 @@ import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
+import jetbrains.jetpad.projectional.view.ViewContainer;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.projectional.diagram.view.DiagramView;
+import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
+import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.jetpad.mapper.MapperFactory;
+import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.jetpad.projectional.diagram.view.Connection;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import java.util.Collection;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 
 public class DiagramEditor extends AbstractJetpadEditor {
   @Override
-  public EditorCell createEditorCell(EditorContext editorContext, SNode diagramNode) {
-    DiagramCell diagramCell = new DiagramCell(editorContext, diagramNode);
-    createBlockCells(editorContext, diagramNode, diagramCell);
-    createConnectorCollection(editorContext, diagramNode, diagramCell);
-    diagramCell.setBig(true);
+  public EditorCell createEditorCell(final EditorContext editorContext, final SNode diagramNode) {
+    ViewContainerComponent component;
+    component = new ViewContainerComponent();
+    ViewContainer container = new ViewContainer();
+    component.container(container);
+    component.container().root().addTrait(RootTrait.ROOT_TRAIT);
+
+    final DiagramCell diagramCell = new DiagramCell(editorContext, diagramNode, component) {
+
+
+      public Mapper<SNode, DiagramView> getMapper() {
+        return new Mapper<SNode, DiagramView>(diagramNode, new ConnectionRoutingView(new OrthogonalRouter())) {
+
+
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            configuration.add(Synchronizers.<SNode,View>forSimpleRole(this, SLinkOperations.getTargets(diagramNode, "blocks", true), getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+                EditorCell blockCell = editorContext.createNodeCell(node);
+                if (blockCell instanceof BlockCell) {
+                  addEditorCell(blockCell);
+                  return ((BlockCell) blockCell).getMapper();
+                }
+                return null;
+              }
+            }));
+            configuration.add(Synchronizers.<SNode,Connection>forSimpleRole(this, SLinkOperations.getTargets(diagramNode, "connectors", true), getTarget().connections, new MapperFactory<SNode, Connection>() {
+              public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
+                EditorCell connectorCell = editorContext.createNodeCell(node);
+                if (connectorCell instanceof ConnectorCell) {
+                  addEditorCell(connectorCell);
+                  return ((ConnectorCell) connectorCell).getMapper();
+                }
+                return null;
+              }
+            }));
+          }
+        };
+      }
+    };
+    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), container);
+    mapper.attachRoot();
+
     return diagramCell;
   }
 
   @Override
   public Collection<String> getContextHints() {
     return Collections.singletonList("jetbrains.mps.testHybridEditor.editor.HybridHints.diagram");
-  }
-
-  private void createBlockCells(EditorContext editorContext, SNode diagramNode, DiagramCell diagramCell) {
-    EditorCell_Collection blockCollection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(editorContext, diagramNode);
-    for (SNode blockNode : ListSequence.fromList(SLinkOperations.getTargets(diagramNode, "blocks", true))) {
-      BlockCell blockCell = (BlockCell) editorContext.createNodeCell(blockNode);
-      blockCollection.addEditorCell(blockCell);
-      diagramCell.getMPSDiagram().blocks.add(blockCell.getBlock());
-    }
-    diagramCell.addEditorCell(blockCollection);
-  }
-
-  private void createConnectorCollection(EditorContext editorContext, SNode diagramNode, DiagramCell diagramCell) {
-    EditorCell_Collection connectorsCollection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(editorContext, diagramNode);
-    for (SNode connectorNode : ListSequence.fromList(SLinkOperations.getTargets(diagramNode, "connectors", true))) {
-      ConnectorCell connectorCell = (ConnectorCell) editorContext.createNodeCell(connectorNode);
-      if (connectorCell.connectWithEnds(diagramCell)) {
-        connectorsCollection.addEditorCell(connectorCell);
-        diagramCell.getMPSDiagram().connectors.add(connectorCell.getConnector());
-      }
-    }
-    diagramCell.addEditorCell(connectorsCollection);
   }
 }

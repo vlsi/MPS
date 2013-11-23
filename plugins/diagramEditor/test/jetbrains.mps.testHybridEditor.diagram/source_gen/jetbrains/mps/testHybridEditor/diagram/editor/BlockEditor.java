@@ -10,21 +10,28 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.mapper.Mapper;
-import jetbrains.mps.nodeEditor.cells.jetpad.mappers.MPSBlockMapper;
+import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
+import jetbrains.mps.diagram.dataflow.view.BlockView;
+import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.mps.nodeEditor.cells.jetpad.model.MPSBlock;
+import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.InputPortCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.OutputPortCell;
+import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
+import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.diagram.layoutView.CenterVerticalLayoutView;
 import jetbrains.jetpad.projectional.view.TextView;
 import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.jetpad.values.Color;
 
 public class BlockEditor extends AbstractJetpadEditor {
   @Override
@@ -33,45 +40,101 @@ public class BlockEditor extends AbstractJetpadEditor {
   }
 
   @Override
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    BlockCell blockCell = new BlockCell(context, node) {
-      public void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, MPSBlockMapper mapper) {
-        configuration.add(Synchronizers.forConstantRole(mapper, (MPSBlock) mapper.getSource(), mapper.getTarget().contentView.children(), new MapperFactory<MPSBlock, View>() {
-          public Mapper<? extends MPSBlock, ? extends View> createMapper(MPSBlock block) {
+  public EditorCell createEditorCell(final EditorContext context, final SNode node) {
+    final BlockCell blockCell = new BlockCell(context, node) {
+
+
+      public Mapper<SNode, DiagramNodeView> getMapper() {
+
+        final Mapper<SNode, DiagramNodeView> mapper = new Mapper<SNode, DiagramNodeView>(node, new BlockView()) {
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            final ReadableProperty<Integer> x = modelProperty(new Computable<Integer>() {
+              public Integer compute() {
+                return SPropertyOperations.getInteger(node, "x");
+              }
+            });
+            final ReadableProperty<Integer> y = modelProperty(new Computable<Integer>() {
+              public Integer compute() {
+                return SPropertyOperations.getInteger(node, "y");
+              }
+            });
+            configuration.add(Synchronizers.forProperty(x, new Runnable() {
+              public void run() {
+                getTarget().moveTo(new Vector(x.get(), y.get()));
+                getTarget().invalidate();
+              }
+            }));
+            configuration.add(Synchronizers.forProperty(y, new Runnable() {
+              public void run() {
+                getTarget().moveTo(new Vector(x.get(), y.get()));
+                getTarget().invalidate();
+              }
+            }));
+            configuration.add(Synchronizers.forSimpleRole(this, SLinkOperations.getTargets(node, "inputPorts", true), getTarget().inputs.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(SNode mapperNode) {
+                EditorCell portCell = context.createNodeCell(mapperNode);
+                if (portCell instanceof InputPortCell) {
+                  addEditorCell(portCell);
+                  return ((InputPortCell) portCell).getMapper();
+                }
+                return null;
+              }
+            }));
+            configuration.add(Synchronizers.forSimpleRole(this, SLinkOperations.getTargets(node, "outputPorts", true), getTarget().outputs.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(SNode maperNode) {
+                EditorCell portCell = context.createNodeCell(maperNode);
+                if (portCell instanceof OutputPortCell) {
+                  addEditorCell(portCell);
+                  return ((OutputPortCell) portCell).getMapper();
+                }
+                return null;
+              }
+            }));
+            registerAditionalSynchronizers(configuration, this);
+          }
+        };
+        DiagramNodeView view = mapper.getTarget();
+        view.rect.background().set(Color.BLACK);
+        view.padding().set(0);
+        mapper.getTarget().rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+          public void move(final Vector delta) {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                SPropertyOperations.set(((SNode) mapper.getSource()), "x", "" + (SPropertyOperations.getInteger(((SNode) mapper.getSource()), "x") + delta.x));
+                SPropertyOperations.set(((SNode) mapper.getSource()), "y", "" + (SPropertyOperations.getInteger(((SNode) mapper.getSource()), "y") + delta.y));
+              }
+            }, context.getOperationContext().getProject());
+            mapper.getSource();
+          }
+        });
+
+        return mapper;
+      }
+
+      public void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, Mapper<SNode, DiagramNodeView> mapper) {
+        configuration.add(Synchronizers.forConstantRole(mapper, mapper.getSource(), mapper.getTarget().contentView.children(), new MapperFactory<SNode, View>() {
+          public Mapper<? extends SNode, ? extends View> createMapper(SNode block) {
             return new BlockEditor.ContentMapper(block);
           }
         }));
       }
-    };
-    blockCell.getBlock().location.set(new Vector(SPropertyOperations.getInteger(node, "x"), SPropertyOperations.getInteger(node, "y")));
 
-    createInputPorts(context, node, blockCell);
-    createOutputPorts(context, node, blockCell);
+
+    };
     blockCell.setBig(true);
+    blockCell.getEditor().addCellDependentOnNodeProperty(blockCell, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+    blockCell.getEditor().addCellDependentOnNodeProperty(blockCell, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+    blockCell.getEditor().addCellDependentOnNodeProperty(blockCell, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
 
     return blockCell;
   }
 
-  private void createInputPorts(EditorContext context, SNode node, BlockCell blockCell) {
-    for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
-      InputPortCell portCell = (InputPortCell) context.createNodeCell(port);
-      blockCell.addEditorCell(portCell);
-      blockCell.getBlock().inputs.add(portCell.getPort());
-    }
-  }
-
-  private void createOutputPorts(EditorContext context, SNode node, BlockCell blockCell) {
-    for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
-      OutputPortCell portCell = (OutputPortCell) context.createNodeCell(port);
-      blockCell.addEditorCell(portCell);
-      blockCell.getBlock().outputs.add(portCell.getPort());
-    }
-  }
 
 
-
-  private class ContentMapper extends Mapper<MPSBlock, BlockEditor.ContentView> {
-    private ContentMapper(MPSBlock block) {
+  private class ContentMapper extends Mapper<SNode, BlockEditor.ContentView> {
+    private ContentMapper(SNode block) {
       super(block, new BlockEditor.ContentView());
     }
 
@@ -81,7 +144,7 @@ public class BlockEditor extends AbstractJetpadEditor {
     protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
       super.registerSynchronizers(configuration);
 
-      configuration.add(Synchronizers.forProperty(stringProperty(getSource().getBlockCell().getSNode(), "name"), getTarget().label.text()));
+      configuration.add(Synchronizers.forProperty(stringProperty(getSource(), "name"), getTarget().label.text()));
     }
   }
 
