@@ -301,7 +301,7 @@ public class TransientModelsModule extends AbstractModule {
         LOG.debug("Un-loading " + getReference());
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null || !swap.swapOut((TransientSModel) mySModel)) {
+        if (swap == null || !swap.swapOut(mySModel)) {
           return false;
         }
 
