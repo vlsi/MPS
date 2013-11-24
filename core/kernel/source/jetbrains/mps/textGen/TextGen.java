@@ -16,7 +16,6 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;

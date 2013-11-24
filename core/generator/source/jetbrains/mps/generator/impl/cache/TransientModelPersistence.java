@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
-import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.persistence.binary.NodesReader;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.util.Pair;
