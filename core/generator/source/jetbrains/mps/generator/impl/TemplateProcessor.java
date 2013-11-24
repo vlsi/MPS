@@ -165,7 +165,11 @@ public final class TemplateProcessor {
     // templateNode has no unprocessed node-macros - create output instance for the template node
     final SNodePointer templateNodeReference = new SNodePointer(templateNode);
     myTracer.pushTemplateNode(templateNodeReference);
-    jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(templateNode.getConcept().getQualifiedName());
+    // XXX same code is in TEE.createNode. If, however, primary use for TEE is
+    // generated code (as opposed to 'apply templates to root' context), it's unreasonable(?)
+    // to expect SConcept to get passed to TEE.createNode() (generated templates are likely to know
+    // strings only)
+    SNode outputNode = myOutputModel.createNode(templateNode.getConcept());
 
     // use same env method as reduce_TemplateNode does
     myEnv.nodeCopied(context, outputNode, GeneratorUtil.getTemplateNodeId(templateNode));

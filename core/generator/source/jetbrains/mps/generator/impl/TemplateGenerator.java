@@ -22,6 +22,8 @@ import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.CloneUtil.Factory;
+import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -800,6 +802,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private final Set<SNode> myAdditionalInputNodes;
     private final SModel myInputModel;
     private final SModelReference myOutputModelRef;
+    private final Factory myNodeFactory;
 
     public FullCopyFacility(TemplateGenerator generator, TemplateExecutionEnvironment environment) {
       this(generator, environment, Collections.<SNode>emptySet());
@@ -811,6 +814,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myGenerationTracer = environment.getTracer();
       myInputModel = generator.getInputModel();
       myOutputModelRef = generator.getOutputModel().getReference();
+      myNodeFactory = new RegularSModelFactory();
     }
 
     @Override
@@ -835,9 +839,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     public SNode copyInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       // no reduction found - do node copying
       myGenerationTracer.pushCopyOperation();
-      jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getQualifiedName());
+      SNode outputNode;
       if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
-        outputNode.setId(inputNode.getNodeId());
+        // copy preserving id
+        outputNode = myNodeFactory.create(inputNode);
+      } else {
+        outputNode = myGenerator.getOutputModel().createNode(inputNode.getConcept());
       }
       myGenerator.blockReductionsForCopiedNode(inputNode, outputNode, myEnvironment.getReductionContext()); // prevent infinite applying of the same reduction to the 'same' node.
 
