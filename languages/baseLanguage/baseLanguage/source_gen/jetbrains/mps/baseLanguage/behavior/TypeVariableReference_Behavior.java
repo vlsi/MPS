@@ -88,6 +88,15 @@ public class TypeVariableReference_Behavior {
     return thisNode;
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    SNode substituted = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false));
+    if (substituted != null) {
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(substituted, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_isSupersetOf_1220438914705", new Object[]{t});
+    } else {
+      return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Type", "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
+    }
+  }
+
   private static SNode _quotation_createNode_6i211a_a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

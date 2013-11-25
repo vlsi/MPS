@@ -18,6 +18,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -126,6 +128,17 @@ public class Type_Behavior {
     return false;
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      t = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+      if (t == null) {
+        return false;
+      }
+    }
+
+    return Type_Behavior.call_isSupersetOf_1220438914705(thisNode, t);
+  }
+
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
     return null;
   }
@@ -221,6 +234,11 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static boolean call_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
+  }
+
+  @Deprecated
   public static SNode call_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
   }
@@ -313,6 +331,11 @@ public class Type_Behavior {
   @Deprecated
   public static boolean callSuper_isSupersetOf_1220438914705(SNode thisNode, String callerConceptFqName, SNode t) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isSupersetOf_1220438914705", new Class[]{SNode.class, SNode.class}, new Object[]{t});
+  }
+
+  @Deprecated
+  public static boolean callSuper_isSupersetOf_9029841626175335449(SNode thisNode, String callerConceptFqName, SNode t, Map<SNode, SNode> substitutions) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isSupersetOf_9029841626175335449", new Class[]{SNode.class, SNode.class, Map.class}, new Object[]{t, substitutions});
   }
 
   @Deprecated

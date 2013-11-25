@@ -12,12 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_IMethodCallTypeArgs_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -30,25 +24,6 @@ public class check_IMethodCallTypeArgs_NonTypesystemRule extends AbstractNonType
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iMethodCall, "Incorrect number of type arguments for a generic method.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7430872850880720443", null, errorTarget);
       }
-    } else {
-      final List<SNode> vars = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(vars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)));
-      ListSequence.fromList(SLinkOperations.getTargets(iMethodCall, "typeArgument", true)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode typeParameter) {
-          SNode var = ListSequence.fromList(vars).removeElementAt(0);
-          if ((SLinkOperations.getTarget(var, "bound", true) != null)) {
-            if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(var, "bound", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-              System.out.println("Type: " + TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(var, "bound", true)));
-            } else
-            if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(var, "bound", true), "virtual_isSupersetOf_1220438914705", new Object[]{typeParameter}))) {
-              {
-                MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "The type " + typeParameter + " is not a valid substitute for the bounded parameter " + var, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7430872850881178173", null, errorTarget);
-              }
-            }
-          }
-        }
-      });
     }
   }
 

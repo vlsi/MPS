@@ -92,6 +92,7 @@ public class InstanceMethodCallOperation_Behavior {
     SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.LocalMethodCall");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
     ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)));
+    ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeArgument", true)));
   }
 
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
