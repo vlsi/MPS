@@ -17,8 +17,9 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -92,17 +93,21 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
     if (sourceNode == null) {
       return null;
     }
-    String propertyName = QueriesUtil.getEditedPropertyName(editorContext.getSelectedCell());
+    final String propertyName = QueriesUtil.getEditedPropertyName(editorContext.getSelectedCell());
     if (propertyName == null) {
       return null;
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)) {
-      SNode propertyDeclaration = SNodeOperations.cast(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-      if (propertyDeclaration == null) {
-        continue;
+    SNode propertyDeclaration = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getConceptDeclaration(node), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return propertyName.equals(SPropertyOperations.getString(it, "name"));
       }
-      SNode property = SLinkOperations.getTarget(propertyDeclaration, "dataType", false);
+    }).first();
+    if (propertyDeclaration == null) {
+      return result;
+    }
+    SNode property = SLinkOperations.getTarget(propertyDeclaration, "dataType", false);
+    for (SNode propertySource : SLinkOperations.getTargets(sourceNode, "propertyDeclaration", true)) {
       if (property == SLinkOperations.getTarget(propertySource, "dataType", false)) {
         ListSequence.fromList(result).addElement(propertySource);
       }
