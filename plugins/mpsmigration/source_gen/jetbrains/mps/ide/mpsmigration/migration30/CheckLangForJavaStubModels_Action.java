@@ -97,11 +97,11 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
         }
       }
       String langStubsMsg = "";
-      for (String modelName : SetSequence.fromSet(langStubModels)) {
+      for (String modelName : langStubModels) {
         langStubsMsg += "  " + modelName + "\n";
       }
       String otherStubsMsg = "";
-      for (String modelName : SetSequence.fromSet(otherStubModels)) {
+      for (String modelName : otherStubModels) {
         otherStubsMsg += "  " + modelName + "\n";
       }
       String message = ((SetSequence.fromSet(langStubModels).isEmpty() ? "No language stub models" : "Language stub models: \n" + langStubsMsg)) + "\n" + ((SetSequence.fromSet(otherStubModels).isEmpty() ? "No other stub models" : "Other stub models: \n" + otherStubsMsg));

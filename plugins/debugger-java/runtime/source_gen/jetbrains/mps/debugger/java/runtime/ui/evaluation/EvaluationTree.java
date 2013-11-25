@@ -316,7 +316,7 @@ import jetbrains.mps.ide.messages.Icons;
 
     @Override
     protected void doInit() {
-      for (String messagePart : ListSequence.fromList(myExtendedMessage)) {
+      for (String messagePart : myExtendedMessage) {
         TextTreeNode node = new TextTreeNode(messagePart) {
           @Override
           public boolean isLeaf() {

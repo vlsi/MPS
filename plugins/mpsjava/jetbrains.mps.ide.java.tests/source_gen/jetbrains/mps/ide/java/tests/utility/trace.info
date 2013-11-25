@@ -144,7 +144,7 @@
     <nodeInfo nodeId="7562608578341431653" fileName="Utils.java" startLine="250" startPosition="320" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7562608578341511028" fileName="Utils.java" startLine="251" startPosition="0" endLine="252" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7562608578341431655" fileName="Utils.java" startLine="252" startPosition="51" endLine="253" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7562608578341431700" fileName="Utils.java" startLine="254" startPosition="89" endLine="255" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7562608578341431700" fileName="Utils.java" startLine="254" startPosition="68" endLine="255" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7562608578341431706" fileName="Utils.java" startLine="255" startPosition="68" endLine="256" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8083368042256419916" fileName="Utils.java" startLine="256" startPosition="69" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8083368042256419918" fileName="Utils.java" startLine="257" startPosition="0" endLine="258" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -153,7 +153,7 @@
     <nodeInfo nodeId="2974745296611411604" fileName="Utils.java" startLine="261" startPosition="14" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7028682026562570839" fileName="Utils.java" startLine="262" startPosition="0" endLine="263" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7028682026562570844" fileName="Utils.java" startLine="263" startPosition="27" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2974745296611411637" fileName="Utils.java" startLine="265" startPosition="89" endLine="266" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2974745296611411637" fileName="Utils.java" startLine="265" startPosition="68" endLine="266" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2974745296611411689" fileName="Utils.java" startLine="266" startPosition="68" endLine="267" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8051061021619746300" fileName="Utils.java" startLine="267" startPosition="69" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8051061021619746468" fileName="Utils.java" startLine="268" startPosition="0" endLine="269" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -373,11 +373,11 @@
       <varInfo nodeId="8083368042256397079" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294020191" fileName="Utils.java" startLine="226" startPosition="89" endLine="230" endPosition="118" />
-    <scopeInfo nodeId="7562608578341431674" fileName="Utils.java" startLine="254" startPosition="89" endLine="258" endPosition="54">
+    <scopeInfo nodeId="7562608578341431674" fileName="Utils.java" startLine="254" startPosition="68" endLine="258" endPosition="54">
       <varInfo nodeId="7562608578341431701" varName="binModel" />
       <varInfo nodeId="7562608578341431707" varName="srcModel" />
     </scopeInfo>
-    <scopeInfo nodeId="2974745296611411609" fileName="Utils.java" startLine="265" startPosition="89" endLine="269" endPosition="70">
+    <scopeInfo nodeId="2974745296611411609" fileName="Utils.java" startLine="265" startPosition="68" endLine="269" endPosition="70">
       <varInfo nodeId="2974745296611411638" varName="binModel" />
       <varInfo nodeId="2974745296611411690" varName="srcModel" />
     </scopeInfo>

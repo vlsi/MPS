@@ -186,7 +186,7 @@
     <nodeInfo nodeId="846214144107996115" fileName="EvaluationModule.java" startLine="33" startPosition="28" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2482939380799864094" fileName="EvaluationModule.java" startLine="38" startPosition="49" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2273513587774663304" fileName="EvaluationModule.java" startLine="43" startPosition="45" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1261653604047518500" fileName="EvaluationModule.java" startLine="45" startPosition="59" endLine="46" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1261653604047518500" fileName="EvaluationModule.java" startLine="45" startPosition="38" endLine="46" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1247371618987947346" fileName="EvaluationModule.java" startLine="46" startPosition="160" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2273513587774663341" fileName="EvaluationModule.java" startLine="47" startPosition="30" endLine="48" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2273513587774546108" fileName="EvaluationModule.java" startLine="49" startPosition="5" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -213,7 +213,7 @@
     <scopeInfo nodeId="846214144107996108" fileName="EvaluationModule.java" startLine="26" startPosition="29" endLine="29" endPosition="42">
       <varInfo nodeId="2891362368264666534" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="1247371618987947340" fileName="EvaluationModule.java" startLine="45" startPosition="59" endLine="48" endPosition="28">
+    <scopeInfo nodeId="1247371618987947340" fileName="EvaluationModule.java" startLine="45" startPosition="38" endLine="48" endPosition="28">
       <varInfo nodeId="1261653604047518501" varName="modelRoot" />
     </scopeInfo>
     <scopeInfo nodeId="846214144107996112" fileName="EvaluationModule.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
