@@ -5,68 +5,67 @@
     <nodeInfo nodeId="1549936565245943604" fileName="MergeTemporaryModel.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReadOnly" />
     <nodeInfo nodeId="1549936565245997063" fileName="MergeTemporaryModel.java" startLine="17" startPosition="74" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1549936565245984430" fileName="MergeTemporaryModel.java" startLine="18" startPosition="42" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1549936565245984434" fileName="MergeTemporaryModel.java" startLine="19" startPosition="26" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3587066204651926871" fileName="MergeTemporaryModel.java" startLine="23" startPosition="62" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="3587066204651940298" fileName="MergeTemporaryModel.java" startLine="24" startPosition="41" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6554100404339530428" fileName="MergeTemporaryModel.java" startLine="25" startPosition="21" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1549936565245943636" fileName="MergeTemporaryModel.java" startLine="31" startPosition="27" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1549936565245943647" fileName="MergeTemporaryModel.java" startLine="35" startPosition="29" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1549936565245943652" fileName="MergeTemporaryModel.java" startLine="36" startPosition="46" endLine="37" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1549936565245943656" fileName="MergeTemporaryModel.java" startLine="37" startPosition="42" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1549936565245943662" fileName="MergeTemporaryModel.java" startLine="40" startPosition="5" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1549936565245943669" fileName="MergeTemporaryModel.java" startLine="45" startPosition="29" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1549936565245943678" fileName="MergeTemporaryModel.java" startLine="50" startPosition="46" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8573417970377450180" fileName="MergeTemporaryModel.java" startLine="55" startPosition="72" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1549936565245943706" fileName="MergeTemporaryModel.java" startLine="60" startPosition="63" endLine="61" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2948071073855657625" fileName="MergeTemporaryModel.java" startLine="64" startPosition="29" endLine="65" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1549936565245943712" fileName="MergeTemporaryModel.java" startLine="69" startPosition="31" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1549936565245943720" fileName="MergeTemporaryModel.java" startLine="74" startPosition="35" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1549936565245943630" fileName="MergeTemporaryModel.java" startLine="30" startPosition="43" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2948071073855646311" fileName="MergeTemporaryModel.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUnload#()V" />
-    <nodeInfo nodeId="1549936565245943666" fileName="MergeTemporaryModel.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLoaded#()Z" />
-    <nodeInfo nodeId="1549936565245943675" fileName="MergeTemporaryModel.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentModelInternal#()Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="1549936565245943689" fileName="MergeTemporaryModel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveModel#()Z" />
-    <nodeInfo nodeId="1549936565245943698" fileName="MergeTemporaryModel.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rename#(Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="1549936565245943709" fileName="MergeTemporaryModel.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
-    <nodeInfo nodeId="1549936565245943716" fileName="MergeTemporaryModel.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadContents#()V" />
-    <nodeInfo nodeId="1549936565245970396" fileName="MergeTemporaryModel.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeTemporaryModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;Z)V" />
-    <nodeInfo nodeId="3587066204651915896" fileName="MergeTemporaryModel.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeTemporaryModel#(Ljetbrains/mps/smodel/SModel;Z)V" />
-    <nodeInfo nodeId="1549936565245943641" fileName="MergeTemporaryModel.java" startLine="34" startPosition="25" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1549936565245943638" fileName="MergeTemporaryModel.java" startLine="33" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="1549936565245943627" fileName="MergeTemporaryModel.java" startLine="29" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelInternal#()Ljetbrains/mps/smodel/SModel;" />
-    <scopeInfo nodeId="1549936565245943635" fileName="MergeTemporaryModel.java" startLine="31" startPosition="27" endLine="32" endPosition="22" />
-    <scopeInfo nodeId="1549936565245943668" fileName="MergeTemporaryModel.java" startLine="45" startPosition="29" endLine="46" endPosition="28" />
-    <scopeInfo nodeId="1549936565245943677" fileName="MergeTemporaryModel.java" startLine="50" startPosition="46" endLine="51" endPosition="20" />
-    <scopeInfo nodeId="1549936565245943693" fileName="MergeTemporaryModel.java" startLine="55" startPosition="72" endLine="56" endPosition="17" />
-    <scopeInfo nodeId="1549936565245943704" fileName="MergeTemporaryModel.java" startLine="60" startPosition="63" endLine="61" endPosition="46" />
-    <scopeInfo nodeId="2948071073855646315" fileName="MergeTemporaryModel.java" startLine="64" startPosition="29" endLine="65" endPosition="46" />
-    <scopeInfo nodeId="1549936565245943711" fileName="MergeTemporaryModel.java" startLine="69" startPosition="31" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="1549936565245943718" fileName="MergeTemporaryModel.java" startLine="74" startPosition="35" endLine="75" endPosition="46" />
-    <scopeInfo nodeId="1549936565245970400" fileName="MergeTemporaryModel.java" startLine="17" startPosition="74" endLine="20" endPosition="22" />
-    <scopeInfo nodeId="3587066204651915900" fileName="MergeTemporaryModel.java" startLine="23" startPosition="62" endLine="26" endPosition="35" />
-    <scopeInfo nodeId="1549936565245943646" fileName="MergeTemporaryModel.java" startLine="35" startPosition="29" endLine="38" endPosition="62" />
-    <scopeInfo nodeId="2948071073855646311" fileName="MergeTemporaryModel.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1549936565245943666" fileName="MergeTemporaryModel.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1549936565245943675" fileName="MergeTemporaryModel.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1549936565245943689" fileName="MergeTemporaryModel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1549936565245943698" fileName="MergeTemporaryModel.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="1549936565245943702" varName="changeFile" />
-      <varInfo nodeId="1549936565245943700" varName="newModelName" />
-    </scopeInfo>
-    <scopeInfo nodeId="1549936565245943709" fileName="MergeTemporaryModel.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1549936565245943716" fileName="MergeTemporaryModel.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1549936565245970396" fileName="MergeTemporaryModel.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+    <nodeInfo nodeId="3587066204651926871" fileName="MergeTemporaryModel.java" startLine="22" startPosition="62" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="3587066204651940298" fileName="MergeTemporaryModel.java" startLine="23" startPosition="41" endLine="24" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6554100404339530428" fileName="MergeTemporaryModel.java" startLine="24" startPosition="21" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1549936565245943636" fileName="MergeTemporaryModel.java" startLine="30" startPosition="27" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1549936565245943647" fileName="MergeTemporaryModel.java" startLine="34" startPosition="29" endLine="35" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1549936565245943652" fileName="MergeTemporaryModel.java" startLine="35" startPosition="46" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1549936565245943656" fileName="MergeTemporaryModel.java" startLine="36" startPosition="42" endLine="37" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1549936565245943662" fileName="MergeTemporaryModel.java" startLine="39" startPosition="5" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1549936565245943669" fileName="MergeTemporaryModel.java" startLine="44" startPosition="29" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1549936565245943678" fileName="MergeTemporaryModel.java" startLine="49" startPosition="46" endLine="50" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8573417970377450180" fileName="MergeTemporaryModel.java" startLine="54" startPosition="72" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1549936565245943706" fileName="MergeTemporaryModel.java" startLine="59" startPosition="63" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2948071073855657625" fileName="MergeTemporaryModel.java" startLine="63" startPosition="29" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1549936565245943712" fileName="MergeTemporaryModel.java" startLine="68" startPosition="31" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1549936565245943720" fileName="MergeTemporaryModel.java" startLine="73" startPosition="35" endLine="74" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1549936565245943630" fileName="MergeTemporaryModel.java" startLine="29" startPosition="43" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2948071073855646311" fileName="MergeTemporaryModel.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUnload#()V" />
+    <nodeInfo nodeId="1549936565245970396" fileName="MergeTemporaryModel.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeTemporaryModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;Z)V" />
+    <nodeInfo nodeId="1549936565245943666" fileName="MergeTemporaryModel.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLoaded#()Z" />
+    <nodeInfo nodeId="1549936565245943675" fileName="MergeTemporaryModel.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentModelInternal#()Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="1549936565245943689" fileName="MergeTemporaryModel.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveModel#()Z" />
+    <nodeInfo nodeId="1549936565245943698" fileName="MergeTemporaryModel.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rename#(Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="1549936565245943709" fileName="MergeTemporaryModel.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
+    <nodeInfo nodeId="1549936565245943716" fileName="MergeTemporaryModel.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadContents#()V" />
+    <nodeInfo nodeId="3587066204651915896" fileName="MergeTemporaryModel.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeTemporaryModel#(Ljetbrains/mps/smodel/SModel;Z)V" />
+    <nodeInfo nodeId="1549936565245943641" fileName="MergeTemporaryModel.java" startLine="33" startPosition="25" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1549936565245943638" fileName="MergeTemporaryModel.java" startLine="32" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="1549936565245943627" fileName="MergeTemporaryModel.java" startLine="28" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelInternal#()Ljetbrains/mps/smodel/SModel;" />
+    <scopeInfo nodeId="1549936565245943635" fileName="MergeTemporaryModel.java" startLine="30" startPosition="27" endLine="31" endPosition="22" />
+    <scopeInfo nodeId="1549936565245943668" fileName="MergeTemporaryModel.java" startLine="44" startPosition="29" endLine="45" endPosition="28" />
+    <scopeInfo nodeId="1549936565245943677" fileName="MergeTemporaryModel.java" startLine="49" startPosition="46" endLine="50" endPosition="20" />
+    <scopeInfo nodeId="1549936565245943693" fileName="MergeTemporaryModel.java" startLine="54" startPosition="72" endLine="55" endPosition="17" />
+    <scopeInfo nodeId="1549936565245943704" fileName="MergeTemporaryModel.java" startLine="59" startPosition="63" endLine="60" endPosition="46" />
+    <scopeInfo nodeId="2948071073855646315" fileName="MergeTemporaryModel.java" startLine="63" startPosition="29" endLine="64" endPosition="46" />
+    <scopeInfo nodeId="1549936565245943711" fileName="MergeTemporaryModel.java" startLine="68" startPosition="31" endLine="69" endPosition="22" />
+    <scopeInfo nodeId="1549936565245943718" fileName="MergeTemporaryModel.java" startLine="73" startPosition="35" endLine="74" endPosition="46" />
+    <scopeInfo nodeId="1549936565245970400" fileName="MergeTemporaryModel.java" startLine="17" startPosition="74" endLine="19" endPosition="26" />
+    <scopeInfo nodeId="3587066204651915900" fileName="MergeTemporaryModel.java" startLine="22" startPosition="62" endLine="25" endPosition="35" />
+    <scopeInfo nodeId="1549936565245943646" fileName="MergeTemporaryModel.java" startLine="34" startPosition="29" endLine="37" endPosition="62" />
+    <scopeInfo nodeId="2948071073855646311" fileName="MergeTemporaryModel.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1549936565245970396" fileName="MergeTemporaryModel.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1549936565246086866" varName="modelRef" />
       <varInfo nodeId="1549936565245974380" varName="readonly" />
     </scopeInfo>
-    <scopeInfo nodeId="3587066204651915896" fileName="MergeTemporaryModel.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1549936565245943666" fileName="MergeTemporaryModel.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1549936565245943675" fileName="MergeTemporaryModel.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1549936565245943689" fileName="MergeTemporaryModel.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1549936565245943698" fileName="MergeTemporaryModel.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1549936565245943702" varName="changeFile" />
+      <varInfo nodeId="1549936565245943700" varName="newModelName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1549936565245943709" fileName="MergeTemporaryModel.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1549936565245943716" fileName="MergeTemporaryModel.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="3587066204651915896" fileName="MergeTemporaryModel.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="3587066204651918291" varName="model" />
       <varInfo nodeId="3587066204651922545" varName="readonly" />
     </scopeInfo>
-    <scopeInfo nodeId="1549936565245943640" fileName="MergeTemporaryModel.java" startLine="34" startPosition="25" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="1549936565245943629" fileName="MergeTemporaryModel.java" startLine="30" startPosition="43" endLine="41" endPosition="20" />
-    <scopeInfo nodeId="1549936565245943627" fileName="MergeTemporaryModel.java" startLine="29" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="1549936565245931290" fileName="MergeTemporaryModel.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
+    <scopeInfo nodeId="1549936565245943640" fileName="MergeTemporaryModel.java" startLine="33" startPosition="25" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1549936565245943629" fileName="MergeTemporaryModel.java" startLine="29" startPosition="43" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="1549936565245943627" fileName="MergeTemporaryModel.java" startLine="28" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="1549936565245931290" fileName="MergeTemporaryModel.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
   </root>
   <root nodeRef="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)/4124845871897264455">
     <nodeInfo nodeId="4124845871897265301" fileName="MergeConflictsBuilder.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBaseModel" />
