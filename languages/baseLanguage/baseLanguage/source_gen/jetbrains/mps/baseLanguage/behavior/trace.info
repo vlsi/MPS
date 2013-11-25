@@ -909,7 +909,7 @@
     <nodeInfo nodeId="3012473318495506795" fileName="FieldDeclaration_Behavior.java" startLine="95" startPosition="27" endLine="96" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3012473318495506800" fileName="FieldDeclaration_Behavior.java" startLine="97" startPosition="5" endLine="98" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2496361171403550865" fileName="FieldDeclaration_Behavior.java" startLine="102" startPosition="89" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7405920559687857482" fileName="FieldDeclaration_Behavior.java" startLine="107" startPosition="50" endLine="108" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7405920559687857482" fileName="FieldDeclaration_Behavior.java" startLine="107" startPosition="107" endLine="108" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7405920559687857483" fileName="FieldDeclaration_Behavior.java" startLine="109" startPosition="5" endLine="110" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7405920559687857493" fileName="FieldDeclaration_Behavior.java" startLine="110" startPosition="101" endLine="111" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="115" startPosition="81" endLine="116" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -973,7 +973,7 @@
     <scopeInfo nodeId="3012473318495506769" fileName="FieldDeclaration_Behavior.java" startLine="87" startPosition="27" endLine="88" endPosition="16" />
     <scopeInfo nodeId="3012473318495506794" fileName="FieldDeclaration_Behavior.java" startLine="95" startPosition="27" endLine="96" endPosition="16" />
     <scopeInfo nodeId="2496361171403550864" fileName="FieldDeclaration_Behavior.java" startLine="102" startPosition="89" endLine="103" endPosition="59" />
-    <scopeInfo nodeId="7405920559687857481" fileName="FieldDeclaration_Behavior.java" startLine="107" startPosition="50" endLine="108" endPosition="13" />
+    <scopeInfo nodeId="7405920559687857481" fileName="FieldDeclaration_Behavior.java" startLine="107" startPosition="107" endLine="108" endPosition="13" />
     <scopeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="115" startPosition="81" endLine="116" endPosition="131" />
     <scopeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="120" startPosition="100" endLine="121" endPosition="176" />
     <scopeInfo nodeId="1213877243781" fileName="FieldDeclaration_Behavior.java" startLine="125" startPosition="92" endLine="126" endPosition="132" />
@@ -5388,7 +5388,7 @@
     <nodeInfo nodeId="3012473318495506866" fileName="StaticFieldDeclaration_Behavior.java" startLine="70" startPosition="27" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3012473318495506871" fileName="StaticFieldDeclaration_Behavior.java" startLine="72" startPosition="5" endLine="73" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2496361171403550876" fileName="StaticFieldDeclaration_Behavior.java" startLine="77" startPosition="89" endLine="78" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7405920559687857619" fileName="StaticFieldDeclaration_Behavior.java" startLine="82" startPosition="50" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7405920559687857619" fileName="StaticFieldDeclaration_Behavior.java" startLine="82" startPosition="107" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7405920559687857620" fileName="StaticFieldDeclaration_Behavior.java" startLine="84" startPosition="5" endLine="85" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7405920559687857630" fileName="StaticFieldDeclaration_Behavior.java" startLine="85" startPosition="101" endLine="86" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4598334504606213657" fileName="StaticFieldDeclaration_Behavior.java" startLine="89" startPosition="89" endLine="90" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5452,7 +5452,7 @@
     <scopeInfo nodeId="3012473318495506840" fileName="StaticFieldDeclaration_Behavior.java" startLine="62" startPosition="27" endLine="63" endPosition="16" />
     <scopeInfo nodeId="3012473318495506865" fileName="StaticFieldDeclaration_Behavior.java" startLine="70" startPosition="27" endLine="71" endPosition="16" />
     <scopeInfo nodeId="2496361171403550875" fileName="StaticFieldDeclaration_Behavior.java" startLine="77" startPosition="89" endLine="78" endPosition="59" />
-    <scopeInfo nodeId="7405920559687857618" fileName="StaticFieldDeclaration_Behavior.java" startLine="82" startPosition="50" endLine="83" endPosition="13" />
+    <scopeInfo nodeId="7405920559687857618" fileName="StaticFieldDeclaration_Behavior.java" startLine="82" startPosition="107" endLine="83" endPosition="13" />
     <scopeInfo nodeId="4598334504606213651" fileName="StaticFieldDeclaration_Behavior.java" startLine="89" startPosition="89" endLine="90" endPosition="166" />
     <scopeInfo nodeId="1213877351133" fileName="StaticFieldDeclaration_Behavior.java" startLine="94" startPosition="82" endLine="95" endPosition="158" />
     <scopeInfo nodeId="1213877351133" fileName="StaticFieldDeclaration_Behavior.java" startLine="99" startPosition="100" endLine="100" endPosition="176" />
@@ -8739,98 +8739,101 @@
     <nodeInfo nodeId="7448855087283425867" fileName="EnumConstantDeclaration_Behavior.java" startLine="53" startPosition="72" endLine="54" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8767021959483237083" fileName="EnumConstantDeclaration_Behavior.java" startLine="54" startPosition="129" endLine="55" endPosition="444" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8767021959483237051" fileName="EnumConstantDeclaration_Behavior.java" startLine="58" startPosition="104" endLine="59" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7405920559687857391" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="133" endLine="63" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7405920559687857401" fileName="EnumConstantDeclaration_Behavior.java" startLine="63" startPosition="101" endLine="64" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1962660292851718638" fileName="EnumConstantDeclaration_Behavior.java" startLine="67" startPosition="78" endLine="68" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1962660292851929731" fileName="EnumConstantDeclaration_Behavior.java" startLine="72" startPosition="56" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1962660292851959401" fileName="EnumConstantDeclaration_Behavior.java" startLine="74" startPosition="5" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1962660292852061859" fileName="EnumConstantDeclaration_Behavior.java" startLine="75" startPosition="0" endLine="76" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1962660292852751977" fileName="EnumConstantDeclaration_Behavior.java" startLine="76" startPosition="49" endLine="77" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1962660292859306569" fileName="EnumConstantDeclaration_Behavior.java" startLine="79" startPosition="39" endLine="80" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1962660292853103299" fileName="EnumConstantDeclaration_Behavior.java" startLine="86" startPosition="64" endLine="87" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1962660292853077909" fileName="EnumConstantDeclaration_Behavior.java" startLine="91" startPosition="8" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366038183556704602" fileName="EnumConstantDeclaration_Behavior.java" startLine="96" startPosition="56" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366038183556704609" fileName="EnumConstantDeclaration_Behavior.java" startLine="98" startPosition="5" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3366038183556704610" fileName="EnumConstantDeclaration_Behavior.java" startLine="99" startPosition="0" endLine="100" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3366038183556704616" fileName="EnumConstantDeclaration_Behavior.java" startLine="100" startPosition="49" endLine="101" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3366038183556704639" fileName="EnumConstantDeclaration_Behavior.java" startLine="103" startPosition="39" endLine="104" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366038183556704663" fileName="EnumConstantDeclaration_Behavior.java" startLine="110" startPosition="64" endLine="111" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366038183556704672" fileName="EnumConstantDeclaration_Behavior.java" startLine="115" startPosition="8" endLine="116" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6610288699007825106" fileName="EnumConstantDeclaration_Behavior.java" startLine="120" startPosition="106" endLine="121" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6941917182335094757" fileName="EnumConstantDeclaration_Behavior.java" startLine="123" startPosition="41" endLine="124" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6610288699009551394" fileName="EnumConstantDeclaration_Behavior.java" startLine="128" startPosition="44" endLine="129" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6941917182333711078" fileName="EnumConstantDeclaration_Behavior.java" startLine="131" startPosition="8" endLine="132" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6610288699005689687" fileName="EnumConstantDeclaration_Behavior.java" startLine="133" startPosition="5" endLine="134" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="138" startPosition="82" endLine="139" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="143" startPosition="75" endLine="144" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="148" startPosition="81" endLine="149" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="153" startPosition="75" endLine="154" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="158" startPosition="115" endLine="159" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="163" startPosition="108" endLine="164" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="168" startPosition="114" endLine="169" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="173" startPosition="108" endLine="174" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1309723841901665203" fileName="EnumConstantDeclaration_Behavior.java" startLine="63" startPosition="66" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7405920559687857391" fileName="EnumConstantDeclaration_Behavior.java" startLine="65" startPosition="5" endLine="66" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7405920559687857401" fileName="EnumConstantDeclaration_Behavior.java" startLine="66" startPosition="101" endLine="67" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1962660292851718638" fileName="EnumConstantDeclaration_Behavior.java" startLine="70" startPosition="78" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1962660292851929731" fileName="EnumConstantDeclaration_Behavior.java" startLine="75" startPosition="56" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1962660292851959401" fileName="EnumConstantDeclaration_Behavior.java" startLine="77" startPosition="5" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1962660292852061859" fileName="EnumConstantDeclaration_Behavior.java" startLine="78" startPosition="0" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1962660292852751977" fileName="EnumConstantDeclaration_Behavior.java" startLine="79" startPosition="49" endLine="80" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1962660292859306569" fileName="EnumConstantDeclaration_Behavior.java" startLine="82" startPosition="39" endLine="83" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1962660292853103299" fileName="EnumConstantDeclaration_Behavior.java" startLine="89" startPosition="64" endLine="90" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1962660292853077909" fileName="EnumConstantDeclaration_Behavior.java" startLine="94" startPosition="8" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366038183556704602" fileName="EnumConstantDeclaration_Behavior.java" startLine="99" startPosition="56" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366038183556704609" fileName="EnumConstantDeclaration_Behavior.java" startLine="101" startPosition="5" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3366038183556704610" fileName="EnumConstantDeclaration_Behavior.java" startLine="102" startPosition="0" endLine="103" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3366038183556704616" fileName="EnumConstantDeclaration_Behavior.java" startLine="103" startPosition="49" endLine="104" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3366038183556704639" fileName="EnumConstantDeclaration_Behavior.java" startLine="106" startPosition="39" endLine="107" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366038183556704663" fileName="EnumConstantDeclaration_Behavior.java" startLine="113" startPosition="64" endLine="114" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366038183556704672" fileName="EnumConstantDeclaration_Behavior.java" startLine="118" startPosition="8" endLine="119" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6610288699007825106" fileName="EnumConstantDeclaration_Behavior.java" startLine="123" startPosition="106" endLine="124" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6941917182335094757" fileName="EnumConstantDeclaration_Behavior.java" startLine="126" startPosition="41" endLine="127" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6610288699009551394" fileName="EnumConstantDeclaration_Behavior.java" startLine="131" startPosition="44" endLine="132" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6941917182333711078" fileName="EnumConstantDeclaration_Behavior.java" startLine="134" startPosition="8" endLine="135" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6610288699005689687" fileName="EnumConstantDeclaration_Behavior.java" startLine="136" startPosition="5" endLine="137" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="141" startPosition="82" endLine="142" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="146" startPosition="75" endLine="147" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="151" startPosition="81" endLine="152" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="156" startPosition="75" endLine="157" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="161" startPosition="115" endLine="162" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="166" startPosition="108" endLine="167" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="171" startPosition="114" endLine="172" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="176" startPosition="108" endLine="177" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isVisible_8083692786967482069#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isStatic_8986964027630462944#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAdditionalIcon_5017341185733863694#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEnumConstantDeclarationPresentation_8767021959483237039#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMembers_1213877531970#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1962660292851912286" fileName="EnumConstantDeclaration_Behavior.java" startLine="71" startPosition="101" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1962660292859305019" fileName="EnumConstantDeclaration_Behavior.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1962660292853103297" fileName="EnumConstantDeclaration_Behavior.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3366038183556704600" fileName="EnumConstantDeclaration_Behavior.java" startLine="95" startPosition="100" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366038183556704637" fileName="EnumConstantDeclaration_Behavior.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3366038183556704661" fileName="EnumConstantDeclaration_Behavior.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6941917182335090036" fileName="EnumConstantDeclaration_Behavior.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6610288699009540529" fileName="EnumConstantDeclaration_Behavior.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1309723841901646783" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="133" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMembers_1213877531970#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1962660292851912286" fileName="EnumConstantDeclaration_Behavior.java" startLine="74" startPosition="101" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1962660292859305019" fileName="EnumConstantDeclaration_Behavior.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1962660292853103297" fileName="EnumConstantDeclaration_Behavior.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3366038183556704600" fileName="EnumConstantDeclaration_Behavior.java" startLine="98" startPosition="100" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3366038183556704637" fileName="EnumConstantDeclaration_Behavior.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3366038183556704661" fileName="EnumConstantDeclaration_Behavior.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6941917182335090036" fileName="EnumConstantDeclaration_Behavior.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6610288699009540529" fileName="EnumConstantDeclaration_Behavior.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableMethodDeclarations_5776618742611315379#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFqName_1213877404258#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_populateMember_7405920559687254644#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/scopes/MembersPopulatingContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMarkIcons_5039675756633083396#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isStatic_8986964027630472402#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAdditionalIcon_8884554759541376072#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFqName_7448855087283424807#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getMarkIcons_5039675756633083396#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isStatic_8986964027630472402#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="167" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAdditionalIcon_8884554759541376072#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="172" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFqName_7448855087283424807#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1962660292859425346" fileName="EnumConstantDeclaration_Behavior.java" startLine="77" startPosition="293" endLine="82" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1962660292853103290" fileName="EnumConstantDeclaration_Behavior.java" startLine="84" startPosition="49" endLine="89" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366038183556704625" fileName="EnumConstantDeclaration_Behavior.java" startLine="101" startPosition="291" endLine="106" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366038183556704654" fileName="EnumConstantDeclaration_Behavior.java" startLine="108" startPosition="49" endLine="113" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6610288699009462366" fileName="EnumConstantDeclaration_Behavior.java" startLine="121" startPosition="260" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6610288699009406579" fileName="EnumConstantDeclaration_Behavior.java" startLine="126" startPosition="9" endLine="131" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMarkIcons_5039675756633083396#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isStatic_8986964027630472402#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAdditionalIcon_8884554759541376072#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFqName_7448855087283424807#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getMarkIcons_5039675756633083396#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isStatic_8986964027630472402#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAdditionalIcon_8884554759541376072#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="175" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFqName_7448855087283424807#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1962660292859425346" fileName="EnumConstantDeclaration_Behavior.java" startLine="80" startPosition="293" endLine="85" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1962660292853103290" fileName="EnumConstantDeclaration_Behavior.java" startLine="87" startPosition="49" endLine="92" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366038183556704625" fileName="EnumConstantDeclaration_Behavior.java" startLine="104" startPosition="291" endLine="109" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3366038183556704654" fileName="EnumConstantDeclaration_Behavior.java" startLine="111" startPosition="49" endLine="116" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6610288699009462366" fileName="EnumConstantDeclaration_Behavior.java" startLine="124" startPosition="260" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6610288699009406579" fileName="EnumConstantDeclaration_Behavior.java" startLine="129" startPosition="9" endLine="134" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMarkIcons_3923831204883340393#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1962660292853103288" fileName="EnumConstantDeclaration_Behavior.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3366038183556704652" fileName="EnumConstantDeclaration_Behavior.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1962660292852865036" fileName="EnumConstantDeclaration_Behavior.java" startLine="82" startPosition="8" endLine="91" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366038183556704645" fileName="EnumConstantDeclaration_Behavior.java" startLine="106" startPosition="8" endLine="115" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6610288699005744519" fileName="EnumConstantDeclaration_Behavior.java" startLine="119" startPosition="101" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="119" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="71" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodsToImplement_5418393554803775106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="95" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodsToOverride_5418393554803767537#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_populateMember_7405920559687254644#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/scopes/MembersPopulatingContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1962660292853103288" fileName="EnumConstantDeclaration_Behavior.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3366038183556704652" fileName="EnumConstantDeclaration_Behavior.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1962660292852865036" fileName="EnumConstantDeclaration_Behavior.java" startLine="85" startPosition="8" endLine="94" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3366038183556704645" fileName="EnumConstantDeclaration_Behavior.java" startLine="109" startPosition="8" endLine="118" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6610288699005744519" fileName="EnumConstantDeclaration_Behavior.java" startLine="122" startPosition="101" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="122" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="74" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodsToImplement_5418393554803775106#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="98" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodsToOverride_5418393554803767537#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1213877492562" fileName="EnumConstantDeclaration_Behavior.java" startLine="26" startPosition="43" endLine="26" endPosition="43" />
     <scopeInfo nodeId="2907982978864662263" fileName="EnumConstantDeclaration_Behavior.java" startLine="41" startPosition="123" endLine="42" endPosition="16" />
     <scopeInfo nodeId="8986964027630472404" fileName="EnumConstantDeclaration_Behavior.java" startLine="45" startPosition="78" endLine="46" endPosition="16" />
     <scopeInfo nodeId="8884554759541376074" fileName="EnumConstantDeclaration_Behavior.java" startLine="49" startPosition="84" endLine="50" endPosition="82" />
     <scopeInfo nodeId="8767021959483237042" fileName="EnumConstantDeclaration_Behavior.java" startLine="58" startPosition="104" endLine="59" endPosition="89" />
-    <scopeInfo nodeId="1962660292851694183" fileName="EnumConstantDeclaration_Behavior.java" startLine="67" startPosition="78" endLine="68" endPosition="64" />
-    <scopeInfo nodeId="1962660292851912287" fileName="EnumConstantDeclaration_Behavior.java" startLine="72" startPosition="56" endLine="73" endPosition="18" />
-    <scopeInfo nodeId="1962660292859305020" fileName="EnumConstantDeclaration_Behavior.java" startLine="79" startPosition="39" endLine="80" endPosition="64" />
-    <scopeInfo nodeId="1962660292853103298" fileName="EnumConstantDeclaration_Behavior.java" startLine="86" startPosition="64" endLine="87" endPosition="119" />
-    <scopeInfo nodeId="3366038183556704601" fileName="EnumConstantDeclaration_Behavior.java" startLine="96" startPosition="56" endLine="97" endPosition="18" />
-    <scopeInfo nodeId="3366038183556704638" fileName="EnumConstantDeclaration_Behavior.java" startLine="103" startPosition="39" endLine="104" endPosition="263" />
-    <scopeInfo nodeId="3366038183556704662" fileName="EnumConstantDeclaration_Behavior.java" startLine="110" startPosition="64" endLine="111" endPosition="119" />
-    <scopeInfo nodeId="6941917182335090037" fileName="EnumConstantDeclaration_Behavior.java" startLine="123" startPosition="41" endLine="124" endPosition="267" />
-    <scopeInfo nodeId="6610288699009540535" fileName="EnumConstantDeclaration_Behavior.java" startLine="128" startPosition="44" endLine="129" endPosition="135" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="138" startPosition="82" endLine="139" endPosition="158" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="143" startPosition="75" endLine="144" endPosition="124" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="148" startPosition="81" endLine="149" endPosition="131" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="153" startPosition="75" endLine="154" endPosition="119" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="158" startPosition="115" endLine="159" endPosition="300" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="163" startPosition="108" endLine="164" endPosition="266" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="168" startPosition="114" endLine="169" endPosition="273" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="173" startPosition="108" endLine="174" endPosition="261" />
+    <scopeInfo nodeId="1309723841901646786" fileName="EnumConstantDeclaration_Behavior.java" startLine="63" startPosition="66" endLine="64" endPosition="13" />
+    <scopeInfo nodeId="1962660292851694183" fileName="EnumConstantDeclaration_Behavior.java" startLine="70" startPosition="78" endLine="71" endPosition="64" />
+    <scopeInfo nodeId="1962660292851912287" fileName="EnumConstantDeclaration_Behavior.java" startLine="75" startPosition="56" endLine="76" endPosition="18" />
+    <scopeInfo nodeId="1962660292859305020" fileName="EnumConstantDeclaration_Behavior.java" startLine="82" startPosition="39" endLine="83" endPosition="64" />
+    <scopeInfo nodeId="1962660292853103298" fileName="EnumConstantDeclaration_Behavior.java" startLine="89" startPosition="64" endLine="90" endPosition="119" />
+    <scopeInfo nodeId="3366038183556704601" fileName="EnumConstantDeclaration_Behavior.java" startLine="99" startPosition="56" endLine="100" endPosition="18" />
+    <scopeInfo nodeId="3366038183556704638" fileName="EnumConstantDeclaration_Behavior.java" startLine="106" startPosition="39" endLine="107" endPosition="263" />
+    <scopeInfo nodeId="3366038183556704662" fileName="EnumConstantDeclaration_Behavior.java" startLine="113" startPosition="64" endLine="114" endPosition="119" />
+    <scopeInfo nodeId="6941917182335090037" fileName="EnumConstantDeclaration_Behavior.java" startLine="126" startPosition="41" endLine="127" endPosition="267" />
+    <scopeInfo nodeId="6610288699009540535" fileName="EnumConstantDeclaration_Behavior.java" startLine="131" startPosition="44" endLine="132" endPosition="135" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="141" startPosition="82" endLine="142" endPosition="158" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="146" startPosition="75" endLine="147" endPosition="124" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="151" startPosition="81" endLine="152" endPosition="131" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="156" startPosition="75" endLine="157" endPosition="119" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="161" startPosition="115" endLine="162" endPosition="300" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="166" startPosition="108" endLine="167" endPosition="266" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="171" startPosition="114" endLine="172" endPosition="273" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="176" startPosition="108" endLine="177" endPosition="261" />
     <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="26" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
@@ -8840,7 +8843,6 @@
     <scopeInfo nodeId="7448855087283424809" fileName="EnumConstantDeclaration_Behavior.java" startLine="53" startPosition="72" endLine="55" endPosition="444">
       <varInfo nodeId="7448855087283425868" varName="containingEnum" />
     </scopeInfo>
-    <scopeInfo nodeId="7405920559687857379" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="133" endLine="64" endPosition="93" />
     <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="2907982978864662264" varName="contextClassifier" />
       <varInfo nodeId="1267197743691103005" varName="contextNode" />
@@ -8855,25 +8857,25 @@
     <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1962660292859305019" fileName="EnumConstantDeclaration_Behavior.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="1962660292859305019" fileName="EnumConstantDeclaration_Behavior.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1962660292859305019" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1962660292853103297" fileName="EnumConstantDeclaration_Behavior.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="1962660292853103297" fileName="EnumConstantDeclaration_Behavior.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1962660292853103297" varName="constantBelongingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="3366038183556704637" fileName="EnumConstantDeclaration_Behavior.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="3366038183556704637" fileName="EnumConstantDeclaration_Behavior.java" startLine="106" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="3366038183556704637" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3366038183556704661" fileName="EnumConstantDeclaration_Behavior.java" startLine="110" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="3366038183556704661" fileName="EnumConstantDeclaration_Behavior.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="3366038183556704661" varName="constantBelongingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="6941917182335090036" fileName="EnumConstantDeclaration_Behavior.java" startLine="123" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="6941917182335090036" fileName="EnumConstantDeclaration_Behavior.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="6941917182335090036" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6610288699009540529" fileName="EnumConstantDeclaration_Behavior.java" startLine="128" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="6610288699009540529" fileName="EnumConstantDeclaration_Behavior.java" startLine="131" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="6610288699009540533" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
@@ -8886,84 +8888,85 @@
     <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="140" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="150" startPosition="0" endLine="154" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="155" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="160" startPosition="0" endLine="164" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="170" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="175" startPosition="0" endLine="179" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7405920559687857379" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="133" endLine="67" endPosition="93" />
+    <scopeInfo nodeId="1962660292853103289" fileName="EnumConstantDeclaration_Behavior.java" startLine="87" startPosition="49" endLine="92" endPosition="12" />
+    <scopeInfo nodeId="3366038183556704653" fileName="EnumConstantDeclaration_Behavior.java" startLine="111" startPosition="49" endLine="116" endPosition="12" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1213877492560" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="7405920559687857382" varName="classifier" />
       <varInfo nodeId="7405920559687857380" varName="context" />
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="147" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="152" startPosition="0" endLine="156" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="162" startPosition="0" endLine="166" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="167" startPosition="0" endLine="171" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="172" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="callerConceptFqName" />
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1962660292853103289" fileName="EnumConstantDeclaration_Behavior.java" startLine="84" startPosition="49" endLine="89" endPosition="12" />
-    <scopeInfo nodeId="3366038183556704653" fileName="EnumConstantDeclaration_Behavior.java" startLine="108" startPosition="49" endLine="113" endPosition="12" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="1213877492560" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1962660292853103288" fileName="EnumConstantDeclaration_Behavior.java" startLine="84" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="1962660292853103288" fileName="EnumConstantDeclaration_Behavior.java" startLine="87" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="1962660292853103288" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="3366038183556704652" fileName="EnumConstantDeclaration_Behavior.java" startLine="108" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="3366038183556704652" fileName="EnumConstantDeclaration_Behavior.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="3366038183556704652" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6610288699005744520" fileName="EnumConstantDeclaration_Behavior.java" startLine="120" startPosition="106" endLine="132" endPosition="67">
+    <scopeInfo nodeId="6610288699005744520" fileName="EnumConstantDeclaration_Behavior.java" startLine="123" startPosition="106" endLine="135" endPosition="67">
       <varInfo nodeId="6610288699009462367" varName="methods" />
       <varInfo nodeId="6610288699009406580" varName="visibleEumMembers" />
       <varInfo nodeId="6610288699007825107" varName="visibleMembers" />
     </scopeInfo>
-    <scopeInfo nodeId="6610288699005689676" fileName="EnumConstantDeclaration_Behavior.java" startLine="119" startPosition="101" endLine="134" endPosition="183" />
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="119" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="6610288699005689676" fileName="EnumConstantDeclaration_Behavior.java" startLine="122" startPosition="101" endLine="137" endPosition="183" />
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="122" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="6610288699005689679" varName="child" />
       <varInfo nodeId="6610288699005689677" varName="kind" />
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1962660292851910517" fileName="EnumConstantDeclaration_Behavior.java" startLine="71" startPosition="101" endLine="92" endPosition="19">
+    <scopeInfo nodeId="1962660292851910517" fileName="EnumConstantDeclaration_Behavior.java" startLine="74" startPosition="101" endLine="95" endPosition="19">
       <varInfo nodeId="1962660292852061860" varName="methods" />
       <varInfo nodeId="1962660292852751978" varName="methodsToImplement" />
     </scopeInfo>
-    <scopeInfo nodeId="3366038183556576479" fileName="EnumConstantDeclaration_Behavior.java" startLine="95" startPosition="100" endLine="116" endPosition="19">
+    <scopeInfo nodeId="3366038183556576479" fileName="EnumConstantDeclaration_Behavior.java" startLine="98" startPosition="100" endLine="119" endPosition="19">
       <varInfo nodeId="3366038183556704611" varName="methods" />
       <varInfo nodeId="3366038183556704617" varName="methodsToOverride" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="71" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="74" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="95" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="98" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="1213877492560" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1962660292859305019" fileName="EnumConstantDeclaration_Behavior.java" startLine="78" startPosition="253" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$1" />
-    <unitInfo nodeId="1962660292853103297" fileName="EnumConstantDeclaration_Behavior.java" startLine="85" startPosition="101" endLine="89" endPosition="9" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$3" />
-    <unitInfo nodeId="3366038183556704637" fileName="EnumConstantDeclaration_Behavior.java" startLine="102" startPosition="252" endLine="106" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$3" />
-    <unitInfo nodeId="3366038183556704661" fileName="EnumConstantDeclaration_Behavior.java" startLine="109" startPosition="101" endLine="113" endPosition="9" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$5" />
-    <unitInfo nodeId="6941917182335090036" fileName="EnumConstantDeclaration_Behavior.java" startLine="122" startPosition="227" endLine="126" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$5" />
-    <unitInfo nodeId="6610288699009540527" fileName="EnumConstantDeclaration_Behavior.java" startLine="127" startPosition="36" endLine="131" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$6" />
-    <unitInfo nodeId="1962660292853103288" fileName="EnumConstantDeclaration_Behavior.java" startLine="83" startPosition="99" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$2" />
-    <unitInfo nodeId="3366038183556704652" fileName="EnumConstantDeclaration_Behavior.java" startLine="107" startPosition="98" endLine="115" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$4" />
-    <unitInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="25" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior" />
+    <unitInfo nodeId="1962660292859305019" fileName="EnumConstantDeclaration_Behavior.java" startLine="81" startPosition="253" endLine="85" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$1" />
+    <unitInfo nodeId="1962660292853103297" fileName="EnumConstantDeclaration_Behavior.java" startLine="88" startPosition="101" endLine="92" endPosition="9" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$3" />
+    <unitInfo nodeId="3366038183556704637" fileName="EnumConstantDeclaration_Behavior.java" startLine="105" startPosition="252" endLine="109" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$3" />
+    <unitInfo nodeId="3366038183556704661" fileName="EnumConstantDeclaration_Behavior.java" startLine="112" startPosition="101" endLine="116" endPosition="9" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$5" />
+    <unitInfo nodeId="6941917182335090036" fileName="EnumConstantDeclaration_Behavior.java" startLine="125" startPosition="227" endLine="129" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$5" />
+    <unitInfo nodeId="6610288699009540527" fileName="EnumConstantDeclaration_Behavior.java" startLine="130" startPosition="36" endLine="134" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$6" />
+    <unitInfo nodeId="1962660292853103288" fileName="EnumConstantDeclaration_Behavior.java" startLine="86" startPosition="99" endLine="94" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$2" />
+    <unitInfo nodeId="3366038183556704652" fileName="EnumConstantDeclaration_Behavior.java" startLine="110" startPosition="98" endLine="118" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior$4" />
+    <unitInfo nodeId="1213877492560" fileName="EnumConstantDeclaration_Behavior.java" startLine="25" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1213877498977">
     <nodeInfo nodeId="1213877498982" fileName="AssignmentExpression_Behavior.java" startLine="21" startPosition="90" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
