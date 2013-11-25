@@ -67,7 +67,6 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     if (myModel == null) {
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
-      updateTimestamp();
       // TODO FIXME listeners are invoked while holding the lock
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
@@ -129,8 +128,6 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   @Override
   protected void reloadContents() {
     ModelAccess.assertLegalWrite();
-
-    updateTimestamp();
 
     if (!isLoaded()) return;
 

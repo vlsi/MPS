@@ -1033,7 +1033,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
         if (needNewTypecheckingContext) {
-          disposeTypeCheckingContext();
+          releaseTypeCheckingContext();
         }
 
         myNode = node;
@@ -1052,7 +1052,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         if (needNewTypecheckingContext) {
-          obtainTypeCheckingContext();
+          acquireTypeCheckingContext();
         }
 
         rebuildEditorContent();
@@ -1359,7 +1359,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       hideMessageToolTip();
     }
 
-    disposeTypeCheckingContext();
+    releaseTypeCheckingContext();
     myHighlightManager.dispose();
 
     removeOurListeners();
@@ -2430,6 +2430,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myUserDataMap.clear();
   }
 
+  @Deprecated
   public TypeCheckingContext getTypeCheckingContext() {
     TypeCheckingContext context = TypeContextManager.getInstance().lookupTypecheckingContext(getNodeForTypechecking(myNode), this);
     return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), this);
@@ -2439,7 +2440,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return this;
   }
 
-  protected void obtainTypeCheckingContext() {
+  protected void acquireTypeCheckingContext() {
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -2448,11 +2449,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  protected void disposeTypeCheckingContext() {
+  protected void releaseTypeCheckingContext() {
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        TypeContextManager.getInstance().releaseTypecheckingContext(getNodeForTypechecking(myNode), EditorComponent.this);
+        TypeContextManager.getInstance().releaseTypecheckingContext(EditorComponent.this);
       }
     });
   }
@@ -3319,6 +3320,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       if (needToRebuild) {
+        releaseTypeCheckingContext();
+        acquireTypeCheckingContext();
         rebuildEditorContent();
       }
     }

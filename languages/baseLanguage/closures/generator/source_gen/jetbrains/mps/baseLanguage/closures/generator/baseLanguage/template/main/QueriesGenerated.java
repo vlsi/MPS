@@ -3356,7 +3356,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1219934508839(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode lvds = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "original", true), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "woven_LVDS");
+    SNode lvds = _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:originalParameterDeclaration")), "woven_LVDS");
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(lvds, "localVariableDeclaration", true), false);
     return lvr;
@@ -3835,6 +3835,10 @@ public class QueriesGenerated {
       }
     }
     return false;
+  }
+
+  public static Object insertMacro_varValue_5180156240568665230(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "original", true), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
   }
 
   public static Object insertMacro_varValue_4640248974485794769(final IOperationContext operationContext, final TemplateQueryContext _context) {

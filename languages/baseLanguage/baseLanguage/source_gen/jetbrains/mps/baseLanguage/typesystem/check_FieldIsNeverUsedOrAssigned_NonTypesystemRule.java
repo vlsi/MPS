@@ -38,6 +38,10 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false, false) == null);
+        }
       }).toListSequence();
       List<SNode> fieldRefOperations = SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
       Iterable<SNode> localFieldReferences = ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {

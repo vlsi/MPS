@@ -135,9 +135,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
     myAreMappingsReady = false;
-    if (hasPostponedReference(myInputModel.getRootNodes())) {
-      System.out.println("PostponedReference in the input!!!");
-    }
     // prepare weaving
     ttrace.push("weavings", false);
     myWeavingProcessor = new WeavingProcessor(this);
@@ -207,9 +204,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // advance blocked reduction data
       getBlockedReductionsData().advanceStep();
     }
-//    if (hasPostponedReference(getOutputModel().getRootNodes())) {
-//      System.out.println("PostponedReference in the output model!!!");
-//    }
     return myChanged;
   }
 
@@ -610,20 +604,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode child : node.getChildren()) {
       revalidateAllReferences(child);
     }
-  }
-
-  private static boolean hasPostponedReference(Iterable<? extends SNode> nodes) {
-    for (SNode n : nodes) {
-      for (SReference r : n.getReferences()) {
-        if (r instanceof PostponedReference) {
-          return true;
-        }
-      }
-      if (hasPostponedReference(n.getChildren())) {
-        return true;
-      }
-    }
-    return false;
   }
 
   /**

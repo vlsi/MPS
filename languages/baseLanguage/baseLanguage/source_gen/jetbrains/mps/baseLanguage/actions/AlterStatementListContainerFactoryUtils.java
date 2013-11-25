@@ -40,7 +40,7 @@ public class AlterStatementListContainerFactoryUtils {
   private static void buildContainer(SNode sampleNode, final SNode newNode) {
     ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(sampleNode), "statement", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(newNode), "statement", true)).addElement(SNodeOperations.copyNode(it));
+        ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(newNode), "statement", true)).addElement(it);
       }
     });
     if (hasCondition(sampleNode) && hasCondition(newNode)) {

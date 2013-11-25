@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -112,8 +111,8 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
 
   @Override
-  protected void processChanged(ProgressMonitor monitor) {
-    // ignore 
+  public boolean needsReloading() {
+    return false;
   }
 
 
