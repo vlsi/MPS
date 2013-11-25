@@ -15,6 +15,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -35,6 +37,9 @@ public class check_IMethodCallTypeArgs_NonTypesystemRule extends AbstractNonType
         public void visit(SNode typeParameter) {
           SNode var = ListSequence.fromList(vars).removeElementAt(0);
           if ((SLinkOperations.getTarget(var, "bound", true) != null)) {
+            if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(var, "bound", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              System.out.println("Type: " + TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(var, "bound", true)));
+            } else
             if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(var, "bound", true), "virtual_isSupersetOf_1220438914705", new Object[]{typeParameter}))) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
