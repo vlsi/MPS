@@ -756,6 +756,22 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.TypeVariableMatchUtil" file="TypeVariableMatchUtil.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Arrays_InequationReplacementRule" />
@@ -5077,10 +5093,8 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.TypeVariableMatchUtil" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -5106,18 +5120,14 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.TypeVariableMatchUtil" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -5264,10 +5274,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.TypeVariableMatchUtil" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

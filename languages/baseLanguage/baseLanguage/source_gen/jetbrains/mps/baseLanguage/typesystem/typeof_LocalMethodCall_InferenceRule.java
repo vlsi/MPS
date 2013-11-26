@@ -21,10 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import java.util.ArrayList;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
@@ -159,20 +155,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
         }
       }
 
-      List<SNode> declarations = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(declarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)));
-      for (SNode typeArg : ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true))) {
-        SNode decl = ListSequence.fromList(declarations).removeElementAt(0);
-        if ((SLinkOperations.getTarget(decl, "bound", true) != null)) {
-          if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(decl, "bound", true), "virtual_isSupersetOf_9029841626175335449", new Object[]{typeArg, subs}))) {
-            {
-              MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArg, "The type " + typeArg + " is not a valid substitute for the bounded parameter " + decl, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4817790028257113537", null, errorTarget);
-            }
-          }
-        }
-      }
-
+      TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, methodCall, subs);
       return;
     }
 
@@ -291,21 +274,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
       }
     }
 
-    List<SNode> declarations = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(declarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)));
-    System.out.println("AAAAAAA");
-    for (SNode typeArg : ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true))) {
-      SNode decl = ListSequence.fromList(declarations).removeElementAt(0);
-      if ((SLinkOperations.getTarget(decl, "bound", true) != null)) {
-        System.out.println("BBBBBBB");
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(decl, "bound", true), "virtual_isSupersetOf_9029841626175335449", new Object[]{typeArg, subs}))) {
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArg, "The type " + typeArg + " is not a valid substitute for the bounded parameter " + decl, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9029841626188853947", null, errorTarget);
-          }
-        }
-      }
-    }
+    TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, methodCall, subs);
   }
 
   public String getApplicableConceptFQName() {

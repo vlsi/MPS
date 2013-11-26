@@ -23,9 +23,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import java.util.Iterator;
 import jetbrains.mps.errors.BaseQuickFixProvider;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -179,19 +176,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
             }
           }
 
-          List<SNode> declarations = ListSequence.fromList(new ArrayList<SNode>());
-          ListSequence.fromList(declarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)));
-          for (SNode typeArg : ListSequence.fromList(SLinkOperations.getTargets(mcallop, "typeArgument", true))) {
-            SNode decl = ListSequence.fromList(declarations).removeElementAt(0);
-            if ((SLinkOperations.getTarget(decl, "bound", true) != null)) {
-              if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(decl, "bound", true), "virtual_isSupersetOf_9029841626175335449", new Object[]{typeArg, subs}))) {
-                {
-                  MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeArg, "The type " + typeArg + " is not a valid substitute for the bounded parameter " + decl, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9029841626187477862", null, errorTarget);
-                }
-              }
-            }
-          }
+          TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, mcallop, subs);
         }
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4107091686347739849", false, false);
     }
