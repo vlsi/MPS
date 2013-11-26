@@ -219,11 +219,6 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  @Override
-  public IFile getBundleHome() {
-    return null;
-  }
-
   public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {
     boolean[] descriptorChanged = new boolean[]{false};
     Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();

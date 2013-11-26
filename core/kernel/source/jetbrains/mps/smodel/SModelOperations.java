@@ -112,7 +112,7 @@ public class SModelOperations {
   }
 
   public static void validateLanguagesAndImports(jetbrains.mps.smodel.SModel model, boolean respectModulesScopes, boolean firstVersion) {
-    @Nullable SModelDescriptor realDescriptor = model.getModelDescriptorPure();
+    @Nullable SModelDescriptor realDescriptor = model.getModelDescriptor();
     if (realDescriptor != null) {
       ModelChange.assertLegalChange(realDescriptor);
     }

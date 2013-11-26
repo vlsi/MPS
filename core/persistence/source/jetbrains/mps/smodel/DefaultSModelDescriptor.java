@@ -43,7 +43,6 @@ import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
 
-
   private SModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
@@ -108,7 +107,6 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
             "Make sure that all project's roots and/or the model namespace is correct");
     return result;
   }
-
 
   public int getPersistenceVersion() {
     return getModelHeader().getPersistenceVersion();
@@ -237,5 +235,4 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   public SModelHeader getHeaderCopy() {
     return myHeader.createCopy();
   }
-
 }
