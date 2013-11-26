@@ -9,13 +9,9 @@
     </modelRoot>
   </models>
   <facets>
-    <facet type="java" />
     <facet type="tests" />
+    <facet type="java" />
     <facet pluginId="jetbrains.mps.ide.make" type="ideaPlugin" />
-    <facet type="java" />
-    <facet pluginId="com.intellij" type="ideaPlugin" />
-    <facet type="tests" />
-    <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>
