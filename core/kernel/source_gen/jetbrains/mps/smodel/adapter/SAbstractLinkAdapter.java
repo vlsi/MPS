@@ -73,6 +73,6 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     if ((concept == null)) {
       return null;
     }
-    return (SNode) new ConceptAndSuperConceptsScope(concept).getMostSpecificLinkDeclarationByRole(role);
+    return (SNode) new ConceptAndSuperConceptsScope(concept).getLinkDeclarationByRole(role);
   }
 }

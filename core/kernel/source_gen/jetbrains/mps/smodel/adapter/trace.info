@@ -69,7 +69,7 @@
     <nodeInfo nodeId="4050058392234673072" fileName="SAbstractLinkAdapter.java" startLine="65" startPosition="55" endLine="66" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9029962061611739271" fileName="SAbstractLinkAdapter.java" startLine="71" startPosition="39" endLine="72" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9029962061611767655" fileName="SAbstractLinkAdapter.java" startLine="73" startPosition="28" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8803966612818545004" fileName="SAbstractLinkAdapter.java" startLine="75" startPosition="5" endLine="76" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8803966612818545004" fileName="SAbstractLinkAdapter.java" startLine="75" startPosition="5" endLine="76" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9029962061611866590" fileName="SAbstractLinkAdapter.java" startLine="35" startPosition="31" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9029962061611885667" fileName="SAbstractLinkAdapter.java" startLine="45" startPosition="31" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4050058392234652876" fileName="SAbstractLinkAdapter.java" startLine="61" startPosition="35" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -97,7 +97,7 @@
     <scopeInfo nodeId="4050058392234585023" fileName="SAbstractLinkAdapter.java" startLine="61" startPosition="35" endLine="66" endPosition="70">
       <varInfo nodeId="4050058392234660658" varName="la" />
     </scopeInfo>
-    <scopeInfo nodeId="9029962061611754001" fileName="SAbstractLinkAdapter.java" startLine="71" startPosition="39" endLine="76" endPosition="104">
+    <scopeInfo nodeId="9029962061611754001" fileName="SAbstractLinkAdapter.java" startLine="71" startPosition="39" endLine="76" endPosition="92">
       <varInfo nodeId="9029962061611739272" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="2075824672078462554" fileName="SAbstractLinkAdapter.java" startLine="33" startPosition="31" endLine="39" endPosition="158">
