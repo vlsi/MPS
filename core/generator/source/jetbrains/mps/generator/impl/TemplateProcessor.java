@@ -36,15 +36,13 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -207,11 +205,15 @@ public final class TemplateProcessor {
       }
       if (templateReferentNode.getModel() == templateModel) { // internal reference
         // XXX same code is in TEEI.resolveInTemplateLater, needs refactoring
+        String resolveInfo = SNodeOperations.getResolveInfo(templateReferentNode);
+        // The right way to get string representation of the reference (aka resolveInfo) is to ask scope about it
+        // However, it doesn't work now (e.g. regenerate BL fails with NodeCastException in VisibleClassConstructorScope:59,
+        // String resolveInfo = ModelConstraints.getScope(reference).getReferenceText(reference.getSourceNode(), templateReferentNode);
         ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
             outputNode, reference.getRole(),
             templateNodeReference,
             GeneratorUtil.getTemplateNodeId(templateReferentNode),
-            jetbrains.mps.util.SNodeOperations.getResolveInfo(templateReferentNode),
+            resolveInfo,
             context);
         PostponedReference postponedReference = new PostponedReference(
             refInfo,
@@ -277,7 +279,7 @@ public final class TemplateProcessor {
       myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
       myTracer.closeTemplateNode(templateNodeReference);
     }
-    return Collections.singletonList(((SNode) outputNode));
+    return Collections.singletonList(outputNode);
   }
 
   private void validateReferences(SNode node, final SNode inputNode) {
