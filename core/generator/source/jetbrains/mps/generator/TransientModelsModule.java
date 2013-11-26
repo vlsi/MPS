@@ -326,11 +326,6 @@ public class TransientModelsModule extends AbstractModule {
     }
 
     @Override
-    public SModel resolveModel(SModelReference reference) {
-      throw new UnsupportedOperationException("not supported since 3.0");
-    }
-
-    @Override
     public boolean isChanged() {
       // TODO move transient models outside of the default repository; false here prevents model from saving
       return false;

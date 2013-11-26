@@ -62,11 +62,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public SModel resolveModel(SModelReference reference) {
-    throw new UnsupportedOperationException("not supported since 3.0");
-  }
-
-  @Override
   public boolean isTransient() {
     return false;
   }
@@ -284,16 +279,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public final void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-    getSModelInternal().addAdditionalModelVersion(modelReference, usedVersion);
-  }
-
-  @Override
-  public final void addAdditionalModelVersion(@NotNull ImportElement element) {
-    getSModelInternal().addAdditionalModelVersion(element);
-  }
-
-  @Override
   public int getVersion() {
     return getSModelInternal().getVersion();
   }
@@ -306,11 +291,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public final StackTraceElement[] getDisposedStacktrace() {
     return getSModelInternal().getDisposedStacktrace();
-  }
-
-  @Override
-  public final void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    getSModelInternal().setModelDescriptor(modelDescriptor);
   }
 
   @Override

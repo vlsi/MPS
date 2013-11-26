@@ -311,11 +311,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
         });
       }
     }
-
-    @Override
-    public SModel resolveModel(SModelReference reference) {
-      throw new UnsupportedOperationException("not supported since 3.0");
-    }
   }
 
   public static class ProjectStructureSModel extends jetbrains.mps.smodel.SModel {

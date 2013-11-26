@@ -178,11 +178,6 @@ public class TestModule extends AbstractModule {
         return new StubModel(PersistenceFacade.getInstance().createModelReference(myLongName), e);
       }
     }
-
-    @Override
-    public SModel resolveModel(SModelReference reference) {
-      throw new UnsupportedOperationException("not supported since 3.0");
-    }
   }
 
   private static class StubModel extends jetbrains.mps.smodel.SModel implements InvalidSModel {

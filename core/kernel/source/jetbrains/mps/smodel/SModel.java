@@ -234,11 +234,6 @@ public class SModel implements SModelData {
   }
 
   @Deprecated
-  public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
-    return getModelDescriptor().resolveModel(reference);
-  }
-
-  @Deprecated
   public void addModelListener(@NotNull SModelListener listener) {
     getModelDescriptor().addModelListener(listener);
   }
@@ -249,10 +244,6 @@ public class SModel implements SModelData {
   }
 
   public SModelDescriptor getModelDescriptor() {
-    return myModelDescriptor;
-  }
-
-  public SModelDescriptor getModelDescriptorPure(){
     return myModelDescriptor;
   }
 

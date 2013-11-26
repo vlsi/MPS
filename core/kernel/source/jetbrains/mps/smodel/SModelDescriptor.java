@@ -90,15 +90,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    */
   public boolean isTransient();
 
-  //------
-
-  @Deprecated
-  /**
-   * Cast to SModelInternal in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  SModel resolveModel(SModelReference reference);
-
   //--------------model listeners--------------------
 
   @Deprecated
