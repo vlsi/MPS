@@ -761,22 +761,6 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute block" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1136917155755" resolveInfo="CellKeyMap_AbstractFunction" />
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1137553248617" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="concept property" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_ConceptProperty" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{{&lt;{propertyDeclaration}&gt;}}" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7750832940157554050" nodeInfo="ig" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1137553248621" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1105725006687" resolveInfo="ConceptPropertyDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
-    </node>
-  </root>
   <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1138197387103" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="_Layout_Constraints_Enum" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />

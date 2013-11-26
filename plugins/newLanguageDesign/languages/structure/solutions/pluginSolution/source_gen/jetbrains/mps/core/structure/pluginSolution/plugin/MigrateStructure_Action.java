@@ -98,7 +98,7 @@ public class MigrateStructure_Action extends BaseAction {
         }
       };
       final Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
-      mh.handle(new Message(MessageKind.INFORMATION, "converting " + language.getModuleFqName()));
+      mh.handle(new Message(MessageKind.INFORMATION, "converting " + language.getModuleName()));
       SNode converted = new LanguageConverter(language, mh).convert();
 
       SModel desc;
