@@ -353,6 +353,15 @@ public class SModelOperations {
     return result;
   }
 
+  @NotNull
+  public static List<SModelReference> getImportedModelUIDs(jetbrains.mps.smodel.SModel sModel) {
+    List<SModelReference> references = new ArrayList<SModelReference>();
+    for (ImportElement importElement : sModel.importedModels()) {
+      references.add(importElement.getModelReference());
+    }
+    return Collections.unmodifiableList(references);
+  }
+
   //todo rewrite using iterators
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
