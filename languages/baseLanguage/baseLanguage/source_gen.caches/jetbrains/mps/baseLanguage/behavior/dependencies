@@ -1136,6 +1136,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
@@ -4487,6 +4488,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />

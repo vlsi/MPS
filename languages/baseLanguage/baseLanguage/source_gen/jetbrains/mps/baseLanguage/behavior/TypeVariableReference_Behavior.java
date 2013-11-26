@@ -90,9 +90,15 @@ public class TypeVariableReference_Behavior {
 
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     SNode substituted = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false));
+    System.out.println("BBBBBBBBBB " + thisNode + ":" + t);
     if (substituted != null) {
+      if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+        SNode substitutedT = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(substituted, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_isSupersetOf_1220438914705", new Object[]{SNodeOperations.cast(substitutedT, "jetbrains.mps.baseLanguage.structure.Type")});
+      }
       return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(substituted, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_isSupersetOf_1220438914705", new Object[]{t});
     } else {
+      System.out.println("AAAAAAAAAAA " + thisNode + ":" + t);
       return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Type", "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
     }
   }

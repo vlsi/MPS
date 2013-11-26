@@ -18,9 +18,9 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -199,12 +199,39 @@ public class ClassifierType_Behavior {
           while (typeParam_it.hasNext() && myParam_it.hasNext()) {
             typeParam_var = typeParam_it.next();
             myParam_var = myParam_it.next();
-            if (SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.LowerBoundType") || SNodeOperations.isInstanceOf(myParam_var, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-              if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, myParam_var, "virtual_isSupersetOf_9029841626175335449", new Object[]{typeParam_var, substitutions}))) {
+            SNode _myParam = myParam_var;
+            SNode _typeParam = typeParam_var;
+            while (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+              if (temp != null) {
+                _myParam = temp;
+              } else {
+                break;
+              }
+            }
+            while (SNodeOperations.isInstanceOf(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+              if (temp != null) {
+                _typeParam = temp;
+              } else {
+                break;
+              }
+            }
+            System.out.println("Resolved: " + _myParam + ":" + _typeParam);
+            if (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+              if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, _myParam, "virtual_isSupersetOf_9029841626175335449", new Object[]{_typeParam, substitutions}))) {
+                return false;
+              }
+            } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+              return false;
+            } else if (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_myParam, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty()) {
+              if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, _myParam, "virtual_isSupersetOf_9029841626175335449", new Object[]{_typeParam, substitutions}) && BehaviorReflection.invokeVirtual(Boolean.TYPE, _typeParam, "virtual_isSupersetOf_9029841626175335449", new Object[]{_myParam, substitutions}))) {
+                System.out.println("Returning false from classifier type " + _myParam + ":" + _typeParam);
                 return false;
               }
             } else {
-              if (!(MatchingUtil.matchNodes(myParam_var, typeParam_var))) {
+              System.out.println("Matching " + _myParam + ":" + _typeParam);
+              if (!(MatchingUtil.matchNodes(_myParam, _typeParam))) {
                 return false;
               }
             }

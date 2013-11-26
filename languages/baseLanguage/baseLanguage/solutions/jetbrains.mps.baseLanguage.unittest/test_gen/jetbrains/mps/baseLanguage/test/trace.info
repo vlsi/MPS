@@ -427,6 +427,10 @@
     <scopeInfo nodeId="1326302914272888841" fileName="TestSafeEquals_Test.java" startLine="17" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="1326302914272879450" fileName="TestSafeEquals_Test.java" startLine="8" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestSafeEquals_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2176128700705692341">
+    <unitInfo nodeId="2176128700705692341" fileName="BoundedTypeOnIllegalPositions_Test.java" startLine="11" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody" />
+    <unitInfo nodeId="2176128700705692341" fileName="BoundedTypeOnIllegalPositions_Test.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4246614868164066702">
     <nodeInfo nodeId="4246614868164066704" fileName="DataKind.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataKind#()V" />
     <scopeInfo nodeId="4246614868164066707" fileName="DataKind.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
