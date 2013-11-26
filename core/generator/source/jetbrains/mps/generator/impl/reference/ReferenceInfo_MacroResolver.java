@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -47,11 +46,6 @@ public class ReferenceInfo_MacroResolver extends ReferenceInfo_Macro {
       return macro.resolve(MPSModuleRepository.getInstance());
     }
     return null;
-  }
-
-  @Override
-  public SNode getInputTargetNode() {
-    throw new UnsupportedOperationException();
   }
 
   @Override

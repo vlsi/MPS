@@ -63,8 +63,6 @@ public abstract class ReferenceInfo {
     return myInputNode;
   }
 
-  public abstract SNode getInputTargetNode();
-
   /*
    * test postponed references
    */

@@ -20,9 +20,9 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, 11/19/10
@@ -40,11 +40,6 @@ public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
     myTemplateSourceNode = sourceNode;
     myTemplateTargetNode = targetNodeId;
     myResolveInfo = resolveInfo;
-  }
-
-  @Override
-  public SNode getInputTargetNode() {
-    throw new UnsupportedOperationException();
   }
 
   @Override

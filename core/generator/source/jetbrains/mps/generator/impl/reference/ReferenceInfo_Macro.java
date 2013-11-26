@@ -78,15 +78,6 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   @Override
-  public String getResolveInfoForNothing() {
-    SNode templateTargetNode = getInputTargetNode();
-    if (templateTargetNode != null) {
-      return templateTargetNode.getName();
-    }
-    return null;
-  }
-
-  @Override
   public boolean isRequired() {
     String role = getReferenceRole();
     SConcept concept = getOutputSourceNode().getConcept();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,11 +40,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     super(outputSourceNode, role, inputNode);
     myInputNode = inputNode;
     myInputTargetNode = inputTargetNode;
-  }
-
-  @Override
-  public SNode getInputTargetNode() {
-    return myInputTargetNode;
   }
 
   @Override

@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -26,18 +30,34 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
 
-  private final SNode myTemplateReferenceNode;
+  private final SNode myTemplateTargetNode;
   private final SNode myReferenceMacro;
 
   public ReferenceInfo_MacroNode(SNode outputSourceNode, SNode macro, SNode templateReferenceNode, TemplateContext context,  @NotNull QueryExecutionContext executionContext) {
     super(outputSourceNode, AttributeOperations.getLinkRole(macro), context, executionContext);
-    myTemplateReferenceNode = templateReferenceNode;
+    myTemplateTargetNode = templateReferenceNode.getReferenceTarget(getReferenceRole());
     myReferenceMacro = macro;
   }
 
   @Override
-  public SNode getInputTargetNode() {
-    return myTemplateReferenceNode.getReferenceTarget(getReferenceRole());
+  public String getResolveInfoForNothing() {
+    if (myTemplateTargetNode != null) {
+      return myTemplateTargetNode.getName();
+    }
+    return null;
+  }
+
+
+  @Override
+  public boolean isDynamicResolve(IGeneratorLogger errorLog) {
+    final boolean dynamicFromTemplate;
+    if (myTemplateTargetNode != null) {
+      SAbstractConcept resolveInfoConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_IResolveInfo);
+      dynamicFromTemplate = myTemplateTargetNode.getConcept().isSubConceptOf(resolveInfoConcept);
+    } else {
+      dynamicFromTemplate = false;
+    }
+    return dynamicFromTemplate || super.isDynamicResolve(errorLog);
   }
 
   @Override
