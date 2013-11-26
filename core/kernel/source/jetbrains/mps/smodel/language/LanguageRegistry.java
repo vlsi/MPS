@@ -103,7 +103,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
         l.afterLanguagesLoaded(languages);
-      } catch (Exception ex) {
+      } catch (Throwable ex) {
         LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
       }
     }
