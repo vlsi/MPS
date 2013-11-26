@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,11 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -36,126 +32,165 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * Build (and optionally maintain) set of all languages, imported directly and indirectly.
+ * The manager represents snapshot of all imported languages and doesn't update in unless {@link #invalidate() invalidated}.
+ * With {@link #trackModelChanges()} it tracks changes in the designated model and updates own state appropriately.
+ * With {@link #trackRepositoryChanges(org.jetbrains.mps.openapi.module.SRepository)}, changes to repository
+ * would invalidate the manager.
+ * <p>Generally, there are two distinct patterns in using this manager, "lifecycle" and "snapshot":</p>
+ * <pre>
+ *   ModelDependenciesManager mdm = new ModelDependenciesManager(model).trackModelChanges().trackRepositoryChanges(repo);
+ *   process(mdm.getAllImportedLanguages());
+ *   ...
+ *   // changes in models are reflected in MDM
+ *   process(mdm.getAllImportedLanguages());
+ *   ...
+ *   // much later
+ *   mdm.dispose();
+ * </pre>
+ * vs.
+ * <pre>
+ *   ModelDependenciesManager mdm = new ModelDependenciesManager(model)
+ *   process(mdm.getAllImportedModels());
+ *   mdm.dispose();
+ * </pre>
+ */
 public class ModelDependenciesManager {
-
-  private static final Logger LOG = LogManager.getLogger(ModelDependenciesManager.class);
-
-  private final SRepository myRepository;
   private SModel myModel;
-  private MySModelWatcher mySModelWatcher;
-  private MyModuleWatcher myModuleWatcher;
 
-  private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
-  private volatile Set<SModuleReference> myCachedDeps;
-  // a one-time synchronization helper for the cache
-  private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
+  private MyModuleWatcher myModuleWatcher;
+  private MySModelWatcher myModelWatcher;
+
+  private volatile Collection<SModuleReference> myCachedDeps;
 
   public ModelDependenciesManager(SModel model) {
-    myRepository = MPSModuleRepository.getInstance();
     myModel = model;
-    myModuleWatcher = new MyModuleWatcher();
   }
 
   public Collection<SModuleReference> getAllImportedLanguages() {
-    if (myModel == null) throw new IllegalStateException("access after disposal");
+    final SModel model = myModel;
+    if (model == null) throw new IllegalStateException("access after disposal");
 
-    if (myInvalidatedFlag.compareAndSet(true, false)) {
-      // lazy initialization
-      if (mySModelWatcher == null) {
-        mySModelWatcher = new MySModelWatcher(myModel);
-      }
-
-      myModuleWatcher.clear();
-
-      Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-
-      for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) myModel).importedLanguages()) {
-        result.add(lang);
-        Language module = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
-        if (module != null) {
-          myModuleWatcher.watchLanguage(module);
-        } else {
-          LOG.error("cannot find used language in repository " + lang.toString());
-        }
-      }
-
-      for (SModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
-        DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
-        if (devkit == null) continue;
-        myModuleWatcher.watchDevKit(devkit);
-
-        for (Language dkLang : devkit.getAllExportedLanguages()) {
-          result.add(dkLang.getModuleReference());
-          myModuleWatcher.watchLanguage(dkLang);
-        }
-
-        for (DevKit exDevKit : devkit.getAllExtendedDevkits()) {
-          myModuleWatcher.watchDevKit(exDevKit);
-        }
-      }
-      this.myCachedDeps = Collections.unmodifiableSet(result);
-      myCacheInitGuard.countDown();
+    Collection<SModuleReference> tlVal = myCachedDeps;
+    if (tlVal == null) {
+      // I can live with expense of two+ threads building identical set simultaneously (microseconds)
+      // and competing to set it to save use of synchronization primitives
+      tlVal = buildAllLanguages(model, new LinkedHashSet<SModuleReference>());
+      myCachedDeps = tlVal = Collections.unmodifiableCollection(tlVal);
     }
-    while (true) {
-      try {
-        myCacheInitGuard.await();
-        break;
-      } catch (InterruptedException e) {
-      }
-    }
-    return myCachedDeps;
+    return tlVal;
   }
 
   public void dispose() {
-    if (mySModelWatcher != null) {
-      mySModelWatcher.dispose();
-      this.mySModelWatcher = null;
+    if (myModelWatcher != null) {
+      myModelWatcher.dispose();
+      myModelWatcher = null;
     }
     if (myModuleWatcher != null) {
       myModuleWatcher.dispose();
-      this.myModuleWatcher = null;
+      myModuleWatcher = null;
     }
-    this.myModel = null;
+    myCachedDeps = null;
+    myModel = null;
   }
 
-  private void invalidate() {
-    myInvalidatedFlag.set(true);
+  protected SModel getModel() {
+    return myModel;
   }
 
-  private class MySModelWatcher extends SModelAdapter {
+  protected boolean isDependency(SModuleReference langRef) {
+    Collection<SModuleReference> tlVal = myCachedDeps;
+    return tlVal != null && tlVal.contains(langRef);
+  }
 
+  public void invalidate() {
+    myCachedDeps = null;
+  }
+
+  protected Collection<SModuleReference> buildAllLanguages(@NotNull SModel model, @NotNull Collection<SModuleReference> result) {
+    for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages()) {
+      handle(lang, result);
+    }
+
+    for (SModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
+      DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
+      if (devkit == null) continue;
+      handle(devkit, result);
+    }
+    return result;
+  }
+
+  /**
+   * Process language reference dependency
+   *
+   * @param lang   reference to language module, never <code>null</code>. Language it points to not necessarily resolves
+   * @param retval collection to fill with languages of interest
+   */
+  protected void handle(SModuleReference lang, Collection<SModuleReference> retval) {
+    retval.add(lang);
+  }
+
+  /**
+   * Process devkit dependency
+   *
+   * @param devkit reference to devkit, not <code>null</code>.
+   * @param retval collection to fill with languages of interest
+   */
+  protected void handle(DevKit devkit, Collection<SModuleReference> retval) {
+    for (Language dkLang : devkit.getAllExportedLanguages()) {
+      handle(dkLang.getModuleReference(), retval);
+    }
+  }
+
+  public ModelDependenciesManager trackModelChanges() {
+    if (myModelWatcher == null) {
+      myModelWatcher = new MySModelWatcher(this);
+    }
+    return this;
+  }
+
+  public ModelDependenciesManager trackRepositoryChanges(SRepository repository) {
+    if (myModuleWatcher != null && myModuleWatcher.myRepository != repository) {
+      myModuleWatcher.dispose();
+    }
+    myModuleWatcher = new MyModuleWatcher(this, repository);
+    return this;
+  }
+
+  private static class MySModelWatcher extends SModelAdapter {
+
+    private final ModelDependenciesManager myDepManager;
     private SModel mySModelDescriptor;
 
-    private MySModelWatcher(SModel sModelDescriptor) {
-      mySModelDescriptor = sModelDescriptor;
+    private MySModelWatcher(ModelDependenciesManager mdm) {
+      myDepManager = mdm;
+      mySModelDescriptor = mdm.getModel();
       registerSelf();
     }
 
     @Override
     public void devkitAdded(SModelDevKitEvent event) {
-      invalidate();
+      myDepManager.invalidate();
     }
 
     @Override
     public void devkitRemoved(SModelDevKitEvent event) {
-      invalidate();
+      myDepManager.invalidate();
     }
 
     @Override
     public void languageAdded(SModelLanguageEvent event) {
-      invalidate();
+      myDepManager.invalidate();
     }
 
     @Override
     public void languageRemoved(SModelLanguageEvent event) {
-      invalidate();
+      myDepManager.invalidate();
     }
 
-    private void dispose() {
+    public void dispose() {
       unregisterSelf();
       this.mySModelDescriptor = null;
     }
@@ -169,51 +204,39 @@ public class ModelDependenciesManager {
     }
   }
 
-  private class MyModuleWatcher extends SRepositoryContentAdapter {
+  private static class MyModuleWatcher extends SRepositoryContentAdapter {
 
-    private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
+    private final SRepository myRepository;
+    private final ModelDependenciesManager myDepManager;
 
-    private MyModuleWatcher() {
+    private MyModuleWatcher(ModelDependenciesManager mdm, SRepository repository) {
+      myDepManager = mdm;
+      myRepository = repository;
       subscribeTo(myRepository);
     }
 
     @Override
     public void beforeModuleRemoved(SModule module) {
-      invalidateIfWatching(module);
+      invalidateIfWatching(module.getModuleReference());
     }
 
     @Override
     public void moduleChanged(SModule module) {
-      invalidateIfWatching(module);
+      invalidateIfWatching(module.getModuleReference());
     }
 
     @Override
-    public void repositoryChanged() {
-      invalidate();
-      unsubscribeFrom(myRepository);
+    public void modelAdded(SModule module, SModel model) {
+      invalidateIfWatching(module.getModuleReference());
     }
 
-    private void watchDevKit(@NotNull DevKit devKit) {
-      myWatchedModules.add(devKit);
-    }
-
-    private void watchLanguage(@NotNull Language language) {
-      myWatchedModules.add(language);
-    }
-
-    private void invalidateIfWatching(SModule module) {
-      if (myWatchedModules.contains(module)) {
-        invalidate();
-        unsubscribeFrom(myRepository);
+    private void invalidateIfWatching(SModuleReference moduleRef) {
+      if (myDepManager.isDependency(moduleRef)) {
+        myDepManager.invalidate();
       }
     }
 
-    private void clear() {
-      myWatchedModules.clear();
-    }
-
-    private void dispose() {
-      clear();
+    public void dispose() {
       unsubscribeFrom(myRepository);
     }
   }
