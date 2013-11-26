@@ -94,7 +94,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
-        if (!newNode.getChildren(role).iterator().hasNext()) {
+        if (targetConcept != null && !newNode.getChildren(role).iterator().hasNext()) {
           SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, scope);
           newNode.addChild(role, childNode);
         }
