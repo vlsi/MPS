@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c8fwrgqxoebcesh9yisjecupattl9lo">
+<dependencies version="2" modelHash="-9h0m5hutqqhomzrm485idbvju3jexu8">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -655,7 +655,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="NullLiteral_Behavior.java" />
   </source>
-  <source id="1213877243781" name="FieldDeclaration_Behavior" hash="-49z8x8cyfurubqv0y33g1oay485f3pn">
+  <source id="1213877243781" name="FieldDeclaration_Behavior" hash="-11h8k2myw16a6j1zyjylwz9kayx5ns">
     <dep root="1213877306256" />
     <dep root="1213877517475" />
     <dep root="1233076309785" />
@@ -1085,12 +1085,13 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BaseMethodDeclaration_Behavior.java" />
   </source>
-  <source id="1213877351133" name="StaticFieldDeclaration_Behavior" hash="9xnkkyopyh2ankgpow5dnh8kluxtmz7">
+  <source id="1213877351133" name="StaticFieldDeclaration_Behavior" hash="-bti3u7hr1wkvfkb3w4lwq2wqiyl9giv">
     <dep root="1213877305150" />
     <dep root="1213877517475" />
     <dep root="1233076309785" />
     <dep root="5017341185733869578" />
     <dep root="7405920559687241221" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
@@ -1455,7 +1456,7 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="TypeDerivable_Behavior.java" />
   </source>
-  <source id="1213877436332" name="ConstructorDeclaration_Behavior" hash="-bmv3isj3xpk0iknhgy84xz0p42oecik">
+  <source id="1213877436332" name="ConstructorDeclaration_Behavior" hash="-acrbn0jje8bcgmc3mfpuoh8mdf6ndp8">
     <dep root="1213877305150" />
     <dep root="1213877306256" />
     <dep root="1213877327381" />
@@ -1590,7 +1591,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="InstanceMethodCallOperation_Behavior.java" />
   </source>
-  <source id="1213877492560" name="EnumConstantDeclaration_Behavior" hash="ajek4ckekx9jn6es0rqntqh0fhzau13">
+  <source id="1213877492560" name="EnumConstantDeclaration_Behavior" hash="-95inic25zwitvxxoj8rkvz8ulrmi62m">
     <dep root="1213877305150" />
     <dep root="1213877306256" />
     <dep root="1213877350233" />
@@ -3015,17 +3016,17 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="IncompleteMemberDeclaration_Behavior.java" />
   </source>
+  <source id="6155185097904819374" name="PrefixIncrementExpression_Behavior" hash="dkvds5tch33g7hqw9jbz661b4hy778b">
+    <dep root="1213877519768" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <file name="PrefixIncrementExpression_Behavior.java" />
+  </source>
   <source id="6155185097904814046" name="PostfixDecrementExpression_Behavior" hash="-6mqra5ue688zqan0h28b5tn02tqjlml">
     <dep root="1213877519768" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="PostfixDecrementExpression_Behavior.java" />
-  </source>
-  <source id="6155185097904815822" name="PostfixIncrementExpression_Behavior" hash="2c3ix8kqqzl1aacvp3uu23qnm0lyqgt">
-    <dep root="1213877519768" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <file name="PostfixIncrementExpression_Behavior.java" />
   </source>
   <source id="6155185097904817598" name="PrefixDecrementExpression_Behavior" hash="-em5ng9ba1z098blr6en792lhrxshc8r">
     <dep root="1213877519768" />
@@ -3033,11 +3034,11 @@
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="PrefixDecrementExpression_Behavior.java" />
   </source>
-  <source id="6155185097904819374" name="PrefixIncrementExpression_Behavior" hash="dkvds5tch33g7hqw9jbz661b4hy778b">
+  <source id="6155185097904815822" name="PostfixIncrementExpression_Behavior" hash="2c3ix8kqqzl1aacvp3uu23qnm0lyqgt">
     <dep root="1213877519768" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <file name="PrefixIncrementExpression_Behavior.java" />
+    <file name="PostfixIncrementExpression_Behavior.java" />
   </source>
 </dependencies>
 

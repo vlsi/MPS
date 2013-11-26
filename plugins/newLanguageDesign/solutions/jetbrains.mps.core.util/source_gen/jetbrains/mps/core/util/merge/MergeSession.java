@@ -53,7 +53,7 @@ public class MergeSession {
     }
 
     final jetbrains.mps.smodel.SModel newmodel = existing.createEmptyCopy();
-    existing.copyPropertiesTo(newmodel.getModelDescriptor());
+    existing.copyPropertiesTo(newmodel);
     Sequence.fromIterable(mergeLists((Iterable<SNode>) model.getRootNodes(), roots, newmodel.getModelDescriptor())).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         newmodel.addRootNode(it);
@@ -131,8 +131,15 @@ public class MergeSession {
     SNode result = new jetbrains.mps.smodel.SNode(node.getConcept().getQualifiedName());
     MapSequence.fromMap(mapping).put(node, result);
     MapSequence.fromMap(reverseMapping).put(result, node);
-    ((jetbrains.mps.smodel.SNode) result).putProperties((jetbrains.mps.smodel.SNode) node);
-    ((jetbrains.mps.smodel.SNode) result).putUserObjects((jetbrains.mps.smodel.SNode) node);
+
+    for (String name : node.getPropertyNames()) {
+      result.setProperty(name, node.getProperty(name));
+    }
+
+    for (Object key : node.getUserObjectKeys()) {
+      result.putUserObject(key, node.getUserObject(key));
+    }
+
     if (existing != null) {
       ((jetbrains.mps.smodel.SNode) result).setId(existing.getNodeId());
     }

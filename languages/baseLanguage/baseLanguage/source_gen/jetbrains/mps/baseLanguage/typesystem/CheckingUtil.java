@@ -68,4 +68,37 @@ public class CheckingUtil {
       }
     });
   }
+
+
+
+
+  /**
+   * Returns the role of the subtree starting at topNode, under which the containedNode is located
+   */
+  public static SNode getContainingSubtreeRole(SNode topNode, SNode containedNode) {
+    if (eq_36hle6_a0a0j(containedNode, topNode)) {
+      throw new IllegalArgumentException("Cannot find a containing subtree for two identical nodes");
+    }
+    if ((containedNode == null) || (topNode == null)) {
+      throw new IllegalArgumentException("Null nodes not allowed");
+    }
+
+    SNode currentNode = containedNode;
+    while ((currentNode != null) && neq_36hle6_a0a4a9(topNode, SNodeOperations.getParent(currentNode))) {
+      currentNode = SNodeOperations.getParent(currentNode);
+    }
+    if (currentNode == null) {
+      return null;
+    }
+
+    return SNodeOperations.getContainingLinkDeclaration(currentNode);
+  }
+
+  private static boolean eq_36hle6_a0a0j(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean neq_36hle6_a0a4a9(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
 }
