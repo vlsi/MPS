@@ -51,6 +51,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildProject_6099797596647447257(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -526,7 +527,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "tail", "jetbrains.mps.build.structure.BuildCompositePath");
+        SLinkOperations.setTarget(_context.getSourceNode(), "tail", _quotation_createNode_i7jjd8_a0a0a0a0b(SLinkOperations.getTarget(_context.getSourceNode(), "tail", true)), true);
         SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(_context.getSourceNode(), "tail", true), CellIdManager.createPropertyId("head"));
         return null;
       }
@@ -959,6 +960,18 @@ public class QueriesGenerated {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
     quotedNode_2.addChild("parts", quotedNode_3);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_i7jjd8_a0a0a0a0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("tail", HUtil.copyIfNecessary(quotedNode_3));
+    }
     return quotedNode_2;
   }
 

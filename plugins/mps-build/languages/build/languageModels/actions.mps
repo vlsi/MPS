@@ -638,7 +638,23 @@
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.8618885170173601778" />
                     </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Link_SetNewChildOperation" typeId="tpdg.767145758118872830" id="8618885170173707613" nodeInfo="nn" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="103203307812555128" nodeInfo="nn">
+                    <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="103203307812580929" nodeInfo="nn">
+                      <node role="quotedNode" roleId="tp3r.1196350785114" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="103203307812583922" nodeInfo="nn">
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="103203307812587446" nodeInfo="nn">
+                          <property name="head" nameId="3ior.8618885170173601779" value="" />
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="103203307812587746" nodeInfo="ng">
+                            <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="103203307812590827" nodeInfo="nn">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="103203307812587774" nodeInfo="nn" />
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="103203307812593799" nodeInfo="nn">
+                                <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.8618885170173601778" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7859459750832381706" nodeInfo="nn">
