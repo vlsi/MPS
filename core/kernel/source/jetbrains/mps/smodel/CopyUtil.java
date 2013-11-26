@@ -13,31 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class CopyUtil {
   private CopyUtil() {
   }
 
   public static void copyModelContent(SModel from, SModel to) {
-
     for (SNode root : from.getRootNodes()) {
       to.addRootNode(copy(root));
     }
   }
 
-  public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
+  public static void copyModelContentAndPreserveIds(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
     for (SNode root : from.getRootNodes()) {
       to.addRootNode(copyAndPreserveId(root, true));
     }
@@ -62,19 +65,15 @@ public final class CopyUtil {
     ((jetbrains.mps.smodel.SModelInternal) model).calculateImplicitImports();
   }
 
-  public static void copyModelProperties(SModel from, SModel to) {
-    ((jetbrains.mps.smodel.SModelInternal) from).copyPropertiesTo(((jetbrains.mps.smodel.SModelInternal) to));
+  public static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+    from.copyPropertiesTo(to);
   }
 
   public static jetbrains.mps.smodel.SModel copyModel(jetbrains.mps.smodel.SModel model) {
     jetbrains.mps.smodel.SModel copy = model.createEmptyCopy();
-    copyModelContentAndPreserveIds(model.getModelDescriptor(), copy.getModelDescriptor());
-    copyModelProperties(model.getModelDescriptor(), copy.getModelDescriptor());
+    copyModelContentAndPreserveIds(model, copy);
+    copyModelProperties(model, copy);
     return copy;
-  }
-
-  public static void changeModelReference(SModel model, SModelReference modelReference) {
-    ((jetbrains.mps.smodel.SModelInternal) model).changeModelReference(modelReference);
   }
 
   public static List<SNode> copy(List<SNode> nodes) {
@@ -156,11 +155,11 @@ public final class CopyUtil {
           if (ref instanceof StaticReference) {
             StaticReference statRef = (StaticReference) ref;
             SReference reference = new StaticReference(
-              statRef.getRole(),
-              outputNode,
-              statRef.getTargetSModelReference(),
-              statRef.getTargetNodeId(),
-              statRef.getResolveInfo());
+                statRef.getRole(),
+                outputNode,
+                statRef.getTargetSModelReference(),
+                statRef.getTargetNodeId(),
+                statRef.getResolveInfo());
             outputNode.setReference(reference.getRole(), reference);
           } else if (ref instanceof DynamicReference && cloneRefs) {
             DynamicReference dynRef = (DynamicReference) ref;

@@ -10,6 +10,7 @@ import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -91,7 +92,7 @@ public class MPSCompiler {
                 JpsModule jpsModule = solution.getModule();
 
                 // TODO targetDir
-                IFile targetDir = FileSystem.getInstance().getFileByPath(solution.getOutputFor(inputModel));
+                IFile targetDir = FileSystem.getInstance().getFileByPath(SModuleOperations.getOutputPathFor(inputModel));
                 // TODO caches in temp folder
                 IFile cachesDir = FileGenerationUtil.getCachesDir(targetDir);
 

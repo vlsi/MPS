@@ -18,9 +18,9 @@ package jetbrains.mps.idea.java.debugger.breakpoints;
 
 import com.intellij.debugger.SourcePosition;
 import com.intellij.debugger.engine.JVMNameUtil;
-import com.intellij.debugger.engine.TopLevelParentClassProvider;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.psi.PsiClass;
+import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.psi.util.PsiUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
@@ -48,7 +48,7 @@ import org.jetbrains.annotations.Nullable;
       return null;
     }
     if (PsiUtil.isLocalOrAnonymousClass(psiClass)) {
-      PsiClass parentClass = TopLevelParentClassProvider.getTopLevelParentClass(psiClass);
+      PsiClass parentClass = getTopLevelParentClass(psiClass);
       if (parentClass == null) {
         return null;
       }
@@ -60,5 +60,14 @@ import org.jetbrains.annotations.Nullable;
       return null;
     }
     return new GeneratedSourcePosition(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1).getNode();
+  }
+
+  private static PsiClass getTopLevelParentClass(PsiClass psiClass) {
+    PsiClass enclosing = PsiTreeUtil.getParentOfType(psiClass, PsiClass.class, true);
+    while (enclosing != null) {
+      psiClass = enclosing;
+      enclosing = PsiTreeUtil.getParentOfType(enclosing, PsiClass.class, true);
+    }
+    return psiClass;
   }
 }
