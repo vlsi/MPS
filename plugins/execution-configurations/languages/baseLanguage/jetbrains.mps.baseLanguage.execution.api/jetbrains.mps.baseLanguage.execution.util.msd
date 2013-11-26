@@ -7,10 +7,9 @@
     </modelRoot>
   </models>
   <facets>
-    <facet pluginId="jetbrains.mps.execution.configurations" type="ideaPlugin" />
     <facet type="java" />
-    <facet pluginId="jetbrains.mps.execution.configurations" type="ideaPlugin" />
     <facet type="tests" />
+    <facet pluginId="jetbrains.mps.execution.configurations" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>
