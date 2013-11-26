@@ -36,6 +36,12 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
 
   public void applyRule(final SNode methodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+      TypeVariableMatchUtil.calculateTypesForStaticMethod(typeCheckingContext, methodCall);
+      if (1 < 5) {
+        return;
+      }
+
+
       // todo: inlined from typeof_IMethodCall 
       final SNode mdecl = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
       if (mdecl == null) {
@@ -69,7 +75,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
         }).toListSequence();
         for (SNode tvd : ListSequence.fromList(inferrableTypeVars).subtract(ListSequence.fromList(boundTypeVars))) {
           // assume all unbound type vars outside an inference context are Object 
-          MapSequence.fromMap(subs).put(tvd, _quotation_createNode_v9rubd_a0b0c0g0a0b());
+          MapSequence.fromMap(subs).put(tvd, _quotation_createNode_v9rubd_a0b0c0k0a0b());
         }
       }
       if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
@@ -292,7 +298,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
     return true;
   }
 
-  private static SNode _quotation_createNode_v9rubd_a0b0c0g0a0b() {
+  private static SNode _quotation_createNode_v9rubd_a0b0c0k0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
