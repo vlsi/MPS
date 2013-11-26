@@ -6,7 +6,6 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -30,7 +29,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        for (String propname : SetSequence.fromSet(SNodeOperations.getProperties(node).keySet())) {
+        for (String propname : SNodeOperations.getProperties(node).keySet()) {
           if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
             return true;
           }
@@ -39,7 +38,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        for (String propname : SetSequence.fromSet(SNodeOperations.getProperties(node).keySet())) {
+        for (String propname : SNodeOperations.getProperties(node).keySet()) {
           if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
             node.setProperty(propname, null);
           }

@@ -36,7 +36,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="4f3cqs31z8z3r319stgpvj95v4ex026" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2gg1pqtx5oviifer9wjwwhnmr9s8esl" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-2b7a2rppfq1uhvwub5utjsuj27e8nm" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9j9njikjpbm0mdlpt71l8bk62lhmpac" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-dyt5u4jh6n0m423lv7waqraopz24g4r" />
@@ -52,11 +52,11 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-bfzpl2k7fbyccc6o0e14x62lu72wfye" />
   <dep model="r:cb723a04-ead3-4054-b750-edbb165cca03(jetbrains.mps.ide.editor.actions.core)" hash="-6ct3faigij8jnmy5p06ojgt7uguhnux" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-93h02qd3mfz4hhspvng20fqnxkp0qxy" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="-69gu34rtdy5msopchbvkkl87ksfz3uc" />
-  <source id="4362199797783336771" name="ExtractComponent" hash="-1uxtp8ag4hjftgi8c4rkmjaheihqgvn">
+  <common hash="-69gu34rtdy5msopchbvkkl87ksfz3uc" dependsOnNodes="true" />
+  <source id="4362199797783336771" name="ExtractComponent" hash="-1uxtp8ag4hjftgi8c4rkmjaheihqgvn" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -139,7 +139,7 @@
   </source>
   <source id="4362199797783345371" name="Default" hash="8dwlnjue6mfkpja2jlbszgrktx5bbfh" />
   <source id="4362199797783345372" name="Mac" hash="2pu31qyuaal7lbvlq3s1z1jbbztrcsl" />
-  <source id="4362199797783345393" name="CopyThisDown" hash="atm7l7mp190vdyx6r4j81t93qfqepg4">
+  <source id="4362199797783345393" name="CopyThisDown" hash="atm7l7mp190vdyx6r4j81t93qfqepg4" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -224,7 +224,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CopyThisDown_Action.java" />
   </source>
-  <source id="3774693388238498747" name="DeleteLine" hash="-56eqbju4yp3g69hfyx7vn2o09nvemwl">
+  <source id="3774693388238498747" name="DeleteLine" hash="-56eqbju4yp3g69hfyx7vn2o09nvemwl" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -306,7 +306,7 @@
     <file name="DeleteLine_Action.java" />
   </source>
   <source id="7791284463049069745" name="EditorActions" hash="-9tejl6432n2eztvk826wzqk2sdamow7" />
-  <source id="7791284463049069760" name="End" hash="bq8trn7jke7qxhtqsx984droqr2d8el">
+  <source id="7791284463049069760" name="End" hash="bq8trn7jke7qxhtqsx984droqr2d8el" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -383,7 +383,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="End_Action.java" />
   </source>
-  <source id="7791284463049069771" name="Home" hash="2bujwwnvhuc83laxd4kbp5qx79cpmsh">
+  <source id="7791284463049069771" name="Home" hash="2bujwwnvhuc83laxd4kbp5qx79cpmsh" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -460,7 +460,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Home_Action.java" />
   </source>
-  <source id="7791284463049069782" name="Insert" hash="-dp2eisgpn8c5in9sx0kpnsphhzhq7he">
+  <source id="7791284463049069782" name="Insert" hash="-dp2eisgpn8c5in9sx0kpnsphhzhq7he" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -545,7 +545,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Insert_Action.java" />
   </source>
-  <source id="7791284463049069850" name="InsertBefore" hash="azngkebsejk3vv8wwldheja365qsbop">
+  <source id="7791284463049069850" name="InsertBefore" hash="azngkebsejk3vv8wwldheja365qsbop" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -630,7 +630,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="InsertBefore_Action.java" />
   </source>
-  <source id="7791284463049069869" name="LocalEnd" hash="-82i5qwgqzq90ny7907zyyo6350l08gj">
+  <source id="7791284463049069869" name="LocalEnd" hash="-82i5qwgqzq90ny7907zyyo6350l08gj" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -707,7 +707,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LocalEnd_Action.java" />
   </source>
-  <source id="7791284463049069880" name="LocalHome" hash="8c406tobga6tqtdvyakqjf67tsrcoen">
+  <source id="7791284463049069880" name="LocalHome" hash="8c406tobga6tqtdvyakqjf67tsrcoen" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -784,7 +784,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LocalHome_Action.java" />
   </source>
-  <source id="7791284463049069891" name="RootEnd" hash="c2s49oxz1s6w0962w5wh6pmw86znptw">
+  <source id="7791284463049069891" name="RootEnd" hash="c2s49oxz1s6w0962w5wh6pmw86znptw" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -861,7 +861,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RootEnd_Action.java" />
   </source>
-  <source id="7791284463049069902" name="RootHome" hash="241av1ne69pmvu7yc3f838olm99j0o9">
+  <source id="7791284463049069902" name="RootHome" hash="241av1ne69pmvu7yc3f838olm99j0o9" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -938,7 +938,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RootHome_Action.java" />
   </source>
-  <source id="7791284463049069913" name="SelectDown" hash="9ftfvw34fiiqzv96elxyxfbeced2lxm">
+  <source id="7791284463049069913" name="SelectDown" hash="9ftfvw34fiiqzv96elxyxfbeced2lxm" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1015,7 +1015,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SelectDown_Action.java" />
   </source>
-  <source id="7791284463049069924" name="SelectLocalEnd" hash="-2hxyoq6b1p9bkyio2h3ltf848fxpxl5">
+  <source id="7791284463049069924" name="SelectLocalEnd" hash="-2hxyoq6b1p9bkyio2h3ltf848fxpxl5" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1093,7 +1093,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SelectLocalEnd_Action.java" />
   </source>
-  <source id="7791284463049070003" name="SelectLocalHome" hash="3s4epo1cv0hgm53d4vv713gyi43u41z">
+  <source id="7791284463049070003" name="SelectLocalHome" hash="3s4epo1cv0hgm53d4vv713gyi43u41z" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1171,7 +1171,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SelectLocalHome_Action.java" />
   </source>
-  <source id="7791284463049070082" name="SelectUp" hash="ddhtpfgo9a88c7jzd5urtqvh70hsm43">
+  <source id="7791284463049070082" name="SelectUp" hash="ddhtpfgo9a88c7jzd5urtqvh70hsm43" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1281,7 +1281,7 @@
     <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <file name="EditorActionUtils.java" />
   </source>
-  <source id="991796682690297081" name="MoveLeft" hash="c7o83yqzcy4div30vm2b0zzv8u81xa7">
+  <source id="991796682690297081" name="MoveLeft" hash="c7o83yqzcy4div30vm2b0zzv8u81xa7" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1360,7 +1360,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MoveLeft_Action.java" />
   </source>
-  <source id="991796682690297084" name="MoveRight" hash="9jlmrhynf5pcowlth7nv3yu4sc1tlxq">
+  <source id="991796682690297084" name="MoveRight" hash="9jlmrhynf5pcowlth7nv3yu4sc1tlxq" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1439,7 +1439,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MoveRight_Action.java" />
   </source>
-  <source id="991796682690297087" name="MoveUp" hash="9dzoms3a00cu3jb57fozrreh07ozic6">
+  <source id="991796682690297087" name="MoveUp" hash="9dzoms3a00cu3jb57fozrreh07ozic6" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1518,7 +1518,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MoveUp_Action.java" />
   </source>
-  <source id="991796682690297090" name="MoveDown" hash="1bvaidk21ir1j9uicri4n09w8hyvvkf">
+  <source id="991796682690297090" name="MoveDown" hash="1bvaidk21ir1j9uicri4n09w8hyvvkf" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1597,7 +1597,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MoveDown_Action.java" />
   </source>
-  <source id="6743831156946309831" name="Escape" hash="-athxzzgr34envjfocgdpjic48kh24ur">
+  <source id="6743831156946309831" name="Escape" hash="-athxzzgr34envjfocgdpjic48kh24ur" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1685,7 +1685,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Escape_Action.java" />
   </source>
-  <source id="2768238731211617618" name="MoveElementsUp" hash="e1u9asc2pwq2ltp5781bx62sxc5cr7z">
+  <source id="2768238731211617618" name="MoveElementsUp" hash="e1u9asc2pwq2ltp5781bx62sxc5cr7z" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211621495" />
     <dep root="3121818631993492461" />
@@ -1762,7 +1762,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MoveElementsUp_Action.java" />
   </source>
-  <source id="2768238731211621495" name="MoveElementsDown" hash="d9qibszrnvn4k7qum6pnmhmhbsoykcg">
+  <source id="2768238731211621495" name="MoveElementsDown" hash="d9qibszrnvn4k7qum6pnmhmhbsoykcg" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="3121818631993492461" />
@@ -1839,7 +1839,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MoveElementsDown_Action.java" />
   </source>
-  <source id="4225699205371269974" name="SelectNext" hash="-h24evuspms65mngk5kc22uetdvlt6m">
+  <source id="4225699205371269974" name="SelectNext" hash="-h24evuspms65mngk5kc22uetdvlt6m" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1916,7 +1916,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SelectNext_Action.java" />
   </source>
-  <source id="4225699205371269977" name="SelectPrevious" hash="3pcgj00mw51fwpdszlbbq2lufjcbghl">
+  <source id="4225699205371269977" name="SelectPrevious" hash="3pcgj00mw51fwpdszlbbq2lufjcbghl" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -1993,7 +1993,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SelectPrevious_Action.java" />
   </source>
-  <source id="8896169282213320720" name="Delete" hash="-5iaxtb1atfmealv34imhdvd9gkgt9zi">
+  <source id="8896169282213320720" name="Delete" hash="-5iaxtb1atfmealv34imhdvd9gkgt9zi" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2070,7 +2070,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Delete_Action.java" />
   </source>
-  <source id="8896169282213957015" name="DeleteToWordEnd" hash="-9cihbylx5udlyjwh9nxypjrzs2e3kpf">
+  <source id="8896169282213957015" name="DeleteToWordEnd" hash="-9cihbylx5udlyjwh9nxypjrzs2e3kpf" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2147,7 +2147,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DeleteToWordEnd_Action.java" />
   </source>
-  <source id="8896169282214002721" name="Backspace" hash="-7bftthec24n99v2tjxrhcetnp7g5yhh">
+  <source id="8896169282214002721" name="Backspace" hash="-7bftthec24n99v2tjxrhcetnp7g5yhh" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2224,7 +2224,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Backspace_Action.java" />
   </source>
-  <source id="8257980988067921114" name="SelectLeft" hash="-48ld9xprcgb4985bcax3qhwcw1ko5ez">
+  <source id="8257980988067921114" name="SelectLeft" hash="-48ld9xprcgb4985bcax3qhwcw1ko5ez" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2301,7 +2301,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SelectLeft_Action.java" />
   </source>
-  <source id="8257980988067921117" name="SelectRight" hash="7yecje8t5799crqhhxnlkj925imwt4v">
+  <source id="8257980988067921117" name="SelectRight" hash="7yecje8t5799crqhhxnlkj925imwt4v" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2446,7 +2446,7 @@
     <file name="MPSEditorActions.xml" />
   </source>
   <source id="1755502566255660782" name="EditorPopup" hash="-4sdlx6cz9ei8krfgsdjww0be8n1i83u" />
-  <source id="3228268613620327405" name="GoByCurrentReference" hash="-qd5a7brwumwkam7dkg74z62pfsuh7n">
+  <source id="3228268613620327405" name="GoByCurrentReference" hash="-qd5a7brwumwkam7dkg74z62pfsuh7n" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2527,7 +2527,7 @@
   </source>
   <source id="3228268613620327882" name="GoToEditorPopupAddition" hash="-23c3btcoumk2oaqu5fruzqov8p91pzh" />
   <source id="5062223007361660572" name="Folding" hash="-b9q510nrbch5v4hbtzn9lxl647sayne" />
-  <source id="5062223007361662016" name="Collapse" hash="-7aewhbsowk32nquqgnkp37e85c3p74f">
+  <source id="5062223007361662016" name="Collapse" hash="-7aewhbsowk32nquqgnkp37e85c3p74f" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2610,7 +2610,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Collapse_Action.java" />
   </source>
-  <source id="5062223007361662050" name="CollapseAll" hash="3jji117f7xrq5hqy30n1xsdsgkpqh1l">
+  <source id="5062223007361662050" name="CollapseAll" hash="3jji117f7xrq5hqy30n1xsdsgkpqh1l" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2693,7 +2693,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CollapseAll_Action.java" />
   </source>
-  <source id="5062223007361662084" name="Expand" hash="bldxtdyq1rpmaqx0yjcwnjaq9fjsthu">
+  <source id="5062223007361662084" name="Expand" hash="bldxtdyq1rpmaqx0yjcwnjaq9fjsthu" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2776,7 +2776,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Expand_Action.java" />
   </source>
-  <source id="5062223007361662120" name="ExpandAll" hash="38tldh5eafh81rnaz0j1p73744h6esc">
+  <source id="5062223007361662120" name="ExpandAll" hash="38tldh5eafh81rnaz0j1p73744h6esc" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2859,7 +2859,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ExpandAll_Action.java" />
   </source>
-  <source id="5062223007361662154" name="FoldSelection" hash="-3j2b91eyuw14156aaqyp5h6l0d60vdy">
+  <source id="5062223007361662154" name="FoldSelection" hash="-3j2b91eyuw14156aaqyp5h6l0d60vdy" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -2944,7 +2944,7 @@
   </source>
   <source id="6714826334259374451" name="RefactoringActions" hash="11pyx6q0u2c5uzgmgdd66fouukh9dji" />
   <source id="862024959182784746" name="EditorLeftPanelMenu" hash="2owh0rt86aee5kx7aoaxkj6emfucqvi" />
-  <source id="6893431717880288043" name="DoNotSuppressErrors" hash="-bhcma91qcsa7nrgnbqx4lkt00x4gcmh">
+  <source id="6893431717880288043" name="DoNotSuppressErrors" hash="-bhcma91qcsa7nrgnbqx4lkt00x4gcmh" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3027,7 +3027,7 @@
   <source id="6893431717880290404" name="SuppressErrorsGroup" hash="8hlagxudc9t3iez89eg9cikxa6oxtdl" />
   <source id="6893431717880497466" name="ActionsAsIntentions" hash="-cppki1s8nto1oj6f0vwhsculx4hmd2b" />
   <source id="3207605520775490116" name="SpecificIntentions" hash="-1jz0u8ru62dfjv2iyeh9c8rrymffxnv" />
-  <source id="3207605520775490121" name="ShowGenerationActions" hash="-4lt5m3g2z311dk231f78ufyrxjv6vqj">
+  <source id="3207605520775490121" name="ShowGenerationActions" hash="-4lt5m3g2z311dk231f78ufyrxjv6vqj" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3107,7 +3107,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ShowGenerationActions_Action.java" />
   </source>
-  <source id="3207605520775490246" name="ShowSurroundWithIntentions" hash="-87f3pdiy92ycidmedsqhbzx9uyxywwl">
+  <source id="3207605520775490246" name="ShowSurroundWithIntentions" hash="-87f3pdiy92ycidmedsqhbzx9uyxywwl" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3200,7 +3200,7 @@
     <file name="ShowSurroundWithIntentions_Action.java" />
   </source>
   <source id="3207605520775490538" name="GenerationActions" hash="-ekweqeapjp6xe5o4qudlpho6cwxjsh1" />
-  <source id="3467203700125709751" name="AddLanguageImport" hash="-11b0bhaca3py8clxjn6ge8hatlsuenj">
+  <source id="3467203700125709751" name="AddLanguageImport" hash="-11b0bhaca3py8clxjn6ge8hatlsuenj" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3280,7 +3280,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddLanguageImport_Action.java" />
   </source>
-  <source id="3467203700125709779" name="AddModelImport" hash="-9nmrvhtfu1x7be0lu8vzr6hp6za5vlf">
+  <source id="3467203700125709779" name="AddModelImport" hash="-9nmrvhtfu1x7be0lu8vzr6hp6za5vlf" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3360,7 +3360,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddModelImport_Action.java" />
   </source>
-  <source id="3467203700125709807" name="AddModelImportByRoot" hash="76vopl9ew34pxorpu2dl12avku63u3d">
+  <source id="3467203700125709807" name="AddModelImportByRoot" hash="76vopl9ew34pxorpu2dl12avku63u3d" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3459,7 +3459,7 @@
   </source>
   <source id="3824306434922117722" name="DefaultNonDumbAware" hash="-bi6yj4rv29lz778pss1x7ytmcabpoan" />
   <source id="3121818631993492461" name="Mac_10_5" hash="c09bdbo5mveuyxd4go54wbti77g6xxt" />
-  <source id="4421450760407613926" name="Find" hash="-6tsf7latv3vsbw8jdzmvs2gf2el0qei">
+  <source id="4421450760407613926" name="Find" hash="-6tsf7latv3vsbw8jdzmvs2gf2el0qei" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3536,7 +3536,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Find_Action.java" />
   </source>
-  <source id="4421450760407613939" name="FindNext" hash="do0ewi7z12cgup4l74t57mitjm6vmat">
+  <source id="4421450760407613939" name="FindNext" hash="do0ewi7z12cgup4l74t57mitjm6vmat" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3613,7 +3613,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindNext_Action.java" />
   </source>
-  <source id="4421450760407613962" name="FindPrevious" hash="-dqpz8jmfyzhypb9hnnrp79m9qg886kc">
+  <source id="4421450760407613962" name="FindPrevious" hash="-dqpz8jmfyzhypb9hnnrp79m9qg886kc" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />
@@ -3690,7 +3690,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FindPrevious_Action.java" />
   </source>
-  <source id="3767536026885379902" name="PushEditorHints" hash="4ky9xolvlmq1i550g0dumx2r6yamevy">
+  <source id="3767536026885379902" name="PushEditorHints" hash="4ky9xolvlmq1i550g0dumx2r6yamevy" dependsOnNodes="true">
     <dep root="1755502566255660782" />
     <dep root="2768238731211617618" />
     <dep root="2768238731211621495" />

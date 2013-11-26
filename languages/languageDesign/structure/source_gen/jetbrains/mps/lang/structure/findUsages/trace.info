@@ -200,7 +200,7 @@
     <nodeInfo nodeId="1236788293557" fileName="LinkInstances_Finder.java" startLine="49" startPosition="27" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
     <nodeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1236788630762" fileName="LinkInstances_Finder.java" startLine="67" startPosition="16" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1236788630746" fileName="LinkInstances_Finder.java" startLine="62" startPosition="56" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1236788630746" fileName="LinkInstances_Finder.java" startLine="62" startPosition="35" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1236788630741" fileName="LinkInstances_Finder.java" startLine="61" startPosition="180" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1236788630738" fileName="LinkInstances_Finder.java" startLine="60" startPosition="42" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="45" startPosition="103" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -229,7 +229,7 @@
     <scopeInfo nodeId="1201275992898" fileName="LinkInstances_Finder.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1201275992898" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1236788630744" fileName="LinkInstances_Finder.java" startLine="62" startPosition="56" endLine="72" endPosition="11" />
+    <scopeInfo nodeId="1236788630744" fileName="LinkInstances_Finder.java" startLine="62" startPosition="35" endLine="72" endPosition="11" />
     <scopeInfo nodeId="1236788630740" fileName="LinkInstances_Finder.java" startLine="61" startPosition="180" endLine="73" endPosition="9" />
     <scopeInfo nodeId="1236788630741" fileName="LinkInstances_Finder.java" startLine="61" startPosition="180" endLine="73" endPosition="9">
       <varInfo nodeId="1236788630742" varName="role" />

@@ -251,7 +251,7 @@ public class Utils {
 
     // constructing the map of corresponding nodes 
     Map<SNode, SNode> classMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    for (String name : SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet())) {
+    for (String name : MapSequence.fromMap(leftModelMap).keySet()) {
       SModel binModel = MapSequence.fromMap(leftModelMap).get(name);
       SModel srcModel = MapSequence.fromMap(rightModelMap).get(name);
 
@@ -262,7 +262,7 @@ public class Utils {
 
     boolean errors = false;
 
-    for (String name : SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet())) {
+    for (String name : MapSequence.fromMap(leftModelMap).keySet()) {
       SModel binModel = MapSequence.fromMap(leftModelMap).get(name);
       SModel srcModel = MapSequence.fromMap(rightModelMap).get(name);
 

@@ -6,7 +6,6 @@ import jetbrains.mps.tool.common.util.UrlClassLoader;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -55,7 +54,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
   public void work() {
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
 
-    for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
+    for (String jar : myWhatToDo.getLibraryJars()) {
       config = config.addLib(jar, new File(jar));
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
@@ -74,7 +73,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     for (IMapping<List<String>, Boolean> chunk : MapSequence.fromMap(myWhatToDo.getChunks())) {
       List<String> modulePaths = chunk.key();
       LinkedHashSet<SModule> modules = new LinkedHashSet<SModule>();
-      for (String modulePath : ListSequence.fromList(modulePaths)) {
+      for (String modulePath : modulePaths) {
         processModuleFile(new File(modulePath), modules);
       }
       Boolean bootstrap = chunk.value();

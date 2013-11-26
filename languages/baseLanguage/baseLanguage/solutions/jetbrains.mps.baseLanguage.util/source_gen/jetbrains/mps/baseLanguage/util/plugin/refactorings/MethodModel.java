@@ -91,7 +91,7 @@ public class MethodModel {
     if (ListSequence.fromList(this.getParametersNames()).isNotEmpty()) {
       text.append("\n");
       boolean first = true;
-      for (String parameter : ListSequence.fromList(this.getParametersNames())) {
+      for (String parameter : this.getParametersNames()) {
         if (!(first)) {
           text.append(",\n");
         }
@@ -104,7 +104,7 @@ public class MethodModel {
     if (ListSequence.fromList(this.getThrowItems()).isNotEmpty()) {
       text.append("throws\n");
       boolean first = true;
-      for (String exception : ListSequence.fromList(this.getThrowItems())) {
+      for (String exception : this.getThrowItems()) {
         if (!(first)) {
           text.append(",\n");
         }

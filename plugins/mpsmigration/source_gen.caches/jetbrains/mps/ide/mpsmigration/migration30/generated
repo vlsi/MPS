@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="7cbvar1tuqwx4izjd0wrl9qnwlwizuc">
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="4fik9q08vp6y6bso4j02p2ik4qfsl53" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-9zadovczgd8keex9br0splhyzqs9w9h" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="1fbejyngxgdw1z499uyby3j4q7dvwpn" />
   <common hash="5d6g1oblvb4hbygifrs2yqdvc6xv8o3" dependsOnNodes="true" />
   <source id="6856864117646528335" name="Migration30Actions" hash="-5wywqg7mi88d11fhaxca7tabiwrvhl0">
     <dep root="8418469470841235721" />

@@ -128,7 +128,7 @@ public class IdeaEnvironment implements Environment {
     }
 
     // todo: is it right place? 
-    for (String macro : SetSequence.fromSet(MapSequence.fromMap(config.macros()).keySet())) {
+    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
       setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
     }
 

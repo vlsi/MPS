@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -83,7 +82,7 @@ public class NodeBuilderNode_Constraints extends BaseConstraintsDescriptor {
               if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")) {
                 SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "target", false);
                 List<SNode> result = new ArrayList<SNode>();
-                for (String cname : SetSequence.fromSet(LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(BehaviorReflection.invokeVirtual(String.class, target, "virtual_getFqName_1213877404258", new Object[]{})))) {
+                for (String cname : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(BehaviorReflection.invokeVirtual(String.class, target, "virtual_getFqName_1213877404258", new Object[]{}))) {
                   SNode cc = SModelUtil.findConceptDeclaration(cname, GlobalScope.getInstance());
                   if ((cc != null) && operationContext.getScope().getModelDescriptor(SNodeOperations.getModel(cc).getReference()) != null) {
                     ListSequence.fromList(result).addElement(cc);

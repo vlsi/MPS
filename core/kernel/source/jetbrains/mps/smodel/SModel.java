@@ -295,7 +295,10 @@ public class SModel implements SModelData {
     disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
-    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
+    if (myModelDependenciesManager != null) {
+      myModelDependenciesManager.dispose();
+      myModelDependenciesManager = null;
+    }
   }
 
   private void checkNotDisposed() {
@@ -574,8 +577,20 @@ public class SModel implements SModelData {
   //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
-    if (myModelDependenciesManager == null) myModelDependenciesManager = new ModelDependenciesManager(getModelDescriptor());
+    if (myModelDependenciesManager == null) {
+      myModelDependenciesManager = new ModelDependenciesManager(getModelDescriptor());
+      // we do not need to track model changes as we are invalidating dep manager right away on any change
+      SRepository repo = getRepository();
+      if (repo != null) {
+        myModelDependenciesManager.trackRepositoryChanges(repo);
+      }
+    }
     return myModelDependenciesManager;
+  }
+  private void invalidateModelDepsManager() {
+    if (myModelDependenciesManager != null) {
+      myModelDependenciesManager.invalidate();
+    }
   }
 
   //language
@@ -591,6 +606,7 @@ public class SModel implements SModelData {
 
     if (myLanguages.remove(ref)) {
       //calculateImplicitImports();
+      invalidateModelDepsManager();
       fireLanguageRemovedEvent(ref);
       markChanged();
     }
@@ -608,6 +624,7 @@ public class SModel implements SModelData {
     }
 
     if (myLanguages.add(ref)) {
+      invalidateModelDepsManager();
       fireLanguageAddedEvent(ref);
       markChanged();
     }
@@ -625,6 +642,7 @@ public class SModel implements SModelData {
     }
 
     if (myDevKits.add(ref)) {
+      invalidateModelDepsManager();
       fireDevKitAddedEvent(ref);
       markChanged();
     }
@@ -636,6 +654,7 @@ public class SModel implements SModelData {
     }
 
     if (myDevKits.remove(ref)) {
+      invalidateModelDepsManager();
       fireDevKitRemovedEvent(ref);
       markChanged();
     }

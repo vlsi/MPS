@@ -170,7 +170,7 @@ public class JavaParser {
         SNode doc = MapSequence.fromMap(javadocs).get(comment[0]);
 
         List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1]));
-        for (String text : ListSequence.fromList(lines)) {
+        for (String text : lines) {
           SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
           SNode part = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
           SPropertyOperations.set(part, "text", text);
@@ -196,7 +196,7 @@ public class JavaParser {
             return !(MapSequence.fromMap(positions.value).containsKey(it)) || Math.abs(MapSequence.fromMap(positions.value).get(it)) <= linestart;
           }
         }).count();
-        for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
+        for (String line : CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1])))) {
           String line_ = line;
           if (line.startsWith(" ")) {
             line_ = line.substring(1);

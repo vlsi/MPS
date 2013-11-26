@@ -41,7 +41,7 @@ public class FooCheckedDots<T extends Enum> {
   public void MPS14570() {
     List<String> sList = ListSequence.fromList(new ArrayList<String>());
     String s2 = "";
-    for (String s : ListSequence.fromList(sList)) {
+    for (String s : sList) {
       check_7013wl_a0a2a8(s2, s);
     }
   }

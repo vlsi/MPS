@@ -19,7 +19,6 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.AfterClass;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 @RunWith(Parameterized.class)
 public class MergeCoreTest extends WorkbenchMpsTest {
@@ -89,7 +88,7 @@ public class MergeCoreTest extends WorkbenchMpsTest {
 
   public static void main(String[] args) throws IOException, ModelReadException {
     setUpClass();
-    for (Object[] p : ListSequence.fromList(params())) {
+    for (Object[] p : params()) {
       new MergeData(new File(TESTDATA_HOME, (String) p[1])).generate();
     }
   }

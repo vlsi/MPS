@@ -337,7 +337,7 @@
     <nodeInfo nodeId="1213877300715" fileName="SConceptType_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877300726" fileName="SConceptType_Behavior.java" startLine="26" startPosition="88" endLine="27" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877300736" fileName="SConceptType_Behavior.java" startLine="28" startPosition="84" endLine="29" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877300750" fileName="SConceptType_Behavior.java" startLine="30" startPosition="82" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877300750" fileName="SConceptType_Behavior.java" startLine="30" startPosition="59" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877300762" fileName="SConceptType_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877300697" fileName="SConceptType_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877300713" fileName="SConceptType_Behavior.java" startLine="21" startPosition="10" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -349,7 +349,7 @@
     <scopeInfo nodeId="1213877300767" fileName="SConceptType_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1213877300710" fileName="SConceptType_Behavior.java" startLine="19" startPosition="26" endLine="20" endPosition="26" />
     <scopeInfo nodeId="1213877300714" fileName="SConceptType_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="79" />
-    <scopeInfo nodeId="1213877300749" fileName="SConceptType_Behavior.java" startLine="30" startPosition="82" endLine="31" endPosition="80" />
+    <scopeInfo nodeId="1213877300749" fileName="SConceptType_Behavior.java" startLine="30" startPosition="59" endLine="31" endPosition="80" />
     <scopeInfo nodeId="1213877300697" fileName="SConceptType_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1213877300697" varName="thisNode" />
     </scopeInfo>

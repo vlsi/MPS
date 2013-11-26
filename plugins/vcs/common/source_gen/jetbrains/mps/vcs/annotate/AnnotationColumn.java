@@ -252,7 +252,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
-        for (LineContent[] lineContents : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
+        for (LineContent[] lineContents : MapSequence.fromMap(myChangesToLineContents).values()) {
           for (LineContent lc : lineContents) {
             SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lc)));
           }
@@ -447,7 +447,7 @@ __switch__:
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (int fileLine = 0; fileLine < ListSequence.fromList(myFileLineToContent).count(); fileLine++) {
-          for (int pseudoLine : Sequence.fromIterable(getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine)))) {
+          for (int pseudoLine : getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine))) {
             int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
             ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
           }

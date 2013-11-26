@@ -294,7 +294,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static void saveStubModelEntries(Element result, Collection<String> entries, MacroHelper macroHelper) {
-    for (String root : CollectionSequence.fromCollection(entries)) {
+    for (String root : entries) {
       Element stubModelEntry = new Element("stubModelEntry");
       stubModelEntry.setAttribute("path", macroHelper.shrinkPath((root == null ? "" : root)));
       result.addContent(stubModelEntry);

@@ -3616,7 +3616,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4155486055398183512(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    for (String name : Sequence.fromIterable(_context.getNode().getPropertyNames())) {
+    for (String name : _context.getNode().getPropertyNames()) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", name)) != null)) {
         continue;
       }

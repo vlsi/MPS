@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-152aewkaq5dmu9kamcqbeib4eyt0qvc">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-b0ho0678lznwfalqwurwnqv0qmcnbat" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <common hash="-b0ho0678lznwfalqwurwnqv0qmcnbat" dependsOnNodes="true" />
   <source id="7705742079275757540" name="ShowInFileView" hash="2nn028b1pwczo63rtj7kswi19fm2dtr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ShowInFileView.java" />

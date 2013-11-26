@@ -1683,7 +1683,7 @@ __switch__:
       }
     };
     Iterable<Integer> out = foo.invoke(0, 10);
-    for (int k : Sequence.fromIterable(out)) {
+    for (int k : out) {
       ListSequence.fromList(res).addElement(k);
     }
     Assert.assertEquals(exp, res);

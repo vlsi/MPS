@@ -64,7 +64,7 @@
     <nodeInfo nodeId="5133679254727507986" fileName="PointerUtils.java" startLine="44" startPosition="38" endLine="45" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727508000" fileName="PointerUtils.java" startLine="50" startPosition="70" endLine="51" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5647974406689069127" fileName="PointerUtils.java" startLine="54" startPosition="93" endLine="55" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5647974406689070782" fileName="PointerUtils.java" startLine="56" startPosition="63" endLine="57" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5647974406689070782" fileName="PointerUtils.java" startLine="56" startPosition="40" endLine="57" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5647974406689101983" fileName="PointerUtils.java" startLine="58" startPosition="5" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727507906" fileName="PointerUtils.java" startLine="24" startPosition="75" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -81,7 +81,7 @@
     <scopeInfo nodeId="5133679254727507942" fileName="PointerUtils.java" startLine="35" startPosition="25" endLine="36" endPosition="229" />
     <scopeInfo nodeId="5133679254727507985" fileName="PointerUtils.java" startLine="44" startPosition="38" endLine="45" endPosition="66" />
     <scopeInfo nodeId="5133679254727507999" fileName="PointerUtils.java" startLine="50" startPosition="70" endLine="51" endPosition="90" />
-    <scopeInfo nodeId="5647974406689069022" fileName="PointerUtils.java" startLine="56" startPosition="63" endLine="57" endPosition="70" />
+    <scopeInfo nodeId="5647974406689069022" fileName="PointerUtils.java" startLine="56" startPosition="40" endLine="57" endPosition="70" />
     <scopeInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="5133679254727507984" fileName="PointerUtils.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5133679254727507984" varName="it" />

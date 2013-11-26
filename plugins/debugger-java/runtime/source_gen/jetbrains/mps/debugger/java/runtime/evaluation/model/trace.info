@@ -44,7 +44,7 @@
     <nodeInfo nodeId="317191294095137927" fileName="EvaluationWithContextContainer.java" startLine="144" startPosition="112" endLine="145" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="317191294095137935" fileName="EvaluationWithContextContainer.java" startLine="146" startPosition="7" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="317191294095137936" fileName="EvaluationWithContextContainer.java" startLine="147" startPosition="0" endLine="148" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="317191294095137949" fileName="EvaluationWithContextContainer.java" startLine="149" startPosition="99" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="317191294095137949" fileName="EvaluationWithContextContainer.java" startLine="149" startPosition="78" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="317191294095137950" fileName="EvaluationWithContextContainer.java" startLine="150" startPosition="0" endLine="151" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="317191294095137954" fileName="EvaluationWithContextContainer.java" startLine="151" startPosition="31" endLine="152" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="317191294095137960" fileName="EvaluationWithContextContainer.java" startLine="152" startPosition="81" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -345,7 +345,7 @@
       <varInfo nodeId="8385458439128056094" varName="containerModule" />
       <varInfo nodeId="317191294095137703" varName="evaluatorNode" />
     </scopeInfo>
-    <scopeInfo nodeId="317191294095137948" fileName="EvaluationWithContextContainer.java" startLine="149" startPosition="99" endLine="164" endPosition="67">
+    <scopeInfo nodeId="317191294095137948" fileName="EvaluationWithContextContainer.java" startLine="149" startPosition="78" endLine="164" endPosition="67">
       <varInfo nodeId="317191294095137955" varName="lowLevelVarNode" />
       <varInfo nodeId="317191294095137951" varName="name" />
     </scopeInfo>
