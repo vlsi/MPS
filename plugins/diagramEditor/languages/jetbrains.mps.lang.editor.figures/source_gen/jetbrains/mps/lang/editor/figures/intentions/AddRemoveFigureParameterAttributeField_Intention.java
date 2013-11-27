@@ -21,10 +21,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddRemoveFigureParameterAttribute_Intention implements IntentionFactory {
+public class AddRemoveFigureParameterAttributeField_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public AddRemoveFigureParameterAttribute_Intention() {
+  public AddRemoveFigureParameterAttributeField_Intention() {
   }
 
   public String getConcept() {
@@ -32,11 +32,11 @@ public class AddRemoveFigureParameterAttribute_Intention implements IntentionFac
   }
 
   public String getPresentation() {
-    return "AddRemoveFigureParameterAttribute";
+    return "AddRemoveFigureParameterAttributeField";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttribute_Intention";
+    return "jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention";
   }
 
   public String getLanguageFqName() {
@@ -87,7 +87,7 @@ public class AddRemoveFigureParameterAttribute_Intention implements IntentionFac
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveFigureParameterAttribute_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveFigureParameterAttributeField_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -97,19 +97,19 @@ public class AddRemoveFigureParameterAttribute_Intention implements IntentionFac
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute")) == null ? "Add figure parameter attribute" : "Remove figure parameter attribute");
+      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField")) == null ? "Add figure parameter attribute" : "Remove figure parameter attribute");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute")) != null) {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"), null);
+      if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField")) != null) {
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField"), null);
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute", null));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField", null));
       }
     }
 
     public IntentionDescriptor getDescriptor() {
-      return AddRemoveFigureParameterAttribute_Intention.this;
+      return AddRemoveFigureParameterAttributeField_Intention.this;
     }
   }
 }

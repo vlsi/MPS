@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.jetpad.projectional.diagram.view.decoration.ConnectionDivergeDecoration;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
 import java.util.List;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
@@ -94,7 +93,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, SNode node) {
     ConnectionRoutingView view = new ConnectionRoutingView(new OrthogonalRouter());
-    new ConnectionDivergeDecoration(view);
     DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);
@@ -146,7 +144,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, SNode node) {
     ConnectionRoutingView view = new ConnectionRoutingView(new OrthogonalRouter());
-    new ConnectionDivergeDecoration(view);
     DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);

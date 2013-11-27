@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"input", "output"}, new boolean[]{false, false}).alias("diagram connector", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"figure", "parameter"}, new boolean[]{false, true}).alias("diagram node", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"figure", "parameter", "inputPort", "outputPort"}, new boolean[]{false, true, false, false}).alias("diagram node", "").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 7:

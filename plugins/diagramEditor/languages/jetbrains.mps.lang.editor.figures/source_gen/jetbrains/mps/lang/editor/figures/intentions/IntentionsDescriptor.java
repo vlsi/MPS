@@ -14,6 +14,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveFigureAttribute_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveFigureParameterAttribute_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveFigureParameterAttributeField_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveFigureParameterAttributeMethod_Intention());
   }
 }

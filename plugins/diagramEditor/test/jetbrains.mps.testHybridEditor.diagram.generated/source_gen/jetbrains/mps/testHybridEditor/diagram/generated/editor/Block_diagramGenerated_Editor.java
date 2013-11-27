@@ -47,7 +47,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
       createViewForChildNode(child, editorCell, view.outputs, editorContext);
     }
-    view.dimension().set(Block_diagramGenerated_Editor._StyleParameter_QueryFunction_70mnj_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         new Mapper<View, SNode>(view, node) {

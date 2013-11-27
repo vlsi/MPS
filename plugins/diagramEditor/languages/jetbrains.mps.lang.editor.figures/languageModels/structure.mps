@@ -65,14 +65,32 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5422656561929884641" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FigureParameterAttribute" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@FigureParameter" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="5422656561929884670" nodeInfo="ng">
-      <property name="role" nameId="tpce.7588428831955550663" value="figureParameter" />
       <node role="multiple" roleId="tpce.7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="tpce.6054523464626862044" id="5422656561929922318" nodeInfo="ng">
         <property name="value" nameId="tpce.6054523464626875854" value="false" />
       </node>
-      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="5422656561929936728" nodeInfo="ng">
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2084788800270473556" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FigureParameterAttributeMethod" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@FigureParameterMethod" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5422656561929884641" resolveInfo="FigureParameterAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2084788800270509543" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="figureParameterMethod" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="2084788800270510719" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2084788800270473590" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FigureParameterAttributeField" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@FigureParameterField" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5422656561929884641" resolveInfo="FigureParameterAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2084788800270473591" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="figureParameterField" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="2084788800270473593" nodeInfo="ng">
         <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
       </node>
     </node>
