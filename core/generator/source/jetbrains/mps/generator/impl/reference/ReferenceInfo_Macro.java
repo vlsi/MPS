@@ -97,8 +97,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {
-      String resolveInfo = (String) result;
-      myResolveInfoForDynamicResolve = resolveInfo;
+      myResolveInfoForDynamicResolve = (String) result;
     }
 
     if (myOutputTargetNode == null) {

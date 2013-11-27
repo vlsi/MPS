@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
-  private final SNode myInputNode;
   private final SNode myInputTargetNode;
 
 
@@ -38,7 +37,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
    */
   public ReferenceInfo_CopiedInputNode(String role, SNode outputSourceNode, SNode inputNode, SNode inputTargetNode) {
     super(outputSourceNode, role, inputNode);
-    myInputNode = inputNode;
     myInputTargetNode = inputTargetNode;
   }
 
@@ -69,7 +67,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   @Override
   public ProblemDescription[] getErrorDescriptions() {
     return new ProblemDescription[]{
-      GeneratorUtil.describe(myInputNode, "input node")
+      GeneratorUtil.describe(getInputNode(), "input node")
     };
   }
 }
