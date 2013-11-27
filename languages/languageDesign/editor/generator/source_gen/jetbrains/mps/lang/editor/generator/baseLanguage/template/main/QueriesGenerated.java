@@ -26,9 +26,9 @@ import jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
-import jetbrains.mps.lang.editor.behavior.StylePriorityGroup_Behavior;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.editor.behavior.StylePriorityGroup_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -45,7 +45,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -596,30 +595,6 @@ public class QueriesGenerated {
     return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.StyleSheetClass"), "extendedClass", true), "styleSheetClass", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_4511456881859701048(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    int priority = StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StylePriorityGroup"));
-    if (priority < 0) {
-      _context.showErrorMessage(SNodeOperations.getParent(_context.getNode()), "Cyclic priority group inheritance detected");
-    }
-    return priority;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3918924352681176561(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false)));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3918924352681193565(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4164785664931879595(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false)));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4164785664931879608(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1384401029876043358(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(_context.getNode());
   }
@@ -885,6 +860,30 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4820515453829541902(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("getEditorHints", _context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4699812310058205509(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false)));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4699812310058205522(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4699812310058375435(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return StyleSheet_Behavior.call_getClassFqName_1213877515585(IStyleSheetMember_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false)));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4699812310058375448(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStyleSheetMember_Behavior.call_getApplyMethodName_2984340427846756354(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "target", true), "stylePriorityGroup", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4699812310058406179(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    int priority = StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.StylePriorityGroup"));
+    if (priority < 0) {
+      _context.showErrorMessage(SNodeOperations.getParent(_context.getNode()), "Cyclic priority group inheritance detected");
+    }
+    return priority;
   }
 
   public static Object referenceMacro_GetReferent_1229561240559(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1424,18 +1423,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.StyleSheetClass"), "extendedClass", true) != null);
   }
 
-  public static boolean ifMacro_Condition_7730231143346999376(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "query", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_7730231143346999393(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "queryStyle", true) == null);
-  }
-
-  public static boolean ifMacro_Condition_4511456881859691819(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StylePriorityGroup", "styleItem");
-  }
-
   public static boolean ifMacro_Condition_5540938954756745633(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.IStyleContainer", false, false), "styleItem", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -1585,6 +1572,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_2467262375112320830(final IOperationContext operationContext, final IfMacroContext _context) {
     return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("editorComponents"))).count() == 1;
+  }
+
+  public static boolean ifMacro_Condition_4699812310058064311(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "query", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_4699812310058064328(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "queryStyle", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_4699812310058406172(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.lang.editor.structure.StylePriorityGroup", "styleItem");
   }
 
   public static SNode sourceNodeQuery_996730828436923520(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1817,14 +1816,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1200439578637(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handlerFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_7730231143346999406(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "key", false);
-  }
-
-  public static SNode sourceNodeQuery_7730231143346999423(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "key", false);
   }
 
   public static SNode sourceNodeQuery_6697121896464661765(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2163,6 +2154,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "selectionEnd", true);
   }
 
+  public static SNode sourceNodeQuery_4699812310058064358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "key", false);
+  }
+
+  public static SNode sourceNodeQuery_4699812310058064341(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"), "key", false);
+  }
+
   public static Object templateArgumentQuery_2467262375112804984(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:allEditorComponents"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -2231,36 +2230,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "styleClass", true);
   }
 
-  public static Iterable sourceNodesQuery_7730231143346999358(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "styleItem", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem");
-      }
-    });
-  }
-
   public static Iterable sourceNodesQuery_6083395046985415685(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "styleItem", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.ApplyStylePriorityGroup")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.DiscardStylePrioriryGroup"));
-      }
-    });
-  }
-
-  public static Iterable sourceNodesQuery_3918924352681062833(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "styleItem", true), "jetbrains.mps.lang.editor.structure.ApplyStylePriorityGroup")).sort(new Comparator<SNode>() {
-      public int compare(SNode a, SNode b) {
-        return ((Integer) StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SLinkOperations.getTarget(SLinkOperations.getTarget(a, "target", true), "stylePriorityGroup", false))).compareTo(StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SLinkOperations.getTarget(SLinkOperations.getTarget(b, "target", true), "stylePriorityGroup", false)));
-      }
-    }, true);
-  }
-
-  public static Iterable sourceNodesQuery_4164785664931879626(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "styleItem", true), "jetbrains.mps.lang.editor.structure.DiscardStylePrioriryGroup")).sort(new Comparator<SNode>() {
-      public int compare(SNode a, SNode b) {
-        return ((Integer) StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SLinkOperations.getTarget(SLinkOperations.getTarget(a, "target", true), "stylePriorityGroup", false))).compareTo(StylePriorityGroup_Behavior.call_getPriority_1938068300780663696(SLinkOperations.getTarget(SLinkOperations.getTarget(b, "target", true), "stylePriorityGroup", false)));
-      }
-    }, true);
+    return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
   }
 
   public static Iterable sourceNodesQuery_2548761562343263256(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
