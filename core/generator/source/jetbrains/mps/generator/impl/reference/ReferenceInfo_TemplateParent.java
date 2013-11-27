@@ -24,8 +24,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
+ * @deprecated This is a special case of ReferenceInfo_Template, with an erroneous assumption structure of output model matches
+ * that of template model. The class will be removed
  * Evgeny Gryaznov, 11/19/10
  */
+@Deprecated
 public class ReferenceInfo_TemplateParent extends ReferenceInfo {
   private SNodeReference myTemplateSourceNode;
   private int myParentIndex;

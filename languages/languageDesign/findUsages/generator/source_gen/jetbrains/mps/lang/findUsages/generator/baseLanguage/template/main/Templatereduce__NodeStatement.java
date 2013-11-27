@@ -42,7 +42,7 @@ public class Templatereduce__NodeStatement implements TemplateDeclarationWeaving
             try {
               environment.getTracer().pushTemplateNode(templateNode_rm6jd2_a0a0a1a3a1a3a1a2);
               environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/3021153905151599942");
-              environment.resolveInTemplateLater(tnode3, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905151599942"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533796715", "_results", context);
+              environment.resolveInTemplateLater(tnode3, "variableDeclaration", templateNode_rm6jd2_a0a0a1a3a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533796715", "_results", context);
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));

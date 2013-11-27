@@ -43,7 +43,7 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
             try {
               environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a3a1a3a1a2);
               environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/3021153905151495931");
-              environment.resolveInTemplateLater(tnode3, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905151495931"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142345323", "monitor", context);
+              environment.resolveInTemplateLater(tnode3, "variableDeclaration", templateNode_iimgyi_a0a0a1a3a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142345323", "monitor", context);
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));

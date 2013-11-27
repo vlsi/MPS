@@ -261,7 +261,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a4a1a3a1a9);
                       environment.nodeCopied(context, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363100026");
-                      environment.resolveInTemplateLater(tnode18, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363100026"), "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", "e", context);
+                      environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_slzep9_a0a0a1a3a1a3a1a4a1a3a1a9, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133", "e", context);
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode18));

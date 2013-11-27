@@ -77,7 +77,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
             try {
               environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a1a1a7a1a2);
               environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959035c/3021153905151604752");
-              environment.resolveInTemplateLater(tnode6, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905151604752"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142292341", "scope", context);
+              environment.resolveInTemplateLater(tnode6, "variableDeclaration", templateNode_qubm7t_a0a0a1a1a1a7a1a2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142292341", "scope", context);
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));
@@ -124,7 +124,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a3a1a1a1a1a1a8a1a2);
                       environment.nodeCopied(context, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959035c/3021153905150327660");
-                      environment.resolveInTemplateLater(tnode12, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905150327660"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142292345", "monitor", context);
+                      environment.resolveInTemplateLater(tnode12, "variableDeclaration", templateNode_qubm7t_a0a0a1a3a1a1a1a1a1a8a1a2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142292345", "monitor", context);
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode12));
