@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -23,40 +22,34 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 
 /**
- * Evgeny Gryaznov, 11/18/10
+ * Default resolver implementation to use with ReferenceMacro nodes
+ * @author Artem Tikhomirov
  */
-public class ReferenceInfo_MacroResolver extends ReferenceInfo_Macro {
+public class MacroResolver implements ReferenceResolver {
+  private final QueryExecutionContext myExecContext;
+  private final SNode myReferenceMacro;
+  private final SNode myTemplateTargetNode;
 
-  private final ReferenceResolver myResolver;
-
-  public ReferenceInfo_MacroResolver(@NotNull ReferenceResolver resolver, @NotNull SNode outputSourceNode, @NotNull String role, @NotNull TemplateContext context, @NotNull QueryExecutionContext executionContext) {
-    super(outputSourceNode, role, context, executionContext);
-    myResolver = resolver;
-  }
-
-  @Nullable
-  @Override
-  public SReference create(@NotNull TemplateGenerator generator) {
-    SReference r = super.create(generator);
-    if (r != null) {
-      return r;
-    }
-    if (isRequired()) {
-      return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
-    }
-    return null;
+  public MacroResolver(@NotNull QueryExecutionContext ctx, @NotNull SNode macro, @Nullable SNode templateTargetNode) {
+    myExecContext = ctx;
+    myReferenceMacro = macro;
+    myTemplateTargetNode = templateTargetNode;
   }
 
   @Override
-  protected Object resolveReference() {
-    return myResolver.resolve(getOutputSourceNode(), myContext);
+  public Object resolve(SNode outputNode, TemplateContext context) {
+    return myExecContext.getReferentTarget(context.getInput(), outputNode, myReferenceMacro, context);
   }
 
   @Override
-  protected SNodeReference getMacroNodeRef() {
-    return myResolver.getTemplateNode();
+  public SNodeReference getTemplateNode() {
+    return myReferenceMacro.getReference();
+  }
+
+  @Override
+  public String getDefaultResolveInfo() {
+    return myTemplateTargetNode != null ? myTemplateTargetNode.getName() : null;
   }
 }

@@ -30,14 +30,12 @@ import org.jetbrains.mps.openapi.model.SReference;
  */
 public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
 
-  private final SNode myTemplateTargetNode;
   @NotNull
-  private final SNode myReferenceMacro;
+  private final MacroResolver myResolver;
 
   public ReferenceInfo_MacroNode(@NotNull SNode outputSourceNode, @NotNull SNode macro, @NotNull SNode templateSourceNode, @NotNull TemplateContext context,  @NotNull QueryExecutionContext executionContext) {
     super(outputSourceNode, AttributeOperations.getLinkRole(macro), context, executionContext);
-    myTemplateTargetNode = templateSourceNode.getReferenceTarget(getReferenceRole());
-    myReferenceMacro = macro;
+    myResolver = new MacroResolver(executionContext, macro, templateSourceNode.getReferenceTarget(getReferenceRole()));
   }
 
   @Nullable
@@ -48,18 +46,18 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
       return r;
     }
     if (isRequired()) {
-      return createInvalidReference(generator, myTemplateTargetNode != null ? myTemplateTargetNode.getName() : null);
+      return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
     }
     return null;
   }
 
   @Override
-  protected SNodeReference getMacroNodeRef() {
-    return myReferenceMacro.getReference();
+  protected Object resolveReference() {
+    return myResolver.resolve(getOutputSourceNode(), myContext);
   }
 
   @Override
-  protected Object resolveReference() {
-    return myExecContext.getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
+  protected SNodeReference getMacroNodeRef() {
+    return myResolver.getTemplateNode();
   }
 }
