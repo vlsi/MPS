@@ -100,6 +100,10 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
         hidePatternEditor();
+        View viewUnderMouse = view.viewAt(event.location());
+        if (viewUnderMouse != myComponent.container().root()) {
+          return;
+        }
         showPatternEditor(event.x(), event.y());
         event.consume();
       }
