@@ -16,8 +16,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_TypeVariableDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_TypeVariableDeclaration_NonTypesystemRule() {
+public class check_TypeVariableDeclarationDuplicateName_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_TypeVariableDeclarationDuplicateName_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode typeVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
@@ -27,7 +27,7 @@ public class check_TypeVariableDeclaration_NonTypesystemRule extends AbstractNon
       }
     }).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_4mfvvk_a0a0a0a0a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "name"), SPropertyOperations.getString(typeVariableDeclaration, "name"));
+        return eq_fdzrny_a0a0a0a0a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "name"), SPropertyOperations.getString(typeVariableDeclaration, "name"));
       }
     });
 
@@ -55,7 +55,7 @@ public class check_TypeVariableDeclaration_NonTypesystemRule extends AbstractNon
     return false;
   }
 
-  private static boolean eq_4mfvvk_a0a0a0a0a0a0a1(Object a, Object b) {
+  private static boolean eq_fdzrny_a0a0a0a0a0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

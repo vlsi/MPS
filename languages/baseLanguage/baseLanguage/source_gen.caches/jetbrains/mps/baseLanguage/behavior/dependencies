@@ -1231,6 +1231,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.scope.EmptyScope" />
     <classNode dependClassName="jetbrains.mps.scope.FilteringByNameScope" />
+    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
