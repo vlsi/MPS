@@ -33,6 +33,8 @@ public interface Style {
 
   void putAll(@NotNull Style style);
 
+  void removeAll(@NotNull Style style);
+
   <T> void set(StyleAttribute<T> attribute, T value);
   <T> void set(StyleAttribute<T> attribute, int priority, T value);
 
