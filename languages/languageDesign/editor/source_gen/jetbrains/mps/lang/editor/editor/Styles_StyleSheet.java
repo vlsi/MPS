@@ -37,20 +37,24 @@ public class Styles_StyleSheet {
       editorCell.getSNode()
     )));
     style.set(StyleAttributes.DRAW_BORDER, true);
+
   }
 
   public static void applyStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+
   }
 
   public static void applyReference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+
   }
 
   public static void applyItem(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+
   }
 
   public static void applyHeader(Style style, EditorCell editorCell) {
@@ -58,6 +62,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+
   }
 
   public static void applyProperty(Style style, EditorCell editorCell) {
@@ -65,18 +70,22 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+
   }
 
   public static void applyBordered(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, true);
+
   }
 
   public static void applyBorderedCollection(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, true);
+
   }
 
   public static void applyTag(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.MATCHING_LABEL, "tag");
+
   }
 
   public static void applyAttributedCellLabel(Style style, EditorCell editorCell) {
@@ -90,10 +99,12 @@ public class Styles_StyleSheet {
       null :
       editorCell.getSNode()
     )));
+
   }
 
   public static void applyString(Style style, EditorCell editorCell) {
     style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
+
   }
 
 

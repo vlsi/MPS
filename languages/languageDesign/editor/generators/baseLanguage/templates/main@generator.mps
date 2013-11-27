@@ -12496,7 +12496,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4164785664931857388" nodeInfo="nn" />
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1384401029876043357" nodeInfo="nn">
         <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />

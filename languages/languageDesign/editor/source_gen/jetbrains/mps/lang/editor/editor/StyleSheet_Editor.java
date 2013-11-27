@@ -149,6 +149,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9d9hlb_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
