@@ -63,7 +63,7 @@
     </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="725186580883628364" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Block2" />
-      <property name="x" nameId="adck.6279035160242221415" value="156" />
+      <property name="x" nameId="adck.6279035160242221415" value="157" />
       <property name="y" nameId="adck.6279035160242221911" value="102" />
       <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="3524364213242493720" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="inputPort1" />

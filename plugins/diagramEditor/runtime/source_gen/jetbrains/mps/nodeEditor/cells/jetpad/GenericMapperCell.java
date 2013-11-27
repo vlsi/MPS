@@ -13,5 +13,10 @@ public abstract class GenericMapperCell<T> extends EditorCell_Collection {
     super(editorContext, node, new CellLayout_Horizontal(), null);
   }
 
+  @Override
+  public boolean isTransparentCollection() {
+    return false;
+  }
+
   public abstract Mapper<SNode, T> getMapper();
 }
