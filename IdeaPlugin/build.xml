@@ -52,8 +52,7 @@
     <echo message="Plugins: ${ideaPlugins}"/>
   </target>
 
-  <target name="prepare" depends="buildCore">
-    <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+  <target name="preBuildCore" depends="buildCore">
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
@@ -81,6 +80,15 @@
     <jar destfile="${base_dir}/IdeaPlugin/mps-core/lib/mps-test-ex.jar">
       <fileset dir="build/tmp/prepare/java/out/mps-test-ex"/>
     </jar>
+  </target>
+
+  <target name="copyCoreFromDist" depends="loadVars">
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
+      <fileset dir="${ideaPlugins}/mps-core/lib"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
+      <fileset dir="${ideaPlugins}/mps-core/languages"/>
+    </copy>
   </target>
 
   <target name="clean">
