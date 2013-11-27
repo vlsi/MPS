@@ -15,11 +15,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_UnusedMethodTypeParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_UnusedMethodTypeParameters_NonTypesystemRule() {
+public class check_UnneededMethodTypeParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_UnneededMethodTypeParameters_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode baseMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
@@ -31,17 +30,13 @@ public class check_UnusedMethodTypeParameters_NonTypesystemRule extends Abstract
           }
         }).all(new IWhereFilter<SNode>() {
           public boolean accept(SNode ref) {
-            return neq_bz72ua_a0a0a0a0a0a0a0a0a0a0a1(SLinkOperations.getTarget(ref, "typeVariableDeclaration", false), typeVarDeclaration);
+            return neq_ba4mce_a0a0a0a0a0a0a0a0a0a0a1(SLinkOperations.getTarget(ref, "typeVariableDeclaration", false), typeVarDeclaration);
           }
         });
         if (unused) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(typeVarDeclaration, "Type variable is not being used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7430872850866111925", null, errorTarget);
-            {
-              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedMethodTypeVariableDeclaration_QuickFix", false);
-              _reporter_2309309498.addIntentionProvider(intentionProvider);
-            }
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(typeVarDeclaration, "Type variable is not needed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7430872850866111925", null, errorTarget);
           }
         }
       }
@@ -63,7 +58,7 @@ public class check_UnusedMethodTypeParameters_NonTypesystemRule extends Abstract
     return false;
   }
 
-  private static boolean neq_bz72ua_a0a0a0a0a0a0a0a0a0a0a1(Object a, Object b) {
+  private static boolean neq_ba4mce_a0a0a0a0a0a0a0a0a0a0a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
 }
