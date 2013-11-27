@@ -54,7 +54,7 @@ public interface Style {
   <T> T get(StyleAttribute<T> attribute);
 
   /**
-   * @return null if no values specified
+   * @return null if no values specified, returned collection can contain nulls: they mean not to push style from parent, not to call combine, but set null
    */
   @Nullable
   <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute);

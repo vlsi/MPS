@@ -47,6 +47,19 @@ public class StyleImpl implements Style {
   private List<Style> myChildren = null;
   private List<StyleListener> myStyleListeners = null;
 
+  public static class NullValue {
+    private static NullValue myInstance;
+    private NullValue(){
+
+    }
+    public static NullValue getInstance() {
+      if (myInstance == null) {
+        myInstance = new NullValue();
+      }
+      return myInstance;
+    }
+  }
+
   private static class IntMapPointer<T> {
     private ListIterator<IntPair<T>> myIterator;
     private boolean myEmpty;
@@ -103,8 +116,20 @@ public class StyleImpl implements Style {
 
     private LinkedList<IntPair<T>> values;
 
-    public LinkedList<IntPair<T>> getAll() {
+    public Collection<IntPair<T>> getAll() {
       return values;
+    }
+
+    public Collection<IntPair<T>> getNullReplaced() {
+      LinkedList<IntPair<T>> result = new LinkedList<IntPair<T>>(values);
+      ListIterator<IntPair<T>> iterator = result.listIterator();
+      while (iterator.hasNext()) {
+        IntPair<T> value = iterator.next();
+        if (value.value instanceof NullValue) {
+          iterator.set(new IntPair<T>(value.index, null));
+        }
+      }
+      return result;
     }
 
     public IntMapPointer<T> search(int index) {
@@ -137,11 +162,18 @@ public class StyleImpl implements Style {
       IntMapPointer<T> searchResult = search(index);
       searchResult.set(value);
     }
-    public T getTop() {
-      if (values == null || values.isEmpty()) {
+    public IntPair<T> getTopPair() {
+      if (values == null) {
         return null;
       }
-      return values.getLast().value;
+      Iterator<IntPair<T>> descendingIterator = values.descendingIterator();
+      while (descendingIterator.hasNext()) {
+        IntPair<T> value = descendingIterator.next();
+        if (!(value.value instanceof NullValue)) {
+          return value;
+        }
+      }
+      return null;
     }
   }
 
@@ -161,7 +193,12 @@ public class StyleImpl implements Style {
 
   private <T> T getTop(StyleAttribute<T> attribute) {
     IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
-    return attributeValue.isEmpty() ? null : attributeValue.get().getTop();
+    if (attributeValue.isEmpty()) {
+      return null;
+    } else {
+      IntPair<T> topPair = attributeValue.get().getTopPair();
+      return  topPair == null ? null : topPair.value;
+    }
   }
 
   private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
@@ -185,7 +222,7 @@ public class StyleImpl implements Style {
           attributeValues.set(new IntObjectSortedListMap<Object>());
         }
         for (IntPair<Object> value : putAttributes) {
-          attributeValues.get().setValue(value.index, value.value);
+          attributeValues.get().setValue(value.index, value.value == null ? NullValue.getInstance() : value.value);
         }
       }
       if (StyleAttributes.isSimple(attribute)) {
@@ -198,6 +235,7 @@ public class StyleImpl implements Style {
     fireStyleChanged(new StyleChangeEvent(this, addedSimple));
   }
 
+  @Override
   public void removeAll(@NotNull Style style) {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
@@ -205,13 +243,11 @@ public class StyleImpl implements Style {
       Collection<IntPair<Object>> putAttributes = style.getAll(attribute);
       if (putAttributes != null) {
         IntMapPointer<IntObjectSortedListMap<Object>> attributeValues = getAttribute(attribute);
-        if (! attributeValues.isEmpty()) {
-          for (IntPair<Object> value : putAttributes) {
-            attributeValues.get().setValue(value.index, null);
-          }
-          if (attributeValues.get().values.isEmpty()) {
-            attributeValues.set(null);
-          }
+        if (attributeValues.isEmpty()) {
+          attributeValues.set(new IntObjectSortedListMap<Object>());
+        }
+        for (IntPair<Object> value : putAttributes) {
+          attributeValues.get().setValue(value.index, NullValue.getInstance());
         }
       }
       if (StyleAttributes.isSimple(attribute)) {
@@ -254,6 +290,7 @@ public class StyleImpl implements Style {
 
   public <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
     assert !StyleAttributes.isSimple(attribute);
+    assert ! (value instanceof NullValue);
     IntMapPointer<IntObjectSortedListMap<T>> cachedAttributeValues = getCachedAttribute(attribute);
     if (value == null) {
       if (! cachedAttributeValues.isEmpty()) {
@@ -293,7 +330,7 @@ public class StyleImpl implements Style {
     if (attributeValues.isEmpty()) {
       return -1;
     } else {
-      return attributeValues.get().values.getLast().index;
+      return attributeValues.get().getTopPair().index;
     }
   }
 
@@ -301,10 +338,10 @@ public class StyleImpl implements Style {
   public <T> T get(StyleAttribute<T> attribute) {
     if (StyleAttributes.isSimple(attribute)) {
       IntObjectSortedListMap<T> attributeValues = getAttribute(attribute).get();
-      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTop();
+      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTopPair().value;
     } else {
       IntObjectSortedListMap<T> attributeValues = getCachedAttribute(attribute).get();
-      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTop();
+      return attributeValues == null ? attribute.combine(null, null) : attributeValues.getTopPair().value;
     }
   }
 
@@ -312,7 +349,7 @@ public class StyleImpl implements Style {
   @Nullable
   public <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute) {
     IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
-    return attributeValue.isEmpty() ? null : attributeValue.get().getAll();
+    return attributeValue.isEmpty() ? null : attributeValue.get().getNullReplaced();
   }
 
   @Override
@@ -329,7 +366,7 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> boolean isSpecified(StyleAttribute<T> attribute) {
-    return getTop(attribute) != null;
+    return ! getAttribute(attribute).isEmpty();
   }
 
   @Override
@@ -455,17 +492,29 @@ public class StyleImpl implements Style {
           newIndex = parentValue.index;
           parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
         } else if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index) && (oldValue == null || currentValue.index < oldValue.index)) {
-          newValue = attribute.combine(null, currentValue.value);
+          if (currentValue.value instanceof NullValue) {
+            newValue = null;
+          } else {
+            newValue = attribute.combine(null, currentValue.value);
+          }
           newIndex = currentValue.index;
           currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
         } else if (parentValue != null && currentValue != null && oldValue != null && parentValue.index == oldValue.index && currentValue.index == oldValue.index) {
-          newValue = attribute.combine(parentValue.value, currentValue.value);
+          if (currentValue.value instanceof NullValue) {
+            newValue = null;
+          } else {
+            newValue = attribute.combine(parentValue.value, currentValue.value);
+          }
           newIndex = currentValue.index;
           parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
           currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
           oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
         } else if (parentValue != null && currentValue != null && parentValue.index == currentValue.index) {
-          newValue = attribute.combine(parentValue.value, currentValue.value);
+          if (currentValue.value instanceof NullValue) {
+            newValue = null;
+          } else {
+            newValue = attribute.combine(parentValue.value, currentValue.value);
+          }
           newIndex = currentValue.index;
           parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
           currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
@@ -475,7 +524,11 @@ public class StyleImpl implements Style {
           parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
           oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
         } else if (currentValue != null && oldValue != null && currentValue.index == oldValue.index) {
-          newValue = attribute.combine(null, currentValue.value);
+          if (currentValue.value instanceof NullValue) {
+            newValue = null;
+          } else {
+            newValue = attribute.combine(null, currentValue.value);
+          }
           newIndex = currentValue.index;
           currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
           oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
