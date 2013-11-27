@@ -3314,11 +3314,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4151393920374910634" resolveInfo="StyleKey" />
     </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3525058663444350845" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="queryStyle" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3525058663444303551" resolveInfo="QueryFunction_Style" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4151393920374910634" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="StyleKey" />

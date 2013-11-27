@@ -345,7 +345,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 164:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PositionStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("position").alias("position", "").staticScope(StaticScope.NONE).create();
       case 165:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").references("key").children(new String[]{"query", "queryStyle"}, new boolean[]{false, false}).alias("pre-defined-style", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").references("key").children(new String[]{"query"}, new boolean[]{false}).alias("pre-defined-style", "").staticScope(StaticScope.NONE).create();
       case 166:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PredefinedSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").properties("cellId").create();
       case 167:
