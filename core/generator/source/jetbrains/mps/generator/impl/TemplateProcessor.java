@@ -24,10 +24,10 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
+import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -36,6 +36,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -218,7 +219,7 @@ public final class TemplateProcessor {
             refInfo,
             myGenerator
         );
-        outputNode.setReference(postponedReference.getRole(), postponedReference);
+        postponedReference.setReferenceInOutputSourceNode();
       } else {
         outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
       }
@@ -232,16 +233,11 @@ public final class TemplateProcessor {
         if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
           myEnv.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
         } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
-          ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroNode(
-              outputNode, templateChildNode,
-              templateNode,
-              context, myEnv.getQueryExecutor()
-          );
-          PostponedReference postponedReference = new PostponedReference(
-              refInfo,
-              myGenerator
-          );
-          outputNode.setReference(postponedReference.getRole(), postponedReference);
+          final String refMacroRole = AttributeOperations.getLinkRole(templateChildNode);
+          MacroResolver mr = new MacroResolver(myEnv.getQueryExecutor(), templateChildNode, templateNode.getReferenceTarget(refMacroRole));
+          ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, outputNode, refMacroRole, context);
+          PostponedReference postponedReference = new PostponedReference(refInfo, myGenerator);
+          postponedReference.setReferenceInOutputSourceNode();
         }
       } else {
         templateChildNodes.add(templateChildNode);
@@ -291,10 +287,8 @@ public final class TemplateProcessor {
             ref.getSourceNode(),
             inputNode,
             ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(
-            refInfo,
-            myGenerator);
-        ref.getSourceNode().setReference(ref.getRole(), postponedReference);
+        PostponedReference postponedReference = new PostponedReference(refInfo, myGenerator);
+        postponedReference.setReferenceInOutputSourceNode();
       }
     }
 

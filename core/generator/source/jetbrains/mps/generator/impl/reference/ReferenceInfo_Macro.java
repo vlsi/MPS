@@ -18,9 +18,9 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -34,20 +34,22 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
-public abstract class ReferenceInfo_Macro extends ReferenceInfo {
+public class ReferenceInfo_Macro extends ReferenceInfo {
   private static Logger LOG = LogManager.getLogger(ReferenceInfo_Macro.class);
 
-  protected final TemplateContext myContext;
-  protected final QueryExecutionContext myExecContext;
+  @NotNull
+  private final ReferenceResolver myResolver;
+  @NotNull
+  private final TemplateContext myContext;
 
   // results of 'expandReferenceMacro'
   private String myResolveInfoForDynamicResolve;
   private SNode myOutputTargetNode;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, String role, @NotNull TemplateContext context, @NotNull QueryExecutionContext executionContext) {
+  public ReferenceInfo_Macro(@NotNull ReferenceResolver resolver, SNode outputSourceNode, String role, @NotNull TemplateContext context) {
     super(outputSourceNode, role, context.getInput());
+    myResolver = resolver;
     myContext = context;
-    myExecContext = executionContext;
   }
 
   @Nullable
@@ -59,6 +61,9 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     }
     if (myResolveInfoForDynamicResolve != null) {
       return createDynamicReference(generator, myResolveInfoForDynamicResolve, getMacroNodeRef());
+    }
+    if (isRequired()) {
+      return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
     }
     return null;
   }
@@ -114,13 +119,17 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     }
   }
 
-  protected abstract Object resolveReference();
+  protected Object resolveReference() {
+    return myResolver.resolve(getOutputSourceNode(), myContext);
+  }
 
   @Nullable
-  protected abstract SNodeReference getMacroNodeRef();
+  protected SNodeReference getMacroNodeRef() {
+    return myResolver.getTemplateNode();
+  }
 
   @Override
-  public ProblemDescription[] getErrorDescriptions() {
+  protected ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
     SNode macroNode = getMacroNodeRef() == null ? null : getMacroNodeRef().resolve(MPSModuleRepository.getInstance());
     return new ProblemDescription[]{

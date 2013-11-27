@@ -52,7 +52,7 @@ public abstract class ReferenceInfo {
     myInputNode = inputNode;
   }
 
-  public SNode getOutputSourceNode() {
+  public final SNode getOutputSourceNode() {
     return myOutputSourceNode;
   }
 

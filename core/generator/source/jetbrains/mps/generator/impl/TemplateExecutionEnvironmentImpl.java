@@ -24,7 +24,6 @@ import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroResolver;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateParent;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -195,10 +194,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           ref.getSourceNode(),
           inputNode,
           ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(
-          refInfo,
-          generator);
-        ref.getSourceNode().setReference(ref.getRole(), postponedReference);
+        PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+        postponedReference.setReferenceInOutputSourceNode();
       }
     }
     for (SNode child : node.getChildren()) {
@@ -299,11 +296,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       parentIndex,
       resolveInfo,
       context);
-    PostponedReference postponedReference = new PostponedReference(
-      refInfo,
-      generator
-    );
-    outputNode.setReference(postponedReference.getRole(), postponedReference);
+    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
   }
 
   @Override
@@ -315,24 +308,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       templateNodeId,
       resolveInfo,
       context);
-    PostponedReference postponedReference = new PostponedReference(
-      refInfo,
-      generator
-    );
-    outputNode.setReference(postponedReference.getRole(), postponedReference);
+    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
   }
 
   @Override
   public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
-    ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroResolver(
-      resolver, outputNode,
-      role, context,
-      getQueryExecutor());
-    PostponedReference postponedReference = new PostponedReference(
-      refInfo,
-      generator
-    );
-    outputNode.setReference(postponedReference.getRole(), postponedReference);
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, outputNode, role, context);
+    PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+    postponedReference.setReferenceInOutputSourceNode();
   }
 
   /*

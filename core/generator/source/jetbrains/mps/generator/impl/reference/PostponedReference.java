@@ -39,6 +39,14 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
     myGenerator = generator;
   }
 
+  // shorthand:
+  // ReferenceInfo ri = new ReferenceInfo(outputSourceNode, role);
+  // PostponedReference pr = new PostponedReference(pr);
+  // outputSourceNode.setReference(role, pr);
+  public void setReferenceInOutputSourceNode() {
+    getSourceNode().setReference(getRole(), this);
+  }
+
   @Override
   @Deprecated
   public boolean isExternal() {
