@@ -20,8 +20,11 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * @deprecated This is a special case of ReferenceInfo_Template, with an erroneous assumption structure of output model matches
@@ -35,15 +38,27 @@ public class ReferenceInfo_TemplateParent extends ReferenceInfo {
   private String myResolveInfo;
 
 
-  public ReferenceInfo_TemplateParent(SNode outputSourceNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
+  public ReferenceInfo_TemplateParent(@NotNull SNode outputSourceNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
     super(outputSourceNode, role, context.getInput());
     myTemplateSourceNode = sourceNode;
     myParentIndex = parentIndex;
     myResolveInfo = resolveInfo;
   }
 
+  @Nullable
   @Override
-  public SNode doResolve_Straightforward(TemplateGenerator generator) {
+  public SReference create(@NotNull TemplateGenerator generator) {
+    SNode parent = doResolve_Straightforward();
+    if (parent != null) {
+      return createStaticReference(parent);
+    }
+    if (myResolveInfo != null) {
+      return createDynamicReference(generator, myResolveInfo, myTemplateSourceNode);
+    }
+    return createInvalidReference(generator, null);
+  }
+
+  private SNode doResolve_Straightforward() {
     // try to resolve if referent node is parent of source node.
     // this solves situation when reference node inside 'template fragment' refers to 'context node' (ancestor outside 'template fragment')
     SNode current = getOutputSourceNode();
@@ -51,21 +66,6 @@ public class ReferenceInfo_TemplateParent extends ReferenceInfo {
       current = current.getParent();
     }
     return current;
-  }
-
-  @Override
-  public SNode doResolve_Tricky(TemplateGenerator generator) {
-    return null;
-  }
-
-  @Override
-  public String getResolveInfoForDynamicResolve() {
-    return myResolveInfo;
-  }
-
-  @Override
-  public String getResolveInfoForNothing() {
-    return myResolveInfo;
   }
 
   @Override

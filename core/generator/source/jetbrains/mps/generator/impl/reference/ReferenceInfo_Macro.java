@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +30,9 @@ import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   private static Logger LOG = LogManager.getLogger(ReferenceInfo_Macro.class);
@@ -38,11 +41,10 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   protected final QueryExecutionContext myExecContext;
 
   // results of 'expandReferenceMacro'
-  private boolean myMacroProcessed;
   private String myResolveInfoForDynamicResolve;
   private SNode myOutputTargetNode;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, String role, TemplateContext context, @NotNull QueryExecutionContext executionContext) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, String role, @NotNull TemplateContext context, @NotNull QueryExecutionContext executionContext) {
     super(outputSourceNode, role, context.getInput());
     myContext = context;
     myExecContext = executionContext;
@@ -50,35 +52,28 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
 
   @Nullable
   @Override
-  public SModelReference getTargetModelReference(TemplateGenerator generator) {
-    return null;
-  }
-
-  @Override
-  public SNode doResolve_Straightforward(TemplateGenerator generator) {
-    ensureMacroProcessed(generator);
-    return myOutputTargetNode;
-  }
-
-  private void ensureMacroProcessed(ITemplateGenerator generator) {
-    if (myMacroProcessed) return;
-    myMacroProcessed = true;
+  public SReference create(@NotNull TemplateGenerator generator) {
     expandReferenceMacro(generator);
-  }
-
-  @Override
-  public SNode doResolve_Tricky(TemplateGenerator generator) {
-    // nothing
+    if (myOutputTargetNode != null) {
+      return createStaticReference(myOutputTargetNode);
+    }
+    if (myResolveInfoForDynamicResolve != null) {
+      return createDynamicReference(generator, myResolveInfoForDynamicResolve, getMacroNodeRef());
+    }
     return null;
   }
 
+  @Nullable
   @Override
-  public String getResolveInfoForDynamicResolve() {
-    return myResolveInfoForDynamicResolve;
+  protected SModelReference getTargetModelReference(ITemplateGenerator generator) {
+    // getTargetModelReference is there for dynamic references. It's not quite obvious
+    // whether dynamic references require null or non null - from DR cons it seems non-null
+    // is relevant for links to Classifiers. It's odd to keep it non-null in base ReferenceInfo, then?
+    // For now, keep it the way it was prior to refactoring.
+    return null;
   }
 
-  @Override
-  public boolean isRequired() {
+  protected final boolean isRequired() {
     String role = getReferenceRole();
     SConcept concept = getOutputSourceNode().getConcept();
     SAbstractLink link = concept.getLink(role);
@@ -91,8 +86,6 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   private void expandReferenceMacro(ITemplateGenerator generator) {
-    String linkRole = getReferenceRole();
-
     Object result = resolveReference();
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
@@ -111,10 +104,11 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
       if (outputTargetNode_output != null) {
         myOutputTargetNode = outputTargetNode_output;
       } else {
+        SNode macroNode = getMacroNodeRef() == null ? null : getMacroNodeRef().resolve(MPSModuleRepository.getInstance());
         // FIXME showErrorIfStrict
-        generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + linkRole + " in " + SNodeUtil.getDebugText(getOutputSourceNode()),
+        generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + getReferenceRole() + " in " + SNodeUtil.getDebugText(getOutputSourceNode()),
           GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"),
-          GeneratorUtil.describeIfExists(getMacroNode(), "reference macro"));
+          GeneratorUtil.describeIfExists(macroNode, "reference macro"));
         generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
       }
     }
@@ -122,14 +116,16 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
 
   protected abstract Object resolveReference();
 
-  protected abstract SNode getMacroNode();
+  @Nullable
+  protected abstract SNodeReference getMacroNodeRef();
 
   @Override
   public ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
+    SNode macroNode = getMacroNodeRef() == null ? null : getMacroNodeRef().resolve(MPSModuleRepository.getInstance());
     return new ProblemDescription[]{
       GeneratorUtil.describe(inputNode, "input node"),
-      GeneratorUtil.describe(getMacroNode(), "reference macro")
+      GeneratorUtil.describeIfExists(macroNode, "reference macro")
     };
   }
 }

@@ -40,6 +40,7 @@ public interface TemplateExecutionEnvironment {
 
   SModel getOutputModel();
 
+  @NotNull
   SNode createOutputNode(@NotNull String conceptName);
 
   @NotNull
@@ -95,11 +96,11 @@ public interface TemplateExecutionEnvironment {
    * @deprecated use {@link #resolveInTemplateLater(org.jetbrains.mps.openapi.model.SNode, String, org.jetbrains.mps.openapi.model.SNodeReference, String, String, TemplateContext)} instead
    */
   @Deprecated
-  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference templateSourceNode, int parentIndex, String resolveInfo, TemplateContext context);
+  void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference templateSourceNode, int parentIndex, String resolveInfo, TemplateContext context);
 
-  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
+  void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
 
-  void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context);
+  void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context);
 
   /*
    *  returns temporary node

@@ -16,10 +16,23 @@
 package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * Created by: Sergey Dmitriev
@@ -44,8 +57,16 @@ public abstract class ReferenceInfo {
   }
 
   @Nullable
-  public SModelReference getTargetModelReference(TemplateGenerator generator) {
+  protected SModelReference getTargetModelReference(ITemplateGenerator generator) {
     // local references only
+    if (myOutputSourceNode != null && myOutputSourceNode.getModel() != null) {
+      // XXX temp code, see #createDynamicReference
+      final SModelReference r1 = myOutputSourceNode.getModel().getReference();
+      final SModelReference r2 = generator.getOutputModel().getReference();
+      if (!r1.equals(r2)) {
+        System.out.printf("Different output model: %s vs %s", r1, r2);
+      }
+    }
     return generator.getOutputModel().getReference();
   }
 
@@ -58,20 +79,68 @@ public abstract class ReferenceInfo {
     return myInputNode;
   }
 
-  /*
-   * test postponed references
-   */
-  public abstract SNode doResolve_Straightforward(TemplateGenerator generator);
+  @Nullable
+  protected final SNodeReference getInputNodeReference() {
+    return myInputNode == null || myInputNode.getModel() == null ? null : new SNodePointer(myInputNode);
+  }
 
-  public abstract SNode doResolve_Tricky(TemplateGenerator generator);
+  @Nullable
+  public abstract SReference create(@NotNull TemplateGenerator generator);
 
-  public abstract String getResolveInfoForDynamicResolve();
+  @NotNull
+  protected SReference createInvalidReference(@NotNull ITemplateGenerator generator, @Nullable String anyHint) {
+    return jetbrains.mps.smodel.SReference.create(getReferenceRole(), getOutputSourceNode(), generator.getOutputModel().getReference(), null, anyHint);
+  }
 
-  public abstract String getResolveInfoForNothing();
+  // XXX likely, Generator parameter is not really needed. Shall refactor getTargetModelReference to get output model from myOutputSourceNode
+  @NotNull
+  protected final SReference createDynamicReference(ITemplateGenerator generator, @NotNull String resolveInfo, @Nullable SNodeReference templateNode) {
+    final DynamicReference dr =
+        new DynamicReference(getReferenceRole(), getOutputSourceNode(), getTargetModelReference(generator), resolveInfo);
+    final SNodeReference inputRef = getInputNodeReference();
+    if (templateNode != null || inputRef != null) {
+      // origin is merely an indication where the reference comes from
+      dr.setOrigin(new DynamicReferenceOrigin(templateNode, inputRef));
+    }
+    return dr;
+  }
 
-  public boolean isRequired() {
+  @NotNull
+  protected final SReference createStaticReference(@NotNull SNode target) {
+    return jetbrains.mps.smodel.SReference.create(getReferenceRole(), getOutputSourceNode(), target);
+  }
+
+
+  protected abstract ProblemDescription[] getErrorDescriptions();
+
+  // XXX in fact, the only use is in ReferenceInfo_CopiedInputNode, might be worth moving there
+  protected final boolean checkResolvedTarget(AbstractTemplateGenerator generator, SNode outputTargetNode) {
+    RoleValidationStatus status = generator.getReferentRoleValidator(myOutputSourceNode, myReferenceRole).validate(outputTargetNode);
+    if (status != null) {
+      status.reportProblem(true, myOutputSourceNode, "bad reference: ", getErrorDescriptions());
+      return false;
+    }
+
+    SModel referentNodeModel = outputTargetNode.getModel();
+    if (referentNodeModel != myOutputSourceNode.getModel()) {
+      if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
+        // references to template nodes are not acceptable
+        generator.getLogger().error(myOutputSourceNode,
+            "bad reference, cannot refer to a generator model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + myReferenceRole + "' in " +
+                SNodeUtil.getDebugText(myOutputSourceNode),
+            getErrorDescriptions());
+        return false;
+      }
+      if (referentNodeModel .getModule() instanceof TransientModelsModule) {
+        // references to transient nodes are not acceptable
+        generator.getLogger().error(myOutputSourceNode,
+            "bad reference, cannot refer to a transient model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + myReferenceRole + "' in " +
+                SNodeUtil.getDebugText(myOutputSourceNode),
+            getErrorDescriptions());
+        return false;
+      }
+    }
     return true;
   }
 
-  public abstract ProblemDescription[] getErrorDescriptions();
 }

@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * Evgeny Gryaznov, 11/18/10
@@ -27,25 +31,31 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
 
   private final SNode myTemplateTargetNode;
+  @NotNull
   private final SNode myReferenceMacro;
 
-  public ReferenceInfo_MacroNode(SNode outputSourceNode, SNode macro, SNode templateReferenceNode, TemplateContext context,  @NotNull QueryExecutionContext executionContext) {
+  public ReferenceInfo_MacroNode(@NotNull SNode outputSourceNode, @NotNull SNode macro, @NotNull SNode templateSourceNode, @NotNull TemplateContext context,  @NotNull QueryExecutionContext executionContext) {
     super(outputSourceNode, AttributeOperations.getLinkRole(macro), context, executionContext);
-    myTemplateTargetNode = templateReferenceNode.getReferenceTarget(getReferenceRole());
+    myTemplateTargetNode = templateSourceNode.getReferenceTarget(getReferenceRole());
     myReferenceMacro = macro;
   }
 
+  @Nullable
   @Override
-  public String getResolveInfoForNothing() {
-    if (myTemplateTargetNode != null) {
-      return myTemplateTargetNode.getName();
+  public SReference create(@NotNull TemplateGenerator generator) {
+    SReference r = super.create(generator);
+    if (r != null) {
+      return r;
+    }
+    if (isRequired()) {
+      return createInvalidReference(generator, myTemplateTargetNode != null ? myTemplateTargetNode.getName() : null);
     }
     return null;
   }
 
   @Override
-  protected SNode getMacroNode() {
-    return myReferenceMacro;
+  protected SNodeReference getMacroNodeRef() {
+    return myReferenceMacro.getReference();
   }
 
   @Override

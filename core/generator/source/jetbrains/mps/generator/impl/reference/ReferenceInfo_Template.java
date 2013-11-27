@@ -21,10 +21,12 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * Evgeny Gryaznov, 11/19/10
@@ -44,8 +46,20 @@ public class ReferenceInfo_Template extends ReferenceInfo {
     myResolveInfo = resolveInfo;
   }
 
+  @Nullable
   @Override
-  public SNode doResolve_Straightforward(TemplateGenerator generator) {
+  public SReference create(@NotNull TemplateGenerator generator) {
+    SNode outputTargetNode = doResolve_Straightforward(generator);
+    if (outputTargetNode != null) {
+      return createStaticReference(outputTargetNode);
+    }
+    if (myResolveInfo != null) {
+      return createDynamicReference(generator, myResolveInfo, myTemplateSourceNode);
+    }
+    return createInvalidReference(generator, null);
+  }
+
+  private SNode doResolve_Straightforward(TemplateGenerator generator) {
     // try to find for the same inputNode
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
@@ -68,23 +82,7 @@ public class ReferenceInfo_Template extends ReferenceInfo {
         return outputTargetNode;
       }
     }
-
     return null;
-  }
-
-  @Override
-  public SNode doResolve_Tricky(TemplateGenerator generator) {
-    return null;
-  }
-
-  @Override
-  public String getResolveInfoForDynamicResolve() {
-    return myResolveInfo;
-  }
-
-  @Override
-  public String getResolveInfoForNothing() {
-    return myResolveInfo;
   }
 
   @Override
@@ -104,7 +102,7 @@ public class ReferenceInfo_Template extends ReferenceInfo {
     SNode outputTargetRoot = outputTarget.getContainingRoot();
     SNode outputSourceRoot = myOutputSourceNode.getContainingRoot();
     SModel model = outputTargetRoot.getModel();
-    if (model == null || !(outputTargetRoot.getParent() == null)) {
+    if (model == null || outputTargetRoot.getParent() != null) {
       SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);
       SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
       if (inputTargetRoot != inputSourceRoot) {

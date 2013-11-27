@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * Evgeny Gryaznov, 11/18/10
@@ -29,9 +32,22 @@ public class ReferenceInfo_MacroResolver extends ReferenceInfo_Macro {
 
   private final ReferenceResolver myResolver;
 
-  public ReferenceInfo_MacroResolver(ReferenceResolver resolver, SNode outputSourceNode, String role, TemplateContext context, QueryExecutionContext executionContext) {
+  public ReferenceInfo_MacroResolver(@NotNull ReferenceResolver resolver, @NotNull SNode outputSourceNode, @NotNull String role, @NotNull TemplateContext context, QueryExecutionContext executionContext) {
     super(outputSourceNode, role, context, executionContext);
     myResolver = resolver;
+  }
+
+  @Nullable
+  @Override
+  public SReference create(@NotNull TemplateGenerator generator) {
+    SReference r = super.create(generator);
+    if (r != null) {
+      return r;
+    }
+    if (isRequired()) {
+      return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
+    }
+    return null;
   }
 
   @Override
@@ -40,16 +56,7 @@ public class ReferenceInfo_MacroResolver extends ReferenceInfo_Macro {
   }
 
   @Override
-  protected SNode getMacroNode() {
-    SNodeReference macro = myResolver.getTemplateNode();
-    if(macro != null) {
-      return macro.resolve(MPSModuleRepository.getInstance());
-    }
-    return null;
-  }
-
-  @Override
-  public String getResolveInfoForNothing() {
-    return myResolver.getDefaultResolveInfo();
+  protected SNodeReference getMacroNodeRef() {
+    return myResolver.getTemplateNode();
   }
 }
