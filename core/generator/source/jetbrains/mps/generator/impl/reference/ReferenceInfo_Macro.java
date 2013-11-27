@@ -60,7 +60,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return createStaticReference(myOutputTargetNode);
     }
     if (myResolveInfoForDynamicResolve != null) {
-      return createDynamicReference(generator, myResolveInfoForDynamicResolve, getMacroNodeRef());
+      return createDynamicReference(myResolveInfoForDynamicResolve, getMacroNodeRef());
     }
     if (isRequired()) {
       return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
@@ -70,7 +70,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
   @Nullable
   @Override
-  protected SModelReference getTargetModelReference(ITemplateGenerator generator) {
+  protected SModelReference getTargetModelReference() {
     // getTargetModelReference is there for dynamic references. It's not quite obvious
     // whether dynamic references require null or non null - from DR cons it seems non-null
     // is relevant for links to Classifiers. It's odd to keep it non-null in base ReferenceInfo, then?

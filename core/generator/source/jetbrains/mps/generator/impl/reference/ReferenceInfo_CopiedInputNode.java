@@ -55,7 +55,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
       }
       String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(myInputTargetNode);
       if (resolveInfo != null) {
-        return createDynamicReference(generator, resolveInfo, null);
+        return createDynamicReference(resolveInfo, null);
       }
       // if input was copied - return one of its copies
       // this can easy produce incorrect references

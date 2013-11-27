@@ -53,7 +53,7 @@ public class ReferenceInfo_TemplateParent extends ReferenceInfo {
       return createStaticReference(parent);
     }
     if (myResolveInfo != null) {
-      return createDynamicReference(generator, myResolveInfo, myTemplateSourceNode);
+      return createDynamicReference(myResolveInfo, myTemplateSourceNode);
     }
     return createInvalidReference(generator, null);
   }
@@ -69,7 +69,7 @@ public class ReferenceInfo_TemplateParent extends ReferenceInfo {
   }
 
   @Override
-  public ProblemDescription[] getErrorDescriptions() {
+  protected ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
     return new ProblemDescription[]{
       GeneratorUtil.describe(inputNode, "input node"),

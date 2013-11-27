@@ -57,17 +57,12 @@ public abstract class ReferenceInfo {
   }
 
   @Nullable
-  protected SModelReference getTargetModelReference(ITemplateGenerator generator) {
+  protected SModelReference getTargetModelReference() {
     // local references only
     if (myOutputSourceNode != null && myOutputSourceNode.getModel() != null) {
-      // XXX temp code, see #createDynamicReference
-      final SModelReference r1 = myOutputSourceNode.getModel().getReference();
-      final SModelReference r2 = generator.getOutputModel().getReference();
-      if (!r1.equals(r2)) {
-        System.out.printf("Different output model: %s vs %s", r1, r2);
-      }
+      return myOutputSourceNode.getModel().getReference();
     }
-    return generator.getOutputModel().getReference();
+    return null;
   }
 
   public String getReferenceRole() {
@@ -92,11 +87,10 @@ public abstract class ReferenceInfo {
     return jetbrains.mps.smodel.SReference.create(getReferenceRole(), getOutputSourceNode(), generator.getOutputModel().getReference(), null, anyHint);
   }
 
-  // XXX likely, Generator parameter is not really needed. Shall refactor getTargetModelReference to get output model from myOutputSourceNode
   @NotNull
-  protected final SReference createDynamicReference(ITemplateGenerator generator, @NotNull String resolveInfo, @Nullable SNodeReference templateNode) {
+  protected final SReference createDynamicReference(@NotNull String resolveInfo, @Nullable SNodeReference templateNode) {
     final DynamicReference dr =
-        new DynamicReference(getReferenceRole(), getOutputSourceNode(), getTargetModelReference(generator), resolveInfo);
+        new DynamicReference(getReferenceRole(), getOutputSourceNode(), getTargetModelReference(), resolveInfo);
     final SNodeReference inputRef = getInputNodeReference();
     if (templateNode != null || inputRef != null) {
       // origin is merely an indication where the reference comes from
