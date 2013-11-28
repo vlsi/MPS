@@ -11,17 +11,7 @@ public class IStyleSheetMember_Behavior {
   }
 
   public static String call_getApplyMethodName_2984340427846756354(SNode thisNode) {
-    StringBuffer bufferName = new StringBuffer();
-    bufferName.append("apply");
-    for (int i = 0; i < SPropertyOperations.getString(thisNode, "name").length(); i++) {
-      char ch = SPropertyOperations.getString(thisNode, "name").charAt(i);
-      if (i == 0) {
-        bufferName.append(Character.toUpperCase(ch));
-      } else {
-        bufferName.append(ch);
-      }
-    }
-    return bufferName.toString();
+    return "apply_" + SPropertyOperations.getString(thisNode, "name");
   }
 
   public static SNode call_getStyleSheet_1213877260644(SNode thisNode) {
