@@ -17,12 +17,9 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -33,7 +30,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
@@ -42,7 +38,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * TODO move listeners to openapi
  */
-public abstract class SModelDescriptorStub implements SModelDescriptor {
+public abstract class SModelDescriptorStub implements SModelInternal, SModel {
 
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
