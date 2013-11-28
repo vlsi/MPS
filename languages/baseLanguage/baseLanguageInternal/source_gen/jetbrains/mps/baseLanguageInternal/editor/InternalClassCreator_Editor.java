@@ -57,7 +57,7 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_xdoz7h_a0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -87,7 +87,7 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_xdoz7h_c0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -101,7 +101,7 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_fqClassName");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -118,7 +118,7 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_xdoz7h_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -172,7 +172,7 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_xdoz7h_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -194,7 +194,7 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xdoz7h_a7a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -282,7 +282,7 @@ public class InternalClassCreator_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xdoz7h_c7a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);

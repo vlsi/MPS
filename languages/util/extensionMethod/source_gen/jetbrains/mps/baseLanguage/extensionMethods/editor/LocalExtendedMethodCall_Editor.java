@@ -80,7 +80,7 @@ public class LocalExtendedMethodCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("baseMethodDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyMPSMethodCall(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

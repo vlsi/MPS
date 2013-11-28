@@ -29,7 +29,7 @@ public class ConfigurationFromExecutorReference_Editor extends DefaultNodeEditor
     editorCell.setCellId("property_name");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

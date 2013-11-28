@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
-  public static void applyRootCellModelStyle(Style style, EditorCell editorCell) {
+  public static void apply_rootCellModelStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
       null :
       editorCell.getContext()
@@ -39,47 +39,47 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.DRAW_BORDER, true);
   }
 
-  public static void applyStyle(Style style, EditorCell editorCell) {
+  public static void apply_style(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyReference(Style style, EditorCell editorCell) {
+  public static void apply_reference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
-  public static void applyItem(Style style, EditorCell editorCell) {
+  public static void apply_item(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyHeader(Style style, EditorCell editorCell) {
+  public static void apply_header(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyProperty(Style style, EditorCell editorCell) {
+  public static void apply_property(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
-  public static void applyBordered(Style style, EditorCell editorCell) {
+  public static void apply_bordered(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, true);
   }
 
-  public static void applyBorderedCollection(Style style, EditorCell editorCell) {
+  public static void apply_borderedCollection(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, true);
   }
 
-  public static void applyTag(Style style, EditorCell editorCell) {
+  public static void apply_tag(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.MATCHING_LABEL, "tag");
   }
 
-  public static void applyAttributedCellLabel(Style style, EditorCell editorCell) {
+  public static void apply_attributedCellLabel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -92,7 +92,7 @@ public class Styles_StyleSheet {
     )));
   }
 
-  public static void applyString(Style style, EditorCell editorCell) {
+  public static void apply_string(Style style, EditorCell editorCell) {
     style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
   }
 

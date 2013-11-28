@@ -11,17 +11,17 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class DocumentationCommentStyleSheet_StyleSheet {
-  public static void applyComment(Style style, EditorCell editorCell) {
+  public static void apply_Comment(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
 
-  public static void applyCommentTag(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.applyJavaDocTag(style, editorCell);
+  public static void apply_CommentTag(Style style, EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.apply_JavaDocTag(style, editorCell);
   }
 
-  public static void applyCommentHTMLTag(Style style, EditorCell editorCell) {
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+  public static void apply_CommentHTMLTag(Style style, EditorCell editorCell) {
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
   }
 

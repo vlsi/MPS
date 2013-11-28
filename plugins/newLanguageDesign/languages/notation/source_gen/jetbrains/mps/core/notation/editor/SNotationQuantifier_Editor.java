@@ -81,7 +81,7 @@ public class SNotationQuantifier_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ey0wdc_b0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

@@ -89,7 +89,7 @@ public class ComeFromExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("link");
       }
       Style style = new StyleImpl();
-      SharedStyles_StyleSheet.applyReferenceOnConceptualFeature(style, editorCell);
+      SharedStyles_StyleSheet.apply_ReferenceOnConceptualFeature(style, editorCell);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

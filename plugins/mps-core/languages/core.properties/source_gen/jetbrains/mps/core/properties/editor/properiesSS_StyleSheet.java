@@ -10,21 +10,21 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class properiesSS_StyleSheet {
-  public static void applyKey(Style style, EditorCell editorCell) {
+  public static void apply_Key(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(128)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyComment(Style style, EditorCell editorCell) {
+  public static void apply_Comment(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(8421504)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
-  public static void applySeparator(Style style, EditorCell editorCell) {
+  public static void apply_Separator(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
 
-  public static void applyValue(Style style, EditorCell editorCell) {
+  public static void apply_Value(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(32768)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }

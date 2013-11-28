@@ -45,7 +45,7 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test modules configuration");
     editorCell.setCellId("Constant_aky039_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyProjectPartKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_projectPartKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

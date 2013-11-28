@@ -33,7 +33,7 @@ public class AuthorBlockDocTag_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@author");
     editorCell.setCellId("Constant_627wb8_a0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

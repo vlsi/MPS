@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
-  public static void applyGenContext_operation(Style style, EditorCell editorCell) {
+  public static void apply_genContext_operation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));

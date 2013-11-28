@@ -19,7 +19,7 @@ public class GetProjectOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+    RunConfigurations_StyleSheet.apply_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

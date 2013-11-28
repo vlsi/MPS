@@ -59,7 +59,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Deprecated");
     editorCell.setCellId("Constant_lchw91_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -44,7 +44,7 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ApplicableNodeReference_Editor._Inline_13d8h_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

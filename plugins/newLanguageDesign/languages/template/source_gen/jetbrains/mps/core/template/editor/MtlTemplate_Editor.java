@@ -70,7 +70,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template");
     editorCell.setCellId("Constant_c4w2e_a0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -100,7 +100,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "::");
     editorCell.setCellId("Constant_c4w2e_c0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -130,7 +130,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_c4w2e_e0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "params-paren");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -226,7 +226,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_c4w2e_h0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -262,7 +262,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_c4w2e_j0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -273,7 +273,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_c4w2e_k0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

@@ -133,7 +133,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_scriptKind");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyConstant(style, editorCell);
+    Styles_StyleSheet.apply_constant(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -187,7 +187,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_modifiesModel");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyConstant(style, editorCell);
+    Styles_StyleSheet.apply_constant(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

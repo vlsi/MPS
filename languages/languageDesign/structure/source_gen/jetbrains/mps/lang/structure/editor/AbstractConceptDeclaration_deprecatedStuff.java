@@ -89,7 +89,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept properties:");
     editorCell.setCellId("Constant_za92a3_a0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -162,7 +162,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept links:");
     editorCell.setCellId("Constant_za92a3_d0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -254,7 +254,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept property declarations:");
     editorCell.setCellId("Constant_za92a3_a1a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -327,7 +327,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept link declarations:");
     editorCell.setCellId("Constant_za92a3_d1a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

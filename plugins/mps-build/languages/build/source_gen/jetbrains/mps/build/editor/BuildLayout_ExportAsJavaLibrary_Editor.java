@@ -41,7 +41,7 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export as java library");
     editorCell.setCellId("Constant_ge4r0w_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
+    buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

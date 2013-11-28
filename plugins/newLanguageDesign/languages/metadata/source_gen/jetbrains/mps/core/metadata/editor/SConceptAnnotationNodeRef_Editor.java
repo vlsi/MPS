@@ -44,7 +44,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ref");
     editorCell.setCellId("Constant_xcgn7z_a0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -113,7 +113,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name_1");
     Style style = new StyleImpl();
-    default_StyleSheet.applyFeature(style, editorCell);
+    default_StyleSheet.apply_feature(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_3_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -143,7 +143,7 @@ public class SConceptAnnotationNodeRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_xcgn7z_e0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

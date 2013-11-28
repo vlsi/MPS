@@ -42,7 +42,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_lj1m7a_a0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -58,7 +58,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -76,7 +76,7 @@ public class SNotationLabel_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_lj1m7a_c0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);

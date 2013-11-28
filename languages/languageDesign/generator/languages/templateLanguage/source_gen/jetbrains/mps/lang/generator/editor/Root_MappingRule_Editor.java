@@ -79,7 +79,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_pxqe0v_a0a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -162,7 +162,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inheritors");
     editorCell.setCellId("Constant_pxqe0v_a1a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -202,7 +202,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_pxqe0v_a2a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -244,7 +244,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keep input root");
     editorCell.setCellId("Constant_pxqe0v_a3a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -338,7 +338,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("labelDeclaration");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -526,7 +526,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("labelDeclaration");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

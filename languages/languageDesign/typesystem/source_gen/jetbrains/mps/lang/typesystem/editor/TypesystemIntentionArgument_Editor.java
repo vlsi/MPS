@@ -42,7 +42,7 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new TypesystemIntentionArgument_Editor._Inline_t15it2_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -92,7 +92,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_6h6dhy_a0");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no role>");
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_6h6dhy_a0a0()}));
@@ -197,7 +197,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("target");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_ConceptName(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -232,7 +232,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_sourceCardinality");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -324,7 +324,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specializes:");
     editorCell.setCellId("Constant_6h6dhy_a5c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -389,7 +389,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered");
     editorCell.setCellId("Constant_6h6dhy_g2a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -412,7 +412,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered:");
     editorCell.setCellId("Constant_6h6dhy_a0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

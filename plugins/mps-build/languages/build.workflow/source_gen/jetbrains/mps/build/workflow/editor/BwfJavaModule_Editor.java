@@ -57,7 +57,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compile java module");
     editorCell.setCellId("Constant_y27sly_a0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -85,7 +85,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depends on");
     editorCell.setCellId("Constant_y27sly_c0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -162,7 +162,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source");
     editorCell.setCellId("Constant_y27sly_a4a");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -197,7 +197,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resources");
     editorCell.setCellId("Constant_y27sly_c4a");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -232,7 +232,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
     editorCell.setCellId("Constant_y27sly_e4a");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -291,7 +291,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output");
     editorCell.setCellId("Constant_y27sly_g4a");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -324,7 +324,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "prepare");
     editorCell.setCellId("Constant_y27sly_i4a");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -416,7 +416,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate debug info");
     editorCell.setCellId("Constant_y27sly_a0_0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -447,7 +447,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate no warnings");
     editorCell.setCellId("Constant_y27sly_c0_0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -478,7 +478,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "maximum heap size (MB)");
     editorCell.setCellId("Constant_y27sly_e0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -510,7 +510,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compiler");
     editorCell.setCellId("Constant_y27sly_g0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

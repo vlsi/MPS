@@ -58,7 +58,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_165sw5_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

@@ -79,7 +79,7 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CustomMapCreator_component.ReplaceWith_HashMapCreator_cellMenu_n2wc8f_a0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_n2wc8f_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
@@ -123,7 +123,7 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_n2wc8f_a1a");
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    Collections_Style_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -195,7 +195,7 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_n2wc8f_e1a");
     Style style = new StyleImpl();
-    Collections_Style_StyleSheet.applyRightAngleBracket(style, editorCell);
+    Collections_Style_StyleSheet.apply_RightAngleBracket(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
@@ -247,7 +247,7 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_n2wc8f_a3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -277,7 +277,7 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_n2wc8f_c3a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

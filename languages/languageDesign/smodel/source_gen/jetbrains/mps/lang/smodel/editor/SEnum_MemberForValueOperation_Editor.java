@@ -36,7 +36,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "memberForValue");
     editorCell.setCellId("Constant_rkyx3t_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStaticMethod(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StaticMethod(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -46,7 +46,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_rkyx3t_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -62,7 +62,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
       editorCell.setRole("valueExpression");
     }
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParameter(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parameter(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,7 +79,7 @@ public class SEnum_MemberForValueOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_rkyx3t_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

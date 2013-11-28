@@ -18,7 +18,7 @@ public class SimpleBuilderExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyParameter(style, editorCell);
+    StyleSheet_StyleSheet.apply_Parameter(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

@@ -99,7 +99,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ka3b3c_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0b0a((editorCell == null ?
       null :
       editorCell.getContext()
@@ -176,7 +176,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ka3b3c_f0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0f0a((editorCell == null ?
       null :
       editorCell.getContext()
@@ -293,7 +293,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ka3b3c_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -308,7 +308,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label");
     Style style = new StyleImpl();
-    TypesystemStyles_StyleSheet.applyInequationLabel(style, editorCell);
+    TypesystemStyles_StyleSheet.apply_InequationLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -350,7 +350,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label_1");
     Style style = new StyleImpl();
-    TypesystemStyles_StyleSheet.applyInequationLabel(style, editorCell);
+    TypesystemStyles_StyleSheet.apply_InequationLabel(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

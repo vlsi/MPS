@@ -20,7 +20,7 @@ public class NodeReachable_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_kwpl6o_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyNodeProperty(style, editorCell);
+    transformationTest_StyleSheet.apply_NodeProperty(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

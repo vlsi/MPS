@@ -67,7 +67,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_q1hswy_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -152,7 +152,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_q1hswy_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightAngleBracket(style, editorCell);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
     editorCell.getStyle().putAll(style);
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);

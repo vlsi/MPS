@@ -247,7 +247,7 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<fields>");
       editorCell.setCellId("Constant_asco8r_a4b1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -326,7 +326,7 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<methods>");
       editorCell.setCellId("Constant_asco8r_a6b1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

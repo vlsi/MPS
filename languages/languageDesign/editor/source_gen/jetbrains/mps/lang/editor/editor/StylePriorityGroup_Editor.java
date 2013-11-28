@@ -51,7 +51,7 @@ public class StylePriorityGroup_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_guvfoh_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyStyle(style, editorCell);
+    Styles_StyleSheet.apply_style(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -96,7 +96,7 @@ public class StylePriorityGroup_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_guvfoh_a2a");
     Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);
+    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -199,7 +199,7 @@ public class StylePriorityGroup_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Add style items");
       editorCell.setCellId("Constant_guvfoh_a1d0");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -217,7 +217,7 @@ public class StylePriorityGroup_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
     editorCell.setCellId("Constant_guvfoh_a3a_0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFoldedCell(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FoldedCell(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

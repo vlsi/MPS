@@ -39,7 +39,7 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace");
     editorCell.setCellId("Constant_yk866h_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -87,7 +87,7 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_yk866h_e0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

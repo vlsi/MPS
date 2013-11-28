@@ -10,12 +10,12 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class EvaluationStyles_StyleSheet {
-  public static void applyContextKeyword(Style style, EditorCell editorCell) {
+  public static void apply_ContextKeyword(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
-  public static void applyHeader(Style style, EditorCell editorCell) {
+  public static void apply_Header(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }

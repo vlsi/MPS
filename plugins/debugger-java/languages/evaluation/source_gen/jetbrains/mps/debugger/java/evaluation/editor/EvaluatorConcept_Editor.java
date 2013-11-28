@@ -70,7 +70,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
     editorCell.setCellId("Constant_6rl195_a0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyHeader(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_Header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -108,7 +108,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static context type");
     editorCell.setCellId("Constant_6rl195_b0b0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyContextKeyword(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_ContextKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -152,7 +152,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this type");
     editorCell.setCellId("Constant_6rl195_b1b0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyContextKeyword(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_ContextKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -196,7 +196,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "visible variables");
     editorCell.setCellId("Constant_6rl195_b2b0a");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyContextKeyword(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_ContextKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -273,7 +273,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "statements to evaluate");
     editorCell.setCellId("Constant_6rl195_b0");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyHeader(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_Header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -320,7 +320,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show context:");
     editorCell.setCellId("Constant_6rl195_a0");
     Style style = new StyleImpl();
-    EvaluationStyles_StyleSheet.applyHeader(style, editorCell);
+    EvaluationStyles_StyleSheet.apply_Header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

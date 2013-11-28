@@ -103,7 +103,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7oop8x_d0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -135,7 +135,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_presentation");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -266,7 +266,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7oop8x_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

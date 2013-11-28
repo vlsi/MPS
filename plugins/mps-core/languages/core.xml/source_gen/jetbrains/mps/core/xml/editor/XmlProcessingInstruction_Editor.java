@@ -37,7 +37,7 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<?");
     editorCell.setCellId("Constant_9277sk_a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlPI(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlPI(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlProcessingInstruction_Editor._StyleParameter_QueryFunction_9277sk_a1a0((editorCell == null ?
       null :
@@ -63,7 +63,7 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_target");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlPITarget(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlPITarget(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -84,7 +84,7 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_rawData");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlPIData(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlPIData(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -101,7 +101,7 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?>");
     editorCell.setCellId("Constant_9277sk_d0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlPI(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlPI(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlProcessingInstruction_Editor._StyleParameter_QueryFunction_9277sk_a1d0((editorCell == null ?
       null :

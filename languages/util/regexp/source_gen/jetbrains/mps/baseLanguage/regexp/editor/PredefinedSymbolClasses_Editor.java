@@ -53,7 +53,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ry768y_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -111,7 +111,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ry768y_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

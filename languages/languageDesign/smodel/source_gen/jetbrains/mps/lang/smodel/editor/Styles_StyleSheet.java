@@ -12,13 +12,13 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 
 public class Styles_StyleSheet {
-  public static void applyRef_link_role(Style style, EditorCell editorCell) {
+  public static void apply_ref_link_role(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
   }
 
-  public static void applyOperationParameter(Style style, EditorCell editorCell) {
+  public static void apply_operationParameter(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 

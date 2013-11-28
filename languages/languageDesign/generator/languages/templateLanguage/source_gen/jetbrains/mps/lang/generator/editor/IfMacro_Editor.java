@@ -65,7 +65,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$IF$");
     editorCell.setCellId("Constant_t4g6n2_a0a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     if (true) {
@@ -128,7 +128,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ELSE$");
     editorCell.setCellId("Constant_t4g6n2_a1a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -329,7 +329,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
         editorCell.setRole("mappingLabel");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

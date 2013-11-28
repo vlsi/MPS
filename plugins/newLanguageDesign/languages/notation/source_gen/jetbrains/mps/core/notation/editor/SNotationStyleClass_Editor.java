@@ -50,7 +50,7 @@ public class SNotationStyleClass_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_class");
     Style style = new StyleImpl();
-    default_StyleSheet.applyString(style, editorCell);
+    default_StyleSheet.apply_string(style, editorCell);
     editorCell.getStyle().putAll(style);
     SNotationStyleClass_delete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

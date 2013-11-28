@@ -39,7 +39,7 @@ public class SingleLineComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
     editorCell.setCellId("Constant_5ng77o_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     editorCell.getStyle().putAll(style);
     UncommentSingleLineComment.setCellActions(editorCell, node, editorContext);

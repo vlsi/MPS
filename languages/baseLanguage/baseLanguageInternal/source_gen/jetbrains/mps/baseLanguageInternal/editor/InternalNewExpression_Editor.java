@@ -58,7 +58,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_svbh7s_a0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -88,7 +88,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_svbh7s_c0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -98,7 +98,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "new");
     editorCell.setCellId("Constant_svbh7s_d0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -112,7 +112,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_fqClassName");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -129,7 +129,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_svbh7s_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -183,7 +183,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_svbh7s_h0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -205,7 +205,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_svbh7s_a8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -293,7 +293,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_svbh7s_c8a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);

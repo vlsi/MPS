@@ -91,7 +91,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new InternalVariableReference_Editor.InternalVariableReference_name_postfixCellMenu_7tajt9_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();

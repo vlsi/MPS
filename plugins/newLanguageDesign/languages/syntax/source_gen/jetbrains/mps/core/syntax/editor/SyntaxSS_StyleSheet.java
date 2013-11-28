@@ -11,27 +11,27 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
 
 public class SyntaxSS_StyleSheet {
-  public static void applyKeyword(Style style, EditorCell editorCell) {
+  public static void apply_Keyword(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
-  public static void applyPunctuation(Style style, EditorCell editorCell) {
+  public static void apply_Punctuation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
 
-  public static void applyEmptyCollection(Style style, EditorCell editorCell) {
+  public static void apply_EmptyCollection(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
-  public static void applyComment(Style style, EditorCell editorCell) {
+  public static void apply_Comment(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(4161375)));
   }
 
-  public static void applyRegex(Style style, EditorCell editorCell) {
+  public static void apply_Regex(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }

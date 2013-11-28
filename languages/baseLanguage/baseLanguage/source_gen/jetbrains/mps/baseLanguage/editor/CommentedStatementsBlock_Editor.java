@@ -30,7 +30,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_ghsvq8_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBlockComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BlockComment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ghsvq8_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ghsvq8_b0(editorContext, node));
@@ -54,7 +54,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBlockComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BlockComment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());

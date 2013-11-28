@@ -46,7 +46,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<node");
     editorCell.setCellId("Constant_ow7a4w_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -125,7 +125,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "...");
       editorCell.setCellId("Constant_ow7a4w_a2a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -136,7 +136,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ow7a4w_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);

@@ -81,7 +81,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_lnae77_a0");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no name>");
@@ -166,7 +166,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
     editorCell.setCellId("Constant_lnae77_d0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -189,7 +189,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
     editorCell.setCellId("Constant_lnae77_a0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

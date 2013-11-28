@@ -78,7 +78,7 @@ public class CellModel_Table_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Table cell:");
     editorCell.setCellId("Constant_83r2zf_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyHeader(style, editorCell);
+    Styles_StyleSheet.apply_header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -112,7 +112,7 @@ public class CellModel_Table_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_83r2zf_a0d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

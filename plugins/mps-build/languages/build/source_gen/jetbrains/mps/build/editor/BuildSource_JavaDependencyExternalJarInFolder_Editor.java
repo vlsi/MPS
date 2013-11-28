@@ -45,7 +45,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "external jar");
     editorCell.setCellId("Constant_a8ta5y_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -73,7 +73,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in folder");
     editorCell.setCellId("Constant_a8ta5y_c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -103,7 +103,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_a8ta5y_e0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_reexport_inJavaDependencyImportedJarFromFolder.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -127,7 +127,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
     editorCell.setCellId("Constant_a8ta5y_a0_0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

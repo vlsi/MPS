@@ -34,7 +34,7 @@ public class VariableInialized_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "init");
     editorCell.setCellId("Constant_y3jdtg_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

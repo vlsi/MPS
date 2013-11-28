@@ -28,7 +28,7 @@ public class DestroyWall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_d48ed0_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    KajakStyles_StyleSheet.applyCommand(style, editorCell);
+    KajakStyles_StyleSheet.apply_Command(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

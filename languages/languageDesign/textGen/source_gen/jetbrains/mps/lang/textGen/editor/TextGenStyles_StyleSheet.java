@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TextGenStyles_StyleSheet {
-  public static void applyTextGenOperation(Style style, EditorCell editorCell) {
+  public static void apply_TextGenOperation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyAppendPart(Style style, EditorCell editorCell) {
+  public static void apply_AppendPart(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
 

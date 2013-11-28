@@ -76,7 +76,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_89tgy3_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0()}));
     return editorCell;

@@ -50,7 +50,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$$");
     editorCell.setCellId("Constant_e7cx8x_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);

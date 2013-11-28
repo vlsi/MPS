@@ -112,7 +112,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_62ivzp_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -167,7 +167,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("variableDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_StaticField(style, editorCell);
       editorCell.getStyle().putAll(style);
       if (true) {
         editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

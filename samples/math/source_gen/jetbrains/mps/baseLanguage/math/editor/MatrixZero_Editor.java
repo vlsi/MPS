@@ -49,7 +49,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "0");
     editorCell.setCellId("Constant_d13tpt_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -82,7 +82,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_d13tpt_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

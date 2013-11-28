@@ -103,7 +103,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for concept");
     editorCell.setCellId("Constant_2ji0fa_c0a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -156,7 +156,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("forConcept");
       }
       Style style = new StyleImpl();
-      SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
+      SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

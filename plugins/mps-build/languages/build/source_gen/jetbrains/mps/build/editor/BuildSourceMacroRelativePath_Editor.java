@@ -47,7 +47,7 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_3is4rg_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyMacro(style, editorCell);
+    buildStyles_StyleSheet.apply_macro(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -111,7 +111,7 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
         editorCell.setRole("macro");
       }
       Style style = new StyleImpl();
-      buildStyles_StyleSheet.applyMacro(style, editorCell);
+      buildStyles_StyleSheet.apply_macro(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

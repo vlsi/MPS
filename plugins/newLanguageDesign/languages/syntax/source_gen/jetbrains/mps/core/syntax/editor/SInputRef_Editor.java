@@ -109,7 +109,7 @@ public class SInputRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(no-eoi)");
     editorCell.setCellId("Constant_dsjx60_a1a");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyKeyword(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     delete_NoEoi.setCellActions(editorCell, node, editorContext);

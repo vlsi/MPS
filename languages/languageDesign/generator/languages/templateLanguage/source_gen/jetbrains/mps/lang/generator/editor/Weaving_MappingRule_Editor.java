@@ -130,7 +130,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("labelDeclaration");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -201,7 +201,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
     editorCell.setCellId("Constant_gkr2rl_a1d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -346,7 +346,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("labelDeclaration");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

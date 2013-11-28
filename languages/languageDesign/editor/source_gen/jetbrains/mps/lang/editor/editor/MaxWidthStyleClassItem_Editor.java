@@ -51,7 +51,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_7mrjrs_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_7mrjrs_a0a0()}));
     return editorCell;
@@ -81,7 +81,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_NumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();

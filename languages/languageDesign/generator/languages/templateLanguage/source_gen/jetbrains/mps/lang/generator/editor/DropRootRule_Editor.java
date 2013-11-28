@@ -49,7 +49,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new DropRootRule_Editor._Inline_fdnaen_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
+    SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -106,7 +106,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_fdnaen_b0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

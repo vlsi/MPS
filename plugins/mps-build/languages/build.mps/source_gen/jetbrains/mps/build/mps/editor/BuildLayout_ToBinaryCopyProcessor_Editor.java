@@ -41,7 +41,7 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
   private EditorCell createComponent_3hb8bt_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(strip implementation)");
     editorCell.setCellId("Constant_3hb8bt_b0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -73,7 +73,7 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
     editorCell.setCellId("Constant_3hb8bt_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

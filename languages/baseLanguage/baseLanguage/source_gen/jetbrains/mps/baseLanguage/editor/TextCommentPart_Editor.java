@@ -35,7 +35,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyTODO(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_TODO(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new LastCommentPart());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

@@ -28,7 +28,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Error_nb4xc9_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

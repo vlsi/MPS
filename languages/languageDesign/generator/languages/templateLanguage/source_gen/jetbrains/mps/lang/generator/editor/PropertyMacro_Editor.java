@@ -48,7 +48,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_y5igai_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    Styles_StyleSheet.apply_macroStart(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     PropertyMacroActions.setCellActions(editorCell, node, editorContext);
@@ -65,7 +65,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_comment");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroDescriptionText(style, editorCell);
+    Styles_StyleSheet.apply_macroDescriptionText(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -87,7 +87,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Property.class);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyNodeUnderMacro(style, editorCell);
+    Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

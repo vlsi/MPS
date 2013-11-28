@@ -93,7 +93,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_mi4qyq_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((editorCell == null ?
       null :
       editorCell.getContext()
@@ -170,7 +170,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_mi4qyq_f0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((editorCell == null ?
       null :
       editorCell.getContext()
@@ -263,7 +263,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_mi4qyq_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

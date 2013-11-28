@@ -10,16 +10,16 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class SharedStyles_StyleSheet {
-  public static void applyReferenceDecorated(Style style, EditorCell editorCell) {
+  public static void apply_ReferenceDecorated(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
-  public static void applyReferenceOnConcept(Style style, EditorCell editorCell) {
+  public static void apply_ReferenceOnConcept(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
-  public static void applyReferenceOnConceptualFeature(Style style, EditorCell editorCell) {
+  public static void apply_ReferenceOnConceptualFeature(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }

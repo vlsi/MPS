@@ -44,7 +44,7 @@ public class BuildSource_JavaDependencyModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
     editorCell.setCellId("Constant_qk2lri_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -109,7 +109,7 @@ public class BuildSource_JavaDependencyModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(reexport)");
     editorCell.setCellId("Constant_qk2lri_c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_reexport_inJavaDependencyModule.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -133,7 +133,7 @@ public class BuildSource_JavaDependencyModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexport:");
     editorCell.setCellId("Constant_qk2lri_a0_0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

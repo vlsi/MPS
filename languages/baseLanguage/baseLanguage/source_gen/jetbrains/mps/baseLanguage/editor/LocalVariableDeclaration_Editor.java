@@ -121,7 +121,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_i0gfbw_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -177,7 +177,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_i0gfbw_a4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

@@ -41,7 +41,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press keys");
     editorCell.setCellId("Constant_pkvqak_a0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyEditorOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -109,7 +109,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_pkvqak_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

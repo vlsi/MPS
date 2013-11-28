@@ -12,14 +12,14 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class structure_StyleSheet {
-  public static void applyAnnotationNode(Style style, EditorCell editorCell) {
+  public static void apply_AnnotationNode(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyKeyword(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+  public static void apply_Keyword(Style style, EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
   }
 
 

@@ -11,17 +11,17 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class StyleSheet_StyleSheet {
-  public static void applyInternalKeyword(Style style, EditorCell editorCell) {
+  public static void apply_InternalKeyword(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyInternalName(Style style, EditorCell editorCell) {
+  public static void apply_InternalName(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applySquareBracket(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.applyBracket(style, editorCell);
+  public static void apply_SquareBracket(Style style, EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.apply_Bracket(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.SELECTABLE, false);
   }

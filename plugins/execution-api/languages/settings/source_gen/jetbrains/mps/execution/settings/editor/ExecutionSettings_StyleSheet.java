@@ -9,11 +9,11 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ExecutionSettings_StyleSheet {
-  public static void applyPersistentConfigurationRef(Style style, EditorCell editorCell) {
+  public static void apply_persistentConfigurationRef(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
-  public static void applyPersistentConfigurationRefDeprecated(Style style, EditorCell editorCell) {
+  public static void apply_persistentConfigurationRefDeprecated(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.STRIKE_OUT, true);
   }

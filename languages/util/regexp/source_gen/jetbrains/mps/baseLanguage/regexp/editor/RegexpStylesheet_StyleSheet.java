@@ -9,18 +9,18 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RegexpStylesheet_StyleSheet {
-  public static void applyRegexpBrace(Style style, EditorCell editorCell) {
+  public static void apply_RegexpBrace(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.MATCHING_LABEL, "regexpBrace");
   }
 
-  public static void applyLeftRegexpBrace(Style style, EditorCell editorCell) {
-    RegexpStylesheet_StyleSheet.applyRegexpBrace(style, editorCell);
+  public static void apply_LeftRegexpBrace(Style style, EditorCell editorCell) {
+    RegexpStylesheet_StyleSheet.apply_RegexpBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
   }
 
-  public static void applyRightRegexpBrace(Style style, EditorCell editorCell) {
-    RegexpStylesheet_StyleSheet.applyRegexpBrace(style, editorCell);
+  public static void apply_RightRegexpBrace(Style style, EditorCell editorCell) {
+    RegexpStylesheet_StyleSheet.apply_RegexpBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
 

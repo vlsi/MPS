@@ -10,54 +10,54 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Styles_StyleSheet {
-  public static void applyGeneratorKeyWord(Style style, EditorCell editorCell) {
+  public static void apply_GeneratorKeyWord(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyReference(Style style, EditorCell editorCell) {
+  public static void apply_reference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
-  public static void applyConstant(Style style, EditorCell editorCell) {
+  public static void apply_constant(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyLiteral(Style style, EditorCell editorCell) {
+  public static void apply_literal(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
-  public static void applyMacroStart(Style style, EditorCell editorCell) {
+  public static void apply_macroStart(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.EDITABLE, true);
   }
 
-  public static void applyNodeUnderMacro(Style style, EditorCell editorCell) {
+  public static void apply_nodeUnderMacro(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
   }
 
-  public static void applyMappingLabelReference(Style style, EditorCell editorCell) {
+  public static void apply_mappingLabelReference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
   }
 
-  public static void applyMacroDescriptionText(Style style, EditorCell editorCell) {
+  public static void apply_macroDescriptionText(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE)));
   }
 
-  public static void applyMappingRuleDeclaration(Style style, EditorCell editorCell) {
+  public static void apply_mappingRuleDeclaration(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
   }
 
-  public static void applyMappingRuleReference(Style style, EditorCell editorCell) {
-    Styles_StyleSheet.applyMappingRuleDeclaration(style, editorCell);
+  public static void apply_mappingRuleReference(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.apply_mappingRuleDeclaration(style, editorCell);
   }
 
 

@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class notation_StyleSheet {
-  public static void applyToken(Style style, EditorCell editorCell) {
+  public static void apply_token(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }

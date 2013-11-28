@@ -50,7 +50,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_7t32xl_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -144,7 +144,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("label");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -289,7 +289,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_7t32xl_a2a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -349,7 +349,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("label");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

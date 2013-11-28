@@ -9,13 +9,13 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TypesystemStyles_StyleSheet {
-  public static void applyInequationLabel(Style style, EditorCell editorCell) {
+  public static void apply_InequationLabel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.WHITE));
     style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
-  public static void applyInequationsGroupsLabel(Style style, EditorCell editorCell) {
+  public static void apply_InequationsGroupsLabel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.WHITE));
     style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));

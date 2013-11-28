@@ -148,7 +148,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
         editorCell.setRole("mappingLabel");
       }
       Style style = new StyleImpl();
-      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -175,7 +175,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("NM_property_comment");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyMacroDescriptionText(style, editorCell);
+    Styles_StyleSheet.apply_macroDescriptionText(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -197,7 +197,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyNodeUnderMacro(style, editorCell);
+    Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

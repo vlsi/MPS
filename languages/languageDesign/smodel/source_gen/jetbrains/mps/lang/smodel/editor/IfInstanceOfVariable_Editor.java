@@ -51,7 +51,7 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLocalVariable(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LocalVariable(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IfInstanceOfVariable_Editor.IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();

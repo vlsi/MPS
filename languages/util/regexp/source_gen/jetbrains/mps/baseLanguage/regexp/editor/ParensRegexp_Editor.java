@@ -48,7 +48,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_igyl5p_a0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -116,7 +116,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_igyl5p_c0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

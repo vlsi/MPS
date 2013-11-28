@@ -36,7 +36,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get copied output for");
     editorCell.setCellId("Constant_h58zhi_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -46,7 +46,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_h58zhi_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -76,7 +76,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_h58zhi_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

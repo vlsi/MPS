@@ -57,7 +57,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root template");
     editorCell.setCellId("Constant_1qmre8_a0a");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -79,7 +79,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
     editorCell.setCellId("Constant_1qmre8_a1a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

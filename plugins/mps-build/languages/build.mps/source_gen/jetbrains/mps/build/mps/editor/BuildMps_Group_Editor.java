@@ -51,7 +51,7 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mps group");
     editorCell.setCellId("Constant_pilq2t_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyProjectPartKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_projectPartKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

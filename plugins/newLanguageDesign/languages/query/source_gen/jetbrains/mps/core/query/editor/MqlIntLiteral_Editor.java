@@ -35,7 +35,7 @@ public class MqlIntLiteral_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyIntLiteral(style, editorCell);
+    MqlSS_StyleSheet.apply_IntLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

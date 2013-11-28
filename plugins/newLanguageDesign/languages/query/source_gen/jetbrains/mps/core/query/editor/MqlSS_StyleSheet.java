@@ -10,20 +10,20 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class MqlSS_StyleSheet {
-  public static void applyKeyword(Style style, EditorCell editorCell) {
+  public static void apply_Keyword(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
   }
 
-  public static void applyIntLiteral(Style style, EditorCell editorCell) {
+  public static void apply_IntLiteral(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 
-  public static void applyStringLiteral(Style style, EditorCell editorCell) {
+  public static void apply_StringLiteral(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 
-  public static void applyPunctuation(Style style, EditorCell editorCell) {
+  public static void apply_Punctuation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
 

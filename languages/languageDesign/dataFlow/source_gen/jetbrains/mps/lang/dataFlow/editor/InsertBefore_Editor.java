@@ -32,7 +32,7 @@ public class InsertBefore_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_l4xam2_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInsertPosition(style, editorCell);
+    DataFlow_StyleSheet.apply_InsertPosition(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;

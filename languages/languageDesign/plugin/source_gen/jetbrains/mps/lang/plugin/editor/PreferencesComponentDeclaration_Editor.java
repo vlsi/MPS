@@ -201,7 +201,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<persistent properties>");
       editorCell.setCellId("Constant_7chywb_a0b1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyEmptyCell(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -339,7 +339,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no preference pages>");
       editorCell.setCellId("Constant_7chywb_a7b1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyEmptyCell(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

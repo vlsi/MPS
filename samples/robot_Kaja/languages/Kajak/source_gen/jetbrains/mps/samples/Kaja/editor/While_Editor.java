@@ -39,7 +39,7 @@ public class While_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_xklbgd_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_3_RTransform");
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
@@ -70,7 +70,7 @@ public class While_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_xklbgd_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, While_Editor._StyleParameter_QueryFunction_xklbgd_a0c0((editorCell == null ?
       null :
       editorCell.getContext()
@@ -127,7 +127,7 @@ public class While_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_xklbgd_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

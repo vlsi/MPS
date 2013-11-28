@@ -49,7 +49,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_bblft7_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -79,7 +79,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_bblft7_c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -89,7 +89,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_bblft7_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -115,7 +115,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_bblft7_a4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -145,7 +145,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_bblft7_c4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -179,7 +179,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_bblft7_g0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -193,7 +193,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_fieldName");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -210,7 +210,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_bblft7_i0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

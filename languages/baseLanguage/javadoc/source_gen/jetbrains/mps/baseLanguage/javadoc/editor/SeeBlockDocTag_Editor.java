@@ -35,7 +35,7 @@ public class SeeBlockDocTag_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@see");
     editorCell.setCellId("Constant_s8euu0_a0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyCommentTag(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -37,7 +37,7 @@ public class BwfMacroListImport_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "import macros from");
     editorCell.setCellId("Constant_5bz59z_a0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -65,7 +65,7 @@ public class BwfMacroListImport_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "prefix");
     editorCell.setCellId("Constant_5bz59z_c0");
     Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

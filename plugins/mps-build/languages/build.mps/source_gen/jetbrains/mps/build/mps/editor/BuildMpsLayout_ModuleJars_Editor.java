@@ -52,7 +52,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_aqxvre_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
+    buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_ModuleJars_Editor.ReplaceWith_BuildLayout_Node_cellMenu_aqxvre_a0a0()}));
@@ -138,7 +138,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "jar locations:");
     editorCell.setCellId("Constant_aqxvre_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -211,7 +211,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
     editorCell.setCellId("Constant_aqxvre_c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

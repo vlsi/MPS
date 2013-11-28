@@ -82,7 +82,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_lqrwoi_a0a");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -112,7 +112,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_lqrwoi_c0a");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -122,7 +122,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "new");
     editorCell.setCellId("Constant_lqrwoi_d0a");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -136,7 +136,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_fqClassName");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -153,7 +153,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_lqrwoi_f0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -207,7 +207,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_lqrwoi_h0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -229,7 +229,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_lqrwoi_a8a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -317,7 +317,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_lqrwoi_c8a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);
@@ -358,7 +358,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_lqrwoi_a1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     AnonymousClass_CurlyBraces.setCellActions(editorCell, node, editorContext);
@@ -487,7 +487,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " << fields >>");
       editorCell.setCellId("Constant_lqrwoi_a0d1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyEmptyCell(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
       style.set(StyleAttributes.SELECTABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
@@ -580,7 +580,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " << methods >>");
       editorCell.setCellId("Constant_lqrwoi_a0f1a");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyEmptyCell(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_EmptyCell(style, editorCell);
       style.set(StyleAttributes.SELECTABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
@@ -655,7 +655,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_lqrwoi_h1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     AnonymousClass_CurlyBraces.setCellActions(editorCell, node, editorContext);

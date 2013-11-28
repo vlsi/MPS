@@ -11,41 +11,41 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class RunConfigurations_StyleSheet {
-  public static void applyLessThen(Style style, EditorCell editorCell) {
+  public static void apply_lessThen(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "type.brace");
   }
 
-  public static void applyGreaterThen(Style style, EditorCell editorCell) {
+  public static void apply_greaterThen(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "type.brace");
   }
 
-  public static void applyOperation(Style style, EditorCell editorCell) {
+  public static void apply_operation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
   }
 
-  public static void applyLeftOperationBrace(Style style, EditorCell editorCell) {
-    RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+  public static void apply_leftOperationBrace(Style style, EditorCell editorCell) {
+    RunConfigurations_StyleSheet.apply_operation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "operation.brace");
   }
 
-  public static void applyRightOperationBrace(Style style, EditorCell editorCell) {
-    RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+  public static void apply_rightOperationBrace(Style style, EditorCell editorCell) {
+    RunConfigurations_StyleSheet.apply_operation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "operation.brace");
   }
 
-  public static void applyConstructorParameter(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+  public static void apply_constructorParameter(Style style, EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
 
-  public static void applyConceptFunctionHeader(Style style, EditorCell editorCell) {
+  public static void apply_conceptFunctionHeader(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }

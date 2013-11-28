@@ -9,24 +9,24 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class DataFlow_StyleSheet {
-  public static void applyInstruction(Style style, EditorCell editorCell) {
+  public static void apply_Instruction(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
-  public static void applyPosition(Style style, EditorCell editorCell) {
+  public static void apply_Position(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 
-  public static void applyMayBeUnreachable(Style style, EditorCell editorCell) {
+  public static void apply_MayBeUnreachable(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.MATCHING_LABEL, "MayBeUnreachable");
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
-  public static void applyLabel(Style style, EditorCell editorCell) {
+  public static void apply_Label(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyInsertPosition(Style style, EditorCell editorCell) {
+  public static void apply_InsertPosition(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 

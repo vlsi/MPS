@@ -43,7 +43,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!--");
     editorCell.setCellId("Constant_5fx40y_a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlComment(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlComment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0a0((editorCell == null ?
       null :
       editorCell.getContext()
@@ -203,7 +203,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_5fx40y_c0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlComment(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlComment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0c0((editorCell == null ?
       null :
       editorCell.getContext()

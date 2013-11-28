@@ -57,7 +57,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_y1wtxd_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -129,7 +129,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_y1wtxd_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -169,7 +169,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referent set handler");
     editorCell.setCellId("Constant_y1wtxd_a4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -232,7 +232,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keeps original reference");
     editorCell.setCellId("Constant_y1wtxd_a3e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -288,7 +288,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scope");
     editorCell.setCellId("Constant_y1wtxd_e4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -349,7 +349,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "validator");
     editorCell.setCellId("Constant_y1wtxd_a7e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -397,7 +397,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "presentation");
     editorCell.setCellId("Constant_y1wtxd_i4a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

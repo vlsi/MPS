@@ -80,7 +80,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface concept");
     editorCell.setCellId("Constant_7v1nzk_a0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -141,7 +141,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_7v1nzk_a2a0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -267,7 +267,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties:");
     editorCell.setCellId("Constant_7v1nzk_b1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -339,7 +339,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children:");
     editorCell.setCellId("Constant_7v1nzk_e1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -432,7 +432,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "references:");
     editorCell.setCellId("Constant_7v1nzk_h1c0");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
+    structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

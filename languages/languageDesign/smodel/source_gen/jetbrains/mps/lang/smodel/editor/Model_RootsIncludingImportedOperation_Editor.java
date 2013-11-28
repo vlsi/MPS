@@ -47,7 +47,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_5c49m1_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -124,7 +124,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
         editorCell.setRole("concept");
       }
       Style style = new StyleImpl();
-      SharedStyles_StyleSheet.applyReferenceOnConcept(style, editorCell);
+      SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -142,7 +142,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_5c49m1_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

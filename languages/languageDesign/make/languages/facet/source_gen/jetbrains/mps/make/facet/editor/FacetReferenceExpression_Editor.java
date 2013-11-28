@@ -35,7 +35,7 @@ public class FacetReferenceExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
     editorCell.setCellId("Constant_vp6dq8_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -53,7 +53,7 @@ public class FacetReferenceExpression_Editor extends DefaultNodeEditor {
       editorCell.setRole("reference");
     }
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_StaticField(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

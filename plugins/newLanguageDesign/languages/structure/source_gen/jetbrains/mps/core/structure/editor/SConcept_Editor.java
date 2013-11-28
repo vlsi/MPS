@@ -125,7 +125,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_yrkjzv_b0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     SConcept_deleteAbstract.setCellActions(editorCell, node, editorContext);
@@ -141,7 +141,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_yrkjzv_c0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     SConcept_deleteFinal.setCellActions(editorCell, node, editorContext);
@@ -157,7 +157,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_yrkjzv_d0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     SConcept_deleteCanBeRoot.setCellActions(editorCell, node, editorContext);
@@ -173,7 +173,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_yrkjzv_e0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
@@ -217,7 +217,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_yrkjzv_g0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -301,7 +301,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "implements");
     editorCell.setCellId("Constant_yrkjzv_a8a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -385,7 +385,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_yrkjzv_a9a");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
@@ -398,7 +398,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_yrkjzv_a9a_0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -474,7 +474,7 @@ public class SConcept_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_yrkjzv_l0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyPunctuation(style, editorCell);
+    default_StyleSheet.apply_punctuation(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

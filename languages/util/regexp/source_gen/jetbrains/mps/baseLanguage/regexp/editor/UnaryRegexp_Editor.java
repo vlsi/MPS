@@ -49,7 +49,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xoe8gq_a0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -83,7 +83,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xoe8gq_c0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -96,7 +96,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_xoe8gq_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.SELECTABLE, true);

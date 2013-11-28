@@ -61,7 +61,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
     editorCell.setCellId("Constant_uc5iyq_a0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -73,7 +73,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
     editorCell.setCellId("Constant_uc5iyq_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -83,7 +83,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
     editorCell.setCellId("Constant_uc5iyq_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyJavaDoc(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -94,7 +94,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
     editorCell.setCellId("Constant_uc5iyq_d0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -105,7 +105,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**...*/");
     editorCell.setCellId("Constant_uc5iyq_a0a_0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFoldedCell(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FoldedCell(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

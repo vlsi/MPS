@@ -11,8 +11,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class KajakStyles_StyleSheet {
-  public static void applyCommand(Style style, EditorCell editorCell) {
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+  public static void apply_Command(Style style, EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
   }

@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 
 public class workflowStyles_StyleSheet {
-  public static void applyKeyword(Style style, EditorCell editorCell) {
+  public static void apply_keyword(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(3158064)));
   }

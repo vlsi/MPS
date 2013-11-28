@@ -53,7 +53,7 @@ public class SNamedPattern_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_qjyhm9_b0");
     Style style = new StyleImpl();
-    SyntaxSS_StyleSheet.applyPunctuation(style, editorCell);
+    SyntaxSS_StyleSheet.apply_Punctuation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

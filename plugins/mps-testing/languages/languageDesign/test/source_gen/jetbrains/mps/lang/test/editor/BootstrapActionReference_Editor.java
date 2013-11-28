@@ -44,7 +44,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "by id:");
     editorCell.setCellId("Constant_pdl482_a0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyEditorOperation(style, editorCell);
+    transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

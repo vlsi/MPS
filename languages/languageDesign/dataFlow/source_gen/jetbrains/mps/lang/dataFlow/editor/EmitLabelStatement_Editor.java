@@ -33,7 +33,7 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_cauuu7_a0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyLabel(style, editorCell);
+    DataFlow_StyleSheet.apply_Label(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

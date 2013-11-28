@@ -55,7 +55,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "font-style");
     editorCell.setCellId("Constant_n0gj60_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_n0gj60_a0a0()}));

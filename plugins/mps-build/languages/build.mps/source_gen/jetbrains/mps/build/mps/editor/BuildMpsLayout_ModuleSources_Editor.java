@@ -51,7 +51,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_gp4zyx_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
+    buildStyles_StyleSheet.apply_outputLayout(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_ModuleSources_Editor.ReplaceWith_BuildLayout_Node_cellMenu_gp4zyx_a0a0()}));
@@ -126,7 +126,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(models only)");
     editorCell.setCellId("Constant_gp4zyx_c0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_ModuleSources_modelsOnly.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -163,7 +163,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
     editorCell.setCellId("Constant_gp4zyx_a0a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -203,7 +203,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "models only:");
     editorCell.setCellId("Constant_gp4zyx_a1a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

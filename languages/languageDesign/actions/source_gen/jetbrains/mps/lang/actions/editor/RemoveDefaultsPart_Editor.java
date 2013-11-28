@@ -29,7 +29,7 @@ public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove defaults");
     editorCell.setCellId("Constant_udsylt_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

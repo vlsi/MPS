@@ -42,7 +42,7 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_qualifier");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDependency_Editor.ReplaceWith_TargetDependency_cellMenu_x08tk8_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();

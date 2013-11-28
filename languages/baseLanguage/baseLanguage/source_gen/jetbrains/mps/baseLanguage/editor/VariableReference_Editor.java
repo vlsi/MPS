@@ -74,7 +74,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("variableDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

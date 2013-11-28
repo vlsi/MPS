@@ -46,7 +46,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "typeof");
     editorCell.setCellId("Constant_ndq0bl_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyCompactKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_CompactKeyWord(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(TypeOfExpression_Editor._StyleParameter_QueryFunction_ndq0bl_a0a0((editorCell == null ?
       null :
       editorCell.getContext()
@@ -71,7 +71,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ndq0bl_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -101,7 +101,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ndq0bl_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -120,7 +120,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip dependency on current:");
     editorCell.setCellId("Constant_ndq0bl_a0_0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

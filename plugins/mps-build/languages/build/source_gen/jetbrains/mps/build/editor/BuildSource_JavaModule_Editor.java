@@ -56,7 +56,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java module");
     editorCell.setCellId("Constant_kr3er8_a0");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyProjectPartKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_projectPartKeyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -116,7 +116,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
     editorCell.setCellId("Constant_kr3er8_a2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -226,7 +226,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_kr3er8_d2a");
     Style style = new StyleImpl();
-    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

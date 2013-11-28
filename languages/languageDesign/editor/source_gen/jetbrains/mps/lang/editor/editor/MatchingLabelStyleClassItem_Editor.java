@@ -53,7 +53,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_uvxm5p_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
+    Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -104,7 +104,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_uvxm5p_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0()}));

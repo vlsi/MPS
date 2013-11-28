@@ -34,7 +34,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "code");
     editorCell.setCellId("Constant_aipk5v_a0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -44,7 +44,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_aipk5v_b0");
     Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

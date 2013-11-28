@@ -49,7 +49,7 @@ public class MqlPackage_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "package");
     editorCell.setCellId("Constant_7oit87_a0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyKeyword(style, editorCell);
+    MqlSS_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -77,7 +77,7 @@ public class MqlPackage_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_7oit87_c0");
     Style style = new StyleImpl();
-    MqlSS_StyleSheet.applyPunctuation(style, editorCell);
+    MqlSS_StyleSheet.apply_Punctuation(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);

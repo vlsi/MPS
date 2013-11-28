@@ -52,7 +52,7 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrated to");
     editorCell.setCellId("Constant_ykmn9g_a0a");
     Style style = new StyleImpl();
-    structure_StyleSheet.applyAnnotationNode(style, editorCell);
+    structure_StyleSheet.apply_AnnotationNode(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     DeprecatedNodeAnnotation_ActionMap.setCellActions(editorCell, node, editorContext);

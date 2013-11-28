@@ -40,7 +40,7 @@ public class TemplateParameterReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new TemplateParameterReference_Editor._Inline_6oagtk_a0a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    RunConfigurations_StyleSheet.applyConstructorParameter(style, editorCell);
+    RunConfigurations_StyleSheet.apply_constructorParameter(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,7 +79,7 @@ public class TemplateParameterReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("variableDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_VariableName(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

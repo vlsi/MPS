@@ -39,7 +39,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_rbbf37_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_rbbf37_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_rbbf37_b0(editorContext, node));
@@ -221,7 +221,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u0421oncept property cell:");
     editorCell.setCellId("Constant_rbbf37_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyHeader(style, editorCell);
+    Styles_StyleSheet.apply_header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -259,7 +259,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
     editorCell.setCellId("Constant_rbbf37_a0d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -342,7 +342,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
     editorCell.setCellId("Constant_rbbf37_a1d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -392,7 +392,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty text*");
     editorCell.setCellId("Constant_rbbf37_a2d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

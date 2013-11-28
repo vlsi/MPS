@@ -43,7 +43,7 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
     editorCell.setCellId("Constant_40aq2x_a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlEntityRef(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlEntityRef(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlEntityRef_Editor._StyleParameter_QueryFunction_40aq2x_a1a0((editorCell == null ?
       null :
@@ -69,7 +69,7 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_entityName");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlEntityRef(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlEntityRef(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRef_Editor.XmlEntityRef_entityName_cellMenu_40aq2x_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -95,7 +95,7 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_40aq2x_c0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlEntityRef(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlEntityRef(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlEntityRef_Editor._StyleParameter_QueryFunction_40aq2x_a1c0((editorCell == null ?
       null :

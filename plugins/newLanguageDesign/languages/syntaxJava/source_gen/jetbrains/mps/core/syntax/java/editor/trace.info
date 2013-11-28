@@ -480,8 +480,8 @@
     <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="68" startPosition="41" endLine="69" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="69" startPosition="42" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="71" startPosition="7" endLine="72" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="72" startPosition="36" endLine="73" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="73" startPosition="61" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="72" startPosition="36" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="73" startPosition="62" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="74" startPosition="54" endLine="75" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5989029785192113726" fileName="SSymbolRefExpression_Editor.java" startLine="75" startPosition="42" endLine="76" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5989029785192113718" fileName="SSymbolRefExpression_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -544,9 +544,9 @@
     <unitInfo nodeId="5989029785192113718" fileName="SSymbolRefExpression_Editor.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.core.syntax.java.editor.SSymbolRefExpression_Editor" />
   </root>
   <root nodeRef="r:7ec26ee7-b99c-48f6-9850-811b7d91fc37(jetbrains.mps.core.syntax.java.editor)/5989029785192122025">
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="70" endLine="12" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applySymRef#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="70" endLine="12" endPosition="59" />
+    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="71" endLine="12" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_SymRef#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="71" endLine="12" endPosition="59" />
     <scopeInfo nodeId="5989029785192122025" fileName="SyntaxJavaSS_StyleSheet.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="5989029785192122025" varName="editorCell" />
       <varInfo nodeId="5989029785192122025" varName="style" />

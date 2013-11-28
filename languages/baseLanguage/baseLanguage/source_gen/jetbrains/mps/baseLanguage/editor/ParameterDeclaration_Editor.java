@@ -125,7 +125,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_vsmugd_b0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

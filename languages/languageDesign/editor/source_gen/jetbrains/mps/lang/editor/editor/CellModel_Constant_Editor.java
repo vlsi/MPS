@@ -36,7 +36,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8hdu2g_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     if (renderingCondition_8hdu2g_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent_8hdu2g_a0(editorContext, node));
@@ -66,7 +66,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a0b0((editorCell == null ?
       null :
       editorCell.getContext()
@@ -199,7 +199,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Constant cell:");
     editorCell.setCellId("Constant_8hdu2g_c0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyHeader(style, editorCell);
+    Styles_StyleSheet.apply_header(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -234,7 +234,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_8hdu2g_a0d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -280,7 +280,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
     editorCell.setCellId("Constant_8hdu2g_a1d0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
+    Styles_StyleSheet.apply_property(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

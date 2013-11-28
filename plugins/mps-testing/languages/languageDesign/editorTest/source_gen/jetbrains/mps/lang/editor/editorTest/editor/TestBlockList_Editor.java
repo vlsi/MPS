@@ -39,7 +39,7 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_mkv9rd_a0");
     Style style = new StyleImpl();
-    TestLanguage_StyleSheet_StyleSheet.applyBaseStyle(style, editorCell);
+    TestLanguage_StyleSheet_StyleSheet.apply_baseStyle(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -99,7 +99,7 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_mkv9rd_c0");
     Style style = new StyleImpl();
-    TestLanguage_StyleSheet_StyleSheet.applyBaseStyle(style, editorCell);
+    TestLanguage_StyleSheet_StyleSheet.apply_baseStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

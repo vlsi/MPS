@@ -71,7 +71,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_7zoim2_a0a");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -99,7 +99,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_7zoim2_c0a");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -164,7 +164,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_7zoim2_e0a");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -174,7 +174,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_7zoim2_f0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -242,7 +242,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_7zoim2_h0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_BaseAngleBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -263,7 +263,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_7zoim2_a0a_0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -291,7 +291,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_7zoim2_c0a_0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    StyleSheet_StyleSheet.apply_InternalKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -356,7 +356,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_7zoim2_e0a_0");
     Style style = new StyleImpl();
-    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    StyleSheet_StyleSheet.apply_SquareBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

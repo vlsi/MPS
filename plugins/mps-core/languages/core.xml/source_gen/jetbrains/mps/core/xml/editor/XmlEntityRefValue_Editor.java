@@ -43,7 +43,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
     editorCell.setCellId("Constant_poez2y_a0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttrEntityRefValue(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1a0((editorCell == null ?
       null :
@@ -70,7 +70,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_entityName");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttrEntityRefValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRefValue_Editor.XmlEntityRefValue_entityName_cellMenu_poez2y_a0b0()}));
@@ -97,7 +97,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_poez2y_c0");
     Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    XmlSS_StyleSheet.apply_xmlAttrEntityRefValue(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1c0((editorCell == null ?
       null :

@@ -50,7 +50,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_yzyesl_a0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -84,7 +84,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_yzyesl_c0");
     Style style = new StyleImpl();
-    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -98,7 +98,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_yzyesl_d0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -130,7 +130,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_yzyesl_f0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Matching(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);

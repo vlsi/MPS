@@ -56,7 +56,7 @@ public class SEnumerationMember_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(default)");
     editorCell.setCellId("Constant_l86t9b_b0");
     Style style = new StyleImpl();
-    default_StyleSheet.applyKeyword(style, editorCell);
+    default_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     SEnumerationMember_removeDefault.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

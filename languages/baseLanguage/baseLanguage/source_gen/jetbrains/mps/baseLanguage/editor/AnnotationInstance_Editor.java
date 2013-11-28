@@ -51,7 +51,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_d5p1uc_a0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -105,7 +105,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
         editorCell.setRole("annotation");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_Annotation(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -140,7 +140,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_d5p1uc_a2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -223,7 +223,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_d5p1uc_c2a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

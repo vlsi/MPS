@@ -50,7 +50,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
     editorCell.setCellId("Constant_q2jz9e_a0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ClassifierDocComment_Editor._StyleParameter_QueryFunction_q2jz9e_a0a0((editorCell == null ?
       null :
       editorCell.getContext()
@@ -73,7 +73,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_body");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -178,7 +178,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_author");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -231,7 +231,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_since");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -284,7 +284,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_version");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -337,7 +337,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_see");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -390,7 +390,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_param");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
@@ -442,7 +442,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
     editorCell.setCellId("Constant_q2jz9e_d0");
     Style style = new StyleImpl();
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

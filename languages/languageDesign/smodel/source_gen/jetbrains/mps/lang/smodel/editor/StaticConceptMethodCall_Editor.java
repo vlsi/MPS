@@ -111,7 +111,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_fn54i1_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -161,7 +161,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
         editorCell.setRole("baseMethodDeclaration");
       }
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyMPSMethodCall(style, editorCell);
+      BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);

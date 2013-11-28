@@ -9,20 +9,20 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class transformationTest_StyleSheet {
-  public static void applyAssertStyle(Style style, EditorCell editorCell) {
+  public static void apply_AssertStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 
-  public static void applyNodeAnnotation(Style style, EditorCell editorCell) {
+  public static void apply_NodeAnnotation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyNodeProperty(Style style, EditorCell editorCell) {
+  public static void apply_NodeProperty(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
-  public static void applyEditorOperation(Style style, EditorCell editorCell) {
+  public static void apply_EditorOperation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 

@@ -26,7 +26,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_h2teu2_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_h2teu2_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h2teu2_b0(editorContext, node));
@@ -37,7 +37,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_h2teu2_a0");
     Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
+    Styles_StyleSheet.apply_bordered(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
