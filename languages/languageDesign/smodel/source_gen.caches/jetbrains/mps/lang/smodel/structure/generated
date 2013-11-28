@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dy6z15si79mr6pnodc2eo1vt2mm67so">
+<dependencies version="2" modelHash="-79a2pd21b9w7h55ubl3tzt2l85h9js3">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -231,7 +231,7 @@
   <source id="1172424058054" name="ConceptRefExpression" hash="16wfqtxkpbmmk6ou2py72isjg82o8a3" />
   <source id="1173122760281" name="Node_GetAncestorsOperation" hash="aibbc3j740t9c6ctv5lu18exgfq98tq" />
   <source id="1175618182947" name="SConceptLinkAccess" hash="-c9da3q2rharsy10s16tjicdcnp2bdnz" />
-  <source id="1176109685393" name="Model_RootsIncludingImportedOperation" hash="-6mu3fx340wupl4jw8t531x0po1bbhel" />
+  <source id="1176109685393" name="Model_RootsIncludingImportedOperation" hash="-1lietg1jlefn2qv4k6ujcipc79tlgg2" />
   <source id="1177026924588" name="RefConcept_Reference" hash="-4yeu4d816rp4tutf39gzv7ds59dg6ry" />
   <source id="1179168000618" name="Node_GetIndexInParentOperation" hash="bw1d604f0dejaf6k6gjuxrp3qjycr06" />
   <source id="1179350041460" name="Concept_GetDirectSuperConcepts" hash="6xpcsa1sg1qmp1vof951jscywvyetuk" />
