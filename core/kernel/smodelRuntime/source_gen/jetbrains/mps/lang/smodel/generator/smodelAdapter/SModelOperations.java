@@ -13,7 +13,6 @@ import jetbrains.mps.util.ConditionalIterable;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -71,14 +70,6 @@ public class SModelOperations {
     }
 
     return allNodesIncludingImported(model, true, concept);
-  }
-
-  public static List<SNode> getRootsIncludingImported(SModel model, IScope scope, String conceptFqName) {
-    return getRootsIncludingImported(model, conceptFqName);
-  }
-
-  public static List<SNode> getNodesIncludingImported(SModel model, IScope scope, String conceptFqName) {
-    return getNodesIncludingImported(model, conceptFqName);
   }
 
   public static List<SNode> getNodesIncludingImported(SModel model, String conceptFqName) {
@@ -196,7 +187,7 @@ public class SModelOperations {
       SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
       return (l == null ? null : ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_kkj9n5_a0a0a0a0a0a4a1a41(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
+          return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
         }
       }));
     } else {
@@ -205,7 +196,7 @@ public class SModelOperations {
     }
   }
 
-  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a41(Object a, Object b) {
+  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
