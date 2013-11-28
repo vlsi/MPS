@@ -57,7 +57,7 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
             ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_lb7xg4_a0a0a0e0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
 
             // add MPSDataKeys if mps.workbench is imported 
-            for (SModel importedModel : SModelOperations.allImportedModels(_context.getModel(), operationContext.getScope())) {
+            for (SModel importedModel : SModelOperations.allImportedModels(_context.getModel())) {
               if (jetbrains.mps.util.SNodeOperations.getModelLongName(importedModel).equals("jetbrains.mps.workbench")) {
                 for (SNode root : importedModel.getRootNodes()) {
                   if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && "MPSDataKeys".equals(SPropertyOperations.getString(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "name"))) {

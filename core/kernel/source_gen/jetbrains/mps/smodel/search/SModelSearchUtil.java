@@ -22,7 +22,7 @@ public class SModelSearchUtil {
   }
 
   public static ISearchScope createModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
-    return new ModelAndImportedModelsScope(model, rootsOnly, scope);
+    return new ModelAndImportedModelsScope(model, rootsOnly);
   }
 
   public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {

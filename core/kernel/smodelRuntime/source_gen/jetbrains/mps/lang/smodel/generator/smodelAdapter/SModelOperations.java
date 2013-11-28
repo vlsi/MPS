@@ -89,7 +89,7 @@ public class SModelOperations {
   private static List<SNode> allNodesIncludingImported(SModel sModel, boolean roots, @Nullable final SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
-    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, GlobalScope.getInstance());
+    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel);
     for (SModel descriptor : modelDescriptors) {
       modelsList.add(descriptor);
     }

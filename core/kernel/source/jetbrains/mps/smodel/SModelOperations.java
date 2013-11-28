@@ -69,7 +69,7 @@ public class SModelOperations {
     Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModel sm : allImportedModels(model, scope)) {
+    for (SModel sm : allImportedModels(model)) {
       importedModels.add(sm.getReference());
     }
 
@@ -282,12 +282,11 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
-  public static List<SModel> allImportedModels(SModel model, IScope scope) {
-    SModel sourceModel = model;
+  public static List<SModel> allImportedModels(SModel model) {
     Set<SModel> result = new LinkedHashSet<SModel>();
     for (Language language : getLanguages(model)) {
       for (SModel am : language.getAccessoryModels()) {
-        if (am != sourceModel) {
+        if (am != model) {
           SModel scopeModelDescriptor = am.getReference().resolve(MPSModuleRepository.getInstance());
           if (scopeModelDescriptor != null) {
             result.add(scopeModelDescriptor);
@@ -296,8 +295,8 @@ public class SModelOperations {
       }
     }
 
-    for (SModel importedModel : importedModels(model, scope)) {
-      if (importedModel != sourceModel) {
+    for (SModel importedModel : importedModels(model)) {
+      if (importedModel != model) {
         result.add(importedModel);
       }
     }
@@ -435,14 +434,13 @@ public class SModelOperations {
     return null;
   }
 
-  @Deprecated
   //todo rewrite using iterators
   @NotNull
-  private static List<SModel> importedModels(SModel model, @NotNull IScope scope) {
+  private static List<SModel> importedModels(SModel model) {
     List<SModel> modelsList = new ArrayList<SModel>();
     for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) model).importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
-      SModel modelDescriptor = scope.getModelDescriptor(modelReference);
+      SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
 
       if (modelDescriptor == null) {
         for (Language l : getLanguages(model)) {
