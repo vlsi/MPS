@@ -18,7 +18,6 @@ package jetbrains.mps.editor.runtime.style;
 import jetbrains.mps.util.containers.EmptyIterator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
@@ -191,20 +190,6 @@ public class StyleImpl implements Style {
     return (IntMapPointer<IntObjectSortedListMap<T>>) (IntMapPointer) myCachedAttributes.search(attribute.getIndex());
   }
 
-  private <T> T getTop(StyleAttribute<T> attribute) {
-    IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
-    if (attributeValue.isEmpty()) {
-      return null;
-    } else {
-      IntPair<T> topPair = attributeValue.get().getTopPair();
-      return  topPair == null ? null : topPair.value;
-    }
-  }
-
-  private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
-    return Collections.singleton(sa);
-  }
-
   @Override
   public void putAll(@NotNull Style style) {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
@@ -275,7 +260,7 @@ public class StyleImpl implements Style {
       }
       attributeValues.get().setValue(priority, value);
     }
-    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
+    Set<StyleAttribute> attributeSet = Collections.<StyleAttribute>singleton(attribute);
     if (StyleAttributes.isSimple(attribute)) {
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
     } else {
