@@ -125,13 +125,11 @@ public class SModelSearchUtil {
   private static class _ConceptsFromModelLanguagesScope extends AbstractSearchScope {
     private SModel myModel;
     private boolean myRootsOnly;
-    private IScope myScope;
     private List<SNode> myConcepts;
 
     public _ConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly, IScope scope) {
       myModel = model;
       myRootsOnly = rootsOnly;
-      myScope = scope;
     }
 
     @NotNull
@@ -139,7 +137,7 @@ public class SModelSearchUtil {
     public List<SNode> getNodes(Condition<SNode> condition) {
       if (myConcepts == null) {
         myConcepts = new ArrayList<SNode>();
-        List<Language> languages = SModelOperations.getLanguages(myModel, myScope);
+        List<Language> languages = SModelOperations.getLanguages(myModel);
         for (Language language : languages) {
           if (myRootsOnly) {
             SModel structureModel = language.getStructureModelDescriptor();

@@ -181,7 +181,7 @@ public class ChildSubstituteActionsHelper {
 
     String childConceptFqName = NameUtil.nodeFQName(childConcept);
     Set<String> concepts = new HashSet<String>();
-    for (Language l : SModelOperations.getLanguages(parentNode.getModel(), scope)) {
+    for (Language l : SModelOperations.getLanguages(parentNode.getModel())) {
       concepts.addAll(LanguageHierarchyCache.getInstance().getDefaultSubstitutableDescendantsOf(childConceptFqName, l));
     }
 

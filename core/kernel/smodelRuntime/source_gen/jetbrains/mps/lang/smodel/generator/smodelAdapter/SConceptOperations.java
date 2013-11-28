@@ -107,7 +107,7 @@ public final class SConceptOperations {
   }
 
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model, IScope scope) {
-    return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model, scope)));
+    return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
   }
 
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<Language> availableLanguages) {

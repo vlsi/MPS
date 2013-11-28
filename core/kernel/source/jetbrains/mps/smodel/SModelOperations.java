@@ -177,7 +177,7 @@ public class SModelOperations {
 
   //todo rewrite using iterators
   @NotNull
-  public static List<Language> getLanguages(SModel model, @NotNull IScope scope) {
+  public static List<Language> getLanguages(SModel model) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
     for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages()) {
@@ -283,7 +283,7 @@ public class SModelOperations {
   public static List<SModel> allImportedModels(SModel model, IScope scope) {
     SModel sourceModel = model;
     Set<SModel> result = new LinkedHashSet<SModel>();
-    for (Language language : getLanguages(model, scope)) {
+    for (Language language : getLanguages(model)) {
       for (SModel am : language.getAccessoryModels()) {
         if (am != sourceModel) {
           SModel scopeModelDescriptor = am.getReference().resolve(MPSModuleRepository.getInstance());
@@ -374,26 +374,6 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
-  @NotNull
-  public static Set<SModel> getDependenciesModels(SModel sModel) {
-    Set<SModel> modelDescriptors = new HashSet<SModel>(allImportedModels(sModel, GlobalScope.getInstance()));
-    for (Language language : getLanguages(sModel, GlobalScope.getInstance())) {
-      modelDescriptors.addAll(LanguageAspect.getAspectModels(language));
-    }
-    return modelDescriptors;
-  }
-
-  //todo rewrite using iterators
-  @NotNull
-  public static Set<SModelReference> getDependenciesModelRefs(SModel sModel) {
-    Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SModel sm : getDependenciesModels(sModel)) {
-      result.add(sm.getReference());
-    }
-    return result;
-  }
-
-  //todo rewrite using iterators
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : SNodeUtil.getDescendants(sModel)) {
@@ -462,7 +442,7 @@ public class SModelOperations {
       SModel modelDescriptor = scope.getModelDescriptor(modelReference);
 
       if (modelDescriptor == null) {
-        for (Language l : getLanguages(model, scope)) {
+        for (Language l : getLanguages(model)) {
           for (SModel accessory : l.getAccessoryModels()) {
             if (modelReference.equals(accessory.getReference())) {
               modelDescriptor = accessory;
