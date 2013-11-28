@@ -204,6 +204,7 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
+  @Deprecated
   @NotNull
   public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model, @NotNull IScope scope) {
     Set<Language> languages = new LinkedHashSet<Language>();
@@ -251,6 +252,7 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
+  @Deprecated
   @NotNull
   public static Set<SModuleReference> getAllImportedLanguages(jetbrains.mps.smodel.SModel model) {
     List<SModuleReference> langs = (model).importedLanguages();
@@ -304,6 +306,7 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
+  @Deprecated
   public static List<SModel> allImportedModels(jetbrains.mps.smodel.SModel model, IScope scope) {
     Set<SModel> result = new LinkedHashSet<SModel>();
     for (Language language : getLanguages(model, scope)) {
@@ -460,6 +463,7 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
+  @Deprecated
   @NotNull
   private static List<SModel> importedModels(jetbrains.mps.smodel.SModel model, @NotNull IScope scope) {
     List<SModel> modelsList = new ArrayList<SModel>();
