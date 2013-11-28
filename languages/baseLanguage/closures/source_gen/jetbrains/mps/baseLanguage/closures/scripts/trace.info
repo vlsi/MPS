@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/4836112446988543578">
-    <nodeInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="13" startPosition="95" endLine="14" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="24" startPosition="59" endLine="25" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4836112446988544851" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4836112446988544865" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="36" startPosition="42" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="14" startPosition="50" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="14" startPosition="50" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="13" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveWildcardsFromUnboundParams_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="54" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="54" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="24" startPosition="59" endLine="25" endPosition="98" />
-    <scopeInfo nodeId="4836112446988544850" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="144" />
-    <scopeInfo nodeId="4836112446988543581" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="104" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="36" startPosition="42" endLine="37" endPosition="20" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="4836112446988543579" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="4836112446988543579" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="14" startPosition="50" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="13" startPosition="95" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="13" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="4836112446988543578" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="15" startPosition="28" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.scripts.RemoveWildcardsFromUnboundParams_MigrationScript$1" />
-    <unitInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.scripts.RemoveWildcardsFromUnboundParams_MigrationScript" />
-  </root>
+  <root nodeRef="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/4836112446988543578" />
   <root nodeRef="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/5571879668402512180">
     <nodeInfo nodeId="5571879668402512180" fileName="UpdateClosuresRuntime_MigrationScript.java" startLine="29" startPosition="84" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5571879668402512181" fileName="UpdateClosuresRuntime_MigrationScript.java" startLine="32" startPosition="31" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
