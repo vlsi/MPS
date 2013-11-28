@@ -369,6 +369,28 @@ public class StyleImpl implements Style {
           }
         }
 
+        Object currentV = currentNow ? currentValue.value : null;
+        Object parentV = parentNow ? parentValue.value : null;
+        Object oldV = oldNow ? oldValue.value : null;
+        Object newV;
+        if (currentV instanceof NullValue || (parentV == null && currentV == null)) {
+          newV = null;
+        } else {
+          newV = attribute.combine(parentV, currentV);
+        }
+        int newInd = currentNow ? currentValue.index : parentNow ? parentValue.index : oldNow ? oldValue.index : null;
+
+        if (currentNow) {
+          //currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+        }
+        if (parentNow) {
+          //parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+        }
+        if (oldNow) {
+          //oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
+        }
+
+
         if (oldValue != null && (parentValue == null || oldValue.index < parentValue.index) && (currentValue == null || oldValue.index < currentValue.index)) {
           assert oldNow && ! currentNow && ! parentNow;
           newValue = null;
@@ -428,6 +450,8 @@ public class StyleImpl implements Style {
         } else {
           throw new IllegalStateException();
         }
+        assert EqualUtil.equals(newV, newValue);
+        assert newInd == newIndex;
         if (!EqualUtil.equals(newValue, getCached(attribute, newIndex))) {
           changedAttributes.add(attribute);
         }
