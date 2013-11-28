@@ -1822,9 +1822,6 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="1213877485040" nodeInfo="nn">
               <link role="concept" roleId="tp25.1182511038750" targetNodeId="1i04.1225194240794" resolveInfo="ConceptBehavior" />
-              <node role="scope" roleId="tp25.1182511038749" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151615981" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877485073" resolveInfo="scope" />
-              </node>
             </node>
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1213877485042" nodeInfo="nr">

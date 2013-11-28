@@ -31,7 +31,6 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="5365453833390719274" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="5365453833390719275" nodeInfo="nn">
                     <link role="concept" roleId="tp25.1182511038750" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
-                    <node role="scope" roleId="tp25.1182511038749" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="5365453833390719276" nodeInfo="nn" />
                   </node>
                 </node>
               </node>
@@ -211,7 +210,6 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="5365453833390719355" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="5365453833390719356" nodeInfo="nn">
                     <link role="concept" roleId="tp25.1182511038750" targetNodeId="rzqf.6129022259108579244" resolveInfo="ExecuteCommandPart" />
-                    <node role="scope" roleId="tp25.1182511038749" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="5365453833390719357" nodeInfo="nn" />
                   </node>
                 </node>
               </node>

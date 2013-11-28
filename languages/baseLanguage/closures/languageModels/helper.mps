@@ -11223,12 +11223,6 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="7178287329507699730" nodeInfo="nn">
                   <link role="concept" roleId="tp25.1182511038750" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-                  <node role="scope" roleId="tp25.1182511038749" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7178287329507699731" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120314502" nodeInfo="nn">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7178287329507699533" resolveInfo="genContext" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetScope" typeId="tpf3.1216945228272" id="7178287329507699733" nodeInfo="nn" />
-                  </node>
                 </node>
               </node>
             </node>
