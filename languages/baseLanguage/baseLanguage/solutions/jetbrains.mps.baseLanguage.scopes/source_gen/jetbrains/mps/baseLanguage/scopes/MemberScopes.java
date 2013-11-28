@@ -8,10 +8,6 @@ import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.scope.ListScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @Deprecated
@@ -43,24 +39,12 @@ public class MemberScopes {
   }
 
   @Deprecated
-  public static Scope visibleClassifierMembers(SNode contextClassifier, final SNode kind, SNode contextNode) {
+  public static Scope visibleClassifierMembers(SNode contextClassifier, SNode kind, SNode contextNode) {
     // use (sequence<node<IClassifierMember>>) classifierType.getVisibleMembers() instead 
-    Scope membersScope = new ListScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClassifier, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return eq_xjj6d8_a0a0a0a0a0a0a0b0d(SNodeOperations.getConceptDeclaration(it), kind);
-      }
-    })) {
-      public String getName(SNode child) {
-        return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-      }
-    };
+    Scope membersScope = BehaviorReflection.invokeVirtual(Scope.class, contextClassifier, "virtual_getMembers_2201875424515824604", new Object[]{kind});
     if (membersScope == null) {
       throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, "name") + " and kind " + SPropertyOperations.getString(kind, "name") + " is null");
     }
     return visibleClassifierMembers(membersScope, contextClassifier, contextNode);
-  }
-
-  private static boolean eq_xjj6d8_a0a0a0a0a0a0a0b0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }
