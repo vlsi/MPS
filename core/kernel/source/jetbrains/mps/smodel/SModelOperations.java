@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -112,7 +113,7 @@ public class SModelOperations {
   }
 
   public static void validateLanguagesAndImports(jetbrains.mps.smodel.SModel model, boolean respectModulesScopes, boolean firstVersion) {
-    @Nullable SModelDescriptor realDescriptor = model.getModelDescriptor();
+    @Nullable SModelBase realDescriptor = model.getModelDescriptor();
     if (realDescriptor != null) {
       ModelChange.assertLegalChange(realDescriptor);
     }

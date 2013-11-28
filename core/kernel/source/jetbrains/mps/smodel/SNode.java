@@ -794,12 +794,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private SModelBase getRealModel() {
     SModel persistentModel = getPersistentModel();
-    if (persistentModel == null) return null;
-
-    SModelDescriptor modelDescriptor = persistentModel.getModelDescriptor();
-    if (!(modelDescriptor instanceof SModelBase)) return null;
-
-    return (SModelBase) modelDescriptor;
+    return persistentModel == null ? null : persistentModel.getModelDescriptor();
   }
 
   void nodeRead() {
