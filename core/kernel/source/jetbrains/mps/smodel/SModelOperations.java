@@ -181,7 +181,7 @@ public class SModelOperations {
     Set<Language> languages = new LinkedHashSet<Language>();
 
     for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages()) {
-      Language language = scope.getLanguage(lang);
+      Language language = (Language) lang.resolve(MPSModuleRepository.getInstance());
 
       if (language != null) {
         languages.add(language);
@@ -190,7 +190,7 @@ public class SModelOperations {
     }
 
     for (SModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
-      DevKit devKit = scope.getDevKit(dk);
+      DevKit devKit = (DevKit) dk.resolve(MPSModuleRepository.getInstance());
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
           if (languages.add(l)) {
@@ -286,7 +286,7 @@ public class SModelOperations {
     for (Language language : getLanguages(model, scope)) {
       for (SModel am : language.getAccessoryModels()) {
         if (am != sourceModel) {
-          SModel scopeModelDescriptor = scope.getModelDescriptor(am.getReference());
+          SModel scopeModelDescriptor = am.getReference().resolve(MPSModuleRepository.getInstance());
           if (scopeModelDescriptor != null) {
             result.add(scopeModelDescriptor);
           }
