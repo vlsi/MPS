@@ -21,20 +21,8 @@ public class SModelSearchUtil {
   public SModelSearchUtil() {
   }
 
-  public static ISearchScope createModelAndImportedModelsScope(SModel model, IScope scope) {
-    return SModelSearchUtil.createModelAndImportedModelsScope(model, false, scope);
-  }
-
   public static ISearchScope createModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
     return new ModelAndImportedModelsScope(model, rootsOnly, scope);
-  }
-
-  public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, IScope scope) {
-    return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, false, scope);
-  }
-
-  public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly, IScope scope) {
-    return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, rootsOnly, scope);
   }
 
   public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {
@@ -127,7 +115,7 @@ public class SModelSearchUtil {
     private boolean myRootsOnly;
     private List<SNode> myConcepts;
 
-    public _ConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly, IScope scope) {
+    public _ConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly) {
       myModel = model;
       myRootsOnly = rootsOnly;
     }
