@@ -10,9 +10,10 @@ import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -58,39 +58,47 @@ public class SModelOperations {
     return list;
   }
 
-  public static List<SNode> getRootsIncludingImported(SModel model, IScope scope, String conceptFqName) {
+  public static List<SNode> getRootsIncludingImported(SModel model, String conceptFqName) {
     if (model == null) {
       return Collections.emptyList();
     }
     if (conceptFqName == null) {
-      return allNodesIncludingImported(model, scope, true, null);
+      return allNodesIncludingImported(model, true, null);
     }
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (concept == null) {
       return Collections.emptyList();
     }
 
-    return allNodesIncludingImported(model, scope, true, concept);
+    return allNodesIncludingImported(model, true, concept);
+  }
+
+  public static List<SNode> getRootsIncludingImported(SModel model, IScope scope, String conceptFqName) {
+    return getRootsIncludingImported(model, conceptFqName);
   }
 
   public static List<SNode> getNodesIncludingImported(SModel model, IScope scope, String conceptFqName) {
+    return getNodesIncludingImported(model, conceptFqName);
+  }
+
+  public static List<SNode> getNodesIncludingImported(SModel model, String conceptFqName) {
     if (model == null) {
       return Collections.emptyList();
     }
     if (conceptFqName == null) {
-      return allNodesIncludingImported(model, scope, false, null);
+      return allNodesIncludingImported(model, false, null);
     }
-    final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+    final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (concept == null) {
       return Collections.emptyList();
     }
-    return allNodesIncludingImported(model, scope, false, concept);
+    return allNodesIncludingImported(model, false, concept);
   }
 
-  private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable final SNode concept) {
+  private static List<SNode> allNodesIncludingImported(SModel sModel, boolean roots, @Nullable final SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
-    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
+    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, GlobalScope.getInstance());
     for (SModel descriptor : modelDescriptors) {
       modelsList.add(descriptor);
     }
@@ -188,7 +196,7 @@ public class SModelOperations {
       SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
       return (l == null ? null : ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
+          return eq_kkj9n5_a0a0a0a0a0a4a1a41(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
         }
       }));
     } else {
@@ -197,7 +205,7 @@ public class SModelOperations {
     }
   }
 
-  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a21(Object a, Object b) {
+  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
