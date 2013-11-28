@@ -25,9 +25,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class StyleSheetClass_Constraints extends BaseConstraintsDescriptor {
-  public StyleSheetClass_Constraints() {
-    super("jetbrains.mps.lang.editor.structure.StyleSheetClass");
+public class IStyleSheetMember_Constraints extends BaseConstraintsDescriptor {
+  public IStyleSheetMember_Constraints() {
+    super("jetbrains.mps.lang.editor.structure.IStyleSheetMember");
   }
 
   @Override
@@ -59,7 +59,7 @@ public class StyleSheetClass_Constraints extends BaseConstraintsDescriptor {
           }
         }).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
           public Iterable<SNode> translate(EditableSModelDescriptor it) {
-            return SModelOperations.getNodes(((SModel) it), "jetbrains.mps.lang.editor.structure.StyleSheetClass");
+            return SModelOperations.getNodes(((SModel) it), "jetbrains.mps.lang.editor.structure.IStyleSheetMember");
           }
         });
 
@@ -68,10 +68,10 @@ public class StyleSheetClass_Constraints extends BaseConstraintsDescriptor {
 
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_lvhrww_a0a1a0a0a2;
+        return breakingNode_pz2bx0_a0a1a0a0a2;
       }
     };
   }
 
-  private static SNodePointer breakingNode_lvhrww_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
+  private static SNodePointer breakingNode_pz2bx0_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
 }

@@ -1152,7 +1152,7 @@
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1873972548978313577" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.3383245079136928391" resolveInfo="IStyleSheetMember" />
     <node role="defaultScope" roleId="tp1t.1213101058038" type="tp1t.NodeDefaultSearchScope" typeId="tp1t.1159285995602" id="1873972548978318485" nodeInfo="ng">
       <node role="searchScopeFactory" roleId="tp1t.1159286114227" type="tp1t.ConstraintFunction_ReferentSearchScope_Factory" typeId="tp1t.1148684180339" id="1873972548978322667" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1873972548978322669" nodeInfo="sn">
@@ -1263,7 +1263,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesOperation" typeId="tp25.1171323947159" id="1873972548978624069" nodeInfo="nn">
-                            <link role="concept" roleId="tp25.1171323947160" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
+                            <link role="concept" roleId="tp25.1171323947160" targetNodeId="tpc2.3383245079136928391" resolveInfo="IStyleSheetMember" />
                           </node>
                         </node>
                       </node>
@@ -1326,7 +1326,7 @@
               </node>
               <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="7609778533465891340" nodeInfo="in">
                 <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7609778533465891378" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.3383245079136928391" resolveInfo="IStyleSheetMember" />
                 </node>
               </node>
             </node>
@@ -1420,22 +1420,6 @@
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpc2.4323500428121233431" resolveInfo="EditorCellId" />
       </node>
     </node>
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1950447826683740663" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.3383245079137382180" resolveInfo="StylePriorityGroup" />
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8538298747010963149" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.4151393920404716535" resolveInfo="PreDefinedStyleClassItem" />
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8538298747010969298" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.1950447826681509042" resolveInfo="ApplyStylePriorityGroup" />
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4699812310048764005" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.1950447826686048995" resolveInfo="DiscardStylePrioriryGroup" />
   </root>
 </model>
 
