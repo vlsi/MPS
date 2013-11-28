@@ -307,7 +307,7 @@ public class Java_Command {
 
   public static String getJdkHome() {
     List<String> homes = Java_Command.getJavaHomes();
-    for (String javaHome : ListSequence.fromList(homes)) {
+    for (String javaHome : homes) {
       if (new File(Java_Command.getJavaCommandPath(javaHome)).exists()) {
         return javaHome;
       }
@@ -326,7 +326,7 @@ public class Java_Command {
     File tmpFile = FileUtil.createTmpFile();
     tmpFile.deleteOnExit();
     PrintWriter writer = new PrintWriter(tmpFile);
-    for (String line : Sequence.fromIterable(text)) {
+    for (String line : text) {
       writer.println(line);
     }
     writer.flush();

@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -23,11 +22,11 @@ public class ModuleChecker {
     monitor.start("Checking " + moduleName + " module properties...", 1);
     try {
       ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
-      for (String msg : ListSequence.fromList(validator.getErrors())) {
+      for (String msg : validator.getErrors()) {
         myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + msg, null, ModelChecker.SEVERITY_ERROR, "module properties"));
 
       }
-      for (String msg : ListSequence.fromList(validator.getWarnings())) {
+      for (String msg : validator.getWarnings()) {
         myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + msg, null, ModelChecker.SEVERITY_WARNING, "module properties"));
 
       }

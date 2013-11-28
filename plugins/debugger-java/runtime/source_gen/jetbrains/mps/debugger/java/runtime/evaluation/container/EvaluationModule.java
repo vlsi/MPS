@@ -42,7 +42,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
   @Override
   protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
-    for (String stub : SetSequence.fromSet(myClassPaths)) {
+    for (String stub : myClassPaths) {
       FolderModelRootBase modelRoot = (FolderModelRootBase) PersistenceFacade.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
       modelRoot.setPath(stub);
       result.add(modelRoot);

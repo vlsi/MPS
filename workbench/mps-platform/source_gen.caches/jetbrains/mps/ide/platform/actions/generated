@@ -20,7 +20,7 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="924efqwkj4uwjz81mdeyk3tq3e1y30z" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="5l5sclic13u5bcf2ok32ikw39zlk8o3" />
@@ -34,7 +34,7 @@
   <dep model="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.platform.dependencyViewer)" hash="13c4tc20rjqszrwwvx99rjxofcvd91j" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="-1c6hewtjbjbxmrq5lb6qaud3b5914hn">
+  <common hash="-1c6hewtjbjbxmrq5lb6qaud3b5914hn" dependsOnNodes="true">
     <dep root="1298565956308939928" />
     <dep root="1784947186835625266" />
     <dep root="1784947186835625271" />
@@ -51,7 +51,7 @@
     <dep root="6714826334259354054" />
   </common>
   <source id="1784947186835625272" name="Default" hash="7jumjk2t2pi8otvco35m0zkyvmi9sxk" />
-  <source id="227146524086541067" name="GoToNodeById" hash="2d3yl7cog0cjwxnv4wcgmbpkmhfen6v">
+  <source id="227146524086541067" name="GoToNodeById" hash="2d3yl7cog0cjwxnv4wcgmbpkmhfen6v" dependsOnNodes="true">
     <dep root="1298565956308939928" />
     <dep root="1784947186835625266" />
     <dep root="1784947186835625271" />
@@ -124,7 +124,7 @@
   <source id="2342514422328380743" name="ModelActions" hash="d3x454o4yojremi26xba9svcq45j9sj" />
   <source id="2342514422328399734" name="AnalyzePlatform" hash="6gi8ztcyv2nr3o900u2u483tr0hya4t" />
   <source id="2342514422328399760" name="IDEAAnalyze" hash="-9xm2qsrdu3if3lgc2nrc2ktfavvi4mj" />
-  <source id="2342514422328735233" name="AnalyzeDependencies" hash="8ghy9o6xmpwhf6tnhd2ay3nxcg4s1s0">
+  <source id="2342514422328735233" name="AnalyzeDependencies" hash="8ghy9o6xmpwhf6tnhd2ay3nxcg4s1s0" dependsOnNodes="true">
     <dep root="1298565956308939928" />
     <dep root="1784947186835625266" />
     <dep root="1784947186835625271" />

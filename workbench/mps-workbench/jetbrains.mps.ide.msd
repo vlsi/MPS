@@ -9,13 +9,6 @@
     <facet type="tests" />
     <facet type="java" />
     <facet pluginId="com.intellij" type="ideaPlugin" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet pluginId="com.intellij" type="ideaPlugin" />
-    <facet pluginId="com.intellij" type="ideaPlugin" />
-    <facet type="tests" />
-    <facet type="java" />
-    <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>

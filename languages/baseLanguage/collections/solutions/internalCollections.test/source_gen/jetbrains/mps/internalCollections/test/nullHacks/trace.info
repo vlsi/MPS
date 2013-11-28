@@ -31,11 +31,11 @@
     <nodeInfo nodeId="1207743073667" fileName="NullSequence_Test.java" startLine="63" startPosition="72" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207743102180" fileName="NullSequence_Test.java" startLine="64" startPosition="70" endLine="65" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228857666954" fileName="NullSequence_Test.java" startLine="76" startPosition="49" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228857666964" fileName="NullSequence_Test.java" startLine="78" startPosition="75" endLine="79" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228857666964" fileName="NullSequence_Test.java" startLine="78" startPosition="52" endLine="79" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8511931774175302747" fileName="NullSequence_Test.java" startLine="80" startPosition="5" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8511931774175302756" fileName="NullSequence_Test.java" startLine="82" startPosition="71" endLine="83" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8511931774175302728" fileName="NullSequence_Test.java" startLine="84" startPosition="5" endLine="85" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8511931774175302739" fileName="NullSequence_Test.java" startLine="86" startPosition="70" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8511931774175302739" fileName="NullSequence_Test.java" startLine="86" startPosition="47" endLine="87" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1228857666960" fileName="NullSequence_Test.java" startLine="77" startPosition="21" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -55,9 +55,9 @@
     <nodeInfo nodeId="1207738915593" fileName="NullSequence_Test.java" startLine="16" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullSequence#()V" />
     <scopeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="71" startPosition="51" endLine="71" endPosition="51" />
     <scopeInfo nodeId="1207741449245" fileName="NullSequence_Test.java" startLine="47" startPosition="55" endLine="48" endPosition="44" />
-    <scopeInfo nodeId="1228857666963" fileName="NullSequence_Test.java" startLine="78" startPosition="75" endLine="79" endPosition="31" />
+    <scopeInfo nodeId="1228857666963" fileName="NullSequence_Test.java" startLine="78" startPosition="52" endLine="79" endPosition="31" />
     <scopeInfo nodeId="8511931774175302755" fileName="NullSequence_Test.java" startLine="82" startPosition="71" endLine="83" endPosition="31" />
-    <scopeInfo nodeId="8511931774175302738" fileName="NullSequence_Test.java" startLine="86" startPosition="70" endLine="87" endPosition="31" />
+    <scopeInfo nodeId="8511931774175302738" fileName="NullSequence_Test.java" startLine="86" startPosition="47" endLine="87" endPosition="31" />
     <scopeInfo nodeId="1225731159908" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7" />
     <scopeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7">
       <varInfo nodeId="1225731168634" varName="foo" />

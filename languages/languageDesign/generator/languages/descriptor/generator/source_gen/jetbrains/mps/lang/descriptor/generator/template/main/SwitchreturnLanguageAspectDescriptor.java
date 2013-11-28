@@ -119,7 +119,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               try {
                 environment.getTracer().pushTemplateNode(templateNode_2tkj9d_a0a0a1a4a1a3a2a5h);
                 environment.nodeCopied(context, tnode4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314403561");
-                environment.resolveInTemplateLater(tnode4, "variableDeclaration", new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4565427742314403561"), "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314373491", "descriptorClass", context);
+                environment.resolveInTemplateLater(tnode4, "variableDeclaration", templateNode_2tkj9d_a0a0a1a4a1a3a2a5h, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314373491", "descriptorClass", context);
 
               } finally {
                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
@@ -340,7 +340,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       try {
                         environment.getTracer().pushTemplateNode(templateNode_2tkj9d_a0a0a1a3a1a3a1a4a1a4a2a5h);
                         environment.nodeCopied(context, tnode18, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4644225720241363019");
-                        environment.resolveInTemplateLater(tnode18, "typeVariableDeclaration", new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "4644225720241363019"), "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314373512", "T", context);
+                        environment.resolveInTemplateLater(tnode18, "typeVariableDeclaration", templateNode_2tkj9d_a0a0a1a3a1a3a1a4a1a4a2a5h, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742314373512", "T", context);
 
                       } finally {
                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode18));

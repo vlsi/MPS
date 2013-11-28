@@ -79,39 +79,32 @@ class GenerationSession {
   private final SModel myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
-  private final IOperationContext myInvocationContext;
-  private final TransientModelsModule myTransientModelsModule;
-  private final IGenerationTracer myGenerationTracer;
   private final boolean myDiscardTransients;
-  private final boolean myKeepFinalOutput;
   private final ProgressMonitor myProgressMonitor;
   private MPSAppenderBase myLoggingHandler;
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
-  private Map<String, Object> myParameters;
 
   private IntermediateModelsCache myNewCache;
+  // != null unless session is abandoned/disposed
   private GenerationSessionContext mySessionContext;
   private IPerformanceTracer ttrace;
 
   private int myMajorStep = 0;
   private int myMinorStep = -1;
-  private GenerationOptions myGenerationOptions;
+  private final GenerationOptions myGenerationOptions;
 
   GenerationSession(@NotNull org.jetbrains.mps.openapi.model.SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
       ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
       IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
-    myInvocationContext = invocationContext;
-    myTransientModelsModule = transientModelsModule;
-    myGenerationTracer = generationOptions.getGenerationTracer();
     myDiscardTransients = !generationOptions.isSaveTransientModels();
-    myKeepFinalOutput = generationOptions.isKeepOutputModel();
     myProgressMonitor = progressMonitor;
     myLogger = new GenerationSessionLogger(logger);
     ttrace = tracer;
     myGenerationOptions = generationOptions;
+    mySessionContext = new GenerationSessionContext(invocationContext, generationOptions.getGenerationTracer(), transientModelsModule, myOriginalInputModel);
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -139,14 +132,15 @@ class GenerationSession {
     monitor.start("", 1 + myGenerationPlan.getStepCount());
     try {
       // generation parameters
+      final Map<String, Object> generationParameters;
       if (parametersProvider != null) {
-        myParameters = parametersProvider.getParameters(myOriginalInputModel);
+        generationParameters = parametersProvider.getParameters(myOriginalInputModel);
       } else {
-        myParameters = null;
+        generationParameters = null;
       }
 
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvocationContext, myGenerationOptions,
-          myGenerationPlan.getSignature(), myParameters, null);
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, mySessionContext.getInvocationContext(),
+          myGenerationOptions, myGenerationPlan.getSignature(), generationParameters, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
       if (incrementalHandler.canOptimize()) {
@@ -158,7 +152,7 @@ class GenerationSession {
           myLogger.info("generated files are up-to-date");
           ttrace.pop();
           return new GenerationStatus(myOriginalInputModel, null,
-              myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
+              myDependenciesBuilder.getResult(mySessionContext.getInvocationContext(), myGenerationOptions.getIncrementalStrategy()), false, false, false);
         }
 
         if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
@@ -200,8 +194,7 @@ class GenerationSession {
         // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
         // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
         // and we'll need to switch to 'transient' (generator) model here anyway
-        mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, myOriginalInputModel, myGenerationPlan,
-            myParameters, null);
+        mySessionContext = new GenerationSessionContext(mySessionContext, myGenerationPlan, generationParameters);
         SModel currInputModel = createTransientModel("0");
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
@@ -251,16 +244,14 @@ class GenerationSession {
 
         // we need this in order to prevent memory leaks from nodes which are reported to message view
         // since session objects might include objects with disposed class loaders
-        if (mySessionContext != null) {
-          mySessionContext.clearTransientObjects();
-        }
+        mySessionContext.clearTransientObjects();
 
-        if (myKeepFinalOutput && mySessionContext != null) {
+        if (myGenerationOptions.isKeepOutputModel()) {
           mySessionContext.keepTransientModel(currOutput, true);
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
+            myDependenciesBuilder.getResult(mySessionContext.getInvocationContext(), myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         success = generationStatus.isOk();
         return generationStatus;
@@ -307,8 +298,7 @@ class GenerationSession {
     }
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan,
-        myParameters, mySessionContext);
+    mySessionContext = new GenerationSessionContext(mySessionContext);
     myLogger.setOperationContext(mySessionContext);
 
     // -- filter mapping configurations
@@ -603,12 +593,11 @@ class GenerationSession {
    * is discarded even if transient models are persisted (useful for output models without changes)
    */
   private void recycleWasteModel(@NotNull SModel model, boolean force) {
-    SModel md = model;
     if (model.getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();
       if (force || (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model))) {
-        mySessionContext.getModule().removeModel(md);
+        mySessionContext.getModule().removeModel(model);
       }
       ttrace.pop();
     }

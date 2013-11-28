@@ -47,7 +47,7 @@
     <nodeInfo nodeId="3095993558265450173" fileName="WatchedRoots.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchedRoots#(Lcom/intellij/openapi/vfs/LocalFileSystem;)V" />
     <nodeInfo nodeId="3889767472196636784" fileName="WatchedRoots.java" startLine="57" startPosition="105" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7835936394085916732" fileName="WatchedRoots.java" startLine="67" startPosition="0" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3889767472196938888" fileName="WatchedRoots.java" startLine="75" startPosition="72" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3889767472196938888" fileName="WatchedRoots.java" startLine="75" startPosition="51" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3889767472197036925" fileName="WatchedRoots.java" startLine="80" startPosition="103" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3889767472196637970" fileName="WatchedRoots.java" startLine="105" startPosition="90" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6793838228148721192" fileName="WatchedRoots.java" startLine="113" startPosition="47" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -82,7 +82,7 @@
     <scopeInfo nodeId="3095993558265450173" fileName="WatchedRoots.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="3095993558265450427" varName="lfs" />
     </scopeInfo>
-    <scopeInfo nodeId="3889767472196927212" fileName="WatchedRoots.java" startLine="75" startPosition="72" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="3889767472196927212" fileName="WatchedRoots.java" startLine="75" startPosition="51" endLine="78" endPosition="7" />
     <scopeInfo nodeId="3889767472197036925" fileName="WatchedRoots.java" startLine="80" startPosition="103" endLine="83" endPosition="5">
       <varInfo nodeId="3889767472197036927" varName="req" />
     </scopeInfo>

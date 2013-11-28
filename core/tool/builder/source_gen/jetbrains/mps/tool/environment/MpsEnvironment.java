@@ -61,7 +61,7 @@ public class MpsEnvironment implements Environment {
     }
 
     Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
-    for (String name : SetSequence.fromSet(MapSequence.fromMap(config.macros()).keySet())) {
+    for (String name : MapSequence.fromMap(config.macros()).keySet()) {
       MapSequence.fromMap(macros).put(name, MapSequence.fromMap(config.macros()).get(name).getAbsolutePath());
     }
     macroProvider = EnvironmentUtils.createMapMacrosProvider(macros);

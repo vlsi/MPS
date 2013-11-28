@@ -11,7 +11,6 @@ import jetbrains.mps.tool.builder.MpsWorker;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.tool.environment.Environment;
 import org.apache.log4j.Logger;
@@ -103,7 +102,7 @@ public class GenTestWorker extends GeneratorWorker {
 
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
 
-    for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
+    for (String jar : myWhatToDo.getLibraryJars()) {
       config = config.addLib(jar, new File(jar));
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {

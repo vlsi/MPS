@@ -369,7 +369,7 @@ public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationW
         try {
           environment.getTracer().pushTemplateNode(templateNode_7ucwoc_a0a0a1a4a1a2);
           environment.nodeCopied(context, tnode25, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709483");
-          environment.resolveInTemplateLater(tnode25, "baseMethodDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709483"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709245", "createNode", context);
+          environment.resolveInTemplateLater(tnode25, "baseMethodDeclaration", templateNode_7ucwoc_a0a0a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709245", "createNode", context);
 
           {
             final List<SNode> tlist26 = new ArrayList<SNode>();

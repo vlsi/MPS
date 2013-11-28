@@ -402,7 +402,6 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidator" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidatorFactory" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

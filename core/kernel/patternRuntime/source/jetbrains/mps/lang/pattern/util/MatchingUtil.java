@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,19 @@ package jetbrains.mps.lang.pattern.util;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.EqualUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class MatchingUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MatchingUtil.class));
@@ -39,7 +42,7 @@ public class MatchingUtil {
     if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
-    if (!node1.getConcept().getQualifiedName().equals(node2.getConcept().getQualifiedName())) return false;
+    if (!node1.getConcept().equals(node2.getConcept())) return false;
 
     //properties
     final Set<String> propertyNames = new HashSet<String>();
@@ -47,22 +50,25 @@ public class MatchingUtil {
     propertyNames.addAll(IterableUtil.asCollection(node1.getPropertyNames()));
     propertyNames.addAll(IterableUtil.asCollection(node2.getPropertyNames()));
 
-    SNode typeDeclaration = ((jetbrains.mps.smodel.SNode) node1).getConceptDeclarationNode();
+    final HashMap<String, SProperty> propertyDeclarations = new HashMap<String, SProperty>();
+    for (SProperty p : node1.getConcept().getProperties()) {
+      propertyDeclarations.put(p.getName(), p);
+    }
 
     for (String propertyName : propertyNames) {
-      SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
-      String propertyValue1 = SNodeAccessUtil.getProperty(node1, propertyName);
-      String propertyValue2 = SNodeAccessUtil.getProperty(node2, propertyName);
+      SProperty propertyDeclaration = propertyDeclarations.get(propertyName);
+      // use of SNode.getProperty() directly (not SNodeAccessUtil.getProperty())
+      // as we are checking for structural equality. If there's e.g. a 'derived' property
+      // == getName() + getNodeId(), its values from SNodeAccessUtil would differ and nodes would not match
+      // (assuming NodeId is different and nodes otherwise match).
+      String propertyValue1 = node1.getProperty(propertyName);
+      String propertyValue2 = node2.getProperty(propertyName);
       if (propertyDeclaration == null) {
-        SNode diagnosticsNode = SNodeAccessUtil.getProperty(node1, propertyName) != null ? node1 : node2;
-        LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration, diagnosticsNode);
+        SNode diagnosticsNode = propertyValue1 != null ? node1 : node2;
+        LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + diagnosticsNode.getConcept().getQualifiedName(), diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
-        if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;
-      } else {
-        PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
-        if (!EqualUtil.equals(propertySupport.fromInternalValue(propertyValue1),
-          propertySupport.fromInternalValue(propertyValue2))) return false;
       }
+      if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;
     }
 
     //-- matching references
@@ -82,8 +88,8 @@ public class MatchingUtil {
     Set<String> childRoles = jetbrains.mps.util.SNodeOperations.getChildRoles(node1, matchAttributes);
     childRoles.addAll(jetbrains.mps.util.SNodeOperations.getChildRoles(node2, matchAttributes));
     for (String role : childRoles) {
-      List<SNode> children1 = ((List) IterableUtil.asList(node1.getChildren(role)));
-      List<SNode> children2 = ((List) IterableUtil.asList(node2.getChildren(role)));
+      List<SNode> children1 = IterableUtil.asList(node1.getChildren(role));
+      List<SNode> children2 = IterableUtil.asList(node2.getChildren(role));
       if (matchModifier.acceptList(children1, children2)) {
         matchModifier.performGroupAction(children1, children2);
         continue;

@@ -21,8 +21,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -61,7 +61,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -155,7 +154,7 @@ public class JavaToMpsConverter {
         if (myModel == null) {
           ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
-          for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
+          for (String pakage : MapSequence.fromMap(classesPerPackage).keySet()) {
             final SModel model = getModel(pakage, MapSequence.fromMap(packageDirs).get(pakage));
             if (model == null) {
               continue;
@@ -1105,7 +1104,7 @@ public class JavaToMpsConverter {
       if (!(modelRoot instanceof DefaultModelRoot)) {
         continue;
       }
-      for (String sourceRoot : CollectionSequence.fromCollection(((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS))) {
+      for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
         if (FileUtil.isSubPath(sourceRoot, dir.getPath())) {
           return MultiTuple.<ModelRoot,String>from(modelRoot, sourceRoot);
         }

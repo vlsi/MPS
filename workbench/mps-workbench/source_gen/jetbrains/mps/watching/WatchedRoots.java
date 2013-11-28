@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.util.FileUtil;
 
@@ -72,7 +72,7 @@ public class WatchedRoots implements ApplicationComponent {
     // handle the case when something from project A added fs listener (=> a watch) under a dir of project B 
 
     List<String> pathsToWatch = ListSequence.fromList(new ArrayList<String>());
-    for (String path : SetSequence.fromSet(myRequestedPaths.keySet())) {
+    for (String path : myRequestedPaths.keySet()) {
       if (!(myOtherRequests.containsKey(path))) {
         ListSequence.fromList(pathsToWatch).addElement(path);
       }

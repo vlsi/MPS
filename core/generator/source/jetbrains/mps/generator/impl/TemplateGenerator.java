@@ -22,6 +22,8 @@ import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.CloneUtil.Factory;
+import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -42,26 +44,25 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -800,6 +801,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private final Set<SNode> myAdditionalInputNodes;
     private final SModel myInputModel;
     private final SModelReference myOutputModelRef;
+    private final Factory myNodeFactory;
 
     public FullCopyFacility(TemplateGenerator generator, TemplateExecutionEnvironment environment) {
       this(generator, environment, Collections.<SNode>emptySet());
@@ -811,6 +813,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myGenerationTracer = environment.getTracer();
       myInputModel = generator.getInputModel();
       myOutputModelRef = generator.getOutputModel().getReference();
+      myNodeFactory = new RegularSModelFactory();
     }
 
     @Override
@@ -835,9 +838,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     public SNode copyInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       // no reduction found - do node copying
       myGenerationTracer.pushCopyOperation();
-      jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getQualifiedName());
+      SNode outputNode;
       if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
-        outputNode.setId(inputNode.getNodeId());
+        // copy preserving id
+        outputNode = myNodeFactory.create(inputNode);
+      } else {
+        outputNode = myGenerator.getOutputModel().createNode(inputNode.getConcept());
       }
       myGenerator.blockReductionsForCopiedNode(inputNode, outputNode, myEnvironment.getReductionContext()); // prevent infinite applying of the same reduction to the 'same' node.
 
@@ -906,7 +912,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               inputReference.getSourceNode(),
               inputTargetNode);
           PostponedReference reference = new PostponedReference(refInfo, myGenerator);
-          outputNode.setReference(reference.getRole(), reference);
+          reference.setReferenceInOutputSourceNode();
         } else if (inputTargetNode.getModel() != null) {
           SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);
         } else {

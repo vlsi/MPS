@@ -52,7 +52,7 @@ public abstract class StubModelDescriptors {
 
   private void collectDescriptors(String path, String prefix, _FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem, Set<BaseStubModelDescriptor> result) {
     PathItem pi = getPathItem.invoke(path);
-    for (String subpkg : ListSequence.fromList(pi.subpackages(prefix))) {
+    for (String subpkg : pi.subpackages(prefix)) {
       if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
         SModelReference smref = smodelRefWithId(subpkg);
         SModel descById = SModelRepository.getInstance().getModelDescriptor(smref);
