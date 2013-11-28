@@ -895,11 +895,9 @@
     <nodeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_StyleSheetClass_NonTypesystemRule#()V" />
     <nodeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1950447826689177474" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="24" startPosition="80" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1950447826689177474" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="24" startPosition="33" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1950447826689177478" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="49" startPosition="64" endLine="53" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1950447826689177478" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_he4noz_a0b0b0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="1950447826689177472" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="23" startPosition="115" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1950447826689177462" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="21" startPosition="30" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -917,14 +915,9 @@
     <scopeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1950447826689177478" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="49" startPosition="64" endLine="53" endPosition="6" />
-    <scopeInfo nodeId="1950447826689177473" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="24" startPosition="80" endLine="29" endPosition="15" />
+    <scopeInfo nodeId="1950447826689177473" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="24" startPosition="33" endLine="29" endPosition="15" />
     <scopeInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1950447826689176450" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1950447826689177478" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="1950447826689177478" varName="a" />
-      <varInfo nodeId="1950447826689177478" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="1950447826689177463" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="22" startPosition="128" endLine="30" endPosition="7" />
     <scopeInfo nodeId="1950447826689176451" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="20" startPosition="128" endLine="31" endPosition="5">
@@ -935,7 +928,7 @@
       <varInfo nodeId="1950447826689176450" varName="styleSheetClass" />
       <varInfo nodeId="1950447826689176450" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_StyleSheetClass_NonTypesystemRule" />
+    <unitInfo nodeId="1950447826689176450" fileName="check_StyleSheetClass_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.check_StyleSheetClass_NonTypesystemRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/2412132804004536449" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/2735767332089496671">

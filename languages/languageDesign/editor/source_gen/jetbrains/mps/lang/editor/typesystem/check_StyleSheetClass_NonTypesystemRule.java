@@ -21,7 +21,7 @@ public class check_StyleSheetClass_NonTypesystemRule extends AbstractNonTypesyst
     SNode p = styleSheetClass;
     while ((SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedClass", true), "styleSheetClass", false) != null)) {
       p = SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedClass", true), "styleSheetClass", false);
-      if (eq_he4noz_a0b0b0b(p.getReference(), styleSheetClass.getReference())) {
+      if (p == styleSheetClass) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(styleSheetClass, "Cyclic style inheritance", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1950447826689177474", null, errorTarget);
@@ -44,12 +44,5 @@ public class check_StyleSheetClass_NonTypesystemRule extends AbstractNonTypesyst
 
   public boolean overrides() {
     return false;
-  }
-
-  private static boolean eq_he4noz_a0b0b0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }
