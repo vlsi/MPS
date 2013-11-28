@@ -27,7 +27,7 @@ public class SimpleBuilders_Behavior {
 
   public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode sb : SModelOperations.getRootsIncludingImported(context, scope, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")) {
+    for (SNode sb : SModelOperations.getRootsIncludingImported(context, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")) {
       if (SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(sb, thisNode)) {
         ListSequence.fromList(result).addElement(sb);
       }

@@ -32,7 +32,7 @@ public class Model {
 
   public void roots_access_1(SModel model, IScope scope) {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
-    SModelOperations.getRootsIncludingImported(model, scope, null);
+    SModelOperations.getRootsIncludingImported(model, null);
     List<SNode> roots2 = SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     Iterable<SNode> roots3 = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
@@ -42,7 +42,7 @@ public class Model {
   }
 
   public void roots_access_2(SModel model, IScope scope) {
-    SModelOperations.getRootsIncludingImported(model, scope, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SModelOperations.getRootsIncludingImported(model, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
 
   public void nodes_access_1(SModel model) {

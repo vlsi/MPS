@@ -11,7 +11,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -39,7 +38,7 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         List<SNode> result = new ArrayList<SNode>();
-        List<SNode> tgList = SModelOperations.getRootsIncludingImported(_context.getModel(), GlobalScope.getInstance(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
+        List<SNode> tgList = SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
         for (SNode tg : tgList) {
           ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(tg, "operation", true)));
         }
