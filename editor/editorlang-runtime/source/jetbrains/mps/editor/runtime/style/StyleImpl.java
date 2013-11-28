@@ -324,9 +324,6 @@ public class StyleImpl implements Style {
       IntPair<Object> currentValue;
       IntPair<Object> oldValue;
 
-      Object newValue;
-      int newIndex;
-
       parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
       currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
       oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
@@ -371,7 +368,6 @@ public class StyleImpl implements Style {
 
         Object currentV = currentNow ? currentValue.value : null;
         Object parentV = parentNow ? parentValue.value : null;
-        Object oldV = oldNow ? oldValue.value : null;
         Object newV;
         if (currentV instanceof NullValue || (parentV == null && currentV == null)) {
           newV = null;
@@ -381,81 +377,20 @@ public class StyleImpl implements Style {
         int newInd = currentNow ? currentValue.index : parentNow ? parentValue.index : oldNow ? oldValue.index : null;
 
         if (currentNow) {
-          //currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
         }
         if (parentNow) {
-          //parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
         }
         if (oldNow) {
-          //oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
+          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
         }
 
 
-        if (oldValue != null && (parentValue == null || oldValue.index < parentValue.index) && (currentValue == null || oldValue.index < currentValue.index)) {
-          assert oldNow && ! currentNow && ! parentNow;
-          newValue = null;
-          newIndex = oldValue.index;
-          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
-        } else if (parentValue != null && (currentValue == null || parentValue.index < currentValue.index) && (oldValue == null || parentValue.index < oldValue.index)) {
-          assert ! oldNow && ! currentNow && parentNow;
-          newValue = attribute.combine(parentValue.value, null);
-          newIndex = parentValue.index;
-          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
-        } else if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index) && (oldValue == null || currentValue.index < oldValue.index)) {
-          assert ! oldNow && currentNow && ! parentNow;
-          if (currentValue.value instanceof NullValue) {
-            newValue = null;
-          } else {
-            newValue = attribute.combine(null, currentValue.value);
-          }
-          newIndex = currentValue.index;
-          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
-        } else if (parentValue != null && currentValue != null && oldValue != null && parentValue.index == oldValue.index && currentValue.index == oldValue.index) {
-          assert oldNow && currentNow && parentNow;
-          if (currentValue.value instanceof NullValue) {
-            newValue = null;
-          } else {
-            newValue = attribute.combine(parentValue.value, currentValue.value);
-          }
-          newIndex = currentValue.index;
-          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
-          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
-          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
-        } else if (parentValue != null && currentValue != null && parentValue.index == currentValue.index) {
-          assert ! oldNow && currentNow && parentNow;
-          if (currentValue.value instanceof NullValue) {
-            newValue = null;
-          } else {
-            newValue = attribute.combine(parentValue.value, currentValue.value);
-          }
-          newIndex = currentValue.index;
-          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
-          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
-        } else if (parentValue != null && oldValue != null && parentValue.index == oldValue.index) {
-          assert oldNow && ! currentNow && parentNow;
-          newValue = attribute.combine(parentValue.value, null);
-          newIndex = parentValue.index;
-          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
-          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
-        } else if (currentValue != null && oldValue != null && currentValue.index == oldValue.index) {
-          assert oldNow && currentNow && ! parentNow;
-          if (currentValue.value instanceof NullValue) {
-            newValue = null;
-          } else {
-            newValue = attribute.combine(null, currentValue.value);
-          }
-          newIndex = currentValue.index;
-          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
-          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
-        } else {
-          throw new IllegalStateException();
-        }
-        assert EqualUtil.equals(newV, newValue);
-        assert newInd == newIndex;
-        if (!EqualUtil.equals(newValue, getCached(attribute, newIndex))) {
+        if (!EqualUtil.equals(newV, getCached(attribute, newInd))) {
           changedAttributes.add(attribute);
         }
-        setCached(attribute, newIndex, newValue);
+        setCached(attribute, newInd, newV);
       }
     }
 
