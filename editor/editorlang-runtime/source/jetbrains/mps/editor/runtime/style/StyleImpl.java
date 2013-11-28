@@ -206,11 +206,6 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public void apply(@NotNull EditorCell cell) {
-    cell.getStyle().putAll(this);
-  }
-
-  @Override
   public void putAll(@NotNull Style style) {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();

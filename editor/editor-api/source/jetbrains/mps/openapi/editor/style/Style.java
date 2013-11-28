@@ -25,11 +25,6 @@ import java.util.Collection;
  * Date: 12/17/12
  */
 public interface Style {
-  /**
-   * Deprecated: should be removed after MPS 3.0
-   */
-  @Deprecated
-  void apply(@NotNull EditorCell cell);
 
   void putAll(@NotNull Style style);
 
