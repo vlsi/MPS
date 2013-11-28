@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.CollectionUtil;
@@ -76,7 +77,7 @@ public class MissingDependenciesFixer {
         List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
         if (fixImplicit) {
           if (model instanceof SModelDescriptor) {
-            for (jetbrains.mps.smodel.SModel.ImportElement impElem : SModelOperations.getAllImportElements(((SModelDescriptor) model).getSModel())) {
+            for (jetbrains.mps.smodel.SModel.ImportElement impElem : SModelOperations.getAllImportElements(((SModelBase) model).getSModel())) {
               ListSequence.fromList(models).addElement(impElem.getModelReference());
             }
           }

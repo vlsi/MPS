@@ -62,16 +62,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public boolean isTransient() {
-    return false;
-  }
-
-  @Override
-  public jetbrains.mps.smodel.SModel getSModel() {
-    return getSModelInternal();
-  }
-
-  @Override
   public void addModelListener(@NotNull SModelListener listener) {
     if (listener.getPriority() == SModelListenerPriority.PLATFORM) {
       myModelListeners.add(0, listener);
@@ -94,7 +84,6 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     myModelListeners.clear();
   }
 
-  @Override
   public boolean isGeneratable() {
     return false;
   }
@@ -177,23 +166,8 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     }
   }
 
-  /**
-   * use getReference()
-   */
-  @Override
-  @Deprecated
-  public jetbrains.mps.smodel.SModelReference getSModelReference() {
-    return ((jetbrains.mps.smodel.SModelReference) getReference());
-  }
-
-  @Override
-  public String getLongName() {
-    return SModelStereotype.withoutStereotype(getReference().getModelName());
-  }
-
-  @Override
-  public String getStereotype() {
-    return SModelStereotype.getStereotype(getReference().getModelName());
+  public jetbrains.mps.smodel.SModel getSModel() {
+    return getSModelInternal();
   }
 
   //

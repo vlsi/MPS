@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -265,7 +266,7 @@ public class RefactoringFacade {
         continue;
       }
       //  we suppose that all models were saved before refactoring started => ImportElements are up to date 
-      for (jetbrains.mps.smodel.SModel.ImportElement elem : ListSequence.fromList(SModelOperations.getAllImportElements(((SModelDescriptor) descr).getSModel()))) {
+      for (jetbrains.mps.smodel.SModel.ImportElement elem : ListSequence.fromList(SModelOperations.getAllImportElements(((SModelBase) descr).getSModel()))) {
         if (MapSequence.fromMap(dependencies).containsKey(elem.getModelReference())) {
           SetSequence.fromSet(result).addElement(descr);
           break;

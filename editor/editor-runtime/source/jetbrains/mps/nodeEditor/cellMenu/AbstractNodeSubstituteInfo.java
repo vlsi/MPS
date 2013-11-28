@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -117,8 +118,8 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
     if (inequalitiesSystem == null) return substituteActionList;
 
     ourModelForTypechecking =  TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-    for (SModuleReference l: ((SModelDescriptor) getEditorContext().getModel()).getSModel().getModelDepsManager().getAllImportedLanguages()){
-      ((SModelDescriptor) ourModelForTypechecking).getSModel().addLanguage(l);
+    for (SModuleReference l: ((SModelBase) getEditorContext().getModel()).getSModel().getModelDepsManager().getAllImportedLanguages()){
+      ((SModelBase) ourModelForTypechecking).getSModel().addLanguage(l);
     }
 
     List<SubstituteAction> result = new ArrayList<SubstituteAction>();

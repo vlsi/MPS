@@ -345,10 +345,5 @@ public class TransientModelsModule extends AbstractModule {
     protected void reloadContents() {
       throw new UnsupportedOperationException();
     }
-
-    @Override
-    public boolean isTransient() {
-      return true;
-    }
   }
 }
