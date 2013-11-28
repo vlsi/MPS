@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9v97auoup3lsxj9qqb2j3qb1f1pm0l1">
+<dependencies version="2" modelHash="8zxwsfhg9tfsoqgfv6x0i4im90fir1c">
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-b0r4umphey8f1daj7yy6ivdfb4xw47o" />
   <dep model="r:ba4ce2b4-b708-4183-95e3-2753aef5bf29(jetbrains.mps.baseLanguage.extensionMethods.editor)" hash="2isg6ky7s70dy987vwiequbn42qx2n8" />
   <dep model="r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)" hash="5k1l8f3x35l75gbqaqu8vse0ww0fhof" />

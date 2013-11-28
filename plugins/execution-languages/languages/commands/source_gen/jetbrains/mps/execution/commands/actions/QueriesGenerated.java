@@ -40,7 +40,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.commands.structure.CommandDeclaration");
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.execution.commands.structure.CommandDeclaration");
           }
         }.compute();
         if (queryResult != null) {
@@ -79,7 +79,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart");
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart");
           }
         }.compute();
         if (queryResult != null) {
