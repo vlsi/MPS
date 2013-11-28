@@ -2023,13 +2023,6 @@
         <property name="text" nameId="tpc2.1073389577007" value="(" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1182511100904" nodeInfo="ng">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no scope&gt;" />
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp25.1182511038749" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1182511105406" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="," />
-      </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1182511109971" nodeInfo="ng">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no concept&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp25.1182511038750" />

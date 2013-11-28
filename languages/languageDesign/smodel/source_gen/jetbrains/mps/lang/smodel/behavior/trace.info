@@ -753,7 +753,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/1213877485027">
     <nodeInfo nodeId="1213877485031" fileName="StaticConceptMethodCall_Behavior.java" startLine="20" startPosition="159" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877485045" fileName="StaticConceptMethodCall_Behavior.java" startLine="22" startPosition="142" endLine="23" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877485045" fileName="StaticConceptMethodCall_Behavior.java" startLine="22" startPosition="135" endLine="23" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877485064" fileName="StaticConceptMethodCall_Behavior.java" startLine="24" startPosition="160" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877485069" fileName="StaticConceptMethodCall_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877485027" fileName="StaticConceptMethodCall_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -765,7 +765,7 @@
     <scopeInfo nodeId="1213877485027" fileName="StaticConceptMethodCall_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1213877485027" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877485044" fileName="StaticConceptMethodCall_Behavior.java" startLine="22" startPosition="142" endLine="26" endPosition="7">
+    <scopeInfo nodeId="1213877485044" fileName="StaticConceptMethodCall_Behavior.java" startLine="22" startPosition="135" endLine="26" endPosition="7">
       <varInfo nodeId="1213877485046" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1213877485037" fileName="StaticConceptMethodCall_Behavior.java" startLine="21" startPosition="48" endLine="27" endPosition="5">
