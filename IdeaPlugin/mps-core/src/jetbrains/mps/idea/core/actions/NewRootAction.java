@@ -211,7 +211,7 @@ public class NewRootAction extends AnAction {
               @Override
               public void run() {
                 SModel model = myModelDescriptor;
-                List<Language> modelLanguages = SModelOperations.getLanguages(model, myOperationContext.getScope());
+                List<Language> modelLanguages = SModelOperations.getLanguages(model);
                 for (Language language : modelLanguages) {
                   for (SNode concept : language.getConceptDeclarations()) {
                     String conceptFqName = NameUtil.nodeFQName(concept);
