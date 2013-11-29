@@ -55,24 +55,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Igor Alshannikov
- * Jan 24, 2006
- */
 public class ChildSubstituteActionsHelper {
   private static final Logger LOG = LogManager.getLogger(ChildSubstituteActionsHelper.class);
-
-  public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
-  public static final String ABSTRACT = "abstract";
-
-  // Not used
-  @Deprecated
-  public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
-    @Override
-    public boolean met(SNode object) {
-      return true;
-    }
-  };
 
   public static List<SubstituteAction> createActions(final SNode parentNode, final SNode currentChild, final SNode childConcept,
       final IChildNodeSetter childSetter, final IOperationContext context) {
