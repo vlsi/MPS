@@ -25,6 +25,10 @@ public class SModelSearchUtil {
     return new ModelAndImportedModelsScope(model, rootsOnly);
   }
 
+  public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly) {
+    return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, rootsOnly);
+  }
+
   public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) {
       return null;
