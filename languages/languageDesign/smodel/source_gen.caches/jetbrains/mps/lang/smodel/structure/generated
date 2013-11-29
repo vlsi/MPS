@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-478uk6t0kk94thznpam24ct8uwsieyo">
+<dependencies version="2" modelHash="z1cby0u4j363xnpdbxxx8t6rjgo9zx">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-dyt5u4jh6n0m423lv7waqraopz24g4r" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4wqibd1vnak473g8nuhgzbq0kkb0oli" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-drlnnuivrewlw803998snh16wd0be3g" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-5rdxzzler24vc515jjfi4vx2ye7dkxt" dependsOnNodes="true">
+  <common hash="da6gn80i6waroedam37s207y9c1pwns" dependsOnNodes="true">
     <dep root="1138055754698" />
     <dep root="1138056022639" />
     <dep root="1138056143562" />
@@ -163,7 +163,7 @@
   <source id="1138056022639" name="SPropertyAccess" hash="-8k9ci679qridxaze3kgfynj4zjtzqm5" />
   <source id="1138056143562" name="SLinkAccess" hash="2bxuxbfconwvxs2kdygwweh6ke4p8vu" />
   <source id="1138056282393" name="SLinkListAccess" hash="-cdzzl607m88jotjpfcs3n2a4f6hmujq" />
-  <source id="1138411891628" name="SNodeOperation" hash="33bhybpkm55ffe5j06gj6p2kryygkcg" />
+  <source id="1138411891628" name="SNodeOperation" hash="-but65u6tnbpwudkpldwnzxq08dijzaa" />
   <source id="1138661924179" name="Property_SetOperation" hash="9co1ah9lux0fo1ekxvu0eh7vjd997zn" />
   <source id="1138676077309" name="EnumMemberReference" hash="8q82bj2c7i1d4lgqxoiiuox5ccleveb" />
   <source id="1138757581985" name="Link_SetNewChildOperation" hash="5cf4h7aai1fzusedrregqpsvh3tycan" />

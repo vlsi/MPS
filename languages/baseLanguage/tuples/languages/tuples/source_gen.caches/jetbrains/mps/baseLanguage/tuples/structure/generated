@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3awctlxhbssp71ilevl5pnpr6qnikp5">
+<dependencies version="2" modelHash="44fzax3vzb0hm43k2gn7eznrp0n7qas">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4wqibd1vnak473g8nuhgzbq0kkb0oli" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="btdjxc14781ocqhqpqncstb627ebbd6" dependsOnNodes="true">
+  <common hash="-bqpo6teafzwzusb7ihkckoebipjqqbv" dependsOnNodes="true">
     <dep root="1238852151516" />
     <dep root="1238853782547" />
     <dep root="1238857743184" />
@@ -24,13 +24,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1238852151516" name="IndexedTupleType" hash="-e2of3apq4hjreimul5clbwhh0xz8aun" />
-  <source id="1238853782547" name="IndexedTupleLiteral" hash="-7otuircokebjuv7spcpz1s8qtze8dt4" />
+  <source id="1238852151516" name="IndexedTupleType" hash="-88s59o1m7q39taw3mnd4ikcqs62jqax" />
+  <source id="1238853782547" name="IndexedTupleLiteral" hash="-bz0ctpz7c29gcw13dioe97eu8z1piwp" />
   <source id="1238857743184" name="IndexedTupleMemberAccessExpression" hash="-94j3s3yy6iotw3opu8w2x7847rcqea5" />
-  <source id="1239360506533" name="NamedTupleDeclaration" hash="-dqnnzxynpbqm3x0kf1ozm8nh152vu7v" />
+  <source id="1239360506533" name="NamedTupleDeclaration" hash="-e3lbgj6btpiwvodg909jnw8tut6sxyr" />
   <source id="1239462176079" name="NamedTupleComponentDeclaration" hash="-1cswzeqacjwq42813kj4kfykfwj035g" />
-  <source id="1239531918181" name="NamedTupleType" hash="-7q4dsqqun9vlnrx0uh3nleemj91rane" />
-  <source id="1239559992092" name="NamedTupleLiteral" hash="cxzt8nbmhbkq8yem6fkztuc8pbx6xju" />
+  <source id="1239531918181" name="NamedTupleType" hash="-cs2scst2dss2aviw1ygaun3nkey9xu5" />
+  <source id="1239559992092" name="NamedTupleLiteral" hash="-ds3jzm9hecxf6t6sydvo94efb9hbvje" />
   <source id="1239560581441" name="NamedTupleComponentReference" hash="-17rfk8pvau56ju59lao898gaw7pygxc" />
   <source id="1239576519914" name="NamedTupleComponentAccessOperation" hash="-eab895plyfinmybszd21wo3kuzjrrzf" />
 </dependencies>
