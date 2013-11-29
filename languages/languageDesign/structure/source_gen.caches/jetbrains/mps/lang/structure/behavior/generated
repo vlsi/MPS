@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4f3cqs31z8z3r319stgpvj95v4ex026">
+<dependencies version="2" modelHash="6f7ax6g74rwuirckibk2ad7h0ycg6l6">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -11,14 +11,14 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-41zcj4srfxst432ncw70viq3i78t8jl" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" hash="-7ocx82c4pe4ja6pu27dq5o0wqxc5i69" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2gg1pqtx5oviifer9wjwwhnmr9s8esl" />
+  <dep model="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" hash="d8ct17g4whcdgjg0x0suoaonhbor1p0" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="1456l4f473hired2n1le0oup7kiwjxt" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4wqibd1vnak473g8nuhgzbq0kkb0oli" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-bhga2yo3yhg4765hg6nvkqbu26lnsqr" />
   <dep model="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" hash="-5jalr2h4mwp22qpc7hd8wypikzxmmjj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="z1cby0u4j363xnpdbxxx8t6rjgo9zx" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="anwnqfgvnoahufaxqnl6nhdvw79v0uj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-2eb3p6cnl5yqiz9lud7dzegwxic3w8p" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="7uy0q3kirgdwbps1ji91cpmiltydqbr" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-drlnnuivrewlw803998snh16wd0be3g" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-dm3fucph2z3yr5mp9u50b5r51i9nf2r" />
@@ -28,7 +28,7 @@
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="dm75q7vc5em4qh6zjrvka04g9q7s08c" />
   <dep model="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" hash="conm2gs3u7fx875iec89b8pqwz3sjq1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-ayoa2b076ar5vqxn39xcwdbb4ho2how" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-5do77owlyobkx5qjefflyvdt22gudut" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-93h02qd3mfz4hhspvng20fqnxkp0qxy" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
@@ -39,11 +39,8 @@
     <dep root="1213877301667" />
     <dep root="1213877313721" />
     <dep root="1213877323882" />
-    <dep root="1213877370946" />
     <dep root="1213877394026" />
     <dep root="1213877397771" />
-    <dep root="1213877528561" />
-    <dep root="1213877535035" />
     <dep root="1213877540483" />
     <dep root="1216822949793" />
     <dep root="1222430504608" />
@@ -53,7 +50,6 @@
     <dep root="2621449412040133765" />
     <dep root="2992811758677310089" />
     <dep root="7588821453550280407" />
-    <dep root="8080932314785851907" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -64,18 +60,13 @@
     <file name="AbstractConceptDeclaration_BehaviorDescriptor.java" />
     <file name="AggregationConceptLinkDeclaration_BehaviorDescriptor.java" />
     <file name="AggregationConceptLink_BehaviorDescriptor.java" />
-    <file name="AnnotationLinkDeclaration_BehaviorDescriptor.java" />
     <file name="AttributeInfo_AttributedConcept_BehaviorDescriptor.java" />
     <file name="AttributeInfo_BehaviorDescriptor.java" />
     <file name="AttributeInfo_IsMultiple_BehaviorDescriptor.java" />
     <file name="BehaviorAspectDescriptor.java" />
-    <file name="BooleanConceptPropertyDeclaration_BehaviorDescriptor.java" />
-    <file name="BooleanConceptProperty_BehaviorDescriptor.java" />
     <file name="ConceptDeclaration_BehaviorDescriptor.java" />
     <file name="ConceptLinkDeclaration_BehaviorDescriptor.java" />
     <file name="ConceptLink_BehaviorDescriptor.java" />
-    <file name="ConceptPropertyDeclaration_BehaviorDescriptor.java" />
-    <file name="ConceptProperty_BehaviorDescriptor.java" />
     <file name="ConstrainedDataTypeDeclaration_BehaviorDescriptor.java" />
     <file name="DataTypeDeclaration_BehaviorDescriptor.java" />
     <file name="DeprecatedNodeAnnotation_BehaviorDescriptor.java" />
@@ -83,18 +74,11 @@
     <file name="EnumerationMemberDeclaration_BehaviorDescriptor.java" />
     <file name="IConceptAspect_BehaviorDescriptor.java" />
     <file name="IStructureDeprecatable_BehaviorDescriptor.java" />
-    <file name="IntegerConceptPropertyDeclaration_BehaviorDescriptor.java" />
-    <file name="IntegerConceptProperty_BehaviorDescriptor.java" />
     <file name="InterfaceConceptDeclaration_BehaviorDescriptor.java" />
     <file name="InterfaceConceptReference_BehaviorDescriptor.java" />
     <file name="LinkDeclaration_BehaviorDescriptor.java" />
-    <file name="MigratedToMethodAnnotation_BehaviorDescriptor.java" />
     <file name="PrimitiveDataTypeDeclaration_BehaviorDescriptor.java" />
     <file name="PropertyDeclaration_BehaviorDescriptor.java" />
-    <file name="ReferenceConceptLinkDeclaration_BehaviorDescriptor.java" />
-    <file name="ReferenceConceptLink_BehaviorDescriptor.java" />
-    <file name="StringConceptPropertyDeclaration_BehaviorDescriptor.java" />
-    <file name="StringConceptProperty_BehaviorDescriptor.java" />
   </common>
   <source id="1213877216526" name="ConceptDeclaration_Behavior" hash="-a27bhs6znxtbhrnz7du6sm8ifbgrhzq">
     <dep root="1213877394026" />
@@ -168,12 +152,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PrimitiveDataTypeDeclaration_Behavior.java" />
   </source>
-  <source id="1213877370946" name="ConceptProperty_Behavior" hash="39m5jtyc574z52cag8qbswwz78zr9lt">
-    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <file name="ConceptProperty_Behavior.java" />
-  </source>
-  <source id="1213877394026" name="AbstractConceptDeclaration_Behavior" hash="32imqvjo06vcaikvik7pr2ubu6i5rq1">
+  <source id="1213877394026" name="AbstractConceptDeclaration_Behavior" hash="-ddk9dqqupksfxo288bhw95knixg9ln1">
     <dep root="2621449412040133765" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -217,16 +196,6 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EnumerationDataTypeDeclaration_Behavior.java" />
-  </source>
-  <source id="1213877528561" name="ReferenceConceptLink_Behavior" hash="362pd5eajr7ckli1t3ohpst5e1hd3s9">
-    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <file name="ReferenceConceptLink_Behavior.java" />
-  </source>
-  <source id="1213877535035" name="AnnotationLinkDeclaration_Behavior" hash="dp1650w34wlw6m3ly3n51piftsu0h05">
-    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <file name="AnnotationLinkDeclaration_Behavior.java" />
   </source>
   <source id="1213877540483" name="ConceptLink_Behavior" hash="-87y1dahyyxovs8l0hx1bfxo5y7i686b">
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -295,11 +264,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <file name="DeprecatedNodeAnnotation_Behavior.java" />
-  </source>
-  <source id="8080932314785851907" name="MigratedToMethodAnnotation_Behavior" hash="bou237eb58pz33ij2rbc30n4xkho60j">
-    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <file name="MigratedToMethodAnnotation_Behavior.java" />
   </source>
   <source id="2992811758677310089" name="AttributeInfo_Behavior" hash="-com9jtcvosmxawpo1jwoznm69m6mizq">
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />

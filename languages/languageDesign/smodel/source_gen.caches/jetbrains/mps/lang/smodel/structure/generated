@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="z1cby0u4j363xnpdbxxx8t6rjgo9zx">
+<dependencies version="2" modelHash="-2eb3p6cnl5yqiz9lud7dzegwxic3w8p">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4wqibd1vnak473g8nuhgzbq0kkb0oli" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-drlnnuivrewlw803998snh16wd0be3g" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
@@ -133,7 +133,6 @@
     <dep root="5692182839349412519" />
     <dep root="5708036808576088033" />
     <dep root="5820409030208923287" />
-    <dep root="5897605856268838718" />
     <dep root="5944356402132808749" />
     <dep root="5944356402132808754" />
     <dep root="597763930871270009" />
@@ -287,7 +286,6 @@
   <source id="2788452359612124331" name="IPropertyQualifier" hash="-dtfzhq8t6nov9jpzatlvn9v14ay6c0y" />
   <source id="2788452359612124332" name="LinkQualifier" hash="-5v4o7aeokezo8p4tvu8rqd8zaa1qfrv" />
   <source id="2788452359612124333" name="PropertyQualifier" hash="-7b0eo9twxf0wrb1pmlbhp1vcjwo4y6o" />
-  <source id="5897605856268838718" name="ConceptPropertyNameRefExpression" hash="-8in5sd42gt2j97skxtkkcs7f8vyoa63" />
   <source id="6995935425733782641" name="Model_GetModule" hash="-2c97u4aadnuab85igjpnihpukpsdot" />
   <source id="4040588429969021681" name="ModuleReferenceExpression" hash="cjfjfcsyfr91m0e77hgnar7bd3au9b5" />
   <source id="4040588429969069898" name="LanguageReferenceExpression" hash="cina48vhi5bla0q9bwjym1d191i88dj" />

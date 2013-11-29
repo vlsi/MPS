@@ -116,7 +116,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.CheckedModuleReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ChildNodeRefExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ConceptFqNameRefExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ConceptPropertyNameRefExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ConceptRefExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ConceptReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ConceptSwitchStatementCase_BehaviorDescriptor" />
@@ -268,12 +267,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.ConceptFqNameRefExpression_BehaviorDescriptor" file="ConceptFqNameRefExpression_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.ConceptPropertyNameRefExpression_BehaviorDescriptor" file="ConceptPropertyNameRefExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />

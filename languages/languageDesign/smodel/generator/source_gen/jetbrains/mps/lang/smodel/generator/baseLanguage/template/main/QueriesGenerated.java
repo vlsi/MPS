@@ -381,10 +381,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "internalValue");
   }
 
-  public static Object propertyMacro_GetPropertyValue_5897605856268916715(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "conceptPropertyDeclaration", false), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_6955116391921923057(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String moduleFqName = SPropertyOperations.getString(_context.getNode(), "moduleId");
     SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
@@ -1553,7 +1549,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0bn(returnType);
+      return _quotation_createNode_x583g4_a0a0c0an(returnType);
     }
   }
 
@@ -1738,7 +1734,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0c0bn(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0an(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
