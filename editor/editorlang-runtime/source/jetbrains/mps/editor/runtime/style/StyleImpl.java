@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.editor.runtime.style.IntObjectSortedListMap.IntMapPointer;
 import jetbrains.mps.editor.runtime.style.IntObjectSortedListMap.NullValue;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;

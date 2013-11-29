@@ -18,16 +18,78 @@ package jetbrains.mps.editor.runtime.style;
 import jetbrains.mps.openapi.editor.style.Style.IntPair;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
 
 /**
  * User: Mihail.Buryakov
  * Date: 11/28/13
  */
 class IntObjectSortedListMap<T> {
+
+  public static class IntMapPointer<T> {
+    IntObjectSortedListMap<T> myMap;
+    private boolean myEmpty;
+    private int myIndex;
+    private int myPointer;
+    public IntMapPointer(IntObjectSortedListMap<T> map, int pointer, boolean empty, int index) {
+      myMap = map;
+      myPointer = pointer;
+      myEmpty = empty;
+      myIndex = index;
+    }
+    public boolean isEmpty() {
+      return myEmpty;
+    }
+    public T get() {
+      if (isEmpty()) {
+        return null;
+      } else {
+        return myMap.values[myPointer];
+      }
+    }
+    public void insert(T value) {
+      assert isEmpty();
+      int n = myMap.indexes.length;
+      int[] newIndexes = new int[n + 1];
+      T[] newValues = (T[]) new Object[n + 1];
+      System.arraycopy(myMap.indexes, 0, newIndexes, 0, myPointer);
+      System.arraycopy(myMap.values, 0, newValues, 0, myPointer);
+      newIndexes[myPointer] = myIndex;
+      newValues[myPointer] = value;
+      System.arraycopy(myMap.indexes, myPointer, newIndexes, myPointer + 1, n - myPointer);
+      System.arraycopy(myMap.values, myPointer, newValues, myPointer + 1, n - myPointer);
+      myMap.indexes = newIndexes;
+      myMap.values = newValues;
+      myEmpty = false;
+    }
+    public void set(T value) {
+      if (value == null) {
+        if (!isEmpty()) {
+          delete();
+        }
+      } else {
+        if (isEmpty()) {
+          insert(value);
+        } else {
+          myMap.values[myPointer] = value;
+        }
+      }
+    }
+    private void delete() {
+      assert ! isEmpty();
+      int n = myMap.indexes.length;
+      int[] newIndexes = new int[n - 1];
+      T[] newValues = (T[]) new Object[n - 1];
+      System.arraycopy(myMap.indexes, 0, newIndexes, 0, myPointer);
+      System.arraycopy(myMap.values, 0, newValues, 0, myPointer);
+      System.arraycopy(myMap.indexes, myPointer + 1, newIndexes, myPointer, n - myPointer - 1);
+      System.arraycopy(myMap.values, myPointer + 1, newValues, myPointer, n - myPointer - 1);
+      myMap.indexes = newIndexes;
+      myMap.values = newValues;
+      myEmpty = true;
+    }
+  }
 
   public static class NullValue {
     private static NullValue myInstance;
@@ -42,43 +104,35 @@ class IntObjectSortedListMap<T> {
     }
   }
 
-  private List<IntPair<T>> values;
+  private int[] indexes = new int[0];
+  private T[] values = (T[]) new Object[0];
 
   public Collection<IntPair<T>> getAll() {
-    return values;
+    ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(indexes.length);
+    for (int i = 0; i < indexes.length; i++) {
+      result.add(new IntPair<T>(indexes[i], values[i]));
+    }
+    return result;
   }
 
   public Collection<IntPair<T>> getNullReplaced() {
-    LinkedList<IntPair<T>> result = new LinkedList<IntPair<T>>(values);
-    ListIterator<IntPair<T>> iterator = result.listIterator();
-    while (iterator.hasNext()) {
-      IntPair<T> value = iterator.next();
-      if (value.value instanceof NullValue) {
-        iterator.set(new IntPair<T>(value.index, null));
+    ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(indexes.length);
+    for (int i = 0; i < indexes.length; i++) {
+      if (values[i] instanceof NullValue) {
+        result.add(new IntPair<T>(indexes[i], null));
+      } else {
+        result.add(new IntPair<T>(indexes[i], values[i]));
       }
     }
     return result;
   }
 
   public IntMapPointer<T> search(int index) {
-    if (values == null) {
-      values = new ArrayList<IntPair<T>>();
-    }
-
-    ListIterator<IntPair<T>> iterator = values.listIterator();
-    if (! iterator.hasNext()) {
-      return new IntMapPointer<T>(true, iterator, index);
+    int pointer = Arrays.binarySearch(indexes, index);
+    if (pointer >= 0) {
+      return new IntMapPointer<T>(this, pointer, false, index);
     } else {
-      while (iterator.hasNext() && iterator.next().index < index);
-      int prevIndex = iterator.previous().index;
-      if (prevIndex == index) {
-        return new IntMapPointer<T>(false, iterator, index);
-      } else if (prevIndex < index) {
-        iterator.next();
-        return new IntMapPointer<T>(true, iterator, index);
-      } else {
-        return new IntMapPointer<T>(true, iterator, index);
-      }
+      return new IntMapPointer<T>(this, - pointer - 1, true, index);
     }
   }
 
@@ -91,14 +145,9 @@ class IntObjectSortedListMap<T> {
     searchResult.set(value);
   }
   public IntPair<T> getTopPair() {
-    if (values == null) {
-      return null;
-    }
-    ListIterator<IntPair<T>> descendingIterator = values.listIterator(values.size());
-    while (descendingIterator.hasPrevious()) {
-      IntPair<T> value = descendingIterator.previous();
-      if (!(value.value instanceof NullValue)) {
-        return value;
+    for (int i = indexes.length - 1; i >= 0; i--) {
+      if (!(values[i] instanceof NullValue)) {
+        return new IntPair<T>(indexes[i], values[i]);
       }
     }
     return null;
