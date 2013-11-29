@@ -587,10 +587,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/jetbrains.mps.ide.java.tests/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/migration">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/migration/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/migration/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../plugins/newLanguageDesign">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/gen.transform/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/gen.transform/source_gen" isTestSource="false" />
