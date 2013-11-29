@@ -161,11 +161,6 @@
     <property name="name" nameId="1169194664001" value="Attribute" />
     <property name="virtualPackage" nameId="1193676396447" value="attributes" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="5169995583184591169" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="attributed" />
-      <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717010" nodeInfo="ig" />
-    </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="5169995583184591164" nodeInfo="ig">
       <property name="name" nameId="1169194664001" value="role" />
       <property name="inheritable" nameId="tpce.1218571350029" value="true" />
