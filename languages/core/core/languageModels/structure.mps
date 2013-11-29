@@ -6,7 +6,6 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" implicit="yes" />
   <root type="tpce.PrimitiveDataTypeDeclaration" typeId="tpce.1083243159079" id="1082983041843" nodeInfo="ng">
     <property name="name" nameId="1169194664001" value="string" />
   </root>
@@ -37,34 +36,6 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1193676396447" nodeInfo="ig">
       <property name="name" nameId="1169194664001" value="virtualPackage" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1082983041843" resolveInfo="string" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1137473854053" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="abstract" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844289" nodeInfo="ig" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="8339862546319981473" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="final" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278845414" nodeInfo="ig" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="1137473891462" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="alias" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843131" nodeInfo="ig" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="1137473914776" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="shortDescription" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844303" nodeInfo="ig" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1137473994950" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="dontSubstituteByDefault" />
-      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838323" nodeInfo="ig" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="6293714305936158372" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="substituteInAmbigousPosition" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838325" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838324" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpcu.1262430001741498020" resolveInfo="substituteInAmbigousPosition" />
-      </node>
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1169194658468" nodeInfo="ig">
@@ -161,16 +132,6 @@
     <property name="name" nameId="1169194664001" value="Attribute" />
     <property name="virtualPackage" nameId="1193676396447" value="attributes" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="5169995583184591164" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="role" />
-      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843063" nodeInfo="ig" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="5169995583184591167" nodeInfo="ig">
-      <property name="name" nameId="1169194664001" value="multiple" />
-      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
-      <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838315" nodeInfo="ig" />
-    </node>
     <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758854" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="" />
       <node role="multiple" roleId="tpce.7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="tpce.6054523464626862044" id="1262857012846245233" nodeInfo="ng">

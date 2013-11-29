@@ -8,7 +8,6 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="hypd" modelUID="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" version="-1" />
-  <import index="tpeu" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138055754698" nodeInfo="ig">
@@ -76,62 +75,6 @@
       <property name="role" nameId="tpce.1071599776563" value="parameter" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1144100743722" resolveInfo="AbstractOperationParameter" />
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1143235288634" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToModel" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278845416" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278845415" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741492322" resolveInfo="applicableToModel" />
-      </node>
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1138763241883" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToNode" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843139" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843138" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741498076" resolveInfo="applicableToNode" />
-      </node>
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1138763303089" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToSimpleProperty" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278845213" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278845212" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741498100" resolveInfo="applicableToSimpleProperty" />
-      </node>
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1146171845591" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToEnumProperty" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843059" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843058" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741498259" resolveInfo="applicableToEnumProperty" />
-      </node>
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1145994733391" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToConceptProperty" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844291" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844290" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741497945" resolveInfo="applicableToConceptProperty" />
-      </node>
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1138763325919" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToLink" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838712" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838711" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741498352" resolveInfo="applicableToLink" />
-      </node>
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1138763350436" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToLinkList" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843135" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843134" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741498382" resolveInfo="applicableToLinkList" />
-      </node>
-    </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1172326539502" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableToConcept" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278830703" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278830702" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpeu.1262430001741498358" resolveInfo="applicableToConcept" />
-      </node>
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1203100323708" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
