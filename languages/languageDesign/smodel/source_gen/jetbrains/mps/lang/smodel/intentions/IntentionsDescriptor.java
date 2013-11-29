@@ -17,7 +17,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddSNodeCastStatement_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ChangeAsCast_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertCastToNodeCast_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertConceptPropertySetToAssignment_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertInstanceofToNodeInstanceof_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertLinkSetToAssignment_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertPropertySetToAssignment_Intention());

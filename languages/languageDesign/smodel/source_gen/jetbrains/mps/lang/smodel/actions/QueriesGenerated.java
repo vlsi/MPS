@@ -268,9 +268,6 @@ public class QueriesGenerated {
                 return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToSimpleProperty_1262430001741498100", new Object[]{}));
               }
             }
-            if (SNodeOperations.isInstanceOf(leftOperation, "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess")) {
-              return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToConceptProperty_1262430001741497945", new Object[]{}));
-            }
           }
           // ========== 
           SNode linkAccess = appTypesInfo.myLinkAccess;
@@ -348,9 +345,6 @@ public class QueriesGenerated {
           SNode linkAccess = appTypesInfo.myLinkAccess;
           if (linkAccess != null && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isAggregation_4024382256428848854", new Object[]{}))) {
             //  some operations are only applicable to aggregation links 
-            if (SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation")) {
-              return true;
-            }
             if (SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation")) {
               return true;
             }
