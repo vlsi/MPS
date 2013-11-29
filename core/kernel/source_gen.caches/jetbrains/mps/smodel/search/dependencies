@@ -68,7 +68,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache" />
     <classNode dependClassName="jetbrains.mps.util.FlattenIterable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

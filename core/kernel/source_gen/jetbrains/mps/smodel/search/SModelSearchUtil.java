@@ -87,24 +87,6 @@ public class SModelSearchUtil {
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
   }
 
-  public static List<SNode> getConceptPropertyDeclarations(SNode concept) {
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
-    for (SNode c : concepts) {
-      for (SNode conceptPropertyDeclaration : SNodeUtil.getConcept_ConceptPropertyDeclarations(c)) {
-        result.add(conceptPropertyDeclaration);
-      }
-    }
-    return result;
-  }
-
-  public static SNode findConceptProperty(SNode concept, String propertyName) {
-    if (concept == null) {
-      return null;
-    }
-    return new ConceptAndSuperConceptsScope(concept).getConceptPropertyByName(propertyName);
-  }
-
   public static Iterable<SNode> getConceptLinkDeclarations(SNode concept) {
     FlattenIterable<SNode> result = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>());
     List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();

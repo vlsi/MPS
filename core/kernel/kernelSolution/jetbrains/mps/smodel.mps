@@ -944,16 +944,6 @@
         <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpce.1169129564478" />
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8642756583111980185" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="link_AbstractConceptDeclaration_conceptProperty" />
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8642756583111983777" nodeInfo="nn" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8642756583111980188" nodeInfo="in" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="8642756583111980192" nodeInfo="nn">
-        <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-        <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpce.1105725339613" />
-      </node>
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8642756583111980193" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="link_AbstractConceptDeclaration_linkDeclaration" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -974,9 +964,20 @@
         <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpce.1071489727084" />
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="7897202388613791825" nodeInfo="ngu" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="589356507348907716" nodeInfo="ngu" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="589356507348830452" nodeInfo="igu">
+      <property name="name" nameId="tpck.1169194664001" value="property_AbstractConceptDeclaration_abstract" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="589356507348830453" nodeInfo="nn" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="589356507348830454" nodeInfo="in" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.PropertyNameRefExpression" typeId="tp25.5253134957341870583" id="589356507348903035" nodeInfo="nn">
+        <link role="conceptDeclaration" roleId="tp25.5253134957341870584" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+        <link role="propertyDeclaration" roleId="tp25.5253134957341870585" targetNodeId="tpce.4628067390765956802" resolveInfo="abstract" />
+      </node>
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5253134957342015602" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="property_INamedConcept_name" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5253134957342015605" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5253134957342015606" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp25.PropertyNameRefExpression" typeId="tp25.5253134957341870583" id="5253134957342015608" nodeInfo="nn">
