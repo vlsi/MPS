@@ -163,6 +163,27 @@
     <unitInfo nodeId="1883330766647280669" fileName="MPSBlockView.java" startLine="42" startPosition="44" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.sandbox.MPSBlockView$1" />
     <unitInfo nodeId="2081283005326978303" fileName="MPSBlockView.java" startLine="25" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.sandbox.MPSBlockView" />
   </root>
+  <root nodeRef="r:1ad1263e-00de-4cc8-9c19-9f634ef22b07(jetbrains.mps.lang.editor.figures.sandbox)/2084788800269979458">
+    <nodeInfo nodeId="6365639112241791788" fileName="BlockContentView.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCellView" />
+    <nodeInfo nodeId="2084788800270123500" fileName="BlockContentView.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCell" />
+    <nodeInfo nodeId="6365639112245884172" fileName="BlockContentView.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRect" />
+    <nodeInfo nodeId="2084788800270742865" fileName="BlockContentView.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
+    <nodeInfo nodeId="6365639112246684682" fileName="BlockContentView.java" startLine="21" startPosition="29" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2084788800270139322" fileName="BlockContentView.java" startLine="22" startPosition="39" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2084788800270154948" fileName="BlockContentView.java" startLine="23" startPosition="47" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112241852854" fileName="BlockContentView.java" startLine="24" startPosition="32" endLine="25" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112245891810" fileName="BlockContentView.java" startLine="25" startPosition="31" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112245947741" fileName="BlockContentView.java" startLine="26" startPosition="27" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112246020665" fileName="BlockContentView.java" startLine="27" startPosition="40" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2084788800270216816" fileName="BlockContentView.java" startLine="33" startPosition="34" endLine="34" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2084788800270022743" fileName="BlockContentView.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="text#()Ljetbrains/jetpad/model/property/Property;" />
+    <nodeInfo nodeId="6365639112241851334" fileName="BlockContentView.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockContentView#()V" />
+    <scopeInfo nodeId="2084788800270022746" fileName="BlockContentView.java" startLine="33" startPosition="34" endLine="34" endPosition="25" />
+    <scopeInfo nodeId="2084788800270022743" fileName="BlockContentView.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6365639112241851338" fileName="BlockContentView.java" startLine="21" startPosition="29" endLine="28" endPosition="48" />
+    <scopeInfo nodeId="6365639112241851334" fileName="BlockContentView.java" startLine="21" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="2084788800269979458" fileName="BlockContentView.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.sandbox.BlockContentView" />
+  </root>
   <root nodeRef="r:1ad1263e-00de-4cc8-9c19-9f634ef22b07(jetbrains.mps.lang.editor.figures.sandbox)/221487594584013390" />
   <root nodeRef="r:1ad1263e-00de-4cc8-9c19-9f634ef22b07(jetbrains.mps.lang.editor.figures.sandbox)/2353136177974229364">
     <nodeInfo nodeId="2353136177974318709" fileName="BlockInstanceView.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDir" />

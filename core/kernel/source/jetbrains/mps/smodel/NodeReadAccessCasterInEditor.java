@@ -104,7 +104,7 @@ public class NodeReadAccessCasterInEditor {
     }
   }
 
-  public static String runCleanPropertyAccessAction(Computable<String> propertyAccess) {
+  public static<T> T runCleanPropertyAccessAction(Computable<T> propertyAccess) {
     ListenersContainer listenersContainer = ourListenersContainer.get();
     boolean wasCleanAccessMode = false;
     if (listenersContainer != null) {

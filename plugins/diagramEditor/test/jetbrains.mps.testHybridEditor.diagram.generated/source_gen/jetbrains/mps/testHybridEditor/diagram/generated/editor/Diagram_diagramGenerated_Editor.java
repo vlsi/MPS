@@ -14,17 +14,23 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
-import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
 import java.util.List;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
-import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
+import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
+import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
+import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.mapper.MapperFactory;
+import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.jetpad.projectional.diagram.view.Connection;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
+import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -46,8 +52,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_tb7paq_b0(editorContext, node));
     editorCell.addEditorCell(this.createDiagram_tb7paq_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tb7paq_d0(editorContext, node));
-    editorCell.addEditorCell(this.createDiagram_tb7paq_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_tb7paq_f0(editorContext, node));
     return editorCell;
   }
 
@@ -91,46 +95,59 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, SNode node) {
-    ConnectionRoutingView view = new ConnectionRoutingView(new OrthogonalRouter());
-    DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.addEditorCell(blockCollection);
-    editorCell.addEditorCell(connectorCollection);
-    List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
-    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "blocks", true), editorContext, connectorCellList, blockCollection, view);
-    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "connectors", true), editorContext, connectorCellList, blockCollection, view);
-    for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
-      if (connectorCell.updateConnectionEnds(editorCell)) {
-        view.connections.add(connectorCell.getConnection());
-        connectorCollection.addEditorCell(connectorCell);
+  private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, final SNode node) {
+    final List<SNode> blocks = ListSequence.fromList(new ArrayList<SNode>());
+    final List<SNode> connectors = ListSequence.fromList(new ArrayList<SNode>());
+    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "blocks", true), editorContext, blocks, connectors);
+    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "connectors", true), editorContext, blocks, connectors);
+
+    final DiagramCell editorCell = new DiagramCell(editorContext, node) {
+      public Mapper<SNode, DiagramView> getMapper() {
+        return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            configuration.add(Synchronizers.<SNode,View>forSimpleRole(this, blocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+                EditorCell blockCell = editorContext.createNodeCell(node);
+                if (blockCell instanceof BlockCell) {
+                  addEditorCell(blockCell);
+                  return ((BlockCell) blockCell).getMapper();
+                }
+                return null;
+
+              }
+            }));
+            configuration.add(Synchronizers.<SNode,Connection>forSimpleRole(this, connectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
+              public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
+                EditorCell connectorCell = editorContext.createNodeCell(node);
+                if (connectorCell instanceof ConnectorCell) {
+                  addEditorCell(connectorCell);
+                  return ((ConnectorCell) connectorCell).getMapper();
+                }
+                return null;
+
+              }
+            }));
+          }
+        };
       }
-    }
+    };
+    RootMapper mapper = new RootMapper(node, editorCell.getMapper(), ((ViewContainerComponent) editorCell.getComponent()).container());
+    mapper.attachRoot();
+
     editorCell.setCellId("Diagram_tb7paq_c0");
     return editorCell;
 
   }
 
-  public static void createDiagram_tb7paq_c0_0(List<SNode> nlist, EditorContext editorContext, List<ConnectorViewCell> connectorCellList, jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection, DiagramView view) {
+  public static void createDiagram_tb7paq_c0_0(List<SNode> nlist, EditorContext editorContext, List<SNode> blocks, List<SNode> connectors) {
     for (SNode contentNode : ListSequence.fromList(nlist)) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent().get();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
-        }
-        view.itemsView.children().add(blockView);
+      EditorCell cell = editorContext.createNodeCell(contentNode);
+      if (cell instanceof BlockCell) {
+        ListSequence.fromList(blocks).addElement(contentNode);
+      } else if (cell instanceof ConnectorCell) {
+        ListSequence.fromList(connectors).addElement(contentNode);
       }
     }
   }
@@ -138,57 +155,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_tb7paq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version-2:");
     editorCell.setCellId("Constant_tb7paq_d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, SNode node) {
-    ConnectionRoutingView view = new ConnectionRoutingView(new OrthogonalRouter());
-    DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.addEditorCell(blockCollection);
-    editorCell.addEditorCell(connectorCollection);
-    List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
-    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, connectorCellList, blockCollection, view);
-    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, connectorCellList, blockCollection, view);
-    for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
-      if (connectorCell.updateConnectionEnds(editorCell)) {
-        view.connections.add(connectorCell.getConnection());
-        connectorCollection.addEditorCell(connectorCell);
-      }
-    }
-    editorCell.setCellId("Diagram_tb7paq_e0");
-    return editorCell;
-
-  }
-
-  public static void createDiagram_tb7paq_e0_0(List<SNode> nlist, EditorContext editorContext, List<ConnectorViewCell> connectorCellList, jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection, DiagramView view) {
-    for (SNode contentNode : ListSequence.fromList(nlist)) {
-      EditorCell contentCell = editorContext.createNodeCell(contentNode);
-      if (!(contentCell instanceof GenericViewCell)) {
-        continue;
-      }
-      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
-      if (genericContentCell instanceof ConnectorViewCell) {
-        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
-        connectorCell.removeAllCells();
-        ListSequence.fromList(connectorCellList).addElement(connectorCell);
-      } else {
-        View blockView = genericContentCell.getView();
-        blockCollection.addEditorCell(genericContentCell);
-        View oldParent = blockView.parent().get();
-        if (oldParent != null) {
-          oldParent.children().remove(oldParent.children().indexOf(blockView));
-        }
-        view.itemsView.children().add(blockView);
-      }
-    }
-  }
-
-  private EditorCell createConstant_tb7paq_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "blablabla");
-    editorCell.setCellId("Constant_tb7paq_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -6,9 +6,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
-import jetbrains.jetpad.projectional.view.ViewContainer;
-import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
@@ -22,19 +19,15 @@ import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
+import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import java.util.Collection;
 import java.util.Collections;
 
 public class DiagramEditor extends AbstractJetpadEditor {
   @Override
   public EditorCell createEditorCell(final EditorContext editorContext, final SNode diagramNode) {
-    ViewContainerComponent component;
-    component = new ViewContainerComponent();
-    ViewContainer container = new ViewContainer();
-    component.container(container);
-    component.container().root().addTrait(RootTrait.ROOT_TRAIT);
 
-    final DiagramCell diagramCell = new DiagramCell(editorContext, diagramNode, component) {
+    final DiagramCell diagramCell = new DiagramCell(editorContext, diagramNode) {
 
 
       public Mapper<SNode, DiagramView> getMapper() {
@@ -68,7 +61,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
         };
       }
     };
-    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), container);
+    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), ((ViewContainerComponent) diagramCell.getComponent()).container());
     mapper.attachRoot();
 
     return diagramCell;

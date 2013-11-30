@@ -34,19 +34,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 
 public class QueriesGenerated {
-  public static void nodeFactory_NodeSetup_FigureParameterProperty_1497735617372820937(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      SPropertyOperations.set(_context.getNewNode(), "name", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_FigureParameterLink_1497735617372821041(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      SPropertyOperations.set(_context.getNewNode(), "name", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_FigureParameterBLQuery_3229274890672234104(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_AbstractFigureParameter_1497735617372820937(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept")) {
       SPropertyOperations.set(_context.getNewNode(), "name", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
     }
@@ -83,15 +71,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractFigureParameter_1497735617373457433(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractParameter_285670992217709792(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    final boolean hasName = new Computable<Boolean>() {
-      public Boolean compute() {
-        return SPropertyOperations.getString(_context.getCurrentTargetNode(), "name") != null && !(isEmptyString(SPropertyOperations.getString(_context.getCurrentTargetNode(), "name")));
-      }
-    }.compute();
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.ParameterLink");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
@@ -111,18 +94,15 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", _context.getCurrentTargetNode());
+                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.ParameterLink", _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(parameter, "link", (item), false);
                 return parameter;
               }
 
               @Override
               protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
-                if (hasName) {
-                  SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
-                  return null;
-                }
-                return createdNode;
+                SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+                return null;
               }
 
               public String getMatchingText(String pattern) {
@@ -138,7 +118,7 @@ public class QueriesGenerated {
       }
     }
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.ParameterProperty");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
@@ -158,18 +138,15 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", _context.getCurrentTargetNode());
+                SNode parameter = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", _context.getCurrentTargetNode());
                 SLinkOperations.setTarget(parameter, "property", (item), false);
                 return parameter;
               }
 
               @Override
               protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
-                if (hasName) {
-                  SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
-                  return null;
-                }
-                return createdNode;
+                SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+                return null;
               }
 
               public String getMatchingText(String pattern) {
@@ -185,21 +162,18 @@ public class QueriesGenerated {
       }
     }
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.FigureParameterBLQuery");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.FigureParameterBLQuery", _context.getCurrentTargetNode());
+            return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", _context.getCurrentTargetNode());
           }
 
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
-            if (hasName) {
-              SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
-              return null;
-            }
-            return createdNode;
+            SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+            return null;
           }
 
           public String getMatchingText(String pattern) {
@@ -213,9 +187,5 @@ public class QueriesGenerated {
       }
     }
     return result;
-  }
-
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }

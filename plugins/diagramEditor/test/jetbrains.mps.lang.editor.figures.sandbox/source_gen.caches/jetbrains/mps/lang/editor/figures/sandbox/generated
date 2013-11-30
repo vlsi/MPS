@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="79cbzd3ptu5y5dbyd54h32dmf8qhtv9">
+<dependencies version="2" modelHash="-cp0g4nmmwjsrdd7hvuz3se7iudqqxe0">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -11,7 +11,7 @@
   <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetpad/jetbrains.jetpad.projectional.view@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <common hash="-78gzffwse4t7uo4pl7zoh9gxwtr4gly" dependsOnNodes="true" />
+  <common hash="-e4sdcgopm429e8olwtmp27kuskoegte" dependsOnNodes="true" />
   <source id="2178507174411843379" name="MPSBlockView" hash="9g2h6y5d1q84dlua7d4c9p3309oym2v">
     <file name="MPSBlockView" />
   </source>
@@ -32,7 +32,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="MPSBlockView.java" />
   </source>
-  <source id="5422656561928673416" name="AttributedMPSBlockView" hash="b242kb3klr8da0kmcw6bh47gw1dxgkl">
+  <source id="5422656561928673416" name="AttributedMPSBlockView" hash="-3istbymovrnsitm3b2xicg5noauonpz">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -46,7 +46,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="AttributedMPSBlockView.java" />
   </source>
-  <source id="2353136177974229364" name="BlockInstanceView" hash="862pk3dcalpjt80lw17h569sd52czw2">
+  <source id="2353136177974229364" name="BlockInstanceView" hash="-22837m2nm5mg1ytrfdfra2137xysi">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -59,6 +59,11 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="BlockInstanceView.java" />
+  </source>
+  <source id="2084788800269979458" name="BlockContentView" hash="1qpqtael8on327nlgwvyo2uqxjntyr7">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <file name="BlockContentView.java" />
   </source>
 </dependencies>
 

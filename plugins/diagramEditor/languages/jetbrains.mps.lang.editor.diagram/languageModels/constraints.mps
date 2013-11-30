@@ -48,18 +48,18 @@
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3748979635598869842" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.1094405431463762199" resolveInfo="FigureParameterProperty" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.285670992217672837" resolveInfo="ParameterProperty" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3748979635598870160" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.1094405431463762212" />
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.285670992217689748" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="3748979635598885857" nodeInfo="ng">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
       </node>
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3748979635598885879" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.1094405431463762240" resolveInfo="FigureParameterLink" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.285670992213637559" resolveInfo="ParameterLink" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3748979635598885880" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.1094405431463762255" />
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.285670992217679783" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="3748979635598885882" nodeInfo="ng">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
       </node>
@@ -112,8 +112,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="1220375669567141667" nodeInfo="nn" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorsOperation" typeId="tp25.1173122760281" id="1220375669567144634" nodeInfo="nn">
                 <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_ConceptList" typeId="tp25.1154546920561" id="1220375669567171901" nodeInfo="ng">
-                  <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1220375669567174530" nodeInfo="ng">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.3229274890672018080" resolveInfo="FigureParameterBLQuery" />
+                  <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="285670992219058197" nodeInfo="ng">
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.285670992213637367" resolveInfo="ParameterBLQuery" />
                   </node>
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1220375669567182121" nodeInfo="ng">
                     <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.1220375669566347117" resolveInfo="ConnectionEndBLQuery" />

@@ -111,7 +111,7 @@
     <nodeInfo nodeId="4088443785018406116" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="37" startPosition="7" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4088443785018408166" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="40" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4088443785018451028" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4088443785018451028" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="44" startPosition="62" endLine="45" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4088443785018451028" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="44" startPosition="62" endLine="45" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4088443785018452625" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="47" startPosition="14" endLine="48" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4088443785018266987" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="53" startPosition="46" endLine="54" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4088443785018266987" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="58" startPosition="5" endLine="59" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -140,7 +140,7 @@
       <varInfo nodeId="4088443785018405454" varName="_reporter_2309309498" />
       <varInfo nodeId="4088443785018405454" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="4088443785018451028" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="45" endPosition="276">
+    <scopeInfo nodeId="4088443785018451028" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="45" endPosition="275">
       <varInfo nodeId="4088443785018451028" varName="_reporter_2309309498" />
       <varInfo nodeId="4088443785018451028" varName="errorTarget" />
     </scopeInfo>

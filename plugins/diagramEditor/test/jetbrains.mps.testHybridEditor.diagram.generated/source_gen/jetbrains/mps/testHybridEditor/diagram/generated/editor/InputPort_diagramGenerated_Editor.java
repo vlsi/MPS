@@ -8,11 +8,9 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
 import jetbrains.jetpad.mapper.Mapper;
-import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 
@@ -25,33 +23,30 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createDiagramNode_cfffa6_a(editorContext, node);
+    return this.createDiagramPort_cfffa6_a(editorContext, node);
   }
 
-  private EditorCell createDiagramNode_cfffa6_a(final EditorContext editorContext, final SNode node) {
-    final RectView view = new RectView();
-    GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
-      public void run() {
-        new Mapper<View, SNode>(view, node) {
+  private EditorCell createDiagramPort_cfffa6_a(final EditorContext editorContext, final SNode node) {
+    final EditorCell editorCell = new PortCell(editorContext, node) {
+      public Mapper<SNode, RectView> getMapper() {
+        Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(node, new RectView()) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            getTarget().background().set(Color.LIGHT_GRAY);
+            getTarget().dimension().set(new Vector(10, 10));
           }
-        }.attachRoot();
+        };
+
+        return mapper;
       }
-    }, editorContext.getOperationContext().getProject());
-    view.visible().set(true);
-    editorCell.setCellId("DiagramNode_cfffa6_a");
+    };
     editorCell.setBig(true);
+
+
+    editorCell.setCellId("DiagramPort_cfffa6_a");
+    editorCell.setBig(true);
+
     return editorCell;
-
-  }
-
-  private static Color _StyleParameter_QueryFunction_cfffa6_a0a(EditorContext editorContext, SNode node) {
-    return Color.LIGHT_GRAY;
-  }
-
-  private static Vector _StyleParameter_QueryFunction_cfffa6_a1a(EditorContext editorContext, SNode node) {
-    return new Vector(10, 10);
   }
 }

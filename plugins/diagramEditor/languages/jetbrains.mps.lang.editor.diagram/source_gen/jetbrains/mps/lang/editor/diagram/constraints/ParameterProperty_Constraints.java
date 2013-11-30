@@ -19,15 +19,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class FigureParameterLink_Constraints extends BaseConstraintsDescriptor {
-  public FigureParameterLink_Constraints() {
-    super("jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink");
+public class ParameterProperty_Constraints extends BaseConstraintsDescriptor {
+  public ParameterProperty_Constraints() {
+    super("jetbrains.mps.lang.editor.diagram.structure.ParameterProperty");
   }
 
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
-    references.put("link", new BaseReferenceConstraintsDescriptor("link", this) {
+    references.put("property", new BaseReferenceConstraintsDescriptor("property", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -39,13 +39,13 @@ public class FigureParameterLink_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_krvrjv_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_tvv1t6_a0a0a0a0a1a0b0a1a1;
           }
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
               return (scope == null ? new EmptyScope() : scope);
             }
           }
@@ -55,5 +55,5 @@ public class FigureParameterLink_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_krvrjv_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "3748979635598885882");
+  private static SNodePointer breakingNode_tvv1t6_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "3748979635598885857");
 }

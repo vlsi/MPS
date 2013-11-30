@@ -10,11 +10,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -43,15 +43,19 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_5xszyv_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5xszyv_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5xszyv_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5xszyv_d0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5xszyv_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5xszyv_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5xszyv_g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5xszyv_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5xszyv_i0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_5xszyv_j0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5xszyv_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5xszyv_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_5xszyv_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5xszyv_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5xszyv_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5xszyv_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5xszyv_h0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5xszyv_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5xszyv_j0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5xszyv_k0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5xszyv_l0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5xszyv_m0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_5xszyv_n0(editorContext, node));
     return editorCell;
   }
 
@@ -60,61 +64,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5xszyv_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inputPort:");
-    editorCell.setCellId("Constant_5xszyv_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_5xszyv_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("inputPort");
-    provider.setNoTargetText("<no inputPort>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("inputPort");
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5xszyv_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "outputPorts:");
-    editorCell.setCellId("Constant_5xszyv_d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_5xszyv_e0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("outputPort");
-    provider.setNoTargetText("<no outputPort>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("outputPort");
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_5xszyv_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5xszyv_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("figure");
     provider.setNoTargetText("<no figure>");
@@ -134,9 +84,9 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5xszyv_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5xszyv_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_5xszyv_g0");
+    editorCell.setCellId("Constant_5xszyv_c0");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyLeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -144,8 +94,8 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5xszyv_h0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CellModel_DiagramNode_Editor.parameterListHandler_5xszyv_h0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_5xszyv_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CellModel_DiagramNode_Editor.parameterListHandler_5xszyv_d0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     Style style = new StyleImpl();
@@ -155,8 +105,8 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class parameterListHandler_5xszyv_h0 extends RefNodeListHandler {
-    public parameterListHandler_5xszyv_h0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_5xszyv_d0 extends RefNodeListHandler {
+    public parameterListHandler_5xszyv_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -205,9 +155,9 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_5xszyv_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5xszyv_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_5xszyv_i0");
+    editorCell.setCellId("Constant_5xszyv_e0");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -215,7 +165,115 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_5xszyv_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5xszyv_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inputPort:");
+    editorCell.setCellId("Constant_5xszyv_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_5xszyv_g0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("inputPort");
+    provider.setNoTargetText("<no inputPort>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("inputPort");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5xszyv_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "outputPorts:");
+    editorCell.setCellId("Constant_5xszyv_h0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_5xszyv_i0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("outputPort");
+    provider.setNoTargetText("<no outputPort>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("outputPort");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5xszyv_j0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x:");
+    editorCell.setCellId("Constant_5xszyv_j0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_5xszyv_k0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("x");
+    provider.setNoTargetText("<no x>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("x");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5xszyv_l0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y:");
+    editorCell.setCellId("Constant_5xszyv_l0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_5xszyv_m0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("y");
+    provider.setNoTargetText("<no y>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("y");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createComponent_5xszyv_n0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
   }

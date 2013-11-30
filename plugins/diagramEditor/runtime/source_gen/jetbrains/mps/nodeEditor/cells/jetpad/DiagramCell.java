@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.jetpad.projectional.view.ViewContainer;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 
@@ -14,9 +16,13 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private ViewContainerComponent myComponent;
 
 
-  public DiagramCell(EditorContext editorContext, SNode node, ViewContainerComponent component) {
+  public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-    myComponent = component;
+    ViewContainer container = new ViewContainer();
+    myComponent = new ViewContainerComponent();
+    myComponent.container(container);
+    myComponent.container().root().addTrait(RootTrait.ROOT_TRAIT);
+
   }
 
   public JComponent getComponent() {

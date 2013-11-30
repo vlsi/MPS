@@ -67,9 +67,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.Connection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.RootTrait" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewContainer" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.awt.ViewContainerComponent" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />

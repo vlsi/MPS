@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2zcxgwfzz7jvwly9dfu9dp3okpih69q">
+<dependencies version="2" modelHash="-che1n6jhy6pzn0bvirvrqmzo7pl1oan">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -12,11 +12,13 @@
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
     <dep root="1094405431463761863" />
-    <dep root="1094405431463762199" />
-    <dep root="1094405431463762240" />
     <dep root="1220375669566347117" />
     <dep root="2721249134706026944" />
-    <dep root="3229274890672018080" />
+    <dep root="285670992205972098" />
+    <dep root="285670992213637294" />
+    <dep root="285670992213637367" />
+    <dep root="285670992213637559" />
+    <dep root="285670992217672837" />
     <dep root="3229274890673749551" />
     <dep root="5355858557208538577" />
     <dep root="5355858557208817201" />
@@ -38,12 +40,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-emjkuuqwahu77q8mx58dycgu5xondxt" />
+  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="1hqjujc29ss6c03ti76jqrer21s92dt" />
   <source id="1094405431463455190" name="AbstractFigureReference" hash="-6eecu2vhunva2ez05g42zt598xfpqsx" />
   <source id="1094405431463663051" name="ExternalFigureReference" hash="-15jge7fjsaayroipsv092h0j981u5oq" />
-  <source id="1094405431463761863" name="AbstractFigureParameter" hash="ehwnl854wwci2r8ldkpsapx3zzexovz" />
-  <source id="1094405431463762199" name="FigureParameterProperty" hash="4afw3ahdx3rhxo459ddhfu2rmeqfy9i" />
-  <source id="1094405431463762240" name="FigureParameterLink" hash="-b3dk31lpaj07qklxngyik4iaa3hmpnp" />
+  <source id="1094405431463761863" name="AbstractFigureParameter" hash="4iqwotvekf36uqxm3mjwefekklmayuh" />
   <source id="6306886970785259796" name="FigureColorStyleClassItem" hash="2a6pbj864ehc5nvo7d11zf31o58lrio" />
   <source id="6306886970785259805" name="QueryFunction_Color" hash="4x1xy1dwc8wbeeo3iip3gj20ptn5p2i" />
   <source id="6306886970789271602" name="JetpadEditorStyleItem" hash="5b8lipemx9wxlv5qmwkyrmprn8y3rxc" />
@@ -53,11 +53,15 @@
   <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="2u355h8121srbu1uqizzhjznl50rx13" />
   <source id="5422656561926747342" name="AttributedFigureReference" hash="-ev7w954cu4avvpgslqxq86e5124tx67" />
   <source id="8686738938027260610" name="LinkDeclarationReference" hash="-2atrjzxrjre5kacdusrob7prrm8br1p" />
-  <source id="3229274890672018080" name="FigureParameterBLQuery" hash="-alfkubx015kx5asej6kcmufp9i0l5ao" />
   <source id="3229274890673749551" name="ThisEditorNodeExpression" hash="-icf5x80xsvz2q12vq9c6jjd6hnkfw5" />
   <source id="1220375669566347117" name="ConnectionEndBLQuery" hash="4oumoeo7pizq7rnjil70bxan0eo0ck3" />
   <source id="2721249134706026944" name="ConnectionEnd" hash="-469vek3fxfedttycabals9adlpejgbj" />
   <source id="5355858557208538577" name="DiagramElement" hash="clp5yg30hata9t6eayeou6nesolojbi" />
   <source id="5355858557208817201" name="DiagramElementBLQuery" hash="-7g65aswx17pheh8pmsrsdzvfzu38s5w" />
+  <source id="285670992205972098" name="CellModel_DiagramPort" hash="-92bbql9d2ijl5wk6bl1hafv32dw5bmw" />
+  <source id="285670992213637294" name="AbstractParameter" hash="-8xvib1a8nihnayhk82jqrt8r2a6fxrp" />
+  <source id="285670992213637367" name="ParameterBLQuery" hash="-7spcs5y7l41ch5qtcxjb5cke8cpnaf5" />
+  <source id="285670992213637559" name="ParameterLink" hash="-wo02zm24fxhmvtwkflcb1i3jurspnq" />
+  <source id="285670992217672837" name="ParameterProperty" hash="d4e2ick6rv0ai9m5fi1fsrk16dtn0f5" />
 </dependencies>
 

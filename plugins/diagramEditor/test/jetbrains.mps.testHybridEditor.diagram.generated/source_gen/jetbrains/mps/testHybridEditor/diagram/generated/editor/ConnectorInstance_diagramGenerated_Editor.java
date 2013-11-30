@@ -8,12 +8,16 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
-import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
+import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.projectional.view.View;
 
 public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -28,26 +32,44 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createDiagramConnector_5733l5_a(final EditorContext editorContext, final SNode node) {
-    PolyLineConnection connection = new PolyLineConnection();
-    final ConnectorViewCell editorCell = new ConnectorViewCell(editorContext, node) {
-      public View getInputView(DiagramViewCell diagramCell) {
-        final SNode connectionEnd = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
-        if (connectionEnd == null) {
-          return null;
-        }
-        return findConnectionEnd(diagramCell, connectionEnd, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
-      }
+    final ConnectorCell editorCell = new ConnectorCell(editorContext, node) {
 
-      public View getOutputView(DiagramViewCell diagramCell) {
-        final SNode connectionEnd = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
-        if (connectionEnd == null) {
-          return null;
-        }
-        return findConnectionEnd(diagramCell, connectionEnd, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "metaPort", false), "name"));
+
+
+      public Mapper<SNode, PolyLineConnection> getMapper() {
+        return new Mapper<SNode, PolyLineConnection>(node, new PolyLineConnection()) {
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            ReadableProperty<SNode> inputPort = JetpadUtils.modelProperty(new Computable<SNode>() {
+              public SNode compute() {
+                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
+              }
+            });
+            ReadableProperty<SNode> outputPort = JetpadUtils.modelProperty(new Computable<SNode>() {
+              public SNode compute() {
+                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
+              }
+            });
+            configuration.add(Synchronizers.forProperty(inputPort, new WritableProperty<SNode>() {
+              public void set(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                getTarget().fromView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+              }
+            }));
+            configuration.add(Synchronizers.forProperty(outputPort, new WritableProperty<SNode>() {
+              public void set(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                getTarget().toView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+
+              }
+            }));
+          }
+        };
       }
     };
-    editorCell.setConnection(connection);
-    editorCell.setView(connection.view());
+    editorCell.setBig(true);
+
     editorCell.setCellId("DiagramConnector_5733l5_a");
     editorCell.setBig(true);
 

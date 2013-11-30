@@ -106,7 +106,6 @@ public class BlockEditor extends AbstractJetpadEditor {
                 SPropertyOperations.set(((SNode) mapper.getSource()), "y", "" + (SPropertyOperations.getInteger(((SNode) mapper.getSource()), "y") + delta.y));
               }
             }, context.getOperationContext().getProject());
-            mapper.getSource();
           }
         });
 
