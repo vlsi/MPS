@@ -663,19 +663,20 @@
     <unitInfo nodeId="8327142480058313300" fileName="DiagramCell.java" startLine="15" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/9070483889460776526">
-    <nodeInfo nodeId="9070483889460815039" fileName="BlockCell.java" startLine="11" startPosition="61" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9070483889460965051" fileName="BlockCell.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerAditionalSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;Ljetbrains/jetpad/mapper/Mapper;)V" />
-    <nodeInfo nodeId="9070483889460809836" fileName="BlockCell.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="9070483889460809840" fileName="BlockCell.java" startLine="11" startPosition="61" endLine="12" endPosition="31" />
-    <scopeInfo nodeId="9070483889460965051" fileName="BlockCell.java" startLine="15" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="675321057242654540" fileName="BlockCell.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myView" />
+    <nodeInfo nodeId="9070483889460815039" fileName="BlockCell.java" startLine="14" startPosition="61" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9070483889460965051" fileName="BlockCell.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerAditionalSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;Ljetbrains/jetpad/mapper/Mapper;)V" />
+    <nodeInfo nodeId="9070483889460809836" fileName="BlockCell.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="9070483889460809840" fileName="BlockCell.java" startLine="14" startPosition="61" endLine="15" endPosition="31" />
+    <scopeInfo nodeId="9070483889460965051" fileName="BlockCell.java" startLine="18" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="9070483889460951293" varName="configuration" />
       <varInfo nodeId="2084788800262352267" varName="mapper" />
     </scopeInfo>
-    <scopeInfo nodeId="9070483889460809836" fileName="BlockCell.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+    <scopeInfo nodeId="9070483889460809836" fileName="BlockCell.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8168571518999641703" varName="editorContext" />
       <varInfo nodeId="8168571518999641705" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="9070483889460776526" fileName="BlockCell.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
+    <unitInfo nodeId="9070483889460776526" fileName="BlockCell.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
   </root>
 </debugInfo>
 

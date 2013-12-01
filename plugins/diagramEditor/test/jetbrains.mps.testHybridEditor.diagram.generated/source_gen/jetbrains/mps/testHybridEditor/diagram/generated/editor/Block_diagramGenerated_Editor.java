@@ -115,6 +115,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
             Block_diagramGenerated_Editor.setDiagramNodeView(getTarget());
           }
         };
+        myView = mapper.getTarget();
         return mapper;
       }
 
@@ -137,6 +138,15 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
             };
           }
         }));
+      }
+
+
+
+      @Override
+      public void synchronizeViewWithModel() {
+        myView.moveTo(new Vector(SNodeOperations.getIndexInParent(node) / 2 * 150 + 10, SPropertyOperations.getInteger(node, "y")));
+        myView.invalidate();
+        requestRelayout();
       }
     };
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
