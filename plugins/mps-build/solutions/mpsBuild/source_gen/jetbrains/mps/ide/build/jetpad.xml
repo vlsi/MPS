@@ -45,6 +45,7 @@
         <library jar="../lib/domUtil-1.0-SNAPSHOT.jar" />
         <library jar="../lib/event-1.0-SNAPSHOT.jar" />
         <library jar="../lib/dataflow-1.0-SNAPSHOT.jar" />
+        <library jar="../lib/otmodel-1.0-SNAPSHOT.jar" />
         <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
       </module>
     </echoxml>
@@ -103,6 +104,9 @@
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/jetpadBuildNumber.txt" />

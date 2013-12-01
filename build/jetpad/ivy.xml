@@ -20,6 +20,7 @@
       <include name="test-1.0-SNAPSHOT" ext="jar"/>
       <include name="values-1.0-SNAPSHOT" ext="jar"/>
       <include name="view-1.0-SNAPSHOT" ext="jar"/>
+      <include name="otmodel-1.0-SNAPSHOT" ext="jar"/>
     </dependency>
   </dependencies>
 </ivy-module>
