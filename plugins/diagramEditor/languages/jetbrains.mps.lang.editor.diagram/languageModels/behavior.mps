@@ -474,7 +474,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5422656561931992194" resolveInfo="it" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5422656561932001811" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtq6.5422656561931910498" resolveInfo="getParameterField" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtq6.5422656561931910498" resolveInfo="getParameterMember" />
                             </node>
                           </node>
                         </node>
@@ -532,7 +532,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5422656561932112692" resolveInfo="it" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5422656561932118377" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtq6.5422656561931910498" resolveInfo="getParameterField" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vtq6.5422656561931910498" resolveInfo="getParameterMember" />
                             </node>
                           </node>
                         </node>

@@ -177,6 +177,7 @@
     <scopeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="19" startPosition="0" endLine="26" endPosition="0" />
     <unitInfo nodeId="6306886970790137071" fileName="QueryFunction_Dimension_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_Behavior" />
   </root>
+  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/675321057241954783" />
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/7140846024011931670">
     <nodeInfo nodeId="7140846024011931923" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011932139" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
