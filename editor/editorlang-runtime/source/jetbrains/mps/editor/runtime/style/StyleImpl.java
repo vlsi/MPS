@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.editor.runtime.style.IntObjectSortedListMap.DiscardValue;
 import jetbrains.mps.editor.runtime.style.IntObjectSortedListMap.IntMapPointer;
-import jetbrains.mps.editor.runtime.style.IntObjectSortedListMap.NullValue;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
@@ -73,7 +73,7 @@ public class StyleImpl implements Style {
           attributeValues.set(new IntObjectSortedListMap<Object>());
         }
         for (IntPair<Object> value : putAttributes) {
-          attributeValues.get().setValue(value.index, value.value == null ? NullValue.getInstance() : value.value);
+          attributeValues.get().setValue(value.index, value.value == null ? DiscardValue.getInstance() : value.value);
         }
       }
       if (StyleAttributes.isSimple(attribute)) {
@@ -98,7 +98,7 @@ public class StyleImpl implements Style {
           attributeValues.set(new IntObjectSortedListMap<Object>());
         }
         for (IntPair<Object> value : putAttributes) {
-          attributeValues.get().setValue(value.index, NullValue.getInstance());
+          attributeValues.get().setValue(value.index, DiscardValue.getInstance());
         }
       }
       if (StyleAttributes.isSimple(attribute)) {
@@ -111,10 +111,7 @@ public class StyleImpl implements Style {
     fireStyleChanged(new StyleChangeEvent(this, addedSimple));
   }
 
-
-  @Override
-  public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
-    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getAttribute(attribute);
+  private <T> void setValue(IntMapPointer<IntObjectSortedListMap<T>> attributeValues, int priority, T value) {
     if (value == null) {
       if (! attributeValues.isEmpty()) {
         if (attributeValues.get().search(priority) != null) {
@@ -130,6 +127,12 @@ public class StyleImpl implements Style {
       }
       attributeValues.get().setValue(priority, value);
     }
+  }
+
+  @Override
+  public <T> void set(StyleAttribute<T> attribute, int priority, T value) {
+    IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getAttribute(attribute);
+    setValue(attributeValues, priority, value);
     Set<StyleAttribute> attributeSet = Collections.<StyleAttribute>singleton(attribute);
     if (StyleAttributes.isSimple(attribute)) {
       fireStyleChanged(new StyleChangeEvent(this, attributeSet));
@@ -138,25 +141,11 @@ public class StyleImpl implements Style {
     }
   }
 
-  public <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
+  private <T> void setCached(StyleAttribute<T> attribute, int priority, T value) {
     assert !StyleAttributes.isSimple(attribute);
-    assert ! (value instanceof NullValue);
+    assert ! (value instanceof DiscardValue);
     IntMapPointer<IntObjectSortedListMap<T>> cachedAttributeValues = getCachedAttribute(attribute);
-    if (value == null) {
-      if (! cachedAttributeValues.isEmpty()) {
-        if (cachedAttributeValues.get().search(priority) != null) {
-          cachedAttributeValues.get().search(priority).set(null);
-          if (cachedAttributeValues.get().getAll().isEmpty()) {
-            cachedAttributeValues.set(null);
-          }
-        }
-      }
-    } else {
-      if (cachedAttributeValues.isEmpty()) {
-        cachedAttributeValues.set(new IntObjectSortedListMap<T>());
-      }
-      cachedAttributeValues.get().setValue(priority, value);
-    }
+    setValue(cachedAttributeValues, priority, value);
   }
 
   @Override
@@ -164,7 +153,7 @@ public class StyleImpl implements Style {
     set(attribute, 0, value);
   }
 
-  public <T> T getCached(StyleAttribute<T> attribute, int priority) {
+  private <T> T getCached(StyleAttribute<T> attribute, int priority) {
     assert !StyleAttributes.isSimple(attribute);
     IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getCachedAttribute(attribute);
     if (attributeValues.isEmpty()) {
@@ -174,6 +163,7 @@ public class StyleImpl implements Style {
     }
   }
 
+  @Override
   public <T> int getHighestPriority(StyleAttribute<T> attribute) {
     IntMapPointer<IntObjectSortedListMap<T>> attributeValues = getCachedAttribute(attribute);
     if (attributeValues.isEmpty()) {
@@ -198,7 +188,7 @@ public class StyleImpl implements Style {
   @Nullable
   public <T> Collection<IntPair<T>> getAll(StyleAttribute<T> attribute) {
     IntMapPointer<IntObjectSortedListMap<T>> attributeValue = getAttribute(attribute);
-    return attributeValue.isEmpty() ? null : attributeValue.get().getNullReplaced();
+    return attributeValue.isEmpty() ? null : attributeValue.get().getDiscardNullReplaced();
   }
 
   @Override
@@ -370,7 +360,7 @@ public class StyleImpl implements Style {
         Object currentV = currentNow ? currentValue.value : null;
         Object parentV = parentNow ? parentValue.value : null;
         Object newV;
-        if (currentV instanceof NullValue || (parentV == null && currentV == null)) {
+        if (currentV instanceof DiscardValue || (parentV == null && currentV == null)) {
           newV = null;
         } else {
           newV = attribute.combine(parentV, currentV);

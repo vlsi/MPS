@@ -91,14 +91,14 @@ class IntObjectSortedListMap<T> {
     }
   }
 
-  public static class NullValue {
-    private static NullValue myInstance;
-    private NullValue(){
+  public static class DiscardValue {
+    private static DiscardValue myInstance;
+    private DiscardValue(){
 
     }
-    public static NullValue getInstance() {
+    public static DiscardValue getInstance() {
       if (myInstance == null) {
-        myInstance = new NullValue();
+        myInstance = new DiscardValue();
       }
       return myInstance;
     }
@@ -115,10 +115,10 @@ class IntObjectSortedListMap<T> {
     return result;
   }
 
-  public Collection<IntPair<T>> getNullReplaced() {
+  public Collection<IntPair<T>> getDiscardNullReplaced() {
     ArrayList<IntPair<T>> result = new ArrayList<IntPair<T>>(indexes.length);
     for (int i = 0; i < indexes.length; i++) {
-      if (values[i] instanceof NullValue) {
+      if (values[i] instanceof DiscardValue) {
         result.add(new IntPair<T>(indexes[i], null));
       } else {
         result.add(new IntPair<T>(indexes[i], values[i]));
@@ -146,7 +146,7 @@ class IntObjectSortedListMap<T> {
   }
   public IntPair<T> getTopPair() {
     for (int i = indexes.length - 1; i >= 0; i--) {
-      if (!(values[i] instanceof NullValue)) {
+      if (!(values[i] instanceof DiscardValue)) {
         return new IntPair<T>(indexes[i], values[i]);
       }
     }
