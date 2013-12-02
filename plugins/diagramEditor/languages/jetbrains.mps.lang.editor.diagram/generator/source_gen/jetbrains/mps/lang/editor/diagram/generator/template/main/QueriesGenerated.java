@@ -249,14 +249,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "outputPort", true);
   }
 
-  public static SNode sourceNodeQuery_675321057242851304(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "x", true);
-  }
-
-  public static SNode sourceNodeQuery_675321057242855574(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "y", true);
-  }
-
   public static SNode sourceNodeQuery_7171441290057344923(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "x", true);
   }
@@ -309,11 +301,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "query", true);
   }
 
-  public static SNode sourceNodeQuery_2373394573195442890(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2682505046534026638(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "x", true);
   }
 
-  public static SNode sourceNodeQuery_2373394573196040136(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2682505046533866889(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "y", true);
   }
 

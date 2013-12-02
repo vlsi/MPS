@@ -34,8 +34,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
-import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -147,8 +145,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       }
     })});
 
-    RootMapper mapper = new RootMapper(node, editorCell.getMapper(), ((ViewContainerComponent) editorCell.getComponent()).container());
-    mapper.attachRoot();
+    editorCell.getRootMapper().attachRoot();
 
     editorCell.setCellId("Diagram_tb7paq_c0");
     return editorCell;
@@ -219,8 +216,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       }
     })});
 
-    RootMapper mapper = new RootMapper(node, editorCell.getMapper(), ((ViewContainerComponent) editorCell.getComponent()).container());
-    mapper.attachRoot();
+    editorCell.getRootMapper().attachRoot();
 
     editorCell.setCellId("Diagram_tb7paq_e0");
     return editorCell;

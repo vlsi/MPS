@@ -4,6 +4,7 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
+import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,6 +38,7 @@ import java.awt.Point;
 import jetbrains.jetpad.event.ModifierKey;
 
 public abstract class DiagramCell extends GenericMapperCell<DiagramView> implements EditorCell_WithComponent {
+  private RootMapper myRootMapper;
   private ViewContainerComponent myComponent;
   private boolean mySubstituteEditorVisible = false;
   private int myPatternEditorX;
@@ -238,5 +240,12 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
         keyCode = 0;
     }
     return new java.awt.event.KeyEvent(getComponent(), id, when, modifiers, keyCode, jetPadKeyEvent.keyChar());
+  }
+
+  public RootMapper getRootMapper() {
+    if (myRootMapper == null) {
+      myRootMapper = new RootMapper(getSNode(), getMapper(), myComponent.container());
+    }
+    return myRootMapper;
   }
 }

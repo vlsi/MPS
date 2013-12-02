@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
-import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,6 +27,10 @@ import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -73,18 +76,18 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               }
             }));
             {
-              final ReadableProperty<Integer> x = JetpadUtils.modelProperty(new Computable<Integer>() {
+              myXProperty = JetpadUtils.modelProperty(new Computable<Integer>() {
                 public Integer compute() {
                   return SNodeOperations.getIndexInParent(node) / 2 * 150 + 10;
                 }
               });
-              final ReadableProperty<Integer> y = JetpadUtils.modelProperty(new Computable<Integer>() {
+              myYProperty = JetpadUtils.modelProperty(new Computable<Integer>() {
                 public Integer compute() {
                   return SPropertyOperations.getInteger(node, "y");
                 }
               });
               final DiagramNodeView view = getTarget();
-              getTarget().moveTo(new Vector(x.get(), y.get()));
+              getTarget().moveTo(new Vector(myXProperty.get(), myYProperty.get()));
 
               view.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
                 public void move(final Vector delta) {
@@ -104,7 +107,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
                       SPropertyOperations.set(((SNode) getSource()), "y", "" + (SPropertyOperations.getInteger(((SNode) getSource()), "y") + delta.y));
                     }
                   }, null, groupId, false, editorContext.getOperationContext().getProject());
-                  getTarget().moveTo(new Vector(x.get(), y.get()));
+                  getTarget().moveTo(new Vector(myXProperty.get(), myYProperty.get()));
                   getTarget().invalidate();
                 }
               });
@@ -115,20 +118,19 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
             Block_diagramGenerated_Editor.setDiagramNodeView(getTarget());
           }
         };
-        myView = mapper.getTarget();
         return mapper;
       }
 
       public void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, final Mapper<SNode, DiagramNodeView> mapper) {
-        configuration.add(Synchronizers.forConstantRole(mapper, mapper.getSource(), mapper.getTarget().contentView.children(), new MapperFactory<SNode, BlockContentView>() {
-          public Mapper<? extends SNode, ? extends BlockContentView> createMapper(SNode block) {
-            return new Mapper<SNode, BlockContentView>(block, new BlockContentView()) {
+        configuration.add(Synchronizers.forConstantRole(mapper, mapper.getSource().getNodeId().toString(), mapper.getTarget().contentView.children(), new MapperFactory<String, BlockContentView>() {
+          public Mapper<? extends String, ? extends BlockContentView> createMapper(String block) {
+            return new Mapper<String, BlockContentView>(block, new BlockContentView()) {
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
                 final PropertyMapperCell cell_70mnj_a0a = new PropertyMapperCell(editorContext, node, getTarget().text(), "name");
                 addEditorCell(cell_70mnj_a0a);
-                configuration.add(Synchronizers.forProperty(JetpadUtils.stringProperty(getSource(), "name"), getTarget().text()));
+                configuration.add(Synchronizers.forProperty(JetpadUtils.stringProperty(node, "name"), getTarget().text()));
                 configuration.add(Synchronizers.forProperty(getTarget().text(), new Runnable() {
                   public void run() {
                     cell_70mnj_a0a.updateModel();
@@ -144,9 +146,21 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
       @Override
       public void synchronizeViewWithModel() {
-        if (myView != null) {
-          myView.moveTo(new Vector(SNodeOperations.getIndexInParent(node) / 2 * 150 + 10, SPropertyOperations.getInteger(node, "y")));
-          myView.invalidate();
+        if (myXProperty == null || myYProperty == null) {
+          return;
+        }
+        DiagramCell cell = ((DiagramCell) CellFinderUtil.findParent(this, new Condition<EditorCell_Collection>() {
+          public boolean met(EditorCell_Collection parent) {
+            return parent instanceof DiagramCell;
+          }
+        }));
+        if (cell == null) {
+          return;
+        }
+        Mapper<? super SNode, ?> descendantMapper = cell.getRootMapper().getDescendantMapper(getSNode());
+        if (descendantMapper != null) {
+          ((View) descendantMapper.getTarget()).moveTo(new Vector(myXProperty.get(), myYProperty.get()));
+          ((View) descendantMapper.getTarget()).invalidate();
           requestRelayout();
         }
       }
