@@ -87,11 +87,11 @@ public class Mps_Command {
   }
 
   public static String getDefaultConfigurationPath() {
-    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug30/config";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug31/config";
   }
 
   public static String getDefaultSystemPath() {
-    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug30/system";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug31/system";
   }
 
   private static List<File> getClassPath() {
