@@ -146,12 +146,36 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
-                final PropertyMapperCell cell_gju6mh_a0a = new PropertyMapperCell(editorContext, node, getTarget().text(), "name");
+                final PropertyMapperCell cell_gju6mh_a0a = new PropertyMapperCell(editorContext, node, getTarget().text(), JetpadUtils.modelProperty(new Computable<String>() {
+                  public String compute() {
+                    return SPropertyOperations.getString(node, "name");
+                  }
+                }), "name");
                 addEditorCell(cell_gju6mh_a0a);
-                configuration.add(Synchronizers.forProperty(JetpadUtils.stringProperty(node, "name"), getTarget().text()));
+                configuration.add(Synchronizers.forProperty(JetpadUtils.modelProperty(new Computable<String>() {
+                  public String compute() {
+                    return SPropertyOperations.getString(node, "name");
+                  }
+                }), getTarget().text()));
                 configuration.add(Synchronizers.forProperty(getTarget().text(), new Runnable() {
                   public void run() {
                     cell_gju6mh_a0a.updateModel();
+                  }
+                }));
+                final PropertyMapperCell cell_gju6mh_a1a = new PropertyMapperCell(editorContext, node, getTarget().isClicked, JetpadUtils.modelProperty(new Computable<Boolean>() {
+                  public Boolean compute() {
+                    return SPropertyOperations.getBoolean(node, "myBooleanProperty");
+                  }
+                }), "myBooleanProperty");
+                addEditorCell(cell_gju6mh_a1a);
+                configuration.add(Synchronizers.forProperty(JetpadUtils.modelProperty(new Computable<Boolean>() {
+                  public Boolean compute() {
+                    return SPropertyOperations.getBoolean(node, "myBooleanProperty");
+                  }
+                }), getTarget().isClicked));
+                configuration.add(Synchronizers.forProperty(getTarget().isClicked, new Runnable() {
+                  public void run() {
+                    cell_gju6mh_a1a.updateModel();
                   }
                 }));
               }

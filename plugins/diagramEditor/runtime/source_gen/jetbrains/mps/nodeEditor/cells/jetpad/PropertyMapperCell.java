@@ -4,6 +4,7 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.jetpad.model.property.Property;
+import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
@@ -12,26 +13,27 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.Computable;
 
 public class PropertyMapperCell extends EditorCell_Basic {
-  protected Property myProperty;
+  protected Property myViewProperty;
+  protected ReadableProperty myModelProperty;
   protected String myPropertyName;
 
   protected PropertyMapperCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
 
-  public PropertyMapperCell(EditorContext editorContext, SNode node, Property property, String propertyName) {
+  public PropertyMapperCell(EditorContext editorContext, SNode node, Property<?> viewProperty, ReadableProperty<?> modelProperty, String propertyName) {
     this(editorContext, node);
-    this.myProperty = property;
-    getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), propertyName));
+    this.myViewProperty = viewProperty;
+    this.myModelProperty = modelProperty;
     myPropertyName = propertyName;
+    getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), myPropertyName));
   }
 
   @Override
-  public void paintContent(Graphics g, ParentSettings parentSettingssss) {
+  public void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
 
@@ -39,13 +41,13 @@ public class PropertyMapperCell extends EditorCell_Basic {
 
   @Override
   public void synchronizeViewWithModel() {
-    myProperty.set(getSNode().getProperty(myPropertyName));
+    myViewProperty.set(myModelProperty.get());
     requestRelayout();
   }
 
   public void updateModel() {
-    ModelAccess.instance().tryWrite(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
+    ModelAccess.instance().tryWrite(new Runnable() {
+      public void run() {
         String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
           public String compute() {
             return getCellId() + "_" + getSNode().getNodeId().toString();
@@ -54,18 +56,10 @@ public class PropertyMapperCell extends EditorCell_Basic {
         getContext().flushEvents();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            getSNode().setProperty(myPropertyName, check_l7rc7g_b0a0a0a0c0a0a0a8(myProperty.get()));
+            getSNode().setProperty(myPropertyName, (myViewProperty.get() == null ? null : myViewProperty.get().toString()));
           }
         }, null, groupId, false, getContext().getOperationContext().getProject());
-        return (myProperty.get() == null ? null : myProperty.get().toString());
       }
-    }));
-  }
-
-  private static String check_l7rc7g_b0a0a0a0c0a0a0a8(Object checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.toString();
-    }
-    return null;
+    });
   }
 }

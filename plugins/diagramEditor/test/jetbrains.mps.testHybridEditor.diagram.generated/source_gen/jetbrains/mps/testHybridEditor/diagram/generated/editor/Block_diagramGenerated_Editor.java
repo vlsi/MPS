@@ -128,9 +128,17 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
-                final PropertyMapperCell cell_70mnj_a0a = new PropertyMapperCell(editorContext, node, getTarget().text(), "name");
+                final PropertyMapperCell cell_70mnj_a0a = new PropertyMapperCell(editorContext, node, getTarget().text(), JetpadUtils.modelProperty(new Computable<String>() {
+                  public String compute() {
+                    return SPropertyOperations.getString(node, "name");
+                  }
+                }), "name");
                 addEditorCell(cell_70mnj_a0a);
-                configuration.add(Synchronizers.forProperty(JetpadUtils.stringProperty(node, "name"), getTarget().text()));
+                configuration.add(Synchronizers.forProperty(JetpadUtils.modelProperty(new Computable<String>() {
+                  public String compute() {
+                    return SPropertyOperations.getString(node, "name");
+                  }
+                }), getTarget().text()));
                 configuration.add(Synchronizers.forProperty(getTarget().text(), new Runnable() {
                   public void run() {
                     cell_70mnj_a0a.updateModel();

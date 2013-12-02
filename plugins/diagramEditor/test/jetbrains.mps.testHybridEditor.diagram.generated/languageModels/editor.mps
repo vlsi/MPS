@@ -303,6 +303,12 @@
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         </node>
       </node>
+      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="6111547859872778735" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="isClicked" />
+        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="6111547859872778741" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.6111547859872065951" resolveInfo="myBooleanProperty" />
+        </node>
+      </node>
       <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="285670992218954143" nodeInfo="ng">
         <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.2084788800270272702" />
       </node>

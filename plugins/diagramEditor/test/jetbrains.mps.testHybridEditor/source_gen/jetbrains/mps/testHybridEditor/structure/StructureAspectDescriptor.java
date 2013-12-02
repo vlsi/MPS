@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.BlockExt").super_("jetbrains.mps.testHybridEditor.structure.Block").parents("jetbrains.mps.testHybridEditor.structure.Block").references("mb").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.BlockInstance").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("x", "y").references("metaBlock").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.BlockInstance").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("x", "y", "myBooleanProperty").references("metaBlock").create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.Connector").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("outputPort", "inputPort").create();
       case 4:

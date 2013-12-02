@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5hlww82qnthxope1umqa0ozjil99fcz">
+<dependencies version="2" modelHash="2uf555pwq9nq5ew68jnltnnvnoagi14">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -33,7 +33,7 @@
   <source id="725186580883451839" name="OutputPort" hash="-2enr97pvyf9ic4n09f3qq5394q7u6q3" />
   <source id="2353136177973871304" name="MetaBlock" hash="nnmi68lw0ugrvqiawsl9ucgrt0u6q2" />
   <source id="2353136177973886045" name="MetaPort" hash="90qfldjsj02nwyy2czaw1mv2i199nom" />
-  <source id="2353136177974080669" name="BlockInstance" hash="2gkm78dfk7gpmzservrd57kb8fcm6ip" />
+  <source id="2353136177974080669" name="BlockInstance" hash="-b6bpkujflpnzxorxc2i9gsvjimue1e6" />
   <source id="2353136177974088982" name="ConnectorInstance" hash="dzrl36sebwdgxryagqs357lqehwmkz6" />
   <source id="5288989961863963745" name="ConnectorEndInstance" hash="-e4kxcb16u3q3e9np92d8y8opu7dc4g6" />
   <source id="320213057867540364" name="BlockExt" hash="9gxg5a8fk3rme0nlz7kw8f8ixyhq4el" />
