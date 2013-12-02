@@ -75,7 +75,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
       }
     })});
 
-    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), container);
+    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), ((ViewContainerComponent) diagramCell.getComponent()).container());
     mapper.attachRoot();
 
     return diagramCell;

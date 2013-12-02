@@ -43,9 +43,14 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private int myPatternEditorY;
 
 
+
   public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-    myComponent = component;
+    ViewContainer container = new ViewContainer();
+    myComponent = new ViewContainerComponent();
+    myComponent.container(container);
+    myComponent.container().root().addTrait(RootTrait.ROOT_TRAIT);
+
   }
 
   public JComponent getComponent() {
