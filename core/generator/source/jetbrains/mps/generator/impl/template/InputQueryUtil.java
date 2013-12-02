@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,12 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -63,7 +61,7 @@ public class InputQueryUtil {
     }
   }
 
-  public static List<SNode> getNewInputNodes(SNode nodeMacro, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException {
+  public static List<SNode> getNewInputNodes(@NotNull SNode nodeMacro, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException {
     try {
       SNode nodesQuery = RuleUtil.getSourceNodesQuery(nodeMacro);
       if (nodesQuery != null) {

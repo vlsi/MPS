@@ -79,7 +79,7 @@ public class SNodeCompare {
   private static boolean nodeChildrenEquals(SNode a, SNode b) {
     Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), SNodeOperations.getChildRoles(a, true));
     SetSequence.fromSet(roles).addSequence(SetSequence.fromSet(SNodeOperations.getChildRoles(b, true)));
-    for (String r : SetSequence.fromSet(roles)) {
+    for (String r : roles) {
       List<? extends SNode> aChildren = IterableUtil.asList(a.getChildren(r));
       List<? extends SNode> bChildren = IterableUtil.asList(b.getChildren(r));
       if (aChildren.size() != bChildren.size()) {

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
-import jetbrains.mps.project.AbstractModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -85,8 +84,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
-    new ASMModelLoader(((AbstractModule) myModelRoot.getModule()), cp, model, false).updateModel();
-    updateTimestamp();
+    new ASMModelLoader(myModelRoot.getModule(), cp, model, false).updateModel();
     return model;
   }
 
@@ -113,7 +111,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
           // dirty hack for current problems with path separators 
           String dirCorrected = dir.replace('/', File.separatorChar);
           dirCorrected = dirCorrected.replace('\\', File.separatorChar);
-          assert dirCorrected.contains(name) : "Strange dir for model: model " + name + "; dir = " + dir;
+          assert dirCorrected.contains(name) : "Strange dir for model " + name + "; dir = " + dir;
 
           int index = dirCorrected.indexOf(name);
           dir = dir.substring(0, index);
@@ -134,12 +132,12 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       return;
     }
     reload();
+    updateTimestamp();
     LOG.assertLog(!(needsReloading()), "Assertion failed.");
   }
 
   private void reload() {
     if (myModel == null) {
-      updateTimestamp();
       return;
     }
     final SModel result = createModel();
@@ -150,6 +148,4 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       }
     });
   }
-
-
 }

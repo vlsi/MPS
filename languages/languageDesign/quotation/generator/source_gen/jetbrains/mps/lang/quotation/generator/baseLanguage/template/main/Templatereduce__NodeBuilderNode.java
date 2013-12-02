@@ -294,7 +294,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a3a1a3a1a3);
                                 environment.nodeCopied(context19, tnode23, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363114829");
-                                environment.resolveInTemplateLater(tnode23, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363114829"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context19);
+                                environment.resolveInTemplateLater(tnode23, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a3a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context19);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode23));
@@ -427,7 +427,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a4a1a3a1a3);
                                 environment.nodeCopied(context29, tnode33, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363100545");
-                                environment.resolveInTemplateLater(tnode33, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363100545"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context29);
+                                environment.resolveInTemplateLater(tnode33, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a4a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context29);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode33));
@@ -604,7 +604,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a5a1a3a1a3);
                                 environment.nodeCopied(context40, tnode44, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363073863");
-                                environment.resolveInTemplateLater(tnode44, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363073863"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context40);
+                                environment.resolveInTemplateLater(tnode44, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a5a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context40);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode44));
@@ -768,7 +768,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a6a1a3a1a3);
                                 environment.nodeCopied(context52, tnode56, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363069236");
-                                environment.resolveInTemplateLater(tnode56, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363069236"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context52);
+                                environment.resolveInTemplateLater(tnode56, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a6a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context52);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode56));
@@ -932,7 +932,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a7a1a3a1a3);
                                 environment.nodeCopied(context64, tnode68, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363083120");
-                                environment.resolveInTemplateLater(tnode68, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363083120"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context64);
+                                environment.resolveInTemplateLater(tnode68, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a7a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context64);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode68));
@@ -1004,7 +1004,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a6a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                     environment.nodeCopied(context64, tnode73, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363097216");
-                                    environment.resolveInTemplateLater(tnode73, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363097216"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context64);
+                                    environment.resolveInTemplateLater(tnode73, "variableDeclaration", templateNode_g27wod_a0a0a1a6a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context64);
 
                                   } finally {
                                     environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode73));
@@ -1058,7 +1058,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a7a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                         environment.nodeCopied(context64, tnode77, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188784930927");
-                                        environment.resolveInTemplateLater(tnode77, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8814250188784930927"), "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188784768973", "facade", context64);
+                                        environment.resolveInTemplateLater(tnode77, "variableDeclaration", templateNode_g27wod_a0a0a1a4a1a7a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188784768973", "facade", context64);
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode77));
@@ -1121,7 +1121,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a8a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                         environment.nodeCopied(context64, tnode81, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188784880826");
-                                        environment.resolveInTemplateLater(tnode81, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8814250188784880826"), "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188784768973", "facade", context64);
+                                        environment.resolveInTemplateLater(tnode81, "variableDeclaration", templateNode_g27wod_a0a0a1a4a1a8a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188784768973", "facade", context64);
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode81));
@@ -1226,7 +1226,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a8a1a3a1a3);
                                 environment.nodeCopied(context83, tnode87, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363107285");
-                                environment.resolveInTemplateLater(tnode87, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363107285"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context83);
+                                environment.resolveInTemplateLater(tnode87, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a8a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context83);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode87));
@@ -1403,7 +1403,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a9a1a3a1a3);
                                 environment.nodeCopied(context94, tnode98, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363093017");
-                                environment.resolveInTemplateLater(tnode98, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363093017"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context94);
+                                environment.resolveInTemplateLater(tnode98, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a9a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context94);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode98));
@@ -1592,7 +1592,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a1a3a1a3a3a2a2a1a01a1a3a1a3);
                                         environment.nodeCopied(context105, tnode111, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363081388");
-                                        environment.resolveInTemplateLater(tnode111, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363081388"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context105);
+                                        environment.resolveInTemplateLater(tnode111, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a1a3a1a3a3a2a2a1a01a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context105);
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode111));
@@ -1640,7 +1640,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                       try {
                                         environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a5a1a4a1a3a1a3a1a3a3a2a2a1a01a1a3a1a3);
                                         environment.nodeCopied(context105, tnode114, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363085829");
-                                        environment.resolveInTemplateLater(tnode114, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363085829"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787869", "n", context105);
+                                        environment.resolveInTemplateLater(tnode114, "variableDeclaration", templateNode_g27wod_a0a0a1a5a1a4a1a3a1a3a1a3a3a2a2a1a01a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787869", "n", context105);
 
                                       } finally {
                                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode114));
@@ -2087,7 +2087,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a31a1a3a1a3);
                                 environment.nodeCopied(context137, tnode141, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363090003");
-                                environment.resolveInTemplateLater(tnode141, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363090003"), "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context137);
+                                environment.resolveInTemplateLater(tnode141, "variableDeclaration", templateNode_g27wod_a0a0a1a3a1a3a1a3a3a2a2a1a31a1a3a1a3, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709784", "_node_", context137);
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode141));

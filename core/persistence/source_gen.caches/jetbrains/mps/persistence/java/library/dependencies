@@ -17,7 +17,6 @@
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
     <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />

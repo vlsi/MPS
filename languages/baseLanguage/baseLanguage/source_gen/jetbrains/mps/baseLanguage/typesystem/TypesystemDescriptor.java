@@ -342,6 +342,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_StaticMethodCall_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_StringBooleanOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -451,6 +455,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_AnnotationTarget_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_AnonymousClassCreator_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -634,6 +642,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_FieldDuplication_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -667,6 +679,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_HasSuperConstructorCall_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_IMethodCallTypeArgs_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -818,7 +834,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_Type_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_TypeInMethodCall_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_TypeInVarDecl_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_TypeVariableDeclarationDuplicateName_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -847,6 +875,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_UnneededJavaImports_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_UnneededMethodTypeParameters_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -1159,7 +1191,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
-          return _quotation_createNode_3ist9o_a0a1a0a0a0vk0a();
+          return _quotation_createNode_3ist9o_a0a1a0a0a0dl0a();
         }
       };
       this.myVariableConverters.add(converter);
@@ -1192,14 +1224,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = _quotation_createNode_3ist9o_a0a0a0a0a0a0a982a0();
+          this.myOperandType = _quotation_createNode_3ist9o_a0a0a0a0a0a0a792a0();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return _quotation_createNode_3ist9o_a0a1a0a0a0a0dl0a();
+          return _quotation_createNode_3ist9o_a0a1a0a0a0a0ll0a();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1455,7 +1487,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0vk0a() {
+  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0dl0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -1463,14 +1495,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_3ist9o_a0a0a0a0a0a0a982a0() {
+  private static SNode _quotation_createNode_3ist9o_a0a0a0a0a0a0a792a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0a0dl0a() {
+  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0a0ll0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);

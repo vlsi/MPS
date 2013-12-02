@@ -191,7 +191,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        for (String code : ListSequence.fromList(keyStrokes)) {
+        for (String code : keyStrokes) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
           editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
           editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));

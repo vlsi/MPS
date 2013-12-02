@@ -16,14 +16,7 @@
 <project name="IDEA-plugin-compile" default="build" basedir=".">
 
   <!--
-     There are two ways to pass IDEA locations to the script.
-
-      1. Environment variables (in ~/.profile or similar)
-
-        export IDEA_PATH=/Applications/IntelliJ\ IDEA\ 12\ CE.app
-        export IDEA_PLUGINS=/Users/username/Library/Application\ Support/IdeaIC12
-
-      2. Java system properties.
+     To pass IDEA locations to the script run it with the following Java system properties:
 
         ant -Dhome.idea_ce=/opt/IDEA12 -Dhome.idea_ce.plugins=/opt/plugins/IDEA12 <task>
   -->
@@ -34,26 +27,21 @@
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
 
-  <target name="loadEnvVars" unless="home.idea_ce">
-    <property environment="env"/>
-    <fail message="Please, define IDEA_PATH environment variable" unless="env.IDEA_PATH"/>
-    <property name="ideaPath" location="${env.IDEA_PATH}"/>
-    <fail message="Please, define IDEA_PLUGINS environment variable" unless="env.IDEA_PLUGINS"/>
-    <property name="ideaPlugins" location="${env.IDEA_PLUGINS}"/>
-  </target>
-
-  <target name="loadSystemVars" if="home.idea_ce">
+  <target name="loadIdeaPathVar">
+    <fail message="I need a system property: home.idea_ce = path to your Idea installation" unless="home.idea_ce"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
-    <property name="ideaPlugins" value="${home.idea_ce.plugins}"/>
+    <echo message="IDEA: ${ideaPath}"/>
   </target>
 
-  <target name="loadVars" depends="loadEnvVars, loadSystemVars">
-    <echo message="IDEA: ${ideaPath}"/>
+  <target name="loadIdeaPluginsPathVar">
+    <fail message="I need a system property: home.idea_ce.plugins = path to your Idea's plugins dir" unless="home.idea_ce.plugins"/>
+    <property name="ideaPlugins" value="${home.idea_ce.plugins}"/>
     <echo message="Plugins: ${ideaPlugins}"/>
   </target>
 
-  <target name="prepare" depends="buildCore">
-    <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
+  <target name="loadVars" depends="loadIdeaPathVar, loadIdeaPluginsPathVar"/>
+
+  <target name="preBuildCore" depends="buildCore">
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
@@ -83,11 +71,20 @@
     </jar>
   </target>
 
+  <target name="copyCoreFromDist" depends="loadIdeaPluginsPathVar">
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
+      <fileset dir="${ideaPlugins}/mps-core/lib"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
+      <fileset dir="${ideaPlugins}/mps-core/languages"/>
+    </copy>
+  </target>
+
   <target name="clean">
     <delete dir="${build.home}"/>
   </target>
 
-  <target name="buildCore" depends="loadVars" unless="buildCoreProcessed">
+  <target name="buildCore" depends="loadIdeaPathVar" unless="buildCoreProcessed">
     <property name="buildCoreProcessed" value="true" />
     <ant antfile="${base_dir}/build/getIdeaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="${base_dir}/build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
@@ -258,7 +255,7 @@
     </ant>
   </target>
 
-  <target name="install-plugin" depends="build">
+  <target name="install-plugin" depends="loadVars, build">
     <property name="pluginPath" value="${ideaPlugins}"/>
     <copy todir="${pluginPath}">
       <fileset dir="${build.home}/artifacts/mpsPlugin"/>

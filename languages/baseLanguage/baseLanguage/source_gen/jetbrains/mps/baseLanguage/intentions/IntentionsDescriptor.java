@@ -64,7 +64,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new MakeStaticFieldVolatile_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeSynchronized_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MergeStringConcatenation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MigrateString_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MoveInitializerToConstructor_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new OrToAndAndBack_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveArrayType_Intention());

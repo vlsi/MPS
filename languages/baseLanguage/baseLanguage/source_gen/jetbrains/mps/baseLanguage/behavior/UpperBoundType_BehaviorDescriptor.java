@@ -38,6 +38,10 @@ public class UpperBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     return UpperBoundType_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
   }
 
+  public boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return UpperBoundType_Behavior.virtual_isSupersetOf_9029841626175335449(thisNode, t, substitutions);
+  }
+
   public boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
     return UpperBoundType_Behavior.virtual_isValueType_4836112446988592019(thisNode);
   }

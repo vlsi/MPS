@@ -20,10 +20,10 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class TemplateLanguage implements TemplateDeclaration {
@@ -634,7 +634,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a3a1a3a1a9a1a11a1a2);
                       environment.nodeCopied(context, tnode42, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2088709642112385754");
-                      environment.resolveInTemplateLater(tnode42, "variableDeclaration", new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2088709642112385754"), "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2229091780083164041", "EXTENDED_LANGUAGE_IDS", context);
+                      environment.resolveInTemplateLater(tnode42, "variableDeclaration", templateNode_gw04jt_a0a0a1a3a1a3a1a9a1a11a1a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2229091780083164041", "EXTENDED_LANGUAGE_IDS", context);
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode42));
@@ -1320,7 +1320,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a4a1a4a1a7a1a51a1a2);
                       environment.nodeCopied(context, tnode90, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8131497994928275525");
-                      environment.resolveInTemplateLater(tnode90, "typeVariableDeclaration", new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8131497994928275525"), "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8131497994928098482", "T", context);
+                      environment.resolveInTemplateLater(tnode90, "typeVariableDeclaration", templateNode_gw04jt_a0a0a1a4a1a4a1a7a1a51a1a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8131497994928098482", "T", context);
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode90));
@@ -1354,7 +1354,7 @@ public class TemplateLanguage implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a8a1a51a1a2);
               environment.nodeCopied(context, tnode91, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8131497994928181562");
-              environment.resolveInTemplateLater(tnode91, "typeVariableDeclaration", new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8131497994928181562"), "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8131497994928098482", "T", context);
+              environment.resolveInTemplateLater(tnode91, "typeVariableDeclaration", templateNode_gw04jt_a0a0a1a8a1a51a1a2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8131497994928098482", "T", context);
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode91));

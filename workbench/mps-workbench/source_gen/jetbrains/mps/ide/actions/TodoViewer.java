@@ -18,6 +18,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -84,7 +85,7 @@ public class TodoViewer extends JPanel {
       }
     };
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
-    myUsagesView.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(myProject.getScope()), new UsagesView.ButtonConfiguration(true), new SearchResults());
+    myUsagesView.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new ProjectScope(myProject)), new UsagesView.ButtonConfiguration(true), new SearchResults());
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());
     ProgressManager.getInstance().run(new Task.Modal(project, "Searching", true) {
       @Override

@@ -124,7 +124,7 @@ public class OverridingMethodsFinder {
 
   private void collectOverridingMethods(SNode classifier, Map<String, Set<SNode>> nameToMethodsMap, Set<SNode> visitedClassifiers) {
     Map<String, Set<SNode>> methodNameToMethodMapCopy = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-    for (String methodName : SetSequence.fromSet(MapSequence.fromMap(nameToMethodsMap).keySet())) {
+    for (String methodName : MapSequence.fromMap(nameToMethodsMap).keySet()) {
       SetSequence.fromSet(safeGet(methodNameToMethodMapCopy, methodName)).addSequence(SetSequence.fromSet(MapSequence.fromMap(nameToMethodsMap).get(methodName)));
     }
     for (final SNode classifierMethod : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).where(new IWhereFilter<SNode>() {

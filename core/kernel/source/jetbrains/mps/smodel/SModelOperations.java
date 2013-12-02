@@ -112,7 +112,7 @@ public class SModelOperations {
   }
 
   public static void validateLanguagesAndImports(jetbrains.mps.smodel.SModel model, boolean respectModulesScopes, boolean firstVersion) {
-    @Nullable SModelDescriptor realDescriptor = model.getModelDescriptorPure();
+    @Nullable SModelDescriptor realDescriptor = model.getModelDescriptor();
     if (realDescriptor != null) {
       ModelChange.assertLegalChange(realDescriptor);
     }
@@ -351,6 +351,15 @@ public class SModelOperations {
     result.addAll(model.importedModels());
     result.addAll(model.getAdditionalModelVersions());
     return result;
+  }
+
+  @NotNull
+  public static List<SModelReference> getImportedModelUIDs(jetbrains.mps.smodel.SModel sModel) {
+    List<SModelReference> references = new ArrayList<SModelReference>();
+    for (ImportElement importElement : sModel.importedModels()) {
+      references.add(importElement.getModelReference());
+    }
+    return Collections.unmodifiableList(references);
   }
 
   //todo rewrite using iterators

@@ -266,7 +266,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       branding = _quotation_createNode_un708i_a0l0b71a21(ICONS, buildNumber, ICONS, name, name, name, ICONS, dateMacro, ICONS, ICONS, ICONS, ICONS, ICONS, ICONS);
       ListSequence.fromList(SLinkOperations.getTargets(buildProject, "parts", true)).addElement(branding);
     }
-    for (String macro : SetSequence.fromSet(userMacroNames)) {
+    for (String macro : userMacroNames) {
       ListSequence.fromList(macros).addElement(_quotation_createNode_un708i_a0a0a81a21(macro));
     }
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "macros", true)).addSequence(ListSequence.fromList(macros));

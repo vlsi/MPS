@@ -76,7 +76,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.ide.CopyPasteManager;
-import com.intellij.util.ui.TextTransferrable;
+import com.intellij.util.ui.TextTransferable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -252,7 +252,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
-        for (LineContent[] lineContents : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
+        for (LineContent[] lineContents : MapSequence.fromMap(myChangesToLineContents).values()) {
           for (LineContent lc : lineContents) {
             SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lc)));
           }
@@ -447,7 +447,7 @@ __switch__:
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (int fileLine = 0; fileLine < ListSequence.fromList(myFileLineToContent).count(); fileLine++) {
-          for (int pseudoLine : Sequence.fromIterable(getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine)))) {
+          for (int pseudoLine : getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine))) {
             int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
             ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
           }
@@ -547,7 +547,7 @@ __switch__:
         @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
-          CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
+          CopyPasteManager.getInstance().setContents(new TextTransferable(asString, asString));
         }
       });
     }

@@ -1115,7 +1115,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Object referenceMacro_GetReferent_4973721372936704562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8685825229212527876(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
   }
 
@@ -2307,7 +2307,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
-  public static Iterable sourceNodesQuery_4973721372936704581(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_8685825229212526353(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 

@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class StringsIO {
   private StringsIO() {
@@ -50,7 +49,7 @@ public class StringsIO {
 
   public static void writeLines(OutputStream output, Iterable<String> lines) {
     PrintWriter out = new PrintWriter(output);
-    for (String line : Sequence.fromIterable(lines)) {
+    for (String line : lines) {
       out.println(line);
     }
     out.close();

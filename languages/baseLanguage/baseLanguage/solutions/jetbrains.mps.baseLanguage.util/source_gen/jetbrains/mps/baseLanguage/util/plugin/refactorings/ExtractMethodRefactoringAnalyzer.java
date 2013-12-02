@@ -167,7 +167,7 @@ public class ExtractMethodRefactoringAnalyzer {
   private Set<SNode> getVarableLiveAtExitPoints() {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (Instruction exitPoint : SetSequence.fromSet(this.getExitPoints())) {
-      for (Object variable : SetSequence.fromSet(this.myLiveVariables.get(exitPoint))) {
+      for (Object variable : this.myLiveVariables.get(exitPoint)) {
         SetSequence.fromSet(result).addElement(((SNode) variable));
       }
     }

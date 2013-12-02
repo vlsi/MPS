@@ -88,6 +88,10 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     return ClassifierType_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
   }
 
+  public boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return ClassifierType_Behavior.virtual_isSupersetOf_9029841626175335449(thisNode, t, substitutions);
+  }
+
   public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     return ClassifierType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
   }

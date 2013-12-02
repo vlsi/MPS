@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-9b4h9tz9felojaxom9dd6kmy82xlhcd">
-  <common hash="-4mlym58ydb939lqnmsvkviagujzjgjm" />
+  <common hash="-4mlym58ydb939lqnmsvkviagujzjgjm" dependsOnNodes="true" />
   <source id="5797068448049410884" name="Icons" hash="9dflho6yrijn1qc7r3jeemiqqj1cm1i">
     <file name="Icons.java" />
   </source>

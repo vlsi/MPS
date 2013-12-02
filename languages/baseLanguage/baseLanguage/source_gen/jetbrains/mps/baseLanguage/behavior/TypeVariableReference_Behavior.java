@@ -88,6 +88,35 @@ public class TypeVariableReference_Behavior {
     return thisNode;
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    SNode myResolvedType = thisNode;
+    SNode resolvedT = t;
+    while (SNodeOperations.isInstanceOf(myResolvedType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(myResolvedType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+      if (temp != null) {
+        myResolvedType = temp;
+      } else {
+        break;
+      }
+    }
+    while (SNodeOperations.isInstanceOf(resolvedT, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(resolvedT, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+      if (temp != null) {
+        resolvedT = temp;
+      } else {
+        break;
+      }
+    }
+
+    if (myResolvedType != thisNode || resolvedT != t) {
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, myResolvedType, "virtual_isSupersetOf_9029841626175335449", new Object[]{resolvedT, substitutions});
+    } else {
+      boolean supersetOf = BehaviorReflection.invokeVirtual(Boolean.TYPE, myResolvedType, "virtual_isSupersetOf_1220438914705", new Object[]{resolvedT});
+      return supersetOf;
+    }
+
+  }
+
   private static SNode _quotation_createNode_6i211a_a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

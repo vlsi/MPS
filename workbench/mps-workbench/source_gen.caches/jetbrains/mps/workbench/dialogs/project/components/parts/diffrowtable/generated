@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="5vt33pw3rc3pohnlxmwhjpoyghfm5o6">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="96j39zyov7h5vgj4smg70qdbhubcfm5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <common hash="96j39zyov7h5vgj4smg70qdbhubcfm5" dependsOnNodes="true" />
   <source id="1560298786499490568" name="DiffRowTable" hash="av70065e21199brfpcxlaeyrfo1pnnj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DiffRowTable.java" />

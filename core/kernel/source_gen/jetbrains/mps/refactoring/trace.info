@@ -824,7 +824,7 @@
     <nodeInfo nodeId="9051163691968378166" fileName="StructureModificationProcessor.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="playRefactoring#(Ljetbrains/mps/refactoring/StructureModification;)Z" />
     <nodeInfo nodeId="3294668569473094846" fileName="StructureModificationProcessor.java" startLine="135" startPosition="48" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="489412339685402746" fileName="StructureModificationProcessor.java" startLine="146" startPosition="70" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1158649578080894622" fileName="StructureModificationProcessor.java" startLine="105" startPosition="84" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1158649578080894622" fileName="StructureModificationProcessor.java" startLine="105" startPosition="63" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9051163691968380095" fileName="StructureModificationProcessor.java" startLine="47" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModelOnLoad#()Z" />
     <nodeInfo nodeId="6798259919457177095" fileName="StructureModificationProcessor.java" startLine="60" startPosition="103" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9051163691968353847" fileName="StructureModificationProcessor.java" startLine="146" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasRefactoringsToPlay#(Ljetbrains/mps/smodel/SModel;)Z" />
@@ -920,7 +920,7 @@
     <scopeInfo nodeId="2370252442139111619" fileName="StructureModificationProcessor.java" startLine="82" startPosition="57" endLine="92" endPosition="9">
       <varInfo nodeId="1158649578080895000" varName="rel" />
     </scopeInfo>
-    <scopeInfo nodeId="1158649578080894594" fileName="StructureModificationProcessor.java" startLine="105" startPosition="84" endLine="115" endPosition="9" />
+    <scopeInfo nodeId="1158649578080894594" fileName="StructureModificationProcessor.java" startLine="105" startPosition="63" endLine="115" endPosition="9" />
     <scopeInfo nodeId="9051163691968380095" fileName="StructureModificationProcessor.java" startLine="47" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="6798259919457177095" fileName="StructureModificationProcessor.java" startLine="60" startPosition="103" endLine="71" endPosition="5">
       <varInfo nodeId="6798259919457177096" varName="importElement" />

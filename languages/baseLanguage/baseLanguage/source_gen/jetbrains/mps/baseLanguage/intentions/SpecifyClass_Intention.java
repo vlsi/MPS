@@ -92,6 +92,10 @@ public class SpecifyClass_Intention implements IntentionFactory {
       for (SNode arg : args) {
         ListSequence.fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.detachNode(arg));
       }
+      List<SNode> typeArgs = SLinkOperations.getTargets(node, "typeArgument", true);
+      for (SNode arg : typeArgs) {
+        ListSequence.fromList(SLinkOperations.getTargets(smc, "typeArgument", true)).addElement(SNodeOperations.detachNode(arg));
+      }
       editorContext.selectWRTFocusPolicy(smc);
     }
 

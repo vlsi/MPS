@@ -35,16 +35,18 @@ public interface SModelRepositoryListener {
   void modelRenamed(SModel modelDescriptor);
 
   /**
-   * This method will be called by SModelRepository to notify clients that underlying
-   * SModel instances was replaced by another one (as a result of reloadFromDisk(),
-   * or replaceModel() methods execution).
+   * Called to notify clients that contents of some models were changed due to model reload
+   * When the model source is changed on disk, this can lead to model reloading. During model
+   * reload session, models get new contents, so the caches depending on the old content should
+   * be invalidate, which can be implemented using this method.
    * <p/>
-   * It is guaranteed that this method will be executed in event dispatch thread if EDT is available.
+   * It is guaranteed that this method will be executed in EDT <br/>
+   * It is guaranteed that each reloadedModel has its contents already replaced before this method is called <br/>
+   * It is not guaranteed that this method will be called in the same command, or write action <br/>
+   * It is not guaranteed that this method will be called immediately after the reload
    * <p/>
-   * Old instance of SModel will not be attached to any SModel and will not
-   * be disposed till the end of notifications processing.
-   *
-   * @param md model descriptor with replaced SModel instance
+   * Old instance of SModelData will be disposed right after all listeners are notified
+   * @param reloadedModels model descriptors which contents were replaced
    */
 
   void modelsReplaced(Set<SModel> reloadedModels);

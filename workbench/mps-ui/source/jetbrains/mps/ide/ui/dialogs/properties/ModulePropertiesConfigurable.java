@@ -123,7 +123,10 @@ import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.DefaultCellEditor;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -149,6 +152,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.EventObject;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -159,12 +163,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModuleDescriptor myModuleDescriptor;
   private AbstractModule myModule;
-  private Map<JBCheckBox, SModuleFacet> myCheckBoxMap = new HashMap<JBCheckBox, SModuleFacet>();
-  private Map<SModuleFacet, JBCheckBox> myModuleFacetMap = new HashMap<SModuleFacet, JBCheckBox>();
+  private Set<JCheckBox> myCheckBoxes = new TreeSet<JCheckBox>(new Comparator<JCheckBox>() {
+    @Override
+    public int compare(JCheckBox o1, JCheckBox o2) {
+      return o1.getText().toLowerCase().compareTo(o2.getText().toLowerCase());
+    }
+  });
 
   public ModulePropertiesConfigurable(SModule module, Project project) {
     super(project);
@@ -1291,6 +1300,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
   public class AddFacetsTab extends BaseTab {
 
+    private static final String CHECKBOX_PROPERTY_KEY = "facet";
+
     public AddFacetsTab() {
       super("Facets", AllIcons.General.Settings, "Add facets");
       init();
@@ -1313,76 +1324,38 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void init() {
-      Set<String> facetsTypes = new HashSet<String>();
+      final HashMap<String, ModuleFacetBase> facetsTypes = new HashMap<String, ModuleFacetBase>();
+      for (final SModuleFacet moduleFacet : myModule.getFacets()) {
+        if (!(moduleFacet instanceof ModuleFacetBase)) continue;
+        facetsTypes.put(((ModuleFacetBase) moduleFacet).getFacetType(), (ModuleFacetBase) moduleFacet);
+      }
+
       Set<String> usedLangs = new HashSet<String>();
       for (SModuleReference reference : myModuleDescriptor.getUsedLanguages()) {
         usedLangs.add(reference.getModuleName());
       }
       Set<String> applicableFacetTypes = FacetsFacade.getInstance().getApplicableFacetTypes(usedLangs);
 
-      int recommended = 0;
-      for (final SModuleFacet moduleFacet : myModule.getFacets()) {
-        if (!(moduleFacet instanceof ModuleFacetBase))
-          continue;
-
-        facetsTypes.add(((ModuleFacetBase) moduleFacet).getFacetType());
-
-        if (applicableFacetTypes.contains(((ModuleFacetBase) moduleFacet).getFacetType())) recommended++;
-
-        final JBCheckBox checkBox = new JBCheckBox(
-          ((ModuleFacetBase) moduleFacet).getFacetPresentation(), true);
-        checkBox.addItemListener(new FacetCheckBoxItemListener(checkBox, moduleFacet));
-
-        myCheckBoxMap.put(checkBox, moduleFacet);
+      for(String facet : FacetsFacade.getInstance().getFacetTypes()) {
+        final SModuleFacet sModuleFacet = facetsTypes.keySet().contains(facet)
+            ? facetsTypes.get(facet) : FacetsFacade.getInstance().getFacetFactory(facet).create();
+        if (!(sModuleFacet instanceof ModuleFacetBase)) continue;
+        final String facetPresentation = applicableFacetTypes.contains(facet)
+            ? ((ModuleFacetBase) sModuleFacet).getFacetPresentation() + " (recommended)"
+            : ((ModuleFacetBase) sModuleFacet).getFacetPresentation();
+        final JBCheckBox checkBox = new JBCheckBox(facetPresentation, facetsTypes.keySet().contains(facet));
+        checkBox.putClientProperty(CHECKBOX_PROPERTY_KEY, sModuleFacet);
+        myCheckBoxes.add(checkBox);
+        checkBox.addItemListener(new FacetCheckBoxItemListener(checkBox));
+      }
+      final JPanel panel = new JPanel();
+      panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+      final int i = 5;
+      panel.setBorder(BorderFactory.createEmptyBorder(i, i, i, i));
+      for (JCheckBox checkBox : myCheckBoxes) {
+        panel.add(checkBox);
       }
 
-
-      for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
-        final SModuleFacet sModuleFacet = FacetsFacade.getInstance().getFacetFactory(facet).create();
-        if (!(sModuleFacet instanceof ModuleFacetBase) || facetsTypes.contains(facet))
-          continue;
-
-        if (applicableFacetTypes.contains(facet)) recommended++;
-
-        final JBCheckBox checkBox = new JBCheckBox(
-          ((ModuleFacetBase) sModuleFacet).getFacetPresentation(), false);
-        checkBox.addItemListener(new FacetCheckBoxItemListener(checkBox, sModuleFacet));
-
-        myCheckBoxMap.put(checkBox, sModuleFacet);
-      }
-
-      JPanel panel = new JPanel(new GridLayoutManager(recommended != 0 ? 2 : 1, 1));
-
-      int row = 0;
-      final GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-
-      if (recommended > 0) {
-        JPanel recomendedPanel = new JPanel(new GridLayoutManager(recommended, 1));
-        recomendedPanel.setBorder(IdeBorderFactory.createTitledBorder("Recommended facets", false, INSETS));
-        for (JBCheckBox jbCheckBox : myCheckBoxMap.keySet()) {
-          if (applicableFacetTypes.contains(((ModuleFacetBase) myCheckBoxMap.get(jbCheckBox)).getFacetType())) {
-            constraints.setRow(row++);
-            recomendedPanel.add(jbCheckBox, constraints);
-          }
-        }
-        row = 0;
-        constraints.setRow(row);
-        panel.add(recomendedPanel, constraints);
-      }
-
-      JPanel other = new JPanel(new GridLayoutManager(myCheckBoxMap.size() - recommended, 1));
-      other.setBorder(IdeBorderFactory.createTitledBorder("Available facets", false, INSETS));
-      for (JBCheckBox jbCheckBox : myCheckBoxMap.keySet()) {
-        if (!applicableFacetTypes.contains(((ModuleFacetBase) myCheckBoxMap.get(jbCheckBox)).getFacetType())) {
-          constraints.setRow(row++);
-          other.add(jbCheckBox, constraints);
-        }
-      }
-      constraints.setRow(recommended > 0 ? 1 : 0);
-      panel.add(other, constraints);
-
-      //panel.setBorder(IdeBorderFactory.createTitledBorder("Facet types", false, INSETS));
       setTabComponent(panel);
     }
 
@@ -1396,10 +1369,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       Set<String> newFacetsTypes = new HashSet<String>();
-      for (SModuleFacet moduleFacet : myCheckBoxMap.values()) {
-        if (!(moduleFacet instanceof ModuleFacetBase))
-          continue;
-        newFacetsTypes.add(((ModuleFacetBase) moduleFacet).getFacetType());
+      for (JCheckBox checkBox : myCheckBoxes) {
+        if(checkBox.isSelected()) {
+          final SModuleFacet facet = (SModuleFacet)checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
+          if (!(facet instanceof ModuleFacetBase)) continue;
+          newFacetsTypes.add(((ModuleFacetBase)facet).getFacetType());
+        }
       }
 
       return facetsTypes.addAll(newFacetsTypes) && newFacetsTypes.containsAll(facetsTypes);
@@ -1407,23 +1382,27 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void apply() {
-      List<SModuleFacet> moduleFacets = IterableUtil.asList(myModule.getFacets());
-      for (JBCheckBox checkBox : myCheckBoxMap.keySet()) {
+      final HashMap<String, ModuleFacetBase> moduleFacets= new HashMap<String, ModuleFacetBase>();
+      for (final SModuleFacet moduleFacet : myModule.getFacets()) {
+        if (!(moduleFacet instanceof ModuleFacetBase)) continue;
+        moduleFacets.put(((ModuleFacetBase) moduleFacet).getFacetType(), (ModuleFacetBase) moduleFacet);
+      }
 
-        if (checkBox.isSelected() && !moduleFacets.contains(myCheckBoxMap.get(checkBox))) {
+      for (JCheckBox checkBox : myCheckBoxes) {
+        if(!(checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY) instanceof ModuleFacetBase)) continue;
 
-          ModuleFacetBase facetBase = (ModuleFacetBase) myCheckBoxMap.get(checkBox);
-          facetBase.setModule(myModule);
+        ModuleFacetBase facet = (ModuleFacetBase)checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
+
+        if (checkBox.isSelected() && !moduleFacets.keySet().contains(facet.getFacetType())) {
+          facet.setModule(myModule);
           Memento memento = new MementoImpl();
-          facetBase.save(memento);
-          myModuleDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facetBase.getFacetType(), memento));
-
-        } else if (!checkBox.isSelected() && moduleFacets.contains(myCheckBoxMap.get(checkBox))) {
-
+          facet.save(memento);
+          myModuleDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facet.getFacetType(), memento));
+        } else if (!checkBox.isSelected() && moduleFacets.keySet().contains(facet.getFacetType())) {
           Iterator<ModuleFacetDescriptor> it = myModuleDescriptor.getModuleFacetDescriptors().iterator();
           while (it.hasNext()) {
             ModuleFacetDescriptor facetDescriptor = it.next();
-            if (facetDescriptor.getType().equals(((ModuleFacetBase) myCheckBoxMap.get(checkBox)).getFacetType())) {
+            if (facetDescriptor.getType().equals(facet.getFacetType())) {
               myModuleDescriptor.getModuleFacetDescriptors().remove(facetDescriptor);
               break;
             }
@@ -1435,18 +1414,16 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     private class FacetCheckBoxItemListener implements ItemListener {
       private final JBCheckBox myCheckBox;
-      private final SModuleFacet mySModuleFacet;
 
-      public FacetCheckBoxItemListener(JBCheckBox checkBox, SModuleFacet sModuleFacet) {
+      public FacetCheckBoxItemListener(JBCheckBox checkBox) {
         myCheckBox = checkBox;
-        mySModuleFacet = sModuleFacet;
       }
 
       @Override
       public void itemStateChanged(ItemEvent e) {
         if (!e.getSource().equals(myCheckBox)) return;
         if (myCheckBox.isSelected()) {
-          ModuleFacetBase moduleFacetBase = (ModuleFacetBase) mySModuleFacet;
+          final ModuleFacetBase moduleFacetBase = (ModuleFacetBase) myCheckBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
           Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(
             moduleFacetBase.getFacetType(), moduleFacetBase);
           if (facetTab != null) {
@@ -1458,7 +1435,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           for (int i = 0; i < ModulePropertiesConfigurable.this.getTabsCount(); i++) {
             Tab tab = ModulePropertiesConfigurable.this.getTab(i);
             if (!(tab instanceof FacetTab)) continue;
-            if (((FacetTab) tab).getFacet().equals(mySModuleFacet))
+            if (((FacetTab) tab).getFacet().equals(myCheckBox.getClientProperty(CHECKBOX_PROPERTY_KEY)))
               ModulePropertiesConfigurable.this.removeTab(tab);
           }
         }

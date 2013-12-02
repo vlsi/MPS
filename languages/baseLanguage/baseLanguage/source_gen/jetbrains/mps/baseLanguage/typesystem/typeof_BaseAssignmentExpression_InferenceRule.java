@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_BaseAssignmentExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -23,6 +24,20 @@ public class typeof_BaseAssignmentExpression_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = baseAssignmentExpression;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519336188", 0, null);
+        {
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix", false);
+          intentionProvider.putArgument("desiredType", lval);
+          intentionProvider.putArgument("expression", SLinkOperations.getTarget(ae, "rValue", true));
+          _info_12389875345.addIntentionProvider(intentionProvider);
+        }
+        {
+          BaseQuickFixProvider intentionProvider = null;
+          intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ChangeExpectedType_QuickFix", false);
+          intentionProvider.putArgument("desiredType", rval);
+          intentionProvider.putArgument("expression", SLinkOperations.getTarget(ae, "lValue", true));
+          _info_12389875345.addIntentionProvider(intentionProvider);
+        }
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(rval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519338112", true), (SNode) typeCheckingContext.typeOf(lval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519345897", true), true, true, _info_12389875345);
       }
     }

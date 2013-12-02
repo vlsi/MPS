@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.io.OutputStream;
 import org.apache.log4j.Logger;
@@ -158,7 +157,7 @@ public class LanguageDescriptorPersistence {
     }
 
     Element sourcePath = new Element("sourcePath");
-    for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
+    for (String p : descriptor.getSourcePaths()) {
       XmlUtil.tagWithAttribute(sourcePath, "source", "path", macroHelper.shrinkPath(p));
     }
     languageElement.addContent(sourcePath);

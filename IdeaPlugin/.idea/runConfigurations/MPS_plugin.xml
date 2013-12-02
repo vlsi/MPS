@@ -28,6 +28,7 @@
         <artifact name="mps-common:jar" />
         <artifact name="mps-jps-plugin:jar" />
       </option>
+      <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build.xml" target="copyCoreFromDist" />
     </method>
   </configuration>
 </component>

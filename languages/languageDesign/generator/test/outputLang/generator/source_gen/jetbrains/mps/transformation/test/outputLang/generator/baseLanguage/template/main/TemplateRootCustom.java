@@ -17,8 +17,8 @@ import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class TemplateRootCustom implements TemplateDeclaration {
@@ -227,7 +227,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a3a1a4a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905120210705");
-                          environment.resolveInTemplateLater(tnode18, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905120210705"), "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135", "q", context);
+                          environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_kyghau_a0a0a1a3a1a3a1a4a1a5a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135", "q", context);
 
                         } finally {
                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode18));
@@ -243,7 +243,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a3a1a4a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode19, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363088829");
-                          environment.resolveInTemplateLater(tnode19, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363088829"), "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103", "i", context);
+                          environment.resolveInTemplateLater(tnode19, "variableDeclaration", templateNode_kyghau_a0a0a1a4a1a3a1a4a1a5a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103", "i", context);
 
                         } finally {
                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode19));

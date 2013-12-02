@@ -179,7 +179,7 @@
     <nodeInfo nodeId="5282765393830144197" fileName="QueriesGenerated.java" startLine="461" startPosition="136" endLine="464" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7836785066500694235" fileName="QueriesGenerated.java" startLine="481" startPosition="0" endLine="484" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="7836785066500694256" fileName="QueriesGenerated.java" startLine="490" startPosition="0" endLine="493" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7036185364857494770" fileName="QueriesGenerated.java" startLine="562" startPosition="86" endLine="565" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7036185364857494770" fileName="QueriesGenerated.java" startLine="562" startPosition="63" endLine="565" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2834351162004232018" fileName="QueriesGenerated.java" startLine="577" startPosition="0" endLine="580" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="2834351162004232557" fileName="QueriesGenerated.java" startLine="581" startPosition="0" endLine="584" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="2834351162004232360" fileName="QueriesGenerated.java" startLine="585" startPosition="0" endLine="588" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -402,7 +402,7 @@
     <scopeInfo nodeId="6283201779507549823" fileName="QueriesGenerated.java" startLine="358" startPosition="151" endLine="366" endPosition="16">
       <varInfo nodeId="6283201779507549825" varName="blockStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="7036185364857390943" fileName="QueriesGenerated.java" startLine="562" startPosition="86" endLine="570" endPosition="61">
+    <scopeInfo nodeId="7036185364857390943" fileName="QueriesGenerated.java" startLine="562" startPosition="63" endLine="570" endPosition="61">
       <varInfo nodeId="7036185364857494783" varName="propertyNode" />
     </scopeInfo>
     <scopeInfo nodeId="7036185364857390937" fileName="QueriesGenerated.java" startLine="561" startPosition="54" endLine="571" endPosition="5">

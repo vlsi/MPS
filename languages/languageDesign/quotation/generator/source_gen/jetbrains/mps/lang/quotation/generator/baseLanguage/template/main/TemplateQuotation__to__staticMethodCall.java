@@ -45,7 +45,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
         try {
           environment.getTracer().pushTemplateNode(templateNode_3njegt_a0a0a1a3a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396668027");
-          environment.resolveInTemplateLater(tnode2, "baseMethodDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396668027"), "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396661196", "_quotation_createNode", context);
+          environment.resolveInTemplateLater(tnode2, "baseMethodDeclaration", templateNode_3njegt_a0a0a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396661196", "_quotation_createNode", context);
 
           {
             final List<SNode> tlist3 = new ArrayList<SNode>();

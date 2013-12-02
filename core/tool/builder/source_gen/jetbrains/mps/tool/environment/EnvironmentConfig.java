@@ -10,7 +10,6 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.tool.builder.util.PathManager;
 
 /**
@@ -76,7 +75,7 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
-    for (String bpath : CollectionSequence.fromCollection(PathManager.getBootstrapPaths())) {
+    for (String bpath : PathManager.getBootstrapPaths()) {
       addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(bpath));
     }
     return addLib(BOOTSTRAP_LIBRARIES_LIB_NAME, new File(PathManager.getLanguagesPath()));
