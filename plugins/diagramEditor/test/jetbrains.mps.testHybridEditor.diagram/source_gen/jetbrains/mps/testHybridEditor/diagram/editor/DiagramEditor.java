@@ -18,6 +18,11 @@ import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import java.util.Collection;
@@ -61,7 +66,16 @@ public class DiagramEditor extends AbstractJetpadEditor {
         };
       }
     };
-    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), ((ViewContainerComponent) diagramCell.getComponent()).container());
+    diagramCell.setCompositeSubstituteInfo(new SubstituteInfoPartExt[]{diagramCell.createNewDiagramNodeActions(diagramNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      public void invoke(SNode node, Integer x, Integer y) {
+        SNode block = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
+        SPropertyOperations.set(block, "name", "newBlock");
+        SPropertyOperations.set(block, "x", "" + (x));
+        SPropertyOperations.set(block, "y", "" + (y));
+      }
+    })});
+
+    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), container);
     mapper.attachRoot();
 
     return diagramCell;

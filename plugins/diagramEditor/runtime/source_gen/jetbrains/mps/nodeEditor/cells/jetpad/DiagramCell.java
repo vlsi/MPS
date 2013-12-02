@@ -11,18 +11,41 @@ import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import javax.swing.JComponent;
 import java.awt.Dimension;
+import jetbrains.jetpad.projectional.view.ViewTrait;
+import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
+import jetbrains.jetpad.projectional.view.ViewEvents;
+import jetbrains.jetpad.projectional.view.ViewEventHandler;
+import jetbrains.jetpad.event.MouseEvent;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.event.KeyEvent;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import java.awt.Window;
+import java.awt.Point;
+import jetbrains.jetpad.event.ModifierKey;
 
 public abstract class DiagramCell extends GenericMapperCell<DiagramView> implements EditorCell_WithComponent {
   private ViewContainerComponent myComponent;
+  private boolean mySubstituteEditorVisible = false;
+  private int myPatternEditorX;
+  private int myPatternEditorY;
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-    ViewContainer container = new ViewContainer();
-    myComponent = new ViewContainerComponent();
-    myComponent.container(container);
-    myComponent.container().root().addTrait(RootTrait.ROOT_TRAIT);
-
+    myComponent = component;
   }
 
   public JComponent getComponent() {
@@ -74,5 +97,139 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     return false;
   }
 
+  private ViewTrait getEventHandlingTrate() {
+    return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
+      public void handle(View view, MouseEvent event) {
+        hidePatternEditor();
+        View viewUnderMouse = view.viewAt(event.location());
+        if (viewUnderMouse != myComponent.container().root()) {
+          return;
+        }
+        showPatternEditor(event.x(), event.y());
+        event.consume();
+      }
+    }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
+      public void handle(View view, KeyEvent event) {
+        if (!(mySubstituteEditorVisible)) {
+          return;
+        }
+        getEditor().processKeyPressed(getAWTKeyEvent(event, false));
+        event.consume();
+      }
+    }).on(ViewEvents.KEY_TYPED, new ViewEventHandler<KeyEvent>() {
+      public void handle(View view, KeyEvent event) {
+        if (!(mySubstituteEditorVisible)) {
+          return;
+        }
+        getEditor().processKeyTyped(getAWTKeyEvent(event, false));
+        event.consume();
+      }
+    }).build();
+  }
 
+  private void showPatternEditor(int x, int y) {
+    myPatternEditorX = x;
+    myPatternEditorY = y;
+    getEditor().activateNodeSubstituteChooser(this, false);
+  }
+
+  private void hidePatternEditor() {
+    getEditor().getNodeSubstituteChooser().setVisible(false);
+  }
+
+  public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+    return new SubstituteInfoPartExt() {
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> result = new ArrayList<SubstituteAction>();
+        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
+          result.add(new NodeSubstituteActionWrapper(action) {
+            @Override
+            public SNode substitute(@Nullable EditorContext context, String string) {
+              SNode result = super.substitute(context, string);
+              setNodePositionCallback.invoke(result, myPatternEditorX, myPatternEditorY);
+              return result;
+            }
+          });
+        }
+        return result;
+      }
+    };
+  }
+
+  public void setCompositeSubstituteInfo(SubstituteInfoPartExt[] infoParts) {
+    setSubstituteInfo(new CompositeSubstituteInfo(getContext(), new BasicCellContext(getSNode()), infoParts));
+  }
+
+  @Override
+  public NodeSubstitutePatternEditor createSubstitutePatternEditor() {
+    return new NodeSubstitutePatternEditor() {
+      @Override
+      public void activate(Window window, Point point, Dimension dimension) {
+        Dimension actualDimension = new Dimension(100, 0);
+        point.translate(myPatternEditorX, myPatternEditorY);
+        super.activate(window, point, actualDimension);
+        mySubstituteEditorVisible = true;
+      }
+
+      @Override
+      public void done() {
+        super.done();
+        mySubstituteEditorVisible = false;
+      }
+    };
+  }
+
+
+
+  private java.awt.event.KeyEvent getAWTKeyEvent(KeyEvent jetPadKeyEvent, boolean isTyped) {
+    // TODO: better integration with MPS substitute editor is required here 
+    int id = (isTyped ? java.awt.event.KeyEvent.KEY_TYPED : java.awt.event.KeyEvent.KEY_PRESSED);
+    long when = System.currentTimeMillis();
+    int modifiers = 0;
+    if (jetPadKeyEvent.has(ModifierKey.ALT)) {
+      modifiers |= java.awt.event.KeyEvent.ALT_MASK;
+    }
+    if (jetPadKeyEvent.has(ModifierKey.CONTROL)) {
+      modifiers |= java.awt.event.KeyEvent.CTRL_MASK;
+    }
+    if (jetPadKeyEvent.has(ModifierKey.META)) {
+      modifiers |= java.awt.event.KeyEvent.META_MASK;
+    }
+    if (jetPadKeyEvent.has(ModifierKey.SHIFT)) {
+      modifiers |= java.awt.event.KeyEvent.SHIFT_MASK;
+    }
+    int keyCode;
+    switch (jetPadKeyEvent.key()) {
+      case ESCAPE:
+        keyCode = java.awt.event.KeyEvent.VK_ESCAPE;
+        break;
+      case SPACE:
+        keyCode = java.awt.event.KeyEvent.VK_SPACE;
+        break;
+      case BACKSPACE:
+        keyCode = java.awt.event.KeyEvent.VK_BACK_SPACE;
+        break;
+      case DELETE:
+        keyCode = java.awt.event.KeyEvent.VK_DELETE;
+        break;
+      case LEFT:
+        keyCode = java.awt.event.KeyEvent.VK_LEFT;
+        break;
+      case RIGHT:
+        keyCode = java.awt.event.KeyEvent.VK_RIGHT;
+        break;
+      case UP:
+        keyCode = java.awt.event.KeyEvent.VK_UP;
+        break;
+      case DOWN:
+        keyCode = java.awt.event.KeyEvent.VK_DOWN;
+        break;
+      case ENTER:
+        keyCode = java.awt.event.KeyEvent.VK_ENTER;
+        break;
+      default:
+        keyCode = 0;
+    }
+    return new java.awt.event.KeyEvent(getComponent(), id, when, modifiers, keyCode, jetPadKeyEvent.keyChar());
+  }
 }
