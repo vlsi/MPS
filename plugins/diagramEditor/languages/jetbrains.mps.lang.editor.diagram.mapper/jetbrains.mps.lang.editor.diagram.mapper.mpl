@@ -46,7 +46,7 @@
           <greater-priority-mapping>
             <generator generatorUID="9af0247c-27b7-402b-82b1-643095fa5943(jetbrains.mps.lang.editor.diagram.mapper#2084788800266602361)" />
             <external-mapping>
-              <mapping-node modelUID="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.mapper.generator.template.main@generator)" nodeID="1094405431463447767" />
+              <mapping-node modelUID="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)" nodeID="1094405431463447767" />
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
