@@ -1409,7 +1409,7 @@
     <nodeInfo nodeId="1497735617372422622" fileName="DiagramNodeParameters.java" startLine="55" startPosition="73" endLine="56" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1497735617372497047" fileName="DiagramNodeParameters.java" startLine="56" startPosition="151" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1497735617371944727" fileName="DiagramNodeParameters.java" startLine="59" startPosition="5" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4088443785018969412" fileName="DiagramNodeParameters.java" startLine="61" startPosition="82" endLine="62" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4088443785018969412" fileName="DiagramNodeParameters.java" startLine="61" startPosition="59" endLine="62" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4088443785018915582" fileName="DiagramNodeParameters.java" startLine="62" startPosition="77" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4088443785021820516" fileName="DiagramNodeParameters.java" startLine="64" startPosition="5" endLine="65" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4088443785019075336" fileName="DiagramNodeParameters.java" startLine="68" startPosition="98" endLine="69" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1437,7 +1437,7 @@
     <scopeInfo nodeId="4088443785021914088" fileName="DiagramNodeParameters.java" startLine="31" startPosition="213" endLine="33" endPosition="13" />
     <scopeInfo nodeId="1497735617371950110" fileName="DiagramNodeParameters.java" startLine="43" startPosition="125" endLine="45" endPosition="126" />
     <scopeInfo nodeId="1497735617372347669" fileName="DiagramNodeParameters.java" startLine="55" startPosition="73" endLine="57" endPosition="24" />
-    <scopeInfo nodeId="4088443785018854236" fileName="DiagramNodeParameters.java" startLine="61" startPosition="82" endLine="63" endPosition="22" />
+    <scopeInfo nodeId="4088443785018854236" fileName="DiagramNodeParameters.java" startLine="61" startPosition="59" endLine="63" endPosition="22" />
     <scopeInfo nodeId="4088443785018595449" fileName="DiagramNodeParameters.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4088443785018595449" varName="editorContext" />
       <varInfo nodeId="4088443785018595449" varName="node" />
