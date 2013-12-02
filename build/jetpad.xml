@@ -46,6 +46,10 @@
         <library jar="../lib/event-1.0-SNAPSHOT.jar" />
         <library jar="../lib/dataflow-1.0-SNAPSHOT.jar" />
         <library jar="../lib/otmodel-1.0-SNAPSHOT.jar" />
+        <library jar="../lib/gwt-util-1.0-SNAPSHOT.jar" />
+        <library jar="../lib/json-1.0-SNAPSHOT.jar" />
+        <library jar="../lib/modelUtil-1.0-SNAPSHOT.jar" />
+        <library jar="../lib/test-1.0-SNAPSHOT.jar" />
         <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
       </module>
     </echoxml>
