@@ -12,23 +12,27 @@ import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.jetpad.mapper.MapperFactory;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.projectional.view.RectView;
+import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.jetpad.values.Color;
 
 public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -49,10 +53,46 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
+            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "inMetaPorts", true)).select(new ISelector<SNode, String>() {
+              public String select(SNode it) {
+                return SPropertyOperations.getString(it, "name");
+              }
+            })), getTarget().inputs.children(), new MapperFactory<String, View>() {
+              public Mapper<? extends String, ? extends View> createMapper(final String id) {
+                Mapper<String, RectView> mapper = new Mapper<String, RectView>(getSource().getNodeId() + ((id == null ? "" : id.toString())), new RectView()) {
+                  @Override
+                  protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                    super.registerSynchronizers(configuration);
+                    getTarget().background().set(Color.LIGHT_GRAY);
+                    getTarget().dimension().set(new Vector(10, 10));
+                  }
+                };
+
+                return mapper;
+              }
+            }));
+            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "outMetaPorts", true)).select(new ISelector<SNode, String>() {
+              public String select(SNode it) {
+                return SPropertyOperations.getString(it, "name");
+              }
+            })), getTarget().outputs.children(), new MapperFactory<String, View>() {
+              public Mapper<? extends String, ? extends View> createMapper(final String id) {
+                Mapper<String, RectView> mapper = new Mapper<String, RectView>(getSource().getNodeId() + ((id == null ? "" : id.toString())), new RectView()) {
+                  @Override
+                  protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                    super.registerSynchronizers(configuration);
+                    getTarget().background().set(Color.GRAY);
+                    getTarget().dimension().set(new Vector(10, 10));
+                  }
+                };
+
+                return mapper;
+              }
+            }));
             {
               final ReadableProperty<Integer> x = JetpadUtils.modelProperty(new Computable<Integer>() {
                 public Integer compute() {
-                  return SNodeOperations.getIndexInParent(node) / 2 * 100;
+                  return SPropertyOperations.getInteger(node, "x");
                 }
               });
               final ReadableProperty<Integer> y = JetpadUtils.modelProperty(new Computable<Integer>() {
@@ -74,6 +114,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
                   ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                     public void run() {
+                      SPropertyOperations.set(((SNode) getSource()), "x", "" + (SPropertyOperations.getInteger(((SNode) getSource()), "x") + delta.x));
                     }
                   }, null, groupId, false, editorContext.getOperationContext().getProject());
                   ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -99,7 +140,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       public void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, final Mapper<SNode, DiagramNodeView> mapper) {
         configuration.add(Synchronizers.forConstantRole(mapper, mapper.getSource(), mapper.getTarget().contentView.children(), new MapperFactory<SNode, BlockContentView>() {
           public Mapper<? extends SNode, ? extends BlockContentView> createMapper(SNode block) {
-            return new Mapper<SNode, BlockContentView>(node, new BlockContentView()) {
+            return new Mapper<SNode, BlockContentView>(block, new BlockContentView()) {
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
@@ -121,11 +162,14 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
       @Override
       public void synchronizeViewWithModel() {
-        myView.moveTo(new Vector(SNodeOperations.getIndexInParent(node) / 2 * 100, SPropertyOperations.getInteger(node, "y")));
-        myView.invalidate();
-        requestRelayout();
+        if (myView != null) {
+          myView.moveTo(new Vector(SPropertyOperations.getInteger(node, "x"), SPropertyOperations.getInteger(node, "y")));
+          myView.invalidate();
+          requestRelayout();
+        }
       }
     };
+    editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
 
     editorCell.setCellId("DiagramNode_gju6mh_a");

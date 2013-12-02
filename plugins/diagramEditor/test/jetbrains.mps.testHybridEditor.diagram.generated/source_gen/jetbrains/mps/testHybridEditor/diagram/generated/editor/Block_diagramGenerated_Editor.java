@@ -122,7 +122,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       public void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, final Mapper<SNode, DiagramNodeView> mapper) {
         configuration.add(Synchronizers.forConstantRole(mapper, mapper.getSource(), mapper.getTarget().contentView.children(), new MapperFactory<SNode, BlockContentView>() {
           public Mapper<? extends SNode, ? extends BlockContentView> createMapper(SNode block) {
-            return new Mapper<SNode, BlockContentView>(node, new BlockContentView()) {
+            return new Mapper<SNode, BlockContentView>(block, new BlockContentView()) {
               @Override
               protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                 super.registerSynchronizers(configuration);
@@ -144,9 +144,11 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
       @Override
       public void synchronizeViewWithModel() {
-        myView.moveTo(new Vector(SNodeOperations.getIndexInParent(node) / 2 * 150 + 10, SPropertyOperations.getInteger(node, "y")));
-        myView.invalidate();
-        requestRelayout();
+        if (myView != null) {
+          myView.moveTo(new Vector(SNodeOperations.getIndexInParent(node) / 2 * 150 + 10, SPropertyOperations.getInteger(node, "y")));
+          myView.invalidate();
+          requestRelayout();
+        }
       }
     };
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));

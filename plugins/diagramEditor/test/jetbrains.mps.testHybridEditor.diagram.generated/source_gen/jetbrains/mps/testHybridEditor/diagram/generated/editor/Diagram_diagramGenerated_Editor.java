@@ -52,6 +52,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_tb7paq_b0(editorContext, node));
     editorCell.addEditorCell(this.createDiagram_tb7paq_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tb7paq_d0(editorContext, node));
+    editorCell.addEditorCell(this.createDiagram_tb7paq_e0(editorContext, node));
     return editorCell;
   }
 
@@ -157,5 +158,62 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_tb7paq_d0");
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, final SNode node) {
+    final List<SNode> blocks = ListSequence.fromList(new ArrayList<SNode>());
+    final List<SNode> connectors = ListSequence.fromList(new ArrayList<SNode>());
+    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, blocks, connectors);
+    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, blocks, connectors);
+
+    final DiagramCell editorCell = new DiagramCell(editorContext, node) {
+      public Mapper<SNode, DiagramView> getMapper() {
+        return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
+          @Override
+          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            configuration.add(Synchronizers.<SNode,View>forSimpleRole(this, blocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
+                EditorCell blockCell = editorContext.createNodeCell(node);
+                if (blockCell instanceof BlockCell) {
+                  addEditorCell(blockCell);
+                  return ((BlockCell) blockCell).getMapper();
+                }
+                return null;
+
+              }
+            }));
+            configuration.add(Synchronizers.<SNode,Connection>forSimpleRole(this, connectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
+              public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
+                EditorCell connectorCell = editorContext.createNodeCell(node);
+                if (connectorCell instanceof ConnectorCell) {
+                  addEditorCell(connectorCell);
+                  return ((ConnectorCell) connectorCell).getMapper();
+                }
+                return null;
+
+              }
+            }));
+          }
+        };
+      }
+    };
+    RootMapper mapper = new RootMapper(node, editorCell.getMapper(), ((ViewContainerComponent) editorCell.getComponent()).container());
+    mapper.attachRoot();
+
+    editorCell.setCellId("Diagram_tb7paq_e0");
+    return editorCell;
+
+  }
+
+  public static void createDiagram_tb7paq_e0_0(List<SNode> nlist, EditorContext editorContext, List<SNode> blocks, List<SNode> connectors) {
+    for (SNode contentNode : ListSequence.fromList(nlist)) {
+      EditorCell cell = editorContext.createNodeCell(contentNode);
+      if (cell instanceof BlockCell) {
+        ListSequence.fromList(blocks).addElement(contentNode);
+      } else if (cell instanceof ConnectorCell) {
+        ListSequence.fromList(connectors).addElement(contentNode);
+      }
+    }
   }
 }

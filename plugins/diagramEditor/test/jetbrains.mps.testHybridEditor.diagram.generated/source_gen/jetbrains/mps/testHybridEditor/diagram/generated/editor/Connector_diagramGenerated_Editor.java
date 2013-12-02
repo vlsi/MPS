@@ -41,27 +41,26 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            ReadableProperty<SNode> inputPort = JetpadUtils.modelProperty(new Computable<SNode>() {
-              public SNode compute() {
-                return SLinkOperations.getTarget(node, "outputPort", false);
-              }
-            });
-            ReadableProperty<SNode> outputPort = JetpadUtils.modelProperty(new Computable<SNode>() {
+            ReadableProperty<SNode> port_9iys9b_a0 = JetpadUtils.modelProperty(new Computable<SNode>() {
               public SNode compute() {
                 return SLinkOperations.getTarget(node, "inputPort", false);
               }
             });
-            configuration.add(Synchronizers.forProperty(inputPort, new WritableProperty<SNode>() {
-              public void set(SNode port) {
-                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                getTarget().fromView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
-              }
-            }));
-            configuration.add(Synchronizers.forProperty(outputPort, new WritableProperty<SNode>() {
+            configuration.add(Synchronizers.forProperty(port_9iys9b_a0, new WritableProperty<SNode>() {
               public void set(SNode port) {
                 Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
                 getTarget().toView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
-
+              }
+            }));
+            ReadableProperty<SNode> port_9iys9b_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
+              public SNode compute() {
+                return SLinkOperations.getTarget(node, "outputPort", false);
+              }
+            });
+            configuration.add(Synchronizers.forProperty(port_9iys9b_a0_0, new WritableProperty<SNode>() {
+              public void set(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                getTarget().fromView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
               }
             }));
           }

@@ -9,7 +9,7 @@
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="7171441290056664121" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="a" />
       <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="7171441290056664112" resolveInfo="r" />
-      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="7171441290056664106" resolveInfo="b" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="7171441290056664106" resolveInfo="c" />
     </node>
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="7171441290056664123" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="a" />
@@ -18,8 +18,8 @@
     </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="2373394573196519214" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="const" />
-      <property name="x" nameId="adck.6279035160242221415" value="76" />
-      <property name="y" nameId="adck.6279035160242221911" value="384" />
+      <property name="x" nameId="adck.6279035160242221415" value="99" />
+      <property name="y" nameId="adck.6279035160242221911" value="76" />
       <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="7171441290056664109" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="r" />
       </node>
@@ -27,7 +27,7 @@
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="7171441290056664111" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="const" />
       <property name="x" nameId="adck.6279035160242221415" value="73" />
-      <property name="y" nameId="adck.6279035160242221911" value="108" />
+      <property name="y" nameId="adck.6279035160242221911" value="169" />
       <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="7171441290056664112" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="r" />
       </node>
@@ -40,7 +40,7 @@
         <property name="name" nameId="tpck.1169194664001" value="a" />
       </node>
       <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="7171441290056664106" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="b" />
+        <property name="name" nameId="tpck.1169194664001" value="c" />
       </node>
       <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="285670992215046555" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="b" />
@@ -48,8 +48,8 @@
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="2353136177974088621" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ProducerBdghjghjfglockInstance" />
-      <property name="x" nameId="adck.2353136177974084745" value="11" />
-      <property name="y" nameId="adck.2353136177974084746" value="53" />
+      <property name="x" nameId="adck.2353136177974084745" value="3" />
+      <property name="y" nameId="adck.2353136177974084746" value="122" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="3229274890675234713" resolveInfo="Producer" />
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="2353136177974088758" nodeInfo="ng">
@@ -57,6 +57,11 @@
       <property name="x" nameId="adck.2353136177974084745" value="262" />
       <property name="y" nameId="adck.2353136177974084746" value="43" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
+    </node>
+    <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="675321057248087394" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="ffff" />
+      <property name="x" nameId="adck.2353136177974084745" value="142" />
+      <property name="y" nameId="adck.2353136177974084746" value="131" />
     </node>
     <node role="newConnectors" roleId="adck.2353136177974093280" type="adck.ConnectorInstance" typeId="adck.2353136177974088982" id="2353136177974097424" nodeInfo="ng">
       <node role="source" roleId="adck.5288989961863964096" type="adck.ConnectorEndInstance" typeId="adck.5288989961863963745" id="6668665838456235888" nodeInfo="ng">
@@ -79,6 +84,9 @@
     <property name="name" nameId="tpck.1169194664001" value="Producer" />
     <node role="outMetaPorts" roleId="adck.3229274890675219468" type="adck.MetaPort" typeId="adck.2353136177973886045" id="1220375669565734577" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="producerOutput" />
+    </node>
+    <node role="outMetaPorts" roleId="adck.3229274890675219468" type="adck.MetaPort" typeId="adck.2353136177973886045" id="675321057247243818" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="d" />
     </node>
   </root>
 </model>
