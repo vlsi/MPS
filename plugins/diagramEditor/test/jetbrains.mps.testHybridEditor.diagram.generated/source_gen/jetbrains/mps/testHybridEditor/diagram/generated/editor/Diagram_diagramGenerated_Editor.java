@@ -29,6 +29,11 @@ import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 
@@ -134,6 +139,14 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         };
       }
     };
+    editorCell.setCompositeSubstituteInfo(new SubstituteInfoPartExt[]{editorCell.createNewDiagramNodeActions(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      public void invoke(SNode node, Integer x, Integer y) {
+        SNode a = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
+        SPropertyOperations.set(a, "x", "" + (x));
+        SPropertyOperations.set(a, "y", "" + (y));
+      }
+    })});
+
     RootMapper mapper = new RootMapper(node, editorCell.getMapper(), ((ViewContainerComponent) editorCell.getComponent()).container());
     mapper.attachRoot();
 
@@ -198,6 +211,14 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         };
       }
     };
+    editorCell.setCompositeSubstituteInfo(new SubstituteInfoPartExt[]{editorCell.createNewDiagramNodeActions(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.BlockInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      public void invoke(SNode node, Integer x, Integer y) {
+        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "name", "block");
+        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "x", "" + (x));
+        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "y", "" + (y));
+      }
+    })});
+
     RootMapper mapper = new RootMapper(node, editorCell.getMapper(), ((ViewContainerComponent) editorCell.getComponent()).container());
     mapper.attachRoot();
 

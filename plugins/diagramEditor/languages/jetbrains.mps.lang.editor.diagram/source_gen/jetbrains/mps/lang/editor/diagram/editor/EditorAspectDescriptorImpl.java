@@ -31,20 +31,22 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 7:
         return Collections.<ConceptEditor>singletonList(new DiagramElementBLQuery_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new DiagramElementsCreation_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new FigureColorStyleClassItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new FigureDimensionStyleClassItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new FigureColorStyleClassItem_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new LinkDeclarationReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new FigureDimensionStyleClassItem_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new ParameterBLQuery_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinkDeclarationReference_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new ParameterLink_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterBLQuery_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new ParameterProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterLink_Editor());
       case 15:
+        return Collections.<ConceptEditor>singletonList(new ParameterProperty_Editor());
+      case 16:
         return Collections.<ConceptEditor>singletonList(new ThisEditorNodeExpression_Editor());
       default:
     }
@@ -62,5 +64,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
 }

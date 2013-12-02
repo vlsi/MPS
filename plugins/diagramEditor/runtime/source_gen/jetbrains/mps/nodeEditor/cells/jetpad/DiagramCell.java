@@ -50,6 +50,8 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     myComponent = new ViewContainerComponent();
     myComponent.container(container);
     myComponent.container().root().addTrait(RootTrait.ROOT_TRAIT);
+    myComponent.container().root().addTrait(getEventHandlingTrate());
+
 
   }
 
