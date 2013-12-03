@@ -77,6 +77,7 @@
       </node>
       <node role="target" roleId="adck.5288989961863964102" type="adck.ConnectorEndInstance" typeId="adck.5288989961863963745" id="6111547859875976019" nodeInfo="ng">
         <link role="block" roleId="adck.5288989961863964092" targetNodeId="2353136177974088758" resolveInfo="TO" />
+        <link role="metaPort" roleId="adck.5288989961863964093" targetNodeId="675321057247243818" resolveInfo="d" />
       </node>
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="8570854907292953344" nodeInfo="ng">
@@ -86,24 +87,19 @@
       <property name="myBooleanProperty" nameId="adck.6111547859872065951" value="false" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
-    <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="2682505046536047299" nodeInfo="ng">
-      <property name="x" nameId="adck.6279035160242221415" value="187" />
-      <property name="y" nameId="adck.6279035160242221911" value="257" />
+    <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="2720370445064076121" nodeInfo="ng">
+      <property name="myBooleanProperty" nameId="adck.6111547859872065951" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="block" />
+      <property name="x" nameId="adck.2353136177974084745" value="-8" />
+      <property name="y" nameId="adck.2353136177974084746" value="130" />
+      <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
-    <node role="blocks" roleId="adck.725186580883451864" type="adck.BlockExt" typeId="adck.320213057867540364" id="6111547859875302579" nodeInfo="ng">
-      <property name="x" nameId="adck.6279035160242221415" value="287" />
-      <property name="y" nameId="adck.6279035160242221911" value="203" />
-      <link role="mb" roleId="adck.320213057867544063" targetNodeId="3229274890675234713" resolveInfo="Producer" />
-    </node>
-    <node role="blocks" roleId="adck.725186580883451864" type="adck.BlockExt" typeId="adck.320213057867540364" id="6111547859875302590" nodeInfo="ng">
-      <property name="x" nameId="adck.6279035160242221415" value="316" />
-      <property name="y" nameId="adck.6279035160242221911" value="65" />
-      <link role="mb" roleId="adck.320213057867544063" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
-    </node>
-    <node role="blocks" roleId="adck.725186580883451864" type="adck.BlockExt" typeId="adck.320213057867540364" id="6111547859875302602" nodeInfo="ng">
-      <property name="x" nameId="adck.6279035160242221415" value="261" />
-      <property name="y" nameId="adck.6279035160242221911" value="81" />
-      <link role="mb" roleId="adck.320213057867544063" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
+    <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="2720370445064076127" nodeInfo="ng">
+      <property name="myBooleanProperty" nameId="adck.6111547859872065951" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="block" />
+      <property name="x" nameId="adck.2353136177974084745" value="117" />
+      <property name="y" nameId="adck.2353136177974084746" value="84" />
+      <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="3229274890675234713" resolveInfo="Producer" />
     </node>
   </root>
   <root type="adck.MetaBlock" typeId="adck.2353136177973871304" id="1220375669565734590" nodeInfo="ng">
