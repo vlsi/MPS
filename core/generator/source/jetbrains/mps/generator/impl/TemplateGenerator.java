@@ -106,13 +106,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private boolean myInplaceModelChange = false;
   private WeavingProcessor myWeavingProcessor;
   private final boolean myInplaceChangeEnabled;
-  /**
-   * This is a hack, to avoid using DeltaBuilder when new roots are added into the model. Can't use myIsChanged (as I used to)
-   * because for parallel generation there are chances myIsChanged is not yet set (root is not yet created) when I get to DeltaBuilder
-   * instantiation. The right way, to make DeltaBuilder aware of root creation, seems too demanding (time/effort) right now.
-   * Note, rootsConsumed (root mappings) shall be fixed as well then (now it's ok as parallel generator jumps in after rootsConsumed is populated)
-   */
-  private boolean myNewRootsAreAdded = false;
+  private List<SNode> myNewAddedRoots;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
@@ -153,6 +147,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myInplaceModelChange = true;
       if (myDeltaBuilder.hasChanges()) {
         myDeltaBuilder.applyInplace(getInputModel(), this);
+      }
+      if (myNewAddedRoots != null) {
+        for (SNode newRoot : myNewAddedRoots) {
+          getInputModel().addRootNode(newRoot);
+        }
+        myNewAddedRoots.clear();
       }
       myOutputRoots.clear();
       myDeltaBuilder = null;
@@ -243,7 +243,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     ttrace.pop();
 
-    if (myInplaceChangeEnabled && !myNewRootsAreAdded && rootsConsumed.isEmpty()) {
+    if (myInplaceChangeEnabled && rootsConsumed.isEmpty()) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
         myLogger.info("Could have had delta builder here, but can't due to active weavings");
       } else {
@@ -269,7 +269,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     try {
       if (environment.getQueryExecutor().isApplicable(rule, environment, null)) {
-        myNewRootsAreAdded = true;
         myGenerationTracer.pushRule(rule.getRuleNode());
         try {
           createRootNodeByRule(rule, environment);
@@ -331,6 +330,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
+      registerAddedRoots(outputNodes);
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, null, rule.getRuleNode(), false);
         setChanged();
@@ -354,6 +354,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
+      registerAddedRoots(outputNodes);
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
@@ -654,6 +655,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   void setChanged() {
     myChanged = true;
+  }
+
+  // FIXME ParallelTemplateGenerator shall handle similar to that in #registerRoot to ensure order is preserved
+  protected void registerAddedRoots(@NotNull Collection<SNode> newRoots) {
+    if (!myInplaceChangeEnabled) {
+      return;
+    }
+    if (myNewAddedRoots == null) {
+      myNewAddedRoots = new ArrayList<SNode>();
+    }
+    myNewAddedRoots.addAll(newRoots);
   }
 
   protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
