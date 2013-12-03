@@ -36,7 +36,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguage>6106f611-7a74-42d1-80de-edc5c602bfd1(jetbrains.mps.lang.editor.diagram)</usedLanguage>
-    <usedLanguage>8dd20ff2-0991-4782-bd64-66f2ff385bc4(jetbrains.mps.lang.editor.diagram.mapper)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
