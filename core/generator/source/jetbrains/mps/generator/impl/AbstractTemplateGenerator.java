@@ -52,7 +52,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private Set<SNode> myFailedRules = new ConcurrentHashSet<SNode>();
   private final boolean myShowBadChildWarning;
-  private final RoleValidator successValidator = new RoleValidator();
+  private final RoleValidator successValidatorOne = new RoleValidator(false);
+  private final RoleValidator successValidatorMany = new RoleValidator(true);
   // not concurrent - I don't care if few threads instantiate validators - it's cheap.
   // besides, the code shall be refactored to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
   private final Map<String, Map<String, RoleValidator>> validators = new HashMap<String, Map<String, RoleValidator>>();
@@ -223,7 +224,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private RoleValidator getValidator(SNode sourceNode, String role, boolean child) {
     if (child && GeneratorUtilEx.link_BaseConcept_attrs.equals(role)) {
       //unnecessary warning removed
-      return successValidator; //todo maybe add check for attribute links
+      return successValidatorMany; //todo maybe add check for attribute links
     }
     final SConcept concept = sourceNode.getConcept();
     String conceptFQName = concept.getQualifiedName();
@@ -249,7 +250,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     } else {
       if (!myShowBadChildWarning) {
         // ignore
-        validator = successValidator;
+        validator = (!link.isReference() && ((SContainmentLink) link).isMultiple()) ? successValidatorMany : successValidatorOne;
       } else {
         validator = new AcceptableTargetValidator(myLogger, link);
       }
@@ -260,13 +261,21 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   public static class RoleValidator {
     private final RoleValidationStatus myStatus;
+    private final boolean myMultipleSource;
 
-    public RoleValidator() {
+    protected RoleValidator() {
       myStatus = null;
+      myMultipleSource = false;
     }
 
-    public RoleValidator(RoleValidationStatus status) {
+    public RoleValidator(boolean isMultipleSource) {
+      myStatus = null;
+      myMultipleSource = isMultipleSource;
+    }
+
+    public RoleValidator(@NotNull RoleValidationStatus status) {
       myStatus = status;
+      myMultipleSource = false;
     }
 
     /**
@@ -277,10 +286,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     }
 
     /**
+     * Value doesn't make sense if validation status is non-null (i.e. error)
      * @return <code>true</code> if source cardinality is 0..* or 1..*
      */
     public boolean isMultipleSource() {
-      return false;
+      return myMultipleSource;
     }
   }
 

@@ -218,7 +218,7 @@
     <nodeInfo nodeId="1447667470349200717" fileName="SequenceType_Behavior.java" startLine="30" startPosition="190" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3078742637637080247" fileName="SequenceType_Behavior.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_hzlnln_a0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1213877245174" fileName="SequenceType_Behavior.java" startLine="49" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAbstractCreators_1226945293888#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1447667470349161983" fileName="SequenceType_Behavior.java" startLine="29" startPosition="77" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1447667470349161983" fileName="SequenceType_Behavior.java" startLine="29" startPosition="212" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877245200" fileName="SequenceType_Behavior.java" startLine="28" startPosition="98" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877245174" fileName="SequenceType_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariableSuffixes_1213877337304#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1213877245176" fileName="SequenceType_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
@@ -262,7 +262,7 @@
     <scopeInfo nodeId="1213877245174" fileName="SequenceType_Behavior.java" startLine="49" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1213877245174" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877245201" fileName="SequenceType_Behavior.java" startLine="29" startPosition="77" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="1213877245201" fileName="SequenceType_Behavior.java" startLine="29" startPosition="212" endLine="40" endPosition="7" />
     <scopeInfo nodeId="1213877245191" fileName="SequenceType_Behavior.java" startLine="27" startPosition="88" endLine="42" endPosition="28">
       <varInfo nodeId="1213877245193" varName="variableSuffixes" />
     </scopeInfo>
