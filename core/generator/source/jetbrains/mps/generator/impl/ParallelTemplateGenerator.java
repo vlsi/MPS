@@ -27,7 +27,6 @@ import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
@@ -58,7 +57,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode, SNodeReference>, RootGenerationTask> myInputToTask;
-  private Map<SNode, RootBasedQueryExectionContext> myRootContext;
+  private Map<SNode, DefaultQueryExecutionContext> myRootContext;
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
@@ -122,15 +121,15 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       }
       inputNode = inputNode.getContainingRoot();
       if (inputNode.getModel() == getInputModel()) {
-        RootBasedQueryExectionContext context;
+        DefaultQueryExecutionContext context;
         if (myRootContext == null) {
-          myRootContext = new HashMap<SNode, RootBasedQueryExectionContext>();
+          myRootContext = new HashMap<SNode, DefaultQueryExecutionContext>();
           context = null;
         } else {
           context = myRootContext.get(inputNode);
         }
         if (context == null) {
-          context = new RootBasedQueryExectionContext(inputNode, this);
+          context = new DefaultQueryExecutionContext(this, false);
           myRootContext.put(inputNode, context);
         }
         return context;
@@ -280,18 +279,6 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     @Override
     public boolean requiresReadAccess() {
       return true;
-    }
-  }
-
-  private static class RootBasedQueryExectionContext extends DefaultQueryExecutionContext {
-
-    public RootBasedQueryExectionContext(SNode root, ITemplateGenerator generator) {
-      super(generator);
-    }
-
-    @Override
-    public boolean isMultithreaded() {
-      return false;
     }
   }
 }

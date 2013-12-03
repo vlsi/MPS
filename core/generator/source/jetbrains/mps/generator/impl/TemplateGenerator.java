@@ -731,7 +731,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     protected abstract void drop(SNode inputRootNode, TemplateDropRootRule rule);
 
-    public abstract void copyRootInputNode(SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
+    public abstract void copyRootInputNode(@NotNull SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
 
     private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
       String applicableConcept = rule.getApplicableConcept();
@@ -779,7 +779,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     @Override
-    public void copyRootInputNode(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+    public void copyRootInputNode(@NotNull SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
       myDeltaBuilder.enterInputRoot(inputRootNode);
       myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       try {
@@ -841,7 +841,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     @Override
-    public void copyRootInputNode(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+    public void copyRootInputNode(@NotNull SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
       // copy
       myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       try {
@@ -852,11 +852,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
-    public SNode copyInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+    public SNode copyInputNode(@NotNull SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       // no reduction found - do node copying
       myGenerationTracer.pushCopyOperation();
       SNode outputNode;
-      if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
+      final SModel inputNodeModel = inputNode.getModel();
+      if (inputNode.getNodeId() != null && inputNodeModel != null) {
         // copy preserving id
         outputNode = myNodeFactory.create(inputNode);
       } else {
@@ -871,11 +872,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
 
       for (SReference inputReference : inputNode.getReferences()) {
-        if (inputNode.getModel() != null) {
+        if (inputNodeModel != null) {
           boolean external = true;
           if (inputReference instanceof PostponedReference){
             external = false;
-          } else if (inputNode.getModel().getReference().equals(inputReference.getTargetSModelReference())){
+          } else if (inputNodeModel.getReference().equals(inputReference.getTargetSModelReference())){
             external = false;
           }
           if (inputReference instanceof DynamicReference || external) {
