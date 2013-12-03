@@ -15,10 +15,11 @@ import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
+import java.util.Set;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -42,26 +43,33 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            ReadableProperty<String> port_5733l5_a0 = JetpadUtils.modelProperty(new Computable<String>() {
-              public String compute() {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false).getNodeId() + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name");
+            ReadableProperty<SNode> port_5733l5_a0 = JetpadUtils.modelProperty(new Computable<SNode>() {
+              public SNode compute() {
+                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
               }
             });
-            configuration.add(Synchronizers.forProperty(port_5733l5_a0, new WritableProperty<String>() {
-              public void set(String port) {
-                Mapper<? super String, ?> descendantMapper = getParent().getDescendantMapper(port);
+            configuration.add(Synchronizers.forProperty(port_5733l5_a0, new WritableProperty<SNode>() {
+              public void set(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
                 getTarget().toView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
               }
             }));
-            ReadableProperty<String> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<String>() {
-              public String compute() {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false).getNodeId() + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "metaPort", false), "name");
+            ReadableProperty<SNode> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
+              public SNode compute() {
+                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
               }
             });
-            configuration.add(Synchronizers.forProperty(port_5733l5_a0_0, new WritableProperty<String>() {
-              public void set(String port) {
-                Mapper<? super String, ?> descendantMapper = getParent().getDescendantMapper(port);
-                getTarget().fromView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+            configuration.add(Synchronizers.forProperty(port_5733l5_a0_0, new WritableProperty<SNode>() {
+              public void set(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                Mapper<? super String, ?> resultMapper;
+                Set<Mapper<? super String, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
+                if (mappers.size() == 0) {
+                  resultMapper = null;
+                } else {
+                  resultMapper = mappers.iterator().next();
+                }
+                getTarget().fromView().set((port == null ? null : (resultMapper == null ? null : ((View) resultMapper.getTarget()))));
               }
             }));
           }

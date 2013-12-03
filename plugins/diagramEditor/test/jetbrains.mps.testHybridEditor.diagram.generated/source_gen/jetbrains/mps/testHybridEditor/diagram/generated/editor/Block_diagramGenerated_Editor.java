@@ -27,10 +27,6 @@ import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -148,29 +144,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
             };
           }
         }));
-      }
-
-
-
-      @Override
-      public void synchronizeViewWithModel() {
-        if (myXProperty == null || myYProperty == null) {
-          return;
-        }
-        DiagramCell cell = ((DiagramCell) CellFinderUtil.findParent(this, new Condition<EditorCell_Collection>() {
-          public boolean met(EditorCell_Collection parent) {
-            return parent instanceof DiagramCell;
-          }
-        }));
-        if (cell == null) {
-          return;
-        }
-        Mapper<? super SNode, ?> descendantMapper = cell.getRootMapper().getDescendantMapper(getSNode());
-        if (descendantMapper != null) {
-          ((View) descendantMapper.getTarget()).moveTo(new Vector(myXProperty.get(), myYProperty.get()));
-          ((View) descendantMapper.getTarget()).invalidate();
-          requestRelayout();
-        }
       }
     };
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));

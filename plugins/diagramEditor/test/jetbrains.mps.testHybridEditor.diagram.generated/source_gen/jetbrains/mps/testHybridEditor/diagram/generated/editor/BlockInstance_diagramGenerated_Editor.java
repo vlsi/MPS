@@ -29,10 +29,6 @@ import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -62,7 +58,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               }
             })), getTarget().inputs.children(), new MapperFactory<String, View>() {
               public Mapper<? extends String, ? extends View> createMapper(final String id) {
-                Mapper<String, RectView> mapper = new Mapper<String, RectView>(getSource().getNodeId() + ((id == null ? "" : id.toString())), new RectView()) {
+                Mapper<String, RectView> mapper = new Mapper<String, RectView>(id, new RectView()) {
                   @Override
                   protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                     super.registerSynchronizers(configuration);
@@ -80,7 +76,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               }
             })), getTarget().outputs.children(), new MapperFactory<String, View>() {
               public Mapper<? extends String, ? extends View> createMapper(final String id) {
-                Mapper<String, RectView> mapper = new Mapper<String, RectView>(getSource().getNodeId() + ((id == null ? "" : id.toString())), new RectView()) {
+                Mapper<String, RectView> mapper = new Mapper<String, RectView>(id, new RectView()) {
                   @Override
                   protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                     super.registerSynchronizers(configuration);
@@ -182,29 +178,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
             };
           }
         }));
-      }
-
-
-
-      @Override
-      public void synchronizeViewWithModel() {
-        if (myXProperty == null || myYProperty == null) {
-          return;
-        }
-        DiagramCell cell = ((DiagramCell) CellFinderUtil.findParent(this, new Condition<EditorCell_Collection>() {
-          public boolean met(EditorCell_Collection parent) {
-            return parent instanceof DiagramCell;
-          }
-        }));
-        if (cell == null) {
-          return;
-        }
-        Mapper<? super SNode, ?> descendantMapper = cell.getRootMapper().getDescendantMapper(getSNode());
-        if (descendantMapper != null) {
-          ((View) descendantMapper.getTarget()).moveTo(new Vector(myXProperty.get(), myYProperty.get()));
-          ((View) descendantMapper.getTarget()).invalidate();
-          requestRelayout();
-        }
       }
     };
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
