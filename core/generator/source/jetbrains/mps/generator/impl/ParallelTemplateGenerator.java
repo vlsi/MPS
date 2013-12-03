@@ -29,16 +29,23 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -110,7 +117,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   @Override
   protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
     if (ROOT_PER_THREAD) {
-      if (inputNode == null || !(inputNode.getModel() != null)) {
+      if (inputNode == null || inputNode.getModel() == null) {
         return super.getDefaultExecutionContext(null);
       }
       inputNode = inputNode.getContainingRoot();
@@ -159,6 +166,22 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       contextToTask.put(executionContext, compositeTask);
     }
     myPool.addTask(compositeTask);
+  }
+
+  @Override
+  protected void registerAddedRoots(@NotNull Collection<SNode> newRoots) {
+    // ParallelTemplateGenerator shall handle this similar to #registerRoot to ensure order is preserved
+    if (!myInplaceChangeEnabled) {
+      return;
+    }
+    if (myNewAddedRoots == null) {
+      synchronized (this) {
+        if (myNewAddedRoots == null) {
+          myNewAddedRoots = Collections.synchronizedList(new ArrayList<SNode>());
+        }
+      }
+    }
+    myNewAddedRoots.addAll(newRoots);
   }
 
   @Override

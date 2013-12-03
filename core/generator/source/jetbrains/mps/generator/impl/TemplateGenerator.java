@@ -105,8 +105,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private DeltaBuilder myDeltaBuilder;
   private boolean myInplaceModelChange = false;
   private WeavingProcessor myWeavingProcessor;
-  private final boolean myInplaceChangeEnabled;
-  private List<SNode> myNewAddedRoots;
+  protected final boolean myInplaceChangeEnabled; // protected for PTG.registerAddedRoots
+  protected List<SNode> myNewAddedRoots; // protected for PTG.registerAddedRoots
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
@@ -149,6 +149,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         myDeltaBuilder.applyInplace(getInputModel(), this);
       }
       if (myNewAddedRoots != null) {
+        // TODO pipe additions through DeltaBuilder as well (instantiate it prior to applyRules and use from registerAddedRoots)
         for (SNode newRoot : myNewAddedRoots) {
           getInputModel().addRootNode(newRoot);
         }
@@ -243,7 +244,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     ttrace.pop();
 
-    if (myInplaceChangeEnabled && rootsConsumed.isEmpty()) {
+    if (myInplaceChangeEnabled) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
         myLogger.info("Could have had delta builder here, but can't due to active weavings");
       } else {
@@ -256,6 +257,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : myInputModel.getRootNodes()) {
       if (rootsConsumed.contains(rootToCopy)) {
+        if (myDeltaBuilder != null) {
+          myDeltaBuilder.enterInputRoot(rootToCopy);
+          myDeltaBuilder.deleteInputRoot(rootToCopy);
+          myDeltaBuilder.leaveInputRoot(rootToCopy);
+        }
         continue;
       }
       QueryExecutionContext context = getExecutionContext(rootToCopy);
@@ -657,7 +663,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  // FIXME ParallelTemplateGenerator shall handle similar to that in #registerRoot to ensure order is preserved
   protected void registerAddedRoots(@NotNull Collection<SNode> newRoots) {
     if (!myInplaceChangeEnabled) {
       return;
