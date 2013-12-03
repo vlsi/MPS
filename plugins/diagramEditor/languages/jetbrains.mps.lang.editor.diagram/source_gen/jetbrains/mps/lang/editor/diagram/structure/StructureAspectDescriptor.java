@@ -40,7 +40,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"query", "handler"}, new boolean[]{false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("concept").children(new String[]{"query", "handler"}, new boolean[]{false, false}).create();
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").references("figure").create();
       case 15:

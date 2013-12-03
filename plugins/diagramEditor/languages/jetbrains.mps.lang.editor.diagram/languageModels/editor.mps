@@ -1147,8 +1147,25 @@
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
       </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5040807685003302240" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="concept:" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="5040807685003302274" nodeInfo="ng">
+        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no specialized concept&gt;" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="gbdf.5040807685003301644" />
+        <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="5040807685003302275" nodeInfo="ng">
+          <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5040807685003302305" nodeInfo="ng">
+            <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8570854907290721315" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="on create:" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutOnNewLineStyleClassItem" typeId="tpc2.1237385578942" id="5040807685003302236" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8570854907290721327" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="gbdf.8570854907290527457" />

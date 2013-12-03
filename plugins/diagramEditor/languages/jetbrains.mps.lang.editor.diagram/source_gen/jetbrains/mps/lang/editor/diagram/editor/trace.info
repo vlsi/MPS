@@ -2470,128 +2470,231 @@
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8288068497636527978" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8288068497637957392" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8570854907290720927">
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="26" startPosition="48" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="35" startPosition="88" endLine="36" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="36" startPosition="96" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="37" startPosition="47" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="38" startPosition="34" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="42" startPosition="87" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="44" startPosition="30" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="45" startPosition="43" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="46" startPosition="26" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="48" startPosition="39" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="50" startPosition="5" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="51" startPosition="34" endLine="52" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="52" startPosition="60" endLine="53" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="53" startPosition="40" endLine="54" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="54" startPosition="73" endLine="55" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="55" startPosition="57" endLine="56" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="57" startPosition="35" endLine="58" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="58" startPosition="72" endLine="59" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="59" startPosition="78" endLine="60" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="61" startPosition="10" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="65" startPosition="88" endLine="66" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="66" startPosition="96" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="67" startPosition="47" endLine="68" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="68" startPosition="34" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="72" startPosition="87" endLine="73" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="73" startPosition="81" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="74" startPosition="32" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="75" startPosition="45" endLine="76" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="76" startPosition="26" endLine="77" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="78" startPosition="39" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="80" startPosition="5" endLine="81" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="81" startPosition="73" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="82" startPosition="57" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="84" startPosition="35" endLine="85" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="85" startPosition="72" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="86" startPosition="78" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="88" startPosition="10" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="47" startPosition="58" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="77" startPosition="58" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_a41aw1_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="56" startPosition="59" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_a41aw1_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="83" startPosition="59" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_a41aw1_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="72" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_a41aw1_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="42" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_a41aw1_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" />
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="28" endLine="28" endPosition="81" />
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="80" />
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="29" startPosition="80" endLine="30" endPosition="81" />
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="80" />
-    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="48" startPosition="39" endLine="49" endPosition="34" />
-    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="78" startPosition="39" endLine="79" endPosition="36" />
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="30" startPosition="28" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="30" startPosition="28" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="36" startPosition="80" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="40" startPosition="88" endLine="41" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="41" startPosition="96" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="42" startPosition="47" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="43" startPosition="34" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="47" startPosition="87" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="49" startPosition="30" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="50" startPosition="43" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="51" startPosition="26" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="53" startPosition="39" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="55" startPosition="5" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="56" startPosition="34" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="57" startPosition="60" endLine="58" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="58" startPosition="40" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="59" startPosition="73" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="60" startPosition="57" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="62" startPosition="35" endLine="63" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="63" startPosition="72" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="66" startPosition="10" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5040807685003302240" fileName="DiagramElementsCreation_Editor.java" startLine="70" startPosition="88" endLine="71" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5040807685003302240" fileName="DiagramElementsCreation_Editor.java" startLine="71" startPosition="94" endLine="72" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302240" fileName="DiagramElementsCreation_Editor.java" startLine="72" startPosition="47" endLine="73" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302240" fileName="DiagramElementsCreation_Editor.java" startLine="73" startPosition="34" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="77" startPosition="87" endLine="78" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="78" startPosition="81" endLine="79" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="79" startPosition="32" endLine="80" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="80" startPosition="57" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="81" startPosition="26" endLine="82" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="82" startPosition="95" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="83" startPosition="58" endLine="84" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="84" startPosition="73" endLine="85" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="85" startPosition="57" endLine="86" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="87" startPosition="35" endLine="88" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="88" startPosition="72" endLine="89" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="89" startPosition="78" endLine="90" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="91" startPosition="10" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="96" startPosition="33" endLine="97" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="100" startPosition="69" endLine="101" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="104" startPosition="81" endLine="105" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="108" startPosition="92" endLine="109" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="109" startPosition="84" endLine="110" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="110" startPosition="31" endLine="111" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="111" startPosition="44" endLine="112" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="112" startPosition="33" endLine="113" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="113" startPosition="28" endLine="114" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="114" startPosition="60" endLine="115" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="116" startPosition="41" endLine="117" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="117" startPosition="42" endLine="118" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="119" startPosition="7" endLine="120" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="120" startPosition="75" endLine="121" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="121" startPosition="59" endLine="122" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="123" startPosition="37" endLine="124" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="124" startPosition="74" endLine="125" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="125" startPosition="80" endLine="126" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="127" startPosition="12" endLine="128" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="132" startPosition="88" endLine="133" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="133" startPosition="96" endLine="134" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="134" startPosition="47" endLine="135" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="135" startPosition="34" endLine="136" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="136" startPosition="63" endLine="137" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="137" startPosition="40" endLine="138" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="138" startPosition="34" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="142" startPosition="87" endLine="143" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="143" startPosition="81" endLine="144" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="144" startPosition="32" endLine="145" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="145" startPosition="45" endLine="146" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="146" startPosition="26" endLine="147" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="148" startPosition="39" endLine="149" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="150" startPosition="5" endLine="151" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="151" startPosition="73" endLine="152" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="152" startPosition="57" endLine="153" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="154" startPosition="35" endLine="155" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="155" startPosition="72" endLine="156" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="156" startPosition="78" endLine="157" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="158" startPosition="10" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="52" startPosition="58" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_a41aw1_a3a#()V" />
+    <nodeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="147" startPosition="58" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="115" startPosition="44" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_a41aw1_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="61" startPosition="59" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5040807685003302240" fileName="DiagramElementsCreation_Editor.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_a41aw1_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="86" startPosition="59" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="122" startPosition="61" endLine="128" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="153" startPosition="59" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="132" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_a41aw1_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_a41aw1_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="77" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_a41aw1_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="142" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_a41aw1_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="47" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_a41aw1_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="108" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_a41aw1_a0d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="30" startPosition="28" endLine="31" endPosition="81" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="32" startPosition="80" endLine="33" endPosition="81" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" />
+    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="53" startPosition="39" endLine="54" endPosition="34" />
+    <scopeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="96" startPosition="33" endLine="97" endPosition="14" />
+    <scopeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="100" startPosition="69" endLine="101" endPosition="67" />
+    <scopeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="104" startPosition="81" endLine="105" endPosition="66" />
+    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="148" startPosition="39" endLine="149" endPosition="36" />
+    <scopeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="116" startPosition="41" endLine="118" endPosition="38" />
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="8570854907290720927" varName="editorContext" />
       <varInfo nodeId="8570854907290720927" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="57" startPosition="35" endLine="60" endPosition="105">
+    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="105">
       <varInfo nodeId="8570854907291185459" varName="manager" />
       <varInfo nodeId="8570854907291185459" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="105">
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="87" startPosition="35" endLine="90" endPosition="105">
+      <varInfo nodeId="8570854907290720927" varName="manager" />
+      <varInfo nodeId="8570854907290720927" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="96" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="5040807685003302275" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="5040807685003302275" varName="editorContext" />
+      <varInfo nodeId="5040807685003302275" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="123" startPosition="37" endLine="126" endPosition="107">
+      <varInfo nodeId="5040807685003302305" varName="manager" />
+      <varInfo nodeId="5040807685003302305" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="154" startPosition="35" endLine="157" endPosition="105">
       <varInfo nodeId="8570854907290721327" varName="manager" />
       <varInfo nodeId="8570854907290721327" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="35" startPosition="88" endLine="39" endPosition="22">
+    <scopeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="40" startPosition="88" endLine="44" endPosition="22">
       <varInfo nodeId="8570854907290883118" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="65" startPosition="88" endLine="69" endPosition="22">
-      <varInfo nodeId="8570854907290721315" varName="editorCell" />
+    <scopeInfo nodeId="5040807685003302240" fileName="DiagramElementsCreation_Editor.java" startLine="70" startPosition="88" endLine="74" endPosition="22">
+      <varInfo nodeId="5040807685003302240" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="8570854907290883118" fileName="DiagramElementsCreation_Editor.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="8570854907290883118" varName="editorContext" />
       <varInfo nodeId="8570854907290883118" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="5040807685003302240" fileName="DiagramElementsCreation_Editor.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="5040807685003302240" varName="editorContext" />
+      <varInfo nodeId="5040807685003302240" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="132" startPosition="88" endLine="139" endPosition="22">
+      <varInfo nodeId="8570854907290721315" varName="editorCell" />
+      <varInfo nodeId="8570854907290721315" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="8570854907290721315" fileName="DiagramElementsCreation_Editor.java" startLine="132" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="8570854907290721315" varName="editorContext" />
       <varInfo nodeId="8570854907290721315" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="24" startPosition="89" endLine="32" endPosition="22">
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="89" endLine="37" endPosition="22">
       <varInfo nodeId="8570854907290720927" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="27" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="8570854907290720927" varName="editorContext" />
       <varInfo nodeId="8570854907290720927" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="72" startPosition="87" endLine="89" endPosition="22">
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="77" startPosition="87" endLine="92" endPosition="22">
+      <varInfo nodeId="8570854907290720927" varName="attributeConcept" />
+      <varInfo nodeId="8570854907290720927" varName="attributeKind" />
+      <varInfo nodeId="8570854907290720927" varName="editorCell" />
+      <varInfo nodeId="8570854907290720927" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="77" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="8570854907290720927" varName="editorContext" />
+      <varInfo nodeId="8570854907290720927" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="142" startPosition="87" endLine="159" endPosition="22">
       <varInfo nodeId="8570854907290721327" varName="attributeConcept" />
       <varInfo nodeId="8570854907290721327" varName="attributeKind" />
       <varInfo nodeId="8570854907290721327" varName="editorCell" />
       <varInfo nodeId="8570854907290721327" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="72" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="8570854907290721327" fileName="DiagramElementsCreation_Editor.java" startLine="142" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="8570854907290721327" varName="editorContext" />
       <varInfo nodeId="8570854907290721327" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="42" startPosition="87" endLine="62" endPosition="22">
+    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="47" startPosition="87" endLine="67" endPosition="22">
       <varInfo nodeId="8570854907291185459" varName="attributeConcept" />
       <varInfo nodeId="8570854907291185459" varName="attributeKind" />
       <varInfo nodeId="8570854907291185459" varName="editorCell" />
       <varInfo nodeId="8570854907291185459" varName="provider" />
       <varInfo nodeId="8570854907291185459" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="42" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="108" startPosition="92" endLine="128" endPosition="24">
+      <varInfo nodeId="5040807685003302305" varName="attributeConcept" />
+      <varInfo nodeId="5040807685003302305" varName="attributeKind" />
+      <varInfo nodeId="5040807685003302305" varName="editorCell" />
+      <varInfo nodeId="5040807685003302305" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="8570854907291185459" fileName="DiagramElementsCreation_Editor.java" startLine="47" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="8570854907291185459" varName="editorContext" />
       <varInfo nodeId="8570854907291185459" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementsCreation_Editor" />
+    <scopeInfo nodeId="5040807685003302305" fileName="DiagramElementsCreation_Editor.java" startLine="108" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="5040807685003302305" varName="editorContext" />
+      <varInfo nodeId="5040807685003302305" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5040807685003302275" fileName="DiagramElementsCreation_Editor.java" startLine="95" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementsCreation_Editor$_Inline_a41aw1_a3a" />
+    <unitInfo nodeId="8570854907290720927" fileName="DiagramElementsCreation_Editor.java" startLine="22" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementsCreation_Editor" />
   </root>
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8686738938027500511">
     <nodeInfo nodeId="8686738938027500511" fileName="LinkDeclarationReference_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
