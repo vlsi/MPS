@@ -18,6 +18,7 @@
       <sourceRoot location="test-1.0-SNAPSHOT.jar" />
       <sourceRoot location="values-1.0-SNAPSHOT.jar" />
       <sourceRoot location="view-1.0-SNAPSHOT.jar" />
+      <sourceRoot location="otmodel-1.0-SNAPSHOT.jar" />
     </modelRoot>
   </models>
   <facets>
@@ -37,6 +38,11 @@
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
