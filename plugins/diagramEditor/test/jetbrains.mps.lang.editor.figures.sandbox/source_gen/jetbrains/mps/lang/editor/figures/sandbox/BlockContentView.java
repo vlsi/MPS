@@ -4,9 +4,9 @@ package jetbrains.mps.lang.editor.figures.sandbox;
 
 import jetbrains.mps.diagram.layoutView.CenterVerticalLayoutView;
 import jetbrains.jetpad.projectional.cell.TextCell;
+import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
-import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.projectional.cell.view.CellView;
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.values.Color;
@@ -22,24 +22,28 @@ import jetbrains.jetpad.mapper.Synchronizers;
 
 public class BlockContentView extends CenterVerticalLayoutView {
   private TextCell myCell = new TextCell();
+  private RectView myRectView = new RectView();
   public Property<Boolean> isClicked = new ValueProperty<Boolean>(false);
 
   public BlockContentView() {
-    final RectView myRect = new RectView();
     CellView myCellView = new CellView(new GroupView());
     background().set(Color.LIGHT_BLUE);
     myCell.addTrait(TextEditing.textEditing());
     myCellView.cell.set(myCell);
     children().add(myCellView);
-    children().add(myRect);
-    myRect.background().set(Color.CYAN);
-    myRect.dimension().set(new Vector(100, 20));
-    myRect.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
+    children().add(myRectView);
+    myRectView.background().set(Color.CYAN);
+    myRectView.dimension().set(new Vector(100, 20));
+    myRectView.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       @Override
       public void handle(View view, MouseEvent e) {
         isClicked.set(!(isClicked.get()));
       }
     }).build());
+    initSynchronizers();
+  }
+
+  private void initSynchronizers() {
     new Mapper<BlockContentView, BlockContentView>(this, this) {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
@@ -47,9 +51,9 @@ public class BlockContentView extends CenterVerticalLayoutView {
         configuration.add(Synchronizers.forProperty(isClicked, new Runnable() {
           public void run() {
             if (isClicked.get()) {
-              myRect.background().set(Color.DARK_GREEN);
+              myRectView.background().set(Color.DARK_GREEN);
             } else {
-              myRect.background().set(Color.CYAN);
+              myRectView.background().set(Color.CYAN);
             }
           }
         }));

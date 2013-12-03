@@ -7,6 +7,11 @@ import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.geometry.Vector;
 
 public abstract class BlockCell extends GenericMapperCell<DiagramNodeView> {
   protected ReadableProperty<Integer> myXProperty;
@@ -17,4 +22,27 @@ public abstract class BlockCell extends GenericMapperCell<DiagramNodeView> {
   }
 
   public abstract void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, Mapper<SNode, DiagramNodeView> mapper);
+
+  @Override
+  public void synchronizeViewWithModel() {
+    if (myXProperty == null || myYProperty == null) {
+      return;
+    }
+    DiagramCell cell = ((DiagramCell) CellFinderUtil.findParent(this, new Condition<EditorCell_Collection>() {
+      public boolean met(EditorCell_Collection parent) {
+        return parent instanceof DiagramCell;
+      }
+    }));
+    if (cell == null) {
+      return;
+    }
+    Mapper<? super SNode, ?> descendantMapper = cell.getRootMapper().getDescendantMapper(getSNode());
+    if (descendantMapper != null) {
+      ((View) descendantMapper.getTarget()).moveTo(new Vector(myXProperty.get(), myYProperty.get()));
+      ((View) descendantMapper.getTarget()).invalidate();
+      requestRelayout();
+    }
+  }
+
+
 }
