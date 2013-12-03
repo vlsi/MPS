@@ -49,7 +49,7 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
             configuration.add(Synchronizers.forProperty(port_9iys9b_a0, new WritableProperty<SNode>() {
               public void set(SNode port) {
                 Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                getTarget().toView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+                getTarget().toView().set((descendantMapper == null ? null : ((View) descendantMapper.getTarget())));
 
               }
             }));
@@ -61,7 +61,7 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
             configuration.add(Synchronizers.forProperty(port_9iys9b_a0_0, new WritableProperty<SNode>() {
               public void set(SNode port) {
                 Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                getTarget().fromView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+                getTarget().fromView().set((descendantMapper == null ? null : ((View) descendantMapper.getTarget())));
                 if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
                   getTarget().fromView().set(null);
                   getTarget().toView().set(null);

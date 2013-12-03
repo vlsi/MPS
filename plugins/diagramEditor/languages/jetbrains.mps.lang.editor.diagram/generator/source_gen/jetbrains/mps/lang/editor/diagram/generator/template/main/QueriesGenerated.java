@@ -26,6 +26,12 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class QueriesGenerated {
@@ -257,6 +263,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "targetNode", true);
   }
 
+  public static SNode sourceNodeQuery_2720370445063347617(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "pointID", true));
+  }
+
+  public static SNode sourceNodeQuery_2720370445063379381(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "pointID", true));
+  }
+
   public static SNode sourceNodeQuery_6111547859874410576(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pointID", true);
   }
@@ -270,23 +284,23 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6111547859873729149(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), "elementType", true);
+    return ((SNode) _context.getVariable("var:genericType"));
   }
 
   public static SNode sourceNodeQuery_6111547859873754135(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), "elementType", true);
+    return ((SNode) _context.getVariable("var:genericType"));
   }
 
   public static SNode sourceNodeQuery_6111547859873792774(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), "elementType", true);
+    return ((SNode) _context.getVariable("var:genericType"));
   }
 
   public static SNode sourceNodeQuery_6111547859873766317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), "elementType", true);
+    return ((SNode) _context.getVariable("var:genericType"));
   }
 
   public static SNode sourceNodeQuery_675321057243609019(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), "jetbrains.mps.baseLanguage.collections.structure.SequenceType"), "elementType", true);
+    return ((SNode) _context.getVariable("var:genericType"));
   }
 
   public static SNode sourceNodeQuery_285670992205229082(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -360,4 +374,55 @@ public class QueriesGenerated {
       }
     });
   }
+
+  public static Object insertMacro_varValue_2720370445062942121(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), new QueriesGenerated.Pattern_x583g4_a1a0a0a0a0fd(), true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first();
+  }
+
+  public static class Pattern_x583g4_a1a0a0a0a0fd extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_x583g4_a1a0a0a0a0fd() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_QueriesGenerated_x583g4_a0a0a0a0a38;
+        nodeToMatch_QueriesGenerated_x583g4_a0a0a0a0a38 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a0a38.getConcept().getQualifiedName()))) {
+          return false;
+        }
+        {
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0a0a38;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a0a38.getReferenceTarget("classifier")))) {
+            return false;
+          }
+        }
+        {
+          String childRole_QueriesGenerated_x583g4_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a0a38, childRole_QueriesGenerated_x583g4_, 1))) {
+            return false;
+          }
+          {
+            SNode childVar_QueriesGenerated_x583g4_a0a0a0a0a0fd = IterableUtil.get(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a0a38.getChildren(childRole_QueriesGenerated_x583g4_), 0);
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+
+    public Object getFieldValue(String fieldName) {
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
+  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0a0a38 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }
