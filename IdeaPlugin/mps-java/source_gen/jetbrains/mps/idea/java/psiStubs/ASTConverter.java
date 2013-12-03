@@ -114,7 +114,7 @@ public class ASTConverter {
     addAnnotations(x, classifier.value);
 
 
-    if (needToSetId() && isNotEmpty_rbndtb_a0a21a61(SPropertyOperations.getString(classifier.value, "name"))) {
+    if (needToSetId() && isNotEmptyString(SPropertyOperations.getString(classifier.value, "name"))) {
       ((jetbrains.mps.smodel.SNode) classifier.value).setId(JavaForeignIdBuilder.computeNodeId(x));
     }
 
@@ -538,20 +538,14 @@ public class ASTConverter {
 
     protected SNode resolveTypeVar(String name) {
       if (myTypeVars == null) {
-        return (parentState == null ?
-          null :
-          parentState.resolveTypeVar(name)
-        );
+        return (parentState == null ? null : parentState.resolveTypeVar(name));
       }
 
       if (myTypeVars == null || !(MapSequence.fromMap(myTypeVars).containsKey(name))) {
         // Either type var map is not initialized, this means that this State object was created with something else: 
         // e.g. with id prefix. 
         // Or type var is not part of this state 
-        return (parentState == null ?
-          null :
-          parentState.resolveTypeVar(name)
-        );
+        return (parentState == null ? null : parentState.resolveTypeVar(name));
 
       } else {
         // we have this var name 
@@ -628,7 +622,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  public static boolean isNotEmpty_rbndtb_a0a21a61(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }
