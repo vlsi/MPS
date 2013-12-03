@@ -52,6 +52,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               public void set(SNode port) {
                 Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
                 getTarget().toView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+
               }
             }));
             ReadableProperty<SNode> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
@@ -63,13 +64,22 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               public void set(SNode port) {
                 Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
                 Mapper<? super String, ?> resultMapper;
-                Set<Mapper<? super String, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
-                if (mappers.size() == 0) {
+                if (descendantMapper == null) {
                   resultMapper = null;
                 } else {
-                  resultMapper = mappers.iterator().next();
+                  Set<Mapper<? super String, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
+                  if (mappers.size() == 0) {
+                    resultMapper = null;
+                  } else {
+                    resultMapper = mappers.iterator().next();
+                  }
                 }
                 getTarget().fromView().set((port == null ? null : (resultMapper == null ? null : ((View) resultMapper.getTarget()))));
+                if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
+                  getTarget().fromView().set(null);
+                  getTarget().toView().set(null);
+                }
+
               }
             }));
           }

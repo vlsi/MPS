@@ -50,6 +50,7 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
               public void set(SNode port) {
                 Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
                 getTarget().toView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+
               }
             }));
             ReadableProperty<SNode> port_9iys9b_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
@@ -61,6 +62,11 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
               public void set(SNode port) {
                 Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
                 getTarget().fromView().set((port == null ? null : (descendantMapper == null ? null : ((View) descendantMapper.getTarget()))));
+                if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
+                  getTarget().fromView().set(null);
+                  getTarget().toView().set(null);
+                }
+
               }
             }));
           }

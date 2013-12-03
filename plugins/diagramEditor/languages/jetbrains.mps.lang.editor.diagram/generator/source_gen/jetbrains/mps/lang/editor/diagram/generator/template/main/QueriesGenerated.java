@@ -157,11 +157,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "pointID", true) != null);
   }
 
-  public static boolean ifMacro_Condition_6111547859874816373(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "pointID", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_6111547859874792591(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6111547859875627482(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "pointID", true) != null);
   }
 
@@ -175,6 +171,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_6111547859874196094(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "pointID", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_6111547859875776649(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(((Boolean) _context.getVariable("isInput")));
   }
 
   public static boolean ifMacro_Condition_5170495790389308453(final IOperationContext operationContext, final IfMacroContext _context) {
