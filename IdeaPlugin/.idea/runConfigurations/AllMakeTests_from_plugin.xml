@@ -7,7 +7,7 @@
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.jps.make.AllMakeTests" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
-    <option name="VM_PARAMETERS" value="-ea -Dmps.make.debug=false -Didea.platform.prefix=Idea -Didea.config.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/config -Didea.system.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/system -Didea.plugins.path=$PROJECT_DIR$" />
+    <option name="VM_PARAMETERS" value="-ea -Dmps.make.debug=false -Didea.home.path=$APPLICATION_HOME_DIR$ -Didea.platform.prefix=Idea -Didea.config.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/config -Didea.system.path=$IDEA_PLUGINS_SANDBOX_FOLDER$/system -Didea.plugins.path=$PROJECT_DIR$" />
     <option name="PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <option name="ENV_VARIABLES" />
@@ -17,7 +17,13 @@
     </option>
     <envs />
     <patterns />
+    <RunnerSettings RunnerId="Debug">
+      <option name="DEBUG_PORT" value="" />
+      <option name="TRANSPORT" value="0" />
+      <option name="LOCAL" value="true" />
+    </RunnerSettings>
     <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Debug" />
     <ConfigurationWrapper RunnerId="Run" />
     <method>
       <option name="Make" enabled="true" />
