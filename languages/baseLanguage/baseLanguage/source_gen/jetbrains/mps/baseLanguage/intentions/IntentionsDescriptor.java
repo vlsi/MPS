@@ -97,6 +97,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithTypeCast_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithWhile_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SwapTernaryBranches_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SwitchToCustomPropertyImplementation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SwitchToDefaultPropertyImplementation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new TryCatchFinally_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new TurnEnumToClassAndBack_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UnwrapIfThenBlock_Intention());
