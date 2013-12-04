@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,26 +20,33 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Translates IGeneratorLogger calls into IMessageHandler's
  * Evgeny Gryaznov, Feb 23, 2010
  */
 public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   protected final IMessageHandler myMessageHandler;
+  protected final MessageFactory myFactory;
   protected final boolean myHandleInfo;
   protected final boolean myHandleWarnings;
-  protected final boolean myKeepModelsWithWarnings;
 
-  public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo, boolean handleWarnings, boolean keepModelsWithWarnings) {
+  public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo, boolean handleWarnings) {
+    this(messageHandler, new BasicFactory(),  handleInfo, handleWarnings);
+  }
+  public GeneratorLoggerAdapter(IMessageHandler messageHandler, MessageFactory msgFactory, boolean handleInfo, boolean handleWarnings) {
     myMessageHandler = messageHandler;
+    myFactory = msgFactory;
     myHandleInfo = handleInfo;
     myHandleWarnings = handleWarnings;
-    myKeepModelsWithWarnings = keepModelsWithWarnings && handleWarnings;
   }
 
   @Override
@@ -54,6 +61,11 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   @Override
   public void info(SNode node, String message) {
+    info(node == null ? null : node.getReference(), message);
+  }
+
+  @Override
+  public void info(@Nullable SNodeReference node, @NotNull String message) {
     if (!myHandleInfo) {
       return;
     }
@@ -79,24 +91,38 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     if (!myHandleWarnings) {
       return;
     }
+    warningReported();
     report(MessageKind.WARNING, message, null);
   }
 
   @Override
   public void warning(SNode node, String message, ProblemDescription... descriptions) {
+    warning(node == null ? null : node.getReference(), message, descriptions);
+  }
+
+  @Override
+  public void warning(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions) {
     if (!myHandleWarnings) {
       return;
     }
+    warningReported();
     report(MessageKind.WARNING, message, node, descriptions);
   }
 
   @Override
   public void error(SNode node, String message, ProblemDescription... descriptions) {
+    error(node == null ? null : node.getReference(), message, descriptions);
+  }
+
+  @Override
+  public void error(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions) {
+    errorReported();
     report(MessageKind.ERROR, message, node, descriptions);
   }
 
   @Override
   public void error(String message) {
+    errorReported();
     report(MessageKind.ERROR, message, null);
   }
 
@@ -117,46 +143,70 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     } else {
       text = "(" + t.getClass().getName() + "): " + text + " (right-click to see)";
     }
+    errorReported();
     Message message = new Message(MessageKind.ERROR, text);
     message.setException(t);
+    addMessage(message);
+  }
+
+  protected void errorReported() {
+    // no-op
+  }
+  protected void warningReported() {
+    // no-op
+  }
+
+  protected final void report(MessageKind kind, String text, SNodeReference node) {
+    addMessage(myFactory.prepare(kind, text, node));
+  }
+
+  protected final void addMessage(@NotNull Message msg) {
     synchronized (myMessageHandler) {
-      myMessageHandler.handle(message);
+      myMessageHandler.handle(msg);
     }
   }
 
-  private void report(MessageKind kind, String text, SNode node) {
-    Message message = prepare(kind, text, node);
-    synchronized (myMessageHandler) {
-      myMessageHandler.handle(message);
+  protected final void report(MessageKind kind, String text, SNodeReference node, ProblemDescription... descriptions) {
+    if (descriptions == null) {
+      report(kind, text, node);
+      return;
     }
-  }
-
-  private void report(MessageKind kind, String text, SNode node, ProblemDescription... descriptions) {
-    List<Message> messages = new ArrayList<Message>(descriptions == null ? 1 : descriptions.length + 1);
-    messages.add(prepare(kind, text, node));
-    if (descriptions != null) {
-      for (ProblemDescription d : descriptions) {
-        if (d != null) {
-          messages.add(prepare(kind, "-- " + d.getMessage(), d.getNode()));
-        }
+    List<Message> messages = new ArrayList<Message>(descriptions.length + 1);
+    messages.add(myFactory.prepare(kind, text, node));
+    for (ProblemDescription d : descriptions) {
+      if (d != null) {
+        messages.add(myFactory.prepare(kind, "-- " + d.getMessage(), d.getNode()));
       }
     }
     synchronized (myMessageHandler) {
       for (Message m : messages) {
-        myMessageHandler.handle(m);
+        addMessage(m);
       }
     }
   }
 
-  private Message prepare(MessageKind kind, String text, SNode node) {
-    Message message = new Message(kind, text);
-    if (node != null && node.getModel() != null && node.getModel() != null && !(node.getModel() .getModule() instanceof TransientModelsModule)) {
-      message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
-    }
-    return message;
-  }
-
   void clear() {
     myMessageHandler.clear();
+  }
+
+  protected static class BasicFactory implements MessageFactory {
+
+    @Override
+    @NotNull
+    public Message prepare(@NotNull MessageKind kind, @NotNull String text, SNodeReference node) {
+      Message message = new Message(kind, text);
+      if (node != null) {
+        if (!TransientModelsModule.isTransientModel(node.getModelReference())) {
+          // XXX I don't know why we shall not include references to transient elements
+          message.setHintObject(node);
+        }
+      }
+      return message;
+    }
+  }
+
+  interface MessageFactory {
+    @NotNull
+    Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node);
   }
 }
