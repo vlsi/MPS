@@ -21403,30 +21403,6 @@
               <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="812933397890462822" nodeInfo="ng">
                 <link role="module" roleId="3ior.2591537044435828006" targetNodeId="812933397890462876" resolveInfo="mps-jps-plugin-tests" />
               </node>
-              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="812933397890474567" nodeInfo="ng">
-                <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="812933397890474569" nodeInfo="ng">
-                  <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="812933397890474634" nodeInfo="ng">
-                    <property name="text" nameId="3ior.4903714810883755350" value="META-INF" />
-                  </node>
-                </node>
-                <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Files" typeId="3ior.2750015747481074431" id="812933397890474428" nodeInfo="ng">
-                  <node role="path" roleId="3ior.2750015747481074432" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="812933397890474492" nodeInfo="ng">
-                    <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6977615362525216887" resolveInfo="mps_home" />
-                    <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="812933397890474494" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="IdeaPlugin" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="812933397890474496" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="mps-core" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="812933397890474498" nodeInfo="nn">
-                          <property name="head" nameId="3ior.8618885170173601779" value="jps-plugin" />
-                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="812933397890474705" nodeInfo="nn">
-                            <property name="head" nameId="3ior.8618885170173601779" value="META-INF" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="6977615362525721914" nodeInfo="ng">
@@ -21563,6 +21539,9 @@
       </node>
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="812933397893959458" nodeInfo="ng">
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="524567090471121813" resolveInfo="mps-jps-plugin" />
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="8549741453432469546" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="1483465595849732551" resolveInfo="mps-java-jps-plugin" />
       </node>
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyLibrary" typeId="3ior.4993211115183250894" id="8547527867702824281" nodeInfo="ng">
         <link role="library" roleId="3ior.4993211115183250895" targetNodeId="8547527867702786660" resolveInfo="idea-devkit-jps" />

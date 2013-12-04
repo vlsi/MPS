@@ -16,7 +16,7 @@
 
 package jetbrains.mps.jps.make;
 
-import com.intellij.ide.macro.MacroManager;
+import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import org.jetbrains.jps.devkit.model.JpsIdeaSdkProperties;
 import org.jetbrains.jps.devkit.model.JpsIdeaSdkType;
 import org.jetbrains.jps.model.JpsDummyElement;
@@ -74,6 +74,7 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
     // This is currently needed for building because we compile against the distribution of plugin
     // (classes and solutions are taken from there)
     buildParams.put("PLUGINS_PATH", pluginsPath);
+
     loadProject(projectDir, buildParams);
 
     JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk("1.6", javaHome, "1.6", JpsJavaSdkType.INSTANCE);
@@ -88,6 +89,7 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
       ideaSdk.addRoot(JpsPathUtil.pathToUrl(jar.getPath()), JpsOrderRootType.COMPILED);
     }
 
+    getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
     rebuildAll();
   }
 }

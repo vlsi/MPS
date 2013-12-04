@@ -89,7 +89,6 @@
     <mkdir dir="${build.layout}/mps-core/lib/jps" />
     <jar destfile="${build.layout}/mps-core/lib/jps/mps-jps-plugin-tests.jar">
       <fileset dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
-      <zipfileset dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/META-INF" prefix="META-INF" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -197,6 +196,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/jps/mps-jps-plugin.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-java/lib/jps/mps-java-jps-plugin.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
