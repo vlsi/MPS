@@ -18,6 +18,7 @@ package jetbrains.mps.jps.make;
 
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.SystemProperties;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -37,7 +38,12 @@ import static com.intellij.openapi.util.io.FileUtil.toSystemDependentName;
  */
 public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
 
-  public static final String[] MPS_LANGUAGE_LOCATIONS = {"mps-core/languages", "mps-java", "mps-core/lib"}; //mps-vcs/languages;
+  // removed mps-java from here for the following reasons:
+  // 1) there were no languages in it
+  // 2) when running tests from source ModulesMiner (called from JpsMPSRepositoryFacade) would find
+  // the module in mps-java.iml and load it. That would happen in initRepository().
+  // Later, when doing initProject() we would again try to load the solution and get an error.
+  public static final String[] MPS_LANGUAGE_LOCATIONS = {"mps-core/languages", "mps-core/lib"}; //mps-vcs/languages;
   private Map<String, String> buildParams = new HashMap<String, String>();
 
   protected static File findFileUnderUserDir(String relativePath, Class<? extends TestCase> testClass) {
