@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,8 +36,20 @@ public class Property_Behavior {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
   }
 
+  public static boolean call_isCustomSetterOnlyImplementation_2622108313329276688(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
+  }
+
   public static SNode call_getCustomPropertyImplementation_1213877383154(SNode thisNode) {
     return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+  }
+
+  public static List<SNode> call_getCustomSetterStatements_2622108313339491118(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")) {
+      return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
+    } else {
+      return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
+    }
   }
 
   public static String call_getPropertyNameWithId_1213877383162(SNode thisNode) {
@@ -44,7 +57,7 @@ public class Property_Behavior {
   }
 
   public static String call_getGetterMethodName_1213877383170(SNode thisNode) {
-    return (check_9xvv7i_a0a0e(SLinkOperations.getTarget(thisNode, "type", true)) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
+    return (check_9xvv7i_a0a0g(SLinkOperations.getTarget(thisNode, "type", true)) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
   }
 
   public static String call_getSetterMethodName_1213877383179(SNode thisNode) {
@@ -76,12 +89,12 @@ public class Property_Behavior {
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(contextClassifier);
     if ((setterVisibility == null)) {
-      return eq_9xvv7i_a0a0i0i(contextNodePackage, contextClassifierPackage);
+      return eq_9xvv7i_a0a0i0k(contextNodePackage, contextClassifierPackage);
     }
     // protected 
     if (SNodeOperations.isInstanceOf(setterVisibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
       String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode));
-      if (eq_9xvv7i_a0b0k0i(contextNodePackage, declarationClassifierPackage)) {
+      if (eq_9xvv7i_a0b0k0k(contextNodePackage, declarationClassifierPackage)) {
         return true;
       }
 
@@ -132,18 +145,18 @@ public class Property_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static boolean check_9xvv7i_a0a0e(SNode checkedDotOperand) {
+  private static boolean check_9xvv7i_a0a0g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.BooleanType");
     }
     return false;
   }
 
-  private static boolean eq_9xvv7i_a0a0i0i(Object a, Object b) {
+  private static boolean eq_9xvv7i_a0a0i0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_9xvv7i_a0b0k0i(Object a, Object b) {
+  private static boolean eq_9xvv7i_a0b0k0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
