@@ -77,11 +77,15 @@ public class SwitchToCustomPropertyImplementation_Intention implements Intention
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Switch to Custom Getter and Setter";
+      return "Customize Getter and Setter";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.replaceWithNewChild(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+      SNode toBeReplaced = SLinkOperations.getTarget(node, "propertyImplementation", true);
+      SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(toBeReplaced, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+      if (SNodeOperations.isInstanceOf(toBeReplaced, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation")) {
+        SLinkOperations.setTarget(replacingNode, "setAccessor", SLinkOperations.getTarget(SNodeOperations.cast(toBeReplaced, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), "setAccessor", true), true);
+      }
     }
 
     public IntentionDescriptor getDescriptor() {

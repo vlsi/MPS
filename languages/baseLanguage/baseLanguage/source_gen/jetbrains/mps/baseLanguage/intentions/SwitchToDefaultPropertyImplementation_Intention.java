@@ -77,7 +77,7 @@ public class SwitchToDefaultPropertyImplementation_Intention implements Intentio
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Switch to Default Getter and Setter";
+      return "Use Default Getter and Setter";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

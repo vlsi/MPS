@@ -71,6 +71,7 @@
   <unitInfo fileName="ContextClassifierKind_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ContextClassifierKind_BehaviorDescriptor" />
   <unitInfo fileName="ContinueStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ContinueStatement_BehaviorDescriptor" />
   <unitInfo fileName="CustomPropertyImplementation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CustomPropertyImplementation_BehaviorDescriptor" />
+  <unitInfo fileName="CustomSetterPropertyImplementation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CustomSetterPropertyImplementation_BehaviorDescriptor" />
   <unitInfo fileName="DefaultClassCreator_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DefaultClassCreator_BehaviorDescriptor" />
   <unitInfo fileName="DefaultGetAccessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DefaultGetAccessor_BehaviorDescriptor" />
   <unitInfo fileName="DefaultPropertyImplementation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DefaultPropertyImplementation_BehaviorDescriptor" />
@@ -176,7 +177,6 @@
   <unitInfo fileName="MethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="MinusAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MinusAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="MinusExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MinusExpression_BehaviorDescriptor" />
-  <unitInfo fileName="MixedPropertyImplementation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MixedPropertyImplementation_BehaviorDescriptor" />
   <unitInfo fileName="Modifier_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Modifier_BehaviorDescriptor" />
   <unitInfo fileName="MulAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MulAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="MulExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MulExpression_BehaviorDescriptor" />
@@ -12853,18 +12853,18 @@
     <unitInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GetAccessor_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/4285773203949552113">
-    <nodeInfo nodeId="4285773203949573871" fileName="MixedPropertyImplementation_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4285773203949552113" fileName="MixedPropertyImplementation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4285773203949552113" fileName="MixedPropertyImplementation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasSetter_1213877430658#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="4285773203949552115" fileName="MixedPropertyImplementation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="4285773203949573753" fileName="MixedPropertyImplementation_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="78" />
-    <scopeInfo nodeId="4285773203949552113" fileName="MixedPropertyImplementation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="4285773203949573871" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4285773203949552113" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4285773203949552113" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasSetter_1213877430658#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="4285773203949552115" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="4285773203949573753" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="78" />
+    <scopeInfo nodeId="4285773203949552113" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="4285773203949552113" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4285773203949552113" fileName="MixedPropertyImplementation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="4285773203949552113" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="4285773203949552113" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4285773203949552113" fileName="MixedPropertyImplementation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MixedPropertyImplementation_Behavior" />
+    <unitInfo nodeId="4285773203949552113" fileName="CustomSetterPropertyImplementation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CustomSetterPropertyImplementation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/4313092516461872700">
     <nodeInfo nodeId="4313092516461929245" fileName="SwitchCase_Behavior.java" startLine="17" startPosition="35" endLine="18" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
