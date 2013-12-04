@@ -793,10 +793,10 @@ public final class TemplateProcessor {
       try {
         return tc.applyFailFast();
       } finally {
+        myTracer.closeTemplateNode(invokedTemplateRef);
         if (inputChanged) {
           myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
         }
-        myTracer.closeTemplateNode(invokedTemplateRef);
       }
     }
   }

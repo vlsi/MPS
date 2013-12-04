@@ -27,7 +27,7 @@ public class check_EnumConstantOverridingMethods_NonTypesystemRule extends Abstr
   }
 
   public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SNodeOperations.getParent(enumConstant) == null)) {
+    if ((SNodeOperations.getParent(enumConstant) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(enumConstant), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return;
     }
     OverridingMethodsFinder finder = new OverridingMethodsFinder(SNodeOperations.cast(SNodeOperations.getParent(enumConstant), "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstant);
