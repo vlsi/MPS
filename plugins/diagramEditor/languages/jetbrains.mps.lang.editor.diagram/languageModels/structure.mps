@@ -82,41 +82,6 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6306886970785259796" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="FigureColorStyleClassItem" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="color" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="6306886970789271602" resolveInfo="JetpadEditorStyleItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6306886970785308675" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6306886970785259805" resolveInfo="QueryFunction_Color" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6306886970785259805" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Color" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6306886970789271602" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="JetpadEditorStyleItem" />
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpc2.1186402475462" resolveInfo="StyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6306886970790135647" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Dimension" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6306886970790145497" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="FigureDimensionStyleClassItem" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dimension" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="6306886970789271602" resolveInfo="JetpadEditorStyleItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6306886970790145498" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6306886970790135647" resolveInfo="QueryFunction_Dimension" />
-    </node>
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6306886970791033847" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CellModel_Diagram" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="diagram" />
@@ -159,16 +124,6 @@
       <property name="role" nameId="tpce.1071599776563" value="figureAttribute" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="ny2.5422656561926747556" resolveInfo="FigureAttribute" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8686738938027260610" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="LinkDeclarationReference" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8686738938027261134" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="link" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3229274890673749551" nodeInfo="ig">

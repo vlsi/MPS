@@ -8,8 +8,8 @@
     <scopeInfo nodeId="5422656561934766361" fileName="QueriesGenerated.java" startLine="234" startPosition="150" endLine="235" endPosition="149" />
   </root>
   <root nodeRef="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)/2201645942106404024">
-    <nodeInfo nodeId="2201645942108119381" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2201645942108114749" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="106" />
+    <nodeInfo nodeId="4950140401485370510" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2201645942108114749" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="77" />
   </root>
   <root nodeRef="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)/2201645942109536141">
     <nodeInfo nodeId="2201645942109566161" fileName="QueriesGenerated.java" startLine="110" startPosition="151" endLine="111" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -140,6 +140,22 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
                     cell_70mnj_a0a.updateModel();
                   }
                 }));
+                final PropertyMapperCell cell_70mnj_a1a = new PropertyMapperCell(editorContext, node, getTarget().isClicked, JetpadUtils.modelProperty(new Computable<Boolean>() {
+                  public Boolean compute() {
+                    return SPropertyOperations.getBoolean(node, "myBooleanProperty");
+                  }
+                }), "myBooleanProperty");
+                addEditorCell(cell_70mnj_a1a);
+                configuration.add(Synchronizers.forProperty(JetpadUtils.modelProperty(new Computable<Boolean>() {
+                  public Boolean compute() {
+                    return SPropertyOperations.getBoolean(node, "myBooleanProperty");
+                  }
+                }), getTarget().isClicked));
+                configuration.add(Synchronizers.forProperty(getTarget().isClicked, new Runnable() {
+                  public void run() {
+                    cell_70mnj_a1a.updateModel();
+                  }
+                }));
               }
             };
           }

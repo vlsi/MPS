@@ -102,8 +102,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, final SNode node) {
     final List<SNode> blocks = ListSequence.fromList(new ArrayList<SNode>());
     final List<SNode> connectors = ListSequence.fromList(new ArrayList<SNode>());
-    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "blocks", true), editorContext, blocks, connectors);
-    createDiagram_tb7paq_c0_0(SLinkOperations.getTargets(node, "connectors", true), editorContext, blocks, connectors);
+    createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "blocks", true), editorContext, blocks, connectors);
+    createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "connectors", true), editorContext, blocks, connectors);
 
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
       public Mapper<SNode, DiagramView> getMapper() {
@@ -152,7 +152,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   }
 
-  public static void createDiagram_tb7paq_c0_0(List<SNode> nlist, EditorContext editorContext, List<SNode> blocks, List<SNode> connectors) {
+  public static void createChildCells_tb7paq_c0(List<SNode> nlist, EditorContext editorContext, List<SNode> blocks, List<SNode> connectors) {
     for (SNode contentNode : ListSequence.fromList(nlist)) {
       EditorCell cell = editorContext.createNodeCell(contentNode);
       if (cell instanceof BlockCell) {
@@ -173,8 +173,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, final SNode node) {
     final List<SNode> blocks = ListSequence.fromList(new ArrayList<SNode>());
     final List<SNode> connectors = ListSequence.fromList(new ArrayList<SNode>());
-    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, blocks, connectors);
-    createDiagram_tb7paq_e0_0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, blocks, connectors);
+    createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, blocks, connectors);
+    createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, blocks, connectors);
 
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
       public Mapper<SNode, DiagramView> getMapper() {
@@ -223,7 +223,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   }
 
-  public static void createDiagram_tb7paq_e0_0(List<SNode> nlist, EditorContext editorContext, List<SNode> blocks, List<SNode> connectors) {
+  public static void createChildCells_tb7paq_e0(List<SNode> nlist, EditorContext editorContext, List<SNode> blocks, List<SNode> connectors) {
     for (SNode contentNode : ListSequence.fromList(nlist)) {
       EditorCell cell = editorContext.createNodeCell(contentNode);
       if (cell instanceof BlockCell) {

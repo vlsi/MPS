@@ -14,9 +14,9 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 3:
         return new CellModel_DiagramNode_Constraints();
-      case 6:
-        return new ParameterProperty_Constraints();
       case 5:
+        return new ParameterProperty_Constraints();
+      case 4:
         return new ParameterLink_Constraints();
       case 0:
         return new AbstractFigureParameter_Constraints();
@@ -24,9 +24,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new CellModel_Diagram_Constraints();
       case 2:
         return new CellModel_DiagramConnector_Constraints();
-      case 4:
-        return new LinkDeclarationReference_Constraints();
-      case 7:
+      case 6:
         return new ThisEditorNodeExpression_Constraints();
       default:
         // todo: illegal in some cases? 
@@ -34,5 +32,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
 }

@@ -44,35 +44,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").references("figure").create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem").super_("jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem").parents("jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem").children(new String[]{"query"}, new boolean[]{false}).alias("color", "").create();
-      case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem").super_("jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem").parents("jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem").children(new String[]{"query"}, new boolean[]{false}).alias("dimension", "").create();
-      case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").abstract_().create();
-      case 18:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("link").create();
-      case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("node", "").create();
-      case 20:
+      case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").children(new String[]{"query"}, new boolean[]{false}).create();
-      case 21:
+      case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ParameterLink").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").references("link").create();
-      case 22:
+      case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ParameterProperty").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").references("property").create();
-      case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").create();
-      case 24:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").create();
-      case 25:
+      case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").create();
-      case 26:
+      case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("x", "").create();
-      case 27:
+      case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("y", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElement", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElement", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
 }

@@ -44,7 +44,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2201645942108114748(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
+    return _context.createUniqueName("createChildCells", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_6306886970791183055(final IOperationContext operationContext, final PropertyMacroContext _context) {
