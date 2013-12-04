@@ -2234,6 +2234,12 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4285773203931776903" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1239354281271" resolveInfo="IMethodLike" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4285773203931776908" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1199653749349" resolveInfo="IStatementListContainer" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201476912089" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SetAccessor" />
@@ -2245,6 +2251,12 @@
       <property name="role" nameId="tpce.1071599776563" value="statementList" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4285773203931592075" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1239354281271" resolveInfo="IMethodLike" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4285773203931621893" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1199653749349" resolveInfo="IStatementListContainer" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1202003934320" nodeInfo="ig">

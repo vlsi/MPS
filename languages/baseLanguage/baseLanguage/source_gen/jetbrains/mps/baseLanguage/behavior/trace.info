@@ -100,7 +100,7 @@
   <unitInfo fileName="ForeachStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ForeachStatement_BehaviorDescriptor" />
   <unitInfo fileName="GenericDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GenericDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="GenericNewExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GenericNewExpression_BehaviorDescriptor" />
-  <unitInfo fileName="GetAccessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GetAccessor_BehaviorDescriptor" />
+  <unitInfo fileName="GetAccessor_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GetAccessor_BehaviorDescriptor" />
   <unitInfo fileName="GreaterThanExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GreaterThanExpression_BehaviorDescriptor" />
   <unitInfo fileName="GreaterThanOrEqualsExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GreaterThanOrEqualsExpression_BehaviorDescriptor" />
   <unitInfo fileName="HasAnnotation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor" />
@@ -213,7 +213,7 @@
   <unitInfo fileName="RemarkStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.RemarkStatement_BehaviorDescriptor" />
   <unitInfo fileName="ReturnStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ReturnStatement_BehaviorDescriptor" />
   <unitInfo fileName="RightShiftAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.RightShiftAssignmentExpression_BehaviorDescriptor" />
-  <unitInfo fileName="SetAccessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SetAccessor_BehaviorDescriptor" />
+  <unitInfo fileName="SetAccessor_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SetAccessor_BehaviorDescriptor" />
   <unitInfo fileName="ShiftLeftExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ShiftLeftExpression_BehaviorDescriptor" />
   <unitInfo fileName="ShiftRightExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ShiftRightExpression_BehaviorDescriptor" />
   <unitInfo fileName="ShiftRightUnsignedExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ShiftRightUnsignedExpression_BehaviorDescriptor" />
@@ -12798,6 +12798,58 @@
     </scopeInfo>
     <unitInfo nodeId="8203593308483695242" fileName="IGenericType_Behavior.java" startLine="35" startPosition="91" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior$1" />
     <unitInfo nodeId="4107091686347010318" fileName="IGenericType_Behavior.java" startLine="18" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/4285773203931592893">
+    <nodeInfo nodeId="4285773203931651546" fileName="SetAccessor_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4285773203931664927" fileName="SetAccessor_Behavior.java" startLine="19" startPosition="69" endLine="20" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4285773203931696329" fileName="SetAccessor_Behavior.java" startLine="23" startPosition="91" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="4285773203931593046" fileName="SetAccessor_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="4285773203931614628" fileName="SetAccessor_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="132" />
+    <scopeInfo nodeId="4285773203931614634" fileName="SetAccessor_Behavior.java" startLine="19" startPosition="69" endLine="20" endPosition="70" />
+    <scopeInfo nodeId="4285773203931614640" fileName="SetAccessor_Behavior.java" startLine="23" startPosition="91" endLine="24" endPosition="34" />
+    <scopeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="4285773203931592893" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4285773203931592893" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="4285773203931592893" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4285773203931592893" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4285773203931592893" fileName="SetAccessor_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SetAccessor_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/4285773203931776934">
+    <nodeInfo nodeId="4285773203931777024" fileName="GetAccessor_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4285773203931777036" fileName="GetAccessor_Behavior.java" startLine="19" startPosition="69" endLine="20" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4285773203931777044" fileName="GetAccessor_Behavior.java" startLine="23" startPosition="91" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="4285773203931776936" fileName="GetAccessor_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="4285773203931777023" fileName="GetAccessor_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="153" />
+    <scopeInfo nodeId="4285773203931777035" fileName="GetAccessor_Behavior.java" startLine="19" startPosition="69" endLine="20" endPosition="70" />
+    <scopeInfo nodeId="4285773203931777043" fileName="GetAccessor_Behavior.java" startLine="23" startPosition="91" endLine="24" endPosition="34" />
+    <scopeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="4285773203931776934" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4285773203931776934" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="4285773203931776934" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4285773203931776934" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4285773203931776934" fileName="GetAccessor_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.GetAccessor_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/4313092516461872700">
     <nodeInfo nodeId="4313092516461929245" fileName="SwitchCase_Behavior.java" startLine="17" startPosition="35" endLine="18" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

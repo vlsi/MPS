@@ -213,7 +213,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 98:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.GenericNewExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"creator"}, new boolean[]{false}).alias("new", "instance creation expression").staticScope(StaticScope.NONE).create();
       case 99:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.GetAccessor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statementList"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.GetAccessor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").children(new String[]{"statementList"}, new boolean[]{false}).create();
       case 100:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.GreaterThanExpression").super_("jetbrains.mps.baseLanguage.structure.BinaryCompareOperation").parents("jetbrains.mps.baseLanguage.structure.BinaryCompareOperation").alias(">", "greater than operation").staticScope(StaticScope.NONE).create();
       case 101:
@@ -439,7 +439,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 211:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression").super_("jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression").parents("jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression").alias(">>=", "").staticScope(StaticScope.NONE).create();
       case 212:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.SetAccessor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statementList"}, new boolean[]{false}).alias("setter", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.SetAccessor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").children(new String[]{"statementList"}, new boolean[]{false}).alias("setter", "").create();
       case 213:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.ShiftLeftExpression").super_("jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation").parents("jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation").alias("<<", "").staticScope(StaticScope.NONE).create();
       case 214:
