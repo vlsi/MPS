@@ -23,8 +23,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import javax.swing.ListCellRenderer;
-import com.intellij.ide.ui.ListCellRendererWrapper;
-import javax.swing.DefaultListCellRenderer;
+import com.intellij.ui.ListCellRendererWrapper;
 import javax.swing.JList;
 import org.jetbrains.annotations.NotNull;
 
@@ -116,7 +115,7 @@ import org.jetbrains.annotations.NotNull;
 
   @Override
   public ListCellRenderer getListCellRenderer() {
-    ListCellRendererWrapper wrapper = new ListCellRendererWrapper<Object>(new DefaultListCellRenderer()) {
+    ListCellRendererWrapper wrapper = new ListCellRendererWrapper<Object>() {
       @Override
       public void customize(JList list, Object value, int index, boolean selected, boolean hasFocus) {
         if (value != null && value instanceof NavigationParticipant.NavigationTarget) {

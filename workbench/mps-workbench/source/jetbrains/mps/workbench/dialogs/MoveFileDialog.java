@@ -49,7 +49,7 @@ public class MoveFileDialog extends DialogWrapper {
           @Override
           public void run() {
             FileChooserDescriptor chooser = new FileChooserDescriptor(false, true, false, false, false, false);
-            FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(chooser, getOwner());
+            FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(chooser, project, getOwner());
             VirtualFile[] selectedFiles = dialog.choose(VirtualFileUtils.getVirtualFile(FileSystem.getInstance().getFileByPath(initialText)), project);
             if (selectedFiles.length > 0 && selectedFiles[0] != null) {
               myDirectoryField.setText(selectedFiles[0].getPath());
