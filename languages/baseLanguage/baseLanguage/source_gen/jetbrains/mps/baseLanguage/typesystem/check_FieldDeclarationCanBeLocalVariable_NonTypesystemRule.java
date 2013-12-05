@@ -13,6 +13,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
+import java.util.Set;
+import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
+import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingReadsAnalyzer;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -60,14 +68,37 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
         return eq_pk5n8v_a0a0a0a0a0h0b(it, Sequence.fromIterable(methods).first());
       }
     })) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variableDeclaration, "Field can be converted into a local variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6640766779592666289", null, errorTarget);
+      SNode method = Sequence.fromIterable(methods).first();
+
+      Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(method, "body", true));
+      final Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
+
+      final AnalysisResult<Set<ReadInstruction>> reachingReads = program.analyze(new ReachingReadsAnalyzer());
+      boolean someReturnReachesVariable = Sequence.fromIterable(returnStatements).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          for (Instruction instruction : ListSequence.fromList(program.getInstructionsFor(it))) {
+            for (Instruction next : SetSequence.fromSet(instruction.pred())) {
+              for (ReadInstruction read : reachingReads.get(next)) {
+                if (read.getVariable() == variableDeclaration) {
+                  return true;
+                }
+              }
+            }
+          }
+          return false;
+        }
+      });
+
+      if (!(someReturnReachesVariable)) {
         {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix", false);
-          intentionProvider.putArgument("method", Sequence.fromIterable(methods).first());
-          intentionProvider.putArgument("refs", refs);
-          _reporter_2309309498.addIntentionProvider(intentionProvider);
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variableDeclaration, "Field can be converted into a local variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6640766779592666289", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix", false);
+            intentionProvider.putArgument("method", Sequence.fromIterable(methods).first());
+            intentionProvider.putArgument("refs", refs);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       }
     }
