@@ -157,6 +157,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public void registerRoot(SNode outputRoot, SNode inputNode) {
+    // XXX in fact, not sure there's need to keep this map if I can use TracingUtil and userobjects with original input?
     if (nextStepToOriginalMap == null) {
       nextStepToOriginalMap = new HashMap<SNode, SNode>();
     }
@@ -165,9 +166,6 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       return;
     }
     SNode originalRoot = currentToOriginalMap.get(inputNode.getContainingRoot());
-//    if(originalRoot == null && !currentToOriginalMap.containsKey(inputNode.getTopmostAncestor())) {
-//      LOG.warn("consistency problem in dependencies map");
-//    }
     nextStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
@@ -183,13 +181,6 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   public void updateModel(SModel newInputModel) {
     if (nextStepToOriginalMap != null) {
       currentToOriginalMap = nextStepToOriginalMap;
-
-//      for(SNode newroot : newInputModel.roots()) {
-//        if(!currentToOriginalMap.containsKey(newroot)) {
-//          LOG.warn("unknown root in model " + newInputModel);
-//        }
-//      }
-
       nextStepToOriginalMap = null;
     } else {
       currentToOriginalMap = new HashMap<SNode, SNode>();
