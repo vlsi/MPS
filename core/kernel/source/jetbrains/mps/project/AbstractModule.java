@@ -726,20 +726,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
-  public final boolean needReloading() {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return SModuleOperations.needReloading(AbstractModule.this);
-      }
-    });
-  }
-
-  @Deprecated
-  public final void reloadFromDisk(boolean reloadClasses) {
-    SModuleOperations.reloadFromDisk(this, reloadClasses);
-  }
-
   public static void handleReadProblem(AbstractModule module, Exception e, boolean isInConflict) {
     SuspiciousModelHandler.getHandler().handleSuspiciousModule(module, isInConflict);
     LOG.error(e.getMessage());
