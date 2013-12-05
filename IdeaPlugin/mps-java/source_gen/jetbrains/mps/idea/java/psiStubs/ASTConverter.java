@@ -269,7 +269,7 @@ public class ASTConverter {
 
     final ASTConverter currConverter = addTypeParams(x, method);
 
-    SLinkOperations.setTarget(method, "returnType", currConverter.convertType(x.getReturnTypeNoResolve()), true);
+    SLinkOperations.setTarget(method, "returnType", currConverter.convertType(x.getReturnType()), true);
     ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getParameterList().getParameters())).select(new ISelector<PsiParameter, SNode>() {
       public SNode select(PsiParameter it) {
         SNode param = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
