@@ -128,7 +128,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2622108313329477938(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "my" + NameUtil.capitalize(SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Property", false, false), "propertyName"));
+    return "my" + NameUtil.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "owningProperty", false), "propertyName"));
   }
 
   public static boolean ifMacro_Condition_3073231036165996124(final IOperationContext operationContext, final IfMacroContext _context) {

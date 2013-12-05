@@ -427,7 +427,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 205:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.PropertyReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").references("property").staticScope(StaticScope.NONE).create();
       case 206:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.PropertyValueReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("property value", "Property value represented in custom getters and setters").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.PropertyValueReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("owningProperty").alias("", "Property value represented in custom getters and setters").create();
       case 207:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.ProtectedVisibility").super_("jetbrains.mps.baseLanguage.structure.Visibility").parents("jetbrains.mps.baseLanguage.structure.Visibility").alias("protected", "").staticScope(StaticScope.NONE).create();
       case 208:
