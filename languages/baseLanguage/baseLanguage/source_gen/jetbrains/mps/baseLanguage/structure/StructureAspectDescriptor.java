@@ -155,7 +155,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 69:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation").super_("jetbrains.mps.baseLanguage.structure.PropertyImplementation").parents("jetbrains.mps.baseLanguage.structure.PropertyImplementation").children(new String[]{"getAccessor", "setAccessor"}, new boolean[]{false, false}).alias("custom", "").create();
       case 70:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation").super_("jetbrains.mps.baseLanguage.structure.PropertyImplementation").parents("jetbrains.mps.baseLanguage.structure.PropertyImplementation").children(new String[]{"getAccessor", "setAccessor"}, new boolean[]{false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation").super_("jetbrains.mps.baseLanguage.structure.PropertyImplementation").parents("jetbrains.mps.baseLanguage.structure.PropertyImplementation").children(new String[]{"getAccessor", "setAccessor"}, new boolean[]{false, false}).alias("custom setter", "").create();
       case 71:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.DefaultClassCreator").super_("jetbrains.mps.baseLanguage.structure.AbstractCreator").parents("jetbrains.mps.baseLanguage.structure.AbstractCreator").references("classifier").children(new String[]{"typeParameter"}, new boolean[]{true}).staticScope(StaticScope.NONE).create();
       case 72:

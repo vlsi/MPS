@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2fhmoiltik1mz7lghppggkbyw4zo05a">
+<dependencies version="2" modelHash="-a9qp6tb2eva1mros70qa0tynlaehi5n">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -631,7 +631,7 @@
   <source id="2820489544401957797" name="DefaultClassCreator" hash="33hq9kuu97ls93w5gwu15vsunh829k6" />
   <source id="28358707492436943" name="JavaImport" hash="23qedo0t6kzute40qq7vd7tz5ir8oii" />
   <source id="3609453419506221441" name="IncompleteMemberDeclaration" hash="77j82hrtwhlp8x37axlf43xts4tz6c0" />
-  <source id="4285773203949551198" name="CustomSetterPropertyImplementation" hash="6pmsbxjvdglxcs1oicbmxt67xqw208h" />
+  <source id="4285773203949551198" name="CustomSetterPropertyImplementation" hash="m3mi7ak5e2b0w6p89ushvezwc78dyx" />
   <source id="2622108313324567541" name="PropertyValueReference" hash="-e4r4tjvggc73988emm54o0d4nxccjzz" />
 </dependencies>
 
