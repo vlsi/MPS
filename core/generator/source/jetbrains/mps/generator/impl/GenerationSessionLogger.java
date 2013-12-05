@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
@@ -106,11 +105,11 @@ public class GenerationSessionLogger extends GeneratorLoggerAdapter implements I
       if (model == null) {
         return false;
       }
-      if (TransientModelsModule.isTransientModel(model)) {
+      assert myOperationContext != null;
+      if (myOperationContext.getModule().isMyTransientModel(model)) {
         if (isWarning && !myKeepModelsWithWarnings) {
           return false;
         }
-        assert myOperationContext != null;
         return myOperationContext.keepTransientModel(model, false);
       }
       return true;

@@ -23,7 +23,6 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -114,7 +113,7 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public boolean addModelToKeep(@NotNull SModelReference modelReference, boolean force) {
-    assert TransientModelsModule.isTransientModel(modelReference);
+    assert isMyTransientModel(modelReference);
     String modelRef = modelReference.toString();
     if (force) {
       myModelsToKeep.add(modelRef);
@@ -224,9 +223,8 @@ public class TransientModelsModule extends AbstractModule {
     return myModels.get(name);
   }
 
-  // to keep model.getModule() instanceof TransientModelsModule in one place
-  public static boolean isTransientModel(SModelReference modelRef) {
-    return modelRef != null && modelRef.getModuleReference() != null && modelRef.getModuleReference().resolve(MPSModuleRepository.getInstance()) instanceof TransientModelsModule;
+  public boolean isMyTransientModel(SModelReference modelRef) {
+    return modelRef != null && myModels.containsKey(modelRef.getModelName());
   }
 
   public class TransientModuleScope extends ModuleScope {

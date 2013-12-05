@@ -20,8 +20,10 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -196,7 +198,8 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     public Message prepare(@NotNull MessageKind kind, @NotNull String text, SNodeReference node) {
       Message message = new Message(kind, text);
       if (node != null) {
-        if (!TransientModelsModule.isTransientModel(node.getModelReference())) {
+        SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
+        if (model != null && !(model.getModule() instanceof TransientModelsModule)) {
           // XXX I don't know why we shall not include references to transient elements
           message.setHintObject(node);
         }

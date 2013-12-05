@@ -15,24 +15,20 @@
  */
 package jetbrains.mps.smodel;
 
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SModelReference;
-
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Set;
 
@@ -208,13 +204,13 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       return null;
     }
 
-    if (TransientModelsModule.isTransientModel(node.getModelReference())) {
-      SModuleReference moduleRef = node.getModelReference().getModuleReference();
-      SModule module = moduleRef == null ? null : moduleRef.resolve(MPSModuleRepository.getInstance());
-      if (module instanceof TransientModelsModule) {
-        if (((TransientModelsModule) module).addModelToKeep(node.getModelReference(), false)) {
-          return node;
-        }
+    SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
+    if (model == null) {
+      return null;
+    }
+    if (model.getModule() instanceof  TransientModelsModule) {
+      if (((TransientModelsModule) model.getModule()).addModelToKeep(node.getModelReference(), false)) {
+        return node;
       }
       return null;
     }

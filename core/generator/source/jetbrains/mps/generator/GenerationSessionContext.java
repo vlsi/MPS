@@ -358,7 +358,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     if (model == null) {
       return false;
     }
-    if (TransientModelsModule.isTransientModel(model) && (force || keepTransientForMessageNavigation())) {
+    if (getModule().isMyTransientModel(model) && (force || keepTransientForMessageNavigation())) {
       return getModule().addModelToKeep(model, force);
     }
     return false;
