@@ -48,9 +48,15 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
             });
             configuration.add(Synchronizers.forProperty(port_9iys9b_a0, new WritableProperty<SNode>() {
               public void set(SNode port) {
-                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                getTarget().toView().set((descendantMapper == null ? null : ((View) descendantMapper.getTarget())));
+                getTarget().toView().set(getTargetView(port));
+              }
 
+              private View getTargetView(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                if (descendantMapper == null) {
+                  return null;
+                }
+                return (View) descendantMapper.getTarget();
               }
             }));
             ReadableProperty<SNode> port_9iys9b_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
@@ -60,13 +66,19 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
             });
             configuration.add(Synchronizers.forProperty(port_9iys9b_a0_0, new WritableProperty<SNode>() {
               public void set(SNode port) {
-                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                getTarget().fromView().set((descendantMapper == null ? null : ((View) descendantMapper.getTarget())));
+                getTarget().fromView().set(getTargetView(port));
                 if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
                   getTarget().fromView().set(null);
                   getTarget().toView().set(null);
                 }
+              }
 
+              private View getTargetView(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                if (descendantMapper == null) {
+                  return null;
+                }
+                return (View) descendantMapper.getTarget();
               }
             }));
           }

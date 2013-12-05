@@ -50,9 +50,15 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
             });
             configuration.add(Synchronizers.forProperty(port_5733l5_a0, new WritableProperty<SNode>() {
               public void set(SNode port) {
-                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                getTarget().toView().set((descendantMapper == null ? null : ((View) descendantMapper.getTarget())));
+                getTarget().toView().set(getTargetView(port));
+              }
 
+              private View getTargetView(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                if (descendantMapper == null) {
+                  return null;
+                }
+                return (View) descendantMapper.getTarget();
               }
             }));
             ReadableProperty<SNode> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
@@ -62,24 +68,23 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
             });
             configuration.add(Synchronizers.forProperty(port_5733l5_a0_0, new WritableProperty<SNode>() {
               public void set(SNode port) {
-                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                Mapper<? super String, ?> resultMapper;
-                if (descendantMapper == null) {
-                  resultMapper = null;
-                } else {
-                  Set<Mapper<? super String, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
-                  if (mappers.size() == 0) {
-                    resultMapper = null;
-                  } else {
-                    resultMapper = mappers.iterator().next();
-                  }
-                }
-                getTarget().fromView().set((resultMapper == null ? null : ((View) resultMapper.getTarget())));
+                getTarget().fromView().set(getTargetView(port));
                 if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
                   getTarget().fromView().set(null);
                   getTarget().toView().set(null);
                 }
+              }
 
+              private View getTargetView(SNode port) {
+                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+                if (descendantMapper == null) {
+                  return null;
+                }
+                Set<Mapper<? super String, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
+                if (mappers.size() > 0) {
+                  return (View) mappers.iterator().next().getTarget();
+                }
+                return (View) descendantMapper.getTarget();
               }
             }));
           }
