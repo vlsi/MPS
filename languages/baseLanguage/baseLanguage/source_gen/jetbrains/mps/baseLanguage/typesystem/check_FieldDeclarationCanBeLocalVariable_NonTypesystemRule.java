@@ -15,12 +15,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
-import java.util.Set;
+import java.util.ArrayList;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
-import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingReadsAnalyzer;
-import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -69,27 +65,16 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
       }
     })) {
       SNode method = Sequence.fromIterable(methods).first();
+      Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
 
-      Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(method, "body", true));
-      final Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
-
-      final AnalysisResult<Set<ReadInstruction>> reachingReads = program.analyze(new ReachingReadsAnalyzer());
-      boolean someReturnReachesVariable = Sequence.fromIterable(returnStatements).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          for (Instruction instruction : ListSequence.fromList(program.getInstructionsFor(it))) {
-            for (Instruction next : SetSequence.fromSet(instruction.pred())) {
-              for (ReadInstruction read : reachingReads.get(next)) {
-                if (read.getVariable() == variableDeclaration) {
-                  return true;
-                }
-              }
-            }
-          }
-          return false;
+      // find a read instruction for variableDeclaration not preceeded by a write instruction 
+      boolean uninitializedRead = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<ReadInstruction>(), program.getUninitializedReads())).any(new IWhereFilter<ReadInstruction>() {
+        public boolean accept(ReadInstruction it) {
+          return eq_pk5n8v_a0a0a0a0a0a4a7a1(it.getVariable(), variableDeclaration);
         }
       });
 
-      if (!(someReturnReachesVariable)) {
+      if (!(uninitializedRead)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variableDeclaration, "Field can be converted into a local variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6640766779592666289", null, errorTarget);
@@ -118,6 +103,10 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean eq_pk5n8v_a0a0a0a0a0a4a7a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_pk5n8v_a0a0a0a0a0h0b(Object a, Object b) {
