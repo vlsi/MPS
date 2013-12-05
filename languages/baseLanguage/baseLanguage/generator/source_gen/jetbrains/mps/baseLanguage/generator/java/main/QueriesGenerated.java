@@ -18,6 +18,7 @@ import jetbrains.mps.baseLanguage.behavior.Property_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -126,12 +127,16 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"), "property", false), "mn_property_setter");
   }
 
+  public static Object referenceMacro_GetReferent_2622108313329477938(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "my" + NameUtil.capitalize(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "owningProperty", false), "propertyName"));
+  }
+
   public static boolean ifMacro_Condition_3073231036165996124(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a0u()));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a0v()));
   }
 
   public static boolean ifMacro_Condition_1201570983175(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode());
+    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode()) || ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.PropertyValueReference", false, new String[]{})).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1201570447832(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -139,11 +144,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5351366134229435236(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode());
+    return Property_Behavior.call_isDefaultImplementation_1213877383134(_context.getNode()) || Property_Behavior.call_isCustomSetterOnlyImplementation_2622108313329276688(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1202009232386(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Property_Behavior.call_isCustomImplementation_1213877383144(_context.getNode());
+    return Property_Behavior.call_isCustomImplementation_1213877383144(_context.getNode()) || Property_Behavior.call_isCustomSetterOnlyImplementation_2622108313329276688(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1202009182092(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -324,14 +329,14 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1202009237531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "setAccessor", true), "statementList", true), "statement", true);
+    return Property_Behavior.call_getCustomSetterStatements_2622108313339491118(_context.getNode());
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201570605396(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
 
-  private static SNode _quotation_createNode_x583g4_b0a0a0u() {
+  private static SNode _quotation_createNode_x583g4_b0a0a0v() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

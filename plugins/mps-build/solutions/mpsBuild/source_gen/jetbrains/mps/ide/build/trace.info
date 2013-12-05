@@ -49,7 +49,7 @@
     <unitInfo nodeId="6515501733571340831" fileName="mpsNewLanguageDesign.xml" startLine="1" startPosition="0" endLine="1539" endPosition="10" unitName="jetbrains.mps.ide.build.mpsNewLanguageDesign" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/6977615362525216882">
-    <unitInfo nodeId="6977615362525216882" fileName="mpsPluginTests.xml" startLine="1" startPosition="0" endLine="213" endPosition="10" unitName="jetbrains.mps.ide.build.mpsPluginTests" />
+    <unitInfo nodeId="6977615362525216882" fileName="mpsPluginTests.xml" startLine="1" startPosition="0" endLine="218" endPosition="10" unitName="jetbrains.mps.ide.build.mpsPluginTests" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/716066598061903713">
     <unitInfo nodeId="716066598061903713" fileName="Info.plist.xml" startLine="1" startPosition="0" endLine="74" endPosition="8" unitName="jetbrains.mps.ide.build.Info$plist" />
