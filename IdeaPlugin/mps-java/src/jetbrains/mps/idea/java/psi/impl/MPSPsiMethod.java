@@ -226,12 +226,6 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   @Nullable
   @Override
-  public PsiType getReturnTypeNoResolve() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Nullable
-  @Override
   public PsiDocComment getDocComment() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
