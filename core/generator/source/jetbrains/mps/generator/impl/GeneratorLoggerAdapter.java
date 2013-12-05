@@ -197,7 +197,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     @NotNull
     public Message prepare(@NotNull MessageKind kind, @NotNull String text, SNodeReference node) {
       Message message = new Message(kind, text);
-      if (node != null) {
+      if (node != null && node.getModelReference() != null) {
         SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
         if (model != null && !(model.getModule() instanceof TransientModelsModule)) {
           // XXX I don't know why we shall not include references to transient elements
