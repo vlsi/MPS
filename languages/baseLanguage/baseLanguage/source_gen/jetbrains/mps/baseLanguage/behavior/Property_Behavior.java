@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.util.NameUtil;
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class Property_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SLinkOperations.setTarget(thisNode, "propertyImplementation", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", null), true);
   }
 
   public static boolean call_isDefaultImplementation_1213877383134(SNode thisNode) {
