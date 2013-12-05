@@ -50,7 +50,6 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private JRadioButton myProjectScopeButton;
   private JRadioButton myModuleScopeButton;
   private JRadioButton myModelScopeButton;
-  private JRadioButton myBootstrapScopeButton = null;
   private ButtonGroup myButtonGroup;
 
   private DefaultCompletionTextField myModuleField;
@@ -93,23 +92,11 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       }
     });
 
-    if (InternalFlag.isInternalMode()) {
-      myBootstrapScopeButton = new JRadioButton(new AbstractAction(BOOTSTRAP_SCOPE) {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          setCompletionFieldsState(false, false);
-        }
-      });
-    }
-
     myButtonGroup = new ButtonGroup();
     myButtonGroup.add(myGlobalScopeButton);
     myButtonGroup.add(myProjectScopeButton);
     myButtonGroup.add(myModuleScopeButton);
     myButtonGroup.add(myModelScopeButton);
-    if (myBootstrapScopeButton != null) {
-      myButtonGroup.add(myBootstrapScopeButton);
-    }
 
     Set<SModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
     List<String> moduleNameList = new ArrayList<String>();
@@ -162,13 +149,6 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     row.add(myGlobalScopeButton, BorderLayout.WEST);
     myPanel.add(row);
 
-    if (InternalFlag.isInternalMode()) {
-      row = new JPanel();
-      row.setLayout(new BorderLayout());
-      row.add(myBootstrapScopeButton, BorderLayout.WEST);
-      myPanel.add(row);
-    }
-
     setDefaults(defaultOptions);
   }
 
@@ -190,12 +170,8 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       setCurrentRadioButton(myModuleScopeButton);
     } else if (scopeType == ScopeType.MODEL) {
       setCurrentRadioButton(myModelScopeButton);
-    } else if (scopeType == ScopeType.BOOTSTRAP) {
-      if (myBootstrapScopeButton != null) {
-        setCurrentRadioButton(myBootstrapScopeButton);
-      } else {
-        setCurrentRadioButton(myGlobalScopeButton);
-      }
+    } else {
+      setCurrentRadioButton(myGlobalScopeButton);
     }
   }
 
@@ -223,8 +199,6 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
       scopeType = ScopeType.MODULE;
     } else if (selectedModel == myModelScopeButton.getModel()) {
       scopeType = ScopeType.MODEL;
-    } else if (myBootstrapScopeButton != null && selectedModel == myBootstrapScopeButton.getModel()) {
-      scopeType = ScopeType.BOOTSTRAP;
     } else {
       //No need to throw exception - just use default value
       scopeType = ScopeType.GLOBAL;
