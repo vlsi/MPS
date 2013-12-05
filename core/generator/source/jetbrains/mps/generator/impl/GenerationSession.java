@@ -404,8 +404,8 @@ class GenerationSession {
       mySessionContext.clearTransientObjects();
       isPrimary = false;
       SModelOperations.validateLanguagesAndImports(realOutputModel, false, false);
+      myDependenciesBuilder.updateModel(realOutputModel);
       if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
-        myDependenciesBuilder.updateModel(currentOutputModel);
         recycleWasteModel(currentInputModel, false); // we can forget about former input model here
         currentInputModel = currentOutputModel;
         ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder(); // why?!

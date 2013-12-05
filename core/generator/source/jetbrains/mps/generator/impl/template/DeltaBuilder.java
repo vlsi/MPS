@@ -177,7 +177,6 @@ public abstract class DeltaBuilder {
   }
 
   public void leaveNestedCopySrc(@NotNull SNode node) {
-    assert node != null;
     if (!isInsideCopyRoot()) {
       return;
     }
@@ -222,7 +221,10 @@ public abstract class DeltaBuilder {
   public void applyInplace(SModel inputModel, TemplateGenerator generator) {
     HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
     for (CopyRoot root : roots) {
-      if (!root.deleted) {
+      if (root.deleted) {
+        // reference target under deleted root needs update, too
+        allReplacedNodes.add(root.myRoot);
+      } else {
         allReplacedNodes.addAll(root.getReplacedNodes());
       }
     }
@@ -234,37 +236,37 @@ public abstract class DeltaBuilder {
     }
     // update references between changed model elements
     for (CopyRoot root : roots) {
-      if (root.deleted) {
-        continue;
-      }
       final SModelReference inputModelRef = inputModel.getReference();
-      final Set<SNode> replacedNodes = root.getReplacedNodes();
-      TreeIterator<SNode> it = (TreeIterator<SNode>) SNodeUtil.getDescendants(root.myRoot).iterator();
-      while (it.hasNext()) {
-        SNode next = it.next();
-        if (replacedNodes.contains(next)) {
-          // nodes under replaced already have PostponedReferences
-          it.skipChildren();
-          continue;
-        }
-        for (SReference reference : next.getReferences()) {
-          if (reference instanceof PostponedReference) {
-            System.out.println("!!! unexpected PostponedReference in the input model");
-          }
-          if (!inputModelRef.equals(reference.getTargetSModelReference())) {
+      final Set<SNode> replacedNodes;
+      if (root.deleted) {
+        replacedNodes = Collections.singleton(root.myRoot);
+      } else {
+        replacedNodes = root.getReplacedNodes();
+        TreeIterator<SNode> it = (TreeIterator<SNode>) SNodeUtil.getDescendants(root.myRoot).iterator();
+        while (it.hasNext()) {
+          SNode next = it.next();
+          if (replacedNodes.contains(next)) {
+            // nodes under replaced already have PostponedReferences
+            it.skipChildren();
             continue;
           }
-          SNode target = reference.getTargetNode();
-          while (target != null) {
-            if (allReplacedNodes.contains(target)) {
-              // reference points elsewhere in this model under a replaced node.
-              // reference needs update, its target is among replaced nodes
-              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), target);
-              PostponedReference pr = new PostponedReference(refInfo, generator);
-              pr.setReferenceInOutputSourceNode();
-              break; // while target
+          for (SReference reference : next.getReferences()) {
+            assert reference instanceof PostponedReference == false : "!!! unexpected PostponedReference in the input model";
+            if (!inputModelRef.equals(reference.getTargetSModelReference())) {
+              continue;
             }
-            target = target.getParent();
+            SNode target = reference.getTargetNode();
+            while (target != null) {
+              if (allReplacedNodes.contains(target)) {
+                // reference points elsewhere in this model under a replaced node.
+                // reference needs update, its target is among replaced nodes
+                ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), target);
+                PostponedReference pr = new PostponedReference(refInfo, generator);
+                pr.setReferenceInOutputSourceNode();
+                break; // while target
+              }
+              target = target.getParent();
+            }
           }
         }
       }
@@ -313,45 +315,6 @@ public abstract class DeltaBuilder {
           System.out.printf("    copysrc %s\n", tree.myInputNode);
         } else {
           System.out.printf("    %s - %d - %s\n", tree.myRoleInParent, tree.mySubTree.size(), tree.myInputNode);
-        }
-      }
-    }
-    if (hasChanges()) {
-      HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
-      for (CopyRoot root : roots) {
-        if (!root.deleted) {
-          allReplacedNodes.addAll(root.getReplacedNodes());
-        }
-      }
-      for (CopyRoot root : roots) {
-        if (root.deleted) {
-          continue;
-        }
-        final SModelReference inputModelRef = root.myRoot.getModel().getReference();
-        final Set<SNode> replacedNodes = root.getReplacedNodes();
-        TreeIterator<SNode> it = (TreeIterator<SNode>) SNodeUtil.getDescendants(root.myRoot).iterator();
-        while (it.hasNext()) {
-          SNode next = it.next();
-          if (replacedNodes.contains(next)) {
-            it.skipChildren();
-            continue;
-          }
-          for (SReference reference : next.getReferences()) {
-            if (reference instanceof PostponedReference) {
-              System.out.println("!!! unexpected PostponedReference in the input model");
-            }
-            if (!inputModelRef.equals(reference.getTargetSModelReference())) {
-              continue;
-            }
-            SNode target = reference.getTargetNode();
-            while (target != null) {
-              if (allReplacedNodes.contains(target)) {
-                System.out.printf("--> Reference in '%s' needs update, its target %s is among replaced nodes\n", reference.getRole(), target.getName());
-                break;
-              }
-              target = target.getParent();
-            }
-          }
         }
       }
     }
