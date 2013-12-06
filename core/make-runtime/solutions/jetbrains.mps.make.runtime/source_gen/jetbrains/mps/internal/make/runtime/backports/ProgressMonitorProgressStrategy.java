@@ -27,10 +27,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   }
 
   public void reset(ProgressMonitor monitor) {
-    this.monitor = (monitor != null ?
-      monitor :
-      new EmptyProgressMonitor()
-    );
+    this.monitor = (monitor != null ? monitor : new EmptyProgressMonitor());
     DequeSequence.fromDeque(monitorWorkStack).clear();
     this.done = 0;
     this.isInitialized = false;
@@ -49,10 +46,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
 
   public ProgressMonitor getProgressMonitor() {
     initializeIfNeeded();
-    return (DequeSequence.fromDeque(monitorWorkStack).isEmpty() ?
-      monitor :
-      DequeSequence.fromDeque(monitorWorkStack).peekElement()._0()
-    );
+    return (DequeSequence.fromDeque(monitorWorkStack).isEmpty() ? monitor : DequeSequence.fromDeque(monitorWorkStack).peekElement()._0());
   }
 
   @Override

@@ -183,7 +183,7 @@
     <nodeInfo nodeId="4539946443012354671" fileName="LambdaApplication_Behavior.java" startLine="30" startPosition="157" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4976946798230781758" fileName="LambdaApplication_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1308935328408185210" fileName="LambdaApplication_Behavior.java" startLine="36" startPosition="74" endLine="37" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1308935328408190848" fileName="LambdaApplication_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="393" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1308935328408190848" fileName="LambdaApplication_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="381" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5066394162984555386" fileName="LambdaApplication_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5066394162984555470" fileName="LambdaApplication_Behavior.java" startLine="18" startPosition="125" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4976946798230781679" fileName="LambdaApplication_Behavior.java" startLine="25" startPosition="85" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -196,7 +196,7 @@
     <scopeInfo nodeId="5066394162984555471" fileName="LambdaApplication_Behavior.java" startLine="19" startPosition="162" endLine="20" endPosition="282" />
     <scopeInfo nodeId="4976946798230781681" fileName="LambdaApplication_Behavior.java" startLine="26" startPosition="162" endLine="27" endPosition="231" />
     <scopeInfo nodeId="1308935328408185126" fileName="LambdaApplication_Behavior.java" startLine="36" startPosition="74" endLine="37" endPosition="331" />
-    <scopeInfo nodeId="1308935328408190841" fileName="LambdaApplication_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="393" />
+    <scopeInfo nodeId="1308935328408190841" fileName="LambdaApplication_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="381" />
     <scopeInfo nodeId="5066394162984555386" fileName="LambdaApplication_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="5066394162984555386" varName="thisNode" />
     </scopeInfo>

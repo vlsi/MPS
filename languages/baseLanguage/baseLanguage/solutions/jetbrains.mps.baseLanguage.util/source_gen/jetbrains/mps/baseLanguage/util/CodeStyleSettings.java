@@ -10,10 +10,7 @@ public class CodeStyleSettings {
 
   @NotNull
   public String getLineSeparatorValue() {
-    return (this.getLineSeparator() != null ?
-      this.getLineSeparator() :
-      System.getProperty("line.separator")
-    );
+    return (this.getLineSeparator() != null ? this.getLineSeparator() : System.getProperty("line.separator"));
   }
 
   private String myFieldPrefix;

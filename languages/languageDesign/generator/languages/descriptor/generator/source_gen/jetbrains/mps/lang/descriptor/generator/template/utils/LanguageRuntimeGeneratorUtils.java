@@ -38,13 +38,10 @@ public class LanguageRuntimeGeneratorUtils {
       return false;
     }
     List<SNode> roots = SModelOperations.getRoots(((SModel) aspectModel), null);
-    return (rootConcept == null ?
-      ListSequence.fromList(roots).isNotEmpty() :
-      ListSequence.fromList(roots).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(it), NameUtil.nodeFQName(rootConcept));
-        }
-      }).isNotEmpty()
-    );
+    return (rootConcept == null ? ListSequence.fromList(roots).isNotEmpty() : ListSequence.fromList(roots).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(it), NameUtil.nodeFQName(rootConcept));
+      }
+    }).isNotEmpty());
   }
 }

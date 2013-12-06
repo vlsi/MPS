@@ -5,10 +5,8 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import java.util.List;
+import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -20,23 +18,21 @@ public class ModuleChecker {
   }
 
   public void checkModule(SModule module, ProgressMonitor monitor) {
-    monitor.start("Checking " + module.getModuleName() + " module properties...", 1);
+    String moduleName = module.getModuleName();
+    monitor.start("Checking " + moduleName + " module properties...", 1);
     try {
-      // TODO:  Provide the full list of errors when usages view framework supports multiple 
-      // TODO:  search results for one module 
-      List<String> errors = ModuleValidatorFactory.createValidator(module).getErrors();
-      if (!(ListSequence.fromList(errors).isEmpty())) {
-        String extraMessage = ListSequence.fromList(errors).getElement(0);
-        if ((int) ListSequence.fromList(errors).count() == 2) {
-          extraMessage += "; " + ListSequence.fromList(errors).getElement(1);
-        } else if (ListSequence.fromList(errors).count() > 2) {
-          extraMessage += "; ...";
-        }
-        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleName() + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
+      ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
+      for (String msg : validator.getErrors()) {
+        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + msg, null, ModelChecker.SEVERITY_ERROR, "module properties"));
+
+      }
+      for (String msg : validator.getWarnings()) {
+        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + msg, null, ModelChecker.SEVERITY_WARNING, "module properties"));
+
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("Error while " + module.getModuleName() + " module checking", t);
+        LOG.error("Error while " + moduleName + " module checking", t);
       }
     } finally {
       monitor.done();

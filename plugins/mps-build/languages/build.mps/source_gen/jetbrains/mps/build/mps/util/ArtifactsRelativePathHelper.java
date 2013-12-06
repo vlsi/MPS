@@ -132,9 +132,6 @@ public class ArtifactsRelativePathHelper {
   }
 
   private static boolean eq_fa9ylc_a0a0b0g(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

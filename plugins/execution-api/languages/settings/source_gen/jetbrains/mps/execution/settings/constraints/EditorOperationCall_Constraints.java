@@ -55,10 +55,7 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
             List<SNode> operations = SettingsEditor_Behavior.call_getDeclaredOperations_946964771156067031(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, "configuration", false), "editor", true));
             return ListSequence.fromList(operations).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return ((SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null) ?
-                  (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getJavaMethod_946964771156066991", new Object[]{}) != null) :
-                  (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{}) != null)
-                );
+                return ((SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null) ? (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getJavaMethod_946964771156066991", new Object[]{}) != null) : (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{}) != null));
               }
             });
           }

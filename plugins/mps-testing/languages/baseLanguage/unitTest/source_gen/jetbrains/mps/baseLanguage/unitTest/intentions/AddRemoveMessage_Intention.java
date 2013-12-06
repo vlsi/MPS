@@ -69,10 +69,7 @@ public class AddRemoveMessage_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true) == null) ?
-        "Add message" :
-        "Remove message"
-      );
+      return ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true) == null) ? "Add message" : "Remove message");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

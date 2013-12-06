@@ -77,10 +77,7 @@ public class ChangeStaticInInner_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Make " + ((Classifier_Behavior.call_isStatic_521412098689998668(node) ?
-        "Non" :
-        ""
-      )) + " Static";
+      return "Make " + ((Classifier_Behavior.call_isStatic_521412098689998668(node) ? "Non" : "")) + " Static";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

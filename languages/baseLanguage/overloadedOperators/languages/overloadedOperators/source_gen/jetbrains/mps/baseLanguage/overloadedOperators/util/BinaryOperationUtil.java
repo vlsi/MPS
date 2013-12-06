@@ -51,11 +51,8 @@ public class BinaryOperationUtil {
   }
 
   public static boolean hasOverloadedOperators(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
-      return false;
-    }
     for (SNode operator : operators) {
-      if (isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operator)) {
+      if (isOverloading(node, leftType, rightType, operator)) {
         return true;
       }
       if (SPropertyOperations.getBoolean(operator, "commutative") && isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), rightType, leftType, operator)) {

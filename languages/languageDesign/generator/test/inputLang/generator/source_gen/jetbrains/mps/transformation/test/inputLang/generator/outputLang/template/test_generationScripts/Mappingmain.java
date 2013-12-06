@@ -21,8 +21,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
@@ -111,7 +112,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202780919451(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_417xrn_a0a3t, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202780919451(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_417xrn_a0a3t, environment.getGenerator())))) {
         return null;
       }
 
@@ -177,7 +178,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202780894871(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_417xrn_a0a3u, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202780894871(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_417xrn_a0a3u, environment.getGenerator())))) {
         return null;
       }
 

@@ -336,19 +336,19 @@
     <nodeInfo nodeId="580018013244306486" fileName="SideTransformUtil.java" startLine="108" startPosition="5" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="580018013244306488" fileName="SideTransformUtil.java" startLine="109" startPosition="0" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="580018013244305028" fileName="SideTransformUtil.java" startLine="114" startPosition="298" endLine="115" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580018013244169819" fileName="SideTransformUtil.java" startLine="120" startPosition="8" endLine="121" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580018013244303819" fileName="SideTransformUtil.java" startLine="123" startPosition="184" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580018013244303822" fileName="SideTransformUtil.java" startLine="125" startPosition="5" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="580018013244304302" fileName="SideTransformUtil.java" startLine="126" startPosition="0" endLine="127" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580018013244304349" fileName="SideTransformUtil.java" startLine="129" startPosition="11" endLine="130" endPosition="366" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580018013244304341" fileName="SideTransformUtil.java" startLine="131" startPosition="29" endLine="132" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580018013244304294" fileName="SideTransformUtil.java" startLine="134" startPosition="5" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="580018013244303824" fileName="SideTransformUtil.java" startLine="135" startPosition="0" endLine="136" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580018013244305304" fileName="SideTransformUtil.java" startLine="140" startPosition="9" endLine="141" endPosition="343" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580018013244305296" fileName="SideTransformUtil.java" startLine="142" startPosition="27" endLine="143" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580018013244305219" fileName="SideTransformUtil.java" startLine="148" startPosition="9" endLine="149" endPosition="424" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="580018013244305205" fileName="SideTransformUtil.java" startLine="150" startPosition="27" endLine="151" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="580018013244305215" fileName="SideTransformUtil.java" startLine="151" startPosition="25" endLine="152" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="580018013244169819" fileName="SideTransformUtil.java" startLine="117" startPosition="174" endLine="118" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="580018013244303819" fileName="SideTransformUtil.java" startLine="120" startPosition="184" endLine="121" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="580018013244303822" fileName="SideTransformUtil.java" startLine="122" startPosition="5" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="580018013244304302" fileName="SideTransformUtil.java" startLine="123" startPosition="0" endLine="124" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="580018013244304349" fileName="SideTransformUtil.java" startLine="126" startPosition="11" endLine="127" endPosition="366" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="580018013244304341" fileName="SideTransformUtil.java" startLine="128" startPosition="29" endLine="129" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="580018013244304294" fileName="SideTransformUtil.java" startLine="131" startPosition="5" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="580018013244303824" fileName="SideTransformUtil.java" startLine="132" startPosition="0" endLine="133" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="580018013244305304" fileName="SideTransformUtil.java" startLine="137" startPosition="9" endLine="138" endPosition="343" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="580018013244305296" fileName="SideTransformUtil.java" startLine="139" startPosition="27" endLine="140" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="580018013244305219" fileName="SideTransformUtil.java" startLine="145" startPosition="9" endLine="146" endPosition="424" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="580018013244305205" fileName="SideTransformUtil.java" startLine="147" startPosition="27" endLine="148" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="580018013244305215" fileName="SideTransformUtil.java" startLine="148" startPosition="25" endLine="149" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="580018013244146962" fileName="SideTransformUtil.java" startLine="43" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SideTransformUtil#()V" />
     <nodeInfo nodeId="580018013244312031" fileName="SideTransformUtil.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="580018013244312040" fileName="SideTransformUtil.java" startLine="52" startPosition="8" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -360,21 +360,21 @@
     <nodeInfo nodeId="580018013244306383" fileName="SideTransformUtil.java" startLine="96" startPosition="30" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="580018013244306457" fileName="SideTransformUtil.java" startLine="104" startPosition="139" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="580018013244305006" fileName="SideTransformUtil.java" startLine="113" startPosition="136" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="580018013244254847" fileName="SideTransformUtil.java" startLine="122" startPosition="5" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="580018013244169077" fileName="SideTransformUtil.java" startLine="116" startPosition="5" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="580018013244254847" fileName="SideTransformUtil.java" startLine="119" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="580018013244304961" fileName="SideTransformUtil.java" startLine="47" startPosition="0" endLine="52" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="580018013244304326" fileName="SideTransformUtil.java" startLine="128" startPosition="31" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="580018013244305289" fileName="SideTransformUtil.java" startLine="139" startPosition="147" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="580018013244169077" fileName="SideTransformUtil.java" startLine="116" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="580018013244305198" fileName="SideTransformUtil.java" startLine="147" startPosition="141" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="580018013244304326" fileName="SideTransformUtil.java" startLine="125" startPosition="31" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="580018013244305289" fileName="SideTransformUtil.java" startLine="136" startPosition="147" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="580018013244305198" fileName="SideTransformUtil.java" startLine="144" startPosition="141" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="580018013244306410" fileName="SideTransformUtil.java" startLine="101" startPosition="34" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="580018013244304309" fileName="SideTransformUtil.java" startLine="127" startPosition="89" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="580018013244305265" fileName="SideTransformUtil.java" startLine="139" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeRemoveByCondition#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Iterator;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="580018013244305187" fileName="SideTransformUtil.java" startLine="147" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeActionBuilder#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/CellSide;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="580018013244304309" fileName="SideTransformUtil.java" startLine="124" startPosition="89" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="580018013244305265" fileName="SideTransformUtil.java" startLine="136" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeRemoveByCondition#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Iterator;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="580018013244305187" fileName="SideTransformUtil.java" startLine="144" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeActionBuilder#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/CellSide;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
     <nodeInfo nodeId="605492362669088141" fileName="SideTransformUtil.java" startLine="62" startPosition="7" endLine="71" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="580018013244306290" fileName="SideTransformUtil.java" startLine="82" startPosition="122" endLine="91" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="580018013244306245" fileName="SideTransformUtil.java" startLine="81" startPosition="0" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="580018013244304412" fileName="SideTransformUtil.java" startLine="57" startPosition="83" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="580018013244146966" fileName="SideTransformUtil.java" startLine="113" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Ljetbrains/mps/nodeEditor/CellSide;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="580018013244146966" fileName="SideTransformUtil.java" startLine="113" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Ljetbrains/mps/nodeEditor/CellSide;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
     <nodeInfo nodeId="580018013244304399" fileName="SideTransformUtil.java" startLine="46" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getApplicableActionsBuilders#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Ljetbrains/mps/nodeEditor/CellSide;Ljetbrains/mps/smodel/IOperationContext;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="580018013244305346" fileName="SideTransformUtil.java" startLine="76" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createActions#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Ljetbrains/mps/nodeEditor/CellSide;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
     <scopeInfo nodeId="580018013244146965" fileName="SideTransformUtil.java" startLine="43" startPosition="30" endLine="43" endPosition="30" />
@@ -388,24 +388,24 @@
     <scopeInfo nodeId="580018013244306386" fileName="SideTransformUtil.java" startLine="97" startPosition="79" endLine="98" endPosition="106" />
     <scopeInfo nodeId="580018013244306458" fileName="SideTransformUtil.java" startLine="105" startPosition="68" endLine="106" endPosition="20" />
     <scopeInfo nodeId="580018013244305007" fileName="SideTransformUtil.java" startLine="114" startPosition="298" endLine="115" endPosition="19" />
-    <scopeInfo nodeId="580018013244169078" fileName="SideTransformUtil.java" startLine="120" startPosition="8" endLine="121" endPosition="19" />
-    <scopeInfo nodeId="580018013244254848" fileName="SideTransformUtil.java" startLine="123" startPosition="184" endLine="124" endPosition="19" />
-    <scopeInfo nodeId="580018013244304327" fileName="SideTransformUtil.java" startLine="129" startPosition="11" endLine="130" endPosition="366" />
-    <scopeInfo nodeId="580018013244304329" fileName="SideTransformUtil.java" startLine="131" startPosition="0" endLine="132" endPosition="27">
+    <scopeInfo nodeId="580018013244169078" fileName="SideTransformUtil.java" startLine="117" startPosition="174" endLine="118" endPosition="19" />
+    <scopeInfo nodeId="580018013244254848" fileName="SideTransformUtil.java" startLine="120" startPosition="184" endLine="121" endPosition="19" />
+    <scopeInfo nodeId="580018013244304327" fileName="SideTransformUtil.java" startLine="126" startPosition="11" endLine="127" endPosition="366" />
+    <scopeInfo nodeId="580018013244304329" fileName="SideTransformUtil.java" startLine="128" startPosition="0" endLine="129" endPosition="27">
       <varInfo nodeId="580018013244304330" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244304332" fileName="SideTransformUtil.java" startLine="131" startPosition="29" endLine="132" endPosition="27" />
-    <scopeInfo nodeId="580018013244305290" fileName="SideTransformUtil.java" startLine="140" startPosition="9" endLine="141" endPosition="343" />
-    <scopeInfo nodeId="580018013244305291" fileName="SideTransformUtil.java" startLine="142" startPosition="0" endLine="143" endPosition="25">
+    <scopeInfo nodeId="580018013244304332" fileName="SideTransformUtil.java" startLine="128" startPosition="29" endLine="129" endPosition="27" />
+    <scopeInfo nodeId="580018013244305290" fileName="SideTransformUtil.java" startLine="137" startPosition="9" endLine="138" endPosition="343" />
+    <scopeInfo nodeId="580018013244305291" fileName="SideTransformUtil.java" startLine="139" startPosition="0" endLine="140" endPosition="25">
       <varInfo nodeId="580018013244305292" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244305294" fileName="SideTransformUtil.java" startLine="142" startPosition="27" endLine="143" endPosition="25" />
-    <scopeInfo nodeId="580018013244305199" fileName="SideTransformUtil.java" startLine="148" startPosition="9" endLine="149" endPosition="424" />
+    <scopeInfo nodeId="580018013244305294" fileName="SideTransformUtil.java" startLine="139" startPosition="27" endLine="140" endPosition="25" />
+    <scopeInfo nodeId="580018013244305199" fileName="SideTransformUtil.java" startLine="145" startPosition="9" endLine="146" endPosition="424" />
     <scopeInfo nodeId="580018013244146962" fileName="SideTransformUtil.java" startLine="43" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="580018013244305200" fileName="SideTransformUtil.java" startLine="150" startPosition="0" endLine="152" endPosition="37">
+    <scopeInfo nodeId="580018013244305200" fileName="SideTransformUtil.java" startLine="147" startPosition="0" endLine="149" endPosition="37">
       <varInfo nodeId="580018013244305201" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244305203" fileName="SideTransformUtil.java" startLine="150" startPosition="27" endLine="152" endPosition="37" />
+    <scopeInfo nodeId="580018013244305203" fileName="SideTransformUtil.java" startLine="147" startPosition="27" endLine="149" endPosition="37" />
     <scopeInfo nodeId="580018013244312031" fileName="SideTransformUtil.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="580018013244312031" varName="it" />
     </scopeInfo>
@@ -428,19 +428,19 @@
       <varInfo nodeId="580018013244306438" varName="action" />
       <varInfo nodeId="580018013244306445" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244304310" fileName="SideTransformUtil.java" startLine="128" startPosition="31" endLine="133" endPosition="7" />
-    <scopeInfo nodeId="580018013244305268" fileName="SideTransformUtil.java" startLine="139" startPosition="147" endLine="144" endPosition="5" />
-    <scopeInfo nodeId="580018013244305190" fileName="SideTransformUtil.java" startLine="147" startPosition="141" endLine="153" endPosition="5" />
+    <scopeInfo nodeId="580018013244304310" fileName="SideTransformUtil.java" startLine="125" startPosition="31" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="580018013244305268" fileName="SideTransformUtil.java" startLine="136" startPosition="147" endLine="141" endPosition="5" />
+    <scopeInfo nodeId="580018013244305190" fileName="SideTransformUtil.java" startLine="144" startPosition="141" endLine="150" endPosition="5" />
     <scopeInfo nodeId="580018013244306410" fileName="SideTransformUtil.java" startLine="101" startPosition="34" endLine="108" endPosition="5">
       <varInfo nodeId="580018013244306413" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244305265" fileName="SideTransformUtil.java" startLine="139" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="580018013244305265" fileName="SideTransformUtil.java" startLine="136" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="580018013244305278" varName="actions" />
       <varInfo nodeId="580018013244305316" varName="context" />
       <varInfo nodeId="580018013244305344" varName="node" />
       <varInfo nodeId="580018013244305274" varName="removeByCondition" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244305187" fileName="SideTransformUtil.java" startLine="147" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="580018013244305187" fileName="SideTransformUtil.java" startLine="144" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="580018013244305195" varName="actionsBuilder" />
       <varInfo nodeId="3609453419539024787" varName="cellSide" />
       <varInfo nodeId="580018013244305237" varName="context" />
@@ -456,10 +456,10 @@
     <scopeInfo nodeId="580018013244304412" fileName="SideTransformUtil.java" startLine="57" startPosition="83" endLine="72" endPosition="5">
       <varInfo nodeId="580018013244304413" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244146969" fileName="SideTransformUtil.java" startLine="113" startPosition="136" endLine="136" endPosition="16">
+    <scopeInfo nodeId="580018013244146969" fileName="SideTransformUtil.java" startLine="113" startPosition="136" endLine="133" endPosition="16">
       <varInfo nodeId="580018013244304303" varName="precondition" />
     </scopeInfo>
-    <scopeInfo nodeId="580018013244146966" fileName="SideTransformUtil.java" startLine="113" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="580018013244146966" fileName="SideTransformUtil.java" startLine="113" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="580018013244304386" varName="actionsBuilder" />
       <varInfo nodeId="580018013244304390" varName="cellSide" />
       <varInfo nodeId="580018013244304363" varName="context" />
@@ -492,7 +492,7 @@
     <unitInfo nodeId="605492362669088168" fileName="SideTransformUtil.java" startLine="67" startPosition="19" endLine="71" endPosition="7" unitName="jetbrains.mps.actions.runtime.impl.SideTransformUtil$3" />
     <unitInfo nodeId="580018013244306308" fileName="SideTransformUtil.java" startLine="83" startPosition="209" endLine="87" endPosition="7" unitName="jetbrains.mps.actions.runtime.impl.SideTransformUtil$4" />
     <unitInfo nodeId="580018013244306308" fileName="SideTransformUtil.java" startLine="87" startPosition="20" endLine="91" endPosition="7" unitName="jetbrains.mps.actions.runtime.impl.SideTransformUtil$5" />
-    <unitInfo nodeId="580018013244146960" fileName="SideTransformUtil.java" startLine="40" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.actions.runtime.impl.SideTransformUtil" />
+    <unitInfo nodeId="580018013244146960" fileName="SideTransformUtil.java" startLine="40" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.actions.runtime.impl.SideTransformUtil" />
   </root>
   <root nodeRef="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/7184282099853726941" />
 </debugInfo>

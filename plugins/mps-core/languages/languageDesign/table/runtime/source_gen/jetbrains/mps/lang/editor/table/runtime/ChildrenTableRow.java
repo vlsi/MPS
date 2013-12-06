@@ -38,7 +38,7 @@ public class ChildrenTableRow extends AbstractTableRow {
 
   protected void insertNewCell(SNode newCellNode, int index) {
     // subclasses may implement this method in a different way 
-    if (index == (int) ListSequence.fromList(getChildren()).count()) {
+    if (index == ListSequence.fromList(getChildren()).count()) {
       myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, "role"), newCellNode);
     } else {
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(getChildren()).getElement(index), newCellNode);

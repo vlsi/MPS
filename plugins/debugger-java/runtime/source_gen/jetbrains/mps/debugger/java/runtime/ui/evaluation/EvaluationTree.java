@@ -297,10 +297,7 @@ import jetbrains.mps.ide.messages.Icons;
     }
 
     public ErrorTreeNode(IEvaluationContainer model, Throwable t) {
-      this(model, (t.getMessage() == null ?
-        t.toString() :
-        t.getMessage()
-      ), EvaluationTree.getStackTrace(t));
+      this(model, (t.getMessage() == null ? t.toString() : t.getMessage()), EvaluationTree.getStackTrace(t));
       myThrowable = t;
     }
 
@@ -319,7 +316,7 @@ import jetbrains.mps.ide.messages.Icons;
 
     @Override
     protected void doInit() {
-      for (String messagePart : ListSequence.fromList(myExtendedMessage)) {
+      for (String messagePart : myExtendedMessage) {
         TextTreeNode node = new TextTreeNode(messagePart) {
           @Override
           public boolean isLeaf() {

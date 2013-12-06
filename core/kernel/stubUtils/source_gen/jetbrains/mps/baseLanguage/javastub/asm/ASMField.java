@@ -89,9 +89,6 @@ public class ASMField {
   }
 
   public List<ASMAnnotation> getAnnotations() {
-    return ((List<ASMAnnotation>) (myAnnotations == null ?
-      Collections.emptyList() :
-      Collections.unmodifiableList(myAnnotations)
-    ));
+    return ((List<ASMAnnotation>) ((myAnnotations == null ? Collections.emptyList() : Collections.unmodifiableList(myAnnotations))));
   }
 }

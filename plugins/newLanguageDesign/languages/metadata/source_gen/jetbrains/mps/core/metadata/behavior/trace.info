@@ -30,24 +30,24 @@
     <nodeInfo nodeId="7891765471710147554" fileName="SConceptAnnotationArgument_Behavior.java" startLine="18" startPosition="29" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7891765471710147558" fileName="SConceptAnnotationArgument_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7891765471710147653" fileName="SConceptAnnotationArgument_Behavior.java" startLine="23" startPosition="39" endLine="24" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="72" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7891765471710147474" fileName="SConceptAnnotationArgument_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7891765471710147522" fileName="SConceptAnnotationArgument_Behavior.java" startLine="17" startPosition="145" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7891765471710147649" fileName="SConceptAnnotationArgument_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="72" endLine="33" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a97394_a0a0a0a0a0a0d0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="7891765471710147564" fileName="SConceptAnnotationArgument_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a97394_a0a0a0a0a0a0d0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="7891765471710147474" fileName="SConceptAnnotationArgument_Behavior.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getParameter_7891765471710147477#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="7891765471710147476" fileName="SConceptAnnotationArgument_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="7891765471710147523" fileName="SConceptAnnotationArgument_Behavior.java" startLine="18" startPosition="29" endLine="19" endPosition="18" />
     <scopeInfo nodeId="7891765471710147650" fileName="SConceptAnnotationArgument_Behavior.java" startLine="23" startPosition="39" endLine="24" endPosition="293" />
+    <scopeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="72" endLine="30" endPosition="46" />
     <scopeInfo nodeId="7891765471710147474" fileName="SConceptAnnotationArgument_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="7891765471710147474" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7891765471710147649" fileName="SConceptAnnotationArgument_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="7891765471710147649" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="72" endLine="33" endPosition="6" />
-    <scopeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="7891765471710147792" fileName="SConceptAnnotationArgument_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="7891765471710147792" varName="a" />
       <varInfo nodeId="7891765471710147792" varName="b" />
     </scopeInfo>
@@ -58,7 +58,7 @@
       <varInfo nodeId="7891765471710147474" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="7891765471710147649" fileName="SConceptAnnotationArgument_Behavior.java" startLine="22" startPosition="140" endLine="26" endPosition="5" unitName="jetbrains.mps.core.metadata.behavior.SConceptAnnotationArgument_Behavior$1" />
-    <unitInfo nodeId="7891765471710147474" fileName="SConceptAnnotationArgument_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.core.metadata.behavior.SConceptAnnotationArgument_Behavior" />
+    <unitInfo nodeId="7891765471710147474" fileName="SConceptAnnotationArgument_Behavior.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.core.metadata.behavior.SConceptAnnotationArgument_Behavior" />
   </root>
 </debugInfo>
 

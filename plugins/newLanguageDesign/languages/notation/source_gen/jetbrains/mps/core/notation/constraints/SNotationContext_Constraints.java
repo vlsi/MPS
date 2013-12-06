@@ -35,9 +35,6 @@ public class SNotationContext_Constraints extends BaseConstraintsDescriptor {
   }
 
   private static boolean neq_pcsico_a0a0b0b0a1a0b0b(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

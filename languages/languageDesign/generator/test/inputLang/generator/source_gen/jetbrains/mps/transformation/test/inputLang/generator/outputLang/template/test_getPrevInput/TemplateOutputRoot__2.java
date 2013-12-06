@@ -42,7 +42,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
       SNodeAccessUtil.setProperty(tnode1, "text", "'getPrevInputTest' output root (2)");
 
       {
-        final List<SNode> tlist2 = new ArrayList();
+        final List<SNode> tlist2 = new ArrayList<SNode>();
         try {
           environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a1a5a1a2);
           final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202338467105(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_ewlaka_a0a0a1a5a1a2, context, environment.getGenerator()));
@@ -56,7 +56,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                 environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode2));
               }
               TemplateContext context2 = context.subContext("LEVEL 1", itnode2);
-              final List<SNode> tlist3 = new ArrayList();
+              final List<SNode> tlist3 = new ArrayList<SNode>();
               try {
                 environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a3a2a2a1a5a1a2);
                 final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202338467112(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2.getInput(), null, loopMacroRef_ewlaka_a0a0a3a2a2a1a5a1a2, context2, environment.getGenerator()));
@@ -70,7 +70,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                       environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode3));
                     }
                     TemplateContext context3 = context2.subContext("LEVEL 2", itnode3);
-                    final List<SNode> tlist4 = new ArrayList();
+                    final List<SNode> tlist4 = new ArrayList<SNode>();
                     try {
                       environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a3a2a2a3a2a2a1a5a1a2);
                       final Iterable<SNode> loopList4 = QueriesGenerated.sourceNodesQuery_1202338467119(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context3.getInput(), null, loopMacroRef_ewlaka_a0a0a3a2a2a3a2a2a1a5a1a2, context3, environment.getGenerator()));
@@ -91,7 +91,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                             SNodeAccessUtil.setProperty(tnode5, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_ewlaka_c0b0c0c0d0c0c0d0c0c0d0c0c0b0f0b0c, context4, environment.getGenerator()))));
 
                             {
-                              final List<SNode> tlist6 = new ArrayList();
+                              final List<SNode> tlist6 = new ArrayList<SNode>();
                               try {
                                 environment.getTracer().pushMacro(mapsrcMacroRef_ewlaka_a0a0a1a4a3a2a2a3a2a2a3a2a2a1a5a1a2);
                                 tlist6.add(environment.insertLater(new NodeMapper() {
@@ -120,7 +120,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                               // TODO validate child 
                             }
                             {
-                              final List<SNode> tlist8 = new ArrayList();
+                              final List<SNode> tlist8 = new ArrayList<SNode>();
                               try {
                                 environment.getTracer().pushMacro(mapsrcMacroRef_ewlaka_a0a0a1a5a3a2a2a3a2a2a3a2a2a1a5a1a2);
                                 tlist8.add(environment.insertLater(new NodeMapper() {
@@ -145,7 +145,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                               // TODO validate child 
                             }
                             {
-                              final List<SNode> tlist10 = new ArrayList();
+                              final List<SNode> tlist10 = new ArrayList<SNode>();
                               try {
                                 environment.getTracer().pushMacro(mapsrcMacroRef_ewlaka_a0a0a1a6a3a2a2a3a2a2a3a2a2a1a5a1a2);
                                 tlist10.add(environment.insertLater(new NodeMapper() {

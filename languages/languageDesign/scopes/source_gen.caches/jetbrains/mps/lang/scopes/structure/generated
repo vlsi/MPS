@@ -1,25 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3d6lcty7k4ohq20yvwqzvwv2jphctqu">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-757fstbbaochthfx92f8c36z12xtl3s">
-    <dep root="2995585510566823808" />
-    <dep root="8077936094962850237" />
-    <dep root="8077936094962911282" />
-    <dep root="8077936094962944991" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="8077936094962850237" name="CompositeWithParentScopeExpression" hash="bn3wtdszpqv05rggx1otzgk9m3vsrjw" />
-  <source id="8077936094962911282" name="ParentScope" hash="49jxjzpmcv4evbwu8quyattx1zg0df5" />
-  <source id="8077936094962944991" name="ComeFromExpression" hash="-9rrbnesty2hrj383pw0a49omwgpb14i" />
-  <source id="2995585510566823808" name="UniformScopeProvider" hash="-b4qcb32yllv5dlnatohze7616ubj1gu" />
-</dependencies>
+<dependencies version="2" modelHash="-3d6lcty7k4ohq20yvwqzvwv2jphctqu" />
 

@@ -102,7 +102,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bndx6c_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_bndx6c_a0a0h(SPropertyOperations.getString(node, "alias"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "alias"));
   }
 
   private EditorCell createConstant_bndx6c_a2a0(EditorContext editorContext, SNode node) {
@@ -267,7 +267,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_bndx6c_a0a0h(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

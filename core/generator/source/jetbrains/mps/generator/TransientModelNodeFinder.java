@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,119 +16,51 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
-import jetbrains.mps.smodel.ConceptDescendantsCache;
-import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.AbstractFastNodeFinder;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * Evgeny Gryaznov, Mar 1, 2010
  */
-public class TransientModelNodeFinder implements FastNodeFinder {
-  private final Object myLock = new Object();
+public class TransientModelNodeFinder extends AbstractFastNodeFinder {
 
-  private SModel myModel;
-  private boolean myInitialized;
-
-  private final Map<String, List<SNode>> myNodes = new ConcurrentHashMap<String, List<SNode>>();
-
-  private SModelChangeListener myChangeListener = new SModelChangeListener() {
+  private final SModelChangeListener myChangeListener = new SModelChangeListener() {
     @Override
     public void nodeAdded(SModel model, SNode node, String role, SNode child) {
-      clearCache();
+      added(child);
     }
 
     @Override
     public void nodeRemoved(SModel model, SNode node, String role, SNode child) {
-      clearCache();
+      removed(child);
     }
 
     @Override
     public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
-      clearCache();
+      // no-op
     }
 
     @Override
     public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
-      clearCache();
+      // n-op, FNF doesn't depend on references, structure only
     }
   };
 
   public TransientModelNodeFinder(SModel model) {
-    myModel = model;
-    if(myModel instanceof EditableSModelBase) {
-      ((EditableSModelBase)myModel).addChangeListener(myChangeListener);
+    super(model);
+    if(model instanceof EditableSModelBase) {
+      ((EditableSModelBase) model).addChangeListener(myChangeListener);
     }
   }
 
   @Override
   public void dispose() {
     if(myModel instanceof EditableSModelBase) {
-      synchronized (myLock) {
-        clearCache();
-      }
       ((EditableSModelBase)myModel).removeChangeListener(myChangeListener);
     }
+    super.dispose();
   }
-
-  private void clearCache() {
-    myNodes.clear();
-    myInitialized=false;
-  }
-
-  private void initCache() {
-    for (SNode root : myModel.getRootNodes()) {
-      addToCache(root);
-    }
-    myInitialized = true;
-  }
-
-  @Override
-  public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
-    // notify 'model nodes read access'
-    myModel.getRootNodes().iterator();
-
-    synchronized (myLock) {
-      if (!myInitialized) {
-        initCache();
-      }
-    }
-
-    if (includeInherited) {
-      final List<SNode> result = new ArrayList<SNode>();
-      for (String d : ConceptDescendantsCache.getInstance().getDescendants(conceptFqName)) {
-        List<SNode> nodes = myNodes.get(d);
-        if (nodes!=null) {
-          result.addAll(nodes);
-        }
-      }
-      return result;
-    } else {
-      List<SNode> nodes = myNodes.get(conceptFqName);
-      if (nodes!=null) {
-        return nodes;
-      }
-      return Collections.emptyList();
-    }
-  }
-
-  private void addToCache(final SNode root) {
-    String conceptFqName = root.getConcept().getQualifiedName();
-    List<SNode> set = myNodes.get(conceptFqName);
-    if (set == null) {
-      set = new ArrayList<SNode>();
-      myNodes.put(conceptFqName, set);
-    }
-    set.add(root);
-
-    for (SNode child : root.getChildren()) {
-      addToCache(child);
-    }
-  }
-
 }

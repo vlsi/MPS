@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
 import jetbrains.mps.project.MPSProject;
@@ -54,7 +54,7 @@ public class NewSolution_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
@@ -73,10 +73,7 @@ public class NewSolution_Action extends BaseAction {
 
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
-          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
-            "" :
-            ((String) MapSequence.fromMap(_params).get("namespace"))
-          ));
+          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(s, (((String) MapSequence.fromMap(_params).get("namespace")) == null ? "" : ((String) MapSequence.fromMap(_params).get("namespace"))));
         }
       });
 

@@ -24,10 +24,12 @@ import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.editor.runtime.cells.CellIdManager;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -49,6 +51,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildProject_6099797596647447257(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -131,6 +134,12 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SPropertyOperations.set(_context.getCurrentTargetNode(), "head", (item));
+                return SNodeOperations.copyNode(_context.getCurrentTargetNode());
+              }
+
+              @Override
+              protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+                SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, CellIdManager.createPropertyId("head"), -1);
                 return null;
               }
             });
@@ -163,10 +172,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -197,10 +203,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -217,10 +220,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            Scope scope = Scope.getScope(((_context.getCurrentTargetNode() != null) ?
-              _context.getCurrentTargetNode() :
-              _context.getParentNode()
-            ), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"));
+            Scope scope = Scope.getScope(((_context.getCurrentTargetNode() != null) ? _context.getCurrentTargetNode() : _context.getParentNode()), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"));
             if (scope == null) {
               return null;
             }
@@ -275,15 +275,9 @@ public class QueriesGenerated {
               Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0m;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.find()) {
-                SNode container = (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ?
-                  SNodeOperations.getParent(_context.getParentNode()) :
-                  _context.getParentNode()
-                );
+                SNode container = (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ? SNodeOperations.getParent(_context.getParentNode()) : _context.getParentNode());
                 if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildStringContainer")) {
-                  if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", new Object[]{pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ?
-                    _context.getParentNode().getRoleInParent() :
-                    _context.getCurrentTargetNode().getRoleInParent()
-                  )})) {
+                  if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", new Object[]{pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.structure.BuildString") ? _context.getParentNode().getRoleInParent() : _context.getCurrentTargetNode().getRoleInParent())})) {
                     return pattern;
                   }
                 } else if (!(pattern.contains("$"))) {
@@ -326,10 +320,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -360,10 +351,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -394,10 +382,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -545,8 +530,9 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "tail", "jetbrains.mps.build.structure.BuildCompositePath");
-        return _context.getSourceNode();
+        SLinkOperations.setTarget(_context.getSourceNode(), "tail", _quotation_createNode_i7jjd8_a0a0a0a0b(SLinkOperations.getTarget(_context.getSourceNode(), "tail", true)), true);
+        SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(_context.getSourceNode(), "tail", true), CellIdManager.createPropertyId("head"));
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -977,6 +963,18 @@ public class QueriesGenerated {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
     quotedNode_2.addChild("parts", quotedNode_3);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_i7jjd8_a0a0a0a0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("tail", HUtil.copyIfNecessary(quotedNode_3));
+    }
     return quotedNode_2;
   }
 

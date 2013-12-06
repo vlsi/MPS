@@ -155,10 +155,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
   }
 
   private MPSProject getMPSProject() {
-    return (myProject != null ?
-      myProject.getComponent(MPSProject.class) :
-      null
-    );
+    return (myProject != null ? myProject.getComponent(MPSProject.class) : null);
   }
 
   private void applyMigrations() {
@@ -210,13 +207,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
             SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), myQuery, provider);
             int newCount = results.getSearchResults().size();
             if (newCount > 0) {
-              updateControls(false, new JLabel("done, but there " + ((newCount == 1 ?
-                "is 1" :
-                "are " + newCount
-              )) + " applicable node" + ((newCount > 1 ?
-                "s" :
-                ""
-              )) + " left"), createShowInNewTabButton(newFinder, provider, myQuery));
+              updateControls(false, new JLabel("done, but there " + ((newCount == 1 ? "is 1" : "are " + newCount)) + " applicable node" + ((newCount > 1 ? "s" : "")) + " left"), createShowInNewTabButton(newFinder, provider, myQuery));
             } else {
               updateControls(false, new JLabel("done"));
             }

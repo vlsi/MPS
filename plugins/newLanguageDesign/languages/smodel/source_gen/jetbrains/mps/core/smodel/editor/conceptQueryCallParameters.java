@@ -58,10 +58,7 @@ public class conceptQueryCallParameters implements ParametersInformation<SNode> 
       styledText.append("<no name>");
     }
 
-    int argumentIndex = (selectedActualArgument != null ?
-      SNodeOperations.getIndexInParent(selectedActualArgument) :
-      -1
-    );
+    int argumentIndex = (selectedActualArgument != null ? SNodeOperations.getIndexInParent(selectedActualArgument) : -1);
     styledText.append("(");
     for (SNode param : SLinkOperations.getTargets(query, "parameters", true)) {
       if (SNodeOperations.getIndexInParent(param) > 0) {

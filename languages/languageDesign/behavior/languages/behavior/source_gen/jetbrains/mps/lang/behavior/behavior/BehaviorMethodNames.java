@@ -11,14 +11,8 @@ public class BehaviorMethodNames {
 
   public static String getDeclarationName(SNode method) {
     SNode baseMethod = ConceptMethodDeclaration_Behavior.call_getOverridenMethod_1225196403956(method);
-    String prefix = (((baseMethod != null) ?
-      "virtual" :
-      "call"
-    )) + "_";
-    return prefix + getMethodName(((baseMethod != null) ?
-      baseMethod :
-      method
-    ));
+    String prefix = (((baseMethod != null) ? "virtual" : "call")) + "_";
+    return prefix + getMethodName(((baseMethod != null) ? baseMethod : method));
   }
 
   @Deprecated

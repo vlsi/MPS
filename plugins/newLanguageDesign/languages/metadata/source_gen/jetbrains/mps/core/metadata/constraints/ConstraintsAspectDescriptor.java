@@ -12,19 +12,13 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 2:
-        return new SConceptAnnotationMember_Constraints();
       case 1:
-        return new SConceptAnnotationChildLink_Constraints();
-      case 4:
+        return new SConceptAnnotationMember_Constraints();
+      case 2:
         return new SConceptAnnotationProperty_Constraints();
-      case 5:
-        return new SConceptAnnotationType_Constraints();
-      case 3:
-        return new SConceptAnnotationNodeRef_Constraints();
       case 0:
         return new SConceptAnnotationArgument_Constraints();
-      case 6:
+      case 3:
         return new SMetadataNodeRefExpression_Constraints();
       default:
         // todo: illegal in some cases? 
@@ -32,5 +26,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.metadata.structure.SConceptAnnotationArgument", "jetbrains.mps.core.metadata.structure.SConceptAnnotationChildLink", "jetbrains.mps.core.metadata.structure.SConceptAnnotationMember", "jetbrains.mps.core.metadata.structure.SConceptAnnotationNodeRef", "jetbrains.mps.core.metadata.structure.SConceptAnnotationProperty", "jetbrains.mps.core.metadata.structure.SConceptAnnotationType", "jetbrains.mps.core.metadata.structure.SMetadataNodeRefExpression"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.core.metadata.structure.SConceptAnnotationArgument", "jetbrains.mps.core.metadata.structure.SConceptAnnotationMember", "jetbrains.mps.core.metadata.structure.SConceptAnnotationProperty", "jetbrains.mps.core.metadata.structure.SMetadataNodeRefExpression"};
 }

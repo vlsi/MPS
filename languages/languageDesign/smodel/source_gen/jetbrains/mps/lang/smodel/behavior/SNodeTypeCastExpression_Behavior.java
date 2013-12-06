@@ -23,10 +23,7 @@ public class SNodeTypeCastExpression_Behavior {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return (SPropertyOperations.getBoolean(thisNode, "asCast") ?
-      "as" :
-      ":"
-    );
+    return (SPropertyOperations.getBoolean(thisNode, "asCast") ? "as" : ":");
   }
 
   @Deprecated

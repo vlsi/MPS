@@ -96,10 +96,7 @@ public class NodeChooserDialog extends DialogWrapper {
       return null;
     }
     BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
-    return (nodeItem != null ?
-      nodeItem.getNode() :
-      null
-    );
+    return (nodeItem != null ? nodeItem.getNode() : null);
   }
 
   @Nullable
@@ -108,10 +105,7 @@ public class NodeChooserDialog extends DialogWrapper {
       return null;
     }
     BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
-    return (nodeItem != null ?
-      nodeItem.getNodePointer() :
-      null
-    );
+    return (nodeItem != null ? nodeItem.getNodePointer() : null);
   }
 
   @Nullable

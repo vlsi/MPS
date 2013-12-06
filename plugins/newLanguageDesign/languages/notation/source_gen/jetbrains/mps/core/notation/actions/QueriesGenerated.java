@@ -78,10 +78,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -98,10 +95,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<Tuples._2<String, NotationContext>> queryResult = new Computable<Iterable<Tuples._2<String, NotationContext>>>() {
           public Iterable<Tuples._2<String, NotationContext>> compute() {
-            final NotationContext context = ContextUtil.getContext((_context.getCurrentTargetNode() != null ?
-              _context.getCurrentTargetNode() :
-              _context.getParentNode()
-            ), null);
+            final NotationContext context = ContextUtil.getContext((_context.getCurrentTargetNode() != null ? _context.getCurrentTargetNode() : _context.getParentNode()), null);
             if (context == null) {
               return ListSequence.fromList(new ArrayList<Tuples._2<String, NotationContext>>());
             }
@@ -137,14 +131,8 @@ public class QueriesGenerated {
 
               public String getMatchingText(String pattern) {
                 SNode cnode = (item)._1().getNode();
-                String idSuffix = ((item)._0() != null ?
-                  "." + (item)._0() :
-                  ""
-                );
-                return ((SNodeOperations.isInstanceOf(cnode, "jetbrains.mps.lang.core.structure.INamedConcept") ?
-                  SPropertyOperations.getString(SNodeOperations.cast(cnode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-                  "<unknown>"
-                )) + idSuffix;
+                String idSuffix = ((item)._0() != null ? "." + (item)._0() : "");
+                return ((SNodeOperations.isInstanceOf(cnode, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(cnode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : "<unknown>")) + idSuffix;
 
               }
 
@@ -231,10 +219,7 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
-              nc :
-              wrappedNode
-            );
+            return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));

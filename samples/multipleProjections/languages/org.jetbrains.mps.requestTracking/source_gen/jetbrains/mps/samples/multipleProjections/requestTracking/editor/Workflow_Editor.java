@@ -100,10 +100,7 @@ public class Workflow_Editor extends DefaultNodeEditor {
   }
 
   private Iterable<String> getEditorHints_yhw0dy_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SPropertyOperations.hasValue(node, "presentation", "tabular", "structural") ?
-      ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular") :
-      Collections.<String>emptyList()
-    );
+    return (SPropertyOperations.hasValue(node, "presentation", "tabular", "structural") ? ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular") : Collections.<String>emptyList());
   }
 
   private EditorCell createRefNode_yhw0dy_a3a(EditorContext editorContext, SNode node) {

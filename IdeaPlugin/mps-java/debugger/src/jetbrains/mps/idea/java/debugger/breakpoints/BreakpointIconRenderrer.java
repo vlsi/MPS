@@ -33,7 +33,7 @@ import com.intellij.openapi.ui.popup.LightweightWindowEvent;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.xdebugger.impl.actions.EditBreakpointAction.ContextAction;
-import com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsMasterDetailPopupFactory;
+import com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory;
 import com.intellij.xdebugger.impl.ui.DebuggerUIUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
 import jetbrains.mps.idea.java.MpsJavaBundle;
@@ -125,16 +125,14 @@ import java.awt.Point;
       int x = getComponent().getLeftEditorHighlighter().getIconRenderersOffset();
       Point whereToShow = new Point(x + getIcon().getIconWidth() / 2, y + getIcon().getIconHeight() / 2);
 
-      Balloon balloon = DebuggerUIUtil.showBreakpointEditor(myBreakpoint.getProject(), mainPanel, myBreakpoint.getDisplayName(), whereToShow, getComponent().getLeftEditorHighlighter(), new Runnable() {
+      Balloon balloon = DebuggerUIUtil.showBreakpointEditor(myBreakpoint.getProject(), mainPanel,
+        whereToShow, getComponent().getLeftEditorHighlighter(), new Runnable() {
         @Override
         public void run() {
           UIUtil.invokeLaterIfNeeded(new Runnable() {
             @Override
             public void run() {
-              final JBPopup popup = BreakpointsMasterDetailPopupFactory.getInstance(myBreakpoint.getProject()).createPopup(myBreakpoint);
-              if (popup != null) {
-                popup.showCenteredInCurrentWindow(myBreakpoint.getProject());
-              }
+              BreakpointsDialogFactory.getInstance(myBreakpoint.getProject()).showDialog(myBreakpoint);
             }
           });
         }

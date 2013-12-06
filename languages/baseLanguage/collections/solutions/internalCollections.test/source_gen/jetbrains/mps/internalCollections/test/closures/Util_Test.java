@@ -47,10 +47,7 @@ public class Util_Test extends TestCase {
     HashMap<Object, Integer> cardMap = new HashMap<Object, Integer>();
     for (Object e : exp) {
       Integer card = cardMap.get(e);
-      cardMap.put(e, (card != null ?
-        card + 1 :
-        1
-      ));
+      cardMap.put(e, (card != null ? card + 1 : 1));
     }
     Iterator testIt = test.iterator();
     while (testIt.hasNext()) {

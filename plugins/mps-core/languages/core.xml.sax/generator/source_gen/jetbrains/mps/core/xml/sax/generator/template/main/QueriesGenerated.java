@@ -73,10 +73,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4720003541484956176(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "check" + ((isNotEmpty_x583g4_a0a0a0a0a21(SPropertyOperations.getString(_context.getNode(), "tagName")) ?
-      SPropertyOperations.getString(_context.getNode(), "tagName") :
-      SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "rule", false), "name")
-    )) + "_" + _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "condition", true)).getNodeId();
+    return "check" + ((isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "tagName")) ? SPropertyOperations.getString(_context.getNode(), "tagName") : SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "rule", false), "name"))) + "_" + _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "condition", true)).getNodeId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1910945748578763716(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -305,10 +302,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2264311582634172188(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "text", true), "handler", true) != null) ?
-      SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "text", true), "handler", true), "body", true) :
-      null
-    );
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "text", true), "handler", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "text", true), "handler", true), "body", true) : null);
   }
 
   public static SNode sourceNodeQuery_2264311582634172227(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -432,7 +426,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a0a0a21(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

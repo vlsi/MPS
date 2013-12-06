@@ -63,10 +63,7 @@ public class BaseMethodParameterInformationQueryUtil {
       }
     }
 
-    int argumentIndex = (selectedActualArgument != null ?
-      SNodeOperations.getIndexInParent(selectedActualArgument) :
-      -1
-    );
+    int argumentIndex = (selectedActualArgument != null ? SNodeOperations.getIndexInParent(selectedActualArgument) : -1);
     styledText.append("(");
     for (SNode param : SLinkOperations.getTargets(methodDeclaration, "parameter", true)) {
       if (SNodeOperations.getIndexInParent(param) > 0) {
@@ -89,9 +86,6 @@ public class BaseMethodParameterInformationQueryUtil {
   }
 
   private static boolean eq_bha4h6_a0a0a5a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

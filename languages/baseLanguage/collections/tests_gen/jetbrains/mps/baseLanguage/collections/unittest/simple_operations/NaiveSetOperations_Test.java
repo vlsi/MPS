@@ -12,26 +12,6 @@ import java.util.HashSet;
 import java.util.HashMap;
 
 public class NaiveSetOperations_Test extends TestCase {
-  public void test_union() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(aabbcc).union(Sequence.fromIterable(cccdde)));
-    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(cccdde).union(Sequence.fromIterable(aabbcc)));
-  }
-
-  public void test_exclude() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
-    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
-    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
-    this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(abc)));
-  }
-
-  public void test_intersect() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).intersect(Sequence.fromIterable(cccdde)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cccdde).intersect(Sequence.fromIterable(aabbcc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(ccc).intersect(Sequence.fromIterable(cc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccaabbcc)));
-  }
-
   private static Iterable<String> aabbcc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
@@ -564,15 +544,35 @@ __switch__:
     }
   });
 
+  public void test_union() throws Exception {
+    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(aabbcc).union(Sequence.fromIterable(cccdde)));
+    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(cccdde).union(Sequence.fromIterable(aabbcc)));
+  }
+
+  public void test_exclude() throws Exception {
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
+    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
+    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
+    this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(abc)));
+  }
+
+  public void test_intersect() throws Exception {
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).intersect(Sequence.fromIterable(cccdde)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cccdde).intersect(Sequence.fromIterable(aabbcc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(ccc).intersect(Sequence.fromIterable(cc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccaabbcc)));
+  }
+
   public NaiveSetOperations_Test() {
   }
 
   public void assertSameContents(Iterable<String> seq1, Iterable<String> seq2) {
     Assert.assertSame(Sequence.fromIterable(seq1).count(), Sequence.fromIterable(seq2).count());
-    for (String x : Sequence.fromIterable(seq1)) {
+    for (String x : seq1) {
       Assert.assertTrue(Sequence.fromIterable(seq2).contains(x));
     }
-    for (String y : Sequence.fromIterable(seq2)) {
+    for (String y : seq2) {
       Assert.assertTrue(Sequence.fromIterable(seq1).contains(y));
     }
   }
@@ -604,10 +604,7 @@ __switch__:
     HashMap<T, Integer> cardMap = new HashMap<T, Integer>();
     for (T e : exp) {
       Integer card = cardMap.get(e);
-      cardMap.put(e, (card != null ?
-        card + 1 :
-        1
-      ));
+      cardMap.put(e, (card != null ? card + 1 : 1));
     }
     Iterator<T> testIt = test.iterator();
     while (testIt.hasNext()) {

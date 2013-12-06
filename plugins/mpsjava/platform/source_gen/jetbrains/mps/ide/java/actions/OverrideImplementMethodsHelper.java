@@ -29,8 +29,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class OverrideImplementMethodsHelper {
   private Project myProject;
-  private SNode myClassConcept;
-  private SNode myContextMember;
+  /*package*/ SNode myClassConcept;
+  /*package*/ SNode myContextMember;
   private boolean myRemoveAttributes;
   private boolean myInsertOverride;
   private boolean myNeedReturnKW;
@@ -45,10 +45,7 @@ public class OverrideImplementMethodsHelper {
   }
 
   public List<SNode> insertMethods(List<SNode> baseMethods) {
-    int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ?
-      ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 :
-      -1
-    );
+    int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ? ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 : -1);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
@@ -66,7 +63,7 @@ public class OverrideImplementMethodsHelper {
     return result;
   }
 
-  private void update(SNode method, SNode baseMethod) {
+  /*package*/ void update(SNode method, SNode baseMethod) {
     if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(baseMethod)))) {
       setVariableNames(method, MapSequence.fromMap(new HashMap<String, Integer>()));
     }
@@ -151,10 +148,7 @@ public class OverrideImplementMethodsHelper {
         }
         String prefix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getPrefix_3012473318495495520", new Object[]{myProject});
         String suffix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getSuffix_3012473318495499856", new Object[]{myProject});
-        String mainName = ((prefix == null || prefix.length() == 0) ?
-          name :
-          NameUtil.capitalize(name)
-        );
+        String mainName = ((prefix == null || prefix.length() == 0) ? name : NameUtil.capitalize(name));
         SPropertyOperations.set(variable, "name", prefix + mainName + suffix);
       }
     }

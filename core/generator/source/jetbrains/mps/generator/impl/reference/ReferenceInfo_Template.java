@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,18 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * Evgeny Gryaznov, 11/19/10
  */
-public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
+public class ReferenceInfo_Template extends ReferenceInfo {
   private SNodeReference myTemplateSourceNode;
   private String myTemplateTargetNode;
   private TemplateContext myContext;
@@ -42,13 +46,20 @@ public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
     myResolveInfo = resolveInfo;
   }
 
+  @Nullable
   @Override
-  public SNode getInputTargetNode() {
-    throw new UnsupportedOperationException();
+  public SReference create(@NotNull TemplateGenerator generator) {
+    SNode outputTargetNode = doResolve_Straightforward(generator);
+    if (outputTargetNode != null) {
+      return createStaticReference(outputTargetNode);
+    }
+    if (myResolveInfo != null) {
+      return createDynamicReference(myResolveInfo, myTemplateSourceNode);
+    }
+    return createInvalidReference(generator, null);
   }
 
-  @Override
-  public SNode doResolve_Straightforward(TemplateGenerator generator) {
+  private SNode doResolve_Straightforward(TemplateGenerator generator) {
     // try to find for the same inputNode
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
@@ -71,27 +82,11 @@ public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
         return outputTargetNode;
       }
     }
-
     return null;
   }
 
   @Override
-  public SNode doResolve_Tricky(TemplateGenerator generator) {
-    return null;
-  }
-
-  @Override
-  public String getResolveInfoForDynamicResolve() {
-    return myResolveInfo;
-  }
-
-  @Override
-  public String getResolveInfoForNothing() {
-    return myResolveInfo;
-  }
-
-  @Override
-  public ProblemDescription[] getErrorDescriptions() {
+  protected ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
     return new ProblemDescription[]{
       GeneratorUtil.describe(inputNode, "input node"),
@@ -100,8 +95,27 @@ public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
   }
 
 
-  @Override
-  protected SNode getTemplateNode() {
+  private void checkCrossRootTemplateReference(@NotNull SNode outputTarget, TemplateGenerator generator) {
+    if (!generator.isStrict()/* || !generator.isIncremental()*/) return;
+
+    // Additional check - reference target should be generated from the same root (required for incremental generation)
+    SNode outputTargetRoot = outputTarget.getContainingRoot();
+    SNode outputSourceRoot = myOutputSourceNode.getContainingRoot();
+    SModel model = outputTargetRoot.getModel();
+    if (model == null || outputTargetRoot.getParent() != null) {
+      SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);
+      SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
+      if (inputTargetRoot != inputSourceRoot) {
+        generator.getLogger().error(getTemplateNode(), "references across templates for different roots are not allowed: use mapping labels or turn off incremental mode, " +
+            "source root: " + (inputSourceRoot == null ? "<conditional root>" : SNodeUtil.getDebugText(inputSourceRoot)) +
+            ", target root: " + (inputTargetRoot == null ? "<conditional root>" : SNodeUtil.getDebugText(inputTargetRoot)),
+            GeneratorUtil.describeIfExists(getOutputSourceNode(), "source"),
+            GeneratorUtil.describeIfExists(outputTarget, "target"));
+      }
+    }
+  }
+
+  private SNode getTemplateNode() {
     return myTemplateSourceNode != null ? myTemplateSourceNode.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

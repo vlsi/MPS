@@ -18,7 +18,6 @@ import java.util.HashSet;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
@@ -114,7 +113,7 @@ public class CopyPasteUtil {
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = new jetbrains.mps.smodel.SNode(sourceNode.getConcept().getQualifiedName());
     ((jetbrains.mps.smodel.SNode) targetNode).setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
-    for (String name : Sequence.fromIterable(sourceNode.getPropertyNames())) {
+    for (String name : sourceNode.getPropertyNames()) {
       targetNode.setProperty(name, sourceNode.getProperty(name));
     }
     sourceNodesToNewNodes.put(sourceNode, targetNode);
@@ -175,10 +174,7 @@ public class CopyPasteUtil {
         if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") && oldTargetNode != null) {
           newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
-          String resolveInfo = (oldTargetNode == null ?
-            ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() :
-            oldTargetNode.getName()
-          );
+          String resolveInfo = (oldTargetNode == null ? ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() : oldTargetNode.getName());
           if (resolveInfo != null) {
             if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId(), resolveInfo);
@@ -413,10 +409,7 @@ public class CopyPasteUtil {
   }
 
   public static synchronized PasteNodeData getConvertedFromClipboard(SModel model, Project project) {
-    return (myDataConverter == null ?
-      null :
-      myDataConverter.getPasteNodeData(model, project)
-    );
+    return (myDataConverter == null ? null : myDataConverter.getPasteNodeData(model, project));
   }
 
   public static boolean canPasteNodes(SModel model, SNode anchor) {

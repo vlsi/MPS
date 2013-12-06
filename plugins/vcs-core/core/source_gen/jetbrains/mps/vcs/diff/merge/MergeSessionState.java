@@ -37,9 +37,6 @@ public class MergeSessionState {
   }
 
   private static <T> T as_4dd3vt_a0a0a0a0d(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

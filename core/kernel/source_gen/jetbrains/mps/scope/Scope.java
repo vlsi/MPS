@@ -104,10 +104,7 @@ public abstract class Scope {
           next = SNodeOperations.getPrevSibling(next);
         }
         n = SNodeOperations.getParent(n);
-        return (n == null ?
-          null :
-          SNodeOperations.getParent(n)
-        );
+        return (n == null ? null : SNodeOperations.getParent(n));
       }
       return SNodeOperations.getParent(n);
     }

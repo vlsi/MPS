@@ -384,7 +384,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           // TODO validate child 
         }
         {
-          final List<SNode> tlist13 = new ArrayList();
+          final List<SNode> tlist13 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a8a2a5v);
             final Iterable<SNode> loopList13 = QueriesGenerated.sourceNodesQuery_4192433084863763935(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_417xrn_a0a0a1a8a2a5v, context, environment.getGenerator()));
@@ -472,7 +472,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUtils")));
 
         {
-          final List<SNode> tlist2 = new ArrayList();
+          final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a5a2a5w);
             final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_6366407517031517860(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_417xrn_a0a0a1a5a2a5w, context, environment.getGenerator()));

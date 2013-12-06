@@ -14,7 +14,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collections;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
@@ -68,7 +68,7 @@ public class SwitchlanguageAspectDescriptorVariable implements TemplateSwitchMap
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_4565427742314546853(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_mjol5z_a0a3h, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_4565427742314546853(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_mjol5z_a0a3h, environment.getGenerator())))) {
         return null;
       }
 

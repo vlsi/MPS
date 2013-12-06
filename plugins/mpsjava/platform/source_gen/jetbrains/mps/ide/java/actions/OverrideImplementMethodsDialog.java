@@ -10,10 +10,10 @@ import com.intellij.ui.NonFocusableCheckBox;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.util.IterableUtil;
@@ -42,14 +42,8 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     myAddReturn.setMnemonic('r');
     myRemoveAttributes = new NonFocusableCheckBox("Remove Attributes");
     myRemoveAttributes.setMnemonic('t');
-    myInsertOverride = (showInsertOverride() ?
-      new NonFocusableCheckBox("Insert @Override") :
-      null
-    );
-    myOptionControls = (showInsertOverride() ?
-      new JCheckBox[]{myAddReturn, myRemoveAttributes, myInsertOverride} :
-      new JCheckBox[]{myAddReturn, myRemoveAttributes}
-    );
+    myInsertOverride = (showInsertOverride() ? new NonFocusableCheckBox("Insert @Override") : null);
+    myOptionControls = (showInsertOverride() ? new JCheckBox[]{myAddReturn, myRemoveAttributes, myInsertOverride} : new JCheckBox[]{myAddReturn, myRemoveAttributes});
     if (myInsertOverride != null) {
       myInsertOverride.setMnemonic('O');
     }
@@ -69,27 +63,15 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
 
   @Override
   protected void customizeOptionsPanel() {
-    myAddReturn.setSelected((myOptions != null ?
-      myOptions.addReturnsOnImplement :
-      false
-    ));
-    myRemoveAttributes.setSelected((myOptions != null ?
-      myOptions.removeAttributes :
-      true
-    ));
+    myAddReturn.setSelected((myOptions != null ? myOptions.addReturnsOnImplement : false));
+    myRemoveAttributes.setSelected((myOptions != null ? myOptions.removeAttributes : true));
     if (myInsertOverride != null) {
-      myInsertOverride.setSelected((myOptions != null ?
-        myOptions.addOverrideAnnotation :
-        true
-      ));
+      myInsertOverride.setSelected((myOptions != null ? myOptions.addOverrideAnnotation : true));
     }
   }
 
   public boolean isInsertOverrideAnnotation() {
-    return (myInsertOverride != null ?
-      myInsertOverride.isSelected() :
-      false
-    );
+    return (myInsertOverride != null ? myInsertOverride.isSelected() : false);
   }
 
   public boolean isAddReturn() {
@@ -112,10 +94,10 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     super.dispose();
   }
 
-  public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
+  public static Iterable<SNode> sortMethods(List<SNode> allSuperClassifiers, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
-    for (SNode c : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{})) {
+    for (SNode c : allSuperClassifiers) {
       MapSequence.fromMap(containerIndex).put(c, i++);
     }
     return Sequence.fromIterable(methods).sort(new Comparator<SNode>() {
@@ -132,18 +114,20 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
 
           return new Integer(IterableUtil.asList(parentA.getChildren(aRole)).indexOf(a)).compareTo(IterableUtil.asList(parentB.getChildren(bRole)).indexOf(b));
         }
-        int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ?
-          MapSequence.fromMap(containerIndex).get(parentA) :
-          0
-        );
-        int iB = (parentB != null && MapSequence.fromMap(containerIndex).containsKey(parentB) ?
-          MapSequence.fromMap(containerIndex).get(parentB) :
-          0
-        );
+        int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ? MapSequence.fromMap(containerIndex).get(parentA) : 0);
+        int iB = (parentB != null && MapSequence.fromMap(containerIndex).containsKey(parentB) ? MapSequence.fromMap(containerIndex).get(parentB) : 0);
         return new Integer(iA).compareTo(iB);
       }
     }, true);
   }
+
+
+
+  public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
+    return sortMethods(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{}), methods);
+  }
+
+
 
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {
     return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodePointer>() {
@@ -154,9 +138,6 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   }
 
   private static boolean neq_sivw9t_a0d0c0a0a0a0d0n(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

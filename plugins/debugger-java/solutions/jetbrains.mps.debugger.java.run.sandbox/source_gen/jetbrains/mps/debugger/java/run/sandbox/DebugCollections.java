@@ -80,7 +80,7 @@ public class DebugCollections {
     SetSequence.fromSet(strings).addElement("alpha");
     SetSequence.fromSet(strings).addElement("beta");
     SetSequence.fromSet(strings).addElement("gamma");
-    for (String i : SetSequence.fromSet(strings)) {
+    for (String i : strings) {
       System.err.println(i);
     }
     for (String j : strings) {

@@ -21,10 +21,7 @@ public class ModuleDependencyChange extends DependencyChange {
 
   @Override
   public String toString() {
-    return ((isDelete() ?
-      "Delete" :
-      "Add"
-    )) + " " + myType.myName + " " + myModuleReference;
+    return ((isDelete() ? "Delete" : "Add")) + " " + myType.myName + " " + myModuleReference;
   }
 
   @NotNull

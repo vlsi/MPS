@@ -29,10 +29,7 @@ import java.util.Collections;
 
   @Override
   public String getName() {
-    return ((myIsEnter ?
-      "entered method" :
-      "exited method"
-    ));
+    return ((myIsEnter ? "entered method" : "exited method"));
   }
 
   @Override

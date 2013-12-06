@@ -74,10 +74,7 @@ public class NodeGroupChange extends ModelChange {
       for (int i = myBegin; i < myEnd; i++) {
         ListSequence.fromList(myPreparedIdsToDelete).addElement(children.get(i).getNodeId());
       }
-      myPreparedAnchorId = (myBegin == 0 ?
-        null :
-        children.get(myBegin - 1).getNodeId()
-      );
+      myPreparedAnchorId = (myBegin == 0 ? null : children.get(myBegin - 1).getNodeId());
     }
   }
 
@@ -100,10 +97,7 @@ public class NodeGroupChange extends ModelChange {
     }
 
     // insert new nodes 
-    SNode anchor = (myPreparedAnchorId == null ?
-      null :
-      model.getNode(myPreparedAnchorId)
-    );
+    SNode anchor = (myPreparedAnchorId == null ? null : model.getNode(myPreparedAnchorId));
     SNode parent = model.getNode(myParentNodeId);
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
       SNodeOperations.insertChild(parent, myRole, newNode, anchor);
@@ -156,14 +150,8 @@ public class NodeGroupChange extends ModelChange {
       }), ", ");
     }
 
-    String oldStuff = (myEnd - myBegin == 1 ?
-      myRole :
-      NameUtil.formatNumericalString(myEnd - myBegin, myRole)
-    );
-    String newStuff = (myResultEnd - myResultBegin == 1 ?
-      myRole :
-      NameUtil.formatNumericalString(myResultEnd - myResultBegin, myRole)
-    );
+    String oldStuff = (myEnd - myBegin == 1 ? myRole : NameUtil.formatNumericalString(myEnd - myBegin, myRole));
+    String newStuff = (myResultEnd - myResultBegin == 1 ? myRole : NameUtil.formatNumericalString(myResultEnd - myResultBegin, myRole));
     if (eq_yjf6x2_a0a6a12(newStuff, myRole) && eq_yjf6x2_a0a6a12_0(oldStuff, myRole)) {
       newStuff = "another";
     } else if (myEnd != myBegin) {
@@ -171,10 +159,7 @@ public class NodeGroupChange extends ModelChange {
     }
     if (myEnd == myBegin) {
       if (verbose) {
-        String addedOrInserted = (myResultEnd == (int) ListSequence.fromList(newChildren).count() ?
-          "Added" :
-          "Inserted"
-        );
+        String addedOrInserted = (myResultEnd == ListSequence.fromList(newChildren).count() ? "Added" : "Inserted");
         return String.format("%s %s: %s", addedOrInserted, newStuff, newIds);
       } else {
         return String.format("Added %s", newStuff);
@@ -197,23 +182,14 @@ public class NodeGroupChange extends ModelChange {
   }
 
   private static String nodeRange(int begin, int end) {
-    return (begin + 1 == end ?
-      String.format("node #%d", begin) :
-      String.format("nodes #%d-%d", begin, end - 1)
-    );
+    return (begin + 1 == end ? String.format("node #%d", begin) : String.format("nodes #%d-%d", begin, end - 1));
   }
 
   private static boolean eq_yjf6x2_a0a6a12(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_yjf6x2_a0a6a12_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

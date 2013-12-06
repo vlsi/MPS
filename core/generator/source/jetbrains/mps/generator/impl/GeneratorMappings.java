@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -38,7 +39,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Evgeny Gryaznov, Feb 16, 2010
  */
-public class GeneratorMappings {
+public final class GeneratorMappings {
 
   /* mapping,input -> output */
   private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<String, Map<SNode, Object>>();
@@ -46,14 +47,8 @@ public class GeneratorMappings {
   /* input -> output */
   private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode;
 
-  /* Object means multiple nodes for the template */
-  private final ConcurrentMap<SNode, Object> myTemplateNodeToOutputNodeMap = new ConcurrentHashMap<SNode, Object>();
-
   /* new style map: Object means multiple nodes for the template */
   private final ConcurrentMap<String, Object> myTemplateNodeIdToOutputNodeMap = new ConcurrentHashMap<String, Object>();
-
-  /* template,input -> output */
-  private final ConcurrentMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<SNode, SNode>, SNode>();
 
   /* new style map: template,input -> output */
   private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<String, SNode>, SNode>();
@@ -63,12 +58,6 @@ public class GeneratorMappings {
   }
 
   // add methods
-
-  void addOutputNodeByTemplateNode(SNode templateNode, @NotNull SNode outputNode) {
-    if (myTemplateNodeToOutputNodeMap.putIfAbsent(templateNode, outputNode) != null) {
-      myTemplateNodeToOutputNodeMap.put(templateNode, this);
-    }
-  }
 
   void addOutputNodeByTemplateNode(String templateNodeId, @NotNull SNode outputNode) {
     if (myTemplateNodeIdToOutputNodeMap.putIfAbsent(templateNodeId, outputNode) != null) {
@@ -112,14 +101,6 @@ public class GeneratorMappings {
     }
   }
 
-  void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
-    // todo: combination of (templateN, inputN) -> outputN
-    // todo: is not unique
-    // todo: generator should report error on attempt to obtain not unique output-node
-    if (templateNode == null) return;
-    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
-  }
-
   void addOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
@@ -128,28 +109,19 @@ public class GeneratorMappings {
     myTemplateNodeIdAndInputNodeToOutputNodeMap.put(new Pair(templateNodeId, inputNode), outputNode);
   }
 
-  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
+  void addOutputNodeForContext(TemplateContext templateContext, String templateNodeId, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should report error on attempt to obtain not unique output-node
-    Pair key = new Pair(templateNode, inditectInputNode);
-    myTemplateNodeAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
-  }
-
-  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, String templateNodeId, SNode outputNode) {
-    // todo: combination of (templateN, inputN) -> outputN
-    // todo: is not unique
-    // todo: generator should report error on attempt to obtain not unique output-node
-    Pair key = new Pair(templateNodeId, inditectInputNode);
-    myTemplateNodeIdAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
+    addOutputNodeByInputAndTemplateNode(templateContext.getInput(), templateNodeId, outputNode);
+    for (SNode historyInputNode : templateContext.getInputHistory()) {
+      Pair key = new Pair(templateNodeId, historyInputNode);
+      myTemplateNodeIdAndInputNodeToOutputNodeMap.putIfAbsent(key, outputNode);
+    }
+    addOutputNodeByTemplateNode(templateNodeId, outputNode);
   }
 
   // find methods
-
-  public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
-    Object o = myTemplateNodeToOutputNodeMap.get(templateNode);
-    return o instanceof SNode ? (SNode) o : null;
-  }
 
   public SNode findOutputNodeByTemplateNodeUnique(String templateNode) {
     Object o = myTemplateNodeIdToOutputNodeMap.get(templateNode);
@@ -193,10 +165,6 @@ public class GeneratorMappings {
       return (SNode) ((List) o).get(0);
     }
     return null;
-  }
-
-  public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
-    return myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId) {

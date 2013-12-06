@@ -39,9 +39,6 @@ public class PluginUtils {
   }
 
   private static boolean eq_l4wyvj_a0f0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

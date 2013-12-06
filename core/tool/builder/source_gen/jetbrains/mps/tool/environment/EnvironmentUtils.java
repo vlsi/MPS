@@ -15,15 +15,11 @@ import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import java.util.Set;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class EnvironmentUtils {
   public static void setSystemProperties(boolean loadIdeaPlugins) {
     String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
+    System.setProperty("idea.is.internal", (mpsInternal == null ? "false" : mpsInternal));
     System.setProperty("idea.no.jre.check", "true");
     if (!(loadIdeaPlugins)) {
       System.setProperty("idea.load.plugins", "false");
@@ -76,7 +72,7 @@ public class EnvironmentUtils {
   public static SetLibraryContributor createLibContributor(boolean loadBootstrapLibs, Map<String, File> libs) {
     Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
     if (loadBootstrapLibs) {
-      for (String bpath : CollectionSequence.fromCollection(PathManager.getBootstrapPaths())) {
+      for (String bpath : PathManager.getBootstrapPaths()) {
         libraryPaths.add(new LibraryContributor.LibDescriptor(bpath, null));
       }
       libraryPaths.add(new LibraryContributor.LibDescriptor(PathManager.getLanguagesPath(), null));

@@ -128,10 +128,7 @@ public class TIntArrayListDecorator extends AbstractList<Integer> implements Lis
 
   @Override
   public boolean remove(Object e) {
-    return (e instanceof Integer ?
-      this.removePrim(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Integer ? this.removePrim(this.unwrap(e)) : false);
   }
 
   @Override
@@ -146,10 +143,7 @@ public class TIntArrayListDecorator extends AbstractList<Integer> implements Lis
 
   @Override
   public boolean contains(Object e) {
-    return (e instanceof Integer ?
-      this.primList.contains(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Integer ? this.primList.contains(this.unwrap(e)) : false);
   }
 
   @Override

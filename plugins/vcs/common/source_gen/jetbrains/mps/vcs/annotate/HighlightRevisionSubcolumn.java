@@ -18,9 +18,6 @@ package jetbrains.mps.vcs.annotate;
 
   @Override
   public String getTextForFileLine(int fileLine) {
-    return (myRevisionRange.isFileLineHighlighted(fileLine) ?
-      "*" :
-      ""
-    );
+    return (myRevisionRange.isFileLineHighlighted(fileLine) ? "*" : "");
   }
 }

@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import com.intellij.openapi.project.Project;
@@ -72,7 +72,7 @@ public class MigrateStructure_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
@@ -98,7 +98,7 @@ public class MigrateStructure_Action extends BaseAction {
         }
       };
       final Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
-      mh.handle(new Message(MessageKind.INFORMATION, "converting " + language.getModuleFqName()));
+      mh.handle(new Message(MessageKind.INFORMATION, "converting " + language.getModuleName()));
       SNode converted = new LanguageConverter(language, mh).convert();
 
       SModel desc;
@@ -162,9 +162,6 @@ public class MigrateStructure_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(MigrateStructure_Action.class);
 
   private static boolean eq_5hzyna_a0a0a0a0a0a3a8a0a6(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

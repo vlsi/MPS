@@ -406,7 +406,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       // TODO validate child 
                     }
                     {
-                      final List<SNode> tlist30 = new ArrayList();
+                      final List<SNode> tlist30 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a4a1a3a4a1a1a1a4a1a2);
                         final Iterable<SNode> loopList30 = QueriesGenerated.sourceNodesQuery_1196351886802(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8.getInput(), null, loopMacroRef_swz52f_a0a0a1a4a1a3a4a1a1a1a4a1a2, context8, environment.getGenerator()));
@@ -539,7 +539,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       // TODO validate child 
                     }
                     {
-                      final List<SNode> tlist38 = new ArrayList();
+                      final List<SNode> tlist38 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a5a1a3a4a1a1a1a4a1a2);
                         final Iterable<SNode> loopList38 = QueriesGenerated.sourceNodesQuery_1196871487533(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8.getInput(), null, loopMacroRef_swz52f_a0a0a1a5a1a3a4a1a1a1a4a1a2, context8, environment.getGenerator()));
@@ -714,7 +714,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       // TODO validate child 
                     }
                     {
-                      final List<SNode> tlist48 = new ArrayList();
+                      final List<SNode> tlist48 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a6a1a3a4a1a1a1a4a1a2);
                         final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1196351886876(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8.getInput(), null, loopMacroRef_swz52f_a0a0a1a6a1a3a4a1a1a1a4a1a2, context8, environment.getGenerator()));
@@ -915,7 +915,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                                 try {
                                                   environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a7a1a5a1a4a1a3a3a2a2a1a6a1a3a4a1a1a1a4a1a2);
                                                   environment.nodeCopied(context48, tnode62, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789279985");
-                                                  environment.resolveInTemplateLater(tnode62, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8814250188789279985"), "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789138124", "facade", context48);
+                                                  environment.resolveInTemplateLater(tnode62, "variableDeclaration", templateNode_swz52f_a0a0a1a4a1a7a1a5a1a4a1a3a3a2a2a1a6a1a3a4a1a1a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789138124", "facade", context48);
 
                                                 } finally {
                                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode62));
@@ -978,7 +978,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                                 try {
                                                   environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a8a1a5a1a4a1a3a3a2a2a1a6a1a3a4a1a1a1a4a1a2);
                                                   environment.nodeCopied(context48, tnode66, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789421634");
-                                                  environment.resolveInTemplateLater(tnode66, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8814250188789421634"), "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789138124", "facade", context48);
+                                                  environment.resolveInTemplateLater(tnode66, "variableDeclaration", templateNode_swz52f_a0a0a1a4a1a8a1a5a1a4a1a3a3a2a2a1a6a1a3a4a1a1a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789138124", "facade", context48);
 
                                                 } finally {
                                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode66));
@@ -1047,7 +1047,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       // TODO validate child 
                     }
                     {
-                      final List<SNode> tlist68 = new ArrayList();
+                      final List<SNode> tlist68 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a7a1a3a4a1a1a1a4a1a2);
                         final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1196351886984(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8.getInput(), null, loopMacroRef_swz52f_a0a0a1a7a1a3a4a1a1a1a4a1a2, context8, environment.getGenerator()));
@@ -1222,7 +1222,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       // TODO validate child 
                     }
                     {
-                      final List<SNode> tlist78 = new ArrayList();
+                      final List<SNode> tlist78 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(loopMacroRef_swz52f_a0a0a1a8a1a3a4a1a1a1a4a1a2);
                         final Iterable<SNode> loopList78 = QueriesGenerated.sourceNodesQuery_1196351887023(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context8.getInput(), null, loopMacroRef_swz52f_a0a0a1a8a1a3a4a1a1a1a4a1a2, context8, environment.getGenerator()));
@@ -1958,7 +1958,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a3a1a4a1a3a1a1a1a6a1a2);
                           environment.nodeCopied(context, tnode126, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363096914");
-                          environment.resolveInTemplateLater(tnode126, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363096914"), "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887403", "nodes", context);
+                          environment.resolveInTemplateLater(tnode126, "variableDeclaration", templateNode_swz52f_a0a0a1a3a1a4a1a3a1a1a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887403", "nodes", context);
 
                         } finally {
                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode126));
@@ -2086,7 +2086,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                                 try {
                                                   environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a5a1a5a1a4a1a3a1a1a1a3a1a5a1a4a1a3a1a1a1a6a1a2);
                                                   environment.nodeCopied(context, tnode137, "tpl/r:00000000-0000-4000-0000-011c8959034c/4265636116363087958");
-                                                  environment.resolveInTemplateLater(tnode137, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4265636116363087958"), "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887459", "child", context);
+                                                  environment.resolveInTemplateLater(tnode137, "variableDeclaration", templateNode_swz52f_a0a0a1a5a1a5a1a4a1a3a1a1a1a3a1a5a1a4a1a3a1a1a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887459", "child", context);
 
                                                 } finally {
                                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode137));

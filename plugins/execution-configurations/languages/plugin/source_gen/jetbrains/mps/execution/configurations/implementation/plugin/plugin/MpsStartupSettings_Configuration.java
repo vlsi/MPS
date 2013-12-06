@@ -21,6 +21,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
@@ -31,10 +32,10 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (isEmpty_l71583_a0a0a0b(this.getConfigurationPath())) {
+    if (isEmptyString(this.getConfigurationPath())) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
     }
-    if (isEmpty_l71583_a0b0a0b(this.getSystemPath())) {
+    if (isEmptyString(this.getSystemPath())) {
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
@@ -160,7 +161,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       // nooooooooo 
       element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
     }
-    for (Object child : element.getChildren()) {
+    for (Element child : ListSequence.fromList(element.getChildren())) {
       if (child instanceof Element) {
         replacePathMacro((Element) child, project);
       }
@@ -228,11 +229,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
 
   protected static Logger LOG = LogManager.getLogger(MpsStartupSettings_Configuration.class);
 
-  public static boolean isEmpty_l71583_a0a0a0b(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_l71583_a0b0a0b(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-evp7uf5zgblrw7y0djibi0q7ze69e4s">
-  <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.plugins(MPS.IDEA/com.intellij.ide.plugins@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <common hash="-c1pqhpg4d7p2zicaehfxsu86pk9fxmk" />
-  <source id="1575175756409680350" name="FlyingActionsFinder" hash="7owf1wkqdqt1r11rbzkzbbbefk5il5i">
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.plugins(MPS.IDEA/com.intellij.ide.plugins@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="FlyingActionsFinder.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-d125vm8wwsf3paiduoq7m26lxfhtzcd" />
 

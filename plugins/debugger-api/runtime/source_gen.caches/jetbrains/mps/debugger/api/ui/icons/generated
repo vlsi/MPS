@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1r5kmmrdj4d841vlm5iiqq6as3bnx9s">
-  <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
-  <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" />
-  <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-8yhecsxj7b4ni07jvcm10l03i3466el" />
-  <common hash="d6w1aq1qylk1a4b6y0j991sir4kvoni" dependsOnNodes="true">
+<dependencies version="2" modelHash="-c6a3lc7f6n8nfawiyukyzac4ahieuaa">
+  <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="dyg43t30is9w08tjvcbay58rympar4z" />
+  <common hash="d6w1aq1qylk1a4b6y0j991sir4kvoni">
     <dep root="4474271214083117745" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
-    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconContainer.java" />
   </common>
-  <source id="4474271214083117745" name="Icons" hash="5f87k0c35rq9teaww3wur6zrrn9cfjr" dependsOnCreated="true">
+  <source id="4474271214083117745" name="Icons" hash="2bzggftpc7sdxgcz8mqohxqa9txjh9j" dependsOnCreated="true">
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="Icons.java" />
   </source>

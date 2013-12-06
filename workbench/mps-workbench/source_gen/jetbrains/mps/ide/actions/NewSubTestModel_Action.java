@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelFqName;
@@ -70,7 +70,7 @@ public class NewSubTestModel_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
@@ -128,10 +128,7 @@ public class NewSubTestModel_Action extends BaseAction {
       if (!(SModelStereotype.TESTS.equals(SModelStereotype.getStereotype(md)))) {
         continue;
       }
-      String name = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ?
-        "" :
-        testModelCount
-      ));
+      String name = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ? "" : testModelCount));
       if (name.equals(SNodeOperations.getModelLongName(md))) {
         testModelCount++;
       }

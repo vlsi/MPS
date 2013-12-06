@@ -22,13 +22,13 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
     super(data);
     setText(label);
     myCollapsedIcon = icon;
-    setLeaf(false);
+    setLeafPosition(false);
     setInitialized(true);
   }
 
   @Override
   public boolean isLeaf() {
-    if (!(getLeaf()) && children == null) {
+    if (!(isLeafPosition()) && children == null) {
       return false;
     }
     return super.isLeaf();
@@ -40,10 +40,7 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
   }
 
   public Icon getIcon(boolean expanded) {
-    return (expanded && myExpandedIcon != null ?
-      myExpandedIcon :
-      myCollapsedIcon
-    );
+    return (expanded && myExpandedIcon != null ? myExpandedIcon : myCollapsedIcon);
   }
 
   private String myText;
@@ -56,19 +53,19 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
     this.myText = value;
   }
 
-  private boolean myLeaf;
+  private boolean myLeafPosition;
 
-  public boolean getLeaf() {
-    return this.myLeaf;
+  public boolean isLeafPosition() {
+    return this.myLeafPosition;
   }
 
-  public void setLeaf(boolean value) {
-    this.myLeaf = value;
+  public void setLeafPosition(boolean value) {
+    this.myLeafPosition = value;
   }
 
   private boolean myInitialized;
 
-  public boolean getInitialized() {
+  public boolean isInitialized() {
     return this.myInitialized;
   }
 

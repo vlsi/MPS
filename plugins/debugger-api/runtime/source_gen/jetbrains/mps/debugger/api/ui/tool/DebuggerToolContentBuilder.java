@@ -65,10 +65,7 @@ public class DebuggerToolContentBuilder implements Disposable {
   private RunContentDescriptor createDescriptor() {
     RunProfile profile = myEnvironment.getRunProfile();
     ExecutionConsole console = myExecutionResult.getExecutionConsole();
-    String runnerType = (console instanceof ExecutionConsoleEx ?
-      JAVA_RUNNER + "." + ((ExecutionConsoleEx) console).getExecutionConsoleId() :
-      JAVA_RUNNER
-    );
+    String runnerType = (console instanceof ExecutionConsoleEx ? JAVA_RUNNER + "." + ((ExecutionConsoleEx) console).getExecutionConsoleId() : JAVA_RUNNER);
     RunnerLayoutUi ui = RunnerLayoutUi.Factory.getInstance(myProject).create(runnerType, myExecutor.getId(), profile.getName(), this);
     if (ApplicationManager.getApplication().isUnitTestMode()) {
       return createDescriptorInternal(ui, profile);
@@ -103,7 +100,7 @@ public class DebuggerToolContentBuilder implements Disposable {
   private ActionGroup createActionToolbar(RunnerLayoutUi ui, RunContentDescriptor contentDescriptor) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
     //  TODO use context to get data to the action 
-    RestartAction restartAction = new RestartAction(myExecutor, myRunner, myExecutionResult.getProcessHandler(), contentDescriptor, myEnvironment);
+    RestartAction restartAction = new RestartAction(myExecutor, myRunner, contentDescriptor, myEnvironment);
     restartAction.registerShortcut(ui.getComponent());
     actionGroup.add(restartAction);
     actionGroup.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup")));

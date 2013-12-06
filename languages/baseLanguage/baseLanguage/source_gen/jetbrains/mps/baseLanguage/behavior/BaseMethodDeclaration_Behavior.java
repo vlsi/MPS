@@ -429,9 +429,6 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   private static boolean neq_tq0gdw_a0a0r(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

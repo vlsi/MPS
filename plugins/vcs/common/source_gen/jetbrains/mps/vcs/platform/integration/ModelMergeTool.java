@@ -146,9 +146,6 @@ public class ModelMergeTool extends MergeTool {
   protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
 
   private static <T> T as_7qvsj_a0a0a0a1a71a1a3(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

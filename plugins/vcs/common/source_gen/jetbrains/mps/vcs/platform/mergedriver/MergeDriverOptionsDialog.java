@@ -108,10 +108,7 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
     private I myInstaller;
 
     public InstallerCheckBox(I installer) {
-      super(installer.getActionTitle() + ((installer.getCurrentState() == AbstractInstaller.State.OUTDATED ?
-        " (update)" :
-        ""
-      )));
+      super(installer.getActionTitle() + ((installer.getCurrentState() == AbstractInstaller.State.OUTDATED ? " (update)" : "")));
       myInstaller = installer;
     }
 
@@ -119,10 +116,7 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
       AbstractInstaller.State currentState = myInstaller.getCurrentState();
       if (currentState != AbstractInstaller.State.NOT_ENABLED) {
         myPanel.add(this);
-        setText(myInstaller.getActionTitle() + ((currentState == AbstractInstaller.State.OUTDATED ?
-          " (update)" :
-          ""
-        )));
+        setText(myInstaller.getActionTitle() + ((currentState == AbstractInstaller.State.OUTDATED ? " (update)" : "")));
         setToolTipText(myInstaller.getActionTooltip());
         setSelected(currentState != AbstractInstaller.State.INSTALLED);
       }

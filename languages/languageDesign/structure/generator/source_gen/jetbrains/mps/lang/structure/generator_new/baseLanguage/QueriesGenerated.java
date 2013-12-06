@@ -145,10 +145,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3270767985091920684(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (SPropertyOperations.hasValue(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "staticScope", "none", null) ?
-      "NONE" :
-      "ROOT"
-    );
+    return (SPropertyOperations.hasValue(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "staticScope", "none", null) ? "NONE" : "ROOT");
   }
 
   public static boolean ifMacro_Condition_1212083662247(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -164,11 +161,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2225291943436771996(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0cb(SPropertyOperations.getString(_context.getNode(), "helpURL"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "helpURL"));
   }
 
   public static boolean ifMacro_Condition_2225291943436941580(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0a92_0(SPropertyOperations.getString(_context.getNode(), "conceptAlias")) || isNotEmpty_x583g4_a0a0a92(SPropertyOperations.getString(_context.getNode(), "conceptShortDescription"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "conceptAlias")) || isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "conceptShortDescription"));
   }
 
   public static boolean ifMacro_Condition_4891130965838065589(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -387,15 +384,7 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0cb(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a92(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a92_0(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

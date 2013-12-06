@@ -22,15 +22,9 @@ public class OrderComparator implements Comparator<Description> {
       return 0;
     }
     Order oaa = a.getAnnotation(Order.class);
-    int orderA = (oaa != null ?
-      oaa.value() :
-      -1
-    );
+    int orderA = (oaa != null ? oaa.value() : -1);
     Order oab = b.getAnnotation(Order.class);
-    int orderB = (oab != null ?
-      oab.value() :
-      -1
-    );
+    int orderB = (oab != null ? oab.value() : -1);
     if (orderA >= 0 || orderB >= 0) {
       return orderA - orderB;
     }

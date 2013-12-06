@@ -55,13 +55,7 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
     editorCell.setCellId("BMDNCC_property_name");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_MethodName(style, editorCell);
-    style.set(StyleAttributes.STRIKE_OUT, BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_8989zw_a0a0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.STRIKE_OUT, BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_8989zw_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();

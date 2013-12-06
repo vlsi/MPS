@@ -66,19 +66,24 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName());
-    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor);
 
     EditorCell result = null;
-    if (editor != null) {
-      try {
+    try {
+      ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor);
+
+      if (editor != null) {
         result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
-      } catch (RuntimeException e) {
-        LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
       }
+    } catch (RuntimeException e) {
+      LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
+    } catch (AssertionError e) {
+      LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
+    } catch (NoClassDefFoundError e) {
+      LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
     }
 
     if (result == null) {
-      editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : new DefaultEditor();
+      ConceptEditor editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : new DefaultEditor();
       result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
     }
 

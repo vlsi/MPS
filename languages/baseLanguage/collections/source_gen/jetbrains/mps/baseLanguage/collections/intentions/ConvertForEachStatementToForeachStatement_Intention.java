@@ -91,6 +91,7 @@ public class ConvertForEachStatementToForeachStatement_Intention implements Inte
       SLinkOperations.setTarget(foreachStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
       SLinkOperations.setTarget(foreachStatement, "iterable", SLinkOperations.getTarget(node, "inputSequence", true), true);
       SPropertyOperations.set(foreachStatement, "label", SPropertyOperations.getString(node, "label"));
+      SLinkOperations.setTarget(foreachStatement, "loopLabel", SLinkOperations.getTarget(node, "loopLabel", true), true);
       SNode newVariable = SNodeFactoryOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
       SPropertyOperations.set(newVariable, "name", SPropertyOperations.getString(oldVariable, "name"));
       SLinkOperations.setTarget(newVariable, "type", variableType, true);

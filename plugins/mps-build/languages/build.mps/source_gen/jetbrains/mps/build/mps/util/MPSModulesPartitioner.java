@@ -143,10 +143,7 @@ public class MPSModulesPartitioner {
 
     @Override
     public Set<? extends IVertex> getNexts() {
-      return (useMeta ?
-        metaDependencies :
-        dependencyNodes
-      );
+      return (useMeta ? metaDependencies : dependencyNodes);
     }
 
     public void fill(Map<SNode, MPSModulesPartitioner.Node> map) {

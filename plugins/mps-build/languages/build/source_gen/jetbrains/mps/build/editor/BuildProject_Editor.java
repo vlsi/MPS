@@ -211,10 +211,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         String basePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(node, Context.defaultContext());
-        return (basePath == null ?
-          "<not available>" :
-          basePath
-        );
+        return (basePath == null ? "<not available>" : basePath);
       }
 
       public void setText(String s) {
@@ -732,10 +729,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
         if (scriptsPath != null && scriptsPath.endsWith("/")) {
           scriptsPath = scriptsPath.substring(0, scriptsPath.length() - 1);
         }
-        return (scriptsPath == null ?
-          "<not available>" :
-          scriptsPath + "/" + BuildProject_Behavior.call_getOutputFileName_4915877860351551360(node)
-        );
+        return (scriptsPath == null ? "<not available>" : scriptsPath + "/" + BuildProject_Behavior.call_getOutputFileName_4915877860351551360(node));
 
       }
 

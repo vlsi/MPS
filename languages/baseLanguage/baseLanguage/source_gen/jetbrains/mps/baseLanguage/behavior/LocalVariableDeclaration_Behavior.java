@@ -60,10 +60,7 @@ public class LocalVariableDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getLocalVariablePrefix() == null ?
-      "" :
-      settings.getLocalVariablePrefix()
-    );
+    return (settings.getLocalVariablePrefix() == null ? "" : settings.getLocalVariablePrefix());
   }
 
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
@@ -71,10 +68,7 @@ public class LocalVariableDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getLocalVariableSuffix() == null ?
-      "" :
-      settings.getLocalVariableSuffix()
-    );
+    return (settings.getLocalVariableSuffix() == null ? "" : settings.getLocalVariableSuffix());
   }
 
   public static SNode virtual_getValue_1224857430232(SNode thisNode) {

@@ -54,10 +54,7 @@ public class ReadHelper {
   }
 
   public SModelReference getSModelReference(@NotNull String ix) {
-    return ((ix == null || ix.length() == 0) ?
-      myModelRef :
-      MapSequence.fromMap(myModelByIx).get(ix)
-    );
+    return ((ix == null || ix.length() == 0) ? myModelRef : MapSequence.fromMap(myModelByIx).get(ix));
   }
 
   @NotNull
@@ -71,14 +68,8 @@ public class ReadHelper {
     int dotIndex = src.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     String text = WriteHelper.decode(src.substring(dotIndex + 1, src.length()));
     result.o1 = WriteHelper.DYNAMIC_REFERENCE_ID.equals(text);
-    SModelReference modelRef = getSModelReference((dotIndex < 0 ?
-      "" :
-      src.substring(0, dotIndex)
-    ));
-    SNodeId nodeId = (result.o1 ?
-      null :
-      jetbrains.mps.smodel.SNodeId.fromString(text)
-    );
+    SModelReference modelRef = getSModelReference((dotIndex < 0 ? "" : src.substring(0, dotIndex)));
+    SNodeId nodeId = (result.o1 ? null : jetbrains.mps.smodel.SNodeId.fromString(text));
     result.o2 = new SNodePointer(modelRef, nodeId);
     return result;
   }

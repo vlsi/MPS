@@ -10,7 +10,7 @@
   <dependency className="jetbrains.mps.console.actions.ConsoleActions" file="ConsoleActions.xml" />
   <dependency className="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action" file="ExecuteActionAttachedToCurrentNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />

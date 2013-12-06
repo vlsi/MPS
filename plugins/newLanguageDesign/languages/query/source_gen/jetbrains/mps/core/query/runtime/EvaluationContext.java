@@ -24,10 +24,7 @@ public class EvaluationContext {
     if (parent != null && (vars == null || !(MapSequence.fromMap(vars).containsKey(varname)))) {
       return parent.getValue(varname);
     }
-    return (vars != null ?
-      MapSequence.fromMap(vars).get(varname) :
-      null
-    );
+    return (vars != null ? MapSequence.fromMap(vars).get(varname) : null);
   }
 
   public void setValue(String varname, Object value) {

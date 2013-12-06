@@ -25,10 +25,7 @@ import jetbrains.mps.vfs.FileSystem;
 public class ModuleLoaderUtils {
   public static SNode getOriginalModule(SNode module, TemplateQueryContext genContext) {
     SNode originalModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, genContext), "jetbrains.mps.build.mps.structure.BuildMps_Module");
-    return (originalModule != null ?
-      originalModule :
-      module
-    );
+    return (originalModule != null ? originalModule : module);
   }
 
 
@@ -99,10 +96,7 @@ public class ModuleLoaderUtils {
           return path;
         }
 
-        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, "defaultPath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ?
-          Context.defaultContext(genContext) :
-          Context.defaultContext()
-        )});
+        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, "defaultPath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
         if (localPath == null) {
           if (genContext != null) {
             genContext.showWarningMessage(found, "cannot resolve local path: " + path + ", macro has no default value");
@@ -122,10 +116,7 @@ public class ModuleLoaderUtils {
     }
 
     private static boolean eq_krgnbt_a0c0f0d0f4(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

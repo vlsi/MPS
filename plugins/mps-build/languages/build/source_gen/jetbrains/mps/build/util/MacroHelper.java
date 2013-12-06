@@ -42,10 +42,7 @@ public final class MacroHelper {
       if (usedNames.contains(SPropertyOperations.getString(m, "name"))) {
         context.reportProblem("duplicate macro name", m);
       }
-      add(m, null, (BehaviorReflection.invokeVirtual(Boolean.TYPE, m, "virtual_isPublic_6547494638219688113", new Object[]{}) ?
-        SPropertyOperations.getString(project, "name") + "." + SPropertyOperations.getString(m, "name") :
-        null
-      ));
+      add(m, null, (BehaviorReflection.invokeVirtual(Boolean.TYPE, m, "virtual_isPublic_6547494638219688113", new Object[]{}) ? SPropertyOperations.getString(project, "name") + "." + SPropertyOperations.getString(m, "name") : null));
     }
     for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(project, "dependencies", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -87,10 +84,7 @@ public final class MacroHelper {
       context.reportProblem("macro is defined outside of the project", macro);
       return;
     }
-    String name = makeUnique((macroProject == project ?
-      SPropertyOperations.getString(macro, "name") :
-      macroProject + "." + SPropertyOperations.getString(macro, "name")
-    ), usedNames);
+    String name = makeUnique((macroProject == project ? SPropertyOperations.getString(macro, "name") : macroProject + "." + SPropertyOperations.getString(macro, "name")), usedNames);
     macroToName.put(macro, name);
     availableMacros.add(macro);
     if (importName != null) {

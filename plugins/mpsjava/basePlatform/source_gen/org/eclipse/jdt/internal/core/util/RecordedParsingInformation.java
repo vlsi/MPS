@@ -30,10 +30,7 @@ public class RecordedParsingInformation {
     this.problems = problems;
     this.lineEnds = lineEnds;
     this.commentPositions = commentPositions;
-    this.problemsCount = (problems != null ?
-      problems.length :
-      0
-    );
+    this.problemsCount = (problems != null ? problems.length : 0);
   }
 
   /*package*/ void updateRecordedParsingInformation(CompilationResult compilationResult) {

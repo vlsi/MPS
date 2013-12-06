@@ -27,7 +27,6 @@ import jetbrains.mps.persistence.FilePerRootDataSource;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -99,14 +98,11 @@ public class BaseVersionUtil {
         return null;
       }
       String ext = vFile.getExtension();
-      return (content instanceof String ?
-        PersistenceUtil.loadModel((String) content, ext) :
-        PersistenceUtil.loadModel((byte[]) content, ext)
-      );
+      return (content instanceof String ? PersistenceUtil.loadModel((String) content, ext) : PersistenceUtil.loadModel((byte[]) content, ext));
     } else if (ds instanceof FilePerRootDataSource) {
       FilePerRootDataSource rds = (FilePerRootDataSource) ds;
       Map<String, Object> content = MapSequence.fromMap(new HashMap<String, Object>());
-      for (String stream : Sequence.fromIterable(rds.getAvailableStreams())) {
+      for (String stream : rds.getAvailableStreams()) {
         IFile file = rds.getFile(stream);
         VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
         if (vFile == null) {

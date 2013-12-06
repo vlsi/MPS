@@ -159,10 +159,7 @@ public class ModelCheckerExecutor {
       return promon;
     }
     ProgressIndicator prind = ProgressManager.getInstance().getProgressIndicator();
-    prind = (prind != null ?
-      prind :
-      new EmptyProgressIndicator()
-    );
+    prind = (prind != null ? prind : new EmptyProgressIndicator());
     return new ProgressMonitorAdapter(prind);
   }
 

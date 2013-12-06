@@ -76,7 +76,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.ide.CopyPasteManager;
-import com.intellij.util.ui.TextTransferrable;
+import com.intellij.util.ui.TextTransferable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -252,7 +252,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
-        for (LineContent[] lineContents : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
+        for (LineContent[] lineContents : MapSequence.fromMap(myChangesToLineContents).values()) {
           for (LineContent lc : lineContents) {
             SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lc)));
           }
@@ -285,10 +285,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
 
       int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
-      int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
-        getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
-        ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
-      );
+      int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ? getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() : ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
       if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
         String author = myAuthorAnnotationAspect.getValue(fileLine);
         graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
@@ -322,21 +319,15 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
   @Override
   public int getWidth() {
-    return (ListSequence.fromList(myAspectSubcolumns).isEmpty() ?
-      0 :
-      ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
-        public Integer select(AnnotationAspectSubcolumn s) {
-          return (s.isEnabled() || myShowAdditionalInfo ?
-            s.getWidth() :
-            0
-          );
-        }
-      }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
-        public Integer combine(Integer a, Integer b) {
-          return a + mySubcolumnInterval + b;
-        }
-      }) + 1 + mySubcolumnInterval / 2
-    );
+    return (ListSequence.fromList(myAspectSubcolumns).isEmpty() ? 0 : ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
+      public Integer select(AnnotationAspectSubcolumn s) {
+        return (s.isEnabled() || myShowAdditionalInfo ? s.getWidth() : 0);
+      }
+    }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+      public Integer combine(Integer a, Integer b) {
+        return a + mySubcolumnInterval + b;
+      }
+    }) + 1 + mySubcolumnInterval / 2);
   }
 
   @Nullable
@@ -456,7 +447,7 @@ __switch__:
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (int fileLine = 0; fileLine < ListSequence.fromList(myFileLineToContent).count(); fileLine++) {
-          for (int pseudoLine : Sequence.fromIterable(getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine)))) {
+          for (int pseudoLine : getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine))) {
             int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
             ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
           }
@@ -484,10 +475,7 @@ __switch__:
   @Nullable
   @Override
   public Cursor getCursor(MouseEvent event) {
-    return (findFileLineByY(event.getY()) == -1 ?
-      null :
-      new Cursor(Cursor.HAND_CURSOR)
-    );
+    return (findFileLineByY(event.getY()) == -1 ? null : new Cursor(Cursor.HAND_CURSOR));
   }
 
   @Override
@@ -559,7 +547,7 @@ __switch__:
         @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
-          CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
+          CopyPasteManager.getInstance().setContents(new TextTransferable(asString, asString));
         }
       });
     }
@@ -664,10 +652,7 @@ __switch__:
               if (provider != null) {
                 pair = provider.getOneList(myVirtualFile, revisionNumber);
               }
-              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0c54(pair) == null ?
-                new FilePathImpl(myVirtualFile) :
-                check_5mnya_a0a2a2a0a0a0a1a1a2tb(pair)
-              );
+              FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0c54(pair) == null ? new FilePathImpl(myVirtualFile) : check_5mnya_a0a2a2a0a0a0a1a1a2tb(pair));
               CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0c54(pair);
               if (cl == null) {
                 VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
@@ -701,16 +686,10 @@ __switch__:
                 pi.setText("Loading model after change");
 
                 assert after != null;
-                FileType[] filetypes = {(before == null ?
-                  null :
-                  before.getFile().getFileType()
-                ), after.getFile().getFileType()};
+                FileType[] filetypes = {(before == null ? null : before.getFile().getFileType()), after.getFile().getFileType()};
                 final boolean isPerRoot = MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(filetypes[1]) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(filetypes[1]);
 
-                final SModel afterModel = PersistenceUtil.loadModel(after.getContent(), (isPerRoot ?
-                  MPSExtentions.MODEL :
-                  filetypes[1].getDefaultExtension()
-                ));
+                final SModel afterModel = PersistenceUtil.loadModel(after.getContent(), (isPerRoot ? MPSExtentions.MODEL : filetypes[1].getDefaultExtension()));
 
                 if (pi.isCanceled()) {
                   return;
@@ -721,10 +700,7 @@ __switch__:
                 if (before == null) {
                   beforeModel.value = new MergeTemporaryModel(myModel.getReference(), true);
                 } else {
-                  beforeModel.value = PersistenceUtil.loadModel(before.getContent(), (isPerRoot ?
-                    MPSExtentions.MODEL :
-                    filetypes[0].getDefaultExtension()
-                  ));
+                  beforeModel.value = PersistenceUtil.loadModel(before.getContent(), (isPerRoot ? MPSExtentions.MODEL : filetypes[0].getDefaultExtension()));
                 }
 
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
@@ -739,14 +715,8 @@ __switch__:
                   }
                 }));
 
-                final String[] titles = {(before == null ?
-                  "<no revision>" :
-                  before.getRevisionNumber().asString()
-                ), after.getRevisionNumber().asString()};
-                DiffContent[] diffContents = new DiffContent[]{new SimpleContent((before == null ?
-                  "" :
-                  before.getContent()
-                ), filetypes[0]), new SimpleContent(after.getContent(), filetypes[1])};
+                final String[] titles = {(before == null ? "<no revision>" : before.getRevisionNumber().asString()), after.getRevisionNumber().asString()};
+                DiffContent[] diffContents = new DiffContent[]{new SimpleContent((before == null ? "" : before.getContent()), filetypes[0]), new SimpleContent(after.getContent(), filetypes[1])};
                 final DiffRequest diffRequest = new SimpleDiffRequest(project, diffContents, titles);
 
                 ApplicationManager.getApplication().invokeLater(new Runnable() {

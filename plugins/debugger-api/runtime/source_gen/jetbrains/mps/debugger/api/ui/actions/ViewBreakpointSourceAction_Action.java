@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class ViewBreakpointSourceAction_Action extends BaseAction {
-  private static final Icon ICON = AllIcons.Actions.ShowSource;
+  private static final Icon ICON = AllIcons.Actions.ShowViewer;
 
   public ViewBreakpointSourceAction_Action() {
     super("View Source", "View Source", ICON);

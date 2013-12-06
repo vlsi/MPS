@@ -20,10 +20,7 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
   public boolean hasNext() {
     if (state == YieldingIterator.State.UNKNOWN) {
       try {
-        this.state = ((this.moveToNext() ?
-          YieldingIterator.State.HAS_NEXT :
-          YieldingIterator.State.AT_END
-        ));
+        this.state = ((this.moveToNext() ? YieldingIterator.State.HAS_NEXT : YieldingIterator.State.AT_END));
       } catch (DelayedException ex) {
         this.state = YieldingIterator.State.AT_END;
         throw ex;

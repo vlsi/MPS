@@ -79,7 +79,7 @@ public class SNodeCompare {
   private static boolean nodeChildrenEquals(SNode a, SNode b) {
     Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), SNodeOperations.getChildRoles(a, true));
     SetSequence.fromSet(roles).addSequence(SetSequence.fromSet(SNodeOperations.getChildRoles(b, true)));
-    for (String r : SetSequence.fromSet(roles)) {
+    for (String r : roles) {
       List<? extends SNode> aChildren = IterableUtil.asList(a.getChildren(r));
       List<? extends SNode> bChildren = IterableUtil.asList(b.getChildren(r));
       if (aChildren.size() != bChildren.size()) {
@@ -99,44 +99,26 @@ public class SNodeCompare {
   }
 
   private static boolean neq_acety0_a0a0c0b(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_acety0_a0e0f0c(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_acety0_a0f0f0c(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_acety0_a0b0a6a5a2(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_acety0_a0a0a0a0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_acety0_a0a0a0a0e_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

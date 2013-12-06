@@ -320,7 +320,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
               environment.nodeCopied(context, tnode20, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670198");
 
               {
-                final List<SNode> tlist21 = new ArrayList();
+                final List<SNode> tlist21 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_a7jb2i_a0a0a1a3a1a7a1a7a1a2);
                   final Iterable<SNode> loopList21 = QueriesGenerated.sourceNodesQuery_7991477654791670241(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_a7jb2i_a0a0a1a3a1a7a1a7a1a2, context, environment.getGenerator()));

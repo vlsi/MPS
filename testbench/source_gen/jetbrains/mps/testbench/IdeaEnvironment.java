@@ -72,16 +72,13 @@ public class IdeaEnvironment implements Environment {
     EnvironmentUtils.setSystemProperties(true);
 
     String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
+    System.setProperty("idea.is.internal", (mpsInternal == null ? "false" : mpsInternal));
     System.setProperty("idea.no.jre.check", "true");
     // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors() 
     System.setProperty("idea.platform.prefix", "Idea");
 
     // do not overwrite plugin.path if set 
-    if (isEmpty_8e5t8e_a0w0h(System.getProperty("plugin.path"))) {
+    if (isEmptyString(System.getProperty("plugin.path"))) {
       StringBuffer pluginPath = new StringBuffer();
       File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
       if (pluginDir.listFiles() != null) {
@@ -131,7 +128,7 @@ public class IdeaEnvironment implements Environment {
     }
 
     // todo: is it right place? 
-    for (String macro : SetSequence.fromSet(MapSequence.fromMap(config.macros()).keySet())) {
+    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
       setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
     }
 
@@ -301,7 +298,7 @@ public class IdeaEnvironment implements Environment {
     }
   }
 
-  public static boolean isEmpty_8e5t8e_a0w0h(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

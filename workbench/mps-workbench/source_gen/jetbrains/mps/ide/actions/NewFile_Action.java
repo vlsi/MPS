@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.application.ApplicationManager;
@@ -53,11 +53,11 @@ public class NewFile_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedFile", event.getData(PlatformDataKeys.VIRTUAL_FILE));
+    MapSequence.fromMap(_params).put("selectedFile", event.getData(CommonDataKeys.VIRTUAL_FILE));
     if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -66,10 +66,7 @@ public class NewFile_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ?
-        ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) :
-        ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent()
-      );
+      final VirtualFile dir = (((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory() ? ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")) : ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent());
       final VirtualFile[] result = new VirtualFile[1];
       InputValidator validator = new InputValidator() {
         @Override

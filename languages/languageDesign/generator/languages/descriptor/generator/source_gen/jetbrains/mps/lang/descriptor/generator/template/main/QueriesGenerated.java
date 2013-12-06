@@ -118,10 +118,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1698302279987411159(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return ((int) ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).count() == 1 ?
-      "Generator" :
-      "Generator" + ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).indexOf(_context.getNode())
-    );
+    return (ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).count() == 1 ? "Generator" : "Generator" + ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).indexOf(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_7633657384060768610(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -149,10 +146,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a22(SPropertyOperations.getString(_context.getNode(), "name")) ?
-      "<no name>" :
-      SPropertyOperations.getString(_context.getNode(), "name")
-    ));
+    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmptyString(SPropertyOperations.getString(_context.getNode(), "name")) ? "<no name>" : SPropertyOperations.getString(_context.getNode(), "name")));
   }
 
   public static Object propertyMacro_GetPropertyValue_4565427742315554124(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -370,10 +364,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
         SModel m = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
-        return (m == null ?
-          Collections.<String>emptyList() :
-          ModelContentUtil.getUsedLanguageNamespaces(m, true)
-        );
+        return (m == null ? Collections.<String>emptyList() : ModelContentUtil.getUsedLanguageNamespaces(m, true));
       }
     }).distinct().sort(new ISelector<String, String>() {
       public String select(String it) {
@@ -396,14 +387,11 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  public static boolean isEmpty_x583g4_a0a0a1a22(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a0jc(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

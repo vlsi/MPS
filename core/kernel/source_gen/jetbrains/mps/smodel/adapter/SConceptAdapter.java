@@ -27,10 +27,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     }
 
     String superConcept = d.getSuperConcept();
-    return (superConcept == null ?
-      null :
-      (SConcept) SConceptRepository.getInstance().getConcept(superConcept)
-    );
+    return (superConcept == null ? null : (SConcept) SConceptRepository.getInstance().getConcept(superConcept));
   }
 
   @Override

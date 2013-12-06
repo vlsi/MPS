@@ -1189,10 +1189,10 @@
     <nodeInfo nodeId="6389121991275174764" fileName="MathTypeUtil.java" startLine="158" startPosition="16" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8471422728814986358" fileName="MathTypeUtil.java" startLine="166" startPosition="97" endLine="167" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1418611629042059876" fileName="MathTypeUtil.java" startLine="169" startPosition="98" endLine="170" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5217243589490821521" fileName="MathTypeUtil.java" startLine="173" startPosition="194" endLine="174" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5217243589490821527" fileName="MathTypeUtil.java" startLine="176" startPosition="195" endLine="177" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5217243589490821539" fileName="MathTypeUtil.java" startLine="179" startPosition="196" endLine="180" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5217243589490821551" fileName="MathTypeUtil.java" startLine="182" startPosition="197" endLine="183" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5217243589490821521" fileName="MathTypeUtil.java" startLine="173" startPosition="192" endLine="174" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5217243589490821527" fileName="MathTypeUtil.java" startLine="176" startPosition="193" endLine="177" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5217243589490821539" fileName="MathTypeUtil.java" startLine="179" startPosition="194" endLine="180" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5217243589490821551" fileName="MathTypeUtil.java" startLine="182" startPosition="195" endLine="183" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5217243589490821563" fileName="MathTypeUtil.java" startLine="185" startPosition="124" endLine="186" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5217243589490821575" fileName="MathTypeUtil.java" startLine="188" startPosition="124" endLine="189" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5217243589490821587" fileName="MathTypeUtil.java" startLine="191" startPosition="121" endLine="192" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1244,10 +1244,10 @@
     <nodeInfo nodeId="6527203785516632935" fileName="MathTypeUtil.java" startLine="305" startPosition="39" endLine="306" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6527203785516632982" fileName="MathTypeUtil.java" startLine="307" startPosition="85" endLine="308" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6527203785516632979" fileName="MathTypeUtil.java" startLine="310" startPosition="5" endLine="311" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4253775830168295904" fileName="MathTypeUtil.java" startLine="315" startPosition="229" endLine="316" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4253775830168295934" fileName="MathTypeUtil.java" startLine="318" startPosition="227" endLine="319" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4253775830168295954" fileName="MathTypeUtil.java" startLine="321" startPosition="223" endLine="322" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4253775830168295974" fileName="MathTypeUtil.java" startLine="324" startPosition="225" endLine="325" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4253775830168295904" fileName="MathTypeUtil.java" startLine="315" startPosition="227" endLine="316" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4253775830168295934" fileName="MathTypeUtil.java" startLine="318" startPosition="225" endLine="319" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4253775830168295954" fileName="MathTypeUtil.java" startLine="321" startPosition="221" endLine="322" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4253775830168295974" fileName="MathTypeUtil.java" startLine="324" startPosition="223" endLine="325" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4253775830168295916" fileName="MathTypeUtil.java" startLine="326" startPosition="5" endLine="327" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4991719046417417550" fileName="MathTypeUtil.java" startLine="330" startPosition="58" endLine="331" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4991719046417417550" fileName="MathTypeUtil.java" startLine="331" startPosition="63" endLine="332" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1444,7 +1444,7 @@
     <nodeInfo nodeId="6389121991275174760" fileName="MathTypeUtil.java" startLine="151" startPosition="48" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8471422728814986339" fileName="MathTypeUtil.java" startLine="165" startPosition="71" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1418611629042059864" fileName="MathTypeUtil.java" startLine="168" startPosition="5" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5217243589490820392" fileName="MathTypeUtil.java" startLine="172" startPosition="505" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5217243589490820392" fileName="MathTypeUtil.java" startLine="172" startPosition="501" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5217243589490821525" fileName="MathTypeUtil.java" startLine="175" startPosition="7" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5217243589490821537" fileName="MathTypeUtil.java" startLine="178" startPosition="7" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5217243589490821549" fileName="MathTypeUtil.java" startLine="181" startPosition="7" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1584,10 +1584,10 @@
     <scopeInfo nodeId="6389121991275174762" fileName="MathTypeUtil.java" startLine="156" startPosition="37" endLine="157" endPosition="90" />
     <scopeInfo nodeId="8471422728814986340" fileName="MathTypeUtil.java" startLine="166" startPosition="97" endLine="167" endPosition="15" />
     <scopeInfo nodeId="1418611629042059865" fileName="MathTypeUtil.java" startLine="169" startPosition="98" endLine="170" endPosition="15" />
-    <scopeInfo nodeId="5217243589490820393" fileName="MathTypeUtil.java" startLine="173" startPosition="194" endLine="174" endPosition="17" />
-    <scopeInfo nodeId="5217243589490821526" fileName="MathTypeUtil.java" startLine="176" startPosition="195" endLine="177" endPosition="18" />
-    <scopeInfo nodeId="5217243589490821538" fileName="MathTypeUtil.java" startLine="179" startPosition="196" endLine="180" endPosition="18" />
-    <scopeInfo nodeId="5217243589490821550" fileName="MathTypeUtil.java" startLine="182" startPosition="197" endLine="183" endPosition="18" />
+    <scopeInfo nodeId="5217243589490820393" fileName="MathTypeUtil.java" startLine="173" startPosition="192" endLine="174" endPosition="17" />
+    <scopeInfo nodeId="5217243589490821526" fileName="MathTypeUtil.java" startLine="176" startPosition="193" endLine="177" endPosition="18" />
+    <scopeInfo nodeId="5217243589490821538" fileName="MathTypeUtil.java" startLine="179" startPosition="194" endLine="180" endPosition="18" />
+    <scopeInfo nodeId="5217243589490821550" fileName="MathTypeUtil.java" startLine="182" startPosition="195" endLine="183" endPosition="18" />
     <scopeInfo nodeId="5217243589490821562" fileName="MathTypeUtil.java" startLine="185" startPosition="124" endLine="186" endPosition="18" />
     <scopeInfo nodeId="5217243589490821574" fileName="MathTypeUtil.java" startLine="188" startPosition="124" endLine="189" endPosition="18" />
     <scopeInfo nodeId="5217243589490821586" fileName="MathTypeUtil.java" startLine="191" startPosition="121" endLine="192" endPosition="18" />
@@ -1607,10 +1607,10 @@
     <scopeInfo nodeId="6444548310667092434" fileName="MathTypeUtil.java" startLine="265" startPosition="50" endLine="266" endPosition="185" />
     <scopeInfo nodeId="6444548310667092440" fileName="MathTypeUtil.java" startLine="281" startPosition="52" endLine="282" endPosition="187" />
     <scopeInfo nodeId="6527203785516632943" fileName="MathTypeUtil.java" startLine="307" startPosition="85" endLine="308" endPosition="21" />
-    <scopeInfo nodeId="4253775830168294546" fileName="MathTypeUtil.java" startLine="315" startPosition="229" endLine="316" endPosition="52" />
-    <scopeInfo nodeId="4253775830168295933" fileName="MathTypeUtil.java" startLine="318" startPosition="227" endLine="319" endPosition="52" />
-    <scopeInfo nodeId="4253775830168295953" fileName="MathTypeUtil.java" startLine="321" startPosition="223" endLine="322" endPosition="52" />
-    <scopeInfo nodeId="4253775830168295973" fileName="MathTypeUtil.java" startLine="324" startPosition="225" endLine="325" endPosition="52" />
+    <scopeInfo nodeId="4253775830168294546" fileName="MathTypeUtil.java" startLine="315" startPosition="227" endLine="316" endPosition="52" />
+    <scopeInfo nodeId="4253775830168295933" fileName="MathTypeUtil.java" startLine="318" startPosition="225" endLine="319" endPosition="52" />
+    <scopeInfo nodeId="4253775830168295953" fileName="MathTypeUtil.java" startLine="321" startPosition="221" endLine="322" endPosition="52" />
+    <scopeInfo nodeId="4253775830168295973" fileName="MathTypeUtil.java" startLine="324" startPosition="223" endLine="325" endPosition="52" />
     <scopeInfo nodeId="4991719046417417550" fileName="MathTypeUtil.java" startLine="332" startPosition="30" endLine="333" endPosition="170" />
     <scopeInfo nodeId="4991719046417417565" fileName="MathTypeUtil.java" startLine="349" startPosition="30" endLine="350" endPosition="170" />
     <scopeInfo nodeId="4991719046417417570" fileName="MathTypeUtil.java" startLine="356" startPosition="30" endLine="357" endPosition="170" />
@@ -1872,7 +1872,7 @@
       <varInfo nodeId="6389121991275174755" varName="matches_i9t80i_a0a32" />
     </scopeInfo>
     <scopeInfo nodeId="1237555847651" fileName="MathTypeUtil.java" startLine="227" startPosition="105" endLine="249" endPosition="7" />
-    <scopeInfo nodeId="5217243589490820370" fileName="MathTypeUtil.java" startLine="172" startPosition="505" endLine="196" endPosition="7" />
+    <scopeInfo nodeId="5217243589490820370" fileName="MathTypeUtil.java" startLine="172" startPosition="501" endLine="196" endPosition="7" />
     <scopeInfo nodeId="6389121991275174753" fileName="MathTypeUtil.java" startLine="136" startPosition="5" endLine="161" endPosition="7">
       <varInfo nodeId="6389121991275174753" varName="matchedNode_i9t80i_a0x" />
     </scopeInfo>
@@ -4811,114 +4811,114 @@
     <nodeInfo nodeId="3361677252835033362" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="52" startPosition="71" endLine="53" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="55" startPosition="15" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="56" startPosition="56" endLine="57" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="64" startPosition="15" endLine="65" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="65" startPosition="56" endLine="66" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="66" startPosition="218" endLine="67" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="70" startPosition="15" endLine="71" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="71" startPosition="56" endLine="72" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="72" startPosition="218" endLine="73" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="76" startPosition="15" endLine="77" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="77" startPosition="56" endLine="78" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="78" startPosition="218" endLine="79" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="88" startPosition="46" endLine="89" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="93" startPosition="5" endLine="94" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="94" startPosition="130" endLine="95" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="99" startPosition="30" endLine="100" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="103" startPosition="70" endLine="104" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="104" startPosition="63" endLine="105" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="105" startPosition="30" endLine="106" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="106" startPosition="165" endLine="107" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="107" startPosition="240" endLine="108" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="111" startPosition="70" endLine="112" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="112" startPosition="63" endLine="113" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="113" startPosition="30" endLine="114" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="114" startPosition="165" endLine="115" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="115" startPosition="239" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="119" startPosition="72" endLine="120" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="120" startPosition="63" endLine="121" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="121" startPosition="30" endLine="122" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="122" startPosition="165" endLine="123" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="123" startPosition="238" endLine="124" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="127" startPosition="72" endLine="128" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="128" startPosition="63" endLine="129" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="129" startPosition="30" endLine="130" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="130" startPosition="165" endLine="131" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="131" startPosition="237" endLine="132" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="135" startPosition="69" endLine="136" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="136" startPosition="63" endLine="137" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="137" startPosition="30" endLine="138" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="138" startPosition="165" endLine="139" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="139" startPosition="240" endLine="140" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="143" startPosition="71" endLine="144" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="144" startPosition="63" endLine="145" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="145" startPosition="30" endLine="146" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="146" startPosition="165" endLine="147" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="147" startPosition="237" endLine="148" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="151" startPosition="71" endLine="152" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="152" startPosition="63" endLine="153" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="153" startPosition="30" endLine="154" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="154" startPosition="165" endLine="155" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="155" startPosition="239" endLine="156" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="159" startPosition="71" endLine="160" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="160" startPosition="63" endLine="161" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="161" startPosition="30" endLine="162" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="162" startPosition="165" endLine="163" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="163" startPosition="237" endLine="164" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="167" startPosition="69" endLine="168" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="168" startPosition="63" endLine="169" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="169" startPosition="30" endLine="170" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="170" startPosition="165" endLine="171" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="171" startPosition="239" endLine="172" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="57" startPosition="218" endLine="58" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="61" startPosition="15" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="62" startPosition="56" endLine="63" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="63" startPosition="218" endLine="64" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="67" startPosition="15" endLine="68" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="68" startPosition="56" endLine="69" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="69" startPosition="218" endLine="70" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="73" startPosition="15" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="74" startPosition="56" endLine="75" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="75" startPosition="218" endLine="76" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="85" startPosition="46" endLine="86" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="90" startPosition="5" endLine="91" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="91" startPosition="130" endLine="92" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="96" startPosition="30" endLine="97" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="100" startPosition="70" endLine="101" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="101" startPosition="63" endLine="102" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="102" startPosition="30" endLine="103" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="103" startPosition="165" endLine="104" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="104" startPosition="240" endLine="105" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="108" startPosition="70" endLine="109" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="109" startPosition="63" endLine="110" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="110" startPosition="30" endLine="111" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="111" startPosition="165" endLine="112" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="112" startPosition="239" endLine="113" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="116" startPosition="72" endLine="117" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="117" startPosition="63" endLine="118" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="118" startPosition="30" endLine="119" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="119" startPosition="165" endLine="120" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="120" startPosition="238" endLine="121" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="124" startPosition="72" endLine="125" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="125" startPosition="63" endLine="126" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="126" startPosition="30" endLine="127" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="127" startPosition="165" endLine="128" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="128" startPosition="237" endLine="129" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="132" startPosition="69" endLine="133" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="133" startPosition="63" endLine="134" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="134" startPosition="30" endLine="135" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="135" startPosition="165" endLine="136" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="136" startPosition="240" endLine="137" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="140" startPosition="71" endLine="141" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="141" startPosition="63" endLine="142" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="142" startPosition="30" endLine="143" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="143" startPosition="165" endLine="144" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="144" startPosition="237" endLine="145" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="148" startPosition="71" endLine="149" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="149" startPosition="63" endLine="150" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="150" startPosition="30" endLine="151" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="151" startPosition="165" endLine="152" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="152" startPosition="239" endLine="153" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="156" startPosition="71" endLine="157" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="157" startPosition="63" endLine="158" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="158" startPosition="30" endLine="159" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="159" startPosition="165" endLine="160" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="160" startPosition="237" endLine="161" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="164" startPosition="69" endLine="165" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="165" startPosition="63" endLine="166" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="166" startPosition="30" endLine="167" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="167" startPosition="165" endLine="168" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="168" startPosition="239" endLine="169" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MatrixNorm_InferenceRule#()V" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="105" startPosition="30" endLine="107" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="105" startPosition="30" endLine="107" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="113" startPosition="30" endLine="115" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="113" startPosition="30" endLine="115" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="121" startPosition="30" endLine="123" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="121" startPosition="30" endLine="123" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="129" startPosition="30" endLine="131" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="129" startPosition="30" endLine="131" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="137" startPosition="30" endLine="139" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="137" startPosition="30" endLine="139" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="145" startPosition="30" endLine="147" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="145" startPosition="30" endLine="147" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="153" startPosition="30" endLine="155" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="153" startPosition="30" endLine="155" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="161" startPosition="30" endLine="163" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="161" startPosition="30" endLine="163" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="169" startPosition="30" endLine="171" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="169" startPosition="30" endLine="171" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="102" startPosition="30" endLine="104" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="102" startPosition="30" endLine="104" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="110" startPosition="30" endLine="112" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="110" startPosition="30" endLine="112" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="118" startPosition="30" endLine="120" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="118" startPosition="30" endLine="120" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="126" startPosition="30" endLine="128" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="126" startPosition="30" endLine="128" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="134" startPosition="30" endLine="136" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="134" startPosition="30" endLine="136" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="142" startPosition="30" endLine="144" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="142" startPosition="30" endLine="144" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="150" startPosition="30" endLine="152" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="150" startPosition="30" endLine="152" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="158" startPosition="30" endLine="160" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="158" startPosition="30" endLine="160" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="166" startPosition="30" endLine="168" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="166" startPosition="30" endLine="168" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="3361677252835032977" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="34" startPosition="153" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="57" startPosition="218" endLine="61" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="92" startPosition="68" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="63" startPosition="114" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="69" startPosition="117" endLine="74" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="75" startPosition="20" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3361677252835033440" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="75" startPosition="18" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="103" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0c0c0a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0b0c0c0a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="119" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0c0c0a0a0a1_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="127" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0c0c0a0a0a1_1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a2a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="143" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0a2a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="151" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0b0a2a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="159" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a2a2a0a0a0b_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="167" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="54" startPosition="15" endLine="62" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="89" startPosition="68" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="54" startPosition="15" endLine="59" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="60" startPosition="114" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="66" startPosition="117" endLine="71" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="72" startPosition="20" endLine="77" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3361677252835033440" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="72" startPosition="18" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="89" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="100" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0c0c0a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0b0c0c0a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="116" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0c0c0a0a0a1_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="124" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0c0c0a0a0a1_1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="132" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a2a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="140" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0a2a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="148" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0b0a2a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="156" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a2a2a0a0a0b_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="164" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8pyikg_a0a0a2a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3361677252835033212" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="44" startPosition="29" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3361677252835033164" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="41" startPosition="92" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3361677252835032982" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="39" startPosition="16" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3361677252835032964" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="27" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="31" startPosition="211" endLine="84" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="117" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="3361677252835033164" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="41" startPosition="92" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3361677252835032982" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="39" startPosition="16" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3361677252835032964" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="27" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="31" startPosition="211" endLine="81" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="117" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="26" startPosition="44" endLine="26" endPosition="44" />
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="88" startPosition="46" endLine="89" endPosition="66" />
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="99" startPosition="30" endLine="100" endPosition="17" />
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="85" startPosition="46" endLine="86" endPosition="66" />
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="96" startPosition="30" endLine="97" endPosition="17" />
     <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="3361677252835032977" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="35" startPosition="13" endLine="37" endPosition="270">
       <varInfo nodeId="3361677252835032977" varName="_reporter_2309309498" />
@@ -4927,110 +4927,110 @@
     <scopeInfo nodeId="3361677252835033213" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="45" startPosition="251" endLine="47" endPosition="66" />
     <scopeInfo nodeId="3361677252835033266" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="48" startPosition="102" endLine="50" endPosition="67" />
     <scopeInfo nodeId="3361677252835033294" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="51" startPosition="119" endLine="53" endPosition="71" />
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="93" startPosition="5" endLine="95" endPosition="45">
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="90" startPosition="5" endLine="92" endPosition="45">
       <varInfo nodeId="758819215871427720" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="105" startPosition="30" endLine="107" endPosition="240" />
-    <scopeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="113" startPosition="30" endLine="115" endPosition="239" />
-    <scopeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="121" startPosition="30" endLine="123" endPosition="238" />
-    <scopeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="129" startPosition="30" endLine="131" endPosition="237" />
-    <scopeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="137" startPosition="30" endLine="139" endPosition="240" />
-    <scopeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="145" startPosition="30" endLine="147" endPosition="237" />
-    <scopeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="153" startPosition="30" endLine="155" endPosition="239" />
-    <scopeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="161" startPosition="30" endLine="163" endPosition="237" />
-    <scopeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="169" startPosition="30" endLine="171" endPosition="239" />
-    <scopeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="64" startPosition="15" endLine="67" endPosition="303">
-      <varInfo nodeId="3361677252835033410" varName="_info_12389875345" />
-      <varInfo nodeId="3361677252835033410" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="70" startPosition="15" endLine="73" endPosition="309">
-      <varInfo nodeId="3361677252835033432" varName="_info_12389875345" />
-      <varInfo nodeId="3361677252835033432" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="76" startPosition="15" endLine="79" endPosition="260">
-      <varInfo nodeId="3361677252835033448" varName="_info_12389875345" />
-      <varInfo nodeId="3361677252835033448" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="99" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="3361677252835032966" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="34" startPosition="153" endLine="38" endPosition="13" />
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="92" startPosition="68" endLine="96" endPosition="5" />
-    <scopeInfo nodeId="3361677252835033405" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="63" startPosition="114" endLine="68" endPosition="15" />
-    <scopeInfo nodeId="3361677252835033419" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="69" startPosition="117" endLine="74" endPosition="15" />
-    <scopeInfo nodeId="3361677252835033441" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="75" startPosition="20" endLine="80" endPosition="15" />
-    <scopeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="103" startPosition="70" endLine="108" endPosition="24">
-      <varInfo nodeId="7312763581004202035" varName="facade" />
-      <varInfo nodeId="7312763581004202035" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="111" startPosition="70" endLine="116" endPosition="24">
-      <varInfo nodeId="7312763581004202048" varName="facade" />
-      <varInfo nodeId="7312763581004202048" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="119" startPosition="72" endLine="124" endPosition="24">
-      <varInfo nodeId="7312763581004202000" varName="facade" />
-      <varInfo nodeId="7312763581004202000" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="127" startPosition="72" endLine="132" endPosition="24">
-      <varInfo nodeId="7312763581004202014" varName="facade" />
-      <varInfo nodeId="7312763581004202014" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="135" startPosition="69" endLine="140" endPosition="24">
-      <varInfo nodeId="7312763581004202022" varName="facade" />
-      <varInfo nodeId="7312763581004202022" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="143" startPosition="71" endLine="148" endPosition="24">
-      <varInfo nodeId="7312763581004202059" varName="facade" />
-      <varInfo nodeId="7312763581004202059" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="151" startPosition="71" endLine="156" endPosition="24">
-      <varInfo nodeId="7312763581004202054" varName="facade" />
-      <varInfo nodeId="7312763581004202054" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="159" startPosition="71" endLine="164" endPosition="24">
-      <varInfo nodeId="7312763581004202027" varName="facade" />
-      <varInfo nodeId="7312763581004202027" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="167" startPosition="69" endLine="172" endPosition="24">
-      <varInfo nodeId="7312763581004202063" varName="facade" />
-      <varInfo nodeId="7312763581004202063" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="55" startPosition="15" endLine="61" endPosition="38">
+    <scopeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="102" startPosition="30" endLine="104" endPosition="240" />
+    <scopeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="110" startPosition="30" endLine="112" endPosition="239" />
+    <scopeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="118" startPosition="30" endLine="120" endPosition="238" />
+    <scopeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="126" startPosition="30" endLine="128" endPosition="237" />
+    <scopeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="134" startPosition="30" endLine="136" endPosition="240" />
+    <scopeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="142" startPosition="30" endLine="144" endPosition="237" />
+    <scopeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="150" startPosition="30" endLine="152" endPosition="239" />
+    <scopeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="158" startPosition="30" endLine="160" endPosition="237" />
+    <scopeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="166" startPosition="30" endLine="168" endPosition="239" />
+    <scopeInfo nodeId="3361677252835033179" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="55" startPosition="15" endLine="58" endPosition="282">
       <varInfo nodeId="3361677252835033179" varName="_info_12389875345" />
       <varInfo nodeId="3361677252835033179" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="3361677252835033410" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="61" startPosition="15" endLine="64" endPosition="303">
+      <varInfo nodeId="3361677252835033410" varName="_info_12389875345" />
+      <varInfo nodeId="3361677252835033410" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="3361677252835033432" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="67" startPosition="15" endLine="70" endPosition="309">
+      <varInfo nodeId="3361677252835033432" varName="_info_12389875345" />
+      <varInfo nodeId="3361677252835033432" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="3361677252835033448" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="73" startPosition="15" endLine="76" endPosition="260">
+      <varInfo nodeId="3361677252835033448" varName="_info_12389875345" />
+      <varInfo nodeId="3361677252835033448" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="96" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="3361677252835032966" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="34" startPosition="153" endLine="38" endPosition="13" />
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="89" startPosition="68" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="3361677252835033405" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="60" startPosition="114" endLine="65" endPosition="15" />
+    <scopeInfo nodeId="3361677252835033419" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="66" startPosition="117" endLine="71" endPosition="15" />
+    <scopeInfo nodeId="3361677252835033441" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="72" startPosition="20" endLine="77" endPosition="15" />
+    <scopeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="100" startPosition="70" endLine="105" endPosition="24">
+      <varInfo nodeId="7312763581004202035" varName="facade" />
+      <varInfo nodeId="7312763581004202035" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="108" startPosition="70" endLine="113" endPosition="24">
+      <varInfo nodeId="7312763581004202048" varName="facade" />
+      <varInfo nodeId="7312763581004202048" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="116" startPosition="72" endLine="121" endPosition="24">
+      <varInfo nodeId="7312763581004202000" varName="facade" />
+      <varInfo nodeId="7312763581004202000" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="124" startPosition="72" endLine="129" endPosition="24">
+      <varInfo nodeId="7312763581004202014" varName="facade" />
+      <varInfo nodeId="7312763581004202014" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="132" startPosition="69" endLine="137" endPosition="24">
+      <varInfo nodeId="7312763581004202022" varName="facade" />
+      <varInfo nodeId="7312763581004202022" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="140" startPosition="71" endLine="145" endPosition="24">
+      <varInfo nodeId="7312763581004202059" varName="facade" />
+      <varInfo nodeId="7312763581004202059" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="148" startPosition="71" endLine="153" endPosition="24">
+      <varInfo nodeId="7312763581004202054" varName="facade" />
+      <varInfo nodeId="7312763581004202054" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="156" startPosition="71" endLine="161" endPosition="24">
+      <varInfo nodeId="7312763581004202027" varName="facade" />
+      <varInfo nodeId="7312763581004202027" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="164" startPosition="69" endLine="169" endPosition="24">
+      <varInfo nodeId="7312763581004202063" varName="facade" />
+      <varInfo nodeId="7312763581004202063" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="89" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="758819215871427720" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="119" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="127" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="135" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="143" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="151" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="159" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="167" startPosition="0" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="3361677252835033165" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="42" startPosition="105" endLine="62" endPosition="15">
+    <scopeInfo nodeId="7312763581004202035" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="100" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202048" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="108" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202000" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="116" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202014" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="124" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202022" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="132" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202059" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="140" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202054" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="148" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202027" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="156" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="7312763581004202063" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="164" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="3361677252835033165" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="42" startPosition="105" endLine="59" endPosition="15">
       <varInfo nodeId="3361677252835033203" varName="f" />
       <varInfo nodeId="3361677252835033209" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="3361677252835032983" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="39" startPosition="18" endLine="81" endPosition="13">
+    <scopeInfo nodeId="3361677252835032983" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="39" startPosition="18" endLine="78" endPosition="13">
       <varInfo nodeId="3361677252835033140" varName="floatResult" />
       <varInfo nodeId="3361677252835032985" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3361677252835031828" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="27" endLine="82" endPosition="11" />
-    <scopeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="30" startPosition="5" endLine="84" endPosition="132">
+    <scopeInfo nodeId="3361677252835031828" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="27" endLine="79" endPosition="11" />
+    <scopeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="33" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="30" startPosition="5" endLine="81" endPosition="132">
       <varInfo nodeId="3361677252835031827" varName="mT" />
     </scopeInfo>
-    <scopeInfo nodeId="758819215871427721" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="117" endLine="85" endPosition="5" />
-    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="758819215871427721" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="117" endLine="82" endPosition="5" />
+    <scopeInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="29" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="758819215871427720" varName="norm" />
       <varInfo nodeId="758819215871427720" varName="status" />
       <varInfo nodeId="758819215871427720" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="32" startPosition="47" endLine="84" endPosition="7" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MatrixNorm_InferenceRule$1" />
-    <unitInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="25" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MatrixNorm_InferenceRule" />
+    <unitInfo nodeId="3361677252835031827" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="32" startPosition="47" endLine="81" endPosition="7" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MatrixNorm_InferenceRule$1" />
+    <unitInfo nodeId="758819215871427720" fileName="typeof_MatrixNorm_InferenceRule.java" startLine="25" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_MatrixNorm_InferenceRule" />
   </root>
   <root nodeRef="r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)/7676695779583721427">
     <nodeInfo nodeId="5053944732574104320" fileName="check_dimensions_NonTypesystemRule.java" startLine="24" startPosition="5" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -73,7 +73,7 @@ public abstract class BaseMethodsScope extends Scope {
   public abstract String getSignatureForOverriding(SNode method, SNode contextClassifier);
 
   public Iterable<SNode> getMethodsFromGroup(Iterable<SNode> groupWithEqualSignature) {
-    if ((int) Sequence.fromIterable(groupWithEqualSignature).select(new ISelector<SNode, SNode>() {
+    if (Sequence.fromIterable(groupWithEqualSignature).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.Classifier");
       }
@@ -97,7 +97,7 @@ public abstract class BaseMethodsScope extends Scope {
     List<SNode> result = ListSequence.fromList(new ArrayList());
     Set<String> overridenSignatures = SetSequence.fromSet(new HashSet<String>());
 
-    for (String name : SetSequence.fromSet(MapSequence.fromMap(nameToMethods).keySet())) {
+    for (String name : MapSequence.fromMap(nameToMethods).keySet()) {
       if (prefix == null || name.startsWith(prefix)) {
         Iterable<SNode> methods = MapSequence.fromMap(nameToMethods).get(name);
         ListSequence.fromList(result).addSequence(Sequence.fromIterable(methods));

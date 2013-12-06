@@ -47,10 +47,23 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
       return null;
     }
     SNode t = SLinkOperations.getTarget(link, "target", false);
-    return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ?
-      new SInterfaceConceptAdapter(NameUtil.nodeFQName(t)) :
-      SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t))
-    );
+    return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ? new SInterfaceConceptAdapter(NameUtil.nodeFQName(t)) : SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t)));
+  }
+
+
+
+  @Override
+  public int hashCode() {
+    return conceptName.hashCode() * 31 + role.hashCode() * 17;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == null || o.getClass() != getClass()) {
+      return false;
+    }
+    SAbstractLinkAdapter la = (SAbstractLinkAdapter) o;
+    return conceptName.equals(la.conceptName) && role.equals(la.role);
   }
 
 
@@ -60,7 +73,6 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     if ((concept == null)) {
       return null;
     }
-    SNode link = (SNode) new ConceptAndSuperConceptsScope(concept).getLinkDeclarationByRole(role);
-    return SModelUtil.getGenuineLinkDeclaration(link);
+    return (SNode) new ConceptAndSuperConceptsScope(concept).getLinkDeclarationByRole(role);
   }
 }

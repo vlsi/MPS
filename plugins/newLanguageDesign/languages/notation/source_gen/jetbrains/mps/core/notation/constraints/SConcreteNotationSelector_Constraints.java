@@ -39,10 +39,7 @@ public class SConcreteNotationSelector_Constraints extends BaseConstraintsDescri
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getParameterNode(), "context", true), "jetbrains.mps.core.notation.structure.SNotationConceptContext")) {
               SNode context = SNodeOperations.cast(SLinkOperations.getTarget(_context.getParameterNode(), "context", true), "jetbrains.mps.core.notation.structure.SNotationConceptContext");
-              return (isNotEmpty_acsz20_a0a1a0a1a0a0a0a0b0a1a1(SPropertyOperations.getString(context, "id")) ?
-                (SPropertyOperations.getString(SLinkOperations.getTarget(context, "element", false), "name") + "." + SPropertyOperations.getString(context, "id")) :
-                SPropertyOperations.getString(SLinkOperations.getTarget(context, "element", false), "name")
-              );
+              return (isNotEmptyString(SPropertyOperations.getString(context, "id")) ? (SPropertyOperations.getString(SLinkOperations.getTarget(context, "element", false), "name") + "." + SPropertyOperations.getString(context, "id")) : SPropertyOperations.getString(SLinkOperations.getTarget(context, "element", false), "name"));
             } else {
               return "<not concept context in notation>";
             }
@@ -53,7 +50,7 @@ public class SConcreteNotationSelector_Constraints extends BaseConstraintsDescri
     return references;
   }
 
-  public static boolean isNotEmpty_acsz20_a0a1a0a1a0a0a0a0b0a1a1(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

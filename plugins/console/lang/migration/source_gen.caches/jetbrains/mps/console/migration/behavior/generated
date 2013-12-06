@@ -1,13 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="93cl69m1if0nzayv9xybg5q650bmrx6">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <dep model="r:2b0d17ab-9da2-4218-82e7-3e7aa5da6fc9(jetbrains.mps.console.migration.structure)" hash="-bva3825i98rmvng3qxybej13j5lf4pi" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="93cl69m1if0nzayv9xybg5q650bmrx6">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:2b0d17ab-9da2-4218-82e7-3e7aa5da6fc9(jetbrains.mps.console.migration.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="BehaviorAspectDescriptor.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="93cl69m1if0nzayv9xybg5q650bmrx6" />
 

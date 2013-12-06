@@ -234,10 +234,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1215793639656(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // todo this is a workaround for IDEA bug with using names in schemes instead of IDs 
-    return (SPropertyOperations.getString(_context.getNode(), "caption") != null ?
-      SPropertyOperations.getString(_context.getNode(), "caption") :
-      SPropertyOperations.getString(_context.getNode(), "name")
-    );
+    return (SPropertyOperations.getString(_context.getNode(), "caption") != null ? SPropertyOperations.getString(_context.getNode(), "caption") : SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1215782589221(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -325,10 +322,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1557260317236434377(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SPropertyOperations.getString(_context.getNode(), "helpTopic") != null ?
-      SPropertyOperations.getString(_context.getNode(), "helpTopic") :
-      SPropertyOperations.getString(_context.getNode(), "name").replace(' ', '_')
-    );
+    return (SPropertyOperations.getString(_context.getNode(), "helpTopic") != null ? SPropertyOperations.getString(_context.getNode(), "helpTopic") : SPropertyOperations.getString(_context.getNode(), "name").replace(' ', '_'));
   }
 
   public static Object propertyMacro_GetPropertyValue_1217679782537(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -358,18 +352,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2119373615199737083(final IOperationContext operationContext, final PropertyMacroContext _context) {
     boolean sameModels = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "action", false)) == SNodeOperations.getModel(_context.getNode());
-    SModel mainModel = (sameModels ?
-      _context.getOriginalInputModel() :
-      SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "action", false))
-    );
+    SModel mainModel = (sameModels ? _context.getOriginalInputModel() : SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "action", false)));
     return mainModel.getModule().getModuleName();
   }
 
   public static Object propertyMacro_GetPropertyValue_3205778618063432805(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "point", false) != null) ?
-      GroupAnchor_Behavior.call_getActionId_5495648829643890225(SLinkOperations.getTarget(_context.getNode(), "point", false)) :
-      ActionGroupDeclaration_Behavior.call_getGeneratedClassFQName_1213877494288(SLinkOperations.getTarget(_context.getNode(), "modifiedGroup", false))
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "point", false) != null) ? GroupAnchor_Behavior.call_getActionId_5495648829643890225(SLinkOperations.getTarget(_context.getNode(), "point", false)) : ActionGroupDeclaration_Behavior.call_getGeneratedClassFQName_1213877494288(SLinkOperations.getTarget(_context.getNode(), "modifiedGroup", false)));
   }
 
   public static Object propertyMacro_GetPropertyValue_1228240948527(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -425,17 +413,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4415621581132897595(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SPropertyOperations.getString(_context.getNode(), "caption") == null ?
-      SPropertyOperations.getString(_context.getNode(), "name") :
-      SPropertyOperations.getString(_context.getNode(), "caption")
-    );
+    return (SPropertyOperations.getString(_context.getNode(), "caption") == null ? SPropertyOperations.getString(_context.getNode(), "name") : SPropertyOperations.getString(_context.getNode(), "caption"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4415621581132897611(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SPropertyOperations.getString(_context.getNode(), "number") == null ?
-      -1 :
-      Integer.parseInt(SPropertyOperations.getString(_context.getNode(), "number"))
-    );
+    return (SPropertyOperations.getString(_context.getNode(), "number") == null ? -1 : Integer.parseInt(SPropertyOperations.getString(_context.getNode(), "number")));
   }
 
   public static Object propertyMacro_GetPropertyValue_5508914264443568721(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -813,7 +795,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6976585500163304387(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0mg(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_1215866113039(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -962,7 +944,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8024349686116085130(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0th(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "toolIcon", true), "path"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "toolIcon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_5508914264443135906(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -978,7 +960,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8024349686116895532(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0xh(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_2386275659558735404(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -986,7 +968,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6769912430829078916(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0zh(SPropertyOperations.getString(_context.getNode(), "shortcutChar"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "shortcutChar"));
   }
 
   public static boolean ifMacro_Condition_3038738109029045717(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1030,7 +1012,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2264311582633519880(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0ki(SPropertyOperations.getString(_context.getNode(), "vendorLogo"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "vendorLogo"));
   }
 
   public static boolean ifMacro_Condition_2264311582633520068(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1054,7 +1036,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2264311582633534291(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && isNotEmpty_x583g4_a0a0a422(SPropertyOperations.getString(_context.getNode(), "caption"));
+    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "caption"));
   }
 
   public static boolean ifMacro_Condition_2264311582633534279(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1210,24 +1192,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8383992355238345812(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true) == null) ?
-      _quotation_createNode_x583g4_a0a0dk() :
-      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true)
-    );
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true) == null) ? _quotation_createNode_x583g4_a0a0dk() : SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true));
   }
 
   public static SNode sourceNodeQuery_8383992355238345841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true) == null) ?
-      _quotation_createNode_x583g4_a0a0ek() :
-      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true)
-    );
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true) == null) ? _quotation_createNode_x583g4_a0a0ek() : SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true));
   }
 
   public static SNode sourceNodeQuery_8383992355238345866(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true) == null) ?
-      _quotation_createNode_x583g4_a0a0fk() :
-      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true)
-    );
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true) == null) ? _quotation_createNode_x583g4_a0a0fk() : SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true));
   }
 
   public static SNode sourceNodeQuery_6423922349611078568(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1835,41 +1808,15 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0mg(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
   private static boolean eq_x583g4_a0a0gh(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_x583g4_a0a0nh(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0th(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0xh(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0zh(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0ki(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a422(String str) {
-    return str != null && str.length() > 0;
+    return (a != null ? a.equals(b) : a == b);
   }
 }

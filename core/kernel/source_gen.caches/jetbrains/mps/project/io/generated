@@ -1,27 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-63dityhs3rlu3nbuifizpfp6gfda1z">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <common hash="6oytwvityzm5bzdwztttqikw69yk5ly" />
-  <source id="557142600900286111" name="DescriptorIOFacade" hash="2mu0eng1bwf841oowovj29b5b2mbmgu">
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="DescriptorIOFacade.java" />
-  </source>
-  <source id="557142600900286148" name="DescriptorIO" hash="-5dhqxx0no26yvdbqajcp503i91nl5uj">
-    <file name="DescriptorIO.java" />
-  </source>
-  <source id="557142600900532740" name="DescriptorIOProvider" hash="45mrvagzepdcy6n2p9029zq1k8wr4dj">
-    <file name="DescriptorIOProvider.java" />
-  </source>
-  <source id="557142600900539533" name="StandardDescriptorIOProvider" hash="fvoyhpnezkeo5teabzreuz9yqaqd32">
-    <file name="StandardDescriptorIOProvider.java" />
-  </source>
-  <source id="3323419009397486857" name="IdeaDescriptorIOProvider" hash="2d1bi9hzng6xj15fm7pr6d4cptfwn6o">
-    <file name="IdeaDescriptorIOProvider.java" />
-  </source>
-  <source id="9081946191808704816" name="DescriptorIOException" hash="-2wup1nghbhwi0xrl9cylaoywq7bn2rb">
-    <file name="DescriptorIOException.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-63dityhs3rlu3nbuifizpfp6gfda1z" />
 

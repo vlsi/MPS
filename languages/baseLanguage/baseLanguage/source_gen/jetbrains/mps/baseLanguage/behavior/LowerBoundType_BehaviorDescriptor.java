@@ -38,6 +38,10 @@ public class LowerBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     return LowerBoundType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
   }
 
+  public boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return LowerBoundType_Behavior.virtual_isSupersetOf_9029841626175335449(thisNode, t, substitutions);
+  }
+
   public boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
     return LowerBoundType_Behavior.virtual_isValueType_4836112446988592019(thisNode);
   }

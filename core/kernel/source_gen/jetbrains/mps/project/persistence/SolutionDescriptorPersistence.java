@@ -14,7 +14,6 @@ import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Priority;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.OutputStream;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -136,7 +135,7 @@ public class SolutionDescriptorPersistence {
     }
 
     Element sourcePath = new Element(SOURCE_PATH);
-    for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
+    for (String p : descriptor.getSourcePaths()) {
       XmlUtil.tagWithAttribute(sourcePath, SOURCE_PATH_SOURCE, "path", macroHelper.shrinkPath(p));
     }
     result.addContent(sourcePath);

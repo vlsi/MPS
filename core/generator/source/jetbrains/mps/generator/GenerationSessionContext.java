@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,22 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -37,7 +44,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private static final Object COPYED_ROOTS = new Object();
 
-  private SModel myOriginalInputModel;
+  private final SModel myOriginalInputModel;
 
   private final IOperationContext myInvocationContext;
   private final IGenerationTracer myGenerationTracer;
@@ -47,42 +54,73 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private final Object NULL_OBJECT = new Object();
 
-  private Map<Object, Object> myTransientObjects = new ConcurrentHashMap<Object, Object>();
-  // objects survive between transient models but not between generation steps 
-  private Map<Object, Object> myStepObjects = new ConcurrentHashMap<Object, Object>();
-  // objects survive between transient models and between generation steps
-  private Map<Object, Object> mySessionObjects = new ConcurrentHashMap<Object, Object>();
+  /**
+   * Transient objects survive micro-step only
+   */
+  private final Map<Object, Object> myTransientObjects;
+  /**
+   * Step objects survive survive major step
+   */
+  private final Map<Object, Object> myStepObjects;
+  /**
+   * Session objects survive complete generation session for the given model
+   */
+  private final Map<Object, Object> mySessionObjects;
 
   // these objects survive through all steps of generation
-  private Set<String> myUsedNames = new ConcurrentHashSet<String>();
+  private final Set<String> myUsedNames;
+  private final SAbstractConcept myNamedConcept;
 
   public GenerationSessionContext(IOperationContext invocationContext,
                                   IGenerationTracer generationTracer,
                                   TransientModelsModule transientModule,
-                                  SModel inputModel,
-                                  GenerationPlan generationPlan,
-                                  Map<String, Object> parameters,
-                                  GenerationSessionContext prevContext) {
+                                  SModel inputModel) {
 
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
     myTransientModule = transientModule;
+    myOriginalInputModel = inputModel;
+    myGenerationPlan = null;
+    myParameters = null;
+    myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
+    mySessionObjects = new ConcurrentHashMap<Object, Object>();
+    myTransientObjects = new ConcurrentHashMap<Object, Object>();
+    myStepObjects = new ConcurrentHashMap<Object, Object>();
+    myUsedNames = new ConcurrentHashSet<String>();
+  }
+
+  // copy cons
+  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan, @Nullable Map<String, Object> parameters) {
+    myInvocationContext = prevContext.myInvocationContext;
+    myGenerationTracer = prevContext.myGenerationTracer;
+    myTransientModule = prevContext.myTransientModule;
+    myOriginalInputModel = prevContext.myOriginalInputModel;
+    mySessionObjects = prevContext.mySessionObjects;
+    myUsedNames = prevContext.myUsedNames;
+    myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = generationPlan;
     myParameters = parameters;
+    // the moment this copy cons is used, nothing happened, reuse
+    myStepObjects = prevContext.myStepObjects;
+    myTransientObjects = prevContext.myTransientObjects;
+  }
 
-    if (prevContext != null) {
-      myOriginalInputModel = prevContext.myOriginalInputModel;
-      mySessionObjects = prevContext.mySessionObjects;
-      myUsedNames = prevContext.myUsedNames;
-    }
-
-    if (!(inputModel .getModule() instanceof TransientModelsModule)) {
-      // new original input model
-      myOriginalInputModel = inputModel;
-      // forget history
-      mySessionObjects.clear();
-      myUsedNames.clear();
-    }
+  /**
+   * copy cons for each major step. Nothing but an odd way to clear step and transient objects
+   */
+  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext) {
+    myInvocationContext = prevContext.myInvocationContext;
+    myGenerationTracer = prevContext.myGenerationTracer;
+    myTransientModule = prevContext.myTransientModule;
+    myOriginalInputModel = prevContext.myOriginalInputModel;
+    mySessionObjects = prevContext.mySessionObjects;
+    myUsedNames = prevContext.myUsedNames;
+    myNamedConcept = prevContext.myNamedConcept;
+    myGenerationPlan = prevContext.myGenerationPlan;
+    myParameters = prevContext.myParameters;
+    // this copy cons indicate new major step, hence new empty maps
+    myTransientObjects = new ConcurrentHashMap<Object, Object>();
+    myStepObjects = new ConcurrentHashMap<Object, Object>();
   }
 
   public void clearTransientObjects() {
@@ -179,8 +217,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       // find topmost 'named' ancestor
       SNode topmostNamed = null;
       SNode node_ = contextNode;
+      final SAbstractConcept namedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
       while (node_ != null) {
-        if (node_.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept))) {
+        if (node_.getConcept().isSubConceptOf(namedConcept)) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
@@ -209,50 +248,64 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return uniqueName;
   }
 
+  private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
+
   public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
     if (useOldStyleUniqueName) {
       return createUniqueNameOldStyle(roughName, contextNode);
     }
 
-    String uniqueSuffix = null;
+    StringBuilder uniqueNameBuffer = new StringBuilder(50);
+    uniqueNameBuffer.append(roughName);
+    if (roughName.length() > 0 && roughName.charAt(roughName.length()-1) == '_') {
+      uniqueNameBuffer.setLength(roughName.length()-1);
+    }
 
     if (contextNode != null) {
       // find topmost 'named' ancestor
       SNode topmostNamed = null;
       SNode node_ = contextNode;
       while (node_ != null) {
-        if (node_.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept))) {
+        if (node_.getConcept().isSubConceptOf(myNamedConcept)) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
       }
 
       if (topmostNamed != null) {
-        String name = topmostNamed.getName();
-        if (name != null) {
-          uniqueSuffix = Integer.toString(name.hashCode() >>> 1, Character.MAX_RADIX);
+        String suffix = topToSuffix.get(topmostNamed);
+        if (suffix != null) {
+          uniqueNameBuffer.append('_');
+          uniqueNameBuffer.append(suffix);
+        } else {
+          String name = topmostNamed.getName();
+          if (name != null) {
+            suffix = Integer.toString(name.hashCode() >>> 1, Character.MAX_RADIX);
+            topToSuffix.put(topmostNamed, suffix);
+            uniqueNameBuffer.append('_');
+            uniqueNameBuffer.append(suffix);
+          }
         }
       }
     } // if(contextNode != null)
 
     if (inputNode != null) {
-      if (uniqueSuffix == null) {
-        uniqueSuffix = nodeUniqueId(inputNode);
-      } else {
-        uniqueSuffix = uniqueSuffix + "_" + nodeUniqueId(inputNode);
-      }
+      final String nid = nodeUniqueId(inputNode);
+      uniqueNameBuffer.append('_');
+      uniqueNameBuffer.append(nid);
     }
 
-    if (uniqueSuffix != null) {
-      roughName = roughName.endsWith("_") ? roughName + uniqueSuffix : roughName + "_" + uniqueSuffix;
-    }
-    String uniqueName = roughName;
+    final boolean suffixAdded = roughName.length() < uniqueNameBuffer.length();
+    String uniqueName = uniqueNameBuffer.toString();
 
-    if (uniqueSuffix == null || myUsedNames.contains(uniqueName)) {
-      roughName += "_";
+    if (!suffixAdded || myUsedNames.contains(uniqueName)) {
+      uniqueNameBuffer.append('_');
+      final int trimPos = uniqueNameBuffer.length();
       for (int count = 0; ; count++) {
-        uniqueName = roughName + count;
+        uniqueNameBuffer.append(count);
+        uniqueName = uniqueNameBuffer.toString();
         if (!myUsedNames.contains(uniqueName)) break;
+        uniqueNameBuffer.setLength(trimPos);
       }
     }
     myUsedNames.add(uniqueName);
@@ -265,25 +318,31 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public void clearCopiedRootsSet() {
-    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
+    Set<SNode> set = getCopiedRoots(false);
     if (set != null) {
       set.clear();
     }
   }
 
   public void registerCopiedRoot(SNode outputRootNode) {
-    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
-    if (set == null) {
-      set = new HashSet<SNode>();
-      putStepObject(COPYED_ROOTS, set);
-    }
-    set.add(outputRootNode);
+    getCopiedRoots(true).add(outputRootNode);
   }
 
   public boolean isCopiedRoot(SNode inputNode) {
-    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
-    if (set == null) return false;
+    Set<SNode> set = getCopiedRoots(false);
+    if (set == null) {
+      return false;
+    }
     return set.contains(inputNode);
+  }
+
+  private Set<SNode> getCopiedRoots(boolean create) {
+    @SuppressWarnings("unchecked")
+    Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
+    if (set == null && create) {
+      putStepObject(COPYED_ROOTS, set = new HashSet<SNode>());
+    }
+    return set;
   }
 
   public IGenerationTracer getGenerationTracer() {

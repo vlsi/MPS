@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
+import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
@@ -29,6 +30,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -86,28 +88,17 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
       return switchMapping.applyDefault(environment, templateSwitch, mappingName, context);
     }
 
-    List<SNode> collection = new ArrayList<SNode>();
     try {
-      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), environment.getReductionContext(), environment.getGenerator());
-      if (nodeAndMappingNamePairs == null) {
-        environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), defaultConsequence, "error processing $SWITCH$/default");
-        return null;
+      RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
+      if (!rcp.prepare(defaultConsequence, templateSwitch.resolve(MPSModuleRepository.getInstance()), context)) {
+          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), defaultConsequence, "error processing $SWITCH$/default");
+          return null;
       }
-
-      for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-        SNode altTemplateNode = nodeAndMappingNamePair.o1;
-        String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-        try {
-          TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
-          collection.addAll(templateProcessor.apply(innerMappingName, altTemplateNode, context));
-        } catch (TemplateProcessingFailureException e) {
-          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), "error processing template fragment");
-        }
-      }
-    } catch (AbandonRuleInputException e) {
+      return rcp.processRuleConsequence(mappingName);
+    } catch (AbandonRuleInputException ex) {
       // it's ok. just ignore
+      return Collections.emptyList();
     }
-    return collection;
   }
 
   @Override
@@ -115,6 +106,9 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     SNode generatorMessage = RuleUtil.getSwitch_NullInputMessage(mySwitch);
     if (generatorMessage != null) {
+      // TODO there's little value in GeneratorUtilEx.processGeneratorMessage per se, and once the code to process consequences moved out from
+      // GeneratorUtilEx to RuleConsequenceProcessor, and doesn't use processGeneratorMessage any longer, there's no justification for this method to survive in
+      // its present state
       GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), null, environment.getGenerator());
     }
   }

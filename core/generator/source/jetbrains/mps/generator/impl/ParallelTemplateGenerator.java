@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,22 +22,29 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -50,7 +57,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode, SNodeReference>, RootGenerationTask> myInputToTask;
-  private Map<SNode, RootBasedQueryExectionContext> myRootContext;
+  private Map<SNode, DefaultQueryExecutionContext> myRootContext;
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
@@ -83,7 +90,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.createRootNodeByRule(rule, environment);
       }
-    }, new Pair<SNode, SNodeReference>(null, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(null, rule.getRuleNode()), environment.getQueryExecutor());
   }
 
   @Override
@@ -93,7 +100,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
       }
-    }, new Pair<SNode, SNodeReference>(inputNode, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(inputNode, rule.getRuleNode()), environment.getQueryExecutor());
   }
 
   @Override
@@ -103,32 +110,37 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.copyRootInputNode(inputRootNode, environment);
       }
-    }, new Pair<SNode, SNodeReference>(inputRootNode, null), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(inputRootNode, null), environment.getQueryExecutor());
   }
 
   @Override
   protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
     if (ROOT_PER_THREAD) {
-      if (inputNode == null || !(inputNode.getModel() != null)) {
+      if (inputNode == null || inputNode.getModel() == null) {
         return super.getDefaultExecutionContext(null);
       }
       inputNode = inputNode.getContainingRoot();
       if (inputNode.getModel() == getInputModel()) {
-        RootBasedQueryExectionContext context;
+        DefaultQueryExecutionContext context;
         if (myRootContext == null) {
-          myRootContext = new HashMap<SNode, RootBasedQueryExectionContext>();
+          myRootContext = new HashMap<SNode, DefaultQueryExecutionContext>();
           context = null;
         } else {
           context = myRootContext.get(inputNode);
         }
         if (context == null) {
-          context = new RootBasedQueryExectionContext(inputNode, this);
+          context = new DefaultQueryExecutionContext(this, false);
           myRootContext.put(inputNode, context);
         }
         return context;
       }
     }
     return super.getDefaultExecutionContext(inputNode);
+  }
+
+  @Override
+  protected DeltaBuilder createDeltaBuilder() {
+    return DeltaBuilder.newConcurrentDeltaBuilder();
   }
 
   private void pushTask(RootGenerationTask task, Pair<SNode, SNodeReference> pair, QueryExecutionContext executionContext) {
@@ -153,6 +165,22 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       contextToTask.put(executionContext, compositeTask);
     }
     myPool.addTask(compositeTask);
+  }
+
+  @Override
+  protected void registerAddedRoots(@NotNull Collection<SNode> newRoots) {
+    // ParallelTemplateGenerator shall handle this similar to #registerRoot to ensure order is preserved
+    if (!myInplaceChangeEnabled) {
+      return;
+    }
+    if (myNewAddedRoots == null) {
+      synchronized (this) {
+        if (myNewAddedRoots == null) {
+          myNewAddedRoots = Collections.synchronizedList(new ArrayList<SNode>());
+        }
+      }
+    }
+    myNewAddedRoots.addAll(newRoots);
   }
 
   @Override
@@ -251,18 +279,6 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     @Override
     public boolean requiresReadAccess() {
       return true;
-    }
-  }
-
-  private static class RootBasedQueryExectionContext extends DefaultQueryExecutionContext {
-
-    public RootBasedQueryExectionContext(SNode root, ITemplateGenerator generator) {
-      super(generator);
-    }
-
-    @Override
-    public boolean isMultithreaded() {
-      return false;
     }
   }
 }

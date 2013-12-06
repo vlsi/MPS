@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="12" startPosition="0" endLine="696" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="12" startPosition="0" endLine="700" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1115463791055875289">
     <nodeInfo nodeId="1115463791055875333" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1115463791055875308" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2321,7 +2321,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1179262299939">
     <nodeInfo nodeId="1944196602935396574" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="23" startPosition="114" endLine="24" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1944196602935396582" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="103" endLine="26" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1944196602935396582" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="103" endLine="26" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1179262412845" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="27" startPosition="5" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1179262299939" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1179262299939" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="36" startPosition="5" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2349,7 +2349,7 @@
     <nodeInfo nodeId="1179262299939" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1196777966186" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_gxg199_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="1179262299939" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="20" startPosition="75" endLine="20" endPosition="75" />
-    <scopeInfo nodeId="1944196602935354004" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="103" endLine="26" endPosition="155" />
+    <scopeInfo nodeId="1944196602935354004" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="25" startPosition="103" endLine="26" endPosition="153" />
     <scopeInfo nodeId="1179262299939" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="75" />
     <scopeInfo nodeId="1179262299939" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="42" startPosition="27" endLine="43" endPosition="16" />
     <scopeInfo nodeId="1196777966186" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="53" startPosition="31" endLine="54" endPosition="78" />
@@ -14011,7 +14011,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/360223900469176654">
     <nodeInfo nodeId="360223900469176656" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="23" startPosition="118" endLine="24" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="360223900469176664" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="360223900469176664" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="360223900469176674" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="27" startPosition="5" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="360223900469176654" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="360223900469176654" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="36" startPosition="5" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -14039,7 +14039,7 @@
     <nodeInfo nodeId="360223900469176654" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="360223900469176675" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_tkf239_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="360223900469176654" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="20" startPosition="67" endLine="20" endPosition="67" />
-    <scopeInfo nodeId="360223900469176663" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="143" />
+    <scopeInfo nodeId="360223900469176663" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="141" />
     <scopeInfo nodeId="360223900469176654" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="71" />
     <scopeInfo nodeId="360223900469176654" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="42" startPosition="27" endLine="43" endPosition="16" />
     <scopeInfo nodeId="360223900469176675" fileName="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" startLine="53" startPosition="31" endLine="54" endPosition="78" />
@@ -14075,7 +14075,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/360223900469239436">
     <nodeInfo nodeId="360223900469239438" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="23" startPosition="117" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="360223900469239446" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="360223900469239446" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="360223900469239456" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="27" startPosition="5" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="360223900469239436" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="360223900469239436" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="36" startPosition="5" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -14103,7 +14103,7 @@
     <nodeInfo nodeId="360223900469239436" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="360223900469239457" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_m5bzh3_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="360223900469239436" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="20" startPosition="65" endLine="20" endPosition="65" />
-    <scopeInfo nodeId="360223900469239445" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="143" />
+    <scopeInfo nodeId="360223900469239445" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="141" />
     <scopeInfo nodeId="360223900469239436" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="70" />
     <scopeInfo nodeId="360223900469239436" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="42" startPosition="27" endLine="43" endPosition="16" />
     <scopeInfo nodeId="360223900469239457" fileName="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java" startLine="53" startPosition="31" endLine="54" endPosition="78" />
@@ -14851,7 +14851,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/5192033827214196961">
     <nodeInfo nodeId="5192033827214196968" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="21" startPosition="116" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="409" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="403" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="24" startPosition="58" endLine="25" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="35" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -14868,7 +14868,7 @@
     <scopeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="85" />
     <scopeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
     <scopeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="409" endLine="25" endPosition="246">
+    <scopeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="403" endLine="25" endPosition="246">
       <varInfo nodeId="5192033827214196979" varName="_reporter_2309309498" />
       <varInfo nodeId="5192033827214196979" varName="errorTarget" />
     </scopeInfo>
@@ -15558,6 +15558,46 @@
       <varInfo nodeId="6126991172893688510" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="6126991172893688510" fileName="typeof_ContainsAllOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_ContainsAllOperation_InferenceRule" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/6481445890964431321">
+    <nodeInfo nodeId="6481445890964433860" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481445890964433860" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="20" startPosition="61" endLine="21" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481445890964433860" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="21" startPosition="215" endLine="22" endPosition="470" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MapAsSequenceVarRef_InferenceRule#()V" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6481445890964433860" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="18" startPosition="132" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="15" startPosition="53" endLine="15" endPosition="53" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="82" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="6481445890964431321" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6481445890964433860" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="470">
+      <varInfo nodeId="6481445890964433860" varName="_info_12389875345" />
+      <varInfo nodeId="6481445890964433860" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="6481445890964431322" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="18" startPosition="132" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6481445890964431321" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6481445890964431321" varName="mapAsSequenceVarRef" />
+      <varInfo nodeId="6481445890964431321" varName="status" />
+      <varInfo nodeId="6481445890964431321" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="6481445890964431321" fileName="typeof_MapAsSequenceVarRef_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_MapAsSequenceVarRef_InferenceRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/6801639034384703215">
     <nodeInfo nodeId="6801639034384703217" fileName="supertypesOf_DequeType_ClassiType_Deque_SubtypingRule.java" startLine="21" startPosition="119" endLine="22" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -16311,7 +16351,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/7886927014685055227">
     <nodeInfo nodeId="7886927014685056766" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="23" startPosition="112" endLine="24" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7886927014685056785" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7886927014685056785" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7886927014685056797" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="27" startPosition="5" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7886927014685055227" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7886927014685055227" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="36" startPosition="5" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -16339,7 +16379,7 @@
     <nodeInfo nodeId="7886927014685055227" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7886927014685056799" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_pn6k9h_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="7886927014685055227" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="20" startPosition="79" endLine="20" endPosition="79" />
-    <scopeInfo nodeId="7886927014685056774" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="143" />
+    <scopeInfo nodeId="7886927014685056774" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="25" startPosition="97" endLine="26" endPosition="141" />
     <scopeInfo nodeId="7886927014685055227" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="77" />
     <scopeInfo nodeId="7886927014685055227" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="42" startPosition="27" endLine="43" endPosition="16" />
     <scopeInfo nodeId="7886927014685056799" fileName="supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule.java" startLine="53" startPosition="31" endLine="54" endPosition="78" />

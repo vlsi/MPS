@@ -82,24 +82,15 @@ public class SConceptPropertyOperations {
 
   public static SNode findProperty(SNode node, String name) {
     boolean cpt = eq_yzaoi3_a0a0a0h(node.getConcept().getQualifiedName(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") || eq_yzaoi3_a0a0a0h_0(node.getConcept().getQualifiedName(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
-    SNode conceptNode = (cpt ?
-      ((SNode) node) :
-      SNodeOperations.getConceptDeclaration(node)
-    );
+    SNode conceptNode = (cpt ? ((SNode) node) : SNodeOperations.getConceptDeclaration(node));
     return SModelSearchUtil.findConceptProperty(conceptNode, name);
   }
 
   private static boolean eq_yzaoi3_a0a0a0h(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_yzaoi3_a0a0a0h_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

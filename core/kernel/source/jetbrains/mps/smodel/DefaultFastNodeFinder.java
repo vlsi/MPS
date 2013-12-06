@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,34 +15,26 @@
  */
 package jetbrains.mps.smodel;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 
-public class DefaultFastNodeFinder implements FastNodeFinder {
-  private final Object myLock = new Object();
-
-  private SModel myModel;
-  private SModel myModelDescriptor;
-  private boolean myInitialized;
-  private SModelAdapter myListener = new MySModelAdapter();
-  private SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
-
-  private final Map<String, Set<SNode>> myNodes = new THashMap<String, Set<SNode>>();
+public class DefaultFastNodeFinder extends AbstractFastNodeFinder {
+  private final SModel myModelDescriptor;
+  private final SModelAdapter myListener = new MySModelAdapter();
+  private final SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
+  private final NodeByIdComparator myComparator = new NodeByIdComparator();
 
   public DefaultFastNodeFinder(SModel model) {
-    myModel = model;
+    super(model);
     myModelDescriptor = model;
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
     ((SModelInternal) myModelDescriptor).addModelListener(myListener);
@@ -50,107 +42,34 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
   @Override
   public void dispose() {
-    synchronized (myLock) {
-      myInitialized = false;
-      myNodes.clear();
-    }
     ((SModelInternal) myModelDescriptor).removeModelListener(myListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryAdapter);
-  }
-
-  private void initCache() {
-    for (SNode root : myModel.getRootNodes()) {
-      addToCache(root);
-    }
-    myInitialized = true;
+    super.dispose();
   }
 
   @Override
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
-    // notify 'model nodes read access'
-    myModel.getRootNodes().iterator();
-
     // pre-loading model to avoid deadlock (model loading process requires a lock)
     // model cannot be unloaded afterwards, because we have model read access
     myModel.load();
-
-    synchronized (myLock) {
-      if (!myInitialized) {
-        initCache();
-      }
-
-      final List<SNode> result = new ArrayList<SNode>();
-
-      if (includeInherited) {
-        for (String d : ConceptDescendantsCache.getInstance().getDescendants(conceptFqName)) {
-          if (myNodes.containsKey(d)) {
-            result.addAll(myNodes.get(d));
-          }
-        }
-      } else {
-        if (myNodes.containsKey(conceptFqName)) {
-          result.addAll(myNodes.get(conceptFqName));
-        }
-      }
-
-      Collections.sort(result, new Comparator<SNode>() {
-        @Override
-        public int compare(SNode o1, SNode o2) {
-          return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
-        }
-      });
-
-      return result;
+    List<SNode> rv = super.getNodes(conceptFqName, includeInherited);
+    // sorting is switched off as it gives different ordering of generated methods
+    // when either regular SModel or transient SModel comes as an input to a generator.
+    // Once generator steps start with transient model (complete copy of input model)
+    // - pending work (FNF consistency is just a nice side-effect), the sorting can be turned on again
+    // (however not sure it is really needed?)
+    if (Boolean.FALSE.booleanValue()) {
+      // not Collections.sort as the list returned is not necessarily modifiable
+      SNode[] arr = rv.toArray(new SNode[rv.size()]);
+      Arrays.sort(arr, myComparator);
+      return Arrays.asList(arr);
     }
+    return rv;
   }
 
-  private void addToCache(final SNode root) {
-    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-      @Override
-      public void run() {
-        for (SNode child : root.getChildren()) {
-          addToCache(child);
-        }
-
-        String conceptFqName = root.getConcept().getQualifiedName();
-        add(conceptFqName, root);
-      }
-    });
-  }
-
-  private void removeFromCache(final SNode root) {
-    boolean wereBlocked = NodeReadAccessCasterInEditor.areEventsBlocked();
-    try {
-      NodeReadAccessCasterInEditor.setEventsBlocked(true);
-
-      for (SNode child : root.getChildren()) {
-        removeFromCache(child);
-      }
-
-      remove(root.getConcept().getQualifiedName(), root);
-    } finally {
-      NodeReadAccessCasterInEditor.setEventsBlocked(wereBlocked);
-    }
-  }
-
-  private void add(String conceptFqName, SNode node) {
-
-    Set<SNode> set = myNodes.get(conceptFqName);
-    if (set == null) {
-      set = new THashSet<SNode>(1);
-      myNodes.put(conceptFqName, set);
-    }
-    set.add(node);
-  }
-
-  private void remove(String conceptFqName, SNode node) {
-    Set<SNode> set = myNodes.get(conceptFqName);
-    if (set == null) return;
-
-    set.remove(node);
-    if (set.isEmpty()) {
-      myNodes.remove(conceptFqName);
-    }
+  @Override
+  protected ConceptInstanceMap build(Computable<ConceptInstanceMap> b) {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(b);
   }
 
   private class MySModelAdapter extends SModelAdapter {
@@ -160,38 +79,22 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
     @Override
     public void childAdded(SModelChildEvent event) {
-      synchronized (myLock) {
-        if (!myInitialized) return;
-
-        addToCache(event.getChild());
-      }
+      added(event.getChild());
     }
 
     @Override
     public void childRemoved(SModelChildEvent event) {
-      synchronized (myLock) {
-        if (!myInitialized) return;
-
-        removeFromCache(event.getChild());
-      }
+      removed(event.getChild());
     }
 
     @Override
     public void rootAdded(SModelRootEvent event) {
-      synchronized (myLock) {
-        if (!myInitialized) return;
-
-        addToCache(event.getRoot());
-      }
+      added(event.getRoot());
     }
 
     @Override
     public void rootRemoved(SModelRootEvent event) {
-      synchronized (myLock) {
-        if (!myInitialized) return;
-
-        removeFromCache(event.getRoot());
-      }
+      removed(event.getRoot());
     }
   }
 
@@ -201,11 +104,15 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
       if (replacedModels.contains(myModelDescriptor)) {
-        synchronized (myLock) {
-          myInitialized = false;
-          myNodes.clear();
-        }
+        reset();
       }
+    }
+  }
+
+  public static class NodeByIdComparator implements Comparator<SNode> {
+    @Override
+    public int compare(SNode o1, SNode o2) {
+      return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
     }
   }
 }

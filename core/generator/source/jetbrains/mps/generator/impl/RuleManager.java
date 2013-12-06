@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.FlattenIterable;
@@ -35,20 +39,19 @@ public class RuleManager {
 
   private TemplateSwitchGraph myTemplateSwitchGraph;
 
-  private List<TemplateMappingScript> myPreScripts;
-  private List<TemplateMappingScript> myPostScripts;
-
   private List<TemplateMappingConfiguration> myMappings;
 
   private Map<SModelReference, TemplateModel> myModelMap;
 
+  private ScriptManager myScripts;
+
   private final FastRuleFinder myRuleFinder;
 
-  public RuleManager(GenerationPlan plan, List<TemplateMappingConfiguration> configurations) {
+  public RuleManager(GenerationPlan plan, List<TemplateMappingConfiguration> configurations, IGeneratorLogger logger) {
     myMappings = configurations;
     myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
     if (myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
-    initialize(myMappings);
+    initialize(myMappings, logger);
     myRuleFinder = initRules(myMappings);
 
     myModelMap = new HashMap<SModelReference, TemplateModel>();
@@ -57,7 +60,7 @@ public class RuleManager {
     }
   }
 
-  private void initialize(List<TemplateMappingConfiguration> list) {
+  private void initialize(List<TemplateMappingConfiguration> list, IGeneratorLogger logger) {
     myCreateRootRules = new FlattenIterable(new ArrayList<List<TemplateCreateRootRule>>(list.size()));
     myRoot_MappingRules = new FlattenIterable(new ArrayList<List<TemplateRootMappingRule>>(list.size()));
     myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<TemplateWeavingRule>>(list.size()));
@@ -70,13 +73,28 @@ public class RuleManager {
       myDropRootRules.add(mappingConfig.getDropRules());
     }
 
-    myPostScripts = new LinkedList<TemplateMappingScript>();
-    myPreScripts = new LinkedList<TemplateMappingScript>();
-    for (TemplateMappingConfiguration mappingConfigs : myMappings) {
-      myPostScripts.addAll(mappingConfigs.getPostScripts());
-      myPreScripts.addAll(mappingConfigs.getPreScripts());
+    LinkedList<TemplateMappingScript> postScripts = new LinkedList<TemplateMappingScript>();
+    LinkedList<TemplateMappingScript> preScripts = new LinkedList<TemplateMappingScript>();
+    String warnMsg = "skip script %s - wrong script kind";
+    for (TemplateMappingConfiguration mappingConfigs : list) {
+      for (TemplateMappingScript postMappingScript : mappingConfigs.getPostScripts()) {
+        if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
+          logger.warning(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format(warnMsg, postMappingScript.getLongName()));
+          continue;
+        }
+        postScripts.add(postMappingScript);
+      }
+      for (TemplateMappingScript preMappingScript :mappingConfigs.getPreScripts()) {
+        if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
+          logger.warning(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format(warnMsg, preMappingScript.getLongName()));
+          continue;
+        }
+        preScripts.add(preMappingScript);
+      }
     }
+    myScripts = new ScriptManager(new ArrayList<TemplateMappingScript>(preScripts), new ArrayList<TemplateMappingScript>(postScripts));
   }
+
 
   private FastRuleFinder initRules(List<TemplateMappingConfiguration> configuration) {
     FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>(new ArrayList<Iterable<TemplateReductionRule>>());
@@ -124,11 +142,64 @@ public class RuleManager {
     return myModelMap.get(modelReference);
   }
 
-  public List<TemplateMappingScript> getPreMappingScripts() {
-    return myPreScripts;
+  public ScriptManager getScripts() {
+    return myScripts;
   }
 
-  public List<TemplateMappingScript> getPostMappingScripts() {
-    return myPostScripts;
+  public class ScriptManager {
+    private List<TemplateMappingScript> myPreScripts;
+    private List<TemplateMappingScript> myPostScripts;
+
+    public ScriptManager(List<TemplateMappingScript> preScripts, List<TemplateMappingScript> postScripts) {
+      myPreScripts = preScripts;
+      myPostScripts = postScripts;
+    }
+
+    public List<TemplateMappingScript> getPreMappingScripts() {
+      return myPreScripts;
+    }
+
+    public List<TemplateMappingScript> getPostMappingScripts() {
+      return myPostScripts;
+    }
+
+    public boolean preprocessing() {
+      return !myPreScripts.isEmpty();
+    }
+
+    public boolean postprocessing() {
+      return !myPostScripts.isEmpty();
+    }
+
+    public boolean needModelCloneToPreprocess(SModel model, boolean persistentTransientModels) {
+      // need to clone input model?
+      // generally, there's no need to have a copy to run a script, even if it modifies the model (unless it's the model we can't modify, i.e. initial one)
+      // however, if we keep transients AND model is modified, it's handy to get a copy of the model to see the difference
+      if (modifiesModel(myPreScripts)) {
+        // we can modify our transient models in place, but when transients are kept, do a copy for ease of tracing
+        // besides, need a copy if trying to run modification script against non-transient model (not to affect any user model)
+        return persistentTransientModels || !isTransientModel(model) ;
+      }
+      return false;
+    }
+
+    public boolean needModelCloneToPostprocess(SModel model, boolean persistentTransientModels) {
+      // cloned model needed only for tracing and if there are chances script make any change
+      return modifiesModel(myPostScripts) && (persistentTransientModels || !isTransientModel(model));
+    }
+
+    private boolean isTransientModel(SModel model) {
+      // deprecated smodel.SModelDescriptor.isTransient suggests to do instanceof instead
+      return model.getModule() instanceof TransientModelsModule;
+    }
+
+    private boolean modifiesModel(List<TemplateMappingScript> scripts) {
+      for (TemplateMappingScript script : scripts) {
+          if (script.modifiesModel()) {
+            return true;
+          }
+        }
+      return false;
+    }
   }
 }

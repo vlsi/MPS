@@ -34,10 +34,7 @@ public class CommandHolder_Actions {
     }
 
     private static boolean eq_5bkq2_a0a0d1(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

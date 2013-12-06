@@ -15,14 +15,14 @@ public class XmlWhitespace_Behavior {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlPrologElement")) {
       SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlPrologElement");
-      return SNodeOperations.isInstanceOf(leftContent, "jetbrains.mps.core.xml.structure.XmlWhitespace") || isEmpty_vw0lry_a0a0b0b0b(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
+      return SNodeOperations.isInstanceOf(leftContent, "jetbrains.mps.core.xml.structure.XmlWhitespace") || isEmptyString(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }
 
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.core.xml.structure.XmlPrologElement", "virtual_onNewLine_2133624044437631588", new Object[]{});
-    if (isEmpty_vw0lry_a0a1a2(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(XmlPart_Behavior.call_onNewLine_2133624044437631588(thisNode));
     }
     return false;
@@ -44,11 +44,7 @@ public class XmlWhitespace_Behavior {
     return true;
   }
 
-  public static boolean isEmpty_vw0lry_a0a0b0b0b(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_vw0lry_a0a1a2(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -9,10 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class StringLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("\"");
-    StringTextGen.compilableString((SPropertyOperations.getString(node, "value") == null ?
-      "" :
-      SPropertyOperations.getString(node, "value")
-    ), this);
+    StringTextGen.compilableString((SPropertyOperations.getString(node, "value") == null ? "" : SPropertyOperations.getString(node, "value")), this);
     this.append("\"");
   }
 }

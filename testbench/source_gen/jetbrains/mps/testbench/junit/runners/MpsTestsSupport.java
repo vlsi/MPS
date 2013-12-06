@@ -53,10 +53,7 @@ public class MpsTestsSupport {
    */
   public static Environment initEnv(boolean withIdea, EnvironmentConfig config) {
     if (ActiveEnvironment.get() == null) {
-      CREATED_ENV = (withIdea ?
-        new IdeaEnvironment(config) :
-        new MpsEnvironment(config)
-      );
+      CREATED_ENV = (withIdea ? new IdeaEnvironment(config) : new MpsEnvironment(config));
       return CREATED_ENV;
     } else {
       if (withIdea && !(ActiveEnvironment.get().hasIdeaInstance())) {

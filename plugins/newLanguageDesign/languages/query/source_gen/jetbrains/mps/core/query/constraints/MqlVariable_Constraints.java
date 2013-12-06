@@ -14,15 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import java.util.Map;
-import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import java.util.HashMap;
-import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.regex.Pattern;
 
 public class MqlVariable_Constraints extends BaseConstraintsDescriptor {
   public MqlVariable_Constraints() {
@@ -46,10 +39,7 @@ public class MqlVariable_Constraints extends BaseConstraintsDescriptor {
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         {
           Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlVariable"));
-          return (scope == null ?
-            new EmptyScope() :
-            scope
-          );
+          return (scope == null ? new EmptyScope() : scope);
         }
       }
     };
@@ -71,29 +61,10 @@ public class MqlVariable_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  @Override
-  protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
-    Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
-    properties.put("name", new BasePropertyConstraintsDescriptor("name", this) {
-      @Override
-      public boolean hasOwnValidator() {
-        return true;
-      }
-
-      @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
-        String propertyName = "name";
-        return REGEXP_hmy0p9_a0a0a1a1a0b0a1a5.matcher((SPropertyOperations.getString(propertyValue))).matches();
-      }
-    });
-    return properties;
-  }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.core.query.structure.MqlVariableContainer");
   }
 
   private static SNodePointer breakingNode_hmy0p9_a0a0a0a0a2 = new SNodePointer("r:d2131fa8-9bff-49c9-a7e2-6972f9544c0a(jetbrains.mps.core.query.constraints)", "261388556849264580");
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d2131fa8-9bff-49c9-a7e2-6972f9544c0a(jetbrains.mps.core.query.constraints)", "3435983127247055593");
-  private static Pattern REGEXP_hmy0p9_a0a0a1a1a0b0a1a5 = Pattern.compile("[a-zA-Z_][a-zA-Z_0-9]*", 0);
 }

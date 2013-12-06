@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -20,8 +21,8 @@ public class check_TemplateDeclarationReference_NonTypesystemRule extends Abstra
   }
 
   public void applyRule(final SNode tdr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(tdr, "template", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(tdr, "template", false), "contentNode", true) != null)) {
-      SNode content = SLinkOperations.getTarget(SLinkOperations.getTarget(tdr, "template", false), "contentNode", true);
+    if ((SLinkOperations.getTarget(tdr, "template", false) != null) && (SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(tdr), "contentNode", true) != null)) {
+      SNode content = SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(tdr), "contentNode", true);
       if (ListSequence.fromList(SNodeOperations.getDescendants(content, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).isEmpty()) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

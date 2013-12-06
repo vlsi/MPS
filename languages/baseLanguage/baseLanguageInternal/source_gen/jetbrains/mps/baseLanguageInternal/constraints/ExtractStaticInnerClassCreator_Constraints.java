@@ -65,10 +65,7 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> res = new ArrayList<SNode>();
-            SNode context = ((_context.getReferenceNode() != null) ?
-              _context.getReferenceNode() :
-              _context.getEnclosingNode()
-            );
+            SNode context = ((_context.getReferenceNode() != null) ? _context.getReferenceNode() : _context.getEnclosingNode());
             for (SNode n : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", false)) {
               if ((SLinkOperations.getTarget(n, "innerClass", true) != null)) {
                 ListSequence.fromList(res).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SLinkOperations.getTarget(n, "innerClass", true))));

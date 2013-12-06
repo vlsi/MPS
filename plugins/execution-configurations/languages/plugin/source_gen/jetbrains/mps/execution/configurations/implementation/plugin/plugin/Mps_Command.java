@@ -83,18 +83,15 @@ public class Mps_Command {
   }
 
   public static String getDefaultVirtualMachineParameters() {
-    return IterableUtils.join(ListSequence.fromList(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), "-client", "-Xss1024k", "-ea", "-Xmx1200m", "-XX:MaxPermSize=150m", "-XX:+HeapDumpOnOutOfMemoryError", "-Dfile.encoding=UTF-8", ((InternalFlag.isInternalMode() ?
-      " -Dmps.internal=true" :
-      ""
-    )))).getCommandList()), " ");
+    return IterableUtils.join(ListSequence.fromList(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), "-client", "-Xss1024k", "-ea", "-Xmx1200m", "-XX:MaxPermSize=150m", "-XX:+HeapDumpOnOutOfMemoryError", "-Dfile.encoding=UTF-8", ((InternalFlag.isInternalMode() ? " -Dmps.internal=true" : "")))).getCommandList()), " ");
   }
 
   public static String getDefaultConfigurationPath() {
-    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug3x/config";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug31/config";
   }
 
   public static String getDefaultSystemPath() {
-    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug3x/system";
+    return SystemProperties.getUserHome().replace(File.separator, "/") + "/" + ".MPSDebug31/system";
   }
 
   private static List<File> getClassPath() {

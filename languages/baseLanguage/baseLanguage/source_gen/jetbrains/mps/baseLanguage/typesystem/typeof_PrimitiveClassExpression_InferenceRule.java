@@ -22,7 +22,7 @@ public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInfer
   }
 
   public void applyRule(final SNode primitiveClassExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode unboxedType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(primitiveClassExpression, "primitiveType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+    SNode unboxedType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(primitiveClassExpression, "primitiveType", true), "virtual_getBoxedType_1213877337320", new Object[]{});
     if (SNodeOperations.isInstanceOf(unboxedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       {
         SNode _nodeToCheck_1029348928467 = primitiveClassExpression;

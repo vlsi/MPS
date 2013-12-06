@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -61,7 +61,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -97,10 +97,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
 
       ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
         public void importForRootAdded(String rootName) {
-          String textToMatch = (rootName != null ?
-            rootName :
-            initialText.value
-          );
+          String textToMatch = (rootName != null ? rootName : initialText.value);
           if (textToMatch.length() == 0) {
             return;
           }
@@ -135,7 +132,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0g(editorCellLabel.getText()))) {
+      if (editorCellLabel.isErrorState() && !(isEmptyString(editorCellLabel.getText()))) {
         return editorCellLabel;
       }
     }
@@ -144,7 +141,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(AddModelImportByRoot_Action.class);
 
-  public static boolean isEmpty_3mx29z_a0a0b0c0g(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

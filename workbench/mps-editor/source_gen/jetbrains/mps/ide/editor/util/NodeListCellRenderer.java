@@ -34,18 +34,12 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
       moduleName = rightRenderer.getText();
       final JPanel spacer = new JPanel();
       spacer.setBorder(BorderFactory.createEmptyBorder(0, 2, 0, 2));
-      spacer.setBackground((isSelected ?
-        UIUtil.getListSelectionBackground() :
-        UIUtil.getListBackground()
-      ));
+      spacer.setBackground((isSelected ? UIUtil.getListSelectionBackground() : UIUtil.getListBackground()));
       add(spacer, BorderLayout.CENTER);
     }
     final Component leftCellRendererComponent = new NodeListCellRenderer.LeftRenderer(moduleName).getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     add(leftCellRendererComponent, BorderLayout.WEST);
-    setBackground((isSelected ?
-      UIUtil.getListSelectionBackground() :
-      UIUtil.getListBackground()
-    ));
+    setBackground((isSelected ? UIUtil.getListSelectionBackground() : UIUtil.getListBackground()));
     return this;
   }
 
@@ -71,10 +65,7 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
       private String getText(T element) {
         String elementText = getElementText(element);
         String containerText = getContainerText(element, elementText);
-        return (containerText != null ?
-          elementText + " " + containerText :
-          elementText
-        );
+        return (containerText != null ? elementText + " " + containerText : elementText);
       }
     };
   }
@@ -95,18 +86,12 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
       assert name != null : "Null name for PSI element " + element;
       append(name, nameAttributes);
       setIcon(NodeListCellRenderer.this.getIcon(element));
-      String containerText = getContainerText(element, name + ((myModuleName != null ?
-        myModuleName + "        " :
-        ""
-      )));
+      String containerText = getContainerText(element, name + ((myModuleName != null ? myModuleName + "        " : "")));
       if (containerText != null) {
         append(" " + containerText, new SimpleTextAttributes(Font.PLAIN, Color.GRAY));
       }
       setPaintFocusBorder(false);
-      setBackground((selected ?
-        UIUtil.getListSelectionBackground() :
-        UIUtil.getListBackground()
-      ));
+      setBackground((selected ? UIUtil.getListSelectionBackground() : UIUtil.getListBackground()));
     }
   }
 }

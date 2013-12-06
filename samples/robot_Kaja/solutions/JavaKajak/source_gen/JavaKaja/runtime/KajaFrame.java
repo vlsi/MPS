@@ -282,10 +282,7 @@ public abstract class KajaFrame {
         final VisualCell currentVisual = visuals[i][j];
         final Color cellValue = cell;
         int marks = worldCell.getMarks();
-        final String marksCaption = (marks > 0 ?
-          "" + marks :
-          ""
-        );
+        final String marksCaption = (marks > 0 ? "" + marks : "");
         final Icon cellIcon = karelIcon;
         final boolean isStopped = stopped;
         try {

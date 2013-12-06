@@ -45,10 +45,7 @@ public class XmlConverter {
   private static SNode convertElement(Element elem) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlElement", null);
     String namespacePrefix = elem.getNamespacePrefix();
-    SPropertyOperations.set(result, "tagName", ((namespacePrefix == null || namespacePrefix.length() == 0) ?
-      elem.getName() :
-      namespacePrefix + ":" + elem.getName()
-    ));
+    SPropertyOperations.set(result, "tagName", ((namespacePrefix == null || namespacePrefix.length() == 0) ? elem.getName() : namespacePrefix + ":" + elem.getName()));
     for (Attribute a : ListSequence.fromList((List<Attribute>) elem.getAttributes())) {
       ListSequence.fromList(SLinkOperations.getTargets(result, "attributes", true)).addElement(convertAttribute(a));
     }
@@ -60,13 +57,7 @@ public class XmlConverter {
     List<Content> list = (List<Content>) elem.getContent();
     Content[] contents = ListSequence.fromList(list).toGenericArray(Content.class);
     for (int i = 0; i < contents.length; i++) {
-      Iterable<SNode> content = convertContent((i > 0 ?
-        contents[i - 1] :
-        null
-      ), contents[i], (i + 1 < contents.length ?
-        contents[i + 1] :
-        null
-      ));
+      Iterable<SNode> content = convertContent((i > 0 ? contents[i - 1] : null), contents[i], (i + 1 < contents.length ? contents[i + 1] : null));
       if (content != null) {
         ListSequence.fromList(SLinkOperations.getTargets(result, "content", true)).addSequence(Sequence.fromIterable(content));
       }
@@ -129,10 +120,7 @@ public class XmlConverter {
       }
       return convertText(Sequence.fromIterable(Sequence.fromArray((" " + text + " ").split("\n"))).select(new ISelector<String, String>() {
         public String select(String it) {
-          return ((it == null ?
-            null :
-            it.trim()
-          ));
+          return ((it == null ? null : it.trim()));
         }
       }).toGenericArray(String.class));
     } else if (c instanceof EntityRef) {

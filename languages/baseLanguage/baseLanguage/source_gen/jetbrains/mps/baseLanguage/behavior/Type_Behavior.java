@@ -18,6 +18,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -57,10 +59,7 @@ public class Type_Behavior {
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     // all 'JavaType's should have getErasure() implemented 
     SNode javaType = Type_Behavior.call_getJavaType_1213877337345(thisNode);
-    return ((javaType == null) ?
-      null :
-      BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), javaType, "virtual_getErasure_702942408396803226", new Object[]{})
-    );
+    return ((javaType == null) ? null : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), javaType, "virtual_getErasure_702942408396803226", new Object[]{}));
   }
 
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
@@ -71,7 +70,7 @@ public class Type_Behavior {
     return true;
   }
 
-  public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
+  public static SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
     return SNodeOperations.copyNode(thisNode);
   }
 
@@ -129,6 +128,17 @@ public class Type_Behavior {
     return false;
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      t = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+      if (t == null) {
+        return false;
+      }
+    }
+
+    return Type_Behavior.call_isSupersetOf_1220438914705(thisNode, t);
+  }
+
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
     return null;
   }
@@ -184,8 +194,8 @@ public class Type_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getUnboxedType_1213877337320(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getUnboxedType_1213877337320", new Object[]{});
+  public static SNode call_getBoxedType_1213877337320(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBoxedType_1213877337320", new Object[]{});
   }
 
   @Deprecated
@@ -221,6 +231,11 @@ public class Type_Behavior {
   @Deprecated
   public static boolean call_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_1220438914705", new Object[]{t});
+  }
+
+  @Deprecated
+  public static boolean call_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
   }
 
   @Deprecated
@@ -279,8 +294,8 @@ public class Type_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getUnboxedType_1213877337320(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getUnboxedType_1213877337320", new Class[]{SNode.class}, new Object[]{});
+  public static SNode callSuper_getBoxedType_1213877337320(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getBoxedType_1213877337320", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -316,6 +331,11 @@ public class Type_Behavior {
   @Deprecated
   public static boolean callSuper_isSupersetOf_1220438914705(SNode thisNode, String callerConceptFqName, SNode t) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isSupersetOf_1220438914705", new Class[]{SNode.class, SNode.class}, new Object[]{t});
+  }
+
+  @Deprecated
+  public static boolean callSuper_isSupersetOf_9029841626175335449(SNode thisNode, String callerConceptFqName, SNode t, Map<SNode, SNode> substitutions) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isSupersetOf_9029841626175335449", new Class[]{SNode.class, SNode.class, Map.class}, new Object[]{t, substitutions});
   }
 
   @Deprecated

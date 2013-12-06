@@ -15,14 +15,19 @@
  */
 package jetbrains.mps.project.structure.model;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.util.io.MementoStreamUtil;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * evgeny, 10/24/12
@@ -76,8 +81,25 @@ public final class ModelRootDescriptor {
   }
 
   public static ModelRootDescriptor getJavaStubsModelRoot(String path) {
+    return getJavaStubsModelRoot(path, Collections.EMPTY_LIST);
+  }
+
+  public static ModelRootDescriptor getJavaStubsModelRoot(String path, final Collection<ModelRootDescriptor> modelRootDescriptors) {
+    final IFile file = FileSystem.getInstance().getFileByPath(path);
+    path = file.getParent().getPath();
+
+    for (ModelRootDescriptor descriptor : modelRootDescriptors) {
+      if(descriptor.memento.get("contentPath").equals(path)) {
+        Memento child = descriptor.memento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
+        child.put("location", file.getName());
+        return null;
+      }
+    }
+
     Memento m = new MementoImpl();
-    m.put("path", path);
+    m.put("contentPath", path);
+    Memento child = m.createChild(FileBasedModelRoot.SOURCE_ROOTS);
+    child.put("location",  file.getName());
     return new ModelRootDescriptor(PersistenceRegistry.JAVA_CLASSES_ROOT, m);
   }
 }

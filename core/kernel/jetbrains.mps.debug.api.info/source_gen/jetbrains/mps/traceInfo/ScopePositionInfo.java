@@ -83,7 +83,7 @@ public class ScopePositionInfo extends PositionInfo {
     if (result != 0) {
       return result;
     }
-    if ((int) SortedMapSequence.fromMap(myNamesToVars).count() == (int) SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).count()) {
+    if (SortedMapSequence.fromMap(myNamesToVars).count() == SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).count()) {
       Iterator<IMapping<String, VarInfo>> vars = SortedMapSequence.fromMap(myNamesToVars).iterator();
       Iterator<IMapping<String, VarInfo>> theirvars = SortedMapSequence.fromMap(((ScopePositionInfo) p).myNamesToVars).iterator();
       while (vars.hasNext()) {

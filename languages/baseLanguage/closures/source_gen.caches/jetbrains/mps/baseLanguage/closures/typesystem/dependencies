@@ -60,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.check_ReturnStatement_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_ClassifierType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_FunctionType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureArgReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureControlStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_CompactInvokeFunctionExpression_InferenceRule" />
@@ -167,6 +168,17 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureArgReference_InferenceRule" file="typeof_ClosureArgReference_InferenceRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureControlStatement_InferenceRule" file="typeof_ClosureControlStatement_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />

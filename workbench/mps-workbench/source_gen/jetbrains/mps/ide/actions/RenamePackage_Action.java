@@ -88,10 +88,7 @@ public class RenamePackage_Action extends BaseAction {
           for (SNode node : nodesUnderPackage) {
             String oldPackage = SPropertyOperations.getString(node, "virtualPackage");
             String newPackage = newName + oldPackage.substring(name.length());
-            SPropertyOperations.set(node, "virtualPackage", (newPackage.length() > 0 ?
-              newPackage :
-              null
-            ));
+            SPropertyOperations.set(node, "virtualPackage", (newPackage.length() > 0 ? newPackage : null));
           }
         }
       });

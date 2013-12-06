@@ -23,7 +23,7 @@ public class supertypesOf_CollectionType_ClassifierTypeCollection_SubtypingRule 
   public SNode getSubOrSuperType(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode et = SLinkOperations.getTarget(ct, "elementType", true);
     if (SNodeOperations.isInstanceOf(et, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      et = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), et, "virtual_getUnboxedType_1213877337320", new Object[]{});
+      et = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), et, "virtual_getBoxedType_1213877337320", new Object[]{});
     }
     return _quotation_createNode_pn6k9h_a2a1(et);
   }

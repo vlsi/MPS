@@ -246,17 +246,8 @@ nextComment:
   private void pushOnCommentsStack(int start, int end) {
     for (int i = start; i <= end; i++) {
       // First see if comment hasn't been already stored 
-      int scannerStart = (this.scanner.commentStarts[i] < 0 ?
-        -this.scanner.commentStarts[i] :
-        this.scanner.commentStarts[i]
-      );
-      int commentStart = (this.commentPtr == -1 ?
-        -1 :
-        ((this.commentStarts[this.commentPtr] < 0 ?
-          -this.commentStarts[this.commentPtr] :
-          this.commentStarts[this.commentPtr]
-        ))
-      );
+      int scannerStart = (this.scanner.commentStarts[i] < 0 ? -this.scanner.commentStarts[i] : this.scanner.commentStarts[i]);
+      int commentStart = (this.commentPtr == -1 ? -1 : ((this.commentStarts[this.commentPtr] < 0 ? -this.commentStarts[this.commentPtr] : this.commentStarts[this.commentPtr])));
       if (commentStart == -1 || scannerStart > commentStart) {
         int stackLength = this.commentStarts.length;
         if (++this.commentPtr >= stackLength) {

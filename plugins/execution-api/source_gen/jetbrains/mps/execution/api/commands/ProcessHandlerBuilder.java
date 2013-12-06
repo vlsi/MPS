@@ -41,14 +41,14 @@ public class ProcessHandlerBuilder {
   }
 
   public ProcessHandlerBuilder append(String... command) {
-    for (String commandPart : Sequence.fromIterable(Sequence.fromArray(command))) {
+    for (String commandPart : Sequence.fromArray(command)) {
       append(commandPart);
     }
     return this;
   }
 
   public ProcessHandlerBuilder append(@NotNull List<String> command) {
-    for (String commandPart : ListSequence.fromList(command)) {
+    for (String commandPart : command) {
       append(commandPart);
     }
     return this;
@@ -75,10 +75,7 @@ public class ProcessHandlerBuilder {
       Process process = builder.start();
       DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(myCommandLine).foldLeft("", new ILeftCombinator<String, String>() {
         public String combine(String s, String it) {
-          return ((s == null || s.length() == 0) ?
-            it :
-            s + " " + it
-          );
+          return ((s == null || s.length() == 0) ? it : s + " " + it);
         }
       }));
       return processHandler;

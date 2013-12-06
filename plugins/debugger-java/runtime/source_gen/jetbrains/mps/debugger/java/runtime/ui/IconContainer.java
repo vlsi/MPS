@@ -10,10 +10,10 @@ public class IconContainer {
   protected static Icon ICON_a1 = AllIcons.Debugger.Db_disabled_exception_breakpoint;
   protected static Icon ICON_a2 = AllIcons.Debugger.Db_method_breakpoint;
   protected static Icon ICON_a3 = AllIcons.Debugger.Db_disabled_method_breakpoint;
-  protected static Icon ICON_a6 = AllIcons.Debugger.Db_field_breakpoint;
-  protected static Icon ICON_a7 = AllIcons.Debugger.Db_disabled_field_breakpoint;
   protected static Icon ICON_a4 = AllIcons.Debugger.Db_invalid_method_breakpoint;
   protected static Icon ICON_a5 = AllIcons.Debugger.Db_muted_method_breakpoint;
+  protected static Icon ICON_a6 = AllIcons.Debugger.Db_field_breakpoint;
+  protected static Icon ICON_a7 = AllIcons.Debugger.Db_disabled_field_breakpoint;
   protected static Icon ICON_a8 = AllIcons.Debugger.Db_invalid_field_breakpoint;
   protected static Icon ICON_a9 = AllIcons.Debugger.Db_muted_field_breakpoint;
 }

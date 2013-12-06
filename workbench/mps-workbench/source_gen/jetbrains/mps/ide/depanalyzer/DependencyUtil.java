@@ -74,18 +74,9 @@ public class DependencyUtil {
           break;
         }
         boolean direct = role == DependencyUtil.Role.UsedDevkit;
-        addDeps(result, devkit.getExtendedDevkits(), (direct ?
-          DependencyUtil.Role.UsedDevkit :
-          DependencyUtil.Role.DependencyDevkit
-        ), DependencyUtil.LinkType.ExtendsDevkit);
-        addDeps(result, devkit.getExportedLanguages(), (direct ?
-          DependencyUtil.Role.UsedLanguage :
-          DependencyUtil.Role.DependencyLanguage
-        ), DependencyUtil.LinkType.ExportsLanguage);
-        addDeps(result, devkit.getExportedSolutions(), (direct ?
-          DependencyUtil.Role.DTDependency_ :
-          DependencyUtil.Role.RTDependency
-        ), DependencyUtil.LinkType.ExportsSolution);
+        addDeps(result, devkit.getExtendedDevkits(), (direct ? DependencyUtil.Role.UsedDevkit : DependencyUtil.Role.DependencyDevkit), DependencyUtil.LinkType.ExtendsDevkit);
+        addDeps(result, devkit.getExportedLanguages(), (direct ? DependencyUtil.Role.UsedLanguage : DependencyUtil.Role.DependencyLanguage), DependencyUtil.LinkType.ExportsLanguage);
+        addDeps(result, devkit.getExportedSolutions(), (direct ? DependencyUtil.Role.DTDependency_ : DependencyUtil.Role.RTDependency), DependencyUtil.LinkType.ExportsSolution);
         break;
 
       case UsedExtLanguage:
@@ -379,79 +370,46 @@ public class DependencyUtil {
   }
 
   private static <T> T as_he47wm_a0a0a0a0c0g0a3a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0a0a0a0d0g0a3a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0a0a2d0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0a0a4d0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0a1a0a1a5d0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0a1a0a4a0a7d0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0a0a0a0d0f0a0h3a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0b0a0j3a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0b0b0j3a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0b0a0k3a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_he47wm_a0b0b0k3a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

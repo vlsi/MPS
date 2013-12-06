@@ -90,10 +90,7 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode body = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TryStatement") ?
-        SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.TryStatement"), "body", true) :
-        SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "body", true)
-      );
+      SNode body = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TryStatement") ? SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.TryStatement"), "body", true) : SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "body", true));
 
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
         final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -117,9 +114,6 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
   }
 
   private static boolean eq_cj56ns_a0a0a0b0j(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

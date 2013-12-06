@@ -39,9 +39,6 @@ public class ShowGetNameUsages_MigrationScript extends BaseMigrationScript {
   }
 
   private static boolean eq_th6w08_a0a0d0a0a0a0b0a(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

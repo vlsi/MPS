@@ -19,13 +19,7 @@ public class CommentLine_Behavior {
       int offset = SPropertyOperations.getString(leftPart, "text").length();
       SNode rightPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
 
-      String text = ((isEmpty_hntxdb_a0a0a0e0a0b(SPropertyOperations.getString(leftPart, "text")) ?
-        "" :
-        SPropertyOperations.getString(leftPart, "text")
-      )) + ((isEmpty_hntxdb_a0a0a0e0a0b_0(SPropertyOperations.getString(rightPart, "text")) ?
-        "" :
-        SPropertyOperations.getString(rightPart, "text")
-      ));
+      String text = ((isEmptyString(SPropertyOperations.getString(leftPart, "text")) ? "" : SPropertyOperations.getString(leftPart, "text"))) + ((isEmptyString(SPropertyOperations.getString(rightPart, "text")) ? "" : SPropertyOperations.getString(rightPart, "text")));
       SPropertyOperations.set(leftPart, "text", text);
       SNodeOperations.deleteNode(rightPart);
       return new NodeCaretPair(leftPart, offset);
@@ -33,11 +27,7 @@ public class CommentLine_Behavior {
     return null;
   }
 
-  public static boolean isEmpty_hntxdb_a0a0a0e0a0b(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_hntxdb_a0a0a0e0a0b_0(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

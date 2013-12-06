@@ -183,9 +183,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(GoByCurrentReferenceToIDEA_Action.class);
 
   private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

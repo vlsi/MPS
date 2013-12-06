@@ -99,10 +99,7 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return ((myParameter == null) ?
-        "Remove @export() Annotation" :
-        "Set " + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "conceptAlias") + " Annotation"
-      );
+      return ((myParameter == null) ? "Remove @export() Annotation" : "Set " + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "conceptAlias") + " Annotation");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

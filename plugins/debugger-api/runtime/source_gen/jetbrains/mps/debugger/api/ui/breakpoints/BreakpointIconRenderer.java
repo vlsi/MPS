@@ -37,10 +37,7 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 
   @Override
   public String getTooltipText() {
-    return "<html><body>" + StringUtil.escapeXml(myBreakpoint.getKind().getPresentation()) + "<br>" + StringUtil.escapeXml(myBreakpoint.getPresentation()) + ((myBreakpoint.isValid() ?
-      "" :
-      "<br><font color='red'>Invalid</br>"
-    )) + "</html></body>";
+    return "<html><body>" + StringUtil.escapeXml(myBreakpoint.getKind().getPresentation()) + "<br>" + StringUtil.escapeXml(myBreakpoint.getPresentation()) + ((myBreakpoint.isValid() ? "" : "<br><font color='red'>Invalid</br>")) + "</html></body>";
   }
 
   @Override
@@ -62,10 +59,7 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
       return null;
     }
     JPopupMenu menu = new JPopupMenu();
-    menu.add(new AbstractAction((myBreakpoint.isEnabled() ?
-      "Disable" :
-      "Enable"
-    )) {
+    menu.add(new AbstractAction((myBreakpoint.isEnabled() ? "Disable" : "Enable")) {
       @Override
       public void actionPerformed(ActionEvent e) {
         myBreakpoint.setEnabled(!(myBreakpoint.isEnabled()));
@@ -102,12 +96,6 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
         return icon;
       }
     }
-    return (breakpoint.isValid() ?
-      ((breakpoint.isEnabled() ?
-        Icons.BREAKPOINT :
-        Icons.DISABLED_BREAKPOINT
-      )) :
-      Icons.INV_BREAKPOINT
-    );
+    return (breakpoint.isValid() ? ((breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT)) : Icons.INV_BREAKPOINT);
   }
 }

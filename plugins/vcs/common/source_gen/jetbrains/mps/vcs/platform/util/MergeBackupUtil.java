@@ -125,10 +125,7 @@ public class MergeBackupUtil {
   public static File chooseZipFileForModelFile(IFile file) {
     MergeDriverBackupUtil.setMergeBackupDirPath(getMergeBackupDirPath());
     org.jetbrains.mps.openapi.model.SModel model = SModelFileTracker.getInstance().findModel(file);
-    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), (model != null ?
-      SModelStereotype.withoutStereotype(model.getModelName()) :
-      null
-    ));
+    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), (model != null ? SModelStereotype.withoutStereotype(model.getModelName()) : null));
   }
 
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {

@@ -65,10 +65,7 @@ public class Data_Flow_TabDescriptor extends RelationDescriptor {
 
   public SNode getNode(SNode node) {
     List<SNode> nodes = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.DATA_FLOW});
-    return (ListSequence.fromList(nodes).isEmpty() ?
-      null :
-      ListSequence.fromList(nodes).first()
-    );
+    return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
   }
 
   public List<SNode> getConcepts(final SNode node) {

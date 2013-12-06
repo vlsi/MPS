@@ -33,7 +33,7 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
         typeCheckingContext.createLessThanInequality((SNode) type, (SNode) _quotation_createNode_vuymlq_a0b0b(), true, true, _info_12389875345);
       }
     }
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && eq_vuymlq_a0a0c0b(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SNodeOperations.getNode("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)", "~DataKey")) && (int) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() == 1) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && eq_vuymlq_a0a0c0b(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), SNodeOperations.getNode("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)", "~DataKey")) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() == 1) {
       SNode typeParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first();
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(actionCallParameter, "value", true);
@@ -72,9 +72,6 @@ public class typeof_ActionCallParameter_InferenceRule extends AbstractInferenceR
   }
 
   private static boolean eq_vuymlq_a0a0c0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

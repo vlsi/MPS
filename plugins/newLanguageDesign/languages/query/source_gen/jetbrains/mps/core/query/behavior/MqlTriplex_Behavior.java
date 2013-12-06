@@ -25,10 +25,7 @@ public class MqlTriplex_Behavior {
   public static Object virtual_evaluate_1671449901154581105(SNode thisNode, EvaluationEnvironment env, EvaluationContext context) {
 
     boolean conditionValue = MqlTriplex_Behavior.call_isTrue_1671449901154581765(thisNode, env.evaluate(SLinkOperations.getTarget(thisNode, "condition", true), context, true), env, context);
-    SNode consequence = (conditionValue ?
-      SLinkOperations.getTarget(thisNode, "thenexpr", true) :
-      SLinkOperations.getTarget(thisNode, "elseexpr", true)
-    );
+    SNode consequence = (conditionValue ? SLinkOperations.getTarget(thisNode, "thenexpr", true) : SLinkOperations.getTarget(thisNode, "elseexpr", true));
     return env.evaluate(consequence, context, true);
   }
 

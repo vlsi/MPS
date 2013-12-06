@@ -62,19 +62,13 @@ public class ClassifierResolveUtils {
     // try to resolve as nested name in current model 
     Iterable<SNode> result = resolveClassifierByNestedName(SNodeOperations.getModel(contextNode), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
-      return ((int) Sequence.fromIterable(result).count() == 1 ?
-        Sequence.fromIterable(result).first() :
-        null
-      );
+      return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
     }
 
     // try to resolve as fq name in current model 
     result = resolveClassifierByFqName(SNodeOperations.getModel(contextNode), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
-      return ((int) Sequence.fromIterable(result).count() == 1 ?
-        Sequence.fromIterable(result).first() :
-        null
-      );
+      return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
     }
 
     Iterable<SModule> visibleModules = check_8z6r2b_a0a8a2(((AbstractModule) check_8z6r2b_a0a0a0i0c(SNodeOperations.getModel(contextNode)))).getVisibleModules();
@@ -85,10 +79,7 @@ public class ClassifierResolveUtils {
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(resolveClassifierByNestedName(model, classifierName)));
     }
     if (ListSequence.fromList(res).isNotEmpty()) {
-      return ((int) ListSequence.fromList(res).count() == 1 ?
-        ListSequence.fromList(res).first() :
-        null
-      );
+      return (ListSequence.fromList(res).count() == 1 ? ListSequence.fromList(res).first() : null);
     }
 
     // try to resolve as fq name in current scope 
@@ -97,19 +88,13 @@ public class ClassifierResolveUtils {
         return it.getModels();
       }
     }), classifierName);
-    return ((int) Sequence.fromIterable(result).count() == 1 ?
-      Sequence.fromIterable(result).first() :
-      null
-    );
+    return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
   }
 
   public static SNode resolveWithSpecifiedTargetModelName(@NotNull String targetModelName, @NotNull String classifierFqName, @Nullable SModel sourceModel) {
     Iterable<SNode> sameModelResult = resolveClassifierByFqName(sourceModel, classifierFqName);
     if (Sequence.fromIterable(sameModelResult).isNotEmpty()) {
-      return ((int) Sequence.fromIterable(sameModelResult).count() == 1 ?
-        Sequence.fromIterable(sameModelResult).first() :
-        null
-      );
+      return (Sequence.fromIterable(sameModelResult).count() == 1 ? Sequence.fromIterable(sameModelResult).first() : null);
     }
 
     IScope modelScope = check_8z6r2b_a0d0d(((AbstractModule) check_8z6r2b_a0a0a3a3(sourceModel)));
@@ -117,18 +102,12 @@ public class ClassifierResolveUtils {
     if (modelScope != null) {
       Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, modelScope);
       if (Sequence.fromIterable(result).isNotEmpty()) {
-        return ((int) Sequence.fromIterable(result).count() == 1 ?
-          Sequence.fromIterable(result).first() :
-          null
-        );
+        return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
       }
     }
 
     Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, GlobalScope.getInstance());
-    return ((int) Sequence.fromIterable(result).count() == 1 ?
-      Sequence.fromIterable(result).first() :
-      null
-    );
+    return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
   }
 
   private static Iterable<SNode> resolveInScope(@NotNull String targetModelName, @NotNull String classifierFqName, @NotNull IScope scope) {
@@ -345,10 +324,7 @@ public class ClassifierResolveUtils {
         // and about to be deleted) before the newly created model (which is the right one) 
 
         Iterable<SNode> matches = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), fqName);
-        return ((int) Sequence.fromIterable(matches).count() == 1 ?
-          construct(Sequence.fromIterable(matches).first(), tokenizer) :
-          null
-        );
+        return (Sequence.fromIterable(matches).count() == 1 ? construct(Sequence.fromIterable(matches).first(), tokenizer) : null);
       }
 
       // not found in single-type impors 
@@ -599,10 +575,7 @@ public class ClassifierResolveUtils {
       if (SPropertyOperations.getBoolean(imp, "onDemand")) {
         String className = SPropertyOperations.getString(imp, "tokens");
         Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
-        SNode containingClas = ((int) Sequence.fromIterable(classes).count() == 1 ?
-          Sequence.fromIterable(classes).first() :
-          null
-        );
+        SNode containingClas = (Sequence.fromIterable(classes).count() == 1 ? Sequence.fromIterable(classes).first() : null);
         if ((containingClas == null)) {
           continue;
         }
@@ -621,10 +594,7 @@ public class ClassifierResolveUtils {
 
         Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
 
-        SNode containingClas = ((int) Sequence.fromIterable(classes).count() == 1 ?
-          Sequence.fromIterable(classes).first() :
-          null
-        );
+        SNode containingClas = (Sequence.fromIterable(classes).count() == 1 ? Sequence.fromIterable(classes).first() : null);
         if ((containingClas == null)) {
           continue;
         }
@@ -694,23 +664,14 @@ public class ClassifierResolveUtils {
   }
 
   private static boolean eq_8z6r2b_a0a0a0c0f(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean neq_8z6r2b_a0a0a0a0a0a0f0g(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_8z6r2b_a0a0a0a0a0a9a6(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

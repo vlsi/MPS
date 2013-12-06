@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
@@ -48,7 +48,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -65,22 +65,13 @@ public class CalcSNodeStatistic_Action extends BaseAction {
       InternalActionsUtils.executeActionOnAllNodesInModal("Calculate statistic", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode node) {
           int propertiesCount = SNodeOperations.getProperties(node).keySet().size();
-          MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ?
-            MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 :
-            1
-          ));
+          MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ? MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 : 1));
 
           int refsCount = SNodeOperations.getReferences(node).size();
-          MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ?
-            MapSequence.fromMap(refsStatistic).get(refsCount) + 1 :
-            1
-          ));
+          MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ? MapSequence.fromMap(refsStatistic).get(refsCount) + 1 : 1));
 
           int childrenCount = SNodeOperations.getChildren(node).size();
-          MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ?
-            MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 :
-            1
-          ));
+          MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ? MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 : 1));
 
           if (propertiesCount + refsCount + childrenCount == 0) {
             zeros.value++;

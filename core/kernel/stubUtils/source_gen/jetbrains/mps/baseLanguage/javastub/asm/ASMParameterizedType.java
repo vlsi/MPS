@@ -13,10 +13,7 @@ public class ASMParameterizedType extends ASMType {
 
   public ASMParameterizedType(ASMType rawType, List<? extends ASMType> typeArguments) {
     myRawType = rawType;
-    myTypeArguments = new ArrayList<ASMType>(((Collection<? extends ASMType>) (typeArguments == null ?
-      Collections.emptyList() :
-      typeArguments
-    )));
+    myTypeArguments = new ArrayList<ASMType>(((Collection<? extends ASMType>) ((typeArguments == null ? Collections.emptyList() : typeArguments))));
   }
 
   public ASMType getRawType() {

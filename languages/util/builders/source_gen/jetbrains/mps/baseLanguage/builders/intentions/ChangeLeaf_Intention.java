@@ -68,10 +68,7 @@ public class ChangeLeaf_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "leaf") ?
-        "Make Non Leaf" :
-        "Make Leaf"
-      );
+      return (SPropertyOperations.getBoolean(node, "leaf") ? "Make Non Leaf" : "Make Leaf");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

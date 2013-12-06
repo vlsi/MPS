@@ -49,10 +49,7 @@ public class ModuleOutputPaths {
       public String select(AbstractModule mod) {
         // todo: tmp hack 
         String path = mod.getTestsGeneratorOutputPath();
-        return (path != null ?
-          path :
-          mod.getGeneratorOutputPath()
-        );
+        return (path != null ? path : mod.getGeneratorOutputPath());
       }
     }));
     this.sortedTestOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<AbstractModule, String>() {

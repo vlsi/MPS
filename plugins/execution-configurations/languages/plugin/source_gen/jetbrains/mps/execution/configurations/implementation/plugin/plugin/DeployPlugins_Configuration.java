@@ -24,7 +24,7 @@ import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.options.SettingsEditor;
-import com.intellij.openapi.util.JDOMExternalizable;
+import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
@@ -110,7 +110,7 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
     if (element.getName().endsWith(mpsLanguageLib)) {
       ListSequence.fromList(toRemove).addElement(element);
     } else {
-      for (Object child : element.getChildren()) {
+      for (Element child : ListSequence.fromList(element.getChildren())) {
         if (child instanceof Element) {
           removeLanguageLibraries((Element) child, project, toRemove);
         }
@@ -160,11 +160,11 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
   }
 
   @Nullable
-  public SettingsEditor<JDOMExternalizable> getRunnerSettingsEditor(ProgramRunner runner) {
+  public SettingsEditor<ConfigurationPerRunnerSettings> getRunnerSettingsEditor(ProgramRunner runner) {
     return null;
   }
 
-  public JDOMExternalizable createRunnerSettings(ConfigurationInfoProvider provider) {
+  public ConfigurationPerRunnerSettings createRunnerSettings(ConfigurationInfoProvider provider) {
     return null;
   }
 

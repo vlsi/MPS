@@ -72,10 +72,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    int metaLevel = (sameMetaLevel ?
-      SModelUtil_new.getMetaLevel(node) :
-      0
-    );
+    int metaLevel = (sameMetaLevel ? SModelUtil_new.getMetaLevel(node) : 0);
 
     // look up for certain concept 
     if (root) {
@@ -128,10 +125,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    int metaLevel = (sameMetaLevel ?
-      SModelUtil_new.getMetaLevel(node) :
-      0
-    );
+    int metaLevel = (sameMetaLevel ? SModelUtil_new.getMetaLevel(node) : 0);
     if (ancestorConceptFqNames.length == 0) {
       return null;
     }
@@ -227,15 +221,12 @@ public class SNodeOperations {
         result.add(node);
       }
     }
-    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ?
-      Condition.FALSE_CONDITION :
-      new Condition<SNode>() {
-        @Override
-        public boolean met(SNode node) {
-          return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
-        }
+    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
+      @Override
+      public boolean met(SNode node) {
+        return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
       }
-    );
+    });
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
       @Override
       public boolean met(SNode node) {
@@ -260,15 +251,12 @@ public class SNodeOperations {
         result.add(node);
       }
     }
-    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ?
-      Condition.FALSE_CONDITION :
-      new Condition<SNode>() {
-        @Override
-        public boolean met(SNode node) {
-          return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
-        }
+    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
+      @Override
+      public boolean met(SNode node) {
+        return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
       }
-    );
+    });
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
       @Override
       public boolean met(SNode node) {
@@ -596,10 +584,7 @@ public class SNodeOperations {
   }
 
   public static SNode getConceptDeclaration(SNode node) {
-    return (node == null ?
-      null :
-      SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance())
-    );
+    return (node == null ? null : SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance()));
   }
 
   public static int getIndexInParent(SNode node) {

@@ -10,17 +10,11 @@ public class PropEscapeUtil {
   }
 
   public static String escapeKey(String text) {
-    return (text == null ?
-      "" :
-      escape(text, true, true)
-    );
+    return (text == null ? "" : escape(text, true, true));
   }
 
   public static String escapeValue(String text) {
-    return (text == null ?
-      "" :
-      escape(text, false, true)
-    );
+    return (text == null ? "" : escape(text, false, true));
   }
 
   private static String escape(String text, boolean escapeSpace, boolean escapeUnicode) {

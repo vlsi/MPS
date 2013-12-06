@@ -42,7 +42,7 @@ public class Templatereduce__ResultStatement implements TemplateDeclarationWeavi
             try {
               environment.getTracer().pushTemplateNode(templateNode_xkd8dl_a0a0a1a3a1a3a1a2);
               environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/3021153905151704221");
-              environment.resolveInTemplateLater(tnode3, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905151704221"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142326869", "_results", context);
+              environment.resolveInTemplateLater(tnode3, "variableDeclaration", templateNode_xkd8dl_a0a0a1a3a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142326869", "_results", context);
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));

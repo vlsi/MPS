@@ -49,10 +49,7 @@ public class ClassConcept_Behavior {
     List<SNode> extendsClassifiers = new ArrayList<SNode>();
     if (!(Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode))) {
       SNode superClassifier = SLinkOperations.getTarget(thisNode, "superclass", true);
-      ListSequence.fromList(extendsClassifiers).addElement(((SLinkOperations.getTarget(superClassifier, "classifier", false) != null) ?
-        superClassifier :
-        BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_3305065273710880775", new Object[]{})
-      ));
+      ListSequence.fromList(extendsClassifiers).addElement(((SLinkOperations.getTarget(superClassifier, "classifier", false) != null) ? superClassifier : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_3305065273710880775", new Object[]{})));
     }
     ListSequence.fromList(extendsClassifiers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -187,10 +184,7 @@ public class ClassConcept_Behavior {
     if (Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode)) {
       return null;
     }
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false) != null) ?
-      SLinkOperations.getTarget(thisNode, "superclass", true) :
-      _quotation_createNode_xjj00_a0b0j()
-    );
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false) != null) ? SLinkOperations.getTarget(thisNode, "superclass", true) : _quotation_createNode_xjj00_a0b0j());
   }
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
@@ -250,6 +244,7 @@ public class ClassConcept_Behavior {
     return result;
   }
 
+  @Deprecated
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     SNode superClass = SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSuperclass_1240936569950", new Object[]{}), "classifier", false);
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {

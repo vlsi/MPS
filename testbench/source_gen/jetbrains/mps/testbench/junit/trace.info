@@ -90,45 +90,45 @@
     <nodeInfo nodeId="5294483648489412063" fileName="OrderComparator.java" startLine="18" startPosition="47" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5294483648489412083" fileName="OrderComparator.java" startLine="21" startPosition="54" endLine="22" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5294483648489412086" fileName="OrderComparator.java" startLine="23" startPosition="5" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412104" fileName="OrderComparator.java" startLine="28" startPosition="6" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412131" fileName="OrderComparator.java" startLine="34" startPosition="37" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412204" fileName="OrderComparator.java" startLine="36" startPosition="5" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5294483648489412147" fileName="OrderComparator.java" startLine="39" startPosition="50" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412159" fileName="OrderComparator.java" startLine="42" startPosition="50" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412168" fileName="OrderComparator.java" startLine="45" startPosition="5" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5294483648489412177" fileName="OrderComparator.java" startLine="46" startPosition="0" endLine="47" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5294483648489412093" fileName="OrderComparator.java" startLine="24" startPosition="45" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5294483648489412104" fileName="OrderComparator.java" startLine="25" startPosition="50" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5294483648489412111" fileName="OrderComparator.java" startLine="26" startPosition="45" endLine="27" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5294483648489412131" fileName="OrderComparator.java" startLine="28" startPosition="37" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489412204" fileName="OrderComparator.java" startLine="30" startPosition="5" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5294483648489412147" fileName="OrderComparator.java" startLine="33" startPosition="50" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489412159" fileName="OrderComparator.java" startLine="36" startPosition="50" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489412168" fileName="OrderComparator.java" startLine="39" startPosition="5" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5294483648489412177" fileName="OrderComparator.java" startLine="40" startPosition="0" endLine="41" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5294483648489412044" fileName="OrderComparator.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OrderComparator#()V" />
     <nodeInfo nodeId="5294483648489412055" fileName="OrderComparator.java" startLine="17" startPosition="52" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5294483648489412074" fileName="OrderComparator.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412121" fileName="OrderComparator.java" startLine="33" startPosition="6" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412150" fileName="OrderComparator.java" startLine="41" startPosition="12" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412093" fileName="OrderComparator.java" startLine="24" startPosition="45" endLine="28" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412111" fileName="OrderComparator.java" startLine="29" startPosition="45" endLine="33" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412138" fileName="OrderComparator.java" startLine="38" startPosition="52" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412135" fileName="OrderComparator.java" startLine="37" startPosition="21" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489412048" fileName="OrderComparator.java" startLine="16" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lorg/junit/runner/Description;Lorg/junit/runner/Description;)I" />
+    <nodeInfo nodeId="5294483648489412121" fileName="OrderComparator.java" startLine="27" startPosition="50" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489412150" fileName="OrderComparator.java" startLine="35" startPosition="12" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489412138" fileName="OrderComparator.java" startLine="32" startPosition="52" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5294483648489412135" fileName="OrderComparator.java" startLine="31" startPosition="21" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5294483648489412048" fileName="OrderComparator.java" startLine="16" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lorg/junit/runner/Description;Lorg/junit/runner/Description;)I" />
     <scopeInfo nodeId="5294483648489412046" fileName="OrderComparator.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
     <scopeInfo nodeId="5294483648489412062" fileName="OrderComparator.java" startLine="18" startPosition="47" endLine="19" endPosition="78" />
     <scopeInfo nodeId="5294483648489412082" fileName="OrderComparator.java" startLine="21" startPosition="54" endLine="22" endPosition="15" />
-    <scopeInfo nodeId="5294483648489412130" fileName="OrderComparator.java" startLine="34" startPosition="37" endLine="35" endPosition="29" />
-    <scopeInfo nodeId="5294483648489412146" fileName="OrderComparator.java" startLine="39" startPosition="50" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="5294483648489412158" fileName="OrderComparator.java" startLine="42" startPosition="50" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="5294483648489412130" fileName="OrderComparator.java" startLine="28" startPosition="37" endLine="29" endPosition="29" />
+    <scopeInfo nodeId="5294483648489412146" fileName="OrderComparator.java" startLine="33" startPosition="50" endLine="34" endPosition="18" />
+    <scopeInfo nodeId="5294483648489412158" fileName="OrderComparator.java" startLine="36" startPosition="50" endLine="37" endPosition="17" />
     <scopeInfo nodeId="5294483648489412044" fileName="OrderComparator.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="5294483648489412137" fileName="OrderComparator.java" startLine="38" startPosition="52" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="5294483648489412135" fileName="OrderComparator.java" startLine="37" startPosition="21" endLine="45" endPosition="5">
+    <scopeInfo nodeId="5294483648489412137" fileName="OrderComparator.java" startLine="32" startPosition="52" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="5294483648489412135" fileName="OrderComparator.java" startLine="31" startPosition="21" endLine="39" endPosition="5">
       <varInfo nodeId="5294483648489412161" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489412054" fileName="OrderComparator.java" startLine="17" startPosition="52" endLine="47" endPosition="89">
+    <scopeInfo nodeId="5294483648489412054" fileName="OrderComparator.java" startLine="17" startPosition="52" endLine="41" endPosition="89">
       <varInfo nodeId="5294483648489412085" varName="oaa" />
       <varInfo nodeId="5294483648489412103" varName="oab" />
       <varInfo nodeId="5294483648489412092" varName="orderA" />
       <varInfo nodeId="5294483648489412110" varName="orderB" />
     </scopeInfo>
-    <scopeInfo nodeId="5294483648489412048" fileName="OrderComparator.java" startLine="16" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="5294483648489412048" fileName="OrderComparator.java" startLine="16" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5294483648489412050" varName="a" />
       <varInfo nodeId="5294483648489412052" varName="b" />
     </scopeInfo>
-    <unitInfo nodeId="5294483648489412039" fileName="OrderComparator.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.testbench.junit.OrderComparator" />
+    <unitInfo nodeId="5294483648489412039" fileName="OrderComparator.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.testbench.junit.OrderComparator" />
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412205">
     <nodeInfo nodeId="5294483648489412209" fileName="WatchingRunNotifier.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCH_LEVEL" />

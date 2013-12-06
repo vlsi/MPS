@@ -25,18 +25,12 @@ public class GenUtil {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.NodeMacro");
       }
     }).toListSequence();
-    SNode real = (ListSequence.fromList(macros).count() <= skipMacro ?
-      node :
-      ListSequence.fromList(macros).getElement(skipMacro)
-    );
+    SNode real = (ListSequence.fromList(macros).count() <= skipMacro ? node : ListSequence.fromList(macros).getElement(skipMacro));
     return (String) context.getTransientObject(MultiTuple.<String,SNode>from(KEY, real));
   }
 
   public static String saveVar(TemplateQueryContext context, SNode node, String var) {
-    SNode original = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") ?
-      SNodeOperations.getParent(node) :
-      node
-    );
+    SNode original = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") ? SNodeOperations.getParent(node) : node);
     if (context.getTransientObject(original) == null) {
       context.putTransientObject(original, var);
     }

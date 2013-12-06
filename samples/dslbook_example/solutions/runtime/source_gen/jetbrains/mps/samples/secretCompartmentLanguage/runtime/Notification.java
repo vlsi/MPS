@@ -37,9 +37,6 @@ public class Notification {
 
   @Override
   public String toString() {
-    return ((isOk()) ?
-      "OK" :
-      "Errors:\n" + report()
-    );
+    return ((isOk()) ? "OK" : "Errors:\n" + report());
   }
 }

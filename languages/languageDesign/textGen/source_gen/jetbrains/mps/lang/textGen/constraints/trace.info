@@ -227,44 +227,44 @@
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="21" startPosition="82" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="25" startPosition="40" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="30" startPosition="84" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7166719696753590034" fileName="EncodingLiteral_Constraints.java" startLine="32" startPosition="123" endLine="33" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7166719696753590034" fileName="EncodingLiteral_Constraints.java" startLine="32" startPosition="106" endLine="33" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7166719696753427468" fileName="EncodingLiteral_Constraints.java" startLine="35" startPosition="78" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7166719696753436256" fileName="EncodingLiteral_Constraints.java" startLine="38" startPosition="13" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7166719696753436267" fileName="EncodingLiteral_Constraints.java" startLine="39" startPosition="74" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7166719696753436261" fileName="EncodingLiteral_Constraints.java" startLine="41" startPosition="47" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="45" startPosition="7" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7166719696753590033" fileName="EncodingLiteral_Constraints.java" startLine="49" startPosition="68" endLine="50" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7166719696753590033" fileName="EncodingLiteral_Constraints.java" startLine="49" startPosition="52" endLine="50" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="65" endLine="54" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EncodingLiteral_Constraints#()V" />
     <nodeInfo nodeId="7166719696753590017" fileName="EncodingLiteral_Constraints.java" startLine="31" startPosition="41" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7166719696753427460" fileName="EncodingLiteral_Constraints.java" startLine="34" startPosition="9" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7166719696753590033" fileName="EncodingLiteral_Constraints.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_p9uqyx_a0a0b0b0a1a0b0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7166719696753590033" fileName="EncodingLiteral_Constraints.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmptyString#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_p9uqyx_a0a0a1a1a0b0a1a1#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
-    <nodeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="65" endLine="57" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7166719696753427473" fileName="EncodingLiteral_Constraints.java" startLine="37" startPosition="9" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_p9uqyx_a0a0a1a1a0b0a1a1#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="31" startPosition="41" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="29" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="22" startPosition="74" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="20" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
     <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="16" startPosition="40" endLine="17" endPosition="66" />
     <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="25" startPosition="40" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="7166719696753590018" fileName="EncodingLiteral_Constraints.java" startLine="32" startPosition="123" endLine="33" endPosition="23" />
+    <scopeInfo nodeId="7166719696753590018" fileName="EncodingLiteral_Constraints.java" startLine="32" startPosition="106" endLine="33" endPosition="23" />
     <scopeInfo nodeId="7166719696753427461" fileName="EncodingLiteral_Constraints.java" startLine="35" startPosition="78" endLine="36" endPosition="22" />
     <scopeInfo nodeId="7166719696753427476" fileName="EncodingLiteral_Constraints.java" startLine="41" startPosition="0" endLine="42" endPosition="23">
       <varInfo nodeId="7166719696753427477" varName="uc" />
     </scopeInfo>
     <scopeInfo nodeId="7166719696753427479" fileName="EncodingLiteral_Constraints.java" startLine="41" startPosition="47" endLine="42" endPosition="23" />
-    <scopeInfo nodeId="7166719696753590033" fileName="EncodingLiteral_Constraints.java" startLine="49" startPosition="68" endLine="50" endPosition="44" />
+    <scopeInfo nodeId="7166719696753590033" fileName="EncodingLiteral_Constraints.java" startLine="49" startPosition="52" endLine="50" endPosition="44" />
+    <scopeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="65" endLine="54" endPosition="45" />
     <scopeInfo nodeId="7166719696753427474" fileName="EncodingLiteral_Constraints.java" startLine="38" startPosition="13" endLine="40" endPosition="22" />
     <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="7166719696753590033" fileName="EncodingLiteral_Constraints.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="7166719696753590033" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="65" endLine="57" endPosition="6" />
-    <scopeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="7166719696753590028" fileName="EncodingLiteral_Constraints.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="7166719696753590028" varName="str" />
     </scopeInfo>
+    <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="7166719696753421213" fileName="EncodingLiteral_Constraints.java" startLine="31" startPosition="41" endLine="43" endPosition="9" />
     <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="30" startPosition="84" endLine="43" endPosition="9">
       <varInfo nodeId="7166719696753421208" varName="propertyName" />
@@ -279,7 +279,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="20" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="23" startPosition="35" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints$1" />
-    <unitInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints" />
+    <unitInfo nodeId="7166719696753421208" fileName="EncodingLiteral_Constraints.java" startLine="15" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints" />
   </root>
 </debugInfo>
 

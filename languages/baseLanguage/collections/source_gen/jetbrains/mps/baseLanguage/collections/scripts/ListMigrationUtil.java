@@ -134,16 +134,10 @@ public class ListMigrationUtil {
   }
 
   private static boolean neq_gtz9m1_a0b0g(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_gtz9m1_a0a2a6(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -15,10 +15,7 @@ public class FixAttributeInfo_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription(SNode node) {
-    return ((((AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")) == null)) ?
-      "Add" :
-      "Remove"
-    )) + " Attribute Info";
+    return ((((AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")) == null)) ? "Add" : "Remove")) + " Attribute Info";
   }
 
   public void execute(SNode node) {

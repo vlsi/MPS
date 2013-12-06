@@ -33,7 +33,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
   }
 
   protected Collection<SNode> applyNode0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final List<SNode> tlist1 = new ArrayList();
+    final List<SNode> tlist1 = new ArrayList<SNode>();
     try {
       environment.getTracer().pushMacro(mapsrcMacroRef_i5yf3w_a0a0a1a2);
       TemplateContext context1 = context.subContext("map_FinderConstructor");
@@ -452,14 +452,14 @@ public class TemplateFinderClass implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a3a1a3a1a01a1a1a1a9a1a3);
                           environment.nodeCopied(context, tnode30, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538175332");
-                          environment.resolveInTemplateLater(tnode30, "baseMethodDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "6297023828538175332"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396930100", "isVisible", context);
+                          environment.resolveInTemplateLater(tnode30, "baseMethodDeclaration", templateNode_i5yf3w_a0a0a1a3a1a3a1a01a1a1a1a9a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396930100", "isVisible", context);
 
                           {
                             final SNode tnode31 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a3a1a3a1a01a1a1a1a9a1a3);
                               environment.nodeCopied(context, tnode31, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538184410");
-                              environment.resolveInTemplateLater(tnode31, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "6297023828538184410"), "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985152", "node", context);
+                              environment.resolveInTemplateLater(tnode31, "variableDeclaration", templateNode_i5yf3w_a0a0a1a4a1a3a1a3a1a01a1a1a1a9a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985152", "node", context);
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode31));
@@ -510,7 +510,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                         try {
                                           environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a4a1a3a1a5a1a3a1a3a1a01a1a1a1a9a1a3);
                                           environment.nodeCopied(context, tnode36, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538464596");
-                                          environment.resolveInTemplateLater(tnode36, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "6297023828538464596"), "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985152", "node", context);
+                                          environment.resolveInTemplateLater(tnode36, "variableDeclaration", templateNode_i5yf3w_a0a0a1a4a1a4a1a3a1a5a1a3a1a3a1a01a1a1a1a9a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985152", "node", context);
 
                                         } finally {
                                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode36));
@@ -1383,7 +1383,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a3a1a3a1a1a1a3a1a11a1a51a1a3);
                               environment.nodeCopied(context, tnode98, "tpl/r:00000000-0000-4000-0000-011c8959035c/3021153905150330637");
-                              environment.resolveInTemplateLater(tnode98, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905150330637"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142236666", "monitor", context);
+                              environment.resolveInTemplateLater(tnode98, "variableDeclaration", templateNode_i5yf3w_a0a0a1a3a1a3a1a1a1a3a1a11a1a51a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142236666", "monitor", context);
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode98));
@@ -1406,7 +1406,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a4a1a3a1a1a1a3a1a11a1a51a1a3);
                                   environment.nodeCopied(context, tnode100, "tpl/r:00000000-0000-4000-0000-011c8959035c/4923130412073258238");
-                                  environment.resolveInTemplateLater(tnode100, "baseMethodDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "4923130412073258238"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839664529", "getDescription", context);
+                                  environment.resolveInTemplateLater(tnode100, "baseMethodDeclaration", templateNode_i5yf3w_a0a0a1a4a1a4a1a3a1a1a1a3a1a11a1a51a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839664529", "getDescription", context);
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode100));
@@ -1495,7 +1495,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a3a1a3a1a3a1a3a1a4a1a11a1a51a1a3);
                                   environment.nodeCopied(context, tnode107, "tpl/r:00000000-0000-4000-0000-011c8959035c/3021153905151615941");
-                                  environment.resolveInTemplateLater(tnode107, "variableDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "3021153905151615941"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142236666", "monitor", context);
+                                  environment.resolveInTemplateLater(tnode107, "variableDeclaration", templateNode_i5yf3w_a0a0a1a3a1a3a1a3a1a3a1a4a1a11a1a51a1a3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142236666", "monitor", context);
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode107));

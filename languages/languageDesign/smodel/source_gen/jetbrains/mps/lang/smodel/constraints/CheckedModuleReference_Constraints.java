@@ -39,10 +39,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
           }
           SModuleReference moduleReference = PersistenceFacade.getInstance().createModuleReference(original);
           SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-          return (module != null ?
-            module.getModuleName() :
-            moduleReference.getModuleName()
-          );
+          return (module != null ? module.getModuleName() : moduleReference.getModuleName());
         }
       }
 

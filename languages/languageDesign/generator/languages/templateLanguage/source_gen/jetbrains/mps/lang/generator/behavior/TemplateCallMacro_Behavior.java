@@ -7,6 +7,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class TemplateCallMacro_Behavior {
@@ -23,6 +24,10 @@ public class TemplateCallMacro_Behavior {
       }
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
+  }
+
+  public static SNode call_getTemplate_982871510068205176(SNode thisNode) {
+    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
 
   public static class Pattern_4ckpni_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {

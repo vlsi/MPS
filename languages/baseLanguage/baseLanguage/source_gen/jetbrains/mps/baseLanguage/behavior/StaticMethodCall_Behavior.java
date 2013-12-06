@@ -51,6 +51,9 @@ public class StaticMethodCall_Behavior {
     for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
     }
+    for (SNode actualTypeArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeArgument", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "typeArgument", true)).addElement(actualTypeArgument);
+    }
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -58,9 +61,6 @@ public class StaticMethodCall_Behavior {
   }
 
   private static boolean eq_8wxa2a_a0a0a0a0a0a0a2(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

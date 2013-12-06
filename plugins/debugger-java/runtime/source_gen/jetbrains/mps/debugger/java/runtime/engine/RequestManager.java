@@ -68,10 +68,7 @@ public class RequestManager implements IRequestManager {
   @Nullable
   public Requestor findRequestor(EventRequest request) {
     ManagerThread.assertIsMangerThread();
-    return (request != null ?
-      (Requestor) request.getProperty(REQUESTOR) :
-      null
-    );
+    return (request != null ? (Requestor) request.getProperty(REQUESTOR) : null);
   }
 
   @NotNull

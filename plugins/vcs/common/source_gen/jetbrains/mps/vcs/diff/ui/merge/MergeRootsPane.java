@@ -178,10 +178,7 @@ public class MergeRootsPane {
     myMergeSession = mergeSession;
     MapSequence.fromMap(myDiffLayoutPart).visitAll(new IVisitor<IMapping<DiffChangeGroupLayout, Boolean>>() {
       public void visit(IMapping<DiffChangeGroupLayout, Boolean> it) {
-        it.key().setChangeSet((it.value() ?
-          mergeSession.getMyChangeSet() :
-          mergeSession.getRepositoryChangeSet()
-        ));
+        it.key().setChangeSet((it.value() ? mergeSession.getMyChangeSet() : mergeSession.getRepositoryChangeSet()));
       }
     });
     setRootId(rootId);
@@ -193,25 +190,13 @@ public class MergeRootsPane {
     }
     isInspectorShown = show;
     PropertiesComponent.getInstance().setValue(PARAM_SHOW_INSPECTOR, show + "");
-    myPanel.setSecondComponent((isInspectorShown ?
-      myBottomPanel :
-      null
-    ));
+    myPanel.setSecondComponent((isInspectorShown ? myBottomPanel : null));
   }
 
 
 
   private ChangeGroupLayout createChangeGroupLayout(boolean mine, boolean inspector) {
-    DiffChangeGroupLayout layout = new DiffChangeGroupLayout(myConflictChecker, (mine ?
-      myMergeSession.getMyChangeSet() :
-      myMergeSession.getRepositoryChangeSet()
-    ), (mine ?
-      myMineEditor :
-      myResultEditor
-    ), (mine ?
-      myResultEditor :
-      myRepositoryEditor
-    ), inspector);
+    DiffChangeGroupLayout layout = new DiffChangeGroupLayout(myConflictChecker, (mine ? myMergeSession.getMyChangeSet() : myMergeSession.getRepositoryChangeSet()), (mine ? myMineEditor : myResultEditor), (mine ? myResultEditor : myRepositoryEditor), inspector);
     MapSequence.fromMap(myDiffLayoutPart).put(layout, mine);
     return layout;
   }
@@ -285,20 +270,11 @@ public class MergeRootsPane {
     ChangeGroupMessages.startMaintaining(layout);
     ListSequence.fromList(myChangeGroupLayouts).addElement(layout);
     DiffEditorSeparator separator = new DiffEditorSeparator(layout);
-    JPanel panel = (inspector ?
-      myBottomPanel :
-      myTopPanel
-    );
-    GridBagConstraints gbc = new GridBagConstraints((mine ?
-      1 :
-      3
-    ), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
+    JPanel panel = (inspector ? myBottomPanel : myTopPanel);
+    GridBagConstraints gbc = new GridBagConstraints((mine ? 1 : 3), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0);
     panel.add(separator, gbc);
     ListSequence.fromList(myEdtiorSeparators).addElement(separator);
-    MergeButtonsPainter.addTo(this, (mine ?
-      myMineEditor :
-      myRepositoryEditor
-    ), layout, inspector);
+    MergeButtonsPainter.addTo(this, (mine ? myMineEditor : myRepositoryEditor), layout, inspector);
   }
 
   private SNodeId getRootNodeId(SModel model) {
@@ -319,19 +295,10 @@ public class MergeRootsPane {
 
   private DiffEditor addEditor(int index, SModel model) {
     SNodeId rootId = getRootNodeId(model);
-    SNode root = (rootId == null ?
-      null :
-      model.getNode(rootId)
-    );
+    SNode root = (rootId == null ? null : model.getNode(rootId));
     final DiffEditor result = new DiffEditor(ProjectHelper.toMPSProject(myProject).getRepository(), root, myTitles[index], index == 0);
 
-    GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
-      5 :
-      0
-    ), 5, (index == 2 ?
-      5 :
-      0
-    )), 0, 0);
+    GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ? 5 : 0), 5, (index == 2 ? 5 : 0)), 0, 0);
     myTopPanel.add(result.getTopComponent(), gbc);
     myBottomPanel.add(result.getInspector().getExternalComponent(), gbc);
 

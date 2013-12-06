@@ -47,7 +47,7 @@ public class JavaExportUtil {
           Tuples._2<SNode, String> resource = artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar"), "path", true));
           SNode jarArtifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
           if (jarArtifact != null) {
-            ListSequence.fromList(result).addElement(MultiTuple.<SNode,Boolean>from(jarArtifact, isNotEmpty_4xqa58_a1a0a0a2a3a2a6a1(resource._1())));
+            ListSequence.fromList(result).addElement(MultiTuple.<SNode,Boolean>from(jarArtifact, isNotEmptyString(resource._1())));
           }
         } else if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")) {
           Tuples._2<SNode, Boolean> requiredJar = requireJar(artifacts, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(classpath, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"), "extJar", true), "jar", false), contextNode);
@@ -185,7 +185,7 @@ public class JavaExportUtil {
     } else if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
       Tuples._2<SNode, String> resource = artifacts.getResource(SLinkOperations.getTarget(SNodeOperations.cast(target, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true));
       artifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
-      withContent = isNotEmpty_4xqa58_a0a2a0h0d(resource._1());
+      withContent = isNotEmptyString(resource._1());
     }
     if (artifact == null) {
       return null;
@@ -214,11 +214,7 @@ public class JavaExportUtil {
 
   }
 
-  public static boolean isNotEmpty_4xqa58_a1a0a0a2a3a2a6a1(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_4xqa58_a0a2a0h0d(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -81,13 +81,7 @@ public class ASMClass {
       }
     }
     if (myNode.visibleAnnotations != null || myNode.invisibleAnnotations != null) {
-      int size = ((myNode.visibleAnnotations != null ?
-        myNode.visibleAnnotations.size() :
-        0
-      )) + ((myNode.invisibleAnnotations != null ?
-        myNode.invisibleAnnotations.size() :
-        0
-      ));
+      int size = ((myNode.visibleAnnotations != null ? myNode.visibleAnnotations.size() : 0)) + ((myNode.invisibleAnnotations != null ? myNode.invisibleAnnotations.size() : 0));
       myAnnotations = new ArrayList<ASMAnnotation>(size);
       if (myNode.visibleAnnotations != null) {
         for (AnnotationNode an : (List<AnnotationNode>) myNode.visibleAnnotations) {
@@ -125,10 +119,7 @@ public class ASMClass {
   }
 
   public String getName() {
-    return (myNode.name == null ?
-      "" :
-      myNode.name
-    );
+    return (myNode.name == null ? "" : myNode.name);
   }
 
   public String getFqName() {
@@ -151,10 +142,7 @@ public class ASMClass {
   }
 
   public List<ASMAnnotation> getAnnotations() {
-    return ((List<ASMAnnotation>) (myAnnotations == null ?
-      Collections.emptyList() :
-      Collections.unmodifiableList(myAnnotations)
-    ));
+    return ((List<ASMAnnotation>) ((myAnnotations == null ? Collections.emptyList() : Collections.unmodifiableList(myAnnotations))));
   }
 
   public ASMType getGenericSuperclass() {

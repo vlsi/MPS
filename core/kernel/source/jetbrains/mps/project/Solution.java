@@ -33,6 +33,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -147,7 +148,10 @@ public class Solution extends AbstractModule {
     if (!descriptor.getModelRootDescriptors().isEmpty()) return;
 
     for (String path : CommonPaths.getMPSPaths(classType)) {
-      descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
+      final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
+      final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(path, modelRootDescriptors);
+      if(javaStubsModelRoot != null)
+        modelRootDescriptors.add(javaStubsModelRoot);
       descriptor.getAdditionalJavaStubPaths().add(path);
     }
   }

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import utils.ParallelLoopException;
 
-public class SimpleParallelForSample {
+public abstract class SimpleParallelForSample<T> {
   public SimpleParallelForSample() {
   }
 
@@ -64,10 +64,9 @@ public class SimpleParallelForSample {
     System.getSecurityManager();
   }
 
-  public static class Logger {
-    public Logger() {
-    }
 
+
+  public static class Logger {
     private static synchronized void log(String msg) {
       System.out.println(msg);
     }

@@ -22,7 +22,7 @@ public class StringLiteralRegexp_Behavior {
   }
 
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
-    if (isEmpty_mq2s4l_a0a0c(SPropertyOperations.getString(thisNode, "text"))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
     return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
@@ -107,7 +107,7 @@ public class StringLiteralRegexp_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static boolean isEmpty_mq2s4l_a0a0c(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -48,7 +48,7 @@ public class ClosuresUtil {
           }
           return false;
         }
-        return isClosureContextOwner(((SNode) n));
+        return ClosuresUtil.isClosureContextOwner(((SNode) n));
       }
     }));
   }
@@ -66,10 +66,7 @@ public class ClosuresUtil {
   public static boolean isVariableUsedInClosure(SNode contextOwner, SNode var, ITemplateGenerator generator) {
     ensureClosureContextOwnerProcessed(contextOwner, generator);
     ClosuresUtil.ClosureContextData contextData = getClosureContextData(contextOwner, generator);
-    return (contextData != null ?
-      contextData.hasVariable(var) :
-      false
-    );
+    return (contextData != null ? contextData.hasVariable(var) : false);
   }
 
   public static boolean hasVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {

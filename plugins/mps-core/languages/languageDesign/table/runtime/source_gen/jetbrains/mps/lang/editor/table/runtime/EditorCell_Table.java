@@ -127,10 +127,7 @@ public class EditorCell_Table extends EditorCell_Collection {
           editorCell.setRightGap(4);
           if (!(editorCell.getStyle().isSpecified(StyleAttributes.MAX_WIDTH))) {
             int maxColumnWidth = myModel.getMaxColumnWidth(column);
-            editorCell.getStyle().set(StyleAttributes.MAX_WIDTH, (maxColumnWidth < 0 ?
-              averageColumnWidth :
-              maxColumnWidth
-            ));
+            editorCell.getStyle().set(StyleAttributes.MAX_WIDTH, (maxColumnWidth < 0 ? averageColumnWidth : maxColumnWidth));
           }
 
           rowCell.addEditorCell(editorCell);
@@ -184,14 +181,14 @@ public class EditorCell_Table extends EditorCell_Collection {
     assert ListSequence.fromList(positionsX).count() > 1;
     int firstX = ListSequence.fromList(positionsX).first();
     int lastX = ListSequence.fromList(positionsX).last();
-    for (int y : ListSequence.fromList(positionsY)) {
+    for (int y : positionsY) {
       graphics.drawLine(firstX, y, lastX, y);
     }
 
     assert ListSequence.fromList(positionsY).count() > 1;
     int firstY = ListSequence.fromList(positionsY).first();
     int lastY = ListSequence.fromList(positionsY).last();
-    for (int x : ListSequence.fromList(positionsX)) {
+    for (int x : positionsX) {
       graphics.drawLine(x, firstY, x, lastY);
     }
   }
@@ -243,10 +240,7 @@ public class EditorCell_Table extends EditorCell_Collection {
         myModel.insertRow(rowNumber);
       }
     });
-    emptyCell.setCellId(cellId + ((beggining ?
-      "_firstCell" :
-      "_lastCell"
-    )));
+    emptyCell.setCellId(cellId + ((beggining ? "_firstCell" : "_lastCell")));
     return emptyCell;
   }
 

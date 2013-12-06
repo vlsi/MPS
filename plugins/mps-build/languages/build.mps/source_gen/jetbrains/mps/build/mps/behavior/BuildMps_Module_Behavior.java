@@ -46,10 +46,7 @@ public class BuildMps_Module_Behavior {
 
       for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
-            SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
-            it
-          );
+          return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ? SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) : it);
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -111,7 +108,7 @@ public class BuildMps_Module_Behavior {
       Tuples._2<SNode, String> resource = artifacts.getResource(path);
       SNode artifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (artifact != null) {
-        if (isNotEmpty_va39l0_a0a0c0i0c(resource._1())) {
+        if (isNotEmptyString(resource._1())) {
           builder.addWithContent(artifact);
         } else {
           builder.add(artifact);
@@ -176,7 +173,7 @@ public class BuildMps_Module_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static boolean isNotEmpty_va39l0_a0a0c0i0c(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

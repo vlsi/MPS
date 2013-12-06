@@ -24,10 +24,7 @@ public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends Abstrac
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140497", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140525", true), (SNode) ((rule != null) && (SLinkOperations.getTarget(rule, "rule", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) != null) ?
-        SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) :
-        _quotation_createNode_4xzpao_a0a1a1()
-      ), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140525", true), (SNode) (((rule != null) && (SLinkOperations.getTarget(rule, "rule", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) : _quotation_createNode_4xzpao_a0a1a1())), _info_12389875345);
     }
   }
 

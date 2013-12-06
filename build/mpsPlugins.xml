@@ -636,10 +636,7 @@
     <mkdir dir="${build.tmp}/java/out/ideaIntegration" />
     <javac2 destdir="${build.tmp}/java/out/ideaIntegration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src>
-        <pathelement path="${mps_home}/plugins/ideaIntegration/source" />
-        <pathelement path="${mps_home}/plugins/ideaIntegration/source_gen" />
-      </src>
+      <src path="${mps_home}/plugins/ideaIntegration/source_gen" />
       <classpath>
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -665,7 +662,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/ideaIntegration">
-      <fileset dir="${mps_home}/plugins/ideaIntegration/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/ideaIntegration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -1294,7 +1290,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.console.internalCommands" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.internalCommands.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.console.internalCommands" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/console/lang/internalCommands/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
@@ -1317,8 +1313,6 @@
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.internalCommands.runtime" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />

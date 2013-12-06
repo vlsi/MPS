@@ -79,28 +79,22 @@ public class CommandUtil {
 
   public static Iterable<SModel> models(ConsoleScope scope) {
     Iterable<SModel> allModels = scope.getSearchScope().getModels();
-    return (scope.includeReadOnly() ?
-      allModels :
-      Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel it) {
-          return !(it.isReadOnly());
-        }
-      })
-    );
+    return (scope.includeReadOnly() ? allModels : Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(it.isReadOnly());
+      }
+    }));
   }
 
 
 
   public static Iterable<SModule> modules(ConsoleScope scope) {
     Iterable<SModule> allModules = scope.getSearchScope().getModules();
-    return (scope.includeReadOnly() ?
-      allModules :
-      Sequence.fromIterable(allModules).where(new IWhereFilter<SModule>() {
-        public boolean accept(SModule it) {
-          return !(it.isReadOnly());
-        }
-      })
-    );
+    return (scope.includeReadOnly() ? allModules : Sequence.fromIterable(allModules).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return !(it.isReadOnly());
+      }
+    }));
   }
 
 
@@ -147,10 +141,7 @@ public class CommandUtil {
       public void invoke() {
         CommandUtil.show(project, results);
       }
-    }, (resultsCount == 0 ?
-      "empty sequence" :
-      resultsCount + " " + resultDescription
-    ));
+    }, (resultsCount == 0 ? "empty sequence" : resultsCount + " " + resultDescription));
   }
 
 
@@ -226,10 +217,7 @@ public class CommandUtil {
   public static ConsoleScope createConsoleScope(@Nullable final SearchScope searchScope, final boolean includeReadOnly, final ConsoleContext context) {
     return new ConsoleScope() {
 
-      private SearchScope mySearchScope = (searchScope == null ?
-        new ProjectScope(context.getProject()) :
-        searchScope
-      );
+      private SearchScope mySearchScope = (searchScope == null ? new ProjectScope(context.getProject()) : searchScope);
 
 
       public SearchScope getSearchScope() {
@@ -279,7 +267,7 @@ public class CommandUtil {
 
 
   public static void executeCommands(final ConsoleTool consoleTool, final List<SNode> commands, final int startWith) {
-    if (startWith == (int) ListSequence.fromList(commands).count()) {
+    if (startWith == ListSequence.fromList(commands).count()) {
       return;
     }
     consoleTool.executeCommand(ListSequence.fromList(commands).getElement(startWith), new Runnable() {

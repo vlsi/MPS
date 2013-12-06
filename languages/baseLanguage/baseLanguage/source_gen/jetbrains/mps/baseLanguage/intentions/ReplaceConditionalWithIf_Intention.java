@@ -44,7 +44,7 @@ public class ReplaceConditionalWithIf_Intention implements IntentionFactory {
   }
 
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -55,11 +55,7 @@ public class ReplaceConditionalWithIf_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode stmtNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement");
-    if (stmtNode == null) {
-      return false;
-    }
-    return true;
+    return (SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement") != null);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -103,7 +99,7 @@ public class ReplaceConditionalWithIf_Intention implements IntentionFactory {
       int nodeIndex = ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).indexOf(node);
       SNode nodeCopy = SNodeOperations.copyNode(node);
       // make + node 
-      SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifTrue", true));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(nodeCopy, "ifTrue", true));
       SNode trueStmt = SNodeOperations.copyNode(stmtNode);
       // make - node 
       SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifFalse", true));

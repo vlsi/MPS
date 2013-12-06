@@ -249,26 +249,26 @@
   </root>
   <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/6321644624958548836">
     <nodeInfo nodeId="3635379492312128764" fileName="CoerceUtil.java" startLine="15" startPosition="32" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5293313440027673886" fileName="CoerceUtil.java" startLine="24" startPosition="69" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3635379492312128726" fileName="CoerceUtil.java" startLine="17" startPosition="5" endLine="18" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5293313440027673886" fileName="CoerceUtil.java" startLine="21" startPosition="69" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6321644624958548838" fileName="CoerceUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CoerceUtil#()V" />
     <nodeInfo nodeId="3635379492312128739" fileName="CoerceUtil.java" startLine="14" startPosition="72" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5293313440027673173" fileName="CoerceUtil.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3635379492312128726" fileName="CoerceUtil.java" startLine="17" startPosition="5" endLine="21" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3635379492312128715" fileName="CoerceUtil.java" startLine="14" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5293313440027673173" fileName="CoerceUtil.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3635379492312128715" fileName="CoerceUtil.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
     <scopeInfo nodeId="6321644624958548841" fileName="CoerceUtil.java" startLine="11" startPosition="23" endLine="11" endPosition="23" />
     <scopeInfo nodeId="3635379492312128740" fileName="CoerceUtil.java" startLine="15" startPosition="32" endLine="16" endPosition="18" />
-    <scopeInfo nodeId="5293313440027673176" fileName="CoerceUtil.java" startLine="24" startPosition="69" endLine="25" endPosition="64" />
+    <scopeInfo nodeId="5293313440027673176" fileName="CoerceUtil.java" startLine="21" startPosition="69" endLine="22" endPosition="64" />
     <scopeInfo nodeId="6321644624958548838" fileName="CoerceUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="5293313440027673173" fileName="CoerceUtil.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="5293313440027673173" fileName="CoerceUtil.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="5293313440027673240" varName="conceptNode" />
       <varInfo nodeId="5293313440027673215" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="3635379492312128718" fileName="CoerceUtil.java" startLine="14" startPosition="72" endLine="21" endPosition="6" />
-    <scopeInfo nodeId="3635379492312128715" fileName="CoerceUtil.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3635379492312128718" fileName="CoerceUtil.java" startLine="14" startPosition="72" endLine="18" endPosition="295" />
+    <scopeInfo nodeId="3635379492312128715" fileName="CoerceUtil.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="3635379492312128724" varName="conceptFqName" />
       <varInfo nodeId="3635379492312128722" varName="type" />
     </scopeInfo>
-    <unitInfo nodeId="6321644624958548836" fileName="CoerceUtil.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.CoerceUtil" />
+    <unitInfo nodeId="6321644624958548836" fileName="CoerceUtil.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.CoerceUtil" />
   </root>
 </debugInfo>
 

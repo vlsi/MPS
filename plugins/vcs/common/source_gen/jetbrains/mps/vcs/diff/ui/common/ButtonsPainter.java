@@ -56,18 +56,12 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public int getLeftAreaWidth() {
-    return (myHighlightLeft ?
-      0 :
-      myWidth
-    );
+    return (myHighlightLeft ? 0 : myWidth);
   }
 
   @Override
   public int getRightAreaWidth() {
-    return (myHighlightLeft ?
-      myWidth :
-      0
-    );
+    return (myHighlightLeft ? myWidth : 0);
   }
 
   @Override

@@ -46,10 +46,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return ((isEmpty_q5t0js_a0a0a0b0a0a0b0a1a0b0b(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ?
-              "<default options>" :
-              SPropertyOperations.getString(_context.getParameterNode(), "optionsName")
-            ));
+            return ((isEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ? "<default options>" : SPropertyOperations.getString(_context.getParameterNode(), "optionsName")));
           }
 
           @Override
@@ -61,10 +58,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaOptions"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };
@@ -75,7 +69,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
 
   private static SNodePointer breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1659807394254175447");
 
-  public static boolean isEmpty_q5t0js_a0a0a0b0a0a0b0a1a0b0b(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -117,6 +117,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     }
 
     reloadContents();
+    updateTimestamp();
     LOG.assertLog(!needsReloading());
   }
 

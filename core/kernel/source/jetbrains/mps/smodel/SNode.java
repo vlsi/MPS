@@ -20,10 +20,8 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -37,28 +35,18 @@ import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.migration.annotations.LongTermMigration;
-import org.jetbrains.mps.migration.annotations.MigrationScript;
-import org.jetbrains.mps.migration.annotations.ShortTermMigration;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
@@ -277,9 +265,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
     propertyChanged(propertyName, oldValue, propertyValue);
@@ -351,12 +337,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
 
     children_remove(wasChild);
-    wasChild.setRoleInParent(null);
+    wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
     performUndoableAction(new Computable<SNodeUndoableAction>() {
@@ -366,10 +352,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
     nodeRemoved(child, wasRole);
+  }
+
+  private boolean needFireEvent() {
+    return myModel != null && myModel.getModelDescriptor() != null && ModelChange.needFireEvents(getModel(), this);
   }
 
   /**
@@ -491,7 +481,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
-        return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
+        return "?" + NameUtil.shortNameFromLongName(myConceptFqName) + "?";
       }
       return "?" + persistentName + "?";
     }
@@ -552,12 +542,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     children_insertBefore(((SNode) anchor), schild);
-    schild.setRoleInParent(role);
+    schild.myRoleInParent = role;
 
     //if child is in unregistered nodes, add this one too to track undo for it
     UnregisteredNodes un = UnregisteredNodes.instance();
     if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
-      startUndoTracking(getTopmostAncestor(), ((SNode) child).myRepository);
+      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
     }
 
     if (myModel == null) {
@@ -576,7 +566,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
     }
     nodeAdded(role, child);
@@ -802,13 +792,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return myModel == null ? null : myModel.getModelDescriptor();
   }
 
-  //this method is for internal checks in SReferenceBase only
-  //note it does not have a read action as it doesn't add a result dependency when called
-  //it also does not check model access as it's already "synchronized" by volatile modifier of myRepo
-  public boolean wasDetached() {
-    return myRepository instanceof DisposedRepository;
-  }
-
   private SModelBase getRealModel() {
     SModel persistentModel = getPersistentModel();
     if (persistentModel == null) return null;
@@ -843,7 +826,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void referenceChanged(String role, org.jetbrains.mps.openapi.model.SReference reference, org.jetbrains.mps.openapi.model.SReference newValue) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireReferenceChanged(this, role, reference, newValue);
   }
@@ -851,7 +834,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void propertyChanged(String propertyName, String oldValue, String newValue) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.firePropertyChanged(this, propertyName, oldValue, newValue);
   }
@@ -859,7 +842,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void nodeAdded(String role, org.jetbrains.mps.openapi.model.SNode child) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireNodeAdded(this, role, child);
   }
@@ -867,7 +850,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
     if (myModel != null && myModel.isUpdateMode()) return;
     SModelBase md = getRealModel();
-    if (md == null || md instanceof FakeModelDescriptor) return;
+    if (md == null) return;
     EditableSModelBase emd = (EditableSModelBase) md;
     emd.fireNodeRemoved(this, role, child);
   }
@@ -913,7 +896,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     myModel.unregisterNode(this);
 
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+    for (SNode child = firstChild(); child != null; child = child.treeNext()) {
       child.unRegisterFromModel();
     }
 
@@ -928,7 +911,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    SRepository repo = model.getModelDescriptor().getRepository();
+    SRepository repo = model.getRepository();
     if (repo != null) {
       attach(repo);
     }
@@ -953,7 +936,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    return (SNode) SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
+    return (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
   }
 
   public SNode getPropertyDeclaration(String propertyName) {
@@ -1013,9 +996,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireReferenceAddedEvent(reference);
     }
   }
@@ -1046,9 +1027,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
 
-    if (myModel == null) return;
-
-    if (ModelChange.needFireEvents(getModel(), this)) {
+    if (needFireEvent()) {
       myModel.fireReferenceRemovedEvent(ref);
     }
   }
@@ -1316,979 +1295,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     node.parent = null;
   }
 
-  //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isInstanceOfConcept(String conceptFqName) {
-    return org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(this, jetbrains.mps.util.SNodeOperations.getConcept(conceptFqName));
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNodeId getSNodeId() {
-    return getNodeId();
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used
-   * @Deprecated in 3.0
-   */
-  public void changeModel(SModel newModel) {
-    if (myModel == newModel) return;
-    LOG.assertLog(myModel == null, "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
-
-    myModel = newModel;
-    myModelForUndo = newModel;
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.changeModel(newModel);
-    }
-  }
-
-  @Deprecated
-  /**
-   * Inline
-   * @Deprecated in 3.0
-   */
-  public String getPersistentProperty(String propertyName) {
-    return getProperty(propertyName);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, not supposed to be used in MPS
-   * @Deprecated in 3.0
-   */
-  public void putProperties(SNode fromNode) {
-    for (String name : fromNode.getPropertyNames()) {
-      setProperty(name, fromNode.getProperty(name));
-    }
-  }
-
-  @Deprecated
-  /**
-   * Inline. Not supposed to be used
-   * @Deprecated in 3.0
-   */
-  public void changePropertyName(String oldPropertyName, String newPropertyName) {
-    setProperty(newPropertyName, getProperty(oldPropertyName));
-    setProperty(oldPropertyName, null);
-  }
-
-  @Deprecated
-  /**
-   * Inline. Not supposed to be used
-   * @Deprecated in 3.0
-   */
-  public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
-    if (usePropertySetter) {
-      SNodeAccessUtil.setProperty(this, propertyName, propertyValue);
-    } else {
-      setProperty(propertyName, propertyValue);
-    }
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getRole() {
-    return getRoleInParent();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode getTopmostAncestor() {
-    return getContainingRoot();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isRoot() {
-    return getModel() != null && getParent() == null;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isDeleted() {
-    return getModel() == null;
-  }
-
-  @Deprecated
-  /**
-   * Use<br/>
-   * n = new jetbrains.mps.smodel.SNode(concept);<br/>
-   * model.addNode(n)<br/>
-   * or<br/>
-   * n = model.newNode(concept)<br/>
-   * Set id if needed before adding to model
-   * InternUtil.intern should be done in outer code
-   *
-   * @Deprecated in 3.0
-   */
-  public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
-    this(callIntern ? InternUtil.intern(conceptFqName) : conceptFqName);
-  }
-
-  @Deprecated
-  /**
-   * Use<br/>
-   * n = new jetbrains.mps.smodel.SNode(concept);<br/>
-   * model.addNode(n)<br/>
-   * or<br/>
-   * n = model.newNode(concept)<br/>
-   * Set id if needed before adding to model
-   *
-   * @Deprecated in 3.0
-   */
-  public SNode(SModel model, String conceptFqName) {
-    this(InternUtil.intern(conceptFqName));
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isRegistered() {
-    return getModel() != null;
-  }
-
-  @Deprecated
-  /**
-   *  replace with getModel==null
-   * @Deprecated in 3.0
-   */
-  public boolean isDetached() {
-    return getModel() == null;
-  }
-
-  @Deprecated
-  public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;
-
-  @Deprecated
-  /**
-   * Do not use. Work with SConcept instead
-   * @Deprecated in 3.0
-   */
-  public boolean isInstanceOfConcept(SNode concept) {
-    return org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(this, jetbrains.mps.util.SNodeOperations.getConcept(NameUtil.nodeFQName(concept)));
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Get resolve info from a reference instead
-   * @Deprecated in 3.0
-   */
-  public String getResolveInfo() {
-    String resolveInfo = SNodeUtil.getResolveInfo(this);
-    if (resolveInfo != null) {
-      return resolveInfo;
-    }
-    // tmp hack
-    return getProperty(SNodeUtil.property_INamedConcept_name);
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. write your own
-   * @Deprecated in 3.0
-   */
-  public String getPresentation(boolean detailed) {
-    if (SNodeOperations.isUnknown(this)) {
-      String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
-      if (persistentName == null) {
-        return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
-      }
-      return "?" + persistentName + "?";
-    }
-
-    try {
-      if (detailed) {
-        return "" + SNodeUtil.getDetailedPresentation(this);
-      } else {
-        return "" + SNodeUtil.getPresentation(this);
-      }
-    } catch (RuntimeException t) {
-      LOG.error(t);
-      return "[can't calculate presentation : " + t.getMessage() + "]";
-    }
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Use smodel language instead
-   * @Deprecated in 3.0
-   */
-  public SNode getChild(String role) {
-    List<SNode> children = getChildren(role);
-    int size = children.size();
-    if (size > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(
-          getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
-      errorMessage += "they are : " + getChildren(role);
-      LOG.error(errorMessage, new Throwable(), this);
-    }
-    if (size == 0) return null;
-    return children.get(0);
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Use smodel language instead
-   * @Deprecated in 3.0
-   */
-  public List<SNode> getAncestors(boolean includeThis) {
-    List<SNode> result = new ArrayList<SNode>();
-    if (includeThis) {
-      result.add(this);
-    }
-    SNode parent = getParent();
-    if (parent != null) {
-      result.addAll(parent.getAncestors(true));
-    }
-    return result;
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Filter attributes out manually
-   * @Deprecated in 3.0
-   */
-  public List<SNode> getChildren(boolean includeAttributes) {
-    if (includeAttributes) return getChildren();
-    ArrayList<SNode> res = new ArrayList<SNode>();
-    for (SNode child : getChildren()) {
-      if (AttributeOperations.isAttribute(child)) continue;
-      res.add(child);
-    }
-    return res;
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
-   * by converting to BaseConcept properties mostly, and considering other
-   * cases individually
-   * @Deprecated in 3.0
-   */
-  public String getConceptProperty(String propertyName) {
-    SNode conceptProperty = findConceptProperty(propertyName);
-    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
-    return o != null ? o.toString() : null;
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
-   * by converting to BaseConcept properties mostly, and considering other
-   * cases individually
-   * @Deprecated in 3.0
-   */
-  public SNode findConceptProperty(String propertyName) {
-    SNode conceptDeclaration;
-    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-      conceptDeclaration = this;
-    } else {
-      conceptDeclaration = (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
-    }
-    return (SNode) SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
-   * by converting to BaseConcept properties mostly, and considering other
-   * cases individually
-   * @Deprecated in 3.0
-   */
-  public boolean hasConceptProperty(String propertyName) {
-    if ("root".equals(propertyName)) {
-      if (SNodeUtil.isInstanceOfConceptDeclaration(this)) {
-        return SNodeUtil.getConceptDeclaration_IsRootable(this);
-      } else {
-        SNode conceptDeclaration = getConceptDeclarationNode();
-        if (SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration)) {
-          return SNodeUtil.getConceptDeclaration_IsRootable(conceptDeclaration);
-        }
-      }
-      return false;
-    }
-
-    return findConceptProperty(propertyName) != null;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public List<SNode> getDescendants() {
-    return getDescendants(null);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public List<SNode> getDescendants(final Condition<SNode> condition) {
-    return (List) jetbrains.mps.util.SNodeOperations.getDescendants(this, new MyTransformingCondition(condition));
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Use smodel language instead
-   * @Deprecated in 3.0
-   */
-  public void setName(String name) {
-    SNodeAccessUtil.setProperty(this, SNodeUtil.property_INamedConcept_name, name);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
-    if (insertBefore) {
-      insertChildBefore(role, child, anchorChild);
-    } else {
-      jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchorChild);
-    }
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public List<SNode> getReferents() {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SReference reference : getReferences()) {
-      SNode targetNode = (SNode) reference.getTargetNode();
-      if (targetNode != null) result.add(targetNode);
-    }
-    return result;
-  }
-
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Set<String> getReferenceRoles() {
-    return jetbrains.mps.util.SNodeOperations.getReferenceRoles(this);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-
-  public String getDebugText() {
-    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void replaceChild(SNode oldChild, SNode newChild) {
-    org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(oldChild, newChild);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void putUserObjects(SNode fromNode) {
-    if (fromNode == null) return;
-    for (Object key : fromNode.getUserObjectKeys()) {
-      putUserObject(key, fromNode.getUserObject(key));
-    }
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode findParent(Condition<SNode> condition) {
-    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(this, new MyTransformingCondition(condition)));
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void addReference(SReference reference) {
-    setReference(reference.getRole(), reference);
-  }
-
-  @Deprecated
-  /**
-   * Use visitProperties()
-   * @Deprecated in 3.0
-   */
-  public Map<String, String> getProperties() {
-    return jetbrains.mps.util.SNodeOperations.getProperties(this);
-  }
-
-  @Deprecated
-  /**
-   * Use visitReferences()
-   * @Deprecated in 3.0
-   */
-  public SReference[] getReferencesArray() {
-    List<SReference> refs = ((List) jetbrains.mps.util.SNodeOperations.getReferences(this));
-    return refs.toArray(new SReference[refs.size()]);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Collection<SReference> getReferencesIterable() {
-    return ((List) jetbrains.mps.util.SNodeOperations.getReferences(this));
-  }
-
-  @Deprecated
-  /**
-   * Is not supposed to be used. Inline.
-   * @Deprecated in 3.0
-   */
-  public SNode findChildByPath(String path) {
-    if (path == null) return null;
-    String residual = path;
-    SNode current = this;
-    while (!residual.equals("") && current != null) {
-      residual = residual.substring(1);
-      int index = residual.indexOf("/");
-      String roleAndNumber = index == -1 ? residual : residual.substring(0, index);
-      residual = residual.substring(roleAndNumber.length());
-
-      int numberIndex = roleAndNumber.indexOf("#");
-      String role = numberIndex == -1 ? roleAndNumber : roleAndNumber.substring(0, numberIndex);
-      String numberString = numberIndex == -1 ? "-1" : roleAndNumber.substring(numberIndex + 1);
-      int number = Integer.parseInt(numberString);
-
-      if (number == -1) {
-        current = current.getChild(role);
-      } else {
-        List<SNode> childrenForRole = current.getChildren(role);
-        if (number < childrenForRole.size()) {
-          current = childrenForRole.get(number);
-        } else {
-          current = null;
-        }
-      }
-    }
-    return current;
-  }
-
-  @Deprecated
-  /**
-   * Is not supposed to be used. Inline.
-   * @Deprecated in 3.0
-   */
-  public String getNodePath(SNode child) {
-    StringBuilder sb = new StringBuilder();
-    SNode current = child;
-    while (current != this && current != null) {
-      String role = current.getRoleInParent();
-      SNode currentParent = current.getParent();
-      List<SNode> children = currentParent == null || role == null ? new ArrayList<SNode>() : currentParent.getChildren(role);
-      String numberString = children.size() <= 1 ? "" : "#" + children.indexOf(current);
-      sb.insert(0, "/" + role + numberString);
-      current = currentParent;
-    }
-    return sb.toString();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode getChildAt(int index) {
-    return getChildren().get(index);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode getReferent(String role) {
-    return getReferenceTarget(role);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, is not supposed to be used in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isAncestorOf(SNode child) {
-    return jetbrains.mps.util.SNodeOperations.isAncestor(this, child);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, is not supposed to be used in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isDescendantOf(SNode node, boolean includeThis) {
-    return jetbrains.mps.util.SNodeOperations.isAncestor(node, includeThis ? this : getParent());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, is not supposed to be used in MPS
-   * @Deprecated in 3.0
-   */
-  public StackTraceElement[] getModelDisposedTrace() {
-    return myModel == null ? null : myModel.getDisposedStacktrace();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Set<String> getChildRoles() {
-    return getChildRoles(false);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Set<String> getChildRoles(boolean includeAttributeRoles) {
-    return addChildRoles(new HashSet<String>(), includeAttributeRoles);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Set<String> addChildRoles(final Set<String> augend) {
-    return addChildRoles(augend, false);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Set<String> addChildRoles(final Set<String> augend, final boolean includeAttributeRoles) {
-    for (SNode child : getChildren()) {
-      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
-        augend.add(child.getRoleInParent());
-      }
-    }
-    return augend;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SReference setReferent(String role, SNode newReferent, boolean useHandler) {
-    if (!useHandler) {
-      LOG.warning("SNode.setReferent does not use the last parameter now");
-    }
-    setReferenceTarget(role, newReferent);
-    return getReference(role);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SReference setReferent(String role, SNode newReferent) {
-    setReferenceTarget(role, newReferent);
-    return getReference(role);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isReferentRequired(String role) {
-    SAbstractLink link = getConcept().getLink(role);
-    if (link == null) {
-      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getQualifiedName());
-      return false;
-    }
-
-    return !link.isOptional();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
-    return (Iterable) jetbrains.mps.util.SNodeOperations.getDescendants(this, new MyTransformingCondition(condition), includeFirst);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void insertChild(final SNode anchor, String role, final SNode child) {
-    jetbrains.mps.util.SNodeOperations.insertChild(this, role, child, anchor);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void setChild(String role, org.jetbrains.mps.openapi.model.SNode childNode) {
-    SNode oldChild = getChild(role);
-    if (oldChild != null) {
-      removeChild(oldChild);
-    }
-    if (childNode != null) {
-      addChild(role, childNode);
-    }
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public int getIndexOfChild(SNode child) {
-    String role = child.getRoleInParent();
-    if (role == null) return -1;
-    return getChildren(role).indexOf(child);
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Replace with smodel language or operations from SNodeUtil
-   * @Deprecated in 3.0
-   */
-  public void replaceChild(SNode oldChild, List<SNode> newChildren) {
-    assert oldChild.treeParent() == this;
-    String oldChildRole = oldChild.getRoleInParent();
-    assert oldChildRole != null;
-    SNode prevChild = oldChild;
-    for (SNode newChild : newChildren) {
-      jetbrains.mps.util.SNodeOperations.insertChild(this, oldChildRole, newChild, prevChild);
-      prevChild = newChild;
-    }
-    removeChild(oldChild);
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Replace with visitUserObjects
-   * @Deprecated in 3.0
-   */
-  public Map<Object, Object> getUserObjects() {
-    final Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
-    for (Object key : getUserObjectKeys()) {
-      userObjects.put(key, getUserObject(key));
-    }
-    return userObjects;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Iterable<SNode> getChildrenIterable() {
-    return getChildren();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void removeUserObject(Object key) {
-    putUserObject(key, null);
-  }
-
-  @Deprecated
-  /**
-   * Users are not supposed to use this in past
-   * @Deprecated in 3.0
-   */
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getId() {
-    return getNodeId().toString();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean hasId() {
-    return getNodeId() != null;
-  }
-
-  @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")
-  @ShortTermMigration(migration = "Replace with SNodeOperations.getChildCount(node)")
-  @LongTermMigration(migration = "Try to rewrite using getChildren()")
-  @Deprecated
-  /**
-   * Do not use it.
-   * Try to eliminate as many usages as possible,
-   * make your own getChildCount() utility where you can't live without it.
-   * No migration is provided since calls should be reviewed separately to avoid performance problems
-   * @Deprecated in 3.0
-   */
-  public int getChildCount(String role) {
-    return getChildren(role).size();
-  }
-
-  @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")
-  @ShortTermMigration(migration = "Replace with SNodeOperations.getChildCount(node)")
-  @LongTermMigration(migration = "Try to rewrite using getChildren()")
-  @Deprecated
-  /**
-   * Do not use it.
-   * Try to eliminate as many usages as possible,
-   * make your own getChildCount() utility where you can't live without it.
-   * No migration is provided since calls should be reviewed separately to avoid performance problems
-   * @Deprecated in 3.0
-   */
-  public int getChildCount() {
-    return jetbrains.mps.util.SNodeOperations.getChildren(this).size();
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Access to children is now provided in by-role manner and through parent node.
-   * Most probably, by calling this method you want to know a sibling in the same role.
-   * E.g. if you need a previous sibling in the same role, use getParent().getPrevChild(node)
-   * @Deprecated in 3.0
-   */
-  public SNode prevSibling() {
-    return (treeParent() == null|| treeParent().firstChild() == this) ? null : treePrevious();
-  }
-
-  @Deprecated
-  /**
-   * Do not use. Access to children is now provided in by-role manner and through parent node.
-   * Most probably, by calling this method you want to know a sibling in the same role.
-   * E.g. if you need a next sibling in the same role, use getParent().getNextChild(node)
-   * @Deprecated in 3.0
-   */
-  public SNode nextSibling() {
-    return treeNext();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SModuleReference getConceptLanguage() {
-    return new jetbrains.mps.project.structure.modules.ModuleReference(getConcept().getLanguage().getQualifiedName());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Language getLanguage() {
-    return jetbrains.mps.util.SNodeOperations.getLanguage(this);
-  }
-
-  @Deprecated
-  @NotNull
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getLanguageNamespace() {
-    return getConcept().getLanguage().getQualifiedName();
-  }
-
-  @NotNull
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Language getNodeLanguage() {
-    return jetbrains.mps.util.SNodeOperations.getLanguage(this);
-  }
-
-  @Deprecated
-  /**
-   * Use setReference(referenceToRemove.getRole, referenceToAdd)
-   * @Deprecated in 3.0
-   */
-  public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
-    setReference(referenceToRemove.getRole(), referenceToAdd);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void removeReference(SReference referenceToRemove) {
-    setReference(referenceToRemove.getRole(), null);
-  }
-
-  @Deprecated
-  /**
-   * Use setReference(role, ref)
-   * @Deprecated in 3.0
-   */
-  public void setReference(SReference reference) {
-    setReference(reference.getRole(), reference);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void removeReferent(String role) {
-    setReferenceTarget(role, null);
-  }
-
-  @NotNull
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getConceptFqName() {
-    return getConcept().getQualifiedName();
-  }
-
-  @NotNull
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getConceptShortName() {
-    return getConcept().getName();
-  }
-
-  @Deprecated
-  /**
-   * Do not use this method. Add and remove only your own user objects
-   * by using setUserObject() method
-   * @Deprecated in 3.0
-   */
-  public void removeAllUserObjects() {
-    myUserObjects = null;
-  }
-
-  @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getRole_() {
-    return getRoleInParent();
-  }
-
-  @Deprecated
-  /**
-   * Use migration in MPS, should be no usages in java code (use smodel language instead)
-   * @Deprecated in 3.0
-   */
-  public int getIntegerProperty(String propertyName) {
-    String value = SNodeAccessUtil.getProperty(this, propertyName);
-    try {
-      return Integer.parseInt(value);
-    } catch (Exception e) {
-      return 0;
-    }
-  }
-
-  @Deprecated
-  /**
-   * Use migration in MPS, should be no usages in java code (use smodel language instead)
-   * @Deprecated in 3.0
-   */
-  public void setIntegerProperty(String propertyName, int value) {
-    SNodeAccessUtil.setProperty(this, propertyName, "" + value);
-  }
-
-  @Deprecated
-  /**
-   * Use migration in MPS, should be no usages in java code (use smodel language instead)
-   * @Deprecated in 3.0
-   */
-  public boolean getBooleanProperty(String propertyName) {
-    return "true".equals(SNodeAccessUtil.getProperty(this, propertyName));
-  }
-
-  @Deprecated
-  /**
-   * Use migration in MPS, should be no usages in java code (use smodel language instead)
-   * @Deprecated in 3.0
-   */
-  public void setBooleanProperty(String propertyName, boolean value) {
-    SNodeAccessUtil.setProperty(this, propertyName, value ? "" + value : null);
-  }
-
-  private static class MyTransformingCondition implements Condition<org.jetbrains.mps.openapi.model.SNode> {
-    private final Condition<SNode> myCondition;
-
-    public MyTransformingCondition(Condition<SNode> condition) {
-      myCondition = condition;
-    }
-
-    @Override
-    public boolean met(org.jetbrains.mps.openapi.model.SNode object) {
-      return object instanceof SNode && myCondition.met((SNode) object);
-    }
   }
 }

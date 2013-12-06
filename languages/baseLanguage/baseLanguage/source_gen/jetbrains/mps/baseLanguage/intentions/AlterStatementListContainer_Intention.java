@@ -80,8 +80,12 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
   }
 
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"));
+    List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
     ListSequence.fromList(list).removeElement(SNodeOperations.getConceptDeclaration(node));
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ForeachStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement")) {
+      ListSequence.fromList(list).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"));
+      ListSequence.fromList(list).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
+    }
     return list;
   }
 
@@ -93,13 +97,17 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Change to " + SPropertyOperations.getString(myParameter, "conceptAlias") + ((SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.ForeachStatement") ?
-        "each" :
-        ""
-      )) + (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.DoWhileStatement") ?
-        "-While" :
-        ""
-      ) + " statement";
+      String targetName;
+      if (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement")) {
+        targetName = "'for (var in iterable)'";
+      } else if (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
+        targetName = "'for Type var: iterable)'";
+      } else {
+        targetName = SPropertyOperations.getString(myParameter, "conceptAlias") + ((SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.DoWhileStatement") ? "-While" : ""));
+      }
+      targetName += " statement";
+      targetName = "Change to " + targetName;
+      return targetName;
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

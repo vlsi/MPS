@@ -34,10 +34,7 @@ public class NamespaceData implements NodeData {
 
   @Override
   public Icon getIcon(boolean expanded) {
-    return (expanded ?
-      IdeIcons.OPENED_FOLDER :
-      IdeIcons.CLOSED_FOLDER
-    );
+    return (expanded ? IdeIcons.OPENED_FOLDER : IdeIcons.CLOSED_FOLDER);
   }
 
   @Override

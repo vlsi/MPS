@@ -9,7 +9,7 @@ import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
@@ -17,8 +17,8 @@ import java.util.Set;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintPreferencesPage;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.apache.log4j.Logger;
@@ -60,7 +60,7 @@ public class PushEditorHints_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -80,7 +80,7 @@ public class PushEditorHints_Action extends BaseAction {
       Set<String> enabledHints = component.getEnabledHints();
       ConceptEditorHintSettings settings = new ConceptEditorHintSettings();
       settings.putAll(ConceptEditorHintSettingsComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getSettings());
-      for (String lang : SetSequence.fromSet(settings.getLanguagesNames())) {
+      for (String lang : settings.getLanguagesNames()) {
         for (ConceptEditorHint hint : SetSequence.fromSet(settings.getHints(lang))) {
           settings.put(lang, hint, false);
         }

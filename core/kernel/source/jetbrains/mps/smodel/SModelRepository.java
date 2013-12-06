@@ -59,7 +59,7 @@ public class SModelRepository implements CoreComponent {
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
-  private final MultiMap<SModel, SModel> myReloadingDescriptorMap = new MultiMap<SModel, SModel>();
+  private final MultiMap<SModel, jetbrains.mps.smodel.SModel> myReloadingDescriptorMap = new MultiMap<SModel, jetbrains.mps.smodel.SModel>();
 
   private final GlobalRepositoriesListener myRepositoriesListener = new GlobalRepositoriesListener();
   private final SModelListener myModelsListener = new ModelChangeListener();
@@ -212,11 +212,11 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
-  public void notifyModelReplaced(SModel modelDescriptor, SModel oldSModel) {
+  public void notifyModelReplaced(SModel modelDescriptor, jetbrains.mps.smodel.SModel oldSModel) {
     ModelAccess.assertLegalWrite();
 
     if (mySModelRepositoryListeners.isEmpty()) {
-      ((jetbrains.mps.smodel.SModelInternal) oldSModel).dispose();
+      oldSModel.dispose();
       return;
     }
 
@@ -248,9 +248,9 @@ public class SModelRepository implements CoreComponent {
   }
 
   private void disposeOldModels() {
-    for (SModel oldModel : myReloadingDescriptorMap.values()) {
+    for (jetbrains.mps.smodel.SModel oldModel : myReloadingDescriptorMap.values()) {
       if (oldModel != null) {
-        ((jetbrains.mps.smodel.SModelInternal) oldModel).dispose();
+        oldModel.dispose();
       }
     }
   }

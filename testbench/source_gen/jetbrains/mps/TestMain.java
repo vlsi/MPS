@@ -34,10 +34,7 @@ public class TestMain {
     }
 
     public Project getProject(String name) {
-      if (((name != null ?
-        name.equals(this.projectName) :
-        name == this.projectName
-      ))) {
+      if (((name != null ? name.equals(this.projectName) : name == this.projectName))) {
         return this.lastProject;
       } else {
         Project p = IdeaEnvironment.openProjectInIdeaEnvironment(new File(name));

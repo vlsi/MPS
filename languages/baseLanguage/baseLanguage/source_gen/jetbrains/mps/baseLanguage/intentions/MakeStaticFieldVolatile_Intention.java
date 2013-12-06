@@ -68,10 +68,7 @@ public class MakeStaticFieldVolatile_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "isVolatile") ?
-        "Make Field Not Volatile" :
-        "Make Field Volatile"
-      );
+      return (SPropertyOperations.getBoolean(node, "isVolatile") ? "Make Field Not Volatile" : "Make Field Volatile");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

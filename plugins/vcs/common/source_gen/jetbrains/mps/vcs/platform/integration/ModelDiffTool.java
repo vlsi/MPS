@@ -46,10 +46,7 @@ public class ModelDiffTool implements DiffTool {
     DiffContent[] contents = request.getContents();
     String[] titles = request.getContentTitles();
     FileType[] types = {contents[0].getContentType(), contents[1].getContentType()};
-    FileType type = (types[1] == null ?
-      types[0] :
-      types[1]
-    );
+    FileType type = (types[1] == null ? types[0] : types[1]);
 
     // trying to fix null content type 
     if (type == null) {
@@ -66,10 +63,7 @@ public class ModelDiffTool implements DiffTool {
       Tuples._2<SModel, SNodeId> oldModel = getModelAndRoot(contents[0]);
       Tuples._2<SModel, SNodeId> newModel = getModelAndRoot(contents[1]);
       if (oldModel != null && newModel != null) {
-        SNodeId rootId = (newModel._1() != null ?
-          newModel._1() :
-          oldModel._1()
-        );
+        SNodeId rootId = (newModel._1() != null ? newModel._1() : oldModel._1());
         ModelDifferenceDialog.showRootDifference(request.getProject(), oldModel._0(), newModel._0(), rootId, titles[0], titles[1], null, request);
         return;
       }
@@ -160,10 +154,7 @@ public class ModelDiffTool implements DiffTool {
     }
     int size = ListSequence.fromList(SModelOperations.getRoots(model, null)).count();
     assert size <= 1;
-    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ?
-      (SNodeId) null :
-      ListSequence.fromList(SModelOperations.getRoots(model, null)).getElement(0).getNodeId()
-    ));
+    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.getRoots(model, null)).getElement(0).getNodeId()));
 
   }
 
@@ -184,10 +175,7 @@ public class ModelDiffTool implements DiffTool {
     }
     int size = ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).count();
     assert size <= 1;
-    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ?
-      (SNodeId) null :
-      ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).getElement(0).getNodeId()
-    ));
+    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ? (SNodeId) null : ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).getElement(0).getNodeId()));
   }
 
   protected static Logger LOG = LogManager.getLogger(ModelDiffTool.class);

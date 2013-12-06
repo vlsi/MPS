@@ -1161,7 +1161,7 @@
     <nodeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="41" startPosition="30" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1259268621398138708" fileName="IfEqualsNullAll.java" startLine="56" startPosition="30" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4258402621852112799" fileName="IfEqualsNullAll.java" startLine="70" startPosition="28" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="283" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="277" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1259268621398138706" fileName="IfEqualsNullAll.java" startLine="55" startPosition="101" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4258402621852112786" fileName="IfEqualsNullAll.java" startLine="69" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1265678854311140235" fileName="IfEqualsNullAll.java" startLine="39" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1210,10 +1210,10 @@
     <scopeInfo nodeId="1228615757308596550" fileName="IfEqualsNullAll.java" startLine="41" startPosition="30" endLine="52" endPosition="9" />
     <scopeInfo nodeId="1259268621398138707" fileName="IfEqualsNullAll.java" startLine="56" startPosition="30" endLine="67" endPosition="9" />
     <scopeInfo nodeId="4258402621852112787" fileName="IfEqualsNullAll.java" startLine="70" startPosition="28" endLine="81" endPosition="7" />
-    <scopeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="283" endLine="53" endPosition="7">
+    <scopeInfo nodeId="1228615757308596549" fileName="IfEqualsNullAll.java" startLine="40" startPosition="277" endLine="53" endPosition="7">
       <varInfo nodeId="1228615757308596552" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1265678854311140236" fileName="IfEqualsNullAll.java" startLine="40" startPosition="283" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="1265678854311140236" fileName="IfEqualsNullAll.java" startLine="40" startPosition="277" endLine="53" endPosition="7" />
     <scopeInfo nodeId="1259268621398138705" fileName="IfEqualsNullAll.java" startLine="55" startPosition="101" endLine="68" endPosition="7" />
     <scopeInfo nodeId="1259268621398138706" fileName="IfEqualsNullAll.java" startLine="55" startPosition="101" endLine="68" endPosition="7">
       <varInfo nodeId="1259268621398138715" varName="var" />
@@ -1543,6 +1543,7 @@
     </scopeInfo>
     <unitInfo nodeId="3383816410303205607" fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4285773203935146642" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/5730083271929368106">
     <nodeInfo nodeId="5730083271929373008" fileName="RuleAssertNotNull.java" startLine="155" startPosition="17" endLine="155" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5730083271929373009" fileName="RuleAssertNotNull.java" startLine="201" startPosition="17" endLine="201" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2767,7 +2768,6 @@
     </scopeInfo>
     <unitInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleWhileNotNull" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580634161341" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580635952572">
     <nodeInfo nodeId="1503494305073290568" fileName="PrefixDecrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1503494305073290572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="18" startPosition="109" endLine="19" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2844,6 +2844,5 @@
     </scopeInfo>
     <unitInfo nodeId="7953345580636000125" fileName="PostfixIncrementExpression_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.PostfixIncrementExpression_DataFlow" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580636977027" />
 </debugInfo>
 

@@ -37,16 +37,10 @@ public class LocalSourcePathArtifact {
     }
 
     LocalSourcePathArtifact that = (LocalSourcePathArtifact) o;
-    if ((root != null ?
-      !(((Object) root).equals(that.root)) :
-      that.root != null
-    )) {
+    if ((root != null ? !(((Object) root).equals(that.root)) : that.root != null)) {
       return false;
     }
-    if ((sourcePath != null ?
-      !((sourcePath).equals(that.sourcePath)) :
-      that.sourcePath != null
-    )) {
+    if ((sourcePath != null ? !((sourcePath).equals(that.sourcePath)) : that.sourcePath != null)) {
       return false;
     }
     if (isFolder != that.isFolder) {
@@ -59,18 +53,9 @@ public class LocalSourcePathArtifact {
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((root != null ?
-      ((Object) root).hashCode() :
-      0
-    ));
-    result = 31 * result + ((sourcePath != null ?
-      String.valueOf(sourcePath).hashCode() :
-      0
-    ));
-    result = 31 * result + ((isFolder ?
-      1 :
-      0
-    ));
+    result = 31 * result + ((root != null ? ((Object) root).hashCode() : 0));
+    result = 31 * result + ((sourcePath != null ? String.valueOf(sourcePath).hashCode() : 0));
+    result = 31 * result + ((isFolder ? 1 : 0));
     return result;
   }
 }

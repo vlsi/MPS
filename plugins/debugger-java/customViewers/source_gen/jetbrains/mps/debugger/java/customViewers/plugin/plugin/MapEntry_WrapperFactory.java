@@ -87,13 +87,7 @@ public class MapEntry_WrapperFactory extends ValueWrapperFactory {
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy key = ((IObjectValueProxy) value.invokeMethod("getKey", "()Ljava/lang/Object;", getThreadReference()));
       IObjectValueProxy entryValue = ((IObjectValueProxy) value.invokeMethod("getValue", "()Ljava/lang/Object;", getThreadReference()));
-      return "[" + ((ProxyEqualsUtil.javaEquals(key, null) ?
-        "null" :
-        (String) (((IObjectValueProxy) key.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue()
-      )) + "] = " + ((ProxyEqualsUtil.javaEquals(entryValue, null) ?
-        "null" :
-        (String) (((IObjectValueProxy) entryValue.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue()
-      ));
+      return "[" + ((ProxyEqualsUtil.javaEquals(key, null) ? "null" : (String) (((IObjectValueProxy) key.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue())) + "] = " + ((ProxyEqualsUtil.javaEquals(entryValue, null) ? "null" : (String) (((IObjectValueProxy) entryValue.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue()));
     }
   }
 

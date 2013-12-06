@@ -103,10 +103,7 @@ import java.io.FilterInputStream;
   @Nullable
   @Override
   /*package*/ Resource getResource(String name, boolean flag) {
-    final long started = (myDebugTime ?
-      System.nanoTime() :
-      0
-    );
+    final long started = (myDebugTime ? System.nanoTime() : 0);
     ZipFile file = null;
     try {
       file = acquireZipFile();
@@ -124,10 +121,7 @@ import java.io.FilterInputStream;
         releaseZipFile(file);
       } catch (IOException ignored) {
       }
-      final long doneFor = (myDebugTime ?
-        System.nanoTime() - started :
-        0
-      );
+      final long doneFor = (myDebugTime ? System.nanoTime() - started : 0);
       if (doneFor > NS_THRESHOLD) {
         System.out.println(doneFor / 1000000 + " ms for jar loader get resource:" + name);
       }

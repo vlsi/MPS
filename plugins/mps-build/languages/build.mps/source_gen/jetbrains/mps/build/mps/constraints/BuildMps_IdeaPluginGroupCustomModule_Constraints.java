@@ -47,10 +47,7 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode group = (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup") ?
-                SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup") :
-                SNodeOperations.as(SNodeOperations.getParent(_context.getContextNode()), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup")
-              );
+              SNode group = (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup") ? SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup") : SNodeOperations.as(SNodeOperations.getParent(_context.getContextNode()), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"));
               if ((group == null)) {
                 return new EmptyScope();
               }

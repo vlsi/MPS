@@ -143,17 +143,11 @@ public class ChangeSetImpl implements ModelChangeSet {
 
   @Override
   public Iterable<ModelChange> getChangesForRoot(@Nullable SNodeId rootId) {
-    return (rootId == null ?
-      myMetadataChanges :
-      MapSequence.fromMap(myRootToChanges).get(rootId)
-    );
+    return (rootId == null ? myMetadataChanges : MapSequence.fromMap(myRootToChanges).get(rootId));
   }
 
   @Override
   public Iterable<SNodeId> getAffectedRoots() {
-    return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
-      MapSequence.fromMap(myRootToChanges).keySet() :
-      SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
-    );
+    return (ListSequence.fromList(myMetadataChanges).isEmpty() ? MapSequence.fromMap(myRootToChanges).keySet() : SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null))));
   }
 }

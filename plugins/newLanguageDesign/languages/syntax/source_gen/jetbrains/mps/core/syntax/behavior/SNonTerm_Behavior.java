@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,15 +21,27 @@ public class SNonTerm_Behavior {
   }
 
   public static boolean virtual_isList_1030525575875844509(final SNode thisNode) {
-    return (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).count() == 2 && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).translate(new ITranslator2<SNode, SNode>() {
+    return new _FunctionTypes._return_P2_E0<Boolean, Integer, Integer>() {
+      public Boolean invoke(Integer a, Integer b) {
+        return a == b;
+      }
+    }.invoke(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).count(), 2) && new _FunctionTypes._return_P2_E0<Boolean, Integer, Integer>() {
+      public Boolean invoke(Integer a, Integer b) {
+        return a == b;
+      }
+    }.invoke(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "parts", true);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.core.syntax.structure.SSymbolRef") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.core.syntax.structure.SSymbolRef"), "ref", false) == SLinkOperations.getTarget(thisNode, "sym", true);
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.core.syntax.structure.SSymbolRef") && new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
+          public Boolean invoke(SNode a, SNode b) {
+            return a == b;
+          }
+        }.invoke(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.core.syntax.structure.SSymbolRef"), "ref", false), SLinkOperations.getTarget(thisNode, "sym", true));
       }
-    }).count() == 1;
+    }).count(), 1);
   }
 
   @Deprecated

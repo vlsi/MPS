@@ -46,10 +46,7 @@ public class OverrideImplementMethodAction {
     final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
       @Override
       public SNodeReference[] compute() {
-        List<SNode> methodsToOverride = (myIsOverride ?
-          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) :
-          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})
-        );
+        List<SNode> methodsToOverride = (myIsOverride ? BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{}));
         return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(contextClass, methodsToOverride));
       }
     });
@@ -61,10 +58,7 @@ public class OverrideImplementMethodAction {
       }
     };
 
-    dialog.setTitle((myIsOverride ?
-      "Select Methods to Override" :
-      "Select Methods to Implement"
-    ));
+    dialog.setTitle((myIsOverride ? "Select Methods to Override" : "Select Methods to Implement"));
     dialog.show();
 
     if (dialog.isOK()) {

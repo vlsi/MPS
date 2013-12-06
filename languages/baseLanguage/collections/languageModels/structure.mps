@@ -2602,5 +2602,17 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6481445890964205296" nodeInfo="ig">
+    <property name="staticScope" nameId="tpce.5404671619616246344" value="root" />
+    <property name="name" nameId="tpck.1169194664001" value="MapAsSequenceVarRef" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="impl" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6481445890964252459" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="original" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
+    </node>
+  </root>
 </model>
 

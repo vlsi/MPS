@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/mps" />
   <property name="build.layout" location="${build.dir}/artifacts/mps" />
-  <property name="build.number" value="MPS-129.SNAPSHOT" />
+  <property name="build.number" value="MPS-132.SNAPSHOT" />
   <tstamp>
     <format property="date" pattern="yyyyMMdd" />
   </tstamp>
@@ -23,6 +23,7 @@
   <property name="artifacts.mpsDebuggerPlugin" location="${build.dir}/artifacts/mpsDebuggerPlugin" />
   <property name="artifacts.mpsExecutionPlugin" location="${build.dir}/artifacts/mpsExecutionPlugin" />
   <property name="artifacts.mpsTesting" location="${build.dir}/artifacts/mpsTesting" />
+  <property name="artifacts.mpsNewLanguageDesign" location="${build.dir}/artifacts/mpsNewLanguageDesign" />
   <property file="${artifacts.mpsBuild}/build.properties" prefix="import.mpsBuild" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBuild.mpsBootstrapCore.version}" />
   
@@ -137,6 +138,10 @@
     <copy todir="${build.layout}/plugins/mps-testing">
       <fileset dir="${artifacts.mpsTesting}/mps-testing" />
     </copy>
+    <mkdir dir="${build.layout}/plugins/mpsNewLanguageDesign" />
+    <copy todir="${build.layout}/plugins/mpsNewLanguageDesign">
+      <fileset dir="${artifacts.mpsNewLanguageDesign}/mpsNewLanguageDesign" />
+    </copy>
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
     </zip>
@@ -174,6 +179,7 @@
     <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsNewLanguageDesign.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

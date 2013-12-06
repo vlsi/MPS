@@ -68,10 +68,7 @@ public class Switch_HasAttributes_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "isCompact") ?
-        "Full view" :
-        "Compact view"
-      );
+      return (SPropertyOperations.getBoolean(node, "isCompact") ? "Full view" : "Compact view");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

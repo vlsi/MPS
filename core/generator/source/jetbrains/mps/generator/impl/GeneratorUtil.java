@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -60,24 +61,26 @@ public class GeneratorUtil {
   }
 
   @NotNull
-  public static TemplateContext createConsequenceContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, @NotNull SNode consequence, SNode newInputNode, ITemplateGenerator generator) {
+  public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env,
+      @NotNull SNode consequence) {
     if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
-      return createTemplateCallContext(inputNode, outerContext, reductionContext, consequence, newInputNode, generator);
+      return createTemplateCallContext(outerContext, env, consequence, outerContext.getInput());
     }
-    return outerContext != null ? outerContext : new DefaultTemplateContext(newInputNode);
+    return outerContext;
   }
 
   @NotNull
-  static TemplateContext createTemplateCallContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, SNode templateCall, SNode newInputNode, ITemplateGenerator generator) {
+  static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall, SNode newInputNode) {
     final SNode[] arguments = getArguments(templateCall);
+    final ITemplateGenerator generator = env.getGenerator();
     final String[] parameters = getParameters(templateCall, generator);
 
     if (arguments == null && parameters == null) {
-      return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
+      return outerContext.subContext(null, newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
-      generator.showErrorMessage(inputNode, templateCall, "number of arguments doesn't match template");
-      return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
+      generator.showErrorMessage(outerContext.getInput(), templateCall, "number of arguments doesn't match template");
+      return outerContext.subContext(null, newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
@@ -89,14 +92,14 @@ public class GeneratorUtil {
       if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression)) && outerContext != null) {
         SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
         if (parameter == null) {
-          generator.showErrorMessage(inputNode, exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
+          generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
         } else {
           value = outerContext.getVariable(parameter.getName());
         }
       } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef)) && outerContext != null) {
         String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
         if (patternVar == null) {
-          generator.showErrorMessage(inputNode, exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
+          generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
         } else {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
           value = outerContext.getPatternVariable(patternVar);
@@ -104,12 +107,12 @@ public class GeneratorUtil {
       } else {
         if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
           SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
-          value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
+          value = env.getQueryExecutor().evaluateArgumentQuery(outerContext.getInput(), query, outerContext);
         } else {
           try {
             value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
           } catch(IllegalArgumentException ex) {
-            generator.showErrorMessage(inputNode, templateCall, "cannot evaluate template argument #" + (i + 1));
+            generator.showErrorMessage(outerContext.getInput(), templateCall, "cannot evaluate template argument #" + (i + 1));
           }
         }
       }

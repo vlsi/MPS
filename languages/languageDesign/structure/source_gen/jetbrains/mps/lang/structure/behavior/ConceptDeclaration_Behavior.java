@@ -37,10 +37,7 @@ public class ConceptDeclaration_Behavior {
     while ((concept != null) && !(SetSequence.fromSet(extendedConcepts).contains(concept))) {
       SetSequence.fromSet(extendedConcepts).addElement(concept);
       ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
-      concept = ((SLinkOperations.getTarget(thisNode, "extends", false) != null) ?
-        SLinkOperations.getTarget(thisNode, "extends", false) :
-        SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")
-      );
+      concept = ((SLinkOperations.getTarget(thisNode, "extends", false) != null) ? SLinkOperations.getTarget(thisNode, "extends", false) : SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
     }
 
     // collect methods from implemented interfaces 

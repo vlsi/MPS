@@ -38,10 +38,7 @@ public class AttributeAccess_Behavior {
 
   public static SNode call_getAttributeContainerType_6960953357954139822(SNode thisNode) {
     SNode result = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
-    return ((result != null) && (SLinkOperations.getTarget(result, "concept", false) == null) ?
-      _quotation_createNode_q663c8_a0b0e() :
-      result
-    );
+    return ((result != null) && (SLinkOperations.getTarget(result, "concept", false) == null) ? _quotation_createNode_q663c8_a0b0e() : result);
   }
 
   public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {

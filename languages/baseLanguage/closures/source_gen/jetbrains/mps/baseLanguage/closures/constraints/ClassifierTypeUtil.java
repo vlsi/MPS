@@ -126,10 +126,7 @@ with_meet:
     if (isFunctionTypeClassifier(classifier)) {
       String cname = SPropertyOperations.getString(classifier, "name");
       int ldi = cname.lastIndexOf(".");
-      cname = (ldi >= 0 ?
-        cname.substring(ldi + 1) :
-        cname
-      );
+      cname = (ldi >= 0 ? cname.substring(ldi + 1) : cname);
       return !(cname.startsWith("_void"));
     }
     return false;
@@ -201,45 +198,24 @@ with_meet:
       ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).clear();
       boolean covariantParam = isFunctionTypeClassifierReturningValue(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
       for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).addElement((isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)) ?
-          copyTypeRecursively(pt, covariantParam) :
-          copyTypeRecursively(pt)
-        ));
+        ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).addElement((isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)) ? copyTypeRecursively(pt, covariantParam) : copyTypeRecursively(pt)));
         covariantParam = false;
       }
       if (covariant) {
-        return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
-          copy :
-          _quotation_createNode_zgotlq_a0a0e0a0j(copy)
-        );
+        return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ? copy : _quotation_createNode_zgotlq_a0a0e0a0j(copy));
       } else {
-        return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
-          copy :
-          _quotation_createNode_zgotlq_a0a0a4a0a9(copy)
-        );
+        return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ? copy : _quotation_createNode_zgotlq_a0a0a4a0a9(copy));
       }
     } else if (covariant) {
-      return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
-        SNodeOperations.copyNode(type) :
-        _quotation_createNode_zgotlq_a0a0a0a9_0(SNodeOperations.copyNode(type))
-      );
+      return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ? SNodeOperations.copyNode(type) : _quotation_createNode_zgotlq_a0a0a0a9_0(SNodeOperations.copyNode(type)));
     } else {
-      return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
-        SNodeOperations.copyNode(type) :
-        _quotation_createNode_zgotlq_a0a0a0a9(SNodeOperations.copyNode(type))
-      );
+      return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ? SNodeOperations.copyNode(type) : _quotation_createNode_zgotlq_a0a0a0a9(SNodeOperations.copyNode(type)));
     }
   }
 
   public static SNode copyTypeRecursively(SNode type) {
-    type = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
-      SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true) :
-      type
-    );
-    type = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
-      SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true) :
-      type
-    );
+    type = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true) : type);
+    type = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true) : type);
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode copy = SNodeOperations.cast(SNodeOperations.copyNode(type), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       ListSequence.fromList(SLinkOperations.getTargets(copy, "parameter", true)).clear();
@@ -260,10 +236,7 @@ with_meet:
   }
 
   private static SNode coerceToClassifierTypeIgnoreParameters(SNode type) {
-    SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") :
-      null
-    );
+    SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ? SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") : null);
     if ((cType != null)) {
       return cType;
     }
@@ -354,9 +327,6 @@ with_meet:
   }
 
   private static boolean eq_zgotlq_a0a0a4(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -76,7 +76,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4965310991037828399(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0n(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static SNode sourceNodeQuery_8814893218132245226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -95,7 +95,7 @@ public class QueriesGenerated {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.resources.structure.IconResourceExpression");
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0n(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

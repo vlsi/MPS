@@ -40,10 +40,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
   public ProjectPropertiesComponent(Project project, ProjectPrefsExtraPanel[] extraPanels) {
     super(true);
     myProject = (StandaloneMPSProject) project.getComponent(MPSProject.class);
-    myExtraPanels = (extraPanels != null ?
-      extraPanels :
-      new ProjectPrefsExtraPanel[0]
-    );
+    myExtraPanels = (extraPanels != null ? extraPanels : new ProjectPrefsExtraPanel[0]);
     myProperties.loadFrom(myProject);
     init();
   }
@@ -99,10 +96,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
   @Override
   public void init() {
-    int rowCount = 2 + ((myExtraPanels == null ?
-      0 :
-      myExtraPanels.length
-    ));
+    int rowCount = 2 + ((myExtraPanels == null ? 0 : myExtraPanels.length));
     int rowIndex = 0;
     this.setLayout(new GridLayoutManager(rowCount, 1));
     this.setAutoscrolls(false);

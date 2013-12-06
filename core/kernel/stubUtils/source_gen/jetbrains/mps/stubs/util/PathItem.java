@@ -27,10 +27,7 @@ public abstract class PathItem {
     IFile container = null;
     for (String p : path.split("!")) {
       if (container == null) {
-        container = FileSystem.getInstance().getFileByPath((this.isJar(p) ?
-          p + "!/" :
-          p
-        ));
+        container = FileSystem.getInstance().getFileByPath((this.isJar(p) ? p + "!/" : p));
       } else {
         File cf = asFile(FileSystem.getInstance().getFileByPath(container.getPath() + p));
         // '!' would have been added by JarFileEntryFile 
@@ -127,10 +124,7 @@ public abstract class PathItem {
   }
 
   private String compose(String pkg, String name) {
-    return (pkg.length() == 0 ?
-      name :
-      pkg + "." + name
-    );
+    return (pkg.length() == 0 ? name : pkg + "." + name);
   }
 
   public boolean isJar(String path) {

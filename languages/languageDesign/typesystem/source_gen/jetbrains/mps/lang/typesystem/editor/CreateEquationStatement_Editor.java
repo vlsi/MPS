@@ -72,13 +72,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_mi4qyq_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -94,13 +88,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_mi4qyq_b0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -171,13 +159,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_mi4qyq_f0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Parenthesis(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

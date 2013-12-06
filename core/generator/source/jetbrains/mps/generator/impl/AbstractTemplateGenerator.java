@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,38 +16,49 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
-  private IOperationContext myOperationContext;
+  private GenerationSessionContext myOperationContext;
   private ProgressMonitor myProgressMonitor;
   protected final IGeneratorLogger myLogger;
 
   protected final SModel myInputModel;
   protected final SModel myOutputModel;
 
-  protected final GeneratorMappings myMappings;
+  private final GeneratorMappings myMappings;
 
   private Set<SNode> myFailedRules = new ConcurrentHashSet<SNode>();
   private final boolean myShowBadChildWarning;
+  private final RoleValidator successValidatorOne = new RoleValidator(false);
+  private final RoleValidator successValidatorMany = new RoleValidator(true);
+  // not concurrent - I don't care if few threads instantiate validators - it's cheap.
+  // besides, the code shall be refactored to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
+  private final Map<String, Map<String, RoleValidator>> validators = new HashMap<String, Map<String, RoleValidator>>();
 
-  protected AbstractTemplateGenerator(IOperationContext operationContext,
+  protected AbstractTemplateGenerator(GenerationSessionContext operationContext,
       ProgressMonitor progressMonitor, IGeneratorLogger logger,
       SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
     myOperationContext = operationContext;
@@ -59,7 +70,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myMappings = new GeneratorMappings(IterableUtil.asCollection(inputModel.getRootNodes()).size());
   }
 
-  public IOperationContext getOperationContext() {
+  @Override
+  public GenerationSessionContext getGeneratorSessionContext() {
     return myOperationContext;
   }
 
@@ -125,7 +137,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
    */
   @Override
   public SModel getSourceModel() {
-    return myInputModel;
+    return getInputModel();
   }
 
   @Override
@@ -138,7 +150,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
    */
   @Override
   public SModel getTargetModel() {
-    return myOutputModel;
+    return getOutputModel();
   }
 
   GeneratorMappings getMappings() {
@@ -148,10 +160,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   @Override
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
     myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-  }
-
-  public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
-    return myMappings.findOutputNodeByTemplateNodeUnique(templateNode);
   }
 
   public SNode findOutputNodeByTemplateNodeUnique(String templateNode) {
@@ -179,14 +187,22 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return outputNode;
   }
 
+  protected void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
+    myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
+  }
+
+  public void addOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId, SNode outputNode) {
+    myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, outputNode);
+  }
+
+  void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
+    myMappings.addOutputNodeForContext(context, templateNodeId, outputNode);
+  }
+
   public SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
     SNode node = findCopiedOutputNodeForInputNode(inputNode);
     if (myMappings.isInputNodeHasUniqueCopiedOutputNode(inputNode)) return node;
     return null;
-  }
-
-  public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
-    return myMappings.findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId) {
@@ -194,68 +210,135 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public SNode findOutputNodeById(SNodeId nodeId) {
-    return myOutputModel.getNode(nodeId);
+    return getOutputModel().getNode(nodeId);
   }
 
-  public SNode findInputNodeById(SNodeId nodeId) {
-    return myInputModel.getNode(nodeId);
+  public RoleValidator getChildRoleValidator(SNode parent, String role) {
+    return getValidator(parent, role, true);
   }
 
-
-  public RoleValidationStatus validateChild(SNode parent, String role, SNode child) {
-    return validateRole(parent, role, child, true);
+  public RoleValidator getReferentRoleValidator(SNode reference, String role) {
+    return getValidator(reference, role, false);
   }
 
-  public RoleValidationStatus validateReferent(SNode reference, String role, SNode referent) {
-    return validateRole(reference, role, referent, false);
-  }
-
-  private RoleValidationStatus validateRole(SNode sourceNode, String role, SNode targetNode, boolean child) {
-    if (child && role.equals(GeneratorUtilEx.link_BaseConcept_attrs)) {
+  private RoleValidator getValidator(SNode sourceNode, String role, boolean child) {
+    if (child && GeneratorUtilEx.link_BaseConcept_attrs.equals(role)) {
       //unnecessary warning removed
-      return null; //todo maybe add check for attribule links
+      return successValidatorMany; //todo maybe add check for attribute links
     }
-    SNode concept = ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode();
-    if (concept == null) {
-      return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConcept().getQualifiedName() + "'");
+    final SConcept concept = sourceNode.getConcept();
+    String conceptFQName = concept.getQualifiedName();
+    Map<String, RoleValidator> vmap = validators.get(conceptFQName);
+    if (vmap == null) {
+      validators.put(conceptFQName, vmap = new HashMap<String, RoleValidator>());
     }
-    SNode link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
-    if (link == null) {
+    RoleValidator validator = vmap.get(role);
+    if (validator != null) {
+      return validator;
+    }
+    SAbstractLink link = concept.getLink(role);
+    if (link == null || link.isReference() == child) {
       String relationKind = child ? "child" : "referent";
-      return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' cannot have " + relationKind + " with role '" + role + "'",
-          GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
+      String msg;
+      if (link == null) {
+        msg = String.format("concept '%s' cannot have %s with role '%s'", concept.getQualifiedName(), relationKind, role);
+      } else {
+        msg = String.format("%s '%s' in concept '%s' doesn't match declared kind:%s", relationKind, role, concept.getQualifiedName(), link.isReference() ? "referent" : "child");
+      }
+      RoleValidationStatus s = new RoleValidationStatus(myLogger, msg);
+      validator = new RoleValidator(s);
+    } else {
+      if (!myShowBadChildWarning) {
+        // ignore
+        validator = (!link.isReference() && ((SContainmentLink) link).isMultiple()) ? successValidatorMany : successValidatorOne;
+      } else {
+        validator = new AcceptableTargetValidator(myLogger, link);
+      }
     }
-    if (!myShowBadChildWarning) {
-      // ignore
-      return null;
+    vmap.put(role, validator);
+    return validator;
+  }
+
+  public static class RoleValidator {
+    private final RoleValidationStatus myStatus;
+    private final boolean myMultipleSource;
+
+    protected RoleValidator() {
+      myStatus = null;
+      myMultipleSource = false;
     }
-    if (!SModelUtil.isAcceptableTarget(link, targetNode)) {
-      if (child && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {
+
+    public RoleValidator(boolean isMultipleSource) {
+      myStatus = null;
+      myMultipleSource = isMultipleSource;
+    }
+
+    public RoleValidator(@NotNull RoleValidationStatus status) {
+      myStatus = status;
+      myMultipleSource = false;
+    }
+
+    /**
+     * @return null if validation succeed
+     */
+    public RoleValidationStatus validate(SNode targetNode) {
+      return myStatus;
+    }
+
+    /**
+     * Value doesn't make sense if validation status is non-null (i.e. error)
+     * @return <code>true</code> if source cardinality is 0..* or 1..*
+     */
+    public boolean isMultipleSource() {
+      return myMultipleSource;
+    }
+  }
+
+  private static class AcceptableTargetValidator extends RoleValidator {
+    private final IGeneratorLogger myLogger;
+    private final SAbstractLink myLink;
+    private final SAbstractConcept myLinkTarget;
+
+    AcceptableTargetValidator(@NotNull IGeneratorLogger logger, @NotNull SAbstractLink link) {
+      myLogger = logger;
+      myLink = link;
+      myLinkTarget = link.getTargetConcept();
+    }
+
+    @Override
+    public RoleValidationStatus validate(SNode targetNode) {
+      if (targetNode.getConcept().isSubConceptOf(myLinkTarget)) {
+        return null;
+      }
+      if (!myLink.isReference() && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {
         // temporary child node, ignore
         return null;
       }
-      SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(link);
-      String expected = linkDeclarationTarget != null ? linkDeclarationTarget.getName() : "<unknown>";
-      String was = targetNode.getConcept().getName();
-      String relationKind = child ? "child" : "referent";
-      return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",
-          GeneratorUtil.describe(targetNode, relationKind));
+      String expected = myLinkTarget.getQualifiedName();
+      String was = targetNode.getConcept().getQualifiedName();
+      String relationKind = myLink.isReference() ? "referent" : "child";
+      String msg = String.format("%s '%s' is expected for role '%s' but was '%s'", relationKind, expected, myLink.getRole(), was);
+      return new RoleValidationStatus(myLogger, msg, GeneratorUtil.describe(targetNode, relationKind));
     }
-    return null;
+
+    @Override
+    public boolean isMultipleSource() {
+      return !myLink.isReference() && ((SContainmentLink) myLink).isMultiple();
+    }
   }
 
-  public class RoleValidationStatus {
-    private SNode sourceNode;
-    private String message;
-    private ProblemDescription[] descriptions;
+  public static class RoleValidationStatus {
+    private final IGeneratorLogger myLogger;
+    private final String message;
+    private final ProblemDescription[] descriptions;
 
-    public RoleValidationStatus(SNode sourceNode, String message, ProblemDescription... descriptions) {
-      this.sourceNode = sourceNode;
+    public RoleValidationStatus(@NotNull IGeneratorLogger logger, String message, ProblemDescription... descriptions) {
+      myLogger = logger;
       this.message = message;
       this.descriptions = descriptions;
     }
 
-    public void reportProblem(boolean isError, String prefix, ProblemDescription... descriptions) {
+    public void reportProblem(boolean isError, SNode sourceNode, String prefix, ProblemDescription... descriptions) {
       if (isError) {
         myLogger.error(sourceNode, prefix + message, GeneratorUtil.concat(this.descriptions, descriptions));
       } else {

@@ -12,7 +12,7 @@
   <unitInfo fileName="ConsoleModelExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ConsoleModelExpression_BehaviorDescriptor" />
   <unitInfo fileName="CustomScope_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.CustomScope_BehaviorDescriptor" />
   <unitInfo fileName="ExceptionHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_BehaviorDescriptor" />
-  <unitInfo fileName="Execute_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.Execute_BehaviorDescriptor" />
+  <unitInfo fileName="Execute_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.Execute_BehaviorDescriptor" />
   <unitInfo fileName="GlobalScope_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.GlobalScope_BehaviorDescriptor" />
   <unitInfo fileName="InstancesExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.InstancesExpression_BehaviorDescriptor" />
   <unitInfo fileName="ModelProperties_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ModelProperties_BehaviorDescriptor" />
@@ -101,27 +101,7 @@
     </scopeInfo>
     <unitInfo nodeId="119903734739773221" fileName="ModuleProperties_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ModuleProperties_Behavior" />
   </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/1549957824998771093" />
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/1769790395579698971" />
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/1915462833252929041" />
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/1915462833253157902" />
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/2137637419750957165" />
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/2197843344737010793">
-    <nodeInfo nodeId="2197843344737012482" fileName="Execute_Behavior.java" startLine="15" startPosition="123" endLine="16" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2197843344737010793" fileName="Execute_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2197843344737010793" fileName="Execute_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
-    <scopeInfo nodeId="2197843344737010795" fileName="Execute_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="2197843344737011157" fileName="Execute_Behavior.java" startLine="15" startPosition="123" endLine="16" endPosition="93" />
-    <scopeInfo nodeId="2197843344737010793" fileName="Execute_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="2197843344737010793" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2197843344737010793" fileName="Execute_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="2197843344737011160" varName="console" />
-      <varInfo nodeId="2197843344737011158" varName="context" />
-      <varInfo nodeId="2197843344737010793" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2197843344737010793" fileName="Execute_Behavior.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.Execute_Behavior" />
-  </root>
+  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/2197843344737010793" />
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/2284201910216391605">
     <nodeInfo nodeId="4225915845891065709" fileName="CallActionExpression_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2284201910216391605" fileName="CallActionExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -207,7 +187,6 @@
     <scopeInfo nodeId="2699636778858912197" fileName="BLCommand_Behavior.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
     <unitInfo nodeId="2699636778858778743" fileName="BLCommand_Behavior.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BLCommand_Behavior" />
   </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/3820104862373852283" />
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/4225915845891119167">
     <nodeInfo nodeId="4225915845891119222" fileName="ConsoleModelExpression_Behavior.java" startLine="12" startPosition="114" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4225915845891119167" fileName="ConsoleModelExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -590,9 +569,6 @@
     </scopeInfo>
     <unitInfo nodeId="473081947984132533" fileName="BLCommandHelp_Behavior.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BLCommandHelp_Behavior" />
   </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/5191068651951198677" />
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/6322385757202393966" />
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/64838023814067301" />
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/6558068108108193352">
     <nodeInfo nodeId="4221956679900513485" fileName="ExceptionHolder_Behavior.java" startLine="18" startPosition="91" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4221956679900513493" fileName="ExceptionHolder_Behavior.java" startLine="19" startPosition="106" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -634,6 +610,5 @@
     </scopeInfo>
     <unitInfo nodeId="7284872370239343379" fileName="ProjectExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ProjectExpression_Behavior" />
   </root>
-  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/752693057588168105" />
 </debugInfo>
 

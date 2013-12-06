@@ -68,10 +68,7 @@ public class ToggleCompactMpsModule_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "compact") ?
-        "Unfold " + SPropertyOperations.getString(node, "name") :
-        "Fold " + SPropertyOperations.getString(node, "name")
-      );
+      return (SPropertyOperations.getBoolean(node, "compact") ? "Unfold " + SPropertyOperations.getString(node, "name") : "Fold " + SPropertyOperations.getString(node, "name"));
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

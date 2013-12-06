@@ -47,10 +47,7 @@ public class CycleHelper {
         }
         SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
         XmlSignature s = new XmlSignature().add(cp);
-        String id = (s.hasErrors() ?
-          "dep." + cp.getNodeId().toString() :
-          s.getResult()
-        );
+        String id = (s.hasErrors() ? "dep." + cp.getNodeId().toString() : s.getResult());
         return !(seenDependencies.add(id));
       }
     });
@@ -73,7 +70,7 @@ public class CycleHelper {
     for (SNode jm : modules) {
       CycleHelper.Module module = new CycleHelper.Module(jm);
       map.put(jm, module);
-      if (isEmpty_yc0kju_a0c0d0f(SPropertyOperations.getString(jm, "outputFolder"))) {
+      if (isEmptyString(SPropertyOperations.getString(jm, "outputFolder"))) {
         genContext.showErrorMessage(jm, "empty output path");
       } else if (SPropertyOperations.getString(jm, "outputFolder").endsWith("/") || SPropertyOperations.getString(jm, "outputFolder").endsWith("\\")) {
         genContext.showErrorMessage(jm, "output path shouldn't end with slash");
@@ -133,10 +130,7 @@ public class CycleHelper {
           } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")) {
             SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
             XmlSignature s = new XmlSignature().add(cp);
-            String id = (s.hasErrors() ?
-              "dep." + cp.getNodeId().toString() :
-              s.getResult()
-            );
+            String id = (s.hasErrors() ? "dep." + cp.getNodeId().toString() : s.getResult());
             if (seenDependencies.add(id)) {
               deps.add(cp);
             }
@@ -162,10 +156,7 @@ public class CycleHelper {
 
         for (SNode n : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(module, "sources", true), "elements", true))) {
           XmlSignature s = new XmlSignature().add(n);
-          String id = (s.hasErrors() ?
-            "path." + n.getNodeId().toString() :
-            s.getResult()
-          );
+          String id = (s.hasErrors() ? "path." + n.getNodeId().toString() : s.getResult());
           if (seenSources.add(id)) {
             sources.add(n);
           }
@@ -247,7 +238,7 @@ public class CycleHelper {
     }
   }
 
-  public static boolean isEmpty_yc0kju_a0c0d0f(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

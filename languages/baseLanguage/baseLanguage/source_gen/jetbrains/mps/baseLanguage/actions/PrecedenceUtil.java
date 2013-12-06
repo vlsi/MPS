@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
@@ -76,9 +76,25 @@ public class PrecedenceUtil {
         SLinkOperations.setTarget(result, "expression", contextNode, true);
         return result;
       }
+    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.CastExpression")) {
+      SNode parentCastExpression = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.CastExpression");
+      if (PrecedenceUtil.needsParensAroundCastExpression(parentCastExpression)) {
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SLinkOperations.setTarget(result, "expression", contextNode, true);
+        return result;
+      }
     }
     return contextNode;
   }
+
+
+
+  public static boolean needsParensAroundCastExpression(SNode castExpression) {
+    return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression));
+
+  }
+
+
 
   private static boolean isHigherPriority(SNode firstExpression, SNode secondExpression) {
     return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)).ordinal() < getPriority(SNodeOperations.getConceptDeclaration(secondExpression)).ordinal();
@@ -127,7 +143,7 @@ public class PrecedenceUtil {
     }
     // TODO: m.b. we should make "Default" precenence higher then all the user extensions 
     // TODO: will be recognized as high-priority expressions 
-    if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")) {
+    if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression") || SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")) {
       return PrecedenceUtil.Precedence.ARRAY_OPARATIONS_AND_METHOD_CALLS;
     }
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {

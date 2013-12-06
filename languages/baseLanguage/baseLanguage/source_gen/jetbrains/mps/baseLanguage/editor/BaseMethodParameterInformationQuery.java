@@ -17,10 +17,7 @@ public class BaseMethodParameterInformationQuery implements ParametersInformatio
 
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
-    SNode methodCall = (selectedActualArgument != null ?
-      SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.structure.IMethodCall") :
-      node
-    );
+    SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.structure.IMethodCall") : node);
     return BaseMethodParameterInformationQueryUtil.getMethodsToShow(methodCall);
   }
 

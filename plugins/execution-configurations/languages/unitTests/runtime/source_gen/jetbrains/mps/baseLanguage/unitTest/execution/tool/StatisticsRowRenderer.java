@@ -130,18 +130,9 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         int f = rowValue.getFailed();
         int e = rowValue.getErrored();
         if (container) {
-          mySuccess.setText((s > 0 ?
-            ("P:" + s) :
-            ""
-          ));
-          myFailure.setText((f > 0 ?
-            ("F:" + f) :
-            ""
-          ));
-          myError.setText((e > 0 ?
-            ("E:" + e) :
-            ""
-          ));
+          mySuccess.setText((s > 0 ? ("P:" + s) : ""));
+          myFailure.setText((f > 0 ? ("F:" + f) : ""));
+          myError.setText((e > 0 ? ("E:" + e) : ""));
           result = myStatePanel;
         } else if ((s + f + e) >= 1) {
           if (s > 0) {

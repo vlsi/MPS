@@ -285,10 +285,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     SModel md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
     if (md instanceof EditableSModel) {
       FileStatus status = getModelFileStatus((EditableSModel) md, myRegistry.getProject());
-      return (status == null ?
-        null :
-        getMessage(status)
-      );
+      return (status == null ? null : getMessage(status));
     } else {
       return null;
     }
@@ -304,10 +301,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
     }
     VirtualFile vf = VirtualFileUtils.getVirtualFile(file);
-    return (vf == null ?
-      null :
-      FileStatusManager.getInstance(project).getStatus(vf)
-    );
+    return (vf == null ? null : FileStatusManager.getInstance(project).getStatus(vf));
   }
 
   private class MyTreeNodeListener implements MPSTreeNodeListener {

@@ -66,10 +66,7 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", true, false) != SNodeOperations.getParent(_context.getParameterNode())) {
               SNode nodeRule = SNodeOperations.as(SNodeOperations.getParent(_context.getParameterNode()), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule");
-              return ((nodeRule == null ?
-                "<unknown>" :
-                SPropertyOperations.getString(nodeRule, "name")
-              )) + "." + SPropertyOperations.getString(_context.getParameterNode(), "name");
+              return ((nodeRule == null ? "<unknown>" : SPropertyOperations.getString(nodeRule, "name"))) + "." + SPropertyOperations.getString(_context.getParameterNode(), "name");
             }
             return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
@@ -83,10 +80,7 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              return (scope == null ? new EmptyScope() : scope);
             }
           }
         };

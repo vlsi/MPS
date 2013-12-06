@@ -21,8 +21,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -61,7 +61,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -150,10 +149,12 @@ public class JavaToMpsConverter {
     runCommand("roots creation pass", new Runnable() {
       public void run() {
 
+        SModule module;
+
         if (myModel == null) {
           ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
-          for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
+          for (String pakage : MapSequence.fromMap(classesPerPackage).keySet()) {
             final SModel model = getModel(pakage, MapSequence.fromMap(packageDirs).get(pakage));
             if (model == null) {
               continue;
@@ -174,6 +175,7 @@ public class JavaToMpsConverter {
 
             ListSequence.fromList(myModels).addElement(model);
           }
+          module = myModule;
 
         } else {
           // todo maybe do something clever with packages <-> java imports 
@@ -183,9 +185,11 @@ public class JavaToMpsConverter {
             myModel.addRootNode(root);
           }
           myAttachedRoots = myRoots;
+          module = myModel.getModule();
         }
 
-        ((AbstractModule) myModule).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
 
         JavaParser.tryResolveUnknowns(myAttachedRoots);
 
@@ -899,10 +903,7 @@ public class JavaToMpsConverter {
 
   private Iterable<SReference> getFieldAndMethodTypeRefs(SNode node) {
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
-    Iterable<SNode> members = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") ?
-      SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true) :
-      Sequence.<SNode>singleton(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))
-    );
+    Iterable<SNode> members = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") ? SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true) : Sequence.<SNode>singleton(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
 
     for (SNode member : Sequence.fromIterable(members)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
@@ -1043,10 +1044,7 @@ public class JavaToMpsConverter {
   }
 
   private SModel createModel(String pkgFqName, IFile pkgDir) {
-    ModelFactory factory = (myCreatePerRoot ?
-      PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID) :
-      PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL)
-    );
+    ModelFactory factory = (myCreatePerRoot ? PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID) : PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL));
 
     ModelRoot modelRoot;
     String sourceRoot;
@@ -1106,7 +1104,7 @@ public class JavaToMpsConverter {
       if (!(modelRoot instanceof DefaultModelRoot)) {
         continue;
       }
-      for (String sourceRoot : CollectionSequence.fromCollection(((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS))) {
+      for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
         if (FileUtil.isSubPath(sourceRoot, dir.getPath())) {
           return MultiTuple.<ModelRoot,String>from(modelRoot, sourceRoot);
         }

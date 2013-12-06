@@ -230,10 +230,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   private Future<IResult> _doMake(Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
 
-    String scrName = ((this.getSession().isCleanMake() ?
-      "Rebuild" :
-      "Make"
-    ));
+    String scrName = ((this.getSession().isCleanMake() ? "Rebuild" : "Make"));
     IMessageHandler mh = this.getSession().getMessageHandler();
     if (mh == null) {
       mh = new WorkbenchMakeService.MessageHandler("Make", this.getSession().getContext());
@@ -444,10 +441,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
           if (delegateConfMon != null) {
             opt = delegateConfMon.relayQuery(query);
           }
-          return (opt != null ?
-            opt :
-            new UIQueryRelayStrategy().relayQuery(query, getSession().getContext())
-          );
+          return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, getSession().getContext()));
         }
       };
       this.jobMon = new IJobMonitor.Stub() {

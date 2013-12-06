@@ -12,12 +12,12 @@ public class BooleanType_BehaviorDescriptor extends PrimitiveType_BehaviorDescri
     return BooleanType_Behavior.virtual_createDefaultTypeExpression_3359611512358152580(thisNode);
   }
 
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return BooleanType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
+    return BooleanType_Behavior.virtual_getBoxedType_1213877337320(thisNode);
   }
 
-  public SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return BooleanType_Behavior.virtual_getUnboxedType_1213877337320(thisNode);
+  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+    return BooleanType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
 
   public String virtual_jniSignature_8847328628797633411(SNode thisNode) {

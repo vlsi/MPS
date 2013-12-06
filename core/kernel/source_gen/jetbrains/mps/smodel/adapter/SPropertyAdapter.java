@@ -42,13 +42,7 @@ public class SPropertyAdapter implements SProperty {
     }
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
       SNode pdt = SNodeOperations.cast(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
-      return new SPrimitiveDataTypeAdapter((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isBoolean_1220268791641", new Object[]{}) ?
-        SPrimitiveDataType.BOOL :
-        ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isInteger_1220268780075", new Object[]{}) ?
-          SPrimitiveDataType.INT :
-          SPrimitiveDataType.STRING
-        ))
-      ));
+      return new SPrimitiveDataTypeAdapter((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL : ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, pdt, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
     }
     return new SDataTypeAdapter();
   }

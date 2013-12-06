@@ -300,10 +300,7 @@ public class RefactoringContext {
       }
     }
     if (kind != StructureModificationData.ConceptFeatureKind.NONE) {
-      myConceptFeatureMap.put(new StructureModificationData.ConceptFeature(oldConceptFQName, kind, oldFeatureName), (delete ?
-        null :
-        new StructureModificationData.ConceptFeature(newConceptFQName, kind, newFeatureName)
-      ));
+      myConceptFeatureMap.put(new StructureModificationData.ConceptFeature(oldConceptFQName, kind, oldFeatureName), (delete ? null : new StructureModificationData.ConceptFeature(newConceptFQName, kind, newFeatureName)));
       myCachesAreUpToDate = false;
       if (newFeatureName == null) {
         return;

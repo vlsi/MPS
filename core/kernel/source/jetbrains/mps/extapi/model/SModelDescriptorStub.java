@@ -104,7 +104,7 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
     return false;
   }
 
-  protected void notifyModelReplaced(SModel oldSModel) {
+  protected void notifyModelReplaced(jetbrains.mps.smodel.SModel oldSModel) {
     SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
   }
 
@@ -351,10 +351,5 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Override
   public void changeModelReference(SModelReference newModelReference) {
     getSModelInternal().changeModelReference(newModelReference);
-  }
-
-  @Override
-  public final void copyPropertiesTo(SModelInternal to) {
-    getSModelInternal().copyPropertiesTo(to);
   }
 }

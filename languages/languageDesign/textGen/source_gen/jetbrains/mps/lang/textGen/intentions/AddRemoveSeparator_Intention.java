@@ -68,10 +68,7 @@ public class AddRemoveSeparator_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "withSeparator") ?
-        "Remove Separator" :
-        "Add Separator"
-      );
+      return (SPropertyOperations.getBoolean(node, "withSeparator") ? "Remove Separator" : "Add Separator");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

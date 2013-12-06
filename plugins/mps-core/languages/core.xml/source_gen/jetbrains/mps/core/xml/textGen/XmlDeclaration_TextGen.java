@@ -15,7 +15,7 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
     this.append("\"");
     this.append(SPropertyOperations.getString(node, "version"));
     this.append("\"");
-    if (isNotEmpty_ney477_a0b0a(SPropertyOperations.getString(node, "encoding"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, "encoding"))) {
       this.append(" ");
       this.append("encoding");
       this.append(" = ");
@@ -23,7 +23,7 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
       this.append(SPropertyOperations.getString(node, "encoding"));
       this.append("\"");
     }
-    if (isNotEmpty_ney477_a0c0a(SPropertyOperations.getString(node, "standalone"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, "standalone"))) {
       this.append(" ");
       this.append("standalone");
       this.append(" = ");
@@ -34,11 +34,7 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
     this.append("?>");
   }
 
-  public static boolean isNotEmpty_ney477_a0b0a(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_ney477_a0c0a(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

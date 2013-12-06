@@ -137,7 +137,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_b42orx_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_b42orx_a0a0i(SPropertyOperations.getString(node, "tagName"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "tagName"));
   }
 
   private EditorCell createProperty_b42orx_e0(EditorContext editorContext, SNode node) {
@@ -693,7 +693,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_b42orx_a0a0i(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

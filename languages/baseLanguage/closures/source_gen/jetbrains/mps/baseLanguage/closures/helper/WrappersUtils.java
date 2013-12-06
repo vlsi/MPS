@@ -57,10 +57,7 @@ public class WrappersUtils {
       } else if (ins instanceof WriteInstruction) {
         WriteInstruction wi = ((WriteInstruction) ins);
         SNode var = (SNode) wi.getVariable();
-        int writes = (MapSequence.fromMap(resMap).containsKey(var) ?
-          MapSequence.fromMap(resMap).get(var) :
-          0
-        );
+        int writes = (MapSequence.fromMap(resMap).containsKey(var) ? MapSequence.fromMap(resMap).get(var) : 0);
         writes++;
         MapSequence.fromMap(resMap).put(var, writes);
       }
@@ -71,8 +68,12 @@ public class WrappersUtils {
   public static List<SNode> collectVariableDeclarationsToWrap(SNode closure) {
     List<SNode> vdecls = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode desc : SNodeOperations.getDescendants(closure, null, false, new String[]{})) {
-      if (((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) || (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-        SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+      if (!(SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+        continue;
+      }
+      SNode varRef = SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference");
+      if ((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
+        SNode vd = SLinkOperations.getTarget(varRef, "variableDeclaration", false);
         if (closure != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
           if (!(ListSequence.fromList(vdecls).contains(vd)) && !(SPropertyOperations.getBoolean(vd, "isFinal"))) {
             ListSequence.fromList(vdecls).addElement(vd);
@@ -80,12 +81,18 @@ public class WrappersUtils {
         }
       }
     }
+    // vdecls got VarDeclarations that are outside of this closure but are referenced from it 
+    // now, check if any such variable is being modified in the scope it's declared in (i.e. out of the closure?) 
 with_decls:
     for (Iterator<SNode> it = ListSequence.fromList(vdecls).iterator(); it.hasNext();) {
       SNode vd = it.next();
       SNode sl = SNodeOperations.getAncestorWhereConceptInList(vd, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList", "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
       for (SNode desc : SNodeOperations.getDescendants(sl, null, false, new String[]{})) {
-        if (((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) || (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == vd) {
+        if (!(SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+          continue;
+        }
+        SNode varRef = SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference");
+        if ((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) && SLinkOperations.getTarget(varRef, "variableDeclaration", false) == vd) {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true) == desc) {
             continue with_decls;
           } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), "expression", true) == desc) {

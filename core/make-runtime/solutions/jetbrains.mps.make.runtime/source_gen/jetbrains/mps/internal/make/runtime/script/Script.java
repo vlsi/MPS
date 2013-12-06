@@ -212,10 +212,7 @@ __switch__:
       Script.ParametersPool pool = new Script.ParametersPool();
 
       LOG.debug("Initializing");
-      IScriptController ctl = (controller != null ?
-        controller :
-        new IScriptController.Stub()
-      );
+      IScriptController ctl = (controller != null ? controller : new IScriptController.Stub());
       ctl.setup(pool, toExecute, scriptInput);
       monitor.advance(1);
 
@@ -242,10 +239,7 @@ __switch__:
     if (target instanceof ITargetEx2) {
       return ((ITargetEx2) target).workEstimate();
     }
-    return (target.requiresInput() || target.producesOutput() ?
-      100 :
-      10
-    );
+    return (target.requiresInput() || target.producesOutput() ? 100 : 10);
   }
 
   private void executeTargets(final IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results, final ProgressMonitor monitor) {
@@ -275,10 +269,7 @@ with_targets:
                   return r.output();
                 }
               });
-              Iterable<IResource> rawInput = Sequence.fromIterable(((Sequence.fromIterable(impre).isEmpty() ?
-                scriptInput :
-                preInput
-              ))).distinct().ofType(IResource.class).toListSequence();
+              Iterable<IResource> rawInput = Sequence.fromIterable(((Sequence.fromIterable(impre).isEmpty() ? scriptInput : preInput))).distinct().ofType(IResource.class).toListSequence();
               LOG.debug("Raw input: " + rawInput);
               Iterable<IResource> input = (Iterable<IResource>) Sequence.fromIterable(rawInput).where(new IWhereFilter<IResource>() {
                 public boolean accept(final IResource res) {
@@ -318,29 +309,17 @@ with_targets:
                   }
                 }), monit, new Script.PropertiesAccessor(pool), subMonitor);
               } finally {
-                MapSequence.fromMap(timeStatistic).put(trg.getName(), ((MapSequence.fromMap(timeStatistic).containsKey(trg.getName()) ?
-                  MapSequence.fromMap(timeStatistic).get(trg.getName()) :
-                  0
-                )) + (System.currentTimeMillis() - startTime));
+                MapSequence.fromMap(timeStatistic).put(trg.getName(), ((MapSequence.fromMap(timeStatistic).containsKey(trg.getName()) ? MapSequence.fromMap(timeStatistic).get(trg.getName()) : 0)) + (System.currentTimeMillis() - startTime));
               }
               if (!(trg.producesOutput())) {
                 // ignore the output 
-                jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ?
-                  Sequence.fromIterable(rawInput).subtract(Sequence.fromIterable(input)) :
-                  rawInput
-                ));
+                jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ? Sequence.fromIterable(rawInput).subtract(Sequence.fromIterable(input)) : rawInput));
               }
               results.addResult(trg.getName(), jr);
 
               if (!(jr.isSucessful()) || monit.stopRequested()) {
-                monit.reportFeedback((jr.isSucessful() ?
-                  new IFeedback.INFORMATION("Cancelled by user") :
-                  new IFeedback.ERROR("Error executing target " + trg.getName())
-                ));
-                LOG.debug((jr.isSucessful() ?
-                  "Stop requested" :
-                  "Execution failed"
-                ));
+                monit.reportFeedback((jr.isSucessful() ? new IFeedback.INFORMATION("Cancelled by user") : new IFeedback.ERROR("Error executing target " + trg.getName())));
+                LOG.debug((jr.isSucessful() ? "Stop requested" : "Execution failed"));
                 return;
               }
               ctl.useMonitor(null);

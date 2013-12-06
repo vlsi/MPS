@@ -113,10 +113,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
 
     public SNode resolveClass(String longName, String stereotype, String nestedClassName) {
       Collection<SModule> visibleModules = IterableUtil.<SModule>asCollection(myScope.getVisibleModules());
-      String modelName = (stereotype != null ?
-        longName + "@" + stereotype :
-        longName
-      );
+      String modelName = (stereotype != null ? longName + "@" + stereotype : longName);
 
       List<SNode> classifiers = new ArrayList<SNode>();
       for (SModel m : Sequence.fromIterable(((Iterable<SModule>) visibleModules)).translate(new ITranslator2<SModule, SModel>() {
@@ -151,7 +148,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
             return SModelStereotype.isUserModel(SNodeOperations.getModel(it));
           }
         });
-        if ((int) Sequence.fromIterable(userClassifiers).count() == 1) {
+        if (Sequence.fromIterable(userClassifiers).count() == 1) {
           return Sequence.fromIterable(userClassifiers).first();
         }
 

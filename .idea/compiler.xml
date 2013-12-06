@@ -370,6 +370,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/gen.transform/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/gen/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/jetbrains.mps.sample.queryTest/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/jetbrains.mps.sample.queryTest2/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/jetbrains.mps.sample.queryTest2/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/metadata/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/notation/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/query/source_gen" includeSubdirectories="true" />
@@ -387,8 +389,6 @@
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/languages/workflow/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/solutions/mpscore.build/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/solutions/mpscore.build/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/solutions/mpscore.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/newLanguageDesign/solutions/mpscore.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/vcs/languages/modelmetadata/source_gen" includeSubdirectories="true" />

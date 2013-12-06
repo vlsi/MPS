@@ -4,9 +4,21 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
@@ -15,6 +27,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class Property_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SLinkOperations.setTarget(thisNode, "propertyImplementation", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", null), true);
   }
 
   public static boolean call_isDefaultImplementation_1213877383134(SNode thisNode) {
@@ -25,8 +38,20 @@ public class Property_Behavior {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
   }
 
+  public static boolean call_isCustomSetterOnlyImplementation_2622108313329276688(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
+  }
+
   public static SNode call_getCustomPropertyImplementation_1213877383154(SNode thisNode) {
     return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+  }
+
+  public static List<SNode> call_getCustomSetterStatements_2622108313339491118(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")) {
+      return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
+    } else {
+      return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
+    }
   }
 
   public static String call_getPropertyNameWithId_1213877383162(SNode thisNode) {
@@ -34,7 +59,7 @@ public class Property_Behavior {
   }
 
   public static String call_getGetterMethodName_1213877383170(SNode thisNode) {
-    return "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode);
+    return (check_9xvv7i_a0a0g(SLinkOperations.getTarget(thisNode, "type", true)) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
   }
 
   public static String call_getSetterMethodName_1213877383179(SNode thisNode) {
@@ -50,6 +75,53 @@ public class Property_Behavior {
       }
     }
     return visibility;
+  }
+
+  public static boolean call_isSetterVisible_6861608246233143251(SNode thisNode, final SNode contextClassifier, SNode contextNode) {
+    SNode setterVisibility = Property_Behavior.call_getSetterVisibility_1213877383188(thisNode);
+    // public 
+    if (SNodeOperations.isInstanceOf(setterVisibility, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
+      return true;
+    }
+    // private 
+    if (SNodeOperations.isInstanceOf(setterVisibility, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      return ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last() == ListSequence.fromList(SNodeOperations.getAncestors(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
+    }
+    // default 
+    String contextNodePackage = VisibilityUtil.packageName(contextNode);
+    String contextClassifierPackage = VisibilityUtil.packageName(contextClassifier);
+    if ((setterVisibility == null)) {
+      return eq_9xvv7i_a0a0i0k(contextNodePackage, contextClassifierPackage);
+    }
+    // protected 
+    if (SNodeOperations.isInstanceOf(setterVisibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+      String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode));
+      if (eq_9xvv7i_a0b0k0k(contextNodePackage, declarationClassifierPackage)) {
+        return true;
+      }
+
+      // two cases: 1) from class 2) from dot expression 
+      Iterable<SNode> possibleClassifiers = ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(it)).contains(contextClassifier);
+        }
+      });
+      if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+        // 1 
+        return Sequence.fromIterable(possibleClassifiers).isNotEmpty();
+      } else {
+        // 2 
+        SNode leftClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+        final Set<SNode> extendedClassifiers = SetSequence.fromSetWithValues(new HashSet<SNode>(), ClassifierScopeUtils.getExtendedClassifiers(leftClassifier));
+        return Sequence.fromIterable(possibleClassifiers).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SetSequence.fromSet(extendedClassifiers).contains(it);
+          }
+        });
+      }
+    }
+
+    return false;
   }
 
   public static boolean call_hasSetter_1213877383224(SNode thisNode) {
@@ -73,5 +145,20 @@ public class Property_Behavior {
   @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541381539(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  private static boolean check_9xvv7i_a0a0g(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.BooleanType");
+    }
+    return false;
+  }
+
+  private static boolean eq_9xvv7i_a0a0i0k(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_9xvv7i_a0b0k0k(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

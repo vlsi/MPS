@@ -41,10 +41,7 @@ public class MqlCollectionSelectorVarRef_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode current = (_context.getReferenceNode() == null ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            );
+            SNode current = (_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode());
             List<SNode> vars = new ArrayList<SNode>();
             while (SNodeOperations.isInstanceOf(current, "jetbrains.mps.core.query.structure.MqlExpression") || SNodeOperations.isInstanceOf(current, "jetbrains.mps.core.query.structure.MqlSelector")) {
               if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.core.query.structure.MqlCollectionSelector")) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
+import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
-import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -29,11 +29,7 @@ import java.util.*;
  */
 public class PartitioningSolver {
 
-  /*
-   *   Dependencies graph. For each mapping contains a set of mappings which should be applied together or after
-   *   it (PriorityData.isStrict means only after).
-   */
-  private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
+  private final PriorityMap myPriorityMap;
 
   /*
    *   Each entry defines a set of mappings, which should be applied together.
@@ -43,37 +39,37 @@ public class PartitioningSolver {
   /*
    *   result: Contains rules which caused conflicts.
    */
-  private final Set<TemplateMappingPriorityRule> myConflictingRules;
+  private final PriorityConflicts myConflicts;
 
-  public PartitioningSolver(Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap, List<CoherentSetData> coherentMappings, Set<TemplateMappingPriorityRule> conflictingRules) {
+  public PartitioningSolver(@NotNull PriorityMap priorityMap, @NotNull List<CoherentSetData> coherentMappings, @NotNull PriorityConflicts conflicts) {
     myPriorityMap = priorityMap;
     myCoherentMappings = coherentMappings;
-    myConflictingRules = conflictingRules;
+    myConflicts = conflicts;
   }
 
   List<List<TemplateMappingConfiguration>> solve() {
     // early error detection
-    for (TemplateMappingConfiguration mapping : myPriorityMap.keySet()) {
+    for (TemplateMappingConfiguration mapping : myPriorityMap.keys()) {
       checkSelfLocking(mapping);
     }
 
     // process coherent mappings
     PriorityMapUtil.joinIntersectingCoherentMappings(myCoherentMappings);
-    PriorityMapUtil.makeLockedByAllCoherentIfLockedByOne(myCoherentMappings, myPriorityMap);
-    PriorityMapUtil.makeLocksEqualsForCoherentMappings(myCoherentMappings, myPriorityMap, myConflictingRules);
+    myPriorityMap.makeLockedByAllCoherentIfLockedByOne(myCoherentMappings);
+    myPriorityMap.makeLocksEqualsForCoherentMappings(myCoherentMappings, myConflicts);
 
     // remove 'weak' priorities
     boolean need_more_passes = true;
     while (need_more_passes) {
       need_more_passes = false;
       iterate_all_mappings:
-      for (TemplateMappingConfiguration lockedMapping : myPriorityMap.keySet()) {
+      for (TemplateMappingConfiguration lockedMapping : myPriorityMap.keys()) {
         while (true) {
-          List<TemplateMappingConfiguration> weakLockMappings = PriorityMapUtil.getWeakLockMappingsForLockedMapping(lockedMapping, myPriorityMap);
+          List<TemplateMappingConfiguration> weakLockMappings = myPriorityMap.getWeakLockMappingsForLockedMapping(lockedMapping);
           if (weakLockMappings.isEmpty()) break;
           for (TemplateMappingConfiguration weakLockMapping : weakLockMappings) {
             // remove 'weak' dependency but don't allow locked-lockedMapping to go before weak-lock lockedMapping
-            PriorityMapUtil.replaceWeakLock(lockedMapping, weakLockMapping, myPriorityMap);
+            myPriorityMap.replaceWeakLock(lockedMapping, weakLockMapping);
             checkSelfLocking(lockedMapping);
 //          // if locked-mapping is strict lock for other mappings,
 //          // then weak-lock-mapping should be strict lock for them as well.
@@ -81,21 +77,20 @@ public class PartitioningSolver {
 //          for (TemplateMappingConfiguration lockedMapping_1 : lockedMappings_1) {
 //            Map<TemplateMappingConfiguration, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
 //            PriorityData priorityDataToApply = locks_1.get(lockedMapping);
-//            PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
+//            PriorityMapUtil.updateLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
 //            checkSelfLocking(lockedMapping_1);
 //          }
 
             // if locked-lockedMapping is a lock for other mappings,
             // then weak-lock-lockedMapping should be a lock for them as well.
-            List<TemplateMappingConfiguration> lockedMappings_1 = PriorityMapUtil.getLockedMappingsForLockMapping(lockedMapping, myPriorityMap);
+            List<TemplateMappingConfiguration> lockedMappings_1 = myPriorityMap.getLockedMappingsForLockMapping(lockedMapping);
             for (TemplateMappingConfiguration lockedMapping_1 : lockedMappings_1) {
-              Map<TemplateMappingConfiguration, PriorityData> locks_1 = myPriorityMap.get(lockedMapping_1);
-              PriorityData priorityDataToApply = locks_1.get(lockedMapping);
-              boolean newLockAdded = PriorityMapUtil.addLock(lockedMapping_1, weakLockMapping, priorityDataToApply, myPriorityMap);
+              PriorityData priorityDataToApply = myPriorityMap.priorityData(lockedMapping_1, lockedMapping);
+              boolean newLockAdded = myPriorityMap.updateLock(lockedMapping_1, weakLockMapping, priorityDataToApply);
               checkSelfLocking(lockedMapping_1);
               if (newLockAdded) {
                 // if new lock is a weak lock, then better start all over again (weak locks cleaning)
-                PriorityData priorityData = myPriorityMap.get(lockedMapping_1).get(weakLockMapping);
+                PriorityData priorityData = myPriorityMap.priorityData(lockedMapping_1, weakLockMapping);
                 // checkSelfLocking may removed it, check if not null
                 if (priorityData != null && priorityData.isWeak()) {
                   need_more_passes = true;
@@ -109,34 +104,30 @@ public class PartitioningSolver {
     }
 
     // paranoid check
-    for (Map<TemplateMappingConfiguration, PriorityData> locks : myPriorityMap.values()) {
-      for (PriorityData priorityData : locks.values()) {
-        if (!priorityData.isStrict()) {
-          throw new RuntimeException("Unexpected weak priority");
-        }
+    for (PriorityData priorityData : myPriorityMap.priorityData()) {
+      if (!priorityData.isStrict()) {
+        throw new RuntimeException("Unexpected weak priority");
       }
     }
+    myPriorityMap.checkTopPriMappingsAreNotLockedByNonTopPri(myConflicts);
 
     // create mappings partitioning
     List<List<TemplateMappingConfiguration>> mappingSets = createMappingSets();
     // if the priority map is still not empty, then there are some conflicting rules
-    for (Map<TemplateMappingConfiguration, PriorityData> grtPriMappings : myPriorityMap.values()) {
-      for (PriorityData priorityData : grtPriMappings.values()) {
-        myConflictingRules.addAll(priorityData.myCauseRules);
-      }
+    for (PriorityData priorityData : myPriorityMap.priorityData()) {
+      myConflicts.register(Kind.PastTopPri, priorityData.myCauseRules);
     }
     return mappingSets;
   }
 
   private void checkSelfLocking(TemplateMappingConfiguration mapping) {
-    Map<TemplateMappingConfiguration, PriorityData> locks = myPriorityMap.get(mapping);
-    PriorityData priorityData = locks.get(mapping);
+    PriorityData priorityData = myPriorityMap.priorityData(mapping, mapping);
     if (priorityData != null) {
       if (priorityData.isStrict()) {
         // error
-        myConflictingRules.addAll(priorityData.myCauseRules);
+        myConflicts.register(Kind.SelfLock, priorityData.myCauseRules);
       }
-      locks.remove(mapping);
+      myPriorityMap.removeSelfLock(mapping);
     }
   }
 
@@ -170,17 +161,15 @@ public class PartitioningSolver {
   }
 
   private List<TemplateMappingConfiguration> createMappingSet(boolean topPriorityGroup) {
-    // add all not-locking-mappinds to set
+    // add all not-locking-mappings to set
     List<TemplateMappingConfiguration> mappingSet = new ArrayList<TemplateMappingConfiguration>();
-    for (TemplateMappingConfiguration mapping : myPriorityMap.keySet()) {
+    for (TemplateMappingConfiguration mapping : myPriorityMap.keys()) {
       if (mapping.isTopPriority() != topPriorityGroup) continue;
-      if (!PriorityMapUtil.isLockingMapping(mapping, myPriorityMap)) {
+      if (!myPriorityMap.isLockingMapping(mapping)) {
         mappingSet.add(mapping);
       }
     }
-    for (TemplateMappingConfiguration mapping : mappingSet) {
-      myPriorityMap.remove(mapping);
-    }
+    myPriorityMap.removeKeys(mappingSet);
     return mappingSet;
   }
 }

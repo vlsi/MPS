@@ -91,9 +91,6 @@ public class TraceDown {
   }
 
   private static boolean eq_mk0t6b_a0a0a0a0a0a2a4(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

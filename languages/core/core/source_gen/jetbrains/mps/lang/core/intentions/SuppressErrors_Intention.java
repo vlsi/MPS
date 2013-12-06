@@ -82,10 +82,7 @@ public class SuppressErrors_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null ?
-        "Supress errors for node '" + node + "'" :
-        "Don't supress errors"
-      );
+      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null ? "Supress errors for node '" + node + "'" : "Don't supress errors");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

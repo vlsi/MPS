@@ -72,7 +72,7 @@ public abstract class BaseLanguagesImportHelper {
   }
 
   private void transformNodeToProperVariableReference(SNode node, SModel containerModel) {
-    if ((int) ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
+    if (ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
       SReference reference = ListSequence.fromList(SNodeOperations.getReferences(node)).first();
       if (neq_5vd2f2_a0a1a0a5(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), containerModel) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
         SNode matchingVar = findVariable(reference);
@@ -113,23 +113,14 @@ public abstract class BaseLanguagesImportHelper {
   }
 
   private static boolean neq_5vd2f2_a0b0a0e(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_5vd2f2_a0a1a1a0a4(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_5vd2f2_a0a1a0a5(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

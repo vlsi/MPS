@@ -149,13 +149,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_id");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NAVIGATABLE_NODE, SNotationConceptContext_Editor._StyleParameter_QueryFunction_tvsk60_a0b1a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, SNotationConceptContext_Editor._StyleParameter_QueryFunction_tvsk60_a0b1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SNotationConceptContext_Editor.SNotationConceptContext_generic_cellMenu_tvsk60_a0b1a()}));
     SNode attributeConcept = provider.getRoleAttribute();

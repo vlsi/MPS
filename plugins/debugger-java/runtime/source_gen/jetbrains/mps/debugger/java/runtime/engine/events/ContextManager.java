@@ -129,9 +129,6 @@ public class ContextManager {
   protected static Logger LOG = LogManager.getLogger(ContextManager.class);
 
   private static boolean eq_toclu7_a0a0a0a0a0a0a9(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

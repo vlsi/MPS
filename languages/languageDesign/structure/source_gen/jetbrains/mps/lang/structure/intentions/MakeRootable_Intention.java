@@ -68,10 +68,7 @@ public class MakeRootable_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "rootable") ?
-        "Make Not Rootable" :
-        "Make Rootable"
-      );
+      return (SPropertyOperations.getBoolean(node, "rootable") ? "Make Not Rootable" : "Make Rootable");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

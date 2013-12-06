@@ -76,10 +76,7 @@ public class MethodsScope extends Scope {
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
-    List<SNode> methods = (MapSequence.fromMap(nameToMethods).containsKey(refText) ?
-      MapSequence.fromMap(nameToMethods).get(refText) :
-      new ArrayList<SNode>()
-    );
+    List<SNode> methods = (MapSequence.fromMap(nameToMethods).containsKey(refText) ? MapSequence.fromMap(nameToMethods).get(refText) : new ArrayList<SNode>());
     if (methods.isEmpty()) {
       return null;
     }
@@ -107,9 +104,6 @@ public class MethodsScope extends Scope {
 
   private static Map<SNode, SNode> calcTypeBindings(SNode classifierType) {
     SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
-    return ((classifier != null) ?
-      MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) :
-      new HashMap<SNode, SNode>()
-    );
+    return ((classifier != null) ? MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) : new HashMap<SNode, SNode>());
   }
 }

@@ -19,10 +19,7 @@ public class SimpleTextGenOperation_Behavior {
     }
     StringBuilder result = new StringBuilder();
     boolean space = false;
-    for (int i = 0; i < name.length(); i += (space ?
-      2 :
-      1
-    )) {
+    for (int i = 0; i < name.length(); i += (space ? 2 : 1)) {
       space = Character.isWhitespace(name.charAt(i));
       if (!(space)) {
         result.append(name.charAt(i));

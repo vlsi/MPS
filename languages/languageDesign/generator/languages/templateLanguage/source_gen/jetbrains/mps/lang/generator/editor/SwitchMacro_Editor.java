@@ -18,6 +18,14 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -42,7 +50,10 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_31t0mi_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_31t0mi_a0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_31t0mi_b0(editorContext, node));
+    if (renderingCondition_31t0mi_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createReadOnlyModelAccessor_31t0mi_b0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createComponent_31t0mi_c0(editorContext, node));
     return editorCell;
   }
 
@@ -51,6 +62,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_31t0mi_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_macroStart(style, editorCell);
+    style.set(StyleAttributes.STRIKE_OUT, true);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -73,7 +85,34 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createComponent_31t0mi_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createReadOnlyModelAccessor_31t0mi_b0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return SPropertyOperations.getString(SLinkOperations.getTarget(node, "templateSwitch", false), "name");
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_31t0mi_b0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.apply_reference(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "templateSwitch");
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_31t0mi_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "templateSwitch", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "templateSwitch", false), "name"));
+  }
+
+  private EditorCell createComponent_31t0mi_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.NodeMacro_postfix");
     return editorCell;
   }
@@ -416,5 +455,9 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

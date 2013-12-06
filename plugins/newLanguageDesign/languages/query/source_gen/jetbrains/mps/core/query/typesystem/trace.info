@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/228266671027905045">
     <nodeInfo nodeId="228266671027905055" fileName="typeof_MqlExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="228266671027905055" fileName="typeof_MqlExpression_InferenceRule.java" startLine="20" startPosition="55" endLine="21" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -603,6 +603,118 @@
       <varInfo nodeId="8595827001410598458" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="8595827001410598458" fileName="check_Assignment_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_Assignment_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/8982157191774801918">
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="19" startPosition="46" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="24" startPosition="5" endLine="25" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="25" startPosition="130" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="30" startPosition="30" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_SwitchExpression_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="23" startPosition="68" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="13" startPosition="53" endLine="13" endPosition="53" />
+    <scopeInfo nodeId="8982157191774801919" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="16" startPosition="129" endLine="16" endPosition="129" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="19" startPosition="46" endLine="20" endPosition="68" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="30" startPosition="30" endLine="31" endPosition="17" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="8982157191774801918" varName="status" />
+      <varInfo nodeId="8982157191774801918" varName="switchExpression" />
+      <varInfo nodeId="8982157191774801918" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="24" startPosition="5" endLine="26" endPosition="45">
+      <varInfo nodeId="8982157191774801918" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="23" startPosition="68" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="8982157191774801918" varName="argument" />
+    </scopeInfo>
+    <unitInfo nodeId="8982157191774801918" fileName="check_SwitchExpression_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_SwitchExpression_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/8982157191774801984">
+    <nodeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="72" startPosition="150" endLine="72" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8982157191774831916" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="27" startPosition="7" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191774831916" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="28" startPosition="60" endLine="29" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191775743294" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191775743574" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="32" startPosition="5" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8982157191775768830" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8982157191775744603" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="35" startPosition="82" endLine="36" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191775753035" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="36" startPosition="152" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8982157191775751780" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="38" startPosition="32" endLine="39" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191775761000" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="41" startPosition="78" endLine="42" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191775753186" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="44" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191775796613" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="44" startPosition="258" endLine="45" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191775784188" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="47" startPosition="9" endLine="48" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191775784188" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="48" startPosition="62" endLine="49" endPosition="524" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="55" startPosition="46" endLine="56" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="60" startPosition="5" endLine="61" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="61" startPosition="130" endLine="62" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="66" startPosition="30" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="70" startPosition="60" endLine="71" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="71" startPosition="63" endLine="72" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="72" startPosition="150" endLine="73" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_ExpressionSwitchBranch_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="8982157191775749100" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="37" startPosition="65" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8982157191775754648" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="40" startPosition="7" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="8982157191774831916" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="26" startPosition="421" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8982157191775784188" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="46" startPosition="144" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="59" startPosition="68" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createMqlBoolType_q0x0t8_a0a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8982157191775770090" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="45" startPosition="214" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8982157191774801994" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="25" startPosition="135" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8982157191775744115" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="34" startPosition="49" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="22" startPosition="59" endLine="22" endPosition="59" />
+    <scopeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="72" startPosition="150" endLine="72" endPosition="150" />
+    <scopeInfo nodeId="8982157191775749103" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="38" startPosition="32" endLine="39" endPosition="15" />
+    <scopeInfo nodeId="8982157191775754651" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="41" startPosition="78" endLine="42" endPosition="15" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="55" startPosition="46" endLine="56" endPosition="71" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="66" startPosition="30" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8982157191774831916" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="27" startPosition="7" endLine="29" endPosition="308">
+      <varInfo nodeId="8982157191774831916" varName="_reporter_2309309498" />
+      <varInfo nodeId="8982157191774831916" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191775784188" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="47" startPosition="9" endLine="49" endPosition="524">
+      <varInfo nodeId="8982157191775784188" varName="_reporter_2309309498" />
+      <varInfo nodeId="8982157191775784188" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="60" startPosition="5" endLine="62" endPosition="45">
+      <varInfo nodeId="8982157191774801984" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="70" startPosition="60" endLine="73" endPosition="14">
+      <varInfo nodeId="8982157191774831451" varName="facade" />
+      <varInfo nodeId="8982157191774831451" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191775770093" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="46" startPosition="144" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="59" startPosition="68" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="8982157191774801995" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="26" startPosition="421" endLine="31" endPosition="13" />
+    <scopeInfo nodeId="8982157191774831451" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="8982157191774801984" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191775744118" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="35" startPosition="82" endLine="51" endPosition="7">
+      <varInfo nodeId="8982157191775796616" varName="caseType" />
+      <varInfo nodeId="8982157191775753189" varName="scrutineeType" />
+      <varInfo nodeId="8982157191775744606" varName="switchExp" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191774801985" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="25" startPosition="135" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="8982157191774801984" varName="expressionSwitchBranch" />
+      <varInfo nodeId="8982157191774801984" varName="status" />
+      <varInfo nodeId="8982157191774801984" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="8982157191774801984" fileName="check_ExpressionSwitchBranch_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_ExpressionSwitchBranch_NonTypesystemRule" />
   </root>
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/9173039802026143502">
     <nodeInfo nodeId="9173039802026157041" fileName="check_MqlCollectionElementOp_NonTypesystemRule.java" startLine="23" startPosition="125" endLine="24" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

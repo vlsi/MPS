@@ -375,10 +375,7 @@ public class FullASTConverter extends ASTConverter {
             if ((switchCase != null)) {
               ListSequence.fromList(SLinkOperations.getTargets(result, "case", true)).addElement(switchCase);
             }
-            currentSwitchCase = ((switchCase == null) ?
-              null :
-              SLinkOperations.getTarget(switchCase, "body", true)
-            );
+            currentSwitchCase = ((switchCase == null) ? null : SLinkOperations.getTarget(switchCase, "body", true));
           }
         } else
         if ((currentSwitchCase != null)) {
@@ -1140,13 +1137,13 @@ public class FullASTConverter extends ASTConverter {
     Iterable<SNode> conss = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), claz, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{});
     if (Sequence.fromIterable(conss).isEmpty()) {
       result = null;
-    } else if ((int) Sequence.fromIterable(conss).count() == 1) {
+    } else if (Sequence.fromIterable(conss).count() == 1) {
       result = Sequence.fromIterable(conss).first();
     } else {
       final int argCount = args.length;
       Iterable<SNode> subset = Sequence.fromIterable(conss).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == argCount;
+          return ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == argCount;
         }
       });
       result = Sequence.fromIterable(subset).first();

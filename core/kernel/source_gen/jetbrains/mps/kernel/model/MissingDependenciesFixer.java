@@ -18,6 +18,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -74,8 +75,10 @@ public class MissingDependenciesFixer {
         SearchScope moduleScope = module.getScope();
         List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
         if (fixImplicit) {
-          for (jetbrains.mps.smodel.SModel.ImportElement impElem : SModelOperations.getAllImportElements(model)) {
-            ListSequence.fromList(models).addElement(impElem.getModelReference());
+          if (model instanceof SModelDescriptor) {
+            for (jetbrains.mps.smodel.SModel.ImportElement impElem : SModelOperations.getAllImportElements(((SModelDescriptor) model).getSModel())) {
+              ListSequence.fromList(models).addElement(impElem.getModelReference());
+            }
           }
         } else {
           ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.getImportedModelUIDs(model)));
@@ -86,10 +89,7 @@ public class MissingDependenciesFixer {
           }
           SModel sm = modelImport.resolve(repository);
           if (sm == null) {
-            sm = (modelImport.getModelName() != null ?
-              SModelRepository.getInstance().getModelDescriptor(modelImport.getModelName()) :
-              null
-            );
+            sm = (modelImport.getModelName() != null ? SModelRepository.getInstance().getModelDescriptor(modelImport.getModelName()) : null);
             if (sm == null) {
               continue;
             }

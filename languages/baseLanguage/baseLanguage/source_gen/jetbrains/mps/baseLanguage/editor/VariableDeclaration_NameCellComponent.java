@@ -86,10 +86,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
         for (String name : names) {
           String prefix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPrefix_3012473318495495520", new Object[]{project});
           String suffix = BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSuffix_3012473318495499856", new Object[]{project});
-          String mainName = ((prefix == null || prefix.length() == 0) ?
-            name :
-            NameUtil.capitalize(name)
-          );
+          String mainName = ((prefix == null || prefix.length() == 0) ? name : NameUtil.capitalize(name));
           ListSequence.fromList(result).addElement(prefix + mainName + suffix);
         }
       }

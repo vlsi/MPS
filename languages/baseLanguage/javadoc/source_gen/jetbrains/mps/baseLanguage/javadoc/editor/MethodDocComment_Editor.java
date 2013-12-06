@@ -63,13 +63,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ls0i5e_a0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a0a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a0a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

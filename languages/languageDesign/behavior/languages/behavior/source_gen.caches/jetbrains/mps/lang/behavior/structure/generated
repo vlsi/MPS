@@ -1,37 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8m5upko6y5dkojs6bcpn6y6gmezepka">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2gg1pqtx5oviifer9wjwwhnmr9s8esl" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="57ikkl6947ea0jdejdvbxk8ynh7pbyr">
-    <dep root="1225194240794" />
-    <dep root="1225194413805" />
-    <dep root="1225194472830" />
-    <dep root="1225194588610" />
-    <dep root="1225194628440" />
-    <dep root="1225194691553" />
-    <dep root="646895014681116169" />
-    <dep root="646895014681116171" />
-    <dep root="6496299201655527393" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="1225194240794" name="ConceptBehavior" hash="-3ec2m874nvdhhccso1c9zmcvvth55n0" />
-  <source id="1225194413805" name="ConceptConstructorDeclaration" hash="-93xb67v994jeos7hbl6abuk6lm1g69o" />
-  <source id="1225194472830" name="ConceptMethodDeclaration" hash="ibgk6egw4ze6vyjuga0516duy06qi2" />
-  <source id="1225194588610" name="StaticConceptMethodDeclaration" hash="1i96dy2kc11yrz7l4kiaiatp7lo8vco" />
-  <source id="1225194628440" name="SuperNodeExpression" hash="7z91ckt99kx5ys0vuqsspekkzfobbou" />
-  <source id="1225194691553" name="ThisNodeExpression" hash="25x4tzhr3nyb0gm1d2lt5w0lutyya8e" />
-  <source id="6496299201655527393" name="LocalBehaviorMethodCall" hash="c9t5j3b45k07e1sxj5ypn997xqeqoco" />
-  <source id="646895014681116169" name="InternalConceptDeclarationReference" hash="-5ae1ga7db9x3b8mhlltj8yza5ciskh3" />
-  <source id="646895014681116171" name="InternalConceptDeclarationsHolder" hash="-elpkegsloofz46fola26co6to2q6q2j" />
-</dependencies>
+<dependencies version="2" modelHash="8m5upko6y5dkojs6bcpn6y6gmezepka" />
 

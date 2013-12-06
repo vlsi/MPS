@@ -180,9 +180,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
   }
 
   private static boolean eq_mgy25g_a0b0a0a1a0f0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

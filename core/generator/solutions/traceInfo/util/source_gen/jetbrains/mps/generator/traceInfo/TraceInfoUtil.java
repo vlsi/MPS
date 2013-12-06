@@ -268,10 +268,7 @@ public class TraceInfoUtil {
 
   public static String modelFqNameFromUnitName(String unitName) {
     int lastDot = unitName.lastIndexOf(".");
-    return ((lastDot == -1 ?
-      "" :
-      unitName.substring(0, lastDot)
-    ));
+    return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
   }
 
   @Nullable

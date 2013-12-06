@@ -31,10 +31,7 @@ public class ConflictsUtil {
   }
 
   public static boolean isModelOrModuleConflicting(EditableSModel emd, Project project) {
-    return ListSequence.fromList(getConflictingModelFiles(emd, project)).isNotEmpty() || ListSequence.fromList(getConflictingModuleFiles((emd != null ?
-      emd.getModule() :
-      null
-    ), project)).isNotEmpty();
+    return ListSequence.fromList(getConflictingModelFiles(emd, project)).isNotEmpty() || ListSequence.fromList(getConflictingModuleFiles((emd != null ? emd.getModule() : null), project)).isNotEmpty();
   }
 
   @NotNull

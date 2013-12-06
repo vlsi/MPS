@@ -242,113 +242,113 @@
     <nodeInfo nodeId="8632185942131070900" fileName="MPSPlugin.java" startLine="27" startPosition="61" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4487287951661012617" fileName="MPSPlugin.java" startLine="28" startPosition="31" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8632185942131070902" fileName="MPSPlugin.java" startLine="29" startPosition="71" endLine="30" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632185942131070917" fileName="MPSPlugin.java" startLine="34" startPosition="6" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632185942131070923" fileName="MPSPlugin.java" startLine="35" startPosition="55" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070941" fileName="MPSPlugin.java" startLine="40" startPosition="9" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632185942131070950" fileName="MPSPlugin.java" startLine="42" startPosition="27" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070952" fileName="MPSPlugin.java" startLine="44" startPosition="7" endLine="45" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070936" fileName="MPSPlugin.java" startLine="46" startPosition="33" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070961" fileName="MPSPlugin.java" startLine="51" startPosition="34" endLine="52" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131070971" fileName="MPSPlugin.java" startLine="53" startPosition="9" endLine="54" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632185942131070980" fileName="MPSPlugin.java" startLine="55" startPosition="27" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070982" fileName="MPSPlugin.java" startLine="57" startPosition="7" endLine="58" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632185942131070993" fileName="MPSPlugin.java" startLine="59" startPosition="28" endLine="60" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070995" fileName="MPSPlugin.java" startLine="61" startPosition="7" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131070999" fileName="MPSPlugin.java" startLine="62" startPosition="21" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070966" fileName="MPSPlugin.java" startLine="64" startPosition="33" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131071005" fileName="MPSPlugin.java" startLine="69" startPosition="42" endLine="70" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071012" fileName="MPSPlugin.java" startLine="71" startPosition="27" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131071024" fileName="MPSPlugin.java" startLine="74" startPosition="9" endLine="75" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632185942131071035" fileName="MPSPlugin.java" startLine="76" startPosition="28" endLine="77" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071017" fileName="MPSPlugin.java" startLine="79" startPosition="33" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071039" fileName="MPSPlugin.java" startLine="81" startPosition="5" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131071066" fileName="MPSPlugin.java" startLine="86" startPosition="9" endLine="87" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071054" fileName="MPSPlugin.java" startLine="89" startPosition="30" endLine="90" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071058" fileName="MPSPlugin.java" startLine="90" startPosition="30" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071073" fileName="MPSPlugin.java" startLine="93" startPosition="5" endLine="94" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131070883" fileName="MPSPlugin.java" startLine="98" startPosition="30" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131070888" fileName="MPSPlugin.java" startLine="100" startPosition="5" endLine="101" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131071079" fileName="MPSPlugin.java" startLine="104" startPosition="40" endLine="105" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131070911" fileName="MPSPlugin.java" startLine="30" startPosition="78" endLine="31" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632185942131070917" fileName="MPSPlugin.java" startLine="31" startPosition="124" endLine="32" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632185942131070923" fileName="MPSPlugin.java" startLine="32" startPosition="55" endLine="33" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070941" fileName="MPSPlugin.java" startLine="37" startPosition="9" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632185942131070950" fileName="MPSPlugin.java" startLine="39" startPosition="27" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070952" fileName="MPSPlugin.java" startLine="41" startPosition="7" endLine="42" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070936" fileName="MPSPlugin.java" startLine="43" startPosition="33" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070961" fileName="MPSPlugin.java" startLine="48" startPosition="34" endLine="49" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131070971" fileName="MPSPlugin.java" startLine="50" startPosition="9" endLine="51" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632185942131070980" fileName="MPSPlugin.java" startLine="52" startPosition="27" endLine="53" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070982" fileName="MPSPlugin.java" startLine="54" startPosition="7" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632185942131070993" fileName="MPSPlugin.java" startLine="56" startPosition="28" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070995" fileName="MPSPlugin.java" startLine="58" startPosition="7" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131070999" fileName="MPSPlugin.java" startLine="59" startPosition="21" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070966" fileName="MPSPlugin.java" startLine="61" startPosition="33" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131071005" fileName="MPSPlugin.java" startLine="66" startPosition="42" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131071012" fileName="MPSPlugin.java" startLine="68" startPosition="27" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131071024" fileName="MPSPlugin.java" startLine="71" startPosition="9" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632185942131071035" fileName="MPSPlugin.java" startLine="73" startPosition="28" endLine="74" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131071017" fileName="MPSPlugin.java" startLine="76" startPosition="33" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131071039" fileName="MPSPlugin.java" startLine="78" startPosition="5" endLine="79" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131071066" fileName="MPSPlugin.java" startLine="83" startPosition="9" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131071054" fileName="MPSPlugin.java" startLine="86" startPosition="30" endLine="87" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131071058" fileName="MPSPlugin.java" startLine="87" startPosition="30" endLine="88" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131071073" fileName="MPSPlugin.java" startLine="90" startPosition="5" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131070883" fileName="MPSPlugin.java" startLine="95" startPosition="30" endLine="96" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131070888" fileName="MPSPlugin.java" startLine="97" startPosition="5" endLine="98" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131071079" fileName="MPSPlugin.java" startLine="101" startPosition="40" endLine="102" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632185942131070890" fileName="MPSPlugin.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSPlugin#()V" />
-    <nodeInfo nodeId="8632185942131070945" fileName="MPSPlugin.java" startLine="41" startPosition="38" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131070975" fileName="MPSPlugin.java" startLine="54" startPosition="38" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131070988" fileName="MPSPlugin.java" startLine="58" startPosition="56" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131071007" fileName="MPSPlugin.java" startLine="70" startPosition="31" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131071030" fileName="MPSPlugin.java" startLine="75" startPosition="58" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131070878" fileName="MPSPlugin.java" startLine="97" startPosition="41" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131071075" fileName="MPSPlugin.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertNotInEDT#()V" />
-    <nodeInfo nodeId="8632185942131070911" fileName="MPSPlugin.java" startLine="30" startPosition="78" endLine="34" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632185942131071050" fileName="MPSPlugin.java" startLine="88" startPosition="27" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131070874" fileName="MPSPlugin.java" startLine="97" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/plugin/MPSPlugin;" />
-    <nodeInfo nodeId="8632185942131071014" fileName="MPSPlugin.java" startLine="73" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8632185942131071047" fileName="MPSPlugin.java" startLine="85" startPosition="34" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8632185942131070933" fileName="MPSPlugin.java" startLine="39" startPosition="64" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8632185942131070927" fileName="MPSPlugin.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectHandler#(Ljava/lang/String;)Ljetbrains/mps/plugin/IProjectHandler;" />
-    <nodeInfo nodeId="8632185942131071043" fileName="MPSPlugin.java" startLine="85" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPlugin#()Ljetbrains/mps/plugin/IMPSPlugin;" />
-    <nodeInfo nodeId="8632185942131070894" fileName="MPSPlugin.java" startLine="26" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectHandler#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/plugin/IProjectHandler;" />
-    <nodeInfo nodeId="8632185942131070963" fileName="MPSPlugin.java" startLine="52" startPosition="31" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8632185942131071001" fileName="MPSPlugin.java" startLine="69" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openConnectionPresent#()Z" />
-    <nodeInfo nodeId="8632185942131070957" fileName="MPSPlugin.java" startLine="51" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIDEAPresent#()Z" />
+    <nodeInfo nodeId="8632185942131070945" fileName="MPSPlugin.java" startLine="38" startPosition="38" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131070975" fileName="MPSPlugin.java" startLine="51" startPosition="38" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131070988" fileName="MPSPlugin.java" startLine="55" startPosition="56" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131071007" fileName="MPSPlugin.java" startLine="67" startPosition="31" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131071030" fileName="MPSPlugin.java" startLine="72" startPosition="58" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131070878" fileName="MPSPlugin.java" startLine="94" startPosition="41" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131071075" fileName="MPSPlugin.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertNotInEDT#()V" />
+    <nodeInfo nodeId="8632185942131071050" fileName="MPSPlugin.java" startLine="85" startPosition="27" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131070874" fileName="MPSPlugin.java" startLine="94" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/plugin/MPSPlugin;" />
+    <nodeInfo nodeId="8632185942131071014" fileName="MPSPlugin.java" startLine="70" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8632185942131071047" fileName="MPSPlugin.java" startLine="82" startPosition="34" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8632185942131070894" fileName="MPSPlugin.java" startLine="26" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectHandler#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/plugin/IProjectHandler;" />
+    <nodeInfo nodeId="8632185942131070933" fileName="MPSPlugin.java" startLine="36" startPosition="64" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8632185942131070927" fileName="MPSPlugin.java" startLine="36" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectHandler#(Ljava/lang/String;)Ljetbrains/mps/plugin/IProjectHandler;" />
+    <nodeInfo nodeId="8632185942131071043" fileName="MPSPlugin.java" startLine="82" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPlugin#()Ljetbrains/mps/plugin/IMPSPlugin;" />
+    <nodeInfo nodeId="8632185942131070963" fileName="MPSPlugin.java" startLine="49" startPosition="31" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8632185942131071001" fileName="MPSPlugin.java" startLine="66" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openConnectionPresent#()Z" />
+    <nodeInfo nodeId="8632185942131070957" fileName="MPSPlugin.java" startLine="48" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIDEAPresent#()Z" />
     <scopeInfo nodeId="8632185942131070893" fileName="MPSPlugin.java" startLine="23" startPosition="23" endLine="23" endPosition="23" />
-    <scopeInfo nodeId="8632185942131070949" fileName="MPSPlugin.java" startLine="42" startPosition="27" endLine="43" endPosition="20" />
-    <scopeInfo nodeId="8632185942131070934" fileName="MPSPlugin.java" startLine="46" startPosition="0" endLine="47" endPosition="18">
+    <scopeInfo nodeId="8632185942131070949" fileName="MPSPlugin.java" startLine="39" startPosition="27" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="8632185942131070934" fileName="MPSPlugin.java" startLine="43" startPosition="0" endLine="44" endPosition="18">
       <varInfo nodeId="8632185942131070938" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131070935" fileName="MPSPlugin.java" startLine="46" startPosition="33" endLine="47" endPosition="18" />
-    <scopeInfo nodeId="8632185942131070979" fileName="MPSPlugin.java" startLine="55" startPosition="27" endLine="56" endPosition="21" />
-    <scopeInfo nodeId="8632185942131070992" fileName="MPSPlugin.java" startLine="59" startPosition="28" endLine="60" endPosition="21" />
-    <scopeInfo nodeId="8632185942131070964" fileName="MPSPlugin.java" startLine="64" startPosition="0" endLine="65" endPosition="19">
+    <scopeInfo nodeId="8632185942131070935" fileName="MPSPlugin.java" startLine="43" startPosition="33" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="8632185942131070979" fileName="MPSPlugin.java" startLine="52" startPosition="27" endLine="53" endPosition="21" />
+    <scopeInfo nodeId="8632185942131070992" fileName="MPSPlugin.java" startLine="56" startPosition="28" endLine="57" endPosition="21" />
+    <scopeInfo nodeId="8632185942131070964" fileName="MPSPlugin.java" startLine="61" startPosition="0" endLine="62" endPosition="19">
       <varInfo nodeId="8632185942131070968" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131070965" fileName="MPSPlugin.java" startLine="64" startPosition="33" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="8632185942131071011" fileName="MPSPlugin.java" startLine="71" startPosition="27" endLine="72" endPosition="19" />
-    <scopeInfo nodeId="8632185942131071034" fileName="MPSPlugin.java" startLine="76" startPosition="28" endLine="77" endPosition="23" />
-    <scopeInfo nodeId="8632185942131071015" fileName="MPSPlugin.java" startLine="79" startPosition="0" endLine="80" endPosition="22">
+    <scopeInfo nodeId="8632185942131070965" fileName="MPSPlugin.java" startLine="61" startPosition="33" endLine="62" endPosition="19" />
+    <scopeInfo nodeId="8632185942131071011" fileName="MPSPlugin.java" startLine="68" startPosition="27" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="8632185942131071034" fileName="MPSPlugin.java" startLine="73" startPosition="28" endLine="74" endPosition="23" />
+    <scopeInfo nodeId="8632185942131071015" fileName="MPSPlugin.java" startLine="76" startPosition="0" endLine="77" endPosition="22">
       <varInfo nodeId="8632185942131071021" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131071016" fileName="MPSPlugin.java" startLine="79" startPosition="33" endLine="80" endPosition="22" />
-    <scopeInfo nodeId="8632185942131071065" fileName="MPSPlugin.java" startLine="86" startPosition="9" endLine="87" endPosition="74" />
-    <scopeInfo nodeId="8632185942131070882" fileName="MPSPlugin.java" startLine="98" startPosition="30" endLine="99" endPosition="36" />
-    <scopeInfo nodeId="8632185942131071078" fileName="MPSPlugin.java" startLine="104" startPosition="40" endLine="105" endPosition="91" />
+    <scopeInfo nodeId="8632185942131071016" fileName="MPSPlugin.java" startLine="76" startPosition="33" endLine="77" endPosition="22" />
+    <scopeInfo nodeId="8632185942131071065" fileName="MPSPlugin.java" startLine="83" startPosition="9" endLine="84" endPosition="74" />
+    <scopeInfo nodeId="8632185942131070882" fileName="MPSPlugin.java" startLine="95" startPosition="30" endLine="96" endPosition="36" />
+    <scopeInfo nodeId="8632185942131071078" fileName="MPSPlugin.java" startLine="101" startPosition="40" endLine="102" endPosition="91" />
     <scopeInfo nodeId="8632185942131070890" fileName="MPSPlugin.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8632185942131071053" fileName="MPSPlugin.java" startLine="89" startPosition="30" endLine="91" endPosition="51" />
-    <scopeInfo nodeId="8632185942131071075" fileName="MPSPlugin.java" startLine="104" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="8632185942131071023" fileName="MPSPlugin.java" startLine="74" startPosition="9" endLine="78" endPosition="7">
+    <scopeInfo nodeId="8632185942131071053" fileName="MPSPlugin.java" startLine="86" startPosition="30" endLine="88" endPosition="51" />
+    <scopeInfo nodeId="8632185942131071075" fileName="MPSPlugin.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="8632185942131071023" fileName="MPSPlugin.java" startLine="71" startPosition="9" endLine="75" endPosition="7">
       <varInfo nodeId="8632185942131071025" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131071048" fileName="MPSPlugin.java" startLine="88" startPosition="0" endLine="92" endPosition="7">
+    <scopeInfo nodeId="8632185942131071048" fileName="MPSPlugin.java" startLine="85" startPosition="0" endLine="89" endPosition="7">
       <varInfo nodeId="8632185942131071063" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131071049" fileName="MPSPlugin.java" startLine="88" startPosition="27" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="8632185942131070877" fileName="MPSPlugin.java" startLine="97" startPosition="41" endLine="101" endPosition="23" />
-    <scopeInfo nodeId="8632185942131070940" fileName="MPSPlugin.java" startLine="40" startPosition="9" endLine="45" endPosition="54">
+    <scopeInfo nodeId="8632185942131071049" fileName="MPSPlugin.java" startLine="85" startPosition="27" endLine="89" endPosition="7" />
+    <scopeInfo nodeId="8632185942131070877" fileName="MPSPlugin.java" startLine="94" startPosition="41" endLine="98" endPosition="23" />
+    <scopeInfo nodeId="8632185942131070940" fileName="MPSPlugin.java" startLine="37" startPosition="9" endLine="42" endPosition="54">
       <varInfo nodeId="8632185942131070942" varName="plugin" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131070874" fileName="MPSPlugin.java" startLine="97" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="8632185942131070899" fileName="MPSPlugin.java" startLine="27" startPosition="61" endLine="36" endPosition="42">
+    <scopeInfo nodeId="8632185942131070899" fileName="MPSPlugin.java" startLine="27" startPosition="61" endLine="33" endPosition="42">
       <varInfo nodeId="8632185942131070903" varName="mpsProject" />
       <varInfo nodeId="8632185942131070912" varName="projectFile" />
       <varInfo nodeId="8632185942131070918" varName="projectPath" />
       <varInfo nodeId="4487287951661012618" varName="projectStore" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131070932" fileName="MPSPlugin.java" startLine="39" startPosition="64" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="8632185942131071046" fileName="MPSPlugin.java" startLine="85" startPosition="34" endLine="94" endPosition="20" />
-    <scopeInfo nodeId="8632185942131070970" fileName="MPSPlugin.java" startLine="53" startPosition="9" endLine="63" endPosition="18">
+    <scopeInfo nodeId="8632185942131070874" fileName="MPSPlugin.java" startLine="94" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="8632185942131070894" fileName="MPSPlugin.java" startLine="26" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8632185942131070897" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="8632185942131070932" fileName="MPSPlugin.java" startLine="36" startPosition="64" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8632185942131071046" fileName="MPSPlugin.java" startLine="82" startPosition="34" endLine="91" endPosition="20" />
+    <scopeInfo nodeId="8632185942131070970" fileName="MPSPlugin.java" startLine="50" startPosition="9" endLine="60" endPosition="18">
       <varInfo nodeId="8632185942131070983" varName="handler" />
       <varInfo nodeId="8632185942131070972" varName="plugin" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131070927" fileName="MPSPlugin.java" startLine="39" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="8632185942131070927" fileName="MPSPlugin.java" startLine="36" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="8632185942131070930" varName="projectPath" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131071043" fileName="MPSPlugin.java" startLine="85" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="8632185942131070894" fileName="MPSPlugin.java" startLine="26" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="8632185942131070897" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="8632185942131071004" fileName="MPSPlugin.java" startLine="69" startPosition="42" endLine="82" endPosition="28" />
-    <scopeInfo nodeId="8632185942131070960" fileName="MPSPlugin.java" startLine="51" startPosition="34" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="8632185942131071001" fileName="MPSPlugin.java" startLine="69" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="8632185942131070957" fileName="MPSPlugin.java" startLine="51" startPosition="0" endLine="68" endPosition="0" />
-    <unitInfo nodeId="8632185942131070856" fileName="MPSPlugin.java" startLine="17" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.plugin.MPSPlugin" />
+    <scopeInfo nodeId="8632185942131071043" fileName="MPSPlugin.java" startLine="82" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="8632185942131071004" fileName="MPSPlugin.java" startLine="66" startPosition="42" endLine="79" endPosition="28" />
+    <scopeInfo nodeId="8632185942131070960" fileName="MPSPlugin.java" startLine="48" startPosition="34" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="8632185942131071001" fileName="MPSPlugin.java" startLine="66" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="8632185942131070957" fileName="MPSPlugin.java" startLine="48" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="8632185942131070856" fileName="MPSPlugin.java" startLine="17" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.plugin.MPSPlugin" />
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131071134">
     <nodeInfo nodeId="8632185942131071343" fileName="MPSProjectIDEHandler.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -390,7 +390,7 @@
     <nodeInfo nodeId="8632185942131071792" fileName="MPSProjectIDEHandler.java" startLine="182" startPosition="26" endLine="183" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632185942131071799" fileName="MPSProjectIDEHandler.java" startLine="183" startPosition="78" endLine="184" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9184997660524409588" fileName="MPSProjectIDEHandler.java" startLine="187" startPosition="43" endLine="188" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9184997660524409615" fileName="MPSProjectIDEHandler.java" startLine="192" startPosition="43" endLine="193" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9184997660524409615" fileName="MPSProjectIDEHandler.java" startLine="192" startPosition="43" endLine="193" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131071836" fileName="MPSProjectIDEHandler.java" startLine="196" startPosition="29" endLine="197" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632185942131071847" fileName="MPSProjectIDEHandler.java" startLine="197" startPosition="98" endLine="198" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131071848" fileName="MPSProjectIDEHandler.java" startLine="199" startPosition="9" endLine="200" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -469,7 +469,7 @@
     <scopeInfo nodeId="8632185942131071419" fileName="MPSProjectIDEHandler.java" startLine="113" startPosition="32" endLine="114" endPosition="59" />
     <scopeInfo nodeId="1071422968910417125" fileName="MPSProjectIDEHandler.java" startLine="122" startPosition="63" endLine="123" endPosition="21" />
     <scopeInfo nodeId="9184997660524409587" fileName="MPSProjectIDEHandler.java" startLine="187" startPosition="43" endLine="188" endPosition="164" />
-    <scopeInfo nodeId="9184997660524409612" fileName="MPSProjectIDEHandler.java" startLine="192" startPosition="43" endLine="193" endPosition="188" />
+    <scopeInfo nodeId="9184997660524409612" fileName="MPSProjectIDEHandler.java" startLine="192" startPosition="43" endLine="193" endPosition="182" />
     <scopeInfo nodeId="8632185942131071960" fileName="MPSProjectIDEHandler.java" startLine="213" startPosition="40" endLine="214" endPosition="48" />
     <scopeInfo nodeId="1071422968910417150" fileName="MPSProjectIDEHandler.java" startLine="126" startPosition="29" endLine="128" endPosition="107">
       <varInfo nodeId="1071422968910417170" varName="context" />
@@ -590,28 +590,28 @@
     <nodeInfo nodeId="6338816248140568476" fileName="IdeaJavaCompilerImpl.java" startLine="68" startPosition="5" endLine="69" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6338816248140957411" fileName="IdeaJavaCompilerImpl.java" startLine="71" startPosition="70" endLine="72" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652478519508028128" fileName="IdeaJavaCompilerImpl.java" startLine="75" startPosition="9" endLine="76" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652478519508028121" fileName="IdeaJavaCompilerImpl.java" startLine="83" startPosition="33" endLine="84" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652478519508028157" fileName="IdeaJavaCompilerImpl.java" startLine="85" startPosition="5" endLine="86" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131072069" fileName="IdeaJavaCompilerImpl.java" startLine="90" startPosition="45" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131072071" fileName="IdeaJavaCompilerImpl.java" startLine="92" startPosition="5" endLine="93" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652478519508028142" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="23" endLine="78" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652478519508028121" fileName="IdeaJavaCompilerImpl.java" startLine="80" startPosition="33" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652478519508028157" fileName="IdeaJavaCompilerImpl.java" startLine="82" startPosition="5" endLine="83" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131072069" fileName="IdeaJavaCompilerImpl.java" startLine="87" startPosition="45" endLine="88" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131072071" fileName="IdeaJavaCompilerImpl.java" startLine="89" startPosition="5" endLine="90" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaJavaCompilerImpl#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="8632185942131072026" fileName="IdeaJavaCompilerImpl.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="8632185942131072030" fileName="IdeaJavaCompilerImpl.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
     <nodeInfo nodeId="4652478519508028112" fileName="IdeaJavaCompilerImpl.java" startLine="65" startPosition="65" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6338816248140731489" fileName="IdeaJavaCompilerImpl.java" startLine="70" startPosition="36" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8632185942131072064" fileName="IdeaJavaCompilerImpl.java" startLine="89" startPosition="51" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652478519508028137" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="126" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131072064" fileName="IdeaJavaCompilerImpl.java" startLine="86" startPosition="51" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8632185942131072011" fileName="IdeaJavaCompilerImpl.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8632185942131072015" fileName="IdeaJavaCompilerImpl.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
     <nodeInfo nodeId="8632185942131072041" fileName="IdeaJavaCompilerImpl.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="4652478519508028142" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="23" endLine="81" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131072019" fileName="IdeaJavaCompilerImpl.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="6338816248140680340" fileName="IdeaJavaCompilerImpl.java" startLine="69" startPosition="73" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8632185942131072004" fileName="IdeaJavaCompilerImpl.java" startLine="31" startPosition="31" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652478519508028137" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="126" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="89" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIdeaProjectHandler#()Ljetbrains/mps/plugin/IProjectHandler;" />
+    <nodeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="86" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIdeaProjectHandler#()Ljetbrains/mps/plugin/IProjectHandler;" />
+    <nodeInfo nodeId="4652478519508028118" fileName="IdeaJavaCompilerImpl.java" startLine="74" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8632185942131072000" fileName="IdeaJavaCompilerImpl.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="4652478519508028118" fileName="IdeaJavaCompilerImpl.java" startLine="74" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="64" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
+    <nodeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="64" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
     <scopeInfo nodeId="8632185942131072029" fileName="IdeaJavaCompilerImpl.java" startLine="52" startPosition="31" endLine="52" endPosition="31" />
     <scopeInfo nodeId="8632185942131072033" fileName="IdeaJavaCompilerImpl.java" startLine="56" startPosition="34" endLine="56" endPosition="34" />
     <scopeInfo nodeId="8632185942131071995" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="48" endLine="27" endPosition="24" />
@@ -621,11 +621,12 @@
     <scopeInfo nodeId="8632185942131072044" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="28" endLine="61" endPosition="81" />
     <scopeInfo nodeId="4652478519508028115" fileName="IdeaJavaCompilerImpl.java" startLine="66" startPosition="23" endLine="67" endPosition="18" />
     <scopeInfo nodeId="6338816248140731492" fileName="IdeaJavaCompilerImpl.java" startLine="71" startPosition="70" endLine="72" endPosition="95" />
-    <scopeInfo nodeId="4652478519508028119" fileName="IdeaJavaCompilerImpl.java" startLine="83" startPosition="0" endLine="84" endPosition="26">
+    <scopeInfo nodeId="4652478519508028141" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="23" endLine="78" endPosition="176" />
+    <scopeInfo nodeId="4652478519508028119" fileName="IdeaJavaCompilerImpl.java" startLine="80" startPosition="0" endLine="81" endPosition="26">
       <varInfo nodeId="4652478519508028125" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4652478519508028120" fileName="IdeaJavaCompilerImpl.java" startLine="83" startPosition="33" endLine="84" endPosition="26" />
-    <scopeInfo nodeId="8632185942131072068" fileName="IdeaJavaCompilerImpl.java" startLine="90" startPosition="45" endLine="91" endPosition="18" />
+    <scopeInfo nodeId="4652478519508028120" fileName="IdeaJavaCompilerImpl.java" startLine="80" startPosition="33" endLine="81" endPosition="26" />
+    <scopeInfo nodeId="8632185942131072068" fileName="IdeaJavaCompilerImpl.java" startLine="87" startPosition="45" endLine="88" endPosition="18" />
     <scopeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8632185942131071993" varName="project" />
     </scopeInfo>
@@ -638,26 +639,25 @@
     <scopeInfo nodeId="8632185942131072011" fileName="IdeaJavaCompilerImpl.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="8632185942131072015" fileName="IdeaJavaCompilerImpl.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="8632185942131072041" fileName="IdeaJavaCompilerImpl.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4652478519508028141" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="23" endLine="81" endPosition="11" />
-    <scopeInfo nodeId="8632185942131072063" fileName="IdeaJavaCompilerImpl.java" startLine="89" startPosition="51" endLine="93" endPosition="64" />
+    <scopeInfo nodeId="4652478519508028127" fileName="IdeaJavaCompilerImpl.java" startLine="75" startPosition="9" endLine="79" endPosition="7">
+      <varInfo nodeId="4652478519508028129" varName="cr" />
+    </scopeInfo>
+    <scopeInfo nodeId="8632185942131072063" fileName="IdeaJavaCompilerImpl.java" startLine="86" startPosition="51" endLine="90" endPosition="64" />
     <scopeInfo nodeId="8632185942131072019" fileName="IdeaJavaCompilerImpl.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="6338816248140680340" fileName="IdeaJavaCompilerImpl.java" startLine="69" startPosition="73" endLine="74" endPosition="5">
       <varInfo nodeId="6338816248140680342" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131072003" fileName="IdeaJavaCompilerImpl.java" startLine="31" startPosition="31" endLine="37" endPosition="15" />
-    <scopeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="89" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="4652478519508028127" fileName="IdeaJavaCompilerImpl.java" startLine="75" startPosition="9" endLine="82" endPosition="7">
-      <varInfo nodeId="4652478519508028129" varName="cr" />
-    </scopeInfo>
+    <scopeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="86" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="8632185942131072000" fileName="IdeaJavaCompilerImpl.java" startLine="30" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4255423530121198830" fileName="IdeaJavaCompilerImpl.java" startLine="65" startPosition="65" endLine="86" endPosition="16">
+    <scopeInfo nodeId="4255423530121198830" fileName="IdeaJavaCompilerImpl.java" startLine="65" startPosition="65" endLine="83" endPosition="16">
       <varInfo nodeId="6338816248140568479" varName="modulePaths" />
     </scopeInfo>
-    <scopeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="64" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="64" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="4255423530121198826" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="8632185942131072010" fileName="IdeaJavaCompilerImpl.java" startLine="32" startPosition="19" endLine="37" endPosition="5" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl$1" />
-    <unitInfo nodeId="8632185942131071966" fileName="IdeaJavaCompilerImpl.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl" />
+    <unitInfo nodeId="8632185942131071966" fileName="IdeaJavaCompilerImpl.java" startLine="22" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl" />
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131072152">
     <nodeInfo nodeId="8632185942131072167" fileName="IdeaNavigationProvider.java" startLine="15" startPosition="75" endLine="16" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

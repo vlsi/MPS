@@ -605,14 +605,14 @@
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="27" startPosition="42" endLine="28" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="31" startPosition="35" endLine="32" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="38" endLine="36" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DOH_Query#()V" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/script/IQuery/Name;" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="options#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voidOption#()Ljetbrains/mps/make/sandbox/sample/what_Option;" />
-    <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="38" endLine="39" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/make/sandbox/sample/what_Option;" />
+    <nodeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()Ljetbrains/mps/make/sandbox/sample/what_Option;" />
     <nodeInfo nodeId="8351679702044326367" fileName="GenerateSpecial_Facet.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="8351679702044326367" fileName="GenerateSpecial_Facet.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="8351679702044326367" fileName="GenerateSpecial_Facet.java" startLine="32" startPosition="34" endLine="33" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -752,14 +752,14 @@
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="23" startPosition="27" endLine="24" endPosition="23" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="27" startPosition="42" endLine="28" endPosition="98" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="31" startPosition="35" endLine="32" endPosition="98" />
+    <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="38" endLine="36" endPosition="93" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="38" endLine="39" endPosition="6" />
-    <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="8351679702044326369" fileName="GenerateSpecial_Facet.java" startLine="65" startPosition="43" endLine="65" endPosition="43" />
     <scopeInfo nodeId="1977954644795407298" fileName="GenerateSpecial_Facet.java" startLine="102" startPosition="24" endLine="102" endPosition="24" />
     <scopeInfo nodeId="8351679702044326367" fileName="GenerateSpecial_Facet.java" startLine="228" startPosition="31" endLine="228" endPosition="31" />
@@ -925,7 +925,7 @@
       <varInfo nodeId="505095865854462544" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="505095865854462544" fileName="what_Option.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
-    <unitInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.DOH_Query" />
+    <unitInfo nodeId="505095865854436832" fileName="DOH_Query.java" startLine="8" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.DOH_Query" />
     <unitInfo nodeId="505095865854424951" fileName="GenerateSpecial_Facet.java" startLine="69" startPosition="17" endLine="83" endPosition="7" unitName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet$1" />
     <unitInfo nodeId="1977954644795407264" fileName="GenerateSpecial_Facet.java" startLine="87" startPosition="17" endLine="108" endPosition="7" unitName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet$2" />
     <unitInfo nodeId="8351679702044326367" fileName="GenerateSpecial_Facet.java" startLine="227" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet$TargetProperties" />

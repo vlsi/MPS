@@ -82,10 +82,7 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
   }
 
   private static boolean eq(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static class DescendingIterator<U> implements Iterator<U> {

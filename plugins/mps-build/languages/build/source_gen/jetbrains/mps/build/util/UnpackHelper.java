@@ -69,10 +69,7 @@ public class UnpackHelper extends DependenciesHelper {
 
     for (SNode n : required) {
       Collection<Object> artifacts = artifactIds.get(n);
-      BehaviorReflection.invokeVirtual(Void.class, n, "virtual_unpack_7128123785277710736", new Object[]{this, (artifacts != null ?
-        artifacts :
-        Collections.emptyList()
-      )});
+      BehaviorReflection.invokeVirtual(Void.class, n, "virtual_unpack_7128123785277710736", new Object[]{this, (artifacts != null ? artifacts : Collections.emptyList())});
     }
   }
 

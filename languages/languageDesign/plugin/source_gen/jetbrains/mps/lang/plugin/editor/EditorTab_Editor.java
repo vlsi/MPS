@@ -249,7 +249,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_gp0hv6_a0a0s(SPropertyOperations.getString(node, "shortcutChar"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "shortcutChar"));
   }
 
   private EditorCell createCollection_gp0hv6_c1b0(EditorContext editorContext, SNode node) {
@@ -487,7 +487,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  public static boolean isNotEmpty_gp0hv6_a0a0s(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -37,10 +37,7 @@ public class ParameterDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getParameterSuffix() == null ?
-      "" :
-      settings.getParameterSuffix()
-    );
+    return (settings.getParameterSuffix() == null ? "" : settings.getParameterSuffix());
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
@@ -48,10 +45,7 @@ public class ParameterDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getParameterPrefix() == null ?
-      "" :
-      settings.getParameterPrefix()
-    );
+    return (settings.getParameterPrefix() == null ? "" : settings.getParameterPrefix());
   }
 
   public static boolean call_hasAnnotation_5499146221535981742(SNode thisNode, SNode annotation) {

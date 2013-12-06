@@ -43,10 +43,7 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
     globalHandleText(myValues.firstElement(), new String(array, start, len));
-    LineToContentMapReader6Handler.ElementHandler current = (myHandlersStack.empty() ?
-      (LineToContentMapReader6Handler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    LineToContentMapReader6Handler.ElementHandler current = (myHandlersStack.empty() ? (LineToContentMapReader6Handler.ElementHandler) null : myHandlersStack.peek());
     if (current != null) {
       current.handleText(myValues.peek(), new String(array, start, len));
     }
@@ -69,10 +66,7 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    LineToContentMapReader6Handler.ElementHandler current = (myHandlersStack.empty() ?
-      (LineToContentMapReader6Handler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    LineToContentMapReader6Handler.ElementHandler current = (myHandlersStack.empty() ? (LineToContentMapReader6Handler.ElementHandler) null : myHandlersStack.peek());
     if (current == null) {
       // root 
       current = modelhandler;

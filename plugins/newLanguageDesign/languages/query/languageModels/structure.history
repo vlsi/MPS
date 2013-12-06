@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="1" />
+    </dependencies>
+    <rename id="bwy9.8982157191766461894" type="CONCEPT" from="CaseClause" to="SwitchBranch" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="2" />
+    </dependencies>
+    <rename id="bwy9.8982157191766317617" type="CONCEPT" from="SwitchStatement" to="SwitchExpression" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="3" />
+    </dependencies>
+    <rename id="bwy9.8982157191766461879" type="CHILD" from="cases" to="branches" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="4" />
+    </dependencies>
+    <rename id="bwy9.8982157191766317617" type="CONCEPT" from="SwitchExpression" to="MqlSwitchExpression" />
+  </StructureModification>
+</history>
+

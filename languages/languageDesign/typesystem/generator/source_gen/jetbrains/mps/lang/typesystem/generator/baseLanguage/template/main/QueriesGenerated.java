@@ -221,7 +221,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_4197825331980858388(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return isEmpty_x583g4_a0a0fb(SPropertyOperations.getString(_context.getNode(), "fqName"));
+    return isEmptyString(SPropertyOperations.getString(_context.getNode(), "fqName"));
   }
 
   public static boolean baseMappingRule_Condition_1175150707078(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -2173,7 +2173,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216643035001(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true), "virtual_getUnboxedType_1213877337320", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "quickFixArgument", false), "argumentType", true), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_1220358467477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2549,10 +2549,7 @@ parametersLoop:
     ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")));
     for (SNode node : nodesToProcess) {
       SModel originalModel = _context.getOriginalInputModel();
-      String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ?
-        jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) :
-        originalModel.getReference().toString()
-      );
+      String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ? jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) : originalModel.getReference().toString());
       String nodeId = _context.getOriginalCopiedInputNode(node).getNodeId().toString();
       SNode annotation = AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"), "jetbrains.mps.lang.typesystem.structure.OriginalNodeId");
       SPropertyOperations.set(annotation, "nodeId", nodeId);
@@ -2895,7 +2892,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  public static boolean isEmpty_x583g4_a0a0fb(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

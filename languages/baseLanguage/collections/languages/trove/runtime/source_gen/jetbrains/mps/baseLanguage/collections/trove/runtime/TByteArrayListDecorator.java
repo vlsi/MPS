@@ -128,10 +128,7 @@ public class TByteArrayListDecorator extends AbstractList<Byte> implements List<
 
   @Override
   public boolean remove(Object e) {
-    return (e instanceof Byte ?
-      this.removePrim(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Byte ? this.removePrim(this.unwrap(e)) : false);
   }
 
   @Override
@@ -146,10 +143,7 @@ public class TByteArrayListDecorator extends AbstractList<Byte> implements List<
 
   @Override
   public boolean contains(Object e) {
-    return (e instanceof Byte ?
-      this.primList.contains(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Byte ? this.primList.contains(this.unwrap(e)) : false);
   }
 
   @Override

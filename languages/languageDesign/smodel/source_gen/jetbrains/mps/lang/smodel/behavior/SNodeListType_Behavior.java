@@ -24,10 +24,7 @@ public class SNodeListType_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode conceptDeclaration = SLinkOperations.getTarget(thisNode, "elementConcept", false);
-    return (conceptDeclaration == null ?
-      "nlist< >" :
-      "nlist<" + SPropertyOperations.getString(conceptDeclaration, "name") + ">"
-    );
+    return (conceptDeclaration == null ? "nlist< >" : "nlist<" + SPropertyOperations.getString(conceptDeclaration, "name") + ">");
   }
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {

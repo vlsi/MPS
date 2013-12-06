@@ -67,9 +67,6 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
   }
 
   private static boolean eq_7ie7o0_a0a0a0a0a0a0a0a0a0a2a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -53,10 +53,7 @@ public class ProjectTestsSupport {
         return null;
       }
     }
-    return ActiveEnvironment.get().openProject(((projectName != null && projectName.length() > 0) ?
-      new File(destinationDir, projectName) :
-      destinationDir
-    ));
+    return ActiveEnvironment.get().openProject(((projectName != null && projectName.length() > 0) ? new File(destinationDir, projectName) : destinationDir));
   }
 
   /**

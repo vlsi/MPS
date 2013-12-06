@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-15tvz0jtunc1rbb3k7djngg5q3z45sz">
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <common hash="3t3ercrodeom7lxm836up4nu7l2eaic" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <common hash="3t3ercrodeom7lxm836up4nu7l2eaic" dependsOnNodes="true" />
   <source id="2891782949125146377" name="Requestor" hash="7crc13wc4m90w463drpi8o6xii9efgx">
     <file name="Requestor.java" />
   </source>
@@ -16,7 +15,6 @@
     <file name="IRequestManager.java" />
   </source>
   <source id="6460341978864599228" name="StepRequestor" hash="-anuu2lks60eeqf3pni0jpm411nck1sc">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StepRequestor.java" />
   </source>

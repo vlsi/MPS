@@ -62,7 +62,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_110763052829785268(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (isNotEmpty_x583g4_a0a0h(SPropertyOperations.getString(_context.getNode(), "alias"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "alias"))) {
       return SPropertyOperations.getString(_context.getNode(), "alias");
     }
     return SPropertyOperations.getString(_context.getNode(), "name");
@@ -85,7 +85,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4089989733346843275(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0m(SPropertyOperations.getString(_context.getNode(), "iconPath"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "iconPath"));
   }
 
   public static boolean ifMacro_Condition_5493844864801812989(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -251,18 +251,11 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0h(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0m(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
   private static boolean eq_x583g4_a0a0a0a44(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

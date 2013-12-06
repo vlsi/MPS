@@ -95,7 +95,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
 
   @Override
   public boolean isValid() {
-    return myLocation.getTargetCodePosition() != null && (isNotEmpty_owwtjm_a0a0a0a7_0(myLocation.getTargetUnitName()) || isNotEmpty_owwtjm_a0a0a0a7(myLocation.getFileName()));
+    return myLocation.getTargetCodePosition() != null && (isNotEmptyString(myLocation.getTargetUnitName()) || isNotEmptyString(myLocation.getFileName()));
   }
 
   @Override
@@ -124,25 +124,15 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((myLocation != null ?
-      ((Object) myLocation).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
     return result;
   }
 
-  public static boolean isNotEmpty_owwtjm_a0a0a0a7(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_owwtjm_a0a0a0a7_0(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
   private static boolean eq_owwtjm_a0d0k(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

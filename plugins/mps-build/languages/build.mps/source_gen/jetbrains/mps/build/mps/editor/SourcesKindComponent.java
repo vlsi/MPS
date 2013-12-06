@@ -118,7 +118,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
   }
 
   private static boolean renderingCondition_qubgco_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_qubgco_a0a0g(SPropertyOperations.getString_def(node, "sourcesKind", null));
+    return isNotEmptyString(SPropertyOperations.getString_def(node, "sourcesKind", null));
   }
 
   private EditorCell createConstant_qubgco_c0(EditorContext editorContext, SNode node) {
@@ -134,7 +134,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
   }
 
   private static boolean renderingCondition_qubgco_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_qubgco_a0a0i(SPropertyOperations.getString_def(node, "sourcesKind", null));
+    return isEmptyString(SPropertyOperations.getString_def(node, "sourcesKind", null));
   }
 
   public static class BuildMps_Solution_generic_cellMenu_qubgco_a0c0 extends AbstractCellMenuPart_Generic_Group {
@@ -177,11 +177,11 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_qubgco_a0a0g(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_qubgco_a0a0i(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

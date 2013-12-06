@@ -142,20 +142,14 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           return "error: " + it.getText() + link;
         }
       }).take(3), "<br/>");
-      final String message = String.format("<p>Cannot %s model %s.<br/>%s</p>", (isSave ?
-        "save" :
-        "load"
-      ), model.getModelName(), problemText);
+      final String message = String.format("<p>Cannot %s model %s.<br/>%s</p>", (isSave ? "save" : "load"), model.getModelName(), problemText);
       final SModelReference ref = model.getReference();
       UIUtil.invokeLaterIfNeeded(new Runnable() {
         public void run() {
           if (myLastNotification != null) {
             myLastNotification.expire();
           }
-          myLastNotification = new Notification("Model Persistence", (isSave ?
-            "Save Failure" :
-            "Load Failure"
-          ), message, NotificationType.WARNING, new NotificationListener() {
+          myLastNotification = new Notification("Model Persistence", (isSave ? "Save Failure" : "Load Failure"), message, NotificationType.WARNING, new NotificationListener() {
             public void hyperlinkUpdate(@NotNull Notification p0, @NotNull HyperlinkEvent e) {
               if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
                 return;

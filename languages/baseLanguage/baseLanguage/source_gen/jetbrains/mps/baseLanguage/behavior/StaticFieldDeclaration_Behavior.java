@@ -62,10 +62,7 @@ public class StaticFieldDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getStaticFieldSuffix() == null ?
-      "" :
-      settings.getStaticFieldSuffix()
-    );
+    return (settings.getStaticFieldSuffix() == null ? "" : settings.getStaticFieldSuffix());
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
@@ -73,10 +70,7 @@ public class StaticFieldDeclaration_Behavior {
     if (settings == null) {
       return "";
     }
-    return (settings.getStaticFieldPrefix() == null ?
-      "" :
-      settings.getStaticFieldPrefix()
-    );
+    return (settings.getStaticFieldPrefix() == null ? "" : settings.getStaticFieldPrefix());
   }
 
   @Nullable
@@ -85,7 +79,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    if (!((context.isElementVisible(thisNode)))) {
+    if (!(context.isElementVisible(thisNode)) || SPropertyOperations.getString(thisNode, "name") == null) {
       return;
     }
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));

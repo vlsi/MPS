@@ -149,9 +149,6 @@ public class DependencyTree extends MPSTree implements DataProvider {
   }
 
   private static <T> T as_he3vmc_a0a0a91(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

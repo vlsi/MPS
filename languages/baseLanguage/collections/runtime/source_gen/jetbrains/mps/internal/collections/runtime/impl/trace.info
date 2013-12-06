@@ -695,114 +695,114 @@
     <nodeInfo nodeId="6543581031674026752" fileName="SortingSequence.java" startLine="42" startPosition="33" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6543581031674026757" fileName="SortingSequence.java" startLine="43" startPosition="52" endLine="44" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674026776" fileName="SortingSequence.java" startLine="48" startPosition="126" endLine="49" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026806" fileName="SortingSequence.java" startLine="57" startPosition="45" endLine="58" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026818" fileName="SortingSequence.java" startLine="59" startPosition="23" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026823" fileName="SortingSequence.java" startLine="61" startPosition="5" endLine="62" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026833" fileName="SortingSequence.java" startLine="62" startPosition="38" endLine="63" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026837" fileName="SortingSequence.java" startLine="63" startPosition="35" endLine="64" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026593" fileName="SortingSequence.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="source" />
-    <nodeInfo nodeId="6543581031674026844" fileName="SortingSequence.java" startLine="70" startPosition="57" endLine="71" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026851" fileName="SortingSequence.java" startLine="75" startPosition="30" endLine="76" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026856" fileName="SortingSequence.java" startLine="80" startPosition="21" endLine="81" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026861" fileName="SortingSequence.java" startLine="85" startPosition="26" endLine="86" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674026617" fileName="SortingSequence.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
-    <nodeInfo nodeId="6543581031674026865" fileName="SortingSequence.java" startLine="93" startPosition="62" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026872" fileName="SortingSequence.java" startLine="98" startPosition="34" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026639" fileName="SortingSequence.java" startLine="104" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="secondary" />
-    <nodeInfo nodeId="6543581031674026643" fileName="SortingSequence.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
-    <nodeInfo nodeId="6543581031674026880" fileName="SortingSequence.java" startLine="107" startPosition="95" endLine="108" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026886" fileName="SortingSequence.java" startLine="108" startPosition="29" endLine="109" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026893" fileName="SortingSequence.java" startLine="113" startPosition="34" endLine="114" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026784" fileName="SortingSequence.java" startLine="49" startPosition="77" endLine="50" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026806" fileName="SortingSequence.java" startLine="54" startPosition="45" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026818" fileName="SortingSequence.java" startLine="56" startPosition="23" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026823" fileName="SortingSequence.java" startLine="58" startPosition="5" endLine="59" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026833" fileName="SortingSequence.java" startLine="59" startPosition="38" endLine="60" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026837" fileName="SortingSequence.java" startLine="60" startPosition="35" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026593" fileName="SortingSequence.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="source" />
+    <nodeInfo nodeId="6543581031674026844" fileName="SortingSequence.java" startLine="67" startPosition="57" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026851" fileName="SortingSequence.java" startLine="72" startPosition="30" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026856" fileName="SortingSequence.java" startLine="77" startPosition="21" endLine="78" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026861" fileName="SortingSequence.java" startLine="82" startPosition="26" endLine="83" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674026617" fileName="SortingSequence.java" startLine="88" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
+    <nodeInfo nodeId="6543581031674026865" fileName="SortingSequence.java" startLine="90" startPosition="62" endLine="91" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026872" fileName="SortingSequence.java" startLine="95" startPosition="34" endLine="96" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026639" fileName="SortingSequence.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="secondary" />
+    <nodeInfo nodeId="6543581031674026643" fileName="SortingSequence.java" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
+    <nodeInfo nodeId="6543581031674026880" fileName="SortingSequence.java" startLine="104" startPosition="95" endLine="105" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026886" fileName="SortingSequence.java" startLine="105" startPosition="29" endLine="106" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026893" fileName="SortingSequence.java" startLine="110" startPosition="34" endLine="111" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026901" fileName="SortingSequence.java" startLine="111" startPosition="36" endLine="112" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="487682311870142129" fileName="SortingSequence.java" startLine="28" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6543581031674026683" fileName="SortingSequence.java" startLine="21" startPosition="106" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674026723" fileName="SortingSequence.java" startLine="33" startPosition="79" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="58" startPosition="44" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmodifiableIterator#(Ljava/util/ListIterator;)V" />
-    <nodeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InversedComparator#(Ljava/util/Comparator;)V" />
-    <nodeInfo nodeId="6543581031674026784" fileName="SortingSequence.java" startLine="49" startPosition="77" endLine="53" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
-    <nodeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
-    <nodeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
-    <nodeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompoundComparator#(Ljava/util/Comparator;Ljava/util/Comparator;)V" />
-    <nodeInfo nodeId="6543581031674026901" fileName="SortingSequence.java" startLine="114" startPosition="36" endLine="118" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="55" startPosition="44" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmodifiableIterator#(Ljava/util/ListIterator;)V" />
+    <nodeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InversedComparator#(Ljava/util/Comparator;)V" />
+    <nodeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
+    <nodeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
+    <nodeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompoundComparator#(Ljava/util/Comparator;Ljava/util/Comparator;)V" />
     <nodeInfo nodeId="487682311870142125" fileName="SortingSequence.java" startLine="25" startPosition="23" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674026747" fileName="SortingSequence.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="alsoSort#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Z)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+    <nodeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
     <nodeInfo nodeId="6543581031674026713" fileName="SortingSequence.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortingSequence#(Ljetbrains/mps/internal/collections/runtime/AbstractSequence;Ljava/util/Comparator;)V" />
-    <nodeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="alsoSort#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Z)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
-    <nodeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="112" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
-    <nodeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="56" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inputSortedWithSelector#()Ljava/util/List;" />
+    <nodeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="53" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inputSortedWithSelector#()Ljava/util/List;" />
     <nodeInfo nodeId="6543581031674026671" fileName="SortingSequence.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortingSequence#(Ljetbrains/mps/internal/collections/runtime/AbstractSequence;Ljava/util/Comparator;Z)V" />
     <scopeInfo nodeId="6543581031674026691" fileName="SortingSequence.java" startLine="22" startPosition="46" endLine="23" endPosition="39" />
     <scopeInfo nodeId="487682311870142128" fileName="SortingSequence.java" startLine="26" startPosition="20" endLine="27" endPosition="35" />
     <scopeInfo nodeId="487682311870142131" fileName="SortingSequence.java" startLine="28" startPosition="12" endLine="29" endPosition="78" />
     <scopeInfo nodeId="6543581031674026731" fileName="SortingSequence.java" startLine="34" startPosition="46" endLine="35" endPosition="39" />
-    <scopeInfo nodeId="6543581031674026817" fileName="SortingSequence.java" startLine="59" startPosition="23" endLine="60" endPosition="19" />
-    <scopeInfo nodeId="6543581031674026843" fileName="SortingSequence.java" startLine="70" startPosition="57" endLine="71" endPosition="27" />
-    <scopeInfo nodeId="6543581031674026850" fileName="SortingSequence.java" startLine="75" startPosition="30" endLine="76" endPosition="30" />
-    <scopeInfo nodeId="6543581031674026855" fileName="SortingSequence.java" startLine="80" startPosition="21" endLine="81" endPosition="27" />
-    <scopeInfo nodeId="6543581031674026860" fileName="SortingSequence.java" startLine="85" startPosition="26" endLine="86" endPosition="48" />
-    <scopeInfo nodeId="6543581031674026864" fileName="SortingSequence.java" startLine="93" startPosition="62" endLine="94" endPosition="29" />
-    <scopeInfo nodeId="6543581031674026871" fileName="SortingSequence.java" startLine="98" startPosition="34" endLine="99" endPosition="36" />
+    <scopeInfo nodeId="6543581031674026817" fileName="SortingSequence.java" startLine="56" startPosition="23" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="6543581031674026843" fileName="SortingSequence.java" startLine="67" startPosition="57" endLine="68" endPosition="27" />
+    <scopeInfo nodeId="6543581031674026850" fileName="SortingSequence.java" startLine="72" startPosition="30" endLine="73" endPosition="30" />
+    <scopeInfo nodeId="6543581031674026855" fileName="SortingSequence.java" startLine="77" startPosition="21" endLine="78" endPosition="27" />
+    <scopeInfo nodeId="6543581031674026860" fileName="SortingSequence.java" startLine="82" startPosition="26" endLine="83" endPosition="48" />
+    <scopeInfo nodeId="6543581031674026864" fileName="SortingSequence.java" startLine="90" startPosition="62" endLine="91" endPosition="29" />
+    <scopeInfo nodeId="6543581031674026871" fileName="SortingSequence.java" startLine="95" startPosition="34" endLine="96" endPosition="36" />
     <scopeInfo nodeId="6543581031674026751" fileName="SortingSequence.java" startLine="42" startPosition="33" endLine="44" endPosition="83">
       <varInfo nodeId="6543581031674026753" varName="sortedInput" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026879" fileName="SortingSequence.java" startLine="107" startPosition="95" endLine="109" endPosition="33" />
-    <scopeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="58" startPosition="44" endLine="61" endPosition="5">
+    <scopeInfo nodeId="6543581031674026775" fileName="SortingSequence.java" startLine="48" startPosition="126" endLine="50" endPosition="190">
+      <varInfo nodeId="6543581031674026777" varName="selectComparator" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674026879" fileName="SortingSequence.java" startLine="104" startPosition="95" endLine="106" endPosition="33" />
+    <scopeInfo nodeId="6543581031674026892" fileName="SortingSequence.java" startLine="110" startPosition="34" endLine="112" endPosition="52">
+      <varInfo nodeId="6543581031674026894" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="55" startPosition="44" endLine="58" endPosition="5">
       <varInfo nodeId="6543581031674026815" varName="u" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="6543581031674026600" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="6543581031674026624" varName="primary" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="6543581031674026630" varName="a" />
       <varInfo nodeId="6543581031674026632" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="6543581031674026650" varName="primary" />
       <varInfo nodeId="6543581031674026653" varName="secondary" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026722" fileName="SortingSequence.java" startLine="33" startPosition="79" endLine="38" endPosition="33" />
     <scopeInfo nodeId="6543581031674026747" fileName="SortingSequence.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026775" fileName="SortingSequence.java" startLine="48" startPosition="126" endLine="53" endPosition="8">
-      <varInfo nodeId="6543581031674026777" varName="selectComparator" />
+    <scopeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="6543581031674026773" varName="ascending" />
+      <varInfo nodeId="3473971317150288159" varName="selector" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026892" fileName="SortingSequence.java" startLine="113" startPosition="34" endLine="118" endPosition="8">
-      <varInfo nodeId="6543581031674026894" varName="c" />
+    <scopeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="6543581031674026659" varName="a" />
+      <varInfo nodeId="6543581031674026661" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674026713" fileName="SortingSequence.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="6543581031674026719" varName="comparator" />
       <varInfo nodeId="6543581031674026716" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026805" fileName="SortingSequence.java" startLine="57" startPosition="45" endLine="64" endPosition="32">
+    <scopeInfo nodeId="6543581031674026805" fileName="SortingSequence.java" startLine="54" startPosition="45" endLine="61" endPosition="32">
       <varInfo nodeId="6543581031674026824" varName="array" />
       <varInfo nodeId="6543581031674026807" varName="cache" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="6543581031674026773" varName="ascending" />
-      <varInfo nodeId="3473971317150288159" varName="selector" />
-    </scopeInfo>
-    <scopeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="112" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="6543581031674026659" varName="a" />
-      <varInfo nodeId="6543581031674026661" varName="b" />
-    </scopeInfo>
     <scopeInfo nodeId="6543581031674026682" fileName="SortingSequence.java" startLine="21" startPosition="106" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="56" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="53" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="6543581031674026671" fileName="SortingSequence.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="6543581031674026680" varName="ascending" />
       <varInfo nodeId="6543581031674026677" varName="comparator" />
       <varInfo nodeId="6543581031674026674" varName="input" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674026612" fileName="SortingSequence.java" startLine="90" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$InversedComparator" />
-    <unitInfo nodeId="6543581031674026634" fileName="SortingSequence.java" startLine="103" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$CompoundComparator" />
-    <unitInfo nodeId="6543581031674026588" fileName="SortingSequence.java" startLine="67" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$UnmodifiableIterator" />
-    <unitInfo nodeId="6543581031674026581" fileName="SortingSequence.java" startLine="17" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence" />
+    <unitInfo nodeId="6543581031674026612" fileName="SortingSequence.java" startLine="87" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$InversedComparator" />
+    <unitInfo nodeId="6543581031674026634" fileName="SortingSequence.java" startLine="100" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$CompoundComparator" />
+    <unitInfo nodeId="6543581031674026588" fileName="SortingSequence.java" startLine="64" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$UnmodifiableIterator" />
+    <unitInfo nodeId="6543581031674026581" fileName="SortingSequence.java" startLine="17" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence" />
   </root>
   <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/6543581031674026912">
     <nodeInfo nodeId="6543581031674026960" fileName="NullListSequence.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -1181,52 +1181,52 @@
   <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/6543581031674028259">
     <nodeInfo nodeId="6543581031674028261" fileName="CardinalityMap.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="map" />
     <nodeInfo nodeId="6543581031674028279" fileName="CardinalityMap.java" startLine="13" startPosition="24" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674028299" fileName="CardinalityMap.java" startLine="21" startPosition="27" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674028332" fileName="CardinalityMap.java" startLine="33" startPosition="27" endLine="34" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674028373" fileName="CardinalityMap.java" startLine="35" startPosition="29" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674028381" fileName="CardinalityMap.java" startLine="36" startPosition="24" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674028365" fileName="CardinalityMap.java" startLine="39" startPosition="29" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674028370" fileName="CardinalityMap.java" startLine="40" startPosition="20" endLine="41" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674028357" fileName="CardinalityMap.java" startLine="42" startPosition="12" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674028362" fileName="CardinalityMap.java" startLine="43" startPosition="20" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674028387" fileName="CardinalityMap.java" startLine="48" startPosition="23" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674028286" fileName="CardinalityMap.java" startLine="14" startPosition="27" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674028299" fileName="CardinalityMap.java" startLine="18" startPosition="27" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674028306" fileName="CardinalityMap.java" startLine="19" startPosition="27" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674028319" fileName="CardinalityMap.java" startLine="20" startPosition="40" endLine="21" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674028332" fileName="CardinalityMap.java" startLine="24" startPosition="27" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674028373" fileName="CardinalityMap.java" startLine="26" startPosition="29" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674028381" fileName="CardinalityMap.java" startLine="27" startPosition="24" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674028365" fileName="CardinalityMap.java" startLine="30" startPosition="29" endLine="31" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674028370" fileName="CardinalityMap.java" startLine="31" startPosition="20" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674028357" fileName="CardinalityMap.java" startLine="33" startPosition="12" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674028362" fileName="CardinalityMap.java" startLine="34" startPosition="20" endLine="35" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674028387" fileName="CardinalityMap.java" startLine="39" startPosition="23" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674028270" fileName="CardinalityMap.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CardinalityMap#()V" />
-    <nodeInfo nodeId="6543581031674028355" fileName="CardinalityMap.java" startLine="42" startPosition="10" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6543581031674028383" fileName="CardinalityMap.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="6543581031674028286" fileName="CardinalityMap.java" startLine="14" startPosition="27" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674028306" fileName="CardinalityMap.java" startLine="22" startPosition="27" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674028319" fileName="CardinalityMap.java" startLine="26" startPosition="7" endLine="30" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674028273" fileName="CardinalityMap.java" startLine="13" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="card#(null)I" />
-    <nodeInfo nodeId="6543581031674028347" fileName="CardinalityMap.java" startLine="38" startPosition="10" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674028293" fileName="CardinalityMap.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="postInc#(null)I" />
-    <nodeInfo nodeId="6543581031674028339" fileName="CardinalityMap.java" startLine="34" startPosition="27" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674028326" fileName="CardinalityMap.java" startLine="33" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="postDec#(null)I" />
+    <nodeInfo nodeId="6543581031674028355" fileName="CardinalityMap.java" startLine="33" startPosition="10" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6543581031674028383" fileName="CardinalityMap.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="6543581031674028273" fileName="CardinalityMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="card#(null)I" />
+    <nodeInfo nodeId="6543581031674028293" fileName="CardinalityMap.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="postInc#(null)I" />
+    <nodeInfo nodeId="6543581031674028347" fileName="CardinalityMap.java" startLine="29" startPosition="10" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674028339" fileName="CardinalityMap.java" startLine="25" startPosition="27" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674028326" fileName="CardinalityMap.java" startLine="24" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="postDec#(null)I" />
     <scopeInfo nodeId="6543581031674028272" fileName="CardinalityMap.java" startLine="10" startPosition="32" endLine="10" endPosition="32" />
-    <scopeInfo nodeId="6543581031674028386" fileName="CardinalityMap.java" startLine="48" startPosition="23" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="6543581031674028386" fileName="CardinalityMap.java" startLine="39" startPosition="23" endLine="40" endPosition="16" />
     <scopeInfo nodeId="6543581031674028270" fileName="CardinalityMap.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="6543581031674028372" fileName="CardinalityMap.java" startLine="35" startPosition="29" endLine="37" endPosition="15" />
-    <scopeInfo nodeId="6543581031674028364" fileName="CardinalityMap.java" startLine="39" startPosition="29" endLine="41" endPosition="15" />
-    <scopeInfo nodeId="6543581031674028356" fileName="CardinalityMap.java" startLine="42" startPosition="12" endLine="44" endPosition="15" />
-    <scopeInfo nodeId="6543581031674028383" fileName="CardinalityMap.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="6543581031674028278" fileName="CardinalityMap.java" startLine="13" startPosition="24" endLine="18" endPosition="6">
+    <scopeInfo nodeId="6543581031674028278" fileName="CardinalityMap.java" startLine="13" startPosition="24" endLine="15" endPosition="31">
       <varInfo nodeId="6543581031674028280" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674028273" fileName="CardinalityMap.java" startLine="13" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="6543581031674028276" varName="u" />
-    </scopeInfo>
-    <scopeInfo nodeId="6543581031674028298" fileName="CardinalityMap.java" startLine="21" startPosition="27" endLine="30" endPosition="6">
+    <scopeInfo nodeId="6543581031674028372" fileName="CardinalityMap.java" startLine="26" startPosition="29" endLine="28" endPosition="15" />
+    <scopeInfo nodeId="6543581031674028364" fileName="CardinalityMap.java" startLine="30" startPosition="29" endLine="32" endPosition="15" />
+    <scopeInfo nodeId="6543581031674028356" fileName="CardinalityMap.java" startLine="33" startPosition="12" endLine="35" endPosition="15" />
+    <scopeInfo nodeId="6543581031674028298" fileName="CardinalityMap.java" startLine="18" startPosition="27" endLine="21" endPosition="31">
       <varInfo nodeId="6543581031674028300" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674028293" fileName="CardinalityMap.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="6543581031674028383" fileName="CardinalityMap.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6543581031674028273" fileName="CardinalityMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="6543581031674028276" varName="u" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674028293" fileName="CardinalityMap.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="6543581031674028296" varName="u" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674028331" fileName="CardinalityMap.java" startLine="33" startPosition="27" endLine="45" endPosition="5">
+    <scopeInfo nodeId="6543581031674028331" fileName="CardinalityMap.java" startLine="24" startPosition="27" endLine="36" endPosition="5">
       <varInfo nodeId="6543581031674028333" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674028326" fileName="CardinalityMap.java" startLine="33" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="6543581031674028326" fileName="CardinalityMap.java" startLine="24" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="6543581031674028329" varName="u" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674028259" fileName="CardinalityMap.java" startLine="7" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.CardinalityMap" />
+    <unitInfo nodeId="6543581031674028259" fileName="CardinalityMap.java" startLine="7" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.CardinalityMap" />
   </root>
   <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/6543581031674028391">
     <nodeInfo nodeId="6543581031674028459" fileName="ComparingSequence.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="left" />
@@ -1948,82 +1948,82 @@
     <nodeInfo nodeId="6543581031674034504" fileName="EnumeratorIterator.java" startLine="48" startPosition="24" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="6543581031674034507" fileName="EnumeratorIterator.java" startLine="50" startPosition="5" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674034513" fileName="EnumeratorIterator.java" startLine="54" startPosition="34" endLine="55" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674034532" fileName="EnumeratorIterator.java" startLine="59" startPosition="6" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034422" fileName="EnumeratorIterator.java" startLine="65" startPosition="24" endLine="66" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034429" fileName="EnumeratorIterator.java" startLine="69" startPosition="46" endLine="70" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034434" fileName="EnumeratorIterator.java" startLine="71" startPosition="5" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034367" fileName="EnumeratorIterator.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="6543581031674034548" fileName="EnumeratorIterator.java" startLine="82" startPosition="24" endLine="83" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674034552" fileName="EnumeratorIterator.java" startLine="87" startPosition="30" endLine="88" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034555" fileName="EnumeratorIterator.java" startLine="92" startPosition="31" endLine="93" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034558" fileName="EnumeratorIterator.java" startLine="97" startPosition="21" endLine="98" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674034562" fileName="EnumeratorIterator.java" startLine="102" startPosition="26" endLine="103" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674034538" fileName="EnumeratorIterator.java" startLine="107" startPosition="62" endLine="108" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674034376" fileName="EnumeratorIterator.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Empty#()V" />
+    <nodeInfo nodeId="6543581031674034521" fileName="EnumeratorIterator.java" startLine="55" startPosition="36" endLine="56" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674034532" fileName="EnumeratorIterator.java" startLine="56" startPosition="52" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034422" fileName="EnumeratorIterator.java" startLine="62" startPosition="24" endLine="63" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034429" fileName="EnumeratorIterator.java" startLine="66" startPosition="46" endLine="67" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034434" fileName="EnumeratorIterator.java" startLine="68" startPosition="5" endLine="69" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034367" fileName="EnumeratorIterator.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="6543581031674034548" fileName="EnumeratorIterator.java" startLine="79" startPosition="24" endLine="80" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674034552" fileName="EnumeratorIterator.java" startLine="84" startPosition="30" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034555" fileName="EnumeratorIterator.java" startLine="89" startPosition="31" endLine="90" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034558" fileName="EnumeratorIterator.java" startLine="94" startPosition="21" endLine="95" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674034562" fileName="EnumeratorIterator.java" startLine="99" startPosition="26" endLine="100" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674034538" fileName="EnumeratorIterator.java" startLine="104" startPosition="62" endLine="105" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674034376" fileName="EnumeratorIterator.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Empty#()V" />
     <nodeInfo nodeId="6543581031674034446" fileName="EnumeratorIterator.java" startLine="14" startPosition="62" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674034500" fileName="EnumeratorIterator.java" startLine="47" startPosition="27" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674034417" fileName="EnumeratorIterator.java" startLine="64" startPosition="38" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674034424" fileName="EnumeratorIterator.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674034417" fileName="EnumeratorIterator.java" startLine="61" startPosition="38" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674034424" fileName="EnumeratorIterator.java" startLine="65" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674034460" fileName="EnumeratorIterator.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
     <nodeInfo nodeId="6543581031674034476" fileName="EnumeratorIterator.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
     <nodeInfo nodeId="6543581031674034484" fileName="EnumeratorIterator.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="current#()null" />
     <nodeInfo nodeId="6543581031674034490" fileName="EnumeratorIterator.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveNext#()Z" />
-    <nodeInfo nodeId="6543581031674034521" fileName="EnumeratorIterator.java" startLine="55" startPosition="36" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674034379" fileName="EnumeratorIterator.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="current#()null" />
-    <nodeInfo nodeId="6543581031674034382" fileName="EnumeratorIterator.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
-    <nodeInfo nodeId="6543581031674034385" fileName="EnumeratorIterator.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveNext#()Z" />
-    <nodeInfo nodeId="6543581031674034388" fileName="EnumeratorIterator.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
-    <nodeInfo nodeId="6543581031674034391" fileName="EnumeratorIterator.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="6543581031674034371" fileName="EnumeratorIterator.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/EnumeratorIterator/Empty;" />
+    <nodeInfo nodeId="6543581031674034379" fileName="EnumeratorIterator.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="current#()null" />
+    <nodeInfo nodeId="6543581031674034382" fileName="EnumeratorIterator.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="6543581031674034385" fileName="EnumeratorIterator.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveNext#()Z" />
+    <nodeInfo nodeId="6543581031674034388" fileName="EnumeratorIterator.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
+    <nodeInfo nodeId="6543581031674034391" fileName="EnumeratorIterator.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="6543581031674034371" fileName="EnumeratorIterator.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/internal/collections/runtime/impl/EnumeratorIterator/Empty;" />
     <nodeInfo nodeId="6543581031674034468" fileName="EnumeratorIterator.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
-    <nodeInfo nodeId="6543581031674034414" fileName="EnumeratorIterator.java" startLine="63" startPosition="85" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674034509" fileName="EnumeratorIterator.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primMoveNext#()Z" />
+    <nodeInfo nodeId="6543581031674034414" fileName="EnumeratorIterator.java" startLine="60" startPosition="85" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674034439" fileName="EnumeratorIterator.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EnumeratorIterator#(Ljava/util/Iterator;)V" />
     <nodeInfo nodeId="6543581031674034496" fileName="EnumeratorIterator.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primCurrent#()null" />
-    <nodeInfo nodeId="6543581031674034509" fileName="EnumeratorIterator.java" startLine="54" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primMoveNext#()Z" />
-    <nodeInfo nodeId="6543581031674034405" fileName="EnumeratorIterator.java" startLine="63" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromIterator#(Ljava/util/Iterator;)Ljetbrains/mps/internal/collections/runtime/IEnumerator/Iterator;" />
-    <scopeInfo nodeId="6543581031674034546" fileName="EnumeratorIterator.java" startLine="78" startPosition="23" endLine="78" endPosition="23" />
+    <nodeInfo nodeId="6543581031674034405" fileName="EnumeratorIterator.java" startLine="60" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromIterator#(Ljava/util/Iterator;)Ljetbrains/mps/internal/collections/runtime/IEnumerator/Iterator;" />
+    <scopeInfo nodeId="6543581031674034546" fileName="EnumeratorIterator.java" startLine="75" startPosition="23" endLine="75" endPosition="23" />
     <scopeInfo nodeId="6543581031674034450" fileName="EnumeratorIterator.java" startLine="15" startPosition="27" endLine="16" endPosition="39" />
     <scopeInfo nodeId="6543581031674034463" fileName="EnumeratorIterator.java" startLine="22" startPosition="28" endLine="23" endPosition="30" />
     <scopeInfo nodeId="6543581031674034479" fileName="EnumeratorIterator.java" startLine="33" startPosition="24" endLine="34" endPosition="22" />
     <scopeInfo nodeId="6543581031674034487" fileName="EnumeratorIterator.java" startLine="38" startPosition="22" endLine="39" endPosition="25" />
     <scopeInfo nodeId="6543581031674034493" fileName="EnumeratorIterator.java" startLine="43" startPosition="29" endLine="44" endPosition="26" />
     <scopeInfo nodeId="6543581031674034503" fileName="EnumeratorIterator.java" startLine="48" startPosition="24" endLine="49" endPosition="41" />
-    <scopeInfo nodeId="6543581031674034421" fileName="EnumeratorIterator.java" startLine="65" startPosition="24" endLine="66" endPosition="51" />
-    <scopeInfo nodeId="6543581031674034428" fileName="EnumeratorIterator.java" startLine="69" startPosition="46" endLine="70" endPosition="43" />
-    <scopeInfo nodeId="6543581031674034547" fileName="EnumeratorIterator.java" startLine="82" startPosition="24" endLine="83" endPosition="41" />
-    <scopeInfo nodeId="6543581031674034551" fileName="EnumeratorIterator.java" startLine="87" startPosition="30" endLine="88" endPosition="19" />
-    <scopeInfo nodeId="6543581031674034554" fileName="EnumeratorIterator.java" startLine="92" startPosition="31" endLine="93" endPosition="19" />
-    <scopeInfo nodeId="6543581031674034557" fileName="EnumeratorIterator.java" startLine="97" startPosition="21" endLine="98" endPosition="41" />
-    <scopeInfo nodeId="6543581031674034561" fileName="EnumeratorIterator.java" startLine="102" startPosition="26" endLine="103" endPosition="48" />
-    <scopeInfo nodeId="6543581031674034537" fileName="EnumeratorIterator.java" startLine="107" startPosition="62" endLine="108" endPosition="52" />
+    <scopeInfo nodeId="6543581031674034421" fileName="EnumeratorIterator.java" startLine="62" startPosition="24" endLine="63" endPosition="51" />
+    <scopeInfo nodeId="6543581031674034428" fileName="EnumeratorIterator.java" startLine="66" startPosition="46" endLine="67" endPosition="43" />
+    <scopeInfo nodeId="6543581031674034547" fileName="EnumeratorIterator.java" startLine="79" startPosition="24" endLine="80" endPosition="41" />
+    <scopeInfo nodeId="6543581031674034551" fileName="EnumeratorIterator.java" startLine="84" startPosition="30" endLine="85" endPosition="19" />
+    <scopeInfo nodeId="6543581031674034554" fileName="EnumeratorIterator.java" startLine="89" startPosition="31" endLine="90" endPosition="19" />
+    <scopeInfo nodeId="6543581031674034557" fileName="EnumeratorIterator.java" startLine="94" startPosition="21" endLine="95" endPosition="41" />
+    <scopeInfo nodeId="6543581031674034561" fileName="EnumeratorIterator.java" startLine="99" startPosition="26" endLine="100" endPosition="48" />
+    <scopeInfo nodeId="6543581031674034537" fileName="EnumeratorIterator.java" startLine="104" startPosition="62" endLine="105" endPosition="52" />
     <scopeInfo nodeId="6543581031674034471" fileName="EnumeratorIterator.java" startLine="27" startPosition="19" endLine="29" endPosition="25" />
-    <scopeInfo nodeId="6543581031674034376" fileName="EnumeratorIterator.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034416" fileName="EnumeratorIterator.java" startLine="64" startPosition="38" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="6543581031674034376" fileName="EnumeratorIterator.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034512" fileName="EnumeratorIterator.java" startLine="54" startPosition="34" endLine="57" endPosition="22" />
+    <scopeInfo nodeId="6543581031674034416" fileName="EnumeratorIterator.java" startLine="61" startPosition="38" endLine="64" endPosition="7" />
     <scopeInfo nodeId="6543581031674034445" fileName="EnumeratorIterator.java" startLine="14" startPosition="62" endLine="18" endPosition="24" />
     <scopeInfo nodeId="6543581031674034460" fileName="EnumeratorIterator.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="6543581031674034476" fileName="EnumeratorIterator.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="6543581031674034484" fileName="EnumeratorIterator.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="6543581031674034490" fileName="EnumeratorIterator.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6543581031674034499" fileName="EnumeratorIterator.java" startLine="47" startPosition="27" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="6543581031674034379" fileName="EnumeratorIterator.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034382" fileName="EnumeratorIterator.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034385" fileName="EnumeratorIterator.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034388" fileName="EnumeratorIterator.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034391" fileName="EnumeratorIterator.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034371" fileName="EnumeratorIterator.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034379" fileName="EnumeratorIterator.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034382" fileName="EnumeratorIterator.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034385" fileName="EnumeratorIterator.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034388" fileName="EnumeratorIterator.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034391" fileName="EnumeratorIterator.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034371" fileName="EnumeratorIterator.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="6543581031674034468" fileName="EnumeratorIterator.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034509" fileName="EnumeratorIterator.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="6543581031674034439" fileName="EnumeratorIterator.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="6543581031674034442" varName="iterator" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674034496" fileName="EnumeratorIterator.java" startLine="47" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034512" fileName="EnumeratorIterator.java" startLine="54" startPosition="34" endLine="60" endPosition="22" />
-    <scopeInfo nodeId="6543581031674034509" fileName="EnumeratorIterator.java" startLine="54" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034413" fileName="EnumeratorIterator.java" startLine="63" startPosition="85" endLine="72" endPosition="42" />
-    <scopeInfo nodeId="6543581031674034405" fileName="EnumeratorIterator.java" startLine="63" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="6543581031674034413" fileName="EnumeratorIterator.java" startLine="60" startPosition="85" endLine="69" endPosition="42" />
+    <scopeInfo nodeId="6543581031674034405" fileName="EnumeratorIterator.java" startLine="60" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="6543581031674034410" varName="itr" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674034362" fileName="EnumeratorIterator.java" startLine="75" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator$Empty" />
-    <unitInfo nodeId="6543581031674034357" fileName="EnumeratorIterator.java" startLine="9" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator" />
+    <unitInfo nodeId="6543581031674034362" fileName="EnumeratorIterator.java" startLine="72" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator$Empty" />
+    <unitInfo nodeId="6543581031674034357" fileName="EnumeratorIterator.java" startLine="9" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.EnumeratorIterator" />
   </root>
   <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/6543581031674034581">
     <nodeInfo nodeId="6543581031674034590" fileName="HasNextState.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="value" />

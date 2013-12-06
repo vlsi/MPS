@@ -126,10 +126,7 @@ public class FilesDelta implements IDelta {
       }
     }).select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
       public String select(IMapping<IFile, FilesDelta.Status> f) {
-        return (f.key().isDirectory() ?
-          DirUtil.normalizeAsDir(f.key().getPath()) :
-          DirUtil.normalize(f.key().getPath())
-        );
+        return (f.key().isDirectory() ? DirUtil.normalizeAsDir(f.key().getPath()) : DirUtil.normalize(f.key().getPath()));
       }
     }).sort(new ISelector<String, String>() {
       public String select(String p) {
@@ -156,10 +153,7 @@ public class FilesDelta implements IDelta {
       }, true)) {
         if (fileAndPath._0().isDirectory()) {
           int fidx = Arrays.binarySearch(pathsToKeep, DirUtil.normalizeAsDir(fileAndPath._1()));
-          fidx = (fidx < 0 ?
-            -1 - fidx :
-            fidx
-          );
+          fidx = (fidx < 0 ? -1 - fidx : fidx);
           if (fidx >= pathsToKeep.length || !(DirUtil.startsWith(pathsToKeep[fidx], fileAndPath._1()))) {
             ListSequence.fromList(filesToDelete).addElement(fileAndPath._0());
             if (fidx >= pathsToKeep.length) {

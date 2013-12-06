@@ -23,9 +23,6 @@ public class StylePriorityGroup_Behavior {
   }
 
   private static boolean eq_4c3u2b_a0c0c0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

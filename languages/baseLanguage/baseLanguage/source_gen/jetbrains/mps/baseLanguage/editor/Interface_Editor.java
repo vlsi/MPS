@@ -131,7 +131,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_4hcgjd_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_4hcgjd_a0a0i(SPropertyOperations.getString(node, "name"));
+    return isEmptyString(SPropertyOperations.getString(node, "name"));
   }
 
   private EditorCell createComponent_4hcgjd_f0(EditorContext editorContext, SNode node) {
@@ -267,20 +267,8 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_4hcgjd_a8a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Interface_Editor._StyleParameter_QueryFunction_4hcgjd_a0a8a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, Interface_Editor._StyleParameter_QueryFunction_4hcgjd_a1a8a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Interface_Editor._StyleParameter_QueryFunction_4hcgjd_a0a8a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, Interface_Editor._StyleParameter_QueryFunction_4hcgjd_a1a8a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -585,7 +573,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isEmpty_4hcgjd_a0a0i(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

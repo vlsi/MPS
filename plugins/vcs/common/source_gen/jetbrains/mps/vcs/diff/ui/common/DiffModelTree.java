@@ -93,8 +93,8 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }, true).toListSequence();
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       DiffModelTree.TreeNode parentNode = modelNode;
-      if (isNotEmpty_5x0uld_a0b0c0e(rtn.myVirtualPackage)) {
-        for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
+      if (isNotEmptyString(rtn.myVirtualPackage)) {
+        for (final String sub : Sequence.fromArray(rtn.myVirtualPackage.split("\\."))) {
           Iterable<DiffModelTree.TreeNode> children = Collections.list(parentNode.children());
           DiffModelTree.TreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<DiffModelTree.TreeNode>() {
             public boolean accept(DiffModelTree.TreeNode c) {
@@ -176,19 +176,13 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   private DiffModelTree.RootTreeNode findRootNode(@Nullable final SNodeId nodeId) {
     return ListSequence.fromList(myRootNodes).findFirst(new IWhereFilter<DiffModelTree.RootTreeNode>() {
       public boolean accept(DiffModelTree.RootTreeNode r) {
-        return (nodeId == null ?
-          r.myRootId == null :
-          nodeId.equals(r.myRootId)
-        );
+        return (nodeId == null ? r.myRootId == null : nodeId.equals(r.myRootId));
       }
     });
   }
 
   private int advanceIndex(int index, boolean next) {
-    return (next ?
-      index + 1 :
-      index - 1
-    );
+    return (next ? index + 1 : index - 1);
   }
 
   public boolean hasNeighbour(SNodeId nodeId, boolean next) {
@@ -262,10 +256,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
           }
 
           if (myVirtualPackage == null) {
-            myVirtualPackage = (SPropertyOperations.getString(root, "virtualPackage") == null ?
-              "" :
-              SPropertyOperations.getString(root, "virtualPackage")
-            );
+            myVirtualPackage = (SPropertyOperations.getString(root, "virtualPackage") == null ? "" : SPropertyOperations.getString(root, "virtualPackage"));
           }
           if (icon == null) {
             icon = IconManager.getIconFor(root);
@@ -387,14 +378,11 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     return null;
   }
 
-  public static boolean isNotEmpty_5x0uld_a0b0c0e(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
   private static <T> T as_5x0uld_a0a0a2a5(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

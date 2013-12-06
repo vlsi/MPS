@@ -57,10 +57,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       }
       EditableSModel emd = (EditableSModel) md;
       DataSource source = emd.getSource();
-      IFile modelFile = (source instanceof FileDataSource ?
-        ((FileDataSource) source).getFile() :
-        null
-      );
+      IFile modelFile = (source instanceof FileDataSource ? ((FileDataSource) source).getFile() : null);
       if (modelFile == null) {
         continue;
       }

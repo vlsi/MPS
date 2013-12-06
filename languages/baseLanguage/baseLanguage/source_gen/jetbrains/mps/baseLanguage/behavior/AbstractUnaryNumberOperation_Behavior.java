@@ -9,6 +9,6 @@ public class AbstractUnaryNumberOperation_Behavior {
   }
 
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
-    return true;
+    return false;
   }
 }

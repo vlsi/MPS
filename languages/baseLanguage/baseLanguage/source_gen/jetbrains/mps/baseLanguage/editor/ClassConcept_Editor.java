@@ -192,7 +192,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_uj0cpq_a7a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_uj0cpq_a0a0o(SPropertyOperations.getString(node, "name"));
+    return isEmptyString(SPropertyOperations.getString(node, "name"));
   }
 
   private EditorCell createComponent_uj0cpq_i0(EditorContext editorContext, SNode node) {
@@ -370,20 +370,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_uj0cpq_a31a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a0a31a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a1a31a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a0a31a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a1a31a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -1248,7 +1236,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isEmpty_uj0cpq_a0a0o(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

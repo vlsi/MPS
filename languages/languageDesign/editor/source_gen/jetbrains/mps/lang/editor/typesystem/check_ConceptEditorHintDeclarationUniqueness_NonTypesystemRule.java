@@ -59,9 +59,6 @@ public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule exte
   }
 
   private static boolean eq_xcu13c_a0b0a0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

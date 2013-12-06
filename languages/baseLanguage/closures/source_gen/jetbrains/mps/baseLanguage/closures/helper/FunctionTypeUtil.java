@@ -156,14 +156,8 @@ with_meet:
   }
 
   public static void prepAdaptations(TemplateQueryContext genContext, SNode ltype, SNode rexpr) {
-    SNode lCType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") :
-      null
-    );
-    SNode lFType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ?
-      SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") :
-      null
-    );
+    SNode lCType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ? SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.structure.ClassifierType") : null);
+    SNode lFType = (SNodeOperations.isInstanceOf(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ? SNodeOperations.cast(ltype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") : null);
     if ((lFType == null) && (lCType == null)) {
       return;
     }
@@ -180,14 +174,8 @@ with_meet:
       }
     }
     SNode rtype = TypeChecker.getInstance().getTypeOf(rexpr);
-    SNode rFType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ?
-      SNodeOperations.cast(rtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") :
-      null
-    );
-    SNode rCType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ?
-      SNodeOperations.cast(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") :
-      null
-    );
+    SNode rFType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") ? SNodeOperations.cast(rtype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType") : null);
+    SNode rCType = (SNodeOperations.isInstanceOf(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") ? SNodeOperations.cast(rtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") : null);
 
     if ((lCType != null) && (rFType != null)) {
       if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(lCType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), true), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {

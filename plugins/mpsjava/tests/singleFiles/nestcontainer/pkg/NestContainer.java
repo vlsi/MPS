@@ -1,3 +1,4 @@
+package pkg;
 
 public class NestContainer {
   private Nested1 f1;

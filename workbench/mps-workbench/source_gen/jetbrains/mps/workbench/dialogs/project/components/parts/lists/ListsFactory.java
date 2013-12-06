@@ -95,10 +95,7 @@ public final class ListsFactory {
   };
   public static final ListsFactory.ListComparator<Path> PATH_COMPARATOR = new ListsFactory.ListComparator<Path>() {
     private String getPathString(Path path) {
-      return ((path == null) ?
-        "null" :
-        path.getPath() + "#" + path.getMPSFolder()
-      );
+      return ((path == null) ? "null" : path.getPath() + "#" + path.getMPSFolder());
     }
 
     @Override

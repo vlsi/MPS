@@ -20,7 +20,7 @@
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="78" startPosition="64" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="80" startPosition="5" endLine="81" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="82" startPosition="67" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="86" startPosition="62" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="88" startPosition="5" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2792997962487298178" fileName="GoToOverridingQueries_Action.java" startLine="93" startPosition="9" endLine="94" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -36,7 +36,7 @@
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="71" startPosition="25" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="77" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="81" startPosition="99" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="85" startPosition="89" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="85" startPosition="87" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2792997962487298187" fileName="GoToOverridingQueries_Action.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="101" startPosition="27" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2792997962487264360" fileName="GoToOverridingQueries_Action.java" startLine="101" startPosition="27" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -369,16 +369,17 @@
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="64" startPosition="67" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="68" startPosition="71" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="74" startPosition="5" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4246302507742178911" fileName="GoToOverridenQuery_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246302507742179003" fileName="GoToOverridenQuery_Action.java" startLine="85" startPosition="38" endLine="86" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4246302507742178789" fileName="GoToOverridenQuery_Action.java" startLine="87" startPosition="7" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4246302507742179653" fileName="GoToOverridenQuery_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="91" startPosition="45" endLine="92" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246302507742178800" fileName="GoToOverridenQuery_Action.java" startLine="97" startPosition="72" endLine="98" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4246302507742178949" fileName="GoToOverridenQuery_Action.java" startLine="80" startPosition="76" endLine="81" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246302507742179003" fileName="GoToOverridenQuery_Action.java" startLine="82" startPosition="38" endLine="83" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4246302507742178789" fileName="GoToOverridenQuery_Action.java" startLine="84" startPosition="7" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4246302507742179653" fileName="GoToOverridenQuery_Action.java" startLine="85" startPosition="0" endLine="86" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="88" startPosition="45" endLine="89" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246302507742178800" fileName="GoToOverridenQuery_Action.java" startLine="94" startPosition="72" endLine="95" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="98" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="59" startPosition="57" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -386,23 +387,22 @@
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="54" startPosition="95" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="67" startPosition="109" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="71" startPosition="89" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4246302507742178981" fileName="GoToOverridenQuery_Action.java" startLine="84" startPosition="8" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="90" startPosition="27" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="90" startPosition="27" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4246302507742178794" fileName="GoToOverridenQuery_Action.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptQuery#(Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="71" startPosition="87" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4246302507742178981" fileName="GoToOverridenQuery_Action.java" startLine="81" startPosition="100" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="87" startPosition="27" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="87" startPosition="27" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4246302507742178794" fileName="GoToOverridenQuery_Action.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptQuery#(Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="41" startPosition="9" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4246302507742178949" fileName="GoToOverridenQuery_Action.java" startLine="80" startPosition="76" endLine="84" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToOverridenQuery_Action#()V" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="57" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="57" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="40" startPosition="89" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="40" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="96" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="96" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="54" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="60" startPosition="25" endLine="60" endPosition="25" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="32" startPosition="32" endLine="33" endPosition="16" />
@@ -412,9 +412,9 @@
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="64" startPosition="67" endLine="65" endPosition="19" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="68" startPosition="71" endLine="69" endPosition="19" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="72" startPosition="62" endLine="73" endPosition="19" />
-    <scopeInfo nodeId="4246302507742178982" fileName="GoToOverridenQuery_Action.java" startLine="85" startPosition="38" endLine="86" endPosition="15" />
-    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="91" startPosition="45" endLine="92" endPosition="92" />
-    <scopeInfo nodeId="4246302507742178796" fileName="GoToOverridenQuery_Action.java" startLine="97" startPosition="72" endLine="98" endPosition="165" />
+    <scopeInfo nodeId="4246302507742178982" fileName="GoToOverridenQuery_Action.java" startLine="82" startPosition="38" endLine="83" endPosition="15" />
+    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="88" startPosition="45" endLine="89" endPosition="92" />
+    <scopeInfo nodeId="4246302507742178796" fileName="GoToOverridenQuery_Action.java" startLine="94" startPosition="72" endLine="95" endPosition="165" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="42" startPosition="7" endLine="44" endPosition="63">
       <varInfo nodeId="4246302507742178774" varName="enabled" />
     </scopeInfo>
@@ -424,11 +424,11 @@
       <varInfo nodeId="4246302507742178774" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="90" startPosition="0" endLine="93" endPosition="7">
+    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="87" startPosition="0" endLine="90" endPosition="7">
       <varInfo nodeId="4246302507742178774" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="90" startPosition="27" endLine="93" endPosition="7" />
-    <scopeInfo nodeId="4246302507742178794" fileName="GoToOverridenQuery_Action.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="87" startPosition="27" endLine="90" endPosition="7" />
+    <scopeInfo nodeId="4246302507742178794" fileName="GoToOverridenQuery_Action.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="4246302507742178794" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
@@ -443,18 +443,18 @@
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="57" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="79" startPosition="9" endLine="89" endPosition="152">
+    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="79" startPosition="9" endLine="86" endPosition="152">
       <varInfo nodeId="4246302507742178950" varName="overriddenQuery" />
       <varInfo nodeId="4246302507742178912" varName="query" />
     </scopeInfo>
+    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="57" startPosition="5" endLine="66" endPosition="5" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="40" startPosition="89" endLine="51" endPosition="5" />
     <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="40" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4246302507742178774" varName="_params" />
       <varInfo nodeId="4246302507742178774" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="96" endLine="94" endPosition="5" />
-    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="96" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="78" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="4246302507742178774" varName="_params" />
       <varInfo nodeId="4246302507742178774" varName="event" />
     </scopeInfo>
@@ -463,7 +463,7 @@
       <varInfo nodeId="4246302507742178774" varName="_params" />
       <varInfo nodeId="4246302507742178774" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="22" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.core.smodel.pluginSolution.plugin.GoToOverridenQuery_Action" />
+    <unitInfo nodeId="4246302507742178774" fileName="GoToOverridenQuery_Action.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.core.smodel.pluginSolution.plugin.GoToOverridenQuery_Action" />
   </root>
   <root nodeRef="r:0e929fd7-38ac-4dd6-abf0-ac47e79d66c1(jetbrains.mps.core.smodel.pluginSolution.plugin)/4246302507742179700">
     <nodeInfo nodeId="4246302507742179700" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

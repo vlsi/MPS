@@ -1,15 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b3mxe29ms80d0ro8g9c7g9sxjxbabbm">
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="94stlc8wpw1498iuiz9fizbw56nu7p" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <dep model="r:7d55e2f9-2d7a-4b97-bb06-ca9cd738534a(jetbrains.mps.transformation.test.errorReporting.typesystem)" hash="tydtretyufozrhb4hxr0qpm5l9ho8v" />
-  <dep model="r:e212bbf5-8b7a-4d76-a650-32f9b4ca3bc3(jetbrains.mps.transformation.test.errorReporting.editor)" hash="-44u757hk7l9ub8c7zckwbv8z92rsbsq" />
-  <common>
-    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:7d55e2f9-2d7a-4b97-bb06-ca9cd738534a(jetbrains.mps.transformation.test.errorReporting.typesystem)" />
-    <dep model="r:e212bbf5-8b7a-4d76-a650-32f9b4ca3bc3(jetbrains.mps.transformation.test.errorReporting.editor)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="b3mxe29ms80d0ro8g9c7g9sxjxbabbm" />
 

@@ -10,6 +10,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
+import java.util.Map;
 
 public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public Type_BehaviorDescriptor() {
@@ -35,6 +36,10 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return Type_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
   }
 
+  public SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
+    return Type_Behavior.virtual_getBoxedType_1213877337320(thisNode);
+  }
+
   @Deprecated
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return Type_Behavior.virtual_getClassExpression_1213877337357(thisNode);
@@ -56,10 +61,6 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return Type_Behavior.virtual_getLooseType_5744862332972792015(thisNode, visitedTypes);
   }
 
-  public SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return Type_Behavior.virtual_getUnboxedType_1213877337320(thisNode);
-  }
-
   public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     return Type_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
   }
@@ -78,6 +79,10 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
 
   public boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     return Type_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
+  }
+
+  public boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return Type_Behavior.virtual_isSupersetOf_9029841626175335449(thisNode, t, substitutions);
   }
 
   public boolean virtual_isValueType_4836112446988592019(SNode thisNode) {

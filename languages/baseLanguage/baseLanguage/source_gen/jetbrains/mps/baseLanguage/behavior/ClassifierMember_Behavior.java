@@ -147,16 +147,10 @@ public class ClassifierMember_Behavior {
   }
 
   private static boolean eq_i8o263_a0a0l0c(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_i8o263_a0a0n0c(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

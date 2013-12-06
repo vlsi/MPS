@@ -130,7 +130,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         @Override
         public void visitChildEvent(SModelChildEvent event) {
           SNode child = event.getChild();
-          if (event.isAdded()) {
+          if (event.isAdded() && child.getModel() != null) {
             nodeAdded(child, reResolvedTargets);
           } else {
             nodeRemoved(child, event.getParent(), event.getModel(), reResolvedTargets);
@@ -176,10 +176,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         if (reResolvedTargets.isEmpty()) {
           return;
         }
-        Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-          editorContext.getOperationContext().getProject() :
-          null
-        );
+        Project p = (editorContext != null && editorContext.getOperationContext() != null ? editorContext.getOperationContext().getProject() : null);
         if (p == null) {
           return;
         }
@@ -413,9 +410,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0v(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

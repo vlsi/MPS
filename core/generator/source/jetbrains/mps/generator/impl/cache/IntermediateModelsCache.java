@@ -178,6 +178,6 @@ public class IntermediateModelsCache {
   }
 
   public String getTimeSpent() {
-    return timeSpent/1000000/1000. + " ms";
+    return timeSpent/1000000 + " ms";
   }
 }

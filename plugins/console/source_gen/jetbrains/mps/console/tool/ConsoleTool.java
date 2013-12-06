@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.UIEditorComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.Language;
@@ -104,7 +105,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   public ConsoleTool(Project project) {
-    super(project, "Console", -1, IconContainer.ICON_d0a61, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Console", -1, MPSIcons.ToolWindows.OpenTerminal_13x13, ToolWindowAnchor.BOTTOM, false);
   }
 
 
@@ -674,10 +675,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          result.state = (myModel == null ?
-            null :
-            PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL)
-          );
+          result.state = (myModel == null ? null : PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL));
         } catch (Exception e) {
           if (LOG.isEnabledFor(Priority.WARN)) {
             LOG.warn("Error on console model saving", e);
@@ -685,10 +683,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         }
       }
     });
-    return (result.state == null ?
-      null :
-      result
-    );
+    return (result.state == null ? null : result);
   }
 
 
@@ -752,9 +747,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   }
 
   private static boolean eq_xg3v07_a0a1a0a0a0a0a2a1a0a0e0a0a0a0b0y(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

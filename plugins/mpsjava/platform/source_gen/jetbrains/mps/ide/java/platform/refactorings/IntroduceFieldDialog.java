@@ -44,10 +44,7 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     ButtonGroup group = new ButtonGroup();
     JRadioButton method = this.createButton(0, FieldInitializationPlace.METHOD, result, group);
     JRadioButton field = this.createButton(1, FieldInitializationPlace.FIELD, result, group);
-    JRadioButton initializer = this.createButton(2, (isStatic ?
-      FieldInitializationPlace.STATICINIT :
-      FieldInitializationPlace.CONSTRUCTOR
-    ), result, group);
+    JRadioButton initializer = this.createButton(2, (isStatic ? FieldInitializationPlace.STATICINIT : FieldInitializationPlace.CONSTRUCTOR), result, group);
 
     if (this.myRefactoring.isInitializeInFieldAvailable()) {
       field.setSelected(true);

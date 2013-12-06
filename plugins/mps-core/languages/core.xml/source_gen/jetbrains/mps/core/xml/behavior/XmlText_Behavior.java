@@ -23,7 +23,7 @@ public class XmlText_Behavior {
   }
 
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
-    if (isEmpty_95m3ba_a0a0a3(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(XmlPart_Behavior.call_onNewLine_2133624044437631588(thisNode));
     }
     return false;
@@ -33,7 +33,7 @@ public class XmlText_Behavior {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent")) {
       SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent");
-      return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(leftContent))), "virtual_textLike_1262430001741498277", new Object[]{}) || isEmpty_95m3ba_a0a0b0b0e(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
+      return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(leftContent))), "virtual_textLike_1262430001741498277", new Object[]{}) || isEmptyString(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }
@@ -42,11 +42,7 @@ public class XmlText_Behavior {
     return true;
   }
 
-  public static boolean isEmpty_95m3ba_a0a0a3(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_95m3ba_a0a0b0b0e(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

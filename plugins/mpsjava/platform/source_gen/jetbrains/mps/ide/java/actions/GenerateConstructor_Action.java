@@ -113,10 +113,7 @@ public class GenerateConstructor_Action extends BaseAction {
           return;
         }
         List<SNodeReference> selectedElements = selectConstructorsDialog.getSelectedElements();
-        selectedConstructors = (selectedElements != null ?
-          selectedElements.toArray(new SNodeReference[selectedElements.size()]) :
-          new SNodeReference[0]
-        );
+        selectedConstructors = (selectedElements != null ? selectedElements.toArray(new SNodeReference[selectedElements.size()]) : new SNodeReference[0]);
       }
 
       boolean needsShowFieldsDialog = false;

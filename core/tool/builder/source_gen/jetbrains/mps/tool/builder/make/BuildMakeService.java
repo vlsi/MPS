@@ -285,10 +285,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
         if (delegateConfMon != null) {
           opt = delegateConfMon.relayQuery(query);
         }
-        return (opt != null ?
-          opt :
-          query.defaultOption()
-        );
+        return (opt != null ? opt : query.defaultOption());
       }
     }
 

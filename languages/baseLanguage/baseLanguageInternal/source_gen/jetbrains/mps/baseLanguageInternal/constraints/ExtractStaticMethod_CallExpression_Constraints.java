@@ -39,10 +39,7 @@ public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstrai
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))), ((_context.getReferenceNode() != null) ?
-              _context.getReferenceNode() :
-              _context.getEnclosingNode()
-            ));
+            return ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))), ((_context.getReferenceNode() != null) ? _context.getReferenceNode() : _context.getEnclosingNode()));
           }
 
           @Override

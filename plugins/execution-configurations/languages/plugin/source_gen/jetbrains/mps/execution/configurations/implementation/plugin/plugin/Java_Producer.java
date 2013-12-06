@@ -97,10 +97,7 @@ public class Java_Producer {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, source, "virtual_isNodeRunnable_4666195181811081448", new Object[]{}))) {
         return null;
       }
-      String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ?
-        SPropertyOperations.getString(SNodeOperations.cast(source, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-        BehaviorReflection.invokeVirtual(String.class, source, "virtual_getUnitName_4666195181811081431", new Object[]{})
-      );
+      String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(source, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : BehaviorReflection.invokeVirtual(String.class, source, "virtual_getUnitName_4666195181811081431", new Object[]{}));
       Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Node " + name, (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;

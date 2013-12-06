@@ -19,7 +19,7 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
     super(tableNode, rowsLinkDeclaration, cellsLinkDeclaration);
     myHeaderColumnsLinkDeclaration = headerCellsLinkDeclaration;
     assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(getTableNode()))).contains(myHeaderColumnsLinkDeclaration);
-    assert (int) ListSequence.fromList(getHeaderColumns()).count() == getColumnCount();
+    assert ListSequence.fromList(getHeaderColumns()).count() == getColumnCount();
   }
 
   @Override

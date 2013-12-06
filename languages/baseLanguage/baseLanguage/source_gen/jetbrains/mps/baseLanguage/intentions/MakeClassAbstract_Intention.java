@@ -83,10 +83,7 @@ public class MakeClassAbstract_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Make" + ((SPropertyOperations.getBoolean(node, "abstractClass") ?
-        " Non" :
-        ""
-      )) + " Abstract";
+      return "Make" + ((SPropertyOperations.getBoolean(node, "abstractClass") ? " Non" : "")) + " Abstract";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

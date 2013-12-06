@@ -69,7 +69,7 @@ public class XmlTextValue_text extends KeyMapImpl {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
         return false;
       }
-      return isNotEmpty_w6ww0f_a0c0f1(SPropertyOperations.getString(node, "text"));
+      return isNotEmptyString(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -94,7 +94,7 @@ public class XmlTextValue_text extends KeyMapImpl {
       return " \"";
     }
 
-    public static boolean isNotEmpty_w6ww0f_a0c0f1(String str) {
+    private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }
@@ -140,7 +140,7 @@ public class XmlTextValue_text extends KeyMapImpl {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
         return false;
       }
-      return isNotEmpty_w6ww0f_a0c0f2(SPropertyOperations.getString(node, "text"));
+      return isNotEmptyString(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -164,7 +164,7 @@ public class XmlTextValue_text extends KeyMapImpl {
       return " &";
     }
 
-    public static boolean isNotEmpty_w6ww0f_a0c0f2(String str) {
+    private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }

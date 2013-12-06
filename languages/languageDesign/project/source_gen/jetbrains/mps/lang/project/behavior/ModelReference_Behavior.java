@@ -11,20 +11,16 @@ public class ModelReference_Behavior {
 
   public static String call_getModelReference_6236774123822284799(SNode thisNode) {
     String result = SPropertyOperations.getString(thisNode, "qualifiedName");
-    if (isNotEmpty_5ve4mf_a0b0b(SPropertyOperations.getString(thisNode, "stereotype"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "stereotype"))) {
       result = result + "@" + SPropertyOperations.getString(thisNode, "stereotype");
     }
-    if (isNotEmpty_5ve4mf_a0c0b(SPropertyOperations.getString(thisNode, "uuid"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "uuid"))) {
       result = SPropertyOperations.getString(thisNode, "uuid") + "(" + result + ")";
     }
     return result;
   }
 
-  public static boolean isNotEmpty_5ve4mf_a0b0b(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_5ve4mf_a0c0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

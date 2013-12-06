@@ -13,7 +13,7 @@ public class TemplateDeclarationReference_Behavior {
   }
 
   public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
-    SNode contentNode = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "template", false), "contentNode", true);
+    SNode contentNode = SLinkOperations.getTarget(TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(thisNode), "contentNode", true);
     if ((contentNode != null)) {
       List<SNode> fragments = SNodeOperations.getDescendants(contentNode, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{});
       if ((ListSequence.fromList(fragments).first() != null) && (SNodeOperations.getParent(ListSequence.fromList(fragments).first()) != null)) {
@@ -21,5 +21,9 @@ public class TemplateDeclarationReference_Behavior {
       }
     }
     return null;
+  }
+
+  public static SNode call_getTemplate_982871510068196871(SNode thisNode) {
+    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
 }

@@ -35,10 +35,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    BLDependenciesHandler.ElementHandler current = (myHandlersStack.empty() ?
-      (BLDependenciesHandler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    BLDependenciesHandler.ElementHandler current = (myHandlersStack.empty() ? (BLDependenciesHandler.ElementHandler) null : myHandlersStack.peek());
     if (current != null) {
       current.handleText(myValues.peek(), new String(array, start, len));
     }
@@ -61,10 +58,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    BLDependenciesHandler.ElementHandler current = (myHandlersStack.empty() ?
-      (BLDependenciesHandler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    BLDependenciesHandler.ElementHandler current = (myHandlersStack.empty() ? (BLDependenciesHandler.ElementHandler) null : myHandlersStack.peek());
     if (current == null) {
       // root 
       current = dependenciesRoothandler;

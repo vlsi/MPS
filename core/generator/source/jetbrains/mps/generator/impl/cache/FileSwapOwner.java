@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
-import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.persistence.binary.NodesReader;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.smodel.SModelOperations;
@@ -29,6 +30,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.ByteArrayInputStream;
@@ -40,8 +42,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * fyodor, 1/10/11
@@ -49,8 +49,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public abstract class FileSwapOwner implements TransientSwapOwner {
 
   private static Logger LOG = LogManager.getLogger(FileSwapOwner.class);
-
-  private Map<String, File> mySwapSpaces = new ConcurrentHashMap<String, File>();
 
   abstract protected File getSwapDir();
 
@@ -103,7 +101,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     }
 
     @Override
-    public boolean swapOut(TransientSModel model) {
+    public boolean swapOut(SModelData model) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
       String modelId = model.getReference().getModelId().toString();
@@ -144,7 +142,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     }
 
     @Override
-    public TransientSModel restoreFromSwap(SModelReference mref) {
+    public <T extends SModelData> T restoreFromSwap(SModelReference mref, T modelData) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
       String modelId = mref.getModelId().toString();
@@ -161,7 +159,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       ModelInputStream mis = null;
       try {
         mis = new ModelInputStream(new FileInputStream(swapFile));
-        return loadModel(mref, mis, new TransientSModel(mref));
+        return loadModel(mref, mis, modelData);
       } catch (IOException e) {
         LOG.error(null, e);
         throw new RuntimeException(e);
@@ -192,19 +190,16 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
     private static final int VERSION = 48;
 
-    public TransientSModel loadModel(SModelReference modelReference, ModelInputStream is, TransientSModel model) throws IOException {
+    public <T extends SModelData> T loadModel(SModelReference modelReference, ModelInputStream is, T model) throws IOException {
       int version = is.readInt();
       if (version != VERSION) {
         return null;
       }
 
-      List<Pair<String, SNode>> roots = new NodesReader(modelReference, null, false).readNodes(model, is);
+      List<Pair<String, SNode>> roots = new NodesReader(modelReference, false).readNodes(is);
       for (Pair<String, SNode> r : roots) {
         model.addRootNode(r.o2);
       }
-
-      // ensure imports are back
-      SModelOperations.validateLanguagesAndImports(model.getModelDescriptor(), false, false);
 
       return model;
     }
@@ -224,14 +219,14 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     writer.writeNode(node, mos);
     mos.close();
 
-    NodesReader reader = new NodesReader(node.getModel().getReference(), null, false);
+    NodesReader reader = new NodesReader(node.getModel().getReference(), false);
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
-    return reader.readNode(((jetbrains.mps.smodel.SNode) node).getPersistentModel(), new ModelInputStream(is)).o2;
+    return reader.readNode(new ModelInputStream(is)).o2;
   }
 
   // method created for testing
-  public static SModel writeAndReadModel(SModel model) throws IOException {
+  public static SModel writeAndReadModel(jetbrains.mps.smodel.SModel model) throws IOException {
     // write
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ModelOutputStream mos = new ModelOutputStream(os);
@@ -244,7 +239,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     new NodesWriter(model.getReference(), null).writeNodes(roots, mos);
     mos.close();
 
-    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(
+    final jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(
         PersistenceFacade.getInstance().createModelReference("smodel.long.name.for.testing"));
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
     ModelInputStream mis = new ModelInputStream(is);
@@ -254,13 +249,31 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     if (version != 44) {
       return null;
     }
-    List<Pair<String, SNode>> resultRoots = new NodesReader(resultModel.getReference(), null, false).readNodes(resultModel, mis);
+    List<Pair<String, SNode>> resultRoots = new NodesReader(resultModel.getReference(), false).readNodes(mis);
     for (Pair<String, SNode> root : resultRoots) {
       resultModel.addRootNode(root.o2);
     }
 
-    SModelOperations.validateLanguagesAndImports(resultModel.getModelDescriptor(), false, false);
+    SModelOperations.validateLanguagesAndImports(resultModel, false, false);
 
-    return resultModel.getModelDescriptor();
+    SModelBase result = new SModelBase(resultModel.getReference(), new NullDataSource()) {
+      @Override
+      public jetbrains.mps.smodel.SModel getSModelInternal() {
+        return resultModel;
+      }
+
+      @Override
+      public boolean isLoaded() {
+        return true;
+      }
+
+      @Override
+      public void unload() {
+
+      }
+    };
+
+    resultModel.setModelDescriptor(result);
+    return result;
   }
 }

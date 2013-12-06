@@ -8,15 +8,18 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ArrayUtils;
+import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.util.NameUtil;
+import java.util.Iterator;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MyRootConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -31,22 +34,172 @@ public class MyRootConcept_Behavior {
   }
 
   public static Iterable<Integer> virtual_myList_8194562227700484039(SNode thisNode) {
-    return Sequence.fromIterable(ArrayUtils.fromIntegerArray(new int[]{1, 2, 3, 4})).concat(Sequence.fromIterable(ArrayUtils.fromIntegerArray(new int[]{4, 5, 6, 7})));
+    return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4)).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5, 6, 7)));
   }
 
   public static Set<SNode> virtual_complexQuery_6727112993714328752(final SNode thisNode) {
     return new _FunctionTypes._return_P0_E0<ISetSequence<SNode>>() {
       public ISetSequence<SNode> invoke() {
         final Set<SNode> s = SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), thisNode, SLinkOperations.getTarget(thisNode, "child", true));
+        final String string = "sdasdasd";
         final Set<SNode> s2 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).intersect(SetSequence.fromSet(s)));
         final Set<SNode> s3 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s2).disjunction(SetSequence.fromSet(s2)));
         final Set<SNode> s4 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s3).union(Sequence.fromIterable(Sequence.<SNode>singleton(null))));
         final Iterable<Integer> emptyList = Sequence.fromIterable(Collections.<Integer>emptyList());
         final Set<String> emptySet = SetSequence.fromSet(new LinkedHashSet<String>());
-        final Set<String> newList = SetSequence.fromSetWithValues(new LinkedHashSet<String>(), SetSequence.fromSet(emptySet).union(Sequence.fromIterable(Sequence.fromArray(new String[]{"adasd"}))));
-        return SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), SLinkOperations.getTarget(thisNode, "z", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "z", true), "z", true)))));
+        final Set<String> newList = SetSequence.fromSetWithValues(new LinkedHashSet<String>(), SetSequence.fromSet(emptySet).union(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "adasd"))));
+        final Set<SNode> z = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), thisNode))));
+        final SNode x = SNodeOperations.getParent(thisNode);
+        final boolean y = BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_queryWithParam_6166572974641188535", new Object[]{SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:3f71a9ca-cfc6-445e-98ca-be6cc5953666(jetbrains.mps.sample.queryTest.structure)", "MyKind"), "TWO")});
+        final boolean yy = BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_queryWithParam_6166572974641188535", new Object[]{null});
+        final SNode unr = SLinkOperations.getTarget(thisNode, "refr", false);
+        return SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SNodeOperations.ofConcept(SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), SLinkOperations.getTarget(thisNode, "z", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "z", true), "z", true)))), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "child", true)))));
       }
     }.invoke();
+  }
+
+  public static boolean virtual_q_3868630583602426896(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(thisNode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "child", true))));
+  }
+
+  public static boolean virtual_ch_6166572974641188527(SNode thisNode) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "child", true), "child", true), "name").length() > 1;
+  }
+
+  public static boolean virtual_queryWithParam_6166572974641188535(SNode thisNode, SNode kind) {
+    return true;
+  }
+
+  public static String virtual_queryWithIfaceParam_6925357446497561814(SNode thisNode, SNode named) {
+    return SPropertyOperations.getString(named, "name");
+  }
+
+  public static String virtual_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, SNode x) {
+    return SPropertyOperations.getString(x, "alias");
+  }
+
+  public static boolean virtual_equalsTest_9164905593977810753(SNode thisNode) {
+    return new _FunctionTypes._return_P2_E0<Boolean, String, String>() {
+      public Boolean invoke(String a, String b) {
+        if (a == null) {
+          return b == null;
+        } else {
+          return a.equals(b);
+        }
+      }
+    }.invoke("", "hello");
+  }
+
+  public static boolean virtual_equalsTest2_9164905593977810783(SNode thisNode) {
+    return new _FunctionTypes._return_P2_E0<Boolean, Iterable<String>, Iterable<String>>() {
+      public Boolean invoke(Iterable<String> leftSequence, Iterable<String> rightSequence) {
+        if (Sequence.fromIterable(leftSequence).count() != Sequence.fromIterable(rightSequence).count()) {
+          return false;
+        }
+        Iterator<? extends String> leftIter = Sequence.fromIterable(leftSequence).iterator();
+        Iterator<? extends String> rightIter = Sequence.fromIterable(rightSequence).iterator();
+        while (leftIter.hasNext()) {
+          String l = leftIter.next();
+          String r = rightIter.next();
+
+          if (!(new _FunctionTypes._return_P2_E0<Boolean, String, String>() {
+            public Boolean invoke(String a, String b) {
+              if (a == null) {
+                return b == null;
+              } else {
+                return a.equals(b);
+              }
+            }
+          }.invoke(l, r))) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }.invoke(ListSequence.fromListAndArray(new ArrayList<String>(), "one", "two"), ListSequence.fromListAndArray(new ArrayList<String>(), "one", "two"));
+  }
+
+  public static boolean virtual_equalsTest3_1471063792864117676(SNode thisNode) {
+    return new _FunctionTypes._return_P2_E0<Boolean, Iterable<? extends Iterable<Integer>>, Iterable<? extends Iterable<Integer>>>() {
+      public Boolean invoke(Iterable<? extends Iterable<Integer>> leftSequence, Iterable<? extends Iterable<Integer>> rightSequence) {
+        if (Sequence.fromIterable(leftSequence).count() != Sequence.fromIterable(rightSequence).count()) {
+          return false;
+        }
+        Iterator<? extends Iterable<Integer>> leftIter = Sequence.fromIterable(leftSequence).iterator();
+        Iterator<? extends Iterable<Integer>> rightIter = Sequence.fromIterable(rightSequence).iterator();
+        while (leftIter.hasNext()) {
+          Iterable<Integer> l = leftIter.next();
+          Iterable<Integer> r = rightIter.next();
+
+          if (!(new _FunctionTypes._return_P2_E0<Boolean, Iterable<Integer>, Iterable<Integer>>() {
+            public Boolean invoke(Iterable<Integer> leftSequence, Iterable<Integer> rightSequence) {
+              if (Sequence.fromIterable(leftSequence).count() != Sequence.fromIterable(rightSequence).count()) {
+                return false;
+              }
+              Iterator<? extends Integer> leftIter = Sequence.fromIterable(leftSequence).iterator();
+              Iterator<? extends Integer> rightIter = Sequence.fromIterable(rightSequence).iterator();
+              while (leftIter.hasNext()) {
+                int l = leftIter.next();
+                int r = rightIter.next();
+
+                if (!(new _FunctionTypes._return_P2_E0<Boolean, Integer, Integer>() {
+                  public Boolean invoke(Integer a, Integer b) {
+                    return a == b;
+                  }
+                }.invoke(l, r))) {
+                  return false;
+                }
+              }
+              return true;
+            }
+          }.invoke(l, r))) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }.invoke(ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), ListSequence.fromListAndArray(new ArrayList<Integer>(), 2)), ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 3), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4)));
+  }
+
+  public static boolean virtual_listOfLists_1471063792878445848(SNode thisNode) {
+    return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), ListSequence.fromListAndArray(new ArrayList<Integer>(), 2))).count() > 0;
+  }
+
+  public static int virtual_switchTest_7488639813761332399(SNode thisNode, final int x) {
+    return new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        int myAlias = x;
+        if (new _FunctionTypes._return_P2_E0<Boolean, Integer, Integer>() {
+          public Boolean invoke(Integer a, Integer b) {
+            return a == b;
+          }
+        }.invoke(myAlias, 1)) {
+          return 2;
+        } else if (myAlias > 1) {
+          return 3;
+        } else {
+          throw new RuntimeException("No default value in switch");
+        }
+      }
+    }.invoke();
+  }
+
+  public static int virtual_switchTest2_7488639813919989880(SNode thisNode, final int x) {
+    return new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        if (true || false) {
+          return 2;
+        } else if (x > 2) {
+          return 3;
+        } else {
+          return 777;
+        }
+      }
+    }.invoke();
+  }
+
+  public static boolean virtual_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, param, "virtual_qt2query_6925357446544699852", new Object[]{});
   }
 
   @Deprecated
@@ -70,6 +223,66 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
+  public static boolean call_q_3868630583602426896(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_q_3868630583602426896", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_ch_6166572974641188527(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_ch_6166572974641188527", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_queryWithParam_6166572974641188535(SNode thisNode, SNode kind) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_queryWithParam_6166572974641188535", new Object[]{kind});
+  }
+
+  @Deprecated
+  public static String call_queryWithIfaceParam_6925357446497561814(SNode thisNode, SNode named) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_queryWithIfaceParam_6925357446497561814", new Object[]{named});
+  }
+
+  @Deprecated
+  public static String call_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, SNode x) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_queryWithComplexIfaceParam_6925357446497561822", new Object[]{x});
+  }
+
+  @Deprecated
+  public static boolean call_equalsTest_9164905593977810753(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_equalsTest_9164905593977810753", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_equalsTest2_9164905593977810783(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_equalsTest2_9164905593977810783", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_equalsTest3_1471063792864117676(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_equalsTest3_1471063792864117676", new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_listOfLists_1471063792878445848(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_listOfLists_1471063792878445848", new Object[]{});
+  }
+
+  @Deprecated
+  public static int call_switchTest_7488639813761332399(SNode thisNode, int x) {
+    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_switchTest_7488639813761332399", new Object[]{x});
+  }
+
+  @Deprecated
+  public static int call_switchTest2_7488639813919989880(SNode thisNode, int x) {
+    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_switchTest2_7488639813919989880", new Object[]{x});
+  }
+
+  @Deprecated
+  public static boolean call_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useQueryTest2_6925357446547284154", new Object[]{param});
+  }
+
+  @Deprecated
   public static boolean callSuper_longName_8194562227700484009(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_longName_8194562227700484009", new Class[]{SNode.class}, new Object[]{});
   }
@@ -87,5 +300,65 @@ public class MyRootConcept_Behavior {
   @Deprecated
   public static Set<SNode> callSuper_complexQuery_6727112993714328752(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<Set<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_complexQuery_6727112993714328752", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_q_3868630583602426896(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_q_3868630583602426896", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_ch_6166572974641188527(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_ch_6166572974641188527", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_queryWithParam_6166572974641188535(SNode thisNode, String callerConceptFqName, SNode kind) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithParam_6166572974641188535", new Class[]{SNode.class, SNode.class}, new Object[]{kind});
+  }
+
+  @Deprecated
+  public static String callSuper_queryWithIfaceParam_6925357446497561814(SNode thisNode, String callerConceptFqName, SNode named) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithIfaceParam_6925357446497561814", new Class[]{SNode.class, SNode.class}, new Object[]{named});
+  }
+
+  @Deprecated
+  public static String callSuper_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, String callerConceptFqName, SNode x) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithComplexIfaceParam_6925357446497561822", new Class[]{SNode.class, SNode.class}, new Object[]{x});
+  }
+
+  @Deprecated
+  public static boolean callSuper_equalsTest_9164905593977810753(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_equalsTest_9164905593977810753", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_equalsTest2_9164905593977810783(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_equalsTest2_9164905593977810783", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_equalsTest3_1471063792864117676(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_equalsTest3_1471063792864117676", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_listOfLists_1471063792878445848(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_listOfLists_1471063792878445848", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static int callSuper_switchTest_7488639813761332399(SNode thisNode, String callerConceptFqName, int x) {
+    return BehaviorManager.getInstance().invokeSuper(Integer.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_switchTest_7488639813761332399", new Class[]{SNode.class, Integer.TYPE}, new Object[]{x});
+  }
+
+  @Deprecated
+  public static int callSuper_switchTest2_7488639813919989880(SNode thisNode, String callerConceptFqName, int x) {
+    return BehaviorManager.getInstance().invokeSuper(Integer.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_switchTest2_7488639813919989880", new Class[]{SNode.class, Integer.TYPE}, new Object[]{x});
+  }
+
+  @Deprecated
+  public static boolean callSuper_useQueryTest2_6925357446547284154(SNode thisNode, String callerConceptFqName, SNode param) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_useQueryTest2_6925357446547284154", new Class[]{SNode.class, SNode.class}, new Object[]{param});
   }
 }

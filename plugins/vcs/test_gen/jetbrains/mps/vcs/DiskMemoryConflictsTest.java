@@ -222,15 +222,9 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       public int show(String message) {
         dialogWasInvoked[0] = true;
         if (DiskMemoryConflictsTest.DiskModification.DELETE == diskModification) {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ?
-            0 :
-            1
-          );
+          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 0 : 1);
         } else {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ?
-            1 :
-            0
-          );
+          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 1 : 0);
         }
       }
     });
@@ -239,15 +233,9 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       public int show(String message) {
         dialogWasInvoked[0] = true;
         if (DiskMemoryConflictsTest.DiskModification.DELETE == diskModification) {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ?
-            0 :
-            1
-          );
+          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 0 : 1);
         } else {
-          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ?
-            1 :
-            0
-          );
+          return (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose ? 1 : 0);
         }
       }
     });

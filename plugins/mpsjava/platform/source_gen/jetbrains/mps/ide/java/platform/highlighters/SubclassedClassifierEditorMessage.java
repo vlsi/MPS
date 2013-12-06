@@ -34,10 +34,7 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
 
   @Override
   public Icon getIcon() {
-    return (myIsInterface ?
-      IconResourceBundle_OverrideImplements.getInstance().getResource("IMPLEMENTED") :
-      IconResourceBundle_OverrideImplements.getInstance().getResource("OVERRIDEN")
-    );
+    return (myIsInterface ? IconResourceBundle_OverrideImplements.getInstance().getResource("IMPLEMENTED") : IconResourceBundle_OverrideImplements.getInstance().getResource("OVERRIDEN"));
   }
 
   @Override
@@ -48,10 +45,7 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
     EditorCell returnTypeCell = CellFinderUtil.findChildByCondition(bigCell, myClassifierNameCellCondition, true);
-    return (returnTypeCell != null ?
-      returnTypeCell :
-      bigCell
-    );
+    return (returnTypeCell != null ? returnTypeCell : bigCell);
   }
 
   @Override

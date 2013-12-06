@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UncommentSingleLineComment {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -22,18 +23,34 @@ public class UncommentSingleLineComment {
       this.myNode = node;
     }
 
+    public String getDescriptionText() {
+      return "If delete comes from end of previos single-line comment (due to the nature editor distributes notification), merge comments. Otherwise, unwrap commented statement, if any";
+    }
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for (SNode commentPart : SLinkOperations.getTargets(node, "commentPart", true)) {
-        if (SNodeOperations.isInstanceOf(commentPart, "jetbrains.mps.baseLanguage.structure.StatementCommentPart")) {
-          SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(SNodeOperations.cast(commentPart, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), "commentedStatement", true));
-          return;
-        }
+      SNode selected = editorContext.getSelectedNode();
+      if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.CommentPart") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment") && !(ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).contains(SNodeOperations.cast(selected, "jetbrains.mps.baseLanguage.structure.CommentPart")))) {
+        SNode prevLine = SNodeOperations.cast(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+        ListSequence.fromList(SLinkOperations.getTargets(prevLine, "commentPart", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)));
+        SNodeOperations.deleteNode(node);
+        return;
       }
-      SNodeOperations.deleteNode(node);
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart")) {
+        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), "commentedStatement", true));
+        return;
+      }
+      if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.SingleLineComment") && SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment")) {
+        // if we got 'delete' for whole comment (not CommentPart), and this map is attached to double slash  
+        // constant, it's likely we got 'Del' or 'Backspace' (no way to tell one from another) pressed over 
+        // double slash constant. Try to join comment lines then. 
+        SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+        ListSequence.fromList(SLinkOperations.getTargets(prevLine, "commentPart", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)));
+        SNodeOperations.deleteNode(node);
+      }
     }
   }
 }

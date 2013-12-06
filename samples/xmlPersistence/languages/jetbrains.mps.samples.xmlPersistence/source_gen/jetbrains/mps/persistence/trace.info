@@ -60,17 +60,18 @@
     <nodeInfo nodeId="7358309956615000296" fileName="XmlModelPersistence.java" startLine="181" startPosition="31" endLine="182" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="7358309956615000283" fileName="XmlModelPersistence.java" startLine="183" startPosition="15" endLine="184" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7358309956615000311" fileName="XmlModelPersistence.java" startLine="189" startPosition="108" endLine="190" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615000338" fileName="XmlModelPersistence.java" startLine="195" startPosition="23" endLine="196" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615000464" fileName="XmlModelPersistence.java" startLine="197" startPosition="5" endLine="198" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7358309956615000361" fileName="XmlModelPersistence.java" startLine="199" startPosition="67" endLine="200" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615000363" fileName="XmlModelPersistence.java" startLine="201" startPosition="5" endLine="202" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615000380" fileName="XmlModelPersistence.java" startLine="203" startPosition="29" endLine="204" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615000382" fileName="XmlModelPersistence.java" startLine="205" startPosition="5" endLine="206" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615000388" fileName="XmlModelPersistence.java" startLine="206" startPosition="49" endLine="207" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615000395" fileName="XmlModelPersistence.java" startLine="208" startPosition="9" endLine="209" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615000400" fileName="XmlModelPersistence.java" startLine="209" startPosition="91" endLine="210" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615000403" fileName="XmlModelPersistence.java" startLine="210" startPosition="28" endLine="211" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615000407" fileName="XmlModelPersistence.java" startLine="212" startPosition="15" endLine="213" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7358309956615000318" fileName="XmlModelPersistence.java" startLine="190" startPosition="63" endLine="191" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7358309956615000338" fileName="XmlModelPersistence.java" startLine="192" startPosition="23" endLine="193" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7358309956615000464" fileName="XmlModelPersistence.java" startLine="194" startPosition="5" endLine="195" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7358309956615000361" fileName="XmlModelPersistence.java" startLine="196" startPosition="67" endLine="197" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7358309956615000363" fileName="XmlModelPersistence.java" startLine="198" startPosition="5" endLine="199" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7358309956615000380" fileName="XmlModelPersistence.java" startLine="200" startPosition="29" endLine="201" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7358309956615000382" fileName="XmlModelPersistence.java" startLine="202" startPosition="5" endLine="203" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7358309956615000388" fileName="XmlModelPersistence.java" startLine="203" startPosition="49" endLine="204" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7358309956615000395" fileName="XmlModelPersistence.java" startLine="205" startPosition="9" endLine="206" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7358309956615000400" fileName="XmlModelPersistence.java" startLine="206" startPosition="91" endLine="207" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7358309956615000403" fileName="XmlModelPersistence.java" startLine="207" startPosition="28" endLine="208" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7358309956615000407" fileName="XmlModelPersistence.java" startLine="209" startPosition="15" endLine="210" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7358309956614999760" fileName="XmlModelPersistence.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XmlModelPersistence#()V" />
     <nodeInfo nodeId="7358309956614999799" fileName="XmlModelPersistence.java" startLine="57" startPosition="111" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7358309956614999855" fileName="XmlModelPersistence.java" startLine="67" startPosition="27" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -83,18 +84,17 @@
     <nodeInfo nodeId="7358309956615000130" fileName="XmlModelPersistence.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="upgrade#(Lorg/jetbrains/mps/openapi/persistence/DataSource;)V" />
     <nodeInfo nodeId="7358309956615000175" fileName="XmlModelPersistence.java" startLine="155" startPosition="43" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7358309956615000227" fileName="XmlModelPersistence.java" startLine="169" startPosition="45" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7358309956615000324" fileName="XmlModelPersistence.java" startLine="194" startPosition="6" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7358309956615000339" fileName="XmlModelPersistence.java" startLine="198" startPosition="27" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7358309956615000370" fileName="XmlModelPersistence.java" startLine="202" startPosition="80" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7358309956615000324" fileName="XmlModelPersistence.java" startLine="191" startPosition="63" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7358309956615000339" fileName="XmlModelPersistence.java" startLine="195" startPosition="27" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7358309956615000370" fileName="XmlModelPersistence.java" startLine="199" startPosition="80" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7358309956614999903" fileName="XmlModelPersistence.java" startLine="76" startPosition="95" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7358309956615000120" fileName="XmlModelPersistence.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsUpgrade#(Lorg/jetbrains/mps/openapi/persistence/DataSource;)Z" />
     <nodeInfo nodeId="7358309956615000138" fileName="XmlModelPersistence.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBinary#()Z" />
     <nodeInfo nodeId="7358309956615000145" fileName="XmlModelPersistence.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileExtension#()Ljava/lang/String;" />
     <nodeInfo nodeId="7358309956615000152" fileName="XmlModelPersistence.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFormatTitle#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7358309956615000318" fileName="XmlModelPersistence.java" startLine="190" startPosition="63" endLine="194" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7358309956614999850" fileName="XmlModelPersistence.java" startLine="66" startPosition="68" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7358309956615000087" fileName="XmlModelPersistence.java" startLine="120" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="save#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/persistence/DataSource;)V" />
-    <nodeInfo nodeId="7358309956615000410" fileName="XmlModelPersistence.java" startLine="207" startPosition="78" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="7358309956615000410" fileName="XmlModelPersistence.java" startLine="204" startPosition="78" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="7358309956614999885" fileName="XmlModelPersistence.java" startLine="74" startPosition="10" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7358309956615000040" fileName="XmlModelPersistence.java" startLine="107" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canCreate#(Lorg/jetbrains/mps/openapi/persistence/DataSource;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="7358309956615000159" fileName="XmlModelPersistence.java" startLine="152" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmpty#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/persistence/StreamDataSource;)Ljetbrains/mps/extapi/model/SModelData;" />
@@ -102,7 +102,7 @@
     <nodeInfo nodeId="7358309956615000297" fileName="XmlModelPersistence.java" startLine="167" startPosition="26" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="7358309956614999929" fileName="XmlModelPersistence.java" startLine="86" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Lorg/jetbrains/mps/openapi/persistence/DataSource;Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="7358309956615000209" fileName="XmlModelPersistence.java" startLine="165" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/persistence/StreamDataSource;)Ljetbrains/mps/extapi/model/SModelData;" />
-    <nodeInfo nodeId="7358309956615000301" fileName="XmlModelPersistence.java" startLine="188" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeModel#(Ljetbrains/mps/extapi/model/SModelData;Lorg/jetbrains/mps/openapi/persistence/StreamDataSource;)V" />
+    <nodeInfo nodeId="7358309956615000301" fileName="XmlModelPersistence.java" startLine="188" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeModel#(Ljetbrains/mps/extapi/model/SModelData;Lorg/jetbrains/mps/openapi/persistence/StreamDataSource;)V" />
     <nodeInfo nodeId="7358309956614999786" fileName="XmlModelPersistence.java" startLine="55" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="load#(Lorg/jetbrains/mps/openapi/persistence/DataSource;Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <scopeInfo nodeId="7358309956614999762" fileName="XmlModelPersistence.java" startLine="52" startPosition="32" endLine="52" endPosition="32" />
     <scopeInfo nodeId="7358309956615000135" fileName="XmlModelPersistence.java" startLine="134" startPosition="65" endLine="134" endPosition="65" />
@@ -125,16 +125,16 @@
     </scopeInfo>
     <scopeInfo nodeId="7358309956615000290" fileName="XmlModelPersistence.java" startLine="181" startPosition="31" endLine="182" endPosition="70" />
     <scopeInfo nodeId="7358309956615000282" fileName="XmlModelPersistence.java" startLine="183" startPosition="15" endLine="184" endPosition="33" />
-    <scopeInfo nodeId="7358309956615000329" fileName="XmlModelPersistence.java" startLine="195" startPosition="23" endLine="196" endPosition="194" />
-    <scopeInfo nodeId="7358309956615000347" fileName="XmlModelPersistence.java" startLine="199" startPosition="67" endLine="200" endPosition="252" />
-    <scopeInfo nodeId="7358309956615000373" fileName="XmlModelPersistence.java" startLine="203" startPosition="29" endLine="204" endPosition="145" />
-    <scopeInfo nodeId="7358309956615000406" fileName="XmlModelPersistence.java" startLine="212" startPosition="15" endLine="213" endPosition="37" />
+    <scopeInfo nodeId="7358309956615000329" fileName="XmlModelPersistence.java" startLine="192" startPosition="23" endLine="193" endPosition="194" />
+    <scopeInfo nodeId="7358309956615000347" fileName="XmlModelPersistence.java" startLine="196" startPosition="67" endLine="197" endPosition="252" />
+    <scopeInfo nodeId="7358309956615000373" fileName="XmlModelPersistence.java" startLine="200" startPosition="29" endLine="201" endPosition="145" />
+    <scopeInfo nodeId="7358309956615000406" fileName="XmlModelPersistence.java" startLine="209" startPosition="15" endLine="210" endPosition="37" />
     <scopeInfo nodeId="7358309956614999760" fileName="XmlModelPersistence.java" startLine="52" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="7358309956614999908" fileName="XmlModelPersistence.java" startLine="77" startPosition="25" endLine="79" endPosition="20" />
     <scopeInfo nodeId="7358309956615000130" fileName="XmlModelPersistence.java" startLine="133" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="7358309956615000132" varName="dataSource" />
     </scopeInfo>
-    <scopeInfo nodeId="7358309956615000393" fileName="XmlModelPersistence.java" startLine="208" startPosition="9" endLine="211" endPosition="21">
+    <scopeInfo nodeId="7358309956615000393" fileName="XmlModelPersistence.java" startLine="205" startPosition="9" endLine="208" endPosition="21">
       <varInfo nodeId="7358309956615000394" varName="writer" />
     </scopeInfo>
     <scopeInfo nodeId="7358309956614999854" fileName="XmlModelPersistence.java" startLine="67" startPosition="27" endLine="71" endPosition="88" />
@@ -197,12 +197,16 @@
       <varInfo nodeId="7358309956615000211" varName="reference" />
       <varInfo nodeId="7358309956615000213" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="7358309956615000309" fileName="XmlModelPersistence.java" startLine="189" startPosition="108" endLine="214" endPosition="5">
+    <scopeInfo nodeId="7358309956615000309" fileName="XmlModelPersistence.java" startLine="189" startPosition="108" endLine="211" endPosition="5">
       <varInfo nodeId="7358309956615000381" varName="content" />
       <varInfo nodeId="7358309956615000310" varName="iterator" />
       <varInfo nodeId="7358309956615000362" varName="result" />
       <varInfo nodeId="7358309956615000317" varName="root" />
       <varInfo nodeId="7358309956615000387" varName="stream" />
+    </scopeInfo>
+    <scopeInfo nodeId="7358309956615000301" fileName="XmlModelPersistence.java" startLine="188" startPosition="0" endLine="213" endPosition="0">
+      <varInfo nodeId="7358309956615000303" varName="model" />
+      <varInfo nodeId="7358309956615000305" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="7358309956614999798" fileName="XmlModelPersistence.java" startLine="57" startPosition="111" endLine="83" endPosition="81">
       <varInfo nodeId="7358309956614999825" varName="contentOnly" />
@@ -211,15 +215,11 @@
       <varInfo nodeId="7358309956614999833" varName="ref" />
       <varInfo nodeId="7358309956614999815" varName="relPath" />
     </scopeInfo>
-    <scopeInfo nodeId="7358309956615000301" fileName="XmlModelPersistence.java" startLine="188" startPosition="0" endLine="216" endPosition="0">
-      <varInfo nodeId="7358309956615000303" varName="model" />
-      <varInfo nodeId="7358309956615000305" varName="source" />
-    </scopeInfo>
     <scopeInfo nodeId="7358309956614999786" fileName="XmlModelPersistence.java" startLine="55" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="7358309956614999789" varName="dataSource" />
       <varInfo nodeId="7358309956614999792" varName="options" />
     </scopeInfo>
-    <unitInfo nodeId="7358309956614999744" fileName="XmlModelPersistence.java" startLine="45" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.persistence.XmlModelPersistence" />
+    <unitInfo nodeId="7358309956614999744" fileName="XmlModelPersistence.java" startLine="45" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.persistence.XmlModelPersistence" />
   </root>
 </debugInfo>
 

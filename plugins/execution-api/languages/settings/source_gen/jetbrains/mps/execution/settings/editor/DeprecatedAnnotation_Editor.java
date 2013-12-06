@@ -78,7 +78,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_lchw91_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_lchw91_a0a0g(SPropertyOperations.getString(node, "since"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "since"));
   }
 
   private EditorCell createConstant_lchw91_a1a0(EditorContext editorContext, SNode node) {
@@ -123,7 +123,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_lchw91_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_lchw91_a0a0k(SPropertyOperations.getString(node, "comment"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "comment"));
   }
 
   private EditorCell createConstant_lchw91_a2a0(EditorContext editorContext, SNode node) {
@@ -257,11 +257,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_lchw91_a0a0g(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_lchw91_a0a0k(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

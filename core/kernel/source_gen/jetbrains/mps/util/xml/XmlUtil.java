@@ -57,10 +57,7 @@ public class XmlUtil {
       return defaultValue;
     }
     String attrValue = element.getAttributeValue(attrName);
-    return (attrValue == null ?
-      defaultValue :
-      Boolean.parseBoolean(attrValue)
-    );
+    return (attrValue == null ? defaultValue : Boolean.parseBoolean(attrValue));
   }
 
   public static String stringWithDefault(Element element, String attrName, String defaultValue) {
@@ -68,9 +65,6 @@ public class XmlUtil {
       return defaultValue;
     }
     String attrValue = element.getAttributeValue(attrName);
-    return (attrValue == null ?
-      defaultValue :
-      attrValue
-    );
+    return (attrValue == null ? defaultValue : attrValue);
   }
 }

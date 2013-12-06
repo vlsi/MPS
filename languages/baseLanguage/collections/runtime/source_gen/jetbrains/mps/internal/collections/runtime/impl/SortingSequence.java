@@ -47,10 +47,7 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
   @Override
   public ISequence<U> alsoSort(_FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super U> selector, boolean ascending) {
     SelectComparator<U> selectComparator = new SelectComparator<U>(selector);
-    return new SortingSequence<U>(input, new SortingSequence.CompoundComparator<U>(comparator, (ascending ?
-      selectComparator :
-      new SortingSequence.InversedComparator<U>(selectComparator)
-    )));
+    return new SortingSequence<U>(input, new SortingSequence.CompoundComparator<U>(comparator, (ascending ? selectComparator : new SortingSequence.InversedComparator<U>(selectComparator))));
   }
 
   @SuppressWarnings(value = "unchecked")
@@ -112,10 +109,7 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
     @Override
     public int compare(T a, T b) {
       int c = primary.compare(a, b);
-      return (c == 0 ?
-        secondary.compare(a, b) :
-        c
-      );
+      return (c == 0 ? secondary.compare(a, b) : c);
     }
   }
 }

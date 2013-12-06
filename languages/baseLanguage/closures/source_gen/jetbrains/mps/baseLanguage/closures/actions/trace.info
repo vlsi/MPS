@@ -195,7 +195,7 @@
     <nodeInfo nodeId="876385242039341263" fileName="QueriesGenerated.java" startLine="51" startPosition="21" endLine="52" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="876385242039341324" fileName="QueriesGenerated.java" startLine="53" startPosition="58" endLine="54" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="876385242039344510" fileName="QueriesGenerated.java" startLine="55" startPosition="108" endLine="56" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="876385242039344548" fileName="QueriesGenerated.java" startLine="57" startPosition="68" endLine="58" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="876385242039344548" fileName="QueriesGenerated.java" startLine="57" startPosition="62" endLine="58" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7376433222636454461" fileName="QueriesGenerated.java" startLine="58" startPosition="69" endLine="59" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="876385242039365536" fileName="QueriesGenerated.java" startLine="60" startPosition="94" endLine="61" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="876385242039365549" fileName="QueriesGenerated.java" startLine="61" startPosition="235" endLine="62" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -213,7 +213,7 @@
     <scopeInfo nodeId="876385242039344559" fileName="QueriesGenerated.java" startLine="59" startPosition="42" endLine="64" endPosition="15">
       <varInfo nodeId="876385242039344563" varName="adaptToPD" />
     </scopeInfo>
-    <scopeInfo nodeId="876385242039344521" fileName="QueriesGenerated.java" startLine="57" startPosition="68" endLine="64" endPosition="15">
+    <scopeInfo nodeId="876385242039344521" fileName="QueriesGenerated.java" startLine="57" startPosition="62" endLine="64" endPosition="15">
       <varInfo nodeId="876385242039344549" varName="adaptTo" />
     </scopeInfo>
     <scopeInfo nodeId="876385242039344485" fileName="QueriesGenerated.java" startLine="55" startPosition="108" endLine="65" endPosition="13">

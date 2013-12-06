@@ -14,15 +14,19 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyRootConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("number", "isGood", "name").children(new String[]{"child", "child2", "z"}, new boolean[]{false, false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyManyIfaces").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.sample.queryTest.structure.MyNamed").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MySubConcept").super_("jetbrains.mps.sample.queryTest.structure.MyRootConcept").parents("jetbrains.mps.sample.queryTest.structure.MyRootConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyNamed").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").properties("myName").create();
       case 2:
+        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyRootConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("number", "isGood", "name").references("refr").children(new String[]{"child", "child2", "z", "someNode"}, new boolean[]{false, false, false, false}).create();
+      case 3:
+        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MySubConcept").super_("jetbrains.mps.sample.queryTest.structure.MyRootConcept").parents("jetbrains.mps.sample.queryTest.structure.MyRootConcept").properties("kind").create();
+      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyUnrelatedConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.sample.queryTest.structure.MyRootConcept", "jetbrains.mps.sample.queryTest.structure.MySubConcept", "jetbrains.mps.sample.queryTest.structure.MyUnrelatedConcept"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.sample.queryTest.structure.MyManyIfaces", "jetbrains.mps.sample.queryTest.structure.MyNamed", "jetbrains.mps.sample.queryTest.structure.MyRootConcept", "jetbrains.mps.sample.queryTest.structure.MySubConcept", "jetbrains.mps.sample.queryTest.structure.MyUnrelatedConcept"};
 }

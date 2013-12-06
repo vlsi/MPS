@@ -11,15 +11,9 @@ public class SCardinality_Behavior {
 
   public static String call_asString_3564725181395014756(SNode thisNode) {
     if (SPropertyOperations.getBoolean(thisNode, "isMultiple")) {
-      return (SPropertyOperations.getBoolean(thisNode, "isRequired") ?
-        "1..n" :
-        "0..n"
-      );
+      return (SPropertyOperations.getBoolean(thisNode, "isRequired") ? "1..n" : "0..n");
     } else {
-      return (SPropertyOperations.getBoolean(thisNode, "isRequired") ?
-        "1" :
-        "0..1"
-      );
+      return (SPropertyOperations.getBoolean(thisNode, "isRequired") ? "1" : "0..1");
     }
   }
 }

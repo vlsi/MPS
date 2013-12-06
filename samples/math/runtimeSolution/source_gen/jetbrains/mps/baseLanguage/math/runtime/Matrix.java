@@ -448,10 +448,7 @@ public class Matrix<T> {
   };
   public static final _FunctionTypes._return_P2_E0<? extends Integer, ? super Integer, ? super Integer> deltaFunc = new _FunctionTypes._return_P2_E0<Integer, Integer, Integer>() {
     public Integer invoke(Integer a, Integer b) {
-      return (a.equals(b) ?
-        1 :
-        0
-      );
+      return (a.equals(b) ? 1 : 0);
     }
   };
   private Object[][] myCarrier = null;
@@ -564,10 +561,7 @@ public class Matrix<T> {
       if (m1 == null && m2 == null) {
         throw new IllegalArgumentException();
       }
-      Matrix r = (m1 == null ?
-        m2 :
-        m1
-      );
+      Matrix r = (m1 == null ? m2 : m1);
       myRows = r.myRows;
       myColumns = r.myColumns;
       myCarrier = new Object[myRows][myColumns];

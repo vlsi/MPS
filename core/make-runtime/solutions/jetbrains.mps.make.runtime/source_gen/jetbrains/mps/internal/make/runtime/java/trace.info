@@ -329,137 +329,137 @@
     <nodeInfo nodeId="4328738523548226207" fileName="JavaStreamHandler.java" startLine="28" startPosition="82" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3822547445468862291" fileName="JavaStreamHandler.java" startLine="29" startPosition="20" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2243001920226356930" fileName="JavaStreamHandler.java" startLine="30" startPosition="62" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3822547445468861516" fileName="JavaStreamHandler.java" startLine="35" startPosition="6" endLine="36" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3822547445468861512" fileName="JavaStreamHandler.java" startLine="36" startPosition="98" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="505174985642790713" fileName="JavaStreamHandler.java" startLine="37" startPosition="0" endLine="38" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8437684059768953336" fileName="JavaStreamHandler.java" startLine="38" startPosition="85" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226241" fileName="JavaStreamHandler.java" startLine="43" startPosition="72" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4328738523548226256" fileName="JavaStreamHandler.java" startLine="44" startPosition="40" endLine="45" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575290129" fileName="JavaStreamHandler.java" startLine="46" startPosition="49" endLine="47" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575290142" fileName="JavaStreamHandler.java" startLine="48" startPosition="12" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3822547445468861878" fileName="JavaStreamHandler.java" startLine="54" startPosition="73" endLine="55" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4328738523548226294" fileName="JavaStreamHandler.java" startLine="55" startPosition="40" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="505174985642790728" fileName="JavaStreamHandler.java" startLine="57" startPosition="49" endLine="58" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575289833" fileName="JavaStreamHandler.java" startLine="59" startPosition="12" endLine="60" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3822547445468861895" fileName="JavaStreamHandler.java" startLine="65" startPosition="72" endLine="66" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4145682539058277973" fileName="JavaStreamHandler.java" startLine="66" startPosition="40" endLine="67" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575293452" fileName="JavaStreamHandler.java" startLine="68" startPosition="49" endLine="69" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575293465" fileName="JavaStreamHandler.java" startLine="70" startPosition="12" endLine="71" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3822547445468861912" fileName="JavaStreamHandler.java" startLine="76" startPosition="54" endLine="77" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4328738523548226324" fileName="JavaStreamHandler.java" startLine="77" startPosition="40" endLine="78" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="505174985642790739" fileName="JavaStreamHandler.java" startLine="78" startPosition="27" endLine="79" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226329" fileName="JavaStreamHandler.java" startLine="79" startPosition="33" endLine="80" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="505174985642795429" fileName="JavaStreamHandler.java" startLine="83" startPosition="23" endLine="84" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8437684059768953389" fileName="JavaStreamHandler.java" startLine="87" startPosition="35" endLine="88" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548226409" fileName="JavaStreamHandler.java" startLine="92" startPosition="25" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3822547445468862158" fileName="JavaStreamHandler.java" startLine="96" startPosition="55" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3822547445468861700" fileName="JavaStreamHandler.java" startLine="101" startPosition="6" endLine="102" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822547445468861055" fileName="JavaStreamHandler.java" startLine="106" startPosition="42" endLine="107" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6673009040135692884" fileName="JavaStreamHandler.java" startLine="107" startPosition="84" endLine="108" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3822547445468861071" fileName="JavaStreamHandler.java" startLine="109" startPosition="63" endLine="110" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3822547445468861082" fileName="JavaStreamHandler.java" startLine="110" startPosition="57" endLine="111" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3822547445468862206" fileName="JavaStreamHandler.java" startLine="113" startPosition="5" endLine="114" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4572289200694361933" fileName="JavaStreamHandler.java" startLine="124" startPosition="45" endLine="125" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2813163484575290140" fileName="JavaStreamHandler.java" startLine="48" startPosition="10" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2813163484575289788" fileName="JavaStreamHandler.java" startLine="59" startPosition="10" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2813163484575293463" fileName="JavaStreamHandler.java" startLine="70" startPosition="10" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="505174985642795425" fileName="JavaStreamHandler.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
-    <nodeInfo nodeId="8437684059768953381" fileName="JavaStreamHandler.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delta#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4572289200694318800" fileName="JavaStreamHandler.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcApproximateSize_internal#()I" />
-    <nodeInfo nodeId="3822547445468861474" fileName="JavaStreamHandler.java" startLine="31" startPosition="88" endLine="35" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226334" fileName="JavaStreamHandler.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="3822547445468861688" fileName="JavaStreamHandler.java" startLine="97" startPosition="0" endLine="101" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3822547445468861068" fileName="JavaStreamHandler.java" startLine="108" startPosition="41" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3822547445468861924" fileName="JavaStreamHandler.java" startLine="117" startPosition="48" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2813163484575290127" fileName="JavaStreamHandler.java" startLine="45" startPosition="27" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2813163484575288513" fileName="JavaStreamHandler.java" startLine="56" startPosition="27" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2813163484575293450" fileName="JavaStreamHandler.java" startLine="67" startPosition="27" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3822547445468861919" fileName="JavaStreamHandler.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDelta#(Z)Ljetbrains/mps/internal/make/runtime/util/FilesDelta;" />
-    <nodeInfo nodeId="4328738523548226300" fileName="JavaStreamHandler.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="touch#(Ljava/lang/String;Z)Z" />
-    <nodeInfo nodeId="3822547445468861682" fileName="JavaStreamHandler.java" startLine="96" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#(Ljava/lang/String;Z)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="3822547445468861050" fileName="JavaStreamHandler.java" startLine="105" startPosition="51" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4328738523548226224" fileName="JavaStreamHandler.java" startLine="42" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="4328738523548226262" fileName="JavaStreamHandler.java" startLine="53" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Lorg/jdom/Element;Z)V" />
-    <nodeInfo nodeId="4145682539058277941" fileName="JavaStreamHandler.java" startLine="64" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;[BZ)V" />
-    <nodeInfo nodeId="3822547445468861015" fileName="JavaStreamHandler.java" startLine="105" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverriddenOutputDir#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="4328738523548226198" fileName="JavaStreamHandler.java" startLine="28" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStreamHandler#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/vfs/IFile;)V" />
-    <scopeInfo nodeId="2813163484575290128" fileName="JavaStreamHandler.java" startLine="46" startPosition="49" endLine="47" endPosition="38" />
-    <scopeInfo nodeId="2813163484575290141" fileName="JavaStreamHandler.java" startLine="48" startPosition="12" endLine="49" endPosition="35" />
-    <scopeInfo nodeId="2813163484575288515" fileName="JavaStreamHandler.java" startLine="57" startPosition="49" endLine="58" endPosition="38" />
-    <scopeInfo nodeId="2813163484575289789" fileName="JavaStreamHandler.java" startLine="59" startPosition="12" endLine="60" endPosition="35" />
-    <scopeInfo nodeId="2813163484575293451" fileName="JavaStreamHandler.java" startLine="68" startPosition="49" endLine="69" endPosition="38" />
-    <scopeInfo nodeId="2813163484575293464" fileName="JavaStreamHandler.java" startLine="70" startPosition="12" endLine="71" endPosition="35" />
-    <scopeInfo nodeId="505174985642795428" fileName="JavaStreamHandler.java" startLine="83" startPosition="23" endLine="84" endPosition="31" />
-    <scopeInfo nodeId="8437684059768953384" fileName="JavaStreamHandler.java" startLine="87" startPosition="35" endLine="88" endPosition="82" />
-    <scopeInfo nodeId="4328738523548226337" fileName="JavaStreamHandler.java" startLine="92" startPosition="25" endLine="93" endPosition="41" />
-    <scopeInfo nodeId="4572289200694318803" fileName="JavaStreamHandler.java" startLine="124" startPosition="45" endLine="125" endPosition="45" />
-    <scopeInfo nodeId="3822547445468861070" fileName="JavaStreamHandler.java" startLine="109" startPosition="63" endLine="111" endPosition="32">
+    <nodeInfo nodeId="3822547445468861474" fileName="JavaStreamHandler.java" startLine="31" startPosition="88" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3822547445468861516" fileName="JavaStreamHandler.java" startLine="32" startPosition="99" endLine="33" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3822547445468861512" fileName="JavaStreamHandler.java" startLine="33" startPosition="98" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="505174985642790713" fileName="JavaStreamHandler.java" startLine="34" startPosition="0" endLine="35" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8437684059768953336" fileName="JavaStreamHandler.java" startLine="35" startPosition="85" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4328738523548226241" fileName="JavaStreamHandler.java" startLine="40" startPosition="72" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4328738523548226256" fileName="JavaStreamHandler.java" startLine="41" startPosition="40" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2813163484575290129" fileName="JavaStreamHandler.java" startLine="43" startPosition="49" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2813163484575290142" fileName="JavaStreamHandler.java" startLine="45" startPosition="12" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3822547445468861878" fileName="JavaStreamHandler.java" startLine="51" startPosition="73" endLine="52" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4328738523548226294" fileName="JavaStreamHandler.java" startLine="52" startPosition="40" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="505174985642790728" fileName="JavaStreamHandler.java" startLine="54" startPosition="49" endLine="55" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2813163484575289833" fileName="JavaStreamHandler.java" startLine="56" startPosition="12" endLine="57" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3822547445468861895" fileName="JavaStreamHandler.java" startLine="62" startPosition="72" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4145682539058277973" fileName="JavaStreamHandler.java" startLine="63" startPosition="40" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2813163484575293452" fileName="JavaStreamHandler.java" startLine="65" startPosition="49" endLine="66" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2813163484575293465" fileName="JavaStreamHandler.java" startLine="67" startPosition="12" endLine="68" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3822547445468861912" fileName="JavaStreamHandler.java" startLine="73" startPosition="54" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4328738523548226324" fileName="JavaStreamHandler.java" startLine="74" startPosition="40" endLine="75" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="505174985642790739" fileName="JavaStreamHandler.java" startLine="75" startPosition="27" endLine="76" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4328738523548226329" fileName="JavaStreamHandler.java" startLine="76" startPosition="33" endLine="77" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="505174985642795429" fileName="JavaStreamHandler.java" startLine="80" startPosition="23" endLine="81" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8437684059768953389" fileName="JavaStreamHandler.java" startLine="84" startPosition="35" endLine="85" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4328738523548226409" fileName="JavaStreamHandler.java" startLine="89" startPosition="25" endLine="90" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3822547445468862158" fileName="JavaStreamHandler.java" startLine="93" startPosition="55" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3822547445468861688" fileName="JavaStreamHandler.java" startLine="94" startPosition="0" endLine="95" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3822547445468861700" fileName="JavaStreamHandler.java" startLine="95" startPosition="75" endLine="96" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3822547445468861055" fileName="JavaStreamHandler.java" startLine="100" startPosition="42" endLine="101" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6673009040135692884" fileName="JavaStreamHandler.java" startLine="101" startPosition="84" endLine="102" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3822547445468861071" fileName="JavaStreamHandler.java" startLine="103" startPosition="63" endLine="104" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3822547445468861082" fileName="JavaStreamHandler.java" startLine="104" startPosition="57" endLine="105" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3822547445468862206" fileName="JavaStreamHandler.java" startLine="107" startPosition="5" endLine="108" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3822547445468861924" fileName="JavaStreamHandler.java" startLine="111" startPosition="48" endLine="112" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4572289200694361933" fileName="JavaStreamHandler.java" startLine="115" startPosition="45" endLine="116" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2813163484575290140" fileName="JavaStreamHandler.java" startLine="45" startPosition="10" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2813163484575289788" fileName="JavaStreamHandler.java" startLine="56" startPosition="10" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2813163484575293463" fileName="JavaStreamHandler.java" startLine="67" startPosition="10" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="505174985642795425" fileName="JavaStreamHandler.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
+    <nodeInfo nodeId="8437684059768953381" fileName="JavaStreamHandler.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delta#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3822547445468861919" fileName="JavaStreamHandler.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDelta#(Z)Ljetbrains/mps/internal/make/runtime/util/FilesDelta;" />
+    <nodeInfo nodeId="4572289200694318800" fileName="JavaStreamHandler.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcApproximateSize_internal#()I" />
+    <nodeInfo nodeId="4328738523548226334" fileName="JavaStreamHandler.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3822547445468861068" fileName="JavaStreamHandler.java" startLine="102" startPosition="41" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2813163484575290127" fileName="JavaStreamHandler.java" startLine="42" startPosition="27" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2813163484575288513" fileName="JavaStreamHandler.java" startLine="53" startPosition="27" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2813163484575293450" fileName="JavaStreamHandler.java" startLine="64" startPosition="27" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3822547445468861682" fileName="JavaStreamHandler.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#(Ljava/lang/String;Z)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="4328738523548226300" fileName="JavaStreamHandler.java" startLine="72" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="touch#(Ljava/lang/String;Z)Z" />
+    <nodeInfo nodeId="3822547445468861050" fileName="JavaStreamHandler.java" startLine="99" startPosition="51" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4328738523548226198" fileName="JavaStreamHandler.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStreamHandler#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/vfs/IFile;)V" />
+    <nodeInfo nodeId="4328738523548226224" fileName="JavaStreamHandler.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="4328738523548226262" fileName="JavaStreamHandler.java" startLine="50" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Lorg/jdom/Element;Z)V" />
+    <nodeInfo nodeId="4145682539058277941" fileName="JavaStreamHandler.java" startLine="61" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;[BZ)V" />
+    <nodeInfo nodeId="3822547445468861015" fileName="JavaStreamHandler.java" startLine="99" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverriddenOutputDir#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/vfs/IFile;" />
+    <scopeInfo nodeId="2813163484575290128" fileName="JavaStreamHandler.java" startLine="43" startPosition="49" endLine="44" endPosition="38" />
+    <scopeInfo nodeId="2813163484575290141" fileName="JavaStreamHandler.java" startLine="45" startPosition="12" endLine="46" endPosition="35" />
+    <scopeInfo nodeId="2813163484575288515" fileName="JavaStreamHandler.java" startLine="54" startPosition="49" endLine="55" endPosition="38" />
+    <scopeInfo nodeId="2813163484575289789" fileName="JavaStreamHandler.java" startLine="56" startPosition="12" endLine="57" endPosition="35" />
+    <scopeInfo nodeId="2813163484575293451" fileName="JavaStreamHandler.java" startLine="65" startPosition="49" endLine="66" endPosition="38" />
+    <scopeInfo nodeId="2813163484575293464" fileName="JavaStreamHandler.java" startLine="67" startPosition="12" endLine="68" endPosition="35" />
+    <scopeInfo nodeId="505174985642795428" fileName="JavaStreamHandler.java" startLine="80" startPosition="23" endLine="81" endPosition="31" />
+    <scopeInfo nodeId="8437684059768953384" fileName="JavaStreamHandler.java" startLine="84" startPosition="35" endLine="85" endPosition="82" />
+    <scopeInfo nodeId="4328738523548226337" fileName="JavaStreamHandler.java" startLine="89" startPosition="25" endLine="90" endPosition="41" />
+    <scopeInfo nodeId="3822547445468861923" fileName="JavaStreamHandler.java" startLine="111" startPosition="48" endLine="112" endPosition="63" />
+    <scopeInfo nodeId="4572289200694318803" fileName="JavaStreamHandler.java" startLine="115" startPosition="45" endLine="116" endPosition="45" />
+    <scopeInfo nodeId="3822547445468861070" fileName="JavaStreamHandler.java" startLine="103" startPosition="63" endLine="105" endPosition="32">
       <varInfo nodeId="3822547445468861072" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="505174985642795425" fileName="JavaStreamHandler.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="8437684059768953381" fileName="JavaStreamHandler.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="4572289200694318800" fileName="JavaStreamHandler.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="4328738523548226307" fileName="JavaStreamHandler.java" startLine="76" startPosition="54" endLine="80" endPosition="25">
-      <varInfo nodeId="3822547445468861913" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226334" fileName="JavaStreamHandler.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="3822547445468861923" fileName="JavaStreamHandler.java" startLine="117" startPosition="48" endLine="121" endPosition="7" />
-    <scopeInfo nodeId="3822547445468861687" fileName="JavaStreamHandler.java" startLine="96" startPosition="55" endLine="102" endPosition="41">
+    <scopeInfo nodeId="505174985642795425" fileName="JavaStreamHandler.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="8437684059768953381" fileName="JavaStreamHandler.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="3822547445468861687" fileName="JavaStreamHandler.java" startLine="93" startPosition="55" endLine="96" endPosition="41">
       <varInfo nodeId="3822547445468861678" varName="outputDir" />
     </scopeInfo>
-    <scopeInfo nodeId="3822547445468861054" fileName="JavaStreamHandler.java" startLine="106" startPosition="42" endLine="112" endPosition="7">
-      <varInfo nodeId="6673009040135692885" varName="source" />
-      <varInfo nodeId="3822547445468861056" varName="useModelFolder" />
-    </scopeInfo>
-    <scopeInfo nodeId="3822547445468861919" fileName="JavaStreamHandler.java" startLine="117" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="3822547445468861919" fileName="JavaStreamHandler.java" startLine="111" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="3822547445468861918" varName="isCache" />
     </scopeInfo>
-    <scopeInfo nodeId="4328738523548226233" fileName="JavaStreamHandler.java" startLine="43" startPosition="72" endLine="50" endPosition="5">
-      <varInfo nodeId="4328738523548226242" varName="file" />
+    <scopeInfo nodeId="4572289200694318800" fileName="JavaStreamHandler.java" startLine="115" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="4328738523548226307" fileName="JavaStreamHandler.java" startLine="73" startPosition="54" endLine="77" endPosition="25">
+      <varInfo nodeId="3822547445468861913" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4328738523548226271" fileName="JavaStreamHandler.java" startLine="54" startPosition="73" endLine="61" endPosition="5">
-      <varInfo nodeId="3822547445468861879" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4145682539058277950" fileName="JavaStreamHandler.java" startLine="65" startPosition="72" endLine="72" endPosition="5">
-      <varInfo nodeId="3822547445468861896" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226300" fileName="JavaStreamHandler.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="4328738523548226305" varName="isCache" />
-      <varInfo nodeId="4328738523548226303" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="3822547445468861682" fileName="JavaStreamHandler.java" startLine="96" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="4328738523548226334" fileName="JavaStreamHandler.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="3822547445468861682" fileName="JavaStreamHandler.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="3822547445468861680" varName="isCache" />
       <varInfo nodeId="3822547445468861681" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3822547445468861018" fileName="JavaStreamHandler.java" startLine="105" startPosition="51" endLine="114" endPosition="16" />
-    <scopeInfo nodeId="4328738523548226224" fileName="JavaStreamHandler.java" startLine="42" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="4328738523548226229" varName="content" />
-      <varInfo nodeId="4328738523548226231" varName="isCache" />
-      <varInfo nodeId="4328738523548226227" varName="name" />
+    <scopeInfo nodeId="3822547445468861054" fileName="JavaStreamHandler.java" startLine="100" startPosition="42" endLine="106" endPosition="7">
+      <varInfo nodeId="6673009040135692885" varName="source" />
+      <varInfo nodeId="3822547445468861056" varName="useModelFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="4328738523548226262" fileName="JavaStreamHandler.java" startLine="53" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="4328738523548226267" varName="content" />
-      <varInfo nodeId="4328738523548226269" varName="isCache" />
-      <varInfo nodeId="4328738523548226265" varName="name" />
+    <scopeInfo nodeId="4328738523548226233" fileName="JavaStreamHandler.java" startLine="40" startPosition="72" endLine="47" endPosition="5">
+      <varInfo nodeId="4328738523548226242" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4145682539058277941" fileName="JavaStreamHandler.java" startLine="64" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="4145682539058277946" varName="content" />
-      <varInfo nodeId="4145682539058277948" varName="isCache" />
-      <varInfo nodeId="4145682539058277944" varName="name" />
+    <scopeInfo nodeId="4328738523548226271" fileName="JavaStreamHandler.java" startLine="51" startPosition="73" endLine="58" endPosition="5">
+      <varInfo nodeId="3822547445468861879" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4328738523548226206" fileName="JavaStreamHandler.java" startLine="28" startPosition="82" endLine="39" endPosition="67">
+    <scopeInfo nodeId="4145682539058277950" fileName="JavaStreamHandler.java" startLine="62" startPosition="72" endLine="69" endPosition="5">
+      <varInfo nodeId="3822547445468861896" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="4328738523548226300" fileName="JavaStreamHandler.java" startLine="72" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="4328738523548226305" varName="isCache" />
+      <varInfo nodeId="4328738523548226303" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="4328738523548226206" fileName="JavaStreamHandler.java" startLine="28" startPosition="82" endLine="36" endPosition="67">
       <varInfo nodeId="2243001920226356931" varName="defaultOutputDir" />
       <varInfo nodeId="3822547445468862292" varName="overriddenOutputDir" />
     </scopeInfo>
-    <scopeInfo nodeId="3822547445468861015" fileName="JavaStreamHandler.java" startLine="105" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="3822547445468861409" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226198" fileName="JavaStreamHandler.java" startLine="28" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="3822547445468861018" fileName="JavaStreamHandler.java" startLine="99" startPosition="51" endLine="108" endPosition="16" />
+    <scopeInfo nodeId="4328738523548226198" fileName="JavaStreamHandler.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="8437684059768953310" varName="cachesOutputDir" />
       <varInfo nodeId="4328738523548226200" varName="model" />
       <varInfo nodeId="4328738523548226202" varName="outputDir" />
     </scopeInfo>
-    <unitInfo nodeId="4328738523548226177" fileName="JavaStreamHandler.java" startLine="19" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" />
+    <scopeInfo nodeId="4328738523548226224" fileName="JavaStreamHandler.java" startLine="39" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="4328738523548226229" varName="content" />
+      <varInfo nodeId="4328738523548226231" varName="isCache" />
+      <varInfo nodeId="4328738523548226227" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="4328738523548226262" fileName="JavaStreamHandler.java" startLine="50" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="4328738523548226267" varName="content" />
+      <varInfo nodeId="4328738523548226269" varName="isCache" />
+      <varInfo nodeId="4328738523548226265" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="4145682539058277941" fileName="JavaStreamHandler.java" startLine="61" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="4145682539058277946" varName="content" />
+      <varInfo nodeId="4145682539058277948" varName="isCache" />
+      <varInfo nodeId="4145682539058277944" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="3822547445468861015" fileName="JavaStreamHandler.java" startLine="99" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="3822547445468861409" varName="md" />
+    </scopeInfo>
+    <unitInfo nodeId="4328738523548226177" fileName="JavaStreamHandler.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" />
   </root>
 </debugInfo>
 

@@ -78,10 +78,7 @@ public class ChangeOrientationCollection_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") ?
-        "Make Horizontal" :
-        "Make Vertical"
-      );
+      return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") ? "Make Horizontal" : "Make Vertical");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

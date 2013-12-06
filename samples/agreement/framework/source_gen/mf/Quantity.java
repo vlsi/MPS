@@ -25,10 +25,7 @@ public class Quantity {
   }
 
   public Quantity abs() {
-    return ((isPositive()) ?
-      this :
-      newObject(Math.abs(getAmount()), myUnit)
-    );
+    return ((isPositive()) ? this : newObject(Math.abs(getAmount()), myUnit));
   }
 
   public Quantity add(Quantity arg) {
@@ -90,17 +87,11 @@ public class Quantity {
   }
 
   public Quantity max(Quantity arg) {
-    return ((isGreaterThan(arg)) ?
-      this :
-      arg
-    );
+    return ((isGreaterThan(arg)) ? this : arg);
   }
 
   public Quantity min(Quantity arg) {
-    return ((isLessThan(arg)) ?
-      this :
-      arg
-    );
+    return ((isLessThan(arg)) ? this : arg);
   }
 
   public Quantity multiply(double arg) {

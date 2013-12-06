@@ -218,6 +218,9 @@ public class DirParser {
 
   public static boolean checkPackageMatchesSourceDirectory(String pkg, IFile sourceDir) {
     String pathPostfix = NameUtil.pathFromNamespace(pkg);
-    return sourceDir.getPath().endsWith(pathPostfix);
+    // pathFromNamespace returns system-dependent path 
+    // while IdeaFile.getPath() returns system-independent 
+    String sourceDirSysDep = NameUtil.toSystemDependentPath(sourceDir.getPath());
+    return sourceDirSysDep.endsWith(pathPostfix);
   }
 }

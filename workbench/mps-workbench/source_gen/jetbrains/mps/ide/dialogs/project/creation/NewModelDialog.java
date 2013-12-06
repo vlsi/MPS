@@ -80,10 +80,7 @@ public class NewModelDialog extends DialogWrapper {
     setTitle("New Model");
     myProject = project;
     myModule = module;
-    myNamespace = (namespace == null ?
-      "" :
-      namespace
-    );
+    myNamespace = (namespace == null ? "" : namespace);
     assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
     initContentPane();
     if (stereotype != null) {
@@ -161,10 +158,7 @@ public class NewModelDialog extends DialogWrapper {
     });
     myModelRoots.setModel(model);
 
-    myModelName.setText((myNamespace.length() == 0 ?
-      myNamespace :
-      myNamespace + "."
-    ));
+    myModelName.setText((myNamespace.length() == 0 ? myNamespace : myNamespace + "."));
 
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Model name:"), constraints);
@@ -201,10 +195,7 @@ public class NewModelDialog extends DialogWrapper {
       @Override
       public void itemStateChanged(ItemEvent p0) {
         check();
-        atSign.setText((myModelStereotype.getSelectedItem().equals(SModelStereotype.NONE) ?
-          "" :
-          "@"
-        ));
+        atSign.setText((myModelStereotype.getSelectedItem().equals(SModelStereotype.NONE) ? "" : "@"));
       }
     });
 
@@ -341,10 +332,7 @@ public class NewModelDialog extends DialogWrapper {
 
   private String getFqName() {
     String stereo = myModelStereotype.getSelectedItem().toString().trim();
-    return myModelName.getText() + ((stereo != null && stereo.length() > 0 ?
-      "@" + stereo :
-      ""
-    ));
+    return myModelName.getText() + ((stereo != null && stereo.length() > 0 ? "@" + stereo : ""));
 
   }
 

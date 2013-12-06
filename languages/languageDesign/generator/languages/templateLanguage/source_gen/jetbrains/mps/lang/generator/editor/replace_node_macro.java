@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
@@ -35,7 +36,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
         public boolean accept(SNode it) {
           return !(SPropertyOperations.getBoolean(it, "abstract"));
         }
-      }).toListSequence();
+      }).subtract(Sequence.fromIterable(Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.SwitchMacro")))).toListSequence();
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -66,7 +67,15 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     }
 
     public String getDescriptionText_internal(SNode parameterObject) {
-      return SPropertyOperations.getString(parameterObject, "conceptAlias");
+      if (isNotEmptyString(SPropertyOperations.getString(parameterObject, "conceptShortDescription"))) {
+        return SPropertyOperations.getString(parameterObject, "conceptShortDescription");
+      } else {
+        return SPropertyOperations.getString(parameterObject, "conceptAlias");
+      }
+    }
+
+    private static boolean isNotEmptyString(String str) {
+      return str != null && str.length() > 0;
     }
   }
 }

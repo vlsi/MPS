@@ -33,7 +33,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
   }
 
   protected Collection<SNode> applyNode0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final List<SNode> tlist1 = new ArrayList();
+    final List<SNode> tlist1 = new ArrayList<SNode>();
     try {
       environment.getTracer().pushMacro(mapsrclMacroRef_ewlaka_a0a0a1a2);
 
@@ -48,7 +48,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
           if (inputChanged1) {
             environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
-          final List<SNode> tlist2 = new ArrayList();
+          final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a2a3a3a1a2);
             final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202256587517(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context1.getInput(), null, loopMacroRef_ewlaka_a0a0a2a3a3a1a2, context1, environment.getGenerator()));
@@ -62,7 +62,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                   environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode2));
                 }
                 TemplateContext context2 = context1.subContext("LEVEL 2", itnode2);
-                final List<SNode> tlist3 = new ArrayList();
+                final List<SNode> tlist3 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2);
                   final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202256594380(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2.getInput(), null, loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2, context2, environment.getGenerator()));
@@ -76,7 +76,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                         environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode3));
                       }
                       TemplateContext context3 = context2.subContext(null, itnode3);
-                      final List<SNode> tlist4 = new ArrayList();
+                      final List<SNode> tlist4 = new ArrayList<SNode>();
                       try {
                         environment.getTracer().pushMacro(mapsrcMacroRef_ewlaka_a0a0a3a2a2a3a2a2a2a3a3a1a2);
                         final SNode tnode5 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");

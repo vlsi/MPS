@@ -166,18 +166,12 @@ public class XmlTestReporter implements ITestReporter {
 
   private String shortName(String testFQname) {
     Matcher matcher = REGEXP_rw4j9x_a0a0a74.matcher(testFQname);
-    return (matcher.matches() ?
-      matcher.group(1) :
-      testFQname
-    );
+    return (matcher.matches() ? matcher.group(1) : testFQname);
   }
 
   private String prefix(String testFQname) {
     Matcher matcher = REGEXP_rw4j9x_a0a0a84.matcher(testFQname);
-    return (matcher.matches() ?
-      matcher.group(1) :
-      testFQname
-    );
+    return (matcher.matches() ? matcher.group(1) : testFQname);
   }
 
   public String seconds(long millis) {

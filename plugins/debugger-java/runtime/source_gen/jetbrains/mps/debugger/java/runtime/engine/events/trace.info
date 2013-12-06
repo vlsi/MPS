@@ -652,6 +652,7 @@
     <nodeInfo nodeId="4838790954312082582" fileName="ContextManager.java" startLine="121" startPosition="5" endLine="122" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4838790954312094427" fileName="ContextManager.java" startLine="125" startPosition="64" endLine="126" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7672976942235813584" fileName="ContextManager.java" startLine="129" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="71" endLine="132" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7672976942235813586" fileName="ContextManager.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextManager#()V" />
     <nodeInfo nodeId="4838790954312080038" fileName="ContextManager.java" startLine="61" startPosition="10" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2847577559724865386" fileName="ContextManager.java" startLine="33" startPosition="19" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -668,7 +669,7 @@
     <nodeInfo nodeId="4520641813121621256" fileName="ContextManager.java" startLine="115" startPosition="7" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4838790954312082423" fileName="ContextManager.java" startLine="118" startPosition="5" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4838790954312094420" fileName="ContextManager.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPausedOnEvent#(Ljetbrains/mps/debugger/java/runtime/engine/events/Context;)Z" />
-    <nodeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="71" endLine="135" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_toclu7_a0a0a0a0a0a0a9#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="7672976942235813714" fileName="ContextManager.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="votePause#(Ljetbrains/mps/debugger/java/runtime/engine/events/EventContext;)Z" />
     <nodeInfo nodeId="4838790954312079977" fileName="ContextManager.java" startLine="46" startPosition="87" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4838790954312080018" fileName="ContextManager.java" startLine="55" startPosition="96" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -676,7 +677,6 @@
     <nodeInfo nodeId="1900503386039683417" fileName="ContextManager.java" startLine="102" startPosition="91" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1900503386039691485" fileName="ContextManager.java" startLine="110" startPosition="5" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7672976942235878525" fileName="ContextManager.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voteResume#(Ljetbrains/mps/debugger/java/runtime/engine/events/EventContext;)V" />
-    <nodeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_toclu7_a0a0a0a0a0a0a9#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="2891782949125171917" fileName="ContextManager.java" startLine="76" startPosition="105" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4838790954312082136" fileName="ContextManager.java" startLine="90" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="firstContext#()Ljetbrains/mps/debugger/java/runtime/engine/events/Context;" />
     <nodeInfo nodeId="2891782949125171910" fileName="ContextManager.java" startLine="68" startPosition="34" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -704,6 +704,7 @@
     <scopeInfo nodeId="4520641813121621257" fileName="ContextManager.java" startLine="116" startPosition="26" endLine="117" endPosition="21" />
     <scopeInfo nodeId="4838790954312082425" fileName="ContextManager.java" startLine="119" startPosition="32" endLine="120" endPosition="27" />
     <scopeInfo nodeId="4838790954312094423" fileName="ContextManager.java" startLine="125" startPosition="64" endLine="126" endPosition="72" />
+    <scopeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="71" endLine="132" endPosition="46" />
     <scopeInfo nodeId="7672976942235813586" fileName="ContextManager.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="2891782949125171938" fileName="ContextManager.java" startLine="69" startPosition="11" endLine="71" endPosition="14" />
     <scopeInfo nodeId="2891782949125171935" fileName="ContextManager.java" startLine="77" startPosition="92" endLine="79" endPosition="61" />
@@ -727,18 +728,17 @@
     <scopeInfo nodeId="4838790954312094420" fileName="ContextManager.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="4838790954312094425" varName="context" />
     </scopeInfo>
+    <scopeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="1900503386039683431" varName="a" />
+      <varInfo nodeId="1900503386039683431" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="7672976942235878528" fileName="ContextManager.java" startLine="32" startPosition="66" endLine="36" endPosition="5" />
     <scopeInfo nodeId="2891782949125171928" fileName="ContextManager.java" startLine="80" startPosition="16" endLine="84" endPosition="16" />
-    <scopeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="71" endLine="135" endPosition="6" />
     <scopeInfo nodeId="7672976942235813714" fileName="ContextManager.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="7672976942235813718" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="7672976942235878525" fileName="ContextManager.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="7672976942235878529" varName="context" />
-    </scopeInfo>
-    <scopeInfo nodeId="1900503386039683431" fileName="ContextManager.java" startLine="131" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="1900503386039683431" varName="a" />
-      <varInfo nodeId="1900503386039683431" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="4838790954311945022" fileName="ContextManager.java" startLine="44" startPosition="42" endLine="51" endPosition="9" />
     <scopeInfo nodeId="4838790954312082139" fileName="ContextManager.java" startLine="91" startPosition="46" endLine="98" endPosition="16" />
@@ -770,7 +770,7 @@
     <unitInfo nodeId="4838790954312080024" fileName="ContextManager.java" startLine="56" startPosition="51" endLine="60" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.events.ContextManager$2" />
     <unitInfo nodeId="1900503386039683422" fileName="ContextManager.java" startLine="103" startPosition="84" endLine="107" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.events.ContextManager$3" />
     <unitInfo nodeId="1900503386039691750" fileName="ContextManager.java" startLine="111" startPosition="71" endLine="115" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.events.ContextManager$4" />
-    <unitInfo nodeId="7672976942235813584" fileName="ContextManager.java" startLine="19" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.events.ContextManager" />
+    <unitInfo nodeId="7672976942235813584" fileName="ContextManager.java" startLine="19" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.events.ContextManager" />
   </root>
 </debugInfo>
 

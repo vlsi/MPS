@@ -37,10 +37,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       // as part of DotExpression 
       SNode instanceType = SNodeOperations.cast(DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      Map<SNode, SNode> typeByTypeVar = ((SLinkOperations.getTarget(instanceType, "classifier", false) != null) ?
-        MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true)) :
-        Collections.<SNode,SNode>emptyMap()
-      );
+      Map<SNode, SNode> typeByTypeVar = ((SLinkOperations.getTarget(instanceType, "classifier", false) != null) ? MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true)) : Collections.<SNode,SNode>emptyMap());
       return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
     } else {
       // as local 
@@ -63,14 +60,11 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     });
     if (Sequence.fromIterable(nonAbstractMethods).isNotEmpty()) {
       // todo: is it right? 
-      return ((int) Sequence.fromIterable(nonAbstractMethods).count() == 1 ?
-        nonAbstractMethods :
-        Sequence.fromIterable(nonAbstractMethods).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.getParent(it) != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
-          }
-        })
-      );
+      return (Sequence.fromIterable(nonAbstractMethods).count() == 1 ? nonAbstractMethods : Sequence.fromIterable(nonAbstractMethods).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getParent(it) != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+        }
+      }));
     } else {
       return super.getMethodsFromGroup(groupWithEqualSignature);
     }

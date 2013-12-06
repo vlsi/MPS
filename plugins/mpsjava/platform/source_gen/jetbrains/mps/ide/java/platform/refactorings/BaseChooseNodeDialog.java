@@ -120,7 +120,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
           }
         })))) {
           ModelTreeNode modelRootTreeNode = ModelTreeBuilder.createSNodeTreeNode(nextRoot);
-          modelRootTreeNode.setLeaf(true);
+          modelRootTreeNode.setLeafPosition(true);
           ModelTreeBuilder.insertChildSNodeTreeNode(node, modelRootTreeNode, SPropertyOperations.getString(nextRoot, "virtualPackage"));
         }
 

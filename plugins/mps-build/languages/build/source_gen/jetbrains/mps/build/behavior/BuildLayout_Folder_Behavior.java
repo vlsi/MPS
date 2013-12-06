@@ -111,16 +111,10 @@ public class BuildLayout_Folder_Behavior {
   }
 
   private static boolean eq_n0rd9q_a0a1a0a3a1a5(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_n0rd9q_a0a1a1a0a0d0b0f(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

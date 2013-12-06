@@ -111,18 +111,12 @@ public class PathManager {
           root = new File(parent).getAbsoluteFile();
           //  one step back to get folder 
         } while (root != null && !(PathManager.isMpsDir(root)));
-        ourHomePath = (root != null ?
-          root.getAbsolutePath() :
-          null
-        );
+        ourHomePath = (root != null ? root.getAbsolutePath() : null);
       }
     }
     try {
       if (!(SystemInfo.isFileSystemCaseSensitive)) {
-        ourHomePath = (ourHomePath == null ?
-          null :
-          new File(ourHomePath).getCanonicalPath()
-        );
+        ourHomePath = (ourHomePath == null ? null : new File(ourHomePath).getCanonicalPath());
       }
     } catch (IOException e) {
       //  ignore 

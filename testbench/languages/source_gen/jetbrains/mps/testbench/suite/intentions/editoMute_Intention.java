@@ -68,10 +68,7 @@ public class editoMute_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "muted") ?
-        "Unmute TestCase" :
-        "Mute TestCase"
-      );
+      return (SPropertyOperations.getBoolean(node, "muted") ? "Unmute TestCase" : "Mute TestCase");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

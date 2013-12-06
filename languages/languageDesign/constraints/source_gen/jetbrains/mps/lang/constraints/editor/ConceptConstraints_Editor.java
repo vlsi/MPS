@@ -626,7 +626,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_g00aa7_a21d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && isNotEmpty_g00aa7_a0a0a34(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && isNotEmptyString(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
   }
 
   private EditorCell createCollection_g00aa7_a21d0(EditorContext editorContext, SNode node) {
@@ -934,7 +934,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_g00aa7_a0a0a34(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

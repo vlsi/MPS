@@ -39,7 +39,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -55,36 +54,34 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.extapi.model.ReloadableSModelBase" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" file="JavaSourceStubModelRoot.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.Util" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
-    <classNode extendsClassName="jetbrains.mps.vfs.FileSystemListener" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory" file="JavaSourceStubModelRootFactory.java">
     <classNode dependClassName="java.lang.Override" />
@@ -93,9 +90,15 @@
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" file="MPSJavaSrcDataSource.java">
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.FolderDataSource" />
   </dependency>

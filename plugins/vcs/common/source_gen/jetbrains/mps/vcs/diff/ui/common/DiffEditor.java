@@ -70,10 +70,7 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
-    SNode root = (rootId == null ?
-      null :
-      model.getNode(rootId)
-    );
+    SNode root = (rootId == null ? null : model.getNode(rootId));
     if (SNodeOperations.getParent(root) == null) {
       getMainEditor().editNode(root);
     }
@@ -97,10 +94,7 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public EditorComponent getEditorComponent(boolean inspector) {
-    return (inspector ?
-      myInspector :
-      myMainEditorComponent
-    );
+    return (inspector ? myInspector : myMainEditorComponent);
   }
 
   public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {

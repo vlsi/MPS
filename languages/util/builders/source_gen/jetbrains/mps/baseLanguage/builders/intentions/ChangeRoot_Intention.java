@@ -68,10 +68,7 @@ public class ChangeRoot_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "root") ?
-        "Make Non Root" :
-        "Make Root"
-      );
+      return (SPropertyOperations.getBoolean(node, "root") ? "Make Non Root" : "Make Root");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

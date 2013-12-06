@@ -73,13 +73,7 @@ public class Junit_Command {
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests, JavaRunParameters javaRunParameters) throws ExecutionException {
-    return new Junit_Command().setVirtualMachineParameter_String(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath_String((check_u7m9j_a0c0a0a0(javaRunParameters) ?
-      javaRunParameters.jrePath() :
-      null
-    )).setWorkingDirectory_File((isEmpty_yo2c7x_a0a0a0a0a9(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
-      null :
-      new File(javaRunParameters.workingDirectory())
-    )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
+    return new Junit_Command().setVirtualMachineParameter_String(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath_String((check_u7m9j_a0c0a0a0(javaRunParameters) ? javaRunParameters.jrePath() : null)).setWorkingDirectory_File((isEmptyString(check_u7m9j_a0a3a0a0a(javaRunParameters)) ? null : new File(javaRunParameters.workingDirectory()))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
   }
 
   public ProcessHandler createProcess(List<ITestNodeWrapper> tests) throws ExecutionException {
@@ -90,10 +84,7 @@ public class Junit_Command {
     if (ListSequence.fromList(testsToRun._0()).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ?
-      " " + myVirtualMachineParameter_String :
-      ""
-    ))).setClassPath_ListString(ListSequence.fromList(testsToRun._1()._2()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1()._0());
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun._1()._2()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1()._0());
   }
 
   public static IDebugger getDebugger() {
@@ -106,10 +97,7 @@ public class Junit_Command {
       public void run() {
         testsCommandLine.value = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(tests).count()));
         for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
-          List<String> parametersPart = ListSequence.fromListAndArray(new ArrayList<String>(), (test.isTestCase() ?
-            "-c" :
-            "-m"
-          ), test.getFqName());
+          List<String> parametersPart = ListSequence.fromListAndArray(new ArrayList<String>(), (test.isTestCase() ? "-c" : "-m"), test.getFqName());
           ListSequence.fromList(testsCommandLine.value).addSequence(ListSequence.fromList(parametersPart));
         }
       }
@@ -155,7 +143,7 @@ public class Junit_Command {
         }), " ");
       }
     });
-    if (isNotEmpty_yo2c7x_a0h0n(skipped.value)) {
+    if (isNotEmptyString(skipped.value)) {
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn("All tests could not be executed together. Skipped " + skipped.value);
       }
@@ -216,25 +204,19 @@ public class Junit_Command {
     return null;
   }
 
-  public static boolean isEmpty_yo2c7x_a0a0a0a0a9(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 
   private static boolean eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0g0n(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a31(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
-  public static boolean isNotEmpty_yo2c7x_a0h0n(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -52,10 +52,7 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode contextNode = (_context.getReferenceNode() == null ?
-              _context.getEnclosingNode() :
-              _context.getReferenceNode()
-            );
+            SNode contextNode = (_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode());
             List<SNode> vars = new ArrayList<SNode>();
             while ((contextNode != null)) {
               if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.generator.structure.VarMacro")) {

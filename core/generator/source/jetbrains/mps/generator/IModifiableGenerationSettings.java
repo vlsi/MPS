@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,13 @@
  */
 package jetbrains.mps.generator;
 
+/**
+ * Settings #isCheckModelsBeforeGeneration and #isGenerateDebugInfo are not generator-specific, but
+ * refer to tasks that runs along with generator. That's why they are not in IGenerationSettions.
+ * This, however, doesn't justify their presence ib IModifiableGenerationSettings, it requires one more
+ * refactoring to extract them into a separate entity
+ */
 public interface IModifiableGenerationSettings extends IGenerationSettings {
-  boolean isSaveTransientModels();
 
   void setSaveTransientModels(boolean saveTransientModels);
 
@@ -24,63 +29,27 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration);
 
-  @Override
-  boolean isParallelGenerator();
-
   void setParallelGenerator(boolean useNewGenerator);
-
-  @Override
-  boolean isStrictMode();
 
   void setStrictMode(boolean strictMode);
 
-  @Override
-  int getNumberOfParallelThreads();
-
   void setNumberOfParallelThreads(int coreNumber);
-
-  @Override
-  int getPerformanceTracingLevel();
 
   void setPerformanceTracingLevel(int performanceTracingLevel);
 
-  @Override
-  int getNumberOfModelsToKeep();
-
   void setNumberOfModelsToKeep(int numberOfModelsToKeep);
-
-  @Override
-  boolean isShowInfo();
 
   void setShowInfo(boolean showInfo);
 
-  @Override
-  boolean isShowWarnings();
-
   void setShowWarnings(boolean showWarnings);
-
-  @Override
-  boolean isKeepModelsWithWarnings();
 
   void setKeepModelsWithWarnings(boolean keepModelsWithWarnings);
 
-  @Override
-  boolean isIncremental();
-
   void setIncremental(boolean isIncremental);
-
-  @Override
-  boolean isIncrementalUseCache();
 
   void setIncrementalUseCache(boolean incrementalUseCache);
 
-  @Override
-  boolean isDebugIncrementalDependencies();
-
   void setDebugIncrementalDependencies(boolean value);
-
-  @Override
-  boolean isFailOnMissingTextGen();
 
   void setFailOnMissingTextGen(boolean fail);
 
@@ -88,8 +57,7 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setGenerateDebugInfo(boolean generateDebugInfo);
 
-  @Override
-  boolean isShowBadChildWarning();
-
   void setShowBadChildWarning(boolean showBadChildWarning);
+
+  void enableInplaceTransformations(boolean enabled);
 }

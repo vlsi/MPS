@@ -96,7 +96,8 @@ public class NewTemplateInRootMappingRule_Intention implements IntentionFactory 
       }
       final SNode rule = node;
       CreateFromUsageUtil.showCreateNewRootMenu(editorContext, new Condition<SNode>() {
-        public boolean met(SNode c) {
+        public boolean met(SNode n) {
+          SNode c = (SNode) n;
           if (SConceptOperations.isExactly(c, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
             return false;
           }

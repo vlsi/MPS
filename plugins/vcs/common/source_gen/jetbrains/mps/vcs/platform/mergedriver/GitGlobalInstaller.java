@@ -95,7 +95,7 @@ import org.apache.log4j.LogManager;
           return !(line.trim().isEmpty());
         }
       }).toListSequence();
-      boolean equal = (int) ListSequence.fromList(section).count() == (int) ListSequence.fromList(newConfigLines).count();
+      boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
           if (neq_btx4zt_a0a0a0g0t0d(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
@@ -159,9 +159,6 @@ import org.apache.log4j.LogManager;
   protected static Logger LOG = LogManager.getLogger(GitGlobalInstaller.class);
 
   private static boolean neq_btx4zt_a0a0a0g0t0d(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

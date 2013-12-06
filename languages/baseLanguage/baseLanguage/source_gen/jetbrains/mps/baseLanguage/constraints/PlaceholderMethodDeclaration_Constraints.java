@@ -49,7 +49,7 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return isEmpty_5inea6_a0a0b0b0a1a0b0d((SPropertyOperations.getString(propertyValue)));
+        return isEmptyString((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;
@@ -61,7 +61,7 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4898614932449980392");
 
-  public static boolean isEmpty_5inea6_a0a0b0b0a1a0b0d(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

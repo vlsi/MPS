@@ -109,10 +109,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
 
   public void setCanRemoveCondition(Condition<T> canRemoveCondition) {
     assertNotInitialized();
-    myCanRemoveCondition = (canRemoveCondition != null ?
-      canRemoveCondition :
-      Condition.TRUE_CONDITION
-    );
+    myCanRemoveCondition = (canRemoveCondition != null ? canRemoveCondition : Condition.TRUE_CONDITION);
   }
 
   public void setAllowRemoveAnyway(boolean allowRemoveAnyway) {
@@ -243,10 +240,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
           break;
         }
       }
-      titledBorder.setTitleColor((hasError ?
-        Color.RED :
-        Color.BLACK
-      ));
+      titledBorder.setTitleColor((hasError ? Color.RED : Color.BLACK));
       ValidateableBoundPanel.this.repaint();
     }
   }

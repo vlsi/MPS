@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,12 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -45,46 +45,46 @@ public class InputQueryUtil {
     return res;
   }
 
-  public static SNode getNodeToInsert(SNode insertMacro, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext, @NotNull ITemplateGenerator generator) throws GenerationFailureException {
+  public static SNode getNodeToInsert(SNode insertMacro, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException {
     try {
       SNode query = RuleUtil.getInsertMacro_Query(insertMacro);
       if(query != null) {
-        return reductionContext.getQueryExecutor().evaluateInsertQuery(context.getInput(), insertMacro, query, context);
+        return env.getQueryExecutor().evaluateInsertQuery(context.getInput(), insertMacro, query, context);
       }
 
-      generator.showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert");
+      env.getGenerator().showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert");
       throw new GenerationFailureException();
     } catch (Throwable t) {
-      generator.getLogger().handleException(t);
-      generator.showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert (see exception)");
+      env.getLogger().handleException(t);
+      env.getGenerator().showErrorMessage(context.getInput(), insertMacro, "couldn't get nodes to insert (see exception)");
       throw new GenerationFailureException(t);
     }
   }
 
-  public static List<SNode> getNewInputNodes(SNode nodeMacro, SNode currentInputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext, @NotNull ITemplateGenerator generator) throws GenerationFailureException {
+  public static List<SNode> getNewInputNodes(@NotNull SNode nodeMacro, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException {
     try {
       SNode nodesQuery = RuleUtil.getSourceNodesQuery(nodeMacro);
       if (nodesQuery != null) {
-        return getNewInputNodes(currentInputNode, nodeMacro, nodesQuery, context, reductionContext);
+        return getNewInputNodes(nodeMacro, nodesQuery, context, env.getQueryExecutor());
       }
 
       SNode nodeQuery = RuleUtil.getSourceNodeQuery(nodeMacro);
       if (nodeQuery != null) {
-        SNode newInputNode = getNewInputNode(currentInputNode, nodeMacro, nodeQuery, context, reductionContext);
+        SNode newInputNode = getNewInputNode(nodeMacro, nodeQuery, context, env.getQueryExecutor());
         return wrapAsList(newInputNode);
       }
 
       if (requiredSourceNodesQuery.contains(nodeMacro.getConcept().getQualifiedName())) {
-        generator.showErrorMessage(currentInputNode, nodeMacro, "couldn't get input nodes");
+        env.getGenerator().showErrorMessage(context.getInput(), nodeMacro, "couldn't get input nodes");
         throw new GenerationFailureException();
       }
 
       // <default> : propagate  current input node
-      return Collections.singletonList(currentInputNode);
+      return Collections.singletonList(context.getInput());
 
     } catch (Throwable t) {
-      generator.getLogger().handleException(t);
-      generator.showErrorMessage(currentInputNode, nodeMacro, "couldn't get input nodes (see exception)");
+      env.getLogger().handleException(t);
+      env.getGenerator().showErrorMessage(context.getInput(), nodeMacro, "couldn't get input nodes (see exception)");
       throw new GenerationFailureException(t);
     }
   }
@@ -96,28 +96,28 @@ public class InputQueryUtil {
   /*
    * only applicable to macros, which can yield 1 new output node
    */
-  public static SNode getNewInputNode(SNode nodeMacro, SNode currentInputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext, @NotNull ITemplateGenerator generator) throws GenerationFailureException {
+  public static SNode getNewInputNode(SNode nodeMacro, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env) throws GenerationFailureException {
     try {
       SNode query = RuleUtil.getSourceNodeQuery(nodeMacro);
       if (query != null) {
-        return getNewInputNode(currentInputNode, nodeMacro, query, context, reductionContext);
+        return getNewInputNode(nodeMacro, query, context, env.getQueryExecutor());
       }
 
       // <default> : propagate  current input node
-      return currentInputNode;
+      return context.getInput();
     } catch (Throwable t) {
-      generator.getLogger().handleException(t);
-      generator.showErrorMessage(currentInputNode, nodeMacro, "couldn't get new input node");
+      env.getLogger().handleException(t);
+      env.getGenerator().showErrorMessage(context.getInput(), nodeMacro, "couldn't get new input node");
       throw new GenerationFailureException(t);
     }
   }
 
-  private static SNode getNewInputNode(SNode currentInputNode, SNode macro, @NotNull SNode query, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
-    return reductionContext.getQueryExecutor().evaluateSourceNodeQuery(currentInputNode, macro, query, context);
+  private static SNode getNewInputNode(SNode macro, @NotNull SNode query, @NotNull TemplateContext context, @NotNull QueryExecutionContext qeContext) throws GenerationFailureException {
+    return qeContext.evaluateSourceNodeQuery(context.getInput(), macro, query, context);
   }
 
-  private static List<SNode> getNewInputNodes(SNode currentInputNode, SNode macro, @NotNull SNode query, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
-    List<SNode> list = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(currentInputNode, null, macro, query, context);
+  private static List<SNode> getNewInputNodes(SNode macro, @NotNull SNode query, @NotNull TemplateContext context, @NotNull QueryExecutionContext qeContext) throws GenerationFailureException {
+    List<SNode> list = qeContext.evaluateSourceNodesQuery(context.getInput(), null, macro, query, context);
     return list != null ? list : Collections.<SNode>emptyList();
   }
 }

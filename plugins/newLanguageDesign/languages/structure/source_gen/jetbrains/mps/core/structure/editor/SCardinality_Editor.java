@@ -34,15 +34,9 @@ public class SCardinality_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         if (SPropertyOperations.getBoolean(node, "isMultiple")) {
-          return (SPropertyOperations.getBoolean(node, "isRequired") ?
-            "1..n" :
-            "0..n"
-          );
+          return (SPropertyOperations.getBoolean(node, "isRequired") ? "1..n" : "0..n");
         } else {
-          return (SPropertyOperations.getBoolean(node, "isRequired") ?
-            "1" :
-            "0..1"
-          );
+          return (SPropertyOperations.getBoolean(node, "isRequired") ? "1" : "0..1");
         }
       }
 

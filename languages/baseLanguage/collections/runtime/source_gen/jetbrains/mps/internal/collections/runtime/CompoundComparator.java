@@ -16,9 +16,6 @@ public class CompoundComparator<T> implements Comparator<T> {
   @Override
   public int compare(T a, T b) {
     int c = primary.compare(a, b);
-    return (c == 0 ?
-      secondary.compare(a, b) :
-      c
-    );
+    return (c == 0 ? secondary.compare(a, b) : c);
   }
 }

@@ -25,13 +25,13 @@ public class JavaSourceStubModelRootSettingsEditor implements ModelRootSettingsE
   public void reset(Project project, ModelRoot root) {
     assert root instanceof JavaSourceStubModelRoot;
     this.myProject = project;
-    this.myPath = ((JavaSourceStubModelRoot) root).getPath();
+    this.myPath = ((JavaSourceStubModelRoot) root).getContentRoot();
   }
 
   @Override
   public void apply(ModelRoot root) {
     assert root instanceof JavaSourceStubModelRoot;
-    ((JavaSourceStubModelRoot) root).setPath(myPath);
+    ((JavaSourceStubModelRoot) root).setContentRoot(myPath);
   }
 
   @Override

@@ -22,14 +22,8 @@ public class GenerateGettersAndSettersUtil {
     if (suffix == null) {
       suffix = "";
     }
-    int preparedNameStart = (((prefix != null && prefix.length() > 0) && fullName.startsWith(prefix)) ?
-      prefix.length() :
-      0
-    );
-    int preparedNameEnd = (((suffix != null && suffix.length() > 0) && fullName.endsWith(suffix)) ?
-      fullName.indexOf(suffix) :
-      fullName.length()
-    );
+    int preparedNameStart = (((prefix != null && prefix.length() > 0) && fullName.startsWith(prefix)) ? prefix.length() : 0);
+    int preparedNameEnd = (((suffix != null && suffix.length() > 0) && fullName.endsWith(suffix)) ? fullName.indexOf(suffix) : fullName.length());
     if (preparedNameStart >= preparedNameEnd) {
       return fullName;
     }
@@ -54,14 +48,8 @@ public class GenerateGettersAndSettersUtil {
     if (codeStyleSettings == null) {
       return NameUtil.decapitalize(preparedFieldName);
     }
-    String prefix = (codeStyleSettings.getParameterPrefix() == null ?
-      "" :
-      codeStyleSettings.getParameterPrefix()
-    );
-    String suffix = (codeStyleSettings.getParameterSuffix() == null ?
-      "" :
-      codeStyleSettings.getParameterSuffix()
-    );
+    String prefix = (codeStyleSettings.getParameterPrefix() == null ? "" : codeStyleSettings.getParameterPrefix());
+    String suffix = (codeStyleSettings.getParameterSuffix() == null ? "" : codeStyleSettings.getParameterSuffix());
     String paramName;
     if ((prefix == null || prefix.length() == 0)) {
       paramName = NameUtil.decapitalize(preparedFieldName + suffix);

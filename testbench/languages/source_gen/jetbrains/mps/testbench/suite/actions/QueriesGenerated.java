@@ -94,10 +94,7 @@ public class QueriesGenerated {
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
-                return new AllSubclassifiersScope(SLinkOperations.getTarget(_quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a(), "classifier", false), smd, IClassifiersSearchScope.CLASS, (mscope != null ?
-                  mscope :
-                  operationContext.getScope()
-                )).getNodes(new Condition<SNode>() {
+                return new AllSubclassifiersScope(SLinkOperations.getTarget(_quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a(), "classifier", false), smd, IClassifiersSearchScope.CLASS, (mscope != null ? mscope : operationContext.getScope())).getNodes(new Condition<SNode>() {
                   public boolean met(SNode cls) {
                     return !(SPropertyOperations.getBoolean(cls, "abstractClass"));
                   }
@@ -146,10 +143,7 @@ public class QueriesGenerated {
 
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
-                return new ReachableClassifiersScope(smd, IClassifiersSearchScope.CLASS, (mscope != null ?
-                  mscope :
-                  operationContext.getScope()
-                )).getNodes(new Condition<SNode>() {
+                return new ReachableClassifiersScope(smd, IClassifiersSearchScope.CLASS, (mscope != null ? mscope : operationContext.getScope())).getNodes(new Condition<SNode>() {
                   public boolean met(SNode cls) {
                     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).translate(new ITranslator2<SNode, SNode>() {
                       public Iterable<SNode> translate(SNode m) {

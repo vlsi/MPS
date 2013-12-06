@@ -113,9 +113,6 @@ public class UnwrapUnlessBlock_Intention implements IntentionFactory {
   }
 
   private static boolean eq_d6nd9e_a0a0a0b0j(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

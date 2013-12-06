@@ -55,10 +55,7 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             IScope ms = ModuleSuite_Behavior.call_scope_1280144168199518341(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
-            return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.CLASS, (ms != null ?
-              ms :
-              operationContext.getScope()
-            )) {
+            return new VisibleClassifiersScope(_context.getEnclosingNode(), IClassifiersSearchScope.CLASS, (ms != null ? ms : operationContext.getScope())) {
               @NotNull
               @Override
               public List<SNode> getClassifiers() {

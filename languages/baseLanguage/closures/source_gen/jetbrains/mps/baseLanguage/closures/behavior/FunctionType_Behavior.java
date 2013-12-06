@@ -122,10 +122,7 @@ with_meet:
     for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, String>() {
       public String select(SNode t) {
         String key = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getNestedName_8540045600162184125", new Object[]{});
-        return (key != null ?
-          key :
-          BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{})
-        );
+        return (key != null ? key : BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{}));
       }
     }, true)) {
       ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt, true));
@@ -152,10 +149,7 @@ with_meet:
     for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, String>() {
       public String select(SNode t) {
         String key = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getNestedName_8540045600162184125", new Object[]{});
-        return (key != null ?
-          key :
-          BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{})
-        );
+        return (key != null ? key : BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{}));
       }
     }, true)) {
       ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt));
@@ -190,10 +184,7 @@ with_meet:
     for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(sample)).sort(new ISelector<SNode, String>() {
       public String select(SNode t) {
         String key = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getNestedName_8540045600162184125", new Object[]{});
-        return (key != null ?
-          key :
-          BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{})
-        );
+        return (key != null ? key : BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{}));
       }
     }, true)) {
       ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(tt, true));
@@ -202,17 +193,11 @@ with_meet:
   }
 
   public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
-    return ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null) ?
-      ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{})) :
-      _quotation_createNode_ksvwin_a0a0l()
-    );
+    return ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null) ? ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{})) : _quotation_createNode_ksvwin_a0a0l());
   }
 
   public static SNode call_getNormalizedTerminateType_1232036646585(SNode thisNode) {
-    return ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{}) != null) ?
-      ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{})) :
-      _quotation_createNode_ksvwin_a0a0m()
-    );
+    return ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{}) != null) ? ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{})) : _quotation_createNode_ksvwin_a0a0m());
   }
 
   public static List<SNode> call_getNormalizedThrowsTypes_3448422702164385781(SNode thisNode) {

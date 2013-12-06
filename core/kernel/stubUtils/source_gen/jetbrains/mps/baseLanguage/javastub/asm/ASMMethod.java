@@ -38,10 +38,7 @@ public class ASMMethod {
       myGenericReturnType = myReturnType;
     }
     Type[] argumentTypes = Type.getArgumentTypes(method.desc);
-    myParameterTypes = (argumentTypes.length > 0 ?
-      new ArrayList<ASMType>(argumentTypes.length) :
-      ((List<ASMType>) ((List) Collections.emptyList()))
-    );
+    myParameterTypes = (argumentTypes.length > 0 ? new ArrayList<ASMType>(argumentTypes.length) : ((List<ASMType>) ((List) Collections.emptyList())));
     for (Type t : argumentTypes) {
       myParameterTypes.add(TypeUtil.fromType(t));
     }
@@ -83,10 +80,7 @@ public class ASMMethod {
           annotations.add(new ASMAnnotation(an));
         }
       }
-      myParameterAnnotations.add((annotations == null ?
-        ((List<ASMAnnotation>) ((List) Collections.emptyList())) :
-        annotations
-      ));
+      myParameterAnnotations.add((annotations == null ? ((List<ASMAnnotation>) ((List) Collections.emptyList())) : annotations));
     }
     List<ASMType> exceptions = new ArrayList<ASMType>(0);
     if (method.signature != null) {
@@ -101,13 +95,7 @@ public class ASMMethod {
       }
     }
     if (myMethod.visibleAnnotations != null || myMethod.invisibleAnnotations != null) {
-      int size = ((myMethod.visibleAnnotations != null ?
-        myMethod.visibleAnnotations.size() :
-        0
-      )) + ((myMethod.invisibleAnnotations != null ?
-        myMethod.invisibleAnnotations.size() :
-        0
-      ));
+      int size = ((myMethod.visibleAnnotations != null ? myMethod.visibleAnnotations.size() : 0)) + ((myMethod.invisibleAnnotations != null ? myMethod.invisibleAnnotations.size() : 0));
       myAnnotations = new ArrayList<ASMAnnotation>(size);
       if (myMethod.visibleAnnotations != null) {
         for (AnnotationNode an : (List<AnnotationNode>) myMethod.visibleAnnotations) {
@@ -128,10 +116,7 @@ public class ASMMethod {
         myParameterNames.add("p" + i);
       }
       if (method.localVariables != null && myParameterTypes.size() < method.localVariables.size()) {
-        int offset = (!(isStatic()) ?
-          1 :
-          0
-        );
+        int offset = (!(isStatic()) ? 1 : 0);
         for (Object lv : method.localVariables) {
           LocalVariableNode node = ((LocalVariableNode) lv);
           int index = node.index - offset;
@@ -219,10 +204,7 @@ public class ASMMethod {
   }
 
   public List<ASMAnnotation> getAnnotations() {
-    return (myAnnotations == null ?
-      ((List<ASMAnnotation>) ((List) Collections.emptyList())) :
-      Collections.unmodifiableList(myAnnotations)
-    );
+    return (myAnnotations == null ? ((List<ASMAnnotation>) ((List) Collections.emptyList())) : Collections.unmodifiableList(myAnnotations));
   }
 
   public List<ASMType> getParameterTypes() {
@@ -234,10 +216,7 @@ public class ASMMethod {
   }
 
   public List<String> getParameterNames() {
-    return ((myParameterNames == null ?
-      ((List<String>) ((List) Collections.emptyList())) :
-      Collections.unmodifiableList(myParameterNames)
-    ));
+    return ((myParameterNames == null ? ((List<String>) ((List) Collections.emptyList())) : Collections.unmodifiableList(myParameterNames)));
   }
 
   public List<List<ASMAnnotation>> getParameterAnnotations() {

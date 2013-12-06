@@ -43,10 +43,7 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
   public NodeBySeveralConceptChooser(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
     ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> select(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
-        return MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from((it._0() == null ?
-          "jetbrains.mps.lang.core.structure.BaseConcept" :
-          it._0()
-        ), it._1());
+        return MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from((it._0() == null ? "jetbrains.mps.lang.core.structure.BaseConcept" : it._0()), it._1());
       }
     }));
 

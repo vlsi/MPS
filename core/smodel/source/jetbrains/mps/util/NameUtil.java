@@ -370,6 +370,10 @@ public class NameUtil {
 
   public static String getModelLongName(SModel model) {
     String name = model.getModelName();
+    return getModelLongName(name);
+  }
+
+  public  static String getModelLongName(String name) {
     int index = name.indexOf("@");
     return (index == -1 ?
         name :

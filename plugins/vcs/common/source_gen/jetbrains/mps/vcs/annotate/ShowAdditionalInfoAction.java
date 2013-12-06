@@ -15,10 +15,7 @@ import java.util.Map;
 
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> _params) {
-    event.getPresentation().setText(((myAnnotationColumn.isShowAdditionalInfo() ?
-      "Hide" :
-      "Show"
-    )) + " Additional Info");
+    event.getPresentation().setText(((myAnnotationColumn.isShowAdditionalInfo() ? "Hide" : "Show")) + " Additional Info");
   }
 
   @Override

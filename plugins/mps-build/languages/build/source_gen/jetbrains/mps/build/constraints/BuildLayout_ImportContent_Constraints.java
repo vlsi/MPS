@@ -59,10 +59,7 @@ public class BuildLayout_ImportContent_Constraints extends BaseConstraintsDescri
             if (target == null) {
               target = BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{});
             }
-            return (_context.getSmartReference() ?
-              "import " + target :
-              target
-            );
+            return (_context.getSmartReference() ? "import " + target : target);
           }
 
           @Override

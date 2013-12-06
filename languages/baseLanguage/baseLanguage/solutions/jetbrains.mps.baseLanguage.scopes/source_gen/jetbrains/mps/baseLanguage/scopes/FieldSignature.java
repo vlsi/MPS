@@ -30,9 +30,6 @@ public class FieldSignature implements Signature {
   }
 
   private static boolean eq_kjk96n_a0c0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

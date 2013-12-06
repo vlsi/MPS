@@ -109,7 +109,7 @@ public class FileUtil {
   public static void copyDir(File what, File to) {
     assert what.isDirectory();
     if (!to.exists()) {
-      to.mkdir();
+      to.mkdirs();
     }
 
     for (File f : what.listFiles()) {

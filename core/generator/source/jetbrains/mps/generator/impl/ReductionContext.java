@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,20 +31,17 @@ public class ReductionContext {
   private final ReductionContext myParent;
   private final SNode myInputNode;
   private final TemplateReductionRule myReductionRule;
-  private final QueryExecutionContext myExecutionContext;
 
-  ReductionContext(@NotNull QueryExecutionContext executionContext) {
+  ReductionContext() {
     myParent = null;
     myInputNode = null;
     myReductionRule = null;
-    myExecutionContext = executionContext;
   }
 
   ReductionContext(@NotNull ReductionContext parent, @NotNull SNode inputNode, @NotNull TemplateReductionRule reductionRule) {
     myParent = parent;
     myInputNode = inputNode;
     myReductionRule = reductionRule;
-    myExecutionContext = parent.myExecutionContext;
   }
 
   boolean isBlocked(SNode inputNode, TemplateReductionRule rule) {
@@ -64,11 +61,6 @@ public class ReductionContext {
       }
     }
     return currentSet;
-  }
-
-  @NotNull
-  public QueryExecutionContext getQueryExecutor() {
-    return myExecutionContext;
   }
 
   static Object combineRuleSets(Object set1, Object set2) {

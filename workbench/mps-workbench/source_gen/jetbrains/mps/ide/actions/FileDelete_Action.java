@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -45,7 +46,7 @@ public class FileDelete_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selectedFile", event.getData(PlatformDataKeys.VIRTUAL_FILE));
+    MapSequence.fromMap(_params).put("selectedFile", event.getData(CommonDataKeys.VIRTUAL_FILE));
     if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }

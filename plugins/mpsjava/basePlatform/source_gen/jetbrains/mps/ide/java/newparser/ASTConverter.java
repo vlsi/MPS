@@ -376,10 +376,7 @@ public class ASTConverter {
 
     org.jetbrains.mps.openapi.model.SNodeId sNodeId = cls.getNodeId();
     // FIXME 
-    String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof SNodeId.Regular ?
-      null :
-      cls.getNodeId().toString()
-    );
+    String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof SNodeId.Regular ? null : cls.getNodeId().toString());
 
     if (method instanceof MethodDeclaration) {
       if (flagSet(method.modifiers, ClassFileConstants.AccStatic) && SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -535,10 +532,7 @@ public class ASTConverter {
 
   private SNode convertMethodGuts(@NotNull AbstractMethodDeclaration x, @Nullable String idPrefix, @NotNull SNode result) throws JavaParseException {
 
-    StringBuilder idBuilder = (idPrefix == null ?
-      null :
-      new StringBuilder(idPrefix)
-    );
+    StringBuilder idBuilder = (idPrefix == null ? null : new StringBuilder(idPrefix));
 
     convertAnnotations(x.annotations, result);
 
@@ -653,16 +647,7 @@ public class ASTConverter {
 
 
   public SNode convertVisibility(int astModifiers) {
-    return (flagSet(astModifiers, ClassFileConstants.AccPublic) ?
-      _quotation_createNode_rbndtb_a0a0ab() :
-      (flagSet(astModifiers, ClassFileConstants.AccProtected) ?
-        _quotation_createNode_rbndtb_a0a0a62() :
-        (flagSet(astModifiers, ClassFileConstants.AccPrivate) ?
-          _quotation_createNode_rbndtb_a0a0a0ab() :
-          null
-        )
-      )
-    );
+    return (flagSet(astModifiers, ClassFileConstants.AccPublic) ? _quotation_createNode_rbndtb_a0a0ab() : (flagSet(astModifiers, ClassFileConstants.AccProtected) ? _quotation_createNode_rbndtb_a0a0a62() : (flagSet(astModifiers, ClassFileConstants.AccPrivate) ? _quotation_createNode_rbndtb_a0a0a0ab() : null)));
   }
 
   public SNode convertTypeReference(TypeReference typRef) {
@@ -801,10 +786,7 @@ public class ASTConverter {
   protected SNode buildArrayType(SNode base, int dimensions, boolean vararg) {
     SNode arrType = base;
 
-    int until = (vararg ?
-      dimensions - 1 :
-      dimensions
-    );
+    int until = (vararg ? dimensions - 1 : dimensions);
 
     for (int i = 0; i < until; i++) {
       arrType = _quotation_createNode_rbndtb_a0a0e0ib(arrType);
@@ -1149,10 +1131,7 @@ public class ASTConverter {
 
     protected SNode resolveTypeVar(String name) {
       if (myTypeVars == null) {
-        return (parentState == null ?
-          null :
-          parentState.resolveTypeVar(name)
-        );
+        return (parentState == null ? null : parentState.resolveTypeVar(name));
       }
 
 
@@ -1160,10 +1139,7 @@ public class ASTConverter {
         // Either type var map is not initialized, this means that this State object was created with something else: 
         // e.g. with id prefix. 
         // Or type var is not part of this state 
-        return (parentState == null ?
-          null :
-          parentState.resolveTypeVar(name)
-        );
+        return (parentState == null ? null : parentState.resolveTypeVar(name));
 
       } else {
         // we have this var name 

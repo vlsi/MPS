@@ -180,17 +180,11 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
     }
 
     public SNode getPropertyDeclarationByName(String name) {
-      return (myPropertyByName == null ?
-        null :
-        myPropertyByName.get(name)
-      );
+      return (myPropertyByName == null ? null : myPropertyByName.get(name));
     }
 
     public List<SNode> getPropertyDeclarations() {
-      return (myProperties == null ?
-        Collections.<SNode>emptyList() :
-        new ArrayList<SNode>(myProperties)
-      );
+      return (myProperties == null ? Collections.<SNode>emptyList() : new ArrayList<SNode>(myProperties));
     }
 
     @Override
@@ -279,10 +273,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
     }
 
     public SNode getLinkDeclarationByRole(String role) {
-      return (myLinkByRole == null ?
-        null :
-        myLinkByRole.get(role)
-      );
+      return (myLinkByRole == null ? null : myLinkByRole.get(role));
     }
 
     public SNode getMostSpecificLinkDeclarationByRole(String role) {
@@ -301,10 +292,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
     }
 
     public List<SNode> getLinkDeclarationsExcludingOverridden() {
-      return (myMostSpecificLinks == null ?
-        Collections.<SNode>emptyList() :
-        new ArrayList<SNode>(myMostSpecificLinks)
-      );
+      return (myMostSpecificLinks == null ? Collections.<SNode>emptyList() : new ArrayList<SNode>(myMostSpecificLinks));
     }
 
     @Override
@@ -427,10 +415,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
     }
 
     public SNode getConceptPropertyByName(String name) {
-      return (myPropertyByName == null ?
-        null :
-        myPropertyByName.get(name)
-      );
+      return (myPropertyByName == null ? null : myPropertyByName.get(name));
     }
 
     @Override

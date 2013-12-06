@@ -89,9 +89,9 @@
     <nodeInfo nodeId="3166734731676166917" fileName="DispatchGroup.java" startLine="50" startPosition="99" endLine="51" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8480956156622385655" fileName="DispatchGroup.java" startLine="51" startPosition="113" endLine="52" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8480956156622712713" fileName="DispatchGroup.java" startLine="52" startPosition="49" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3166734731676581662" fileName="DispatchGroup.java" startLine="54" startPosition="68" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3166734731676581662" fileName="DispatchGroup.java" startLine="54" startPosition="62" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3166734731676576367" fileName="DispatchGroup.java" startLine="55" startPosition="72" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3166734731676945061" fileName="DispatchGroup.java" startLine="57" startPosition="58" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3166734731676945061" fileName="DispatchGroup.java" startLine="57" startPosition="52" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3166734731677265077" fileName="DispatchGroup.java" startLine="59" startPosition="7" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3166734731677226912" fileName="DispatchGroup.java" startLine="60" startPosition="0" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3166734731676638495" fileName="DispatchGroup.java" startLine="61" startPosition="28" endLine="62" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -108,7 +108,7 @@
     <nodeInfo nodeId="3166734731676993839" fileName="DispatchGroup.java" startLine="82" startPosition="5" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="35825318243263310" fileName="DispatchGroup.java" startLine="83" startPosition="0" endLine="84" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="35825318243263006" fileName="DispatchGroup.java" startLine="84" startPosition="89" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3166734731677009040" fileName="DispatchGroup.java" startLine="86" startPosition="59" endLine="87" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3166734731677009040" fileName="DispatchGroup.java" startLine="86" startPosition="53" endLine="87" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3166734731677099774" fileName="DispatchGroup.java" startLine="87" startPosition="92" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="35825318242843587" fileName="DispatchGroup.java" startLine="88" startPosition="0" endLine="89" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="35825318242997940" fileName="DispatchGroup.java" startLine="93" startPosition="45" endLine="94" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -185,7 +185,7 @@
     <scopeInfo nodeId="6855443792548949113" fileName="DispatchGroup.java" startLine="30" startPosition="40" endLine="31" endPosition="95" />
     <scopeInfo nodeId="6855443792548949133" fileName="DispatchGroup.java" startLine="34" startPosition="39" endLine="35" endPosition="68" />
     <scopeInfo nodeId="3112508579548408983" fileName="DispatchGroup.java" startLine="41" startPosition="64" endLine="42" endPosition="60" />
-    <scopeInfo nodeId="3166734731676901686" fileName="DispatchGroup.java" startLine="57" startPosition="58" endLine="58" endPosition="20" />
+    <scopeInfo nodeId="3166734731676901686" fileName="DispatchGroup.java" startLine="57" startPosition="52" endLine="58" endPosition="20" />
     <scopeInfo nodeId="7139749370071243001" fileName="DispatchGroup.java" startLine="72" startPosition="66" endLine="73" endPosition="67" />
     <scopeInfo nodeId="7139749370071111756" fileName="DispatchGroup.java" startLine="75" startPosition="12" endLine="76" endPosition="55" />
     <scopeInfo nodeId="3166734731676361917" fileName="DispatchGroup.java" startLine="80" startPosition="50" endLine="81" endPosition="18" />
@@ -260,7 +260,7 @@
       <varInfo nodeId="7139749370069578208" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="3166734731675222669" fileName="DispatchGroup.java" startLine="38" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="7139749370070364142" fileName="DispatchGroup.java" startLine="54" startPosition="68" endLine="63" endPosition="115">
+    <scopeInfo nodeId="7139749370070364142" fileName="DispatchGroup.java" startLine="54" startPosition="62" endLine="63" endPosition="115">
       <varInfo nodeId="3166734731676638498" varName="methodsForRoots" />
     </scopeInfo>
     <scopeInfo nodeId="7139749370070843162" fileName="DispatchGroup.java" startLine="69" startPosition="68" endLine="78" endPosition="5">
@@ -273,7 +273,7 @@
     <scopeInfo nodeId="3166734731675945704" fileName="DispatchGroup.java" startLine="153" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="3166734731676039694" varName="classes" />
     </scopeInfo>
-    <scopeInfo nodeId="35825318242804344" fileName="DispatchGroup.java" startLine="86" startPosition="59" endLine="103" endPosition="0">
+    <scopeInfo nodeId="35825318242804344" fileName="DispatchGroup.java" startLine="86" startPosition="53" endLine="103" endPosition="0">
       <varInfo nodeId="35825318242843590" varName="cls" />
       <varInfo nodeId="35825318242887853" varName="isGlobalRoot" />
     </scopeInfo>
@@ -325,38 +325,38 @@
     <nodeInfo nodeId="7139749370073354559" fileName="DispatchGroupDescriptor.java" startLine="60" startPosition="46" endLine="61" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7139749370073362752" fileName="DispatchGroupDescriptor.java" startLine="64" startPosition="5" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6855443792548949246" fileName="DispatchGroupDescriptor.java" startLine="65" startPosition="0" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4661992271516548303" fileName="DispatchGroupDescriptor.java" startLine="75" startPosition="51" endLine="76" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="82" startPosition="5" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="85" startPosition="9" endLine="86" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8480956156621497712" fileName="DispatchGroupDescriptor.java" startLine="87" startPosition="106" endLine="88" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8480956156621507036" fileName="DispatchGroupDescriptor.java" startLine="90" startPosition="9" endLine="91" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8480956156621527164" fileName="DispatchGroupDescriptor.java" startLine="94" startPosition="100" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8480956156621545508" fileName="DispatchGroupDescriptor.java" startLine="96" startPosition="5" endLine="97" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="101" startPosition="5" endLine="102" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8480956156621614743" fileName="DispatchGroupDescriptor.java" startLine="103" startPosition="101" endLine="104" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8480956156621637062" fileName="DispatchGroupDescriptor.java" startLine="106" startPosition="5" endLine="107" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4661992271516548303" fileName="DispatchGroupDescriptor.java" startLine="72" startPosition="51" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="79" startPosition="5" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="82" startPosition="9" endLine="83" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8480956156621497712" fileName="DispatchGroupDescriptor.java" startLine="84" startPosition="106" endLine="85" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8480956156621507036" fileName="DispatchGroupDescriptor.java" startLine="87" startPosition="9" endLine="88" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8480956156621527164" fileName="DispatchGroupDescriptor.java" startLine="91" startPosition="100" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8480956156621545508" fileName="DispatchGroupDescriptor.java" startLine="93" startPosition="5" endLine="94" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="98" startPosition="5" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8480956156621614743" fileName="DispatchGroupDescriptor.java" startLine="100" startPosition="101" endLine="101" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8480956156621637062" fileName="DispatchGroupDescriptor.java" startLine="103" startPosition="5" endLine="104" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6855443792548949289" fileName="DispatchGroupDescriptor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6855443792548949237" fileName="DispatchGroupDescriptor.java" startLine="35" startPosition="35" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3166734731696195894" fileName="DispatchGroupDescriptor.java" startLine="41" startPosition="0" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7139749370073256179" fileName="DispatchGroupDescriptor.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7139749370073268538" fileName="DispatchGroupDescriptor.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7139749370073317381" fileName="DispatchGroupDescriptor.java" startLine="59" startPosition="32" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4661992271516545615" fileName="DispatchGroupDescriptor.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="86" startPosition="28" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8480956156621517939" fileName="DispatchGroupDescriptor.java" startLine="93" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="102" startPosition="22" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4661992271516545615" fileName="DispatchGroupDescriptor.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="83" startPosition="28" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8480956156621517939" fileName="DispatchGroupDescriptor.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="99" startPosition="22" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6855443792548949285" fileName="DispatchGroupDescriptor.java" startLine="26" startPosition="117" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="84" startPosition="101" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="100" startPosition="39" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7139749370073155488" fileName="DispatchGroupDescriptor.java" startLine="70" startPosition="25" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="81" startPosition="101" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="97" startPosition="39" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7139749370073304961" fileName="DispatchGroupDescriptor.java" startLine="56" startPosition="20" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7139749370073155488" fileName="DispatchGroupDescriptor.java" startLine="70" startPosition="25" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7139749370073150622" fileName="DispatchGroupDescriptor.java" startLine="69" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
     <nodeInfo nodeId="6855443792548949261" fileName="DispatchGroupDescriptor.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DispatchGroupDescriptor#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="83" startPosition="23" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8480956156621588159" fileName="DispatchGroupDescriptor.java" startLine="100" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="typeHashCode#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-    <nodeInfo nodeId="7139749370073150622" fileName="DispatchGroupDescriptor.java" startLine="69" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="81" startPosition="54" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="80" startPosition="23" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8480956156621588159" fileName="DispatchGroupDescriptor.java" startLine="97" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="typeHashCode#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+    <nodeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="78" startPosition="54" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7139749370073304961" fileName="DispatchGroupDescriptor.java" startLine="51" startPosition="0" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8480956156621454574" fileName="DispatchGroupDescriptor.java" startLine="81" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="typesEqual#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8480956156621454574" fileName="DispatchGroupDescriptor.java" startLine="78" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="typesEqual#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6855443792548949233" fileName="DispatchGroupDescriptor.java" startLine="34" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="6855443792548949290" fileName="DispatchGroupDescriptor.java" startLine="28" startPosition="37" endLine="29" endPosition="59" />
     <scopeInfo nodeId="6855443792548949242" fileName="DispatchGroupDescriptor.java" startLine="36" startPosition="50" endLine="37" endPosition="19" />
@@ -364,35 +364,36 @@
     <scopeInfo nodeId="7139749370073256181" fileName="DispatchGroupDescriptor.java" startLine="45" startPosition="49" endLine="46" endPosition="19" />
     <scopeInfo nodeId="7139749370073268540" fileName="DispatchGroupDescriptor.java" startLine="48" startPosition="113" endLine="49" endPosition="19" />
     <scopeInfo nodeId="7139749370073317383" fileName="DispatchGroupDescriptor.java" startLine="60" startPosition="46" endLine="61" endPosition="23" />
-    <scopeInfo nodeId="4661992271516545616" fileName="DispatchGroupDescriptor.java" startLine="75" startPosition="51" endLine="76" endPosition="36" />
-    <scopeInfo nodeId="8480956156621489586" fileName="DispatchGroupDescriptor.java" startLine="87" startPosition="106" endLine="88" endPosition="127" />
-    <scopeInfo nodeId="8480956156621517941" fileName="DispatchGroupDescriptor.java" startLine="94" startPosition="100" endLine="95" endPosition="19" />
-    <scopeInfo nodeId="8480956156621604267" fileName="DispatchGroupDescriptor.java" startLine="103" startPosition="101" endLine="104" endPosition="78" />
+    <scopeInfo nodeId="4661992271516545616" fileName="DispatchGroupDescriptor.java" startLine="72" startPosition="51" endLine="73" endPosition="36" />
+    <scopeInfo nodeId="8480956156621489586" fileName="DispatchGroupDescriptor.java" startLine="84" startPosition="106" endLine="85" endPosition="127" />
+    <scopeInfo nodeId="8480956156621517941" fileName="DispatchGroupDescriptor.java" startLine="91" startPosition="100" endLine="92" endPosition="19" />
+    <scopeInfo nodeId="8480956156621604267" fileName="DispatchGroupDescriptor.java" startLine="100" startPosition="101" endLine="101" endPosition="78" />
     <scopeInfo nodeId="6855443792548949289" fileName="DispatchGroupDescriptor.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="6855443792548949289" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4661992271516545615" fileName="DispatchGroupDescriptor.java" startLine="75" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="4661992271516545615" fileName="DispatchGroupDescriptor.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="4661992271516545615" varName="it" />
       <varInfo nodeId="4661992271516545615" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="85" startPosition="9" endLine="89" endPosition="11">
+    <scopeInfo nodeId="8480956156621489584" fileName="DispatchGroupDescriptor.java" startLine="82" startPosition="9" endLine="86" endPosition="11">
       <varInfo nodeId="8480956156621489584" varName="cls2" />
     </scopeInfo>
-    <scopeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="101" startPosition="5" endLine="105" endPosition="7">
+    <scopeInfo nodeId="8480956156621604265" fileName="DispatchGroupDescriptor.java" startLine="98" startPosition="5" endLine="102" endPosition="7">
       <varInfo nodeId="8480956156621604265" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="7139749370073304961" fileName="DispatchGroupDescriptor.java" startLine="57" startPosition="52" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="7139749370073150625" fileName="DispatchGroupDescriptor.java" startLine="70" startPosition="25" endLine="75" endPosition="7" />
     <scopeInfo nodeId="6855443792548949264" fileName="DispatchGroupDescriptor.java" startLine="24" startPosition="49" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="8480956156621482490" fileName="DispatchGroupDescriptor.java" startLine="84" startPosition="101" endLine="91" endPosition="21" />
-    <scopeInfo nodeId="8480956156621588162" fileName="DispatchGroupDescriptor.java" startLine="100" startPosition="39" endLine="107" endPosition="131" />
-    <scopeInfo nodeId="7139749370073150625" fileName="DispatchGroupDescriptor.java" startLine="70" startPosition="25" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="8480956156621482490" fileName="DispatchGroupDescriptor.java" startLine="81" startPosition="101" endLine="88" endPosition="21" />
+    <scopeInfo nodeId="8480956156621588162" fileName="DispatchGroupDescriptor.java" startLine="97" startPosition="39" endLine="104" endPosition="131" />
+    <scopeInfo nodeId="7139749370073150622" fileName="DispatchGroupDescriptor.java" startLine="69" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="6855443792548949261" fileName="DispatchGroupDescriptor.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6855443792548949304" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="8480956156621588159" fileName="DispatchGroupDescriptor.java" startLine="100" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="8480956156621588159" fileName="DispatchGroupDescriptor.java" startLine="97" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="8480956156621606200" varName="typ" />
     </scopeInfo>
-    <scopeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="82" startPosition="5" endLine="92" endPosition="7">
+    <scopeInfo nodeId="8480956156621482488" fileName="DispatchGroupDescriptor.java" startLine="79" startPosition="5" endLine="89" endPosition="7">
       <varInfo nodeId="8480956156621482488" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="7139749370073304961" fileName="DispatchGroupDescriptor.java" startLine="52" startPosition="5" endLine="63" endPosition="7">
@@ -401,9 +402,8 @@
       <varInfo nodeId="7139749370073304961" varName="ths_it" />
       <varInfo nodeId="7139749370073304961" varName="ths_var" />
     </scopeInfo>
-    <scopeInfo nodeId="7139749370073150622" fileName="DispatchGroupDescriptor.java" startLine="69" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="8480956156621454577" fileName="DispatchGroupDescriptor.java" startLine="81" startPosition="54" endLine="97" endPosition="239" />
-    <scopeInfo nodeId="8480956156621454574" fileName="DispatchGroupDescriptor.java" startLine="81" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="8480956156621454577" fileName="DispatchGroupDescriptor.java" startLine="78" startPosition="54" endLine="94" endPosition="239" />
+    <scopeInfo nodeId="8480956156621454574" fileName="DispatchGroupDescriptor.java" startLine="78" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="8480956156621466960" varName="typ1" />
       <varInfo nodeId="8480956156621469442" varName="typ2" />
     </scopeInfo>
@@ -414,8 +414,8 @@
       <varInfo nodeId="6855443792548949248" varName="o" />
     </scopeInfo>
     <unitInfo nodeId="6855443792548949289" fileName="DispatchGroupDescriptor.java" startLine="27" startPosition="119" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor$1" />
-    <unitInfo nodeId="4661992271516545615" fileName="DispatchGroupDescriptor.java" startLine="74" startPosition="64" endLine="78" endPosition="5" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor$2" />
-    <unitInfo nodeId="6855443792548949232" fileName="DispatchGroupDescriptor.java" startLine="16" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor" />
+    <unitInfo nodeId="4661992271516545615" fileName="DispatchGroupDescriptor.java" startLine="71" startPosition="113" endLine="75" endPosition="5" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor$2" />
+    <unitInfo nodeId="6855443792548949232" fileName="DispatchGroupDescriptor.java" startLine="16" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor" />
   </root>
   <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548949309">
     <nodeInfo nodeId="6855443792548949327" fileName="DispatchMethodCollector.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="groups" />

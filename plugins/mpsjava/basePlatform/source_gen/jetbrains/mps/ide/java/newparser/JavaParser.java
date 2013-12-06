@@ -27,6 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -50,13 +51,11 @@ public class JavaParser {
 
   @NotNull
   public JavaParser.JavaParseResult parseCompilationUnit(String code) throws JavaParseException {
-    // temp thing: peek at the package name 
-    String pkg = peekPackage(code);
-    return parse(code, pkg, FeatureKind.CLASS, null, true);
+    return parse(code, FeatureKind.CLASS, null, true);
   }
 
   @NotNull
-  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, SNode context, boolean recovery) throws JavaParseException {
+  public JavaParser.JavaParseResult parse(String code, FeatureKind what, SNode context, boolean recovery) throws JavaParseException {
     // in eclipse there is full recovery and statement recovery 
     // TODO use full recovery 
 
@@ -65,10 +64,7 @@ public class JavaParser {
     Map<String, String> settings = new HashMap<String, String>();
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
-    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ?
-      new ASTConverter(stubsMode) :
-      new FullASTConverter(null)
-    );
+    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverter(stubsMode) : new FullASTConverter(null));
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     String resultPackageName = null;
@@ -174,7 +170,7 @@ public class JavaParser {
         SNode doc = MapSequence.fromMap(javadocs).get(comment[0]);
 
         List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1]));
-        for (String text : ListSequence.fromList(lines)) {
+        for (String text : lines) {
           SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
           SNode part = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
           SPropertyOperations.set(part, "text", text);
@@ -200,7 +196,7 @@ public class JavaParser {
             return !(MapSequence.fromMap(positions.value).containsKey(it)) || Math.abs(MapSequence.fromMap(positions.value).get(it)) <= linestart;
           }
         }).count();
-        for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
+        for (String line : CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1])))) {
           String line_ = line;
           if (line.startsWith(" ")) {
             line_ = line.substring(1);
@@ -277,7 +273,8 @@ public class JavaParser {
     }
   }
 
-  private String peekPackage(String source) {
+  @Nullable
+  public static String peekPackage(String source) {
     // WILL GO AWAY COMPLETELY 
     final String str = "package ";
     StringBuilder packageName = new StringBuilder();
@@ -288,7 +285,7 @@ public class JavaParser {
       }
       packageName.append(c);
     }
-    return packageName.toString();
+    return (packageName.length() == 0 ? null : packageName.toString());
   }
 
   public static class JavaParseResult {

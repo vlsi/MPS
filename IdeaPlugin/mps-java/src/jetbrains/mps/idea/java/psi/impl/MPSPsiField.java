@@ -112,11 +112,6 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
     throw new IncorrectOperationException();
   }
 
-  @Override
-  public PsiType getTypeNoResolve() {
-    return getType();
-  }
-
   @Nullable
   @Override
   public PsiDocComment getDocComment() {

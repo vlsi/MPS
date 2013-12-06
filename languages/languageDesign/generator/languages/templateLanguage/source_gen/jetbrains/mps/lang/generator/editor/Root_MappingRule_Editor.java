@@ -438,7 +438,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_pxqe0v_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pxqe0v_b0_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_pxqe0v_c0_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_pxqe0v_c0(editorContext, node));
     return editorCell;
   }
 
@@ -464,79 +464,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_pxqe0v_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_pxqe0v_c0_0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_pxqe0v_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_pxqe0v_b2a(editorContext, node));
+  private EditorCell createComponent_pxqe0v_c0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.MappingRuleCommonFields");
     return editorCell;
-  }
-
-  private EditorCell createConstant_pxqe0v_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
-    editorCell.setCellId("Constant_pxqe0v_a2a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefCell_pxqe0v_b2a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("labelDeclaration");
-    provider.setNoTargetText("<no labelDeclaration>");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_Editor._Inline_pxqe0v_a1c0());
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  public static class _Inline_pxqe0v_a1c0 extends InlineCellProvider {
-    public _Inline_pxqe0v_a1c0() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_pxqe0v_a0b2a(editorContext, node);
-    }
-
-    private EditorCell createProperty_pxqe0v_a0b2a(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("name");
-      provider.setNoTargetText("<no name>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name_3");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("labelDeclaration");
-      }
-      Style style = new StyleImpl();
-      Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
-      editorCell.getStyle().putAll(style);
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
   }
 }

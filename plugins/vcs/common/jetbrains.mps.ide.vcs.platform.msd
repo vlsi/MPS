@@ -4,8 +4,12 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" type="java_classes" />
-    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar" type="java_classes" />
+    <modelRoot contentPath="${mps_home}/plugins/svn4idea/lib" type="java_classes">
+      <sourceRoot location="svn4idea.jar" />
+    </modelRoot>
+    <modelRoot contentPath="${mps_home}/plugins/git4idea/lib" type="java_classes">
+      <sourceRoot location="git4idea.jar" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="jetbrains.mps.vcs" type="ideaPlugin" />

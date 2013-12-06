@@ -20,10 +20,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8319207097755373177(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "project", true) != null) ?
-      SLinkOperations.getTarget(_context.getNode(), "project", true) :
-      SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null)
-    );
+    return ((SLinkOperations.getTarget(_context.getNode(), "project", true) != null) ? SLinkOperations.getTarget(_context.getNode(), "project", true) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null));
   }
 
   public static SNode sourceNodeQuery_1225441503928(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

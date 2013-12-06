@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.featureStatistics.FeatureUsageTracker;
@@ -107,7 +107,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -137,7 +137,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
         public void run(@NotNull final ProgressIndicator p) {
           modelAccess.runReadAction(new Runnable() {
             public void run() {
-              for (String finderClass : ListSequence.fromList(finderClasses)) {
+              for (String finderClass : finderClasses) {
                 List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
                 ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
                   public SNodePointer select(SNode it) {

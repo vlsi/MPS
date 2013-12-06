@@ -29,10 +29,7 @@ public class GlobalSNodeId {
   public SNode getNode() {
     SModelReference sModelReference = PersistenceFacade.getInstance().createModelReference(getModelReference());
     SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelReference);
-    return (sModelDescriptor == null ?
-      null :
-      sModelDescriptor.getNode(SNodeId.fromString(getNodeId()))
-    );
+    return (sModelDescriptor == null ? null : sModelDescriptor.getNode(SNodeId.fromString(getNodeId())));
   }
 
   @Override

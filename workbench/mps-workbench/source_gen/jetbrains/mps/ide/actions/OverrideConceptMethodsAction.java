@@ -41,10 +41,7 @@ public class OverrideConceptMethodsAction {
       public void run() {
         contextClass.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
         contextMethod.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", true, false);
-        List<SNode> methodsToOverride = (myIsOverride ?
-          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) :
-          BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})
-        );
+        List<SNode> methodsToOverride = (myIsOverride ? BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass.value, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{}));
         methods.value = OverrideConceptMethodsDialog.toNodePointers(OverrideConceptMethodsDialog.sortMethods(contextClass.value, methodsToOverride));
       }
     });
@@ -55,10 +52,7 @@ public class OverrideConceptMethodsAction {
         return myIsOverride;
       }
     };
-    dialog.setTitle((myIsOverride ?
-      "Select Behavior Methods to Override" :
-      "Select Behavior Methods to Implement"
-    ));
+    dialog.setTitle((myIsOverride ? "Select Behavior Methods to Override" : "Select Behavior Methods to Implement"));
     dialog.show();
 
     if (dialog.isOK()) {

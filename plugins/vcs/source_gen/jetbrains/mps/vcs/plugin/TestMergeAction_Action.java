@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import javax.swing.SwingUtilities;
@@ -61,7 +61,7 @@ public class TestMergeAction_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -81,7 +81,7 @@ public class TestMergeAction_Action extends BaseAction {
       descriptor.setDescription("Zip files (*.zip) ");
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          VirtualFile vFile = FileChooser.chooseFile(((Project) MapSequence.fromMap(_params).get("project")), descriptor);
+          VirtualFile vFile = FileChooser.chooseFile(descriptor, ((Project) MapSequence.fromMap(_params).get("project")), null);
 
           final String resFile;
           SModel[] zipped;
@@ -127,9 +127,6 @@ public class TestMergeAction_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
 
   private static <T> T as_81bq2k_a0a0a0c0a0a0a0a0j0a0a0a4a0a5(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

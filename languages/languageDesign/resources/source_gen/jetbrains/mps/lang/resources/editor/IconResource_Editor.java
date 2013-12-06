@@ -89,7 +89,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_79r3b6_a0a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_79r3b6_a0a0h(SPropertyOperations.getString(node, "path"));
+    return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
 
   private EditorCell createConstant_79r3b6_a0a0a(EditorContext editorContext, SNode node) {
@@ -180,11 +180,11 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_79r3b6_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_79r3b6_a0a0s(SPropertyOperations.getString(node, "path"));
+    return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
 
   private static boolean renderingCondition_79r3b6_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_79r3b6_a0a0t(SPropertyOperations.getString(node, "path"));
+    return isEmptyString(SPropertyOperations.getString(node, "path"));
   }
 
   private EditorCell createRefNode_79r3b6_a1a(EditorContext editorContext, SNode node) {
@@ -223,13 +223,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_path");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(IconResource_Editor._StyleParameter_QueryFunction_79r3b6_a0a((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(IconResource_Editor._StyleParameter_QueryFunction_79r3b6_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -243,21 +237,10 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static Color _StyleParameter_QueryFunction_79r3b6_a0a(EditorContext editorContext, SNode node) {
-    return (IconResource_Behavior.call_isValid_8974276187400030063(node) ?
-      Color.BLACK :
-      Color.RED
-    );
+    return (IconResource_Behavior.call_isValid_8974276187400030063(node) ? Color.BLACK : Color.RED);
   }
 
-  public static boolean isEmpty_79r3b6_a0a0h(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_79r3b6_a0a0s(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_79r3b6_a0a0t(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -14,7 +14,7 @@
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="75" startPosition="45" endLine="76" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="77" startPosition="7" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="83" startPosition="53" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="85" startPosition="5" endLine="86" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="85" startPosition="5" endLine="86" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="87" startPosition="62" endLine="88" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="89" startPosition="5" endLine="90" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="91" startPosition="64" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -71,7 +71,7 @@
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="82" startPosition="95" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="86" startPosition="89" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="86" startPosition="87" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="90" startPosition="90" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841968384" fileName="CollectTests_Action.java" startLine="111" startPosition="92" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="115" startPosition="27" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

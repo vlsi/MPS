@@ -49,14 +49,8 @@ public class StringUtil {
     if (text.length() < oldS.length()) {
       return text;
     }
-    final String text1 = (ignoreCase ?
-      text.toLowerCase() :
-      text
-    );
-    final String oldS1 = (ignoreCase ?
-      oldS.toLowerCase() :
-      oldS
-    );
+    final String text1 = (ignoreCase ? text.toLowerCase() : text);
+    final String oldS1 = (ignoreCase ? oldS.toLowerCase() : oldS);
     final StringBuilder newText = new StringBuilder();
     int i = 0;
     while (i < text1.length()) {

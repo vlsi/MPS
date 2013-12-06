@@ -5,17 +5,16 @@ package jetbrains.mps.baseLanguage.javastub;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -33,7 +32,7 @@ public class SReferenceCreator implements SReferenceHandler {
 
   @Override
   public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
-    if (pack.equals(SNodeOperations.getModelLongName(model))) {
+    if (pack.equals(NameUtil.getModelLongName(model.getReference().getModelName()))) {
       SNode nodeInSameModel = model.getNode(targetNodeId);
       if (nodeInSameModel != null) {
         return jetbrains.mps.smodel.SReference.create(role, source, model.getReference(), targetNodeId, resolveInfo);
@@ -47,7 +46,7 @@ public class SReferenceCreator implements SReferenceHandler {
     }
 
     for (SModelReference m : possibleModels) {
-      ((SModelInternal) model).addModelImport(m, false);
+      (model).addModelImport(m, false);
     }
 
     if (SetSequence.fromSet(possibleModels).count() > 1) {

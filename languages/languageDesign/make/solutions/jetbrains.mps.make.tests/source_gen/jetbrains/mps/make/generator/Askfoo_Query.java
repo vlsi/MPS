@@ -33,9 +33,6 @@ public class Askfoo_Query implements IQuery<Bar_Option> {
   }
 
   public Bar_Option defaultOption() {
-    return (defaultOption >= 0 ?
-      Bar_Option.class.getEnumConstants()[defaultOption] :
-      null
-    );
+    return (defaultOption >= 0 ? Bar_Option.class.getEnumConstants()[defaultOption] : null);
   }
 }

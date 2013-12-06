@@ -21,23 +21,16 @@ public class BuildLayout_Filemode_Behavior {
       SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept", false, false);
       name = SPropertyOperations.getString(ancestor, "name");
     }
-    if (isNotEmpty_sy70l_a0e0b(SPropertyOperations.getString(thisNode, "filemode"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "filemode"))) {
       name = name + "_f" + SPropertyOperations.getString(thisNode, "filemode");
     }
-    if (isNotEmpty_sy70l_a0f0b(SPropertyOperations.getString(thisNode, "dirmode"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "dirmode"))) {
       name = name + "_d" + SPropertyOperations.getString(thisNode, "dirmode");
     }
-    return context.getTempPath(thisNode, name, ((nlayout != null) ?
-      SPropertyOperations.getString(nlayout, "name") :
-      "default"
-    ));
+    return context.getTempPath(thisNode, name, ((nlayout != null) ? SPropertyOperations.getString(nlayout, "name") : "default"));
   }
 
-  public static boolean isNotEmpty_sy70l_a0e0b(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_sy70l_a0f0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

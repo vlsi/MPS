@@ -105,7 +105,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       modelAccess.runReadAction(new Runnable() {
         public void run() {
           basePath.value = BuildProject_Behavior.call_getBasePath_4959435991187146924(((SNode) MapSequence.fromMap(_params).get("node")), Context.defaultContext());
-          if (basePath.value != null && isNotEmpty_mmt9i1_a0a1a0a0a0a7a0a5(basePath.value)) {
+          if (basePath.value != null && isNotEmptyString(basePath.value)) {
             projectFolder.value = FileSystem.getInstance().getFileByPath(basePath.value);
           }
         }
@@ -161,7 +161,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(ImportAllModulesFromFolder_Action.class);
 
-  public static boolean isNotEmpty_mmt9i1_a0a1a0a0a0a7a0a5(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

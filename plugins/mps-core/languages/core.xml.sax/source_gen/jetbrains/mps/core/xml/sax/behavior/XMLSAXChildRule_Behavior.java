@@ -16,7 +16,7 @@ public class XMLSAXChildRule_Behavior {
   }
 
   public static String call_getTagName_2264311582634140608(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "rule", false) != null) && isNotEmpty_twisza_a0a0a0b(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName")) && (SPropertyOperations.getBoolean(thisNode, "overrideTag") == false || isEmpty_twisza_a0a0a0a1(SPropertyOperations.getString(thisNode, "tagName")))) {
+    if ((SLinkOperations.getTarget(thisNode, "rule", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName")) && (SPropertyOperations.getBoolean(thisNode, "overrideTag") == false || isEmptyString(SPropertyOperations.getString(thisNode, "tagName")))) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName");
     }
     return SPropertyOperations.getString(thisNode, "tagName");
@@ -65,11 +65,11 @@ public class XMLSAXChildRule_Behavior {
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
   }
 
-  public static boolean isNotEmpty_twisza_a0a0a0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_twisza_a0a0a0a1(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

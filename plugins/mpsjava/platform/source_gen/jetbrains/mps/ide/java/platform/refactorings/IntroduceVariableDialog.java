@@ -151,9 +151,6 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
   @Override
   public JComponent getPreferredFocusedComponent() {
     JComponent candidate = super.getPreferredFocusedComponent();
-    return (candidate == null ?
-      this.myName :
-      candidate
-    );
+    return (candidate == null ? this.myName : candidate);
   }
 }

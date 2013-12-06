@@ -81,9 +81,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
   }
 
   private static boolean neq_bqsatu_a0a0f(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

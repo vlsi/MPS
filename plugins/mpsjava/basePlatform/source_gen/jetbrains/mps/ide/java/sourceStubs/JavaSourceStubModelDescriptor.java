@@ -19,10 +19,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.ide.java.newparser.JavaParser;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.io.InputStream;
@@ -43,16 +41,14 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
   private SModelReference myModelRef;
   private SModel myModel;
-  private String myJavaPackage;
   private Map<String, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
 
 
 
-  public JavaSourceStubModelDescriptor(SModelReference modelRef, MultiStreamDataSource dataSource, String javaPackage) {
+  public JavaSourceStubModelDescriptor(SModelReference modelRef, MultiStreamDataSource dataSource) {
     super(modelRef, dataSource);
     myModelRef = modelRef;
-    myJavaPackage = javaPackage;
   }
 
 
@@ -115,8 +111,8 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
 
   @Override
-  protected void processChanged(ProgressMonitor monitor) {
-    // ignore 
+  public boolean needsReloading() {
+    return false;
   }
 
 
@@ -131,7 +127,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   public void processStreams(Iterable<String> names, SModelData into) {
     JavaParser parser = new JavaParser();
 
-    for (String fileName : Sequence.fromIterable(names)) {
+    for (String fileName : names) {
       try {
         Set<SNode> oldNodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myRootsPerFile).get(fileName));
 
@@ -153,7 +149,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
           LOG.warning("failed to close file " + fileName, e);
         }
 
-        JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, null, true);
+        JavaParser.JavaParseResult parseResult = parser.parse(code, FeatureKind.CLASS_STUB, null, true);
         if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
           for (SNode newNode : ListSequence.fromList(parseResult.getNodes())) {
             final SNodeId newNodeId = newNode.getNodeId();
@@ -218,11 +214,8 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
         wholeBuffer = new byte[size];
         int c = 0;
         int p = 0;
-        for (byte[] buf : ListSequence.fromList(blocks)) {
-          int n = (c == blks - 1 ?
-            lastRead :
-            BUFSIZE
-          );
+        for (byte[] buf : blocks) {
+          int n = (c == blks - 1 ? lastRead : BUFSIZE);
           System.arraycopy(buf, 0, wholeBuffer, p, n);
           p = p + BUFSIZE;
           c++;

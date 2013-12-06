@@ -448,10 +448,7 @@ public class ModuleChecker {
     }
 
     // wat? 
-    String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(myGenContext != null ?
-      Context.defaultContext(myGenContext) :
-      Context.defaultContext()
-    )});
+    String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(myGenContext != null ? Context.defaultContext(myGenContext) : Context.defaultContext())});
     String testPath = null;
     if (localPath != null) {
       TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(myModuleDescriptor, FileSystem.getInstance().getFileByPath(localPath));
@@ -513,10 +510,7 @@ public class ModuleChecker {
       }
       if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule")) {
         SNode onModule = SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule");
-        boolean existing = (usedModuleIds.containsKey(SPropertyOperations.getString(SLinkOperations.getTarget(onModule, "module", false), "uuid")) ?
-          usedModuleIds.get(SPropertyOperations.getString(SLinkOperations.getTarget(onModule, "module", false), "uuid")) :
-          false
-        );
+        boolean existing = (usedModuleIds.containsKey(SPropertyOperations.getString(SLinkOperations.getTarget(onModule, "module", false), "uuid")) ? usedModuleIds.get(SPropertyOperations.getString(SLinkOperations.getTarget(onModule, "module", false), "uuid")) : false);
         usedModuleIds.put(SPropertyOperations.getString(SLinkOperations.getTarget(onModule, "module", false), "uuid"), SPropertyOperations.getBoolean(onModule, "reexport") || existing);
         if (extracted) {
           extractedModules.add(SPropertyOperations.getString(SLinkOperations.getTarget(onModule, "module", false), "uuid"));
@@ -632,10 +626,7 @@ public class ModuleChecker {
           final String relPath = BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{});
           if (!(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              SNode dep = (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
-                SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
-                it
-              );
+              SNode dep = (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ? SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) : it);
               return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_yr5c5g_a0a1a0a0a0a0b0a0d0x0db(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
             }
           }))) {
@@ -713,10 +704,7 @@ public class ModuleChecker {
     Set<String> extendedLanguages = SetSequence.fromSet(new HashSet<String>());
     Set<String> usedLanguages = SetSequence.fromSet(new HashSet<String>());
     for (SNode originalDep : deps) {
-      SNode dep = (SNodeOperations.isInstanceOf(originalDep, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ?
-        SLinkOperations.getTarget(SNodeOperations.cast(originalDep, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
-        originalDep
-      );
+      SNode dep = (SNodeOperations.isInstanceOf(originalDep, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ? SLinkOperations.getTarget(SNodeOperations.cast(originalDep, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) : originalDep);
       if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule")) {
         SNode depOnModule = SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule");
         String uuid = SPropertyOperations.getString(SLinkOperations.getTarget(depOnModule, "module", false), "uuid");
@@ -801,10 +789,7 @@ public class ModuleChecker {
     if (SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(myModule)) {
       return node;
     }
-    return (myGenContext != null ?
-      myGenContext.getOriginalCopiedInputNode(node) :
-      node
-    );
+    return (myGenContext != null ? myGenContext.getOriginalCopiedInputNode(node) : node);
   }
 
 
@@ -850,30 +835,18 @@ public class ModuleChecker {
   }
 
   private static boolean neq_yr5c5g_a0a0e0r(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_yr5c5g_a0a8a71(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0x0db(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_yr5c5g_a0a0a0a0a0a0a0c0d0x0db(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

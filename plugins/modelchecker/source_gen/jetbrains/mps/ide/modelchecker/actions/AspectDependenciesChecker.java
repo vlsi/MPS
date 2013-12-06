@@ -91,14 +91,8 @@ public class AspectDependenciesChecker extends SpecificChecker {
   }
 
   public int getModelKind(SModel model, @Nullable SReference reference) {
-    DataSource source = (model != null ?
-      model.getSource() :
-      null
-    );
-    IFile modelFile = (source instanceof FileDataSource ?
-      ((FileDataSource) source).getFile() :
-      null
-    );
+    DataSource source = (model != null ? model.getSource() : null);
+    IFile modelFile = (source instanceof FileDataSource ? ((FileDataSource) source).getFile() : null);
     if (modelFile != null) {
       String filePath = modelFile.getAbsolutePath().replace('\\', '/');
       if (filePath.startsWith(languagesUtilPath)) {

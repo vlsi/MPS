@@ -266,7 +266,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       branding = _quotation_createNode_un708i_a0l0b71a21(ICONS, buildNumber, ICONS, name, name, name, ICONS, dateMacro, ICONS, ICONS, ICONS, ICONS, ICONS, ICONS);
       ListSequence.fromList(SLinkOperations.getTargets(buildProject, "parts", true)).addElement(branding);
     }
-    for (String macro : SetSequence.fromSet(userMacroNames)) {
+    for (String macro : userMacroNames) {
       ListSequence.fromList(macros).addElement(_quotation_createNode_un708i_a0a0a81a21(macro));
     }
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "macros", true)).addSequence(ListSequence.fromList(macros));
@@ -2383,58 +2383,34 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static boolean eq_un708i_a0d0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_un708i_a0r0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_un708i_a0a71a21(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_un708i_a0b71a21(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_un708i_a0a0a0a0a0b1a0a0a0a13a21(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_un708i_a0fb0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_un708i_a0pb0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_un708i_a0a0a0a0a0a0a11a31(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

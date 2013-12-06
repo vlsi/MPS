@@ -68,10 +68,7 @@ public class MakeStaticFieldTransient_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "isTransient") ?
-        "Make Field Not Transient" :
-        "Make Field Transient"
-      );
+      return (SPropertyOperations.getBoolean(node, "isTransient") ? "Make Field Not Transient" : "Make Field Transient");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

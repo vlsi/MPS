@@ -75,13 +75,7 @@ public class GenModuleXmlWorker extends MpsWorker {
 
     try {
       PrintWriter wr = new PrintWriter(new PrintStream(file.openOutputStream()));
-      wr.println("<module namespace=\"" + moduleRef.getModuleName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ?
-        "solution" :
-        (module instanceof Language ?
-          "language" :
-          "unknown"
-        )
-      )) + "\">");
+      wr.println("<module namespace=\"" + moduleRef.getModuleName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ? "solution" : (module instanceof Language ? "language" : "unknown"))) + "\">");
 
       wr.println(INDENT_WITH + "<dependencies>");
       Collection<SModule> dependencies = getDepenencies(module);

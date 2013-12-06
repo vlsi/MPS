@@ -61,10 +61,7 @@ public class SetReferenceChange extends NodeChange {
     if (myTargetNodeId == null && myResolveInfo == null) {
       node.setReferenceTarget(myRole, null);
     } else {
-      SModelReference targetModelReference = (myTargetModelReference == null ?
-        model.getReference() :
-        myTargetModelReference
-      );
+      SModelReference targetModelReference = (myTargetModelReference == null ? model.getReference() : myTargetModelReference);
       SReference reference;
       if (myTargetNodeId == null) {
         reference = new DynamicReference(myRole, node, targetModelReference, myResolveInfo);
@@ -83,10 +80,7 @@ public class SetReferenceChange extends NodeChange {
 
   @Override
   public String toString() {
-    String targetString = (myTargetModelReference == null ?
-      "" + myTargetNodeId :
-      String.format("%s|%s", myTargetModelReference, myTargetNodeId)
-    );
+    String targetString = (myTargetModelReference == null ? "" + myTargetNodeId : String.format("%s|%s", myTargetModelReference, myTargetNodeId));
     return String.format("Set reference in role %s for node %s to %s [resolveInfo=%s]", myRole, getAffectedNodeId(), targetString, myResolveInfo);
   }
 
@@ -190,44 +184,26 @@ public class SetReferenceChange extends NodeChange {
   }
 
   private static boolean eq_mgdhcs_a0a0a9a5(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_mgdhcs_a0a0a9a5_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean neq_mgdhcs_a0h0n(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_mgdhcs_a0i0n(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_mgdhcs_a0j0n(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_mgdhcs_a0e0o(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

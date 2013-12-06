@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -103,7 +104,11 @@ public class ConstructorDeclaration_Behavior {
     }
     SNode superclass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     if (superclass != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")) {
-      Iterable<SNode> constructors = ClassConcept_Behavior.call_constructors_5292274854859503373(superclass);
+      Iterable<SNode> constructors = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(superclass)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+        }
+      });
       if (Sequence.fromIterable(constructors).isEmpty()) {
         return null;
       }
@@ -116,6 +121,19 @@ public class ConstructorDeclaration_Behavior {
     } else {
       return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(superclass)).first();
     }
+  }
+
+  public static boolean call_hasImplicitSuperDefaultConstructor_6155185097898257848(SNode thisNode) {
+    SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
+    if (classifierType == null) {
+      return true;
+    }
+    SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+    if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      return false;
+    }
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).isEmpty();
   }
 
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {

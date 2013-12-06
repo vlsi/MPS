@@ -57,25 +57,16 @@ public class AdaptableClassifierTarget {
     SNode adaptable = (SNode) Values.ADAPTABLE.get(genContext, target);
     String aname = SPropertyOperations.getString(adaptable, "name");
     int aldidx = aname.lastIndexOf(".");
-    aname = (aldidx >= 0 ?
-      aname.substring(aldidx + 1) :
-      aname
-    );
+    aname = (aldidx >= 0 ? aname.substring(aldidx + 1) : aname);
     String tname = SPropertyOperations.getString(target, "name");
     int tldidx = tname.lastIndexOf(".");
-    tname = (tldidx >= 0 ?
-      tname.substring(tldidx + 1) :
-      tname
-    );
+    tname = (tldidx >= 0 ? tname.substring(tldidx + 1) : tname);
     return aname + "_to_" + tname + "_adapter";
   }
 
   public SNode getTarget(SNode expr) {
     SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(expr), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
-    ntype = (ntype == null ?
-      TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) :
-      ntype
-    );
+    ntype = (ntype == null ? TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) : ntype);
     assert ntype != null;
     final String trgFQname = (String) Values.PREP_DATA.get(genContext, expr);
     SNode target = ListSequence.fromList(getTargets(SLinkOperations.getTarget(ntype, "classifier", false))).findFirst(new IWhereFilter<SNode>() {

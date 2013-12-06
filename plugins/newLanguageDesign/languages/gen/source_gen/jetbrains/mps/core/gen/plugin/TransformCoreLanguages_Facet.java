@@ -145,10 +145,7 @@ public class TransformCoreLanguages_Facet extends IFacet.Stub {
               } catch (ClassNotFoundException ignore) {
               }
 
-              final TransientModelsProvider transModels = (tmc != null ?
-                (TransientModelsProvider) tmc :
-                new TransientModelsProvider(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Variables.class).project(), null)
-              );
+              final TransientModelsProvider transModels = (tmc != null ? (TransientModelsProvider) tmc : new TransientModelsProvider(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Variables.class).project(), null));
               GenerationOptions options = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure.Variables.class).generationOptions().create();
               final GenerationOptions.OptionsBuilder builder = GenerationOptions.getDefaults().keepOutputModel(true).strictMode(options.isStrictMode()).reporting(options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings(), options.getNumberOfModelsToKeep()).saveTransientModels(options.isSaveTransientModels());
               ModelAccess.instance().runReadAction(new Runnable() {

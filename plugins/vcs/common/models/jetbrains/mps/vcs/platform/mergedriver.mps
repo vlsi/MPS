@@ -7270,7 +7270,7 @@
           <property name="value" nameId="tpee.1070475926801" value="xstream-1.4.3.jar" />
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7211226859971706318" nodeInfo="nn">
-          <property name="value" nameId="tpee.1070475926801" value="guava-12.0.jar" />
+          <property name="value" nameId="tpee.1070475926801" value="guava-14.0.1.jar" />
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4452305126578631431" nodeInfo="nn">
           <property name="value" nameId="tpee.1070475926801" value="jdom.jar" />

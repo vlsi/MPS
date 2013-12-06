@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="ek0dc645sp0tj9ha57b8sn3iad4kx3s">
-  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
-  <common hash="8dqs6igc9hn1ly75zrcfr8gtbpzclw5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <common hash="8dqs6igc9hn1ly75zrcfr8gtbpzclw5" dependsOnNodes="true" />
   <source id="5294483648489409095" name="ThreadWatcher" hash="-ai723ocuk88h1c5utews8ipot9gbmdl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ThreadWatcher.java" />
@@ -15,7 +14,6 @@
     <file name="CachingAppender.java" />
   </source>
   <source id="5294483648489410732" name="CachingPrintStream" hash="-bcyqft27m3pirhycm9h42an2zboq8fi">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CachingPrintStream.java" />
   </source>

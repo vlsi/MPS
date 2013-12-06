@@ -53,7 +53,7 @@ public class MergeSession {
     }
 
     final jetbrains.mps.smodel.SModel newmodel = existing.createEmptyCopy();
-    existing.copyPropertiesTo(newmodel.getModelDescriptor());
+    existing.copyPropertiesTo(newmodel);
     Sequence.fromIterable(mergeLists((Iterable<SNode>) model.getRootNodes(), roots, newmodel.getModelDescriptor())).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         newmodel.addRootNode(it);
@@ -117,10 +117,7 @@ public class MergeSession {
     Sequence.fromIterable(created).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         String signature = getSignature(it);
-        SNode existingNode = (MapSequence.fromMap(existingNodes).containsKey(signature) ?
-          ListSequence.fromList(MapSequence.fromMap(existingNodes).get(signature)).removeElementAt(0) :
-          null
-        );
+        SNode existingNode = (MapSequence.fromMap(existingNodes).containsKey(signature) ? ListSequence.fromList(MapSequence.fromMap(existingNodes).get(signature)).removeElementAt(0) : null);
         ListSequence.fromList(result).addElement(merge(existingNode, it, newmodel));
       }
     });
@@ -134,15 +131,19 @@ public class MergeSession {
     SNode result = new jetbrains.mps.smodel.SNode(node.getConcept().getQualifiedName());
     MapSequence.fromMap(mapping).put(node, result);
     MapSequence.fromMap(reverseMapping).put(result, node);
-    ((jetbrains.mps.smodel.SNode) result).putProperties((jetbrains.mps.smodel.SNode) node);
-    ((jetbrains.mps.smodel.SNode) result).putUserObjects((jetbrains.mps.smodel.SNode) node);
+
+    for (String name : node.getPropertyNames()) {
+      result.setProperty(name, node.getProperty(name));
+    }
+
+    for (Object key : node.getUserObjectKeys()) {
+      result.putUserObject(key, node.getUserObject(key));
+    }
+
     if (existing != null) {
       ((jetbrains.mps.smodel.SNode) result).setId(existing.getNodeId());
     }
-    for (SNode child : mergeLists((existing == null ?
-      Sequence.fromIterable(Collections.<SNode>emptyList()) :
-      jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(existing)
-    ), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(node), newmodel)) {
+    for (SNode child : mergeLists((existing == null ? Sequence.fromIterable(Collections.<SNode>emptyList()) : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(existing)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(node), newmodel)) {
       String role = MapSequence.fromMap(reverseMapping).get(child).getRoleInParent();
       assert role != null;
       result.addChild(role, child);
@@ -151,10 +152,7 @@ public class MergeSession {
   }
 
   protected String getSignature(SNode node) {
-    String signature = ((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(node) == null) ?
-      "{root}" :
-      jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkRole(node)
-    );
+    String signature = ((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(node) == null) ? "{root}" : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkRole(node));
     assert signature != null;
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       signature = "#" + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");

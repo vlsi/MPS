@@ -88,23 +88,11 @@ public abstract class DebugConnectionSettings implements IDebuggerSettings {
   }
 
   public String getPresentation() {
-    return "transport: " + ((myUseSockets ?
-      "'socket'" :
-      "'shared memory'"
-    )) + ", address: " + getAddress();
+    return "transport: " + ((myUseSockets ? "'socket'" : "'shared memory'")) + ", address: " + getAddress();
   }
 
   protected static String getCommandLine(boolean serverMode, boolean useSockets, boolean suspend, String address) {
-    return "-Xrunjdwp:transport=" + ((useSockets ?
-      "dt_socket" :
-      "dt_shmem"
-    )) + ",server=" + (((serverMode ?
-      'y' :
-      'n'
-    ))) + ",suspend=" + (((suspend ?
-      'y' :
-      'n'
-    ))) + ",address=" + address;
+    return "-Xrunjdwp:transport=" + ((useSockets ? "dt_socket" : "dt_shmem")) + ",server=" + (((serverMode ? 'y' : 'n'))) + ",suspend=" + (((suspend ? 'y' : 'n'))) + ",address=" + address;
   }
 
   protected static String getCommandLine(boolean serverMode, boolean useSockets, boolean suspend, String host, int port, String sharedMemoryAddress) {

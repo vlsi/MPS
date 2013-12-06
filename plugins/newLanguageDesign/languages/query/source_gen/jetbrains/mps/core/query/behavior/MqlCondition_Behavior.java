@@ -60,10 +60,7 @@ public class MqlCondition_Behavior {
   }
 
   public static int call_evaluateAsInt_1671449901154582343(SNode thisNode, boolean left, EvaluationEnvironment env, EvaluationContext context) {
-    Object result = env.evaluate((left ?
-      SLinkOperations.getTarget(thisNode, "left", true) :
-      SLinkOperations.getTarget(thisNode, "right", true)
-    ), context, false);
+    Object result = env.evaluate((left ? SLinkOperations.getTarget(thisNode, "left", true) : SLinkOperations.getTarget(thisNode, "right", true)), context, false);
     if (result instanceof Integer) {
       return (Integer) result;
     }
@@ -71,10 +68,7 @@ public class MqlCondition_Behavior {
   }
 
   public static boolean call_evaluateAsBoolean_1671449901154582389(SNode thisNode, boolean left, EvaluationEnvironment env, EvaluationContext context) {
-    Object result = env.evaluate((left ?
-      SLinkOperations.getTarget(thisNode, "left", true) :
-      SLinkOperations.getTarget(thisNode, "right", true)
-    ), context, true);
+    Object result = env.evaluate((left ? SLinkOperations.getTarget(thisNode, "left", true) : SLinkOperations.getTarget(thisNode, "right", true)), context, true);
     if (result instanceof Boolean) {
       return (Boolean) result;
     } else if (result == null) {

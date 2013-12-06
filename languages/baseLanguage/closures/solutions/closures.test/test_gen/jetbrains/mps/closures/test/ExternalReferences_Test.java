@@ -78,6 +78,71 @@ __switch__:
     Assert.assertEquals(0, res.value);
   }
 
+  public void test_lvdsWithYieldFromNestedClosure() throws Exception {
+    final Wrappers._int res = new Wrappers._int(0);
+    int x = Sequence.fromIterable(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
+      public Iterable<Integer> invoke() {
+        return new Iterable<Integer>() {
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator<Integer>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      this.__CP__ = 1;
+                      this.yield(_3_local);
+                      return true;
+                    case 0:
+                      this._3_local = 10;
+                      res.value = new _FunctionTypes._return_P0_E0<Integer>() {
+                        public Integer invoke() {
+                          return _3_local++;
+                        }
+                      }.invoke();
+                      _3_local++;
+                      this.__CP__ = 4;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+
+              private int _3_local;
+            };
+          }
+        };
+      }
+    }.invoke()).first();
+    Assert.assertEquals(10, res.value);
+    Assert.assertEquals(12, x);
+  }
+
+  public void test_lvdsNoYieldFromNestedClosure() throws Exception {
+    final Wrappers._int res = new Wrappers._int(0);
+    int x = new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        final Wrappers._int local = new Wrappers._int(10);
+        res.value = new _FunctionTypes._return_P0_E0<Integer>() {
+          public Integer invoke() {
+            return ++local.value;
+          }
+        }.invoke();
+        return ++local.value;
+      }
+    }.invoke();
+    Assert.assertEquals(11, res.value);
+    Assert.assertEquals(12, x);
+  }
+
   public void test_alteredLocalVariable3() throws Exception {
     final Wrappers._T<byte[]> bytes = new Wrappers._T<byte[]>(new byte[1]);
     new _FunctionTypes._return_P0_E0<byte[]>() {

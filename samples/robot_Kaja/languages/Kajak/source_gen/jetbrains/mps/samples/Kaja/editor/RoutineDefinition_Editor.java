@@ -73,20 +73,8 @@ public class RoutineDefinition_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7lzh7e_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, RoutineDefinition_Editor._StyleParameter_QueryFunction_7lzh7e_a0c0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, RoutineDefinition_Editor._StyleParameter_QueryFunction_7lzh7e_a1c0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, RoutineDefinition_Editor._StyleParameter_QueryFunction_7lzh7e_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, RoutineDefinition_Editor._StyleParameter_QueryFunction_7lzh7e_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.MATCHING_LABEL, "block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

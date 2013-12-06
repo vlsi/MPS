@@ -91,7 +91,7 @@ public class Map_Test extends Util_Test {
     Map<Integer, Character> ascii = MapSequence.<Integer, Character>fromMapAndKeysArray(new HashMap<Integer, Character>(), 48, 49, 50).withValues('0', '1', '2');
     Assert.assertSame('1', MapSequence.fromMap(ascii).get(49));
     Iterable<Integer> keys = MapSequence.fromMap(ascii).keySet();
-    for (int k : Sequence.fromIterable(keys)) {
+    for (int k : keys) {
       Assert.assertEquals(Character.valueOf((char) (int) k), MapSequence.fromMap(ascii).get(k));
     }
   }

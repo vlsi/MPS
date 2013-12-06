@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
-import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.persistence.binary.NodesReader;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.util.Pair;
@@ -52,8 +51,7 @@ public class TransientModelPersistence {
       return null;
     }
 
-    TransientSModel m = new TransientSModel(myModelReference);
-    List<Pair<String, SNode>> roots = new NodesReader(myModelReference, null, false).readNodes(m, is);
+    List<Pair<String, SNode>> roots = new NodesReader(myModelReference, false).readNodes(is);
     List<SNode> res = new ArrayList<SNode>(roots.size());
     for (Pair<String, SNode> r : roots) {
       res.add(r.o2);

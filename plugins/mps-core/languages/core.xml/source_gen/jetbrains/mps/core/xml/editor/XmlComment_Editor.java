@@ -44,13 +44,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5fx40y_a0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlComment(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0a0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -204,13 +198,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5fx40y_c0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlComment(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0c0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -54,7 +54,7 @@ public class QueriesGenerated {
           SNode pdtype = SLinkOperations.getTarget(ListSequence.fromList(params).getElement(idx), "type", true);
           if (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
             Iterable<SNode> methods = Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(SNodeOperations.cast(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
-            if ((int) Sequence.fromIterable(methods).count() == 1) {
+            if (Sequence.fromIterable(methods).count() == 1) {
               SNode adaptTo = Sequence.fromIterable(methods).first();
               // TODO: generic parameters 
               for (SNode adaptToPD : SLinkOperations.getTargets(adaptTo, "parameter", true)) {

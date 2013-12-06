@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c1xxiw06yn7s5w2dcvjr8t7qbnjava7">
-  <dep model="f:java_stub#847a3235-09f9-403c-b6a9-1c294a212e92#org.apache.tools.ant.taskdefs(Ant/org.apache.tools.ant.taskdefs@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <common hash="38o5i6u0qu2zkwhmoyxkoychnsfrgia" />
-  <source id="288299486413331049" name="ConvertToBinaryTask" hash="-5t7jkgeofcp94zr8ajejtk5mr2l9m1d">
-    <dep model="f:java_stub#847a3235-09f9-403c-b6a9-1c294a212e92#org.apache.tools.ant.taskdefs(Ant/org.apache.tools.ant.taskdefs@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="ConvertToBinaryTask.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-c1xxiw06yn7s5w2dcvjr8t7qbnjava7" />
 

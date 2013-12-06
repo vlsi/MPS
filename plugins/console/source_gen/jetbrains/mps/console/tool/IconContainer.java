@@ -6,7 +6,6 @@ import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
 
 public class IconContainer {
-  protected static Icon ICON_d0a61 = IconUtil.getIcon("console.png");
   protected static Icon ICON_c0a0yb = IconUtil.getIcon("run.png");
   protected static Icon ICON_c0a0cc = IconUtil.getIcon("clean.png");
   protected static Icon ICON_c0a0ec = IconUtil.getIcon("previousOccurence.png");

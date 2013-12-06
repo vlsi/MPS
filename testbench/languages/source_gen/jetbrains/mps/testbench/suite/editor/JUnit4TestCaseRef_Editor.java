@@ -37,13 +37,7 @@ public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Test");
     editorCell.setCellId("Constant_hazblc_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.STRIKE_OUT, JUnit4TestCaseRef_Editor._StyleParameter_QueryFunction_hazblc_a0a0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.STRIKE_OUT, JUnit4TestCaseRef_Editor._StyleParameter_QueryFunction_hazblc_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

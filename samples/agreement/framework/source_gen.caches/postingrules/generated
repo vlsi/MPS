@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="4yqiqln5nbta7sx61zcktkksepbc585">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" hash="-204lc1mozakfy7b6kd9agjc0ohqro8p" />
-  <common hash="7q3ug124ovc87w7715pjp728l0nj5ah" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a9qp6tb2eva1mros70qa0tynlaehi5n" />
+  <common hash="7q3ug124ovc87w7715pjp728l0nj5ah" dependsOnNodes="true" />
   <source id="6531435794299649861" name="AccountingException" hash="-2k9jnfz4mhsr20ks657mjuw68miyf7y">
     <file name="AccountingException.java" />
   </source>
@@ -29,12 +28,10 @@
     <file name="MissingPostingRuleException.java" />
   </source>
   <source id="6531435794299652198" name="TaxEvent" hash="cw0zdlomg32azqapqge1algd3hsowwk">
-    <dep root="6531435794299655543" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TaxEvent.java" />
   </source>
   <source id="6531435794299652730" name="Usage" hash="9832piqxfolz7i5vhz93z2p26j9g5zr">
-    <dep root="6531435794299655543" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Usage.java" />
   </source>
@@ -59,7 +56,6 @@
   </source>
   <source id="6531435794299654975" name="Customer" hash="-22j3aq3dpamp52p74pye4s45d83yot5">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" />
     <file name="Customer.java" />
   </source>
   <source id="6531435794299655211" name="Adjustment" hash="2rjc3mcldelwy940amxic5y9ow0kok6">

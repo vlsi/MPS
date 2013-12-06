@@ -34,10 +34,7 @@ public class BuildLayout_Node_Behavior {
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Node")) {
       sb.append("/");
     }
-    sb.append((SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") != null ?
-      SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") :
-      SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name")
-    ));
+    sb.append((SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name")));
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {

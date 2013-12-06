@@ -28,7 +28,7 @@ public class RenameDialog extends StringChooserDialog {
 
   private void update() {
     // TODO check for valid name 
-    if (isEmpty_x29nvn_a0b0d(trim_x29nvn_a0a1a3(myTextField.getText()))) {
+    if (isEmptyString(trim_x29nvn_a0a1a3(myTextField.getText()))) {
       setErrorText("New name cannot be empty");
       getRefactorAction().setEnabled(false);
     } else {
@@ -44,14 +44,11 @@ public class RenameDialog extends StringChooserDialog {
     return dialog.myResultString;
   }
 
-  public static boolean isEmpty_x29nvn_a0b0d(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 
   public static String trim_x29nvn_a0a1a3(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
+    return (str == null ? null : str.trim());
   }
 }

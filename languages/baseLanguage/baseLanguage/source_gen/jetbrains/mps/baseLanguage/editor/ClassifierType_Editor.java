@@ -210,10 +210,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_91bvrs_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ((SLinkOperations.getTarget(node, "classifier", false) != null) ?
-          BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}) :
-          "<unknown>"
-        );
+        return ((SLinkOperations.getTarget(node, "classifier", false) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}) : "<unknown>");
       }
 
       public void setText(String s) {

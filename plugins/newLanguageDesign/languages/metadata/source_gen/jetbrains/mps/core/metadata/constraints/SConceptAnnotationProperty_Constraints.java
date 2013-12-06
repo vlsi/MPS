@@ -7,16 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import java.util.Map;
-import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import java.util.HashMap;
-import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.regex.Pattern;
 
 public class SConceptAnnotationProperty_Constraints extends BaseConstraintsDescriptor {
   public SConceptAnnotationProperty_Constraints() {
@@ -39,24 +32,6 @@ public class SConceptAnnotationProperty_Constraints extends BaseConstraintsDescr
     return result;
   }
 
-  @Override
-  protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
-    Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
-    properties.put("name", new BasePropertyConstraintsDescriptor("name", this) {
-      @Override
-      public boolean hasOwnValidator() {
-        return true;
-      }
-
-      @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
-        String propertyName = "name";
-        return REGEXP_m80s3c_a0a0a1a1a0b0a1a3.matcher((SPropertyOperations.getString(propertyValue))).matches();
-      }
-    });
-    return properties;
-  }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (SLinkOperations.findLinkDeclaration("jetbrains.mps.core.metadata.structure.SConceptAnnotationProperty", "defaultValue") == link) {
       return SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.query.structure.MqlIntLiteral") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.query.structure.MqlStringLiteral") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.query.structure.MqlBoolLiteral");
@@ -65,5 +40,4 @@ public class SConceptAnnotationProperty_Constraints extends BaseConstraintsDescr
   }
 
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:728df9c4-e244-47ab-9c6b-5ca5e534ecd1(jetbrains.mps.core.metadata.constraints)", "2848533153256521358");
-  private static Pattern REGEXP_m80s3c_a0a0a1a1a0b0a1a3 = Pattern.compile("[a-zA-Z_][\\w]*", 0);
 }

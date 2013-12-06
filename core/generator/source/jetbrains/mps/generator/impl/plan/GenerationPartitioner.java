@@ -60,15 +60,15 @@ public class GenerationPartitioner {
   private final Map<SModelReference, TemplateModel> myModelMap;
 
   // result
-  private final Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> myPriorityMap;
+  private final PriorityMap myPriorityMap;
   private final List<CoherentSetData> myCoherentMappings;
-  private Set<TemplateMappingPriorityRule> myConflictingRules;
+  private PriorityConflicts myConflicts;
 
   public GenerationPartitioner(Collection<TemplateModule> generators) {
     myGenerators = generators;
-    myPriorityMap = new HashMap<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>>();
+    myPriorityMap = new PriorityMap();
     myCoherentMappings = new ArrayList<CoherentSetData>();
-    myConflictingRules = new HashSet<TemplateMappingPriorityRule>();
+    myConflicts = new PriorityConflicts();
 
     myModulesMap = new HashMap<SModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
@@ -84,9 +84,7 @@ public class GenerationPartitioner {
   public List<List<TemplateMappingConfiguration>> createMappingSets() {
     for (TemplateModule generator : myGenerators) {
       for (TemplateModel model : generator.getModels()) {
-        for (TemplateMappingConfiguration m : model.getConfigurations()) {
-          myPriorityMap.put(m, new HashMap<TemplateMappingConfiguration, PriorityData>());
-        }
+        myPriorityMap.prepare(model.getConfigurations());
       }
     }
 
@@ -94,7 +92,7 @@ public class GenerationPartitioner {
     loadRules();
 
     // solve
-    return new PartitioningSolver(myPriorityMap, myCoherentMappings, myConflictingRules).solve();
+    return new PartitioningSolver(myPriorityMap, myCoherentMappings, myConflicts).solve();
   }
 
   private void loadRules() {
@@ -105,18 +103,6 @@ public class GenerationPartitioner {
       }
       for (TemplateMappingPriorityRule rule : priorities) {
         processRule((MappingPriorityRule) rule, generator);
-      }
-    }
-  }
-
-  private void printRules() {
-    for (TemplateMappingConfiguration left : myPriorityMap.keySet()) {
-      Map<TemplateMappingConfiguration, PriorityData> right = myPriorityMap.get(left);
-
-      System.out.println(left.getName() + " (" + left.getModel().getLongName() + ")");
-      for (Entry<TemplateMappingConfiguration, PriorityData> entry : right.entrySet()) {
-        System.out.println("\t\t" + (entry.getValue().isStrict() ? "<   " :
-            "<= ") + entry.getKey().getName() + " (" + entry.getKey().getModel().getLongName() + ")");
       }
     }
   }
@@ -147,16 +133,8 @@ public class GenerationPartitioner {
       boolean isStrict = rule.getType() == RuleType.STRICTLY_BEFORE || rule.getType() == RuleType.STRICTLY_AFTER;
 
       for (TemplateMappingConfiguration lesserPriMapping : loPrio) {
-        Map<TemplateMappingConfiguration, PriorityData> grtPriMappingsFromMap = myPriorityMap.get(lesserPriMapping);
-
         for (TemplateMappingConfiguration grtPriMapping : hiPrio) {
-          if (!grtPriMappingsFromMap.containsKey(grtPriMapping)) {
-            grtPriMappingsFromMap.put(grtPriMapping, new PriorityData(isStrict, rule));
-          } else {
-            PriorityData priorityData = grtPriMappingsFromMap.get(grtPriMapping);
-            if (isStrict) priorityData.myStrict = true;
-            priorityData.myCauseRules.add(rule);
-          }
+          myPriorityMap.updateLock(lesserPriMapping, grtPriMapping, new PriorityData(isStrict, rule));
         }
       }
     }
@@ -165,7 +143,7 @@ public class GenerationPartitioner {
   private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator,
       String sourceGeneratorID) {
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
-      return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keySet());
+      return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keys());
     }
 
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
@@ -233,10 +211,9 @@ public class GenerationPartitioner {
     return Collections.emptyList();
   }
 
-  public Set<TemplateMappingPriorityRule> getConflictingPriorityRules() {
-    return myConflictingRules;
+  public PriorityConflicts getConflictingPriorityRules() {
+    return myConflicts;
   }
-
 
   static class PriorityData {
     boolean myStrict;
@@ -284,6 +261,11 @@ public class GenerationPartitioner {
       myMappings = mappings;
       myCauseRules = new HashSet<MappingPriorityRule>();
       myCauseRules.add(rule);
+    }
+
+    void merge(CoherentSetData other) {
+      myMappings.addAll(other.myMappings);
+      myCauseRules.addAll(other.myCauseRules);
     }
   } // class CoherentSetData
 }

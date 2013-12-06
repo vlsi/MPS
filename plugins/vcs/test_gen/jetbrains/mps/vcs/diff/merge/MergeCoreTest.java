@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff.merge;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import jetbrains.mps.WorkbenchMpsTest;
 import java.io.File;
 import org.junit.Test;
 import org.junit.Assert;
@@ -18,10 +19,9 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.AfterClass;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 @RunWith(Parameterized.class)
-public class MergeCoreTest {
+public class MergeCoreTest extends WorkbenchMpsTest {
   private static final File TESTDATA_HOME = new File("testbench/modules/merge");
   private static String ourPlayRefactoringWas;
   private static boolean ourMergeDriverModeWas;
@@ -88,7 +88,7 @@ public class MergeCoreTest {
 
   public static void main(String[] args) throws IOException, ModelReadException {
     setUpClass();
-    for (Object[] p : ListSequence.fromList(params())) {
+    for (Object[] p : params()) {
       new MergeData(new File(TESTDATA_HOME, (String) p[1])).generate();
     }
   }

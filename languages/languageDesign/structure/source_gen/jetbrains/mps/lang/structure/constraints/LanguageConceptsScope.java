@@ -78,16 +78,10 @@ public class LanguageConceptsScope extends SimpleScope {
   }
 
   private static <T> T as_gt0k3c_a0a0a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_gt0k3c_a0a0a1a7a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

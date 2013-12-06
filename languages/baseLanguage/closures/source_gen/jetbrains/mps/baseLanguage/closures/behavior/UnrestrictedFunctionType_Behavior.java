@@ -56,10 +56,7 @@ public class UnrestrictedFunctionType_Behavior {
       List<SNode> args = SLinkOperations.getTargets(SNodeOperations.cast(tt, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
       tt = ListSequence.fromList(args).getElement(0);
     }
-    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
-      tt :
-      null
-    );
+    return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ? tt : null);
   }
 
   @Deprecated

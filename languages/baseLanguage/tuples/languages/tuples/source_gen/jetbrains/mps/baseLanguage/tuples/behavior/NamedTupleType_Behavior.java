@@ -71,10 +71,7 @@ public class NamedTupleType_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       // treat raw type as if all params were Object or the appropriate bound 
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true))) {
-        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ?
-          _quotation_createNode_ja7850_a0a0a1a2a2() :
-          SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))
-        ));
+        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_ja7850_a0a0a1a2a2() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
       }
     } else {
       {

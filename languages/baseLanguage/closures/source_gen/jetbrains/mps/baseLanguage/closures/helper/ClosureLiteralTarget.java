@@ -80,10 +80,7 @@ public class ClosureLiteralTarget {
         @Override
         public Comparable<?> select(SNode t) {
           String key = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getNestedName_8540045600162184125", new Object[]{});
-          return (key != null ?
-            key :
-            BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{})
-          );
+          return (key != null ? key : BehaviorReflection.invokeVirtual(String.class, t, "virtual_getPresentation_1213877396640", new Object[]{}));
         }
       }, true).iterator();
       Iterator<SNode> methThrIt = ListSequence.fromList(FunctionTypeUtil.normalizeThrowsTypes(SLinkOperations.getTargets(meth, "throwsItem", true))).iterator();
@@ -106,10 +103,7 @@ public class ClosureLiteralTarget {
       while (reifiedTypeIt.hasNext() && targetTypeVarIt.hasNext()) {
         SNode typeVar = targetTypeVarIt.next();
         SNode rtp = reifiedTypeIt.next();
-        SNode substituteType = (MapSequence.fromMap(map).containsKey(typeVar) ?
-          SNodeOperations.copyNode(MapSequence.fromMap(map).get(typeVar)) :
-          SNodeOperations.copyNode(rtp)
-        );
+        SNode substituteType = (MapSequence.fromMap(map).containsKey(typeVar) ? SNodeOperations.copyNode(MapSequence.fromMap(map).get(typeVar)) : SNodeOperations.copyNode(rtp));
         // TODO: we need a better way to handle wildcards in the substitutes 
         // Any (completely) reified type has precedence over calculated function type's parameter 
         // Example: String s = { => null; } must use String, not Object as the return value 

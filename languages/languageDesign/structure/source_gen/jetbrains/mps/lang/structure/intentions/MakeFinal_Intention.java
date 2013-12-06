@@ -68,10 +68,7 @@ public class MakeFinal_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "final") ?
-        "Make Not Final" :
-        "Make Final"
-      );
+      return (SPropertyOperations.getBoolean(node, "final") ? "Make Not Final" : "Make Final");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

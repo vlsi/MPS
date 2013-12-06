@@ -97,10 +97,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
         String remaining = tokens.substring(i + 1);
         int nextDot = tokens.indexOf(".", i + 1);
 
-        final String memberCandidateName = (nextDot > 0 ?
-          tokens.substring(i + 1, nextDot) :
-          remaining
-        );
+        final String memberCandidateName = (nextDot > 0 ? tokens.substring(i + 1, nextDot) : remaining);
 
         if (Sequence.fromIterable(Members.visibleStaticFields(chosen, node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

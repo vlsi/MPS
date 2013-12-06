@@ -43,10 +43,7 @@ import org.apache.log4j.LogManager;
     LightModelEnvironmentInfoImpl persistenceEnv = new LightModelEnvironmentInfoImpl();
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(persistenceEnv);
 
-    String ext = (myExtension == null ?
-      MPSExtentions.MODEL :
-      myExtension
-    );
+    String ext = (myExtension == null ? MPSExtentions.MODEL : myExtension);
     if (MPSExtentions.MODEL_HEADER.equals(myExtension) || MPSExtentions.MODEL_ROOT.equals(myExtension)) {
       // special support for per-root persistence 
       ext = MPSExtentions.MODEL;

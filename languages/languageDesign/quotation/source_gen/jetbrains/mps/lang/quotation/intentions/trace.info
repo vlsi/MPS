@@ -573,118 +573,121 @@
     <nodeInfo nodeId="8182547171709991951" fileName="QuotationConverter.java" startLine="82" startPosition="124" endLine="83" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182547171709992294" fileName="QuotationConverter.java" startLine="84" startPosition="30" endLine="85" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6213548759747499822" fileName="QuotationConverter.java" startLine="86" startPosition="14" endLine="87" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747663746" fileName="QuotationConverter.java" startLine="95" startPosition="7" endLine="96" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084677235673527667" fileName="QuotationConverter.java" startLine="97" startPosition="5" endLine="98" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8084677235673527679" fileName="QuotationConverter.java" startLine="99" startPosition="96" endLine="100" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747650013" fileName="QuotationConverter.java" startLine="100" startPosition="50" endLine="101" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747663742" fileName="QuotationConverter.java" startLine="101" startPosition="205" endLine="102" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7060245871956274522" fileName="QuotationConverter.java" startLine="102" startPosition="120" endLine="103" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401155318" fileName="QuotationConverter.java" startLine="104" startPosition="28" endLine="105" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1006429225401155324" fileName="QuotationConverter.java" startLine="105" startPosition="126" endLine="106" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747663960" fileName="QuotationConverter.java" startLine="106" startPosition="118" endLine="107" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747664021" fileName="QuotationConverter.java" startLine="108" startPosition="14" endLine="109" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747664093" fileName="QuotationConverter.java" startLine="109" startPosition="157" endLine="110" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747704019" fileName="QuotationConverter.java" startLine="111" startPosition="7" endLine="112" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084677235673527711" fileName="QuotationConverter.java" startLine="113" startPosition="5" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8084677235673527777" fileName="QuotationConverter.java" startLine="116" startPosition="39" endLine="117" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8084677235673527839" fileName="QuotationConverter.java" startLine="120" startPosition="37" endLine="121" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8084677235673559543" fileName="QuotationConverter.java" startLine="124" startPosition="79" endLine="125" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8084677235673559546" fileName="QuotationConverter.java" startLine="126" startPosition="7" endLine="127" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084677235673559631" fileName="QuotationConverter.java" startLine="127" startPosition="70" endLine="128" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8084677235673559637" fileName="QuotationConverter.java" startLine="128" startPosition="120" endLine="129" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084677235673559655" fileName="QuotationConverter.java" startLine="129" startPosition="284" endLine="130" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8084677235673559661" fileName="QuotationConverter.java" startLine="130" startPosition="124" endLine="131" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084677235673559669" fileName="QuotationConverter.java" startLine="131" startPosition="114" endLine="132" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084677235673559675" fileName="QuotationConverter.java" startLine="132" startPosition="66" endLine="133" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747649949" fileName="QuotationConverter.java" startLine="134" startPosition="5" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6213548759747738578" fileName="QuotationConverter.java" startLine="135" startPosition="0" endLine="136" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747636830" fileName="QuotationConverter.java" startLine="138" startPosition="112" endLine="139" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7060245871956274646" fileName="QuotationConverter.java" startLine="140" startPosition="7" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6213548759747738565" fileName="QuotationConverter.java" startLine="141" startPosition="0" endLine="142" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="144" startPosition="47" endLine="145" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747738818" fileName="QuotationConverter.java" startLine="147" startPosition="7" endLine="148" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747738474" fileName="QuotationConverter.java" startLine="148" startPosition="109" endLine="149" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747738517" fileName="QuotationConverter.java" startLine="149" startPosition="31" endLine="150" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1006429225401035541" fileName="QuotationConverter.java" startLine="151" startPosition="55" endLine="152" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401035595" fileName="QuotationConverter.java" startLine="153" startPosition="14" endLine="154" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747738523" fileName="QuotationConverter.java" startLine="154" startPosition="116" endLine="155" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401109699" fileName="QuotationConverter.java" startLine="155" startPosition="61" endLine="156" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401035637" fileName="QuotationConverter.java" startLine="157" startPosition="27" endLine="158" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401035680" fileName="QuotationConverter.java" startLine="158" startPosition="51" endLine="159" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401108627" fileName="QuotationConverter.java" startLine="162" startPosition="25" endLine="163" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401109690" fileName="QuotationConverter.java" startLine="164" startPosition="14" endLine="165" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747738472" fileName="QuotationConverter.java" startLine="166" startPosition="7" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8182547171709991562" fileName="QuotationConverter.java" startLine="168" startPosition="5" endLine="169" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8182547171709991160" fileName="QuotationConverter.java" startLine="172" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="174" startPosition="85" endLine="175" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="175" startPosition="63" endLine="176" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="176" startPosition="30" endLine="177" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="177" startPosition="166" endLine="178" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="178" startPosition="77" endLine="179" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="182" startPosition="87" endLine="183" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="183" startPosition="63" endLine="184" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="184" startPosition="30" endLine="185" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="185" startPosition="166" endLine="186" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="186" startPosition="77" endLine="187" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="190" startPosition="89" endLine="191" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="191" startPosition="63" endLine="192" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="192" startPosition="30" endLine="193" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="193" startPosition="164" endLine="194" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="194" startPosition="77" endLine="195" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1006429225401109687" fileName="QuotationConverter.java" startLine="164" startPosition="12" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="176" startPosition="30" endLine="178" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="176" startPosition="30" endLine="178" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="184" startPosition="30" endLine="186" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="184" startPosition="30" endLine="186" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="192" startPosition="30" endLine="194" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="192" startPosition="30" endLine="194" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8182547171709992455" fileName="QuotationConverter.java" startLine="87" startPosition="122" endLine="88" endPosition="484" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747663746" fileName="QuotationConverter.java" startLine="89" startPosition="7" endLine="90" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8084677235673527667" fileName="QuotationConverter.java" startLine="91" startPosition="5" endLine="92" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8084677235673527679" fileName="QuotationConverter.java" startLine="93" startPosition="96" endLine="94" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747650013" fileName="QuotationConverter.java" startLine="94" startPosition="50" endLine="95" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747663742" fileName="QuotationConverter.java" startLine="95" startPosition="205" endLine="96" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7060245871956274522" fileName="QuotationConverter.java" startLine="96" startPosition="120" endLine="97" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1006429225401155318" fileName="QuotationConverter.java" startLine="98" startPosition="28" endLine="99" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1006429225401155324" fileName="QuotationConverter.java" startLine="99" startPosition="126" endLine="100" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747663960" fileName="QuotationConverter.java" startLine="100" startPosition="118" endLine="101" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747664021" fileName="QuotationConverter.java" startLine="102" startPosition="14" endLine="103" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747664093" fileName="QuotationConverter.java" startLine="103" startPosition="157" endLine="104" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747704019" fileName="QuotationConverter.java" startLine="105" startPosition="7" endLine="106" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8084677235673527711" fileName="QuotationConverter.java" startLine="107" startPosition="5" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8084677235673527777" fileName="QuotationConverter.java" startLine="110" startPosition="39" endLine="111" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8084677235673527839" fileName="QuotationConverter.java" startLine="114" startPosition="37" endLine="115" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8084677235673559543" fileName="QuotationConverter.java" startLine="118" startPosition="79" endLine="119" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8084677235673559546" fileName="QuotationConverter.java" startLine="120" startPosition="7" endLine="121" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8084677235673559631" fileName="QuotationConverter.java" startLine="121" startPosition="70" endLine="122" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8084677235673559637" fileName="QuotationConverter.java" startLine="122" startPosition="120" endLine="123" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8084677235673559655" fileName="QuotationConverter.java" startLine="123" startPosition="284" endLine="124" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8084677235673559661" fileName="QuotationConverter.java" startLine="124" startPosition="124" endLine="125" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8084677235673559669" fileName="QuotationConverter.java" startLine="125" startPosition="114" endLine="126" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8084677235673559675" fileName="QuotationConverter.java" startLine="126" startPosition="66" endLine="127" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747649949" fileName="QuotationConverter.java" startLine="128" startPosition="5" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6213548759747738578" fileName="QuotationConverter.java" startLine="129" startPosition="0" endLine="130" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747636830" fileName="QuotationConverter.java" startLine="132" startPosition="112" endLine="133" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7060245871956274646" fileName="QuotationConverter.java" startLine="134" startPosition="7" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6213548759747738565" fileName="QuotationConverter.java" startLine="135" startPosition="0" endLine="136" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="138" startPosition="47" endLine="139" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747738818" fileName="QuotationConverter.java" startLine="141" startPosition="7" endLine="142" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747738474" fileName="QuotationConverter.java" startLine="142" startPosition="109" endLine="143" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747738517" fileName="QuotationConverter.java" startLine="143" startPosition="31" endLine="144" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1006429225401035541" fileName="QuotationConverter.java" startLine="145" startPosition="55" endLine="146" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1006429225401035595" fileName="QuotationConverter.java" startLine="147" startPosition="14" endLine="148" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747738523" fileName="QuotationConverter.java" startLine="148" startPosition="116" endLine="149" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1006429225401109699" fileName="QuotationConverter.java" startLine="149" startPosition="61" endLine="150" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1006429225401035637" fileName="QuotationConverter.java" startLine="151" startPosition="27" endLine="152" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1006429225401035680" fileName="QuotationConverter.java" startLine="152" startPosition="51" endLine="153" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1006429225401108627" fileName="QuotationConverter.java" startLine="156" startPosition="25" endLine="157" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1006429225401109690" fileName="QuotationConverter.java" startLine="158" startPosition="14" endLine="159" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747738472" fileName="QuotationConverter.java" startLine="160" startPosition="7" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8182547171709991562" fileName="QuotationConverter.java" startLine="162" startPosition="5" endLine="163" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8182547171709991160" fileName="QuotationConverter.java" startLine="166" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="168" startPosition="85" endLine="169" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="169" startPosition="63" endLine="170" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="170" startPosition="30" endLine="171" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="171" startPosition="166" endLine="172" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="172" startPosition="77" endLine="173" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="176" startPosition="87" endLine="177" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="177" startPosition="63" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="178" startPosition="30" endLine="179" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="179" startPosition="166" endLine="180" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="180" startPosition="77" endLine="181" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="184" startPosition="89" endLine="185" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="185" startPosition="63" endLine="186" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="186" startPosition="30" endLine="187" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="187" startPosition="164" endLine="188" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="188" startPosition="77" endLine="189" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1006429225401109687" fileName="QuotationConverter.java" startLine="158" startPosition="12" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="170" startPosition="30" endLine="172" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="170" startPosition="30" endLine="172" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="178" startPosition="30" endLine="180" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="178" startPosition="30" endLine="180" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="186" startPosition="30" endLine="188" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="186" startPosition="30" endLine="188" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8182547171709991162" fileName="QuotationConverter.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationConverter#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6213548759747738326" fileName="QuotationConverter.java" startLine="47" startPosition="83" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8182547171709991499" fileName="QuotationConverter.java" startLine="58" startPosition="46" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6213548759747664019" fileName="QuotationConverter.java" startLine="108" startPosition="12" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8084677235673527773" fileName="QuotationConverter.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8084677235673527835" fileName="QuotationConverter.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8084677235673527888" fileName="QuotationConverter.java" startLine="123" startPosition="9" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196351887038" fileName="QuotationConverter.java" startLine="137" startPosition="68" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="143" startPosition="27" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="143" startPosition="27" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1006429225401035601" fileName="QuotationConverter.java" startLine="156" startPosition="99" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8182547171709992273" fileName="QuotationConverter.java" startLine="86" startPosition="12" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6213548759747664019" fileName="QuotationConverter.java" startLine="102" startPosition="12" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8084677235673527773" fileName="QuotationConverter.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8084677235673527835" fileName="QuotationConverter.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8084677235673527888" fileName="QuotationConverter.java" startLine="117" startPosition="9" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196351887038" fileName="QuotationConverter.java" startLine="131" startPosition="68" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="137" startPosition="27" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="137" startPosition="27" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1006429225401035601" fileName="QuotationConverter.java" startLine="150" startPosition="99" endLine="154" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6213548759747738237" fileName="QuotationConverter.java" startLine="62" startPosition="159" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6213548759747738762" fileName="QuotationConverter.java" startLine="68" startPosition="163" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1006429225401117110" fileName="QuotationConverter.java" startLine="142" startPosition="245" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1006429225401108622" fileName="QuotationConverter.java" startLine="161" startPosition="7" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8182547171709992455" fileName="QuotationConverter.java" startLine="87" startPosition="122" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="174" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_aytayy_a0a1a0d0l0d#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="182" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_aytayy_a0a0b0a3a11a3#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="190" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_aytayy_a0a0b0a3a11a3_0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6213548759747663931" fileName="QuotationConverter.java" startLine="103" startPosition="264" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1006429225401035593" fileName="QuotationConverter.java" startLine="153" startPosition="12" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8182547171709992273" fileName="QuotationConverter.java" startLine="86" startPosition="12" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1006429225401117110" fileName="QuotationConverter.java" startLine="136" startPosition="245" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1006429225401108622" fileName="QuotationConverter.java" startLine="155" startPosition="7" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196871927215" fileName="QuotationConverter.java" startLine="83" startPosition="200" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="168" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_aytayy_a0a1a0d0l0d#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="176" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_aytayy_a0a0b0a3a11a3#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="184" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_aytayy_a0a0b0a3a11a3_0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6213548759747663931" fileName="QuotationConverter.java" startLine="97" startPosition="264" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1006429225401035593" fileName="QuotationConverter.java" startLine="147" startPosition="12" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8182547171709991177" fileName="QuotationConverter.java" startLine="46" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convert#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1006429225401035411" fileName="QuotationConverter.java" startLine="150" startPosition="17" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196871927215" fileName="QuotationConverter.java" startLine="83" startPosition="200" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6213548759747649950" fileName="QuotationConverter.java" startLine="98" startPosition="71" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1196871487545" fileName="QuotationConverter.java" startLine="79" startPosition="36" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8084677235673527713" fileName="QuotationConverter.java" startLine="114" startPosition="0" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1196351887031" fileName="QuotationConverter.java" startLine="136" startPosition="77" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8182547171709991181" fileName="QuotationConverter.java" startLine="58" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convert#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1006429225401035411" fileName="QuotationConverter.java" startLine="144" startPosition="17" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196871487545" fileName="QuotationConverter.java" startLine="79" startPosition="36" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6213548759747649950" fileName="QuotationConverter.java" startLine="92" startPosition="71" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8084677235673527713" fileName="QuotationConverter.java" startLine="108" startPosition="0" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1196351887031" fileName="QuotationConverter.java" startLine="130" startPosition="77" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8182547171709991181" fileName="QuotationConverter.java" startLine="58" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convert#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="8182547171709991165" fileName="QuotationConverter.java" startLine="42" startPosition="46" endLine="43" endPosition="31" />
     <scopeInfo nodeId="6213548759747738327" fileName="QuotationConverter.java" startLine="48" startPosition="106" endLine="49" endPosition="18" />
     <scopeInfo nodeId="8182547171709991501" fileName="QuotationConverter.java" startLine="59" startPosition="32" endLine="60" endPosition="18" />
     <scopeInfo nodeId="1196871927219" fileName="QuotationConverter.java" startLine="84" startPosition="30" endLine="85" endPosition="118" />
-    <scopeInfo nodeId="8084677235673527774" fileName="QuotationConverter.java" startLine="116" startPosition="39" endLine="117" endPosition="113" />
-    <scopeInfo nodeId="8084677235673527836" fileName="QuotationConverter.java" startLine="120" startPosition="37" endLine="121" endPosition="105" />
-    <scopeInfo nodeId="8084677235673527890" fileName="QuotationConverter.java" startLine="124" startPosition="79" endLine="125" endPosition="17" />
-    <scopeInfo nodeId="1196351887044" fileName="QuotationConverter.java" startLine="138" startPosition="112" endLine="139" endPosition="17" />
-    <scopeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="144" startPosition="47" endLine="145" endPosition="252" />
-    <scopeInfo nodeId="1006429225401035412" fileName="QuotationConverter.java" startLine="151" startPosition="55" endLine="152" endPosition="50" />
-    <scopeInfo nodeId="1006429225401108623" fileName="QuotationConverter.java" startLine="162" startPosition="25" endLine="163" endPosition="220" />
-    <scopeInfo nodeId="1006429225401109688" fileName="QuotationConverter.java" startLine="164" startPosition="14" endLine="165" endPosition="63" />
-    <scopeInfo nodeId="6213548759747664020" fileName="QuotationConverter.java" startLine="108" startPosition="14" endLine="110" endPosition="290" />
-    <scopeInfo nodeId="1006429225401035602" fileName="QuotationConverter.java" startLine="157" startPosition="27" endLine="159" endPosition="160" />
-    <scopeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="176" startPosition="30" endLine="178" endPosition="77" />
-    <scopeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="184" startPosition="30" endLine="186" endPosition="77" />
-    <scopeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="192" startPosition="30" endLine="194" endPosition="77" />
+    <scopeInfo nodeId="8084677235673527774" fileName="QuotationConverter.java" startLine="110" startPosition="39" endLine="111" endPosition="113" />
+    <scopeInfo nodeId="8084677235673527836" fileName="QuotationConverter.java" startLine="114" startPosition="37" endLine="115" endPosition="105" />
+    <scopeInfo nodeId="8084677235673527890" fileName="QuotationConverter.java" startLine="118" startPosition="79" endLine="119" endPosition="17" />
+    <scopeInfo nodeId="1196351887044" fileName="QuotationConverter.java" startLine="132" startPosition="112" endLine="133" endPosition="17" />
+    <scopeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="138" startPosition="47" endLine="139" endPosition="252" />
+    <scopeInfo nodeId="1006429225401035412" fileName="QuotationConverter.java" startLine="145" startPosition="55" endLine="146" endPosition="50" />
+    <scopeInfo nodeId="1006429225401108623" fileName="QuotationConverter.java" startLine="156" startPosition="25" endLine="157" endPosition="220" />
+    <scopeInfo nodeId="1006429225401109688" fileName="QuotationConverter.java" startLine="158" startPosition="14" endLine="159" endPosition="63" />
+    <scopeInfo nodeId="8182547171709992274" fileName="QuotationConverter.java" startLine="86" startPosition="14" endLine="88" endPosition="484">
+      <varInfo nodeId="6213548759747499823" varName="dataType" />
+    </scopeInfo>
+    <scopeInfo nodeId="6213548759747664020" fileName="QuotationConverter.java" startLine="102" startPosition="14" endLine="104" endPosition="290" />
+    <scopeInfo nodeId="1006429225401035602" fileName="QuotationConverter.java" startLine="151" startPosition="27" endLine="153" endPosition="160" />
+    <scopeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="170" startPosition="30" endLine="172" endPosition="77" />
+    <scopeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="178" startPosition="30" endLine="180" endPosition="77" />
+    <scopeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="186" startPosition="30" endLine="188" endPosition="77" />
     <scopeInfo nodeId="8182547171709991162" fileName="QuotationConverter.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8182547171709991166" varName="quotation" />
     </scopeInfo>
@@ -694,78 +697,75 @@
     <scopeInfo nodeId="6213548759747738763" fileName="QuotationConverter.java" startLine="69" startPosition="23" endLine="72" endPosition="18">
       <varInfo nodeId="1006429225401109671" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="6213548759747663932" fileName="QuotationConverter.java" startLine="104" startPosition="28" endLine="107" endPosition="68">
+    <scopeInfo nodeId="6213548759747663932" fileName="QuotationConverter.java" startLine="98" startPosition="28" endLine="101" endPosition="68">
       <varInfo nodeId="1006429225401155319" varName="nbexpr" />
     </scopeInfo>
-    <scopeInfo nodeId="8084677235673527773" fileName="QuotationConverter.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="8084677235673527773" fileName="QuotationConverter.java" startLine="110" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="8084677235673527773" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8084677235673527835" fileName="QuotationConverter.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="8084677235673527835" fileName="QuotationConverter.java" startLine="114" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="8084677235673527835" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1006429225401117111" fileName="QuotationConverter.java" startLine="143" startPosition="27" endLine="146" endPosition="9" />
-    <scopeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="143" startPosition="27" endLine="146" endPosition="9" />
-    <scopeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="174" startPosition="85" endLine="179" endPosition="24">
+    <scopeInfo nodeId="1006429225401117111" fileName="QuotationConverter.java" startLine="137" startPosition="27" endLine="140" endPosition="9" />
+    <scopeInfo nodeId="1006429225401117142" fileName="QuotationConverter.java" startLine="137" startPosition="27" endLine="140" endPosition="9" />
+    <scopeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="168" startPosition="85" endLine="173" endPosition="24">
       <varInfo nodeId="6213548759747499964" varName="facade" />
       <varInfo nodeId="6213548759747499964" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="182" startPosition="87" endLine="187" endPosition="24">
+    <scopeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="176" startPosition="87" endLine="181" endPosition="24">
       <varInfo nodeId="6213548759747499956" varName="facade" />
       <varInfo nodeId="6213548759747499956" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="190" startPosition="89" endLine="195" endPosition="24">
+    <scopeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="184" startPosition="89" endLine="189" endPosition="24">
       <varInfo nodeId="8182547171709992512" varName="facade" />
       <varInfo nodeId="8182547171709992512" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1006429225401035594" fileName="QuotationConverter.java" startLine="153" startPosition="14" endLine="160" endPosition="9" />
-    <scopeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="174" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="1006429225401035594" fileName="QuotationConverter.java" startLine="147" startPosition="14" endLine="154" endPosition="9" />
+    <scopeInfo nodeId="6213548759747499964" fileName="QuotationConverter.java" startLine="168" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="6213548759747499964" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="182" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="6213548759747499956" fileName="QuotationConverter.java" startLine="176" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="6213548759747499956" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="190" startPosition="0" endLine="197" endPosition="0">
+    <scopeInfo nodeId="8182547171709992512" fileName="QuotationConverter.java" startLine="184" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="8182547171709992512" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8182547171709992274" fileName="QuotationConverter.java" startLine="86" startPosition="14" endLine="94" endPosition="17">
-      <varInfo nodeId="6213548759747499823" varName="dataType" />
     </scopeInfo>
     <scopeInfo nodeId="8182547171709991180" fileName="QuotationConverter.java" startLine="46" startPosition="26" endLine="55" endPosition="13">
       <varInfo nodeId="8182547171709991220" varName="node" />
       <varInfo nodeId="8182547171709991229" varName="q" />
     </scopeInfo>
-    <scopeInfo nodeId="8084677235673527716" fileName="QuotationConverter.java" startLine="123" startPosition="9" endLine="133" endPosition="97">
+    <scopeInfo nodeId="1196871487550" fileName="QuotationConverter.java" startLine="80" startPosition="43" endLine="90" endPosition="97">
+      <varInfo nodeId="1237745905089" varName="attribute" />
+      <varInfo nodeId="8182547171709991927" varName="pval" />
+    </scopeInfo>
+    <scopeInfo nodeId="8084677235673527716" fileName="QuotationConverter.java" startLine="117" startPosition="9" endLine="127" endPosition="97">
       <varInfo nodeId="8084677235673559632" varName="lval" />
       <varInfo nodeId="8084677235673559656" varName="nbexpr" />
     </scopeInfo>
     <scopeInfo nodeId="8182547171709991177" fileName="QuotationConverter.java" startLine="46" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="6213548759747649953" fileName="QuotationConverter.java" startLine="99" startPosition="96" endLine="112" endPosition="97">
+    <scopeInfo nodeId="1196871487545" fileName="QuotationConverter.java" startLine="79" startPosition="36" endLine="91" endPosition="5">
+      <varInfo nodeId="1196871487548" varName="property" />
+    </scopeInfo>
+    <scopeInfo nodeId="6213548759747649953" fileName="QuotationConverter.java" startLine="93" startPosition="96" endLine="106" endPosition="97">
       <varInfo nodeId="6213548759747663743" varName="lval" />
       <varInfo nodeId="6213548759747650014" varName="refattr" />
     </scopeInfo>
-    <scopeInfo nodeId="6213548759747649950" fileName="QuotationConverter.java" startLine="98" startPosition="71" endLine="113" endPosition="5">
+    <scopeInfo nodeId="6213548759747649950" fileName="QuotationConverter.java" startLine="92" startPosition="71" endLine="107" endPosition="5">
       <varInfo nodeId="6213548759747649951" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1196871487550" fileName="QuotationConverter.java" startLine="80" startPosition="43" endLine="96" endPosition="97">
-      <varInfo nodeId="1237745905089" varName="attribute" />
-      <varInfo nodeId="8182547171709991927" varName="pval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196871487545" fileName="QuotationConverter.java" startLine="79" startPosition="36" endLine="97" endPosition="5">
-      <varInfo nodeId="1196871487548" varName="property" />
-    </scopeInfo>
-    <scopeInfo nodeId="8084677235673527713" fileName="QuotationConverter.java" startLine="114" startPosition="0" endLine="134" endPosition="5">
+    <scopeInfo nodeId="8084677235673527713" fileName="QuotationConverter.java" startLine="108" startPosition="0" endLine="128" endPosition="5">
       <varInfo nodeId="8084677235673527714" varName="refAQ" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351887037" fileName="QuotationConverter.java" startLine="137" startPosition="68" endLine="167" endPosition="0">
+    <scopeInfo nodeId="1196351887037" fileName="QuotationConverter.java" startLine="131" startPosition="68" endLine="161" endPosition="0">
       <varInfo nodeId="6213548759747738475" varName="c" />
       <varInfo nodeId="6213548759747738566" varName="link" />
       <varInfo nodeId="6213548759747738518" varName="lval" />
       <varInfo nodeId="6213548759747738819" varName="multipleLink" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351887031" fileName="QuotationConverter.java" startLine="136" startPosition="77" endLine="168" endPosition="5">
+    <scopeInfo nodeId="1196351887031" fileName="QuotationConverter.java" startLine="130" startPosition="77" endLine="162" endPosition="5">
       <varInfo nodeId="1196351887035" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="8182547171709991184" fileName="QuotationConverter.java" startLine="58" startPosition="46" endLine="169" endPosition="18">
+    <scopeInfo nodeId="8182547171709991184" fileName="QuotationConverter.java" startLine="58" startPosition="46" endLine="163" endPosition="18">
       <varInfo nodeId="6213548759747738229" varName="aq" />
       <varInfo nodeId="6213548759747738728" varName="la" />
       <varInfo nodeId="6213548759747738579" varName="map" />
@@ -773,12 +773,12 @@
       <varInfo nodeId="8182547171709991541" varName="result" />
       <varInfo nodeId="8084677235673527668" varName="seenRoles" />
     </scopeInfo>
-    <scopeInfo nodeId="8182547171709991181" fileName="QuotationConverter.java" startLine="58" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="8182547171709991181" fileName="QuotationConverter.java" startLine="58" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="8182547171709991186" varName="quotationNode" />
     </scopeInfo>
-    <unitInfo nodeId="8084677235673527773" fileName="QuotationConverter.java" startLine="115" startPosition="99" endLine="119" endPosition="5" unitName="jetbrains.mps.lang.quotation.intentions.QuotationConverter$1" />
-    <unitInfo nodeId="8084677235673527835" fileName="QuotationConverter.java" startLine="119" startPosition="18" endLine="123" endPosition="5" unitName="jetbrains.mps.lang.quotation.intentions.QuotationConverter$2" />
-    <unitInfo nodeId="8182547171709991160" fileName="QuotationConverter.java" startLine="39" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.quotation.intentions.QuotationConverter" />
+    <unitInfo nodeId="8084677235673527773" fileName="QuotationConverter.java" startLine="109" startPosition="99" endLine="113" endPosition="5" unitName="jetbrains.mps.lang.quotation.intentions.QuotationConverter$1" />
+    <unitInfo nodeId="8084677235673527835" fileName="QuotationConverter.java" startLine="113" startPosition="18" endLine="117" endPosition="5" unitName="jetbrains.mps.lang.quotation.intentions.QuotationConverter$2" />
+    <unitInfo nodeId="8182547171709991160" fileName="QuotationConverter.java" startLine="39" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.quotation.intentions.QuotationConverter" />
   </root>
 </debugInfo>
 

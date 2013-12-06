@@ -30,14 +30,8 @@ public class EditorParenthesisUtil {
       return;
     }
     SNode sidemost = findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(expr, "expression", true), toRight);
-    SNode leaf = findRightmostOrLeftmostLeafExpression((toRight ?
-      SLinkOperations.getTarget(binOp, "rightExpression", true) :
-      SLinkOperations.getTarget(binOp, "leftExpression", true)
-    ), !(toRight));
-    SNode backsideSubtree = (toRight ?
-      SLinkOperations.getTarget(binOp, "leftExpression", true) :
-      SLinkOperations.getTarget(binOp, "rightExpression", true)
-    );
+    SNode leaf = findRightmostOrLeftmostLeafExpression((toRight ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true)), !(toRight));
+    SNode backsideSubtree = (toRight ? SLinkOperations.getTarget(binOp, "leftExpression", true) : SLinkOperations.getTarget(binOp, "rightExpression", true));
     SNodeOperations.detachNode(backsideSubtree);
     SNodeOperations.replaceWithAnother(binOp, backsideSubtree);
     SNodeOperations.replaceWithAnother(sidemost, binOp);
@@ -46,10 +40,7 @@ public class EditorParenthesisUtil {
     } else {
       SLinkOperations.setTarget(binOp, "rightExpression", sidemost, true);
     }
-    SNode sideSubtree = (toRight ?
-      SLinkOperations.getTarget(binOp, "rightExpression", true) :
-      SLinkOperations.getTarget(binOp, "leftExpression", true)
-    );
+    SNode sideSubtree = (toRight ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true));
     SNodeOperations.detachNode(leaf);
     if (toRight) {
       SLinkOperations.setTarget(binOp, "rightExpression", leaf, true);
@@ -69,10 +60,7 @@ public class EditorParenthesisUtil {
         ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(exprParent, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       }
     }
-    SNode binOpCheck = (SNodeOperations.isInstanceOf(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation") ?
-      SNodeOperations.cast(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation") :
-      binOp
-    );
+    SNode binOpCheck = (SNodeOperations.isInstanceOf(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation") ? SNodeOperations.cast(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation") : binOp);
     ParenthesisUtil.checkOperationWRTPriority(binOpCheck);
     selectNode(context, expr, toRight);
   }
@@ -81,10 +69,7 @@ public class EditorParenthesisUtil {
     context.flushEvents();
     EditorComponent component = context.getEditorComponent();
     EditorCell nodeCell = component.findNodeCell(expr);
-    EditorCell cell = (selectLastLeaf ?
-      CellFinderUtil.findLastSelectableLeaf(nodeCell) :
-      CellFinderUtil.findFirstSelectableLeaf(nodeCell)
-    );
+    EditorCell cell = (selectLastLeaf ? CellFinderUtil.findLastSelectableLeaf(nodeCell) : CellFinderUtil.findFirstSelectableLeaf(nodeCell));
 
     if (cell != null) {
       component.changeSelection(cell);
@@ -97,10 +82,7 @@ public class EditorParenthesisUtil {
     }
     SNode sidemost = findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(expr, "expression", true), !(toRight));
     SNode binOp = SNodeOperations.cast(SNodeOperations.getParent(sidemost), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    SNode sideExpr = (toRight ?
-      SLinkOperations.getTarget(binOp, "rightExpression", true) :
-      SLinkOperations.getTarget(binOp, "leftExpression", true)
-    );
+    SNode sideExpr = (toRight ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true));
     SNodeOperations.detachNode(sideExpr);
     SNodeOperations.replaceWithAnother(binOp, sideExpr);
     SNodeOperations.replaceWithAnother(expr, binOp);
@@ -118,9 +100,6 @@ public class EditorParenthesisUtil {
       return root;
     }
     SNode binOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    return findRightmostOrLeftmostLeafExpression((rightmost ?
-      SLinkOperations.getTarget(binOp, "rightExpression", true) :
-      SLinkOperations.getTarget(binOp, "leftExpression", true)
-    ), rightmost);
+    return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true)), rightmost);
   }
 }

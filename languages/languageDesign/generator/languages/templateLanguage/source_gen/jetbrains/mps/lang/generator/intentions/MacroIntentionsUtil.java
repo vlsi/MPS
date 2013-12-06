@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -90,6 +91,16 @@ public class MacroIntentionsUtil {
       }
     }
     return result;
+  }
+
+  public static String getPresentaion(SNode intentionParam) {
+    //  characters '_' and '&' are treated as mnemonics in AnAction that is created for each intention, 
+    //  however it's common to see '_' in link/property/conecept/template names, and removing this char 
+    //  (as mnemonics processing does) results in incorrect name shown to user, which is wrong. 
+    // Here I escape only '_' as it's unlikely to see '&' in metamodel-level names, 
+    // although correct (but impossible now) solution would be to change the way actions for intentions are created 
+    // (i.e. without mnemonics processing). 
+    return BehaviorReflection.invokeVirtual(String.class, intentionParam, "virtual_getPresentation_1213877396640", new Object[]{}).replaceAll("_{1}", "__");
   }
 
   public static class Pattern_iiuth6_a0a0a0a3a2 extends GeneratedMatchingPattern implements IMatchingPattern {

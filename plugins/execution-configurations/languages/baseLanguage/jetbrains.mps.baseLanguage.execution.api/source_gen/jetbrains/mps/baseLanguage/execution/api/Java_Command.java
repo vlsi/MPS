@@ -175,10 +175,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
-    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmpty_kk96hj_a0a0a0a0a91(check_yvpt_a0a4a0a0e(runParameters)) ?
-      null :
-      new File(check_yvpt_a0a0e0a0a4(runParameters))
-    )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
+    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a4a0a0e(runParameters)) ? null : new File(check_yvpt_a0a0e0a0a4(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
   }
 
   public static IDebugger getDebugger() {
@@ -186,7 +183,7 @@ public class Java_Command {
   }
 
   public static boolean isUnitNode(SNode node) {
-    return isNotEmpty_kk96hj_a0a0v(Java_Command.getClassName(node));
+    return isNotEmptyString(Java_Command.getClassName(node));
   }
 
   private static String getClassName(SNode node) {
@@ -207,7 +204,7 @@ public class Java_Command {
           LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
         }
         return null;
-      } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
+      } else if (Sequence.fromIterable(unitNames).count() == 1) {
         return Sequence.fromIterable(unitNames).first();
       } else {
         return TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
@@ -301,7 +298,7 @@ public class Java_Command {
     if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
       ListSequence.fromList(homes).addElement(systemJdkHome);
     }
-    if (isNotEmpty_kk96hj_a0e0fb(System.getenv("JAVA_HOME"))) {
+    if (isNotEmptyString(System.getenv("JAVA_HOME"))) {
       ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
     }
     ListSequence.fromList(homes).addElement(systemJavaHome);
@@ -310,7 +307,7 @@ public class Java_Command {
 
   public static String getJdkHome() {
     List<String> homes = Java_Command.getJavaHomes();
-    for (String javaHome : ListSequence.fromList(homes)) {
+    for (String javaHome : homes) {
       if (new File(Java_Command.getJavaCommandPath(javaHome)).exists()) {
         return javaHome;
       }
@@ -329,7 +326,7 @@ public class Java_Command {
     File tmpFile = FileUtil.createTmpFile();
     tmpFile.deleteOnExit();
     PrintWriter writer = new PrintWriter(tmpFile);
-    for (String line : Sequence.fromIterable(text)) {
+    for (String line : text) {
       writer.println(line);
     }
     writer.flush();
@@ -436,29 +433,19 @@ public class Java_Command {
     return quotedNode_1;
   }
 
-  public static boolean isEmpty_kk96hj_a0a0a0a0a91(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isNotEmpty_kk96hj_a0a0v(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
   private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  public static boolean isNotEmpty_kk96hj_a0e0fb(String str) {
-    return str != null && str.length() > 0;
+    return (a != null ? a.equals(b) : a == b);
   }
 }

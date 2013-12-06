@@ -46,7 +46,7 @@ public class ControlMethodUtil {
               for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
                 ListSequence.fromList(closureParamTypes).addElement(SNodeOperations.copyNode(pt));
               }
-            } else if (closureParamTypes != null && (int) ListSequence.fromList(closureParamTypes).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)).count()) {
+            } else if (closureParamTypes != null && ListSequence.fromList(closureParamTypes).count() == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)).count()) {
               int i = 0;
               for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
                 if (!(MatchingUtil.matchNodes(pt, ListSequence.fromList(closureParamTypes).getElement(i++)))) {
@@ -76,10 +76,7 @@ public class ControlMethodUtil {
           return null;
         }
       }
-      return (inf.isInitialized() ?
-        inf :
-        null
-      );
+      return (inf.isInitialized() ? inf : null);
     }
     return null;
   }

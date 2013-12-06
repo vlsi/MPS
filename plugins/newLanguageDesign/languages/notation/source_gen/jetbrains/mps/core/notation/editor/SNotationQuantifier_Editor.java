@@ -62,13 +62,7 @@ public class SNotationQuantifier_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ey0wdc_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SPropertyOperations.hasValue(node, "kind", "list", "optional") ?
-          "*" :
-          (SPropertyOperations.hasValue(node, "kind", "nonempty-list", "optional") ?
-            "+" :
-            "?"
-          )
-        );
+        return (SPropertyOperations.hasValue(node, "kind", "list", "optional") ? "*" : (SPropertyOperations.hasValue(node, "kind", "nonempty-list", "optional") ? "+" : "?"));
       }
 
       public void setText(String s) {

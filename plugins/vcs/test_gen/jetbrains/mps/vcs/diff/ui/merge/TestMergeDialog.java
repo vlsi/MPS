@@ -72,10 +72,7 @@ public class TestMergeDialog {
     if (args.length == 0) {
       System.out.print("Input path to model zip: ");
       String line = new Scanner(System.in).nextLine();
-      args = new String[]{((line == null ?
-        null :
-        line.trim()
-      ))};
+      args = new String[]{((line == null ? null : line.trim()))};
     }
     ENV = new IdeaEnvironment(EnvironmentConfig.defaultEnvironment());
     IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
@@ -154,9 +151,6 @@ public class TestMergeDialog {
   protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
 
   private static <T> T as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

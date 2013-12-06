@@ -21,43 +21,28 @@ public class NodeSubstituteActionsComparator implements Comparator<SubstituteAct
     Object parameter2 = action2.getParameterObject();
 
     if (parameter1 instanceof SNode) {
-      return (parameter2 instanceof SNode ?
-        compare((SNode) parameter1, (SNode) parameter2) :
-        -1
-      );
+      return (parameter2 instanceof SNode ? compare((SNode) parameter1, (SNode) parameter2) : -1);
     } else {
-      return (parameter2 instanceof SNode ?
-        1 :
-        0
-      );
+      return (parameter2 instanceof SNode ? 1 : 0);
     }
   }
 
   private int compare(SNode node1, SNode node2) {
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-      return (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?
-        0 :
-        1
-      );
+      return (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ? 0 : 1);
     } else if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       return -1;
     }
 
     SModel containigModel = SNodeOperations.getModel(myContainingRoot);
     if (SNodeOperations.getModel(node1) != containigModel) {
-      return (SNodeOperations.getModel(node2) != containigModel ?
-        0 :
-        1
-      );
+      return (SNodeOperations.getModel(node2) != containigModel ? 0 : 1);
     } else if (SNodeOperations.getModel(node2) != containigModel) {
       return -1;
     }
 
     if (SNodeOperations.getContainingRoot(node1) != myContainingRoot) {
-      return (SNodeOperations.getContainingRoot(node2) != myContainingRoot ?
-        0 :
-        1
-      );
+      return (SNodeOperations.getContainingRoot(node2) != myContainingRoot ? 0 : 1);
     } else if (SNodeOperations.getContainingRoot(node2) != myContainingRoot) {
       return -1;
     }

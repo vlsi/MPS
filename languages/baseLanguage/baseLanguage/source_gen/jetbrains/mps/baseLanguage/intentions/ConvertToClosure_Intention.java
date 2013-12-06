@@ -69,7 +69,7 @@ public class ConvertToClosure_Intention implements IntentionFactory {
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode parentInterface = SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
-      return (int) Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(parentInterface)).count() == 1;
+      return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(parentInterface)).count() == 1;
     }
     return false;
   }

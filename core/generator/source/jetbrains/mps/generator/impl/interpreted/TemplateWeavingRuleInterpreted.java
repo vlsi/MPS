@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.*;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
@@ -110,11 +111,11 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         new WeavingMappingRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
         ruleNode.getModel());
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find context node query '" + methodName + "' : evaluate to null");
+      environment.getLogger().warning(ruleNode, "cannot find context node query '" + methodName + "' : evaluate to null");
       return null;
     } catch (Exception e) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "cannot evaluate rule context query");
-      environment.getGenerator().getLogger().handleException(e);
+      environment.getLogger().handleException(e);
     }
     return null;
   }
@@ -133,12 +134,12 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      environment.getGenerator().getLogger().handleException(t);
-      environment.getGenerator().getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().handleException(t);
+      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -179,17 +180,17 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
 
     // check fragments: all fragments with <default context> should have the same parent
-    checkTemplateFragmentsForWeaving(template, templateFragments, environment.getGenerator());
+    checkTemplateFragmentsForWeaving(template, templateFragments, environment.getLogger());
 
     // for each template fragment create output nodes
-    TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+    TemplateProcessor templateProcessor = new TemplateProcessor(environment);
     for (SNode templateFragment : templateFragments) {
       SNode templateFragmentNode = templateFragment.getParent();
       SNode contextParentNode = null;
       try {
-        contextParentNode = environment.getReductionContext().getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
+        contextParentNode = environment.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
       } catch (Exception e) {
-        environment.getGenerator().getLogger().handleException(e);
+        environment.getLogger().handleException(e);
       }
       if (contextParentNode != null) {
         try {
@@ -205,7 +206,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         } catch (TemplateProcessingFailureException e) {
           // FIXME
           environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "error processing template fragment");
-          environment.getGenerator().getLogger().info(contextParentNode, " -- was output context node:");
+          environment.getLogger().info(contextParentNode, " -- was output context node:");
         }
       } else {
         environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "couldn't define 'context' for template fragment");
@@ -213,7 +214,51 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
   }
 
-  public static void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, TemplateGenerator generator) {
+  /**
+   * For an imaginary model where X is translated to Class and there's weaving that adds a field to this class, of the context classifier type:
+   * <pre>
+   * RootMappingRule(X) ==> ClassConcept
+   * WeavingMappingRule(X).context = gencontext.getOutput(node); weave_InjectField(TemplateDeclarationReference)
+   *
+   * weave_InjectField got content node (TemplateDeclaration.contentNode) which is a fake class:
+   * content node:
+   * class AAA {
+   *   &lt;TF public AAA field; TF&gt;
+   * }
+   * </pre>
+   *
+   * To resolve AAA reference correctly, we need to know mapping of weaving rule's context to AAA template node. While in
+   * TemplateProcessor, we create a PostponedReference with ReferenceInfo_Template (reference to AAA classifier is reference inside template model).
+   * During resolution step, however, it's not clear how to find output node that corresponds to AAA template reference.
+   * Before this modest hack was introduced, there used to be ReferenceInfo_TemplateNode with an awkward hack that walked parents
+   * of reference source in output model and in template model simultaneously until template model element that matched the one from ReferenceInfo
+   * was found, and corresponding output node was treated as proper target. This was bit too much of assumption about output model structure, imo.
+   * Proposed alternative is not perfect, but at least clearly binds context of weaving rule to content node in weaving template, so that developers
+   * won't need to rely on parent walking heuristics.
+   *
+   * Note, neither approach deals with reference target that is not in ancestry or content node respectively, e.g.:
+   * <pre>
+   * content node:
+   * class AAA {
+   *   private AAA(int i) {
+   *
+   *   }
+   *   &lt;TF public static AAA field = new AAA(5); TF&gt;
+   * }
+   * </pre>
+   * Here, former approach of ReferenceInfo_TemplateNode would fail to find AAA cons as it's not in ancestry of field declaration. The mapping
+   * from the method below won't help either. I feel the case above is handled via indirect mapping and input history, but not sure.
+   *
+   * @param environment
+   * @param outputContextNode node from context query of WeavingMappingRule, element of output model we inject into
+   * @param inputNode source model element this weaving is applicable to (instance of WeavingMappingRule.applicableConcept)
+   */
+  void mapWeaveContentNodeToTemplateDeclarationContentNode(TemplateExecutionEnvironment environment, SNode outputContextNode, SNode inputNode) {
+    SNode contentNode = RuleUtil.getTemplateDeclaration_ContentNode(template);
+    environment.getGenerator().addOutputNodeByInputAndTemplateNode(inputNode, GeneratorUtil.getTemplateNodeId(contentNode), outputContextNode);
+  }
+
+  public static void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, IGeneratorLogger logger) {
 
     // all fragments with <default context> should have the same parent
     boolean sameParent = true;
@@ -236,7 +281,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
           list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
         }
       }
-      generator.getLogger().error(template, "all fragments with <default context> should have the same parent",
+      logger.error(template, "all fragments with <default context> should have the same parent",
         list.toArray(new ProblemDescription[list.size()]));
     }
   }
@@ -253,8 +298,9 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
+      mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       weaveTemplateDeclaration(outputContextNode,
-        GeneratorUtil.createConsequenceContext(context.getInput(), null, environment.getReductionContext(), consequenceNode, context.getInput(), environment.getGenerator()), environment);
+        GeneratorUtil.createConsequenceContext(context, environment, consequenceNode), environment);
       return true;
     }
   }
@@ -274,13 +320,14 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         environment.getGenerator().showErrorMessage(context.getInput(), ruleNode, "weaving rule: cannot create list of source nodes");
         return false;
       }
-      Collection<SNode> queryNodes = environment.getReductionContext().getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, query, context);
+      Collection<SNode> queryNodes = environment.getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, query, context);
       if (queryNodes.isEmpty()) {
         return false;
       }
+      mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       for (SNode queryNode : queryNodes) {
         weaveTemplateDeclaration(outputContextNode,
-          GeneratorUtil.createConsequenceContext(queryNode, null, environment.getReductionContext(), consequenceNode, queryNode, environment.getGenerator()), environment);
+          GeneratorUtil.createConsequenceContext(new DefaultTemplateContext(queryNode), environment, consequenceNode), environment);
       }
 
       return true;

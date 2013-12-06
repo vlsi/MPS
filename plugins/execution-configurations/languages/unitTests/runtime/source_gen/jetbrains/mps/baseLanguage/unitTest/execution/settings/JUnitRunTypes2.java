@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.smodel.SNodePointer;
@@ -43,7 +42,7 @@ public enum JUnitRunTypes2 {
       return TestUtils.getModuleTests(module);
     }
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if (isEmpty_torbaz_a0a0b1(configuration.getModule())) {
+      if (isEmptyString(configuration.getModule())) {
         return "Module is not selected.";
       }
       SModule module = TestUtils.getModule(configuration.getModule());
@@ -89,7 +88,7 @@ public enum JUnitRunTypes2 {
         return "Classes list is empty.";
       }
       if (configuration.getTestCases() != null) {
-        for (String testCase : ListSequence.fromList(configuration.getTestCases())) {
+        for (String testCase : configuration.getTestCases()) {
           SNodeReference pointer = PointerUtils.stringToPointer(testCase);
           if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
             return "Could not find test case for id " + testCase + ".";
@@ -109,7 +108,7 @@ public enum JUnitRunTypes2 {
         return "Methods list is empty.";
       }
       if (configuration.getTestMethods() != null) {
-        for (String method : ListSequence.fromList(configuration.getTestMethods())) {
+        for (String method : configuration.getTestMethods()) {
           SNodeReference pointer = PointerUtils.stringToPointer(method);
           if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
             return "Could not find test method for id " + method + ".";
@@ -128,7 +127,7 @@ public enum JUnitRunTypes2 {
 
   public abstract String check(JUnitSettings_Configuration cofiguration, Project project);
 
-  public static boolean isEmpty_torbaz_a0a0b1(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -58,10 +58,7 @@ public class ClassPath {
 
   @Nullable
   public Resource getResource(String s, boolean flag) {
-    final long started = (myDebugTime ?
-      System.nanoTime() :
-      0
-    );
+    final long started = (myDebugTime ? System.nanoTime() : 0);
     try {
       int i;
       if (myCanUseCache) {
@@ -90,10 +87,7 @@ public class ClassPath {
       }
       return null;
     } finally {
-      long doneFor = (myDebugTime ?
-        System.nanoTime() - started :
-        0
-      );
+      long doneFor = (myDebugTime ? System.nanoTime() - started : 0);
       if (doneFor > NS_THRESHOLD) {
         System.out.println((doneFor / 1000000) + " ms for getResource:" + s + ", flag:" + flag);
       }

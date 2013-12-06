@@ -22,10 +22,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
     SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) {
       String longName = modelReference.getModelName();
-      return (longName.equals("") ?
-        "<no name>" :
-        longName
-      );
+      return (longName.equals("") ? "<no name>" : longName);
     }
     return modelReference.getModelName();
   }

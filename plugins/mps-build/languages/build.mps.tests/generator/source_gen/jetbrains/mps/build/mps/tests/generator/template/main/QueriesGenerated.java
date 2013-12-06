@@ -202,16 +202,10 @@ public class QueriesGenerated {
   }
 
   private static boolean neq_x583g4_a0a0a0(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean neq_x583g4_a0a0a0_0(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

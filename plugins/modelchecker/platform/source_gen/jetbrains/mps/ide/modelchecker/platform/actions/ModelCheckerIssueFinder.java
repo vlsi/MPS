@@ -56,10 +56,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       throw new IllegalArgumentException();
     }
 
-    int work = ((modules != null ?
-      ListSequence.fromList(modules).count() :
-      0
-    )) + ListSequence.fromList(models).count() + 1;
+    int work = ((modules != null ? ListSequence.fromList(modules).count() : 0)) + ListSequence.fromList(models).count() + 1;
     monitor.start("Checking", work);
 
     try {

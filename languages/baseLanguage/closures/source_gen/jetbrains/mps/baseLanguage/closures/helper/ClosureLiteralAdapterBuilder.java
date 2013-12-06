@@ -10,12 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -66,12 +65,13 @@ public class ClosureLiteralAdapterBuilder {
 
   private SNode lookupAdapterClassAnnotation(SNode literal) {
     final SNode adapterAnn = SLinkOperations.getTarget(_quotation_createNode_wzrebk_a0a0a5(), "annotation", false);
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(literal)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
-      @Override
-      public boolean accept(SNode ann) {
-        return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
+    SNode pdecl = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(literal));
+    for (SNode ann : SLinkOperations.getTargets(SNodeOperations.cast(pdecl, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)) {
+      if (SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn) {
+        return ann;
       }
-    });
+    }
+    return null;
   }
 
   private SNode findAdapterClassDeclaration(SNode literal, final SNode annInst) {
@@ -84,12 +84,12 @@ public class ClosureLiteralAdapterBuilder {
   }
 
   private SNode getAdapterClassFunctionType(SNode cls) {
-    return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).findFirst(new IWhereFilter<SNode>() {
-      @Override
-      public boolean accept(SNode md) {
-        return SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
+    for (SNode md : Classifier_Behavior.call_methods_5292274854859311639(cls)) {
+      if (SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration")) {
+        return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"));
       }
-    }), "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"));
+    }
+    return null;
   }
 
   private static SNode _quotation_createNode_wzrebk_a0a0a5() {

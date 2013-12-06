@@ -86,10 +86,7 @@ public class RemoteSettingsEditor extends JPanel {
     @Override
     public void keyReleased(KeyEvent e) {
       updateFieldsFromUi();
-      myPortTextField.setForeground((myPortTextField.isEditValid() ?
-        StyleRegistry.getInstance().getEditorForeground() :
-        Color.RED
-      ));
+      myPortTextField.setForeground((myPortTextField.isEditValid() ? StyleRegistry.getInstance().getEditorForeground() : Color.RED));
     }
 
     @Override

@@ -155,10 +155,7 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
     });
     GeneratorPathsComponent.getInstance().registerForeignPathsProvider(new ForeignPathsProvider() {
       public String belongsToForeignPath(IFile path) {
-        return (myForeignRootPaths != null ?
-          myForeignRootPaths.findForeignPrefix(path.getPath()) :
-          null
-        );
+        return (myForeignRootPaths != null ? myForeignRootPaths.findForeignPrefix(path.getPath()) : null);
       }
     });
   }
@@ -185,10 +182,7 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
 
     public String findForeignPrefix(String path) {
       int idx = DirUtil.findPrefixAsDir(path, rootPaths);
-      return (idx >= 0 ?
-        rootPaths[idx] :
-        null
-      );
+      return (idx >= 0 ? rootPaths[idx] : null);
     }
   }
 }

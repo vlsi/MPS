@@ -84,7 +84,7 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (int) SetSequence.fromSet(editorHintsSet).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).distinct().count() && SetSequence.fromSet(editorHintsSet).containsSequence(ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).select(new ISelector<SNode, SNode>() {
+            return SetSequence.fromSet(editorHintsSet).count() == ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).distinct().count() && SetSequence.fromSet(editorHintsSet).containsSequence(ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SLinkOperations.getTarget(it, "hint", false);
               }
@@ -99,18 +99,15 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget("conceptDeclaration");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorDeclaration, "Duplicate editor declaration. Editor for same set of context hints (" + ((ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).isEmpty() ?
-            "<default>" :
-            ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).select(new ISelector<SNode, String>() {
-              public String select(SNode it) {
-                return SPropertyOperations.getString(SLinkOperations.getTarget(it, "hint", false), "name");
-              }
-            }).reduceLeft(new ILeftCombinator<String, String>() {
-              public String combine(String a, String b) {
-                return a + " & " + b;
-              }
-            })
-          )) + ") was already defined in: " + BehaviorReflection.invokeVirtual(String.class, duplicatingEditorDecl, "virtual_getFqName_1213877404258", new Object[]{}), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6246554009626560906", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorDeclaration, "Duplicate editor declaration. Editor for same set of context hints (" + ((ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).isEmpty() ? "<default>" : ListSequence.fromList(SLinkOperations.getTargets(editorDeclaration, "contextHints", true)).select(new ISelector<SNode, String>() {
+            public String select(SNode it) {
+              return SPropertyOperations.getString(SLinkOperations.getTarget(it, "hint", false), "name");
+            }
+          }).reduceLeft(new ILeftCombinator<String, String>() {
+            public String combine(String a, String b) {
+              return a + " & " + b;
+            }
+          }))) + ") was already defined in: " + BehaviorReflection.invokeVirtual(String.class, duplicatingEditorDecl, "virtual_getFqName_1213877404258", new Object[]{}), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6246554009626560906", null, errorTarget);
         }
       }
     }
@@ -132,9 +129,6 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
   }
 
   private static <T> T as_e0tm27_a0a0a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

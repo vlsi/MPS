@@ -188,10 +188,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
   @Override
   public void writeModel(SModelData model, StreamDataSource source) throws IOException, ModelSaveException {
     Iterator<SNode> iterator = model.getRootNodes().iterator();
-    SNode root = (iterator.hasNext() ?
-      iterator.next() :
-      null
-    );
+    SNode root = (iterator.hasNext() ? iterator.next() : null);
     if (root == null) {
       throw new ModelSaveException("cannot save empty model", Collections.<SModel.Problem>singletonList(new PersistenceProblem(SModel.Problem.Kind.Save, "cannot save empty model", null, true)));
     }

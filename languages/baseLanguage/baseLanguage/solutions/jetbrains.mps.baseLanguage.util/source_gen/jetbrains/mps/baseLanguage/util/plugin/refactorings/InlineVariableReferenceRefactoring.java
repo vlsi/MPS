@@ -93,9 +93,6 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
   }
 
   private static boolean eq_uj3i4l_a0a0a0a0a0a0a0a2a3(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -68,10 +68,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
 
   public static String call_calculateUnpackPath_715289236985547394(SNode thisNode, Context context) {
     SNode nlayout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildNamedLayout", true, false);
-    return context.getTempPath(thisNode, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getLastSegment_1368030936106771141", new Object[]{context.getMacros(thisNode)}).replace(".", "_"), ((nlayout != null) ?
-      SPropertyOperations.getString(nlayout, "name") :
-      "default"
-    ));
+    return context.getTempPath(thisNode, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getLastSegment_1368030936106771141", new Object[]{context.getMacros(thisNode)}).replace(".", "_"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, "name") : "default"));
   }
 
   public static SNode call_getUnpackTask_8990969321156029654(SNode thisNode, Context context) {

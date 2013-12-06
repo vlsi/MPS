@@ -32,10 +32,7 @@ public class Complex extends Number {
     if (myRealPart == 0) {
       return myImagPart + "*I";
     }
-    return "(" + myRealPart + ((Math.signum(myImagPart) > 0 ?
-      "+" :
-      "-"
-    )) + Math.abs(myImagPart) + "*I)";
+    return "(" + myRealPart + ((Math.signum(myImagPart) > 0 ? "+" : "-")) + Math.abs(myImagPart) + "*I)";
   }
 
   public double re() {

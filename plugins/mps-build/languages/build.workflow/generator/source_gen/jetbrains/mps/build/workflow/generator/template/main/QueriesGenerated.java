@@ -146,10 +146,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2059109515400317575(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (isNotEmpty_x583g4_a0a0a0y(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
-      "javac2" :
-      "javac"
-    );
+    return (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ? "javac2" : "javac");
   }
 
   public static Object propertyMacro_GetPropertyValue_6647099934207240060(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -177,10 +174,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6896005762093592339(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SPropertyOperations.getBoolean(_context.getNode(), "isLocation") ?
-      SPropertyOperations.getString(_context.getNode(), "name") + ".relative" :
-      SPropertyOperations.getString(_context.getNode(), "name")
-    );
+    return (SPropertyOperations.getBoolean(_context.getNode(), "isLocation") ? SPropertyOperations.getString(_context.getNode(), "name") + ".relative" : SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_6896005762093592358(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -204,7 +198,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7385586609667799754(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0lb(((String) _context.getVariable("var:deps")));
+    return isNotEmptyString(((String) _context.getVariable("var:deps")));
   }
 
   public static boolean ifMacro_Condition_2529023923283273405(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -236,11 +230,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1841835149314837357(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0sb(SPropertyOperations.getString(_context.getNode(), "baseDirectory"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "baseDirectory"));
   }
 
   public static boolean ifMacro_Condition_5091697509629088381(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0a54(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ");
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ");
   }
 
   public static boolean ifMacro_Condition_1659807394254658074(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -256,7 +250,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2059109515400349923(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0a94(SPropertyOperations.getString(_context.getNode(), "compiler")) && !(SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "compiler")) && !(SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ"));
   }
 
   public static boolean ifMacro_Condition_1659807394254493284(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -886,23 +880,7 @@ public class QueriesGenerated {
     }
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a0y(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0lb(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0sb(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a54(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a94(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

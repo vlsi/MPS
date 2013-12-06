@@ -14,24 +14,15 @@ public class CompositeWithParentScope {
   public static Scope from(Scope original, SNode node, SNode kind) {
     // todo: from? 
     Scope nextScope = Scope.getScope(Scope.parent(node), node, kind);
-    return (nextScope == null ?
-      original :
-      new CompositeScope(original, nextScope)
-    );
+    return (nextScope == null ? original : new CompositeScope(original, nextScope));
   }
 
   public static Scope from(Iterable<SNode> elements, SNode node, SNode kind) {
-    return (elements != null ?
-      from(new NamedElementsScope(elements), node, kind) :
-      parentScope(node, kind)
-    );
+    return (elements != null ? from(new NamedElementsScope(elements), node, kind) : parentScope(node, kind));
   }
 
   public static Scope from(SNode element, SNode node, SNode kind) {
-    return ((element != null) ?
-      from(new NamedElementsScope(element), node, kind) :
-      parentScope(node, kind)
-    );
+    return ((element != null) ? from(new NamedElementsScope(element), node, kind) : parentScope(node, kind));
   }
 
   public static Scope fromLink(SNode link, SNode node, SNode kind) {

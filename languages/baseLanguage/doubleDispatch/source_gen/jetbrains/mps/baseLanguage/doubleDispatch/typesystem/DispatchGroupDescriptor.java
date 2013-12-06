@@ -68,10 +68,7 @@ public class DispatchGroupDescriptor {
 
   @Override
   public int hashCode() {
-    return methodName.hashCode() + ((isStatic ?
-      1 :
-      0
-    )) + Sequence.fromIterable(otherParamTypes).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
+    return methodName.hashCode() + ((isStatic ? 1 : 0)) + Sequence.fromIterable(otherParamTypes).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
       public Integer combine(Integer s, SNode it) {
         return s + typeHashCode(it);
       }

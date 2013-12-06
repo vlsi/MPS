@@ -53,7 +53,7 @@ public class ScopeUtil {
     return Sequence.fromIterable(importDeclarations).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         // searching for smart references 
-        return (int) Sequence.fromIterable(SNodeOperations.getReferences(it)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(Sequence.fromIterable(SNodeOperations.getReferences(it)).first()), "jetbrains.mps.lang.core.structure.ScopeProvider");
+        return Sequence.fromIterable(SNodeOperations.getReferences(it)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(Sequence.fromIterable(SNodeOperations.getReferences(it)).first()), "jetbrains.mps.lang.core.structure.ScopeProvider");
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

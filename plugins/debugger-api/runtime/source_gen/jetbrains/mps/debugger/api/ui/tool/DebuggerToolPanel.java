@@ -17,8 +17,8 @@ import com.intellij.execution.ui.layout.PlaceInGrid;
 import javax.swing.JComponent;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import com.intellij.ui.components.JBScrollPane;
-import javax.swing.JComboBox;
-import com.intellij.ide.ui.ListCellRendererWrapper;
+import com.intellij.openapi.ui.ComboBox;
+import com.intellij.ui.ListCellRendererWrapper;
 import jetbrains.mps.debug.api.programState.IThread;
 import com.intellij.ui.components.JBList;
 import javax.swing.event.ListSelectionListener;
@@ -79,8 +79,8 @@ public class DebuggerToolPanel {
 
   private JComponent createThreadsComponent() {
     myThreadsComboBoxModel = new DebuggerToolPanel.ThreadsComboBoxModel();
-    JComboBox threadsComboBox = new JComboBox(myThreadsComboBoxModel);
-    threadsComboBox.setRenderer(new ListCellRendererWrapper<IThread>(threadsComboBox.getRenderer()) {
+    ComboBox threadsComboBox = new ComboBox(myThreadsComboBoxModel);
+    threadsComboBox.setRenderer(new ListCellRendererWrapper<IThread>() {
       @Override
       public void customize(JList list, IThread value, int index, boolean selected, boolean hasFocus) {
         if (value != null) {
@@ -118,10 +118,7 @@ public class DebuggerToolPanel {
             String typename = location.getUnitName();
             int lastDot = typename.lastIndexOf(".");
             String className = typename.substring(lastDot + 1);
-            String pckgName = (lastDot > 0 ?
-              typename.substring(0, lastDot) :
-              ""
-            );
+            String pckgName = (lastDot > 0 ? typename.substring(0, lastDot) : "");
             framePresentation = location.getRoutineName() + "():" + location.getLineNumber() + " " + className + "(" + pckgName + ")";
           }
           setText(framePresentation);

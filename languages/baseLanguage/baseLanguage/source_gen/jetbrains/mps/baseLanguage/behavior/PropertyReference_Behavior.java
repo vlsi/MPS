@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class PropertyReference_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +12,10 @@ public class PropertyReference_Behavior {
 
   public static boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return Property_Behavior.call_hasSetter_1213877383224(SLinkOperations.getTarget(thisNode, "property", false));
+  }
+
+  public static boolean call_isBeingAssigned_6861608246250221916(SNode thisNode) {
+    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
+    return SNodeOperations.hasRole(parent, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "lValue");
   }
 }

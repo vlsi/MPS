@@ -155,16 +155,10 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     if (myIndex != that.myIndex) {
       return false;
     }
-    if ((myLocation != null ?
-      !(myLocation.equals(that.myLocation)) :
-      that.myLocation != null
-    )) {
+    if ((myLocation != null ? !(myLocation.equals(that.myLocation)) : that.myLocation != null)) {
       return false;
     }
-    if ((myThread != null ?
-      !(myThread.equals(that.myThread)) :
-      that.myThread != null
-    )) {
+    if ((myThread != null ? !(myThread.equals(that.myThread)) : that.myThread != null)) {
       return false;
     }
 
@@ -175,14 +169,8 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   public int hashCode() {
     int result = 0;
     result = 31 * result + myIndex;
-    result = 31 * result + ((myLocation != null ?
-      (myLocation).hashCode() :
-      0
-    ));
-    result = 31 * result + ((myThread != null ?
-      (myThread).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myLocation != null ? (myLocation).hashCode() : 0));
+    result = 31 * result + ((myThread != null ? (myThread).hashCode() : 0));
     return result;
   }
 }

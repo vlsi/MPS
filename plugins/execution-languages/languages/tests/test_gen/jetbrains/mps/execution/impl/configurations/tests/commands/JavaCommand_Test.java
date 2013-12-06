@@ -88,17 +88,11 @@ public class JavaCommand_Test extends BaseTransformationTest4 {
     }
 
     private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
 
     private static boolean neq_849b2c_a0a0a0a0a1a3a1b(Object a, Object b) {
-      return !((a != null ?
-        a.equals(b) :
-        a == b
-      ));
+      return !((a != null ? a.equals(b) : a == b));
     }
   }
 }

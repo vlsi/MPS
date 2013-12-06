@@ -42,10 +42,7 @@ public class MqlCollectionProperty_Behavior {
   public static Object virtual_evaluate_7862448911997337721(SNode thisNode, Object object, EvaluationEnvironment env, EvaluationContext context) {
     if (SPropertyOperations.hasValue(thisNode, "kind", "2", null)) {
       Iterator iterator = ((Iterable) object).iterator();
-      return (iterator.hasNext() ?
-        iterator.next() :
-        null
-      );
+      return (iterator.hasNext() ? iterator.next() : null);
     } else if (SPropertyOperations.hasValue(thisNode, "kind", "4", null)) {
       Iterator iterator = ((Iterable) object).iterator();
       return !(iterator.hasNext());

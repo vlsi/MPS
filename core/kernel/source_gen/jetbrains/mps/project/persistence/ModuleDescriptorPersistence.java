@@ -175,10 +175,7 @@ public class ModuleDescriptorPersistence {
         m = cache[cacheIndex].getMemento();
       }
       Memento sr = m.createChild("sourceRoot");
-      sr.put("location", (relPath.isEmpty() ?
-        "." :
-        relPath
-      ));
+      sr.put("location", (relPath.isEmpty() ? "." : relPath));
       return result;
     }
 
@@ -222,10 +219,7 @@ public class ModuleDescriptorPersistence {
   public static void readMemento(Memento memento, Element element, final MacroHelper macroHelper) {
     for (Attribute attr : (List<Attribute>) element.getAttributes()) {
       String name = attr.getName();
-      memento.put(name, (isPathAttribute(name) ?
-        macroHelper.expandPath(attr.getValue()) :
-        attr.getValue()
-      ));
+      memento.put(name, (isPathAttribute(name) ? macroHelper.expandPath(attr.getValue()) : attr.getValue()));
     }
     for (Element elem : (List<Element>) element.getChildren()) {
       Memento child = memento.createChild(elem.getName());
@@ -235,10 +229,7 @@ public class ModuleDescriptorPersistence {
 
   public static void writeMemento(Memento memento, Element element, final MacroHelper macroHelper) {
     for (String key : memento.getKeys()) {
-      element.setAttribute(key, (isPathAttribute(key) ?
-        macroHelper.shrinkPath(memento.get(key)) :
-        memento.get(key)
-      ));
+      element.setAttribute(key, (isPathAttribute(key) ? macroHelper.shrinkPath(memento.get(key)) : memento.get(key)));
     }
     for (Memento childMemento : memento.getChildren()) {
       Element child = new Element(childMemento.getType());
@@ -303,12 +294,9 @@ public class ModuleDescriptorPersistence {
   }
 
   public static void saveStubModelEntries(Element result, Collection<String> entries, MacroHelper macroHelper) {
-    for (String root : CollectionSequence.fromCollection(entries)) {
+    for (String root : entries) {
       Element stubModelEntry = new Element("stubModelEntry");
-      stubModelEntry.setAttribute("path", macroHelper.shrinkPath((root == null ?
-        "" :
-        root
-      )));
+      stubModelEntry.setAttribute("path", macroHelper.shrinkPath((root == null ? "" : root)));
       result.addContent(stubModelEntry);
     }
   }
@@ -345,10 +333,7 @@ public class ModuleDescriptorPersistence {
       FileUtil.closeFileSafe(r);
     }
     setTimestamp(md, file);
-    md.setLoadException((exception.getCause() == null ?
-      exception :
-      exception.getCause()
-    ));
+    md.setLoadException((exception.getCause() == null ? exception : exception.getCause()));
   }
 
   private static boolean matches(Memento manager, ModelRootManager mrm) {

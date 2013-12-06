@@ -60,41 +60,41 @@
     <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="92" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="75" startPosition="41" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="78" startPosition="7" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="79" startPosition="36" endLine="80" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="80" startPosition="54" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="81" startPosition="42" endLine="82" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="82" startPosition="75" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="83" startPosition="59" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="85" startPosition="37" endLine="86" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="86" startPosition="74" endLine="87" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="87" startPosition="80" endLine="88" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="89" startPosition="12" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="92" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="75" startPosition="41" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="78" startPosition="7" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="79" startPosition="36" endLine="80" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="80" startPosition="54" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="81" startPosition="42" endLine="82" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="82" startPosition="75" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="83" startPosition="59" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="85" startPosition="37" endLine="86" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="86" startPosition="74" endLine="87" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="87" startPosition="80" endLine="88" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="89" startPosition="12" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_4olnxz_a0a#()V" />
     <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="74" startPosition="44" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="74" startPosition="44" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="84" startPosition="61" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="84" startPosition="61" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4olnxz_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_4olnxz_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_4olnxz_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_4olnxz_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
     <scopeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="31" startPosition="40" endLine="32" endPosition="80" />
     <scopeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="14" />
     <scopeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" />
     <scopeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" />
-    <scopeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="75" startPosition="41" endLine="77" endPosition="39" />
+    <scopeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="75" startPosition="41" endLine="77" endPosition="39" />
     <scopeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="146911029171891502" varName="editorContext" />
       <varInfo nodeId="146911029171891502" varName="node" />
@@ -111,9 +111,9 @@
       <varInfo nodeId="146911029171891511" varName="editorContext" />
       <varInfo nodeId="146911029171891511" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="85" startPosition="37" endLine="88" endPosition="107">
-      <varInfo nodeId="146911029171891511" varName="manager" />
-      <varInfo nodeId="146911029171891511" varName="opContext" />
+    <scopeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="85" startPosition="37" endLine="88" endPosition="107">
+      <varInfo nodeId="146911029171891513" varName="manager" />
+      <varInfo nodeId="146911029171891513" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="25" startPosition="89" endLine="33" endPosition="22">
       <varInfo nodeId="146911029171891502" varName="editorCell" />
@@ -133,16 +133,16 @@
       <varInfo nodeId="146911029171891502" varName="editorContext" />
       <varInfo nodeId="146911029171891502" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="92" endLine="90" endPosition="24">
-      <varInfo nodeId="146911029171891511" varName="attributeConcept" />
-      <varInfo nodeId="146911029171891511" varName="attributeKind" />
-      <varInfo nodeId="146911029171891511" varName="editorCell" />
-      <varInfo nodeId="146911029171891511" varName="provider" />
-      <varInfo nodeId="146911029171891511" varName="style" />
+    <scopeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="92" endLine="90" endPosition="24">
+      <varInfo nodeId="146911029171891513" varName="attributeConcept" />
+      <varInfo nodeId="146911029171891513" varName="attributeKind" />
+      <varInfo nodeId="146911029171891513" varName="editorCell" />
+      <varInfo nodeId="146911029171891513" varName="provider" />
+      <varInfo nodeId="146911029171891513" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="146911029171891511" varName="editorContext" />
-      <varInfo nodeId="146911029171891511" varName="node" />
+    <scopeInfo nodeId="146911029171891513" fileName="SStructurePropertyRef_Editor.java" startLine="67" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="146911029171891513" varName="editorContext" />
+      <varInfo nodeId="146911029171891513" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="146911029171891511" fileName="SStructurePropertyRef_Editor.java" startLine="54" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SStructurePropertyRef_Editor$_Inline_4olnxz_a0a" />
     <unitInfo nodeId="146911029171891502" fileName="SStructurePropertyRef_Editor.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SStructurePropertyRef_Editor" />
@@ -908,43 +908,43 @@
     <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="92" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="75" startPosition="41" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="78" startPosition="7" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="79" startPosition="36" endLine="80" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="80" startPosition="112" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="81" startPosition="59" endLine="82" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="82" startPosition="54" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="83" startPosition="42" endLine="84" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="84" startPosition="75" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="85" startPosition="59" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="87" startPosition="37" endLine="88" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="88" startPosition="74" endLine="89" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="89" startPosition="80" endLine="90" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="91" startPosition="12" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="92" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="75" startPosition="41" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="78" startPosition="7" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="79" startPosition="36" endLine="80" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="80" startPosition="112" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="81" startPosition="59" endLine="82" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="82" startPosition="54" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="83" startPosition="42" endLine="84" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="84" startPosition="75" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="85" startPosition="59" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="87" startPosition="37" endLine="88" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="88" startPosition="74" endLine="89" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="89" startPosition="80" endLine="90" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="91" startPosition="12" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_44zvdn_a0a#()V" />
     <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="74" startPosition="44" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="74" startPosition="44" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="86" startPosition="61" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="86" startPosition="61" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_44zvdn_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_44zvdn_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_44zvdn_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_44zvdn_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
     <scopeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="31" startPosition="28" endLine="32" endPosition="80" />
     <scopeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="14" />
     <scopeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" />
     <scopeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" />
-    <scopeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="75" startPosition="41" endLine="77" endPosition="35" />
+    <scopeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="75" startPosition="41" endLine="77" endPosition="35" />
     <scopeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="2456221013111788227" varName="editorContext" />
       <varInfo nodeId="2456221013111788227" varName="node" />
@@ -961,9 +961,9 @@
       <varInfo nodeId="2456221013111788262" varName="editorContext" />
       <varInfo nodeId="2456221013111788262" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="87" startPosition="37" endLine="90" endPosition="107">
-      <varInfo nodeId="2456221013111788262" varName="manager" />
-      <varInfo nodeId="2456221013111788262" varName="opContext" />
+    <scopeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="87" startPosition="37" endLine="90" endPosition="107">
+      <varInfo nodeId="2456221013111788263" varName="manager" />
+      <varInfo nodeId="2456221013111788263" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="28" startPosition="89" endLine="33" endPosition="22">
       <varInfo nodeId="2456221013111788227" varName="editorCell" />
@@ -982,16 +982,16 @@
       <varInfo nodeId="2456221013111788227" varName="editorContext" />
       <varInfo nodeId="2456221013111788227" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="92" endLine="92" endPosition="24">
-      <varInfo nodeId="2456221013111788262" varName="attributeConcept" />
-      <varInfo nodeId="2456221013111788262" varName="attributeKind" />
-      <varInfo nodeId="2456221013111788262" varName="editorCell" />
-      <varInfo nodeId="2456221013111788262" varName="provider" />
-      <varInfo nodeId="2456221013111788262" varName="style" />
+    <scopeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="92" endLine="92" endPosition="24">
+      <varInfo nodeId="2456221013111788263" varName="attributeConcept" />
+      <varInfo nodeId="2456221013111788263" varName="attributeKind" />
+      <varInfo nodeId="2456221013111788263" varName="editorCell" />
+      <varInfo nodeId="2456221013111788263" varName="provider" />
+      <varInfo nodeId="2456221013111788263" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="2456221013111788262" varName="editorContext" />
-      <varInfo nodeId="2456221013111788262" varName="node" />
+    <scopeInfo nodeId="2456221013111788263" fileName="SEnumLiteralEntityRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="2456221013111788263" varName="editorContext" />
+      <varInfo nodeId="2456221013111788263" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="2456221013111788262" fileName="SEnumLiteralEntityRef_Editor.java" startLine="54" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SEnumLiteralEntityRef_Editor$_Inline_44zvdn_a0a" />
     <unitInfo nodeId="2456221013111788227" fileName="SEnumLiteralEntityRef_Editor.java" startLine="23" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SEnumLiteralEntityRef_Editor" />
@@ -1068,57 +1068,63 @@
     <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="36" startPosition="109" endLine="37" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="38" startPosition="5" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632884680339360371" fileName="SNotationCall_Editor.java" startLine="44" startPosition="31" endLine="45" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="63" startPosition="44" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="66" startPosition="13" endLine="67" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="67" startPosition="79" endLine="68" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="68" startPosition="60" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="77" startPosition="8" endLine="78" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="78" startPosition="40" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5566195403253919815" fileName="SNotationCall_Editor.java" startLine="82" startPosition="107" endLine="83" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8200039929379673185" fileName="SNotationCall_Editor.java" startLine="86" startPosition="111" endLine="87" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8200039929379681513" fileName="SNotationCall_Editor.java" startLine="87" startPosition="66" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8632884680339397932" fileName="SNotationCall_Editor.java" startLine="45" startPosition="154" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5566195403253914257" fileName="SNotationCall_Editor.java" startLine="46" startPosition="67" endLine="47" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632884680339360342" fileName="SNotationCall_Editor.java" startLine="47" startPosition="151" endLine="48" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="54" startPosition="44" endLine="55" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="57" startPosition="13" endLine="58" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="58" startPosition="79" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="59" startPosition="60" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="60" startPosition="34" endLine="61" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="61" startPosition="102" endLine="62" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="62" startPosition="220" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="63" startPosition="40" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5566195403253919815" fileName="SNotationCall_Editor.java" startLine="67" startPosition="107" endLine="68" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8200039929379673185" fileName="SNotationCall_Editor.java" startLine="71" startPosition="111" endLine="72" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8200039929379681513" fileName="SNotationCall_Editor.java" startLine="72" startPosition="66" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="51" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="35" startPosition="28" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="35" startPosition="28" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="5566195403253919813" fileName="SNotationCall_Editor.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_401fjg_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8632884680339397932" fileName="SNotationCall_Editor.java" startLine="45" startPosition="154" endLine="49" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5566195403253914257" fileName="SNotationCall_Editor.java" startLine="49" startPosition="10" endLine="53" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632884680339360342" fileName="SNotationCall_Editor.java" startLine="53" startPosition="10" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8200039929379681510" fileName="SNotationCall_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_401fjg_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="70" startPosition="102" endLine="77" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5566195403253919813" fileName="SNotationCall_Editor.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_401fjg_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8200039929379681510" fileName="SNotationCall_Editor.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_401fjg_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
     <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_401fjg_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="44" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="113" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_401fjg_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="60" startPosition="37" endLine="60" endPosition="37" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="113" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_401fjg_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="51" startPosition="37" endLine="51" endPosition="37" />
     <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" />
     <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="36" startPosition="109" endLine="37" endPosition="96" />
-    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="63" startPosition="44" endLine="64" endPosition="46" />
-    <scopeInfo nodeId="5566195403253919814" fileName="SNotationCall_Editor.java" startLine="82" startPosition="107" endLine="83" endPosition="73" />
-    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="60" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="54" startPosition="44" endLine="55" endPosition="46" />
+    <scopeInfo nodeId="5566195403253919814" fileName="SNotationCall_Editor.java" startLine="67" startPosition="107" endLine="68" endPosition="73" />
+    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="51" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="2711998566964153008" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="8200039929379681511" fileName="SNotationCall_Editor.java" startLine="86" startPosition="111" endLine="88" endPosition="16" />
+    <scopeInfo nodeId="8200039929379681511" fileName="SNotationCall_Editor.java" startLine="71" startPosition="111" endLine="73" endPosition="16" />
     <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="2711998566964153008" varName="editorContext" />
       <varInfo nodeId="2711998566964153008" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="35" startPosition="28" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="2711998566964153008" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="5566195403253919813" fileName="SNotationCall_Editor.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="5566195403253919813" fileName="SNotationCall_Editor.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="5566195403253919813" varName="editorContext" />
       <varInfo nodeId="5566195403253919813" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8200039929379681510" fileName="SNotationCall_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="8632884680339360341" fileName="SNotationCall_Editor.java" startLine="44" startPosition="31" endLine="48" endPosition="251">
+      <varInfo nodeId="8632884680339397933" varName="cnode" />
+      <varInfo nodeId="8632884680339360372" varName="context" />
+      <varInfo nodeId="5566195403253914258" varName="idSuffix" />
+    </scopeInfo>
+    <scopeInfo nodeId="8200039929379681510" fileName="SNotationCall_Editor.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="8200039929379681510" varName="editorContext" />
       <varInfo nodeId="8200039929379681510" varName="node" />
       <varInfo nodeId="8200039929379681510" varName="scope" />
     </scopeInfo>
+    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="44" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="32" startPosition="89" endLine="39" endPosition="22">
       <varInfo nodeId="2711998566964153008" varName="editorCell" />
     </scopeInfo>
@@ -1126,22 +1132,16 @@
       <varInfo nodeId="2711998566964153008" varName="editorContext" />
       <varInfo nodeId="2711998566964153008" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339360341" fileName="SNotationCall_Editor.java" startLine="44" startPosition="31" endLine="57" endPosition="22">
-      <varInfo nodeId="8632884680339397933" varName="cnode" />
-      <varInfo nodeId="8632884680339360372" varName="context" />
-      <varInfo nodeId="5566195403253914258" varName="idSuffix" />
-    </scopeInfo>
-    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="44" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="113" endLine="79" endPosition="22">
+    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="113" endLine="64" endPosition="22">
       <varInfo nodeId="2711998566964153008" varName="editorCell" />
       <varInfo nodeId="2711998566964153008" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="42" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="2711998566964153008" varName="editorContext" />
       <varInfo nodeId="2711998566964153008" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="43" startPosition="83" endLine="66" endPosition="5" unitName="jetbrains.mps.core.notation.editor.SNotationCall_Editor$1" />
-    <unitInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="27" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationCall_Editor" />
+    <unitInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="43" startPosition="83" endLine="57" endPosition="5" unitName="jetbrains.mps.core.notation.editor.SNotationCall_Editor$1" />
+    <unitInfo nodeId="2711998566964153008" fileName="SNotationCall_Editor.java" startLine="27" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationCall_Editor" />
   </root>
   <root nodeRef="r:da48bdcf-b312-42d5-8f83-648e55453840(jetbrains.mps.core.notation.editor)/2711998566964162681">
     <nodeInfo nodeId="2711998566964162681" fileName="SNotationTab_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1897,37 +1897,38 @@
     <nodeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="55" startPosition="72" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="56" startPosition="78" endLine="57" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="58" startPosition="10" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="77" startPosition="44" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="80" startPosition="13" endLine="81" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="81" startPosition="79" endLine="82" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="82" startPosition="60" endLine="83" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="83" startPosition="34" endLine="84" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="84" startPosition="60" endLine="85" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="85" startPosition="54" endLine="86" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="86" startPosition="47" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="87" startPosition="57" endLine="88" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="88" startPosition="107" endLine="89" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="89" startPosition="59" endLine="90" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="90" startPosition="40" endLine="91" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="91" startPosition="79" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3129031437528361761" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="31" endLine="65" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="71" startPosition="44" endLine="72" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="74" startPosition="13" endLine="75" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="75" startPosition="79" endLine="76" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="76" startPosition="60" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="77" startPosition="34" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="78" startPosition="60" endLine="79" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="79" startPosition="54" endLine="80" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="80" startPosition="47" endLine="81" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="81" startPosition="57" endLine="82" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="82" startPosition="107" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="83" startPosition="59" endLine="84" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="84" startPosition="40" endLine="85" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="85" startPosition="79" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="68" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="47" startPosition="58" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="53" startPosition="59" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3129031437528361761" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="31" endLine="71" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_ey0wdc_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="113" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="113" endLine="74" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="42" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_ey0wdc_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_ey0wdc_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="74" startPosition="37" endLine="74" endPosition="37" />
+    <nodeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_ey0wdc_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="68" startPosition="37" endLine="68" endPosition="37" />
     <scopeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="36" startPosition="28" endLine="37" endPosition="80" />
     <scopeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="94" />
     <scopeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="48" startPosition="39" endLine="49" endPosition="34" />
-    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="77" startPosition="44" endLine="78" endPosition="46" />
-    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="74" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="3129031437528361760" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="31" endLine="65" endPosition="174" />
+    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="71" startPosition="44" endLine="72" endPosition="46" />
+    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="68" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="3129031437528361757" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
@@ -1938,18 +1939,17 @@
       <varInfo nodeId="3129031437528339301" varName="manager" />
       <varInfo nodeId="3129031437528339301" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="3129031437528361757" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="33" startPosition="89" endLine="39" endPosition="22">
       <varInfo nodeId="3129031437528339298" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3129031437528361760" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="31" endLine="71" endPosition="10" />
     <scopeInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3129031437528339298" varName="editorContext" />
       <varInfo nodeId="3129031437528339298" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="64" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="3129031437528339301" fileName="SNotationQuantifier_Editor.java" startLine="42" startPosition="87" endLine="59" endPosition="22">
       <varInfo nodeId="3129031437528339301" varName="attributeConcept" />
       <varInfo nodeId="3129031437528339301" varName="attributeKind" />
@@ -1960,16 +1960,16 @@
       <varInfo nodeId="3129031437528339301" varName="editorContext" />
       <varInfo nodeId="3129031437528339301" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="113" endLine="92" endPosition="22">
+    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="113" endLine="86" endPosition="22">
       <varInfo nodeId="3129031437528361757" varName="editorCell" />
       <varInfo nodeId="3129031437528361757" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="62" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="3129031437528361757" varName="editorContext" />
       <varInfo nodeId="3129031437528361757" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="63" startPosition="83" endLine="80" endPosition="5" unitName="jetbrains.mps.core.notation.editor.SNotationQuantifier_Editor$1" />
-    <unitInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="28" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationQuantifier_Editor" />
+    <unitInfo nodeId="3129031437528361757" fileName="SNotationQuantifier_Editor.java" startLine="63" startPosition="83" endLine="74" endPosition="5" unitName="jetbrains.mps.core.notation.editor.SNotationQuantifier_Editor$1" />
+    <unitInfo nodeId="3129031437528339298" fileName="SNotationQuantifier_Editor.java" startLine="28" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationQuantifier_Editor" />
   </root>
   <root nodeRef="r:da48bdcf-b312-42d5-8f83-648e55453840(jetbrains.mps.core.notation.editor)/3129031437528354508">
     <nodeInfo nodeId="3129031437528354508" fileName="SNotationQuantifier_delete.java" startLine="14" startPosition="95" endLine="15" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3799,28 +3799,28 @@
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="86" startPosition="74" endLine="87" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="87" startPosition="80" endLine="88" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="89" startPosition="12" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="49" endLine="98" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_STokenDataType_cellMenu_ps7sd4_a0a0a0#()V" />
+    <nodeInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="49" endLine="98" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_STokenDataType_cellMenu_ps7sd4_a0a0a0#()V" />
     <nodeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_ps7sd4_a0a#()V" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="74" startPosition="44" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="84" startPosition="61" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_ps7sd4_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_ps7sd4_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="67" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_ps7sd4_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="94" startPosition="66" endLine="94" endPosition="66" />
+    <scopeInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="94" startPosition="66" endLine="94" endPosition="66" />
     <scopeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
     <scopeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="31" startPosition="28" endLine="32" endPosition="80" />
     <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="14" />
     <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" />
     <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" />
-    <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="49" endLine="98" endPosition="70" />
+    <scopeInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="49" endLine="98" endPosition="70" />
     <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="75" startPosition="41" endLine="77" endPosition="38" />
-    <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="38802263486228420" varName="editorContext" />
       <varInfo nodeId="38802263486228420" varName="node" />
@@ -3841,7 +3841,7 @@
       <varInfo nodeId="38802263486228427" varName="manager" />
       <varInfo nodeId="38802263486228427" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="28" startPosition="89" endLine="33" endPosition="22">
       <varInfo nodeId="38802263486228420" varName="editorCell" />
     </scopeInfo>
@@ -3870,7 +3870,7 @@
       <varInfo nodeId="38802263486228427" varName="editorContext" />
       <varInfo nodeId="38802263486228427" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="93" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.core.notation.editor.STokenConceptType_Editor$_Inline_ps7sd4_a0a$ReplaceWith_STokenDataType_cellMenu_ps7sd4_a0a0a0" />
+    <unitInfo nodeId="38802263487530745" fileName="STokenConceptType_Editor.java" startLine="93" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.core.notation.editor.STokenConceptType_Editor$_Inline_ps7sd4_a0a$ReplaceWith_STokenDataType_cellMenu_ps7sd4_a0a0a0" />
     <unitInfo nodeId="38802263486228427" fileName="STokenConceptType_Editor.java" startLine="54" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.core.notation.editor.STokenConceptType_Editor$_Inline_ps7sd4_a0a" />
     <unitInfo nodeId="38802263486228420" fileName="STokenConceptType_Editor.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.core.notation.editor.STokenConceptType_Editor" />
   </root>
@@ -5028,42 +5028,42 @@
     <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="52" startPosition="33" endLine="53" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="92" endLine="65" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="65" startPosition="84" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="66" startPosition="31" endLine="67" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="67" startPosition="44" endLine="68" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="68" startPosition="33" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="69" startPosition="28" endLine="70" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="70" startPosition="60" endLine="71" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="72" startPosition="41" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="73" startPosition="42" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="75" startPosition="7" endLine="76" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="76" startPosition="36" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="77" startPosition="57" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="78" startPosition="54" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="79" startPosition="42" endLine="80" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="80" startPosition="75" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="81" startPosition="59" endLine="82" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="83" startPosition="37" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="84" startPosition="74" endLine="85" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="85" startPosition="80" endLine="86" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="87" startPosition="12" endLine="88" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="92" endLine="65" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="65" startPosition="84" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="66" startPosition="31" endLine="67" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="67" startPosition="44" endLine="68" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="68" startPosition="33" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="69" startPosition="28" endLine="70" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="70" startPosition="60" endLine="71" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="72" startPosition="41" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="73" startPosition="42" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="75" startPosition="7" endLine="76" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="76" startPosition="36" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="77" startPosition="57" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="78" startPosition="54" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="79" startPosition="42" endLine="80" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="80" startPosition="75" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="81" startPosition="59" endLine="82" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="83" startPosition="37" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="84" startPosition="74" endLine="85" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="85" startPosition="80" endLine="86" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="87" startPosition="12" endLine="88" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_72qdny_a0a#()V" />
     <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="71" startPosition="44" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="71" startPosition="44" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="42" startPosition="59" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="82" startPosition="61" endLine="88" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="82" startPosition="61" endLine="88" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_72qdny_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="33" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_72qdny_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_72qdny_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_72qdny_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
     <scopeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="28" startPosition="28" endLine="29" endPosition="80" />
     <scopeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="52" startPosition="33" endLine="53" endPosition="14" />
     <scopeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" />
     <scopeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" />
-    <scopeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="72" startPosition="41" endLine="74" endPosition="36" />
+    <scopeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="72" startPosition="41" endLine="74" endPosition="36" />
     <scopeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="65776729175606823" varName="editorContext" />
       <varInfo nodeId="65776729175606823" varName="node" />
@@ -5080,9 +5080,9 @@
       <varInfo nodeId="65776729175606826" varName="editorContext" />
       <varInfo nodeId="65776729175606826" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="83" startPosition="37" endLine="86" endPosition="107">
-      <varInfo nodeId="65776729175606826" varName="manager" />
-      <varInfo nodeId="65776729175606826" varName="opContext" />
+    <scopeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="83" startPosition="37" endLine="86" endPosition="107">
+      <varInfo nodeId="65776729175606831" varName="manager" />
+      <varInfo nodeId="65776729175606831" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="25" startPosition="89" endLine="30" endPosition="22">
       <varInfo nodeId="65776729175606823" varName="editorCell" />
@@ -5101,16 +5101,16 @@
       <varInfo nodeId="65776729175606823" varName="editorContext" />
       <varInfo nodeId="65776729175606823" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="92" endLine="88" endPosition="24">
-      <varInfo nodeId="65776729175606826" varName="attributeConcept" />
-      <varInfo nodeId="65776729175606826" varName="attributeKind" />
-      <varInfo nodeId="65776729175606826" varName="editorCell" />
-      <varInfo nodeId="65776729175606826" varName="provider" />
-      <varInfo nodeId="65776729175606826" varName="style" />
+    <scopeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="92" endLine="88" endPosition="24">
+      <varInfo nodeId="65776729175606831" varName="attributeConcept" />
+      <varInfo nodeId="65776729175606831" varName="attributeKind" />
+      <varInfo nodeId="65776729175606831" varName="editorCell" />
+      <varInfo nodeId="65776729175606831" varName="provider" />
+      <varInfo nodeId="65776729175606831" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="65776729175606826" varName="editorContext" />
-      <varInfo nodeId="65776729175606826" varName="node" />
+    <scopeInfo nodeId="65776729175606831" fileName="SNotationTokenRef_Editor.java" startLine="64" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="65776729175606831" varName="editorContext" />
+      <varInfo nodeId="65776729175606831" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="65776729175606826" fileName="SNotationTokenRef_Editor.java" startLine="51" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationTokenRef_Editor$_Inline_72qdny_a0a" />
     <unitInfo nodeId="65776729175606823" fileName="SNotationTokenRef_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationTokenRef_Editor" />
@@ -5397,43 +5397,43 @@
     <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="92" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="75" startPosition="41" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="78" startPosition="7" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="79" startPosition="36" endLine="80" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="80" startPosition="112" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="81" startPosition="59" endLine="82" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="82" startPosition="54" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="83" startPosition="42" endLine="84" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="84" startPosition="75" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="85" startPosition="59" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="87" startPosition="37" endLine="88" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="88" startPosition="74" endLine="89" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="89" startPosition="80" endLine="90" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="91" startPosition="12" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="92" endLine="68" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="69" startPosition="31" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="70" startPosition="44" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="71" startPosition="33" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="72" startPosition="28" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="75" startPosition="41" endLine="76" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="76" startPosition="42" endLine="77" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="78" startPosition="7" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="79" startPosition="36" endLine="80" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="80" startPosition="112" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="81" startPosition="59" endLine="82" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="82" startPosition="54" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="83" startPosition="42" endLine="84" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="84" startPosition="75" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="85" startPosition="59" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="87" startPosition="37" endLine="88" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="88" startPosition="74" endLine="89" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="89" startPosition="80" endLine="90" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="91" startPosition="12" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_81uxyh_a0a#()V" />
     <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="74" startPosition="44" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="74" startPosition="44" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="86" startPosition="61" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="86" startPosition="61" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_81uxyh_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_81uxyh_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_81uxyh_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_81uxyh_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
     <scopeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="31" startPosition="28" endLine="32" endPosition="80" />
     <scopeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="55" startPosition="33" endLine="56" endPosition="14" />
     <scopeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="59" startPosition="69" endLine="60" endPosition="67" />
     <scopeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="63" startPosition="81" endLine="64" endPosition="66" />
-    <scopeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="75" startPosition="41" endLine="77" endPosition="35" />
+    <scopeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="75" startPosition="41" endLine="77" endPosition="35" />
     <scopeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="7805033636902348045" varName="editorContext" />
       <varInfo nodeId="7805033636902348045" varName="node" />
@@ -5450,9 +5450,9 @@
       <varInfo nodeId="7805033636902348048" varName="editorContext" />
       <varInfo nodeId="7805033636902348048" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="87" startPosition="37" endLine="90" endPosition="107">
-      <varInfo nodeId="7805033636902348048" varName="manager" />
-      <varInfo nodeId="7805033636902348048" varName="opContext" />
+    <scopeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="87" startPosition="37" endLine="90" endPosition="107">
+      <varInfo nodeId="7805033636902348050" varName="manager" />
+      <varInfo nodeId="7805033636902348050" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="28" startPosition="89" endLine="33" endPosition="22">
       <varInfo nodeId="7805033636902348045" varName="editorCell" />
@@ -5471,16 +5471,16 @@
       <varInfo nodeId="7805033636902348045" varName="editorContext" />
       <varInfo nodeId="7805033636902348045" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="92" endLine="92" endPosition="24">
-      <varInfo nodeId="7805033636902348048" varName="attributeConcept" />
-      <varInfo nodeId="7805033636902348048" varName="attributeKind" />
-      <varInfo nodeId="7805033636902348048" varName="editorCell" />
-      <varInfo nodeId="7805033636902348048" varName="provider" />
-      <varInfo nodeId="7805033636902348048" varName="style" />
+    <scopeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="92" endLine="92" endPosition="24">
+      <varInfo nodeId="7805033636902348050" varName="attributeConcept" />
+      <varInfo nodeId="7805033636902348050" varName="attributeKind" />
+      <varInfo nodeId="7805033636902348050" varName="editorCell" />
+      <varInfo nodeId="7805033636902348050" varName="provider" />
+      <varInfo nodeId="7805033636902348050" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="7805033636902348048" varName="editorContext" />
-      <varInfo nodeId="7805033636902348048" varName="node" />
+    <scopeInfo nodeId="7805033636902348050" fileName="SStructureLinkRef_Editor.java" startLine="67" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="7805033636902348050" varName="editorContext" />
+      <varInfo nodeId="7805033636902348050" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="7805033636902348048" fileName="SStructureLinkRef_Editor.java" startLine="54" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SStructureLinkRef_Editor$_Inline_81uxyh_a0a" />
     <unitInfo nodeId="7805033636902348045" fileName="SStructureLinkRef_Editor.java" startLine="23" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SStructureLinkRef_Editor" />
@@ -5653,27 +5653,28 @@
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="148" startPosition="26" endLine="149" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="149" startPosition="58" endLine="150" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="150" startPosition="40" endLine="151" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="158" startPosition="8" endLine="159" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="159" startPosition="40" endLine="160" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="160" startPosition="225" endLine="161" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="161" startPosition="57" endLine="162" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="163" startPosition="35" endLine="164" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="164" startPosition="72" endLine="165" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="165" startPosition="78" endLine="166" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="167" startPosition="10" endLine="168" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8200039929379506942" fileName="SNotationConceptContext_Editor.java" startLine="171" startPosition="108" endLine="172" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339275956" fileName="SNotationConceptContext_Editor.java" startLine="180" startPosition="70" endLine="181" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339284082" fileName="SNotationConceptContext_Editor.java" startLine="182" startPosition="7" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8632884680339284088" fileName="SNotationConceptContext_Editor.java" startLine="183" startPosition="0" endLine="184" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8632884680339284533" fileName="SNotationConceptContext_Editor.java" startLine="186" startPosition="41" endLine="187" endPosition="733" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339284562" fileName="SNotationConceptContext_Editor.java" startLine="190" startPosition="39" endLine="191" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339284573" fileName="SNotationConceptContext_Editor.java" startLine="194" startPosition="41" endLine="195" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339284584" fileName="SNotationConceptContext_Editor.java" startLine="198" startPosition="40" endLine="199" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339276030" fileName="SNotationConceptContext_Editor.java" startLine="201" startPosition="9" endLine="202" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="205" startPosition="162" endLine="206" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632884680339330919" fileName="SNotationConceptContext_Editor.java" startLine="209" startPosition="164" endLine="210" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="213" startPosition="45" endLine="214" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="176" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNotationConceptContext_generic_cellMenu_tvsk60_a0b1a#()V" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="151" startPosition="34" endLine="152" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="152" startPosition="231" endLine="153" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="153" startPosition="40" endLine="154" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="154" startPosition="225" endLine="155" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="155" startPosition="57" endLine="156" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="157" startPosition="35" endLine="158" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="158" startPosition="72" endLine="159" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="159" startPosition="78" endLine="160" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="161" startPosition="10" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8200039929379506942" fileName="SNotationConceptContext_Editor.java" startLine="165" startPosition="108" endLine="166" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339275956" fileName="SNotationConceptContext_Editor.java" startLine="174" startPosition="70" endLine="175" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339284082" fileName="SNotationConceptContext_Editor.java" startLine="176" startPosition="7" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8632884680339284088" fileName="SNotationConceptContext_Editor.java" startLine="177" startPosition="0" endLine="178" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632884680339284533" fileName="SNotationConceptContext_Editor.java" startLine="180" startPosition="41" endLine="181" endPosition="733" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339284562" fileName="SNotationConceptContext_Editor.java" startLine="184" startPosition="39" endLine="185" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339284573" fileName="SNotationConceptContext_Editor.java" startLine="188" startPosition="41" endLine="189" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339284584" fileName="SNotationConceptContext_Editor.java" startLine="192" startPosition="40" endLine="193" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339276030" fileName="SNotationConceptContext_Editor.java" startLine="195" startPosition="9" endLine="196" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="199" startPosition="162" endLine="200" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632884680339330919" fileName="SNotationConceptContext_Editor.java" startLine="203" startPosition="164" endLine="204" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="207" startPosition="45" endLine="208" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="170" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNotationConceptContext_generic_cellMenu_tvsk60_a0b1a#()V" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="49" startPosition="80" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="49" startPosition="80" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -5681,29 +5682,28 @@
     <nodeInfo nodeId="8632884680339275925" fileName="SNotationConceptContext_Editor.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="8632884680339275925" fileName="SNotationConceptContext_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="8632884680339276037" fileName="SNotationConceptContext_Editor.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_tvsk60_a1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="8632884680339275937" fileName="SNotationConceptContext_Editor.java" startLine="171" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_tvsk60_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8632884680339275954" fileName="SNotationConceptContext_Editor.java" startLine="179" startPosition="140" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632884680339284531" fileName="SNotationConceptContext_Editor.java" startLine="186" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8632884680339284560" fileName="SNotationConceptContext_Editor.java" startLine="190" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8632884680339284571" fileName="SNotationConceptContext_Editor.java" startLine="194" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8632884680339284582" fileName="SNotationConceptContext_Editor.java" startLine="198" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="205" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
+    <nodeInfo nodeId="8632884680339275937" fileName="SNotationConceptContext_Editor.java" startLine="165" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_tvsk60_a0b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8632884680339275954" fileName="SNotationConceptContext_Editor.java" startLine="173" startPosition="140" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632884680339284531" fileName="SNotationConceptContext_Editor.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8632884680339284560" fileName="SNotationConceptContext_Editor.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8632884680339284571" fileName="SNotationConceptContext_Editor.java" startLine="188" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8632884680339284582" fileName="SNotationConceptContext_Editor.java" startLine="192" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="199" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="203" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="207" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
     <nodeInfo nodeId="8632884680339275926" fileName="SNotationConceptContext_Editor.java" startLine="97" startPosition="44" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="68" startPosition="59" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8632884680339275926" fileName="SNotationConceptContext_Editor.java" startLine="107" startPosition="61" endLine="113" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="162" startPosition="59" endLine="168" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="151" startPosition="34" endLine="158" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="156" startPosition="59" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tvsk60_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="117" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_tvsk60_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="8632884680339275932" fileName="SNotationConceptContext_Editor.java" startLine="132" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_tvsk60_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8632884680339284518" fileName="SNotationConceptContext_Editor.java" startLine="184" startPosition="187" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8632884680339284518" fileName="SNotationConceptContext_Editor.java" startLine="178" startPosition="187" endLine="195" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="56" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_tvsk60_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="144" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_tvsk60_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="8632884680339275926" fileName="SNotationConceptContext_Editor.java" startLine="90" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_tvsk60_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="179" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="144" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_tvsk60_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="176" startPosition="68" endLine="176" endPosition="68" />
+    <nodeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="173" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="170" startPosition="68" endLine="170" endPosition="68" />
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="41" startPosition="79" endLine="42" endPosition="63" />
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="48" startPosition="28" endLine="49" endPosition="80" />
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="50" startPosition="109" endLine="51" endPosition="85" />
@@ -5713,17 +5713,17 @@
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="122" startPosition="40" endLine="123" endPosition="82" />
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="123" startPosition="82" endLine="124" endPosition="82" />
     <scopeInfo nodeId="8632884680339276038" fileName="SNotationConceptContext_Editor.java" startLine="128" startPosition="111" endLine="129" endPosition="61" />
-    <scopeInfo nodeId="8632884680339275938" fileName="SNotationConceptContext_Editor.java" startLine="171" startPosition="108" endLine="172" endPosition="91" />
-    <scopeInfo nodeId="8632884680339275955" fileName="SNotationConceptContext_Editor.java" startLine="180" startPosition="70" endLine="181" endPosition="20" />
-    <scopeInfo nodeId="8632884680339284532" fileName="SNotationConceptContext_Editor.java" startLine="186" startPosition="41" endLine="187" endPosition="733" />
-    <scopeInfo nodeId="8632884680339284561" fileName="SNotationConceptContext_Editor.java" startLine="190" startPosition="39" endLine="191" endPosition="224" />
-    <scopeInfo nodeId="8632884680339284572" fileName="SNotationConceptContext_Editor.java" startLine="194" startPosition="41" endLine="195" endPosition="65" />
-    <scopeInfo nodeId="8632884680339284583" fileName="SNotationConceptContext_Editor.java" startLine="198" startPosition="40" endLine="199" endPosition="57" />
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="205" startPosition="162" endLine="206" endPosition="108" />
-    <scopeInfo nodeId="8632884680339276035" fileName="SNotationConceptContext_Editor.java" startLine="209" startPosition="164" endLine="210" endPosition="59" />
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="213" startPosition="45" endLine="214" endPosition="19" />
+    <scopeInfo nodeId="8632884680339275938" fileName="SNotationConceptContext_Editor.java" startLine="165" startPosition="108" endLine="166" endPosition="91" />
+    <scopeInfo nodeId="8632884680339275955" fileName="SNotationConceptContext_Editor.java" startLine="174" startPosition="70" endLine="175" endPosition="20" />
+    <scopeInfo nodeId="8632884680339284532" fileName="SNotationConceptContext_Editor.java" startLine="180" startPosition="41" endLine="181" endPosition="733" />
+    <scopeInfo nodeId="8632884680339284561" fileName="SNotationConceptContext_Editor.java" startLine="184" startPosition="39" endLine="185" endPosition="224" />
+    <scopeInfo nodeId="8632884680339284572" fileName="SNotationConceptContext_Editor.java" startLine="188" startPosition="41" endLine="189" endPosition="65" />
+    <scopeInfo nodeId="8632884680339284583" fileName="SNotationConceptContext_Editor.java" startLine="192" startPosition="40" endLine="193" endPosition="57" />
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="199" startPosition="162" endLine="200" endPosition="108" />
+    <scopeInfo nodeId="8632884680339276035" fileName="SNotationConceptContext_Editor.java" startLine="203" startPosition="164" endLine="204" endPosition="59" />
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="207" startPosition="45" endLine="208" endPosition="19" />
     <scopeInfo nodeId="8632884680339275926" fileName="SNotationConceptContext_Editor.java" startLine="98" startPosition="41" endLine="100" endPosition="38" />
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="176" startPosition="0" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="170" startPosition="0" endLine="172" endPosition="0" />
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8632884680339275918" varName="editorContext" />
       <varInfo nodeId="8632884680339275918" varName="node" />
@@ -5750,27 +5750,27 @@
       <varInfo nodeId="8632884680339276037" varName="node" />
       <varInfo nodeId="8632884680339276037" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="163" startPosition="35" endLine="166" endPosition="105">
+    <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="157" startPosition="35" endLine="160" endPosition="105">
       <varInfo nodeId="8632884680339275918" varName="manager" />
       <varInfo nodeId="8632884680339275918" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275937" fileName="SNotationConceptContext_Editor.java" startLine="171" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="8632884680339275937" fileName="SNotationConceptContext_Editor.java" startLine="165" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="8632884680339275937" varName="editorContext" />
       <varInfo nodeId="8632884680339275937" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339284531" fileName="SNotationConceptContext_Editor.java" startLine="186" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="8632884680339284531" fileName="SNotationConceptContext_Editor.java" startLine="180" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="8632884680339284531" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339284560" fileName="SNotationConceptContext_Editor.java" startLine="190" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="8632884680339284560" fileName="SNotationConceptContext_Editor.java" startLine="184" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="8632884680339284560" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339284571" fileName="SNotationConceptContext_Editor.java" startLine="194" startPosition="0" endLine="197" endPosition="0">
+    <scopeInfo nodeId="8632884680339284571" fileName="SNotationConceptContext_Editor.java" startLine="188" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="8632884680339284571" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339284582" fileName="SNotationConceptContext_Editor.java" startLine="198" startPosition="0" endLine="201" endPosition="0">
+    <scopeInfo nodeId="8632884680339284582" fileName="SNotationConceptContext_Editor.java" startLine="192" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="8632884680339284582" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="205" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="199" startPosition="0" endLine="202" endPosition="0">
       <varInfo nodeId="8632884680339275944" varName="editorContext" />
       <varInfo nodeId="8632884680339275944" varName="model" />
       <varInfo nodeId="8632884680339275944" varName="node" />
@@ -5778,7 +5778,7 @@
       <varInfo nodeId="8632884680339275944" varName="parameterObject" />
       <varInfo nodeId="8632884680339275944" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="209" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="203" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="8632884680339275944" varName="editorContext" />
       <varInfo nodeId="8632884680339275944" varName="model" />
       <varInfo nodeId="8632884680339275944" varName="node" />
@@ -5786,7 +5786,7 @@
       <varInfo nodeId="8632884680339275944" varName="parameterObject" />
       <varInfo nodeId="8632884680339275944" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="213" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="207" startPosition="0" endLine="210" endPosition="0" />
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="45" startPosition="89" endLine="53" endPosition="22">
       <varInfo nodeId="8632884680339275918" varName="editorCell" />
     </scopeInfo>
@@ -5817,7 +5817,18 @@
       <varInfo nodeId="8632884680339275918" varName="provider" />
       <varInfo nodeId="8632884680339275918" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="144" startPosition="89" endLine="162" endPosition="22">
+      <varInfo nodeId="8632884680339275918" varName="attributeConcept" />
+      <varInfo nodeId="8632884680339275918" varName="attributeKind" />
+      <varInfo nodeId="8632884680339275918" varName="editorCell" />
+      <varInfo nodeId="8632884680339275918" varName="provider" />
+      <varInfo nodeId="8632884680339275918" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="56" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="8632884680339275918" varName="editorContext" />
+      <varInfo nodeId="8632884680339275918" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="144" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="8632884680339275918" varName="editorContext" />
       <varInfo nodeId="8632884680339275918" varName="node" />
     </scopeInfo>
@@ -5828,38 +5839,27 @@
       <varInfo nodeId="8632884680339275926" varName="provider" />
       <varInfo nodeId="8632884680339275926" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275946" fileName="SNotationConceptContext_Editor.java" startLine="179" startPosition="140" endLine="202" endPosition="60">
+    <scopeInfo nodeId="8632884680339275946" fileName="SNotationConceptContext_Editor.java" startLine="173" startPosition="140" endLine="196" endPosition="60">
       <varInfo nodeId="8632884680339284089" varName="lscope" />
       <varInfo nodeId="8632884680339284519" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="144" startPosition="89" endLine="168" endPosition="22">
-      <varInfo nodeId="8632884680339275918" varName="attributeConcept" />
-      <varInfo nodeId="8632884680339275918" varName="attributeKind" />
-      <varInfo nodeId="8632884680339275918" varName="editorCell" />
-      <varInfo nodeId="8632884680339275918" varName="provider" />
-      <varInfo nodeId="8632884680339275918" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="8632884680339275926" fileName="SNotationConceptContext_Editor.java" startLine="90" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="8632884680339275926" varName="editorContext" />
       <varInfo nodeId="8632884680339275926" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="179" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="173" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="8632884680339275944" varName="editorContext" />
       <varInfo nodeId="8632884680339275944" varName="node" />
       <varInfo nodeId="8632884680339275944" varName="operationContext" />
       <varInfo nodeId="8632884680339275944" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="144" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="8632884680339275918" varName="editorContext" />
-      <varInfo nodeId="8632884680339275918" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="8632884680339284531" fileName="SNotationConceptContext_Editor.java" startLine="185" startPosition="99" endLine="189" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$1" />
-    <unitInfo nodeId="8632884680339284560" fileName="SNotationConceptContext_Editor.java" startLine="189" startPosition="20" endLine="193" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$2" />
-    <unitInfo nodeId="8632884680339284571" fileName="SNotationConceptContext_Editor.java" startLine="193" startPosition="19" endLine="197" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$3" />
-    <unitInfo nodeId="8632884680339284582" fileName="SNotationConceptContext_Editor.java" startLine="197" startPosition="20" endLine="201" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$4" />
+    <unitInfo nodeId="8632884680339284531" fileName="SNotationConceptContext_Editor.java" startLine="179" startPosition="99" endLine="183" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$1" />
+    <unitInfo nodeId="8632884680339284560" fileName="SNotationConceptContext_Editor.java" startLine="183" startPosition="20" endLine="187" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$2" />
+    <unitInfo nodeId="8632884680339284571" fileName="SNotationConceptContext_Editor.java" startLine="187" startPosition="19" endLine="191" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$3" />
+    <unitInfo nodeId="8632884680339284582" fileName="SNotationConceptContext_Editor.java" startLine="191" startPosition="20" endLine="195" endPosition="7" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$4" />
     <unitInfo nodeId="8632884680339275925" fileName="SNotationConceptContext_Editor.java" startLine="77" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$_Inline_tvsk60_a0a" />
-    <unitInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="175" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$SNotationConceptContext_generic_cellMenu_tvsk60_a0b1a" />
-    <unitInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="40" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor" />
+    <unitInfo nodeId="8632884680339275944" fileName="SNotationConceptContext_Editor.java" startLine="169" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor$SNotationConceptContext_generic_cellMenu_tvsk60_a0b1a" />
+    <unitInfo nodeId="8632884680339275918" fileName="SNotationConceptContext_Editor.java" startLine="40" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.core.notation.editor.SNotationConceptContext_Editor" />
   </root>
 </debugInfo>
 

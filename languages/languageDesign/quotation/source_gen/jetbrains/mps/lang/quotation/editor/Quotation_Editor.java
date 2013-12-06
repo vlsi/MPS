@@ -233,10 +233,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_29llnk_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SLinkOperations.getTarget(node, "quotedNode", true) != null ?
-          SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "quotedNode", true)), "name") :
-          "<not specitied>"
-        );
+        return (SLinkOperations.getTarget(node, "quotedNode", true) != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "quotedNode", true)), "name") : "<not specitied>");
       }
 
       public void setText(String s) {

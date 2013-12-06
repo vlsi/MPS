@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -107,6 +108,15 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   @Override
   public SNode getActionType(String pattern) {
     SNode node = createChildNode(getParameterObject(), null, pattern);
-    return ActionsUtil.isInstanceOfIType(node) ? node : TypeChecker.getInstance().getTypeOf(node);
+    if (ActionsUtil.isInstanceOfIType(node)) return node;
+
+    //the following is for smart-type completion
+
+    AbstractNodeSubstituteInfo.getModelForTypechecking().addRootNode(node);
+    try {
+      return TypeChecker.getInstance().getTypeOf(node);
+    } finally {
+      AbstractNodeSubstituteInfo.getModelForTypechecking().removeRootNode(node);
+    }
   }
 }

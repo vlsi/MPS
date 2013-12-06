@@ -71,10 +71,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     } else {
       name = getNode().getName();
     }
-    return (name == null ?
-      "no name" :
-      name
-    );
+    return (name == null ? "no name" : name);
   }
 
   @Override

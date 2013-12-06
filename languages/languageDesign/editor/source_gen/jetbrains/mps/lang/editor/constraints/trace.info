@@ -7,41 +7,41 @@
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="57" startPosition="7" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_pzef4u_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="48" startPosition="238" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_pzef4u_a0a0a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellModel_Component_Constraints#()V" />
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="48" startPosition="238" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="29" startPosition="75" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="27" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="23" startPosition="44" endLine="24" endPosition="69" />
     <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
     <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
+      <varInfo nodeId="1213104840151" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="47" startPosition="13" endLine="52" endPosition="16">
-      <varInfo nodeId="1213104840151" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" />
-    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1213104840151" varName="_context" />
       <varInfo nodeId="1213104840151" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" />
-    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="28" startPosition="83" endLine="58" endPosition="22">
+    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
+    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
       <varInfo nodeId="1213104840151" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="27" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="39" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints$2" />
-    <unitInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="30" startPosition="42" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints$1" />
-    <unitInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="22" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints" />
+    <scopeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
+    <unitInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints$2" />
+    <unitInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="30" startPosition="42" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints$1" />
+    <unitInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.CellModel_Component_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1213104846218">
     <nodeInfo nodeId="1213104846218" fileName="CellMenuComponentFeature_Link_Constraints.java" startLine="23" startPosition="54" endLine="24" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -856,49 +856,47 @@
     <unitInfo nodeId="1873972548978313577" fileName="IStyleSheetMember_Constraints.java" startLine="40" startPosition="15" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.IStyleSheetMember_Constraints$1" />
     <unitInfo nodeId="1873972548978313577" fileName="IStyleSheetMember_Constraints.java" startLine="28" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.IStyleSheetMember_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1950447826683740663" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4151393920516603319" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4323500428148828478">
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="23" startPosition="48" endLine="24" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="57" startPosition="7" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_pz2436_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="48" startPosition="224" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_pz2436_a0a0a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellIdReferenceSelector_Constraints#()V" />
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
     <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="48" startPosition="224" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="29" startPosition="75" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="27" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="23" startPosition="48" endLine="24" endPosition="73" />
     <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
     <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
+      <varInfo nodeId="4323500428148828478" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="47" startPosition="13" endLine="52" endPosition="16">
-      <varInfo nodeId="4323500428148828478" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" />
-    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="4323500428148828478" varName="_context" />
       <varInfo nodeId="4323500428148828478" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" />
-    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="28" startPosition="83" endLine="58" endPosition="22">
+    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
+    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
       <varInfo nodeId="4323500428148828478" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="27" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="39" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints$2" />
-    <unitInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="30" startPosition="29" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints$1" />
-    <unitInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="22" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints" />
+    <scopeInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
+    <unitInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints$2" />
+    <unitInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="30" startPosition="29" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints$1" />
+    <unitInfo nodeId="4323500428148828478" fileName="CellIdReferenceSelector_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.CellIdReferenceSelector_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4510086454767559154">
     <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="23" startPosition="56" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -906,43 +904,42 @@
     <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="57" startPosition="7" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_f6obta_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="48" startPosition="234" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_f6obta_a0a0a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyDeclarationCellSelector_Constraints#()V" />
     <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
     <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="48" startPosition="234" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="29" startPosition="75" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="27" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="23" startPosition="56" endLine="24" endPosition="81" />
     <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
     <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
+      <varInfo nodeId="4510086454767559154" varName="scope" />
+    </scopeInfo>
     <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="47" startPosition="13" endLine="52" endPosition="16">
-      <varInfo nodeId="4510086454767559154" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" />
-    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="4510086454767559154" varName="_context" />
       <varInfo nodeId="4510086454767559154" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" />
-    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="28" startPosition="83" endLine="58" endPosition="22">
+    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
+    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
       <varInfo nodeId="4510086454767559154" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="27" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="39" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$2" />
-    <unitInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="30" startPosition="46" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$1" />
-    <unitInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="22" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints" />
+    <scopeInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
+    <unitInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$2" />
+    <unitInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="30" startPosition="46" endLine="54" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints$1" />
+    <unitInfo nodeId="4510086454767559154" fileName="PropertyDeclarationCellSelector_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.PropertyDeclarationCellSelector_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4699812310048764005" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/5944657839017577715">
     <nodeInfo nodeId="5944657839017577715" fileName="ConceptEditorHintDeclaration_Constraints.java" startLine="20" startPosition="53" endLine="21" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5944657839017577715" fileName="ConceptEditorHintDeclaration_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1101,7 +1098,5 @@
     </scopeInfo>
     <unitInfo nodeId="625126330682991629" fileName="CellModel_ReferencePresentation_Constraints.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.CellModel_ReferencePresentation_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/8538298747010963149" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/8538298747010969298" />
 </debugInfo>
 

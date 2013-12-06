@@ -5,6 +5,7 @@ package jetbrains.mps.make.generator;
 import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
+import jetbrains.mps.make.facet.IFacetManifest;
 import org.junit.Test;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IScriptController;
@@ -26,7 +27,6 @@ import jetbrains.mps.make.facet.ITarget;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.make.facet.IFacetManifest;
 import org.junit.Before;
 import java.lang.reflect.Constructor;
 import org.junit.After;
@@ -34,6 +34,8 @@ import jetbrains.mps.make.facet.FacetRegistry;
 
 @RunWith(JMock.class)
 public class Generator_Test extends MockTestCase {
+  private IFacetManifest manifest;
+
   @Test
   public void test_queryStop() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -107,8 +109,6 @@ public class Generator_Test extends MockTestCase {
     Assert.assertFalse(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
-
-  private IFacetManifest manifest;
 
   public Generator_Test() {
   }

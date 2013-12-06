@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,12 +67,12 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
+      environment.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
+      environment.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
     } catch (Throwable t) {
-      environment.getGenerator().getLogger().handleException(t);
-      environment.getGenerator().getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
+      environment.getLogger().handleException(t);
+      environment.getLogger().error(condition, "error executing condition " + methodName + " (see exception)");
       throw new GenerationFailureException(t);
     }
     // in this case 'true' is better default

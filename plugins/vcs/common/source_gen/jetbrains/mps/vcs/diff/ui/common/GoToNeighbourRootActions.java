@@ -45,13 +45,7 @@ public abstract class GoToNeighbourRootActions {
     private boolean myNext;
 
     public TheAction(boolean next) {
-      super("Go to " + ((next ?
-        "Next" :
-        "Previous"
-      )) + " Root", null, (next ?
-        GoToNeighbourRootActions.NEXT_ROOT_ICON :
-        GoToNeighbourRootActions.PREVIOUS_ROOT_ICON
-      ));
+      super("Go to " + ((next ? "Next" : "Previous")) + " Root", null, (next ? GoToNeighbourRootActions.NEXT_ROOT_ICON : GoToNeighbourRootActions.PREVIOUS_ROOT_ICON));
       setDisableOnNoProject(false);
       setExecuteOutsideCommand(true);
       myNext = next;

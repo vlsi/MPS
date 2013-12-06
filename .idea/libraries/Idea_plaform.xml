@@ -21,8 +21,9 @@
       <root url="jar://$PROJECT_DIR$/lib/sanselan-0.98-snapshot.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/swingx-core-1.6.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xpp3-1.1.4-min.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/gson-2.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/netty-3.6.2.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gson-2.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsr166e.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.0.Alpha1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -71,7 +72,6 @@
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/platform-main" />
       <root url="jar://$PROJECT_DIR$/lib/src/cglib-src-2.2.2.jar!/src/test" />
       <root url="jar://$PROJECT_DIR$/lib/src/cglib-src-2.2.2.jar!/src/proxy" />
-      <root url="jar://$PROJECT_DIR$/lib/src/gson-2.2.1-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/jgoodies-forms-src.zip!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/jhsrc.jar!/src" />
       <root url="jar://$PROJECT_DIR$/lib/src/jna-src.zip!/contrib/platform/src" />
@@ -80,6 +80,9 @@
       <root url="jar://$PROJECT_DIR$/lib/src/nanoxml.zip!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/sanselan-0.98-snapshot-src.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/xpp3-1.1.4-min-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/gson-2.2.3-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/jsr166e_src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/netty-all-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

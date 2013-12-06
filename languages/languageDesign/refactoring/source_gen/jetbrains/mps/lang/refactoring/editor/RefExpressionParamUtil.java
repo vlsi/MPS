@@ -19,20 +19,11 @@ public class RefExpressionParamUtil {
     String target = "no_target";
     boolean isList = SPropertyOperations.getBoolean(SLinkOperations.getTarget(ref, "target", true), "allowMultiple");
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget")) {
-      target = ((isList ?
-        "nlist" :
-        "node"
-      )) + "<" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget"), "concept", false), "name") + ">";
+      target = ((isList ? "nlist" : "node")) + "<" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget"), "concept", false), "name") + ">";
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.ModelTarget")) {
-      target = (isList ?
-        "list<model>" :
-        "model"
-      );
+      target = (isList ? "list<model>" : "model");
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ref, "target", true), "jetbrains.mps.lang.refactoring.structure.ModuleTarget")) {
-      target = (isList ?
-        "list<SModule>" :
-        "SModule"
-      );
+      target = (isList ? "list<SModule>" : "SModule");
     }
     styledText.append(target).append(" target");
     if (showParameters) {

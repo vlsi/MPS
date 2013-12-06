@@ -68,10 +68,7 @@ public class ToggleExceptionSection_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "hasException") ?
-        "Hide Exception Section" :
-        "Show Exception Section"
-      );
+      return (SPropertyOperations.getBoolean(node, "hasException") ? "Hide Exception Section" : "Show Exception Section");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

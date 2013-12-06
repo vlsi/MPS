@@ -544,10 +544,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
             }
           }).select(new ISelector<SNode, String>() {
             public String select(SNode c) {
-              return ((SPropertyOperations.getBoolean(c, "final") ?
-                "final " :
-                ""
-              )) + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(c, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}) + " " + SPropertyOperations.getString(c, "name") + ";";
+              return ((SPropertyOperations.getBoolean(c, "final") ? "final " : "")) + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(c, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}) + " " + SPropertyOperations.getString(c, "name") + ";";
             }
           }), "\n");
         }

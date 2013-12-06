@@ -629,7 +629,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
 
         {
-          final List<SNode> tlist2 = new ArrayList();
+          final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a5a2a5w);
             final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1820665478710840047(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_417xrn_a0a0a1a5a2a5w, context, environment.getGenerator()));

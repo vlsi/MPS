@@ -84,10 +84,7 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) == null) ?
-        "Add Documentation Comment" :
-        "Remove Documentation Comment"
-      );
+      return ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")) == null) ? "Add Documentation Comment" : "Remove Documentation Comment");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

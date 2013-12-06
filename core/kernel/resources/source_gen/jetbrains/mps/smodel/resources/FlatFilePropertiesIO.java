@@ -53,17 +53,11 @@ public class FlatFilePropertiesIO implements IPropertiesIO {
         }
       }
     });
-    return (Map<String, String>) ((props.value != null ?
-      new HashMap(props.value) :
-      null
-    ));
+    return (Map<String, String>) ((props.value != null ? new HashMap(props.value) : null));
   }
 
   @Override
   public Object getKey() {
-    return (descFile != null ?
-      descFile.getPath() :
-      null
-    );
+    return (descFile != null ? descFile.getPath() : null);
   }
 }

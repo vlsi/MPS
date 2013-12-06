@@ -65,13 +65,7 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_p7dwc8_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ExportScopeNamespace_Editor._StyleParameter_QueryFunction_p7dwc8_a1c0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ExportScopeNamespace_Editor._StyleParameter_QueryFunction_p7dwc8_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

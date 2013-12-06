@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="Ant" uuid="847a3235-09f9-403c-b6a9-1c294a212e92" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/lib/ant/lib/ant.jar" type="java_classes" />
+    <modelRoot contentPath="${mps_home}/lib/ant/lib" type="java_classes">
+      <sourceRoot location="ant.jar" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />

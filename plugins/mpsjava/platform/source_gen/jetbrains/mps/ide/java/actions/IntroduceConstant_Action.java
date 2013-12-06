@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -77,7 +77,7 @@ public class IntroduceConstant_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("component") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("projct", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("projct", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("projct") == null) {
       return false;
     }

@@ -128,10 +128,7 @@ public class TShortArrayListDecorator extends AbstractList<Short> implements Lis
 
   @Override
   public boolean remove(Object e) {
-    return (e instanceof Short ?
-      this.removePrim(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Short ? this.removePrim(this.unwrap(e)) : false);
   }
 
   @Override
@@ -146,10 +143,7 @@ public class TShortArrayListDecorator extends AbstractList<Short> implements Lis
 
   @Override
   public boolean contains(Object e) {
-    return (e instanceof Short ?
-      this.primList.contains(this.unwrap(e)) :
-      false
-    );
+    return (e instanceof Short ? this.primList.contains(this.unwrap(e)) : false);
   }
 
   @Override

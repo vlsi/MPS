@@ -37,6 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -66,7 +67,7 @@ public class MergeSession {
 
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
-    jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_bow6nj_a0a0a1a31(base, SModelBase.class).getSModelInternal());
+    jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) base).getSModel());
     if (resModel instanceof DefaultSModel) {
       int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
       ((DefaultSModel) resModel).setPersistenceVersion(pv);
@@ -164,10 +165,7 @@ public class MergeSession {
   }
 
   public Iterable<SNodeId> getAffectedRoots() {
-    return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
-      MapSequence.fromMap(myRootToChanges).keySet() :
-      SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
-    );
+    return (ListSequence.fromList(myMetadataChanges).isEmpty() ? MapSequence.fromMap(myRootToChanges).keySet() : SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null))));
   }
 
   public List<ModelChange> getChangesForRoot(@NotNull SNodeId rootId) {
@@ -215,13 +213,7 @@ public class MergeSession {
         // sort out nonconflicting changes to the end of list, so they will be ignored if other connected changes exists 
         boolean aa = a.isNonConflicting();
         boolean bb = b.isNonConflicting();
-        return (aa == bb ?
-          0 :
-          (aa ?
-            1 :
-            -1
-          )
-        );
+        return (aa == bb ? 0 : (aa ? 1 : -1));
       }
     }, true)) {
       applyChange(c);
@@ -304,7 +296,7 @@ public class MergeSession {
     // clear UnregisteredNodes pool to avoid a lot of ERRORs in log: 
     UnregisteredNodes.instance().clear();
 
-    CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
+    CopyUtil.copyModelProperties(((SModelDescriptor) stateCopy.myResultModel).getSModel(), ((SModelDescriptor) myResultModel).getSModel());
     ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SModelOperations.addRootNode(myResultModel, r);
@@ -445,14 +437,8 @@ public class MergeSession {
 
     private void invalidateChildrenChanges(SModelChildEvent event, int offset) {
       int index = SNodeOperations.getIndexInParent(event.getChild()) + offset;
-      int beginOffset = (offset == 1 ?
-        0 :
-        -1
-      );
-      int endOffset = (offset == -1 ?
-        0 :
-        1
-      );
+      int beginOffset = (offset == 1 ? 0 : -1);
+      int endOffset = (offset == -1 ? 0 : 1);
       invalidateChildrenChanges(event.getParent(), event.getChildRole(), index, beginOffset, endOffset);
     }
 
@@ -495,31 +481,15 @@ public class MergeSession {
 
   }
 
-  private static <T> T as_bow6nj_a0a0a1a31(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
   private static <T> T as_bow6nj_a0a0a71(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static boolean eq_bow6nj_a0a0a0a0a0a0b0d84(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_bow6nj_a0a0a0a0a0a0b0l84(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

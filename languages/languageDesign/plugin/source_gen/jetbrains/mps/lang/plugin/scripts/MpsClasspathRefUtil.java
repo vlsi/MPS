@@ -88,9 +88,6 @@ import jetbrains.mps.project.AbstractModule;
   }
 
   private static boolean eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

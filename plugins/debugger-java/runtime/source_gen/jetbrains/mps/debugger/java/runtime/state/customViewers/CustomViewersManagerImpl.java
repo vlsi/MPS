@@ -132,10 +132,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
       if (factories.isEmpty()) {
         return null;
       }
-      factory = (factories.size() > 1 ?
-        getBestFactory(factories, session) :
-        factories.iterator().next()
-      );
+      factory = (factories.size() > 1 ? getBestFactory(factories, session) : factories.iterator().next());
     }
     return factory.createValueWrapper(proxy, threadReference);
   }
@@ -210,9 +207,6 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
   protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);
 
   private static boolean neq_2btpdq_a0e0n(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 }

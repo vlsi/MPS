@@ -85,10 +85,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   @Override
   public int hashCode() {
     int result = 0;
-    result = 31 * result + ((myExceptionName != null ?
-      String.valueOf(myExceptionName).hashCode() :
-      0
-    ));
+    result = 31 * result + ((myExceptionName != null ? String.valueOf(myExceptionName).hashCode() : 0));
     return result;
   }
 
@@ -119,9 +116,6 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   }
 
   private static boolean eq_bv30lc_a0d0j(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -74,7 +75,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
     SNodeReference ruleNodeId = new jetbrains.mps.smodel.SNodePointer(ruleNode);
     environment.getTracer().pushRule(ruleNodeId);
     try {
-      return apply(context.getInput(), pattern, environment.getEnvironment(context.getInput(), this));
+      return apply(context, pattern, environment.getEnvironment(context.getInput(), this));
     } catch (AbandonRuleInputException e) {
       return Collections.emptyList();
     } finally {
@@ -83,7 +84,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
 
   }
 
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, TemplateGenerator generator) throws GenerationFailureException {
+  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, ITemplateGenerator generator) throws GenerationFailureException {
     String methodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
     try {
       return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
@@ -105,43 +106,23 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
   }
 
   @Nullable
-  private Collection<SNode> apply(SNode inputNode, @NotNull GeneratedMatchingPattern pattern, @NotNull TemplateExecutionEnvironment environment)
+  private Collection<SNode> apply(TemplateContext templateContext, @NotNull GeneratedMatchingPattern pattern, @NotNull TemplateExecutionEnvironment environment)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
+    final SNode inputNode = templateContext.getInput();
     String ruleMappingName = RuleUtil.getPatternReductionRuleLabel(ruleNode);
     SNode ruleConsequence = RuleUtil.getPatternReductionRuleConsequence(ruleNode);
     if (ruleConsequence == null) {
       environment.getGenerator().showErrorMessage(inputNode, null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(inputNode, new DefaultTemplateContext(pattern, null, inputNode), environment.getReductionContext(), ruleConsequence, inputNode, environment.getGenerator());
 
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, ruleNode, environment.getReductionContext(), environment.getGenerator());
-    if (nodeAndMappingNamePairs == null) {
+    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
+    if (!rcp.prepare(ruleConsequence, ruleNode, templateContext.subContext(pattern))) {
       environment.getGenerator().showErrorMessage(inputNode, null, ruleConsequence, "error processing reduction rule consequence");
       return null;
     }
-
-    List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
-    for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-      SNode templateNode = nodeAndMappingNamePair.o1;
-      String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
-      try {
-        result.addAll(templateProcessor.apply(mappingName, templateNode, conseqContext));
-      } catch (DismissTopMappingRuleException e) {
-        throw e;
-      } catch (TemplateProcessingFailureException e) {
-        environment.getGenerator().showErrorMessage(inputNode, templateNode, ruleNode, "error processing reduction rule");
-      } catch (GenerationFailureException e) {
-        throw e;
-      } catch (GenerationCanceledException e) {
-        throw e;
-      } catch (Throwable t) {
-        environment.getGenerator().getLogger().handleException(t);
-        environment.getGenerator().showErrorMessage(inputNode, templateNode, ruleNode, "error processing reduction rule");
-      }
-    }
+    List<SNode> result = rcp.processRuleConsequence(ruleMappingName);
     return result;
   }
 }

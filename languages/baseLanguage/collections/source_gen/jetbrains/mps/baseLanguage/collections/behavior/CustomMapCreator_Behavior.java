@@ -30,10 +30,7 @@ public class CustomMapCreator_Behavior {
       public void visit(SNode chld) {
         if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           int index = ListSequence.fromList(tvars).indexOf(SLinkOperations.getTarget(SNodeOperations.cast(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
-          SNode realType = ((index >= 0 && index < ListSequence.fromList(params).count()) ?
-            SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)) :
-            null
-          );
+          SNode realType = ((index >= 0 && index < ListSequence.fromList(params).count()) ? SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)) : null);
           SNodeOperations.replaceWithAnother(chld, realType);
         }
       }

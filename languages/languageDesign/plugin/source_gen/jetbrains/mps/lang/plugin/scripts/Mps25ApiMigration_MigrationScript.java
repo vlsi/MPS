@@ -1062,7 +1062,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), "jetbrains.mps.baseLanguage.plugin") && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 3 && "NodeNavigationItem".equals(((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"))).getResolveInfo());
+        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), "jetbrains.mps.baseLanguage.plugin") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 3 && "NodeNavigationItem".equals(((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"))).getResolveInfo());
       }
 
       public void doUpdateInstanceNode(SNode node) {

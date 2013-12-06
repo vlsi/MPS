@@ -19,7 +19,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   private Project myProject;
 
   public BaseTransformationTest4() {
-    Logger.setFactory(LoggerFactory.getInstance());
+    Logger.setFactory(LoggerFactory.class);
   }
 
   public BaseTransformationTest4(Project project, SModel modelDescriptor) {
@@ -54,7 +54,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   @Override
   public void init() {
     this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
-    CloneUtil.cloneModelWithImports(this.myModel, this.myTransientModel, false);
+    new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithImports();
     TemporaryModels.getInstance().addMissingImports(myTransientModel);
   }
 

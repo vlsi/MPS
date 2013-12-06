@@ -114,10 +114,7 @@ public class SideTransformUtil {
     if (!(SetSequence.fromSet(tags).contains(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), SPropertyOperations.getString_def(actionsBuilder, "transformTag", "default_RTransform"))))) {
       return false;
     }
-    if ((cellSide == CellSide.LEFT ?
-      SPropertyOperations.hasValue(actionsBuilder, "side", null, null) :
-      SPropertyOperations.hasValue(actionsBuilder, "side", "left", null)
-    )) {
+    if ((cellSide == CellSide.LEFT ? SPropertyOperations.hasValue(actionsBuilder, "side", null, null) : SPropertyOperations.hasValue(actionsBuilder, "side", "left", null))) {
       return false;
     }
     if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(node), NameUtil.nodeFQName(SLinkOperations.getTarget(actionsBuilder, "applicableConcept", false))))) {

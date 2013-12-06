@@ -104,10 +104,7 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
 
   public String getFileName() {
-    return (myFileName == null ?
-      myClassName :
-      myFileName
-    );
+    return (myFileName == null ? myClassName : myFileName);
   }
 
   @Override

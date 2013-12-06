@@ -19,9 +19,6 @@ public class TestCaseRow extends TestContainerRow {
   }
 
   private static boolean eq_f4t6f0_a0a0a2(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

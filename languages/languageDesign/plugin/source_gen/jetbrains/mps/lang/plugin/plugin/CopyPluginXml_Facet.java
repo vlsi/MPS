@@ -222,10 +222,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
     }
 
     private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a4j(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 

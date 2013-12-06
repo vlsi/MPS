@@ -146,8 +146,8 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -331,7 +331,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private MyEventsCollector myEventsCollector = new MyEventsCollector();
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
-  private Set<SModel> myModelDescriptorsWithListener = new HashSet<SModel>();
+  private Set<SModel> mySModelsWithListener = new HashSet<SModel>();
 
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
@@ -1021,10 +1021,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        assert
-            node == null || SNodeUtil.isAccessible(node, myRepository) :
-            "editNode() accepts nodes from its own repository only (model = " + node.getModel() +
-                (node.getModel() != null ? ", repository = " + node.getModel().getRepository() : "") + ")";
+        if (node != null) {
+          assert node.getModel() != null : "Can't edit a node that is not registered in a model";
+          assert SNodeUtil.isAccessible(node, myRepository) :
+              "editNode() accepts nodes from its own repository only (model = " + node.getModel() + ", repository = " + node.getModel().getRepository() + ")";
+        }
 
         if (myNode != null && notifiesCreation()) {
           notifyDisposal();
@@ -1032,7 +1033,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
         if (needNewTypecheckingContext) {
-          disposeTypeCheckingContext();
+          releaseTypeCheckingContext();
         }
 
         myNode = node;
@@ -1051,7 +1052,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         if (needNewTypecheckingContext) {
-          obtainTypeCheckingContext();
+          acquireTypeCheckingContext();
         }
 
         rebuildEditorContent();
@@ -1358,7 +1359,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       hideMessageToolTip();
     }
 
-    disposeTypeCheckingContext();
+    releaseTypeCheckingContext();
     myHighlightManager.dispose();
 
     removeOurListeners();
@@ -1469,16 +1470,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void addOurListeners(@NotNull SModel sm) {
     myEventsCollector.add(sm);
-    myModelDescriptorsWithListener.add(sm);
+    mySModelsWithListener.add(sm);
   }
 
   private void removeOurListeners(@NotNull SModel sm) {
     myEventsCollector.remove(sm);
-    myModelDescriptorsWithListener.remove(sm);
+    mySModelsWithListener.remove(sm);
   }
 
   private void removeOurListeners() {
-    for (SModel sm : myModelDescriptorsWithListener.toArray(new SModel[myModelDescriptorsWithListener.size()])) {
+    for (SModel sm : mySModelsWithListener.toArray(new SModel[mySModelsWithListener.size()])) {
       removeOurListeners(sm);
     }
     myLastDeps = new HashSet<SModel>();
@@ -1524,11 +1525,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository) && !myModelDescriptorsWithListener.contains(myNode.getModel())) {
+    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository) && !mySModelsWithListener.contains(myNode.getModel())) {
       String message = "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       message += "\n modelId: " + myNode.getModel().getModelId().toString();
       message += "\n" + "models with listeners:";
-      for (SModel model : myModelDescriptorsWithListener) {
+      for (SModel model : mySModelsWithListener) {
         message += "\n\t" + model.getModelId().toString();
       }
       assert false : message;
@@ -2429,6 +2430,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myUserDataMap.clear();
   }
 
+  @Deprecated
   public TypeCheckingContext getTypeCheckingContext() {
     TypeCheckingContext context = TypeContextManager.getInstance().lookupTypecheckingContext(getNodeForTypechecking(myNode), this);
     return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), this);
@@ -2438,7 +2440,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return this;
   }
 
-  protected void obtainTypeCheckingContext() {
+  protected void acquireTypeCheckingContext() {
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -2447,11 +2449,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  protected void disposeTypeCheckingContext() {
+  protected void releaseTypeCheckingContext() {
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        TypeContextManager.getInstance().releaseTypecheckingContext(getNodeForTypechecking(myNode), EditorComponent.this);
+        TypeContextManager.getInstance().releaseTypecheckingContext(EditorComponent.this);
       }
     });
   }
@@ -3301,38 +3303,39 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
-      boolean needToRebuild = false;
 
-      for (SModel descriptor : replacedModels) {
-        if (myModelDescriptorsWithListener.contains(descriptor)) {
-          needToRebuild = true;
-        }
-        if (myNode != null && myNode.getModel() != null) {
+      boolean needToRebuild = false;
+      SModelReference currentModelReference = getCurrentModelReference();
+      for (SModel model : replacedModels) {
+        needToRebuild = needToRebuild || mySModelsWithListener.contains(model);
+
+        if (myNode != null && model.getReference().equals(currentModelReference)) {
           assertModelNotDisposed();
-          if (myNode.getModel().getReference().equals(descriptor.getReference())) {
-            clearModelDisposedTrace();
-            SNodeId oldId = myNode.getNodeId();
-            myNode = descriptor.getNode(oldId);
+          SNode newNode = model.getNode(myNode.getNodeId());
+          if (newNode != null && newNode != myNode) {
+            myNode = newNode;
             needToRebuild = true;
           }
         }
       }
 
       if (needToRebuild) {
+        releaseTypeCheckingContext();
+        acquireTypeCheckingContext();
         rebuildEditorContent();
       }
     }
 
-
     @Override
-    public void beforeModelRemoved(SModel modelDescriptor) {
-      if (!myModelDescriptorsWithListener.contains(modelDescriptor)) return;
-      if (myNode == null) return;
+    public void beforeModelRemoved(SModel model) {
+      if (!mySModelsWithListener.contains(model)) return;
+      if (model.getReference().equals(getCurrentModelReference())) {
+        myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
+      }
+    }
 
-      SModel model = myNode.getModel();
-      if (model != null && !model.getReference().equals(modelDescriptor.getReference())) return;
-
-      myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
+    private SModelReference getCurrentModelReference() {
+      return getEditorContext() != null && getEditorContext().getModel() != null ? getEditorContext().getModel().getReference() : null;
     }
   }
 

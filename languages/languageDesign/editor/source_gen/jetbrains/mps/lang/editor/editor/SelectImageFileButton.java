@@ -30,10 +30,7 @@ public class SelectImageFileButton extends JButton {
     this.setBorder(new MetalBorders.ButtonBorder());
     final Language language = Language.getLanguageFor(SNodeOperations.getModel(this.myNode));
     String filename = MacrosFactory.forModule(language).expandPath(SPropertyOperations.getString(node, "imageFile"));
-    final File baseFile = (filename == null ?
-      null :
-      new File(filename)
-    );
+    final File baseFile = (filename == null ? null : new File(filename));
     this.setAction(new AbstractAction(" ... ") {
       @Override
       public void actionPerformed(ActionEvent e) {

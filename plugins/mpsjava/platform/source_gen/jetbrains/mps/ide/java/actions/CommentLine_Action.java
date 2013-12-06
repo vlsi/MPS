@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.openapi.editor.EditorContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -79,17 +80,23 @@ public class CommentLine_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
+      SNode currentNode;
       if (singleLineComment != null) {
         // uncommenting 
         SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), "commentedStatement", true);
         SNodeOperations.replaceWithAnother(singleLineComment, innerStatement);
         SNodeOperations.deleteNode(singleLineComment);
+        currentNode = innerStatement;
       } else {
         SNode statement = CommentLine_Action.this.getStatement(_params);
         assert statement != null : "Statement should not be null due to the isApplicable() constraints";
@@ -97,6 +104,10 @@ public class CommentLine_Action extends BaseAction {
         SNode comment = SNodeOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
         SNode commentPart = SLinkOperations.addNewChild(comment, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
         SLinkOperations.setTarget(commentPart, "commentedStatement", statement, true);
+        currentNode = comment;
+      }
+      if ((SNodeOperations.getNextSibling(currentNode) != null)) {
+        ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(SNodeOperations.getNextSibling(currentNode));
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

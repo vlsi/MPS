@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.logging.runtime" uuid="a3e4657f-a76c-45bb-bbda-c764596ecc65" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${mps_home}/lib/log4j.jar" type="java_classes" />
+    <modelRoot contentPath="${mps_home}/lib" type="java_classes">
+      <sourceRoot location="log4j.jar" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />

@@ -41,10 +41,7 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         SNodeId targetNodeId = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", "enumConstantDeclaration")).getTargetNodeId();
-        String value = (targetNodeId != null ?
-          targetNodeId.toString() :
-          null
-        );
+        String value = (targetNodeId != null ? targetNodeId.toString() : null);
         if (value == null || value.endsWith("DEFAULT")) {
           StubRefUtil.replaceRefs(node, _quotation_createNode_kyzgj4_b0a0c0a0());
         } else if (value.endsWith("AS_COMMENT")) {
@@ -644,9 +641,6 @@ public class Mps30ApiMigration_MigrationScript extends BaseMigrationScript {
   }
 
   private static boolean eq_kgm8nx_a0a3a3a0a0a0a51a0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

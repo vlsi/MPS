@@ -65,7 +65,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gn5t9c_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_gn5t9c_a0a0e(SPropertyOperations.getString(node, "path"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "path"));
   }
 
   private EditorCell createConstant_gn5t9c_a1a(EditorContext editorContext, SNode node) {
@@ -103,7 +103,7 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_gn5t9c_a0a0e(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -42,10 +42,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   }
 
   public String getId() {
-    return (myAnnotationAspect == null ?
-      null :
-      myAnnotationAspect.getId()
-    );
+    return (myAnnotationAspect == null ? null : myAnnotationAspect.getId());
   }
 
   public boolean isEnabled() {
@@ -67,20 +64,14 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
       String[] strings = longName.split(" ");
       if (strings.length > 1) {
         // Middle name check: Vasya S. Pupkin 
-        return (strings[1].length() < 3 && strings.length > 2 && strings[2].length() > 1 ?
-          strings[2] :
-          strings[1]
-        );
+        return (strings[1].length() < 3 && strings.length > 2 && strings[2].length() > 1 ? strings[2] : strings[1]);
       }
       if (longName.contains(".")) {
         strings = longName.split(".");
         // vasya.pupkin case 
         if (strings.length > 1) {
           // Middle name check: Vasya.S.Pupkin 
-          return (strings[1].length() == 1 && strings.length > 2 && strings[2].length() > 1 ?
-            strings[2] :
-            strings[1]
-          );
+          return (strings[1].length() == 1 && strings.length > 2 && strings[2].length() > 1 ? strings[2] : strings[1]);
         }
       }
     }

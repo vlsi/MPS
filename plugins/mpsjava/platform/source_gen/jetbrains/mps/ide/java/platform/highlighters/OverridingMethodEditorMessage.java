@@ -21,10 +21,7 @@ public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage
 
   @Override
   public Icon getIcon() {
-    return (this.isOverriding ?
-      IconResourceBundle_OverrideImplements.getInstance().getResource("OVERRIDING") :
-      IconResourceBundle_OverrideImplements.getInstance().getResource("IMPLEMENTING")
-    );
+    return (this.isOverriding ? IconResourceBundle_OverrideImplements.getInstance().getResource("OVERRIDING") : IconResourceBundle_OverrideImplements.getInstance().getResource("IMPLEMENTING"));
   }
 
   @Override

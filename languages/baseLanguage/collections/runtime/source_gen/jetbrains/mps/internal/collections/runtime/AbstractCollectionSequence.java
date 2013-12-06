@@ -173,10 +173,7 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
       if (thisColl == thatColl) {
         return true;
       }
-      return (thisColl != null ?
-        thisColl.equals(thatColl) :
-        false
-      );
+      return (thisColl != null ? thisColl.equals(thatColl) : false);
     }
     return super.equals(o);
   }

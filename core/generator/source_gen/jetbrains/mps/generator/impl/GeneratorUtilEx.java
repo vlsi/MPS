@@ -4,6 +4,8 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import java.util.Set;
+import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -11,13 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import java.util.LinkedList;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
@@ -25,15 +24,24 @@ public class GeneratorUtilEx {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(GeneratorUtilEx.class));
   public static final String link_BaseConcept_attrs = "smodelAttribute";
 
+  private static final Set<String> TemplateLangElements = new HashSet<String>();
+  static {
+    TemplateLangElements.add(RuleUtil.concept_ReferenceMacro);
+    TemplateLangElements.add(RuleUtil.concept_PropertyMacro);
+    TemplateLangElements.add("jetbrains.mps.lang.generator.structure.TemplateFragment");
+    TemplateLangElements.add("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+  }
+
   public GeneratorUtilEx() {
   }
 
   public static boolean isTemplateLanguageElement(SNode n) {
-    if (!(n.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator"))) {
+    String conceptFQName = n.getConcept().getQualifiedName();
+    if (!(conceptFQName.startsWith("jetbrains.mps.lang.generator"))) {
       // optimization 
       return false;
     }
-    return SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.NodeMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.ReferenceMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.PropertyMacro") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.TemplateFragment") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+    return RuleUtil.isNodeMacro(n) || TemplateLangElements.contains(conceptFQName);
   }
 
   public static String getMappingName(SNode node, String defaultValue) {
@@ -55,10 +63,7 @@ public class GeneratorUtilEx {
     } else {
       LOG.errorWithTrace("unexpected input " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
-    String mappingName = (mappingLabel != null ?
-      SPropertyOperations.getString(mappingLabel, "name") :
-      null
-    );
+    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, "name") : null);
     if (mappingName == null) {
       return defaultValue;
     }
@@ -67,14 +72,20 @@ public class GeneratorUtilEx {
 
   public static String getMappingName_NodeMacro(SNode node, String defaultValue) {
     SNode mappingLabel = SLinkOperations.getTarget(node, "mappingLabel", false);
-    String mappingName = (mappingLabel != null ?
-      SPropertyOperations.getString(mappingLabel, "name") :
-      null
-    );
+    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, "name") : null);
     if (mappingName == null) {
       return defaultValue;
     }
     return mappingName;
+  }
+
+  public static String getMappingName_TemplateFragment(SNode node, String defaultValue) {
+    SNode ld = SLinkOperations.getTarget(node, "labelDeclaration", false);
+    if (ld == null) {
+      return defaultValue;
+    }
+    String v = SPropertyOperations.getString(ld, "name");
+    return (v == null ? defaultValue : v);
   }
 
   public static String getPatternVariableName(SNode ref) {
@@ -82,9 +93,24 @@ public class GeneratorUtilEx {
   }
 
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
-    List<SNode> templateFragments = new LinkedList<SNode>();
-    for (SNode subnode : jetbrains.mps.util.SNodeOperations.getDescendants(template, new IsInstanceCondition("jetbrains.mps.lang.generator.structure.TemplateFragment"), false)) {
-      templateFragments.add((SNode) subnode);
+    List<SNode> templateFragments = new ArrayList<SNode>();
+    LinkedList<SNode> queue = new LinkedList<SNode>();
+    queue.addFirst(template);
+    final SNode conceptTemplateFragment = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment");
+    while (!(queue.isEmpty())) {
+      SNode subnode = queue.removeFirst();
+      // do not look for TemplateFragments in subnode's children as TFs couldn't be nested 
+      boolean tfFound = false;
+      for (SNode attr : SLinkOperations.getTargets(subnode, "smodelAttribute", true)) {
+        if (SNodeOperations.getConceptDeclaration(attr) == conceptTemplateFragment) {
+          templateFragments.add((SNode) attr);
+          tfFound = true;
+          break;
+        }
+      }
+      if (!(tfFound)) {
+        queue.addAll(SNodeOperations.getChildren(subnode));
+      }
     }
     return templateFragments;
   }
@@ -109,66 +135,27 @@ public class GeneratorUtilEx {
     return true;
   }
 
-  public static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(SNode ruleConsequence, SNode inputNode, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
-    if (ruleConsequence == null) {
-      generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
-      return null;
-    }
-    generator.getGenerationTracer().pushRuleConsequence(new SNodePointer(ruleConsequence));
-    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) {
-      SNode message = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"), "generatorMessage", true);
-      DismissTopMappingRuleException.MessageType messageType = processGeneratorMessage(message, inputNode, null, ruleNode, generator);
-      throw new DismissTopMappingRuleException(messageType);
-    } else
-    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence")) {
-      throw new AbandonRuleInputException();
-    } else
-    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference") || SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
-      SNode templateContainer;
-      if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
-        templateContainer = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), "template", false);
-      } else {
-        templateContainer = ruleConsequence;
-      }
-      if (templateContainer == null) {
-        generator.showErrorMessage(inputNode, ruleConsequence, ruleNode, "error processing template consequence: no 'template'");
-        return null;
-      }
-      List<SNode> fragments = getTemplateFragments(templateContainer);
-      if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, inputNode, ruleNode, generator)) {
-        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
-        for (SNode fragment : fragments) {
-          result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), getMappingName(fragment, null)));
-        }
-        return result;
-      }
-    } else
-    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
-      SNode templateNode = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), "templateNode", true);
-      if (templateNode != null) {
-        return Collections.singletonList(new Pair<SNode, String>(templateNode, null));
-      } else {
-        generator.showErrorMessage(inputNode, null, ruleConsequence, "no template node");
-      }
-    } else
-    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")) {
-      SNode inlineSwitch = SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence");
-      for (SNode switchCase : SLinkOperations.getTargets(inlineSwitch, "case", true)) {
-        if (reductionContext.getQueryExecutor().checkCondition(SLinkOperations.getTarget(switchCase, "conditionFunction", true), true, inputNode, switchCase)) {
-          return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(SLinkOperations.getTarget(switchCase, "caseConsequence", true), inputNode, switchCase, reductionContext, generator);
-        }
-      }
-      SNode defaultConsequence = SLinkOperations.getTarget(inlineSwitch, "defaultConsequence", true);
-      if (defaultConsequence == null) {
-        generator.showErrorMessage(inputNode, null, inlineSwitch, "no default consequence in switch");
-      } else {
-        return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, inputNode, defaultConsequence, reductionContext, generator);
-      }
+  public static void dispatchRuleConsequence(@NotNull SNode ruleConsequence, @NotNull GeneratorUtilEx.ConsequenceDispatch dispatch) {
+    if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
+      dispatch.templateDeclarationReference(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+      dispatch.inlineTemplateWithContext(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
+      dispatch.inlineTemplate(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")) {
+      dispatch.inlineSwitch(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence")) {
+      dispatch.weaveEach(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence")) {
+      dispatch.abandonInput(ruleConsequence);
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) {
+      dispatch.dismissTopRule(ruleConsequence);
     } else {
-      generator.showErrorMessage(inputNode, null, ruleConsequence, "unsupported rule consequence");
+      dispatch.unknown(ruleConsequence);
     }
-    return null;
   }
+
+
 
   public static DismissTopMappingRuleException.MessageType processGeneratorMessage(SNode message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
     DismissTopMappingRuleException.MessageType messageType = null;
@@ -189,7 +176,39 @@ public class GeneratorUtilEx {
     return messageType;
   }
 
+  public static String getGeneratorMessage_text(SNode generatorMessage) {
+    return SPropertyOperations.getString(generatorMessage, "messageText");
+  }
+
+  public static DismissTopMappingRuleException.MessageType getGeneratorMessage_kind(SNode generatorMessage) {
+    if (generatorMessage == null) {
+      // this is how it used to be, although to me default to warn/info might be better 
+      return null;
+    }
+    if (SPropertyOperations.hasValue(generatorMessage, "messageType", "error", "info")) {
+      return DismissTopMappingRuleException.MessageType.error;
+    } else
+    if (SPropertyOperations.hasValue(generatorMessage, "messageType", "warning", "info")) {
+      return DismissTopMappingRuleException.MessageType.warning;
+    } else {
+      return DismissTopMappingRuleException.MessageType.info;
+    }
+  }
+
+
+
   public static SNode getReferenceMacro(SNode node, String linkRole) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole));
+  }
+
+  public static interface ConsequenceDispatch {
+    public void inlineSwitch(SNode ruleConsequence);
+    public void inlineTemplateWithContext(SNode ruleConsequence);
+    public void inlineTemplate(SNode ruleConsequence);
+    public void templateDeclarationReference(SNode ruleConsequence);
+    public void weaveEach(SNode ruleConsequence);
+    public void abandonInput(SNode ruleConsequence);
+    public void dismissTopRule(SNode ruleConsequence);
+    public void unknown(SNode ruleConsequence);
   }
 }

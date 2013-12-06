@@ -32,10 +32,7 @@ public class ClassifierLoader {
       return;
     }
 
-    String cp = ((pack.length() == 0) ?
-      "" :
-      pack + "."
-    );
+    String cp = ((pack.length() == 0) ? "" : pack + ".");
     byte[] code = myCpItem.getClass(cp + name);
     if (code == null) {
       return;

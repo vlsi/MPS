@@ -71,10 +71,7 @@ public class AttributeOperations {
   }
 
   public static List<SNode> getAttributeList(SNode node, IAttributeDescriptor descriptor) {
-    return ((node == null) ?
-      null :
-      new AttributeOperations.AttributeList(node, descriptor)
-    );
+    return ((node == null) ? null : new AttributeOperations.AttributeList(node, descriptor));
   }
 
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
@@ -161,16 +158,10 @@ public class AttributeOperations {
   }
 
   private static boolean eq_b2vkxw_a0a0a0a0a0a0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_b2vkxw_a0a0a0a0a0a0s(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

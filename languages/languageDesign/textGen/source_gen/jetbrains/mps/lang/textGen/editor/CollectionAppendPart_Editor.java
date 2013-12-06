@@ -87,7 +87,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wfu8o0_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "withSeparator") || isNotEmpty_wfu8o0_a0a0a6(SPropertyOperations.getString(node, "separator"));
+    return SPropertyOperations.getBoolean(node, "withSeparator") || isNotEmptyString(SPropertyOperations.getString(node, "separator"));
   }
 
   private EditorCell createConstant_wfu8o0_a2a(EditorContext editorContext, SNode node) {
@@ -154,7 +154,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wfu8o0_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_wfu8o0_a0a0m(SPropertyOperations.getString(node, "separator"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "separator"));
   }
 
   private EditorCell createConstant_wfu8o0_a0a(EditorContext editorContext, SNode node) {
@@ -190,11 +190,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_wfu8o0_a0a0a6(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_wfu8o0_a0a0m(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

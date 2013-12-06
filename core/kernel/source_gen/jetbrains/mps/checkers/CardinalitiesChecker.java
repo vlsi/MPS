@@ -22,7 +22,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
     for (SNode link : ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(concept))) {
-      if (isEmpty_gmr83o_a0a0c0b(SPropertyOperations.getString(link, "role"))) {
+      if (isEmptyString(SPropertyOperations.getString(link, "role"))) {
         continue;
       }
       component.addDependency(link);
@@ -49,7 +49,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
     }
   }
 
-  public static boolean isEmpty_gmr83o_a0a0c0b(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

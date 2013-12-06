@@ -18,7 +18,6 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -61,7 +60,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
 
-    for (String propname : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {
+    for (String propname : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
       if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

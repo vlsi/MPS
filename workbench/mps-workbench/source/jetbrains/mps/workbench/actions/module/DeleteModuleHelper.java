@@ -23,6 +23,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -59,12 +60,7 @@ public class DeleteModuleHelper {
       throw new IllegalArgumentException("Non-project modules can only be deleted with files deletion enabled");
     }
 
-    //remove from project
-    if (project.isProjectModule(module)) {
-      project.removeModule(module.getModuleReference());
-      ((StandaloneMPSProject) project).update();
-      project.save();
-    }
+    MPSModuleRepository.getInstance().saveAll();
 
     if (deleteFiles) {
       for (SModel model : module.getModels()) {

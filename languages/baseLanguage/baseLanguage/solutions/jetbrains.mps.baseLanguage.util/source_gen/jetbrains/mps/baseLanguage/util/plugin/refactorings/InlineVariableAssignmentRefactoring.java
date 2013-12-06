@@ -60,7 +60,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     List<SNode> result = new ArrayList<SNode>();
     for (ReadInstruction read : SetSequence.fromSet(this.myReadInstructions)) {
       SNode node = (SNode) read.getSource();
-      if (!(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "expression")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"))) {
+      if (!(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "expression") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.UnaryMinus"))) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"))) {
         ListSequence.fromList(result).addElement((node));
       }
     }

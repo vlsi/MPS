@@ -57,10 +57,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
               }
             }
             if (target == null) {
-              target = (SNodeOperations.isInstanceOf(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFolder") ?
-                BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}) :
-                BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{})
-              );
+              target = (SNodeOperations.isInstanceOf(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFolder") ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getParameterNode(), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{}));
             }
             return target;
           }

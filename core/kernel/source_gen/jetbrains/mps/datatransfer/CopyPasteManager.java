@@ -78,19 +78,13 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
   public CopyPreProcessor getPreProcessor(SNode concept) {
     load();
     AbstractManager.Descriptor<CopyPreProcessor> descriptor = MapSequence.fromMap(myPreProcessors).get(concept);
-    return (descriptor == null ?
-      (CopyPreProcessor) null :
-      descriptor.getInstance()
-    );
+    return (descriptor == null ? (CopyPreProcessor) null : descriptor.getInstance());
   }
 
   private PastePostProcessor getPostProcessor(SNode concept) {
     load();
     AbstractManager.Descriptor<PastePostProcessor> descriptor = MapSequence.fromMap(myPostProcessors).get(concept);
-    return (descriptor == null ?
-      (PastePostProcessor) null :
-      descriptor.getInstance()
-    );
+    return (descriptor == null ? (PastePostProcessor) null : descriptor.getInstance());
   }
 
   private void load() {

@@ -61,10 +61,7 @@ public class IGeneratedToClass_Behavior {
 
   public static String call_makeUpperCase_946964771156905431(SAbstractConcept thisConcept, @NonNls String string, int index) {
     assert index >= 0 && index < string.length();
-    return string.substring(0, index) + string.substring(index, index + 1).toUpperCase() + ((index + 1 < string.length() ?
-      string.substring(index + 1) :
-      ""
-    ));
+    return string.substring(0, index) + string.substring(index, index + 1).toUpperCase() + ((index + 1 < string.length() ? string.substring(index + 1) : ""));
   }
 
   public static String call_getValidClassName_3754131050835940481(SAbstractConcept thisConcept, @NonNls String name) {

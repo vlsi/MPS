@@ -174,10 +174,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
         @Override
         protected IMessageHandler initialValue() {
-          return (MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ?
-            MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._1() :
-            null
-          );
+          return (MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ? MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._1() : null);
         }
       };
 

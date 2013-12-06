@@ -44,10 +44,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       }
     });
     Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
-    SNode mtd = (it.hasNext() ?
-      it.next() :
-      null
-    );
+    SNode mtd = (it.hasNext() ? it.next() : null);
     if (it.hasNext()) {
       errorMsg = ": more than one abstract method";
     } else if (mtd != null) {
@@ -104,10 +101,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         }
       });
       Iterator<SNode> it = Sequence.fromIterable(cands).iterator();
-      SNode mtd = (it.hasNext() ?
-        it.next() :
-        null
-      );
+      SNode mtd = (it.hasNext() ? it.next() : null);
       if (it.hasNext()) {
         errorMsg = ": more than one abstract method";
       } else if (mtd != null) {

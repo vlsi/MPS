@@ -22,10 +22,7 @@ public class ImportedModelChange extends DependencyChange {
 
   @Override
   public String toString() {
-    return ((isDelete() ?
-      "Delete" :
-      "Add"
-    )) + " imported model " + myModelReference;
+    return ((isDelete() ? "Delete" : "Add")) + " imported model " + myModelReference;
   }
 
   @NotNull

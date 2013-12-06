@@ -10,11 +10,12 @@ import java.util.zip.ZipEntry;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
-import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
 import java.util.zip.ZipOutputStream;
 import java.io.FileOutputStream;
@@ -80,11 +81,11 @@ public class MergeData {
   private boolean generateAndCheckResultData() throws ModelReadException {
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
 
-    DefaultSModel baseModel = ModelPersistence.readModel(myBaseModelString, false);
-    DefaultSModel mineModel = ModelPersistence.readModel(myMineModelString, false);
-    DefaultSModel repositoryModel = ModelPersistence.readModel(myRepositoryModelString, false);
+    SModel baseModel = PersistenceUtil.loadModel(myBaseModelString, "mps");
+    SModel mineModel = PersistenceUtil.loadModel(myMineModelString, "mps");
+    SModel repositoryModel = PersistenceUtil.loadModel(myRepositoryModelString, "mps");
 
-    final MergeSession session = MergeSession.createMergeSession(baseModel.getModelDescriptor(), mineModel.getModelDescriptor(), repositoryModel.getModelDescriptor());
+    final MergeSession session = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
     String resultModelString = null;
     if (Sequence.fromIterable(session.getAllChanges()).all(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange c) {
@@ -181,13 +182,7 @@ public class MergeData {
   private static boolean check(String what, String expected, String actual) {
     if (expected == null || actual == null) {
       if (expected != null || actual != null) {
-        System.err.printf("Expected %s: %s, but actual is %s\n", what, (expected == null ?
-          "null" :
-          "not null"
-        ), (actual == null ?
-          "null" :
-          "not null"
-        ));
+        System.err.printf("Expected %s: %s, but actual is %s\n", what, (expected == null ? "null" : "not null"), (actual == null ? "null" : "not null"));
         return false;
       } else {
         return true;
@@ -208,9 +203,6 @@ public class MergeData {
   }
 
   private static <T> T as_u0rai9_a0a0a2a8a71(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

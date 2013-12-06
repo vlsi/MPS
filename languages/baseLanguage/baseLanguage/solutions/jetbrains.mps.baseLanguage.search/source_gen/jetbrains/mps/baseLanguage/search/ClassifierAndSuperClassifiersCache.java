@@ -308,10 +308,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
     @Nullable
     public List<SNode> getMethodsByName(String methodName) {
-      return MapSequence.fromMap(myMethodsByName).get((methodName == null ?
-        "" :
-        methodName
-      ));
+      return MapSequence.fromMap(myMethodsByName).get((methodName == null ? "" : methodName));
     }
 
     @Override
@@ -350,7 +347,7 @@ forEachInAllMethods:
           List<SNode> equalParmCountMethods = new ArrayList<SNode>();
           List<SNode> methods = MapSequence.fromMap(this.myMethodsByName).get(name);
           for (SNode method : methods) {
-            if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
+            if ((SNodeOperations.getParent(currMethod) != SNodeOperations.getParent(method)) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == currMethodParmCount) {
               equalParmCountMethods.add(method);
             }
           }
@@ -466,17 +463,11 @@ forEachInAllMethods:
     }
 
     public SNode getFieldByName(String name) {
-      return MapSequence.fromMap(myFieldsByName).get((name == null ?
-        "" :
-        name
-      ));
+      return MapSequence.fromMap(myFieldsByName).get((name == null ? "" : name));
     }
 
     public SNode getStaticFieldByName(String name) {
-      return MapSequence.fromMap(myStaticFieldsByName).get((name == null ?
-        "" :
-        name
-      ));
+      return MapSequence.fromMap(myStaticFieldsByName).get((name == null ? "" : name));
     }
 
     @Override

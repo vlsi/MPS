@@ -96,10 +96,7 @@ public class SModelOperations {
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
-      Iterable<SNode> nodes = (roots ?
-        aModel.getRootNodes() :
-        SNodeUtil.getDescendants(aModel)
-      );
+      Iterable<SNode> nodes = (roots ? aModel.getRootNodes() : SNodeUtil.getDescendants(aModel));
       if (concept == null) {
         resultNodes.addAll(IterableUtil.asList(nodes));
       } else if (roots) {
@@ -189,27 +186,18 @@ public class SModelOperations {
         return null;
       }
       SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
-      return (l == null ?
-        null :
-        ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
-          }
-        })
-      );
+      return (l == null ? null : ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
+        }
+      }));
     } else {
       SModel m = ProjectStructureModule.getInstance().getModelByModule(module);
-      return (m == null ?
-        null :
-        ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first()
-      );
+      return (m == null ? null : ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first());
     }
   }
 
   private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a21(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

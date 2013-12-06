@@ -102,16 +102,10 @@ public class ModelUsagesFinder implements IFinder {
   }
 
   private static <T> T as_s8v3jk_a0a0a0f0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 
   private static <T> T as_s8v3jk_a0a0b0a5a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

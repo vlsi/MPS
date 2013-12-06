@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import com.intellij.openapi.project.Project;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
@@ -41,10 +41,7 @@ public class AddModuleToVcs_Action extends BaseAction {
     try {
       {
         Presentation presentation = event.getPresentation();
-        presentation.setText(String.format("Add %s to VCS", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ?
-          "Module" :
-          "Modules"
-        )));
+        presentation.setText(String.format("Add %s to VCS", (((List<SModule>) MapSequence.fromMap(_params).get("modules")).size() == 1 ? "Module" : "Modules")));
         boolean enabled = ListSequence.fromList(VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")))).isNotEmpty();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
@@ -61,7 +58,7 @@ public class AddModuleToVcs_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }

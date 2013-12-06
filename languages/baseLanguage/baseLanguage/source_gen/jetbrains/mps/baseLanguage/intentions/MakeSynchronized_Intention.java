@@ -83,10 +83,7 @@ public class MakeSynchronized_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "isSynchronized") ?
-        "Make Method Not Synchronized" :
-        "Make Method Synchronized"
-      );
+      return (SPropertyOperations.getBoolean(node, "isSynchronized") ? "Make Method Not Synchronized" : "Make Method Synchronized");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

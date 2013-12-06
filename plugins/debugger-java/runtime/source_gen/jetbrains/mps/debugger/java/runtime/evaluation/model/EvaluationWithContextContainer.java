@@ -146,7 +146,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
 
       final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
-      for (String variable : SetSequence.fromSet(MapSequence.fromMap(contextVariables).keySet())) {
+      for (String variable : MapSequence.fromMap(contextVariables).keySet()) {
 
         String name = variable;
         SNode lowLevelVarNode = MapSequence.fromMap(declaredVariables).get(name);
@@ -290,10 +290,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
 
   public static String modelFqNameFromUnitName(String unitName) {
     int lastDot = unitName.lastIndexOf(".");
-    return ((lastDot == -1 ?
-      "" :
-      unitName.substring(0, lastDot)
-    ));
+    return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
   }
 
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {
@@ -331,23 +328,14 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   protected static Logger LOG = LogManager.getLogger(EvaluationWithContextContainer.class);
 
   private static boolean eq_v5yv3u_a0a0a0a0a0a0b0d0o(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_v5yv3u_a0a0a0a0a0a0a2v(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_v5yv3u_a0a0a0a0a0a0a1a2v(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

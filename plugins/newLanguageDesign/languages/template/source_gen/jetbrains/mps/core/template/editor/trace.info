@@ -391,74 +391,76 @@
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="284" startPosition="115" endLine="285" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="285" startPosition="106" endLine="286" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="286" startPosition="45" endLine="287" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="301" startPosition="8" endLine="302" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="302" startPosition="68" endLine="303" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="303" startPosition="40" endLine="304" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="304" startPosition="49" endLine="305" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="309" startPosition="95" endLine="310" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="313" startPosition="66" endLine="314" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="314" startPosition="41" endLine="315" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="318" startPosition="86" endLine="319" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="319" startPosition="80" endLine="320" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="320" startPosition="95" endLine="321" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="324" startPosition="68" endLine="325" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="325" startPosition="34" endLine="326" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="326" startPosition="80" endLine="327" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="327" startPosition="87" endLine="328" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="331" startPosition="89" endLine="332" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="336" startPosition="96" endLine="337" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="338" startPosition="34" endLine="339" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="341" startPosition="131" endLine="342" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="91" endLine="348" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="348" startPosition="88" endLine="349" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="349" startPosition="50" endLine="350" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="350" startPosition="36" endLine="351" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9160962589444206913" fileName="MtlTemplate_Editor.java" startLine="355" startPosition="108" endLine="356" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9160962589444199077" fileName="MtlTemplate_Editor.java" startLine="359" startPosition="108" endLine="360" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="363" startPosition="89" endLine="364" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="364" startPosition="97" endLine="365" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="365" startPosition="48" endLine="366" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="366" startPosition="34" endLine="367" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="367" startPosition="49" endLine="368" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="368" startPosition="58" endLine="369" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="369" startPosition="60" endLine="370" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="370" startPosition="113" endLine="371" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="371" startPosition="40" endLine="372" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="371" startPosition="40" endLine="372" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="372" startPosition="85" endLine="373" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="92" endLine="377" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="377" startPosition="40" endLine="378" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="378" startPosition="145" endLine="379" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="380" startPosition="31" endLine="381" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="382" startPosition="12" endLine="383" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="384" startPosition="5" endLine="385" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3373821274546492219" fileName="MtlTemplate_Editor.java" startLine="388" startPosition="111" endLine="389" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="392" startPosition="88" endLine="393" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="393" startPosition="81" endLine="394" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="394" startPosition="33" endLine="395" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="395" startPosition="46" endLine="396" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="396" startPosition="26" endLine="397" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="398" startPosition="39" endLine="399" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="400" startPosition="5" endLine="401" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="401" startPosition="73" endLine="402" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="402" startPosition="57" endLine="403" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="404" startPosition="35" endLine="405" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="405" startPosition="72" endLine="406" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="406" startPosition="78" endLine="407" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="408" startPosition="10" endLine="409" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3373821274546505854" fileName="MtlTemplate_Editor.java" startLine="416" startPosition="75" endLine="417" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240319640319" fileName="MtlTemplate_Editor.java" startLine="417" startPosition="97" endLine="418" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240319640325" fileName="MtlTemplate_Editor.java" startLine="418" startPosition="140" endLine="419" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3373821274546649901" fileName="MtlTemplate_Editor.java" startLine="419" startPosition="77" endLine="420" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="424" startPosition="15" endLine="425" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="425" startPosition="69" endLine="426" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="426" startPosition="46" endLine="427" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="430" startPosition="87" endLine="431" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="431" startPosition="86" endLine="432" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="432" startPosition="46" endLine="433" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="433" startPosition="34" endLine="434" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="287" startPosition="34" endLine="288" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="288" startPosition="226" endLine="289" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="289" startPosition="221" endLine="290" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="290" startPosition="68" endLine="291" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="291" startPosition="40" endLine="292" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="292" startPosition="49" endLine="293" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="297" startPosition="95" endLine="298" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="301" startPosition="66" endLine="302" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="302" startPosition="41" endLine="303" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="306" startPosition="86" endLine="307" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="307" startPosition="80" endLine="308" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="308" startPosition="95" endLine="309" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="312" startPosition="68" endLine="313" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="313" startPosition="34" endLine="314" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="314" startPosition="80" endLine="315" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="315" startPosition="87" endLine="316" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="319" startPosition="89" endLine="320" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="324" startPosition="96" endLine="325" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="326" startPosition="34" endLine="327" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="329" startPosition="131" endLine="330" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="91" endLine="336" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="336" startPosition="88" endLine="337" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="337" startPosition="50" endLine="338" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="338" startPosition="36" endLine="339" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9160962589444206913" fileName="MtlTemplate_Editor.java" startLine="343" startPosition="108" endLine="344" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9160962589444199077" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="108" endLine="348" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="351" startPosition="89" endLine="352" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="352" startPosition="97" endLine="353" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="353" startPosition="48" endLine="354" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="354" startPosition="34" endLine="355" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="355" startPosition="49" endLine="356" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="356" startPosition="58" endLine="357" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="357" startPosition="60" endLine="358" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="358" startPosition="113" endLine="359" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="359" startPosition="40" endLine="360" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="359" startPosition="40" endLine="360" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="360" startPosition="85" endLine="361" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="364" startPosition="92" endLine="365" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="365" startPosition="40" endLine="366" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="366" startPosition="145" endLine="367" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="368" startPosition="31" endLine="369" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="370" startPosition="12" endLine="371" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="372" startPosition="5" endLine="373" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3373821274546492219" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="111" endLine="377" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="380" startPosition="88" endLine="381" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="381" startPosition="81" endLine="382" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="382" startPosition="33" endLine="383" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="383" startPosition="46" endLine="384" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="384" startPosition="26" endLine="385" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="386" startPosition="39" endLine="387" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="388" startPosition="5" endLine="389" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="389" startPosition="73" endLine="390" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="390" startPosition="57" endLine="391" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="392" startPosition="35" endLine="393" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="393" startPosition="72" endLine="394" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="394" startPosition="78" endLine="395" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="396" startPosition="10" endLine="397" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3373821274546505854" fileName="MtlTemplate_Editor.java" startLine="404" startPosition="75" endLine="405" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240319640319" fileName="MtlTemplate_Editor.java" startLine="405" startPosition="97" endLine="406" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240319640325" fileName="MtlTemplate_Editor.java" startLine="406" startPosition="140" endLine="407" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3373821274546649901" fileName="MtlTemplate_Editor.java" startLine="407" startPosition="77" endLine="408" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="412" startPosition="15" endLine="413" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="413" startPosition="69" endLine="414" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="414" startPosition="46" endLine="415" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="418" startPosition="87" endLine="419" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="419" startPosition="86" endLine="420" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="420" startPosition="46" endLine="421" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="421" startPosition="34" endLine="422" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="249" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="382" startPosition="10" endLine="384" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="370" startPosition="10" endLine="372" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1016170791824067890" fileName="MtlTemplate_Editor.java" startLine="84" startPosition="58" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="151" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="parametersListHandler_c4w2e_f0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -467,57 +469,55 @@
     <nodeInfo nodeId="1163325315882426198" fileName="MtlTemplate_Editor.java" startLine="238" startPosition="89" endLine="241" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1163325315882426224" fileName="MtlTemplate_Editor.java" startLine="242" startPosition="56" endLine="245" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="252" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="309" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="varsListHandler_c4w2e_l0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="331" startPosition="0" endLine="334" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="337" startPosition="134" endLine="340" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="340" startPosition="9" endLine="343" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9160962589444206911" fileName="MtlTemplate_Editor.java" startLine="355" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_c4w2e_a0l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="9160962589444199075" fileName="MtlTemplate_Editor.java" startLine="359" startPosition="0" endLine="362" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_c4w2e_a1l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3373821274546483519" fileName="MtlTemplate_Editor.java" startLine="388" startPosition="0" endLine="391" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_c4w2e_a0m0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="397" startPosition="58" endLine="400" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="297" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="varsListHandler_c4w2e_l0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="319" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="325" startPosition="134" endLine="328" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="328" startPosition="9" endLine="331" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9160962589444206911" fileName="MtlTemplate_Editor.java" startLine="343" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_c4w2e_a0l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="9160962589444199075" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_c4w2e_a1l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3373821274546483519" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="0" endLine="379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_c4w2e_a0m0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="385" startPosition="58" endLine="388" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="179" startPosition="134" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="313" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="301" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="160" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="318" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="379" startPosition="33" endLine="384" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="306" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="367" startPosition="33" endLine="372" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1016170791824067890" fileName="MtlTemplate_Editor.java" startLine="90" startPosition="59" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="212212067812118791" fileName="MtlTemplate_Editor.java" startLine="120" startPosition="59" endLine="126" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="166" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="324" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_a11a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="403" startPosition="59" endLine="409" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3373821274546505848" fileName="MtlTemplate_Editor.java" startLine="416" startPosition="0" endLine="422" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="430" startPosition="0" endLine="436" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_n0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="312" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_a11a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="391" startPosition="59" endLine="397" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3373821274546505848" fileName="MtlTemplate_Editor.java" startLine="404" startPosition="0" endLine="410" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="418" startPosition="0" endLine="424" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_n0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="142" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_c4w2e_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="287" startPosition="34" endLine="294" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="294" startPosition="8" endLine="301" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3373821274546497084" fileName="MtlTemplate_Editor.java" startLine="414" startPosition="44" endLine="422" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3373821274546497084" fileName="MtlTemplate_Editor.java" startLine="402" startPosition="44" endLine="410" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="212212067812118790" fileName="MtlTemplate_Editor.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="212212067812118813" fileName="MtlTemplate_Editor.java" startLine="203" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_a5a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1163325315882426171" fileName="MtlTemplate_Editor.java" startLine="225" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="132" endLine="344" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="323" startPosition="132" endLine="332" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="177" startPosition="132" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="212212067812118807" fileName="MtlTemplate_Editor.java" startLine="214" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="212212067812118817" fileName="MtlTemplate_Editor.java" startLine="261" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_j0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="8148155863335690826" fileName="MtlTemplate_Editor.java" startLine="272" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_k0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="414" startPosition="0" endLine="424" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/nodeEditor/AbstractCellProvider;" />
+    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="402" startPosition="0" endLine="412" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/nodeEditor/AbstractCellProvider;" />
     <nodeInfo nodeId="1016170791824067888" fileName="MtlTemplate_Editor.java" startLine="99" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="237" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="0" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_c4w2e_a21a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="323" startPosition="0" endLine="334" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="364" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_c4w2e_a21a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="212212067812118792" fileName="MtlTemplate_Editor.java" startLine="129" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c4w2e_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="177" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="190" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="363" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c4w2e_m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="412" startPosition="99" endLine="424" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="283" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_c4w2e_l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="351" startPosition="0" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c4w2e_m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="400" startPosition="99" endLine="412" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="212212067812118791" fileName="MtlTemplate_Editor.java" startLine="111" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_c4w2e_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="412" startPosition="0" endLine="429" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCustom_c4w2e_a0m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="400" startPosition="0" endLine="417" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCustom_c4w2e_a0m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1016170791824067890" fileName="MtlTemplate_Editor.java" startLine="79" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_c4w2e_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="392" startPosition="0" endLine="411" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_c4w2e_a0m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="380" startPosition="0" endLine="399" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_c4w2e_a0m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="48" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c4w2e_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="235" startPosition="112" endLine="255" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="283" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_c4w2e_l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="235" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_c4w2e_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="249" startPosition="37" endLine="249" endPosition="37" />
     <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="44" startPosition="79" endLine="45" endPosition="62" />
@@ -542,17 +542,17 @@
     <scopeInfo nodeId="1163325315882426199" fileName="MtlTemplate_Editor.java" startLine="239" startPosition="29" endLine="240" endPosition="23" />
     <scopeInfo nodeId="1163325315882426225" fileName="MtlTemplate_Editor.java" startLine="243" startPosition="34" endLine="244" endPosition="50" />
     <scopeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="252" startPosition="44" endLine="253" endPosition="46" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="309" startPosition="95" endLine="310" endPosition="50" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="331" startPosition="89" endLine="332" endPosition="65" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="338" startPosition="34" endLine="339" endPosition="95" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="341" startPosition="131" endLine="342" endPosition="139" />
-    <scopeInfo nodeId="9160962589444206912" fileName="MtlTemplate_Editor.java" startLine="355" startPosition="108" endLine="356" endPosition="240" />
-    <scopeInfo nodeId="9160962589444199076" fileName="MtlTemplate_Editor.java" startLine="359" startPosition="108" endLine="360" endPosition="240" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="371" startPosition="40" endLine="372" endPosition="85" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="380" startPosition="31" endLine="381" endPosition="70" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="382" startPosition="12" endLine="383" endPosition="69" />
-    <scopeInfo nodeId="3373821274546483520" fileName="MtlTemplate_Editor.java" startLine="388" startPosition="111" endLine="389" endPosition="132" />
-    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="398" startPosition="39" endLine="399" endPosition="37" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="297" startPosition="95" endLine="298" endPosition="50" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="319" startPosition="89" endLine="320" endPosition="65" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="326" startPosition="34" endLine="327" endPosition="95" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="329" startPosition="131" endLine="330" endPosition="139" />
+    <scopeInfo nodeId="9160962589444206912" fileName="MtlTemplate_Editor.java" startLine="343" startPosition="108" endLine="344" endPosition="240" />
+    <scopeInfo nodeId="9160962589444199076" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="108" endLine="348" endPosition="240" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="359" startPosition="40" endLine="360" endPosition="85" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="368" startPosition="31" endLine="369" endPosition="70" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="370" startPosition="12" endLine="371" endPosition="69" />
+    <scopeInfo nodeId="3373821274546483520" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="111" endLine="377" endPosition="132" />
+    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="386" startPosition="39" endLine="387" endPosition="37" />
     <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="155" startPosition="66" endLine="157" endPosition="93">
       <varInfo nodeId="212212067812118786" varName="listOwner" />
     </scopeInfo>
@@ -560,7 +560,7 @@
     <scopeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="249" startPosition="0" endLine="251" endPosition="0">
       <varInfo nodeId="1163325315882426173" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="313" startPosition="66" endLine="315" endPosition="93">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="301" startPosition="66" endLine="303" endPosition="93">
       <varInfo nodeId="212212067812118786" varName="listOwner" />
     </scopeInfo>
     <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
@@ -590,32 +590,32 @@
     <scopeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="252" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="1163325315882426173" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="309" startPosition="0" endLine="312" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="297" startPosition="0" endLine="300" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="childRole" />
       <varInfo nodeId="212212067812118786" varName="context" />
       <varInfo nodeId="212212067812118786" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="318" startPosition="86" endLine="321" endPosition="25">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="306" startPosition="86" endLine="309" endPosition="25">
       <varInfo nodeId="212212067812118786" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="331" startPosition="0" endLine="334" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="319" startPosition="0" endLine="322" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
       <varInfo nodeId="212212067812118786" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9160962589444206911" fileName="MtlTemplate_Editor.java" startLine="355" startPosition="0" endLine="358" endPosition="0">
+    <scopeInfo nodeId="9160962589444206911" fileName="MtlTemplate_Editor.java" startLine="343" startPosition="0" endLine="346" endPosition="0">
       <varInfo nodeId="9160962589444206911" varName="editorContext" />
       <varInfo nodeId="9160962589444206911" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9160962589444199075" fileName="MtlTemplate_Editor.java" startLine="359" startPosition="0" endLine="362" endPosition="0">
+    <scopeInfo nodeId="9160962589444199075" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="0" endLine="350" endPosition="0">
       <varInfo nodeId="9160962589444199075" varName="editorContext" />
       <varInfo nodeId="9160962589444199075" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3373821274546483519" fileName="MtlTemplate_Editor.java" startLine="388" startPosition="0" endLine="391" endPosition="0">
+    <scopeInfo nodeId="3373821274546483519" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="0" endLine="379" endPosition="0">
       <varInfo nodeId="3373821274546483519" varName="editorContext" />
       <varInfo nodeId="3373821274546483519" varName="node" />
       <varInfo nodeId="3373821274546483519" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="404" startPosition="35" endLine="407" endPosition="105">
+    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="392" startPosition="35" endLine="395" endPosition="105">
       <varInfo nodeId="212212067812147834" varName="manager" />
       <varInfo nodeId="212212067812147834" varName="opContext" />
     </scopeInfo>
@@ -625,20 +625,20 @@
     <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="166" startPosition="68" endLine="170" endPosition="23">
       <varInfo nodeId="212212067812118786" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="313" startPosition="0" endLine="317" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="301" startPosition="0" endLine="305" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="324" startPosition="68" endLine="328" endPosition="23">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="312" startPosition="68" endLine="316" endPosition="23">
       <varInfo nodeId="212212067812118786" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="91" endLine="351" endPosition="24">
+    <scopeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="91" endLine="339" endPosition="24">
       <varInfo nodeId="9160962589444199073" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3373821274546505853" fileName="MtlTemplate_Editor.java" startLine="416" startPosition="75" endLine="420" endPosition="30">
+    <scopeInfo nodeId="3373821274546505853" fileName="MtlTemplate_Editor.java" startLine="404" startPosition="75" endLine="408" endPosition="30">
       <varInfo nodeId="1240319640320" varName="collection" />
       <varInfo nodeId="3373821274546505855" varName="template" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="430" startPosition="87" endLine="434" endPosition="22">
+    <scopeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="418" startPosition="87" endLine="422" endPosition="22">
       <varInfo nodeId="212212067812118884" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="142" startPosition="90" endLine="147" endPosition="22">
@@ -649,24 +649,24 @@
       <varInfo nodeId="212212067812118786" varName="editorContext" />
       <varInfo nodeId="212212067812118786" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="318" startPosition="0" endLine="323" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="306" startPosition="0" endLine="311" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
       <varInfo nodeId="212212067812118786" varName="elementNode" />
     </scopeInfo>
     <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="166" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="324" startPosition="0" endLine="330" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="312" startPosition="0" endLine="318" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="347" startPosition="0" endLine="353" endPosition="0">
+    <scopeInfo nodeId="9160962589444199073" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="0" endLine="341" endPosition="0">
       <varInfo nodeId="9160962589444199073" varName="editorContext" />
       <varInfo nodeId="9160962589444199073" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3373821274546505848" fileName="MtlTemplate_Editor.java" startLine="416" startPosition="0" endLine="422" endPosition="0">
+    <scopeInfo nodeId="3373821274546505848" fileName="MtlTemplate_Editor.java" startLine="404" startPosition="0" endLine="410" endPosition="0">
       <varInfo nodeId="3373821274546505851" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="430" startPosition="0" endLine="436" endPosition="0">
+    <scopeInfo nodeId="212212067812118884" fileName="MtlTemplate_Editor.java" startLine="418" startPosition="0" endLine="424" endPosition="0">
       <varInfo nodeId="212212067812118884" varName="editorContext" />
       <varInfo nodeId="212212067812118884" varName="node" />
     </scopeInfo>
@@ -686,7 +686,7 @@
       <varInfo nodeId="1163325315882426171" varName="editorCell" />
       <varInfo nodeId="1163325315882426171" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="336" startPosition="96" endLine="343" endPosition="9" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="324" startPosition="96" endLine="331" endPosition="9" />
     <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="178" startPosition="96" endLine="186" endPosition="9" />
     <scopeInfo nodeId="212212067812118807" fileName="MtlTemplate_Editor.java" startLine="214" startPosition="87" endLine="222" endPosition="22">
       <varInfo nodeId="212212067812118807" varName="editorCell" />
@@ -700,7 +700,7 @@
       <varInfo nodeId="8148155863335690826" varName="editorCell" />
       <varInfo nodeId="8148155863335690826" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3373821274546497083" fileName="MtlTemplate_Editor.java" startLine="414" startPosition="44" endLine="422" endPosition="10" />
+    <scopeInfo nodeId="3373821274546497083" fileName="MtlTemplate_Editor.java" startLine="402" startPosition="44" endLine="410" endPosition="10" />
     <scopeInfo nodeId="212212067812118790" fileName="MtlTemplate_Editor.java" startLine="69" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="212212067812118790" varName="editorContext" />
       <varInfo nodeId="212212067812118790" varName="node" />
@@ -725,8 +725,8 @@
       <varInfo nodeId="1163325315882426182" varName="root" />
       <varInfo nodeId="1163325315882426213" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="132" endLine="344" endPosition="7" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="92" endLine="385" endPosition="22">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="323" startPosition="132" endLine="332" endPosition="7" />
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="364" startPosition="92" endLine="373" endPosition="22">
       <varInfo nodeId="212212067812118786" varName="alternationCondition" />
       <varInfo nodeId="212212067812118786" varName="editorCell" />
     </scopeInfo>
@@ -747,23 +747,28 @@
       <varInfo nodeId="8148155863335690826" varName="editorContext" />
       <varInfo nodeId="8148155863335690826" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="363" startPosition="89" endLine="373" endPosition="22">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="283" startPosition="90" endLine="293" endPosition="22">
+      <varInfo nodeId="212212067812118786" varName="editorCell" />
+      <varInfo nodeId="212212067812118786" varName="handler" />
+      <varInfo nodeId="212212067812118786" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="351" startPosition="89" endLine="361" endPosition="22">
       <varInfo nodeId="212212067812118786" varName="editorCell" />
       <varInfo nodeId="212212067812118786" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="414" startPosition="0" endLine="424" endPosition="0" />
+    <scopeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="402" startPosition="0" endLine="412" endPosition="0" />
     <scopeInfo nodeId="1016170791824067888" fileName="MtlTemplate_Editor.java" startLine="99" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1016170791824067888" varName="editorContext" />
       <varInfo nodeId="1016170791824067888" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="237" startPosition="0" endLine="248" endPosition="0" />
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="335" startPosition="0" endLine="346" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="323" startPosition="0" endLine="334" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
       <varInfo nodeId="212212067812118786" varName="elementCell" />
       <varInfo nodeId="212212067812118786" varName="elementNode" />
       <varInfo nodeId="212212067812118786" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="376" startPosition="0" endLine="387" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="364" startPosition="0" endLine="375" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
       <varInfo nodeId="212212067812118786" varName="node" />
     </scopeInfo>
@@ -782,7 +787,11 @@
       <varInfo nodeId="212212067812118786" varName="nextNode" />
       <varInfo nodeId="212212067812118786" varName="prevNode" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="363" startPosition="0" endLine="375" endPosition="0">
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="283" startPosition="0" endLine="295" endPosition="0">
+      <varInfo nodeId="212212067812118786" varName="editorContext" />
+      <varInfo nodeId="212212067812118786" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="351" startPosition="0" endLine="363" endPosition="0">
       <varInfo nodeId="212212067812118786" varName="editorContext" />
       <varInfo nodeId="212212067812118786" varName="node" />
     </scopeInfo>
@@ -792,7 +801,7 @@
       <varInfo nodeId="212212067812118791" varName="editorCell" />
       <varInfo nodeId="212212067812118791" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="412" startPosition="99" endLine="427" endPosition="22">
+    <scopeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="400" startPosition="99" endLine="415" endPosition="22">
       <varInfo nodeId="3373821274546497081" varName="editorCell" />
       <varInfo nodeId="3373821274546497081" varName="provider" />
     </scopeInfo>
@@ -806,13 +815,13 @@
       <varInfo nodeId="212212067812118791" varName="editorContext" />
       <varInfo nodeId="212212067812118791" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="392" startPosition="88" endLine="409" endPosition="22">
+    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="380" startPosition="88" endLine="397" endPosition="22">
       <varInfo nodeId="212212067812147834" varName="attributeConcept" />
       <varInfo nodeId="212212067812147834" varName="attributeKind" />
       <varInfo nodeId="212212067812147834" varName="editorCell" />
       <varInfo nodeId="212212067812147834" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="412" startPosition="0" endLine="429" endPosition="0">
+    <scopeInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="400" startPosition="0" endLine="417" endPosition="0">
       <varInfo nodeId="3373821274546497081" varName="editorContext" />
       <varInfo nodeId="3373821274546497081" varName="node" />
     </scopeInfo>
@@ -823,7 +832,7 @@
       <varInfo nodeId="1016170791824067890" varName="editorContext" />
       <varInfo nodeId="1016170791824067890" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="392" startPosition="0" endLine="411" endPosition="0">
+    <scopeInfo nodeId="212212067812147834" fileName="MtlTemplate_Editor.java" startLine="380" startPosition="0" endLine="399" endPosition="0">
       <varInfo nodeId="212212067812147834" varName="editorContext" />
       <varInfo nodeId="212212067812147834" varName="node" />
     </scopeInfo>
@@ -831,28 +840,19 @@
       <varInfo nodeId="212212067812118786" varName="editorContext" />
       <varInfo nodeId="212212067812118786" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="283" startPosition="90" endLine="305" endPosition="22">
-      <varInfo nodeId="212212067812118786" varName="editorCell" />
-      <varInfo nodeId="212212067812118786" varName="handler" />
-      <varInfo nodeId="212212067812118786" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="235" startPosition="112" endLine="258" endPosition="22">
       <varInfo nodeId="1163325315882426173" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="283" startPosition="0" endLine="307" endPosition="0">
-      <varInfo nodeId="212212067812118786" varName="editorContext" />
-      <varInfo nodeId="212212067812118786" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="235" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="1163325315882426173" varName="editorContext" />
       <varInfo nodeId="1163325315882426173" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3373821274546505846" fileName="MtlTemplate_Editor.java" startLine="415" startPosition="19" endLine="422" endPosition="9" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$3" />
-    <unitInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="413" startPosition="40" endLine="424" endPosition="5" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$2" />
+    <unitInfo nodeId="3373821274546505846" fileName="MtlTemplate_Editor.java" startLine="403" startPosition="19" endLine="410" endPosition="9" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$3" />
+    <unitInfo nodeId="3373821274546497081" fileName="MtlTemplate_Editor.java" startLine="401" startPosition="40" endLine="412" endPosition="5" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$2" />
     <unitInfo nodeId="1163325315882426173" fileName="MtlTemplate_Editor.java" startLine="236" startPosition="83" endLine="255" endPosition="5" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$1" />
-    <unitInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="308" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$varsListHandler_c4w2e_l0" />
+    <unitInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="296" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$varsListHandler_c4w2e_l0" />
     <unitInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="150" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor$parametersListHandler_c4w2e_f0" />
-    <unitInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="43" startPosition="0" endLine="437" endPosition="0" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor" />
+    <unitInfo nodeId="212212067812118786" fileName="MtlTemplate_Editor.java" startLine="43" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.core.template.editor.MtlTemplate_Editor" />
   </root>
   <root nodeRef="r:14a2d6d2-3f0c-49a8-b49d-696a546fe368(jetbrains.mps.core.template.editor)/212212067812118828">
     <nodeInfo nodeId="212212067812118828" fileName="MtlBuilder_Editor.java" startLine="32" startPosition="79" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1802,40 +1802,40 @@
     <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="52" startPosition="33" endLine="53" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="92" endLine="65" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="65" startPosition="84" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="66" startPosition="31" endLine="67" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="67" startPosition="44" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="68" startPosition="28" endLine="69" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="69" startPosition="60" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="71" startPosition="41" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="72" startPosition="42" endLine="73" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="74" startPosition="7" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="75" startPosition="36" endLine="76" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="76" startPosition="54" endLine="77" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="77" startPosition="42" endLine="78" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="78" startPosition="75" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="79" startPosition="59" endLine="80" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="81" startPosition="37" endLine="82" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="82" startPosition="74" endLine="83" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="83" startPosition="80" endLine="84" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="85" startPosition="12" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="92" endLine="65" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="65" startPosition="84" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="66" startPosition="31" endLine="67" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="67" startPosition="44" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="68" startPosition="28" endLine="69" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="69" startPosition="60" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="71" startPosition="41" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="72" startPosition="42" endLine="73" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="74" startPosition="7" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="75" startPosition="36" endLine="76" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="76" startPosition="54" endLine="77" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="77" startPosition="42" endLine="78" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="78" startPosition="75" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="79" startPosition="59" endLine="80" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="81" startPosition="37" endLine="82" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="82" startPosition="74" endLine="83" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="83" startPosition="80" endLine="84" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="85" startPosition="12" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_vdofcq_a0a#()V" />
     <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="70" startPosition="44" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="70" startPosition="44" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="42" startPosition="59" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="80" startPosition="61" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="80" startPosition="61" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_vdofcq_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="33" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_vdofcq_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_vdofcq_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_vdofcq_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
     <scopeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="28" startPosition="28" endLine="29" endPosition="80" />
     <scopeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="52" startPosition="33" endLine="53" endPosition="14" />
     <scopeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" />
     <scopeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="60" startPosition="81" endLine="61" endPosition="66" />
-    <scopeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="71" startPosition="41" endLine="73" endPosition="38" />
+    <scopeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="71" startPosition="41" endLine="73" endPosition="38" />
     <scopeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="4273915927700610138" varName="editorContext" />
       <varInfo nodeId="4273915927700610138" varName="node" />
@@ -1852,9 +1852,9 @@
       <varInfo nodeId="6601450967974145124" varName="editorContext" />
       <varInfo nodeId="6601450967974145124" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="81" startPosition="37" endLine="84" endPosition="107">
-      <varInfo nodeId="6601450967974145124" varName="manager" />
-      <varInfo nodeId="6601450967974145124" varName="opContext" />
+    <scopeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="81" startPosition="37" endLine="84" endPosition="107">
+      <varInfo nodeId="6601450967974145125" varName="manager" />
+      <varInfo nodeId="6601450967974145125" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="25" startPosition="89" endLine="30" endPosition="22">
       <varInfo nodeId="4273915927700610138" varName="editorCell" />
@@ -1873,16 +1873,16 @@
       <varInfo nodeId="4273915927700610138" varName="editorContext" />
       <varInfo nodeId="4273915927700610138" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="92" endLine="86" endPosition="24">
-      <varInfo nodeId="6601450967974145124" varName="attributeConcept" />
-      <varInfo nodeId="6601450967974145124" varName="attributeKind" />
-      <varInfo nodeId="6601450967974145124" varName="editorCell" />
-      <varInfo nodeId="6601450967974145124" varName="provider" />
-      <varInfo nodeId="6601450967974145124" varName="style" />
+    <scopeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="92" endLine="86" endPosition="24">
+      <varInfo nodeId="6601450967974145125" varName="attributeConcept" />
+      <varInfo nodeId="6601450967974145125" varName="attributeKind" />
+      <varInfo nodeId="6601450967974145125" varName="editorCell" />
+      <varInfo nodeId="6601450967974145125" varName="provider" />
+      <varInfo nodeId="6601450967974145125" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="6601450967974145124" varName="editorContext" />
-      <varInfo nodeId="6601450967974145124" varName="node" />
+    <scopeInfo nodeId="6601450967974145125" fileName="MtlNewNodeType_Editor.java" startLine="64" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="6601450967974145125" varName="editorContext" />
+      <varInfo nodeId="6601450967974145125" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="6601450967974145124" fileName="MtlNewNodeType_Editor.java" startLine="51" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.core.template.editor.MtlNewNodeType_Editor$_Inline_vdofcq_a0a" />
     <unitInfo nodeId="4273915927700610138" fileName="MtlNewNodeType_Editor.java" startLine="20" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.core.template.editor.MtlNewNodeType_Editor" />

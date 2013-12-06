@@ -11,7 +11,7 @@ import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.core.smodel.util.ConceptQueryUtil;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
@@ -68,7 +68,7 @@ public class GoToOverridenQuery_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -78,10 +78,7 @@ public class GoToOverridenQuery_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode query = GoToOverridenQuery_Action.this.getConceptQuery(_params);
-      SNode overriddenQuery = ((query != null) ?
-        ConceptQueryUtil.getOverriddenQuery(query) :
-        null
-      );
+      SNode overriddenQuery = ((query != null) ? ConceptQueryUtil.getOverriddenQuery(query) : null);
       if ((overriddenQuery == null)) {
         return;
       }

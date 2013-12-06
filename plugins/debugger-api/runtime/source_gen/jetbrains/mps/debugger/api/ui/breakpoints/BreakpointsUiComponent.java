@@ -123,10 +123,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     SNodeReference rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
-        final SNode rootNode = (editedNode.getModel() == null ?
-          null :
-          editedNode.getContainingRoot()
-        );
+        final SNode rootNode = (editedNode.getModel() == null ? null : editedNode.getContainingRoot());
         return new SNodePointer(rootNode);
       }
     });

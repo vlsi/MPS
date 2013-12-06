@@ -13,8 +13,10 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -87,12 +89,20 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(node);
-      SNode castExpression = _quotation_createNode_3zfq0u_a0b0a(SNodeOperations.copyNode(node), expectedType);
-      SNodeOperations.replaceWithAnother(node, castExpression);
+      SNode parenthesisedCastExpression = _quotation_createNode_3zfq0u_a0b0a(SNodeOperations.copyNode(node), expectedType);
+      SNodeOperations.replaceWithAnother(node, parenthesisedCastExpression);
+
+      SNode castExpression = SNodeOperations.cast(SLinkOperations.getTarget(parenthesisedCastExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.CastExpression");
+      if (PrecedenceUtil.needsParensAroundCastExpression(castExpression)) {
+        SNode expression = SLinkOperations.getTarget(castExpression, "expression", true);
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SLinkOperations.setTarget(result, "expression", expression, true);
+      }
+
       if (expectedType != null) {
-        SelectionUtil.selectNode(editorContext, castExpression);
+        SelectionUtil.selectNode(editorContext, parenthesisedCastExpression);
       } else {
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.CastExpression"), "leftParen", -1);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, castExpression, "leftParen", -1);
       }
     }
 

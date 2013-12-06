@@ -12,7 +12,7 @@
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="50" startPosition="45" endLine="51" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="52" startPosition="7" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="58" startPosition="53" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="62" startPosition="62" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="66" startPosition="59" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -34,7 +34,7 @@
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="57" startPosition="95" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="61" startPosition="89" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="61" startPosition="87" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="65" startPosition="84" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="69" startPosition="107" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7711023363876674047" fileName="ShowNodeMessages_Action.java" startLine="73" startPosition="86" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

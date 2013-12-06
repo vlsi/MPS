@@ -108,7 +108,7 @@ public class ShowImplementationComponent extends JPanel {
     showSource.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0)), this);
     group.add(showSource);
 
-    showSource = new ShowSourceAction("Show Source", Actions.ShowSource, false);
+    showSource = new ShowSourceAction("Show Source", Actions.ShowViewer, false); //TODO: choose better icon
     showSource.registerCustomShortcutSet(new CompositeShortcutSet(CommonShortcuts.getViewSource(), CommonShortcuts.CTRL_ENTER), this);
     group.add(showSource);
 

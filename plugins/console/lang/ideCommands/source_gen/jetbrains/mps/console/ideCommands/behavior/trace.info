@@ -148,16 +148,16 @@
     <nodeInfo nodeId="8228751877663833172" fileName="ClickableGenerator_Behavior.java" startLine="91" startPosition="7" endLine="92" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7444767914051669150" fileName="ClickableGenerator_Behavior.java" startLine="92" startPosition="195" endLine="93" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4263252858386477661" fileName="ClickableGenerator_Behavior.java" startLine="96" startPosition="25" endLine="97" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3894227536042410673" fileName="ClickableGenerator_Behavior.java" startLine="102" startPosition="80" endLine="103" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3894227536042410673" fileName="ClickableGenerator_Behavior.java" startLine="102" startPosition="80" endLine="103" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3894227536042463370" fileName="ClickableGenerator_Behavior.java" startLine="107" startPosition="36" endLine="108" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3894227536042463370" fileName="ClickableGenerator_Behavior.java" startLine="109" startPosition="5" endLine="110" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3894227536042459065" fileName="ClickableGenerator_Behavior.java" startLine="113" startPosition="60" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3894227536042459065" fileName="ClickableGenerator_Behavior.java" startLine="113" startPosition="55" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3894227536041893272" fileName="ClickableGenerator_Behavior.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3894227536043450861" fileName="ClickableGenerator_Behavior.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/ui/persistence/Tab;)Z" />
     <nodeInfo nodeId="3894227536043500330" fileName="ClickableGenerator_Behavior.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/ui/persistence/Tab;)V" />
     <nodeInfo nodeId="3894227536041893272" fileName="ClickableGenerator_Behavior.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3894227536042463370" fileName="ClickableGenerator_Behavior.java" startLine="106" startPosition="98" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3894227536042459065" fileName="ClickableGenerator_Behavior.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_cte1s_a0a0c#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3894227536042459065" fileName="ClickableGenerator_Behavior.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3894227536043378214" fileName="ClickableGenerator_Behavior.java" startLine="49" startPosition="27" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4263252858386477657" fileName="ClickableGenerator_Behavior.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4263252858386474885" fileName="ClickableGenerator_Behavior.java" startLine="93" startPosition="58" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -180,9 +180,9 @@
     <scopeInfo nodeId="3894227536043450862" fileName="ClickableGenerator_Behavior.java" startLine="84" startPosition="37" endLine="85" endPosition="79" />
     <scopeInfo nodeId="3894227536043500331" fileName="ClickableGenerator_Behavior.java" startLine="88" startPosition="33" endLine="89" endPosition="35" />
     <scopeInfo nodeId="4263252858386477660" fileName="ClickableGenerator_Behavior.java" startLine="96" startPosition="25" endLine="97" endPosition="34" />
-    <scopeInfo nodeId="3894227536041955203" fileName="ClickableGenerator_Behavior.java" startLine="102" startPosition="80" endLine="103" endPosition="87" />
+    <scopeInfo nodeId="3894227536041955203" fileName="ClickableGenerator_Behavior.java" startLine="102" startPosition="80" endLine="103" endPosition="81" />
     <scopeInfo nodeId="3894227536042463370" fileName="ClickableGenerator_Behavior.java" startLine="107" startPosition="36" endLine="108" endPosition="47" />
-    <scopeInfo nodeId="3894227536042459065" fileName="ClickableGenerator_Behavior.java" startLine="113" startPosition="60" endLine="114" endPosition="43" />
+    <scopeInfo nodeId="3894227536042459065" fileName="ClickableGenerator_Behavior.java" startLine="113" startPosition="55" endLine="114" endPosition="43" />
     <scopeInfo nodeId="3894227536041893272" fileName="ClickableGenerator_Behavior.java" startLine="25" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="3894227536041893272" varName="thisNode" />
     </scopeInfo>

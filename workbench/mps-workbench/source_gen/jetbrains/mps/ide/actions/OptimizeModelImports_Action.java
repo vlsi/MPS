@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.OptimizeImportsHelper;
@@ -69,7 +69,7 @@ public class OptimizeModelImports_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("models") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
@@ -89,10 +89,7 @@ public class OptimizeModelImports_Action extends BaseAction {
           SModelRepository.getInstance().saveAll();
         }
       });
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.value.equals("") ?
-        "Nothing to optimize" :
-        report.value
-      ), "Optimize Imports", Messages.getInformationIcon());
+      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.value.equals("") ? "Nothing to optimize" : report.value), "Optimize Imports", Messages.getInformationIcon());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);

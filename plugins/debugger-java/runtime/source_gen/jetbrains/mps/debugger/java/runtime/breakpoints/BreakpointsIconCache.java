@@ -163,40 +163,16 @@ public class BreakpointsIconCache implements ProjectComponent {
   }
 
   private Icon getIconInternal(JavaBreakpoint breakpoint, @Nullable DebugSession session) {
-    String warning = (session == null ?
-      null :
-      session.getEventsProcessor().getRequestManager().getWarning(breakpoint)
-    );
+    String warning = (session == null ? null : session.getEventsProcessor().getRequestManager().getWarning(breakpoint));
     switch (breakpoint.getKind()) {
       case EXCEPTION_BREAKPOINT:
-        return (breakpoint.isEnabled() ?
-          jetbrains.mps.debugger.java.runtime.ui.Icons.EXCEPTION_BREAKPOINT :
-          jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_EXCEPTION_BREAKPOINT
-        );
+        return (breakpoint.isEnabled() ? jetbrains.mps.debugger.java.runtime.ui.Icons.EXCEPTION_BREAKPOINT : jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_EXCEPTION_BREAKPOINT);
       case LINE_BREAKPOINT:
-        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ?
-          ((breakpoint.isEnabled() ?
-            Icons.BREAKPOINT :
-            Icons.DISABLED_BREAKPOINT
-          )) :
-          Icons.INV_BREAKPOINT
-        );
+        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ? ((breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT)) : Icons.INV_BREAKPOINT);
       case METHOD_BREAKPOINT:
-        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ?
-          ((breakpoint.isEnabled() ?
-            jetbrains.mps.debugger.java.runtime.ui.Icons.METHOD_BREAKPOINT :
-            jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_METHOD_BREAKPOINT
-          )) :
-          jetbrains.mps.debugger.java.runtime.ui.Icons.INVALID_METHOD_BREAKPOINT
-        );
+        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ? ((breakpoint.isEnabled() ? jetbrains.mps.debugger.java.runtime.ui.Icons.METHOD_BREAKPOINT : jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_METHOD_BREAKPOINT)) : jetbrains.mps.debugger.java.runtime.ui.Icons.INVALID_METHOD_BREAKPOINT);
       case FIELD_BREAKPOINT:
-        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ?
-          ((breakpoint.isEnabled() ?
-            jetbrains.mps.debugger.java.runtime.ui.Icons.FIELD_BREAKPOINT :
-            jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_FIELD_BREAKPOINT
-          )) :
-          jetbrains.mps.debugger.java.runtime.ui.Icons.INVALID_FIELD_BREAKPOINT
-        );
+        return (breakpoint.isValid() && (warning == null || warning.length() == 0) ? ((breakpoint.isEnabled() ? jetbrains.mps.debugger.java.runtime.ui.Icons.FIELD_BREAKPOINT : jetbrains.mps.debugger.java.runtime.ui.Icons.DISABLED_FIELD_BREAKPOINT)) : jetbrains.mps.debugger.java.runtime.ui.Icons.INVALID_FIELD_BREAKPOINT);
       default:
     }
     return null;

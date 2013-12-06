@@ -214,10 +214,7 @@ public class ChangesManagerTest {
         final Wrappers._T<FileStatusListener> listener = new Wrappers._T<FileStatusListener>();
         final _FunctionTypes._void_P0_E0 stopIfNeeded = new _FunctionTypes._void_P0_E0() {
           public void invoke() {
-            if ((expectedFileStatus == null ?
-              statusBefore != myFileStatusManager.getStatus(file) :
-              expectedFileStatus == myFileStatusManager.getStatus(file)
-            )) {
+            if ((expectedFileStatus == null ? statusBefore != myFileStatusManager.getStatus(file) : expectedFileStatus == myFileStatusManager.getStatus(file))) {
               myFileStatusManager.removeFileStatusListener(listener.value);
               // Wait until changes manager is notified about changed file status 
               try {
@@ -309,10 +306,7 @@ public class ChangesManagerTest {
           String simpleName = NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(r.getModel())) + "." + r.getName();
           FileStatus expectedStatus = MapSequence.fromMap(myExpectedFileStatuses).get(simpleName);
           FileStatus actualStatus = fsm.getStatus(r);
-          actualStatus = (FileStatus.NOT_CHANGED == actualStatus ?
-            null :
-            actualStatus
-          );
+          actualStatus = (FileStatus.NOT_CHANGED == actualStatus ? null : actualStatus);
           Assert.assertSame(expectedStatus, actualStatus);
         }
       }
@@ -511,10 +505,7 @@ public class ChangesManagerTest {
         public void run() {
           SNode node = t.invoke();
           assert node == null || SNodeOperations.isRoot(node);
-          ListSequence.fromList(affectedNodePointers).addElement((node == null ?
-            null :
-            new SNodePointer(node)
-          ));
+          ListSequence.fromList(affectedNodePointers).addElement((node == null ? null : new SNodePointer(node)));
         }
       });
       waitAndCheck(diff);

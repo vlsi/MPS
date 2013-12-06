@@ -52,7 +52,7 @@ public abstract class StubModelDescriptors {
 
   private void collectDescriptors(String path, String prefix, _FunctionTypes._return_P1_E0<? extends PathItem, ? super String> getPathItem, Set<BaseStubModelDescriptor> result) {
     PathItem pi = getPathItem.invoke(path);
-    for (String subpkg : ListSequence.fromList(pi.subpackages(prefix))) {
+    for (String subpkg : pi.subpackages(prefix)) {
       if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
         SModelReference smref = smodelRefWithId(subpkg);
         SModel descById = SModelRepository.getInstance().getModelDescriptor(smref);
@@ -88,14 +88,8 @@ public abstract class StubModelDescriptors {
   public SModelReference javaStubRef(String pkg) {
     String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pkg, stereo).toString(), null);
-    SModelReference mr = (models.isEmpty() ?
-      null :
-      models.iterator().next()
-    );
-    SModuleReference moduleRef = (mr == null ?
-      null :
-      SModelRepository.getInstance().getModelDescriptor(mr).getModule().getModuleReference()
-    );
+    SModelReference mr = (models.isEmpty() ? null : models.iterator().next());
+    SModuleReference moduleRef = (mr == null ? null : SModelRepository.getInstance().getModelDescriptor(mr).getModule().getModuleReference());
 
     String mfq = "MPS.Workbench";
     String muid = "86441d7a-e194-42da-81a5-2161ec62a379";

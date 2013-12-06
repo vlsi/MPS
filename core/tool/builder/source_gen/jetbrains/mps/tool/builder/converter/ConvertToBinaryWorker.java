@@ -42,10 +42,7 @@ public class ConvertToBinaryWorker {
   private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     try {
-      DefaultSModel model = (stripImplementation ?
-        ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) :
-        ModelPersistence.readModel(new FileDataSource(source), false)
-      );
+      DefaultSModel model = (stripImplementation ? ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) : ModelPersistence.readModel(new FileDataSource(source), false));
       if (model.getSModelHeader().getPersistenceVersion() < ModelPersistence.LAST_VERSION) {
         throw new IOException("cannot convert " + sourceFile + ": model persistence is too old, please upgrade");
       }

@@ -104,10 +104,7 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
                     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "plugin", false), "id");
                   }
                 });
-                return ((text == null || text.length() == 0) ?
-                  super.calculatePresentableTextInternal() :
-                  text
-                );
+                return ((text == null || text.length() == 0) ? super.calculatePresentableTextInternal() : text);
               }
             };
           }

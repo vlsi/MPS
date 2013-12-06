@@ -16,7 +16,7 @@ public class KeyValueCommandPart extends AbstractCommandPart implements CommandP
   }
 
   public KeyValueCommandPart(@Nullable String key, @Nullable File value) {
-    if ((key != null && key.length() > 0) && (value != null) && (isNotEmpty_4tiyva_a0a0a0b(value.getAbsolutePath()))) {
+    if ((key != null && key.length() > 0) && (value != null) && (isNotEmptyString(value.getAbsolutePath()))) {
       addCommands(key, value.getAbsolutePath());
     }
   }
@@ -31,7 +31,7 @@ public class KeyValueCommandPart extends AbstractCommandPart implements CommandP
     }
   }
 
-  public static boolean isNotEmpty_4tiyva_a0a0a0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

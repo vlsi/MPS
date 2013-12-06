@@ -33,6 +33,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.editor.runtime.cells.CellIdManager;
 
 public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -144,6 +146,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
         SNodeFactoryOperations.setNewChild(node, "compositePart", "jetbrains.mps.build.structure.BuildCompositePath");
       }
       SPropertyOperations.set(SLinkOperations.getTarget(node, "compositePart", true), "head", parameterObject);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, "compositePart", true), CellIdManager.createPropertyId("head"), -1);
     }
 
     public boolean isReferentPresentation() {

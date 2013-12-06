@@ -213,10 +213,7 @@ with_allThrows:
       }
     }
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true);
-    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).isNotEmpty() ?
-      BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), closure, "virtual_getLastStatement_1239354409446", new Object[]{}) :
-      null
-    );
+    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).isNotEmpty() ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), closure, "virtual_getLastStatement_1239354409446", new Object[]{}) : null);
     boolean returnsValue = !(ListSequence.fromList(allRets).isEmpty());
     boolean returnsFromLast = !(isVoid) && SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, closure, "virtual_isExecuteSynchronous_1230212745736", new Object[]{}));
     boolean yieldsValue = !(ListSequence.fromList(allYlds).isEmpty());

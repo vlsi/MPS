@@ -12,7 +12,7 @@ public class ShortType_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
+  public static SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
     return _quotation_createNode_gsl4dp_a0a0();
   }
 

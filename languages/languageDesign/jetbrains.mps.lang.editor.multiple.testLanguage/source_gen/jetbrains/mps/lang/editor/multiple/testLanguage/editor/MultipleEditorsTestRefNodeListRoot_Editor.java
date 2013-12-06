@@ -525,10 +525,7 @@ public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor
     }
 
     private Iterable<String> getEditorHints_or70v3_a3m2a(SNode node, EditorContext editorContext, IScope scope) {
-      return (SPropertyOperations.getBoolean(node, "projectAsCompact") ?
-        Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") :
-        Collections.<String>emptyList()
-      );
+      return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
     }
 
     private Iterable<String> getEditorHints_or70v3_a3m2a_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -536,10 +533,7 @@ public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor
       checkParametersAvailability &= scope != null;
       checkParametersAvailability &= node != null;
 
-      return (SPropertyOperations.getBoolean(node, "projectAsCompact") ?
-        Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") :
-        Collections.<String>emptyList()
-      );
+      return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
     }
   }
 

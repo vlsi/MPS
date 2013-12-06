@@ -174,10 +174,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest4 {
     }
 
     private static boolean eq_p8h609_a0a0l0f2(Object a, Object b) {
-      return (a != null ?
-        a.equals(b) :
-        a == b
-      );
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

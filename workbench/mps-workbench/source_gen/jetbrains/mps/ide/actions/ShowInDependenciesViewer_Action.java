@@ -12,7 +12,7 @@ import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.platform.actions.DependenciesUtil;
 import com.intellij.openapi.project.Project;
@@ -68,7 +68,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -98,9 +98,6 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
   }
 
   private static <T> T as_nkoo1o_a0a0b0a0g(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

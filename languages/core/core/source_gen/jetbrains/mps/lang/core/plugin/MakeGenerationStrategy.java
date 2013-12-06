@@ -22,10 +22,7 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
 
   @Override
   public GenerationDependencies getDependencies(SModel descriptor) {
-    return (isIncremental ?
-      GenerationDependenciesCache.getInstance().get(descriptor) :
-      null
-    );
+    return (isIncremental ? GenerationDependenciesCache.getInstance().get(descriptor) : null);
   }
 
   @Override

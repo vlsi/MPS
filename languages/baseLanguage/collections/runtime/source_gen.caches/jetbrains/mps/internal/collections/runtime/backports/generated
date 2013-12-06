@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="9wpgq72m33ivbbcb9ims67mpp9byuws">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
-  <common hash="7k5flcoywq0z7t4kafqmofagvvmfljg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a9qp6tb2eva1mros70qa0tynlaehi5n" />
+  <common hash="7k5flcoywq0z7t4kafqmofagvvmfljg" dependsOnNodes="true" />
   <source id="6543581031674027297" name="Deque" hash="-c509d8erffchgl1zbcninfcj7nouplf">
     <file name="Deque.java" />
   </source>

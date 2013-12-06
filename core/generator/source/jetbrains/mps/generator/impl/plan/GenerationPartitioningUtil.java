@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -220,9 +220,11 @@ public class GenerationPartitioningUtil {
       final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelUID);
       String modelName = moreDetails ? SModelStereotype.withoutStereotype(modelReference.getModelName()) : NameUtil.shortNameFromLongName(
           SModelStereotype.withoutStereotype(modelReference.getModelName()));
-      String s = modelName + ".";
+      StringBuilder sb = new StringBuilder();
+      sb.append(modelName);
+      sb.append('.');
       if (nodeID.equals("*")) {
-        return s + "*";
+        return sb.append('*').toString();
       } else {
         SModel refModel = SModelRepository.getInstance().getModelDescriptor(modelReference);
         if (refModel != null) {
@@ -230,11 +232,11 @@ public class GenerationPartitioningUtil {
           assert nodeId != null : "wrong node id string";
           SNode mappingConfig = refModel.getNode(nodeId);
           if (mappingConfig != null) {
-            return s + mappingConfig.getName();
+            return sb.append(mappingConfig.getName()).toString();
           }
         }
       }
-      return s + nodeID + "!unresolved!";
+      return sb.append(nodeID).append("!unresolved!").toString();
     }
 
     if (mappingRef instanceof MappingConfig_ExternalRef) {

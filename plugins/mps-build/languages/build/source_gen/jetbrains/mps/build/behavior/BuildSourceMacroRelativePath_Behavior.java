@@ -17,9 +17,6 @@ public class BuildSourceMacroRelativePath_Behavior {
 
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
     String tail = BuildRelativePath_Behavior.call_getPathTail_1258644073389171001(thisNode);
-    return ((tail == null || tail.length() == 0) ?
-      "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}" :
-      "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}/" + tail
-    );
+    return ((tail == null || tail.length() == 0) ? "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}" : "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}/" + tail);
   }
 }

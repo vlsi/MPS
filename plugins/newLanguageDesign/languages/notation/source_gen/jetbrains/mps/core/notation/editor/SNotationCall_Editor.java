@@ -43,18 +43,9 @@ public class SNotationCall_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         NotationContext context = BehaviorReflection.invokeVirtual(NotationContext.class, node, "virtual_getContext_8632884680339357870", new Object[]{});
-        SNode cnode = (context != null ?
-          context.getNode() :
-          null
-        );
-        String idSuffix = ((node != null) && SPropertyOperations.getString(node, "id") != null ?
-          "." + SPropertyOperations.getString(node, "id") :
-          ""
-        );
-        return ((SNodeOperations.isInstanceOf(cnode, "jetbrains.mps.lang.core.structure.INamedConcept") ?
-          SPropertyOperations.getString(SNodeOperations.cast(cnode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
-          "<unknown>"
-        )) + idSuffix;
+        SNode cnode = (context != null ? context.getNode() : null);
+        String idSuffix = ((node != null) && SPropertyOperations.getString(node, "id") != null ? "." + SPropertyOperations.getString(node, "id") : "");
+        return ((SNodeOperations.isInstanceOf(cnode, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(cnode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : "<unknown>")) + idSuffix;
       }
 
       public void setText(String s) {
@@ -68,13 +59,7 @@ public class SNotationCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_401fjg_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
-    style.set(StyleAttributes.NAVIGATABLE_NODE, SNotationCall_Editor._StyleParameter_QueryFunction_401fjg_a1a0((editorCell == null ?
-      null :
-      editorCell.getContext()
-    ), (editorCell == null ?
-      null :
-      editorCell.getSNode()
-    )));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, SNotationCall_Editor._StyleParameter_QueryFunction_401fjg_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

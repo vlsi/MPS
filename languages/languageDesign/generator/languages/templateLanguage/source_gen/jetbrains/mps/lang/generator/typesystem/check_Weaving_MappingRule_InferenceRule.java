@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,7 +21,7 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
 
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
-      SNode template = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), "template", false);
+      SNode template = TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(SNodeOperations.cast(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
       boolean useRootTemplateFragment = false;
       for (SNode child : SNodeOperations.getChildren(SLinkOperations.getTarget(template, "contentNode", true))) {
         if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.generator.structure.TemplateFragment")) {

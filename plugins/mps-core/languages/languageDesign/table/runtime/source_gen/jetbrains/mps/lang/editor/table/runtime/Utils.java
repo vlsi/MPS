@@ -13,7 +13,7 @@ public class Utils {
 
   public static void insertElementAt(List<SNode> list, SNode newElement, int index) {
     assert index >= 0 && index <= ListSequence.fromList(list).count();
-    if (ListSequence.fromList(list).isEmpty() || index == (int) ListSequence.fromList(list).count()) {
+    if (ListSequence.fromList(list).isEmpty() || index == ListSequence.fromList(list).count()) {
       ListSequence.fromList(list).addElement(newElement);
     } else {
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(list).getElement(index), newElement);

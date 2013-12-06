@@ -22,10 +22,7 @@ public class typeof_GenerationContextOp_VarRef_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = varRef;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2721957369897647157", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2721957369897647154", true), (SNode) ((SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "varmacro", false), "type", true) != null) ?
-        SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "varmacro", false), "type", true) :
-        _quotation_createNode_47swkr_a0a0a1()
-      ), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2721957369897647154", true), (SNode) (((SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "varmacro", false), "type", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "varmacro", false), "type", true) : _quotation_createNode_47swkr_a0a0a1())), _info_12389875345);
     }
   }
 

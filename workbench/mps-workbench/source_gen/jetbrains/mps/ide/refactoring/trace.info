@@ -691,23 +691,23 @@
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/5101259057297948769">
     <nodeInfo nodeId="5101259057297974332" fileName="OptionDialog.java" startLine="13" startPosition="98" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5101259057297974358" fileName="OptionDialog.java" startLine="18" startPosition="8" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5101259057297974340" fileName="OptionDialog.java" startLine="14" startPosition="47" endLine="15" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5101259057297974358" fileName="OptionDialog.java" startLine="15" startPosition="207" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5101259057297948771" fileName="OptionDialog.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptionDialog#()V" />
-    <nodeInfo nodeId="5101259057297974340" fileName="OptionDialog.java" startLine="14" startPosition="47" endLine="18" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5101259057297974329" fileName="OptionDialog.java" startLine="13" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDialog#(Ljetbrains/mps/project/Project;Ljava/lang/String;Ljava/lang/String;Z)I" />
+    <nodeInfo nodeId="5101259057297974329" fileName="OptionDialog.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showDialog#(Ljetbrains/mps/project/Project;Ljava/lang/String;Ljava/lang/String;Z)I" />
     <scopeInfo nodeId="5101259057297948774" fileName="OptionDialog.java" startLine="10" startPosition="25" endLine="10" endPosition="25" />
     <scopeInfo nodeId="5101259057297948771" fileName="OptionDialog.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="5101259057297974331" fileName="OptionDialog.java" startLine="13" startPosition="98" endLine="19" endPosition="18">
+    <scopeInfo nodeId="5101259057297974331" fileName="OptionDialog.java" startLine="13" startPosition="98" endLine="16" endPosition="18">
       <varInfo nodeId="5101259057297974341" varName="option" />
       <varInfo nodeId="5101259057297974333" varName="options" />
     </scopeInfo>
-    <scopeInfo nodeId="5101259057297974329" fileName="OptionDialog.java" startLine="13" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="5101259057297974329" fileName="OptionDialog.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="5101259057297974366" varName="initialValue" />
       <varInfo nodeId="5101259057297974360" varName="project" />
       <varInfo nodeId="5101259057297974362" varName="text" />
       <varInfo nodeId="5101259057297974364" varName="title" />
     </scopeInfo>
-    <unitInfo nodeId="5101259057297948769" fileName="OptionDialog.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.refactoring.OptionDialog" />
+    <unitInfo nodeId="5101259057297948769" fileName="OptionDialog.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ide.refactoring.OptionDialog" />
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/5814231631271803738">
     <nodeInfo nodeId="5814231631271810184" fileName="RefactoringAccessImpl.java" startLine="24" startPosition="31" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

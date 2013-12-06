@@ -19,6 +19,7 @@ import com.intellij.openapi.roots.impl.libraries.LibraryTableImplUtil;
 import com.intellij.project.model.JpsModelManager;
 import com.intellij.project.model.impl.module.JpsOrderEntryFactory;
 import com.intellij.project.model.impl.module.dependencies.JpsLibraryOrderEntry;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import org.jetbrains.jps.model.java.JpsJavaLibraryType;
@@ -54,7 +55,8 @@ public class ClassStubsJpsModelRootContributor implements JpsModelRootContributo
       for (File root : roots) {
         String path = root.getPath();
         JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot();
-        modelRoot.setPath(path);
+        modelRoot.setContentRoot(path);
+        modelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, path);
         modelRoots.add(modelRoot);
       }
     }

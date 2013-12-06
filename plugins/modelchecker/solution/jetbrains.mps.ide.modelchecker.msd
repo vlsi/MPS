@@ -4,7 +4,9 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/modelchecker/classes" type="java_classes" />
+    <modelRoot contentPath="${mps_home}/plugins/modelchecker" type="java_classes">
+      <sourceRoot location="classes" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="jetbrains.mps.ide.modelchecker" type="ideaPlugin" />

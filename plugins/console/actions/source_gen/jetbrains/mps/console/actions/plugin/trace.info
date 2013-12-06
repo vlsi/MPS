@@ -11,7 +11,7 @@
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="46" startPosition="45" endLine="47" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="48" startPosition="7" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="56" startPosition="5" endLine="57" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="56" startPosition="5" endLine="57" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="58" startPosition="62" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="62" startPosition="60" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -28,7 +28,7 @@
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="53" startPosition="95" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="57" startPosition="89" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="57" startPosition="87" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="61" startPosition="86" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="81" startPosition="27" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="81" startPosition="27" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -109,7 +109,6 @@
     <scopeInfo nodeId="3894227536045060131" fileName="Actions_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="3894227536045060131" fileName="Actions_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.console.actions.plugin.Actions_ApplicationPlugin" />
   </root>
-  <root nodeRef="r:bc997d9f-39f7-40e9-8b56-d20b3073f68f(jetbrains.mps.console.actions.plugin)/4045134570814076822" />
   <root nodeRef="r:bc997d9f-39f7-40e9-8b56-d20b3073f68f(jetbrains.mps.console.actions.plugin)/6359836120039452651">
     <nodeInfo nodeId="6359836120039452651" fileName="TextPreviewGroup_Console_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6359836120039452651" fileName="TextPreviewGroup_Console_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />

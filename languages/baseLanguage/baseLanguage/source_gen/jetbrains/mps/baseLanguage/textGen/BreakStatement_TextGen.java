@@ -23,7 +23,7 @@ public class BreakStatement_TextGen extends SNodeTextGen {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "loopLabelReference", true), "loopLabel", false), "name"));
       this.append(";");
-    } else if (isNotEmpty_e6b90q_a0a2a0(SPropertyOperations.getString(node, "label"))) {
+    } else if (isNotEmptyString(SPropertyOperations.getString(node, "label"))) {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(node, "label"));
       this.append(";");
@@ -47,7 +47,7 @@ public class BreakStatement_TextGen extends SNodeTextGen {
 
   protected static Logger LOG = LogManager.getLogger(BreakStatement_TextGen.class);
 
-  public static boolean isNotEmpty_e6b90q_a0a2a0(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

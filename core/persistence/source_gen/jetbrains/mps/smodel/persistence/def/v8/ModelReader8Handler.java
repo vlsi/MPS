@@ -76,10 +76,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
 
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
-    ModelReader8Handler.ElementHandler current = (myHandlersStack.empty() ?
-      (ModelReader8Handler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    ModelReader8Handler.ElementHandler current = (myHandlersStack.empty() ? (ModelReader8Handler.ElementHandler) null : myHandlersStack.peek());
     if (current != null) {
       current.handleText(myValues.peek(), new String(array, start, len));
     }
@@ -102,10 +99,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    ModelReader8Handler.ElementHandler current = (myHandlersStack.empty() ?
-      (ModelReader8Handler.ElementHandler) null :
-      myHandlersStack.peek()
-    );
+    ModelReader8Handler.ElementHandler current = (myHandlersStack.empty() ? (ModelReader8Handler.ElementHandler) null : myHandlersStack.peek());
     if (current == null) {
       // root 
       current = modelhandler;
@@ -182,7 +176,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldmodel.setPersistenceVersion(8);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper(fieldmodel.getReference());
-      fieldlinkMap = new ModelLinkMap(fieldmodel.getModelDescriptor());
+      fieldlinkMap = new ModelLinkMap(fieldmodel);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -210,10 +204,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("version".equals(name)) {
         int version;
         try {
-          version = (value == null ?
-            -1 :
-            Integer.parseInt(value)
-          );
+          version = (value == null ? -1 : Integer.parseInt(value));
         } catch (NumberFormatException e) {
           version = -1;
         }
@@ -311,10 +302,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private void handleChild_286176397450364112(Object resultObject, Object value) throws SAXException {
       String[] child = (String[]) value;
-      fieldhelper.addImportToModel(fieldmodel, child[0], child[1], (child[2] != null ?
-        Integer.parseInt(child[2]) :
-        -1
-      ), child[3] != null);
+      fieldhelper.addImportToModel(fieldmodel, child[0], child[1], (child[2] != null ? Integer.parseInt(child[2]) : -1), child[3] != null);
     }
 
     private void handleChild_1361478912184551722(Object resultObject, Object value) throws SAXException {
@@ -345,13 +333,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     private boolean validateInternal(ModelLoadResult result) throws SAXException {
       new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
       fieldlinkMap.fillModelEnvironmentInfo();
-      result.setState((fieldhasSkippedNodes ?
-        ((fieldinterfaceOnly ?
-          ModelLoadingState.INTERFACE_LOADED :
-          ModelLoadingState.NO_IMPLEMENTATION
-        )) :
-        ModelLoadingState.FULLY_LOADED
-      ));
+      result.setState((fieldhasSkippedNodes ? ((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.NO_IMPLEMENTATION)) : ModelLoadingState.FULLY_LOADED));
       return true;
     }
   }
@@ -466,10 +448,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         }
       }
       String conceptName = InternUtil.intern(fieldhelper.readType(attrs.getValue("type")));
-      jetbrains.mps.smodel.SNode result = (interfaceNode ?
-        new InterfaceSNode(conceptName) :
-        new jetbrains.mps.smodel.SNode(conceptName)
-      );
+      jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(conceptName) : new jetbrains.mps.smodel.SNode(conceptName));
       fieldlinkMap.addNodeMetainfo(parsed._0(), parsed._1(), (boolean) parsed._2(), result);
       return result;
     }

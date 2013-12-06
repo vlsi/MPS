@@ -11,10 +11,7 @@ public class TestClass {
   public static void ifTest() {
     String nullString = null;
     if (!(nullString.equals("@"))) {
-      String someString = ((nullString == null) ?
-        "null" :
-        "not null"
-      );
+      String someString = ((nullString == null) ? "null" : "not null");
       System.err.println(someString);
       return;
     } else {

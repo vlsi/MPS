@@ -86,14 +86,8 @@ public class MergeConfirmation {
   }
 
   private static int showUnresolvedChangesConfirmation(DialogWrapper dialog, int changes) {
-    String message = String.format("You have %s left. Do you want to resolve %s automatically?", NameUtil.formatNumericalString(changes, "unresolved change"), (changes > 1 ?
-      "them" :
-      "it"
-    ));
-    String title = "Unresolved Change" + ((changes > 1 ?
-      "s" :
-      ""
-    ));
+    String message = String.format("You have %s left. Do you want to resolve %s automatically?", NameUtil.formatNumericalString(changes, "unresolved change"), (changes > 1 ? "them" : "it"));
+    String title = "Unresolved Change" + ((changes > 1 ? "s" : ""));
     int answer = Messages.showYesNoCancelDialog(dialog.getContentPane(), message, title, Messages.getQuestionIcon());
     if (answer == 0) {
       return MergeConfirmation.RESOLVE_AUTOMATICALLY;

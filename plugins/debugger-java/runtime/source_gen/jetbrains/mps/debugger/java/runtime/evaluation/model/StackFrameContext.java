@@ -381,23 +381,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   private static boolean eq_4zsmpx_a0a0a0a0a1a11(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a11(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_4zsmpx_a0c0m(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

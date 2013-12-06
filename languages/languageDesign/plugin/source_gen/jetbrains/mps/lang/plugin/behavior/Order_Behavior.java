@@ -18,7 +18,7 @@ public class Order_Behavior {
 
   public static String call_getGeneratedClassName_3038738109029038654(SNode thisNode) {
     String n;
-    if (isEmpty_tlwj75_a0b0b(SPropertyOperations.getString(thisNode, "name"))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, "name"))) {
       n = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false), "name");
     } else {
       n = SPropertyOperations.getString(thisNode, "name");
@@ -58,7 +58,7 @@ public class Order_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.Order"), callerConceptFqName, "virtual_getOrder_3038738109029048953", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static boolean isEmpty_tlwj75_a0b0b(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

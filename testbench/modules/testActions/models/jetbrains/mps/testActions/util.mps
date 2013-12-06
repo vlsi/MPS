@@ -68,8 +68,8 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mo84.~PluginId%dgetId(java%dlang%dString)%ccom%dintellij%dopenapi%dextensions%dPluginId" resolveInfo="getId" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mo84.~PluginId" resolveInfo="PluginId" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4484885613884918103" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="wlgq.~PluginManager%dCORE_PLUGIN_ID" resolveInfo="CORE_PLUGIN_ID" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="wlgq.~PluginManager" resolveInfo="PluginManager" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="wlgq.~PluginManagerCore%dCORE_PLUGIN_ID" resolveInfo="CORE_PLUGIN_ID" />
               </node>
             </node>
           </node>

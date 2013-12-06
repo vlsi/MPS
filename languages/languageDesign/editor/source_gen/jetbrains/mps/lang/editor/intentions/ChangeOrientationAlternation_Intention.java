@@ -68,10 +68,7 @@ public class ChangeOrientationAlternation_Intention implements IntentionFactory 
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "vertical") ?
-        "Make Horizontal" :
-        "Make Vertical"
-      );
+      return (SPropertyOperations.getBoolean(node, "vertical") ? "Make Horizontal" : "Make Vertical");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

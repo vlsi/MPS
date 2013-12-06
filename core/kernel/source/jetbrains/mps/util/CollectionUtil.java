@@ -152,7 +152,10 @@ public class CollectionUtil {
   }
 
   public static <T> List<T> intersect(Collection<T> collection1, Collection<T> collection2) {
-    ArrayList<T> result = new ArrayList<T>();
+    if (collection2.isEmpty() || collection1.isEmpty()) {
+      return Collections.emptyList();
+    }
+    ArrayList<T> result = new ArrayList<T>(Math.min(collection1.size(), collection2.size()));
     for (T t : collection1) {
       if (collection2.contains(t)) {
         result.add(t);
@@ -162,6 +165,9 @@ public class CollectionUtil {
   }
 
   public static <T> boolean intersects(Collection<T> collection1, Collection<T> collection2) {
+    if (collection2.isEmpty() || collection1.isEmpty()) {
+      return false;
+    }
     for (T t : collection1) {
       if (collection2.contains(t)) {
         return true;

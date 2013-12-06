@@ -40,7 +40,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       return ListSequence.fromList(new ArrayList<String>());
     }
     if (item instanceof String) {
-      if (isNotEmpty_zceotc_a0a0b0d(((String) item))) {
+      if (isNotEmptyString(((String) item))) {
         return ProcessHandlerBuilder.splitCommandInParts((String) item);
       }
     } else if (item instanceof File) {
@@ -66,7 +66,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
 
   protected static Logger LOG = LogManager.getLogger(ListCommandPart.class);
 
-  public static boolean isNotEmpty_zceotc_a0a0b0d(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

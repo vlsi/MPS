@@ -1,204 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:0bb5e892-3294-41a6-b5db-b1bdf3480f53(jetbrains.mps.debugger.java.runtime.ui.breakpoints)/742486944792816688">
-    <nodeInfo nodeId="742486944792820980" fileName="ChooseFromStubsByNameModel.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPossibleNodes" />
-    <nodeInfo nodeId="2034046503361579785" fileName="ChooseFromStubsByNameModel.java" startLine="36" startPosition="25" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579800" fileName="ChooseFromStubsByNameModel.java" startLine="39" startPosition="44" endLine="40" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503361579807" fileName="ChooseFromStubsByNameModel.java" startLine="42" startPosition="11" endLine="43" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579818" fileName="ChooseFromStubsByNameModel.java" startLine="43" startPosition="201" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2034046503361579824" fileName="ChooseFromStubsByNameModel.java" startLine="45" startPosition="73" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579829" fileName="ChooseFromStubsByNameModel.java" startLine="46" startPosition="44" endLine="47" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579842" fileName="ChooseFromStubsByNameModel.java" startLine="48" startPosition="39" endLine="49" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503361579848" fileName="ChooseFromStubsByNameModel.java" startLine="49" startPosition="85" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503361579854" fileName="ChooseFromStubsByNameModel.java" startLine="51" startPosition="11" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792821004" fileName="ChooseFromStubsByNameModel.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="742486944792922422" fileName="ChooseFromStubsByNameModel.java" startLine="60" startPosition="94" endLine="61" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361589103" fileName="ChooseFromStubsByNameModel.java" startLine="63" startPosition="25" endLine="64" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361589112" fileName="ChooseFromStubsByNameModel.java" startLine="64" startPosition="113" endLine="65" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792922438" fileName="ChooseFromStubsByNameModel.java" startLine="67" startPosition="7" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821033" fileName="ChooseFromStubsByNameModel.java" startLine="71" startPosition="77" endLine="72" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821043" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="82" endLine="76" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821054" fileName="ChooseFromStubsByNameModel.java" startLine="77" startPosition="33" endLine="78" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821058" fileName="ChooseFromStubsByNameModel.java" startLine="79" startPosition="5" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821064" fileName="ChooseFromStubsByNameModel.java" startLine="84" startPosition="33" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821071" fileName="ChooseFromStubsByNameModel.java" startLine="89" startPosition="35" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821078" fileName="ChooseFromStubsByNameModel.java" startLine="94" startPosition="38" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821085" fileName="ChooseFromStubsByNameModel.java" startLine="99" startPosition="35" endLine="100" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821092" fileName="ChooseFromStubsByNameModel.java" startLine="104" startPosition="37" endLine="105" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821099" fileName="ChooseFromStubsByNameModel.java" startLine="109" startPosition="45" endLine="110" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821397" fileName="ChooseFromStubsByNameModel.java" startLine="122" startPosition="87" endLine="123" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821407" fileName="ChooseFromStubsByNameModel.java" startLine="124" startPosition="33" endLine="125" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792821135" fileName="ChooseFromStubsByNameModel.java" startLine="129" startPosition="6" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821145" fileName="ChooseFromStubsByNameModel.java" startLine="134" startPosition="51" endLine="135" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821170" fileName="ChooseFromStubsByNameModel.java" startLine="139" startPosition="89" endLine="140" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821185" fileName="ChooseFromStubsByNameModel.java" startLine="141" startPosition="89" endLine="142" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821203" fileName="ChooseFromStubsByNameModel.java" startLine="143" startPosition="99" endLine="144" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792821208" fileName="ChooseFromStubsByNameModel.java" startLine="146" startPosition="5" endLine="147" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821226" fileName="ChooseFromStubsByNameModel.java" startLine="151" startPosition="48" endLine="152" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821237" fileName="ChooseFromStubsByNameModel.java" startLine="157" startPosition="35" endLine="158" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3301954042131472371" fileName="ChooseFromStubsByNameModel.java" startLine="162" startPosition="45" endLine="163" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821250" fileName="ChooseFromStubsByNameModel.java" startLine="163" startPosition="104" endLine="164" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821257" fileName="ChooseFromStubsByNameModel.java" startLine="164" startPosition="37" endLine="165" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821269" fileName="ChooseFromStubsByNameModel.java" startLine="166" startPosition="28" endLine="167" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821271" fileName="ChooseFromStubsByNameModel.java" startLine="168" startPosition="5" endLine="169" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="742486944792821282" fileName="ChooseFromStubsByNameModel.java" startLine="173" startPosition="29" endLine="174" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5091697509633029175" fileName="ChooseFromStubsByNameModel.java" startLine="178" startPosition="38" endLine="179" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503361579798" fileName="ChooseFromStubsByNameModel.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="742486944792821027" fileName="ChooseFromStubsByNameModel.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/NavigationTarget;)Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821049" fileName="ChooseFromStubsByNameModel.java" startLine="76" startPosition="87" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="742486944792821102" fileName="ChooseFromStubsByNameModel.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveInitialCheckBoxState#(Z)V" />
-    <nodeInfo nodeId="742486944792821402" fileName="ChooseFromStubsByNameModel.java" startLine="123" startPosition="47" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="742486944792821190" fileName="ChooseFromStubsByNameModel.java" startLine="142" startPosition="57" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="742486944792821264" fileName="ChooseFromStubsByNameModel.java" startLine="165" startPosition="47" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361579837" fileName="ChooseFromStubsByNameModel.java" startLine="47" startPosition="98" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361589101" fileName="ChooseFromStubsByNameModel.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="742486944792821060" fileName="ChooseFromStubsByNameModel.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPromptText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821067" fileName="ChooseFromStubsByNameModel.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotInMessage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821074" fileName="ChooseFromStubsByNameModel.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotFoundMessage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821081" fileName="ChooseFromStubsByNameModel.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckBoxName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821088" fileName="ChooseFromStubsByNameModel.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckBoxMnemonic#()C" />
-    <nodeInfo nodeId="742486944792821095" fileName="ChooseFromStubsByNameModel.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadInitialCheckBoxState#()Z" />
-    <nodeInfo nodeId="742486944792821138" fileName="ChooseFromStubsByNameModel.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNames#(Z)[Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821220" fileName="ChooseFromStubsByNameModel.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementName#(Ljava/lang/Object;)Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821278" fileName="ChooseFromStubsByNameModel.java" startLine="172" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHelpId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5091697509633029169" fileName="ChooseFromStubsByNameModel.java" startLine="177" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="useMiddleMatching#()Z" />
-    <nodeInfo nodeId="2034046503361579792" fileName="ChooseFromStubsByNameModel.java" startLine="37" startPosition="80" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821232" fileName="ChooseFromStubsByNameModel.java" startLine="155" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSeparators#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503361589097" fileName="ChooseFromStubsByNameModel.java" startLine="61" startPosition="61" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792821388" fileName="ChooseFromStubsByNameModel.java" startLine="121" startPosition="102" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="742486944792821177" fileName="ChooseFromStubsByNameModel.java" startLine="140" startPosition="119" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="742486944792821037" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNamespace#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/NavigationTarget;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503361579819" fileName="ChooseFromStubsByNameModel.java" startLine="44" startPosition="0" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="742486944792821120" fileName="ChooseFromStubsByNameModel.java" startLine="120" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="customize#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)V" />
-    <nodeInfo nodeId="742486944792821010" fileName="ChooseFromStubsByNameModel.java" startLine="60" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidClassifier#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/NavigationTarget;)Z" />
-    <nodeInfo nodeId="742486944792821244" fileName="ChooseFromStubsByNameModel.java" startLine="161" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFullName#(Ljava/lang/Object;)Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792821113" fileName="ChooseFromStubsByNameModel.java" startLine="118" startPosition="49" endLine="129" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821159" fileName="ChooseFromStubsByNameModel.java" startLine="138" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementsByName#(Ljava/lang/String;ZLjava/lang/String;)[Ljava/lang/Object;" />
-    <nodeInfo nodeId="742486944792821109" fileName="ChooseFromStubsByNameModel.java" startLine="117" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRenderer#()Ljavax/swing/ListCellRenderer;" />
-    <nodeInfo nodeId="2034046503361579783" fileName="ChooseFromStubsByNameModel.java" startLine="36" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2034046503361579779" fileName="ChooseFromStubsByNameModel.java" startLine="34" startPosition="53" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="742486944792820991" fileName="ChooseFromStubsByNameModel.java" startLine="34" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChooseFromStubsByNameModel#(Ljetbrains/mps/project/Project;)V" />
-    <scopeInfo nodeId="742486944792821107" fileName="ChooseFromStubsByNameModel.java" startLine="114" startPosition="55" endLine="114" endPosition="55" />
-    <scopeInfo nodeId="2034046503361579799" fileName="ChooseFromStubsByNameModel.java" startLine="39" startPosition="44" endLine="40" endPosition="94" />
-    <scopeInfo nodeId="742486944792821004" fileName="ChooseFromStubsByNameModel.java" startLine="58" startPosition="0" endLine="59" endPosition="0">
+    <nodeInfo nodeId="742486944792820980" fileName="ChooseFromStubsByNameModel.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPossibleNodes" />
+    <nodeInfo nodeId="2034046503361579785" fileName="ChooseFromStubsByNameModel.java" startLine="35" startPosition="25" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361579800" fileName="ChooseFromStubsByNameModel.java" startLine="38" startPosition="44" endLine="39" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2034046503361579807" fileName="ChooseFromStubsByNameModel.java" startLine="41" startPosition="11" endLine="42" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361579818" fileName="ChooseFromStubsByNameModel.java" startLine="42" startPosition="201" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2034046503361579824" fileName="ChooseFromStubsByNameModel.java" startLine="44" startPosition="73" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361579829" fileName="ChooseFromStubsByNameModel.java" startLine="45" startPosition="44" endLine="46" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361579842" fileName="ChooseFromStubsByNameModel.java" startLine="47" startPosition="39" endLine="48" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361579848" fileName="ChooseFromStubsByNameModel.java" startLine="48" startPosition="85" endLine="49" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503361579854" fileName="ChooseFromStubsByNameModel.java" startLine="50" startPosition="11" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792821004" fileName="ChooseFromStubsByNameModel.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="742486944792922422" fileName="ChooseFromStubsByNameModel.java" startLine="59" startPosition="94" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361589103" fileName="ChooseFromStubsByNameModel.java" startLine="62" startPosition="25" endLine="63" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361589112" fileName="ChooseFromStubsByNameModel.java" startLine="63" startPosition="113" endLine="64" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792922438" fileName="ChooseFromStubsByNameModel.java" startLine="66" startPosition="7" endLine="67" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821033" fileName="ChooseFromStubsByNameModel.java" startLine="70" startPosition="77" endLine="71" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821043" fileName="ChooseFromStubsByNameModel.java" startLine="74" startPosition="82" endLine="75" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821054" fileName="ChooseFromStubsByNameModel.java" startLine="76" startPosition="33" endLine="77" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821058" fileName="ChooseFromStubsByNameModel.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821064" fileName="ChooseFromStubsByNameModel.java" startLine="83" startPosition="33" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821071" fileName="ChooseFromStubsByNameModel.java" startLine="88" startPosition="35" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821078" fileName="ChooseFromStubsByNameModel.java" startLine="93" startPosition="38" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821085" fileName="ChooseFromStubsByNameModel.java" startLine="98" startPosition="35" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821092" fileName="ChooseFromStubsByNameModel.java" startLine="103" startPosition="37" endLine="104" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821099" fileName="ChooseFromStubsByNameModel.java" startLine="108" startPosition="45" endLine="109" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821397" fileName="ChooseFromStubsByNameModel.java" startLine="121" startPosition="87" endLine="122" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821407" fileName="ChooseFromStubsByNameModel.java" startLine="123" startPosition="33" endLine="124" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792821135" fileName="ChooseFromStubsByNameModel.java" startLine="128" startPosition="6" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821145" fileName="ChooseFromStubsByNameModel.java" startLine="133" startPosition="51" endLine="134" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821170" fileName="ChooseFromStubsByNameModel.java" startLine="138" startPosition="89" endLine="139" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821185" fileName="ChooseFromStubsByNameModel.java" startLine="140" startPosition="89" endLine="141" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821203" fileName="ChooseFromStubsByNameModel.java" startLine="142" startPosition="99" endLine="143" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792821208" fileName="ChooseFromStubsByNameModel.java" startLine="145" startPosition="5" endLine="146" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821226" fileName="ChooseFromStubsByNameModel.java" startLine="150" startPosition="48" endLine="151" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821237" fileName="ChooseFromStubsByNameModel.java" startLine="156" startPosition="35" endLine="157" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3301954042131472371" fileName="ChooseFromStubsByNameModel.java" startLine="161" startPosition="45" endLine="162" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821250" fileName="ChooseFromStubsByNameModel.java" startLine="162" startPosition="104" endLine="163" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821257" fileName="ChooseFromStubsByNameModel.java" startLine="163" startPosition="37" endLine="164" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821269" fileName="ChooseFromStubsByNameModel.java" startLine="165" startPosition="28" endLine="166" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821271" fileName="ChooseFromStubsByNameModel.java" startLine="167" startPosition="5" endLine="168" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821282" fileName="ChooseFromStubsByNameModel.java" startLine="172" startPosition="29" endLine="173" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5091697509633029175" fileName="ChooseFromStubsByNameModel.java" startLine="177" startPosition="38" endLine="178" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2034046503361579798" fileName="ChooseFromStubsByNameModel.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="742486944792821027" fileName="ChooseFromStubsByNameModel.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/NavigationTarget;)Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821049" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="87" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="742486944792821102" fileName="ChooseFromStubsByNameModel.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveInitialCheckBoxState#(Z)V" />
+    <nodeInfo nodeId="742486944792821402" fileName="ChooseFromStubsByNameModel.java" startLine="122" startPosition="47" endLine="125" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="742486944792821190" fileName="ChooseFromStubsByNameModel.java" startLine="141" startPosition="57" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="742486944792821264" fileName="ChooseFromStubsByNameModel.java" startLine="164" startPosition="47" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361579837" fileName="ChooseFromStubsByNameModel.java" startLine="46" startPosition="98" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2034046503361589101" fileName="ChooseFromStubsByNameModel.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="742486944792821060" fileName="ChooseFromStubsByNameModel.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPromptText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821067" fileName="ChooseFromStubsByNameModel.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotInMessage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821074" fileName="ChooseFromStubsByNameModel.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotFoundMessage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821081" fileName="ChooseFromStubsByNameModel.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckBoxName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821088" fileName="ChooseFromStubsByNameModel.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckBoxMnemonic#()C" />
+    <nodeInfo nodeId="742486944792821095" fileName="ChooseFromStubsByNameModel.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadInitialCheckBoxState#()Z" />
+    <nodeInfo nodeId="742486944792821138" fileName="ChooseFromStubsByNameModel.java" startLine="132" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNames#(Z)[Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821220" fileName="ChooseFromStubsByNameModel.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementName#(Ljava/lang/Object;)Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821278" fileName="ChooseFromStubsByNameModel.java" startLine="171" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHelpId#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5091697509633029169" fileName="ChooseFromStubsByNameModel.java" startLine="176" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="useMiddleMatching#()Z" />
+    <nodeInfo nodeId="2034046503361579792" fileName="ChooseFromStubsByNameModel.java" startLine="36" startPosition="80" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821232" fileName="ChooseFromStubsByNameModel.java" startLine="154" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSeparators#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="2034046503361589097" fileName="ChooseFromStubsByNameModel.java" startLine="60" startPosition="61" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792821388" fileName="ChooseFromStubsByNameModel.java" startLine="120" startPosition="102" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="742486944792821177" fileName="ChooseFromStubsByNameModel.java" startLine="139" startPosition="119" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="742486944792821037" fileName="ChooseFromStubsByNameModel.java" startLine="74" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNamespace#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/NavigationTarget;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2034046503361579819" fileName="ChooseFromStubsByNameModel.java" startLine="43" startPosition="0" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="742486944792821120" fileName="ChooseFromStubsByNameModel.java" startLine="119" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="customize#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)V" />
+    <nodeInfo nodeId="742486944792821010" fileName="ChooseFromStubsByNameModel.java" startLine="59" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidClassifier#(Lorg/jetbrains/mps/openapi/persistence/NavigationParticipant/NavigationTarget;)Z" />
+    <nodeInfo nodeId="742486944792821244" fileName="ChooseFromStubsByNameModel.java" startLine="160" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFullName#(Ljava/lang/Object;)Ljava/lang/String;" />
+    <nodeInfo nodeId="742486944792821113" fileName="ChooseFromStubsByNameModel.java" startLine="117" startPosition="49" endLine="128" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="742486944792821159" fileName="ChooseFromStubsByNameModel.java" startLine="137" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementsByName#(Ljava/lang/String;ZLjava/lang/String;)[Ljava/lang/Object;" />
+    <nodeInfo nodeId="742486944792821109" fileName="ChooseFromStubsByNameModel.java" startLine="116" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRenderer#()Ljavax/swing/ListCellRenderer;" />
+    <nodeInfo nodeId="2034046503361579783" fileName="ChooseFromStubsByNameModel.java" startLine="35" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2034046503361579779" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="53" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="742486944792820991" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChooseFromStubsByNameModel#(Ljetbrains/mps/project/Project;)V" />
+    <scopeInfo nodeId="742486944792821107" fileName="ChooseFromStubsByNameModel.java" startLine="113" startPosition="55" endLine="113" endPosition="55" />
+    <scopeInfo nodeId="2034046503361579799" fileName="ChooseFromStubsByNameModel.java" startLine="38" startPosition="44" endLine="39" endPosition="94" />
+    <scopeInfo nodeId="742486944792821004" fileName="ChooseFromStubsByNameModel.java" startLine="57" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="742486944792821007" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821032" fileName="ChooseFromStubsByNameModel.java" startLine="71" startPosition="77" endLine="72" endPosition="40" />
-    <scopeInfo nodeId="742486944792821053" fileName="ChooseFromStubsByNameModel.java" startLine="77" startPosition="33" endLine="78" endPosition="79" />
-    <scopeInfo nodeId="742486944792821063" fileName="ChooseFromStubsByNameModel.java" startLine="84" startPosition="33" endLine="85" endPosition="16" />
-    <scopeInfo nodeId="742486944792821070" fileName="ChooseFromStubsByNameModel.java" startLine="89" startPosition="35" endLine="90" endPosition="16" />
-    <scopeInfo nodeId="742486944792821077" fileName="ChooseFromStubsByNameModel.java" startLine="94" startPosition="38" endLine="95" endPosition="16" />
-    <scopeInfo nodeId="742486944792821084" fileName="ChooseFromStubsByNameModel.java" startLine="99" startPosition="35" endLine="100" endPosition="16" />
-    <scopeInfo nodeId="742486944792821091" fileName="ChooseFromStubsByNameModel.java" startLine="104" startPosition="37" endLine="105" endPosition="20" />
-    <scopeInfo nodeId="742486944792821098" fileName="ChooseFromStubsByNameModel.java" startLine="109" startPosition="45" endLine="110" endPosition="17" />
-    <scopeInfo nodeId="742486944792821406" fileName="ChooseFromStubsByNameModel.java" startLine="124" startPosition="33" endLine="125" endPosition="30" />
-    <scopeInfo nodeId="742486944792821144" fileName="ChooseFromStubsByNameModel.java" startLine="134" startPosition="51" endLine="135" endPosition="80" />
-    <scopeInfo nodeId="742486944792821202" fileName="ChooseFromStubsByNameModel.java" startLine="143" startPosition="99" endLine="144" endPosition="36" />
-    <scopeInfo nodeId="742486944792821225" fileName="ChooseFromStubsByNameModel.java" startLine="151" startPosition="48" endLine="152" endPosition="69" />
-    <scopeInfo nodeId="742486944792821236" fileName="ChooseFromStubsByNameModel.java" startLine="157" startPosition="35" endLine="158" endPosition="29" />
-    <scopeInfo nodeId="742486944792821268" fileName="ChooseFromStubsByNameModel.java" startLine="166" startPosition="28" endLine="167" endPosition="18" />
-    <scopeInfo nodeId="742486944792821281" fileName="ChooseFromStubsByNameModel.java" startLine="173" startPosition="29" endLine="174" endPosition="16" />
-    <scopeInfo nodeId="5091697509633029173" fileName="ChooseFromStubsByNameModel.java" startLine="178" startPosition="38" endLine="179" endPosition="16" />
-    <scopeInfo nodeId="2034046503361579841" fileName="ChooseFromStubsByNameModel.java" startLine="48" startPosition="39" endLine="50" endPosition="54" />
-    <scopeInfo nodeId="2034046503361589102" fileName="ChooseFromStubsByNameModel.java" startLine="63" startPosition="25" endLine="65" endPosition="67">
+    <scopeInfo nodeId="742486944792821032" fileName="ChooseFromStubsByNameModel.java" startLine="70" startPosition="77" endLine="71" endPosition="40" />
+    <scopeInfo nodeId="742486944792821053" fileName="ChooseFromStubsByNameModel.java" startLine="76" startPosition="33" endLine="77" endPosition="79" />
+    <scopeInfo nodeId="742486944792821063" fileName="ChooseFromStubsByNameModel.java" startLine="83" startPosition="33" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="742486944792821070" fileName="ChooseFromStubsByNameModel.java" startLine="88" startPosition="35" endLine="89" endPosition="16" />
+    <scopeInfo nodeId="742486944792821077" fileName="ChooseFromStubsByNameModel.java" startLine="93" startPosition="38" endLine="94" endPosition="16" />
+    <scopeInfo nodeId="742486944792821084" fileName="ChooseFromStubsByNameModel.java" startLine="98" startPosition="35" endLine="99" endPosition="16" />
+    <scopeInfo nodeId="742486944792821091" fileName="ChooseFromStubsByNameModel.java" startLine="103" startPosition="37" endLine="104" endPosition="20" />
+    <scopeInfo nodeId="742486944792821098" fileName="ChooseFromStubsByNameModel.java" startLine="108" startPosition="45" endLine="109" endPosition="17" />
+    <scopeInfo nodeId="742486944792821406" fileName="ChooseFromStubsByNameModel.java" startLine="123" startPosition="33" endLine="124" endPosition="30" />
+    <scopeInfo nodeId="742486944792821144" fileName="ChooseFromStubsByNameModel.java" startLine="133" startPosition="51" endLine="134" endPosition="80" />
+    <scopeInfo nodeId="742486944792821202" fileName="ChooseFromStubsByNameModel.java" startLine="142" startPosition="99" endLine="143" endPosition="36" />
+    <scopeInfo nodeId="742486944792821225" fileName="ChooseFromStubsByNameModel.java" startLine="150" startPosition="48" endLine="151" endPosition="69" />
+    <scopeInfo nodeId="742486944792821236" fileName="ChooseFromStubsByNameModel.java" startLine="156" startPosition="35" endLine="157" endPosition="29" />
+    <scopeInfo nodeId="742486944792821268" fileName="ChooseFromStubsByNameModel.java" startLine="165" startPosition="28" endLine="166" endPosition="18" />
+    <scopeInfo nodeId="742486944792821281" fileName="ChooseFromStubsByNameModel.java" startLine="172" startPosition="29" endLine="173" endPosition="16" />
+    <scopeInfo nodeId="5091697509633029173" fileName="ChooseFromStubsByNameModel.java" startLine="177" startPosition="38" endLine="178" endPosition="16" />
+    <scopeInfo nodeId="2034046503361579841" fileName="ChooseFromStubsByNameModel.java" startLine="47" startPosition="39" endLine="49" endPosition="54" />
+    <scopeInfo nodeId="2034046503361589102" fileName="ChooseFromStubsByNameModel.java" startLine="62" startPosition="25" endLine="64" endPosition="67">
       <varInfo nodeId="2034046503361589104" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361579798" fileName="ChooseFromStubsByNameModel.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="2034046503361579798" fileName="ChooseFromStubsByNameModel.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="2034046503361579798" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821027" fileName="ChooseFromStubsByNameModel.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="742486944792821027" fileName="ChooseFromStubsByNameModel.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="742486944792821030" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821102" fileName="ChooseFromStubsByNameModel.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="742486944792821102" fileName="ChooseFromStubsByNameModel.java" startLine="112" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="742486944792821105" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361589101" fileName="ChooseFromStubsByNameModel.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="742486944792821060" fileName="ChooseFromStubsByNameModel.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="742486944792821067" fileName="ChooseFromStubsByNameModel.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="742486944792821074" fileName="ChooseFromStubsByNameModel.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="742486944792821081" fileName="ChooseFromStubsByNameModel.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="742486944792821088" fileName="ChooseFromStubsByNameModel.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="742486944792821095" fileName="ChooseFromStubsByNameModel.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="742486944792821396" fileName="ChooseFromStubsByNameModel.java" startLine="122" startPosition="87" endLine="126" endPosition="11">
+    <scopeInfo nodeId="2034046503361589101" fileName="ChooseFromStubsByNameModel.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="742486944792821060" fileName="ChooseFromStubsByNameModel.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="742486944792821067" fileName="ChooseFromStubsByNameModel.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="742486944792821074" fileName="ChooseFromStubsByNameModel.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="742486944792821081" fileName="ChooseFromStubsByNameModel.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="742486944792821088" fileName="ChooseFromStubsByNameModel.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="742486944792821095" fileName="ChooseFromStubsByNameModel.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="742486944792821396" fileName="ChooseFromStubsByNameModel.java" startLine="121" startPosition="87" endLine="125" endPosition="11">
       <varInfo nodeId="742486944792821398" varName="fullName" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821138" fileName="ChooseFromStubsByNameModel.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="742486944792821138" fileName="ChooseFromStubsByNameModel.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="742486944792821142" varName="checkBoxState" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821184" fileName="ChooseFromStubsByNameModel.java" startLine="141" startPosition="89" endLine="145" endPosition="7">
+    <scopeInfo nodeId="742486944792821184" fileName="ChooseFromStubsByNameModel.java" startLine="140" startPosition="89" endLine="144" endPosition="7">
       <varInfo nodeId="742486944792821186" varName="descriptorName" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821220" fileName="ChooseFromStubsByNameModel.java" startLine="150" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="742486944792821220" fileName="ChooseFromStubsByNameModel.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="742486944792821223" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821278" fileName="ChooseFromStubsByNameModel.java" startLine="172" startPosition="0" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="5091697509633029169" fileName="ChooseFromStubsByNameModel.java" startLine="177" startPosition="0" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="742486944792821042" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="82" endLine="80" endPosition="16">
+    <scopeInfo nodeId="742486944792821278" fileName="ChooseFromStubsByNameModel.java" startLine="171" startPosition="0" endLine="175" endPosition="0" />
+    <scopeInfo nodeId="5091697509633029169" fileName="ChooseFromStubsByNameModel.java" startLine="176" startPosition="0" endLine="180" endPosition="0" />
+    <scopeInfo nodeId="742486944792821042" fileName="ChooseFromStubsByNameModel.java" startLine="74" startPosition="82" endLine="79" endPosition="16">
       <varInfo nodeId="742486944792821044" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821232" fileName="ChooseFromStubsByNameModel.java" startLine="155" startPosition="0" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="742486944792821387" fileName="ChooseFromStubsByNameModel.java" startLine="121" startPosition="102" endLine="127" endPosition="9" />
-    <scopeInfo nodeId="742486944792821177" fileName="ChooseFromStubsByNameModel.java" startLine="140" startPosition="119" endLine="146" endPosition="5">
+    <scopeInfo nodeId="742486944792821232" fileName="ChooseFromStubsByNameModel.java" startLine="154" startPosition="0" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="742486944792821387" fileName="ChooseFromStubsByNameModel.java" startLine="120" startPosition="102" endLine="126" endPosition="9" />
+    <scopeInfo nodeId="742486944792821177" fileName="ChooseFromStubsByNameModel.java" startLine="139" startPosition="119" endLine="145" endPosition="5">
       <varInfo nodeId="742486944792821182" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361579823" fileName="ChooseFromStubsByNameModel.java" startLine="45" startPosition="73" endLine="52" endPosition="41">
+    <scopeInfo nodeId="2034046503361579823" fileName="ChooseFromStubsByNameModel.java" startLine="44" startPosition="73" endLine="51" endPosition="41">
       <varInfo nodeId="2034046503361579830" varName="descriptorList" />
       <varInfo nodeId="2034046503361579825" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821037" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="742486944792821037" fileName="ChooseFromStubsByNameModel.java" startLine="74" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="742486944792821040" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821249" fileName="ChooseFromStubsByNameModel.java" startLine="162" startPosition="45" endLine="169" endPosition="34">
+    <scopeInfo nodeId="742486944792821249" fileName="ChooseFromStubsByNameModel.java" startLine="161" startPosition="45" endLine="168" endPosition="34">
       <varInfo nodeId="742486944792821251" varName="name" />
       <varInfo nodeId="742486944792821258" varName="namespace" />
       <varInfo nodeId="3301954042131472372" varName="navTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821015" fileName="ChooseFromStubsByNameModel.java" startLine="60" startPosition="94" endLine="68" endPosition="24">
+    <scopeInfo nodeId="742486944792821015" fileName="ChooseFromStubsByNameModel.java" startLine="59" startPosition="94" endLine="67" endPosition="24">
       <varInfo nodeId="742486944792922423" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821169" fileName="ChooseFromStubsByNameModel.java" startLine="139" startPosition="89" endLine="147" endPosition="95">
+    <scopeInfo nodeId="742486944792821169" fileName="ChooseFromStubsByNameModel.java" startLine="138" startPosition="89" endLine="146" endPosition="95">
       <varInfo nodeId="742486944792821171" varName="descriptors" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361579819" fileName="ChooseFromStubsByNameModel.java" startLine="44" startPosition="0" endLine="53" endPosition="9">
+    <scopeInfo nodeId="2034046503361579819" fileName="ChooseFromStubsByNameModel.java" startLine="43" startPosition="0" endLine="52" endPosition="9">
       <varInfo nodeId="2034046503361579821" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821120" fileName="ChooseFromStubsByNameModel.java" startLine="120" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="742486944792821120" fileName="ChooseFromStubsByNameModel.java" startLine="119" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="742486944792821131" varName="hasFocus" />
       <varInfo nodeId="742486944792821127" varName="index" />
       <varInfo nodeId="742486944792821123" varName="list" />
       <varInfo nodeId="742486944792821129" varName="selected" />
       <varInfo nodeId="742486944792821125" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821010" fileName="ChooseFromStubsByNameModel.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="742486944792821010" fileName="ChooseFromStubsByNameModel.java" startLine="59" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="742486944792821013" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821244" fileName="ChooseFromStubsByNameModel.java" startLine="161" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="742486944792821244" fileName="ChooseFromStubsByNameModel.java" startLine="160" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="742486944792821247" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821159" fileName="ChooseFromStubsByNameModel.java" startLine="138" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="742486944792821159" fileName="ChooseFromStubsByNameModel.java" startLine="137" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="742486944792821165" varName="checkBoxState" />
       <varInfo nodeId="742486944792821163" varName="name" />
       <varInfo nodeId="742486944792821167" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821112" fileName="ChooseFromStubsByNameModel.java" startLine="118" startPosition="49" endLine="130" endPosition="19">
+    <scopeInfo nodeId="742486944792821112" fileName="ChooseFromStubsByNameModel.java" startLine="117" startPosition="49" endLine="129" endPosition="19">
       <varInfo nodeId="742486944792821114" varName="wrapper" />
     </scopeInfo>
-    <scopeInfo nodeId="742486944792821109" fileName="ChooseFromStubsByNameModel.java" startLine="117" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="2034046503361579784" fileName="ChooseFromStubsByNameModel.java" startLine="36" startPosition="25" endLine="53" endPosition="9">
+    <scopeInfo nodeId="742486944792821109" fileName="ChooseFromStubsByNameModel.java" startLine="116" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="2034046503361579784" fileName="ChooseFromStubsByNameModel.java" startLine="35" startPosition="25" endLine="52" endPosition="9">
       <varInfo nodeId="2034046503361579808" varName="descr" />
       <varInfo nodeId="2034046503361579786" varName="mds" />
       <varInfo nodeId="2034046503361579793" varName="stubModels" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361579783" fileName="ChooseFromStubsByNameModel.java" startLine="36" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="742486944792820993" fileName="ChooseFromStubsByNameModel.java" startLine="34" startPosition="53" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="742486944792820991" fileName="ChooseFromStubsByNameModel.java" startLine="34" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="2034046503361579783" fileName="ChooseFromStubsByNameModel.java" startLine="35" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="742486944792820993" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="53" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="742486944792820991" fileName="ChooseFromStubsByNameModel.java" startLine="33" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="7881115362294352287" varName="p" />
     </scopeInfo>
-    <unitInfo nodeId="2034046503361579798" fileName="ChooseFromStubsByNameModel.java" startLine="38" startPosition="75" endLine="42" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$2" />
-    <unitInfo nodeId="2034046503361589101" fileName="ChooseFromStubsByNameModel.java" startLine="62" startPosition="45" endLine="67" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$2" />
-    <unitInfo nodeId="742486944792821118" fileName="ChooseFromStubsByNameModel.java" startLine="119" startPosition="42" endLine="129" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$3" />
-    <unitInfo nodeId="2034046503361579783" fileName="ChooseFromStubsByNameModel.java" startLine="35" startPosition="45" endLine="55" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$1" />
-    <unitInfo nodeId="742486944792816688" fileName="ChooseFromStubsByNameModel.java" startLine="31" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel" />
+    <unitInfo nodeId="2034046503361579798" fileName="ChooseFromStubsByNameModel.java" startLine="37" startPosition="75" endLine="41" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$2" />
+    <unitInfo nodeId="2034046503361589101" fileName="ChooseFromStubsByNameModel.java" startLine="61" startPosition="45" endLine="66" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$2" />
+    <unitInfo nodeId="742486944792821118" fileName="ChooseFromStubsByNameModel.java" startLine="118" startPosition="42" endLine="128" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$3" />
+    <unitInfo nodeId="2034046503361579783" fileName="ChooseFromStubsByNameModel.java" startLine="34" startPosition="45" endLine="54" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel$1" />
+    <unitInfo nodeId="742486944792816688" fileName="ChooseFromStubsByNameModel.java" startLine="30" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel" />
   </root>
   <root nodeRef="r:0bb5e892-3294-41a6-b5db-b1bdf3480f53(jetbrains.mps.debugger.java.runtime.ui.breakpoints)/742486944792820722">
     <nodeInfo nodeId="742486944792820725" fileName="StubsClassChooserDialog.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
@@ -270,27 +270,27 @@
     <nodeInfo nodeId="742486944792833440" fileName="ExceptionChooserDialog.java" startLine="33" startPosition="173" endLine="34" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="742486944792833450" fileName="ExceptionChooserDialog.java" startLine="35" startPosition="5" endLine="36" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2816410937774688222" fileName="ExceptionChooserDialog.java" startLine="42" startPosition="45" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2034046503361578204" fileName="ExceptionChooserDialog.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="742486944792833424" fileName="ExceptionChooserDialog.java" startLine="32" startPosition="22" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="50" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_lt001m_a0a0a1a2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="2034046503361578200" fileName="ExceptionChooserDialog.java" startLine="21" startPosition="61" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2816410937774688213" fileName="ExceptionChooserDialog.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_lt001m_a0a0a1a2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="742486944792833414" fileName="ExceptionChooserDialog.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="742486944792833389" fileName="ExceptionChooserDialog.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExceptionChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
     <scopeInfo nodeId="2034046503361578205" fileName="ExceptionChooserDialog.java" startLine="23" startPosition="25" endLine="24" endPosition="127" />
     <scopeInfo nodeId="742486944792833439" fileName="ExceptionChooserDialog.java" startLine="33" startPosition="173" endLine="34" endPosition="188" />
     <scopeInfo nodeId="2816410937774688218" fileName="ExceptionChooserDialog.java" startLine="42" startPosition="45" endLine="43" endPosition="50" />
+    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="47" endPosition="46" />
     <scopeInfo nodeId="2034046503361578204" fileName="ExceptionChooserDialog.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="65" endLine="50" endPosition="6" />
+    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="742486944792924580" varName="a" />
+      <varInfo nodeId="742486944792924580" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="742486944792833419" fileName="ExceptionChooserDialog.java" startLine="31" startPosition="41" endLine="36" endPosition="117">
       <varInfo nodeId="742486944792833421" varName="base" />
     </scopeInfo>
     <scopeInfo nodeId="2816410937774688213" fileName="ExceptionChooserDialog.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="742486944792924580" fileName="ExceptionChooserDialog.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="742486944792924580" varName="a" />
-      <varInfo nodeId="742486944792924580" varName="b" />
-    </scopeInfo>
     <scopeInfo nodeId="742486944792833396" fileName="ExceptionChooserDialog.java" startLine="19" startPosition="89" endLine="27" endPosition="39">
       <varInfo nodeId="742486944792924452" varName="node" />
     </scopeInfo>
@@ -302,7 +302,7 @@
       <varInfo nodeId="742486944792833394" varName="title" />
     </scopeInfo>
     <unitInfo nodeId="2034046503361578204" fileName="ExceptionChooserDialog.java" startLine="22" startPosition="45" endLine="26" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog$1" />
-    <unitInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" />
+    <unitInfo nodeId="742486944792833383" fileName="ExceptionChooserDialog.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" />
   </root>
 </debugInfo>
 

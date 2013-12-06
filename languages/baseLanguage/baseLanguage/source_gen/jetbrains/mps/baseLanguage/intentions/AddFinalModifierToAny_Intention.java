@@ -92,10 +92,7 @@ public class AddFinalModifierToAny_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "isFinal") ?
-        "Remove 'final' Modifier" :
-        "Add 'final' Modifier"
-      );
+      return (SPropertyOperations.getBoolean(node, "isFinal") ? "Remove 'final' Modifier" : "Add 'final' Modifier");
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

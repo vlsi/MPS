@@ -195,31 +195,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1237469474662(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static Object referenceMacro_GetReferent_1237468698117(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static Object referenceMacro_GetReferent_1237468739820(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static Object referenceMacro_GetReferent_1237469665271(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ?
-      "append" :
-      "appendWithIndent"
-    );
+    return (!(SPropertyOperations.getBoolean(_context.getNode(), "withIndent")) ? "append" : "appendWithIndent");
   }
 
   public static boolean ifMacro_Condition_2352568442779188165(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -319,7 +307,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1237984687060(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || isNotEmpty_x583g4_a0a0a66(SPropertyOperations.getString(_context.getNode(), "separator"));
+    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "separator"));
   }
 
   public static boolean ifMacro_Condition_1237470933865(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -478,7 +466,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a66(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

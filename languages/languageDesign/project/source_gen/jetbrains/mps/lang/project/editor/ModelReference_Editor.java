@@ -68,7 +68,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_i85no5_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_i85no5_a0a0f(SPropertyOperations.getString(node, "stereotype"));
+    return isNotEmptyString(SPropertyOperations.getString(node, "stereotype"));
   }
 
   private EditorCell createConstant_i85no5_a1a(EditorContext editorContext, SNode node) {
@@ -215,7 +215,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_i85no5_a0a0f(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }
