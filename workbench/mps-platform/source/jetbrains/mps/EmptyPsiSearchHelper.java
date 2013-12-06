@@ -102,6 +102,12 @@ public class EmptyPsiSearchHelper implements PsiSearchHelper {
   }
 
   @Override
+  public boolean processElementsWithWord(@NotNull TextOccurenceProcessor processor, @NotNull SearchScope searchScope, @NotNull String text, short searchContext,
+      boolean caseSensitive, boolean processInjectedPsi) {
+    return false;
+  }
+
+  @Override
   public AsyncFuture<Boolean> processElementsWithWordAsync(@NotNull TextOccurenceProcessor processor, @NotNull SearchScope searchScope, @NotNull String text,
       short searchContext, boolean caseSensitive) {
     return null;

@@ -35,6 +35,7 @@ import org.jetbrains.jps.model.JpsElement;
 import org.jetbrains.jps.model.module.JpsModuleSourceRootType;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -125,6 +126,12 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
       return EMPTY_EXCLUDE_FOLDERS;
     }
 
+    @NotNull
+    @Override
+    public List<String> getExcludeFolderUrls() {
+      return Collections.emptyList();
+    }
+
     @Override
     public VirtualFile[] getExcludeFolderFiles() {
       return EMPTY_VIRTUAL_FILES;
@@ -146,6 +153,12 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
       return null;
     }
 
+    @NotNull
+    @Override
+    public <P extends JpsElement> SourceFolder addSourceFolder(@NotNull VirtualFile virtualFile, @NotNull JpsModuleSourceRootType<P> pJpsModuleSourceRootType) {
+      return null;
+    }
+
     @Override
     public SourceFolder addSourceFolder(@NotNull String url, boolean isTestSource) {
       return null;
@@ -154,6 +167,12 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
     @NotNull
     @Override
     public <P extends JpsElement> SourceFolder addSourceFolder(@NotNull String s, @NotNull JpsModuleSourceRootType<P> pJpsModuleSourceRootType) {
+      return null;
+    }
+
+    @NotNull
+    @Override
+    public <P extends JpsElement> SourceFolder addSourceFolder(@NotNull String s, @NotNull JpsModuleSourceRootType<P> pJpsModuleSourceRootType, @NotNull P p) {
       return null;
     }
 
@@ -177,6 +196,11 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
 
     @Override
     public void removeExcludeFolder(@NotNull ExcludeFolder excludeFolder) {
+    }
+
+    @Override
+    public boolean removeExcludeFolder(@NotNull String s) {
+      return false;
     }
 
     @Override

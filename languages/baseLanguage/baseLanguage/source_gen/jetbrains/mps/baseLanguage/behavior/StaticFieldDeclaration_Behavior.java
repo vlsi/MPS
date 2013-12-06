@@ -79,7 +79,7 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    if (!((context.isElementVisible(thisNode)))) {
+    if (!(context.isElementVisible(thisNode)) || SPropertyOperations.getString(thisNode, "name") == null) {
       return;
     }
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));

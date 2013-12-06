@@ -115,7 +115,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
 </dependenciesRoot>
 

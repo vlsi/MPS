@@ -52,7 +52,7 @@
     <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="114" startPosition="28" endLine="115" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="117" startPosition="31" endLine="118" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1165597592844" fileName="SimpleOperations1.java" startLine="124" startPosition="7" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1165597609639" fileName="SimpleOperations1.java" startLine="126" startPosition="47" endLine="127" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165597609639" fileName="SimpleOperations1.java" startLine="126" startPosition="24" endLine="127" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1165597659870" fileName="SimpleOperations1.java" startLine="127" startPosition="41" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1165597680563" fileName="SimpleOperations1.java" startLine="128" startPosition="14" endLine="129" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1165597680575" fileName="SimpleOperations1.java" startLine="129" startPosition="65" endLine="130" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -110,7 +110,7 @@
     <scopeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="99" startPosition="27" endLine="102" endPosition="34" />
     <scopeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="103" startPosition="27" endLine="106" endPosition="34" />
     <scopeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="107" startPosition="27" endLine="110" endPosition="34" />
-    <scopeInfo nodeId="1165597563934" fileName="SimpleOperations1.java" startLine="126" startPosition="47" endLine="131" endPosition="69" />
+    <scopeInfo nodeId="1165597563934" fileName="SimpleOperations1.java" startLine="126" startPosition="24" endLine="131" endPosition="69" />
     <scopeInfo nodeId="1165526704345" fileName="SimpleOperations1.java" startLine="20" startPosition="25" endLine="27" endPosition="67">
       <varInfo nodeId="1165526704347" varName="S" />
     </scopeInfo>
@@ -837,8 +837,8 @@
     <nodeInfo nodeId="1180978118548" fileName="NaiveSetOperations_Test.java" startLine="562" startPosition="110" endLine="563" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1196886294224" fileName="NaiveSetOperations_Test.java" startLine="563" startPosition="110" endLine="564" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1180976074080" fileName="NaiveSetOperations_Test.java" startLine="570" startPosition="80" endLine="571" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1180976094308" fileName="NaiveSetOperations_Test.java" startLine="572" startPosition="50" endLine="573" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1180976128877" fileName="NaiveSetOperations_Test.java" startLine="575" startPosition="50" endLine="576" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1180976094308" fileName="NaiveSetOperations_Test.java" startLine="572" startPosition="27" endLine="573" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1180976128877" fileName="NaiveSetOperations_Test.java" startLine="575" startPosition="27" endLine="576" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209906614557" fileName="NaiveSetOperations_Test.java" startLine="580" startPosition="75" endLine="581" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209906614563" fileName="NaiveSetOperations_Test.java" startLine="581" startPosition="39" endLine="582" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209906614576" fileName="NaiveSetOperations_Test.java" startLine="583" startPosition="49" endLine="584" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -987,8 +987,8 @@
     <scopeInfo nodeId="1224596674248" fileName="NaiveSetOperations_Test.java" startLine="457" startPosition="26" endLine="458" endPosition="35" />
     <scopeInfo nodeId="1224596675328" fileName="NaiveSetOperations_Test.java" startLine="494" startPosition="26" endLine="495" endPosition="35" />
     <scopeInfo nodeId="1224596675218" fileName="NaiveSetOperations_Test.java" startLine="535" startPosition="26" endLine="536" endPosition="35" />
-    <scopeInfo nodeId="1180976086650" fileName="NaiveSetOperations_Test.java" startLine="572" startPosition="50" endLine="573" endPosition="65" />
-    <scopeInfo nodeId="1180976112581" fileName="NaiveSetOperations_Test.java" startLine="575" startPosition="50" endLine="576" endPosition="65" />
+    <scopeInfo nodeId="1180976086650" fileName="NaiveSetOperations_Test.java" startLine="572" startPosition="27" endLine="573" endPosition="65" />
+    <scopeInfo nodeId="1180976112581" fileName="NaiveSetOperations_Test.java" startLine="575" startPosition="27" endLine="576" endPosition="65" />
     <scopeInfo nodeId="1209906614575" fileName="NaiveSetOperations_Test.java" startLine="583" startPosition="49" endLine="584" endPosition="55" />
     <scopeInfo nodeId="1209906614606" fileName="NaiveSetOperations_Test.java" startLine="592" startPosition="21" endLine="593" endPosition="39" />
     <scopeInfo nodeId="1209906614625" fileName="NaiveSetOperations_Test.java" startLine="596" startPosition="30" endLine="597" endPosition="54" />

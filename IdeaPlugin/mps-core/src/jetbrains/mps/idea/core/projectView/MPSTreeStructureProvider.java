@@ -239,7 +239,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (!(treeNode instanceof MPSPsiModelTreeNode)) return null; // only model
 
     MPSPsiModel psiModel = ((MPSPsiModelTreeNode) treeNode).getModel();
-    if (!psiModel.isValid()) return null;
+    if (psiModel == null || !psiModel.isValid()) return null;
 
     Project project = treeNode.getProject();
     EditableSModelDescriptor modelDescriptor = getModel(treeNode);

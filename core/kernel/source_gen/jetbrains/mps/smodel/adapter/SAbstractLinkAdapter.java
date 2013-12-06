@@ -52,12 +52,27 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
 
 
 
+  @Override
+  public int hashCode() {
+    return conceptName.hashCode() * 31 + role.hashCode() * 17;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == null || o.getClass() != getClass()) {
+      return false;
+    }
+    SAbstractLinkAdapter la = (SAbstractLinkAdapter) o;
+    return conceptName.equals(la.conceptName) && role.equals(la.role);
+  }
+
+
+
   protected final SNode getLinkNode() {
     SNode concept = SModelUtil.findConceptDeclaration(conceptName, GlobalScope.getInstance());
     if ((concept == null)) {
       return null;
     }
-    SNode link = (SNode) new ConceptAndSuperConceptsScope(concept).getLinkDeclarationByRole(role);
-    return SModelUtil.getGenuineLinkDeclaration(link);
+    return (SNode) new ConceptAndSuperConceptsScope(concept).getLinkDeclarationByRole(role);
   }
 }

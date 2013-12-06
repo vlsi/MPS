@@ -81,7 +81,7 @@ public class TestMergeAction_Action extends BaseAction {
       descriptor.setDescription("Zip files (*.zip) ");
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          VirtualFile vFile = FileChooser.chooseFile(((Project) MapSequence.fromMap(_params).get("project")), descriptor);
+          VirtualFile vFile = FileChooser.chooseFile(descriptor, ((Project) MapSequence.fromMap(_params).get("project")), null);
 
           final String resFile;
           SModel[] zipped;

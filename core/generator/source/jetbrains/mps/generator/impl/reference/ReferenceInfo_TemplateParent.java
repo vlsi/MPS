@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,32 +20,45 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
+ * @deprecated This is a special case of ReferenceInfo_Template, with an erroneous assumption structure of output model matches
+ * that of template model. The class will be removed
  * Evgeny Gryaznov, 11/19/10
  */
+@Deprecated
 public class ReferenceInfo_TemplateParent extends ReferenceInfo {
   private SNodeReference myTemplateSourceNode;
   private int myParentIndex;
   private String myResolveInfo;
 
 
-  public ReferenceInfo_TemplateParent(SNode outputSourceNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
+  public ReferenceInfo_TemplateParent(@NotNull SNode outputSourceNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
     super(outputSourceNode, role, context.getInput());
     myTemplateSourceNode = sourceNode;
     myParentIndex = parentIndex;
     myResolveInfo = resolveInfo;
   }
 
+  @Nullable
   @Override
-  public SNode getInputTargetNode() {
-    throw new UnsupportedOperationException();
+  public SReference create(@NotNull TemplateGenerator generator) {
+    SNode parent = doResolve_Straightforward();
+    if (parent != null) {
+      return createStaticReference(parent);
+    }
+    if (myResolveInfo != null) {
+      return createDynamicReference(myResolveInfo, myTemplateSourceNode);
+    }
+    return createInvalidReference(generator, null);
   }
 
-  @Override
-  public SNode doResolve_Straightforward(TemplateGenerator generator) {
+  private SNode doResolve_Straightforward() {
     // try to resolve if referent node is parent of source node.
     // this solves situation when reference node inside 'template fragment' refers to 'context node' (ancestor outside 'template fragment')
     SNode current = getOutputSourceNode();
@@ -56,22 +69,7 @@ public class ReferenceInfo_TemplateParent extends ReferenceInfo {
   }
 
   @Override
-  public SNode doResolve_Tricky(TemplateGenerator generator) {
-    return null;
-  }
-
-  @Override
-  public String getResolveInfoForDynamicResolve() {
-    return myResolveInfo;
-  }
-
-  @Override
-  public String getResolveInfoForNothing() {
-    return myResolveInfo;
-  }
-
-  @Override
-  public ProblemDescription[] getErrorDescriptions() {
+  protected ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
     return new ProblemDescription[]{
       GeneratorUtil.describe(inputNode, "input node"),

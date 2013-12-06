@@ -72,7 +72,7 @@ public class DefaultSModel extends LazySModel {
   }
 
   @Override
-  public void copyPropertiesTo(SModelInternal to) {
+  public void copyPropertiesTo(SModel to) {
     super.copyPropertiesTo(to);
     if (to instanceof DefaultSModel) {
       DefaultSModel dto = (DefaultSModel) to;

@@ -55,6 +55,16 @@ public class LowerBoundType_Behavior {
     }
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), "virtual_isSupersetOf_9029841626175335449", new Object[]{SLinkOperations.getTarget(thisNode, "bound", true), substitutions});
+    } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+      return false;
+    }
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, t, "virtual_isSupersetOf_9029841626175335449", new Object[]{SLinkOperations.getTarget(thisNode, "bound", true), substitutions});
+  }
+
   private static SNode _quotation_createNode_kcjgm5_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

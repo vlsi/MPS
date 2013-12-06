@@ -146,7 +146,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
 
       final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
-      for (String variable : SetSequence.fromSet(MapSequence.fromMap(contextVariables).keySet())) {
+      for (String variable : MapSequence.fromMap(contextVariables).keySet()) {
 
         String name = variable;
         SNode lowLevelVarNode = MapSequence.fromMap(declaredVariables).get(name);

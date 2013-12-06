@@ -15,24 +15,18 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * These references are created in transient models.
  * They are always internal.
  */
-public class PostponedReference extends SReference {
+public class PostponedReference extends jetbrains.mps.smodel.SReference {
 
   private final TemplateGenerator myGenerator;
   private ReferenceInfo myReferenceInfo;
@@ -45,6 +39,14 @@ public class PostponedReference extends SReference {
     myGenerator = generator;
   }
 
+  // shorthand:
+  // ReferenceInfo ri = new ReferenceInfo(outputSourceNode, role);
+  // PostponedReference pr = new PostponedReference(pr);
+  // outputSourceNode.setReference(role, pr);
+  public void setReferenceInOutputSourceNode() {
+    getSourceNode().setReference(getRole(), this);
+  }
+
   @Override
   @Deprecated
   public boolean isExternal() {
@@ -54,12 +56,10 @@ public class PostponedReference extends SReference {
   @Override
   @Nullable
   public synchronized SModelReference getTargetSModelReference() {
-    if (myReferenceInfo != null) {
-      return myReferenceInfo.getTargetModelReference(myGenerator);
-    } else if (myReplacementReference != null) {
-      return myReplacementReference.getTargetSModelReference();
+    SReference ref = getReplacementReference();
+    if (ref != null) {
+      return ref.getTargetSModelReference();
     }
-
     // ok, reference is unresolved and not required
     return null;
   }
@@ -71,88 +71,35 @@ public class PostponedReference extends SReference {
    * @Deprecated in 3.0
    */
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    throw new RuntimeException("not supported");
+    throw new UnsupportedOperationException();
   }
 
   @Override
   protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
-    if (ref == null) return null;
+    if (ref == null) {
+      return null;
+    }
     return ref.getTargetNode();
   }
 
   /**
    * @return null is not resolved and not required.
    */
-  private synchronized SReference getReplacementReference() {
+  private SReference getReplacementReference() {
     if (myReplacementReference != null) {
       return myReplacementReference;
     }
 
-    if (myReferenceInfo == null) {
-      return null; // already processed
-    }
-
-    String role = myReferenceInfo.getReferenceRole();
-    SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
-    SModelReference targetModelReference = myReferenceInfo.getTargetModelReference(myGenerator);
-
-    SNode outputTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
-    if (outputTargetNode != null) {
-//      if (checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
-//        // ok
-      myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
-//      } else {
-//        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
-//      }
-    } else if (myReferenceInfo.isDynamicResolve(myGenerator.getLogger()) && myReferenceInfo.getResolveInfoForDynamicResolve() != null) {
-      DynamicReference dynamicReference = new DynamicReference(
-        role,
-        outputSourceNode,
-        targetModelReference,
-        myReferenceInfo.getResolveInfoForDynamicResolve());
-
-      SNode templateNode = myReferenceInfo instanceof ReferenceInfo_Macro ? ((ReferenceInfo_Macro) myReferenceInfo).getMacroNode() : null;
-      SNode inputNode = myReferenceInfo.getInputNode();
-      boolean validInputNode = inputNode != null && inputNode.getModel() != null;
-      if (validInputNode || templateNode != null) {
-        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new jetbrains.mps.smodel.SNodePointer(templateNode) : null, validInputNode ? new jetbrains.mps.smodel.SNodePointer(inputNode) : null));
+    synchronized (this) {
+      if (myReferenceInfo == null) {
+        return null; // already processed
       }
 
-      myReplacementReference = dynamicReference;
-
-    } else {
-      outputTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
-      if (outputTargetNode != null) {
-        if (checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
-          // ok
-          myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
-        } else {
-          myReplacementReference = new StaticReference(
-            role,
-            outputSourceNode,
-            targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
-            null,
-            myReferenceInfo.getResolveInfoForNothing());
-        }
-      } else if (myReferenceInfo.isRequired()) {
-        myGenerator.getLogger().error(myReferenceInfo.getOutputSourceNode(),
-          "cannot resolve required reference; role: '" + myReferenceInfo.getReferenceRole() + "' in output node " + SNodeUtil.getDebugText(myReferenceInfo.getOutputSourceNode()),
-          myReferenceInfo.getErrorDescriptions());
-
-        myReplacementReference = new StaticReference(
-          role,
-          outputSourceNode,
-          targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
-          null,
-          myReferenceInfo.getResolveInfoForNothing());
-      } else {
-        // not resolved and not required
-      }
+      myReplacementReference = myReferenceInfo.create(myGenerator);
+      // release resources
+      myReferenceInfo = null;
     }
-
-    // release resources
-    myReferenceInfo = null;
     return myReplacementReference;
   }
 
@@ -162,30 +109,5 @@ public class PostponedReference extends SReference {
    */
   public void validateAndReplace() {
     getSourceNode().setReference(getRole(), getReplacementReference());
-  }
-
-  private boolean checkResolvedTarget(SNode outputNode, String role, SNode outputTargetNode) {
-    RoleValidationStatus status = myGenerator.getReferentRoleValidator(outputNode, role).validate(outputTargetNode);
-    if (status != null) {
-      status.reportProblem(true, outputNode, "bad reference: ", myReferenceInfo.getErrorDescriptions());
-      return false;
-    }
-
-    SModel referentNodeModel = outputTargetNode.getModel();
-    if (referentNodeModel != outputNode.getModel()) {
-      if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
-        // references on template nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a generator model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + SNodeUtil.getDebugText(outputNode),
-          myReferenceInfo.getErrorDescriptions());
-        return false;
-      }
-      if (referentNodeModel .getModule() instanceof TransientModelsModule) {
-        // references on transient nodes are not acceptable
-        myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a transient model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + SNodeUtil.getDebugText(outputNode),
-          myReferenceInfo.getErrorDescriptions());
-        return false;
-      }
-    }
-    return true;
   }
 }

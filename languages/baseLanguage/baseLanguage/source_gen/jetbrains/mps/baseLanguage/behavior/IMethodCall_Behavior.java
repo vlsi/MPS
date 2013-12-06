@@ -78,10 +78,11 @@ public class IMethodCall_Behavior {
       return _quotation_createNode_fq0410_a0a1a2();
     }
     SNode concreteType;
-    if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier) {
-      concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
+    int index = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false));
+    if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier && ListSequence.fromList(parameters).count() > index) {
+      concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(index));
     } else {
-      concreteType = _quotation_createNode_fq0410_a0a0a3a2();
+      concreteType = _quotation_createNode_fq0410_a0a0a4a2();
     }
     return concreteType;
   }
@@ -241,7 +242,7 @@ public class IMethodCall_Behavior {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_fq0410_a0a0a3a2() {
+  private static SNode _quotation_createNode_fq0410_a0a0a4a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

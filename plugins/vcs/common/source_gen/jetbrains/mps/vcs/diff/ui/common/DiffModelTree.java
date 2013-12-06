@@ -94,7 +94,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       DiffModelTree.TreeNode parentNode = modelNode;
       if (isNotEmptyString(rtn.myVirtualPackage)) {
-        for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
+        for (final String sub : Sequence.fromArray(rtn.myVirtualPackage.split("\\."))) {
           Iterable<DiffModelTree.TreeNode> children = Collections.list(parentNode.children());
           DiffModelTree.TreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<DiffModelTree.TreeNode>() {
             public boolean accept(DiffModelTree.TreeNode c) {

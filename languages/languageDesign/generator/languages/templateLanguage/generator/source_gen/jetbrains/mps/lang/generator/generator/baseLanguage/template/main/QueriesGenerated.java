@@ -281,10 +281,6 @@ public class QueriesGenerated {
     return _context.getNode().getProperty("templateNodeId");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4155486055398184040(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Integer.valueOf(_context.getNode().getProperty("parentIndex"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_4565390460241594511(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("resolveInfo");
   }
@@ -1881,11 +1877,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0xp(_context.getNode().getProperty("kind"), "normal");
-  }
-
-  public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0yp(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0wp(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2864,10 +2856,6 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_4565390460241641355(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode().getReferenceTarget("originalNode");
-  }
-
   public static SNode sourceNodeQuery_1246578104714226092(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
@@ -3616,7 +3604,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4155486055398183512(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    for (String name : Sequence.fromIterable(_context.getNode().getPropertyNames())) {
+    for (String name : _context.getNode().getPropertyNames()) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", name)) != null)) {
         continue;
       }
@@ -3655,50 +3643,24 @@ public class QueriesGenerated {
         _context.showErrorMessage(_context.getNode(), "cannot resolve reference in template model; role: " + reference.getRole());
         continue;
       }
+      SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
+      referenceNode.setProperty("role", reference.getRole());
       if (SNodeOperations.getModel(targetNode) == SNodeOperations.getModel(_context.getNode())) {
-        SNode current = _context.getNode();
-        int counter = 0;
-        while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0neb(current, targetNode)) {
-            break;
-          }
-          current = SNodeOperations.getParent(current);
-          counter++;
-        }
-        SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-        referenceNode.setProperty("role", reference.getRole());
-        referenceNode.setReferenceTarget("originalNode", _context.getNode());
-        if (current != null) {
-          // return parent N (counter) 
-          referenceNode.setProperty("kind", "parentIndex");
-          referenceNode.setProperty("parentIndex", Integer.toString(counter));
-        } else {
-          // internal reference 
-          referenceNode.setProperty("kind", "internal");
-          referenceNode.setProperty("templateNodeId", GeneratorUtil.getTemplateNodeId(_context.getOriginalCopiedInputNode(targetNode)));
-        }
+        // internal reference 
+        referenceNode.setProperty("kind", "internal");
+        referenceNode.setProperty("templateNodeId", GeneratorUtil.getTemplateNodeId(_context.getOriginalCopiedInputNode(targetNode)));
 
-        String resolveInfo = null;
-        if ((targetNode != null)) {
-          resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
-        }
+        String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
         if (resolveInfo == null) {
           resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         }
-        if (resolveInfo == null) {
-          resolveInfo = "";
-        }
         referenceNode.setProperty("resolveInfo", resolveInfo);
-        ListSequence.fromList(result).addElement(referenceNode);
-
       } else {
-        SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         referenceNode.setProperty("kind", "normal");
         referenceNode.setProperty("targetModel", reference.getTargetSModelReference().toString());
-        referenceNode.setProperty("role", reference.getRole());
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());
-        ListSequence.fromList(result).addElement(referenceNode);
       }
+      ListSequence.fromList(result).addElement(referenceNode);
     }
     return result;
   }
@@ -4113,15 +4075,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_x583g4_a0a0xp(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_x583g4_a0a0yp(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_x583g4_a0a0c0d0b0neb(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0wp(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -11,9 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,15 +26,24 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(classifier, "visibility", true) == null)) {
-      if (!(ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(classifier), null)).translate(new ITranslator2<SNode, SReference>() {
+      if (!(ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(classifier), null)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ListSequence.fromList(SNodeOperations.getAncestors(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false)).isEmpty();
+        }
+      }).translate(new ITranslator2<SNode, SReference>() {
         public Iterable<SReference> translate(SNode it) {
           return SNodeOperations.getReferences(it);
         }
       }).any(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
-          return eq_oirmva_a0a0a0a0a0a0a0a1(SLinkOperations.getTargetNode(it), classifier);
+          return eq_oirmva_a0a0a0a0a0a0a0a0b(SLinkOperations.getTargetNode(it), classifier) || ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTargetNode(it), "jetbrains.mps.baseLanguage.structure.Classifier", false)).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b(it, classifier);
+            }
+          });
         }
       }))) {
+
         String msg;
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
           msg = "Enum";
@@ -74,7 +83,11 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
     return false;
   }
 
-  private static boolean eq_oirmva_a0a0a0a0a0a0a0a1(Object a, Object b) {
+  private static boolean eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_oirmva_a0a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

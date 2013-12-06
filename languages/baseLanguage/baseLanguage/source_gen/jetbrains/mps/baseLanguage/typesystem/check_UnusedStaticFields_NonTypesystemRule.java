@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UnusedStaticFields_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,14 +22,22 @@ public class check_UnusedStaticFields_NonTypesystemRule extends AbstractNonTypes
   }
 
   public void applyRule(final SNode staticFieldDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(staticFieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(staticFieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(staticFieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(staticFieldDeclaration), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "variableDeclaration", false) == staticFieldDeclaration;
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment", false, false) == null);
       }
     }).isEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(staticFieldDeclaration, "Unused static field", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "543449459583393390", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedStaticField_QuickFix", false);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
   }

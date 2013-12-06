@@ -55,11 +55,9 @@
     <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.ui.SideBorder" />
-    <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
     <classNode dependClassName="com.intellij.ui.SpeedSearchComparator" />
     <classNode dependClassName="com.intellij.ui.popup.AbstractPopup" />
     <classNode dependClassName="com.intellij.ui.popup.PopupUpdateProcessor" />
-    <classNode dependClassName="com.intellij.ui.speedSearch.SpeedSearchUtil" />
     <classNode dependClassName="com.intellij.ui.treeStructure.Tree" />
     <classNode dependClassName="com.intellij.ui.treeStructure.filtered.FilteringTreeBuilder" />
     <classNode dependClassName="com.intellij.ui.treeStructure.filtered.FilteringTreeStructure" />
@@ -111,7 +109,6 @@
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" />
-    <classNode dependClassName="org.jetbrains.annotations.Nls" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

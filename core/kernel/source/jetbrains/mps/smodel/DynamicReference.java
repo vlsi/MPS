@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,19 @@
  */
 package jetbrains.mps.smodel;
 
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
-
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -73,8 +74,14 @@ public class DynamicReference extends SReferenceBase {
     }
   }
 
-  private boolean isTargetClassifier(SNode node, String role) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SLinkOperations.findLinkDeclaration(node.getConcept().getQualifiedName(), role), "target", false), "jetbrains.mps.baseLanguage.structure.Classifier");
+  private boolean isTargetClassifier(@NotNull SNode node, @NotNull String role) {
+    SAbstractLink lnk = node.getConcept().getLink(role);
+    SAbstractConcept lnkTarget = lnk == null ? null : lnk.getTargetConcept();
+    if (lnkTarget == null) {
+      return false;
+    }
+    final SConcept classifierConcept = SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.baseLanguage.structure.Classifier");
+    return lnkTarget.isSubConceptOf(classifierConcept);
   }
 
   @Override
@@ -147,17 +154,6 @@ public class DynamicReference extends SReferenceBase {
     error(message);
   }
 
-  private SModule getModule() {
-    SModel model = getSourceNode().getModel();
-    if (model != null) {
-      SModel descr = model;
-      if (descr != null) {
-        return descr.getModule();
-      }
-    }
-    return null;
-  }
-
   @Override
   public void makeDirect() {
 
@@ -168,14 +164,16 @@ public class DynamicReference extends SReferenceBase {
 
   }
 
+  @Nullable
   public DynamicReferenceOrigin getOrigin() {
     return myOrigin;
   }
 
-  public void setOrigin(DynamicReferenceOrigin origin) {
+  public void setOrigin(@Nullable DynamicReferenceOrigin origin) {
     myOrigin = origin;
   }
 
+  @Immutable
   public static class DynamicReferenceOrigin {
     private final SNodeReference template;
     private final SNodeReference inputNode;

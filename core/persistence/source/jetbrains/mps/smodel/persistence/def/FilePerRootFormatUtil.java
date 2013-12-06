@@ -120,6 +120,9 @@ public class FilePerRootFormatUtil {
             throw new ModelReadException("Couldn't read model: " + stream + " root file is broken - contains more than one roots", null);
           }
           count++;
+          // detach it from its spurious model, which is just a container for this single root
+          model.removeRootNode(rootNode);
+          // now that it's detached we can safely add it to our model
           result.addRootNode(rootNode);
         }
       } catch (IOException e) {

@@ -32,6 +32,15 @@ public class UpperBoundType_Behavior {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "bound", true), "virtual_isSupersetOf_1220438914705", new Object[]{t});
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "bound", true), "virtual_isSupersetOf_9029841626175335449", new Object[]{SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), substitutions});
+    } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+      return false;
+    }
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "bound", true), "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
+  }
+
   public static boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
     return false;
   }
@@ -46,7 +55,7 @@ public class UpperBoundType_Behavior {
       if (expBound == SLinkOperations.getTarget(thisNode, "bound", true)) {
         return thisNode;
       }
-      return _quotation_createNode_cv9ggd_a2a0a4(expBound);
+      return _quotation_createNode_cv9ggd_a2a0a5(expBound);
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
   }
@@ -57,7 +66,7 @@ public class UpperBoundType_Behavior {
     }
   }
 
-  private static SNode _quotation_createNode_cv9ggd_a2a0a4(Object parameter_1) {
+  private static SNode _quotation_createNode_cv9ggd_a2a0a5(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

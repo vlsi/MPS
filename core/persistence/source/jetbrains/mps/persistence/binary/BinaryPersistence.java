@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.persistence.LightModelEnvironmentInfo;
-import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -150,10 +148,8 @@ public class BinaryPersistence {
     BinarySModel model = new BinarySModel(modelHeader);
     loadModelProperties(model, is);
 
-    ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
-    NodesReader reader = new NodesReader(modelReference,
-        env instanceof LightModelEnvironmentInfo ? (LightModelEnvironmentInfo) env : null, interfaceOnly);
-    List<Pair<String, SNode>> roots = reader.readNodes(model, is);
+    NodesReader reader = new NodesReader(modelReference, interfaceOnly);
+    List<Pair<String, SNode>> roots = reader.readNodes(is);
     for (Pair<String, SNode> r : roots) {
       model.addRootNode(r.o2);
     }
@@ -183,7 +179,7 @@ public class BinaryPersistence {
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
     os.writeInt((model).getVersion());
-    SModelDescriptor md = model.getModelDescriptorPure();
+    SModelDescriptor md = model.getModelDescriptor();
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
@@ -242,7 +238,7 @@ public class BinaryPersistence {
       for (ImportElement element : model.importedModels()) {
         consumer.consume(element.getModelReference().getModelName());
       }
-      new NodesReader(modelHeader.getReference(), null, false) {
+      new NodesReader(modelHeader.getReference(), false) {
         @Override
         protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
           String name = super.readConceptQualifiedName(is);
@@ -258,7 +254,7 @@ public class BinaryPersistence {
           }
           return id;
         }
-      }.readNodes(model, mis);
+      }.readNodes(mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
     } finally {

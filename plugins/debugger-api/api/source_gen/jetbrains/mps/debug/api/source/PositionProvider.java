@@ -12,7 +12,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NonNls;
@@ -29,7 +28,7 @@ public class PositionProvider implements ProjectComponent {
 
   @Nullable
   public SourcePosition getPosition(@Nullable ILocation location, @NotNull final AbstractDebugSession session) {
-    for (String key : SetSequence.fromSet(MapSequence.fromMap(myKeysToProviders).keySet())) {
+    for (String key : MapSequence.fromMap(myKeysToProviders).keySet()) {
       IPositionProvider provider = ListSequence.fromList(MapSequence.fromMap(myKeysToProviders).get(key)).findFirst(new IWhereFilter<IPositionProvider>() {
         public boolean accept(IPositionProvider it) {
           return it.accepts(session);
@@ -47,7 +46,7 @@ public class PositionProvider implements ProjectComponent {
 
   @Nullable
   public SourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber, @NotNull final AbstractDebugSession session) {
-    for (String key : SetSequence.fromSet(MapSequence.fromMap(myKeysToProviders).keySet())) {
+    for (String key : MapSequence.fromMap(myKeysToProviders).keySet()) {
       IPositionProvider provider = ListSequence.fromList(MapSequence.fromMap(myKeysToProviders).get(key)).findFirst(new IWhereFilter<IPositionProvider>() {
         public boolean accept(IPositionProvider it) {
           return it.accepts(session);

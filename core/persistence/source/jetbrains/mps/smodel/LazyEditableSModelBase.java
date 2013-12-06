@@ -36,12 +36,10 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
       if (state == ModelLoadingState.INTERFACE_LOADED) {
         ModelLoadResult result = loadSModel(ModelLoadingState.INTERFACE_LOADED);
         processLoadedModel(result.getModel());
-        updateTimestamp();
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
         LazySModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
-        updateTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
         fullModel.setUpdateMode(true);
@@ -132,8 +130,6 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
 
   @Override
   protected void reloadContents() {
-    updateTimestamp();
-
     if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = loadSModel(myModel.getState());

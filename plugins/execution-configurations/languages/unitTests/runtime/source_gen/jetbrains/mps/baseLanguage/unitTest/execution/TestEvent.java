@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.unitTest.execution;
 
 import java.util.List;
 import org.junit.runner.Description;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class TestEvent {
@@ -89,7 +89,7 @@ public class TestEvent {
 
   public static String getEventToken(String messageString) {
     String token = null;
-    for (String expectedToken : ListSequence.fromList(TestEvent.ALL_TOKENS)) {
+    for (String expectedToken : TestEvent.ALL_TOKENS) {
       if (messageString.startsWith(expectedToken)) {
         token = expectedToken;
         break;

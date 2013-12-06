@@ -118,7 +118,7 @@ public class NodePaster {
   public void pasteAsRoots(SModel model, String dstPackage) {
     pasteAsRoots(model);
     for (SNode node : myPasteNodes) {
-      SNodeAccessUtil.setProperty(node, jetbrains.mps.smodel.SNode.PACK, dstPackage);
+      SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, dstPackage);
     }
   }
 

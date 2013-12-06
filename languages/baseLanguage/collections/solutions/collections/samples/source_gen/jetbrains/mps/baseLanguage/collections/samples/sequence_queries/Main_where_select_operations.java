@@ -81,7 +81,7 @@ __switch__:
       }
     });
     System.out.println("count (before):" + count.value);
-    for (String s : Sequence.fromIterable(strings)) {
+    for (String s : strings) {
       System.out.println(s);
     }
     System.out.println("count (after):" + count.value);

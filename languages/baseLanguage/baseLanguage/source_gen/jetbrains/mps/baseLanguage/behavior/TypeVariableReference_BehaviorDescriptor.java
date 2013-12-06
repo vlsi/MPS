@@ -40,6 +40,10 @@ public class TypeVariableReference_BehaviorDescriptor extends Type_BehaviorDescr
     return TypeVariableReference_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
+  public boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return TypeVariableReference_Behavior.virtual_isSupersetOf_9029841626175335449(thisNode, t, substitutions);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.TypeVariableReference";

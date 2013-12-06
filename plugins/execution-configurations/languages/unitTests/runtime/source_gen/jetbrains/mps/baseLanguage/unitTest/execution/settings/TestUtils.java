@@ -58,7 +58,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_pointerString_it = Sequence.fromIterable(strings).iterator();
+                      this._2_pointerString_it = strings.iterator();
                     case 3:
                       if (!(this._2_pointerString_it.hasNext())) {
                         this.__CP__ = 1;

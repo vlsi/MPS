@@ -1951,7 +1951,7 @@
     <nodeInfo nodeId="3256085672520562606" fileName="BuildGeneratorImpl.java" startLine="264" startPosition="36" endLine="265" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3256085672520570560" fileName="BuildGeneratorImpl.java" startLine="265" startPosition="44" endLine="266" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3256085672520549923" fileName="BuildGeneratorImpl.java" startLine="266" startPosition="162" endLine="267" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469659103" fileName="BuildGeneratorImpl.java" startLine="269" startPosition="62" endLine="270" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659103" fileName="BuildGeneratorImpl.java" startLine="269" startPosition="41" endLine="270" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8633283924066274202" fileName="BuildGeneratorImpl.java" startLine="271" startPosition="5" endLine="272" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1021458544535501838" fileName="BuildGeneratorImpl.java" startLine="272" startPosition="127" endLine="273" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8633283924066274197" fileName="BuildGeneratorImpl.java" startLine="273" startPosition="139" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -4791,7 +4791,7 @@
     <scopeInfo nodeId="8722937377469658777" fileName="BuildGeneratorImpl.java" startLine="194" startPosition="14" endLine="195" endPosition="33" />
     <scopeInfo nodeId="8722937377469658799" fileName="BuildGeneratorImpl.java" startLine="199" startPosition="12" endLine="200" endPosition="29" />
     <scopeInfo nodeId="8668191939847130137" fileName="BuildGeneratorImpl.java" startLine="227" startPosition="44" endLine="228" endPosition="108" />
-    <scopeInfo nodeId="8722937377469659102" fileName="BuildGeneratorImpl.java" startLine="269" startPosition="62" endLine="270" endPosition="95" />
+    <scopeInfo nodeId="8722937377469659102" fileName="BuildGeneratorImpl.java" startLine="269" startPosition="41" endLine="270" endPosition="95" />
     <scopeInfo nodeId="3256085672520562227" fileName="BuildGeneratorImpl.java" startLine="279" startPosition="42" endLine="280" endPosition="36" />
     <scopeInfo nodeId="440909057400845602" fileName="BuildGeneratorImpl.java" startLine="290" startPosition="41" endLine="291" endPosition="107" />
     <scopeInfo nodeId="3256085672520562305" fileName="BuildGeneratorImpl.java" startLine="294" startPosition="12" endLine="295" endPosition="208" />

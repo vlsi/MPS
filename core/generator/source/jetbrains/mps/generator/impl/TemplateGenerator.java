@@ -22,6 +22,8 @@ import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.CloneUtil.Factory;
+import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -42,26 +44,25 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -104,14 +105,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private DeltaBuilder myDeltaBuilder;
   private boolean myInplaceModelChange = false;
   private WeavingProcessor myWeavingProcessor;
-  private final boolean myInplaceChangeEnabled;
-  /**
-   * This is a hack, to avoid using DeltaBuilder when new roots are added into the model. Can't use myIsChanged (as I used to)
-   * because for parallel generation there are chances myIsChanged is not yet set (root is not yet created) when I get to DeltaBuilder
-   * instantiation. The right way, to make DeltaBuilder aware of root creation, seems too demanding (time/effort) right now.
-   * Note, rootsConsumed (root mappings) shall be fixed as well then (now it's ok as parallel generator jumps in after rootsConsumed is populated)
-   */
-  private boolean myNewRootsAreAdded = false;
+  protected final boolean myInplaceChangeEnabled; // protected for PTG.registerAddedRoots
+  protected List<SNode> myNewAddedRoots; // protected for PTG.registerAddedRoots
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
@@ -135,9 +130,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
     myAreMappingsReady = false;
-    if (hasPostponedReference(myInputModel.getRootNodes())) {
-      System.out.println("PostponedReference in the input!!!");
-    }
     // prepare weaving
     ttrace.push("weavings", false);
     myWeavingProcessor = new WeavingProcessor(this);
@@ -155,6 +147,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myInplaceModelChange = true;
       if (myDeltaBuilder.hasChanges()) {
         myDeltaBuilder.applyInplace(getInputModel(), this);
+      }
+      if (myNewAddedRoots != null) {
+        // TODO pipe additions through DeltaBuilder as well (instantiate it prior to applyRules and use from registerAddedRoots)
+        for (SNode newRoot : myNewAddedRoots) {
+          getInputModel().addRootNode(newRoot);
+        }
+        myNewAddedRoots.clear();
       }
       myOutputRoots.clear();
       myDeltaBuilder = null;
@@ -207,9 +206,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // advance blocked reduction data
       getBlockedReductionsData().advanceStep();
     }
-//    if (hasPostponedReference(getOutputModel().getRootNodes())) {
-//      System.out.println("PostponedReference in the output model!!!");
-//    }
     return myChanged;
   }
 
@@ -248,7 +244,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     ttrace.pop();
 
-    if (myInplaceChangeEnabled && !myNewRootsAreAdded && rootsConsumed.isEmpty()) {
+    if (myInplaceChangeEnabled) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
         myLogger.info("Could have had delta builder here, but can't due to active weavings");
       } else {
@@ -261,6 +257,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : myInputModel.getRootNodes()) {
       if (rootsConsumed.contains(rootToCopy)) {
+        if (myDeltaBuilder != null) {
+          myDeltaBuilder.enterInputRoot(rootToCopy);
+          myDeltaBuilder.deleteInputRoot(rootToCopy);
+          myDeltaBuilder.leaveInputRoot(rootToCopy);
+        }
         continue;
       }
       QueryExecutionContext context = getExecutionContext(rootToCopy);
@@ -274,7 +275,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     try {
       if (environment.getQueryExecutor().isApplicable(rule, environment, null)) {
-        myNewRootsAreAdded = true;
         myGenerationTracer.pushRule(rule.getRuleNode());
         try {
           createRootNodeByRule(rule, environment);
@@ -336,6 +336,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
+      registerAddedRoots(outputNodes);
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, null, rule.getRuleNode(), false);
         setChanged();
@@ -359,6 +360,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return;
       }
 
+      registerAddedRoots(outputNodes);
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
@@ -612,20 +614,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private static boolean hasPostponedReference(Iterable<? extends SNode> nodes) {
-    for (SNode n : nodes) {
-      for (SReference r : n.getReferences()) {
-        if (r instanceof PostponedReference) {
-          return true;
-        }
-      }
-      if (hasPostponedReference(n.getChildren())) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   /**
    * prevents applying of reduction rules which have already been applied to the input node.
    */
@@ -673,6 +661,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   void setChanged() {
     myChanged = true;
+  }
+
+  protected void registerAddedRoots(@NotNull Collection<SNode> newRoots) {
+    if (!myInplaceChangeEnabled) {
+      return;
+    }
+    if (myNewAddedRoots == null) {
+      myNewAddedRoots = new ArrayList<SNode>();
+    }
+    myNewAddedRoots.addAll(newRoots);
   }
 
   protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
@@ -733,7 +731,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     protected abstract void drop(SNode inputRootNode, TemplateDropRootRule rule);
 
-    public abstract void copyRootInputNode(SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
+    public abstract void copyRootInputNode(@NotNull SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
 
     private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
       String applicableConcept = rule.getApplicableConcept();
@@ -781,7 +779,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     @Override
-    public void copyRootInputNode(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+    public void copyRootInputNode(@NotNull SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
       myDeltaBuilder.enterInputRoot(inputRootNode);
       myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       try {
@@ -820,6 +818,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private final Set<SNode> myAdditionalInputNodes;
     private final SModel myInputModel;
     private final SModelReference myOutputModelRef;
+    private final Factory myNodeFactory;
 
     public FullCopyFacility(TemplateGenerator generator, TemplateExecutionEnvironment environment) {
       this(generator, environment, Collections.<SNode>emptySet());
@@ -831,6 +830,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myGenerationTracer = environment.getTracer();
       myInputModel = generator.getInputModel();
       myOutputModelRef = generator.getOutputModel().getReference();
+      myNodeFactory = new RegularSModelFactory();
     }
 
     @Override
@@ -841,7 +841,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     @Override
-    public void copyRootInputNode(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+    public void copyRootInputNode(@NotNull SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
       // copy
       myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       try {
@@ -852,12 +852,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
-    public SNode copyInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+    public SNode copyInputNode(@NotNull SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       // no reduction found - do node copying
       myGenerationTracer.pushCopyOperation();
-      jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getQualifiedName());
-      if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
-        outputNode.setId(inputNode.getNodeId());
+      SNode outputNode;
+      final SModel inputNodeModel = inputNode.getModel();
+      if (inputNode.getNodeId() != null && inputNodeModel != null) {
+        // copy preserving id
+        outputNode = myNodeFactory.create(inputNode);
+      } else {
+        outputNode = myGenerator.getOutputModel().createNode(inputNode.getConcept());
       }
       myGenerator.blockReductionsForCopiedNode(inputNode, outputNode, myEnvironment.getReductionContext()); // prevent infinite applying of the same reduction to the 'same' node.
 
@@ -868,11 +872,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
 
       for (SReference inputReference : inputNode.getReferences()) {
-        if (inputNode.getModel() != null) {
+        if (inputNodeModel != null) {
           boolean external = true;
           if (inputReference instanceof PostponedReference){
             external = false;
-          } else if (inputNode.getModel().getReference().equals(inputReference.getTargetSModelReference())){
+          } else if (inputNodeModel.getReference().equals(inputReference.getTargetSModelReference())){
             external = false;
           }
           if (inputReference instanceof DynamicReference || external) {
@@ -926,7 +930,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               inputReference.getSourceNode(),
               inputTargetNode);
           PostponedReference reference = new PostponedReference(refInfo, myGenerator);
-          outputNode.setReference(reference.getRole(), reference);
+          reference.setReferenceInOutputSourceNode();
         } else if (inputTargetNode.getModel() != null) {
           SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);
         } else {

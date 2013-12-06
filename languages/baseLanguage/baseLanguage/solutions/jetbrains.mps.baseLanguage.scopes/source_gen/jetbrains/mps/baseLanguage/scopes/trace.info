@@ -254,7 +254,7 @@
     <nodeInfo nodeId="1870042688391590942" fileName="BaseMethodsScope.java" startLine="138" startPosition="0" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3223524098368407227" fileName="BaseMethodsScope.java" startLine="38" startPosition="50" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2428721740553106180" fileName="BaseMethodsScope.java" startLine="75" startPosition="87" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8931958903031995364" fileName="BaseMethodsScope.java" startLine="100" startPosition="90" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8931958903031995364" fileName="BaseMethodsScope.java" startLine="100" startPosition="69" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9000162595163784437" fileName="BaseMethodsScope.java" startLine="152" startPosition="74" endLine="161" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4688468737501467307" fileName="BaseMethodsScope.java" startLine="75" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodsFromGroup#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2428721740553105756" fileName="BaseMethodsScope.java" startLine="99" startPosition="0" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -357,7 +357,7 @@
       <varInfo nodeId="2178788147568616819" varName="signature" />
     </scopeInfo>
     <scopeInfo nodeId="4688468737501467310" fileName="BaseMethodsScope.java" startLine="75" startPosition="87" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="2428721740553105759" fileName="BaseMethodsScope.java" startLine="100" startPosition="90" endLine="109" endPosition="7" />
+    <scopeInfo nodeId="2428721740553105759" fileName="BaseMethodsScope.java" startLine="100" startPosition="69" endLine="109" endPosition="7" />
     <scopeInfo nodeId="4688468737501467307" fileName="BaseMethodsScope.java" startLine="75" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="4688468737501467314" varName="groupWithEqualSignature" />
     </scopeInfo>
@@ -2796,7 +2796,7 @@
     <nodeInfo nodeId="794874978493615899" fileName="MemberScopes.java" startLine="31" startPosition="126" endLine="32" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6320759254352298166" fileName="MemberScopes.java" startLine="35" startPosition="45" endLine="36" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="794874978493615896" fileName="MemberScopes.java" startLine="42" startPosition="104" endLine="43" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1406216627277184799" fileName="MemberScopes.java" startLine="43" startPosition="90" endLine="44" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3341017266499583380" fileName="MemberScopes.java" startLine="43" startPosition="90" endLine="44" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1406216627277184994" fileName="MemberScopes.java" startLine="45" startPosition="31" endLine="46" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="6320759254352299046" fileName="MemberScopes.java" startLine="47" startPosition="5" endLine="48" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6320759254352298038" fileName="MemberScopes.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MemberScopes#()V" />
@@ -2820,7 +2820,7 @@
       <varInfo nodeId="6320759254352298155" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6320759254352299036" fileName="MemberScopes.java" startLine="42" startPosition="104" endLine="48" endPosition="82">
-      <varInfo nodeId="1406216627277184800" varName="membersScope" />
+      <varInfo nodeId="3341017266499583381" varName="membersScope" />
     </scopeInfo>
     <scopeInfo nodeId="6320759254352298047" fileName="MemberScopes.java" startLine="20" startPosition="64" endLine="27" endPosition="6" />
     <scopeInfo nodeId="6320759254352298110" fileName="MemberScopes.java" startLine="31" startPosition="126" endLine="38" endPosition="6" />

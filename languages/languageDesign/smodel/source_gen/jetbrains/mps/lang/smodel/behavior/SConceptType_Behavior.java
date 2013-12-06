@@ -27,7 +27,7 @@ public class SConceptType_Behavior {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "concept");
     if ((SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false) != null)) {
       String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false), "name"));
-      for (String element : ListSequence.fromList(NameUtil.splitByCamels(name))) {
+      for (String element : NameUtil.splitByCamels(name)) {
         ListSequence.fromList(variableSuffixes).addElement(element + "Concept");
       }
     }

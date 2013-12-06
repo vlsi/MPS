@@ -1038,9 +1038,18 @@ public class QueriesGenerated {
 
                 ListSequence.fromList(SLinkOperations.getTargets((item), "typeVariableDeclaration", true)).visitAll(new IVisitor<SNode>() {
                   public void visit(final SNode originalVar) {
-                    SNode newTypeParam;
+                    SNode newTypeParam = null;
                     if (ListSequence.fromList(expectedTypeParams).isNotEmpty()) {
                       newTypeParam = SNodeOperations.copyNode(ListSequence.fromList(expectedTypeParams).removeElementAt(0));
+                      if (SNodeOperations.isInstanceOf(newTypeParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+                        newTypeParam = null;
+                      } else if (SNodeOperations.isInstanceOf(newTypeParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+                        newTypeParam = SLinkOperations.getTarget(SNodeOperations.cast(newTypeParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true);
+                      } else if (SNodeOperations.isInstanceOf(newTypeParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+                        newTypeParam = SLinkOperations.getTarget(SNodeOperations.cast(newTypeParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true);
+                      }
+                    }
+                    if ((newTypeParam != null)) {
                       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(creator, "cls", true), "typeParameter", true)).addElement(newTypeParam);
                     } else {
                       newTypeParam = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(creator, "cls", true), "typeParameter", "jetbrains.mps.baseLanguage.structure.ClassifierType");
@@ -1049,7 +1058,7 @@ public class QueriesGenerated {
                     // replace all type vars with new ones 
                     Iterable<SNode> typeVarRefs = ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
-                        return eq_x583g4_a0a0a0a0a0a3a0a0a0a01a0a0a0a0a0a1a2a0a1a25(SLinkOperations.getTarget(it, "typeVariableDeclaration", false), originalVar);
+                        return eq_x583g4_a0a0a0a0a0a4a0a0a0a01a0a0a0a0a0a1a2a0a1a25(SLinkOperations.getTarget(it, "typeVariableDeclaration", false), originalVar);
                       }
                     });
                     for (SNode typeVar : Sequence.fromIterable(typeVarRefs)) {
@@ -6046,7 +6055,7 @@ __switch__:
     return quotedNode_2;
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a3a0a0a0a01a0a0a0a0a0a1a2a0a1a25(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a4a0a0a0a01a0a0a0a0a0a1a2a0a1a25(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 

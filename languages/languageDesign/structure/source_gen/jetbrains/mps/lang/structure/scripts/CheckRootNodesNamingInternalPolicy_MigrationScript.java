@@ -80,7 +80,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
 
       public void doUpdateInstanceNode(SNode node) {
         StringBuilder sb = new StringBuilder();
-        for (String word : ListSequence.fromList(NameUtil.splitByCamels(SPropertyOperations.getString(node, "name")))) {
+        for (String word : NameUtil.splitByCamels(SPropertyOperations.getString(node, "name"))) {
           sb.append(NameUtil.decapitalize(word)).append(" ");
         }
         SNode aliasProperty = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).where(new IWhereFilter<SNode>() {

@@ -17,6 +17,7 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class SelectTest_Test extends Util_Test {
   public void test_selectMethod() throws Exception {
@@ -158,5 +159,18 @@ __switch__:
     Assert.assertTrue((int) Sequence.fromIterable(seql).count() == 1 && (long) Sequence.fromIterable(seql).first() == -1L);
     Assert.assertTrue((int) ListSequence.fromList(lo).ofType(Boolean.class).count() == 1);
     Assert.assertTrue(ListSequence.fromList(lo).ofType(Float.class).isEmpty());
+  }
+
+  public void test_mps19134() throws Exception {
+    // testing compilation 
+    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 111, 112, 113)).translate(new ITranslator2<Integer, String>() {
+      public Iterable<String> translate(Integer it) {
+        return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "foo", "bar")).select(new ISelector<String, String>() {
+          public String select(String it) {
+            return ((true ? "" : "")) + "";
+          }
+        });
+      }
+    });
   }
 }

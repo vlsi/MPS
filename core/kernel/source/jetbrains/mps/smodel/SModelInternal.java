@@ -99,6 +99,4 @@ public interface SModelInternal {
   void changeModelReference(SModelReference newModelReference);
 
   boolean updateModuleReferences();
-
-  void copyPropertiesTo(SModelInternal to);
 }

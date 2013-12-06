@@ -120,8 +120,8 @@ public class CreateGroupsBuilder {
       final Runnable r2 = new Runnable() {
         @Override
         public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), jetbrains.mps.smodel.SNode.PACK);
-          SNodeAccessUtil.setProperty(created[0], jetbrains.mps.smodel.SNode.PACK, mainPack);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), SNodeUtil.property_BaseConcept_virtualPackage);
+          SNodeAccessUtil.setProperty(created[0], SNodeUtil.property_BaseConcept_virtualPackage, mainPack);
           myCallback.changeNode(created[0]);
         }
       };

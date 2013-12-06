@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,11 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.persistence.LightModelEnvironmentInfo;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.smodel.InterfaceSNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.runtime.ConceptKind;
-import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -39,13 +36,11 @@ import java.util.List;
 
 public class NodesReader {
   protected final SModelReference myModelReference;
-  private final LightModelEnvironmentInfo myEnv;
   private final boolean myInterfaceOnly;
   private boolean hasSkippedNodes = false;
 
-  public NodesReader(@NotNull SModelReference modelReference, LightModelEnvironmentInfo info, boolean interfaceOnly) {
+  public NodesReader(@NotNull SModelReference modelReference, boolean interfaceOnly) {
     myModelReference = modelReference;
-    myEnv = info;
     myInterfaceOnly = interfaceOnly;
   }
 
@@ -53,16 +48,16 @@ public class NodesReader {
     return hasSkippedNodes;
   }
 
-  public List<Pair<String, SNode>> readNodes(SModel model, ModelInputStream is) throws IOException {
+  public List<Pair<String, SNode>> readNodes(ModelInputStream is) throws IOException {
     int size = is.readInt();
     List<Pair<String, SNode>> nodes = new ArrayList<Pair<String, SNode>>(size);
     for (int i = 0; i < size; i++) {
-      nodes.add(readNode(model, is));
+      nodes.add(readNode(is));
     }
     return nodes;
   }
 
-  public Pair<String, SNode> readNode(SModel model, ModelInputStream is) throws IOException {
+  public Pair<String, SNode> readNode(ModelInputStream is) throws IOException {
     String conceptFqName = readConceptQualifiedName(is);
     SNodeId nodeId = is.readNodeId();
     String nodeRole = is.readString();
@@ -87,9 +82,9 @@ public class NodesReader {
 
     readReferences(is, node);
 
-    readChildren(model, is, node);
+    readChildren(is, node);
 
-    readUserObjects(model, is, node);
+    readUserObjects(is, node);
 
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
@@ -102,21 +97,12 @@ public class NodesReader {
     return i == 1 ? ConceptKind.INTERFACE : i == 3 ? ConceptKind.IMPLEMENTATION_WITH_STUB : i == 2 ? ConceptKind.IMPLEMENTATION : ConceptKind.NORMAL;
   }
 
-  private StaticScope getStaticScope(byte nodeInfo) {
-    int i = (nodeInfo >> 3) & 3;
-    return i == 1 ? StaticScope.ROOT : i == 2 ? StaticScope.NONE : StaticScope.GLOBAL;
-  }
-
-  private boolean isUnordered(byte nodeInfo) {
-    return (nodeInfo & 1) != 0;
-  }
-
   protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
     return is.readString();
   }
 
-  protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
-    List<Pair<String, SNode>> children = readNodes(model, is);
+  protected void readChildren(ModelInputStream is, SNode node) throws IOException {
+    List<Pair<String, SNode>> children = readNodes(is);
     for (Pair<String, SNode> child : children) {
       if (!(node instanceof InterfaceSNode) || child.o2 instanceof InterfaceSNode) {
         node.addChild(child.o1, child.o2);
@@ -173,19 +159,19 @@ public class NodesReader {
     }
   }
 
-  private void readUserObjects(SModel model, ModelInputStream is, SNode node) throws IOException {
+  private void readUserObjects(ModelInputStream is, SNode node) throws IOException {
     // first read user objects
     int userObjectCount = is.readInt();
     for (int i = 0; i < userObjectCount; i += 2) {
-      Object key = readUserObject(is, model);
-      Object value = readUserObject(is, model);
+      Object key = readUserObject(is);
+      Object value = readUserObject(is);
       if (key != null && value != null) {
         node.putUserObject(key, value);
       }
     }
   }
 
-  private Object readUserObject(ModelInputStream is, SModel model) throws IOException {
+  private Object readUserObject(ModelInputStream is) throws IOException {
     int id = is.readInt();
     switch (id) {
       case NodesWriter.USER_NODE_POINTER:

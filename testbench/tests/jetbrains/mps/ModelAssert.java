@@ -27,7 +27,7 @@ import java.util.*;
 import static org.junit.Assert.*;
 
 public class ModelAssert {
-  public static void assertDeepModelEquals(SModel expectedModel, SModel actualModel) {
+  public static void assertDeepModelEquals(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
     ModelAccess.instance().checkReadAccess();
 
     assertSameImports(expectedModel, actualModel);
@@ -54,15 +54,15 @@ public class ModelAssert {
     assertTrue("Found not expected " + objectName + " " + actualIdToNodeMap, actualIdToNodeMap.isEmpty());
   }
 
-  private static void assertSameModelImports(SModel expectedModel, SModel actualModel) {
+  private static void assertSameModelImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
     assertListsEqual(SModelOperations.getImportedModelUIDs(expectedModel),
       SModelOperations.getImportedModelUIDs(actualModel),
       "model import");
   }
 
-  private static void assertSameLanguageAspects(SModel expectedModel, SModel actualModel) {
-    List<ImportElement> expectedLanguageAspects = ((jetbrains.mps.smodel.SModelInternal) expectedModel).getAdditionalModelVersions();
-    List<ImportElement> actualLanguageAspects = ((jetbrains.mps.smodel.SModelInternal) actualModel).getAdditionalModelVersions();
+  private static void assertSameLanguageAspects(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+    List<ImportElement> expectedLanguageAspects = (expectedModel).getAdditionalModelVersions();
+    List<ImportElement> actualLanguageAspects = (actualModel).getAdditionalModelVersions();
 
     for (ImportElement expectedEl : expectedLanguageAspects) {
       boolean found = false;
@@ -99,9 +99,9 @@ public class ModelAssert {
     assertEquals("Language aspect verion of model " + expectedEl.getModelReference() + " differ ", expectedEl.getUsedVersion(), actualEl.getUsedVersion());
   }
 
-  private static void assertSameImports(SModel expectedModel, SModel actualModel) {
-    assertListsEqual(((jetbrains.mps.smodel.SModelInternal) expectedModel).getAdditionalModelVersions(),
-      ((jetbrains.mps.smodel.SModelInternal) actualModel).getAdditionalModelVersions(), new Comparator<ImportElement>() {
+  private static void assertSameImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
+    assertListsEqual((expectedModel).getAdditionalModelVersions(),
+      (actualModel).getAdditionalModelVersions(), new Comparator<ImportElement>() {
         @Override
         public int compare(ImportElement import1, ImportElement import2) {
           if (import1.getModelReference().equals(import2.getModelReference())) {

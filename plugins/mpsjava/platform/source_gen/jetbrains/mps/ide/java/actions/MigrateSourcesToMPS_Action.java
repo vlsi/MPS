@@ -17,7 +17,6 @@ import java.util.List;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.project.MPSProject;
@@ -96,7 +95,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
       }
 
       List<IFile> sourcePaths = ListSequence.fromList(new ArrayList<IFile>());
-      for (String path : CollectionSequence.fromCollection(moduleDescr.getSourcePaths())) {
+      for (String path : moduleDescr.getSourcePaths()) {
         ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFileByPath(path));
       }
 

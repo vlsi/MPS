@@ -21,18 +21,35 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
-import jetbrains.mps.generator.impl.reference.*;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateParent;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.runtime.ReferenceResolver;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.util.InternUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -67,9 +84,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return generator.getOutputModel();
   }
 
+  @NotNull
   @Override
-  public SNode createOutputNode(String conceptName) {
-    return new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptName));
+  public SNode createOutputNode(@NotNull String conceptName) {
+    // I use getInstanceConcept because it doesn't return null for unknown concepts
+    // Another alternative is to check getConcept for null and instantiate BaseConcept then
+    SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptName);
+    return generator.getOutputModel().createNode(c);
   }
 
   @Override
@@ -94,6 +115,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return reductionContext;
   }
 
+  @NotNull
   @Override
   public QueryExecutionContext getQueryExecutor() {
     return myExecutionContext;
@@ -172,10 +194,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           ref.getSourceNode(),
           inputNode,
           ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(
-          refInfo,
-          generator);
-        ref.getSourceNode().setReference(ref.getRole(), postponedReference);
+        PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+        postponedReference.setReferenceInOutputSourceNode();
       }
     }
     for (SNode child : node.getChildren()) {
@@ -268,7 +288,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
-  public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
+  public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
     ReferenceInfo_TemplateParent refInfo = new ReferenceInfo_TemplateParent(
       outputNode,
       role,
@@ -276,15 +296,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       parentIndex,
       resolveInfo,
       context);
-    PostponedReference postponedReference = new PostponedReference(
-      refInfo,
-      generator
-    );
-    outputNode.setReference(postponedReference.getRole(), postponedReference);
+    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
   }
 
   @Override
-  public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
+  public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
       outputNode,
       role,
@@ -292,24 +308,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       templateNodeId,
       resolveInfo,
       context);
-    PostponedReference postponedReference = new PostponedReference(
-      refInfo,
-      generator
-    );
-    outputNode.setReference(postponedReference.getRole(), postponedReference);
+    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
   }
 
   @Override
-  public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
-    ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroResolver(
-      resolver, outputNode,
-      role, context,
-      getQueryExecutor());
-    PostponedReference postponedReference = new PostponedReference(
-      refInfo,
-      generator
-    );
-    outputNode.setReference(postponedReference.getRole(), postponedReference);
+  public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
+    ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, outputNode, role, context);
+    PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+    postponedReference.setReferenceInOutputSourceNode();
   }
 
   /*
@@ -317,7 +323,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   */
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    SNode childToReplaceLater = new jetbrains.mps.smodel.SNode(mapper.getConceptFqName());
+    SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());
     getTracer().pushOutputNodeToReplaceLater(childToReplaceLater);
     generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, getQueryExecutor());
     return childToReplaceLater;
@@ -343,15 +349,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       status.reportProblem(false, contextParentNode, "",
         GeneratorUtil.describe(inputNode, "input"),
         GeneratorUtil.describe(templateNode.resolve(MPSModuleRepository.getInstance()), "template"));
-    }
-
-    // add
-    SNode/*LinkDeclaration*/ childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(((jetbrains.mps.smodel.SNode) contextParentNode).getConceptDeclarationNode(), childRole);
-    if (childLinkDeclaration == null) {
-      // there should have been warning about that
+      // spit out the warning, but try to add anyway
       contextParentNode.addChild(childRole, outputNodeToWeave);
     } else {
-      if (SModelUtil.isMultipleLinkDeclaration(childLinkDeclaration)) {
+      // add
+      if (v.isMultipleSource()) {
         contextParentNode.addChild(childRole, outputNodeToWeave);
       } else {
         SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(contextParentNode, childRole);

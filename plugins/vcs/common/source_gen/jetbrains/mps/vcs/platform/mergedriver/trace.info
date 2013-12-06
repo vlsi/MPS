@@ -93,7 +93,7 @@
     <nodeInfo nodeId="4166013692425290845" fileName="MergeDriverPacker.java" startLine="82" startPosition="52" endLine="83" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4166013692425290849" fileName="MergeDriverPacker.java" startLine="83" startPosition="48" endLine="84" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4166013692425290854" fileName="MergeDriverPacker.java" startLine="84" startPosition="53" endLine="85" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1564108971409412535" fileName="MergeDriverPacker.java" startLine="93" startPosition="70" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1564108971409412535" fileName="MergeDriverPacker.java" startLine="93" startPosition="47" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1564108971409412543" fileName="MergeDriverPacker.java" startLine="96" startPosition="33" endLine="97" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1564108971409417491" fileName="MergeDriverPacker.java" startLine="98" startPosition="16" endLine="99" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1564108971409412552" fileName="MergeDriverPacker.java" startLine="102" startPosition="47" endLine="103" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -226,7 +226,7 @@
       <varInfo nodeId="3532702333854217696" varName="svnPlugin" />
     </scopeInfo>
     <scopeInfo nodeId="8298649587588677832" fileName="MergeDriverPacker.java" startLine="113" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="1564108971409412534" fileName="MergeDriverPacker.java" startLine="93" startPosition="70" endLine="105" endPosition="7">
+    <scopeInfo nodeId="1564108971409412534" fileName="MergeDriverPacker.java" startLine="93" startPosition="47" endLine="105" endPosition="7">
       <varInfo nodeId="1564108971409412536" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="6006585546800309800" fileName="MergeDriverPacker.java" startLine="141" startPosition="12" endLine="153" endPosition="142">

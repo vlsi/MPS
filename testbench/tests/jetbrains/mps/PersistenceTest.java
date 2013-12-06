@@ -100,7 +100,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                       fail();
                     }
                     assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                    ModelAssert.assertDeepModelEquals(model, result.getModel().getModelDescriptor());
+                    ModelAssert.assertDeepModelEquals(((SModelBase) model).getSModel(), result.getModel());
                     result.getModel().dispose();
                   }
                 } catch (AssertionFailedError e) {
@@ -178,8 +178,8 @@ public class PersistenceTest extends WorkbenchMpsTest {
                         ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getSource(),
                             ModelLoadingState.FULLY_LOADED);
                         assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                        ModelAssert.assertDeepModelEquals(resultFrom.getModel().getModelDescriptor(),
-                            result.getModel().getModelDescriptor());
+                        ModelAssert.assertDeepModelEquals(resultFrom.getModel(),
+                            result.getModel());
                         return result;
                       } catch (ModelReadException e) {
                         return null;
@@ -225,8 +225,8 @@ public class PersistenceTest extends WorkbenchMpsTest {
       assert source != null;
 
       try {
-        SModel model = wasInitialized ? modelDescriptor : ModelPersistence.readModel(source, false).getModelDescriptor();
-        ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), source, toVersion);
+        jetbrains.mps.smodel.SModel model = wasInitialized ? modelDescriptor.getSModelInternal() : ModelPersistence.readModel(source, false);
+        ModelPersistence.saveModel(model, source, toVersion);
         modelDescriptor.reloadFromSource();
       } catch (ModelReadException e) {
         // This hardly can happend, unreadable model should be already filtered out

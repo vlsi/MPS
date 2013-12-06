@@ -49,13 +49,13 @@ public class ArrayType_Behavior {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "array");
     if ((SLinkOperations.getTarget(thisNode, "componentType", true) != null)) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           if (!(ListSequence.fromList(variableSuffixes).contains(suffix))) {
             ListSequence.fromList(variableSuffixes).addElement(suffix);
           }
         }
       } else {
-        for (String suffix : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{}))) {
+        for (String suffix : BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getVariableSuffixes_1213877337304", new Object[]{})) {
           ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
         }
       }

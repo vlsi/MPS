@@ -17,10 +17,10 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import org.jetbrains.annotations.NotNull;
-import java.util.Set;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -172,8 +172,80 @@ public class ClassifierType_Behavior {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Type", "virtual_isSupersetOf_1220438914705", new Object[]{t});
   }
 
+  public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+      {
+        SNode matchedNode_hz3823_a0a0k = thisNode;
+        {
+          boolean matches_hz3823_a0a0a01 = false;
+          GeneratedMatchingPattern matchingPattern_hz3823_a0a0a01 = new ClassifierType_Behavior.Pattern_hz3823_a0a1a1a0a0a11();
+          matches_hz3823_a0a0a01 = matchingPattern_hz3823_a0a0a01.match(matchedNode_hz3823_a0a0k);
+          if (matches_hz3823_a0a0a01) {
+            return true;
+          } else
+          return false;
+        }
+      }
+    }
+    {
+      GeneratedMatchingPattern pattern_hz3823_b0k = new ClassifierType_Behavior.Pattern_hz3823_a0a0a1a11(SLinkOperations.getTarget(thisNode, "classifier", false));
+      SNode coercedNode_hz3823_b0k = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_hz3823_b0k);
+      if (coercedNode_hz3823_b0k != null) {
+        {
+          Iterator<SNode> typeParam_it = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0k.getFieldValue("patternVar_l"))).iterator();
+          Iterator<SNode> myParam_it = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
+          SNode typeParam_var;
+          SNode myParam_var;
+          while (typeParam_it.hasNext() && myParam_it.hasNext()) {
+            typeParam_var = typeParam_it.next();
+            myParam_var = myParam_it.next();
+            SNode _myParam = myParam_var;
+            SNode _typeParam = typeParam_var;
+            while (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_myParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+              if (temp != null) {
+                _myParam = temp;
+              } else {
+                break;
+              }
+            }
+            while (SNodeOperations.isInstanceOf(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+              SNode temp = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(_typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
+              if (temp != null) {
+                _typeParam = temp;
+              } else {
+                break;
+              }
+            }
+            if (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+              if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, _myParam, "virtual_isSupersetOf_9029841626175335449", new Object[]{_typeParam, substitutions}))) {
+                return false;
+              }
+            } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+              return false;
+            } else if (SNodeOperations.isInstanceOf(_myParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_myParam, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty()) {
+              if (!(SNodeOperations.isInstanceOf(_typeParam, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_typeParam, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty() && BehaviorReflection.invokeVirtual(Boolean.TYPE, _myParam, "virtual_isSupersetOf_9029841626175335449", new Object[]{_typeParam, substitutions}) && BehaviorReflection.invokeVirtual(Boolean.TYPE, _typeParam, "virtual_isSupersetOf_9029841626175335449", new Object[]{_myParam, substitutions}))) {
+                return false;
+              }
+            } else {
+              if (!(MatchingUtil.matchNodes(_myParam, _typeParam))) {
+                return false;
+              }
+            }
+          }
+        }
+        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count()) {
+          return false;
+        }
+        return true;
+      } else {
+      }
+    }
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Type", "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
+  }
+
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
-    return _quotation_createNode_hz3823_a0a01();
+    return _quotation_createNode_hz3823_a0a11();
   }
 
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
@@ -242,7 +314,7 @@ public class ClassifierType_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       // treat raw type as if all params were Object or the appropriate bound 
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true))) {
-        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_hz3823_a0a0a1a6a81() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
+        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_hz3823_a0a0a1a6a91() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
       }
     } else {
       {
@@ -293,7 +365,7 @@ public class ClassifierType_Behavior {
 
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     if ("jetbrains.mps.baseLanguage.structure.ArrayType".equals(conceptFqName)) {
-      return SLinkOperations.getTarget(thisNode, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0t_0(), "classifier", false) || SLinkOperations.getTarget(thisNode, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0t(), "classifier", false);
+      return SLinkOperations.getTarget(thisNode, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0u_0(), "classifier", false) || SLinkOperations.getTarget(thisNode, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0u(), "classifier", false);
     }
     return true;
   }
@@ -405,6 +477,103 @@ public class ClassifierType_Behavior {
     }
   }
 
+  public static class Pattern_hz3823_a0a1a1a0a0a11 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_hz3823_a0a1a1a0a0a11() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k;
+        nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k.getConcept().getQualifiedName()))) {
+          return false;
+        }
+        {
+          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0l;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k.getReferenceTarget("classifier")))) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+
+    public Object getFieldValue(String fieldName) {
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
+  public static class Pattern_hz3823_a0a0a1a11 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ List<SNode> patternVar_l;
+    /*package*/ SNode patternVar_ignored;
+    /*package*/ Object AntiquotationField_hz3823_a0a0a1a01;
+
+    public Pattern_hz3823_a0a0a1a11(Object parameter_hz3823_a0a0a1a01) {
+      this.AntiquotationField_hz3823_a0a0a1a01 = parameter_hz3823_a0a0a1a01;
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01;
+        nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01.getConcept().getQualifiedName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a01;
+          if (nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01.getReferenceTarget("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole_ClassifierType_Behavior_hz3823__0 = "parameter";
+          this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
+          patternVar_ignored = null;
+          for (SNode childVar : nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01.getChildren(childRole_ClassifierType_Behavior_hz3823__0)) {
+            patternVar_ignored = childVar;
+            ListSequence.fromList(this.patternVar_l).addElement(childVar);
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return true;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
+        patternVar_ignored = (SNode) pattern.getFieldValue("patternVar_ignored");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("patternVar_l".equals(fieldName)) {
+        return patternVar_l;
+      }
+      if ("patternVar_ignored".equals(fieldName)) {
+        return patternVar_ignored;
+      }
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
   private static SNode _quotation_createNode_hz3823_a0a7(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -413,14 +582,14 @@ public class ClassifierType_Behavior {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_hz3823_a0a01() {
+  private static SNode _quotation_createNode_hz3823_a0a11() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_hz3823_a0a0a1a6a81() {
+  private static SNode _quotation_createNode_hz3823_a0a0a1a6a91() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -428,7 +597,7 @@ public class ClassifierType_Behavior {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_hz3823_a0a0a0a0t() {
+  private static SNode _quotation_createNode_hz3823_a0a0a0a0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -436,7 +605,7 @@ public class ClassifierType_Behavior {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_hz3823_a0a0a0a0t_0() {
+  private static SNode _quotation_createNode_hz3823_a0a0a0a0u_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -445,4 +614,5 @@ public class ClassifierType_Behavior {
   }
 
   private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0l = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }
