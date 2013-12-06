@@ -167,10 +167,7 @@ __switch__:
       public Iterable<String> translate(Integer it) {
         return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "foo", "bar")).select(new ISelector<String, String>() {
           public String select(String it) {
-            return ((true ?
-              "" :
-              ""
-            )) + "";
+            return ((true ? "" : "")) + "";
           }
         });
       }
