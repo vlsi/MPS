@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:7c6b6a5a-7faa-4582-9cf9-57f779b50a76(jetbrains.mps.console.base.util)/6928665434434205188">
+    <nodeInfo nodeId="6928665434434213751" fileName="SubconceptsScope.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6928665434435461642" fileName="SubconceptsScope.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" />
+    <nodeInfo nodeId="6928665434435662660" fileName="SubconceptsScope.java" startLine="21" startPosition="56" endLine="22" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6928665434435676462" fileName="SubconceptsScope.java" startLine="22" startPosition="27" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537277537" fileName="SubconceptsScope.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6928665434435462413" fileName="SubconceptsScope.java" startLine="30" startPosition="78" endLine="31" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224588814561861661" fileName="SubconceptsScope.java" startLine="31" startPosition="84" endLine="32" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224588814561861723" fileName="SubconceptsScope.java" startLine="33" startPosition="45" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224588814561861954" fileName="SubconceptsScope.java" startLine="37" startPosition="39" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224588814561861959" fileName="SubconceptsScope.java" startLine="38" startPosition="34" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224588814561862166" fileName="SubconceptsScope.java" startLine="45" startPosition="68" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224588814561862135" fileName="SubconceptsScope.java" startLine="47" startPosition="71" endLine="48" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224588814561862144" fileName="SubconceptsScope.java" startLine="50" startPosition="29" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224588814561862153" fileName="SubconceptsScope.java" startLine="52" startPosition="16" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224588814561865215" fileName="SubconceptsScope.java" startLine="56" startPosition="5" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537277800" fileName="SubconceptsScope.java" startLine="61" startPosition="74" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8401916545537277961" fileName="SubconceptsScope.java" startLine="64" startPosition="22" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8401916545537277822" fileName="SubconceptsScope.java" startLine="66" startPosition="7" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8401916545537277967" fileName="SubconceptsScope.java" startLine="68" startPosition="32" endLine="69" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8401916545537277963" fileName="SubconceptsScope.java" startLine="69" startPosition="21" endLine="70" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224588814561865243" fileName="SubconceptsScope.java" startLine="72" startPosition="5" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224588814561862151" fileName="SubconceptsScope.java" startLine="52" startPosition="14" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1224588814561861687" fileName="SubconceptsScope.java" startLine="32" startPosition="106" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8401916545537277952" fileName="SubconceptsScope.java" startLine="63" startPosition="71" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6928665434435657970" fileName="SubconceptsScope.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubconceptsScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="1224588814561861952" fileName="SubconceptsScope.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8401916545537277827" fileName="SubconceptsScope.java" startLine="67" startPosition="31" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224588814561862142" fileName="SubconceptsScope.java" startLine="49" startPosition="33" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224588814561861744" fileName="SubconceptsScope.java" startLine="35" startPosition="5" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224588814561862140" fileName="SubconceptsScope.java" startLine="48" startPosition="31" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224588814561865197" fileName="SubconceptsScope.java" startLine="46" startPosition="24" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1224588814561865336" fileName="SubconceptsScope.java" startLine="62" startPosition="34" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6928665434435461775" fileName="SubconceptsScope.java" startLine="30" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6928665434435461790" fileName="SubconceptsScope.java" startLine="44" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6928665434435461813" fileName="SubconceptsScope.java" startLine="60" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="8401916545537277537" fileName="SubconceptsScope.java" startLine="28" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="8401916545537277542" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224588814561861688" fileName="SubconceptsScope.java" startLine="33" startPosition="45" endLine="34" endPosition="17" />
+    <scopeInfo nodeId="1224588814561862143" fileName="SubconceptsScope.java" startLine="50" startPosition="29" endLine="51" endPosition="21" />
+    <scopeInfo nodeId="1224588814561862152" fileName="SubconceptsScope.java" startLine="52" startPosition="16" endLine="53" endPosition="22" />
+    <scopeInfo nodeId="8401916545537277953" fileName="SubconceptsScope.java" startLine="64" startPosition="22" endLine="65" endPosition="17" />
+    <scopeInfo nodeId="6928665434435657973" fileName="SubconceptsScope.java" startLine="21" startPosition="56" endLine="23" endPosition="23" />
+    <scopeInfo nodeId="1224588814561861953" fileName="SubconceptsScope.java" startLine="37" startPosition="39" endLine="39" endPosition="55">
+      <varInfo nodeId="1224588814561861955" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401916545537277828" fileName="SubconceptsScope.java" startLine="68" startPosition="32" endLine="70" endPosition="20" />
+    <scopeInfo nodeId="6928665434435657970" fileName="SubconceptsScope.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6928665434435661349" varName="concept" />
+      <varInfo nodeId="6928665434435661922" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224588814561861952" fileName="SubconceptsScope.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1224588814561861952" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224588814561862141" fileName="SubconceptsScope.java" startLine="49" startPosition="33" endLine="54" endPosition="9" />
+    <scopeInfo nodeId="1224588814561865200" fileName="SubconceptsScope.java" startLine="47" startPosition="71" endLine="55" endPosition="7">
+      <varInfo nodeId="1224588814561862136" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224588814561865339" fileName="SubconceptsScope.java" startLine="63" startPosition="71" endLine="71" endPosition="7">
+      <varInfo nodeId="8401916545537277823" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224588814561865197" fileName="SubconceptsScope.java" startLine="46" startPosition="24" endLine="56" endPosition="5">
+      <varInfo nodeId="1224588814561865198" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="1224588814561865336" fileName="SubconceptsScope.java" startLine="62" startPosition="34" endLine="72" endPosition="5">
+      <varInfo nodeId="1224588814561865337" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="6928665434435461789" fileName="SubconceptsScope.java" startLine="30" startPosition="78" endLine="41" endPosition="7">
+      <varInfo nodeId="1224588814561861662" varName="seq" />
+    </scopeInfo>
+    <scopeInfo nodeId="6928665434435461812" fileName="SubconceptsScope.java" startLine="45" startPosition="68" endLine="57" endPosition="18">
+      <varInfo nodeId="1224588814561862167" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6928665434435461837" fileName="SubconceptsScope.java" startLine="61" startPosition="74" endLine="73" endPosition="18">
+      <varInfo nodeId="8401916545537277801" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6928665434435461775" fileName="SubconceptsScope.java" startLine="30" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="6928665434435461780" varName="prefix" />
+    </scopeInfo>
+    <scopeInfo nodeId="6928665434435461790" fileName="SubconceptsScope.java" startLine="44" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="6928665434435461794" varName="contextNode" />
+      <varInfo nodeId="6928665434435461796" varName="refText" />
+    </scopeInfo>
+    <scopeInfo nodeId="6928665434435461813" fileName="SubconceptsScope.java" startLine="60" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="6928665434435461817" varName="contextNode" />
+      <varInfo nodeId="6928665434435461819" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1224588814561861952" fileName="SubconceptsScope.java" startLine="36" startPosition="48" endLine="41" endPosition="5" unitName="jetbrains.mps.console.base.util.SubconceptsScope$1" />
+    <unitInfo nodeId="6928665434434205188" fileName="SubconceptsScope.java" startLine="15" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.console.base.util.SubconceptsScope" />
+  </root>
+</debugInfo>
+

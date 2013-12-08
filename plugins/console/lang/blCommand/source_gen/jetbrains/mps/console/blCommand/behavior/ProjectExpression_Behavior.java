@@ -12,4 +12,8 @@ public class ProjectExpression_Behavior {
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
     return null;
   }
+
+  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
+    return "current project";
+  }
 }

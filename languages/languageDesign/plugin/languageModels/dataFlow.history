@@ -12,7 +12,7 @@
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="-1" />
       <model index="97fo" modelUID="r:8656e939-bf57-4238-aa56-83db35841a3e(jetbrains.mps.execution.configurations.deprecated.dataFlow)" version="-1" />
       <model index="ucfr" modelUID="r:def9da36-61ed-4f39-9c10-98a9883447d1(jetbrains.mps.execution.configurations.deprecated.editor)" version="0" />
-      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="-1" />
+      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="24" />
       <model index="11eb" modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.execution.configurations.deprecated.structure)" version="1" />
     </dependencies>
     <move id="tp4k.3856910426407529532" to="11eb.314981645426569336" />
@@ -1900,7 +1900,7 @@
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="0" />
       <model index="97fo" modelUID="r:8656e939-bf57-4238-aa56-83db35841a3e(jetbrains.mps.execution.configurations.deprecated.dataFlow)" version="0" />
       <model index="ucfr" modelUID="r:def9da36-61ed-4f39-9c10-98a9883447d1(jetbrains.mps.execution.configurations.deprecated.editor)" version="1" />
-      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="0" />
+      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="25" />
       <model index="11eb" modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.execution.configurations.deprecated.structure)" version="2" />
     </dependencies>
     <move id="tp4k.9061443648117357793" to="11eb.314981645426831724" />
@@ -1949,7 +1949,7 @@
       <model index="tp4u" modelUID="r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)" version="1" />
       <model index="tp4v" modelUID="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)" version="4" />
       <model index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="-1" />
-      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="6" />
+      <model index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="31" />
     </dependencies>
     <move id="tp4k.1229346143986" to="qff7.8974276187400348185" />
     <move id="tp4k.1225441160166" to="qff7.8974276187400348170" />
