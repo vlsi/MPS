@@ -30,7 +30,7 @@ public class FrameRule implements GetDataRule {
   public Object getData(DataProvider dataProvider) {
     Project project = MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     if (project == null) {
-      IdeFrame[] frames = WindowManager.getInstance().getAllFrames();
+      IdeFrame[] frames = WindowManager.getInstance().getAllProjectFrames();
       return frames.length == 0 ? null : frames[0];
     }
     return WindowManager.getInstance().getFrame(project);

@@ -23,6 +23,10 @@ import com.intellij.ui.LayeredIcon;
 import javax.swing.Icon;
 
 public class MPSIcons {
+  public static class Ant {
+    public static final Icon Build = IconLoader.getIcon("/ant/build.png");
+  }
+
   public static class Actions {
     public static final Icon AddToVCS = IconLoader.getIcon("/actions/addToVcs.png");
     public static final Icon GroupByCategory = IconLoader.getIcon("/actions/groupByCategory.png");

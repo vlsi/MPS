@@ -4,9 +4,30 @@ package jetbrains.mps.console.blCommand.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.console.base.behavior.ConsoleHelpProvider_Behavior;
 
-public class ShowExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
+public class ShowExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ConsoleExpression_BehaviorDescriptor {
   public ShowExpression_BehaviorDescriptor() {
+  }
+
+  public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
+  }
+
+  public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
+  }
+
+  public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
+  }
+
+  public String virtual_getKind_7006261637493126084(SConcept thisConcept) {
+    return ConsoleExpression_Behavior.virtual_getKind_7006261637493126084(thisConcept);
+  }
+
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
+    return ShowExpression_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
 
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {

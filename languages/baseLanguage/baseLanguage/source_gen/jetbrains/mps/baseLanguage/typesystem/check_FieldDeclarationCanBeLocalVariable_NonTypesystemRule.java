@@ -13,6 +13,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import java.util.ArrayList;
+import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -60,14 +64,26 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
         return eq_pk5n8v_a0a0a0a0a0h0b(it, Sequence.fromIterable(methods).first());
       }
     })) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variableDeclaration, "Field can be converted into a local variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6640766779592666289", null, errorTarget);
+      SNode method = Sequence.fromIterable(methods).first();
+      Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
+
+      // find a read instruction for variableDeclaration not preceeded by a write instruction 
+      boolean uninitializedRead = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<ReadInstruction>(), program.getUninitializedReads())).any(new IWhereFilter<ReadInstruction>() {
+        public boolean accept(ReadInstruction it) {
+          return eq_pk5n8v_a0a0a0a0a0a4a7a1(it.getVariable(), variableDeclaration);
+        }
+      });
+
+      if (!(uninitializedRead)) {
         {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix", false);
-          intentionProvider.putArgument("method", Sequence.fromIterable(methods).first());
-          intentionProvider.putArgument("refs", refs);
-          _reporter_2309309498.addIntentionProvider(intentionProvider);
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variableDeclaration, "Field can be converted into a local variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6640766779592666289", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix", false);
+            intentionProvider.putArgument("method", Sequence.fromIterable(methods).first());
+            intentionProvider.putArgument("refs", refs);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       }
     }
@@ -87,6 +103,10 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean eq_pk5n8v_a0a0a0a0a0a4a7a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_pk5n8v_a0a0a0a0a0h0b(Object a, Object b) {

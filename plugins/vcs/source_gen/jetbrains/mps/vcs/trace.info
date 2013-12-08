@@ -327,7 +327,7 @@
     <scopeInfo nodeId="3613324658897713272" fileName="MPSVcsProjectConfiguration.java" startLine="39" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="3613324658897713275" varName="ignoreGeneratedFiles" />
     </scopeInfo>
-    <unitInfo nodeId="3613324658897713315" fileName="MPSVcsProjectConfiguration.java" startLine="44" startPosition="57" endLine="51" endPosition="7" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration$1" />
+    <unitInfo nodeId="3613324658897713315" fileName="MPSVcsProjectConfiguration.java" startLine="44" startPosition="56" endLine="51" endPosition="7" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration$1" />
     <unitInfo nodeId="3613324658897713217" fileName="MPSVcsProjectConfiguration.java" startLine="59" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration$MyState" />
     <unitInfo nodeId="3613324658897713212" fileName="MPSVcsProjectConfiguration.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.vcs.MPSVcsProjectConfiguration" />
   </root>

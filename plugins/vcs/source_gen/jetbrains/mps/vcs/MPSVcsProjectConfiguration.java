@@ -41,7 +41,7 @@ public class MPSVcsProjectConfiguration extends AbstractProjectComponent impleme
       myState.myIgnoreGeneratedFiles = ignoreGeneratedFiles;
       ModuleRootListener moduleRootListener = myProject.getMessageBus().asyncPublisher(ProjectTopics.PROJECT_ROOTS);
       moduleRootListener.rootsChanged(new ModuleRootEventImpl(myProject, false));
-      VirtualFileManager.getInstance().refresh(true, new Runnable() {
+      VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
         @Override
         public void run() {
           if (!(myProject.isDisposed())) {

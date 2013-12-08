@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 
-public class RebuildAspectCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
+public abstract class RebuildAspectCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public RebuildAspectCommand_BehaviorDescriptor() {
   }
 

@@ -5,25 +5,27 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 import org.apache.log4j.Priority;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -33,81 +35,120 @@ public class HelpCommand_Behavior {
   }
 
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
-    final Language base = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class);
-    Iterable<Language> consoleLanguages = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class));
-    consoleLanguages = Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<Language>() {
-      public Iterable<Language> iterable() {
-        return new Iterable<Language>() {
-          public Iterator<Language> iterator() {
-            return new YieldingIterator<Language>() {
-              private int __CP__ = 0;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 2:
-                      this.__CP__ = 1;
-                      this.yield(base);
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
-          }
-        };
-      }
-    })).concat(Sequence.fromIterable(consoleLanguages));
-    console.addText(Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(consoleLanguages).translate(new ITranslator2<Language, SModel>() {
-      public Iterable<SModel> translate(Language it) {
-        return it.getModels();
-      }
-    }).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return it.getRootNodes();
-      }
-    }), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getTargets(it, "implements", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "intfc", false) == SNodeOperations.getNode("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "473081947981012231");
-          }
-        });
-      }
-    }).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        try {
-          return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) it))), "virtual_getHelp_473081947982699339", new Object[]{});
-        } catch (RuntimeException e) {
-          if (LOG.isEnabledFor(Priority.WARN)) {
-            LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
-          }
-          return "";
+    if ((SLinkOperations.getTarget(thisNode, "target", true) == null)) {
+      Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), context.getConsoleModel(), GlobalScope.getInstance())).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(it);
         }
+      }).sort(new ISelector<SNode, String>() {
+        public String select(SNode it) {
+          return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getGroup_6928665434441162387", new Object[]{});
+        }
+      }, true).alsoSort(new ISelector<SNode, String>() {
+        public String select(SNode it) {
+          return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getKind_7006261637493126084", new Object[]{});
+        }
+      }, true);
+      Deque<SNode> groupedConstructions = LinkedListSequence.fromLinkedList(new LinkedList<SNode>());
+      for (SNode e : Sequence.fromIterable(constructions)) {
+        if (BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(e)), "virtual_getGroup_6928665434441162387", new Object[]{}) != check_x46ur7_a0a0c0a0a(LinkedListSequence.fromLinkedList(groupedConstructions).last())) {
+          LinkedListSequence.fromLinkedList(groupedConstructions).addElement(null);
+        }
+        LinkedListSequence.fromLinkedList(groupedConstructions).addElement(e);
       }
-    }).foldLeft("", new ILeftCombinator<String, String>() {
-      public String combine(String s, String it) {
-        return ((s == null || s.length() == 0) ? it : s + "\n" + it);
+      List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedList(groupedConstructions).select(new ISelector<SNode, IListSequence<String>>() {
+        public IListSequence<String> select(SNode it) {
+          try {
+            return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getKind_7006261637493126084", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
+          } catch (RuntimeException e) {
+            if (LOG.isEnabledFor(Priority.WARN)) {
+              LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
+            }
+            try {
+              return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "", "");
+            } catch (RuntimeException e1) {
+              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, "name"), "", "");
+            }
+          }
+        }
+      }));
+      List<Integer> maxLens = ListSequence.fromList(new LinkedList<Integer>());
+      for (int i = 0; i < ListSequence.fromList(resultList).select(new ISelector<List<String>, Integer>() {
+        public Integer select(List<String> it) {
+          return ListSequence.fromList(it).count();
+        }
+      }).foldRight(0, new IRightCombinator<Integer, Integer>() {
+        public Integer combine(Integer it, Integer s) {
+          return Math.max(s, it);
+        }
+      }); i++) {
+        int maxLength = 0;
+        for (List<String> row : ListSequence.fromList(resultList)) {
+          int length = check_x46ur7_a0a0b0f0a0a(ListSequence.fromList(row).getElement(i));
+          if (length > maxLength) {
+            maxLength = length;
+          }
+        }
+        ListSequence.fromList(maxLens).addElement(maxLength);
       }
-    }));
+
+      StringBuilder output = new StringBuilder();
+      for (List<String> row : ListSequence.fromList(resultList)) {
+        for (int i = 0; i < ListSequence.fromList(maxLens).count(); i++) {
+          output.append((ListSequence.fromList(row).getElement(i) == null ? "" : ListSequence.fromList(row).getElement(i)));
+          if (i < ListSequence.fromList(maxLens).count() - 1) {
+            for (int j = check_x46ur7_a0a0b0a0i0a0a(ListSequence.fromList(row).getElement(i)); j < ListSequence.fromList(maxLens).getElement(i) + 2; j++) {
+              output.append(" ");
+            }
+          }
+        }
+        output.append("\n");
+      }
+      console.addText("Constructions available in console:\n\n");
+      console.addText(output.toString());
+    } else if (SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "target", true), "command", false), "jetbrains.mps.console.base.structure.ConsoleHelpProvider")) {
+      String helpPage;
+      try {
+        SNode chp = (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "target", true), "command", false);
+        helpPage = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getHelpPage_7006261637493125297", new Object[]{});
+        if ((helpPage != null && helpPage.length() > 0)) {
+          console.addText(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n\n" + helpPage);
+        } else {
+          console.addText(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
+        }
+      } catch (RuntimeException ignored) {
+      }
+    }
   }
 
-  public static String virtual_getHelp_473081947982699339(SAbstractConcept thisConcept) {
-    String result = "Constructions available in console:\n\n";
-    result += "?                       command       display this help\n";
-    return result;
+  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
+    return "display this help or command help";
+  }
 
+  public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
+    return "When called without arguments, prints common help.\nWhen command is specified, prints help about the command.";
   }
 
   protected static Logger LOG = LogManager.getLogger(HelpCommand_Behavior.class);
+
+  private static String check_x46ur7_a0a0c0a0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(checkedDotOperand)), "virtual_getGroup_6928665434441162387", new Object[]{});
+    }
+    return null;
+  }
+
+  private static int check_x46ur7_a0a0b0f0a0a(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.length();
+    }
+    return 0;
+  }
+
+  private static int check_x46ur7_a0a0b0a0i0a0a(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.length();
+    }
+    return 0;
+  }
 }
