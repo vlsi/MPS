@@ -24,12 +24,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import jetbrains.mps.logging.MPSAppenderBase;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.apache.log4j.Priority;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 
 public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   private CountDownLatch myLatch = new CountDownLatch(1);
@@ -60,10 +54,9 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       public void run() {
         CoreMakeTask.RelayingLoggingHandler rlh = new CoreMakeTask.RelayingLoggingHandler(coreTask.getMessageHandler());
         try {
-          rlh.startRelaying();
           coreTask.run(monitor);
         } finally {
-          rlh.stopRelaying();
+          rlh.dispose();
         }
       }
     }, "MPS Make Thread");
@@ -167,42 +160,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     INDETERMINATE();
 
     TaskState() {
-    }
-
-    public static class RelayingLoggingHandler extends MPSAppenderBase {
-      private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
-      private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
-        @Override
-        protected IMessageHandler initialValue() {
-          return (MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ?
-            MakeTask.TaskState.RelayingLoggingHandler.GROUP_HANDLER._1() :
-            null
-          );
-        }
-      };
-
-      public RelayingLoggingHandler(IMessageHandler mh) {
-        this.messageHandler.set(mh);
-        GROUP_HANDLER = MultiTuple.<ThreadGroup,IMessageHandler>from(Thread.currentThread().getThreadGroup(), mh);
-      }
-
-      public void startRelaying() {
-        this.register();
-      }
-
-      public void stopRelaying() {
-        this.unregister();
-      }
-
-      @Override
-      protected void append(@NotNull Priority priority, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
-        IMessageHandler mh = messageHandler.get();
-        if (mh != null) {
-          Message message = new Message(MessageKind.fromPriority(priority), messageText);
-          message.setHintObject(object);
-          mh.handle(message);
-        }
-      }
     }
   }
 }

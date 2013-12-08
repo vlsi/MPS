@@ -59,13 +59,13 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeChecker myTypeChecker;
 
+  //TypeContextManager is a singleton, so we can omit remove() here though the field is not static
   private ThreadLocal<ITypeContextOwner> myTypecheckingContextOwner = new ThreadLocal<ITypeContextOwner>() {
     @Override
     protected ITypeContextOwner initialValue() {
       return new DefaultTypecheckingContextOwner();
     }
   };
-
   private ThreadLocal<SubtypingCache> mySubtypingCache = new ThreadLocal<SubtypingCache>();
 
   public static TypeContextManager getInstance() {

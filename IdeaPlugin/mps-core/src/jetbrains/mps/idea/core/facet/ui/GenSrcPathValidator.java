@@ -59,7 +59,7 @@ public class GenSrcPathValidator extends ProjectStructureValidator {
     else if (element instanceof FacetProjectStructureElement) {
       Module module = myModule.get();
       if (module != null) {
-        myModule.set(null);
+        myModule.remove();
         FacetProjectStructureElement fpse = (FacetProjectStructureElement) element;
         Project project = module.getProject();
         FacetPointersManager.getInstance(project).create(fpse.getId());
