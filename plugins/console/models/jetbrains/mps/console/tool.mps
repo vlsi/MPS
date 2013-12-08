@@ -3055,7 +3055,7 @@
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="6533942543040119249" nodeInfo="nn">
                                             <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6533942543040119796" nodeInfo="nn">
-                                              <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.TextResponceItem" typeId="eynw.5637103006919121976" id="6533942543040120309" nodeInfo="ng">
+                                              <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.TextResponseItem" typeId="eynw.5637103006919121976" id="6533942543040120309" nodeInfo="ng">
                                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="6533942543040120783" nodeInfo="ng">
                                                   <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
                                                   <property name="label" nameId="tp3r.6489343236075007666" value="TextResponceItem" />
@@ -3089,7 +3089,7 @@
                                             </node>
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="6533942543040163819" nodeInfo="nn">
-                                            <link role="concept" roleId="tp25.1139877738879" targetNodeId="eynw.5637103006919122224" resolveInfo="NewLineResponceItem" />
+                                            <link role="concept" roleId="tp25.1139877738879" targetNodeId="eynw.5637103006919122224" resolveInfo="NewLineResponseItem" />
                                           </node>
                                         </node>
                                       </node>
@@ -3297,7 +3297,7 @@
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="6533942543040061951" nodeInfo="nn">
-                                        <link role="concept" roleId="tp25.1139877738879" targetNodeId="eynw.5637103006919121940" resolveInfo="NodeResponceItem" />
+                                        <link role="concept" roleId="tp25.1139877738879" targetNodeId="eynw.5637103006919121940" resolveInfo="NodeResponseItem" />
                                       </node>
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6533942543040068329" nodeInfo="nn">

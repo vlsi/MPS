@@ -287,21 +287,21 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5637103006919121966" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="response" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5637103006919121940" resolveInfo="NodeResponceItem" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5637103006919121940" resolveInfo="NodeResponseItem" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5637103006919121968" nodeInfo="ng">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.5637103006919121941" />
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5637103006919122218" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="response" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5637103006919121976" resolveInfo="TextResponceItem" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5637103006919121976" resolveInfo="TextResponseItem" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5637103006919122220" nodeInfo="ng">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.5637103006919122193" resolveInfo="text" />
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5637103006919122491" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="response" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5637103006919122224" resolveInfo="NewLineResponceItem" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5637103006919122224" resolveInfo="NewLineResponseItem" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5637103006919122493" nodeInfo="nn">
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5637103006919122590" nodeInfo="nn">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />

@@ -12,20 +12,20 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class NodeResponceItem_Editor extends DefaultNodeEditor {
+public class NodeResponseItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_uup70z_a(editorContext, node);
+    return this.createCollection_rjs2cb_a(editorContext, node);
   }
 
-  private EditorCell createCollection_uup70z_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rjs2cb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_uup70z_a");
+    editorCell.setCellId("Collection_rjs2cb_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNode_uup70z_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_rjs2cb_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_uup70z_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_rjs2cb_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("node");
     provider.setNoTargetText("<no node>");

@@ -82,11 +82,11 @@
     <classNode dependClassName="jetbrains.mps.console.base.editor.INodeWithReference_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.InterpretedCommand_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.base.editor.NewLineResponceItem_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.base.editor.NodeResponceItem_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.base.editor.NewLineResponseItem_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.base.editor.NodeResponseItem_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.PastedNodeReference_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.Response_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.base.editor.TextResponceItem_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.base.editor.TextResponseItem_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
@@ -192,7 +192,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.NewLineResponceItem_Editor" file="NewLineResponceItem_Editor.java">
+  <dependency className="jetbrains.mps.console.base.editor.NewLineResponseItem_Editor" file="NewLineResponseItem_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
@@ -202,7 +202,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.NodeResponceItem_Editor" file="NodeResponceItem_Editor.java">
+  <dependency className="jetbrains.mps.console.base.editor.NodeResponseItem_Editor" file="NodeResponseItem_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
@@ -245,7 +245,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.TextResponceItem_Editor" file="TextResponceItem_Editor.java">
+  <dependency className="jetbrains.mps.console.base.editor.TextResponseItem_Editor" file="TextResponseItem_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />

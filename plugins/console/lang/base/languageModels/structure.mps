@@ -3,7 +3,7 @@
   <persistence version="8" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" />
-  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
+  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="eynw" modelUID="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" version="2" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="757553790980850366" nodeInfo="ig">
@@ -182,7 +182,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="item" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="5637103006919120956" resolveInfo="ResponceItem" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5637103006919120956" resolveInfo="ResponseItem" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5637103006918242489" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="HistoryItem" />
@@ -193,11 +193,11 @@
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5637103006919120956" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="response" />
-    <property name="name" nameId="tpck.1169194664001" value="ResponceItem" />
+    <property name="name" nameId="tpck.1169194664001" value="ResponseItem" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5637103006919121940" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="response" />
-    <property name="name" nameId="tpck.1169194664001" value="NodeResponceItem" />
+    <property name="name" nameId="tpck.1169194664001" value="NodeResponseItem" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5637103006919121941" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -206,27 +206,27 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5637103006919122597" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5637103006919120956" resolveInfo="ResponceItem" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5637103006919120956" resolveInfo="ResponseItem" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5637103006919121976" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="response" />
-    <property name="name" nameId="tpck.1169194664001" value="TextResponceItem" />
+    <property name="name" nameId="tpck.1169194664001" value="TextResponseItem" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5637103006919122193" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="text" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5637103006919122595" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5637103006919120956" resolveInfo="ResponceItem" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5637103006919120956" resolveInfo="ResponseItem" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5637103006919122224" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="response" />
-    <property name="name" nameId="tpck.1169194664001" value="NewLineResponceItem" />
+    <property name="name" nameId="tpck.1169194664001" value="NewLineResponseItem" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5637103006919122593" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5637103006919120956" resolveInfo="ResponceItem" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5637103006919120956" resolveInfo="ResponseItem" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6928665434433761801" nodeInfo="ig">

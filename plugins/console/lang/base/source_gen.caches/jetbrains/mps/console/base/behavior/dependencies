@@ -9,14 +9,14 @@
     <classNode dependClassName="jetbrains.mps.console.base.behavior.HelpConceptReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.History_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.ModifiedCommandHistoryItem_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.NewLineResponceItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.NewLineResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeReferencePresentation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeReferenceString_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeResponceItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeWithClosure_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.PastedNodeReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.Response_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.TextResponceItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.TextResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
@@ -273,10 +273,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.NewLineResponceItem_BehaviorDescriptor" file="NewLineResponceItem_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.base.behavior.NewLineResponseItem_BehaviorDescriptor" file="NewLineResponseItem_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.ResponceItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -320,10 +320,10 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.NodeResponceItem_BehaviorDescriptor" file="NodeResponceItem_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.base.behavior.NodeResponseItem_BehaviorDescriptor" file="NodeResponseItem_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.ResponceItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -362,7 +362,7 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.ResponceItem_BehaviorDescriptor" file="ResponceItem_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" file="ResponseItem_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.console.base.behavior.Response_BehaviorDescriptor" file="Response_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -372,10 +372,10 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.TextResponceItem_BehaviorDescriptor" file="TextResponceItem_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.base.behavior.TextResponseItem_BehaviorDescriptor" file="TextResponseItem_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.ResponceItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.ResponseItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />

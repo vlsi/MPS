@@ -395,7 +395,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                 ListSequence.fromList(SLinkOperations.getTargets(getLastReponse(), "item", true)).addElement(_quotation_createNode_xg3v07_a0a0a1a1a0a0b0a4a0a0yb(line));
               }
               if (scanner.hasNextLine() || text.charAt(text.length() - 1) == '\n') {
-                SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NewLineResponceItem");
+                SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NewLineResponseItem");
               }
             }
           }
@@ -408,7 +408,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                 ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
               }
             }
-            SLinkOperations.setTarget(SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NodeResponceItem"), "node", node, true);
+            SLinkOperations.setTarget(SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NodeResponseItem"), "node", node, true);
           }
         }, new Runnable() {
           public void run() {
@@ -694,7 +694,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   private static SNode _quotation_createNode_xg3v07_a0a0a1a1a0a0b0a4a0a0yb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResponceItem", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResponseItem", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
   }

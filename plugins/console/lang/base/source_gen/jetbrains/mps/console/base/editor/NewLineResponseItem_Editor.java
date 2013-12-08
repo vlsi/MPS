@@ -11,14 +11,14 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class NewLineResponceItem_Editor extends DefaultNodeEditor {
+public class NewLineResponseItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_hbhyey_a(editorContext, node);
+    return this.createConstant_e0ktqa_a(editorContext, node);
   }
 
-  private EditorCell createConstant_hbhyey_a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_e0ktqa_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_hbhyey_a");
+    editorCell.setCellId("Constant_e0ktqa_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
