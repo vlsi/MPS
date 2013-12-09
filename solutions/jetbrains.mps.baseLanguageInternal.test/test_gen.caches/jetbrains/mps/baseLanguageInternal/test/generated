@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-5kxgtamhc16vxlnycz57xsed203bvce">
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="7cf5mbs6r7l7w6l3mzm1xim6xwzt321" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-zttxhpc4iix3xpfv1j0msfpvjln643" />
+  <common hash="2lylh8s3xa0gq767jm4gsnjzgqfucdh" dependsOnNodes="true" />
+  <source id="1293230950168428284" name="InternalClassifier" hash="-10m7348d2z9t3w8shykppoxp0cdzsmd">
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="InternalClassifier_Test.java" />
+  </source>
+  <source id="1293230950168512377" hash="-1kw5obcqhr80tgm1aq5dwugs6pc3nct" />
+</dependencies>
+

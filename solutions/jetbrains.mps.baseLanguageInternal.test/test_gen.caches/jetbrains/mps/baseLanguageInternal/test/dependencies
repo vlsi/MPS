@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguageInternal.test.InternalClassifier_Test" file="InternalClassifier_Test.java">
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
+</dependenciesRoot>
+
