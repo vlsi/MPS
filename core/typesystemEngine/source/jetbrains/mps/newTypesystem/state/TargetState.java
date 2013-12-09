@@ -71,8 +71,13 @@ public class TargetState extends State {
     return myTargetTypeCalculated;
   }
 
+  @Deprecated
   public void expandTargetNode() {
-    getNodeMaps().expandNode(myTargetNode, true);
+    expandTargetNode(true);
+  }
+
+  public void expandTargetNode(boolean finalExpansion) {
+    getNodeMaps().expandNode(myTargetNode, finalExpansion);
     if (!TypesUtil.hasVariablesInside(getNodeMaps().getType(myTargetNode))) {
       setTargetTypeCalculated();
     }
@@ -80,7 +85,6 @@ public class TargetState extends State {
 
   @Override
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
-    expandTargetNode();
-    return;
+    expandTargetNode(finalExpansion);
   }
 }
