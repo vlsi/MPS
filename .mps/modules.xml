@@ -39,6 +39,7 @@
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="core.baseLanguage.tests" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/jetbrains.mps.baseLanguage.util.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguageInternal/jetbrains.mps.baseLanguageInternal.mpl" folder="core.baseLanguage" />
+      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguageInternal/solutions/jetbrains.mps.baseLanguageInternal.test/jetbrains.mps.baseLanguageInternal.test.msd" folder="core.baseLanguage.tests" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/blTypes/jetbrains.mps.baseLanguage.blTypes.mpl" folder="core.baseLanguage.extensions" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/checkDot/languages/checkedDots/jetbrains.mps.baseLanguage.checkedDots.mpl" folder="core.baseLanguage.checkedDots" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/checkDot/languages/checkedDots/sandbox/jetbrains.mps.baseLanguage.checkedDots.sandbox.msd" folder="core.baseLanguage.checkedDots" />
@@ -351,7 +352,6 @@
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" folder="samples.persistence" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguageInternal.test/jetbrains.mps.baseLanguageInternal.test.msd" folder="core.baseLanguage.tests" />
       <modulePath path="$PROJECT_DIR$/solutions/test/test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/jetbrains.mps.testbench.suite.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/jetbrains.mps.testbench.suite.pluginSolution.msd" folder="tests" />
