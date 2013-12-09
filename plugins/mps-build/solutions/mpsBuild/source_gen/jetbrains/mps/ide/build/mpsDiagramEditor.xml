@@ -314,7 +314,6 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -380,7 +379,6 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -451,7 +449,6 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
@@ -520,7 +517,6 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -582,7 +578,6 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0-SNAPSHOT.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/modelUtil-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
