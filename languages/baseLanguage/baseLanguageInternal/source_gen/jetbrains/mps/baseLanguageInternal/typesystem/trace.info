@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="11" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1100832983841501763">
     <nodeInfo nodeId="1100832983841501766" fileName="typeof_InternalClassCreator_InferenceRule.java" startLine="24" startPosition="133" endLine="25" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1100832983841501771" fileName="typeof_InternalClassCreator_InferenceRule.java" startLine="26" startPosition="82" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -550,6 +550,81 @@
       <varInfo nodeId="1238253384653" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="1238253384653" fileName="typeof_ExtractToConstantExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.typeof_ExtractToConstantExpression_InferenceRule" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1293230950168564359">
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="26" startPosition="35" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1293230950168634814" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="18" startPosition="97" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="25" startPosition="207" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="26" startPosition="35" endLine="27" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="30" startPosition="27" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="35" startPosition="5" endLine="36" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="36" startPosition="133" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="43" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="43" startPosition="135" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="48" startPosition="53" endLine="49" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="52" startPosition="55" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule#()V" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableCustom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSubtypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSupertypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="34" startPosition="71" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="41" startPosition="73" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="15" startPosition="94" endLine="15" endPosition="94" />
+    <scopeInfo nodeId="1293230950168564361" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="22" startPosition="253" endLine="22" endPosition="253" />
+    <scopeInfo nodeId="1293230950168564361" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="26" startPosition="35" endLine="26" endPosition="35" />
+    <scopeInfo nodeId="1293230950168564674" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="18" startPosition="97" endLine="19" endPosition="128" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="30" startPosition="27" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="48" startPosition="53" endLine="49" endPosition="81" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="52" startPosition="55" endLine="53" endPosition="81" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1293230950168564359" varName="equationInfo" />
+      <varInfo nodeId="1293230950168564359" varName="inequalityIsLessThan" />
+      <varInfo nodeId="1293230950168564359" varName="inequalityIsWeak" />
+      <varInfo nodeId="1293230950168564359" varName="status" />
+      <varInfo nodeId="1293230950168564359" varName="subtype" />
+      <varInfo nodeId="1293230950168564359" varName="supertype" />
+      <varInfo nodeId="1293230950168564359" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="25" startPosition="207" endLine="27" endPosition="27">
+      <varInfo nodeId="1293230950168564359" varName="result_14532009" />
+    </scopeInfo>
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="35" startPosition="5" endLine="37" endPosition="45">
+      <varInfo nodeId="1293230950168564359" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="44" endPosition="45">
+      <varInfo nodeId="1293230950168564359" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1293230950168564359" varName="status" />
+      <varInfo nodeId="1293230950168564359" varName="subtype" />
+      <varInfo nodeId="1293230950168564359" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1293230950168564359" varName="equationInfo" />
+      <varInfo nodeId="1293230950168564359" varName="inequalityIsLessThan" />
+      <varInfo nodeId="1293230950168564359" varName="inequalityIsWeak" />
+      <varInfo nodeId="1293230950168564359" varName="status" />
+      <varInfo nodeId="1293230950168564359" varName="subtype" />
+      <varInfo nodeId="1293230950168564359" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="34" startPosition="71" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="41" startPosition="73" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1293230950168564359" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="1293230950168564359" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1293230950168564359" fileName="InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule.java" startLine="14" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.typesystem.InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/1585405235656400053">
     <nodeInfo nodeId="1585405235656400060" fileName="typeof_WeakConstantReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

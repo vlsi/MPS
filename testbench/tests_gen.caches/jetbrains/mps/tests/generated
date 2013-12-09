@@ -50,6 +50,7 @@
   <dep model="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" hash="-a2hy8sdbzsdgber2jubgx0b2bgbzo0a" />
   <dep model="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)" hash="3x256n9u13sp36cnpws2o2ukfs5u5pn" />
   <dep model="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" hash="2vcqie0wutjp3vkg9ok0c3w6nvxiv5w" />
+  <dep model="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" hash="-3mwi2ozuug0jguu2mju6xi5183150ap" />
   <dep model="r:eb1b318e-412f-4a0e-a1ff-62ff2ab9ff40(jetbrains.mps.lang.extension.tests.testExtension@tests)" hash="-5t14r5hizapfakeq4p5kny7ec2z3n2b" />
   <dep model="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)" hash="-60n25uthgbbswwou15uhk5n914xse0q" />
   <dep model="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)" hash="-4qbdh5sek0vgwlwusdwiwcgxjwmldoe" />
@@ -62,6 +63,7 @@
     <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" />
     <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" />
+    <dep model="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" />
     <file name="TestModule_closures_test.java" />
   </source>
   <source id="2712670354707832478" name="jetbrains.mps.baseLanguage.closures.unittest" hash="bjjdi641fyclw0vg0yd8jri2dmhs0ce">
