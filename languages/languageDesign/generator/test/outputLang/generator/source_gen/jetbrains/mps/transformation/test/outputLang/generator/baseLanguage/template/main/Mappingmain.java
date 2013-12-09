@@ -210,7 +210,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         environment.nodeCopied(context2, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363090086");
         environment.resolve(new ReferenceResolver() {
           public Object resolve(SNode outputNode, TemplateContext context) {
-            return QueriesGenerated.referenceMacro_GetReferent_1473665232107455264(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode3, referenceMacro_417xrn_c0b0a0a0a0a0c0f0f81, "variableDeclaration", context, environment.getGenerator()));
+            return QueriesGenerated.referenceMacro_GetReferent_1473665232107455264(environment.getOperationContext(), new ReferenceMacroContext(context, tnode3, referenceMacro_417xrn_c0b0a0a0a0a0c0f0f81, "variableDeclaration", environment.getGenerator()));
           }
 
           public String getDefaultResolveInfo() {
@@ -218,7 +218,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           }
 
           public SNodeReference getTemplateNode() {
-            return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1473665232107455263");
+            return referenceMacro_417xrn_c0b0a0a0a0a0c0f0f81;
           }
         }, tnode3, "variableDeclaration", context2);
 

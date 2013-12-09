@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,8 +37,18 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
     myRole = AttributeOperations.getLinkRole(macroNode);
   }
 
+  /**
+   * @deprecated use {@link #ReferenceMacroContext(jetbrains.mps.generator.runtime.TemplateContext, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNodeReference, String, ITemplateGenerator)} instead
+   */
+  @Deprecated
   public ReferenceMacroContext(SNode node, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role, TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
+    myOutputNode = outputNode;
+    myRole = role;
+  }
+
+  public ReferenceMacroContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role, @NotNull ITemplateGenerator generator) {
+    super(context.getInput(), macroNode, context, generator);
     myOutputNode = outputNode;
     myRole = role;
   }

@@ -4034,9 +4034,9 @@
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="355" startPosition="33" endLine="356" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="357" startPosition="39" endLine="358" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="358" startPosition="137" endLine="359" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="361" startPosition="104" endLine="362" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="361" startPosition="104" endLine="362" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="365" startPosition="77" endLine="366" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="369" startPosition="79" endLine="370" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="369" startPosition="79" endLine="370" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="372" startPosition="84" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="374" startPosition="45" endLine="375" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="375" startPosition="152" endLine="376" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4238,9 +4238,9 @@
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="311" startPosition="34" endLine="312" endPosition="54" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="328" startPosition="43" endLine="329" endPosition="31" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="333" startPosition="43" endLine="334" endPosition="110" />
-    <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="361" startPosition="104" endLine="362" endPosition="335" />
+    <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="361" startPosition="104" endLine="362" endPosition="315" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="365" startPosition="77" endLine="366" endPosition="61" />
-    <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="369" startPosition="79" endLine="370" endPosition="207" />
+    <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="369" startPosition="79" endLine="370" endPosition="117" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="378" startPosition="56" endLine="379" endPosition="73" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="387" startPosition="52" endLine="388" endPosition="76" />
     <scopeInfo nodeId="7991477654791670136" fileName="TemplateFindUsagesDescriptor.java" startLine="403" startPosition="52" endLine="404" endPosition="76" />

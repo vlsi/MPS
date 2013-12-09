@@ -359,7 +359,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                                     environment.nodeCopied(context21, tnode25, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791738439");
                                     environment.resolve(new ReferenceResolver() {
                                       public Object resolve(SNode outputNode, TemplateContext context) {
-                                        return QueriesGenerated.referenceMacro_GetReferent_7991477654791738442(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode25, referenceMacro_a7jb2i_c0b0a0a0a0a0c0b0d0b0e0b0d0d0c0c0b0d0b0h0b0h0b0c, "baseMethodDeclaration", context, environment.getGenerator()));
+                                        return QueriesGenerated.referenceMacro_GetReferent_7991477654791738442(environment.getOperationContext(), new ReferenceMacroContext(context, tnode25, referenceMacro_a7jb2i_c0b0a0a0a0a0c0b0d0b0e0b0d0d0c0c0b0d0b0h0b0h0b0c, "baseMethodDeclaration", environment.getGenerator()));
                                       }
 
                                       public String getDefaultResolveInfo() {
@@ -367,7 +367,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                                       }
 
                                       public SNodeReference getTemplateNode() {
-                                        return new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791738441");
+                                        return referenceMacro_a7jb2i_c0b0a0a0a0a0c0b0d0b0e0b0d0d0c0c0b0d0b0h0b0h0b0c;
                                       }
                                     }, tnode25, "baseMethodDeclaration", context21);
 

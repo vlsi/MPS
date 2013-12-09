@@ -1097,7 +1097,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                                             environment.nodeCopied(context74, tnode77, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5554116809065233208");
                                             environment.resolve(new ReferenceResolver() {
                                               public Object resolve(SNode outputNode, TemplateContext context) {
-                                                return QueriesGenerated.referenceMacro_GetReferent_5554116809065233210(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode77, referenceMacro_gw04jt_c0b0a0a0a0a0c0b0d0b0b0d0c0c0b0f0b0b0b0d0b0d0b0g0b0o0b0c, "baseMethodDeclaration", context, environment.getGenerator()));
+                                                return QueriesGenerated.referenceMacro_GetReferent_5554116809065233210(environment.getOperationContext(), new ReferenceMacroContext(context, tnode77, referenceMacro_gw04jt_c0b0a0a0a0a0c0b0d0b0b0d0c0c0b0f0b0b0b0d0b0d0b0g0b0o0b0c, "baseMethodDeclaration", environment.getGenerator()));
                                               }
 
                                               public String getDefaultResolveInfo() {
@@ -1105,7 +1105,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                                               }
 
                                               public SNodeReference getTemplateNode() {
-                                                return new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5554116809065233209");
+                                                return referenceMacro_gw04jt_c0b0a0a0a0a0c0b0d0b0b0d0c0c0b0f0b0b0b0d0b0d0b0g0b0o0b0c;
                                               }
                                             }, tnode77, "baseMethodDeclaration", context74);
 

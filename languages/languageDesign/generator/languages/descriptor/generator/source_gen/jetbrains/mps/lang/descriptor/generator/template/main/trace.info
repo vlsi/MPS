@@ -3695,9 +3695,9 @@
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="175" startPosition="21" endLine="176" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="177" startPosition="27" endLine="178" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="178" startPosition="112" endLine="179" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="181" startPosition="92" endLine="182" endPosition="307" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="181" startPosition="92" endLine="182" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="185" startPosition="65" endLine="186" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="189" startPosition="67" endLine="190" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="189" startPosition="67" endLine="190" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="192" startPosition="67" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="194" startPosition="33" endLine="195" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="195" startPosition="139" endLine="196" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3740,9 +3740,9 @@
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="262" startPosition="29" endLine="263" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="264" startPosition="35" endLine="265" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="265" startPosition="128" endLine="266" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="268" startPosition="100" endLine="269" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="268" startPosition="100" endLine="269" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="272" startPosition="73" endLine="273" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="276" startPosition="75" endLine="277" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="276" startPosition="75" endLine="277" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="279" startPosition="76" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="281" startPosition="41" endLine="282" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="282" startPosition="148" endLine="283" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3784,9 +3784,9 @@
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="354" startPosition="21" endLine="355" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="356" startPosition="27" endLine="357" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="357" startPosition="112" endLine="358" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="360" startPosition="92" endLine="361" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="360" startPosition="92" endLine="361" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="364" startPosition="65" endLine="365" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="368" startPosition="67" endLine="369" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="368" startPosition="67" endLine="369" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="371" startPosition="68" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="373" startPosition="33" endLine="374" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="374" startPosition="140" endLine="375" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3939,25 +3939,25 @@
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="128" startPosition="35" endLine="129" endPosition="58" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="137" startPosition="31" endLine="138" endPosition="49" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="170" startPosition="43" endLine="171" endPosition="67" />
-    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="181" startPosition="92" endLine="182" endPosition="307" />
+    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="181" startPosition="92" endLine="182" endPosition="287" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="185" startPosition="65" endLine="186" endPosition="50" />
-    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="189" startPosition="67" endLine="190" endPosition="182" />
+    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="189" startPosition="67" endLine="190" endPosition="92" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="198" startPosition="43" endLine="199" endPosition="66" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="207" startPosition="39" endLine="208" endPosition="57" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="248" startPosition="56" endLine="249" endPosition="70" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="257" startPosition="52" endLine="258" endPosition="68" />
-    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="268" startPosition="100" endLine="269" endPosition="324" />
+    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="268" startPosition="100" endLine="269" endPosition="304" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="272" startPosition="73" endLine="273" endPosition="58" />
-    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="276" startPosition="75" endLine="277" endPosition="190" />
+    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="276" startPosition="75" endLine="277" endPosition="108" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="285" startPosition="52" endLine="286" endPosition="68" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="294" startPosition="48" endLine="295" endPosition="68" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="303" startPosition="44" endLine="304" endPosition="63" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="312" startPosition="40" endLine="313" endPosition="55" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="321" startPosition="35" endLine="322" endPosition="53" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="349" startPosition="44" endLine="350" endPosition="58" />
-    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="360" startPosition="92" endLine="361" endPosition="308" />
+    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="360" startPosition="92" endLine="361" endPosition="288" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="364" startPosition="65" endLine="365" endPosition="50" />
-    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="368" startPosition="67" endLine="369" endPosition="182" />
+    <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="368" startPosition="67" endLine="369" endPosition="92" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="377" startPosition="44" endLine="378" endPosition="64" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="386" startPosition="40" endLine="387" endPosition="60" />
     <scopeInfo nodeId="8131497994927289969" fileName="SwitchreturnLanguageAspectDescriptor.java" startLine="395" startPosition="36" endLine="396" endPosition="54" />
@@ -5754,9 +5754,9 @@
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1093" startPosition="41" endLine="1094" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1095" startPosition="47" endLine="1096" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1096" startPosition="154" endLine="1097" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1099" startPosition="112" endLine="1100" endPosition="351" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1099" startPosition="112" endLine="1100" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1103" startPosition="85" endLine="1104" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1107" startPosition="87" endLine="1108" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1107" startPosition="87" endLine="1108" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1110" startPosition="92" endLine="1111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1112" startPosition="45" endLine="1113" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1114" startPosition="51" endLine="1115" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6527,9 +6527,9 @@
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1040" startPosition="34" endLine="1041" endPosition="54" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1075" startPosition="55" endLine="1076" endPosition="43" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1080" startPosition="55" endLine="1081" endPosition="122" />
-    <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1099" startPosition="112" endLine="1100" endPosition="351" />
+    <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1099" startPosition="112" endLine="1100" endPosition="331" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1103" startPosition="85" endLine="1104" endPosition="67" />
-    <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1107" startPosition="87" endLine="1108" endPosition="202" />
+    <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1107" startPosition="87" endLine="1108" endPosition="133" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1122" startPosition="68" endLine="1123" endPosition="92" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1131" startPosition="64" endLine="1132" endPosition="81" />
     <scopeInfo nodeId="9020561928507177266" fileName="TemplateLanguage.java" startLine="1160" startPosition="64" endLine="1161" endPosition="88" />
