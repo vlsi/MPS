@@ -72,7 +72,7 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(final SNode thisNode) {
-    if ((SNodeOperations.getParent(thisNode) == null)) {
+    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
     }
 
@@ -96,7 +96,7 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(final SNode thisNode) {
-    if ((SNodeOperations.getParent(thisNode) == null)) {
+    if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
     }
 

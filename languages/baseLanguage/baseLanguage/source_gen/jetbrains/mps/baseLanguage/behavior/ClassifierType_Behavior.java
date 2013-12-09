@@ -234,6 +234,9 @@ public class ClassifierType_Behavior {
             }
           }
         }
+        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count()) {
+          return false;
+        }
         return true;
       } else {
       }

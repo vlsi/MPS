@@ -15,9 +15,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new InternalMode_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConsoleModelExpression_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new Make_Editor());
+        return Collections.<ConceptEditor>singletonList(new InternalMode_Editor());
       default:
     }
     return Collections.emptyList();
@@ -34,5 +34,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.internalCommands.structure.InternalMode", "jetbrains.mps.console.internalCommands.structure.Make"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression", "jetbrains.mps.console.internalCommands.structure.InternalMode"};
 }

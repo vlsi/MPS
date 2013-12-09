@@ -112,9 +112,9 @@ public class TransientModelsModule extends AbstractModule {
     }
   }
 
-  public boolean addModelToKeep(SModel model, boolean force) {
-    assert model.getModule() instanceof TransientModelsModule;
-    String modelRef = model.getReference().toString();
+  public boolean addModelToKeep(@NotNull SModelReference modelReference, boolean force) {
+    assert isMyTransientModel(modelReference);
+    String modelRef = modelReference.toString();
     if (force) {
       myModelsToKeep.add(modelRef);
       return true;
@@ -221,6 +221,10 @@ public class TransientModelsModule extends AbstractModule {
     boolean own = myModels.keySet().contains(SModelStereotype.withoutStereotype(name));
     if (!own) return super.resolveInDependencies(reference);
     return myModels.get(name);
+  }
+
+  public boolean isMyTransientModel(SModelReference modelRef) {
+    return modelRef != null && myModels.containsKey(modelRef.getModelName());
   }
 
   public class TransientModuleScope extends ModuleScope {

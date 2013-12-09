@@ -127,10 +127,10 @@ public class DelayedChanges {
         Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
         if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
           if (!childLang.getGenerators().isEmpty()) {
-            myLogger.error(child, "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
+            myLogger.error(child.getReference(), "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
               GeneratorUtil.describe(myContext.getInput(), "input"),
               GeneratorUtil.describe(getMapSrcMacro(), "template"),
-              new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
+              new ProblemDescription("workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
           }
         }
 

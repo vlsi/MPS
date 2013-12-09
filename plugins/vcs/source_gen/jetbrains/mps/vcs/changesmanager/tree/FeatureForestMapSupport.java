@@ -99,7 +99,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
     public void changeAdded(@NotNull final ModelChange change) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Feature[] features = getFeaturesForChange(change);
+          Feature[] features = FeatureForestMapSupport.getFeaturesForChange(change);
           MapSequence.fromMap(myChangeToFeaturesMap).put(change, features);
           for (Feature f : MapSequence.fromMap(myChangeToFeaturesMap).get(change)) {
             myMap.put(f, change);

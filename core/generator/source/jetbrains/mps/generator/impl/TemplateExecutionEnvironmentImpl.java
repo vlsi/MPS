@@ -148,10 +148,10 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
           if (!outputNodeLang.getGenerators().isEmpty()) {
             SNode tNode = templateNode.resolve(MPSModuleRepository.getInstance());
-            getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleName() + "' - this language did not show up when computing generation steps!",
+            getLogger().error(outputNode.getReference(), "language of output node is '" + outputNodeLang.getModuleName() + "' - this language did not show up when computing generation steps!",
               GeneratorUtil.describe(tNode, "template"),
               GeneratorUtil.describe(templateContext.getInput(), "input"),
-              new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
+              new ProblemDescription("workaround: add the language '" + outputNodeLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
           }
         }
       }
@@ -168,10 +168,10 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
       if (!childLang.getGenerators().isEmpty()) {
         SNode tNode = templateNode.resolve(MPSModuleRepository.getInstance());
-        getLogger().error(child, "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
+        getLogger().error(child.getReference(), "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
           GeneratorUtil.describe(tNode, "template"),
           GeneratorUtil.describe(templateContext.getInput(), "input"),
-          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
+          new ProblemDescription("workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
       }
     }
 

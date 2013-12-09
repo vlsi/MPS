@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ChooseFromStubsByNameModel" file="ChooseFromStubsByNameModel.java">
-    <classNode dependClassName="com.intellij.ide.ui.ListCellRendererWrapper" />
+    <classNode dependClassName="com.intellij.ui.ListCellRendererWrapper" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -11,7 +11,6 @@
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="javax.swing.ListCellRenderer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />

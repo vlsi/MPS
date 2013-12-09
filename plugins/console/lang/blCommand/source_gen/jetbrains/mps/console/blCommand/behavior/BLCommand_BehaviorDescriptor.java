@@ -6,6 +6,7 @@ import jetbrains.mps.console.base.behavior.GeneratedCommand_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
@@ -18,12 +19,20 @@ public class BLCommand_BehaviorDescriptor extends GeneratedCommand_BehaviorDescr
     return BLCommand_Behavior.virtual_getBody_1239354440022(thisNode);
   }
 
+  public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
+    return BLCommand_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
+  }
+
   public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return BLCommand_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
   }
 
   public SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
     return IMethodLike_Behavior.virtual_getLastStatement_1239354409446(thisNode);
+  }
+
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
+    return BLCommand_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
 
   public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {

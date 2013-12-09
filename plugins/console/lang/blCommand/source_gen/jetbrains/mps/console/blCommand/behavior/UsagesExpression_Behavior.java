@@ -49,4 +49,8 @@ __switch__:
       }
     });
   }
+
+  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
+    return "usages of node (find usages mechanism)";
+  }
 }

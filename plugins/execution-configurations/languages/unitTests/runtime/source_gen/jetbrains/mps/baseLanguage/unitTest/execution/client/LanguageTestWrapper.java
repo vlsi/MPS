@@ -83,11 +83,11 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       return super.getTestRunParameters();
     }
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
-      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m", "-XX:PermSize=256m")).union(Sequence.fromIterable(CollectionSequence.fromCollection(PathMacros.getInstance().getUserMacroNames()).select(new _FunctionTypes._return_P1_E0<String, String>() {
+      return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m", "-XX:PermSize=256m")).union(CollectionSequence.fromCollection(PathMacros.getInstance().getUserMacroNames()).select(new _FunctionTypes._return_P1_E0<String, String>() {
         public String invoke(String key) {
           return "-D" + "path.macro." + key + "=\"" + PathMacros.getInstance().getValue(key) + "\"";
         }
-      }))).toListSequence(), ListSequence.fromList(getIdeaClasspath()).union(ListSequence.fromList(super.getTestRunParameters()._2())).toListSequence());
+      })).toListSequence(), ListSequence.fromList(getIdeaClasspath()).union(ListSequence.fromList(super.getTestRunParameters()._2())).toListSequence());
     }
     return super.getTestRunParameters();
   }
