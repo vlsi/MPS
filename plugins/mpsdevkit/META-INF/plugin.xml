@@ -18,7 +18,7 @@
   <id>jetbrains.mps.ide.devkit</id>
   <name>Languages DevKit</name>
   <description>Allows to develop new MPS languages</description>
-  <version>3.0.2</version>
+  <version>3.0.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="129.1" until-build="130.1"/>
   <depends>jetbrains.mps.ide.make</depends>
