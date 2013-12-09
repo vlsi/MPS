@@ -959,6 +959,7 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="typesystemUi" />
+    <orderEntry type="library" name="JetPad" level="project" />
   </component>
 </module>
 
