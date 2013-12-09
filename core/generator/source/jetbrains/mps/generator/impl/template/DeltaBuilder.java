@@ -232,7 +232,7 @@ public abstract class DeltaBuilder {
     // It's faster to rebuild FNF completely than to update it. E.g step 4 for lang.editor/editor
     // spent 90 seconds out of 105 in replace of 9k children
     if (inputModel instanceof SModelInternal) {
-      ((SModelInternal) inputModel).getFastNodeFinder().dispose();
+      ((SModelInternal) inputModel).disposeFastNodeFinder();
     }
     // update references between changed model elements
     for (CopyRoot root : roots) {

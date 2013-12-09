@@ -28,6 +28,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -353,8 +354,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return !myInvocationContext.isTestMode();
   }
 
-  public boolean keepTransientModel(SModel model, boolean force) {
-    if (model .getModule() instanceof TransientModelsModule && (force || keepTransientForMessageNavigation())) {
+  public boolean keepTransientModel(@Nullable SModelReference model, boolean force) {
+    if (model == null) {
+      return false;
+    }
+    if (getModule().isMyTransientModel(model) && (force || keepTransientForMessageNavigation())) {
       return getModule().addModelToKeep(model, force);
     }
     return false;

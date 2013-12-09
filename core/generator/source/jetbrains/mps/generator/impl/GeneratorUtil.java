@@ -23,12 +23,12 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
@@ -129,10 +129,11 @@ public class GeneratorUtil {
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
       String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + SNodeUtil.getDebugText(pair.o1) : "");
+      SNodeReference nr = pair.o1 == null ? null : pair.o1.getReference();
       if (error) {
-        logger.error(pair.o1, logMessage);
+        logger.error(nr, logMessage);
       } else {
-        logger.info(pair.o1, logMessage);
+        logger.info(nr, logMessage);
       }
       if (indentInc && indent.length() >= 80) {
         indentInc = false;
@@ -149,11 +150,23 @@ public class GeneratorUtil {
   }
 
   public static ProblemDescription describe(SNode node, String nodeRole) {
-    return new ProblemDescription(node, " -- was " + nodeRole + ": " + (node == null ? "null" : SNodeUtil.getDebugText(node)));
+    SNodeReference nr;
+    String msg;
+    if (node == null) {
+      nr = null;
+      msg = "null";
+    } else {
+      nr = node.getReference();
+      msg = SNodeUtil.getDebugText(node);
+    }
+    return new ProblemDescription(nr, String.format("-- was %s: %s", nodeRole, msg));
   }
 
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
-    return node != null ? new ProblemDescription(node, " -- was " + nodeRole + ": " + SNodeUtil.getDebugText(node)) : null;
+    if (node != null) {
+      return new ProblemDescription(node.getReference(), String.format("-- was %s: %s", nodeRole, SNodeUtil.getDebugText(node)));
+    }
+    return null;
   }
 
   public static <T> T[] concat(T[] arr1, T[] arr2) {
