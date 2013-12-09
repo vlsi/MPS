@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,28 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Perhaps, shall replace usages right with TemplateQueryContextWithMacro
+ */
 public class SourceSubstituteMacroNodeContext extends TemplateQueryContextWithMacro {
 
   public SourceSubstituteMacroNodeContext(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(inputNode, macroNode, context, generator);
   }
 
+  /**
+   * @deprecated use {@link #SourceSubstituteMacroNodeContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * will be removed after 3.1
+   */
+  @Deprecated
   public SourceSubstituteMacroNodeContext(SNode inputNode, @NotNull SNodeReference macroNode, TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(inputNode, macroNode, context, generator);
+  }
+
+  /**
+   * @since 3.1
+   */
+  public SourceSubstituteMacroNodeContext(@NotNull TemplateContext context, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(context, macroNode, generator);
   }
 }

@@ -246,7 +246,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       Collection<SNode> tlist1 = null;
       try {
         environment.getTracer().pushMacro(ifMacroRef_417xrn_a0a0a2a5t);
-        if (QueriesGenerated.ifMacro_Condition_4929591503636643306(environment.getOperationContext(), new IfMacroContext(context.getInput(), ifMacroRef_417xrn_a0a0a2a5t, context, environment.getGenerator()))) {
+        if (QueriesGenerated.ifMacro_Condition_4929591503636643306(environment.getOperationContext(), new IfMacroContext(context, ifMacroRef_417xrn_a0a0a2a5t, environment.getGenerator()))) {
           final SNode tnode2 = environment.createOutputNode("jetbrains.mps.lang.core.structure.BaseConcept");
           try {
             environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a1a2a5t);

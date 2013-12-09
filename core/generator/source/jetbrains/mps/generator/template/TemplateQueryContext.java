@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 
@@ -37,6 +39,14 @@ public class TemplateQueryContext {
     myTemplateNode = templateNode;
     myGenerator = generator;
     myContext = context;
+  }
+
+  // protected for the time being, unless decided to expose it (seems to be nice idea, after all)
+  protected TemplateQueryContext(@Nullable SNode templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+    myInputNode = context.getInput();
+    myContext = context;
+    myTemplateNode = templateNode;
+    myGenerator = generator;
   }
 
   /**

@@ -3157,10 +3157,6 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_6497389703574369049(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_4155486055398184052(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
@@ -3209,10 +3205,6 @@ public class QueriesGenerated {
     return (String) _context.getTransientObject(_context.getNode());
   }
 
-  public static Object templateArgumentQuery_4155486055398088999(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_99767819676502824(final IOperationContext operationContext, final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
@@ -3232,10 +3224,6 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_99767819676503010(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_99767819676503024(final IOperationContext operationContext, final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
       return (String) _context.getTransientObject(MultiTuple.<String,SNode>from("contextvar", _context.getNode()));
@@ -3248,10 +3236,6 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_99767819676503277(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_99767819676503288(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
 
@@ -3285,10 +3269,6 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_99767819676503560(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return "tlist" + ((int[]) _context.getVariable("varindex"))[0];
-  }
-
-  public static Object templateArgumentQuery_99767819676502167(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
   }
 
   public static Object templateArgumentQuery_1520710884206582504(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -3448,10 +3428,6 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_3462145372628094045(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_812193811988884547(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
 

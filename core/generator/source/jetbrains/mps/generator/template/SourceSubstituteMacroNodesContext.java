@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +34,23 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
     myRulePointer = null;
   }
 
+
+  /**
+   * @deprecated use {@link #SourceSubstituteMacroNodesContext(TemplateContext, SNodeReference, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * will be removed after 3.1
+   */
+  @Deprecated
   public SourceSubstituteMacroNodesContext(SNode node, SNodeReference ruleNode, SNodeReference macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
+    myRule = null;
+    myRulePointer = ruleNode;
+  }
+
+  /**
+   * @since 3.1
+   */
+  public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, SNodeReference ruleNode, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(context, macroNode, generator);
     myRule = null;
     myRulePointer = ruleNode;
   }

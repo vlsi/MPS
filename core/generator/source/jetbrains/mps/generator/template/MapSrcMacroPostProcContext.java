@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,21 @@ public class MapSrcMacroPostProcContext extends TemplateQueryContextWithMacro {
     myOutputNode = outputNode;
   }
 
+  /**
+   * @deprecated use {@link #MapSrcMacroPostProcContext(TemplateContext, SNode, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * will be removed after 3.1
+   */
+  @Deprecated
   public MapSrcMacroPostProcContext(SNode node, @NotNull SNodeReference macroNode, SNode outputNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
+    myOutputNode = outputNode;
+  }
+
+  /**
+   * @since 3.1
+   */
+  public MapSrcMacroPostProcContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(context, macroNode, generator);
     myOutputNode = outputNode;
   }
 

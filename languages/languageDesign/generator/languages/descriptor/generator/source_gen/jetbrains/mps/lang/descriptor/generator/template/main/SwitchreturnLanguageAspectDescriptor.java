@@ -232,7 +232,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_2tkj9d_a0a0a1a3a1a3a1a3a1a4a1a3a1a4a2a5h);
                                 environment.nodeCopied(context, tnode13, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315531960");
-                                SNodeAccessUtil.setProperty(tnode13, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "EditorAspectDescriptor", propertyMacro_2tkj9d_c0b0c0c0b0d0b0d0b0d0b0e0b0d0b0e0c0f7, context, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode13, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(environment.getOperationContext(), new PropertyMacroContext(context, "EditorAspectDescriptor", propertyMacro_2tkj9d_c0b0c0c0b0d0b0d0b0d0b0e0b0d0b0e0c0f7, environment.getGenerator()))));
 
                                 {
                                   final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");

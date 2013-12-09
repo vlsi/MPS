@@ -230,8 +230,8 @@
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="85" startPosition="13" endLine="86" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="88" startPosition="11" endLine="89" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="90" startPosition="17" endLine="91" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="91" startPosition="86" endLine="92" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="92" startPosition="257" endLine="93" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="91" startPosition="86" endLine="92" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="92" startPosition="237" endLine="93" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="94" startPosition="23" endLine="95" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="97" startPosition="65" endLine="98" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209150125542" fileName="Templateout__class.java" startLine="99" startPosition="13" endLine="100" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

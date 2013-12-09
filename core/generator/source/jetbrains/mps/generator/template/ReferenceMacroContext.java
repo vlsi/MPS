@@ -38,7 +38,8 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   }
 
   /**
-   * @deprecated use {@link #ReferenceMacroContext(jetbrains.mps.generator.runtime.TemplateContext, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.model.SNodeReference, String, ITemplateGenerator)} instead
+   * @deprecated use {@link #ReferenceMacroContext(TemplateContext, SNode, SNodeReference, String, ITemplateGenerator)} instead. This constructor
+   * will be removed after 3.1
    */
   @Deprecated
   public ReferenceMacroContext(SNode node, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role, TemplateContext context, @NotNull ITemplateGenerator generator) {
@@ -47,8 +48,11 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
     myRole = role;
   }
 
+  /**
+   * @since 3.1
+   */
   public ReferenceMacroContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role, @NotNull ITemplateGenerator generator) {
-    super(context.getInput(), macroNode, context, generator);
+    super(context, macroNode, generator);
     myOutputNode = outputNode;
     myRole = role;
   }
