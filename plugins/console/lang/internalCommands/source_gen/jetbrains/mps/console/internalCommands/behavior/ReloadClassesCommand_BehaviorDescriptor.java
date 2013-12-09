@@ -6,6 +6,7 @@ import jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ReloadClassesCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor {
   public ReloadClassesCommand_BehaviorDescriptor() {
@@ -13,6 +14,10 @@ public class ReloadClassesCommand_BehaviorDescriptor extends InterpretedCommand_
 
   public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     ReloadClassesCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
+  }
+
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
+    return ReloadClassesCommand_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
 
   @Override

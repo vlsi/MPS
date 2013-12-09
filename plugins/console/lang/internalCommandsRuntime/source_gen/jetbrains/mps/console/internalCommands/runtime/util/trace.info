@@ -1,84 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:6eb42b25-83db-4c72-9ba5-c1a95b1514ba(jetbrains.mps.console.internalCommands.runtime.util)/8829647120617550906">
-    <nodeInfo nodeId="8829647120617551057" fileName="InternalUtil.java" startLine="23" startPosition="43" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8829647120617554660" fileName="InternalUtil.java" startLine="29" startPosition="55" endLine="30" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8829647120617557997" fileName="InternalUtil.java" startLine="30" startPosition="53" endLine="31" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2849748491601373931" fileName="InternalUtil.java" startLine="36" startPosition="243" endLine="37" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2849748491601819248" fileName="InternalUtil.java" startLine="39" startPosition="62" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2849748491601826180" fileName="InternalUtil.java" startLine="44" startPosition="64" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2849748491602128434" fileName="InternalUtil.java" startLine="47" startPosition="8" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2849748491601927316" fileName="InternalUtil.java" startLine="48" startPosition="0" endLine="49" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2849748491601935045" fileName="InternalUtil.java" startLine="52" startPosition="191" endLine="53" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2849748491601747332" fileName="InternalUtil.java" startLine="56" startPosition="59" endLine="57" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2849748491601983714" fileName="InternalUtil.java" startLine="61" startPosition="24" endLine="62" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2849748491601982473" fileName="InternalUtil.java" startLine="64" startPosition="46" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2849748491602050846" fileName="InternalUtil.java" startLine="70" startPosition="7" endLine="71" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8829647120617551037" fileName="InternalUtil.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInternalFlag#()Z" />
-    <nodeInfo nodeId="2849748491601816110" fileName="InternalUtil.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2849748491601826176" fileName="InternalUtil.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2849748491601746931" fileName="InternalUtil.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2849748491601982471" fileName="InternalUtil.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="8829647120617554594" fileName="InternalUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setInternalFlag#(Z)Z" />
-    <nodeInfo nodeId="2849748491601777482" fileName="InternalUtil.java" startLine="37" startPosition="75" endLine="42" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2849748491601826166" fileName="InternalUtil.java" startLine="42" startPosition="8" endLine="47" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2849748491601929990" fileName="InternalUtil.java" startLine="54" startPosition="16" endLine="59" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2849748491601975181" fileName="InternalUtil.java" startLine="62" startPosition="95" endLine="67" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2849748491601972908" fileName="InternalUtil.java" startLine="54" startPosition="14" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2849748491601530182" fileName="InternalUtil.java" startLine="60" startPosition="9" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2849748491601882411" fileName="InternalUtil.java" startLine="51" startPosition="25" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2849748491601986330" fileName="InternalUtil.java" startLine="51" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2849748491601986328" fileName="InternalUtil.java" startLine="49" startPosition="95" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2849748491601155726" fileName="InternalUtil.java" startLine="36" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="make#(Ljetbrains/mps/project/Project;Ljava/lang/Iterable;Ljava/lang/Iterable;Ljava/lang/Iterable;Ljava/lang/Iterable;Z)V" />
-    <scopeInfo nodeId="8829647120617551040" fileName="InternalUtil.java" startLine="23" startPosition="43" endLine="24" endPosition="41" />
-    <scopeInfo nodeId="2849748491601817157" fileName="InternalUtil.java" startLine="39" startPosition="62" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="2849748491601826179" fileName="InternalUtil.java" startLine="44" startPosition="64" endLine="45" endPosition="18" />
-    <scopeInfo nodeId="2849748491601882414" fileName="InternalUtil.java" startLine="52" startPosition="191" endLine="53" endPosition="109" />
-    <scopeInfo nodeId="2849748491601746932" fileName="InternalUtil.java" startLine="56" startPosition="59" endLine="57" endPosition="36" />
-    <scopeInfo nodeId="2849748491601982472" fileName="InternalUtil.java" startLine="64" startPosition="46" endLine="65" endPosition="49" />
-    <scopeInfo nodeId="8829647120617554597" fileName="InternalUtil.java" startLine="29" startPosition="55" endLine="31" endPosition="29" />
-    <scopeInfo nodeId="8829647120617551037" fileName="InternalUtil.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2849748491601816110" fileName="InternalUtil.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="2849748491601816110" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="2849748491601826176" fileName="InternalUtil.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="2849748491601826176" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="2849748491601746931" fileName="InternalUtil.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="2849748491601746931" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="2849748491601982471" fileName="InternalUtil.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="2849748491601982471" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="8829647120617554594" fileName="InternalUtil.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <nodeInfo nodeId="8829647120617551057" fileName="InternalUtil.java" startLine="10" startPosition="43" endLine="11" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8829647120617554660" fileName="InternalUtil.java" startLine="16" startPosition="55" endLine="17" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8829647120617557997" fileName="InternalUtil.java" startLine="17" startPosition="53" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8829647120617551037" fileName="InternalUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInternalFlag#()Z" />
+    <nodeInfo nodeId="8829647120617554594" fileName="InternalUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setInternalFlag#(Z)Z" />
+    <scopeInfo nodeId="8829647120617551040" fileName="InternalUtil.java" startLine="10" startPosition="43" endLine="11" endPosition="41" />
+    <scopeInfo nodeId="8829647120617554597" fileName="InternalUtil.java" startLine="16" startPosition="55" endLine="18" endPosition="29" />
+    <scopeInfo nodeId="8829647120617551037" fileName="InternalUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="8829647120617554594" fileName="InternalUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="8829647120617554621" varName="flag" />
     </scopeInfo>
-    <scopeInfo nodeId="2849748491601972909" fileName="InternalUtil.java" startLine="54" startPosition="16" endLine="59" endPosition="14" />
-    <scopeInfo nodeId="2849748491601530185" fileName="InternalUtil.java" startLine="61" startPosition="24" endLine="67" endPosition="13">
-      <varInfo nodeId="2849748491601983715" varName="mgsm" />
-    </scopeInfo>
-    <scopeInfo nodeId="2849748491601986332" fileName="InternalUtil.java" startLine="51" startPosition="25" endLine="68" endPosition="9" />
-    <scopeInfo nodeId="2849748491601986330" fileName="InternalUtil.java" startLine="51" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="2849748491601155729" fileName="InternalUtil.java" startLine="36" startPosition="243" endLine="71" endPosition="136">
-      <varInfo nodeId="2849748491601373932" varName="context" />
-      <varInfo nodeId="2849748491601777485" varName="models" />
-      <varInfo nodeId="2849748491601927319" varName="modelsToGenerate" />
-      <varInfo nodeId="2849748491601826167" varName="modules" />
-    </scopeInfo>
-    <scopeInfo nodeId="2849748491601155726" fileName="InternalUtil.java" startLine="36" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="2849748491601294729" varName="dirtyOnly" />
-      <varInfo nodeId="2849748491601243077" varName="models_" />
-      <varInfo nodeId="2849748491601243047" varName="models__" />
-      <varInfo nodeId="2849748491601243181" varName="modules_" />
-      <varInfo nodeId="2849748491601243148" varName="modules__" />
-      <varInfo nodeId="2849748491601369745" varName="project" />
-    </scopeInfo>
-    <unitInfo nodeId="2849748491601816110" fileName="InternalUtil.java" startLine="38" startPosition="120" endLine="42" endPosition="5" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil$1" />
-    <unitInfo nodeId="2849748491601826176" fileName="InternalUtil.java" startLine="43" startPosition="124" endLine="47" endPosition="5" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil$2" />
-    <unitInfo nodeId="2849748491601746931" fileName="InternalUtil.java" startLine="55" startPosition="117" endLine="59" endPosition="11" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil$4" />
-    <unitInfo nodeId="2849748491601982471" fileName="InternalUtil.java" startLine="63" startPosition="91" endLine="67" endPosition="11" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil$4" />
-    <unitInfo nodeId="2849748491601986330" fileName="InternalUtil.java" startLine="50" startPosition="45" endLine="70" endPosition="5" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil$3" />
-    <unitInfo nodeId="8829647120617550906" fileName="InternalUtil.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil" />
+    <unitInfo nodeId="8829647120617550906" fileName="InternalUtil.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil" />
   </root>
 </debugInfo>
 

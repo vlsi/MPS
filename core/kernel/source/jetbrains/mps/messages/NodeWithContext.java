@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,28 @@
 package jetbrains.mps.messages;
 
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+@Immutable
 public class NodeWithContext {
-  private SNodeReference myNodePointer;
-  private IOperationContext myContext;
+  @NotNull
+  private final SNodeReference myNodePointer;
+  private final IOperationContext myContext;
 
+  @Deprecated
   public NodeWithContext(SNode node, IOperationContext context) {
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
+    this(new jetbrains.mps.smodel.SNodePointer(node), context);
+  }
+
+  public NodeWithContext(@NotNull SNodeReference node, IOperationContext context) {
+    myNodePointer = node;
     myContext = context;
   }
 
+  @NotNull
   public SNodeReference getNode() {
     return myNodePointer;
   }

@@ -198,7 +198,7 @@ public final class TemplateProcessor {
 
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
-        myGenerator.getLogger().error(templateNode,
+        myGenerator.getLogger().error(templateNode.getReference(),
             "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
                 templateNode));
         continue;
@@ -340,7 +340,7 @@ public final class TemplateProcessor {
         } catch (TemplateProcessingFailureException e) {
           // FIXME
           myGenerator.showErrorMessage(context.getInput(), templateFragment, macro, "error processing template fragment");
-          myGenerator.getLogger().info(contextParentNode, " -- was output context node:");
+          myGenerator.getLogger().info(contextParentNode.getReference(), " -- was output context node:");
         }
       } else {
         myGenerator.showErrorMessage(context.getInput(), templateFragment, macro, "couldn't define 'context' for template fragment");
@@ -474,12 +474,11 @@ public final class TemplateProcessor {
         Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
         if (!getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
           if (!childLang.getGenerators().isEmpty()) {
-            getLogger().error(child,
+            getLogger().error(child.getReference(),
                 "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
                 GeneratorUtil.describe(macro, "template"),
                 GeneratorUtil.describe(templateContext.getInput(), "input"),
-                new ProblemDescription(null,
-                    "workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
+                new ProblemDescription("workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
           }
         }
 
@@ -535,7 +534,7 @@ public final class TemplateProcessor {
         }
 
       } else {
-        getLogger().error(templateContext.getInput(), "cannot apply $WEAVE$ to a list of nodes",
+        getLogger().error(templateContext.getInput().getReference(), "cannot apply $WEAVE$ to a list of nodes",
             GeneratorUtil.describe(macro, "template"),
             GeneratorUtil.describe(templateContext.getInput(), "input"));
       }

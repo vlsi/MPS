@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.generator;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, Feb 23, 2010
@@ -26,37 +30,62 @@ public interface IGeneratorLogger {
 
   boolean needsWarnings();
 
+  @Deprecated
   void info(SNode node, String message);
+  void info(@Nullable SNodeReference node, @NotNull String message);
 
   void info(String message);
 
   void warning(String message);
 
+  @Deprecated
   void warning(SNode node, String message, ProblemDescription... descriptions);
+  void warning(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions);
 
   void error(String message);
 
+  @Deprecated
   void error(SNode node, String message, ProblemDescription... descriptions);
+  void error(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions);
 
   void handleException(Throwable t);
 
   /**
    * Contains description of the problem.
    */
-  public class ProblemDescription {
+  @Immutable
+  public final class ProblemDescription {
 
-    private SNode myNode;
-    private String myMessage;
+    private final SNodeReference myNode;
+    private final String myMessage;
 
+    /**
+     * @deprecated Use {@link #ProblemDescription(org.jetbrains.mps.openapi.model.SNodeReference, String)} instead
+     */
+    @Deprecated
     public ProblemDescription(SNode node, String message) {
+      this(node == null ? null : node.getReference(), message);
+    }
+
+    public ProblemDescription(@NotNull String message) {
+      this((SNodeReference) null, message);
+    }
+
+    /**
+     * @param node identify problem location, if possible
+     * @param message describe the issue, mandatory
+     */
+    public ProblemDescription(@Nullable SNodeReference node, @NotNull String message) {
       myNode = node;
       myMessage = message;
     }
 
-    public SNode getNode() {
+    @Nullable
+    public SNodeReference getNode() {
       return myNode;
     }
 
+    @NotNull
     public String getMessage() {
       return myMessage;
     }

@@ -41,6 +41,8 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.NodeWithContext;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
@@ -95,13 +97,13 @@ class GenerationSession {
   private final GenerationOptions myGenerationOptions;
 
   GenerationSession(@NotNull org.jetbrains.mps.openapi.model.SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
-      ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
+      ProgressMonitor progressMonitor, GenerationSessionLogger logger, TransientModelsModule transientModelsModule,
       IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myDiscardTransients = !generationOptions.isSaveTransientModels();
     myProgressMonitor = progressMonitor;
-    myLogger = new GenerationSessionLogger(logger);
+    myLogger = logger;
     ttrace = tracer;
     myGenerationOptions = generationOptions;
     mySessionContext = new GenerationSessionContext(invocationContext, generationOptions.getGenerationTracer(), transientModelsModule, myOriginalInputModel);
@@ -247,7 +249,7 @@ class GenerationSession {
         mySessionContext.clearTransientObjects();
 
         if (myGenerationOptions.isKeepOutputModel()) {
-          mySessionContext.keepTransientModel(currOutput, true);
+          mySessionContext.keepTransientModel(currOutput.getReference(), true);
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
@@ -668,12 +670,13 @@ class GenerationSession {
             @Nullable Object hintObject) {
           if (mySessionContext == null) return;
           if (hintObject instanceof SNode) {
-            mySessionContext.keepTransientModel(((SNode) hintObject).getModel(), false);
+            final SModel m = ((SNode) hintObject).getModel();
+            mySessionContext.keepTransientModel(m.getReference(), false);
           } else if (hintObject instanceof NodeWithContext) {
-            SNode node = ((NodeWithContext) hintObject).getNode().resolve(MPSModuleRepository.getInstance());
-            if (node != null) {
-              mySessionContext.keepTransientModel(node.getModel(), false);
-            }
+            SModelReference mr = ((NodeWithContext) hintObject).getNode().getModelReference();
+            mySessionContext.keepTransientModel(mr, false);
+          } else if (hintObject instanceof SNodeReference) {
+            mySessionContext.keepTransientModel(((SNodeReference) hintObject).getModelReference(), false);
           }
         }
       };

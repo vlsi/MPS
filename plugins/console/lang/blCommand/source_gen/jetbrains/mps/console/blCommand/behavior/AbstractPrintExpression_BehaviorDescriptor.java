@@ -5,7 +5,7 @@ package jetbrains.mps.console.blCommand.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class AbstractPrintExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
+public abstract class AbstractPrintExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AbstractPrintExpression_BehaviorDescriptor() {
   }
 

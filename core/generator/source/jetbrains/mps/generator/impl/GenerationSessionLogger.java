@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,160 +17,52 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Igor Alshannikov
  * Nov 30, 2007
  */
-public class GenerationSessionLogger implements IGeneratorLogger {
+public class GenerationSessionLogger extends GeneratorLoggerAdapter implements IGeneratorLogger {
 
-  private GenerationSessionContext myOperationContext;
   private int myWarningsCount;
   private int myErrorsCount;
 
-  private final IMessageHandler myMessageHandler;
-  private final boolean myHandleInfo;
-  private final boolean myHandleWarnings;
-  private final boolean myKeepModelsWithWarnings;
-
-  public GenerationSessionLogger(GeneratorLoggerAdapter logger) {
-    myMessageHandler = logger.myMessageHandler;
-    myHandleInfo = logger.myHandleInfo;
-    myHandleWarnings = logger.myHandleWarnings;
-    myKeepModelsWithWarnings = logger.myKeepModelsWithWarnings;
-  }
-
-  @Override
-  public boolean needsInfo() {
-    return myHandleInfo;
-  }
-
-  @Override
-  public boolean needsWarnings() {
-    return myHandleWarnings;
+  public GenerationSessionLogger(GeneratorLoggerAdapter logger, boolean keepModelsWithWarnings) {
+    super(logger.myMessageHandler, new KeepWithWarningsAwareFactory(keepModelsWithWarnings && logger.myHandleWarnings), logger.myHandleInfo,
+        logger.myHandleWarnings);
   }
 
   public void setOperationContext(GenerationSessionContext operationContext) {
-    myOperationContext = operationContext;
-  }
-
-  @Override
-  public void info(SNode node, String message) {
-    if (!myHandleInfo) {
-      return;
+    if (myFactory instanceof KeepWithWarningsAwareFactory) {
+      ((KeepWithWarningsAwareFactory) myFactory).setOperationContext(operationContext);
     }
-    report(MessageKind.INFORMATION, message, node);
-  }
-
-  @Override
-  public void info(String message) {
-    if (!myHandleInfo) {
-      return;
-    }
-    report(MessageKind.INFORMATION, message, (SNode) null);
-  }
-
-  @Override
-  public void warning(String message) {
-    if (!myHandleWarnings) {
-      return;
-    }
-    myWarningsCount++;
-    report(MessageKind.WARNING, message, (SNode) null);
-  }
-
-  @Override
-  public void warning(SNode node, String message, ProblemDescription... descriptions) {
-    if (!myHandleWarnings) {
-      return;
-    }
-    myWarningsCount++;
-    report(MessageKind.WARNING, message, node, descriptions);
-  }
-
-  @Override
-  public void error(SNode node, String message, ProblemDescription... descriptions) {
-    myErrorsCount++;
-    report(MessageKind.ERROR, message, node, descriptions);
   }
 
   /* package */ void error(@NotNull SModuleReference moduleReference, String message) {
-    myErrorsCount++;
+    errorReported();
     report(MessageKind.ERROR, message, moduleReference);
   }
 
   @Override
-  public void error(String message) {
+  protected void errorReported() {
     myErrorsCount++;
-    report(MessageKind.ERROR, message, (SNode) null);
   }
 
   @Override
-  public void handleException(Throwable t) {
-    String text = t.getMessage();
-    if(text == null) {
-      Throwable cause = t.getCause();
-      int tries = 0;
-      while(text == null && cause != null && tries < 10) {
-        text = cause.getMessage();
-        cause = cause.getCause();
-        tries++;
-      }
-    }
-    if(text == null) {
-      text = "An exception was encountered: " + t.getClass().getName() + " (no message) (right-click to see)";
-    } else {
-      text = "(" + t.getClass().getName() + "): " + text + " (right-click to see)";
-    }
-
-    Message message = new Message(MessageKind.ERROR, text);
-    message.setException(t);
-    synchronized (myMessageHandler) {
-      myMessageHandler.handle(message);
-    }
-  }
-
-  private void report(MessageKind kind, String text, SNode node) {
-    Message message = prepare(kind, text, node);
-    synchronized (myMessageHandler) {
-      myMessageHandler.handle(message);
-    }
+  protected void warningReported() {
+    myWarningsCount++;
   }
 
   private void report(MessageKind kind, String text, SModuleReference module) {
-    Message message = prepare(kind, text, module);
-    synchronized (myMessageHandler) {
-      myMessageHandler.handle(message);
-    }
-  }
-
-  private void report(MessageKind kind, String text, SNode node, ProblemDescription... descriptions) {
-    List<Message> messages = new ArrayList<Message>(descriptions == null ? 1 : descriptions.length + 1);
-    messages.add(prepare(kind, text, node));
-    if (descriptions != null) {
-      for (ProblemDescription d : descriptions) {
-        if (d != null) {
-          messages.add(prepare(kind, "-- " + d.getMessage(), d.getNode()));
-        }
-      }
-    }
-    synchronized (myMessageHandler) {
-      for (Message m : messages) {
-        myMessageHandler.handle(m);
-      }
-    }
+    addMessage(prepare(kind, text, module));
   }
 
   private Message prepare(MessageKind kind, String text, @NotNull SModuleReference module) {
@@ -179,34 +71,49 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     return message;
   }
 
-  private Message prepare(MessageKind kind, String text, SNode node) {
-    Message message = new Message(kind, text);
+  static class KeepWithWarningsAwareFactory extends BasicFactory {
+    // XXX I'm not quite sure this is the right place for keepModelsWithWarnings option,
+    // perhaps, can keep it in TransientModelsModule or anywhere outside of this class?
+    private final boolean myKeepModelsWithWarnings;
+    @Nullable
+    private GenerationSessionContext myOperationContext;
 
-    if (node != null) {
-      if (myOperationContext != null) {
-        if (keepModel(node.getModel(), kind != MessageKind.ERROR)) {
+     KeepWithWarningsAwareFactory(boolean keepModelsWithWarnings) {
+       myKeepModelsWithWarnings = keepModelsWithWarnings;
+     }
+
+    public void setOperationContext(@Nullable GenerationSessionContext operationContext) {
+      myOperationContext = operationContext;
+    }
+
+    @NotNull
+    @Override
+    public Message prepare(@NotNull MessageKind kind, @NotNull String text, SNodeReference node) {
+
+      if (node != null && myOperationContext != null) {
+        if (keepModel(node.getModelReference(), kind != MessageKind.ERROR)) {
+          Message message = new Message(kind, text);
           NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
           message.setHintObject(context);
+          return message;
         }
-      } else if (node.getModel() != null && node.getModel() != null && !(node.getModel() .getModule() instanceof TransientModelsModule)) {
-        message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
+      return super.prepare(kind, text, node);
     }
-    return message;
-  }
 
-
-  private boolean keepModel(SModel model, boolean isWarning) {
-    if (model == null) {
-      return false;
-    }
-    if (model .getModule() instanceof TransientModelsModule) {
-      if (isWarning && !myKeepModelsWithWarnings) {
+    private boolean keepModel(SModelReference model, boolean isWarning) {
+      if (model == null) {
         return false;
       }
-      return myOperationContext.keepTransientModel(model, false);
+      assert myOperationContext != null;
+      if (myOperationContext.getModule().isMyTransientModel(model)) {
+        if (isWarning && !myKeepModelsWithWarnings) {
+          return false;
+        }
+        return myOperationContext.keepTransientModel(model, false);
+      }
+      return true;
     }
-    return true;
   }
 
   public int getErrorCount() {

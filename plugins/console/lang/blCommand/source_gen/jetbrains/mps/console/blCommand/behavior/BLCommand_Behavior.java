@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -28,6 +29,14 @@ public class BLCommand_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(_quotation_createNode_1tnz54_a0a1a2());
     return result;
+  }
+
+  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
+    return "execute statement list";
+  }
+
+  public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
+    return "{ <statements> }";
   }
 
   private static SNode _quotation_createNode_1tnz54_a0a0() {

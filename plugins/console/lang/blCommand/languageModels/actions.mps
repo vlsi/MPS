@@ -174,7 +174,7 @@
     </node>
   </root>
   <root type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="3492877759608901704" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.parameter" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.query.parameter" />
     <property name="name" nameId="tpck.1169194664001" value="ScopeParameterLiteral_factories" />
     <node role="nodeFactory" roleId="tpdg.1158700779049" type="tpdg.NodeFactory" typeId="tpdg.1158700725281" id="3492877759608901705" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpdg.1158700943156" targetNodeId="3xdn.2755216049126692157" resolveInfo="ModulesScope" />

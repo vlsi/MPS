@@ -114,7 +114,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + getReferenceRole() + " in " + SNodeUtil.getDebugText(getOutputSourceNode()),
           GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"),
           GeneratorUtil.describeIfExists(macroNode, "reference macro"));
-        generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
+        generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel().getReference(), true);
       }
     }
   }
