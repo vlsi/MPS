@@ -28,7 +28,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
   private final SNode myRule;
   private final SNodeReference myRulePointer;
-  private final SNodeReference myMacroPointer;
 
   /**
    * actually this parameter is
@@ -37,7 +36,6 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
     super(node, macroNode, context, generator);
     myRule = ruleNode;
     myRulePointer = null;
-    myMacroPointer = null;
   }
 
 
@@ -47,29 +45,23 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
    */
   @Deprecated
   public SourceSubstituteMacroNodesContext(SNode node, SNodeReference ruleNode, SNodeReference macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    super(node, null, context, generator);
+    super(node, macroNode, context, generator);
     myRule = null;
     myRulePointer = ruleNode;
-    myMacroPointer = macroNode;
   }
 
   /**
    * @since 3.1
    */
   public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, SNodeReference ruleNode, SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(null, context, generator);
+    super(macroNode, context, generator);
     myRule = null;
     myRulePointer = ruleNode;
-    myMacroPointer = macroNode;
   }
 
   @Override
   public SNode getTemplateNode() {
     SNode tn = super.getTemplateNode();
-    if (tn != null) {
-      return tn;
-    }
-    tn = myMacroPointer != null ? myMacroPointer.resolve(MPSModuleRepository.getInstance()) : null;
     if (tn != null) {
       return tn;
     }

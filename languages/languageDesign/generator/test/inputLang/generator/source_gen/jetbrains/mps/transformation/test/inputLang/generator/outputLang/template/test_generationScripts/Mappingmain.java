@@ -130,7 +130,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5t);
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_1195172400866(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f91, environment.getGenerator()))) {
+      if (QueriesGenerated.baseMappingRule_Condition_1195172400866(environment.getOperationContext(), new BaseMappingRuleContext(context, rule_417xrn_b0b0c0f91, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2a5t);
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
@@ -221,7 +221,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202243113773(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a5v, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202243113773(environment.getOperationContext(), new BaseMappingRuleContext(context, rootMappingRule_417xrn_b0b0a0a5v, environment.getGenerator())))) {
         return false;
       }
       return true;

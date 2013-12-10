@@ -3345,10 +3345,6 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_8371596541809530194(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_1520710884206584397(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "template", false);
   }

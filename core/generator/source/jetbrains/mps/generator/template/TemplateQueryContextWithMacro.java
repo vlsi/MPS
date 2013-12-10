@@ -26,38 +26,17 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public class TemplateQueryContextWithMacro extends TemplateQueryContext {
 
-  private final SNode myMacro;
-  private final SNodeReference myMacroPointer;
-
   public TemplateQueryContextWithMacro(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, null, context, generator);
-    myMacro = macroNode;
-    myMacroPointer = null;
+    super(inputNode, macroNode, context, generator);
   }
 
   public TemplateQueryContextWithMacro(SNode inputNode, SNodeReference macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, null, context, generator);
-    myMacro = null;
-    myMacroPointer = macroNode;
+    super(inputNode, macroNode, context, generator);
   }
 
   // public, not protected - although work in progress and, perhaps, ITemplateGenerator shall be gone, as well, there are usages
   // e.g. in InsertMacro, that instantiate this context directly and may benefit from this cons.
   public TemplateQueryContextWithMacro(@NotNull TemplateContext context, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(null, context, generator);
-    myMacro = null;
-    myMacroPointer = macroNode;
-  }
-
-  @Override
-  public SNode getTemplateNode() {
-    SNode ruleNode = getTemplateNodeForLogging();
-    return ruleNode != null ? ruleNode.getParent() : null;
-  }
-
-  @Override
-  public SNode getTemplateNodeForLogging() {
-    return myMacro != null ? myMacro :
-      myMacroPointer != null ? myMacroPointer.resolve(MPSModuleRepository.getInstance()) : null;
+    super(macroNode, context, generator);
   }
 }

@@ -26,29 +26,20 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TemplateVarContext extends TemplateQueryContext {
 
-  private final SNodeReference myTemplateNode;
-
   /**
-   * @deprecated use {@link #TemplateVarContext(jetbrains.mps.generator.runtime.TemplateContext, org.jetbrains.mps.openapi.model.SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #TemplateVarContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
   public TemplateVarContext(SNode inputNode, @NotNull SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, null, context, generator);
-    myTemplateNode = templateNode;
+    super(inputNode, templateNode, context, generator);
   }
 
   /**
    * @since 3.1
    */
   public TemplateVarContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
-    super(null, context, generator);
-    myTemplateNode = templateNode;
-  }
-
-  @Override
-  public SNode getTemplateNode() {
-    return myTemplateNode.resolve(MPSModuleRepository.getInstance());
+    super(templateNode, context, generator);
   }
 }
 

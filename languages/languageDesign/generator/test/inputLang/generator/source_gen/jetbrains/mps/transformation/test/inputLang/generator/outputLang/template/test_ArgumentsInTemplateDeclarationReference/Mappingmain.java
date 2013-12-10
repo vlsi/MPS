@@ -157,7 +157,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5r);
-      Collection<SNode> tlist1 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599916822(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0f71, context, environment.getGenerator())))).apply(environment, context);
+      Collection<SNode> tlist1 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599916822(environment.getOperationContext(), new TemplateArgumentContext(context, templArgCall_417xrn_b0b0a0a0a0b0f71, environment.getGenerator())))).apply(environment, context);
       return tlist1;
     }
   }
@@ -197,9 +197,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5s);
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_7496726876599935510(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f81, environment.getGenerator()))) {
+      if (QueriesGenerated.baseMappingRule_Condition_7496726876599935510(environment.getOperationContext(), new BaseMappingRuleContext(context, rule_417xrn_b0b0c0f81, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2a5s);
-        Collection<SNode> tlist2 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599937591(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0c0f81, context, environment.getGenerator())))).apply(environment, context);
+        Collection<SNode> tlist2 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599937591(environment.getOperationContext(), new TemplateArgumentContext(context, templArgCall_417xrn_b0b0a0a0a0b0c0f81, environment.getGenerator())))).apply(environment, context);
         tlist1 = tlist2;
       } else {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0c0f81);
@@ -259,7 +259,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           tlist1 = TemplateUtil.singletonList(tnode2);
         } else {
           environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0b0c0f91);
-          Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636646079(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0a1a2a5t, context, environment.getGenerator())))).apply(environment, context);
+          Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636646079(environment.getOperationContext(), new TemplateArgumentContext(context, templArgCall_417xrn_b0b0a0a0a0b0a1a2a5t, environment.getGenerator())))).apply(environment, context);
           tlist1 = tlist3;
         }
 
@@ -305,7 +305,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5u);
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_4929591503636676782(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f02, environment.getGenerator()))) {
+      if (QueriesGenerated.baseMappingRule_Condition_4929591503636676782(environment.getOperationContext(), new BaseMappingRuleContext(context, rule_417xrn_b0b0c0f02, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2a5u);
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.lang.core.structure.BaseConcept");
         try {
@@ -319,7 +319,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0c0f02);
-        Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636680081(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0a2a5u, context, environment.getGenerator())))).apply(environment, context);
+        Collection<SNode> tlist3 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_4929591503636680081(environment.getOperationContext(), new TemplateArgumentContext(context, templArgCall_417xrn_b0b0a0a0a0b0a2a5u, environment.getGenerator())))).apply(environment, context);
         tlist1 = tlist3;
       }
       return tlist1;

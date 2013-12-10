@@ -29,24 +29,34 @@ import java.util.List;
  */
 public class TemplateQueryContext {
 
+  @Nullable
   private final SNode myInputNode;
-  private final SNode myTemplateNode;
+  @Nullable
+  private final SNodeReference myTemplateNode;
+  @NotNull
   private final ITemplateGenerator myGenerator;
+  @Nullable
   protected TemplateContext myContext;
 
-  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
+  // cons with less restrictions (null/notnull) implied. shall not become public
+  protected TemplateQueryContext(SNode inputNode, SNodeReference templateNode, TemplateContext context, @NotNull ITemplateGenerator generator) {
     myInputNode = inputNode;
+    myContext = context;
     myTemplateNode = templateNode;
     myGenerator = generator;
-    myContext = context;
+  }
+
+  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
+    this(inputNode, templateNode == null ? null : templateNode.getReference(), context, generator);
   }
 
   // protected for the time being, unless decided to expose it (seems to be nice idea, after all)
   protected TemplateQueryContext(@Nullable SNode templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    myInputNode = context.getInput();
-    myContext = context;
-    myTemplateNode = templateNode;
-    myGenerator = generator;
+    this(context.getInput(), templateNode == null ? null : templateNode.getReference(), context, generator);
+  }
+
+  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+    this(context.getInput(), templateNode, context, generator);
   }
 
   /**
@@ -61,8 +71,12 @@ public class TemplateQueryContext {
     return myInputNode;
   }
 
+  // FIXME replace rv with SNodeReference, let the caller decide what to do
   public SNode getTemplateNode() {
-    return myTemplateNode;
+    if (myTemplateNode == null) {
+      return null;
+    }
+    return myTemplateNode.resolve(MPSModuleRepository.getInstance());
   }
 
   public SNode getOutputNode() {

@@ -783,7 +783,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final GeneratedMatchingPattern pattern, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5z);
-      Collection<SNode> tlist1 = new TemplateprocessStatement(((String) QueriesGenerated.templateArgumentQuery_4816349095291000368(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0f52, context, environment.getGenerator()))), ((String) pattern.getFieldValue("patternVar_jobName")), ((SNode) pattern.getFieldValue("patternVar_myExpr")), 12, true).apply(environment, context);
+      Collection<SNode> tlist1 = new TemplateprocessStatement(((String) QueriesGenerated.templateArgumentQuery_4816349095291000368(environment.getOperationContext(), new TemplateArgumentContext(context, templArgCall_417xrn_b0b0a0a0a0b0f52, environment.getGenerator()))), ((String) pattern.getFieldValue("patternVar_jobName")), ((SNode) pattern.getFieldValue("patternVar_myExpr")), 12, true).apply(environment, context);
       return tlist1;
     }
   }
@@ -1162,7 +1162,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_3571912445009978241(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a1fb, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_3571912445009978241(environment.getOperationContext(), new BaseMappingRuleContext(context, weavingRule_417xrn_a0a1fb, environment.getGenerator())))) {
         return false;
       }
       return true;

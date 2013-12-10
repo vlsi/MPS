@@ -129,7 +129,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5r);
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.baseMappingRule_Condition_1820665478710839841(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
+      if (QueriesGenerated.baseMappingRule_Condition_1820665478710839841(environment.getOperationContext(), new BaseMappingRuleContext(context, rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2a5r);
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
@@ -171,7 +171,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a2a5r);
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
-      } else if (QueriesGenerated.baseMappingRule_Condition_1820665478710839910(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
+      } else if (QueriesGenerated.baseMappingRule_Condition_1820665478710839910(environment.getOperationContext(), new BaseMappingRuleContext(context, rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0c0f71);
         final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
@@ -213,7 +213,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a0c0f71);
         }
         tlist1 = TemplateUtil.singletonList(tnode7);
-      } else if (QueriesGenerated.baseMappingRule_Condition_2643213347103793267(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
+      } else if (QueriesGenerated.baseMappingRule_Condition_2643213347103793267(environment.getOperationContext(), new BaseMappingRuleContext(context, rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a1c0f71);
         final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
@@ -255,7 +255,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a2a1c0f71);
         }
         tlist1 = TemplateUtil.singletonList(tnode12);
-      } else if (QueriesGenerated.baseMappingRule_Condition_2643213347103793295(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
+      } else if (QueriesGenerated.baseMappingRule_Condition_2643213347103793295(environment.getOperationContext(), new BaseMappingRuleContext(context, rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2c0f71);
         final SNode tnode17 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
@@ -727,7 +727,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_6655394244919371015(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a5y, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_6655394244919371015(environment.getOperationContext(), new BaseMappingRuleContext(context, rootMappingRule_417xrn_b0b0a0a5y, environment.getGenerator())))) {
         return false;
       }
       return true;
