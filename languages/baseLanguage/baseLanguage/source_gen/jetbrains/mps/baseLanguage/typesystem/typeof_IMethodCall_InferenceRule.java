@@ -14,10 +14,10 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -49,6 +49,17 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
           MapSequence.fromMap(subs).put(tvd, typeCheckingContext.getRepresentative(T_typevar_4695112407844173847));
         }
       }
+      for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true))) {
+        if ((SLinkOperations.getTarget(tvd, "bound", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(tvd, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(SLinkOperations.getTarget(tvd, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+          {
+            SNode _nodeToCheck_1029348928467 = mcall;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5302270944911972807", 0, null);
+            typeCheckingContext.createLessThanInequality((SNode) MapSequence.fromMap(subs).get(tvd), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true)), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), false, false, _info_12389875345);
+          }
+        }
+      }
+
     } else {
       {
         Iterator<SNode> tvd_it = ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).iterator();
