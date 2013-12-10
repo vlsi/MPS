@@ -47,7 +47,7 @@ public class TypeVariableMatchUtil {
 
 
   @InferenceMethod
-  public static void calculateTypesForStaticMethod(final TypeCheckingContext typeCheckingContext, SNode staticMethodCall) {
+  public static void calculateTypesForStaticMethod(final TypeCheckingContext typeCheckingContext, final SNode staticMethodCall) {
     final SNode mdecl = SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false);
     if (mdecl == null) {
       return;
@@ -116,7 +116,7 @@ public class TypeVariableMatchUtil {
     {
       SNode _nodeToCheck_1029348928467 = staticMethodCall;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510781", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) retType, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510783", true), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) retType, (SNode) typeCheckingContext.typeOf(staticMethodCall, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510783", true), false, true, _info_12389875345);
     }
 
     List<SNode> actualArguments = ListSequence.fromList(new ArrayList<SNode>());
@@ -138,7 +138,7 @@ public class TypeVariableMatchUtil {
             typeCheckingContext.whenConcrete(A, new Runnable() {
               public void run() {
                 {
-                  SNode _nodeToCheck_1029348928467 = null;
+                  SNode _nodeToCheck_1029348928467 = staticMethodCall;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510825", 0, null);
                   {
                     BaseQuickFixProvider intentionProvider = null;
@@ -155,7 +155,7 @@ public class TypeVariableMatchUtil {
         } else {
           if (!(typeCheckingContext.isSingleTypeComputation())) {
             {
-              SNode _nodeToCheck_1029348928467 = argt_var;
+              SNode _nodeToCheck_1029348928467 = staticMethodCall;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510848", 0, null);
               {
                 BaseQuickFixProvider intentionProvider = null;
@@ -164,7 +164,7 @@ public class TypeVariableMatchUtil {
                 intentionProvider.putArgument("expression", actualArgument);
                 _info_12389875345.addIntentionProvider(intentionProvider);
               }
-              typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510855", true), true, true, _info_12389875345);
+              typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) typeCheckingContext.typeOf(argt_var, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510855", true), true, true, _info_12389875345);
             }
           }
         }
