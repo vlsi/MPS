@@ -145,6 +145,8 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
         }
       }
     }
+
+    TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, mcall, subs);
   }
 
   public String getApplicableConceptFQName() {
