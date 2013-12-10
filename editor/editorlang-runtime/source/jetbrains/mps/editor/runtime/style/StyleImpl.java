@@ -63,6 +63,11 @@ public class StyleImpl implements Style {
 
   @Override
   public void putAll(@NotNull Style style) {
+    putAll(style, 0);
+  }
+
+  @Override
+  public void putAll(@NotNull Style style, int selfPriority) {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
     for (StyleAttribute<Object> attribute : style.getSpecifiedAttributes()) {
@@ -73,7 +78,7 @@ public class StyleImpl implements Style {
           attributeValues.set(new IntObjectSortedListMap<Object>());
         }
         for (IntPair<Object> value : putAttributes) {
-          attributeValues.get().setValue(value.index, value.value == null ? DiscardValue.getInstance() : value.value);
+          attributeValues.get().setValue(Math.max(value.index, selfPriority), value.value == null ? DiscardValue.getInstance() : value.value);
         }
       }
       if (StyleAttributes.isSimple(attribute)) {

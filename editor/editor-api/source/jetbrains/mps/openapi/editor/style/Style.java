@@ -28,6 +28,8 @@ public interface Style {
 
   void putAll(@NotNull Style style);
 
+  void putAll(@NotNull Style style, int selfPriority);
+
   void removeAll(@NotNull Style style);
 
   <T> void set(StyleAttribute<T> attribute, T value);
