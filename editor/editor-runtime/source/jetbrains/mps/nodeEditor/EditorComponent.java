@@ -2056,7 +2056,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                           });
                         }
                       });
-                      popupMenu.show(dialog, button.getX(), button.getY() + button.getHeight());
+                      popupMenu.show(button, 0, button.getHeight());
                     } else {
                       getModelAccess().runWriteInEDT(new Runnable() {
                         @Override

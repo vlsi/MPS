@@ -774,6 +774,22 @@
     <unitInfo nodeId="4853049144093343618" fileName="GenericNewExpressionTypeParameters_Test.java" startLine="51" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test$TestBody" />
     <unitInfo nodeId="4853049144093343618" fileName="GenericNewExpressionTypeParameters_Test.java" startLine="13" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.GenericNewExpressionTypeParameters_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/488298296050326101">
+    <nodeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="16" startPosition="68" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="23" startPosition="70" endLine="24" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="24" startPosition="140" endLine="25" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck488298296050687637#()V" />
+    <nodeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck488298296050687637#()V" />
+    <scopeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="16" startPosition="68" endLine="18" endPosition="123" />
+    <scopeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="23" startPosition="70" endLine="25" endPosition="153">
+      <varInfo nodeId="488298296050326101" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody" />
+    <unitInfo nodeId="488298296050326101" fileName="TypeInference_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypeInference_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4914675704512523356">
     <nodeInfo nodeId="4914675704512523356" fileName="FieldDeclarationCanBeLocalVariable_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4914675704512523356" fileName="FieldDeclarationCanBeLocalVariable_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1374,7 +1390,6 @@
     <unitInfo nodeId="8187342170694467176" fileName="WildCardsInAnonymousClassCreators_Test.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody" />
     <unitInfo nodeId="8187342170694467176" fileName="WildCardsInAnonymousClassCreators_Test.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8187342170706220252" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/843236768048177679">
     <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="16" startPosition="68" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="843236768048177679" fileName="FinalFieldWasAssigned_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
