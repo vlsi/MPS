@@ -39,7 +39,7 @@ public class TemplateQueryContext {
   protected TemplateContext myContext;
 
   // cons with less restrictions (null/notnull) implied. shall not become public
-  protected TemplateQueryContext(SNode inputNode, SNodeReference templateNode, TemplateContext context, @NotNull ITemplateGenerator generator) {
+  protected TemplateQueryContext(SNode inputNode, SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
     myInputNode = inputNode;
     myContext = context;
     myTemplateNode = templateNode;
