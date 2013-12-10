@@ -309,79 +309,51 @@ public class StyleImpl implements Style {
 
       Iterator<IntPair<Object>> parentIterator = parentValues == null ? new EmptyIterator<IntPair<Object>>() : parentValues.iterator();
       Iterator<IntPair<Object>> currentIterator = currentValues == null ? new EmptyIterator<IntPair<Object>>() : currentValues.iterator();
-      Iterator<IntPair<Object>> oldIterator = oldValues == null ? new EmptyIterator<IntPair<Object>>() : oldValues.iterator();
 
       IntPair<Object> parentValue;
       IntPair<Object> currentValue;
-      IntPair<Object> oldValue;
 
       parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
       currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
-      oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
-      while (parentValue != null || currentValue != null || oldValue != null) {
-        boolean currentNow = true;
-        boolean parentNow = true;
-        boolean oldNow = true;
 
-        if (currentValue == null) {
-          currentNow = false;
-        }
-        if (parentValue == null) {
-          parentNow = false;
-        }
-        if (oldValue == null) {
-          oldNow = false;
-        }
-        if (currentValue != null && parentValue != null) {
-          if (currentValue.index > parentValue.index) {
-            currentNow = false;
-          }
-          if (currentValue.index < parentValue.index) {
-            parentNow = false;
-          }
-        }
-        if (currentValue != null && oldValue != null) {
-          if (currentValue.index > oldValue.index) {
-            currentNow = false;
-          }
-          if (currentValue.index < oldValue.index) {
-            oldNow = false;
-          }
-        }
-        if (parentValue != null && oldValue != null) {
-          if (parentValue.index > oldValue.index) {
-            parentNow = false;
-          }
-          if (parentValue.index < oldValue.index) {
-            oldNow = false;
-          }
-        }
+      IntObjectSortedListMap<Object> newValues = new IntObjectSortedListMap<Object>();
+      while (parentValue != null || currentValue != null ) {
 
-        Object currentV = currentNow ? currentValue.value : null;
-        Object parentV = parentNow ? parentValue.value : null;
-        Object newV;
-        if (currentV instanceof DiscardValue || (parentV == null && currentV == null)) {
-          newV = null;
-        } else {
-          newV = attribute.combine(parentV, currentV);
-        }
-        int newInd = currentNow ? currentValue.index : parentNow ? parentValue.index : oldNow ? oldValue.index : null;
-
-        if (currentNow) {
+        if (currentValue != null && (parentValue == null || currentValue.index < parentValue.index)) {
+          if (!(currentValue.value instanceof DiscardValue)) {
+            newValues.setValue(currentValue.index, attribute.combine(null, currentValue.value));
+          }
           currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
-        }
-        if (parentNow) {
+        } else if (currentValue == null || parentValue.index < currentValue.index) {
+          newValues.setValue(parentValue.index, attribute.combine(parentValue.value, null));
+          parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
+        } else {
+          if (!(currentValue.value instanceof DiscardValue)) {
+            newValues.setValue(currentValue.index, attribute.combine(parentValue.value, currentValue.value));
+          }
+          currentValue = currentIterator.hasNext() ? currentIterator.next() : null;
           parentValue = parentIterator.hasNext() ? parentIterator.next() : null;
         }
-        if (oldNow) {
-          oldValue = oldIterator.hasNext() ? oldIterator.next() : null;
-        }
+      }
 
-
-        if (!EqualUtil.equals(newV, getCached(attribute, newInd))) {
+      Iterator<IntPair<Object>> oldIterator = oldValues == null ? new EmptyIterator<IntPair<Object>>() : oldValues.iterator();
+      Iterator<IntPair<Object>> newIterator = newValues.getAll().iterator();
+      while (oldIterator.hasNext() || newIterator.hasNext()) {
+        if (newIterator.hasNext() ^ oldIterator.hasNext()) {
           changedAttributes.add(attribute);
+          break;
         }
-        setCached(attribute, newInd, newV);
+        IntPair<Object> newValue = newIterator.next();
+        IntPair<Object> oldValue = oldIterator.next();
+        if (newValue.index != oldValue.index || !EqualUtil.equals(newValue.value, oldValue.value)) {
+          changedAttributes.add(attribute);
+          break;
+        }
+      }
+      if (newValues.getAll().isEmpty()) {
+        myCachedAttributes.search(attribute.getIndex()).set(null);
+      } else {
+        myCachedAttributes.search(attribute.getIndex()).set(newValues);
       }
     }
 
