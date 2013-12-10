@@ -29,6 +29,6 @@ public class typeof_StaticMethodCall_InferenceRule extends AbstractInferenceRule
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }
