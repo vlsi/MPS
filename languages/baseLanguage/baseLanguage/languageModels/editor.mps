@@ -11047,22 +11047,28 @@
         <link role="styleSheetClass" roleId="tpc2.1198252276894" targetNodeId="1186415544875" resolveInfo="KeyWord" />
       </node>
     </node>
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1198594875276" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="Comment" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="7730231143345231385" nodeInfo="nn">
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="3516632611398403426" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="CommentPG" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="3516632611398415396" nodeInfo="nn">
         <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="184304648420812679" />
       </node>
     </node>
-    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="7730231143345802634" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="TODO" />
-      <node role="extendedClass" roleId="tpc2.1198252369256" type="tpc2.StyleSheetClassReference" typeId="tpc2.1198252130653" id="7730231143345833736" nodeInfo="ng">
-        <link role="styleSheetClass" roleId="tpc2.1198252276894" targetNodeId="1198594875276" resolveInfo="Comment" />
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1198594875276" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Comment" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="3516632611398418738" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="3516632611398453113" nodeInfo="ng">
+          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
+        </node>
       </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="3516632611398472564" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="TODO_PG" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="1854016315433320680" nodeInfo="nn">
         <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="184304648420781294" />
         <node role="query" roleId="tpc2.8730965736661186051" type="tpc2.QueryFunction_Boolean" typeId="tpc2.1223387125302" id="4970344874571976402" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4970344874571976403" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4970344874572005796" nodeInfo="nn">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpck.SuppressErrorsAnnotation" typeId="tpck.4222318806802425298" id="4970344874575563276" nodeInfo="ng" />
               <node role="expression" roleId="tpee.1068581517676" type="tpee.AndExpression" typeId="tpee.1080120340718" id="4970344874572004933" nodeInfo="nn">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970344874572007777" nodeInfo="nn">
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4970344874572015022" nodeInfo="nn">
@@ -11083,16 +11089,37 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="4970344874571976414" nodeInfo="nn" />
                 </node>
               </node>
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpck.SuppressErrorsAnnotation" typeId="tpck.4222318806802425298" id="4970344874575563276" nodeInfo="ng" />
             </node>
           </node>
         </node>
       </node>
+      <node role="extendedGroup" roleId="tpc2.3383245079137422296" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="3516632611398479531" nodeInfo="ng">
+        <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398403426" resolveInfo="CommentPG" />
+      </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="7730231143345802634" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="TODO" />
+      <node role="extendedClass" roleId="tpc2.1198252369256" type="tpc2.StyleSheetClassReference" typeId="tpc2.1198252130653" id="7730231143345833736" nodeInfo="ng">
+        <link role="styleSheetClass" roleId="tpc2.1198252276894" targetNodeId="1198594875276" resolveInfo="Comment" />
+      </node>
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="3516632611398486798" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="6044426492108868378" nodeInfo="ng">
+          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="3516632611398472564" resolveInfo="TODO_PG" />
+        </node>
+      </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="2475588304313460312" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="BlockCommentPG" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="7730231143345231991" nodeInfo="nn">
+        <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="1794287103456760646" />
+      </node>
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1794287103456802471" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="BlockComment" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="7730231143345231991" nodeInfo="nn">
-        <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="1794287103456760646" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="2475588304313474950" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="2475588304313474954" nodeInfo="ng">
+          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="2475588304313460312" resolveInfo="BlockCommentPG" />
+        </node>
       </node>
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="1223649189121" nodeInfo="ng">
