@@ -8,9 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -28,25 +25,20 @@ public class typeof_AsNodeOperation_InferenceRule extends AbstractInferenceRule_
       final SNode operandType = typeCheckingContext.typeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(operation), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313515942417", true);
       typeCheckingContext.whenConcrete(operandType, new Runnable() {
         public void run() {
-          {
-            IMatchingPattern pattern_5agh1u_a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType");
-            SNode coercedNode_5agh1u_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(operandType), pattern_5agh1u_a0a0);
-            if (coercedNode_5agh1u_a0a0 != null) {
-              // todo: use something like isInterfaceConcept() or isConcreteConcept() methods in SConcept instead? 
-              if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(coercedNode_5agh1u_a0a0, "jetbrains.mps.lang.smodel.structure.SConceptType"), "conceptDeclaraton", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-                {
-                  SNode _nodeToCheck_1029348928467 = operation;
-                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516003089", 0, null);
-                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516002720", true), (SNode) _quotation_createNode_x39xdp_a0a0b0c0a0a0b(), _info_12389875345);
-                }
-              } else {
-                {
-                  SNode _nodeToCheck_1029348928467 = operation;
-                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516013673", 0, null);
-                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516012963", true), (SNode) _quotation_createNode_x39xdp_a0a0a1a2a0a0a1(), _info_12389875345);
-                }
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(operandType), "jetbrains.mps.lang.smodel.structure.SConceptType")) {
+            // todo: use something like isInterfaceConcept() or isConcreteConcept() methods in SConcept instead? 
+            if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getExpandedNode(operandType), "jetbrains.mps.lang.smodel.structure.SConceptType"), "conceptDeclaraton", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+              {
+                SNode _nodeToCheck_1029348928467 = operation;
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516003089", 0, null);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516002720", true), (SNode) _quotation_createNode_x39xdp_a0a0b0a0a0b(), _info_12389875345);
               }
             } else {
+              {
+                SNode _nodeToCheck_1029348928467 = operation;
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516013673", 0, null);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8866923313516012963", true), (SNode) _quotation_createNode_x39xdp_a0a0a1a0a0a1(), _info_12389875345);
+              }
             }
           }
           // logic like for ConceptDeclaration is impossible for InterfaceConceptDeclaration because: 
@@ -73,7 +65,7 @@ public class typeof_AsNodeOperation_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  private static SNode _quotation_createNode_x39xdp_a0a0b0c0a0a0b() {
+  private static SNode _quotation_createNode_x39xdp_a0a0b0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
@@ -81,7 +73,7 @@ public class typeof_AsNodeOperation_InferenceRule extends AbstractInferenceRule_
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x39xdp_a0a0a1a2a0a0a1() {
+  private static SNode _quotation_createNode_x39xdp_a0a0a1a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
