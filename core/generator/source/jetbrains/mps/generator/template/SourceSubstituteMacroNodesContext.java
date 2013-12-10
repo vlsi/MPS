@@ -17,21 +17,27 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
 
-public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithMacro {
+/**
+ * Despite the name, the context serves not only to 'sourceNodesQuery' in macros but also to similar queries in
+ * rules (any sourceNodesQuery) in fact.
+ */
+public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
   private final SNode myRule;
   private final SNodeReference myRulePointer;
+  private final SNodeReference myMacroPointer;
 
   /**
-   * actually this parameter is passed not only to 'sourceNodesQuery' in macros but also to similar queries in rules
+   * actually this parameter is
    */
-  public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
+  public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myRule = ruleNode;
     myRulePointer = null;
+    myMacroPointer = null;
   }
 
 
@@ -41,18 +47,34 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
    */
   @Deprecated
   public SourceSubstituteMacroNodesContext(SNode node, SNodeReference ruleNode, SNodeReference macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    super(node, macroNode, context, generator);
+    super(node, null, context, generator);
     myRule = null;
     myRulePointer = ruleNode;
+    myMacroPointer = macroNode;
   }
 
   /**
    * @since 3.1
    */
-  public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, SNodeReference ruleNode, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(context, macroNode, generator);
+  public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, SNodeReference ruleNode, SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(null, context, generator);
     myRule = null;
     myRulePointer = ruleNode;
+    myMacroPointer = macroNode;
+  }
+
+  @Override
+  public SNode getTemplateNode() {
+    SNode tn = super.getTemplateNode();
+    if (tn != null) {
+      return tn;
+    }
+    tn = myMacroPointer != null ? myMacroPointer.resolve(MPSModuleRepository.getInstance()) : null;
+    if (tn != null) {
+      return tn;
+    }
+    tn = getRuleNodeForLogging();
+    return tn != null ? tn.getParent() : null;
   }
 
   @Override
