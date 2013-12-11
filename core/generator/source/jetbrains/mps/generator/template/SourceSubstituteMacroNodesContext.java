@@ -52,8 +52,8 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
   }
 
   @Override
-  protected SNodeReference getTemplateNode() {
-    SNodeReference tn = super.getTemplateNode();
+  protected SNodeReference getTemplateNodeRef() {
+    SNodeReference tn = super.getTemplateNodeRef();
     if (tn != null) {
       return tn;
     }

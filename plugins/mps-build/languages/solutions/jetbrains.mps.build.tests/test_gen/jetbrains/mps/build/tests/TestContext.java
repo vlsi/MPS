@@ -70,7 +70,7 @@ public class TestContext extends Context {
     }
 
     @Override
-    protected SNodeReference getTemplateNode() {
+    protected SNodeReference getTemplateNodeRef() {
       throw new UnsupportedOperationException();
     }
 
