@@ -33,7 +33,7 @@ public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeav
     try {
       environment.getTracer().pushTemplateNode(templateNode_asyc93_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008522549");
-      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008522555(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method", propertyMacro_asyc93_c0b0c0c0b0c, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008522555(environment.getOperationContext(), new PropertyMacroContext(context, "method", propertyMacro_asyc93_c0b0c0c0b0c, environment.getGenerator()))));
 
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
@@ -118,7 +118,7 @@ public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeav
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_asyc93_a0a0a1a3a1a4a1a4a1a3a1a3a1a6a1a2);
                               environment.nodeCopied(context, tnode10, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008526314");
-                              SNodeAccessUtil.setProperty(tnode10, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008526320(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "name", propertyMacro_asyc93_c0b0c0c0b0d0b0e0b0e0b0d0b0d0b0g0b0c, context, environment.getGenerator()))));
+                              SNodeAccessUtil.setProperty(tnode10, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008526320(environment.getOperationContext(), new PropertyMacroContext(context, "name", propertyMacro_asyc93_c0b0c0c0b0d0b0e0b0e0b0d0b0d0b0g0b0c, environment.getGenerator()))));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode10));

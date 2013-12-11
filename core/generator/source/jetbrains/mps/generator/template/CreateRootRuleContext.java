@@ -26,6 +26,6 @@ public class CreateRootRuleContext extends TemplateQueryContextWithRule {
   }
 
   public CreateRootRuleContext(@NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
-    super(null, ruleNode, generator);
+    super((SNode) null, ruleNode, generator);
   }
 }

@@ -37,7 +37,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
     try {
       environment.getTracer().pushMacro(mapsrclMacroRef_ewlaka_a0a0a1a2);
 
-      final Iterable<SNode> sourceList1 = QueriesGenerated.sourceNodesQuery_1233603475878(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, mapsrclMacroRef_ewlaka_a0a0a1a2, context, environment.getGenerator()));
+      final Iterable<SNode> sourceList1 = QueriesGenerated.sourceNodesQuery_1233603475878(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, mapsrclMacroRef_ewlaka_a0a0a1a2, environment.getGenerator()));
       for (SNode itnode1 : sourceList1) {
         if (itnode1 == null) {
           continue;
@@ -51,7 +51,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
           final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a2a3a3a1a2);
-            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202256587517(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context1.getInput(), null, loopMacroRef_ewlaka_a0a0a2a3a3a1a2, context1, environment.getGenerator()));
+            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202256587517(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context1, null, loopMacroRef_ewlaka_a0a0a2a3a3a1a2, environment.getGenerator()));
             for (SNode itnode2 : loopList2) {
               if (itnode2 == null) {
                 continue;
@@ -65,7 +65,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                 final List<SNode> tlist3 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2);
-                  final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202256594380(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2.getInput(), null, loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2, context2, environment.getGenerator()));
+                  final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202256594380(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2, null, loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2, environment.getGenerator()));
                   for (SNode itnode3 : loopList3) {
                     if (itnode3 == null) {
                       continue;
@@ -83,14 +83,14 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a2a3a2a2a3a2a2a2a3a3a1a2);
                           environment.nodeCopied(context3, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202256495546");
-                          SNodeAccessUtil.setProperty(tnode5, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(environment.getOperationContext(), new PropertyMacroContext(context3.getInput(), "_text_", propertyMacro_ewlaka_c0b0c0c0c0d0c0c0d0c0c0c0d0d0b0c, context3, environment.getGenerator()))));
+                          SNodeAccessUtil.setProperty(tnode5, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(environment.getOperationContext(), new PropertyMacroContext(context3, "_text_", propertyMacro_ewlaka_c0b0c0c0c0d0c0c0d0c0c0c0d0d0b0c, environment.getGenerator()))));
 
                           {
                             final SNode tnode6 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a1a4a2a3a2a2a3a2a2a2a3a3a1a2);
                               environment.nodeCopied(context3, tnode6, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327206676");
-                              SNodeAccessUtil.setProperty(tnode6, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(environment.getOperationContext(), new PropertyMacroContext(context3.getInput(), "_root_level_was_", propertyMacro_ewlaka_c0b0c0c0b0e0c0d0c0c0d0c0c0c0d0d0b0c, context3, environment.getGenerator()))));
+                              SNodeAccessUtil.setProperty(tnode6, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(environment.getOperationContext(), new PropertyMacroContext(context3, "_root_level_was_", propertyMacro_ewlaka_c0b0c0c0b0e0c0d0c0c0d0c0c0c0d0d0b0c, environment.getGenerator()))));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));
@@ -105,12 +105,12 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                             Collection<SNode> tlist7 = null;
                             try {
                               environment.getTracer().pushMacro(ifMacroRef_ewlaka_a0a0a1a5a2a3a2a2a3a2a2a2a3a3a1a2);
-                              if (QueriesGenerated.ifMacro_Condition_1202332796047(environment.getOperationContext(), new IfMacroContext(context3.getInput(), ifMacroRef_ewlaka_a0a0a1a5a2a3a2a2a3a2a2a2a3a3a1a2, context3, environment.getGenerator()))) {
+                              if (QueriesGenerated.ifMacro_Condition_1202332796047(environment.getOperationContext(), new IfMacroContext(context3, ifMacroRef_ewlaka_a0a0a1a5a2a3a2a2a3a2a2a2a3a3a1a2, environment.getGenerator()))) {
                                 final SNode tnode8 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a1a1a1a5a2a3a2a2a3a2a2a2a3a3a1a2);
                                   environment.nodeCopied(context3, tnode8, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327778745");
-                                  SNodeAccessUtil.setProperty(tnode8, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(environment.getOperationContext(), new PropertyMacroContext(context3.getInput(), "_level_1_was_", propertyMacro_ewlaka_c0b0c0c0b0b0b0f0c0d0c0c0d0c0c0c0d0d0b0c, context3, environment.getGenerator()))));
+                                  SNodeAccessUtil.setProperty(tnode8, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(environment.getOperationContext(), new PropertyMacroContext(context3, "_level_1_was_", propertyMacro_ewlaka_c0b0c0c0b0b0b0f0c0d0c0c0d0c0c0c0d0d0b0c, environment.getGenerator()))));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode8));
@@ -132,7 +132,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a1a6a2a3a2a2a3a2a2a2a3a3a1a2);
                               environment.nodeCopied(context3, tnode10, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327949446");
-                              SNodeAccessUtil.setProperty(tnode10, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(environment.getOperationContext(), new PropertyMacroContext(context3.getInput(), "_level_2_was_", propertyMacro_ewlaka_c0b0c0c0b0g0c0d0c0c0d0c0c0c0d0d0b0c, context3, environment.getGenerator()))));
+                              SNodeAccessUtil.setProperty(tnode10, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(environment.getOperationContext(), new PropertyMacroContext(context3, "_level_2_was_", propertyMacro_ewlaka_c0b0c0c0b0g0c0d0c0c0d0c0c0c0d0d0b0c, environment.getGenerator()))));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode10));
@@ -151,7 +151,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                           tlist4.add(tnode5);
                           environment.postProcess(new PostProcessor() {
                             public void process(SNode outputNode, TemplateContext postProcessContext) {
-                              QueriesGenerated.mapSrcMacro_post_mapper_1225236165359(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext.getInput(), mapsrcMacroRef_ewlaka_b0b0a0a0a0a0b0d0d0c0c0d0c0c0c0d0d0b0c, outputNode, postProcessContext, environment.getGenerator()));
+                              QueriesGenerated.mapSrcMacro_post_mapper_1225236165359(environment.getOperationContext(), new MapSrcMacroPostProcContext(postProcessContext, outputNode, mapsrcMacroRef_ewlaka_c0b0a0a0a0a0b0d0d0c0c0d0c0c0c0d0d0b0c, environment.getGenerator()));
                             }
                           }, tnode5, context3);
                         }
@@ -243,6 +243,6 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
   private static SNodePointer propertyMacro_ewlaka_c0b0c0c0b0b0b0f0c0d0c0c0d0c0c0c0d0d0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202327887567");
   private static SNodePointer templateNode_ewlaka_a0a0a1a6a2a3a2a2a3a2a2a2a3a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202327949446");
   private static SNodePointer propertyMacro_ewlaka_c0b0c0c0b0g0c0d0c0c0d0c0c0c0d0d0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202327970030");
-  private static SNodePointer mapsrcMacroRef_ewlaka_b0b0a0a0a0a0b0d0d0c0c0d0c0c0c0d0d0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202337434278");
+  private static SNodePointer mapsrcMacroRef_ewlaka_c0b0a0a0a0a0b0d0d0c0c0d0c0c0c0d0d0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202337434278");
   private static SNodePointer templateNode_ewlaka_a0a0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202255620269");
 }

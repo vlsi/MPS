@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.*;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -139,11 +140,11 @@ public class ModelConstraints {
 
   @NotNull
   private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
-    SNode scopeReference = ((jetbrains.mps.smodel.SNode) referenceNode).getLinkDeclaration(role);
+    SNode concept = SModelUtil.findConceptDeclaration(referenceNode.getConcept().getQualifiedName(), GlobalScope.getInstance());
+    SNode scopeReference = SModelSearchUtil.findLinkDeclaration(concept, role);
     if (scopeReference == null) {
       return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getQualifiedName() + "'");
     }
-    SNode concept = ((jetbrains.mps.smodel.SNode) referenceNode).getConceptDeclarationNode();
 
     return new OkReferenceDescriptor(
       concept, SModelUtil.getGenuineLinkRole(scopeReference), // sourceNodeConcept, genuineRole

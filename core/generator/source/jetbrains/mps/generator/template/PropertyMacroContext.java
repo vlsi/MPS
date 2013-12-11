@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,21 @@ public class PropertyMacroContext extends TemplateQueryContextWithMacro {
     myTemplateValue = templateValue;
   }
 
+  /**
+   * @deprecated use {@link #PropertyMacroContext(TemplateContext, String, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * will be removed after 3.1
+   */
+  @Deprecated
   public PropertyMacroContext(SNode node, String templateValue, @NotNull SNodeReference macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
+    myTemplateValue = templateValue;
+  }
+
+  /**
+   * @since 3.1
+   */
+  public PropertyMacroContext(@NotNull TemplateContext context, String templateValue, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(context, macroNode, generator);
     myTemplateValue = templateValue;
   }
 

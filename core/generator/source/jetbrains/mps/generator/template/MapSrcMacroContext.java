@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,21 @@ public class MapSrcMacroContext extends TemplateQueryContextWithMacro {
     myParentOutputNode = parentOutputNode;
   }
 
+  /**
+   * @deprecated use {@link #MapSrcMacroContext(TemplateContext, SNode, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * will be removed after 3.1
+   */
+  @Deprecated
   public MapSrcMacroContext(SNode node, @NotNull SNodeReference macroNode, SNode parentOutputNode, TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
+    myParentOutputNode = parentOutputNode;
+  }
+
+  /**
+   * @since 3.1
+   */
+  public MapSrcMacroContext(@NotNull TemplateContext context, SNode parentOutputNode, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(context, macroNode, generator);
     myParentOutputNode = parentOutputNode;
   }
 

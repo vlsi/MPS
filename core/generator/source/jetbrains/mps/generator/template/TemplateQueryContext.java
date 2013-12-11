@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 
@@ -27,16 +29,34 @@ import java.util.List;
  */
 public class TemplateQueryContext {
 
+  @Nullable
   private final SNode myInputNode;
-  private final SNode myTemplateNode;
+  @Nullable
+  private final SNodeReference myTemplateNode;
+  @NotNull
   private final ITemplateGenerator myGenerator;
+  @Nullable
   protected TemplateContext myContext;
 
-  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
+  // cons with less restrictions (null/notnull) implied. shall not become public
+  protected TemplateQueryContext(SNode inputNode, SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
     myInputNode = inputNode;
+    myContext = context;
     myTemplateNode = templateNode;
     myGenerator = generator;
-    myContext = context;
+  }
+
+  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
+    this(inputNode, templateNode == null ? null : templateNode.getReference(), context, generator);
+  }
+
+  // protected for the time being, unless decided to expose it (seems to be nice idea, after all)
+  protected TemplateQueryContext(@Nullable SNode templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+    this(context.getInput(), templateNode == null ? null : templateNode.getReference(), context, generator);
+  }
+
+  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+    this(context.getInput(), templateNode, context, generator);
   }
 
   /**
@@ -51,8 +71,12 @@ public class TemplateQueryContext {
     return myInputNode;
   }
 
+  // FIXME replace rv with SNodeReference, let the caller decide what to do
   public SNode getTemplateNode() {
-    return myTemplateNode;
+    if (myTemplateNode == null) {
+      return null;
+    }
+    return myTemplateNode.resolve(MPSModuleRepository.getInstance());
   }
 
   public SNode getOutputNode() {

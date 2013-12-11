@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -32,17 +33,19 @@ public class TemplateQueryContextWithRule extends TemplateQueryContext {
   }
 
   public TemplateQueryContextWithRule(SNode inputNode, TemplateContext templateContext, SNode ruleNode, ITemplateGenerator generator) {
-    super(inputNode, null, templateContext, generator);
+    super(inputNode, (SNodeReference) null, templateContext, generator);
     myRule = ruleNode;
     myRulePointer = null;
   }
 
-  public TemplateQueryContextWithRule(SNode inputNode, SNodeReference ruleNode, ITemplateGenerator generator) {
-    this(inputNode, null, ruleNode, generator);
+  public TemplateQueryContextWithRule(SNode inputNode, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
+    super(inputNode, (SNodeReference) null, null, generator);
+    myRule = null;
+    myRulePointer = ruleNode;
   }
 
-  public TemplateQueryContextWithRule(SNode inputNode, TemplateContext templateContext, SNodeReference ruleNode, ITemplateGenerator generator) {
-    super(inputNode, null, templateContext, generator);
+  protected TemplateQueryContextWithRule(@NotNull TemplateContext templateContext, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
+    super((SNodeReference) null, templateContext, generator);
     myRule = null;
     myRulePointer = ruleNode;
   }

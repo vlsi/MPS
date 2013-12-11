@@ -38,6 +38,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.ArrayList;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -1008,8 +1009,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
-    SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");
+    SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:contextRule")), "mainMethodForRule");
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first();
   }
 
@@ -1211,7 +1211,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1215596987510(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)).first();
+    return ((SNode) _context.getVariable("var:methodFirstParam"));
   }
 
   public static Object referenceMacro_GetReferent_8417933508988548835(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2556,6 +2556,14 @@ parametersLoop:
       SPropertyOperations.set(annotation, "modelId", modelId);
     }
 
+  }
+
+  public static Object insertMacro_varValue_7078451712471987562(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
+  }
+
+  public static Object insertMacro_varValue_7078451712471876618(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true)).first();
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a2a0c() {

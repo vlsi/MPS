@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,15 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class MappingScriptContext extends TemplateQueryContext {
-  private final SNode myScript;
-  private final SNodeReference myScriptPointer;
   private SModel myModel;
 
-  public MappingScriptContext(SModel model, SNode mappingScript, ITemplateGenerator generator) {
-    super(null, null, null, generator);
-    myScript = mappingScript;
-    myScriptPointer = null;
-    myModel = model;
-  }
-
-  public MappingScriptContext(SModel model, SNodeReference mappingScript, ITemplateGenerator generator) {
-    super(null, null, null, generator);
-    myScript = null;
-    myScriptPointer = mappingScript;
+  public MappingScriptContext(SModel model, @NotNull SNodeReference mappingScript, @NotNull ITemplateGenerator generator) {
+    super(null, mappingScript, null, generator);
     myModel = model;
   }
 
@@ -47,11 +35,6 @@ public class MappingScriptContext extends TemplateQueryContext {
   }
 
   @Override
-  public SNode getInputNode() {
-    return null;
-  }
-
-  @Override
   public SModel getInputModel() {
     return myModel;
   }
@@ -59,11 +42,5 @@ public class MappingScriptContext extends TemplateQueryContext {
   @Override
   public SModel getOutputModel() {
     return myModel;
-  }
-
-  @Override
-  public SNode getTemplateNodeForLogging() {
-    return myScript != null ? myScript :
-      myScriptPointer != null ? myScriptPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }
