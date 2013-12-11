@@ -16,11 +16,11 @@
 package jetbrains.mps.generator.textGen;
 
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,31 +36,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TextGeneratorEngine {
   private final boolean generateDebugInfo;
   private final boolean failIfNoTextgen;
-
   private final ExecutorService executor;
-
-  private final ThreadLocal<StringBuilder[]> buffers = new ThreadLocal<StringBuilder[]>() {
-    @Override
-    protected StringBuilder[] initialValue() {
-      return new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768)};
-    }
-
-    @Override
-    public StringBuilder[] get() {
-      StringBuilder[] result = super.get();
-
-      result[0].setLength(0);
-      result[1].setLength(0);
-      if (result[0].capacity() > 100000) {
-        result[0] = new StringBuilder(8192);
-      }
-      if (result[1].capacity() > 200000) {
-        result[1] = new StringBuilder(32768);
-      }
-
-      return result;
-    }
-  };
 
   public TextGeneratorEngine(boolean generateDebugInfo, boolean failIfNoTextgen) {
     this.generateDebugInfo = generateDebugInfo;
@@ -109,7 +85,7 @@ public class TextGeneratorEngine {
           boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
           try {
             SModel model = root.getModel();
-            TextGenerationResult result = TextGen.generateText(root, failIfNoTextgen, generateDebugInfo, buffers.get());
+            TextGenerationResult result = TextGen.generateText(root, failIfNoTextgen, generateDebugInfo, null);
             int modelRootsCount = rootsCounts.get(model);
             List<TextGenerationResult> modelResults = resultsForModel.get(model);
 

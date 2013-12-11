@@ -62,6 +62,9 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Scanner;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -81,7 +84,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 @State(name = "ConsoleHistory", storages = @Storage(file = StoragePathMacros.WORKSPACE_FILE)
 )
@@ -417,6 +419,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                   ((SModelInternal) myModel).addLanguage(usedLanguage);
                   ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
                 }
+                for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
+                  SModelReference usedModel = ref.getTargetSModelReference();
+                  if (usedModel != null && !(((SModelInternal) myModel).importedModels().contains(usedModel))) {
+                    ((SModelInternal) myModel).addModelImport(usedModel, false);
+                    ((AbstractModule) myModel.getModule()).addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
+                  }
+                }
               }
               SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "node", node, true);
             }
@@ -435,11 +444,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
             }
           }, new Runnable() {
             public void run() {
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                public void run() {
-                  TemporaryModels.getInstance().addMissingImports(myModel);
-                }
-              });
               // todo: this is a hack - activate is not required there because command can activate some other component 
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
