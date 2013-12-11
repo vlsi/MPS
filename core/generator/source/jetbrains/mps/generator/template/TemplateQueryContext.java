@@ -18,8 +18,10 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 
 import java.util.List;
 
@@ -71,14 +73,6 @@ public class TemplateQueryContext {
     return myInputNode;
   }
 
-  // FIXME replace rv with SNodeReference, let the caller decide what to do
-  public SNode getTemplateNode() {
-    if (myTemplateNode == null) {
-      return null;
-    }
-    return myTemplateNode.resolve(MPSModuleRepository.getInstance());
-  }
-
   public SNode getOutputNode() {
     return null; //used in ref macros
   }
@@ -124,7 +118,7 @@ public class TemplateQueryContext {
 
   public SNode getOutputNodeByMappingLabel(String label) {
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNode(), "'get output by label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(null, label);
   }
@@ -132,7 +126,7 @@ public class TemplateQueryContext {
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by input and label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNode(), "'get output by input and label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
@@ -146,14 +140,14 @@ public class TemplateQueryContext {
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get all output by input and label' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNode(), "'get all output by input and label' cannot be used here");
     }
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
   }
 
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
     if (myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "cannot register label anymore");
+      myGenerator.getLogger().error(getTemplateNode(), "cannot register label anymore");
     }
     myGenerator.registerMappingLabel(inputNode, mappingName, outputNode);
   }
@@ -165,7 +159,7 @@ public class TemplateQueryContext {
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
     if (inputNode == null) return null;
     if (!myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get copied node for input' cannot be used here");
+      myGenerator.getLogger().error(getTemplateNode(), "'get copied node for input' cannot be used here");
     }
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
   }
@@ -239,15 +233,26 @@ public class TemplateQueryContext {
 
   public void showErrorMessage(SNode node, String message) {
     SNode inputNode = (node != null) ? node : getInputNode();
-    myGenerator.showErrorMessage(inputNode, getTemplateNode(), getRuleNodeForLogging(), message);
+    SNodeReference tnr = getTemplateNode();
+    SNodeReference rnr = getRuleNode();
+    SNode tn = tnr == null ? null : tnr.resolve(MPSModuleRepository.getInstance());
+    SNode rn = rnr == null ? null : rnr.resolve(MPSModuleRepository.getInstance());
+    myGenerator.showErrorMessage(inputNode, tn, rn, message);
   }
 
-  public SNode getTemplateNodeForLogging() {
-    return getTemplateNode();
+  /**
+   * @return context template node where the query is evaluated
+   */
+  @Nullable
+  protected SNodeReference getTemplateNode() {
+    return myTemplateNode;
   }
 
-  public SNode getRuleNodeForLogging() {
+  /**
+   * @return context rule, where query is being evaluated, if available
+   */
+  @Nullable
+  protected SNodeReference getRuleNode() {
     return null;
   }
-
 }

@@ -65,12 +65,12 @@ public class TestContext extends Context {
     }
 
     @Override
-    public SNode getRuleNodeForLogging() {
+    protected SNodeReference getRuleNode() {
       throw new UnsupportedOperationException();
     }
 
     @Override
-    public SNode getTemplateNodeForLogging() {
+    protected SNodeReference getTemplateNode() {
       throw new UnsupportedOperationException();
     }
 
@@ -203,11 +203,6 @@ public class TestContext extends Context {
 
     @Override
     public SNode getOutputNode() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public SNode getTemplateNode() {
       throw new UnsupportedOperationException();
     }
 

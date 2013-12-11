@@ -166,9 +166,9 @@ class GenerationSession {
           myLogger.info("Processing:");
           for (SNode node : myOriginalInputModel.getRootNodes()) {
             if (incrementalHandler.getRequiredRoots().contains(node)) {
-              myLogger.info(node.getName() + " (cache)");
+              myLogger.info(String.format("%s (%s) (cache)", node.getName(), node.getConcept().getQualifiedName()));
             } else if (!incrementalHandler.getIgnoredRoots().contains(node)) {
-              myLogger.info(node.getName());
+              myLogger.info(String.format("%s (%s)", node.getName(), node.getConcept().getQualifiedName()));
             }
           }
         }

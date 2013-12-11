@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -25,7 +24,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * Evgeny Gryaznov, 11/15/10
  */
 public class TemplateQueryContextWithRule extends TemplateQueryContext {
-  private final SNode myRule;
   private final SNodeReference myRulePointer;
 
   public TemplateQueryContextWithRule(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
@@ -34,26 +32,22 @@ public class TemplateQueryContextWithRule extends TemplateQueryContext {
 
   public TemplateQueryContextWithRule(SNode inputNode, TemplateContext templateContext, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, (SNodeReference) null, templateContext, generator);
-    myRule = ruleNode;
-    myRulePointer = null;
+    myRulePointer = ruleNode == null ? null : ruleNode.getReference();
   }
 
   public TemplateQueryContextWithRule(SNode inputNode, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
     super(inputNode, (SNodeReference) null, null, generator);
-    myRule = null;
     myRulePointer = ruleNode;
   }
 
   protected TemplateQueryContextWithRule(@NotNull TemplateContext templateContext, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
     super((SNodeReference) null, templateContext, generator);
-    myRule = null;
     myRulePointer = ruleNode;
   }
 
   @Override
-  public SNode getRuleNodeForLogging() {
-    return myRule != null ? myRule :
-      myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;
+  protected SNodeReference getRuleNode() {
+    return myRulePointer;
   }
 
 }
