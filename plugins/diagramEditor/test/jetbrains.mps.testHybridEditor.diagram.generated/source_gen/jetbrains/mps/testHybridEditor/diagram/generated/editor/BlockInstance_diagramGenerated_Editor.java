@@ -22,6 +22,15 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.base.Value;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import java.util.Iterator;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
+import jetbrains.jetpad.projectional.view.ViewEvents;
+import jetbrains.jetpad.projectional.view.ViewEventHandler;
+import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
@@ -61,9 +70,54 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                 Mapper<String, RectView> mapper = new Mapper<String, RectView>(id, new RectView()) {
                   @Override
                   protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                    super.registerSynchronizers(configuration);
-                    getTarget().background().set(Color.LIGHT_GRAY);
-                    getTarget().dimension().set(new Vector(10, 10));
+                    {
+                      super.registerSynchronizers(configuration);
+                      getTarget().background().set(Color.LIGHT_GRAY);
+                      getTarget().dimension().set(new Vector(10, 10));
+                      final Value<PolyLineConnection> connector = new Value<PolyLineConnection>();
+                      DiagramCell diagramCell = null;
+                      EditorCell cell;
+                      Iterator<EditorCell_Collection> parents = parents();
+                      while (parents.hasNext()) {
+                        cell = parents.next();
+                        if (cell instanceof DiagramCell) {
+                          diagramCell = ((DiagramCell) cell);
+                          break;
+                        }
+                      }
+                      final DiagramCell parent = diagramCell;
+                      getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(View view, MouseEvent e) {
+                          if (connector.get() == null) {
+                            PolyLineConnection newConnector = new PolyLineConnection();
+                            newConnector.fromView().set(getTarget());
+                            newConnector.toLocation().set(e.location());
+                            parent.setConnection(newConnector);
+                            connector.set(newConnector);
+                          } else {
+                            connector.get().toLocation().set(e.location());
+                          }
+                        }
+                      }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(View view, MouseEvent e) {
+                          if (connector.get() == null) {
+                            return;
+                          }
+                          View atEvent = getTarget().container().root().viewAt(e.location());
+                          if (atEvent == null || atEvent.prop(JetpadUtils.PORT).get() == null) {
+                            parent.setConnection(null);
+                          } else {
+                            connector.get().toView().set(atEvent);
+                          }
+                          connector.set(null);
+                        }
+                      }).build());
+
+                    }
+                    getTarget().prop(JetpadUtils.PORT).set(node);
+
                   }
                 };
 
@@ -79,9 +133,54 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                 Mapper<String, RectView> mapper = new Mapper<String, RectView>(id, new RectView()) {
                   @Override
                   protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                    super.registerSynchronizers(configuration);
-                    getTarget().background().set(Color.GRAY);
-                    getTarget().dimension().set(new Vector(10, 10));
+                    {
+                      super.registerSynchronizers(configuration);
+                      getTarget().background().set(Color.GRAY);
+                      getTarget().dimension().set(new Vector(10, 10));
+                      final Value<PolyLineConnection> connector = new Value<PolyLineConnection>();
+                      DiagramCell diagramCell = null;
+                      EditorCell cell;
+                      Iterator<EditorCell_Collection> parents = parents();
+                      while (parents.hasNext()) {
+                        cell = parents.next();
+                        if (cell instanceof DiagramCell) {
+                          diagramCell = ((DiagramCell) cell);
+                          break;
+                        }
+                      }
+                      final DiagramCell parent = diagramCell;
+                      getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(View view, MouseEvent e) {
+                          if (connector.get() == null) {
+                            PolyLineConnection newConnector = new PolyLineConnection();
+                            newConnector.fromView().set(getTarget());
+                            newConnector.toLocation().set(e.location());
+                            parent.setConnection(newConnector);
+                            connector.set(newConnector);
+                          } else {
+                            connector.get().toLocation().set(e.location());
+                          }
+                        }
+                      }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(View view, MouseEvent e) {
+                          if (connector.get() == null) {
+                            return;
+                          }
+                          View atEvent = getTarget().container().root().viewAt(e.location());
+                          if (atEvent == null || atEvent.prop(JetpadUtils.PORT).get() == null) {
+                            parent.setConnection(null);
+                          } else {
+                            connector.get().toView().set(atEvent);
+                          }
+                          connector.set(null);
+                        }
+                      }).build());
+
+                    }
+                    getTarget().prop(JetpadUtils.PORT).set(node);
+
                   }
                 };
 
@@ -102,7 +201,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               final DiagramNodeView view = getTarget();
               getTarget().moveTo(new Vector(myXProperty.get(), myYProperty.get()));
 
-              view.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+              view.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
                 public void move(final Vector delta) {
                   String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
                     public String compute() {

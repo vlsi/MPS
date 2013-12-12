@@ -29,6 +29,7 @@ import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -133,6 +134,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
               }
             }));
+            configuration.add(Synchronizers.forObservableRole(this, myList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
+              public Mapper<? extends PolyLineConnection, ? extends Connection> createMapper(PolyLineConnection source) {
+                return new Mapper<PolyLineConnection, Connection>(source, source) {};
+              }
+            }));
           }
         };
       }
@@ -202,6 +208,11 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
                 }
                 return null;
 
+              }
+            }));
+            configuration.add(Synchronizers.forObservableRole(this, myList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
+              public Mapper<? extends PolyLineConnection, ? extends Connection> createMapper(PolyLineConnection source) {
+                return new Mapper<PolyLineConnection, Connection>(source, source) {};
               }
             }));
           }

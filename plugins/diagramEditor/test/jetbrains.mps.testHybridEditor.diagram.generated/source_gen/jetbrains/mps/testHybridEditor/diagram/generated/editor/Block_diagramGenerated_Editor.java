@@ -85,7 +85,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               final DiagramNodeView view = getTarget();
               getTarget().moveTo(new Vector(myXProperty.get(), myYProperty.get()));
 
-              view.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+              view.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
                 public void move(final Vector delta) {
                   String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
                     public String compute() {

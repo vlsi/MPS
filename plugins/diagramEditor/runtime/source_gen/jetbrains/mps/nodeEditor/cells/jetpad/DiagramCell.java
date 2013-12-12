@@ -6,6 +6,12 @@ import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
+import jetbrains.jetpad.model.property.Property;
+import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.model.property.ValueProperty;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.jetpad.model.collections.list.ObservableList;
+import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.ViewContainer;
@@ -43,6 +49,9 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private boolean mySubstituteEditorVisible = false;
   private int myPatternEditorX;
   private int myPatternEditorY;
+  private Property<Vector> myConnectionLocation = new ValueProperty<Vector>(new Vector(0, 0));
+  protected Property<PolyLineConnection> myConnection = new ValueProperty<PolyLineConnection>(null);
+  protected ObservableList<PolyLineConnection> myList = new ObservableArrayList<PolyLineConnection>();
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
@@ -244,5 +253,17 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
       myRootMapper = new RootMapper(getSNode(), getMapper(), myComponent.container());
     }
     return myRootMapper;
+  }
+
+  public void setConnectionLocation(Vector location) {
+    myConnection.get().toLocation().set(location);
+  }
+
+  public void setConnection(PolyLineConnection connection) {
+    myList.clear();
+    myConnection.set(connection);
+    if (myConnection.get() != null) {
+      myList.add(myConnection.get());
+    }
   }
 }
