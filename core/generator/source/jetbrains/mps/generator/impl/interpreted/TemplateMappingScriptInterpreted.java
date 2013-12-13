@@ -68,7 +68,7 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
       QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new MappingScriptContext(model, scriptNode, generator),
+        new MappingScriptContext(model, getScriptNode(), generator),
         scriptNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {

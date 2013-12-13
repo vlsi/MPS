@@ -105,7 +105,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1218738676457(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a5q, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1218738676457(environment.getOperationContext(), new BaseMappingRuleContext(context, rootMappingRule_417xrn_b0b0a0a5q, environment.getGenerator())))) {
         return false;
       }
       return true;
@@ -134,7 +134,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1218738876108(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a1r, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1218738876108(environment.getOperationContext(), new BaseMappingRuleContext(context, weavingRule_417xrn_a0a1r, environment.getGenerator())))) {
         return false;
       }
       return true;

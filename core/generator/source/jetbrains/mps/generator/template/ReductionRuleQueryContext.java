@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -25,15 +26,15 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * that access actual arguments supplied for the switch.
  *
  * It extends BaseMappingRuleContext (not TemplateQueryContextWithRule directly) because a lot of code
- * (QueriesGenerated class) expects BaseMappingRuleContext in their baseMappintRule_xxx_checkCondition()
+ * (QueriesGenerated class) expects BaseMappingRuleContext in their baseMappingRule_xxx_checkCondition()
  * @author Artem Tikhomirov
  */
 public class ReductionRuleQueryContext extends BaseMappingRuleContext {
-  public ReductionRuleQueryContext(TemplateContext templateContext, SNode ruleNode, ITemplateGenerator generator) {
-    super(templateContext.getInput(), templateContext, ruleNode, generator);
+  public ReductionRuleQueryContext(@NotNull TemplateContext templateContext, @NotNull SNode ruleNode, @NotNull ITemplateGenerator generator) {
+    super(templateContext, ruleNode.getReference(), generator);
   }
 
-  public ReductionRuleQueryContext(TemplateContext templateContext, SNodeReference ruleNodeRef, ITemplateGenerator generator) {
-    super(templateContext.getInput(), templateContext, ruleNodeRef, generator);
+  public ReductionRuleQueryContext(@NotNull TemplateContext templateContext, @NotNull SNodeReference ruleNodeRef, @NotNull ITemplateGenerator generator) {
+    super(templateContext, ruleNodeRef, generator);
   }
 }

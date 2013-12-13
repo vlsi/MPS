@@ -33,7 +33,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     try {
       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533397");
-      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533417(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method", propertyMacro_es4xty_c0b0c0c0b0c, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533417(environment.getOperationContext(), new PropertyMacroContext(context, "method", propertyMacro_es4xty_c0b0c0c0b0c, environment.getGenerator()))));
 
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
@@ -140,7 +140,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a4a1a4a1a3a1a3a1a6a1a2);
                                   environment.nodeCopied(context, tnode12, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533406");
-                                  SNodeAccessUtil.setProperty(tnode12, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533408(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "name", propertyMacro_es4xty_c0b0c0c0b0e0b0d0b0e0b0e0b0d0b0d0b0g0b0c, context, environment.getGenerator()))));
+                                  SNodeAccessUtil.setProperty(tnode12, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533408(environment.getOperationContext(), new PropertyMacroContext(context, "name", propertyMacro_es4xty_c0b0c0c0b0e0b0d0b0e0b0e0b0d0b0d0b0g0b0c, environment.getGenerator()))));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode12));
@@ -233,7 +233,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     try {
       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3);
       environment.nodeCopied(context, tnode14, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533438");
-      SNodeAccessUtil.setProperty(tnode14, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533458(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method2", propertyMacro_es4xty_c0b0c0c0b0d, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode14, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533458(environment.getOperationContext(), new PropertyMacroContext(context, "method2", propertyMacro_es4xty_c0b0c0c0b0d, environment.getGenerator()))));
 
       {
         final SNode tnode15 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
@@ -356,7 +356,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a4a1a4a1a3a1a3a1a6a1a3);
                                   environment.nodeCopied(context, tnode26, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533447");
-                                  SNodeAccessUtil.setProperty(tnode26, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533449(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "name", propertyMacro_es4xty_c0b0c0c0b0e0b0e0b0e0b0e0b0d0b0d0b0g0b0d, context, environment.getGenerator()))));
+                                  SNodeAccessUtil.setProperty(tnode26, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533449(environment.getOperationContext(), new PropertyMacroContext(context, "name", propertyMacro_es4xty_c0b0c0c0b0e0b0e0b0e0b0e0b0d0b0d0b0g0b0d, environment.getGenerator()))));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode26));
@@ -433,7 +433,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     try {
       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4);
       environment.nodeCopied(context, tnode27, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533471");
-      SNodeAccessUtil.setProperty(tnode27, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533491(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method3", propertyMacro_es4xty_c0b0c0c0b0e, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode27, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533491(environment.getOperationContext(), new PropertyMacroContext(context, "method3", propertyMacro_es4xty_c0b0c0c0b0e, environment.getGenerator()))));
 
       {
         final SNode tnode28 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
@@ -540,7 +540,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a4a1a4a1a3a1a3a1a6a1a4);
                                   environment.nodeCopied(context, tnode38, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533480");
-                                  SNodeAccessUtil.setProperty(tnode38, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533482(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "name", propertyMacro_es4xty_c0b0c0c0b0e0b0d0b0e0b0e0b0d0b0d0b0g0b0e, context, environment.getGenerator()))));
+                                  SNodeAccessUtil.setProperty(tnode38, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533482(environment.getOperationContext(), new PropertyMacroContext(context, "name", propertyMacro_es4xty_c0b0c0c0b0e0b0d0b0e0b0e0b0d0b0d0b0g0b0e, environment.getGenerator()))));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode38));

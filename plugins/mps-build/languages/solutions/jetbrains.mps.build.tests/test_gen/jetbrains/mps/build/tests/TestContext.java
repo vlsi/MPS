@@ -9,6 +9,7 @@ import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Map;
 import java.util.HashMap;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -34,7 +35,7 @@ public class TestContext extends Context {
     private SModel model;
 
     public TestGenContext(SModel model) {
-      super(null, null, null, null);
+      super(null, (SNodeReference) null, null, null);
       this.model = model;
     }
 

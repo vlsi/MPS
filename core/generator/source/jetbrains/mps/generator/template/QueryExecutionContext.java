@@ -26,6 +26,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * FIXME get rid of inputNode where templateContext is available
  * Evgeny Gryaznov, Feb 24, 2010
  */
 public interface QueryExecutionContext {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -25,30 +26,17 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public class TemplateQueryContextWithMacro extends TemplateQueryContext {
 
-  private final SNode myMacro;
-  private final SNodeReference myMacroPointer;
-
   public TemplateQueryContextWithMacro(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, null, context, generator);
-    myMacro = macroNode;
-    myMacroPointer = null;
+    super(inputNode, macroNode, context, generator);
   }
 
   public TemplateQueryContextWithMacro(SNode inputNode, SNodeReference macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, null, context, generator);
-    myMacro = null;
-    myMacroPointer = macroNode;
+    super(inputNode, macroNode, context, generator);
   }
 
-  @Override
-  public SNode getTemplateNode() {
-    SNode ruleNode = getTemplateNodeForLogging();
-    return ruleNode != null ? ruleNode.getParent() : null;
-  }
-
-  @Override
-  public SNode getTemplateNodeForLogging() {
-    return myMacro != null ? myMacro :
-      myMacroPointer != null ? myMacroPointer.resolve(MPSModuleRepository.getInstance()) : null;
+  // public, not protected - although work in progress and, perhaps, ITemplateGenerator shall be gone, as well, there are usages
+  // e.g. in InsertMacro, that instantiate this context directly and may benefit from this cons.
+  public TemplateQueryContextWithMacro(@NotNull TemplateContext context, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(macroNode, context, generator);
   }
 }

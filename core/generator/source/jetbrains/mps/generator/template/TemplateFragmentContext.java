@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public class TemplateFragmentContext extends TemplateQueryContextWithMacro {
   }
 
   public TemplateFragmentContext(SNode mainContextNode, @NotNull SNodeReference tfMacro, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    super(context.getInput(), tfMacro, context, generator);
+    super(context, tfMacro, generator);
     myMainContextNode = mainContextNode;
   }
 

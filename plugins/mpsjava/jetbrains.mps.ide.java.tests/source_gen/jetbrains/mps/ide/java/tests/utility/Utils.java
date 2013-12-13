@@ -22,6 +22,8 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.extapi.model.SModelBase;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -74,6 +76,11 @@ public class Utils {
 
       SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
       SModelOperations.addRootNode(mdl, result);
+      if (mdl instanceof SModelBase && SNodeOperations.getModel(expected) instanceof SModelBase) {
+        for (SModuleReference langref : ((SModelBase) SNodeOperations.getModel(expected)).importedLanguages()) {
+          ((SModelBase) mdl).addLanguage(langref);
+        }
+      }
 
       if (onlyStubs) {
         NodePatcher.removeStatements(expected);
