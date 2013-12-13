@@ -17,13 +17,16 @@ import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import javax.swing.JComponent;
 import java.awt.Dimension;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.model.event.EventHandler;
+import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.event.KeyEvent;
+import jetbrains.jetpad.event.Key;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
@@ -62,6 +65,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     ViewContainer container = new ViewContainer();
     myComponent = new ViewContainerComponent();
     myComponent.container(container);
+    setupRootView(myComponent.container().root());
     myComponent.container().root().addTrait(RootTrait.ROOT_TRAIT);
     myComponent.container().root().addTrait(getEventHandlingTrate());
   }
@@ -115,11 +119,26 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     return false;
   }
 
+  private void setupRootView(View root) {
+    root.focusable().set(true);
+    root.focused().addHandler(new EventHandler<PropertyChangeEvent<Boolean>>() {
+      public void onEvent(PropertyChangeEvent<Boolean> focused) {
+        if (!(focused.getNewValue())) {
+          hidePatternEditor();
+        }
+      }
+    });
+  }
+
   private ViewTrait getEventHandlingTrate() {
     return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
+        if (view.focused().get()) {
+          hidePatternEditor();
+        } else {
+          view.container().focusedView().set(view);
+        }
         activateBlockInfo();
-        hidePatternEditor();
         View viewUnderMouse = view.viewAt(event.location());
         if (viewUnderMouse != myComponent.container().root()) {
           return;
@@ -129,11 +148,16 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
       }
     }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
       public void handle(View view, KeyEvent event) {
-        if (!(mySubstituteEditorVisible)) {
+        if (mySubstituteEditorVisible) {
+          getEditor().processKeyPressed(getAWTKeyEvent(event, false));
+          event.consume();
           return;
         }
-        getEditor().processKeyPressed(getAWTKeyEvent(event, false));
-        event.consume();
+
+        if (event.key() == Key.ESCAPE) {
+          view.container().focusedView().set(null);
+          event.consume();
+        }
       }
     }).on(ViewEvents.KEY_TYPED, new ViewEventHandler<KeyEvent>() {
       public void handle(View view, KeyEvent event) {
