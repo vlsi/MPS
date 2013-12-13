@@ -44,7 +44,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
             super.registerSynchronizers(configuration);
             ReadableProperty<SNode> port_5733l5_a0 = JetpadUtils.modelProperty(new Computable<SNode>() {
               public SNode compute() {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
+                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
               }
             });
             configuration.add(Synchronizers.forProperty(port_5733l5_a0, new WritableProperty<SNode>() {
@@ -57,12 +57,16 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
                 if (descendantMapper == null) {
                   return null;
                 }
+                Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false));
+                if (mappers.size() > 0) {
+                  return (View) mappers.iterator().next().getTarget();
+                }
                 return (View) descendantMapper.getTarget();
               }
             }));
             ReadableProperty<SNode> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
               public SNode compute() {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
+                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
               }
             });
             configuration.add(Synchronizers.forProperty(port_5733l5_a0_0, new WritableProperty<SNode>() {
@@ -79,7 +83,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
                 if (descendantMapper == null) {
                   return null;
                 }
-                Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false));
+                Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "metaPort", false));
                 if (mappers.size() > 0) {
                   return (View) mappers.iterator().next().getTarget();
                 }

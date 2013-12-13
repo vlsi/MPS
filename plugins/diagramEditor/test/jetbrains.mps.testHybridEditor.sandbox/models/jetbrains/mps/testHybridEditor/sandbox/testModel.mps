@@ -7,12 +7,12 @@
   <root type="adck.Diagram" typeId="adck.725186580883451585" id="725186580883618058" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="myDiagram" />
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="7171441290056664121" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="a" />
+      <property name="name" nameId="tpck.1169194664001" value="c1" />
       <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="7171441290056664112" resolveInfo="block2_out" />
       <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="7171441290056664106" resolveInfo="sum_input_2" />
     </node>
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="7171441290056664123" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="a" />
+      <property name="name" nameId="tpck.1169194664001" value="c2" />
       <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="7171441290056664109" resolveInfo="block1_out" />
       <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="7171441290056664104" resolveInfo="sum_input_1" />
     </node>
@@ -58,9 +58,9 @@
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="2353136177974088758" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="TO" />
-      <property name="x" nameId="adck.2353136177974084745" value="525" />
-      <property name="y" nameId="adck.2353136177974084746" value="282" />
-      <property name="myBooleanProperty" nameId="adck.6111547859872065951" value="false" />
+      <property name="x" nameId="adck.2353136177974084745" value="492" />
+      <property name="y" nameId="adck.2353136177974084746" value="355" />
+      <property name="myBooleanProperty" nameId="adck.6111547859872065951" value="true" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
     <node role="newConnectors" roleId="adck.2353136177974093280" type="adck.ConnectorInstance" typeId="adck.2353136177974088982" id="2353136177974097424" nodeInfo="ng">
@@ -83,6 +83,7 @@
       </node>
     </node>
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="6981942132920256770" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="c3" />
       <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="285670992215046555" resolveInfo="sum_output" />
       <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="6981942132920256710" resolveInfo="chain_in" />
     </node>
