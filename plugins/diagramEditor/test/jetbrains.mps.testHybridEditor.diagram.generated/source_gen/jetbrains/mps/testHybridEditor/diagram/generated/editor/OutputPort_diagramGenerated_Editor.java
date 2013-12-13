@@ -43,10 +43,11 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
         Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(node, new RectView()) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+            super.registerSynchronizers(configuration);
+            getTarget().background().set(Color.GRAY);
+            getTarget().dimension().set(new Vector(10, 10));
             {
-              super.registerSynchronizers(configuration);
-              getTarget().background().set(Color.GRAY);
-              getTarget().dimension().set(new Vector(10, 10));
+
               final Value<PolyLineConnection> connector = new Value<PolyLineConnection>();
               DiagramCell diagramCell = null;
               EditorCell cell;
@@ -79,18 +80,18 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
                     return;
                   }
                   View atEvent = getTarget().container().root().viewAt(e.location());
-                  if (atEvent == null || atEvent.prop(JetpadUtils.PORT).get() == null) {
+                  if (atEvent == null || atEvent.prop(JetpadUtils.SOURCE).get() == null) {
                     parent.setConnection(null);
                   } else {
-                    connector.get().toView().set(atEvent);
+                    parent.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
+                    parent.activateConnectorInfo();
+                    parent.showPatternEditor(e.location().x, e.location().y);
                   }
                   connector.set(null);
                 }
               }).build());
-
             }
-            getTarget().prop(JetpadUtils.PORT).set(getSource());
-
+            getTarget().prop(JetpadUtils.SOURCE).set(getSource());
           }
         };
 

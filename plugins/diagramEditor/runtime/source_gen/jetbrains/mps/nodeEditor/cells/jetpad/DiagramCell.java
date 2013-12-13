@@ -7,13 +7,12 @@ import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.jetpad.model.property.Property;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.jetpad.model.collections.list.ObservableList;
-import jetbrains.jetpad.model.collections.list.ObservableArrayList;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.jetpad.model.property.ValueProperty;
+import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import javax.swing.JComponent;
@@ -36,7 +35,6 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
@@ -49,9 +47,14 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private boolean mySubstituteEditorVisible = false;
   private int myPatternEditorX;
   private int myPatternEditorY;
-  private Property<Vector> myConnectionLocation = new ValueProperty<Vector>(new Vector(0, 0));
   protected Property<PolyLineConnection> myConnection = new ValueProperty<PolyLineConnection>(null);
-  protected ObservableList<PolyLineConnection> myList = new ObservableArrayList<PolyLineConnection>();
+  protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
+  private CompositeSubstituteInfo myBlockInfo;
+  private CompositeSubstituteInfo myConnectorInfo;
+  private SNode myCurrentFrom;
+  private SNode myCurrentTo;
+  private Object myCurrentFromId;
+  private Object myCurrentToId;
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
@@ -115,6 +118,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private ViewTrait getEventHandlingTrate() {
     return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
       public void handle(View view, MouseEvent event) {
+        activateBlockInfo();
         hidePatternEditor();
         View viewUnderMouse = view.viewAt(event.location());
         if (viewUnderMouse != myComponent.container().root()) {
@@ -142,7 +146,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     }).build();
   }
 
-  private void showPatternEditor(int x, int y) {
+  public void showPatternEditor(int x, int y) {
     myPatternEditorX = x;
     myPatternEditorY = y;
     getEditor().activateNodeSubstituteChooser(this, false);
@@ -171,8 +175,53 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     };
   }
 
-  public void setCompositeSubstituteInfo(SubstituteInfoPartExt[] infoParts) {
-    setSubstituteInfo(new CompositeSubstituteInfo(getContext(), new BasicCellContext(getSNode()), infoParts));
+  public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
+    return new SubstituteInfoPartExt() {
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> result = new ArrayList<SubstituteAction>();
+        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
+          result.add(new NodeSubstituteActionWrapper(action) {
+            @Override
+            public SNode substitute(@Nullable EditorContext context, String string) {
+              SNode result = super.substitute(context, string);
+              setConnectorCallback.invoke(result, myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
+              return result;
+            }
+
+
+
+            @Override
+            public boolean canSubstitute(String string) {
+              return super.canSubstitute(string) && canCreateConnector.invoke(myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
+            }
+          });
+        }
+        return result;
+      }
+    };
+  }
+
+  public void setBlockSubstituteInfo(SubstituteInfoPartExt[] infoParts) {
+    myBlockInfo = new CompositeSubstituteInfo(getContext(), new BasicCellContext(getSNode()), infoParts);
+  }
+
+  public void setConnectorSubstituteInfo(SubstituteInfoPartExt[] infoParts) {
+    myConnectorInfo = new CompositeSubstituteInfo(getContext(), new BasicCellContext(getSNode()), infoParts);
+  }
+
+  public void activateBlockInfo() {
+    setSubstituteInfo(myBlockInfo);
+  }
+
+  public void activateConnectorInfo() {
+    setSubstituteInfo(myConnectorInfo);
+  }
+
+  public void setCurrentConnectorContext(SNode from, Object fromId, SNode to, Object toId) {
+    myCurrentFrom = from;
+    myCurrentFromId = fromId;
+    myCurrentTo = to;
+    myCurrentToId = toId;
   }
 
   @Override
@@ -189,6 +238,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
       @Override
       public void done() {
         super.done();
+        setConnection(null);
         mySubstituteEditorVisible = false;
       }
     };
@@ -255,15 +305,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     return myRootMapper;
   }
 
-  public void setConnectionLocation(Vector location) {
-    myConnection.get().toLocation().set(location);
-  }
-
   public void setConnection(PolyLineConnection connection) {
-    myList.clear();
-    myConnection.set(connection);
-    if (myConnection.get() != null) {
-      myList.add(myConnection.get());
-    }
+    myConnectionSingleList.setItem(connection);
   }
 }

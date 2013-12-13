@@ -4,7 +4,6 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.projectional.view.ViewPropertySpec;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.jetpad.projectional.view.ViewPropertyKind;
 import java.awt.Color;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.util.Computable;
@@ -20,9 +19,8 @@ import jetbrains.jetpad.model.property.PropertyChangeEvent;
  * Date: 7/23/13
  */
 public class JetpadUtils {
-  public static final ViewPropertySpec<SNode> PORT = new ViewPropertySpec<SNode>("inputPort");
-
-  public static final ViewPropertySpec<String> ID = new ViewPropertySpec("id", ViewPropertyKind.NONE, "");
+  public static final ViewPropertySpec<SNode> SOURCE = new ViewPropertySpec<SNode>("inputPort");
+  public static final ViewPropertySpec<Object> ID = new ViewPropertySpec("id");
 
   public static Color toAwtColor(jetbrains.jetpad.values.Color color) {
     return new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());

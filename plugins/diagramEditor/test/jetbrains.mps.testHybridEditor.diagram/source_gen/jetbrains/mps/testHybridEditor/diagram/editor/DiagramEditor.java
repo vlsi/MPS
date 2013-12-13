@@ -66,7 +66,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
         };
       }
     };
-    diagramCell.setCompositeSubstituteInfo(new SubstituteInfoPartExt[]{diagramCell.createNewDiagramNodeActions(diagramNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+    diagramCell.setBlockSubstituteInfo(new SubstituteInfoPartExt[]{diagramCell.createNewDiagramNodeActions(diagramNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
       public void invoke(SNode node, Integer x, Integer y) {
         SNode block = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
         SPropertyOperations.set(block, "name", "newBlock");

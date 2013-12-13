@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/1491555030356781789">
     <nodeInfo nodeId="1491555030356827125" fileName="CheckAbstractFigureParameter_exists_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1491555030356827125" fileName="CheckAbstractFigureParameter_exists_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -450,6 +450,220 @@
       <varInfo nodeId="8570854907291436625" varName="yFunctionParameter" />
     </scopeInfo>
     <unitInfo nodeId="8570854907291436625" fileName="typeof_YFunctionParameter_InferenceRule.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.typeof_YFunctionParameter_InferenceRule" />
+  </root>
+  <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/939897302409170321">
+    <nodeInfo nodeId="939897302409170323" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170323" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="21" startPosition="67" endLine="22" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170323" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="22" startPosition="209" endLine="23" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="33" startPosition="130" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="43" startPosition="63" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="45" startPosition="159" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_FromNodeFunctionParameter_InferenceRule#()V" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170323" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="138" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_69s3hi_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="16" startPosition="59" endLine="16" endPosition="59" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="83" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+      <varInfo nodeId="939897302409170321" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170323" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="286">
+      <varInfo nodeId="939897302409170323" varName="_info_12389875345" />
+      <varInfo nodeId="939897302409170323" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="61" endLine="46" endPosition="24">
+      <varInfo nodeId="939897302409170325" varName="facade" />
+      <varInfo nodeId="939897302409170325" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170322" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="138" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="939897302409170321" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170325" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="939897302409170321" varName="fromNodeFunctionParameter" />
+      <varInfo nodeId="939897302409170321" varName="status" />
+      <varInfo nodeId="939897302409170321" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="939897302409170321" fileName="typeof_FromNodeFunctionParameter_InferenceRule.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FromNodeFunctionParameter_InferenceRule" />
+  </root>
+  <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/939897302409170735">
+    <nodeInfo nodeId="939897302409170737" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170737" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="21" startPosition="65" endLine="22" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170737" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="22" startPosition="209" endLine="23" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="33" startPosition="130" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="43" startPosition="63" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="45" startPosition="159" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ToNodeFunctionParameter_InferenceRule#()V" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170737" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="136" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_nrfnhq_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="16" startPosition="57" endLine="16" endPosition="57" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="81" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="159" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+      <varInfo nodeId="939897302409170735" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170737" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="286">
+      <varInfo nodeId="939897302409170737" varName="_info_12389875345" />
+      <varInfo nodeId="939897302409170737" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="61" endLine="46" endPosition="24">
+      <varInfo nodeId="939897302409170739" varName="facade" />
+      <varInfo nodeId="939897302409170739" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170736" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="136" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="939897302409170735" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170739" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="939897302409170735" varName="status" />
+      <varInfo nodeId="939897302409170735" varName="toNodeFunctionParameter" />
+      <varInfo nodeId="939897302409170735" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="939897302409170735" fileName="typeof_ToNodeFunctionParameter_InferenceRule.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ToNodeFunctionParameter_InferenceRule" />
+  </root>
+  <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/939897302409170871">
+    <nodeInfo nodeId="939897302409170873" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170873" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="22" startPosition="65" endLine="23" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170873" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="23" startPosition="209" endLine="24" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="34" startPosition="130" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="30" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="61" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="44" startPosition="63" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="46" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="46" startPosition="165" endLine="47" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="47" startPosition="239" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_FromIdFunctionParameter_InferenceRule#()V" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170873" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="136" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_x3mdmy_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="17" startPosition="57" endLine="17" endPosition="57" />
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="81" />
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="30" endLine="40" endPosition="17" />
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="33" startPosition="5" endLine="35" endPosition="45">
+      <varInfo nodeId="939897302409170871" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="239" />
+    <scopeInfo nodeId="939897302409170873" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="286">
+      <varInfo nodeId="939897302409170873" varName="_info_12389875345" />
+      <varInfo nodeId="939897302409170873" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="939897302409170872" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="136" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="61" endLine="48" endPosition="24">
+      <varInfo nodeId="939897302409170875" varName="facade" />
+      <varInfo nodeId="939897302409170875" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="939897302409170871" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="939897302409170871" varName="fromIdFunctionParameter" />
+      <varInfo nodeId="939897302409170871" varName="status" />
+      <varInfo nodeId="939897302409170871" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409170875" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <unitInfo nodeId="939897302409170871" fileName="typeof_FromIdFunctionParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.typeof_FromIdFunctionParameter_InferenceRule" />
+  </root>
+  <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/939897302409171007">
+    <nodeInfo nodeId="939897302409171009" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409171009" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="22" startPosition="63" endLine="23" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409171009" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="23" startPosition="209" endLine="24" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="34" startPosition="130" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="30" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="61" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="44" startPosition="63" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="46" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="46" startPosition="165" endLine="47" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="47" startPosition="239" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ToIdFunctionParameter_InferenceRule#()V" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409171009" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="134" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_fwafzl_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="17" startPosition="55" endLine="17" endPosition="55" />
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="79" />
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="30" endLine="40" endPosition="17" />
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="33" startPosition="5" endLine="35" endPosition="45">
+      <varInfo nodeId="939897302409171007" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="239" />
+    <scopeInfo nodeId="939897302409171009" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="286">
+      <varInfo nodeId="939897302409171009" varName="_info_12389875345" />
+      <varInfo nodeId="939897302409171009" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="939897302409171008" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="134" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="61" endLine="48" endPosition="24">
+      <varInfo nodeId="939897302409441935" varName="facade" />
+      <varInfo nodeId="939897302409441935" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="939897302409171007" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="939897302409171007" varName="status" />
+      <varInfo nodeId="939897302409171007" varName="toIdFunctionParameter" />
+      <varInfo nodeId="939897302409171007" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="939897302409441935" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <unitInfo nodeId="939897302409171007" fileName="typeof_ToIdFunctionParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.typeof_ToIdFunctionParameter_InferenceRule" />
   </root>
 </debugInfo>
 

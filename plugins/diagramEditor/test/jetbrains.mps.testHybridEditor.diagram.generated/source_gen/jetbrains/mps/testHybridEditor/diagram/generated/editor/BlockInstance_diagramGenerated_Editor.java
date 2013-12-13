@@ -15,13 +15,12 @@ import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.base.Value;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
@@ -31,8 +30,8 @@ import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.smodel.ModelAccess;
@@ -61,62 +60,16 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "inMetaPorts", true)).select(new ISelector<SNode, String>() {
-              public String select(SNode it) {
-                return SPropertyOperations.getString(it, "name");
-              }
-            })), getTarget().inputs.children(), new MapperFactory<String, View>() {
-              public Mapper<? extends String, ? extends View> createMapper(final String id) {
-                Mapper<String, RectView> mapper = new Mapper<String, RectView>(id, new RectView()) {
+            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromIterable(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "inMetaPorts", true)), getTarget().inputs.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(final SNode id) {
+                Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(id, new RectView()) {
                   @Override
                   protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                    {
-                      super.registerSynchronizers(configuration);
-                      getTarget().background().set(Color.LIGHT_GRAY);
-                      getTarget().dimension().set(new Vector(10, 10));
-                      final Value<PolyLineConnection> connector = new Value<PolyLineConnection>();
-                      DiagramCell diagramCell = null;
-                      EditorCell cell;
-                      Iterator<EditorCell_Collection> parents = parents();
-                      while (parents.hasNext()) {
-                        cell = parents.next();
-                        if (cell instanceof DiagramCell) {
-                          diagramCell = ((DiagramCell) cell);
-                          break;
-                        }
-                      }
-                      final DiagramCell parent = diagramCell;
-                      getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(View view, MouseEvent e) {
-                          if (connector.get() == null) {
-                            PolyLineConnection newConnector = new PolyLineConnection();
-                            newConnector.fromView().set(getTarget());
-                            newConnector.toLocation().set(e.location());
-                            parent.setConnection(newConnector);
-                            connector.set(newConnector);
-                          } else {
-                            connector.get().toLocation().set(e.location());
-                          }
-                        }
-                      }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(View view, MouseEvent e) {
-                          if (connector.get() == null) {
-                            return;
-                          }
-                          View atEvent = getTarget().container().root().viewAt(e.location());
-                          if (atEvent == null || atEvent.prop(JetpadUtils.PORT).get() == null) {
-                            parent.setConnection(null);
-                          } else {
-                            connector.get().toView().set(atEvent);
-                          }
-                          connector.set(null);
-                        }
-                      }).build());
-
-                    }
-                    getTarget().prop(JetpadUtils.PORT).set(node);
+                    super.registerSynchronizers(configuration);
+                    getTarget().background().set(Color.LIGHT_GRAY);
+                    getTarget().dimension().set(new Vector(10, 10));
+                    getTarget().prop(JetpadUtils.SOURCE).set(node);
+                    getTarget().prop(JetpadUtils.ID).set(id);
 
                   }
                 };
@@ -124,19 +77,16 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                 return mapper;
               }
             }));
-            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "outMetaPorts", true)).select(new ISelector<SNode, String>() {
-              public String select(SNode it) {
-                return SPropertyOperations.getString(it, "name");
-              }
-            })), getTarget().outputs.children(), new MapperFactory<String, View>() {
-              public Mapper<? extends String, ? extends View> createMapper(final String id) {
-                Mapper<String, RectView> mapper = new Mapper<String, RectView>(id, new RectView()) {
+            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromIterable(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "outMetaPorts", true)), getTarget().outputs.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(final SNode id) {
+                Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(id, new RectView()) {
                   @Override
                   protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                    super.registerSynchronizers(configuration);
+                    getTarget().background().set(Color.GRAY);
+                    getTarget().dimension().set(new Vector(10, 10));
                     {
-                      super.registerSynchronizers(configuration);
-                      getTarget().background().set(Color.GRAY);
-                      getTarget().dimension().set(new Vector(10, 10));
+
                       final Value<PolyLineConnection> connector = new Value<PolyLineConnection>();
                       DiagramCell diagramCell = null;
                       EditorCell cell;
@@ -169,17 +119,19 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                             return;
                           }
                           View atEvent = getTarget().container().root().viewAt(e.location());
-                          if (atEvent == null || atEvent.prop(JetpadUtils.PORT).get() == null) {
+                          if (atEvent == null || atEvent.prop(JetpadUtils.SOURCE).get() == null) {
                             parent.setConnection(null);
                           } else {
-                            connector.get().toView().set(atEvent);
+                            parent.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
+                            parent.activateConnectorInfo();
+                            parent.showPatternEditor(e.location().x, e.location().y);
                           }
                           connector.set(null);
                         }
                       }).build());
-
                     }
-                    getTarget().prop(JetpadUtils.PORT).set(node);
+                    getTarget().prop(JetpadUtils.SOURCE).set(node);
+                    getTarget().prop(JetpadUtils.ID).set(id);
 
                   }
                 };
@@ -228,6 +180,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
             }
 
             registerAditionalSynchronizers(configuration, this);
+            getTarget().rect.prop(JetpadUtils.SOURCE).set(getSource());
             BlockInstance_diagramGenerated_Editor.setDiagramNodeView(getTarget());
           }
         };

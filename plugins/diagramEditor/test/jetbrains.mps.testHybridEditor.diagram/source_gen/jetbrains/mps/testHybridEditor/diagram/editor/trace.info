@@ -399,7 +399,7 @@
       <varInfo nodeId="725186580886525256" varName="diagramNode" />
       <varInfo nodeId="725186580886525254" varName="editorContext" />
     </scopeInfo>
-    <unitInfo nodeId="320213057866998681" fileName="DiagramEditor.java" startLine="69" startPosition="320" endLine="76" endPosition="5" unitName="jetbrains.mps.testHybridEditor.diagram.editor.DiagramEditor$2" />
+    <unitInfo nodeId="320213057866998681" fileName="DiagramEditor.java" startLine="69" startPosition="316" endLine="76" endPosition="5" unitName="jetbrains.mps.testHybridEditor.diagram.editor.DiagramEditor$2" />
     <unitInfo nodeId="7839772582270588546" fileName="DiagramEditor.java" startLine="45" startPosition="171" endLine="54" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.DiagramEditor$3" />
     <unitInfo nodeId="7839772582272207126" fileName="DiagramEditor.java" startLine="55" startPosition="172" endLine="64" endPosition="13" unitName="jetbrains.mps.testHybridEditor.diagram.editor.DiagramEditor$3" />
     <unitInfo nodeId="7839772582271021352" fileName="DiagramEditor.java" startLine="39" startPosition="19" endLine="66" endPosition="9" unitName="jetbrains.mps.testHybridEditor.diagram.editor.DiagramEditor$2" />

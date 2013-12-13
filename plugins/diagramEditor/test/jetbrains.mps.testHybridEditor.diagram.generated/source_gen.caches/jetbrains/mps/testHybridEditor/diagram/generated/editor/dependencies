@@ -26,7 +26,6 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.diagram.dataflow.view.BlockView" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.sandbox.BlockContentView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -95,7 +94,6 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -125,8 +123,10 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagramGenerated_Editor" file="Diagram_diagramGenerated_Editor.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -143,6 +143,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -160,6 +161,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
@@ -186,20 +188,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.jetpad.base.Value" />
-    <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolyLineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEventHandler" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.PortCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

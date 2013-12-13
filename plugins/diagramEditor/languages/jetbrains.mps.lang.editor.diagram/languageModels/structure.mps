@@ -98,6 +98,12 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8570854907290423690" resolveInfo="DiagramElementsCreation" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="939897302409114961" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="connectorCreation" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="939897302409084996" resolveInfo="DiagramConnectorCreation" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6382742553261733065" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CellModel_DiagramConnector" />
@@ -254,6 +260,61 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8570854907290717922" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="XFunctionParameter" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="x" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="939897302409084996" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="DiagramConnectorCreation" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="939897302409084997" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="concept" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="939897302409084998" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="query" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="939897302409084999" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="canCreate" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="939897302409110350" resolveInfo="DiagramConnectorCanCreateHandler" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="939897302409114956" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="handler" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="939897302409085052" resolveInfo="DiagramConnectorCreationHandler" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="939897302409085052" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="DiagramConnectorCreationHandler" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="939897302409110350" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="DiagramConnectorCanCreateHandler" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="939897302409170265" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FromNodeFunctionParameter" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="from" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="939897302409170270" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ToNodeFunctionParameter" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="to" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="939897302409170275" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FromIdFunctionParameter" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="fromId" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="939897302409170280" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ToIdFunctionParameter" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="toId" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
   </root>
 </model>

@@ -19,7 +19,6 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -80,7 +79,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
                 if (descendantMapper == null) {
                   return null;
                 }
-                Set<Mapper<? super String, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
+                Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false));
                 if (mappers.size() > 0) {
                   return (View) mappers.iterator().next().getTarget();
                 }

@@ -175,6 +175,8 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7br2q0_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7br2q0_c0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7br2q0_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7br2q0_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_7br2q0_f0(editorContext, node));
     return editorCell;
   }
 
@@ -191,7 +193,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7br2q0_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "creation:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "elements creation:");
     editorCell.setCellId("Constant_7br2q0_c0_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -210,6 +212,60 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
 
   private static class elementsCreationListHandler_7br2q0_d0 extends RefNodeListHandler {
     public elementsCreationListHandler_7br2q0_d0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        if (elementNode != null) {
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+  }
+
+  private EditorCell createConstant_7br2q0_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "connector creation:");
+    editorCell.setCellId("Constant_7br2q0_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_7br2q0_f0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CellModel_Diagram_Editor.connectorCreationListHandler_7br2q0_f0(node, "connectorCreation", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_connectorCreation");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private static class connectorCreationListHandler_7br2q0_f0 extends RefNodeListHandler {
+    public connectorCreationListHandler_7br2q0_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
