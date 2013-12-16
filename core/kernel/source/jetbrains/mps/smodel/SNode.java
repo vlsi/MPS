@@ -1095,7 +1095,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !myModel.canFireReadEvent()) return;
     if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
       try {
         ourReadAccessHandlingInProgress.set(Boolean.TRUE);
