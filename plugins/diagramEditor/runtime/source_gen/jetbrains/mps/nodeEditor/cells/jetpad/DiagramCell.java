@@ -6,10 +6,8 @@ import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
-import jetbrains.jetpad.model.property.Property;
-import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
+import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -43,6 +41,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
 import java.awt.Point;
 import jetbrains.jetpad.event.ModifierKey;
+import jetbrains.jetpad.geometry.Vector;
 
 public abstract class DiagramCell extends GenericMapperCell<DiagramView> implements EditorCell_WithComponent {
   private RootMapper myRootMapper;
@@ -50,7 +49,6 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private boolean mySubstituteEditorVisible = false;
   private int myPatternEditorX;
   private int myPatternEditorY;
-  protected Property<PolyLineConnection> myConnection = new ValueProperty<PolyLineConnection>(null);
   protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
   private CompositeSubstituteInfo myBlockInfo;
   private CompositeSubstituteInfo myConnectorInfo;
@@ -262,7 +260,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
       @Override
       public void done() {
         super.done();
-        setConnection(null);
+        hideConnectionDragFeedback();
         mySubstituteEditorVisible = false;
       }
     };
@@ -329,7 +327,24 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     return myRootMapper;
   }
 
-  public void setConnection(PolyLineConnection connection) {
+  public boolean hasConnectionDragFeedback() {
+    return !(myConnectionSingleList.isEmpty());
+  }
+
+  public PolyLineConnection showConnectionDragFeedback(View fromView, Vector toLocation) {
+    assert myConnectionSingleList.isEmpty();
+    PolyLineConnection connection = new PolyLineConnection();
+    connection.fromView().set(fromView);
+    connection.toLocation().set(toLocation);
     myConnectionSingleList.setItem(connection);
+    return connection;
+  }
+
+  public void updateConnectionDragFeedback(Vector toLocation) {
+    myConnectionSingleList.getItem().toLocation().set(toLocation);
+  }
+
+  public void hideConnectionDragFeedback() {
+    myConnectionSingleList.setItem(null);
   }
 }

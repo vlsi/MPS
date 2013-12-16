@@ -277,9 +277,9 @@
   </root>
   <root nodeRef="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)/7171441290057803824">
     <nodeInfo nodeId="7171441290057902030" fileName="QueriesGenerated.java" startLine="214" startPosition="136" endLine="215" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302413766432" fileName="QueriesGenerated.java" startLine="218" startPosition="135" endLine="219" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="939897302413766432" fileName="QueriesGenerated.java" startLine="218" startPosition="136" endLine="219" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7171441290057811120" fileName="QueriesGenerated.java" startLine="214" startPosition="136" endLine="215" endPosition="55" />
-    <scopeInfo nodeId="939897302413761079" fileName="QueriesGenerated.java" startLine="218" startPosition="135" endLine="219" endPosition="58" />
+    <scopeInfo nodeId="6981942132932723323" fileName="QueriesGenerated.java" startLine="218" startPosition="136" endLine="219" endPosition="58" />
   </root>
   <root nodeRef="r:529e2ccf-8d81-4b68-8e71-328f91951f93(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)/8570854907291873537">
     <nodeInfo nodeId="5040807685003437692" fileName="QueriesGenerated.java" startLine="146" startPosition="151" endLine="147" endPosition="501" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

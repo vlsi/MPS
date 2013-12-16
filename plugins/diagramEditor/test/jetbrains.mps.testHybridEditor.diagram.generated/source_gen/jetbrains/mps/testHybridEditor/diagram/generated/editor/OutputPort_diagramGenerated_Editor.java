@@ -13,14 +13,12 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.base.Value;
-import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 
 public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -44,44 +42,36 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
             super.registerSynchronizers(configuration);
             getTarget().background().set(Color.GRAY);
             getTarget().dimension().set(new Vector(10, 10));
-            {
-
-              final Value<PolyLineConnection> connector = new Value<PolyLineConnection>();
-              final DiagramCell diagramCell = getDiagramCell();
-              if (diagramCell == null) {
-                return;
+            getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
+              @Override
+              public void handle(View view, MouseEvent e) {
+                DiagramCell diagramCell = getDiagramCell();
+                if (diagramCell == null) {
+                  return;
+                }
+                if (diagramCell.hasConnectionDragFeedback()) {
+                  diagramCell.updateConnectionDragFeedback(e.location());
+                } else {
+                  diagramCell.showConnectionDragFeedback(getTarget(), e.location());
+                }
               }
-              getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
-                @Override
-                public void handle(View view, MouseEvent e) {
-                  if (connector.get() == null) {
-                    PolyLineConnection newConnector = new PolyLineConnection();
-                    newConnector.fromView().set(getTarget());
-                    newConnector.toLocation().set(e.location());
-                    diagramCell.setConnection(newConnector);
-                    connector.set(newConnector);
-                  } else {
-                    connector.get().toLocation().set(e.location());
-                  }
+            }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+              @Override
+              public void handle(View view, MouseEvent e) {
+                DiagramCell diagramCell = getDiagramCell();
+                if (diagramCell == null || !(diagramCell.hasConnectionDragFeedback())) {
+                  return;
                 }
-              }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
-                @Override
-                public void handle(View view, MouseEvent e) {
-                  if (connector.get() == null) {
-                    return;
-                  }
-                  View atEvent = getTarget().container().root().viewAt(e.location());
-                  if (atEvent == null || atEvent.prop(JetpadUtils.SOURCE).get() == null) {
-                    diagramCell.setConnection(null);
-                  } else {
-                    diagramCell.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
-                    diagramCell.activateConnectorInfo();
-                    diagramCell.showPatternEditor(e.location().x, e.location().y);
-                  }
-                  connector.set(null);
+                View atEvent = getTarget().container().root().viewAt(e.location());
+                if (atEvent == null || atEvent.prop(JetpadUtils.SOURCE).get() == null) {
+                  diagramCell.hideConnectionDragFeedback();
+                } else {
+                  diagramCell.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
+                  diagramCell.activateConnectorInfo();
+                  diagramCell.showPatternEditor(e.location().x, e.location().y);
                 }
-              }).build());
-            }
+              }
+            }).build());
             getTarget().prop(JetpadUtils.SOURCE).set(getSource());
           }
         };
