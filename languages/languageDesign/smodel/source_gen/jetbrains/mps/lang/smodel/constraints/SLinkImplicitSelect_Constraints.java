@@ -86,25 +86,23 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0;
-        nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_f4oi2a_a0a0a0a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_f4oi2a_a0a0a0a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_SLinkImplicitSelect_Constraints_f4oi2a_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0, childRole_SLinkImplicitSelect_Constraints_f4oi2a_, 1))) {
+          String childRole_f4oi2a_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_f4oi2a_a0a0a0a0a0a0, childRole_f4oi2a_, 1))) {
             return false;
           }
           {
-            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = IterableUtil.get(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a_), 0);
+            SNode childVar_f4oi2a_a0a0a0a0a0a0a = IterableUtil.get(nodeToMatch_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_f4oi2a_), 0);
             {
-              SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
-              nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_f4oi2a_a0a0a0a0a0a0a = childVar_f4oi2a_a0a0a0a0a0a0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_nodeType = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a.getReferenceTarget("concept");
+              patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getReferenceTarget("concept");
             }
           }
         }
@@ -141,25 +139,23 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0;
-        nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_f4oi2a_a0a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_f4oi2a_a0a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_SLinkImplicitSelect_Constraints_f4oi2a__0 = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0, childRole_SLinkImplicitSelect_Constraints_f4oi2a__0, 1))) {
+          String childRole_f4oi2a__0 = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_f4oi2a_a0a0a0a0, childRole_f4oi2a__0, 1))) {
             return false;
           }
           {
-            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = IterableUtil.get(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a__0), 0);
+            SNode childVar_f4oi2a_a0a0a0a0a = IterableUtil.get(nodeToMatch_f4oi2a_a0a0a0a0.getChildren(childRole_f4oi2a__0), 0);
             {
-              SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
-              nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_f4oi2a_a0a0a0a0a = childVar_f4oi2a_a0a0a0a0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_f4oi2a_a0a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_nodeType = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a.getReferenceTarget("concept");
+              patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a.getReferenceTarget("concept");
             }
           }
         }

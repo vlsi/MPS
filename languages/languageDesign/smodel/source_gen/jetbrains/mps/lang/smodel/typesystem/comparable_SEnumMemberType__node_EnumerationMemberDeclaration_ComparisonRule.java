@@ -57,14 +57,13 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a;
-        nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_ityt7t_a0a = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_ityt7t_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_vbthi0_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a.getReferenceTarget("concept")))) {
+          SNodeReference pointer = SNODE_POINTER_vbthi0_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ityt7t_a0a.getReferenceTarget("concept")))) {
             return false;
           }
         }
@@ -87,5 +86,5 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
     }
   }
 
-  private static SNodePointer SNODE_POINTER_vbthi0_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodePointer SNODE_POINTER_vbthi0_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 }

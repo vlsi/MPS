@@ -78,12 +78,11 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a;
-        nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_3tjcdg_a0a = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_3tjcdg_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_CONCEPT = nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getReferenceTarget("elementConcept");
+        patternVar_CONCEPT = nodeToMatch_3tjcdg_a0a.getReferenceTarget("elementConcept");
       }
       return true;
     }
@@ -117,19 +116,18 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0;
-        nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_3tjcdg_a0a_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_3tjcdg_a0a_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0, childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_, 1))) {
+          String childRole_3tjcdg_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_3tjcdg_a0a_0, childRole_3tjcdg_, 1))) {
             return false;
           }
           {
-            SNode childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0 = IterableUtil.get(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getChildren(childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_), 0);
-            this.patternVar_ELEMENT = childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0;
+            SNode childVar_3tjcdg_a0a0 = IterableUtil.get(nodeToMatch_3tjcdg_a0a_0.getChildren(childRole_3tjcdg_), 0);
+            this.patternVar_ELEMENT = childVar_3tjcdg_a0a0;
           }
         }
       }
