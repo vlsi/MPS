@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.jetpad.mapper.Mapper;
 
 public abstract class GenericMapperCell<T> extends EditorCell_Collection {
@@ -16,6 +18,14 @@ public abstract class GenericMapperCell<T> extends EditorCell_Collection {
   @Override
   public boolean isTransparentCollection() {
     return false;
+  }
+
+  protected DiagramCell getDiagramCell() {
+    return (DiagramCell) CellFinderUtil.findParent(this, new Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection>() {
+      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent) {
+        return parent instanceof DiagramCell;
+      }
+    });
   }
 
   public abstract Mapper<SNode, T> getMapper();

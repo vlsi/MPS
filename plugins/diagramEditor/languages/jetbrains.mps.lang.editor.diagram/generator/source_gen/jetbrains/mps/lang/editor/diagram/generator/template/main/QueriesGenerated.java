@@ -203,7 +203,7 @@ public class QueriesGenerated {
     return ((Boolean) _context.getVariable("isInput"));
   }
 
-  public static boolean ifMacro_Condition_7171441290057474081(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6981942132926265691(final IOperationContext operationContext, final IfMacroContext _context) {
     return ((Boolean) _context.getVariable("isInput"));
   }
 
@@ -287,27 +287,27 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "query", true);
   }
 
-  public static SNode sourceNodeQuery_675321057244910415(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6981942132926627986(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "query", true);
   }
 
-  public static SNode sourceNodeQuery_6111547859873729149(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6981942132926265713(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("var:genericType"));
   }
 
-  public static SNode sourceNodeQuery_6111547859873754135(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6981942132926265724(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("var:genericType"));
   }
 
-  public static SNode sourceNodeQuery_6111547859873792774(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6981942132926265736(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("var:genericType"));
   }
 
-  public static SNode sourceNodeQuery_6111547859873766317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6981942132926265749(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("var:genericType"));
   }
 
-  public static SNode sourceNodeQuery_675321057243609019(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6981942132926265799(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("var:genericType"));
   }
 
@@ -371,7 +371,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "input");
   }
 
-  public static Object templateArgumentQuery_7171441290058433296(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_6981942132926265770(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((Boolean) _context.getVariable("isInput"));
   }
 
@@ -399,7 +399,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Object insertMacro_varValue_2720370445062942121(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_6981942132926265807(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "query", true)), new QueriesGenerated.Pattern_x583g4_a1a0a0a0a0ld(), true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first();
   }
 

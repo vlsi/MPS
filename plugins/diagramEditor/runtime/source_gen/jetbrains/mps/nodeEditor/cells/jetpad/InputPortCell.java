@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class InputPortCell extends GenericMapperCell<RectView> {
-
-
   public InputPortCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }

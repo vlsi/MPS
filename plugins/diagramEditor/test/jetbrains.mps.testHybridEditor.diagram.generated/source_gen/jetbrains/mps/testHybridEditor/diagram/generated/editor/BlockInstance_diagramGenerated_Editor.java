@@ -24,8 +24,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.base.Value;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import java.util.Iterator;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -88,17 +86,10 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     {
 
                       final Value<PolyLineConnection> connector = new Value<PolyLineConnection>();
-                      DiagramCell diagramCell = null;
-                      EditorCell cell;
-                      Iterator<EditorCell_Collection> parents = parents();
-                      while (parents.hasNext()) {
-                        cell = parents.next();
-                        if (cell instanceof DiagramCell) {
-                          diagramCell = ((DiagramCell) cell);
-                          break;
-                        }
+                      final DiagramCell diagramCell = getDiagramCell();
+                      if (diagramCell == null) {
+                        return;
                       }
-                      final DiagramCell parent = diagramCell;
                       getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
                         @Override
                         public void handle(View view, MouseEvent e) {
@@ -106,7 +97,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                             PolyLineConnection newConnector = new PolyLineConnection();
                             newConnector.fromView().set(getTarget());
                             newConnector.toLocation().set(e.location());
-                            parent.setConnection(newConnector);
+                            diagramCell.setConnection(newConnector);
                             connector.set(newConnector);
                           } else {
                             connector.get().toLocation().set(e.location());
@@ -120,11 +111,11 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                           }
                           View atEvent = getTarget().container().root().viewAt(e.location());
                           if (atEvent == null || atEvent.prop(JetpadUtils.SOURCE).get() == null) {
-                            parent.setConnection(null);
+                            diagramCell.setConnection(null);
                           } else {
-                            parent.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
-                            parent.activateConnectorInfo();
-                            parent.showPatternEditor(e.location().x, e.location().y);
+                            diagramCell.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
+                            diagramCell.activateConnectorInfo();
+                            diagramCell.showPatternEditor(e.location().x, e.location().y);
                           }
                           connector.set(null);
                         }

@@ -2,14 +2,14 @@
 <debugInfo>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/1407003963424236742" />
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/285670992206004280">
-    <nodeInfo nodeId="285670992206004290" fileName="PortCell.java" startLine="12" startPosition="60" endLine="13" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="285670992206004282" fileName="PortCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PortCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="285670992206004289" fileName="PortCell.java" startLine="12" startPosition="60" endLine="13" endPosition="31" />
-    <scopeInfo nodeId="285670992206004282" fileName="PortCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="285670992206004290" fileName="PortCell.java" startLine="10" startPosition="60" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="285670992206004282" fileName="PortCell.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PortCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="285670992206004289" fileName="PortCell.java" startLine="10" startPosition="60" endLine="11" endPosition="31" />
+    <scopeInfo nodeId="285670992206004282" fileName="PortCell.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="285670992206004283" varName="editorContext" />
       <varInfo nodeId="285670992206004285" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="285670992206004280" fileName="PortCell.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PortCell" />
+    <unitInfo nodeId="285670992206004280" fileName="PortCell.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PortCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/285670992208410529">
     <nodeInfo nodeId="285670992208410530" fileName="PropertyMapperCell.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViewProperty" />
@@ -122,24 +122,24 @@
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784604" />
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784840" />
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6365639112243173471">
-    <nodeInfo nodeId="6365639112243191046" fileName="InputPortCell.java" startLine="12" startPosition="65" endLine="13" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6365639112243179145" fileName="InputPortCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InputPortCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="6365639112243179149" fileName="InputPortCell.java" startLine="12" startPosition="65" endLine="13" endPosition="31" />
-    <scopeInfo nodeId="6365639112243179145" fileName="InputPortCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="6365639112243191046" fileName="InputPortCell.java" startLine="10" startPosition="65" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6365639112243179145" fileName="InputPortCell.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InputPortCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="6365639112243179149" fileName="InputPortCell.java" startLine="10" startPosition="65" endLine="11" endPosition="31" />
+    <scopeInfo nodeId="6365639112243179145" fileName="InputPortCell.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="6365639112243179196" varName="editorContext" />
       <varInfo nodeId="6365639112243179198" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6365639112243173471" fileName="InputPortCell.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.InputPortCell" />
+    <unitInfo nodeId="6365639112243173471" fileName="InputPortCell.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.InputPortCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6365639112243194472">
-    <nodeInfo nodeId="6365639112243194485" fileName="OutputPortCell.java" startLine="12" startPosition="66" endLine="13" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6365639112243194477" fileName="OutputPortCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OutputPortCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="6365639112243194484" fileName="OutputPortCell.java" startLine="12" startPosition="66" endLine="13" endPosition="31" />
-    <scopeInfo nodeId="6365639112243194477" fileName="OutputPortCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="6365639112243194485" fileName="OutputPortCell.java" startLine="10" startPosition="66" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6365639112243194477" fileName="OutputPortCell.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OutputPortCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="6365639112243194484" fileName="OutputPortCell.java" startLine="10" startPosition="66" endLine="11" endPosition="31" />
+    <scopeInfo nodeId="6365639112243194477" fileName="OutputPortCell.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="6365639112243194478" varName="editorContext" />
       <varInfo nodeId="6365639112243194480" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6365639112243194472" fileName="OutputPortCell.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.OutputPortCell" />
+    <unitInfo nodeId="6365639112243194472" fileName="OutputPortCell.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.OutputPortCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6365639112243901492">
     <nodeInfo nodeId="6365639112243901505" fileName="AbstractJetpadEditor.java" startLine="18" startPosition="31" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -185,20 +185,31 @@
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6763610584514195731" />
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/7839772582269268412">
-    <nodeInfo nodeId="7839772582269339510" fileName="GenericMapperCell.java" startLine="12" startPosition="72" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6721598535435447375" fileName="GenericMapperCell.java" startLine="17" startPosition="44" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7839772582269465414" fileName="GenericMapperCell.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
-    <nodeInfo nodeId="7839772582269334914" fileName="GenericMapperCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenericMapperCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6721598535435446684" fileName="GenericMapperCell.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTransparentCollection#()Z" />
-    <scopeInfo nodeId="7839772582269334917" fileName="GenericMapperCell.java" startLine="12" startPosition="72" endLine="13" endPosition="66" />
-    <scopeInfo nodeId="6721598535435446688" fileName="GenericMapperCell.java" startLine="17" startPosition="44" endLine="18" endPosition="17" />
-    <scopeInfo nodeId="7839772582269465414" fileName="GenericMapperCell.java" startLine="21" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7839772582269334914" fileName="GenericMapperCell.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="7839772582269339510" fileName="GenericMapperCell.java" startLine="14" startPosition="72" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6721598535435447375" fileName="GenericMapperCell.java" startLine="19" startPosition="44" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981942132924392764" fileName="GenericMapperCell.java" startLine="25" startPosition="91" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7839772582269465414" fileName="GenericMapperCell.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="7839772582269334914" fileName="GenericMapperCell.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenericMapperCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6981942132924388167" fileName="GenericMapperCell.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Z" />
+    <nodeInfo nodeId="6721598535435446684" fileName="GenericMapperCell.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTransparentCollection#()Z" />
+    <nodeInfo nodeId="6981942132924376240" fileName="GenericMapperCell.java" startLine="23" startPosition="42" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981942132924315038" fileName="GenericMapperCell.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDiagramCell#()Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;" />
+    <scopeInfo nodeId="7839772582269334917" fileName="GenericMapperCell.java" startLine="14" startPosition="72" endLine="15" endPosition="66" />
+    <scopeInfo nodeId="6721598535435446688" fileName="GenericMapperCell.java" startLine="19" startPosition="44" endLine="20" endPosition="17" />
+    <scopeInfo nodeId="6981942132924388173" fileName="GenericMapperCell.java" startLine="25" startPosition="91" endLine="26" endPosition="45" />
+    <scopeInfo nodeId="7839772582269465414" fileName="GenericMapperCell.java" startLine="31" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="7839772582269334914" fileName="GenericMapperCell.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7839772582269339063" varName="editorContext" />
       <varInfo nodeId="7839772582269339101" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6721598535435446684" fileName="GenericMapperCell.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="7839772582269268412" fileName="GenericMapperCell.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.GenericMapperCell" />
+    <scopeInfo nodeId="6981942132924388167" fileName="GenericMapperCell.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="6981942132924388171" varName="parent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6721598535435446684" fileName="GenericMapperCell.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6981942132924315041" fileName="GenericMapperCell.java" startLine="23" startPosition="42" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="6981942132924315038" fileName="GenericMapperCell.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="6981942132924388165" fileName="GenericMapperCell.java" startLine="24" startPosition="61" endLine="28" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.GenericMapperCell$1" />
+    <unitInfo nodeId="7839772582269268412" fileName="GenericMapperCell.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.GenericMapperCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/8327142480058313300">
     <nodeInfo nodeId="2682505046531450265" fileName="DiagramCell.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootMapper" />
