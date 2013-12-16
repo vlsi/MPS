@@ -301,9 +301,9 @@
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="939897302409476767" nodeInfo="sn">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="939897302409707329" nodeInfo="nn">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="939897302409739661" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="939897302409743232" nodeInfo="nn">
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="939897302409744409" nodeInfo="nn" />
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="gbdf.ToIdFunctionParameter" typeId="gbdf.939897302409170280" id="939897302409742025" nodeInfo="ng" />
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="6981942132924013183" nodeInfo="nn">
+                    <node role="classType" roleId="tpee.1081256993305" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6981942132924014372" nodeInfo="in" />
+                    <node role="leftExpression" roleId="tpee.1081256993304" type="gbdf.ToIdFunctionParameter" typeId="gbdf.939897302409170280" id="939897302409742025" nodeInfo="ng" />
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.AndExpression" typeId="tpee.1080120340718" id="939897302409721081" nodeInfo="nn">
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.AndExpression" typeId="tpee.1080120340718" id="939897302409713888" nodeInfo="nn">
@@ -451,6 +451,29 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="939897302409904183" nodeInfo="nn">
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964092" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6981942132924016011" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6981942132924023786" nodeInfo="nn">
+                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6981942132924033896" nodeInfo="nn">
+                    <node role="expression" roleId="tpee.1070534934092" type="gbdf.ToIdFunctionParameter" typeId="gbdf.939897302409170280" id="6981942132924027004" nodeInfo="ng" />
+                    <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6981942132924033897" nodeInfo="in">
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="adck.2353136177973886045" resolveInfo="MetaPort" />
+                    </node>
+                  </node>
+                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6981942132924020533" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6981942132924016224" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6981942132924016010" nodeInfo="nn">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="939897302409686558" resolveInfo="connector" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6981942132924018965" nodeInfo="nn">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964102" />
+                      </node>
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6981942132924022061" nodeInfo="nn">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964093" />
                     </node>
                   </node>
                 </node>
