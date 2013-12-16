@@ -159,7 +159,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   }
 
   protected final void report(MessageKind kind, String text, SNodeReference node) {
-    addMessage(myFactory.prepare(kind, text, node));
+    addMessage(myFactory.prepare(kind, text == null ? "" : text, node));
   }
 
   protected final void addMessage(@NotNull Message msg) {

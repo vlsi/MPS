@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -26,16 +25,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * rules (any sourceNodesQuery) in fact.
  */
 public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
-  private final SNode myRule;
   private final SNodeReference myRulePointer;
 
-  /**
-   * actually this parameter is
-   */
   public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
-    myRule = ruleNode;
-    myRulePointer = null;
+    myRulePointer = ruleNode == null ? null : ruleNode.getReference();
   }
 
 
@@ -46,7 +40,6 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
   @Deprecated
   public SourceSubstituteMacroNodesContext(SNode node, SNodeReference ruleNode, SNodeReference macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
-    myRule = null;
     myRulePointer = ruleNode;
   }
 
@@ -55,23 +48,20 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
    */
   public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, SNodeReference ruleNode, SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
     super(macroNode, context, generator);
-    myRule = null;
     myRulePointer = ruleNode;
   }
 
   @Override
-  public SNode getTemplateNode() {
-    SNode tn = super.getTemplateNode();
+  protected SNodeReference getTemplateNodeRef() {
+    SNodeReference tn = super.getTemplateNodeRef();
     if (tn != null) {
       return tn;
     }
-    tn = getRuleNodeForLogging();
-    return tn != null ? tn.getParent() : null;
+    return getRuleNode();
   }
 
   @Override
-  public SNode getRuleNodeForLogging() {
-    return myRule != null ? myRule :
-      myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;
+  protected SNodeReference getRuleNode() {
+    return myRulePointer;
   }
 }

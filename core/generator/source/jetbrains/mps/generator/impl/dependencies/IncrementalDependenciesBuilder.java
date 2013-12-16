@@ -221,7 +221,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
-    if (inputNode == null || !(inputNode.getModel() != null)) {
+    if (inputNode == null || inputNode.getModel() == null) {
       return myConditionalsBuilder;
     }
     inputNode = inputNode.getContainingRoot();
