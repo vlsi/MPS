@@ -172,6 +172,15 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     SModel model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
     if (model instanceof EditableSModel && !(model.isReadOnly())) {
+      if (feature instanceof ModelFeature) {
+        // do not try to compute changes in case we need only model status 
+        TreeMessage message = getMessage((ModelFeature) feature);
+        if (message != null) {
+          node.addTreeMessage(message);
+        }
+        return;
+      }
+
       EditableSModel emd = (EditableSModel) model;
       myRegistry.getCurrentDifference(emd).setEnabled(true);
 
@@ -183,11 +192,6 @@ public class TreeHighlighter implements TreeMessageOwner {
         node.addTreeMessage(getMessage(change, emd));
       } else if (myMap.isAncestorOfAddedFeature(feature)) {
         node.addTreeMessage(getMessage(FileStatus.MODIFIED));
-      } else if (feature instanceof ModelFeature) {
-        TreeMessage message = getMessage((ModelFeature) feature);
-        if (message != null) {
-          node.addTreeMessage(message);
-        }
       }
     }
   }
