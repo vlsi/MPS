@@ -67,7 +67,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
         }
       }
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true))) {
-        if ((SLinkOperations.getTarget(tvd, "bound", true) != null)) {
+        if ((SLinkOperations.getTarget(tvd, "bound", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(tvd, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
           BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(SLinkOperations.getTarget(tvd, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
           {
             SNode _nodeToCheck_1029348928467 = methodCall;
