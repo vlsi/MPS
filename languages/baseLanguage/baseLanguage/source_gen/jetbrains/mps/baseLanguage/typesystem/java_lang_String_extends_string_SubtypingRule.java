@@ -49,14 +49,13 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_java_lang_String_extends_string_imi2rc_a0a;
-        nodeToMatch_java_lang_String_extends_string_imi2rc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_lang_String_extends_string_imi2rc_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_imi2rc_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_imi2rc_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_cxnqcy_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_lang_String_extends_string_imi2rc_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_cxnqcy_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_imi2rc_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -86,5 +85,5 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_cxnqcy_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String");
+  private static SNodePointer SNODE_POINTER_cxnqcy_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String");
 }

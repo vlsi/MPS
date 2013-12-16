@@ -38,12 +38,11 @@ public class TemplateCallMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0;
-        nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_4ckpni_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_4ckpni_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_TemplateCallMacro_Behavior_4ckpni_a0a0a0.getReferenceTarget("concept");
+        patternVar_concept = nodeToMatch_4ckpni_a0a0a0.getReferenceTarget("concept");
       }
       return true;
     }

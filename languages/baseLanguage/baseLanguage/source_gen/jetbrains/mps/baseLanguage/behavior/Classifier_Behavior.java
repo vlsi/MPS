@@ -737,23 +737,22 @@ public class Classifier_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42;
-        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_qw8l7c_a0a0a0a42 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_qw8l7c_a0a0a0a42.getConcept().getQualifiedName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a42;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_qw8l7c_a0a0a0a42.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
+          String childRole_qw8l7c_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_foo = null;
-          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
+          for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a42.getChildren(childRole_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

@@ -60,25 +60,24 @@ public class collection_comparableWith_Collection_ComparisonRule extends Compari
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a;
-        nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_uvtyfy_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_uvtyfy_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_5x9es4_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_5x9es4_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_uvtyfy_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_collection_comparableWith_Collection_uvtyfy_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a, childRole_collection_comparableWith_Collection_uvtyfy_, 1))) {
+          String childRole_uvtyfy_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_uvtyfy_a0a, childRole_uvtyfy_, 1))) {
             return false;
           }
           {
-            SNode childVar_collection_comparableWith_Collection_uvtyfy_a0a0 = IterableUtil.get(nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getChildren(childRole_collection_comparableWith_Collection_uvtyfy_), 0);
-            this.patternVar_ELEMENT = childVar_collection_comparableWith_Collection_uvtyfy_a0a0;
+            SNode childVar_uvtyfy_a0a0 = IterableUtil.get(nodeToMatch_uvtyfy_a0a.getChildren(childRole_uvtyfy_), 0);
+            this.patternVar_ELEMENT = childVar_uvtyfy_a0a0;
           }
         }
       }
@@ -106,5 +105,5 @@ public class collection_comparableWith_Collection_ComparisonRule extends Compari
     }
   }
 
-  private static SNodePointer SNODE_POINTER_5x9es4_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Collection");
+  private static SNodePointer SNODE_POINTER_5x9es4_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Collection");
 }

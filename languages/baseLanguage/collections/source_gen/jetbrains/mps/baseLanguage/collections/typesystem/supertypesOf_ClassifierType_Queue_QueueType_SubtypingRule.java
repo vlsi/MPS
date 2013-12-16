@@ -53,25 +53,24 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a;
-        nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_jsixhd_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_jsixhd_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_4viu4b_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_4viu4b_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_jsixhd_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a, childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_, 1))) {
+          String childRole_jsixhd_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_jsixhd_a0a, childRole_jsixhd_, 1))) {
             return false;
           }
           {
-            SNode childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0 = IterableUtil.get(nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getChildren(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_), 0);
-            this.patternVar_ELEMENT_TYPE = childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0;
+            SNode childVar_jsixhd_a0a0 = IterableUtil.get(nodeToMatch_jsixhd_a0a.getChildren(childRole_jsixhd_), 0);
+            this.patternVar_ELEMENT_TYPE = childVar_jsixhd_a0a0;
           }
         }
       }
@@ -111,5 +110,5 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
     return quotedNode_2;
   }
 
-  private static SNodePointer SNODE_POINTER_4viu4b_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Queue");
+  private static SNodePointer SNODE_POINTER_4viu4b_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Queue");
 }

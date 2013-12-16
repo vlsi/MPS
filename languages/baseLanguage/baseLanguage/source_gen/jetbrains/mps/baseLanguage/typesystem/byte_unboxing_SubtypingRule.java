@@ -49,14 +49,13 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_byte_unboxing_omlyur_a0a;
-        nodeToMatch_byte_unboxing_omlyur_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_byte_unboxing_omlyur_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_omlyur_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_omlyur_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_1sray5_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_byte_unboxing_omlyur_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_1sray5_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_omlyur_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -86,5 +85,5 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_1sray5_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Byte");
+  private static SNodePointer SNODE_POINTER_1sray5_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Byte");
 }

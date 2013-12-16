@@ -53,25 +53,24 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a;
-        nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_2lqiec_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2lqiec_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_36aa7y_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_36aa7y_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_2lqiec_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_supertypesOf_ClassifierType_Iterator_2lqiec_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a, childRole_supertypesOf_ClassifierType_Iterator_2lqiec_, 1))) {
+          String childRole_2lqiec_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_2lqiec_a0a, childRole_2lqiec_, 1))) {
             return false;
           }
           {
-            SNode childVar_supertypesOf_ClassifierType_Iterator_2lqiec_a0a0 = IterableUtil.get(nodeToMatch_supertypesOf_ClassifierType_Iterator_2lqiec_a0a.getChildren(childRole_supertypesOf_ClassifierType_Iterator_2lqiec_), 0);
-            this.patternVar_p = childVar_supertypesOf_ClassifierType_Iterator_2lqiec_a0a0;
+            SNode childVar_2lqiec_a0a0 = IterableUtil.get(nodeToMatch_2lqiec_a0a.getChildren(childRole_2lqiec_), 0);
+            this.patternVar_p = childVar_2lqiec_a0a0;
           }
         }
       }
@@ -111,5 +110,5 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
     return quotedNode_2;
   }
 
-  private static SNodePointer SNODE_POINTER_36aa7y_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator");
+  private static SNodePointer SNODE_POINTER_36aa7y_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator");
 }

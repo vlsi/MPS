@@ -60,25 +60,24 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a;
-        nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_h34l93_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_h34l93_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_h34l93_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_stack_type_comparableWith_Deque_h34l93_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a, childRole_stack_type_comparableWith_Deque_h34l93_, 1))) {
+          String childRole_h34l93_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_h34l93_a0a, childRole_h34l93_, 1))) {
             return false;
           }
           {
-            SNode childVar_stack_type_comparableWith_Deque_h34l93_a0a0 = IterableUtil.get(nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getChildren(childRole_stack_type_comparableWith_Deque_h34l93_), 0);
-            this.patternVar_ELEMENT_TYPE = childVar_stack_type_comparableWith_Deque_h34l93_a0a0;
+            SNode childVar_h34l93_a0a0 = IterableUtil.get(nodeToMatch_h34l93_a0a.getChildren(childRole_h34l93_), 0);
+            this.patternVar_ELEMENT_TYPE = childVar_h34l93_a0a0;
           }
         }
       }
@@ -106,5 +105,5 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
     }
   }
 
-  private static SNodePointer SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
+  private static SNodePointer SNODE_POINTER_2rsa22_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
 }

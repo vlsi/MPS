@@ -12,9 +12,9 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-7gi3z1ratcdq1h3ehy39bfj6odce5rk" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-ckaodtt4l5se5ht7gribpngasvig6zx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-5p40y8lpbfcgiwz8w4fo4i2nlnz8em5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-sojb5y8hfbmj6uas4le1efub9iw8w5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="73i4kh54xsgdn4e49nimc20rbpbjghx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a9qp6tb2eva1mros70qa0tynlaehi5n" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-2b7a2rppfq1uhvwub5utjsuj27e8nm" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9j9njikjpbm0mdlpt71l8bk62lhmpac" />
   <dep model="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)" hash="-2lsly20vkbzhvv48hpuuvc4gjofehgg" />
@@ -22,7 +22,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-9k2w3mr8xi0w828vmp29p3g05wjm9qj" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-dm3fucph2z3yr5mp9u50b5r51i9nf2r" />
-  <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" hash="3mthn4klcsuldaxvenxionyyda0zbsx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" hash="4wuixd1tpkmlcbtapbveequp4oons8x" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="24go6mlxqfa8vkywupfg1a2w2jd0abi" />
   <dep model="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" hash="b3s8xbvzh3yagpono397fyvzg991j56" />
   <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="5ojv1a92nwhmoiq8k72dy1hxoa4owlm" />
@@ -220,7 +220,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RulesFunctions_Collections.java" />
   </source>
-  <source id="1178725704935" name="typeof_SkipOperation" hash="-28lbx61005kkedpglfd2hnjm6v1hk2v">
+  <source id="1178725704935" name="typeof_SkipOperation" hash="-28lbx61005kkedpglfd2hnjm6v1hk2v" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -233,7 +233,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SkipOperation_InferenceRule.java" />
   </source>
-  <source id="1178725704956" name="typeof_TakeOperation" hash="b47fqrmrbvjp7q27448qq8r9ic4pet2">
+  <source id="1178725704956" name="typeof_TakeOperation" hash="b47fqrmrbvjp7q27448qq8r9ic4pet2" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -246,7 +246,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TakeOperation_InferenceRule.java" />
   </source>
-  <source id="1178725704977" name="typeof_PageOperation" hash="-9vgli4nhru485ian5re9huucj1dsomx">
+  <source id="1178725704977" name="typeof_PageOperation" hash="-9vgli4nhru485ian5re9huucj1dsomx" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -259,7 +259,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_PageOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705102" name="typeof_ToListOperation" hash="-8vyy3nl9hm76ujukmp6thtqoy5fg2oh">
+  <source id="1178725705102" name="typeof_ToListOperation" hash="-8vyy3nl9hm76ujukmp6thtqoy5fg2oh" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -270,7 +270,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ToListOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705123" name="typeof_GetFirstOperation" hash="-37fk5sdyejdwzr9gmxx2ce6iovhtwmr">
+  <source id="1178725705123" name="typeof_GetFirstOperation" hash="-37fk5sdyejdwzr9gmxx2ce6iovhtwmr" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -280,7 +280,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_GetFirstOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705132" name="typeof_GetLastOperation" hash="b27waja49xcoatvbwebehl7r795pmou">
+  <source id="1178725705132" name="typeof_GetLastOperation" hash="b27waja49xcoatvbwebehl7r795pmou" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -290,7 +290,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_GetLastOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705141" name="typeof_IsEmptyOperation" hash="-9f380gupep39ghk3636yhggpizm9a04">
+  <source id="1178725705141" name="typeof_IsEmptyOperation" hash="-9f380gupep39ghk3636yhggpizm9a04" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -302,7 +302,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_IsEmptyOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705162" name="typeof_ContainsOperation" hash="-5c5nz0otxaahl1iz7g7fmqedhvnbtwy">
+  <source id="1178725705162" name="typeof_ContainsOperation" hash="-5c5nz0otxaahl1iz7g7fmqedhvnbtwy" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -316,7 +316,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ContainsOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705395" name="typeof_ForEachStatement" hash="4hk8amop5unrd2yx5mqhu9b8lih11is">
+  <source id="1178725705395" name="typeof_ForEachStatement" hash="4hk8amop5unrd2yx5mqhu9b8lih11is" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
@@ -331,7 +331,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ForEachStatement_InferenceRule.java" />
   </source>
-  <source id="1178725705451" name="typeof_ForEachVariableReference" hash="8edxjbf4n4hlxnvgh3ka7zn9at16fze">
+  <source id="1178725705451" name="typeof_ForEachVariableReference" hash="8edxjbf4n4hlxnvgh3ka7zn9at16fze" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -343,7 +343,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_ForEachVariableReference_InferenceRule.java" />
   </source>
-  <source id="1178725705459" name="typeof_AddElementOperation" hash="26g87b414pytkxvk4tv1v4aqcp75hiv">
+  <source id="1178725705459" name="typeof_AddElementOperation" hash="26g87b414pytkxvk4tv1v4aqcp75hiv" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -357,7 +357,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_AddElementOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705477" name="typeof_AddAllElementsOperation" hash="-6fu1cxwaquybyltqcn57lio1c6qzgf">
+  <source id="1178725705477" name="typeof_AddAllElementsOperation" hash="-6fu1cxwaquybyltqcn57lio1c6qzgf" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -372,7 +372,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AddAllElementsOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705520" name="typeof_RemoveElementOperation" hash="-bpxou8ad5capk2fk25qx94f0g8r3rm7">
+  <source id="1178725705520" name="typeof_RemoveElementOperation" hash="-bpxou8ad5capk2fk25qx94f0g8r3rm7" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -386,7 +386,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_RemoveElementOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705538" name="typeof_GetElementOperation" hash="66y8yc33yqy6y9kb8ekzp6d4g34skxn">
+  <source id="1178725705538" name="typeof_GetElementOperation" hash="66y8yc33yqy6y9kb8ekzp6d4g34skxn" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -401,7 +401,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetElementOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705560" name="typeof_GetSizeOperation" hash="-8nl9k6x0sns96vnpopr7b9zpidpi2gl">
+  <source id="1178725705560" name="typeof_GetSizeOperation" hash="-8nl9k6x0sns96vnpopr7b9zpidpi2gl" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -412,7 +412,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetSizeOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705571" name="typeof_GetIndexOfOperation" hash="gz6owv6jtx8l8rvnyl7u7x6okv1e89">
+  <source id="1178725705571" name="typeof_GetIndexOfOperation" hash="gz6owv6jtx8l8rvnyl7u7x6okv1e89" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -425,7 +425,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetIndexOfOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705593" name="typeof_RemoveAllElementsOperation" hash="-2tp6qqkvmo4v3w9kyt6xgfm85cagpv6">
+  <source id="1178725705593" name="typeof_RemoveAllElementsOperation" hash="-2tp6qqkvmo4v3w9kyt6xgfm85cagpv6" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -440,7 +440,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_RemoveAllElementsOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705652" name="typeof_ReverseOperation" hash="-4vkjzbukob5h95qfwsly192kixy7nmj">
+  <source id="1178725705652" name="typeof_ReverseOperation" hash="-4vkjzbukob5h95qfwsly192kixy7nmj" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -453,7 +453,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_ReverseOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705665" name="typeof_IsNotEmptyOperation" hash="cmair7fsoo9uhvc44fv3rs3fkliny2l">
+  <source id="1178725705665" name="typeof_IsNotEmptyOperation" hash="cmair7fsoo9uhvc44fv3rs3fkliny2l" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -465,7 +465,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_IsNotEmptyOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705683" name="typeof_BinaryOperation" hash="238fci3zxqiw0l6i8qf8icrgowjptov">
+  <source id="1178725705683" name="typeof_BinaryOperation" hash="238fci3zxqiw0l6i8qf8icrgowjptov" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -478,7 +478,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_BinaryOperation_InferenceRule.java" />
   </source>
-  <source id="1178725705719" name="supertypesOf_ClassifierTypeList_ListType" hash="-62ri6g9n2ombvw26xhnni4uawafkkz0">
+  <source id="1178725705719" name="supertypesOf_ClassifierTypeList_ListType" hash="-62ri6g9n2ombvw26xhnni4uawafkkz0" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -494,7 +494,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java" />
   </source>
-  <source id="1178881531250" name="supertypesOf_ClassifierTypeIterable_SequenceType" hash="-drwco6gm6za0c6xcjhwus2r6km56juo">
+  <source id="1178881531250" name="supertypesOf_ClassifierTypeIterable_SequenceType" hash="-drwco6gm6za0c6xcjhwus2r6km56juo" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -509,7 +509,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java" />
   </source>
-  <source id="1178899814661" name="typeof_DistinctOperation" hash="-b7vejlnn5oddumqt570llluryypziec">
+  <source id="1178899814661" name="typeof_DistinctOperation" hash="-b7vejlnn5oddumqt570llluryypziec" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -538,7 +538,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TypeUtil_Collections.java" />
   </source>
-  <source id="1179262299939" name="supertypesOf_SequenceType_ClassifierTypeIterable" hash="-cm78l3tc3ft26jv23q7x7j5mudq0aef">
+  <source id="1179262299939" name="supertypesOf_SequenceType_ClassifierTypeIterable" hash="-cm78l3tc3ft26jv23q7x7j5mudq0aef" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -552,7 +552,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" />
   </source>
-  <source id="1184970373516" name="typeof_ToArrayOperation" hash="-7ojeubzgg6rr014gjgouecxb5flaytm">
+  <source id="1184970373516" name="typeof_ToArrayOperation" hash="-7ojeubzgg6rr014gjgouecxb5flaytm" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -563,7 +563,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ToArrayOperation_InferenceRule.java" />
   </source>
-  <source id="1197927831004" name="typeof_HashMapCreator" hash="-26jl2tbw5iymz7p42gbuj1tmwckt85j">
+  <source id="1197927831004" name="typeof_HashMapCreator" hash="-26jl2tbw5iymz7p42gbuj1tmwckt85j" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -576,7 +576,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_HashMapCreator_InferenceRule.java" />
   </source>
-  <source id="1198083415474" name="typeof_MapElement" hash="ebsv1paxqhj8pvymx5bcr22f5cr16xc">
+  <source id="1198083415474" name="typeof_MapElement" hash="ebsv1paxqhj8pvymx5bcr22f5cr16xc" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -589,7 +589,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_MapElement_InferenceRule.java" />
   </source>
-  <source id="1198165935901" name="map_extends_java_util_Map" hash="5bigkbhqnwmczm2zsrx89kfneo3q20x">
+  <source id="1198165935901" name="map_extends_java_util_Map" hash="5bigkbhqnwmczm2zsrx89kfneo3q20x" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -602,7 +602,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="map_extends_java_util_Map_SubtypingRule.java" />
   </source>
-  <source id="1198166032007" name="java_util_Map_extends_map" hash="arfihpe0uucifjao553c28gtvz2ux3o">
+  <source id="1198166032007" name="java_util_Map_extends_map" hash="arfihpe0uucifjao553c28gtvz2ux3o" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -618,7 +618,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="java_util_Map_extends_map_SubtypingRule.java" />
   </source>
-  <source id="1201872573502" name="typeof_ContainsKeyOperation" hash="-62u3361y49ej1za1sryl43bftw7s9lq">
+  <source id="1201872573502" name="typeof_ContainsKeyOperation" hash="-62u3361y49ej1za1sryl43bftw7s9lq" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -632,7 +632,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ContainsKeyOperation_InferenceRule.java" />
   </source>
-  <source id="1201874339717" name="typeof_GetKeysOperation" hash="-2b4o6rq7rmx9cg12w22g47qldswqa5i">
+  <source id="1201874339717" name="typeof_GetKeysOperation" hash="-2b4o6rq7rmx9cg12w22g47qldswqa5i" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -645,7 +645,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetKeysOperation_InferenceRule.java" />
   </source>
-  <source id="1207233744808" name="typeof_MapRemoveOperation" hash="-6wadzcn07s4lg0paka4jq8ink24a2w2">
+  <source id="1207233744808" name="typeof_MapRemoveOperation" hash="-6wadzcn07s4lg0paka4jq8ink24a2w2" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -659,7 +659,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_MapRemoveOperation_InferenceRule.java" />
   </source>
-  <source id="1207236203097" name="typeof_ToIteratorOperation" hash="-ed3d7bkb3vpcwub46j0645isn09s5if">
+  <source id="1207236203097" name="typeof_ToIteratorOperation" hash="-ed3d7bkb3vpcwub46j0645isn09s5if" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
@@ -671,7 +671,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ToIteratorOperation_InferenceRule.java" />
   </source>
-  <source id="1208542368393" name="typeof_MapClearOperation" hash="31r3wte6kfyihu6epr2z097mt2e2c5t">
+  <source id="1208542368393" name="typeof_MapClearOperation" hash="31r3wte6kfyihu6epr2z097mt2e2c5t" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -684,7 +684,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_MapClearOperation_InferenceRule.java" />
   </source>
-  <source id="1202115927796" name="typeof_MappingOperation" hash="-63h3ydbppfqfmh31z4kihqi8nhnqmcc">
+  <source id="1202115927796" name="typeof_MappingOperation" hash="-63h3ydbppfqfmh31z4kihqi8nhnqmcc" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -698,7 +698,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_MappingOperation_InferenceRule.java" />
   </source>
-  <source id="1202120950726" name="typeof_WhereOperation" hash="be6ld939kidrj1zqgoj4nde130gu8i6">
+  <source id="1202120950726" name="typeof_WhereOperation" hash="be6ld939kidrj1zqgoj4nde130gu8i6" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -712,7 +712,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_WhereOperation_InferenceRule.java" />
   </source>
-  <source id="1202129057670" name="typeof_SelectOperation" hash="ci8acfb54gfaiw7bkk2goatms33hog">
+  <source id="1202129057670" name="typeof_SelectOperation" hash="ci8acfb54gfaiw7bkk2goatms33hog" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -726,7 +726,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SelectOperation_InferenceRule.java" />
   </source>
-  <source id="1203341187034" name="supertypesOf_ISequence_class" hash="dy8ibify6bhsinib467e39ptobs3nv3">
+  <source id="1203341187034" name="supertypesOf_ISequence_class" hash="dy8ibify6bhsinib467e39ptobs3nv3" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -742,7 +742,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="supertypesOf_ISequence_class_SubtypingRule.java" />
   </source>
-  <source id="1205679968096" name="typeof_SortOperation" hash="3opd478fu6yjmi10go5t3ibauc4l6la">
+  <source id="1205679968096" name="typeof_SortOperation" hash="3opd478fu6yjmi10go5t3ibauc4l6la" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
@@ -757,7 +757,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SortOperation_InferenceRule.java" />
   </source>
-  <source id="1205753301392" name="typeof_ChunkOperation" hash="-5tncgm6e9ackxfvm607ez7jw932otxs">
+  <source id="1205753301392" name="typeof_ChunkOperation" hash="-5tncgm6e9ackxfvm607ez7jw932otxs" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -770,7 +770,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ChunkOperation_InferenceRule.java" />
   </source>
-  <source id="1205842228688" name="typeof_VisitAllOperation" hash="d1homxg8oc3k2vb8gxek10b1vk3gqxf">
+  <source id="1205842228688" name="typeof_VisitAllOperation" hash="d1homxg8oc3k2vb8gxek10b1vk3gqxf" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -784,7 +784,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_VisitAllOperation_InferenceRule.java" />
   </source>
-  <source id="1209728239442" name="typeof_ComparatorSortOperation" hash="bs0airdoq9y5gbu89yt6g0uxnsc2cy8">
+  <source id="1209728239442" name="typeof_ComparatorSortOperation" hash="bs0airdoq9y5gbu89yt6g0uxnsc2cy8" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -798,7 +798,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ComparatorSortOperation_InferenceRule.java" />
   </source>
-  <source id="1224414526096" name="typeof_SequenceCreator" hash="-a213z0h3z72a8l2ts9scm1lmi6h7qrz">
+  <source id="1224414526096" name="typeof_SequenceCreator" hash="-a213z0h3z72a8l2ts9scm1lmi6h7qrz" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -811,7 +811,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SequenceCreator_InferenceRule.java" />
   </source>
-  <source id="1225551170076" name="typeof_SmartClosureParameterDeclaration" hash="e4ii9wfi2nok1eajklytrc0kft60o2o">
+  <source id="1225551170076" name="typeof_SmartClosureParameterDeclaration" hash="e4ii9wfi2nok1eajklytrc0kft60o2o" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -832,7 +832,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="typeof_SmartClosureParameterDeclaration_InferenceRule.java" />
   </source>
-  <source id="1225622471801" name="typeof_InsertElementOperation" hash="-5v6a1a0zlsi3gqn22s0773h0podib65">
+  <source id="1225622471801" name="typeof_InsertElementOperation" hash="-5v6a1a0zlsi3gqn22s0773h0podib65" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -847,7 +847,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_InsertElementOperation_InferenceRule.java" />
   </source>
-  <source id="1225645917507" name="typeof_SetElementOperation" hash="e5gvtchiax93h6svmtrwigm0eh9nma9">
+  <source id="1225645917507" name="typeof_SetElementOperation" hash="e5gvtchiax93h6svmtrwigm0eh9nma9" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -862,7 +862,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SetElementOperation_InferenceRule.java" />
   </source>
-  <source id="1225711291806" name="typeof_ListElementAccessExpression" hash="uz75rqpj43doibji6yrrt6jwkq7p8l">
+  <source id="1225711291806" name="typeof_ListElementAccessExpression" hash="uz75rqpj43doibji6yrrt6jwkq7p8l" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -875,7 +875,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ListElementAccessExpression_InferenceRule.java" />
   </source>
-  <source id="1225727805374" name="typeof_FindFirstOperation" hash="-1gyj1hc6mxbqndx0cjhtixyvvp29f34">
+  <source id="1225727805374" name="typeof_FindFirstOperation" hash="-1gyj1hc6mxbqndx0cjhtixyvvp29f34" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -889,7 +889,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_FindFirstOperation_InferenceRule.java" />
   </source>
-  <source id="1225730450691" name="typeof_FindLastOperation" hash="-5gq567ymkohls2o6gd1y0q7xg0sdclt">
+  <source id="1225730450691" name="typeof_FindLastOperation" hash="-5gq567ymkohls2o6gd1y0q7xg0sdclt" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -903,7 +903,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_FindLastOperation_InferenceRule.java" />
   </source>
-  <source id="1226566979417" name="typeof_AddSetElementOperation" hash="-d0003voqttqzahn9rn1awdy8k2ov4w7">
+  <source id="1226566979417" name="typeof_AddSetElementOperation" hash="-d0003voqttqzahn9rn1awdy8k2ov4w7" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -917,7 +917,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AddSetElementOperation_InferenceRule.java" />
   </source>
-  <source id="1226591539034" name="typeof_RemoveSetElementOperation" hash="a8ys02z0a5r4828q1uf1k2qsxiex1mw">
+  <source id="1226591539034" name="typeof_RemoveSetElementOperation" hash="a8ys02z0a5r4828q1uf1k2qsxiex1mw" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -931,7 +931,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_RemoveSetElementOperation_InferenceRule.java" />
   </source>
-  <source id="1226592772950" name="typeof_AddAllSetElementsOperation" hash="edslam68y85icjacxeqnzezmk0qkpts">
+  <source id="1226592772950" name="typeof_AddAllSetElementsOperation" hash="edslam68y85icjacxeqnzezmk0qkpts" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -945,7 +945,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AddAllSetElementsOperation_InferenceRule.java" />
   </source>
-  <source id="1226594103503" name="typeof_RemoveAllSetElementsOperation" hash="5exurncbugqoglipykw7vhgjeq9h3j2">
+  <source id="1226594103503" name="typeof_RemoveAllSetElementsOperation" hash="5exurncbugqoglipykw7vhgjeq9h3j2" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -959,7 +959,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_RemoveAllSetElementsOperation_InferenceRule.java" />
   </source>
-  <source id="1226598429206" name="set_weakSupertypeOf_ClassifierType_Set" hash="-4ucs3vzi4wdrvmucfuanc3bcgw08dwc">
+  <source id="1226598429206" name="set_weakSupertypeOf_ClassifierType_Set" hash="-4ucs3vzi4wdrvmucfuanc3bcgw08dwc" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -975,7 +975,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java" />
   </source>
-  <source id="1226598870189" name="sequence_supertypeOf_set" hash="-aagzofk2iun4rfhu8x68n3gxpmrtxeb">
+  <source id="1226598870189" name="sequence_supertypeOf_set" hash="-aagzofk2iun4rfhu8x68n3gxpmrtxeb" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -988,7 +988,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sequence_supertypeOf_set_SubtypingRule.java" />
   </source>
-  <source id="1226598928538" name="set_type_equivalent_to_subconcepts" hash="5eagknuth2b9luyyaice6qrmat05dp2">
+  <source id="1226598928538" name="set_type_equivalent_to_subconcepts" hash="5eagknuth2b9luyyaice6qrmat05dp2" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -999,7 +999,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="set_type_equivalent_to_subconcepts_InequationReplacementRule.java" />
   </source>
-  <source id="1226599215753" name="ClassifierType_Set_weakSupertypeOf_set" hash="-61ybdgfbfhugspgzpwaez1i3opbapqx">
+  <source id="1226599215753" name="ClassifierType_Set_weakSupertypeOf_set" hash="-61ybdgfbfhugspgzpwaez1i3opbapqx" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1012,7 +1012,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java" />
   </source>
-  <source id="1226934632457" name="typeof_ClearSetOperation" hash="3hy03pfi486rou52w08x9okdzwcfr8d">
+  <source id="1226934632457" name="typeof_ClearSetOperation" hash="3hy03pfi486rou52w08x9okdzwcfr8d" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1025,7 +1025,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ClearSetOperation_InferenceRule.java" />
   </source>
-  <source id="1227022291587" name="typeof_RemoveAtElementOperation" hash="-1zy90z4r605w6uzcpj2l9p4psyaim6o">
+  <source id="1227022291587" name="typeof_RemoveAtElementOperation" hash="-1zy90z4r605w6uzcpj2l9p4psyaim6o" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1040,7 +1040,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_RemoveAtElementOperation_InferenceRule.java" />
   </source>
-  <source id="1227022545670" name="typeof_ClearAllElementsOperation" hash="3nrzvritjwu0qpz4ldr1impoxfm1wne">
+  <source id="1227022545670" name="typeof_ClearAllElementsOperation" hash="3nrzvritjwu0qpz4ldr1impoxfm1wne" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1054,7 +1054,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ClearAllElementsOperation_InferenceRule.java" />
   </source>
-  <source id="1227022638839" name="typeof_AddFirstElementOperation" hash="-5pk2kbhbat4zh3k42gkgx9hmm99hqr3">
+  <source id="1227022638839" name="typeof_AddFirstElementOperation" hash="-5pk2kbhbat4zh3k42gkgx9hmm99hqr3" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1068,7 +1068,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_AddFirstElementOperation_InferenceRule.java" />
   </source>
-  <source id="1227022714857" name="typeof_AddLastElementOperation" hash="-gfb87jkwa47pspn01ea7l85m9vcj7f">
+  <source id="1227022714857" name="typeof_AddLastElementOperation" hash="-gfb87jkwa47pspn01ea7l85m9vcj7f" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1082,7 +1082,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_AddLastElementOperation_InferenceRule.java" />
   </source>
-  <source id="1227026148894" name="typeof_RemoveFirstElementOperation" hash="-469jsaen91k2e2mpvsuf28bq84des6i">
+  <source id="1227026148894" name="typeof_RemoveFirstElementOperation" hash="-469jsaen91k2e2mpvsuf28bq84des6i" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1095,7 +1095,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_RemoveFirstElementOperation_InferenceRule.java" />
   </source>
-  <source id="1227026162503" name="typeof_RemoveLastElementOperation" hash="48w4nh9nv2b0mqiolmvow6ggvwdk35x">
+  <source id="1227026162503" name="typeof_RemoveLastElementOperation" hash="48w4nh9nv2b0mqiolmvow6ggvwdk35x" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1108,7 +1108,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_RemoveLastElementOperation_InferenceRule.java" />
   </source>
-  <source id="1227627122674" name="typeof_ForEachVariable" hash="cmhbxn1ya0m4zewvovz9i5sscc2uung">
+  <source id="1227627122674" name="typeof_ForEachVariable" hash="cmhbxn1ya0m4zewvovz9i5sscc2uung" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1119,7 +1119,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_ForEachVariable_InferenceRule.java" />
   </source>
-  <source id="1228229118221" name="typeof_DowncastExpression" hash="-2gfstlrru278rmq2yvxerqbd2fv9mck">
+  <source id="1228229118221" name="typeof_DowncastExpression" hash="-2gfstlrru278rmq2yvxerqbd2fv9mck" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1131,7 +1131,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_DowncastExpression_InferenceRule.java" />
   </source>
-  <source id="1235566720229" name="typeof_AnyOperation" hash="c4wec00dda7e4tq5cezyxbgf32gny55">
+  <source id="1235566720229" name="typeof_AnyOperation" hash="c4wec00dda7e4tq5cezyxbgf32gny55" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1145,7 +1145,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AnyOperation_InferenceRule.java" />
   </source>
-  <source id="1235566874836" name="typeof_AllOperation" hash="-357h8g1svry18nwu1bb10vxa8d015ce">
+  <source id="1235566874836" name="typeof_AllOperation" hash="-357h8g1svry18nwu1bb10vxa8d015ce" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1159,7 +1159,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AllOperation_InferenceRule.java" />
   </source>
-  <source id="1235573443526" name="typeof_SingletonSequenceCreator" hash="ejke6v9ffxzami7m7llqg467pmrd6t8">
+  <source id="1235573443526" name="typeof_SingletonSequenceCreator" hash="ejke6v9ffxzami7m7llqg467pmrd6t8" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1172,7 +1172,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SingletonSequenceCreator_InferenceRule.java" />
   </source>
-  <source id="1237469184035" name="supertypesOf_IteratorType" hash="7i517hmhetxwsmipoidcldncraqmt3k">
+  <source id="1237469184035" name="supertypesOf_IteratorType" hash="7i517hmhetxwsmipoidcldncraqmt3k" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1185,7 +1185,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_IteratorType_SubtypingRule.java" />
   </source>
-  <source id="1237469274783" name="supertypesOf_ClassifierType_Iterator" hash="4v95qmpo1umh8y68jb7e8oj4apt6oda">
+  <source id="1237469274783" name="supertypesOf_ClassifierType_Iterator" hash="4v95qmpo1umh8y68jb7e8oj4apt6oda" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1201,7 +1201,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_ClassifierType_Iterator_SubtypingRule.java" />
   </source>
-  <source id="1237470007043" name="iterator_subtypeOf_iterator" hash="-7qaraa12aeg2baxw2n08zlpjrw67048">
+  <source id="1237470007043" name="iterator_subtypeOf_iterator" hash="-7qaraa12aeg2baxw2n08zlpjrw67048" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1212,7 +1212,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="iterator_subtypeOf_iterator_InequationReplacementRule.java" />
   </source>
-  <source id="1237470333097" name="typeof_GetIteratorOperation" hash="dmxkqsgm2gykhhi0erkgb1hrfz7wwxw">
+  <source id="1237470333097" name="typeof_GetIteratorOperation" hash="dmxkqsgm2gykhhi0erkgb1hrfz7wwxw" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1225,7 +1225,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetIteratorOperation_InferenceRule.java" />
   </source>
-  <source id="1237470917222" name="typeof_HasNextOperation" hash="1fl599i3dy04xumdyr4wbiad2kzoy8b">
+  <source id="1237470917222" name="typeof_HasNextOperation" hash="1fl599i3dy04xumdyr4wbiad2kzoy8b" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1238,7 +1238,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_HasNextOperation_InferenceRule.java" />
   </source>
-  <source id="1237471047473" name="typeof_GetNextOperation" hash="b4ash1zvsxhjnsntdxvvku1etox0wa6">
+  <source id="1237471047473" name="typeof_GetNextOperation" hash="b4ash1zvsxhjnsntdxvvku1etox0wa6" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1251,7 +1251,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetNextOperation_InferenceRule.java" />
   </source>
-  <source id="1237471103266" name="typeof_GetCurrentOperation" hash="-cf5tznn9kxjhiuoa4hoif0igcn1t9tx">
+  <source id="1237471103266" name="typeof_GetCurrentOperation" hash="-cf5tznn9kxjhiuoa4hoif0igcn1t9tx" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1264,7 +1264,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetCurrentOperation_InferenceRule.java" />
   </source>
-  <source id="1237471184664" name="typeof_MoveNextOperation" hash="-228oa4249lj5e0g8oj1bk73j80g66ih">
+  <source id="1237471184664" name="typeof_MoveNextOperation" hash="-228oa4249lj5e0g8oj1bk73j80g66ih" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1277,7 +1277,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_MoveNextOperation_InferenceRule.java" />
   </source>
-  <source id="1237496559130" name="supertypesOf_EnumeratorType" hash="5f893q2mj4t25njf8ut22s58b7orzm1">
+  <source id="1237496559130" name="supertypesOf_EnumeratorType" hash="5f893q2mj4t25njf8ut22s58b7orzm1" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1290,7 +1290,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="supertypesOf_EnumeratorType_SubtypingRule.java" />
   </source>
-  <source id="1237496656054" name="supertypesOf_EnumeratorType_IteratorType" hash="-p5sn1qkzt04dstb1tt945ig3w7vapx">
+  <source id="1237496656054" name="supertypesOf_EnumeratorType_IteratorType" hash="-p5sn1qkzt04dstb1tt945ig3w7vapx" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1302,7 +1302,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_EnumeratorType_IteratorType_SubtypingRule.java" />
   </source>
-  <source id="1237496715796" name="supertypesOf_IEnumerator" hash="-e6jtbfg3kp0awlt8nuh29z2ov2uoq15">
+  <source id="1237496715796" name="supertypesOf_IEnumerator" hash="-e6jtbfg3kp0awlt8nuh29z2ov2uoq15" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -1318,7 +1318,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="supertypesOf_IEnumerator_SubtypingRule.java" />
   </source>
-  <source id="1237496769944" name="enumerator_subtypeOf_enumerator" hash="2lpuugpv05lnnn8t76jhorp9ef9n3bo">
+  <source id="1237496769944" name="enumerator_subtypeOf_enumerator" hash="2lpuugpv05lnnn8t76jhorp9ef9n3bo" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1329,7 +1329,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="enumerator_subtypeOf_enumerator_InequationReplacementRule.java" />
   </source>
-  <source id="1237549316054" name="typeof_GetEnumeratorOperation" hash="90pnjj7tyynvy08po35m51kdawx53mw">
+  <source id="1237549316054" name="typeof_GetEnumeratorOperation" hash="90pnjj7tyynvy08po35m51kdawx53mw" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1342,7 +1342,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetEnumeratorOperation_InferenceRule.java" />
   </source>
-  <source id="1237723040301" name="typeof_AbstractContainerCreator" hash="-a7e2zizq5r13xvwy327imv3ccqj8oos">
+  <source id="1237723040301" name="typeof_AbstractContainerCreator" hash="-a7e2zizq5r13xvwy327imv3ccqj8oos" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -1361,7 +1361,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="typeof_AbstractContainerCreator_InferenceRule.java" />
   </source>
-  <source id="1237907193276" name="typeof_ContainsValueOperation" hash="-2pcis6k4gt06o3bnr45tc80z6ur9nul">
+  <source id="1237907193276" name="typeof_ContainsValueOperation" hash="-2pcis6k4gt06o3bnr45tc80z6ur9nul" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1375,7 +1375,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ContainsValueOperation_InferenceRule.java" />
   </source>
-  <source id="1237909243402" name="typeof_GetValuesOperation" hash="442epl3la9evxqwszh8aeiuloucncww">
+  <source id="1237909243402" name="typeof_GetValuesOperation" hash="442epl3la9evxqwszh8aeiuloucncww" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1388,7 +1388,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetValuesOperation_InferenceRule.java" />
   </source>
-  <source id="1240151356714" name="supertypesOf_ContainerIteratorType" hash="bxyupcbrz5mweb97dghpgiou9c27jpg">
+  <source id="1240151356714" name="supertypesOf_ContainerIteratorType" hash="bxyupcbrz5mweb97dghpgiou9c27jpg" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1400,7 +1400,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_ContainerIteratorType_SubtypingRule.java" />
   </source>
-  <source id="1240151461838" name="containerIterator_subtrypeOf_containerIterator" hash="azb6awxwvwu0qa2t9h1eb3yrh331ebc">
+  <source id="1240151461838" name="containerIterator_subtrypeOf_containerIterator" hash="azb6awxwvwu0qa2t9h1eb3yrh331ebc" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1411,7 +1411,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="containerIterator_subtrypeOf_containerIterator_InequationReplacementRule.java" />
   </source>
-  <source id="1240151619985" name="typeof_RemoveOperation" hash="ah2gv8gqp6xb47dj345v74tcnnys091">
+  <source id="1240151619985" name="typeof_RemoveOperation" hash="ah2gv8gqp6xb47dj345v74tcnnys091" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1424,7 +1424,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_RemoveOperation_InferenceRule.java" />
   </source>
-  <source id="1240239578560" name="typeof_TreeMapCreator" hash="76imu5u2b2ne70t3j5hw6vri29agr5">
+  <source id="1240239578560" name="typeof_TreeMapCreator" hash="76imu5u2b2ne70t3j5hw6vri29agr5" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1437,7 +1437,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TreeMapCreator_InferenceRule.java" />
   </source>
-  <source id="1240239213915" name="sortedMap_subtypeOf_map" hash="-e5qo9c0ux91v30mr4n2q7l6mwsyu80o">
+  <source id="1240239213915" name="sortedMap_subtypeOf_map" hash="-e5qo9c0ux91v30mr4n2q7l6mwsyu80o" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1449,7 +1449,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sortedMap_subtypeOf_map_SubtypingRule.java" />
   </source>
-  <source id="1240239977378" name="typeof_HeadMapOperation" hash="6p8ir59vypkjwwc2l57trye2z57sr3m">
+  <source id="1240239977378" name="typeof_HeadMapOperation" hash="6p8ir59vypkjwwc2l57trye2z57sr3m" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1463,7 +1463,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_HeadMapOperation_InferenceRule.java" />
   </source>
-  <source id="1240240156320" name="typeof_TailMapOperation" hash="2o8r3ap0btvmevf8aiy4a6j8tca5601">
+  <source id="1240240156320" name="typeof_TailMapOperation" hash="2o8r3ap0btvmevf8aiy4a6j8tca5601" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1477,7 +1477,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TailMapOperation_InferenceRule.java" />
   </source>
-  <source id="1240240356583" name="typeof_SubMapOperation" hash="-a0f1d3bzng7mxto9jml6ybnvejdbuvg">
+  <source id="1240240356583" name="typeof_SubMapOperation" hash="-a0f1d3bzng7mxto9jml6ybnvejdbuvg" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1491,7 +1491,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SubMapOperation_InferenceRule.java" />
   </source>
-  <source id="1240251380238" name="typeof_HeadSetOperation" hash="3zz3hbddya1gmuq4afkimpu7s7vt5ai">
+  <source id="1240251380238" name="typeof_HeadSetOperation" hash="3zz3hbddya1gmuq4afkimpu7s7vt5ai" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1505,7 +1505,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_HeadSetOperation_InferenceRule.java" />
   </source>
-  <source id="1240251624474" name="typeof_TailSetOperation" hash="64ll2tax3xn4qgj5xo49u6ciaeucxni">
+  <source id="1240251624474" name="typeof_TailSetOperation" hash="64ll2tax3xn4qgj5xo49u6ciaeucxni" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1519,7 +1519,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TailSetOperation_InferenceRule.java" />
   </source>
-  <source id="1240251724629" name="typeof_SubSetOperation" hash="e0n2wof5p2f1eyhrndtsykweu3sc25k">
+  <source id="1240251724629" name="typeof_SubSetOperation" hash="e0n2wof5p2f1eyhrndtsykweu3sc25k" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1533,7 +1533,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SubSetOperation_InferenceRule.java" />
   </source>
-  <source id="1240252125253" name="SortedMap_comparableTo_sorted_map" hash="ac49d6a9k8oqevslt9gmozpndom67yx">
+  <source id="1240252125253" name="SortedMap_comparableTo_sorted_map" hash="ac49d6a9k8oqevslt9gmozpndom67yx" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1549,7 +1549,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SortedMap_comparableTo_sorted_map_SubtypingRule.java" />
   </source>
-  <source id="1240252246637" name="sorted_map_comparableTo_SortedMap" hash="-87w9cnfhxf3ahj7iq8x5cvqy4ahs7ie">
+  <source id="1240252246637" name="sorted_map_comparableTo_SortedMap" hash="-87w9cnfhxf3ahj7iq8x5cvqy4ahs7ie" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1562,7 +1562,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sorted_map_comparableTo_SortedMap_SubtypingRule.java" />
   </source>
-  <source id="1240252404452" name="SortedSet_comparableTo_sorted_set" hash="42erpq1cap8pwiqhc31w1pfmt01xai5">
+  <source id="1240252404452" name="SortedSet_comparableTo_sorted_set" hash="42erpq1cap8pwiqhc31w1pfmt01xai5" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1578,7 +1578,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SortedSet_comparableTo_sorted_set_SubtypingRule.java" />
   </source>
-  <source id="1240252457931" name="sorted_set_comparableTo_SortedSet" hash="-1wbpvxtuwnivveneog7hy504qrto72e">
+  <source id="1240252457931" name="sorted_set_comparableTo_SortedSet" hash="-1wbpvxtuwnivveneog7hy504qrto72e" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1591,7 +1591,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sorted_set_comparableTo_SortedSet_SubtypingRule.java" />
   </source>
-  <source id="1240252516761" name="sorted_set_subtypeOf_set" hash="-cxmw0m843n26otjaagktjlijelsop0d">
+  <source id="1240252516761" name="sorted_set_subtypeOf_set" hash="-cxmw0m843n26otjaagktjlijelsop0d" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1603,7 +1603,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sorted_set_subtypeOf_set_SubtypingRule.java" />
   </source>
-  <source id="1240319956157" name="check_container_creator_not_primitive_array" hash="a50jb1ef3ibtgo6bsotlzktv7t32urf">
+  <source id="1240319956157" name="check_container_creator_not_primitive_array" hash="a50jb1ef3ibtgo6bsotlzktv7t32urf" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1615,7 +1615,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="check_container_creator_not_primitive_array_NonTypesystemRule.java" />
   </source>
-  <source id="1240325939754" name="typeof_AsSequenceOperation" hash="-8bk90n91i3usv4g8bc9ootattzuj7kz">
+  <source id="1240325939754" name="typeof_AsSequenceOperation" hash="-8bk90n91i3usv4g8bc9ootattzuj7kz" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1628,7 +1628,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AsSequenceOperation_InferenceRule.java" />
   </source>
-  <source id="1240687811538" name="typeof_JoinOperation" hash="-6cqtchx3p2qe31fqb0efx46jlukixe1">
+  <source id="1240687811538" name="typeof_JoinOperation" hash="-6cqtchx3p2qe31fqb0efx46jlukixe1" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1642,7 +1642,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_JoinOperation_InferenceRule.java" />
   </source>
-  <source id="1240824145431" name="IMapping_interface_supertypeOf_mappingType" hash="-dwzncd1kgxjzkl0aqnty827ujuq48k8">
+  <source id="1240824145431" name="IMapping_interface_supertypeOf_mappingType" hash="-dwzncd1kgxjzkl0aqnty827ujuq48k8" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1655,7 +1655,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="IMapping_interface_supertypeOf_mappingType_SubtypingRule.java" />
   </source>
-  <source id="1240824401992" name="mappingType_sypertypeOf_IMapping_interface" hash="29y95lgxeiw5qs1i9qq0wrznyguxvp">
+  <source id="1240824401992" name="mappingType_sypertypeOf_IMapping_interface" hash="29y95lgxeiw5qs1i9qq0wrznyguxvp" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -1671,7 +1671,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java" />
   </source>
-  <source id="1240825492651" name="typeof_ValueAccessOperation" hash="-etz3t6apkmfdgrkuiwxjzalhv6iwpmg">
+  <source id="1240825492651" name="typeof_ValueAccessOperation" hash="-etz3t6apkmfdgrkuiwxjzalhv6iwpmg" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1684,7 +1684,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ValueAccessOperation_InferenceRule.java" />
   </source>
-  <source id="1240825632865" name="typeof_KeyAccessOperation" hash="-7fwn0he5r314trndzcq1hbminsoqv33">
+  <source id="1240825632865" name="typeof_KeyAccessOperation" hash="-7fwn0he5r314trndzcq1hbminsoqv33" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1697,7 +1697,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_KeyAccessOperation_InferenceRule.java" />
   </source>
-  <source id="1240854419720" name="typeof_MappingsSetOperation" hash="-87zwizh30x014fsgzhv64nnx4tzuagv">
+  <source id="1240854419720" name="typeof_MappingsSetOperation" hash="-87zwizh30x014fsgzhv64nnx4tzuagv" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1710,7 +1710,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_MappingsSetOperation_InferenceRule.java" />
   </source>
-  <source id="1240857007399" name="sequence_supertypeOf_map" hash="-exb7ey43g2jcm7csmeqp71owlpiloru">
+  <source id="1240857007399" name="sequence_supertypeOf_map" hash="-exb7ey43g2jcm7csmeqp71owlpiloru" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1722,7 +1722,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sequence_supertypeOf_map_SubtypingRule.java" />
   </source>
-  <source id="1240906947628" name="typeof_PutAllOperation" hash="-b2ajh3elpdpb3aexfupijbwyogza0rw">
+  <source id="1240906947628" name="typeof_PutAllOperation" hash="-b2ajh3elpdpb3aexfupijbwyogza0rw" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1736,7 +1736,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_PutAllOperation_InferenceRule.java" />
   </source>
-  <source id="1241437869459" name="set_type_comparableWith_Set" hash="8z8klz64k7aygoquqv9kmq3wrrwapsd">
+  <source id="1241437869459" name="set_type_comparableWith_Set" hash="8z8klz64k7aygoquqv9kmq3wrrwapsd" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1752,7 +1752,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="set_type_comparableWith_Set_ComparisonRule.java" />
   </source>
-  <source id="1241438229076" name="map_type_comparableWith_Map" hash="-3sluiyt7e1zho16ipo4uqc2qkdgou4">
+  <source id="1241438229076" name="map_type_comparableWith_Map" hash="-3sluiyt7e1zho16ipo4uqc2qkdgou4" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1768,7 +1768,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="map_type_comparableWith_Map_ComparisonRule.java" />
   </source>
-  <source id="1241438271946" name="sequence_type_comparableWith_Iterable" hash="-5qmr2bcudi8e63rytat4omxhdog089w">
+  <source id="1241438271946" name="sequence_type_comparableWith_Iterable" hash="-5qmr2bcudi8e63rytat4omxhdog089w" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -1793,7 +1793,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" />
   </source>
-  <source id="2976448425532784006" name="sequence_supertypeOf_queue" hash="34sh5eptvpywu472hh9qlr7uml94d63">
+  <source id="2976448425532784006" name="sequence_supertypeOf_queue" hash="34sh5eptvpywu472hh9qlr7uml94d63" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1805,7 +1805,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sequence_supertypeOf_queue_SubtypingRule.java" />
   </source>
-  <source id="2976448425532787456" name="queue_type_comparableWith_Queue" hash="-6do1p6671az914bza10rnrvw9n0k8jb">
+  <source id="2976448425532787456" name="queue_type_comparableWith_Queue" hash="-6do1p6671az914bza10rnrvw9n0k8jb" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1821,7 +1821,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="queue_type_comparableWith_Queue_ComparisonRule.java" />
   </source>
-  <source id="2976448425532787472" name="supertypesOf_QueueType_ClassiType_Queue" hash="6bg8wg4k9eeoqw7hwjdndqo3lz0wuzg">
+  <source id="2976448425532787472" name="supertypesOf_QueueType_ClassiType_Queue" hash="6bg8wg4k9eeoqw7hwjdndqo3lz0wuzg" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1834,7 +1834,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_QueueType_ClassiType_Queue_SubtypingRule.java" />
   </source>
-  <source id="2976448425532787493" name="supertypesOf_ClassifierType_Queue_QueueType" hash="ahklhb0i77hp603z29r8wvdykxjicvg">
+  <source id="2976448425532787493" name="supertypesOf_ClassifierType_Queue_QueueType" hash="ahklhb0i77hp603z29r8wvdykxjicvg" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1850,7 +1850,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java" />
   </source>
-  <source id="6801639034384703215" name="supertypesOf_DequeType_ClassiType_Deque" hash="3f8zrai81ukmri004p4qukk2q1ltchv">
+  <source id="6801639034384703215" name="supertypesOf_DequeType_ClassiType_Deque" hash="3f8zrai81ukmri004p4qukk2q1ltchv" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1873,7 +1873,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.java" />
   </source>
-  <source id="6801639034384706572" name="deque_type_comparableWith_Deque" hash="-esab057geempxtmjq0aact7xbjfgwni">
+  <source id="6801639034384706572" name="deque_type_comparableWith_Deque" hash="-esab057geempxtmjq0aact7xbjfgwni" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1889,7 +1889,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="deque_type_comparableWith_Deque_ComparisonRule.java" />
   </source>
-  <source id="6801639034384706583" name="queue_supertypeOf_deque" hash="81z24a50w123oj04xo1nl0c6334jhqo">
+  <source id="6801639034384706583" name="queue_supertypeOf_deque" hash="81z24a50w123oj04xo1nl0c6334jhqo" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1901,7 +1901,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="queue_supertypeOf_deque_SubtypingRule.java" />
   </source>
-  <source id="6801639034384800409" name="supertypesOf_StackType_ClassiType_Deque" hash="-32crtyl7q14grcji792i97tcwi7kua6">
+  <source id="6801639034384800409" name="supertypesOf_StackType_ClassiType_Deque" hash="-32crtyl7q14grcji792i97tcwi7kua6" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1924,7 +1924,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_StackType_StackType_withWildcard_SubtypingRule.java" />
   </source>
-  <source id="6801639034384806465" name="stack_type_comparableWith_Deque" hash="dhers14b0s8lcdro6ls3yykncsjarrc">
+  <source id="6801639034384806465" name="stack_type_comparableWith_Deque" hash="dhers14b0s8lcdro6ls3yykncsjarrc" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -1940,7 +1940,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="stack_type_comparableWith_Deque_ComparisonRule.java" />
   </source>
-  <source id="6801639034384806476" name="sequence_supertypeOf_stack" hash="9bwm7bc7scqp5yzz1r60wueomuxkaoj">
+  <source id="6801639034384806476" name="sequence_supertypeOf_stack" hash="9bwm7bc7scqp5yzz1r60wueomuxkaoj" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1952,7 +1952,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sequence_supertypeOf_stack_SubtypingRule.java" />
   </source>
-  <source id="6801639034384806488" name="stack_supertypeOf_deque" hash="-7exg0akox0tkaosd2e4wyiqu982ov4f">
+  <source id="6801639034384806488" name="stack_supertypeOf_deque" hash="-7exg0akox0tkaosd2e4wyiqu982ov4f" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -1964,7 +1964,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="stack_supertypeOf_deque_SubtypingRule.java" />
   </source>
-  <source id="3358009230508699968" name="typeof_PopOperation" hash="7y2u6ht3zhqpodntz38jhi81nbi6m7a">
+  <source id="3358009230508699968" name="typeof_PopOperation" hash="7y2u6ht3zhqpodntz38jhi81nbi6m7a" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1977,7 +1977,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_PopOperation_InferenceRule.java" />
   </source>
-  <source id="3358009230508799529" name="typeof_PushOperation" hash="d852sntcsdoph12bymec7p6uhx7y2j">
+  <source id="3358009230508799529" name="typeof_PushOperation" hash="d852sntcsdoph12bymec7p6uhx7y2j" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -1991,7 +1991,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_PushOperation_InferenceRule.java" />
   </source>
-  <source id="3358009230509562498" name="supertypesOf_linkedlist" hash="7pqc5ril1vawr9dbeujpukwoc37x8hl">
+  <source id="3358009230509562498" name="supertypesOf_linkedlist" hash="7pqc5ril1vawr9dbeujpukwoc37x8hl" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2004,7 +2004,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_linkedlist_SubtypingRule.java" />
   </source>
-  <source id="3055999550620863368" name="typeof_RemoveWhereOperation" hash="-1ww5wcxvaxazpz4tyebzcvcfuj9crkw">
+  <source id="3055999550620863368" name="typeof_RemoveWhereOperation" hash="-1ww5wcxvaxazpz4tyebzcvcfuj9crkw" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2019,7 +2019,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_RemoveWhereOperation_InferenceRule.java" />
   </source>
-  <source id="1241438170772" name="list_type_comparableWith_List" hash="a6x4bm5qvam2bj7taaa2swy5zydzaop">
+  <source id="1241438170772" name="list_type_comparableWith_List" hash="a6x4bm5qvam2bj7taaa2swy5zydzaop" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -2035,7 +2035,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="list_type_comparableWith_List_ComparisonRule.java" />
   </source>
-  <source id="5108199730660923207" name="sequence_subtypeOf_sequence" hash="-6fvhd4uzbsessa7que8qdwsyxr6a4zq">
+  <source id="5108199730660923207" name="sequence_subtypeOf_sequence" hash="-6fvhd4uzbsessa7que8qdwsyxr6a4zq" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -2046,7 +2046,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="sequence_subtypeOf_sequence_InequationReplacementRule.java" />
   </source>
-  <source id="6126991172893688510" name="typeof_ContainsAllOperation" hash="-xzwhmyvs64l5gudx6pxvux5vfh301x">
+  <source id="6126991172893688510" name="typeof_ContainsAllOperation" hash="-xzwhmyvs64l5gudx6pxvux5vfh301x" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2060,7 +2060,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ContainsAllOperation_InferenceRule.java" />
   </source>
-  <source id="5633809102336885672" name="typeof_SubListOperation" hash="csvdinv910nhlbfbhr0htv2imwpc12n">
+  <source id="5633809102336885672" name="typeof_SubListOperation" hash="csvdinv910nhlbfbhr0htv2imwpc12n" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2074,7 +2074,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_SubListOperation_InferenceRule.java" />
   </source>
-  <source id="5784983078884872753" name="typeof_PeekOperation" hash="6frxd6wdg5z6pdzwwtj1l69gqtxofjx">
+  <source id="5784983078884872753" name="typeof_PeekOperation" hash="6frxd6wdg5z6pdzwwtj1l69gqtxofjx" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2087,7 +2087,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_PeekOperation_InferenceRule.java" />
   </source>
-  <source id="5232196642625575001" name="typeof_HeadListOperation" hash="5b7sdix8rpk0ubb6jyxxoao8t3mpkvr">
+  <source id="5232196642625575001" name="typeof_HeadListOperation" hash="5b7sdix8rpk0ubb6jyxxoao8t3mpkvr" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2101,7 +2101,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_HeadListOperation_InferenceRule.java" />
   </source>
-  <source id="5232196642625575076" name="typeof_TailListOperation" hash="-tquki2j5nf0api8xs51nvyaegdlwp1">
+  <source id="5232196642625575076" name="typeof_TailListOperation" hash="-tquki2j5nf0api8xs51nvyaegdlwp1" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2115,7 +2115,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TailListOperation_InferenceRule.java" />
   </source>
-  <source id="5192033827214196961" name="check_CustomContainerCreator_elementType" hash="-d9d5ojdsh066xdginkz659gh7rx5uz5">
+  <source id="5192033827214196961" name="check_CustomContainerCreator_elementType" hash="-d9d5ojdsh066xdginkz659gh7rx5uz5" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
@@ -2130,7 +2130,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="check_CustomContainerCreator_elementType_NonTypesystemRule.java" />
   </source>
-  <source id="1576845966386918275" name="typeof_CustomMapCreator" hash="536h27w6junokv4at1fpbn8za4sim4y">
+  <source id="1576845966386918275" name="typeof_CustomMapCreator" hash="536h27w6junokv4at1fpbn8za4sim4y" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2142,7 +2142,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_CustomMapCreator_InferenceRule.java" />
   </source>
-  <source id="1279588871815200404" name="typeof_CustomContainerDeclaration" hash="7g8gp0isaqirem63sztodbp5eoa4gl7">
+  <source id="1279588871815200404" name="typeof_CustomContainerDeclaration" hash="7g8gp0isaqirem63sztodbp5eoa4gl7" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2154,7 +2154,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_CustomContainerDeclaration_InferenceRule.java" />
   </source>
-  <source id="4498918741262504537" name="setType_with_vars_subtypeOf_setType" hash="-1dehc3osaxwt6364x21m88hz8nh4chg">
+  <source id="4498918741262504537" name="setType_with_vars_subtypeOf_setType" hash="-1dehc3osaxwt6364x21m88hz8nh4chg" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2168,7 +2168,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" />
   </source>
-  <source id="1115463791055875289" name="listType_with_vars_subtypeOf_listType" hash="-91t3jretfnp2rqvq81wh9hfqc87y60z">
+  <source id="1115463791055875289" name="listType_with_vars_subtypeOf_listType" hash="-91t3jretfnp2rqvq81wh9hfqc87y60z" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2182,7 +2182,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" />
   </source>
-  <source id="2261417478148990390" name="typeof_TreeSetCreator" hash="1gywi813149mqqm3pjhrt63iegu0l3i">
+  <source id="2261417478148990390" name="typeof_TreeSetCreator" hash="1gywi813149mqqm3pjhrt63iegu0l3i" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2195,7 +2195,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TreeSetCreator_InferenceRule.java" />
   </source>
-  <source id="1522217801069359740" name="typeof_ReduceLeftOperation" hash="3bldp4xkoiy534e38lrqydbmtfbi4c3">
+  <source id="1522217801069359740" name="typeof_ReduceLeftOperation" hash="3bldp4xkoiy534e38lrqydbmtfbi4c3" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2209,7 +2209,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ReduceLeftOperation_InferenceRule.java" />
   </source>
-  <source id="1522217801069396406" name="typeof_ReduceRightOperation" hash="-7gxw65da84652ztfskgkyzz1h9tchwb">
+  <source id="1522217801069396406" name="typeof_ReduceRightOperation" hash="-7gxw65da84652ztfskgkyzz1h9tchwb" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2223,7 +2223,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ReduceRightOperation_InferenceRule.java" />
   </source>
-  <source id="1522217801069396610" name="typeof_FoldLeftOperation" hash="-91c7gfwttna9ohtnf8e99lpgxzj89zi">
+  <source id="1522217801069396610" name="typeof_FoldLeftOperation" hash="-91c7gfwttna9ohtnf8e99lpgxzj89zi" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2237,7 +2237,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_FoldLeftOperation_InferenceRule.java" />
   </source>
-  <source id="1522217801069421834" name="typeof_FoldRightOperation" hash="a8ilpe9j91baadysdunow3ur5dj7myz">
+  <source id="1522217801069421834" name="typeof_FoldRightOperation" hash="a8ilpe9j91baadysdunow3ur5dj7myz" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2251,7 +2251,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_FoldRightOperation_InferenceRule.java" />
   </source>
-  <source id="3031165383882167873" name="list_covariant_with_extends" hash="40rywfd8yorffw05l0obuu90bpbw408">
+  <source id="3031165383882167873" name="list_covariant_with_extends" hash="40rywfd8yorffw05l0obuu90bpbw408" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -2265,7 +2265,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="list_covariant_with_extends_InequationReplacementRule.java" />
   </source>
-  <source id="7707298106572005943" name="set_covariant_with_extends" hash="ev621vc9jleqg9lziyxvvpvlimpn758">
+  <source id="7707298106572005943" name="set_covariant_with_extends" hash="ev621vc9jleqg9lziyxvvpvlimpn758" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -2276,7 +2276,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="set_covariant_with_extends_InequationReplacementRule.java" />
   </source>
-  <source id="4020503625588455767" name="typeof_GetLastIndexOfOperation" hash="-5t2njk52x29uh1adasp8abbetnjpusf">
+  <source id="4020503625588455767" name="typeof_GetLastIndexOfOperation" hash="-5t2njk52x29uh1adasp8abbetnjpusf" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2289,7 +2289,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_GetLastIndexOfOperation_InferenceRule.java" />
   </source>
-  <source id="8293956702610249694" name="typeof_MultiForEachVariableReference" hash="3cipji972l7epf32fmihume7s6sacpv">
+  <source id="8293956702610249694" name="typeof_MultiForEachVariableReference" hash="3cipji972l7epf32fmihume7s6sacpv" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2301,7 +2301,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_MultiForEachVariableReference_InferenceRule.java" />
   </source>
-  <source id="8293956702610249715" name="typeof_MultiForEachVariable" hash="-3onvlo01p2lhqm02ncq5d2qs0trd5l">
+  <source id="8293956702610249715" name="typeof_MultiForEachVariable" hash="-3onvlo01p2lhqm02ncq5d2qs0trd5l" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2314,7 +2314,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_MultiForEachVariable_InferenceRule.java" />
   </source>
-  <source id="7886927014685055227" name="supertypesOf_CollectionType_ClassifierTypeCollection" hash="91zoij7lumbbeq4kc5uxcp2he26frou">
+  <source id="7886927014685055227" name="supertypesOf_CollectionType_ClassifierTypeCollection" hash="91zoij7lumbbeq4kc5uxcp2he26frou" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2338,7 +2338,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_CollectionType_CollectionType_withWildcard_SubtypingRule.java" />
   </source>
-  <source id="7886927014685056817" name="supertypesOf_CollectionType_SequenceType" hash="bs9h18uztd6hyb3285gqkw75fncpe9r">
+  <source id="7886927014685056817" name="supertypesOf_CollectionType_SequenceType" hash="bs9h18uztd6hyb3285gqkw75fncpe9r" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -2350,7 +2350,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_CollectionType_SequenceType_SubtypingRule.java" />
   </source>
-  <source id="7886927014685056834" name="collection_comparableWith_Collection" hash="dkxrbasdi8uil60pmf07dv8ulgqwdwp">
+  <source id="7886927014685056834" name="collection_comparableWith_Collection" hash="dkxrbasdi8uil60pmf07dv8ulgqwdwp" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -2366,7 +2366,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="collection_comparableWith_Collection_ComparisonRule.java" />
   </source>
-  <source id="7886927014685056847" name="collection_covariant_extends" hash="-6mimqw75y4douzk7t01t4zhgqrlajqc">
+  <source id="7886927014685056847" name="collection_covariant_extends" hash="-6mimqw75y4douzk7t01t4zhgqrlajqc" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -2380,7 +2380,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="collection_covariant_extends_InequationReplacementRule.java" />
   </source>
-  <source id="4453708832985607259" name="supertypesOf_List" hash="-20grgoa8lu2mx6bannegk83qnocnbfk">
+  <source id="4453708832985607259" name="supertypesOf_List" hash="-20grgoa8lu2mx6bannegk83qnocnbfk" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2393,7 +2393,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_List_SubtypingRule.java" />
   </source>
-  <source id="4453708832985646044" name="supertypesOf_set_collection" hash="9272bnolzlkfr9hd5slg6k7mzhzdp8c">
+  <source id="4453708832985646044" name="supertypesOf_set_collection" hash="9272bnolzlkfr9hd5slg6k7mzhzdp8c" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -2405,7 +2405,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_set_collection_SubtypingRule.java" />
   </source>
-  <source id="2526372162255446590" name="typeof_AsUnmodifiableOperation" hash="bb7igmw7wtmg7bzch2y0uvdg4a2xhgh">
+  <source id="2526372162255446590" name="typeof_AsUnmodifiableOperation" hash="bb7igmw7wtmg7bzch2y0uvdg4a2xhgh" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2418,7 +2418,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AsUnmodifiableOperation_InferenceRule.java" />
   </source>
-  <source id="2938222244302954884" name="listSubtypeOfNodeList" hash="3rgt5ytfysqwk9ck4pnpzl2r3s8spwx">
+  <source id="2938222244302954884" name="listSubtypeOfNodeList" hash="3rgt5ytfysqwk9ck4pnpzl2r3s8spwx" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2431,7 +2431,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="listSubtypeOfNodeList_InequationReplacementRule.java" />
   </source>
-  <source id="4611582986551020946" name="typeof_AsSynchronizedOperation" hash="8ehdo4i2xv5p7vk02ctzrh49knw3uef">
+  <source id="4611582986551020946" name="typeof_AsSynchronizedOperation" hash="8ehdo4i2xv5p7vk02ctzrh49knw3uef" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2444,7 +2444,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_AsSynchronizedOperation_InferenceRule.java" />
   </source>
-  <source id="4611582986551314347" name="typeof_OfTypeOperation" hash="-47o8ye5fuxivobbpp6wl0y5bkwrlnl0">
+  <source id="4611582986551314347" name="typeof_OfTypeOperation" hash="-47o8ye5fuxivobbpp6wl0y5bkwrlnl0" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2458,7 +2458,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_OfTypeOperation_InferenceRule.java" />
   </source>
-  <source id="5699792037748043367" name="typeof_TestAddElementOperation" hash="-6pxylhvi0qmu7g6bzc1gz5a825vn26z">
+  <source id="5699792037748043367" name="typeof_TestAddElementOperation" hash="-6pxylhvi0qmu7g6bzc1gz5a825vn26z" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2472,7 +2472,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TestAddElementOperation_InferenceRule.java" />
   </source>
-  <source id="4073682006117732267" name="typeof_TestRemoveElementOperation" hash="enb97aq1y5adkko1crwc7mxd26t6sr8">
+  <source id="4073682006117732267" name="typeof_TestRemoveElementOperation" hash="enb97aq1y5adkko1crwc7mxd26t6sr8" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2486,7 +2486,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_TestRemoveElementOperation_InferenceRule.java" />
   </source>
-  <source id="3070162689085490475" name="supertypesOf_ClassifierType_Collection" hash="cztwo2fu0kqeyqur80z24csg68es32p">
+  <source id="3070162689085490475" name="supertypesOf_ClassifierType_Collection" hash="cztwo2fu0kqeyqur80z24csg68es32p" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -2502,7 +2502,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_ClassifierType_Collection_SubtypingRule.java" />
   </source>
-  <source id="6481445890964431321" name="typeof_MapAsSequenceVarRef" hash="-cjxat0telrwi3g3gsn394rz72araqon">
+  <source id="6481445890964431321" name="typeof_MapAsSequenceVarRef" hash="-cjxat0telrwi3g3gsn394rz72araqon" dependsOnCreated="true">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2514,7 +2514,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="typeof_MapAsSequenceVarRef_InferenceRule.java" />
   </source>
-  <source id="360223900469176654" name="supertypesOf_ListType_ClassifierTypeList" hash="280wqpw9kkdqacnr2i97m8jhc4u9ijw">
+  <source id="360223900469176654" name="supertypesOf_ListType_ClassifierTypeList" hash="280wqpw9kkdqacnr2i97m8jhc4u9ijw" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -2528,7 +2528,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java" />
   </source>
-  <source id="360223900469239436" name="supertypesOf_SetType_ClassifierTypeSet" hash="boqcorp5834j6ekmz7r92cdd3ml9u60">
+  <source id="360223900469239436" name="supertypesOf_SetType_ClassifierTypeSet" hash="boqcorp5834j6ekmz7r92cdd3ml9u60" dependsOnCreated="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />

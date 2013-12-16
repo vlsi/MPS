@@ -61,29 +61,28 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a;
-        nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_a1tqv3_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_a1tqv3_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_yoc8ci_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_yoc8ci_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_a1tqv3_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_map_type_comparableWith_Map_a1tqv3_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a, childRole_map_type_comparableWith_Map_a1tqv3_, 2))) {
+          String childRole_a1tqv3_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_a1tqv3_a0a, childRole_a1tqv3_, 2))) {
             return false;
           }
           {
-            SNode childVar_map_type_comparableWith_Map_a1tqv3_a0a0 = IterableUtil.get(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_), 0);
-            this.patternVar_KEY = childVar_map_type_comparableWith_Map_a1tqv3_a0a0;
+            SNode childVar_a1tqv3_a0a0 = IterableUtil.get(nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_), 0);
+            this.patternVar_KEY = childVar_a1tqv3_a0a0;
           }
           {
-            SNode childVar_map_type_comparableWith_Map_a1tqv3_b0a0 = IterableUtil.get(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_), 1);
-            this.patternVar_VALUE = childVar_map_type_comparableWith_Map_a1tqv3_b0a0;
+            SNode childVar_a1tqv3_b0a0 = IterableUtil.get(nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_), 1);
+            this.patternVar_VALUE = childVar_a1tqv3_b0a0;
           }
         }
       }
@@ -115,5 +114,5 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
     }
   }
 
-  private static SNodePointer SNODE_POINTER_yoc8ci_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
+  private static SNodePointer SNODE_POINTER_yoc8ci_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
 }

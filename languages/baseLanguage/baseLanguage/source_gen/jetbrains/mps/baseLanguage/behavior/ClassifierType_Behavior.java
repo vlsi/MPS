@@ -386,14 +386,13 @@ public class ClassifierType_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j;
-        nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_hz3823_a0a0a0a0j = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a0a0a0j.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0k;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0j.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -427,23 +426,22 @@ public class ClassifierType_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9;
-        nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_hz3823_a0a1a9 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a1a9.getConcept().getQualifiedName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a9;
-          if (nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_hz3823_a0a1a9.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_ClassifierType_Behavior_hz3823_ = "parameter";
+          String childRole_hz3823_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getChildren(childRole_ClassifierType_Behavior_hz3823_)) {
+          for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
@@ -483,14 +481,13 @@ public class ClassifierType_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k;
-        nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_hz3823_a0a0a0a0k = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a0a0a0k.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0l;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0k.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0l;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0k.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -524,23 +521,22 @@ public class ClassifierType_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01;
-        nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_hz3823_a0a1a01 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a1a01.getConcept().getQualifiedName()))) {
           return false;
         }
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a01;
-          if (nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_hz3823_a0a1a01.getReferenceTarget("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole_ClassifierType_Behavior_hz3823__0 = "parameter";
+          String childRole_hz3823__0 = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a01.getChildren(childRole_ClassifierType_Behavior_hz3823__0)) {
+          for (SNode childVar : nodeToMatch_hz3823_a0a1a01.getChildren(childRole_hz3823__0)) {
             patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
@@ -613,6 +609,6 @@ public class ClassifierType_Behavior {
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
-  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0l = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0l = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }
