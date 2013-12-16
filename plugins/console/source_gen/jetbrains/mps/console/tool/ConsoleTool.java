@@ -62,6 +62,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Scanner;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
@@ -82,7 +85,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 @State(name = "ConsoleHistory", storages = @Storage(file = StoragePathMacros.WORKSPACE_FILE)
 )
@@ -407,6 +409,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                 ((SModelInternal) myModel).addLanguage(usedLanguage);
                 ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
               }
+              for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
+                SModelReference usedModel = ref.getTargetSModelReference();
+                if (usedModel != null && !(((SModelInternal) myModel).importedModels().contains(usedModel))) {
+                  ((SModelInternal) myModel).addModelImport(usedModel, false);
+                  ((AbstractModule) myModel.getModule()).addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
+                }
+              }
             }
             SLinkOperations.setTarget(SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NodeResponseItem"), "node", node, true);
           }
@@ -418,20 +427,14 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           }
         }, new Runnable() {
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                TemporaryModels.getInstance().addMissingImports(myModel);
-              }
-            });
             // todo: this is a hack - activate is not required there because command can activate some other component 
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                ProjectHelper.toIdeaProject(ProjectHelper.toMPSProject(ConsoleTool.this.getProject())).getComponent(ConsoleTool.class).getToolWindow().activate(new Runnable() {
+                getProject().getComponent(ConsoleTool.class).getToolWindow().activate(new Runnable() {
                   public void run() {
                     setSelection();
                   }
                 });
-                check_xg3v07_a1a0a2a0a0d0a4a0a0yb(executeAfter);
               }
             });
           }
@@ -697,13 +700,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResponseItem", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
-  }
-
-  private static void check_xg3v07_a1a0a2a0a0d0a4a0a0yb(Runnable checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.run();
-    }
-
   }
 
   private static SNode check_xg3v07_a0d0a0a5ic(SNodeReference checkedDotOperand) {

@@ -23,10 +23,7 @@ import java.awt.event.MouseEvent;
     this.label.setIconTextGap(0);
     Font labelFont = UIUtil.getLabelFont();
     boolean framedStyle = SystemInfo.isMac || !(SystemProperties.getBooleanProperty("idea.ui.mem.use", false));
-    this.label.setFont((framedStyle ?
-      labelFont.deriveFont(11.0f) :
-      labelFont
-    ));
+    this.label.setFont((framedStyle ? labelFont.deriveFont(11.0f) : labelFont));
     this.label.setPreferredSize(this.label.getPreferredSize());
     this.label.setText(myWidget.getText());
     this.add(this.label);
