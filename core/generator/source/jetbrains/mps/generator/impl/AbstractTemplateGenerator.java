@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
@@ -54,9 +55,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final boolean myShowBadChildWarning;
   private final RoleValidator successValidatorOne = new RoleValidator(false);
   private final RoleValidator successValidatorMany = new RoleValidator(true);
-  // not concurrent - I don't care if few threads instantiate validators - it's cheap.
-  // besides, the code shall be refactored to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
-  private final Map<String, Map<String, RoleValidator>> validators = new HashMap<String, Map<String, RoleValidator>>();
+  // the code might need refactoring to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
+  private final Map<String, Map<String, RoleValidator>> validators = new ConcurrentHashMap<String, Map<String, RoleValidator>>();
 
   protected AbstractTemplateGenerator(GenerationSessionContext operationContext,
       ProgressMonitor progressMonitor, IGeneratorLogger logger,
