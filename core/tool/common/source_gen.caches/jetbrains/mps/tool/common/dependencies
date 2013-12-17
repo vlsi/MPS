@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.tool.common.GeneratorProperties" file="GeneratorProperties.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+  </dependency>
   <dependency className="jetbrains.mps.tool.common.IMessageFormat" file="IMessageFormat.java">
     <classNode dependClassName="java.lang.CharSequence" />
     <classNode dependClassName="java.lang.String" />
@@ -83,7 +88,9 @@
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.ScriptProperties" file="ScriptProperties.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.tool.common.GeneratorProperties" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.TeamCityMessageFormat" file="TeamCityMessageFormat.java">
     <classNode dependClassName="java.lang.CharSequence" />
