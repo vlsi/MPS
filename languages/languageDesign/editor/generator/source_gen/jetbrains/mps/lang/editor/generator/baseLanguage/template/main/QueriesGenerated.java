@@ -576,14 +576,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "matchingText");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3078850565505994001(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2982664442062271244(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode menuComponent = SLinkOperations.getTarget(_context.getNode(), "cellMenuComponent", false);
-    return SModelOperations.getModelName(SNodeOperations.getModel(menuComponent)) + "!" + SPropertyOperations.getString(menuComponent, "name");
+    return SModelOperations.getModelName(SNodeOperations.getModel(menuComponent)) + "." + SPropertyOperations.getString(menuComponent, "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3078850565505426436(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2982664442062427578(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode menuComponent = SLinkOperations.getTarget(_context.getNode(), "cellMenuComponent", false);
-    return SModelOperations.getModelName(SNodeOperations.getModel(menuComponent)) + "!" + SPropertyOperations.getString(menuComponent, "name");
+    return SModelOperations.getModelName(SNodeOperations.getModel(menuComponent)) + "." + SPropertyOperations.getString(menuComponent, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1210379733937(final IOperationContext operationContext, final PropertyMacroContext _context) {

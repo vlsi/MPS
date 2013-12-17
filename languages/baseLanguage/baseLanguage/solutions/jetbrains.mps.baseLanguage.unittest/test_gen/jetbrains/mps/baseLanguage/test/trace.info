@@ -980,6 +980,22 @@
     <unitInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test$TestBody" />
     <unitInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5679018521759262129">
+    <nodeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="23" startPosition="71" endLine="24" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="24" startPosition="141" endLine="25" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck5679018521759346994#()V" />
+    <nodeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck5679018521759346994#()V" />
+    <scopeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="16" startPosition="69" endLine="18" endPosition="154" />
+    <scopeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="23" startPosition="71" endLine="25" endPosition="154">
+      <varInfo nodeId="5679018521759262129" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.GetElementOperationFollowedByPropertyAccess_Test$TestBody" />
+    <unitInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.GetElementOperationFollowedByPropertyAccess_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6011730950863071455">
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="16" startPosition="42" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
