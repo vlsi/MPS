@@ -51,7 +51,6 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_l06mua_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyMacroStart(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
