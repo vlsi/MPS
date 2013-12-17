@@ -47,6 +47,7 @@ public class ConceptRegistry implements CoreComponent {
   private final Map<String, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<String, ConstraintsDescriptor>();
   private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<String, TextGenDescriptor>();
 
+  //ConceptRegistry is a singleton, so we can omit remove() here though the field is not static
   private final ThreadLocal<Set<Pair<String, LanguageAspect>>> conceptsInLoading = new ThreadLocal<Set<Pair<String, LanguageAspect>>>() {
     @Override
     protected Set<Pair<String, LanguageAspect>> initialValue() {

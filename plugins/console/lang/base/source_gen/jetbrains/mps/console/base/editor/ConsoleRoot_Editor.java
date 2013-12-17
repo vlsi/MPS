@@ -29,8 +29,9 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_drvoix_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drvoix_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drvoix_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_drvoix_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_drvoix_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_drvoix_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_drvoix_f0(editorContext, node));
     return editorCell;
   }
 
@@ -64,7 +65,17 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_drvoix_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_drvoix_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Use Ctrl+M and Ctrl+L to add imports and languages.");
+    editorCell.setCellId("Constant_drvoix_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_drvoix_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("history");
     provider.setNoTargetText("<no history>");
@@ -84,7 +95,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_drvoix_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_drvoix_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commandHolder");
     provider.setNoTargetText("<no commandHolder>");

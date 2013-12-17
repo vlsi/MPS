@@ -34,6 +34,7 @@ import java.util.Set;
 public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   private static Logger LOG = LogManager.getLogger(SNodeAccessUtil.class);
 
+  //SNodeAccessUtilImpl has only one instance, so we can omit remove() here though the field is not static
   private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
   private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
   private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
