@@ -246,7 +246,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     String uniqueName;
     int count = 0;
-    final Set<String> usedNames = getUsedNames(contextNode);
+    final Set<String> usedNames = getUsedNames(null);
     while (true) {
       uniqueName = roughName + (count++);
       if (!usedNames.contains(uniqueName)) break;
@@ -296,6 +296,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
             uniqueNameBuffer.append(suffix);
           }
         }
+        contextNode = topmostNamed;
       }
     } // if(contextNode != null)
 
