@@ -199,21 +199,23 @@ public class Inequalities {
       SNode output = myState.getRepresentative(pair.o2);
       if (input == null || output == null) continue;
 
-      for (SNode inputVar : TypesUtil.getVariables(input, myState)) {
+      final List<SNode> invars = TypesUtil.getVariables(input, myState);
+      for (SNode inputVar : invars) {
         if (TypesUtil.isVariable(inputVar)) {
           myNodesInc.add(inputVar);
           myNodesToBlocksInc.addLink(inputVar, inequality);
         }
       }
-      for (SNode outputVar : TypesUtil.getVariables(output, myState)) {
+      final List<SNode> outvars = TypesUtil.getVariables(output, myState);
+      for (SNode outputVar : outvars) {
         if (TypesUtil.isVariable(outputVar)) {
           myNodesInc.add(outputVar);
           myNodesToBlocksInc.addLink(outputVar, inequality);
         }
       }
       if (input != output) {
-        for (SNode inputVar : TypesUtil.getVariables(input, myState)) {
-          for (SNode outputVar : TypesUtil.getVariables(output, myState)) {
+        for (SNode inputVar : invars) {
+          for (SNode outputVar : outvars) {
             addVariablesLinkInc(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
           }
         }
@@ -269,25 +271,31 @@ public class Inequalities {
       return false;
     }
 
-    // recursive relations have to be eliminated *before* we attempt to pick a type for a var
-    if (trySolvingRecursive(inequalities)) return true;
-
     mySolveOnlyRight = true;
     if (chooseVarAndSolve(mySolvableRight)) return true;
     mySolveOnlyRight = false;
     if (chooseVarAndSolve(mySolvableLeft)) return true;
+
+    // recursive relations have to be eliminated *before* we attempt to pick a type for a var
+    // but this slows down inequations elimination substantially
+    if (trySolvingRecursive(inequalities)) return true;
+
     if (lastChance(inequalities)) return true;
     return false;
   }
 
+  private boolean isRecursive(RelationBlock inequality) {
+    if (TypesUtil.isVariable(inequality.getLeftNode()) || !TypesUtil.isVariable(inequality.getRightNode())) return false;
+    final SNode rightRep = myState.getRepresentative(inequality.getRightNode());
+    if (!TypesUtil.isVariable(rightRep)) return false;
+    final List<SNode> leftVars = TypesUtil.getVariables(inequality.getLeftNode(), myState);
+    if (leftVars.isEmpty()) return false;
+    return leftVars.contains(rightRep);
+  }
+
   private boolean trySolvingRecursive(List<RelationBlock> inequalities) {
     for (RelationBlock inequality : inequalities) {
-      if (!(TypesUtil.isVariable(inequality.getLeftNode()) &&
-          TypesUtil.hasVariablesInside(inequality.getLeftNode()) &&
-          TypesUtil.isVariable(inequality.getRightNode())) &&
-          TypesUtil.getVariables(inequality.getLeftNode(), myState).contains(myState.getRepresentative(inequality.getRightNode())) &&
-          myState.getBlocks().contains(inequality))
-      {
+      if (isRecursive(inequality) && myState.getBlocks().contains(inequality)) {
         myState.executeOperation(new RemoveBlockOperation(inequality));
         return true;
       }
@@ -311,7 +319,8 @@ public class Inequalities {
     Set<RelationBlock> blocks = new THashSet<RelationBlock>(myNodesToBlocksInc.getByFirst(node));
     final Set<Block> stateBlocks = myState.getBlocks();
     for(Iterator<RelationBlock> it = blocks.iterator(); it.hasNext();) {
-      if(!stateBlocks.contains(it.next())) {
+      final RelationBlock next = it.next();
+      if(!stateBlocks.contains(next) || isRecursive(next)) { // recursive relations are solved at the end
         it.remove();
       }
     }
