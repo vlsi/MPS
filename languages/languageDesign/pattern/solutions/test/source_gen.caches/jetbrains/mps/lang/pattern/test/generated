@@ -17,7 +17,7 @@
   <dep model="r:e99a00b2-f235-4c54-b7b3-4db727dc65df(jetbrains.mps.lang.pattern.testLang.generator.template.main@generator)" hash="boa0n9v0ugpryse3efredf7gj4ohyp1" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="-8pe95fvbqbiw9xp2y2yns39icsihjm" dependsOnNodes="true" />
-  <source id="815823070325240409" name="v2" hash="47ivxwdqxfcdae59ej74e6yt6kt8pwl" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="815823070325240409" name="v2" hash="47ivxwdqxfcdae59ej74e6yt6kt8pwl" dependsOnNodes="true">
     <dep root="1563914226484855981" />
     <dep root="1563914226484862621" />
     <dep root="1563914226484895490" />
@@ -44,7 +44,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Patternv2_Test.java" />
   </source>
-  <source id="1563914226484855981" name="v3" hash="3yql8nw8r86ax8vlw8uj08fujb62v3e" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="1563914226484855981" name="v3" hash="3yql8nw8r86ax8vlw8uj08fujb62v3e" dependsOnNodes="true">
     <dep root="1563914226484862621" />
     <dep root="1563914226484895490" />
     <dep root="1563914226484981153" />
@@ -71,7 +71,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Patternv3_Test.java" />
   </source>
-  <source id="1563914226484862621" name="ListPattern" hash="8agmf7l9yil6k0ymkqpxk6uwfro6rbt" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="1563914226484862621" name="ListPattern" hash="8agmf7l9yil6k0ymkqpxk6uwfro6rbt" dependsOnNodes="true">
     <dep root="1563914226484855981" />
     <dep root="1563914226484895490" />
     <dep root="1563914226484981153" />
@@ -98,7 +98,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PatternListPattern_Test.java" />
   </source>
-  <source id="1563914226484895490" name="Property" hash="-bc41ofw65795ig3qjtgfjuzcd0ss8uk" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="1563914226484895490" name="Property" hash="-bc41ofw65795ig3qjtgfjuzcd0ss8uk" dependsOnNodes="true">
     <dep root="1563914226484855981" />
     <dep root="1563914226484862621" />
     <dep root="1563914226484981153" />
@@ -123,7 +123,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PatternProperty_Test.java" />
   </source>
-  <source id="1563914226484981153" name="v1" hash="cjolcbbnqk6mirjhin1o5zuytjb3pet" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="1563914226484981153" name="v1" hash="cjolcbbnqk6mirjhin1o5zuytjb3pet" dependsOnNodes="true">
     <dep root="1563914226484855981" />
     <dep root="1563914226484862621" />
     <dep root="1563914226484895490" />
@@ -150,7 +150,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Patternv1_Test.java" />
   </source>
-  <source id="2879868312063084275" name="OrPattern" hash="cvm05m3h3jbwbncfjx0s0t5og9v5rpw" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="2879868312063084275" name="OrPattern" hash="cvm05m3h3jbwbncfjx0s0t5og9v5rpw" dependsOnNodes="true">
     <dep root="1563914226484855981" />
     <dep root="1563914226484862621" />
     <dep root="1563914226484895490" />
@@ -177,7 +177,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PatternOrPattern_Test.java" />
   </source>
-  <source id="4855904478357165289" name="OrPattern2" hash="-7r2gs0xvj4pll8hkncf8amwzszm4yh7" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="4855904478357165289" name="OrPattern2" hash="-7r2gs0xvj4pll8hkncf8amwzszm4yh7" dependsOnNodes="true">
     <dep root="1563914226484855981" />
     <dep root="1563914226484862621" />
     <dep root="1563914226484895490" />
@@ -204,7 +204,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PatternOrPattern2_Test.java" />
   </source>
-  <source id="8263735385373599995" name="MultipleOr" hash="-e25ziaszm10le3r3waa64eck5e60jzl" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="8263735385373599995" name="MultipleOr" hash="-e25ziaszm10le3r3waa64eck5e60jzl" dependsOnNodes="true">
     <dep root="1563914226484855981" />
     <dep root="1563914226484862621" />
     <dep root="1563914226484895490" />
