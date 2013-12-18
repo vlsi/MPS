@@ -36,6 +36,7 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
             super.registerSynchronizers(configuration);
             getTarget().background().set(Color.LIGHT_GRAY);
             getTarget().dimension().set(new Vector(10, 10));
+            getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
             getTarget().prop(JetpadUtils.SOURCE).set(getSource());
           }
         };

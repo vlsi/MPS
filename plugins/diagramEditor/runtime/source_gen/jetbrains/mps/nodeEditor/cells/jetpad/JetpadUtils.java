@@ -20,6 +20,7 @@ import jetbrains.jetpad.model.property.PropertyChangeEvent;
  */
 public class JetpadUtils {
   public static final ViewPropertySpec<SNode> SOURCE = new ViewPropertySpec<SNode>("inputPort");
+  public static final ViewPropertySpec<Boolean> CONNECTABLE = new ViewPropertySpec<Boolean>("connectable");
   public static final ViewPropertySpec<Object> ID = new ViewPropertySpec("id");
 
   public static Color toAwtColor(jetbrains.jetpad.values.Color color) {

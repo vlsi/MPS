@@ -8,8 +8,8 @@ import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import javax.swing.JComponent;
@@ -52,10 +52,6 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private int myPatternEditorX;
   private int myPatternEditorY;
   protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
-  private SNode myCurrentFrom;
-  private SNode myCurrentTo;
-  private Object myCurrentFromId;
-  private Object myCurrentToId;
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
@@ -232,26 +228,25 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
         return Collections.<SubstituteAction>singletonList(new AbstractNodeSubstituteAction(childNodeConcept, childNodeConcept, container) {
           @Override
           public boolean canSubstitute(String string) {
-            return hasConnectionDragFeedback() && super.canSubstitute(string) && canCreateConnector.invoke(myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
+            if (!(hasConnectionDragFeedback()) || !(super.canSubstitute(string))) {
+              return false;
+            }
+
+            DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
+            return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
           }
 
           @Override
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
             SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container), editorContext.getOperationContext().getScope());
             ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
-            setConnectorCallback.invoke(result, myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
+            DiagramCell.ConnectionInfo connectionInfo = new DiagramCell.ConnectionInfo();
+            setConnectorCallback.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
             return result;
           }
         });
       }
     };
-  }
-
-  public void setCurrentConnectorContext(SNode from, Object fromId, SNode to, Object toId) {
-    myCurrentFrom = from;
-    myCurrentFromId = fromId;
-    myCurrentTo = to;
-    myCurrentToId = toId;
   }
 
   @Override
@@ -273,8 +268,6 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
       }
     };
   }
-
-
 
   private java.awt.event.KeyEvent getAWTKeyEvent(KeyEvent jetPadKeyEvent, boolean isTyped) {
     // TODO: better integration with MPS substitute editor is required here 
@@ -339,20 +332,94 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     return !(myConnectionSingleList.isEmpty());
   }
 
-  public PolyLineConnection showConnectionDragFeedback(View fromView, Vector toLocation) {
+  public PolyLineConnection showConnectionDragFeedback(View fromView) {
     assert myConnectionSingleList.isEmpty();
     PolyLineConnection connection = new PolyLineConnection();
     connection.fromView().set(fromView);
-    connection.toLocation().set(toLocation);
     myConnectionSingleList.setItem(connection);
     return connection;
   }
 
   public void updateConnectionDragFeedback(Vector toLocation) {
+    View targetView = myComponent.container().root().viewAt(toLocation);
+    while (targetView != null && targetView.prop(JetpadUtils.CONNECTABLE).get() == null) {
+      targetView = targetView.parent().get();
+    }
+    if (targetView != null && targetView.prop(JetpadUtils.CONNECTABLE).get().booleanValue()) {
+      myConnectionSingleList.getItem().toView().set(targetView);
+    } else {
+      myConnectionSingleList.getItem().toView().set(null);
+    }
     myConnectionSingleList.getItem().toLocation().set(toLocation);
   }
 
-  public void hideConnectionDragFeedback() {
+  private void hideConnectionDragFeedback() {
     myConnectionSingleList.setItem(null);
+  }
+
+  private class ConnectionInfo {
+
+
+    private ConnectionInfo() {
+      PolyLineConnection connectionDragFeedback = myConnectionSingleList.getItem();
+      if (connectionDragFeedback == null) {
+        return;
+      }
+
+      View fromView = connectionDragFeedback.fromView().get();
+      View toView = connectionDragFeedback.toView().get();
+      if (fromView == null || toView == null) {
+        return;
+      }
+
+      setFromNode(fromView.prop(JetpadUtils.SOURCE).get());
+      setFromId(fromView.prop(JetpadUtils.ID).get());
+      setToNode(toView.prop(JetpadUtils.SOURCE).get());
+      setToId(toView.prop(JetpadUtils.ID).get());
+    }
+
+    public boolean isValid() {
+      return myFromNode != null && myToNode != null;
+    }
+
+    private SNode myFromNode;
+
+    public SNode getFromNode() {
+      return this.myFromNode;
+    }
+
+    private void setFromNode(SNode value) {
+      this.myFromNode = value;
+    }
+
+    private Object myFromId;
+
+    public Object getFromId() {
+      return this.myFromId;
+    }
+
+    private void setFromId(Object value) {
+      this.myFromId = value;
+    }
+
+    private SNode myToNode;
+
+    public SNode getToNode() {
+      return this.myToNode;
+    }
+
+    private void setToNode(SNode value) {
+      this.myToNode = value;
+    }
+
+    private Object myToId;
+
+    public Object getToId() {
+      return this.myToId;
+    }
+
+    private void setToId(Object value) {
+      this.myToId = value;
+    }
   }
 }

@@ -111,6 +111,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
             }
 
             registerAditionalSynchronizers(configuration, this);
+            getTarget().contentView.prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
             getTarget().rect.prop(JetpadUtils.SOURCE).set(getSource());
             Block_diagramGenerated_Editor.setDiagramNodeView(getTarget());
           }

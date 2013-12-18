@@ -64,6 +64,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                     super.registerSynchronizers(configuration);
                     getTarget().background().set(Color.LIGHT_GRAY);
                     getTarget().dimension().set(new Vector(10, 10));
+                    getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
                     getTarget().prop(JetpadUtils.SOURCE).set(node);
                     getTarget().prop(JetpadUtils.ID).set(id);
 
@@ -88,11 +89,10 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                         if (diagramCell == null) {
                           return;
                         }
-                        if (diagramCell.hasConnectionDragFeedback()) {
-                          diagramCell.updateConnectionDragFeedback(e.location());
-                        } else {
-                          diagramCell.showConnectionDragFeedback(getTarget(), e.location());
+                        if (!(diagramCell.hasConnectionDragFeedback())) {
+                          diagramCell.showConnectionDragFeedback(getTarget());
                         }
+                        diagramCell.updateConnectionDragFeedback(e.location());
                       }
                     }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
                       @Override
@@ -101,15 +101,11 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                         if (diagramCell == null || !(diagramCell.hasConnectionDragFeedback())) {
                           return;
                         }
-                        View atEvent = getTarget().container().root().viewAt(e.location());
-                        if (atEvent == null || atEvent.prop(JetpadUtils.SOURCE).get() == null) {
-                          diagramCell.hideConnectionDragFeedback();
-                        } else {
-                          diagramCell.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
-                          diagramCell.createNewDiagramElement(e.location().x, e.location().y);
-                        }
+                        diagramCell.updateConnectionDragFeedback(e.location());
+                        diagramCell.createNewDiagramElement(e.location().x, e.location().y);
                       }
                     }).build());
+                    getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
                     getTarget().prop(JetpadUtils.SOURCE).set(node);
                     getTarget().prop(JetpadUtils.ID).set(id);
 
@@ -160,6 +156,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
             }
 
             registerAditionalSynchronizers(configuration, this);
+            getTarget().contentView.prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
             getTarget().rect.prop(JetpadUtils.SOURCE).set(getSource());
             BlockInstance_diagramGenerated_Editor.setDiagramNodeView(getTarget());
           }
