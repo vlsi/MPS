@@ -25,10 +25,10 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.event.KeyEvent;
 import jetbrains.jetpad.event.Key;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -36,6 +36,10 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
+import java.util.Collections;
+import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
@@ -141,7 +145,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
         if (viewUnderMouse != myComponent.container().root()) {
           return;
         }
-        showPatternEditor(event.x(), event.y());
+        createNewDiagramElement(event.x(), event.y());
         event.consume();
       }
     }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
@@ -168,10 +172,32 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     }).build();
   }
 
-  public void showPatternEditor(int x, int y) {
+  public void createNewDiagramElement(int x, int y) {
+    if (trySubstituteImmediately()) {
+      return;
+    }
     myPatternEditorX = x;
     myPatternEditorY = y;
     getEditor().activateNodeSubstituteChooser(this, false);
+  }
+
+  private boolean trySubstituteImmediately() {
+    List<SubstituteAction> matchingActions = getSubstituteInfo().getMatchingActions("", false);
+    if (matchingActions.size() != 1) {
+      return false;
+    }
+    final SubstituteAction theAction = matchingActions.get(0);
+    final boolean[] result = new boolean[]{false};
+    getContext().getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        result[0] = theAction.canSubstitute("");
+      }
+    });
+    if (!(result[0])) {
+      return false;
+    }
+    theAction.substitute(getContext(), "");
+    return true;
   }
 
   private void hidePatternEditor() {
@@ -198,27 +224,25 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   }
 
   public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
+    // TMP solution: manually creating instance of connection instead of using 
+    // ModelActions.createChildNodeSubstituteActions() because of mbeddr reqirements: 
+    // hiding text-specific connection substitute actions from the diagram 
     return new SubstituteInfoPartExt() {
-      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-        List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
-          result.add(new NodeSubstituteActionWrapper(action) {
-            @Override
-            public SNode substitute(@Nullable EditorContext context, String string) {
-              SNode result = super.substitute(context, string);
-              setConnectorCallback.invoke(result, myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
-              return result;
-            }
+      public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+        return Collections.<SubstituteAction>singletonList(new AbstractNodeSubstituteAction(childNodeConcept, childNodeConcept, container) {
+          @Override
+          public boolean canSubstitute(String string) {
+            return super.canSubstitute(string) && canCreateConnector.invoke(myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
+          }
 
-
-
-            @Override
-            public boolean canSubstitute(String string) {
-              return super.canSubstitute(string) && canCreateConnector.invoke(myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
-            }
-          });
-        }
-        return result;
+          @Override
+          protected SNode doSubstitute(@Nullable EditorContext context, String string) {
+            SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container), editorContext.getOperationContext().getScope());
+            ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
+            setConnectorCallback.invoke(result, myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
+            return result;
+          }
+        });
       }
     };
   }
