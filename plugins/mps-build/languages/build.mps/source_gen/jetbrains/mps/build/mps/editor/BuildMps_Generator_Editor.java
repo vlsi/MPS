@@ -249,10 +249,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     if (renderingCondition_leuqor_a1e0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_leuqor_b4a(editorContext, node));
     }
-    editorCell.addEditorCell(this.createComponent_leuqor_c4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_leuqor_d4a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_leuqor_e4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_leuqor_f4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_leuqor_c4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_leuqor_d4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_leuqor_e4a(editorContext, node));
     return editorCell;
   }
 
@@ -288,17 +287,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "doNotCompile");
   }
 
-  private EditorCell createComponent_leuqor_c4a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.ModuleGenerationOptions");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_leuqor_d4a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Generator_Editor.sourcesListHandler_leuqor_d4a(node, "sources", editorContext);
+  private EditorCell createRefNodeList_leuqor_c4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Generator_Editor.sourcesListHandler_leuqor_c4a(node, "sources", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_sources");
     Style style = new StyleImpl();
@@ -311,8 +301,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class sourcesListHandler_leuqor_d4a extends RefNodeListHandler {
-    public sourcesListHandler_leuqor_d4a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class sourcesListHandler_leuqor_c4a extends RefNodeListHandler {
+    public sourcesListHandler_leuqor_c4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -335,7 +325,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_leuqor_a3e0(editorContext, node);
+      return this.createConstant_leuqor_a2e0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -350,9 +340,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_leuqor_a3e0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_leuqor_a2e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_leuqor_a3e0");
+      editorCell.setCellId("Constant_leuqor_a2e0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -361,9 +351,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_leuqor_e4a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_leuqor_d4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
-    editorCell.setCellId("Constant_leuqor_e4a");
+    editorCell.setCellId("Constant_leuqor_d4a");
     Style style = new StyleImpl();
     workflowStyles_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -372,8 +362,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_leuqor_f4a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Generator_Editor.dependenciesListHandler_leuqor_f4a(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_leuqor_e4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Generator_Editor.dependenciesListHandler_leuqor_e4a(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     Style style = new StyleImpl();
@@ -384,8 +374,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class dependenciesListHandler_leuqor_f4a extends RefNodeListHandler {
-    public dependenciesListHandler_leuqor_f4a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_leuqor_e4a extends RefNodeListHandler {
+    public dependenciesListHandler_leuqor_e4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -408,7 +398,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_leuqor_a5e0(editorContext, node);
+      return this.createConstant_leuqor_a4e0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -423,9 +413,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_leuqor_a5e0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_leuqor_a4e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_leuqor_a5e0");
+      editorCell.setCellId("Constant_leuqor_a4e0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -521,10 +511,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     if (renderingCondition_leuqor_a1b0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_leuqor_b1a0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createComponent_leuqor_c1a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_leuqor_d1a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_leuqor_e1a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_leuqor_f1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_leuqor_c1a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_leuqor_d1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_leuqor_e1a0(editorContext, node));
     return editorCell;
   }
 
@@ -556,17 +545,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "doNotCompile");
   }
 
-  private EditorCell createComponent_leuqor_c1a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.ModuleGenerationOptions");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_leuqor_d1a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Generator_Editor.sourcesListHandler_leuqor_d1a0(node, "sources", editorContext);
+  private EditorCell createRefNodeList_leuqor_c1a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Generator_Editor.sourcesListHandler_leuqor_c1a0(node, "sources", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_sources_1");
     Style style = new StyleImpl();
@@ -579,8 +559,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class sourcesListHandler_leuqor_d1a0 extends RefNodeListHandler {
-    public sourcesListHandler_leuqor_d1a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class sourcesListHandler_leuqor_c1a0 extends RefNodeListHandler {
+    public sourcesListHandler_leuqor_c1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -603,7 +583,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_leuqor_a3b0a(editorContext, node);
+      return this.createConstant_leuqor_a2b0a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -618,9 +598,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_leuqor_a3b0a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_leuqor_a2b0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_leuqor_a3b0a");
+      editorCell.setCellId("Constant_leuqor_a2b0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -629,9 +609,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_leuqor_e1a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_leuqor_d1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
-    editorCell.setCellId("Constant_leuqor_e1a0");
+    editorCell.setCellId("Constant_leuqor_d1a0");
     Style style = new StyleImpl();
     workflowStyles_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -640,8 +620,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_leuqor_f1a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Generator_Editor.dependenciesListHandler_leuqor_f1a0(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_leuqor_e1a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Generator_Editor.dependenciesListHandler_leuqor_e1a0(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies_1");
     Style style = new StyleImpl();
@@ -652,8 +632,8 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class dependenciesListHandler_leuqor_f1a0 extends RefNodeListHandler {
-    public dependenciesListHandler_leuqor_f1a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_leuqor_e1a0 extends RefNodeListHandler {
+    public dependenciesListHandler_leuqor_e1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -676,7 +656,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_leuqor_a5b0a(editorContext, node);
+      return this.createConstant_leuqor_a4b0a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -691,9 +671,9 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_leuqor_a5b0a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_leuqor_a4b0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_leuqor_a5b0a");
+      editorCell.setCellId("Constant_leuqor_a4b0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);

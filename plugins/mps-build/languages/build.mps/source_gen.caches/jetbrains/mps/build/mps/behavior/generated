@@ -14,7 +14,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-dyt5u4jh6n0m423lv7waqraopz24g4r" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-dm3fucph2z3yr5mp9u50b5r51i9nf2r" />
-  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="bb6s5fqkdfhfbbzta9z0mcdf8rdf8lu" />
+  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="avne8tdolyx263tilrxqaxahp5klu5r" />
   <dep model="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" hash="c8k0p47ld3evqz28d1xgerh9cmgwcn0" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="2warf9wz9zr88u4nnjvoe96w6bynxhi" />
   <dep model="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" hash="-sgmajqo3qzuj4f17w8xg2vzkg7eaw4" />
@@ -99,7 +99,6 @@
     <file name="BuildMps_ModuleDependencyOnModule_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependency_BehaviorDescriptor.java" />
-    <file name="BuildMps_ModuleGenerationOptions_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleJarRuntime_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleJavaSource_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleModelRoot_BehaviorDescriptor.java" />
