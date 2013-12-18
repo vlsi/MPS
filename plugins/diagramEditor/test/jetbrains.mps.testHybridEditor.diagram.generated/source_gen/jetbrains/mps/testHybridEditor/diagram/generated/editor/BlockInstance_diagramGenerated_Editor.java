@@ -106,8 +106,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                           diagramCell.hideConnectionDragFeedback();
                         } else {
                           diagramCell.setCurrentConnectorContext(getTarget().prop(JetpadUtils.SOURCE).get(), getTarget().prop(JetpadUtils.ID).get(), atEvent.prop(JetpadUtils.SOURCE).get(), atEvent.prop(JetpadUtils.ID).get());
-                          diagramCell.activateConnectorInfo();
-                          diagramCell.showPatternEditor(e.location().x, e.location().y);
+                          diagramCell.createNewDiagramElement(e.location().x, e.location().y);
                         }
                       }
                     }).build());

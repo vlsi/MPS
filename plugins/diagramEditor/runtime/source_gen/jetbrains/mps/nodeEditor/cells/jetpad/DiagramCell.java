@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.jetpad.projectional.view.ViewContainer;
@@ -40,7 +39,6 @@ import java.util.Collections;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
 import java.awt.Point;
@@ -54,8 +52,6 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
   private int myPatternEditorX;
   private int myPatternEditorY;
   protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
-  private CompositeSubstituteInfo myBlockInfo;
-  private CompositeSubstituteInfo myConnectorInfo;
   private SNode myCurrentFrom;
   private SNode myCurrentTo;
   private Object myCurrentFromId;
@@ -140,7 +136,6 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
         } else {
           view.container().focusedView().set(view);
         }
-        activateBlockInfo();
         View viewUnderMouse = view.viewAt(event.location());
         if (viewUnderMouse != myComponent.container().root()) {
           return;
@@ -211,6 +206,11 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
         for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
           result.add(new NodeSubstituteActionWrapper(action) {
             @Override
+            public boolean canSubstitute(String string) {
+              return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
+            }
+
+            @Override
             public SNode substitute(@Nullable EditorContext context, String string) {
               SNode result = super.substitute(context, string);
               setNodePositionCallback.invoke(result, myPatternEditorX, myPatternEditorY);
@@ -232,7 +232,7 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
         return Collections.<SubstituteAction>singletonList(new AbstractNodeSubstituteAction(childNodeConcept, childNodeConcept, container) {
           @Override
           public boolean canSubstitute(String string) {
-            return super.canSubstitute(string) && canCreateConnector.invoke(myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
+            return hasConnectionDragFeedback() && super.canSubstitute(string) && canCreateConnector.invoke(myCurrentFrom, myCurrentFromId, myCurrentTo, myCurrentToId);
           }
 
           @Override
@@ -245,22 +245,6 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
         });
       }
     };
-  }
-
-  public void setBlockSubstituteInfo(SubstituteInfoPartExt[] infoParts) {
-    myBlockInfo = new CompositeSubstituteInfo(getContext(), new BasicCellContext(getSNode()), infoParts);
-  }
-
-  public void setConnectorSubstituteInfo(SubstituteInfoPartExt[] infoParts) {
-    myConnectorInfo = new CompositeSubstituteInfo(getContext(), new BasicCellContext(getSNode()), infoParts);
-  }
-
-  public void activateBlockInfo() {
-    setSubstituteInfo(myBlockInfo);
-  }
-
-  public void activateConnectorInfo() {
-    setSubstituteInfo(myConnectorInfo);
   }
 
   public void setCurrentConnectorContext(SNode from, Object fromId, SNode to, Object toId) {
