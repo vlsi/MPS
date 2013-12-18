@@ -211,11 +211,12 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setCanBeFolded(true);
     editorCell.addEditorCell(this.createConstant_ucemm3_a4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ucemm3_b4a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ucemm3_c4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ucemm3_d4a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ucemm3_e4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ucemm3_f4a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ucemm3_b4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ucemm3_c4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ucemm3_d4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ucemm3_e4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ucemm3_f4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ucemm3_g4a(editorContext, node));
     return editorCell;
   }
 
@@ -234,8 +235,17 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ucemm3_b4a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Language_Editor.sourcesListHandler_ucemm3_b4a(node, "sources", editorContext);
+  private EditorCell createComponent_ucemm3_b4a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.ModuleGenerationOptions");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_ucemm3_c4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Language_Editor.sourcesListHandler_ucemm3_c4a(node, "sources", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_sources");
     Style style = new StyleImpl();
@@ -247,8 +257,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class sourcesListHandler_ucemm3_b4a extends RefNodeListHandler {
-    public sourcesListHandler_ucemm3_b4a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class sourcesListHandler_ucemm3_c4a extends RefNodeListHandler {
+    public sourcesListHandler_ucemm3_c4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -271,7 +281,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ucemm3_a1e0(editorContext, node);
+      return this.createConstant_ucemm3_a2e0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -286,9 +296,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_ucemm3_a1e0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ucemm3_a2e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_ucemm3_a1e0");
+      editorCell.setCellId("Constant_ucemm3_a2e0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -297,9 +307,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_ucemm3_c4a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ucemm3_d4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
-    editorCell.setCellId("Constant_ucemm3_c4a");
+    editorCell.setCellId("Constant_ucemm3_d4a");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -308,8 +318,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ucemm3_d4a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Language_Editor.dependenciesListHandler_ucemm3_d4a(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_ucemm3_e4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Language_Editor.dependenciesListHandler_ucemm3_e4a(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     Style style = new StyleImpl();
@@ -320,8 +330,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class dependenciesListHandler_ucemm3_d4a extends RefNodeListHandler {
-    public dependenciesListHandler_ucemm3_d4a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_ucemm3_e4a extends RefNodeListHandler {
+    public dependenciesListHandler_ucemm3_e4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -344,7 +354,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ucemm3_a3e0(editorContext, node);
+      return this.createConstant_ucemm3_a4e0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -359,9 +369,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_ucemm3_a3e0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ucemm3_a4e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_ucemm3_a3e0");
+      editorCell.setCellId("Constant_ucemm3_a4e0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -370,9 +380,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_ucemm3_e4a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ucemm3_f4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "runtime:");
-    editorCell.setCellId("Constant_ucemm3_e4a");
+    editorCell.setCellId("Constant_ucemm3_f4a");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -381,8 +391,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ucemm3_f4a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Language_Editor.runtimeListHandler_ucemm3_f4a(node, "runtime", editorContext);
+  private EditorCell createRefNodeList_ucemm3_g4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Language_Editor.runtimeListHandler_ucemm3_g4a(node, "runtime", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_runtime");
     Style style = new StyleImpl();
@@ -393,8 +403,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class runtimeListHandler_ucemm3_f4a extends RefNodeListHandler {
-    public runtimeListHandler_ucemm3_f4a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class runtimeListHandler_ucemm3_g4a extends RefNodeListHandler {
+    public runtimeListHandler_ucemm3_g4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -417,7 +427,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ucemm3_a5e0(editorContext, node);
+      return this.createConstant_ucemm3_a6e0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -432,9 +442,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_ucemm3_a5e0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ucemm3_a6e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_ucemm3_a5e0");
+      editorCell.setCellId("Constant_ucemm3_a6e0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -527,11 +537,12 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setCanBeFolded(true);
     editorCell.addEditorCell(this.createConstant_ucemm3_a1a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ucemm3_b1a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ucemm3_c1a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ucemm3_d1a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ucemm3_e1a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ucemm3_f1a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ucemm3_b1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ucemm3_c1a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ucemm3_d1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ucemm3_e1a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ucemm3_f1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ucemm3_g1a0(editorContext, node));
     return editorCell;
   }
 
@@ -546,8 +557,17 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ucemm3_b1a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Language_Editor.sourcesListHandler_ucemm3_b1a0(node, "sources", editorContext);
+  private EditorCell createComponent_ucemm3_b1a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.ModuleGenerationOptions");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_ucemm3_c1a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Language_Editor.sourcesListHandler_ucemm3_c1a0(node, "sources", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_sources_1");
     Style style = new StyleImpl();
@@ -559,8 +579,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class sourcesListHandler_ucemm3_b1a0 extends RefNodeListHandler {
-    public sourcesListHandler_ucemm3_b1a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class sourcesListHandler_ucemm3_c1a0 extends RefNodeListHandler {
+    public sourcesListHandler_ucemm3_c1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -583,7 +603,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ucemm3_a1b0a(editorContext, node);
+      return this.createConstant_ucemm3_a2b0a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -598,9 +618,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_ucemm3_a1b0a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ucemm3_a2b0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_ucemm3_a1b0a");
+      editorCell.setCellId("Constant_ucemm3_a2b0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -609,9 +629,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_ucemm3_c1a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ucemm3_d1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
-    editorCell.setCellId("Constant_ucemm3_c1a0");
+    editorCell.setCellId("Constant_ucemm3_d1a0");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -620,8 +640,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ucemm3_d1a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Language_Editor.dependenciesListHandler_ucemm3_d1a0(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_ucemm3_e1a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Language_Editor.dependenciesListHandler_ucemm3_e1a0(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies_1");
     Style style = new StyleImpl();
@@ -632,8 +652,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class dependenciesListHandler_ucemm3_d1a0 extends RefNodeListHandler {
-    public dependenciesListHandler_ucemm3_d1a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_ucemm3_e1a0 extends RefNodeListHandler {
+    public dependenciesListHandler_ucemm3_e1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -656,7 +676,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ucemm3_a3b0a(editorContext, node);
+      return this.createConstant_ucemm3_a4b0a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -671,9 +691,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_ucemm3_a3b0a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ucemm3_a4b0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_ucemm3_a3b0a");
+      editorCell.setCellId("Constant_ucemm3_a4b0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
@@ -682,9 +702,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_ucemm3_e1a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ucemm3_f1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "runtime:");
-    editorCell.setCellId("Constant_ucemm3_e1a0");
+    editorCell.setCellId("Constant_ucemm3_f1a0");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -693,8 +713,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ucemm3_f1a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_Language_Editor.runtimeListHandler_ucemm3_f1a0(node, "runtime", editorContext);
+  private EditorCell createRefNodeList_ucemm3_g1a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_Language_Editor.runtimeListHandler_ucemm3_g1a0(node, "runtime", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_runtime_1");
     Style style = new StyleImpl();
@@ -705,8 +725,8 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class runtimeListHandler_ucemm3_f1a0 extends RefNodeListHandler {
-    public runtimeListHandler_ucemm3_f1a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class runtimeListHandler_ucemm3_g1a0 extends RefNodeListHandler {
+    public runtimeListHandler_ucemm3_g1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -729,7 +749,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ucemm3_a5b0a(editorContext, node);
+      return this.createConstant_ucemm3_a6b0a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -744,9 +764,9 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_ucemm3_a5b0a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ucemm3_a6b0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_ucemm3_a5b0a");
+      editorCell.setCellId("Constant_ucemm3_a6b0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);

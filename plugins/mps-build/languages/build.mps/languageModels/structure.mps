@@ -293,6 +293,11 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4297162197621219900" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="generatorOptions" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4297162197621205241" resolveInfo="BuildMps_ModuleGenerationOptions" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="322010710376037449" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleDependencyOnDevKit" />
@@ -892,6 +897,43 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="269707337715631452" nodeInfo="ig">
       <property name="externalValue" nameId="tpce.1083923523172" value="tests" />
       <property name="internalValue" nameId="tpce.1083923523171" value="tests" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4297162197620964123" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
+    <property name="name" nameId="tpck.1169194664001" value="BuildMps_GeneratorOptions" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generator options" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197620978188" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="strict" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197620978190" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="parallel" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197620978193" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="parallelThreads" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4297162197621031140" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="inplace" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4297162197621031138" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4297162197621205241" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Project" />
+    <property name="name" nameId="tpck.1169194664001" value="BuildMps_ModuleGenerationOptions" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply generation options" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4297162197621138199" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="options" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4297162197620964123" resolveInfo="BuildMps_GeneratorOptions" />
     </node>
   </root>
 </model>
