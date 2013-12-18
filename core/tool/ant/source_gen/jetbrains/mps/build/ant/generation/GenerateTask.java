@@ -49,6 +49,10 @@ public class GenerateTask extends MpsLoadTask {
     myGenProps.setInplaceTransform(inplaceEnabled);
   }
 
+  public void setParallelThreads(int threadCount) {
+    myGenProps.setParallelThreads(threadCount);
+  }
+
   public void addConfiguredPlugin(Plugin plugin) {
     String property = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
     if ((property == null || property.length() == 0)) {

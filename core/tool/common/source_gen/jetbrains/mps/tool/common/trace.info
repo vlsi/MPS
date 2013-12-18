@@ -37,49 +37,68 @@
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/3415722583340914388">
     <nodeInfo nodeId="3415722583340934659" fileName="GeneratorProperties.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TRANSFORM_IN_PLACE" />
-    <nodeInfo nodeId="3415722583340939341" fileName="GeneratorProperties.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARALLEL_MODE" />
-    <nodeInfo nodeId="3415722583341620943" fileName="GeneratorProperties.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScript" />
-    <nodeInfo nodeId="3415722583341620947" fileName="GeneratorProperties.java" startLine="21" startPosition="45" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5682549678865142920" fileName="GeneratorProperties.java" startLine="25" startPosition="64" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3415722583341725209" fileName="GeneratorProperties.java" startLine="26" startPosition="68" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5682549678865142940" fileName="GeneratorProperties.java" startLine="30" startPosition="33" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5682549678865142964" fileName="GeneratorProperties.java" startLine="34" startPosition="68" endLine="35" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3415722583341726804" fileName="GeneratorProperties.java" startLine="35" startPosition="72" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5682549678865142984" fileName="GeneratorProperties.java" startLine="39" startPosition="35" endLine="40" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3415722583341291341" fileName="GeneratorProperties.java" startLine="43" startPosition="74" endLine="44" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3415722583341728011" fileName="GeneratorProperties.java" startLine="44" startPosition="79" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3415722583341408413" fileName="GeneratorProperties.java" startLine="48" startPosition="39" endLine="49" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3415722583341620826" fileName="GeneratorProperties.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorProperties#(Ljetbrains/mps/tool/common/Script;)V" />
-    <nodeInfo nodeId="5682549678865142936" fileName="GeneratorProperties.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStrictMode#()Z" />
-    <nodeInfo nodeId="5682549678865142980" fileName="GeneratorProperties.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParallelMode#()Z" />
-    <nodeInfo nodeId="3415722583341320045" fileName="GeneratorProperties.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInplaceTransform#()Z" />
-    <nodeInfo nodeId="5682549678865142914" fileName="GeneratorProperties.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStrictMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
-    <nodeInfo nodeId="5682549678865142958" fileName="GeneratorProperties.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setParallelMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
-    <nodeInfo nodeId="3415722583341225070" fileName="GeneratorProperties.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInplaceTransform#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
-    <nodeInfo nodeId="3415722583340939337" fileName="GeneratorProperties.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRICT_MODE" />
-    <scopeInfo nodeId="3415722583341620830" fileName="GeneratorProperties.java" startLine="21" startPosition="45" endLine="22" endPosition="22" />
-    <scopeInfo nodeId="5682549678865142939" fileName="GeneratorProperties.java" startLine="30" startPosition="33" endLine="31" endPosition="67" />
-    <scopeInfo nodeId="5682549678865142983" fileName="GeneratorProperties.java" startLine="39" startPosition="35" endLine="40" endPosition="69" />
-    <scopeInfo nodeId="3415722583341320049" fileName="GeneratorProperties.java" startLine="48" startPosition="39" endLine="49" endPosition="74" />
-    <scopeInfo nodeId="5682549678865142919" fileName="GeneratorProperties.java" startLine="25" startPosition="64" endLine="27" endPosition="16" />
-    <scopeInfo nodeId="5682549678865142963" fileName="GeneratorProperties.java" startLine="34" startPosition="68" endLine="36" endPosition="16" />
-    <scopeInfo nodeId="3415722583341225074" fileName="GeneratorProperties.java" startLine="43" startPosition="74" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="3415722583341620826" fileName="GeneratorProperties.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="4297162197629917442" fileName="GeneratorProperties.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_COUNT" />
+    <nodeInfo nodeId="3415722583340939341" fileName="GeneratorProperties.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARALLEL_MODE" />
+    <nodeInfo nodeId="3415722583341620943" fileName="GeneratorProperties.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScript" />
+    <nodeInfo nodeId="3415722583341620947" fileName="GeneratorProperties.java" startLine="22" startPosition="45" endLine="23" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865142920" fileName="GeneratorProperties.java" startLine="26" startPosition="64" endLine="27" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3415722583341725209" fileName="GeneratorProperties.java" startLine="27" startPosition="68" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5682549678865142940" fileName="GeneratorProperties.java" startLine="31" startPosition="33" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5682549678865142964" fileName="GeneratorProperties.java" startLine="35" startPosition="68" endLine="36" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3415722583341726804" fileName="GeneratorProperties.java" startLine="36" startPosition="72" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5682549678865142984" fileName="GeneratorProperties.java" startLine="40" startPosition="35" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4297162197629899456" fileName="GeneratorProperties.java" startLine="44" startPosition="67" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4297162197629900290" fileName="GeneratorProperties.java" startLine="45" startPosition="71" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4297162197629913734" fileName="GeneratorProperties.java" startLine="50" startPosition="9" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4297162197629949313" fileName="GeneratorProperties.java" startLine="52" startPosition="40" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3415722583341291341" fileName="GeneratorProperties.java" startLine="57" startPosition="74" endLine="58" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3415722583341728011" fileName="GeneratorProperties.java" startLine="58" startPosition="79" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3415722583341408413" fileName="GeneratorProperties.java" startLine="62" startPosition="39" endLine="63" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3415722583341620826" fileName="GeneratorProperties.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorProperties#(Ljetbrains/mps/tool/common/Script;)V" />
+    <nodeInfo nodeId="5682549678865142936" fileName="GeneratorProperties.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStrictMode#()Z" />
+    <nodeInfo nodeId="5682549678865142980" fileName="GeneratorProperties.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParallelMode#()Z" />
+    <nodeInfo nodeId="3415722583341320045" fileName="GeneratorProperties.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInplaceTransform#()Z" />
+    <nodeInfo nodeId="5682549678865142914" fileName="GeneratorProperties.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStrictMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
+    <nodeInfo nodeId="5682549678865142958" fileName="GeneratorProperties.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setParallelMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
+    <nodeInfo nodeId="4297162197629886268" fileName="GeneratorProperties.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setParallelThreads#(I)Ljetbrains/mps/tool/common/GeneratorProperties;" />
+    <nodeInfo nodeId="3415722583341225070" fileName="GeneratorProperties.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInplaceTransform#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
+    <nodeInfo nodeId="3415722583340939337" fileName="GeneratorProperties.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRICT_MODE" />
+    <nodeInfo nodeId="4297162197629942116" fileName="GeneratorProperties.java" startLine="49" startPosition="35" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4297162197629902829" fileName="GeneratorProperties.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParallelThreads#()I" />
+    <scopeInfo nodeId="3415722583341620830" fileName="GeneratorProperties.java" startLine="22" startPosition="45" endLine="23" endPosition="22" />
+    <scopeInfo nodeId="5682549678865142939" fileName="GeneratorProperties.java" startLine="31" startPosition="33" endLine="32" endPosition="67" />
+    <scopeInfo nodeId="5682549678865142983" fileName="GeneratorProperties.java" startLine="40" startPosition="35" endLine="41" endPosition="69" />
+    <scopeInfo nodeId="4297162197629942118" fileName="GeneratorProperties.java" startLine="50" startPosition="9" endLine="51" endPosition="66" />
+    <scopeInfo nodeId="4297162197629942119" fileName="GeneratorProperties.java" startLine="52" startPosition="0" endLine="53" endPosition="15">
+      <varInfo nodeId="4297162197629942121" varName="ex" />
+    </scopeInfo>
+    <scopeInfo nodeId="4297162197629942125" fileName="GeneratorProperties.java" startLine="52" startPosition="40" endLine="53" endPosition="15" />
+    <scopeInfo nodeId="3415722583341320049" fileName="GeneratorProperties.java" startLine="62" startPosition="39" endLine="63" endPosition="74" />
+    <scopeInfo nodeId="5682549678865142919" fileName="GeneratorProperties.java" startLine="26" startPosition="64" endLine="28" endPosition="16" />
+    <scopeInfo nodeId="5682549678865142963" fileName="GeneratorProperties.java" startLine="35" startPosition="68" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="4297162197629886272" fileName="GeneratorProperties.java" startLine="44" startPosition="67" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="3415722583341225074" fileName="GeneratorProperties.java" startLine="57" startPosition="74" endLine="59" endPosition="16" />
+    <scopeInfo nodeId="3415722583341620826" fileName="GeneratorProperties.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="3415722583341620871" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="5682549678865142936" fileName="GeneratorProperties.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5682549678865142980" fileName="GeneratorProperties.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3415722583341320045" fileName="GeneratorProperties.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="5682549678865142914" fileName="GeneratorProperties.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="5682549678865142936" fileName="GeneratorProperties.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="5682549678865142980" fileName="GeneratorProperties.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="3415722583341320045" fileName="GeneratorProperties.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5682549678865142914" fileName="GeneratorProperties.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5682549678865142917" varName="strictMode" />
     </scopeInfo>
-    <scopeInfo nodeId="5682549678865142958" fileName="GeneratorProperties.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="5682549678865142958" fileName="GeneratorProperties.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5682549678865142959" varName="parallelMode" />
     </scopeInfo>
-    <scopeInfo nodeId="3415722583341225070" fileName="GeneratorProperties.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="4297162197629886268" fileName="GeneratorProperties.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4297162197629898720" varName="threadsCount" />
+    </scopeInfo>
+    <scopeInfo nodeId="3415722583341225070" fileName="GeneratorProperties.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="3415722583341288139" varName="inplaceEnabled" />
     </scopeInfo>
-    <unitInfo nodeId="3415722583340914388" fileName="GeneratorProperties.java" startLine="6" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.tool.common.GeneratorProperties" />
+    <scopeInfo nodeId="4297162197629902833" fileName="GeneratorProperties.java" startLine="49" startPosition="35" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="4297162197629902829" fileName="GeneratorProperties.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
+    <unitInfo nodeId="3415722583340914388" fileName="GeneratorProperties.java" startLine="6" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.tool.common.GeneratorProperties" />
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252775322">
     <nodeInfo nodeId="7910428321252775325" fileName="TeamCityMessageFormat.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINES_SEPARATOR" />

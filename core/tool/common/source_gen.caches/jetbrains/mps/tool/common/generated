@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bmmg49wcnxoety149gv2fjy5di83f75">
+<dependencies version="2" modelHash="-65p5dkqxzny50pn4wr37e4o8ql0xbuq">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a9qp6tb2eva1mros70qa0tynlaehi5n" />
   <common hash="-1sik5ekg4gfiq1zvmcx8ddeqjnhjyq2" />
   <source id="878521226297927156" name="Script" hash="-40926qgpuv2a4srmf8nr0hydew9tzhc">
@@ -24,7 +24,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JDOMUtil.java" />
   </source>
-  <source id="3415722583340914388" name="GeneratorProperties" hash="95iphsijcghd7h4gz9fg2t8agfd9gkm">
+  <source id="3415722583340914388" name="GeneratorProperties" hash="9n9c5i0nldpb6zuysg4ikc7y4j4uyjf">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GeneratorProperties.java" />
   </source>

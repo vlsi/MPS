@@ -8,6 +8,7 @@ package jetbrains.mps.tool.common;
  */
 public final class GeneratorProperties {
   private static final String TRANSFORM_IN_PLACE = "in-place";
+  private static final String THREAD_COUNT = "parallel.threads";
   /**
    * package visibility is just for the sake of deprecated fields in ScriptProperties
    * Once they are gone, these shall be private.
@@ -38,6 +39,19 @@ public final class GeneratorProperties {
 
   public boolean isParallelMode() {
     return Boolean.parseBoolean(myScript.getProperty(PARALLEL_MODE));
+  }
+
+  public GeneratorProperties setParallelThreads(int threadsCount) {
+    myScript.putProperty(THREAD_COUNT, Integer.toString(threadsCount));
+    return this;
+  }
+
+  public int getParallelThreads() {
+    try {
+      return Integer.parseInt(myScript.getProperty(THREAD_COUNT));
+    } catch (NumberFormatException ex) {
+      return 2;
+    }
   }
 
   public GeneratorProperties setInplaceTransform(boolean inplaceEnabled) {
