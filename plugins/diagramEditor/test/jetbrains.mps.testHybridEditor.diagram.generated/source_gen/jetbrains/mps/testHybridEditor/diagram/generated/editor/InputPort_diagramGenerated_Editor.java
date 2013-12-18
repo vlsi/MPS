@@ -14,6 +14,8 @@ import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
+import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 
 public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -38,6 +40,18 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
             getTarget().dimension().set(new Vector(10, 10));
             getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
             getTarget().prop(JetpadUtils.SOURCE).set(getSource());
+
+            getTarget().focusable().set(true);
+            getTarget().prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
+              public boolean canDelete() {
+                return true;
+              }
+
+              public void delete() {
+                System.out.println("Port Delete Called!");
+              }
+            });
+
           }
         };
 

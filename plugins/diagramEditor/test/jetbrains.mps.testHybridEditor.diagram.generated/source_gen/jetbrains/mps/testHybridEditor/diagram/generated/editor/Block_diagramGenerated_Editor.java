@@ -25,6 +25,7 @@ import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.util.Pair;
@@ -110,8 +111,23 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
             }
 
+            getTarget().focusable().set(true);
+            getTarget().prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
+              public boolean canDelete() {
+                return true;
+              }
+
+              public void delete() {
+                editorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
+                  public void run() {
+                    SNodeOperations.deleteNode(node);
+                  }
+                });
+              }
+            });
+
             registerAditionalSynchronizers(configuration, this);
-            getTarget().contentView.prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+            getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
             getTarget().rect.prop(JetpadUtils.SOURCE).set(getSource());
             Block_diagramGenerated_Editor.setDiagramNodeView(getTarget());
           }

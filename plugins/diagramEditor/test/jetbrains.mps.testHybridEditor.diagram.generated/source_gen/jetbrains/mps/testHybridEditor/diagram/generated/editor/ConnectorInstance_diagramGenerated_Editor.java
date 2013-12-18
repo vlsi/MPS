@@ -19,6 +19,8 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
+import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 
 public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -90,6 +92,18 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
                 return (View) descendantMapper.getTarget();
               }
             }));
+
+            getTarget().view().focusable().set(true);
+            getTarget().view().prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
+              public boolean canDelete() {
+                return true;
+              }
+
+              public void delete() {
+                System.out.println("Connection Delete Called!");
+              }
+            });
+
           }
         };
       }

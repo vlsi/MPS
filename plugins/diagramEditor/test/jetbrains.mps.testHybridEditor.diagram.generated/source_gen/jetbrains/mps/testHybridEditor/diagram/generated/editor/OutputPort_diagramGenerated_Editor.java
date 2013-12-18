@@ -20,6 +20,8 @@ import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
+import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 
 public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -67,6 +69,18 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
             }).build());
             getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
             getTarget().prop(JetpadUtils.SOURCE).set(getSource());
+
+            getTarget().focusable().set(true);
+            getTarget().prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
+              public boolean canDelete() {
+                return true;
+              }
+
+              public void delete() {
+                System.out.println("Port Delete Called!");
+              }
+            });
+
           }
         };
 
