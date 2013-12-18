@@ -500,7 +500,7 @@
     <nodeInfo nodeId="1225236110100" fileName="QueriesGenerated.java" startLine="116" startPosition="145" endLine="117" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233602256912" fileName="QueriesGenerated.java" startLine="117" startPosition="82" endLine="118" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225236645468" fileName="QueriesGenerated.java" startLine="121" startPosition="145" endLine="122" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="32" startPosition="43" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="32" startPosition="43" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="36" startPosition="158" endLine="37" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="38" startPosition="9" endLine="39" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="39" startPosition="77" endLine="40" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -577,7 +577,7 @@
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="223" startPosition="15" endLine="224" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="224" startPosition="121" endLine="225" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="226" startPosition="5" endLine="227" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="230" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_ewlaka_a0a1_0" />
+    <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="230" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_ewlaka_a0a1" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="231" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateNode_ewlaka_a0a0a1a2" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="232" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="loopMacroRef_ewlaka_a0a0a1a5a1a2" />
     <nodeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="233" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="loopMacroRef_ewlaka_a0a0a3a2a2a1a5a1a2" />
@@ -663,7 +663,7 @@
       <varInfo nodeId="1202338740214" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="29" startPosition="34" endLine="29" endPosition="34" />
-    <scopeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="32" startPosition="43" endLine="33" endPosition="34" />
+    <scopeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="32" startPosition="43" endLine="33" endPosition="32" />
     <scopeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="50" startPosition="34" endLine="51" endPosition="23" />
     <scopeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="55" startPosition="34" endLine="56" endPosition="101" />
     <scopeInfo nodeId="1202338159177" fileName="TemplateOutputRoot__2.java" startLine="64" startPosition="40" endLine="65" endPosition="29" />

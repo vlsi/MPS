@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
@@ -133,7 +134,8 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public SModel getModelDescriptor(SModelReference modelReference) {
+  @Nullable
+  public SModel getModelDescriptor(@NotNull SModelReference modelReference) {
     return getModelDescriptor(modelReference.getModelId());
   }
 

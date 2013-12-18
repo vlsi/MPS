@@ -17,10 +17,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
-public class GeneratorUtilEx {
+public final class GeneratorUtilEx {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(GeneratorUtilEx.class));
   public static final String link_BaseConcept_attrs = "smodelAttribute";
 
@@ -36,12 +34,15 @@ public class GeneratorUtilEx {
   }
 
   public static boolean isTemplateLanguageElement(SNode n) {
-    String conceptFQName = n.getConcept().getQualifiedName();
-    if (!(conceptFQName.startsWith("jetbrains.mps.lang.generator"))) {
+    return isTemplateLanguageElement(n.getConcept().getQualifiedName());
+  }
+
+  public static boolean isTemplateLanguageElement(String conceptQualifiedName) {
+    if (!(conceptQualifiedName.startsWith("jetbrains.mps.lang.generator"))) {
       // optimization 
       return false;
     }
-    return RuleUtil.isNodeMacro(n) || TemplateLangElements.contains(conceptFQName);
+    return RuleUtil.isNodeMacro(conceptQualifiedName) || TemplateLangElements.contains(conceptQualifiedName);
   }
 
   public static String getMappingName(SNode node, String defaultValue) {
@@ -193,12 +194,6 @@ public class GeneratorUtilEx {
     } else {
       return DismissTopMappingRuleException.MessageType.info;
     }
-  }
-
-
-
-  public static SNode getReferenceMacro(SNode node, String linkRole) {
-    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole));
   }
 
   public static interface ConsequenceDispatch {

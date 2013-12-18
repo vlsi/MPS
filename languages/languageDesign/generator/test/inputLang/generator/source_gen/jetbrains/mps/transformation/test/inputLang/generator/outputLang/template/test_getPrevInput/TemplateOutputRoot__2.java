@@ -30,7 +30,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
   }
 
   public SNodeReference getTemplateNode() {
-    return template_ewlaka_a0a1_0;
+    return template_ewlaka_a0a1;
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
@@ -227,7 +227,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
     return TemplateUtil.singletonList(tnode1);
   }
 
-  private static SNodePointer template_ewlaka_a0a1_0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338159177");
+  private static SNodePointer template_ewlaka_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338159177");
   private static SNodePointer templateNode_ewlaka_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338159177");
   private static SNodePointer loopMacroRef_ewlaka_a0a0a1a5a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338467104");
   private static SNodePointer loopMacroRef_ewlaka_a0a0a3a2a2a1a5a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338467111");
