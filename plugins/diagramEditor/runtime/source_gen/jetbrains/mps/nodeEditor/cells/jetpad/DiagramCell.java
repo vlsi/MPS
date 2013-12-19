@@ -24,7 +24,6 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.event.KeyEvent;
 import jetbrains.jetpad.event.Key;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -171,15 +170,6 @@ public abstract class DiagramCell extends GenericMapperCell<DiagramView> impleme
     myPatternEditorX = x;
     myPatternEditorY = y;
     getEditor().activateNodeSubstituteChooser(this, false);
-  }
-
-  @Override
-  public void setSubstituteInfo(SubstituteInfo info) {
-    // TODO: temporary fix preventing parent from setting different substitute info for this node. 
-    if (getSubstituteInfo() != null) {
-      return;
-    }
-    super.setSubstituteInfo(info);
   }
 
   private boolean trySubstituteImmediately() {

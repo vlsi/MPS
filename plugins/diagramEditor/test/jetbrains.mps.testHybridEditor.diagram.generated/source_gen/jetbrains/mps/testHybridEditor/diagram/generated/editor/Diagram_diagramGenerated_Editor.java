@@ -110,6 +110,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "blocks", true), editorContext, blocks, connectors);
     createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "connectors", true), editorContext, blocks, connectors);
 
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
       public Mapper<SNode, DiagramView> getMapper() {
         return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
@@ -170,7 +172,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.getRootMapper().attachRoot();
 
     editorCell.setCellId("Diagram_tb7paq_c0");
-    return editorCell;
+    wrappingCollection.addEditorCell(editorCell);
+    return wrappingCollection;
 
   }
 
@@ -198,6 +201,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, blocks, connectors);
     createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, blocks, connectors);
 
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
       public Mapper<SNode, DiagramView> getMapper() {
         return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
@@ -252,7 +257,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         final SNode port = ((SNode) fromId);
         SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "metaPort", ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "metaBlock", false), "outMetaPorts", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a6a11(it, port);
+            return eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a8a11(it, port);
           }
         }), false);
         SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "block", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
@@ -263,7 +268,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.getRootMapper().attachRoot();
 
     editorCell.setCellId("Diagram_tb7paq_e0");
-    return editorCell;
+    wrappingCollection.addEditorCell(editorCell);
+    return wrappingCollection;
 
   }
 
@@ -278,7 +284,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a6a11(Object a, Object b) {
+  private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a8a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
