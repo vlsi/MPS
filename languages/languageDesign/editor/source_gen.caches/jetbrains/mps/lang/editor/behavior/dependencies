@@ -331,6 +331,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryHintsSpecification_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.RGBColor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ReadOnlyModelAccessor_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ReadOnlyStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.RightTransformAnchorTagWrapper_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ScriptKindClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.SelectInEditorOperation_BehaviorDescriptor" />
@@ -2806,6 +2807,22 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ReadOnlyStyleClassItem_Behavior" file="ReadOnlyStyleClassItem_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ReadOnlyStyleClassItem_BehaviorDescriptor" file="ReadOnlyStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ReadOnlyStyleClassItem_Behavior" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.RightTransformAnchorTagWrapper_BehaviorDescriptor" file="RightTransformAnchorTagWrapper_BehaviorDescriptor.java">

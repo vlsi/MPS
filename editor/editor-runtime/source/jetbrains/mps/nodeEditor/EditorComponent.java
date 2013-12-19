@@ -2547,7 +2547,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isKeyboardHandlerProcessingEnabled(KeyEvent keyEvent) {
-    if (!isReadOnly()) {
+    if (!isReadOnly() && !isCellReadOnly(getSelectedCell())) {
       return true;
     }
     jetbrains.mps.openapi.editor.cells.CellActionType actionType = getActionType(keyEvent, getEditorContext());
@@ -2884,6 +2884,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public boolean isReadOnly() {
     return myReadOnly;
+  }
+
+  public boolean isCellReadOnly(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    return cell.getStyle().get(StyleAttributes.READ_ONLY);
   }
 
   public void setPopupMenuEnabled(boolean popupMenuEnabled) {

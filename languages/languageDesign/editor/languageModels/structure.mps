@@ -3621,5 +3621,11 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137382180" resolveInfo="StylePriorityGroup" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="795210086017940429" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
+    <property name="name" nameId="tpck.1169194664001" value="ReadOnlyStyleClassItem" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="read-only" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+  </root>
 </model>
 
