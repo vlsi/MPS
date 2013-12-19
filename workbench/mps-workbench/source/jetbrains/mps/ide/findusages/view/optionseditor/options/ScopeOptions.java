@@ -16,12 +16,12 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.scopes.BootstrapScope;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class ScopeOptions extends BaseOptions {
+  private static final Logger LOG = Logger.getLogger(ScopeOptions.class);
   private static final String SCOPE_TYPE = "scope_type";
   private static final String MODEL = "model";
   private static final String MODULE = "module";
@@ -90,14 +91,13 @@ public class ScopeOptions extends BaseOptions {
         return new GlobalScope();
       case PROJECT:
         return new ProjectScope(operationContext.getProject());
-      case BOOTSTRAP:
-        return new BootstrapScope();
       case MODULE:
         return new ModulesScope(myModule);
       case MODEL:
         return new ModelsScope(myModel);
       default:
-        throw new IllegalArgumentException("Illegal scope type: " + myScopeType);
+        LOG.error("Illegal scope type: " + myScopeType);
+        return new GlobalScope();
     }
   }
 
@@ -107,14 +107,13 @@ public class ScopeOptions extends BaseOptions {
         return new GlobalScope();
       case PROJECT:
         return new ProjectScope(project);
-      case BOOTSTRAP:
-        return new BootstrapScope();
       case MODULE:
         return new ModulesScope(myModule);
       case MODEL:
         return new ModelsScope(myModel);
       default:
-        throw new IllegalArgumentException("Illegal scope type: " + myScopeType);
+        LOG.error("Illegal scope type: " + myScopeType);
+        return new GlobalScope();
     }
   }
 
@@ -141,6 +140,6 @@ public class ScopeOptions extends BaseOptions {
   }
 
   public enum ScopeType {
-    GLOBAL, PROJECT, BOOTSTRAP, MODULE, MODEL;
+    GLOBAL, PROJECT, MODULE, MODEL;
   }
 }

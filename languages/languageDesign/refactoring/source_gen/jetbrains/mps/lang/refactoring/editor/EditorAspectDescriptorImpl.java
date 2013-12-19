@@ -17,60 +17,42 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new AbstractUIArgumentExpression_Editor());
-      case 2:
         return Collections.<ConceptEditor>singletonList(new ChangeFeatureNameExpression_Editor());
-      case 3:
-        return Collections.<ConceptEditor>singletonList(new ChangeFeatureNameOperation_Editor());
-      case 4:
+      case 2:
         return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
-      case 5:
+      case 3:
         return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
-      case 6:
+      case 4:
         return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
-      case 7:
+      case 5:
         return Collections.<ConceptEditor>singletonList(new DeleteFeatureExpression_Editor());
-      case 8:
-        return Collections.<ConceptEditor>singletonList(new DeleteFeatureOperation_Editor());
-      case 9:
-        return Collections.<ConceptEditor>singletonList(new ExecuteFindersExpression_Editor());
-      case 10:
+      case 6:
         return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
-      case 11:
-        return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
-      case 12:
+      case 7:
         return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
-      case 13:
+      case 8:
         return Collections.<ConceptEditor>singletonList(new MergeNodeWithAnotherNodeExpression_Editor());
-      case 14:
+      case 9:
         return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
-      case 15:
+      case 10:
         return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
-      case 16:
+      case 11:
         return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
-      case 17:
+      case 12:
         return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
-      case 18:
+      case 13:
         return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
-      case 19:
+      case 14:
         return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
-      case 20:
-        return Collections.<ConceptEditor>singletonList(new OldRefactoring_Editor());
-      case 21:
+      case 15:
         return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
-      case 22:
+      case 16:
         return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
-      case 23:
+      case 17:
         return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
-      case 24:
-        return Collections.<ConceptEditor>singletonList(new RequiredAdditionalArgument_Editor());
-      case 25:
-        return Collections.<ConceptEditor>singletonList(new RequiredAdditionalArgumentReference_Editor());
-      case 26:
-        return Collections.<ConceptEditor>singletonList(new RequiredUserEnteredArgument_Editor());
-      case 27:
+      case 18:
         return Collections.<ConceptEditor>singletonList(new UpdateModelByDefaultOperation_Editor());
-      case 28:
+      case 19:
         return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
       default:
     }
@@ -80,11 +62,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        if ("jetbrains.mps.lang.refactoring.editor.AffectedNodesClauseInParent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new AffectedNodesClauseInParent());
-        }
-        break;
-      case 1:
         if ("jetbrains.mps.lang.refactoring.editor.RefactoringTarget".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget());
         }
@@ -101,6 +78,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.FinderReference", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.OldRefactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"};
 }

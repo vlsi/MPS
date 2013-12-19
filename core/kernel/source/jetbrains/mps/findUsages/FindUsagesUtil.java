@@ -17,7 +17,6 @@ package jetbrains.mps.findUsages;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
@@ -43,7 +42,7 @@ public class FindUsagesUtil {
   public static boolean hasModelUsages(SModel m, Collection<SModelReference> models) {
     if (m == null) return false;
 
-    for (SModel modelDescriptor : SModelOperations.allImportedModels(m, GlobalScope.getInstance())) {
+    for (SModel modelDescriptor : SModelOperations.allImportedModels(m)) {
       if (models.contains(modelDescriptor.getReference())) {
         return true;
       }

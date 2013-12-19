@@ -781,7 +781,7 @@ public class QueriesGenerated {
           public Iterable<SNode> compute() {
             // TODO: Use link scopes here 
             List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-            Set<SModel> allVisibleModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), (List<SModel>) SModelOperations.allImportedModels(_context.getModel(), operationContext.getScope()));
+            Set<SModel> allVisibleModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), (List<SModel>) SModelOperations.allImportedModels(_context.getModel()));
             SetSequence.fromSet(allVisibleModels).addElement(_context.getModel());
             for (SModel nextModel : SetSequence.fromSet(allVisibleModels)) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(nextModel, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration")));

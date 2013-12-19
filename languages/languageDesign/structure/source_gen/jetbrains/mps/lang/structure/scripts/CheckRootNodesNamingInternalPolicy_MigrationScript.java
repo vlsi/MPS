@@ -8,10 +8,6 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigrationScript {
   public CheckRootNodesNamingInternalPolicy_MigrationScript(IOperationContext operationContext) {
@@ -43,12 +39,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode aliasProperty = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
-          }
-        }).first(), "jetbrains.mps.lang.structure.structure.StringConceptProperty");
-        SPropertyOperations.set(aliasProperty, "value", NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias")));
+        SPropertyOperations.set(node, "conceptAlias", NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias")));
       }
 
       public boolean isShowAsIntention() {
@@ -83,12 +74,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         for (String word : NameUtil.splitByCamels(SPropertyOperations.getString(node, "name"))) {
           sb.append(NameUtil.decapitalize(word)).append(" ");
         }
-        SNode aliasProperty = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty") && SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "conceptPropertyDeclaration", false), "name").equals("alias");
-          }
-        }).first(), "jetbrains.mps.lang.structure.structure.StringConceptProperty");
-        SPropertyOperations.set(aliasProperty, "value", sb.toString().trim());
+        SPropertyOperations.set(node, "conceptAlias", sb.toString().trim());
       }
 
       public boolean isShowAsIntention() {

@@ -11,14 +11,14 @@ import jetbrains.mps.smodel.SModelOperations;
 
 public class ModelPlusImportedScope extends ModelsScope {
   public ModelPlusImportedScope(SModel model, boolean rootsOnly, IScope moduleScope, String targetConcept) {
-    super(getImportedModels(model, moduleScope), rootsOnly, targetConcept);
+    super(getImportedModels(model), rootsOnly, targetConcept);
   }
 
-  private static Collection<SModel> getImportedModels(SModel model, IScope moduleScope) {
+  private static Collection<SModel> getImportedModels(SModel model) {
     if (model == null) {
       return Collections.emptyList();
     }
-    List<SModel> models = SModelOperations.allImportedModels(model, moduleScope);
+    List<SModel> models = SModelOperations.allImportedModels(model);
     models.add(0, model);
     return models;
   }

@@ -51,7 +51,7 @@ public class ModelRules {
   private static final Logger LOG = LogManager.getLogger(RulesManager.class);
 
   public ModelRules(SModel model) {
-    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
+    List<Language> languages = SModelOperations.getLanguages(model);
     for (Language language : languages) {
       loadLanguage(language.getModuleName());
     }

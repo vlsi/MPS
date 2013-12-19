@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dfuhirfukpoaej61l094horlmrucf12">
+<dependencies version="2" modelHash="-2hubvwh7bwismm0eld02cqmdefvj5by">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4wqibd1vnak473g8nuhgzbq0kkb0oli" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-31rzzi8ghx9wsx8iyr9dawpcz9u93g2" dependsOnNodes="true">
+  <common hash="6f6y4apot1u0qj5sckbg94wktm7c88d" dependsOnNodes="true">
     <dep root="1047408822409601647" />
     <dep root="1082983041843" />
     <dep root="1082983657062" />
@@ -46,7 +46,7 @@
   <source id="1082983041843" name="string" hash="6k9lnh85tuz9zqww6stp9xzeeia3nmv" />
   <source id="1082983657062" name="integer" hash="82opkqcw5lx3hsl6lggiyno45wibxx4" />
   <source id="1082983657063" name="boolean" hash="6m9iy5s74uvtj6z020hl02bere4cl0s" />
-  <source id="1133920641626" name="BaseConcept" hash="-covkbe8wjil5rru5sbb2ml6yfqeq7oj" />
+  <source id="1133920641626" name="BaseConcept" hash="blzv66nwsmyzoc51viodvu3rz0yp6fl" />
   <source id="1169194658468" name="INamedConcept" hash="31f25jqs7qgh5bc6mdvlz1pwe833iyx" />
   <source id="1196978630214" name="IResolveInfo" hash="9zeoaaa45swisze75ternrtlkyq00vg" />
   <source id="1221647093812" name="IWrapper" hash="4b4gsmj2mli0h6ebtmjhyq2sxt2s0sk" />
@@ -58,7 +58,7 @@
   <source id="2565736246230036150" name="ExportScopePublic" hash="-5qcf45bsi0k59be2adi54xh0l7i3ykh" />
   <source id="2565736246230036151" name="ExportScopeNamespace" hash="d4oecexg44b63x5ejzphbpmi1uf8spd" />
   <source id="2565736246230036154" name="ExportScopeModule" hash="eitb406esxfxyyiguepur1jqreot9bn" />
-  <source id="5169995583184591161" name="Attribute" hash="90hn9edtnk6qbwq3pgutflxdo95ijbw" />
+  <source id="5169995583184591161" name="Attribute" hash="7bradiqdpllw3ldxrvmo6kpketachnn" />
   <source id="3364660638048049745" name="LinkAttribute" hash="-7hijn3msmvmsto7va9vw38sk6l6mj3k" />
   <source id="3364660638048049748" name="NodeAttribute" hash="-6eq0yckioq0z1w43mq8xtzvuj9wdcme" />
   <source id="3364660638048049750" name="PropertyAttribute" hash="-7tmh4lzc7d3s6x2jptg1qk4b33dg6ax" />

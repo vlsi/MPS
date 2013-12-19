@@ -55,24 +55,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Igor Alshannikov
- * Jan 24, 2006
- */
 public class ChildSubstituteActionsHelper {
   private static final Logger LOG = LogManager.getLogger(ChildSubstituteActionsHelper.class);
-
-  public static final String DONT_SUBSTITUTE_BY_DEFAULT = "dontSubstituteByDefault";
-  public static final String ABSTRACT = "abstract";
-
-  // Not used
-  @Deprecated
-  public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
-    @Override
-    public boolean met(SNode object) {
-      return true;
-    }
-  };
 
   public static List<SubstituteAction> createActions(final SNode parentNode, final SNode currentChild, final SNode childConcept,
       final IChildNodeSetter childSetter, final IOperationContext context) {
@@ -93,7 +77,7 @@ public class ChildSubstituteActionsHelper {
     // special case
     if (childConcept == SModelUtil.getBaseConcept()) {
       if ((currentChild == null || currentChild.getConcept().getQualifiedName().equals(SNodeUtil.concept_BaseConcept))) {
-        ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
+        ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true);
         List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
         List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>(allVisibleConcepts.size());
         for (final SNode visibleConcept : allVisibleConcepts) {
@@ -181,7 +165,7 @@ public class ChildSubstituteActionsHelper {
 
     String childConceptFqName = NameUtil.nodeFQName(childConcept);
     Set<String> concepts = new HashSet<String>();
-    for (Language l : SModelOperations.getLanguages(parentNode.getModel(), scope)) {
+    for (Language l : SModelOperations.getLanguages(parentNode.getModel())) {
       concepts.addAll(LanguageHierarchyCache.getInstance().getDefaultSubstitutableDescendantsOf(childConceptFqName, l));
     }
 

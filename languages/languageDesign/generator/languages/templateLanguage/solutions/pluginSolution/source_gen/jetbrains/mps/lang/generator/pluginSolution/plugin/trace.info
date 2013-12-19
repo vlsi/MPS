@@ -331,66 +331,66 @@
     <unitInfo nodeId="428466863025296238" fileName="AttachMappingLabelDialog.java" startLine="29" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.AttachMappingLabelDialog" />
   </root>
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/428466863025296645">
-    <nodeInfo nodeId="428466863025296655" fileName="MappingLabelUtil.java" startLine="20" startPosition="93" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="428466863025296659" fileName="MappingLabelUtil.java" startLine="21" startPosition="30" endLine="22" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="428466863025296686" fileName="MappingLabelUtil.java" startLine="25" startPosition="74" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025296690" fileName="MappingLabelUtil.java" startLine="26" startPosition="28" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="428466863025296691" fileName="MappingLabelUtil.java" startLine="30" startPosition="5" endLine="31" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="428466863025296695" fileName="MappingLabelUtil.java" startLine="32" startPosition="31" endLine="33" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="428466863025296698" fileName="MappingLabelUtil.java" startLine="33" startPosition="15" endLine="34" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="428466863025296716" fileName="MappingLabelUtil.java" startLine="37" startPosition="43" endLine="38" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="428466863025296728" fileName="MappingLabelUtil.java" startLine="41" startPosition="25" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025296742" fileName="MappingLabelUtil.java" startLine="44" startPosition="14" endLine="45" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025296750" fileName="MappingLabelUtil.java" startLine="45" startPosition="163" endLine="46" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025296756" fileName="MappingLabelUtil.java" startLine="47" startPosition="7" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="428466863025296758" fileName="MappingLabelUtil.java" startLine="48" startPosition="27" endLine="49" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="428466863025296766" fileName="MappingLabelUtil.java" startLine="49" startPosition="144" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025296772" fileName="MappingLabelUtil.java" startLine="50" startPosition="59" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025296779" fileName="MappingLabelUtil.java" startLine="52" startPosition="5" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="428466863025296646" fileName="MappingLabelUtil.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingLabelUtil#()V" />
-    <nodeInfo nodeId="428466863025296714" fileName="MappingLabelUtil.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="428466863025296726" fileName="MappingLabelUtil.java" startLine="40" startPosition="19" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="428466863025296740" fileName="MappingLabelUtil.java" startLine="44" startPosition="12" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="428466863025296678" fileName="MappingLabelUtil.java" startLine="24" startPosition="100" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="428466863025296708" fileName="MappingLabelUtil.java" startLine="35" startPosition="57" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025296672" fileName="MappingLabelUtil.java" startLine="23" startPosition="67" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="428466863025296668" fileName="MappingLabelUtil.java" startLine="22" startPosition="213" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="428466863025296706" fileName="MappingLabelUtil.java" startLine="34" startPosition="158" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="428466863025296693" fileName="MappingLabelUtil.java" startLine="31" startPosition="12" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="428466863025296651" fileName="MappingLabelUtil.java" startLine="20" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findOrCreateMappingLabelForName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="428466863025296649" fileName="MappingLabelUtil.java" startLine="17" startPosition="29" endLine="17" endPosition="29" />
-    <scopeInfo nodeId="428466863025296715" fileName="MappingLabelUtil.java" startLine="37" startPosition="43" endLine="38" endPosition="108" />
-    <scopeInfo nodeId="428466863025296727" fileName="MappingLabelUtil.java" startLine="41" startPosition="25" endLine="42" endPosition="55" />
-    <scopeInfo nodeId="428466863025296646" fileName="MappingLabelUtil.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="428466863025296685" fileName="MappingLabelUtil.java" startLine="25" startPosition="74" endLine="27" endPosition="16" />
-    <scopeInfo nodeId="428466863025296741" fileName="MappingLabelUtil.java" startLine="44" startPosition="14" endLine="46" endPosition="61" />
-    <scopeInfo nodeId="428466863025296714" fileName="MappingLabelUtil.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+    <nodeInfo nodeId="428466863025296655" fileName="MappingLabelUtil.java" startLine="19" startPosition="93" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="428466863025296659" fileName="MappingLabelUtil.java" startLine="20" startPosition="30" endLine="21" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="428466863025296686" fileName="MappingLabelUtil.java" startLine="24" startPosition="74" endLine="25" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025296690" fileName="MappingLabelUtil.java" startLine="25" startPosition="28" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="428466863025296691" fileName="MappingLabelUtil.java" startLine="29" startPosition="5" endLine="30" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="428466863025296695" fileName="MappingLabelUtil.java" startLine="31" startPosition="31" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="428466863025296698" fileName="MappingLabelUtil.java" startLine="32" startPosition="15" endLine="33" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="428466863025296716" fileName="MappingLabelUtil.java" startLine="36" startPosition="43" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="428466863025296728" fileName="MappingLabelUtil.java" startLine="40" startPosition="25" endLine="41" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025296742" fileName="MappingLabelUtil.java" startLine="43" startPosition="14" endLine="44" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025296750" fileName="MappingLabelUtil.java" startLine="44" startPosition="163" endLine="45" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025296756" fileName="MappingLabelUtil.java" startLine="46" startPosition="7" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="428466863025296758" fileName="MappingLabelUtil.java" startLine="47" startPosition="27" endLine="48" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="428466863025296766" fileName="MappingLabelUtil.java" startLine="48" startPosition="144" endLine="49" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025296772" fileName="MappingLabelUtil.java" startLine="49" startPosition="59" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025296779" fileName="MappingLabelUtil.java" startLine="51" startPosition="5" endLine="52" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="428466863025296646" fileName="MappingLabelUtil.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingLabelUtil#()V" />
+    <nodeInfo nodeId="428466863025296714" fileName="MappingLabelUtil.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="428466863025296726" fileName="MappingLabelUtil.java" startLine="39" startPosition="19" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="428466863025296740" fileName="MappingLabelUtil.java" startLine="43" startPosition="12" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="428466863025296678" fileName="MappingLabelUtil.java" startLine="23" startPosition="100" endLine="27" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="428466863025296708" fileName="MappingLabelUtil.java" startLine="34" startPosition="57" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025296672" fileName="MappingLabelUtil.java" startLine="22" startPosition="67" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="428466863025296668" fileName="MappingLabelUtil.java" startLine="21" startPosition="186" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="428466863025296706" fileName="MappingLabelUtil.java" startLine="33" startPosition="158" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="428466863025296693" fileName="MappingLabelUtil.java" startLine="30" startPosition="12" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="428466863025296651" fileName="MappingLabelUtil.java" startLine="19" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findOrCreateMappingLabelForName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="428466863025296649" fileName="MappingLabelUtil.java" startLine="16" startPosition="29" endLine="16" endPosition="29" />
+    <scopeInfo nodeId="428466863025296715" fileName="MappingLabelUtil.java" startLine="36" startPosition="43" endLine="37" endPosition="108" />
+    <scopeInfo nodeId="428466863025296727" fileName="MappingLabelUtil.java" startLine="40" startPosition="25" endLine="41" endPosition="55" />
+    <scopeInfo nodeId="428466863025296646" fileName="MappingLabelUtil.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="428466863025296685" fileName="MappingLabelUtil.java" startLine="24" startPosition="74" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="428466863025296741" fileName="MappingLabelUtil.java" startLine="43" startPosition="14" endLine="45" endPosition="61" />
+    <scopeInfo nodeId="428466863025296714" fileName="MappingLabelUtil.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="428466863025296714" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="428466863025296677" fileName="MappingLabelUtil.java" startLine="24" startPosition="100" endLine="28" endPosition="9" />
-    <scopeInfo nodeId="428466863025296671" fileName="MappingLabelUtil.java" startLine="23" startPosition="67" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="428466863025296672" fileName="MappingLabelUtil.java" startLine="23" startPosition="67" endLine="29" endPosition="7">
+    <scopeInfo nodeId="428466863025296677" fileName="MappingLabelUtil.java" startLine="23" startPosition="100" endLine="27" endPosition="9" />
+    <scopeInfo nodeId="428466863025296671" fileName="MappingLabelUtil.java" startLine="22" startPosition="67" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="428466863025296672" fileName="MappingLabelUtil.java" startLine="22" startPosition="67" endLine="28" endPosition="7">
       <varInfo nodeId="428466863025296673" varName="ml" />
     </scopeInfo>
-    <scopeInfo nodeId="428466863025296668" fileName="MappingLabelUtil.java" startLine="22" startPosition="213" endLine="30" endPosition="5">
+    <scopeInfo nodeId="428466863025296668" fileName="MappingLabelUtil.java" startLine="21" startPosition="186" endLine="29" endPosition="5">
       <varInfo nodeId="428466863025296669" varName="mc" />
     </scopeInfo>
-    <scopeInfo nodeId="428466863025296707" fileName="MappingLabelUtil.java" startLine="35" startPosition="57" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="428466863025296694" fileName="MappingLabelUtil.java" startLine="32" startPosition="31" endLine="51" endPosition="30">
+    <scopeInfo nodeId="428466863025296707" fileName="MappingLabelUtil.java" startLine="34" startPosition="57" endLine="42" endPosition="9" />
+    <scopeInfo nodeId="428466863025296694" fileName="MappingLabelUtil.java" startLine="31" startPosition="31" endLine="50" endPosition="30">
       <varInfo nodeId="428466863025296699" varName="localMCs" />
       <varInfo nodeId="428466863025296696" varName="mc" />
       <varInfo nodeId="428466863025296759" varName="newLabel" />
     </scopeInfo>
-    <scopeInfo nodeId="428466863025296654" fileName="MappingLabelUtil.java" startLine="20" startPosition="93" endLine="53" endPosition="24">
+    <scopeInfo nodeId="428466863025296654" fileName="MappingLabelUtil.java" startLine="19" startPosition="93" endLine="52" endPosition="24">
       <varInfo nodeId="428466863025296660" varName="mappingConfigurations" />
       <varInfo nodeId="428466863025296656" varName="mappingLabel" />
     </scopeInfo>
-    <scopeInfo nodeId="428466863025296651" fileName="MappingLabelUtil.java" startLine="20" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="428466863025296651" fileName="MappingLabelUtil.java" startLine="19" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="428466863025296783" varName="labelName" />
       <varInfo nodeId="428466863025296781" varName="templateNode" />
     </scopeInfo>
-    <unitInfo nodeId="428466863025296714" fileName="MappingLabelUtil.java" startLine="36" startPosition="55" endLine="40" endPosition="9" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil$1" />
-    <unitInfo nodeId="428466863025296645" fileName="MappingLabelUtil.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil" />
+    <unitInfo nodeId="428466863025296714" fileName="MappingLabelUtil.java" startLine="35" startPosition="55" endLine="39" endPosition="9" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil$1" />
+    <unitInfo nodeId="428466863025296645" fileName="MappingLabelUtil.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.generator.pluginSolution.plugin.MappingLabelUtil" />
   </root>
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/428466863025296807">
     <nodeInfo nodeId="428466863025296807" fileName="ShowAsIntentions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

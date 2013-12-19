@@ -30,7 +30,6 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="8814893218132458911" nodeInfo="nn" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="8814893218132458920" nodeInfo="nn">
                     <link role="concept" roleId="tp25.1182511038750" targetNodeId="1oap.8974276187400029888" resolveInfo="IconResourceDeclaration" />
-                    <node role="scope" roleId="tp25.1182511038749" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="8814893218132458922" nodeInfo="nn" />
                   </node>
                 </node>
               </node>

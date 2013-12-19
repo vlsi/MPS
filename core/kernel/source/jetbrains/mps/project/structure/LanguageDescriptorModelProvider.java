@@ -222,7 +222,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   public LanguageModelDescriptor createModel(Language module) {
     LanguageModelDescriptor result = new LanguageModelDescriptor(getSModelReference(module), module);
 
-    myModels.put(result.getSModelReference(), result);
+    myModels.put(result.getReference(), result);
     module.registerModel(result);
     return result;
   }
@@ -254,7 +254,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     @Override
     protected jetbrains.mps.smodel.SModel createModel() {
-      jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getSModelReference()) {
+      jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference()) {
         @Override
         public boolean canFireEvent() {
           return false;

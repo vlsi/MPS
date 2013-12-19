@@ -235,10 +235,6 @@ public class AbstractConceptDeclaration_Behavior {
     return SNodeOperations.cast(p, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
-  public static List<SNode> call_getConceptPropertyDeclarations_1213877394562(SNode thisNode) {
-    return (List<SNode>) SModelSearchUtil.getConceptPropertyDeclarations(thisNode);
-  }
-
   public static List<SNode> call_getConceptLinkDeclarations_1213877394578(SNode thisNode) {
     return (List<SNode>) IterableUtil.asList(SModelSearchUtil.getConceptLinkDeclarations(thisNode));
   }

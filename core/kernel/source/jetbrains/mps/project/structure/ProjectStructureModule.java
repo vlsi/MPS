@@ -257,7 +257,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     @Override
     protected ProjectStructureSModel createModel() {
-      final ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
+      final ProjectStructureSModel model = new ProjectStructureSModel(getReference());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
       final IFile file = ((AbstractModule) myModule).getDescriptorFile();
 
@@ -310,11 +310,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
           }
         });
       }
-    }
-
-    @Override
-    public SModel resolveModel(SModelReference reference) {
-      throw new UnsupportedOperationException("not supported since 3.0");
     }
   }
 

@@ -337,7 +337,7 @@
     <nodeInfo nodeId="5199967550912384282" fileName="SimpleBuilders_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5199967550912479714" fileName="SimpleBuilders_Behavior.java" startLine="18" startPosition="88" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5199967550912479721" fileName="SimpleBuilders_Behavior.java" startLine="21" startPosition="5" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5199967550912479791" fileName="SimpleBuilders_Behavior.java" startLine="30" startPosition="145" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5199967550912479791" fileName="SimpleBuilders_Behavior.java" startLine="30" startPosition="138" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6211769134875410582" fileName="SimpleBuilders_Behavior.java" startLine="40" startPosition="29" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="5199967550912479771" fileName="SimpleBuilders_Behavior.java" startLine="29" startPosition="48" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5199967550912384282" fileName="SimpleBuilders_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isDescendant_5199967550912479710#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -351,7 +351,7 @@
       <varInfo nodeId="5199967550912384282" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="6211769134875410584" fileName="SimpleBuilders_Behavior.java" startLine="41" startPosition="29" endLine="43" endPosition="76" />
-    <scopeInfo nodeId="5199967550912479772" fileName="SimpleBuilders_Behavior.java" startLine="30" startPosition="145" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="5199967550912479772" fileName="SimpleBuilders_Behavior.java" startLine="30" startPosition="138" endLine="33" endPosition="7" />
     <scopeInfo nodeId="5199967550912479771" fileName="SimpleBuilders_Behavior.java" startLine="29" startPosition="48" endLine="34" endPosition="5">
       <varInfo nodeId="5199967550912479775" varName="sb" />
     </scopeInfo>

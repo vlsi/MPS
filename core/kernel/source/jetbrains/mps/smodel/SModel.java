@@ -78,7 +78,7 @@ public class SModel implements SModelData {
 
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
 
-  protected SModelDescriptor myModelDescriptor;
+  protected SModelBase myModelDescriptor;
 
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
@@ -234,11 +234,6 @@ public class SModel implements SModelData {
   }
 
   @Deprecated
-  public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
-    return getModelDescriptor().resolveModel(reference);
-  }
-
-  @Deprecated
   public void addModelListener(@NotNull SModelListener listener) {
     getModelDescriptor().addModelListener(listener);
   }
@@ -248,16 +243,12 @@ public class SModel implements SModelData {
     getModelDescriptor().removeModelListener(listener);
   }
 
-  public SModelDescriptor getModelDescriptor() {
-    return myModelDescriptor;
-  }
-
-  public SModelDescriptor getModelDescriptorPure(){
+  public SModelBase getModelDescriptor() {
     return myModelDescriptor;
   }
 
   public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    myModelDescriptor = ((SModelDescriptor) modelDescriptor);
+    myModelDescriptor = ((SModelBase) modelDescriptor);
   }
 
   protected void enforceFullLoad() {

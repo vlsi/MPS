@@ -5,7 +5,6 @@ package jetbrains.mps.smodel.search;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
@@ -19,13 +18,11 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = LogManager.getLogger(ModelAndImportedModelsScope.class);
   private SModel myModel;
   private boolean myRootsOnly;
-  private IScope myScope;
   private List<SModel> myModels;
 
-  public ModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
+  public ModelAndImportedModelsScope(SModel model, boolean rootsOnly) {
     myModel = model;
     myRootsOnly = rootsOnly;
-    myScope = scope;
   }
 
   @NotNull
@@ -34,7 +31,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
       if (myModel == null) {
         myModels = new ArrayList<SModel>(1);
       } else {
-        myModels = SModelOperations.allImportedModels(myModel, myScope);
+        myModels = SModelOperations.allImportedModels(myModel);
         myModels.add(0, myModel);
       }
     }

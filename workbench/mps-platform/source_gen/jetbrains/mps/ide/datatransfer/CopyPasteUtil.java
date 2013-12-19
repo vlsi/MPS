@@ -306,7 +306,7 @@ public class CopyPasteUtil {
       @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
-        for (SModel sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
+        for (SModel sm : SModelOperations.allImportedModels(targetModel)) {
           allImportedModels.add(sm.getReference());
         }
         for (SModelReference modelReference : necessaryImports) {

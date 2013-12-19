@@ -60,7 +60,7 @@ public class ChildSubstituteActionsUtil {
     }
 
     List<SNode> allBuilders = new ArrayList<SNode>();
-    List<Language> languages = SModelOperations.getLanguages(SNodeOperations.getModel(parentNode), context.getScope());
+    List<Language> languages = SModelOperations.getLanguages(SNodeOperations.getModel(parentNode));
     boolean wrapped = !(childSetter instanceof DefaultChildNodeSetter);
     for (SNode actionsBuilder : ListSequence.fromList(getAllActionsBuilders(languages))) {
       SNode applicableConcept = SLinkOperations.getTarget(actionsBuilder, "applicableConcept", false);

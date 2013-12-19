@@ -202,16 +202,6 @@ public class SModelUtil_new implements CoreComponent {
     return SPropertyOperations.getString(conceptDeclaration, "conceptAlias");
   }
 
-  public static String getStringConceptProperty(SNode conceptDeclaration, String propertyName) {
-    SNode property = SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-
-    Object value = SNodeUtil.getConceptPropertyValue(property);
-    if (value instanceof String) {
-      return (String) value;
-    }
-    return null;
-  }
-
   public static boolean isEmptyPropertyValue(String s) {
     return s == null || s.equals("");
   }

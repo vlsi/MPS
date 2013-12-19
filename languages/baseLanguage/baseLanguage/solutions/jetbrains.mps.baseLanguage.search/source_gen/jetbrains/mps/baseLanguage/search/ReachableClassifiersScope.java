@@ -51,7 +51,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
   @NotNull
   @Override
   public List<SNode> getClassifiers() {
-    List<? extends SModel> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
+    List<? extends SModel> models = new ModelAndImportedModelsScope(this.myModel, false).getModels();
     List<SNode> result = new ArrayList<SNode>();
     for (SModel model : models) {
       List<SNode> classifiers = ClassifiersCache.getInstance(model).getClassifiers();
