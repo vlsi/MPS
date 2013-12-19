@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-cdxt28wd4jf4phtq1lflunp2m45ze29">
-  <common hash="bc6312i5nvw53e1jrzwwm2wrbqialsn" />
+  <common hash="bc6312i5nvw53e1jrzwwm2wrbqialsn" dependsOnNodes="true" />
   <source id="1225980323340" name="Constants" hash="13ujje0l9bg9lsdzsbjn06wf8ybrldy">
     <file name="Constants.java" />
   </source>

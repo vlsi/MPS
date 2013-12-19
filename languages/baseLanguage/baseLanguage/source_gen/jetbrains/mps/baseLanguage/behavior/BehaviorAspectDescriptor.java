@@ -408,10 +408,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new JavaImport_BehaviorDescriptor();
       case 82:
         return new IncompleteMemberDeclaration_BehaviorDescriptor();
-      case 48:
-        return new CustomSetterPropertyImplementation_BehaviorDescriptor();
       case 140:
         return new PropertyValueReference_BehaviorDescriptor();
+      case 48:
+        return new CustomSetterPropertyImplementation_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
