@@ -4,10 +4,6 @@ package jetbrains.mps.baseLanguage.scripts;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class SModelMethodMigration extends SimpleMigration {
   private final SNode sourceConcept;
@@ -21,11 +17,6 @@ public abstract class SModelMethodMigration extends SimpleMigration {
 
   @Override
   public String getName() {
-    String functionAlias = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(smodelFunctionConcept, "conceptProperty", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false), "name").equals("alias");
-      }
-    }), "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value");
-    return "Migrate " + functionAlias + "(" + SPropertyOperations.getString(sourceConcept, "name") + ") usages";
+    return "Migrate " + SPropertyOperations.getString(sourceConcept, "name") + " usages";
   }
 }

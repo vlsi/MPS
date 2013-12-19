@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.collections.constraints.AbstractContainerCreator_Constraints" file="AbstractContainerCreator_Constraints.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.constraints.AbstractEnumeratorOperation_Constraints" file="AbstractEnumeratorOperation_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -87,7 +78,6 @@
   <dependency className="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractContainerCreator_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractEnumeratorOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractIteratorOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.AbstractMappingOperation_Constraints" />
