@@ -89,7 +89,12 @@ public class BlockEditor extends AbstractJetpadEditor {
                 return null;
               }
             }));
-            registerAditionalSynchronizers(configuration, this);
+
+            configuration.add(Synchronizers.forConstantRole(this, getSource(), getTarget().contentView.children(), new MapperFactory<SNode, View>() {
+              public Mapper<? extends SNode, ? extends View> createMapper(SNode block) {
+                return new BlockEditor.ContentMapper(block);
+              }
+            }));
           }
         };
         DiagramNodeView view = mapper.getTarget();
@@ -107,14 +112,6 @@ public class BlockEditor extends AbstractJetpadEditor {
         });
 
         return mapper;
-      }
-
-      public void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, Mapper<SNode, DiagramNodeView> mapper) {
-        configuration.add(Synchronizers.forConstantRole(mapper, mapper.getSource(), mapper.getTarget().contentView.children(), new MapperFactory<SNode, View>() {
-          public Mapper<? extends SNode, ? extends View> createMapper(SNode block) {
-            return new BlockEditor.ContentMapper(block);
-          }
-        }));
       }
 
 

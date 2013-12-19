@@ -7,10 +7,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
 
@@ -20,8 +20,6 @@ public abstract class BlockCell extends GenericMapperCell<DiagramNodeView> {
     setXProperty(x);
     setYProperty(y);
   }
-
-  public abstract void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, Mapper<SNode, DiagramNodeView> mapper);
 
   @Override
   public void synchronizeViewWithModel() {

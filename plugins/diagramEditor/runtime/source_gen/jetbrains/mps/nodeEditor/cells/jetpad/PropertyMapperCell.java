@@ -7,59 +7,57 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 
-public class PropertyMapperCell extends EditorCell_Basic {
+public abstract class PropertyMapperCell extends EditorCell_Basic {
   protected Property myViewProperty;
   protected ReadableProperty myModelProperty;
-  protected String myPropertyName;
+  private String myCommandId;
 
-  protected PropertyMapperCell(EditorContext editorContext, SNode node) {
+  public PropertyMapperCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
-  }
-
-  public PropertyMapperCell(EditorContext editorContext, SNode node, Property<?> viewProperty, ReadableProperty<?> modelProperty, String propertyName) {
-    this(editorContext, node);
-    this.myViewProperty = viewProperty;
-    this.myModelProperty = modelProperty;
-    myPropertyName = propertyName;
-    getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), myPropertyName));
+    myModelProperty = createModelProperty();
+    myCommandId = getCellId() + "_" + getSNode().getNodeId().toString();
   }
 
   @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
+  public void registerSynchronizers(Mapper.SynchronizersConfiguration configuration, Property viewProperty) {
+    assert myViewProperty == null;
+    myViewProperty = viewProperty;
+    configuration.add(Synchronizers.forProperty(myModelProperty, viewProperty));
+    // TODO: create Writable model property and use it in synchronizer 
+    configuration.add(Synchronizers.forProperty(viewProperty, new Runnable() {
+      public void run() {
+        ModelAccess.instance().tryWrite(new Runnable() {
+          public void run() {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                setModelPropertyValue((myViewProperty.get() == null ? null : myViewProperty.get().toString()));
+              }
+            }, null, myCommandId, false, getContext().getOperationContext().getProject());
+          }
+        });
+      }
+    }));
+  }
 
+  protected abstract ReadableProperty createModelProperty();
 
+  protected abstract void setModelPropertyValue(String value);
 
   @Override
   public void synchronizeViewWithModel() {
+    if (myViewProperty == null) {
+      return;
+    }
     myViewProperty.set(myModelProperty.get());
     requestRelayout();
-  }
-
-  public void updateModel() {
-    ModelAccess.instance().tryWrite(new Runnable() {
-      public void run() {
-        String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
-          public String compute() {
-            return getCellId() + "_" + getSNode().getNodeId().toString();
-          }
-        });
-        getContext().flushEvents();
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            getSNode().setProperty(myPropertyName, (myViewProperty.get() == null ? null : myViewProperty.get().toString()));
-          }
-        }, null, groupId, false, getContext().getOperationContext().getProject());
-      }
-    });
   }
 }

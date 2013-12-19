@@ -8,11 +8,13 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
+import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -21,7 +23,6 @@ import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
-import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -46,6 +47,32 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramNode_70mnj_a(final EditorContext editorContext, final SNode node) {
+    final PropertyMapperCell parameterPropertyCell_70mnj_a0a = new PropertyMapperCell(editorContext, node) {
+      protected ReadableProperty createModelProperty() {
+        return JetpadUtils.modelProperty(new Computable<String>() {
+          public String compute() {
+            return SPropertyOperations.getString(node, "name");
+          }
+        });
+      }
+
+      protected void setModelPropertyValue(String value) {
+        SPropertyOperations.set(node, "name", value);
+      }
+    };
+    final PropertyMapperCell parameterPropertyCell_70mnj_a1a = new PropertyMapperCell(editorContext, node) {
+      protected ReadableProperty createModelProperty() {
+        return JetpadUtils.modelProperty(new Computable<Boolean>() {
+          public Boolean compute() {
+            return SPropertyOperations.getBoolean(node, "myBooleanProperty");
+          }
+        });
+      }
+
+      protected void setModelPropertyValue(String value) {
+        SPropertyOperations.set(node, "myBooleanProperty", value);
+      }
+    };
     BlockCell editorCell = new BlockCell(editorContext, node, JetpadUtils.modelProperty(new Computable<Integer>() {
       public Integer compute() {
         return SNodeOperations.getIndexInParent(node) / 2 * 150 + 10;
@@ -81,57 +108,27 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               }
             }));
 
-            registerAditionalSynchronizers(configuration, this);
+            configuration.add(Synchronizers.forConstantRole(this, getSource().getNodeId().toString(), getTarget().contentView.children(), new MapperFactory<String, BlockContentView>() {
+              public Mapper<? extends String, ? extends BlockContentView> createMapper(String block) {
+                return new Mapper<String, BlockContentView>(block, new BlockContentView()) {
+                  @Override
+                  protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                    super.registerSynchronizers(configuration);
+                    parameterPropertyCell_70mnj_a0a.registerSynchronizers(configuration, getTarget().text());
+                    parameterPropertyCell_70mnj_a1a.registerSynchronizers(configuration, getTarget().isClicked);
+                  }
+                };
+              }
+            }));
           }
         };
         return mapper;
       }
-
-      public void registerAditionalSynchronizers(Mapper.SynchronizersConfiguration configuration, final Mapper<SNode, DiagramNodeView> mapper) {
-        configuration.add(Synchronizers.forConstantRole(mapper, mapper.getSource().getNodeId().toString(), mapper.getTarget().contentView.children(), new MapperFactory<String, BlockContentView>() {
-          public Mapper<? extends String, ? extends BlockContentView> createMapper(String block) {
-            return new Mapper<String, BlockContentView>(block, new BlockContentView()) {
-              @Override
-              protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-                super.registerSynchronizers(configuration);
-                final PropertyMapperCell cell_70mnj_a0a = new PropertyMapperCell(editorContext, node, getTarget().text(), JetpadUtils.modelProperty(new Computable<String>() {
-                  public String compute() {
-                    return SPropertyOperations.getString(node, "name");
-                  }
-                }), "name");
-                addEditorCell(cell_70mnj_a0a);
-                configuration.add(Synchronizers.forProperty(JetpadUtils.modelProperty(new Computable<String>() {
-                  public String compute() {
-                    return SPropertyOperations.getString(node, "name");
-                  }
-                }), getTarget().text()));
-                configuration.add(Synchronizers.forProperty(getTarget().text(), new Runnable() {
-                  public void run() {
-                    cell_70mnj_a0a.updateModel();
-                  }
-                }));
-                final PropertyMapperCell cell_70mnj_a1a = new PropertyMapperCell(editorContext, node, getTarget().isClicked, JetpadUtils.modelProperty(new Computable<Boolean>() {
-                  public Boolean compute() {
-                    return SPropertyOperations.getBoolean(node, "myBooleanProperty");
-                  }
-                }), "myBooleanProperty");
-                addEditorCell(cell_70mnj_a1a);
-                configuration.add(Synchronizers.forProperty(JetpadUtils.modelProperty(new Computable<Boolean>() {
-                  public Boolean compute() {
-                    return SPropertyOperations.getBoolean(node, "myBooleanProperty");
-                  }
-                }), getTarget().isClicked));
-                configuration.add(Synchronizers.forProperty(getTarget().isClicked, new Runnable() {
-                  public void run() {
-                    cell_70mnj_a1a.updateModel();
-                  }
-                }));
-              }
-            };
-          }
-        }));
-      }
     };
+    editorCell.addEditorCell(parameterPropertyCell_70mnj_a0a);
+    editorCell.addEditorCell(parameterPropertyCell_70mnj_a1a);
+    parameterPropertyCell_70mnj_a0a.getEditor().addCellDependentOnNodeProperty(parameterPropertyCell_70mnj_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+    parameterPropertyCell_70mnj_a1a.getEditor().addCellDependentOnNodeProperty(parameterPropertyCell_70mnj_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
 
     editorCell.setCellId("DiagramNode_70mnj_a");
