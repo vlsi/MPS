@@ -9,12 +9,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
-import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -41,34 +40,32 @@ public class BlockEditor extends AbstractJetpadEditor {
 
   @Override
   public EditorCell createEditorCell(final EditorContext context, final SNode node) {
-    final BlockCell blockCell = new BlockCell(context, node) {
+    final BlockCell blockCell = new BlockCell(context, node, modelProperty(new Computable<Integer>() {
+      public Integer compute() {
+        return SPropertyOperations.getInteger(node, "x");
+      }
+    }), modelProperty(new Computable<Integer>() {
+      public Integer compute() {
+        return SPropertyOperations.getInteger(node, "y");
+      }
+    })) {
 
 
       public Mapper<SNode, DiagramNodeView> getMapper() {
-
+        final BlockCell bc = this;
         final Mapper<SNode, DiagramNodeView> mapper = new Mapper<SNode, DiagramNodeView>(node, new BlockView()) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            final ReadableProperty<Integer> x = modelProperty(new Computable<Integer>() {
-              public Integer compute() {
-                return SPropertyOperations.getInteger(node, "x");
-              }
-            });
-            final ReadableProperty<Integer> y = modelProperty(new Computable<Integer>() {
-              public Integer compute() {
-                return SPropertyOperations.getInteger(node, "y");
-              }
-            });
-            configuration.add(Synchronizers.forProperty(x, new Runnable() {
+            configuration.add(Synchronizers.forProperty(bc.getXProperty(), new Runnable() {
               public void run() {
-                getTarget().moveTo(new Vector(x.get(), y.get()));
+                getTarget().moveTo(new Vector(bc.getXProperty().get(), bc.getYProperty().get()));
                 getTarget().invalidate();
               }
             }));
-            configuration.add(Synchronizers.forProperty(y, new Runnable() {
+            configuration.add(Synchronizers.forProperty(bc.getYProperty(), new Runnable() {
               public void run() {
-                getTarget().moveTo(new Vector(x.get(), y.get()));
+                getTarget().moveTo(new Vector(bc.getXProperty().get(), bc.getYProperty().get()));
                 getTarget().invalidate();
               }
             }));
