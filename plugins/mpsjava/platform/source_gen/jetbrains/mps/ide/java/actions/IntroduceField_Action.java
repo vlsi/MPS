@@ -14,10 +14,13 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceStaticFieldRefactoring;
 import jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog;
 import com.intellij.openapi.project.Project;
 import javax.swing.JOptionPane;
@@ -77,7 +80,7 @@ public class IntroduceField_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -87,7 +90,14 @@ public class IntroduceField_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.introduceField");
-      final IntroduceFieldRefactoring introducer = new IntroduceFieldRefactoring();
+      final Wrappers._boolean mustBeStatic = new Wrappers._boolean();
+      ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          mustBeStatic.value = (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", false, false) != null) || (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) != null) || (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.StaticInitializer", false, false) != null);
+        }
+      });
+
+      final AbstractIntroduceFieldRefactoring introducer = (mustBeStatic.value ? new IntroduceStaticFieldRefactoring() : new IntroduceFieldRefactoring());
       final Wrappers._T<String> error = new Wrappers._T<String>();
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
@@ -95,7 +105,7 @@ public class IntroduceField_Action extends BaseAction {
         }
       });
       if (error.value == null) {
-        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Project) MapSequence.fromMap(_params).get("project")), introducer, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Project) MapSequence.fromMap(_params).get("project")), introducer, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), mustBeStatic.value);
         dialog.show();
       } else {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);

@@ -31,14 +31,19 @@ import com.intellij.openapi.vfs.pointers.VirtualFilePointerManager;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.jps.model.JpsElement;
+import org.jetbrains.jps.model.module.JpsModuleSourceRootType;
 
 import java.io.File;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public class ModelRootContentEntryEditor extends ContentEntryEditor {
   private DummyContentEntry myContentEntry;
 
   public ModelRootContentEntryEditor(DefaultModelRoot root, Disposable disposable) {
-    super(pathToUrl(root), false, false);
+    super(pathToUrl(root), null);
     myContentEntry = new DummyContentEntry(root, disposable);
   }
 
@@ -99,6 +104,18 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
       return EMPTY_SOURCE_FOLDERS;
     }
 
+    @NotNull
+    @Override
+    public List<SourceFolder> getSourceFolders(@NotNull JpsModuleSourceRootType<?> jpsModuleSourceRootType) {
+      return null;
+    }
+
+    @NotNull
+    @Override
+    public List<SourceFolder> getSourceFolders(@NotNull Set<? extends JpsModuleSourceRootType<?>> jpsModuleSourceRootTypes) {
+      return null;
+    }
+
     @Override
     public VirtualFile[] getSourceFolderFiles() {
       return EMPTY_VIRTUAL_FILES;
@@ -107,6 +124,12 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
     @Override
     public ExcludeFolder[] getExcludeFolders() {
       return EMPTY_EXCLUDE_FOLDERS;
+    }
+
+    @NotNull
+    @Override
+    public List<String> getExcludeFolderUrls() {
+      return Collections.emptyList();
     }
 
     @Override
@@ -124,8 +147,32 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
       return null;
     }
 
+    @NotNull
+    @Override
+    public <P extends JpsElement> SourceFolder addSourceFolder(@NotNull VirtualFile virtualFile, @NotNull JpsModuleSourceRootType<P> pJpsModuleSourceRootType, @NotNull P p) {
+      return null;
+    }
+
+    @NotNull
+    @Override
+    public <P extends JpsElement> SourceFolder addSourceFolder(@NotNull VirtualFile virtualFile, @NotNull JpsModuleSourceRootType<P> pJpsModuleSourceRootType) {
+      return null;
+    }
+
     @Override
     public SourceFolder addSourceFolder(@NotNull String url, boolean isTestSource) {
+      return null;
+    }
+
+    @NotNull
+    @Override
+    public <P extends JpsElement> SourceFolder addSourceFolder(@NotNull String s, @NotNull JpsModuleSourceRootType<P> pJpsModuleSourceRootType) {
+      return null;
+    }
+
+    @NotNull
+    @Override
+    public <P extends JpsElement> SourceFolder addSourceFolder(@NotNull String s, @NotNull JpsModuleSourceRootType<P> pJpsModuleSourceRootType, @NotNull P p) {
       return null;
     }
 
@@ -149,6 +196,11 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
 
     @Override
     public void removeExcludeFolder(@NotNull ExcludeFolder excludeFolder) {
+    }
+
+    @Override
+    public boolean removeExcludeFolder(@NotNull String s) {
+      return false;
     }
 
     @Override

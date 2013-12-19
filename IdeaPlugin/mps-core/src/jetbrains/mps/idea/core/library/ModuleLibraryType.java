@@ -50,6 +50,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -86,7 +87,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   public static Set<VirtualFile> getModuleJars(AbstractModule usedModule) {
     Set<VirtualFile> stubFiles = new HashSet<VirtualFile>();
-    for (String stubPath : usedModule.getClassPath()) {
+    for (String stubPath : SModuleOperations.getJavaFacet(usedModule).getClassPath()) {
       VirtualFile jarFile = getJarFile(stubPath);
       if (jarFile != null) {
         stubFiles.add(jarFile);

@@ -50,6 +50,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -63,6 +64,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -110,7 +112,7 @@ public class NewRootAction extends AnAction {
             SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
             SModel model = myModelDescriptor;
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
-            ((jetbrains.mps.smodel.SNode) newNode).setName(getNameField().getText());
+            SNodeAccessUtil.setProperty(newNode, jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name, getNameField().getText());
             model.addRootNode(newNode);
             myModelDescriptor.save();
           }

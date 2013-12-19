@@ -1,5 +1,6 @@
 package org.jetbrains.jps.builders;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.application.ex.PathManagerEx;
 import com.intellij.openapi.util.SystemInfo;
@@ -267,7 +268,7 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
 
   protected BuildResult doBuild(final ProjectDescriptor descriptor, CompileScopeTestBuilder scopeBuilder) {
     Map<String, String> builderParams = getBuilderParams();
-    IncProjectBuilder builder = new IncProjectBuilder(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null);
+    IncProjectBuilder builder = new IncProjectBuilder(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null, false);
     BuildResult result = new BuildResult();
     builder.addMessageHandler(result);
     try {

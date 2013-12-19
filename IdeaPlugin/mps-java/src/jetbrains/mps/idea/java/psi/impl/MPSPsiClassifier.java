@@ -27,6 +27,7 @@ import com.intellij.psi.impl.light.JavaIdentifier;
 import com.intellij.psi.javadoc.PsiDocComment;
 import com.intellij.psi.scope.PsiScopeProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.psi.util.PsiUtil;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -336,7 +337,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
                                      @NotNull ResolveState state,
                                      PsiElement lastParent,
                                      @NotNull PsiElement place) {
-    return PsiClassImplUtil.processDeclarationsInClass(this, processor, state, null, lastParent, place, false);
+    return PsiClassImplUtil.processDeclarationsInClass(this, processor, state, null, lastParent, place, PsiUtil.getLanguageLevel(place), false);
   }
 
   @Nullable

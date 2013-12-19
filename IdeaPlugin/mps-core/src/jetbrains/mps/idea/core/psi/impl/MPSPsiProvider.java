@@ -230,7 +230,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
     PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
     event.setParent(node != null ? node : model);
-    event.setGeneric(false);
+    event.setGenericChange(false);
 
     ((PsiManagerImpl) manager).childrenChanged(event);
   }
