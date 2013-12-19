@@ -468,10 +468,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/pluginSolution/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests/test_gen" isTestSource="false" />
