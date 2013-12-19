@@ -5,13 +5,13 @@ package jetbrains.mps.tool.builder.make;
 import jetbrains.mps.tool.common.util.UrlClassLoader;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
+import org.apache.log4j.Logger;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.environment.Environment;
-import org.apache.log4j.Logger;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import java.util.LinkedHashSet;
@@ -53,18 +53,22 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   @Override
   public void work() {
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
 
     for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
-      config = config.addLib(jar, new File(jar));
+      File jarFile = new File(jar);
+      if (!(jarFile.exists())) {
+        error("Library " + jar + " does not exist.");
+      }
+      config = config.addLib(jar, jarFile);
     }
     for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
     }
 
     Environment environment = new GeneratorWorker.MyEnvironment(config);
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-
     setupEnvironment();
     setGenerationProperties();
     boolean doneSomething = false;
