@@ -52,30 +52,22 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramNode_gju6mh_a(final EditorContext editorContext, final SNode node) {
-    final PropertyMapperCell parameterPropertyCell_gju6mh_a0a = new PropertyMapperCell(editorContext, node) {
-      protected PropertyMapperCell.WritableModelProperty createModelProperty() {
-        return new PropertyMapperCell.WritableModelProperty<String>() {
-          protected String getModelPropertyValue() {
-            return SPropertyOperations.getString(node, "name");
-          }
+    final PropertyMapperCell parameterPropertyCell_gju6mh_a0a = new PropertyMapperCell<String>(editorContext, node) {
+      protected String getModelPropertyValueImpl() {
+        return SPropertyOperations.getString(node, "name");
+      }
 
-          protected void setModelPropertyValue(String value) {
-            SPropertyOperations.set(node, "name", value);
-          }
-        };
+      protected void setModelPropertyValueImpl(String value) {
+        SPropertyOperations.set(node, "name", value);
       }
     };
-    final PropertyMapperCell parameterPropertyCell_gju6mh_a1a = new PropertyMapperCell(editorContext, node) {
-      protected PropertyMapperCell.WritableModelProperty createModelProperty() {
-        return new PropertyMapperCell.WritableModelProperty<Boolean>() {
-          protected Boolean getModelPropertyValue() {
-            return SPropertyOperations.getBoolean(node, "myBooleanProperty");
-          }
+    final PropertyMapperCell parameterPropertyCell_gju6mh_a1a = new PropertyMapperCell<Boolean>(editorContext, node) {
+      protected Boolean getModelPropertyValueImpl() {
+        return SPropertyOperations.getBoolean(node, "myBooleanProperty");
+      }
 
-          protected void setModelPropertyValue(Boolean value) {
-            SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
-          }
-        };
+      protected void setModelPropertyValueImpl(Boolean value) {
+        SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
       }
     };
     BlockCell editorCell = new BlockCell(editorContext, node, JetpadUtils.modelProperty(new Computable<Integer>() {

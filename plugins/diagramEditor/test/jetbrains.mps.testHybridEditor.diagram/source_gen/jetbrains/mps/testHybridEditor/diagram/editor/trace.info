@@ -211,42 +211,42 @@
     <unitInfo nodeId="221487594584013390" fileName="BlockEditor.java" startLine="35" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.editor.BlockEditor" />
   </root>
   <root nodeRef="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)/3524364213239966523">
-    <nodeInfo nodeId="7594581796304076690" fileName="OutputPortEditor.java" startLine="27" startPosition="97" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594581796304081636" fileName="OutputPortEditor.java" startLine="30" startPosition="10" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7594581796304081642" fileName="OutputPortEditor.java" startLine="31" startPosition="43" endLine="32" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594581796304081835" fileName="OutputPortEditor.java" startLine="32" startPosition="42" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594581796304079285" fileName="OutputPortEditor.java" startLine="33" startPosition="49" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7839772582271359145" fileName="OutputPortEditor.java" startLine="34" startPosition="0" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6365639112245723514" fileName="OutputPortEditor.java" startLine="37" startPosition="6" endLine="38" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6365639112243655002" fileName="OutputPortEditor.java" startLine="38" startPosition="32" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3524364213239966575" fileName="OutputPortEditor.java" startLine="43" startPosition="47" endLine="44" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7594581796304076684" fileName="OutputPortEditor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="3524364213239966570" fileName="OutputPortEditor.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="7594581796304076676" fileName="OutputPortEditor.java" startLine="24" startPosition="50" endLine="30" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7839772582271343561" fileName="OutputPortEditor.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
-    <nodeInfo nodeId="6365639112245690498" fileName="OutputPortEditor.java" startLine="22" startPosition="79" endLine="37" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3524364213239966532" fileName="OutputPortEditor.java" startLine="21" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="7594581796304076689" fileName="OutputPortEditor.java" startLine="27" startPosition="97" endLine="28" endPosition="55" />
-    <scopeInfo nodeId="3524364213239966574" fileName="OutputPortEditor.java" startLine="43" startPosition="47" endLine="44" endPosition="98" />
-    <scopeInfo nodeId="7594581796304076684" fileName="OutputPortEditor.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+    <nodeInfo nodeId="7594581796304076690" fileName="OutputPortEditor.java" startLine="26" startPosition="97" endLine="27" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796304081636" fileName="OutputPortEditor.java" startLine="29" startPosition="10" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7594581796304081642" fileName="OutputPortEditor.java" startLine="30" startPosition="43" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796304081835" fileName="OutputPortEditor.java" startLine="31" startPosition="42" endLine="32" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796304079285" fileName="OutputPortEditor.java" startLine="32" startPosition="49" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7839772582271359145" fileName="OutputPortEditor.java" startLine="33" startPosition="0" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6365639112245723514" fileName="OutputPortEditor.java" startLine="36" startPosition="6" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6365639112243655002" fileName="OutputPortEditor.java" startLine="37" startPosition="32" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3524364213239966575" fileName="OutputPortEditor.java" startLine="42" startPosition="47" endLine="43" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7594581796304076684" fileName="OutputPortEditor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="3524364213239966570" fileName="OutputPortEditor.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="7594581796304076676" fileName="OutputPortEditor.java" startLine="23" startPosition="50" endLine="29" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7839772582271343561" fileName="OutputPortEditor.java" startLine="23" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="6365639112245690498" fileName="OutputPortEditor.java" startLine="21" startPosition="79" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3524364213239966532" fileName="OutputPortEditor.java" startLine="20" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="7594581796304076689" fileName="OutputPortEditor.java" startLine="26" startPosition="97" endLine="27" endPosition="55" />
+    <scopeInfo nodeId="3524364213239966574" fileName="OutputPortEditor.java" startLine="42" startPosition="47" endLine="43" endPosition="98" />
+    <scopeInfo nodeId="7594581796304076684" fileName="OutputPortEditor.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="7594581796304076687" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="3524364213239966570" fileName="OutputPortEditor.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7839772582271343567" fileName="OutputPortEditor.java" startLine="24" startPosition="50" endLine="35" endPosition="22">
+    <scopeInfo nodeId="3524364213239966570" fileName="OutputPortEditor.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7839772582271343567" fileName="OutputPortEditor.java" startLine="23" startPosition="50" endLine="34" endPosition="22">
       <varInfo nodeId="7594581796304076677" varName="mapper" />
       <varInfo nodeId="7594581796304081637" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="7839772582271343561" fileName="OutputPortEditor.java" startLine="24" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3524364213239966539" fileName="OutputPortEditor.java" startLine="22" startPosition="79" endLine="39" endPosition="26">
+    <scopeInfo nodeId="7839772582271343561" fileName="OutputPortEditor.java" startLine="23" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="3524364213239966539" fileName="OutputPortEditor.java" startLine="21" startPosition="79" endLine="38" endPosition="26">
       <varInfo nodeId="6365639112245690499" varName="outputPortCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3524364213239966532" fileName="OutputPortEditor.java" startLine="21" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="3524364213239966532" fileName="OutputPortEditor.java" startLine="20" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="3524364213239966535" varName="context" />
       <varInfo nodeId="3524364213239966537" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7594581796304076680" fileName="OutputPortEditor.java" startLine="25" startPosition="45" endLine="30" endPosition="9" unitName="jetbrains.mps.testHybridEditor.diagram.editor.OutputPortEditor$2" />
-    <unitInfo nodeId="7839772582271343559" fileName="OutputPortEditor.java" startLine="23" startPosition="43" endLine="37" endPosition="5" unitName="jetbrains.mps.testHybridEditor.diagram.editor.OutputPortEditor$1" />
-    <unitInfo nodeId="3524364213239966523" fileName="OutputPortEditor.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.editor.OutputPortEditor" />
+    <unitInfo nodeId="7594581796304076680" fileName="OutputPortEditor.java" startLine="24" startPosition="45" endLine="29" endPosition="9" unitName="jetbrains.mps.testHybridEditor.diagram.editor.OutputPortEditor$2" />
+    <unitInfo nodeId="7839772582271343559" fileName="OutputPortEditor.java" startLine="22" startPosition="40" endLine="36" endPosition="5" unitName="jetbrains.mps.testHybridEditor.diagram.editor.OutputPortEditor$1" />
+    <unitInfo nodeId="3524364213239966523" fileName="OutputPortEditor.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.editor.OutputPortEditor" />
   </root>
   <root nodeRef="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)/6279035160241222452">
     <nodeInfo nodeId="7594581796303983394" fileName="InputPortEditor.java" startLine="26" startPosition="97" endLine="27" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.jetpad.GenericMapperCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.OutputPortCell;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.RectView;
@@ -20,7 +19,7 @@ public class OutputPortEditor extends AbstractJetpadEditor {
 
   @Override
   public EditorCell createEditorCell(EditorContext context, final SNode node) {
-    GenericMapperCell outputPortCell = new OutputPortCell(context, node) {
+    OutputPortCell outputPortCell = new OutputPortCell(context, node) {
       public Mapper<SNode, RectView> getMapper() {
         Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(node, new RectView()) {
           @Override
