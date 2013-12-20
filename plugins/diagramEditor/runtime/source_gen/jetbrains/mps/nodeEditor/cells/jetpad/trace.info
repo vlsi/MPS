@@ -12,66 +12,117 @@
     <unitInfo nodeId="285670992206004280" fileName="PortCell.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PortCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/285670992208410529">
-    <nodeInfo nodeId="285670992208410530" fileName="PropertyMapperCell.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myViewProperty" />
-    <nodeInfo nodeId="2682505046536390007" fileName="PropertyMapperCell.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelProperty" />
-    <nodeInfo nodeId="1357648881830546316" fileName="PropertyMapperCell.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandId" />
-    <nodeInfo nodeId="3710139271550044458" fileName="PropertyMapperCell.java" startLine="21" startPosition="70" endLine="22" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2682505046536409751" fileName="PropertyMapperCell.java" startLine="22" startPosition="31" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1357648881830560031" fileName="PropertyMapperCell.java" startLine="23" startPosition="44" endLine="24" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1952076962750390701" fileName="PropertyMapperCell.java" startLine="31" startPosition="109" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1952076962750312590" fileName="PropertyMapperCell.java" startLine="32" startPosition="122" endLine="33" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1357648881830001309" fileName="PropertyMapperCell.java" startLine="33" startPosition="14" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1357648881830063937" fileName="PropertyMapperCell.java" startLine="34" startPosition="34" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3710139271549117564" fileName="PropertyMapperCell.java" startLine="35" startPosition="80" endLine="36" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3710139271548896258" fileName="PropertyMapperCell.java" startLine="42" startPosition="33" endLine="43" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3710139271548769387" fileName="PropertyMapperCell.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModelProperty#()Ljetbrains/jetpad/model/property/ReadableProperty;" />
-    <nodeInfo nodeId="3710139271548884840" fileName="PropertyMapperCell.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3710139271551489041" fileName="PropertyMapperCell.java" startLine="58" startPosition="33" endLine="59" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2682505046536456112" fileName="PropertyMapperCell.java" startLine="60" startPosition="5" endLine="61" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="285670992208410614" fileName="PropertyMapperCell.java" startLine="61" startPosition="46" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="285670992208410580" fileName="PropertyMapperCell.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
-    <nodeInfo nodeId="7535322512157574865" fileName="PropertyMapperCell.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3710139271551479260" fileName="PropertyMapperCell.java" startLine="57" startPosition="42" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="285670992208410544" fileName="PropertyMapperCell.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyMapperCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7535322512157534637" fileName="PropertyMapperCell.java" startLine="40" startPosition="29" endLine="45" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7535322512157735070" fileName="PropertyMapperCell.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="285670992208410591" fileName="PropertyMapperCell.java" startLine="56" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronizeViewWithModel#()V" />
-    <nodeInfo nodeId="7535322512157702105" fileName="PropertyMapperCell.java" startLine="38" startPosition="25" endLine="47" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1357648881830306907" fileName="PropertyMapperCell.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1357648881830158389" fileName="PropertyMapperCell.java" startLine="36" startPosition="71" endLine="49" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1357648881829924167" fileName="PropertyMapperCell.java" startLine="31" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;Ljetbrains/jetpad/model/property/Property;)V" />
-    <scopeInfo nodeId="285670992208410586" fileName="PropertyMapperCell.java" startLine="28" startPosition="71" endLine="28" endPosition="71" />
-    <scopeInfo nodeId="7535322512157574866" fileName="PropertyMapperCell.java" startLine="42" startPosition="33" endLine="43" endPosition="111" />
-    <scopeInfo nodeId="3710139271548769387" fileName="PropertyMapperCell.java" startLine="52" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3710139271548884840" fileName="PropertyMapperCell.java" startLine="54" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="3710139271548940197" varName="value" />
+    <nodeInfo nodeId="2682505046536390007" fileName="PropertyMapperCell.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelProperty" />
+    <nodeInfo nodeId="1357648881830546316" fileName="PropertyMapperCell.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandId" />
+    <nodeInfo nodeId="3710139271550044458" fileName="PropertyMapperCell.java" startLine="27" startPosition="70" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2682505046536409751" fileName="PropertyMapperCell.java" startLine="28" startPosition="31" endLine="29" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1357648881830560031" fileName="PropertyMapperCell.java" startLine="29" startPosition="44" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1357648881830063937" fileName="PropertyMapperCell.java" startLine="37" startPosition="109" endLine="38" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768504176634" fileName="PropertyMapperCell.java" startLine="38" startPosition="80" endLine="39" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3710139271548769387" fileName="PropertyMapperCell.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModelProperty#()Ljetbrains/mps/nodeEditor/cells/jetpad/PropertyMapperCell/WritableModelProperty;" />
+    <nodeInfo nodeId="5374841768503760707" fileName="PropertyMapperCell.java" startLine="45" startPosition="42" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="285670992208410614" fileName="PropertyMapperCell.java" startLine="46" startPosition="47" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768502995430" fileName="PropertyMapperCell.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHandlers" />
+    <nodeInfo nodeId="5374841768503013428" fileName="PropertyMapperCell.java" startLine="54" startPosition="31" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768503044686" fileName="PropertyMapperCell.java" startLine="56" startPosition="7" endLine="57" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5374841768503087004" fileName="PropertyMapperCell.java" startLine="59" startPosition="30" endLine="60" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768503129979" fileName="PropertyMapperCell.java" startLine="61" startPosition="37" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768509056410" fileName="PropertyMapperCell.java" startLine="72" startPosition="32" endLine="73" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5374841768507050826" fileName="PropertyMapperCell.java" startLine="84" startPosition="31" endLine="85" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768508856668" fileName="PropertyMapperCell.java" startLine="92" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelPropertyValue#()null" />
+    <nodeInfo nodeId="5374841768507150909" fileName="PropertyMapperCell.java" startLine="94" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(null)V" />
+    <nodeInfo nodeId="5374841768503672716" fileName="PropertyMapperCell.java" startLine="97" startPosition="31" endLine="98" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5374841768503463404" fileName="PropertyMapperCell.java" startLine="98" startPosition="27" endLine="99" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5374841768503441866" fileName="PropertyMapperCell.java" startLine="101" startPosition="83" endLine="102" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768503368036" fileName="PropertyMapperCell.java" startLine="104" startPosition="10" endLine="105" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="285670992208410580" fileName="PropertyMapperCell.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
+    <nodeInfo nodeId="5374841768503002099" fileName="PropertyMapperCell.java" startLine="53" startPosition="90" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5374841768503168919" fileName="PropertyMapperCell.java" startLine="60" startPosition="32" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5374841768509055401" fileName="PropertyMapperCell.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()null" />
+    <nodeInfo nodeId="5374841768507050824" fileName="PropertyMapperCell.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5374841768503423249" fileName="PropertyMapperCell.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="call#(Ljetbrains/jetpad/model/event/EventHandler;)V" />
+    <nodeInfo nodeId="1357648881829924167" fileName="PropertyMapperCell.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;Ljetbrains/jetpad/model/property/Property;)V" />
+    <nodeInfo nodeId="285670992208410544" fileName="PropertyMapperCell.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyMapperCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="285670992208410591" fileName="PropertyMapperCell.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronizeViewWithModel#()V" />
+    <nodeInfo nodeId="5374841768509009342" fileName="PropertyMapperCell.java" startLine="70" startPosition="28" endLine="75" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5374841768507050820" fileName="PropertyMapperCell.java" startLine="82" startPosition="27" endLine="87" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768503390608" fileName="PropertyMapperCell.java" startLine="99" startPosition="89" endLine="104" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5374841768503078080" fileName="PropertyMapperCell.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="5374841768509009340" fileName="PropertyMapperCell.java" startLine="70" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()null" />
+    <nodeInfo nodeId="5374841768507050818" fileName="PropertyMapperCell.java" startLine="82" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5374841768503069592" fileName="PropertyMapperCell.java" startLine="57" startPosition="64" endLine="65" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5374841768509009336" fileName="PropertyMapperCell.java" startLine="68" startPosition="20" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5374841768507066500" fileName="PropertyMapperCell.java" startLine="80" startPosition="32" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768503358070" fileName="PropertyMapperCell.java" startLine="96" startPosition="45" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5374841768508908432" fileName="PropertyMapperCell.java" startLine="68" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()null" />
+    <nodeInfo nodeId="5374841768507035660" fileName="PropertyMapperCell.java" startLine="80" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(null)V" />
+    <nodeInfo nodeId="5374841768503337828" fileName="PropertyMapperCell.java" startLine="96" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="firePropertyChangedEvent#()V" />
+    <nodeInfo nodeId="5374841768502969710" fileName="PropertyMapperCell.java" startLine="53" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addHandler#(Ljetbrains/jetpad/model/event/EventHandler;)Ljetbrains/jetpad/model/event/Registration;" />
+    <scopeInfo nodeId="285670992208410586" fileName="PropertyMapperCell.java" startLine="34" startPosition="71" endLine="34" endPosition="71" />
+    <scopeInfo nodeId="3710139271548769387" fileName="PropertyMapperCell.java" startLine="42" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5374841768503002102" fileName="PropertyMapperCell.java" startLine="54" startPosition="31" endLine="55" endPosition="83" />
+    <scopeInfo nodeId="5374841768503168922" fileName="PropertyMapperCell.java" startLine="61" startPosition="37" endLine="62" endPosition="30" />
+    <scopeInfo nodeId="5374841768509055402" fileName="PropertyMapperCell.java" startLine="72" startPosition="32" endLine="73" endPosition="45" />
+    <scopeInfo nodeId="5374841768507050825" fileName="PropertyMapperCell.java" startLine="84" startPosition="31" endLine="85" endPosition="60" />
+    <scopeInfo nodeId="5374841768508856668" fileName="PropertyMapperCell.java" startLine="92" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="5374841768507150909" fileName="PropertyMapperCell.java" startLine="94" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="5374841768507184410" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3710139271551479263" fileName="PropertyMapperCell.java" startLine="58" startPosition="33" endLine="59" endPosition="13" />
-    <scopeInfo nodeId="285670992208410554" fileName="PropertyMapperCell.java" startLine="21" startPosition="70" endLine="24" endPosition="72" />
-    <scopeInfo nodeId="285670992208410580" fileName="PropertyMapperCell.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="5374841768503423251" fileName="PropertyMapperCell.java" startLine="101" startPosition="83" endLine="102" endPosition="36" />
+    <scopeInfo nodeId="1357648881829924170" fileName="PropertyMapperCell.java" startLine="37" startPosition="109" endLine="39" endPosition="80" />
+    <scopeInfo nodeId="285670992208410594" fileName="PropertyMapperCell.java" startLine="45" startPosition="42" endLine="47" endPosition="22" />
+    <scopeInfo nodeId="285670992208410554" fileName="PropertyMapperCell.java" startLine="27" startPosition="70" endLine="30" endPosition="72" />
+    <scopeInfo nodeId="285670992208410580" fileName="PropertyMapperCell.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="285670992208410582" varName="g" />
       <varInfo nodeId="285670992208410584" varName="parentSettings" />
     </scopeInfo>
-    <scopeInfo nodeId="7535322512157574865" fileName="PropertyMapperCell.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="285670992208410544" fileName="PropertyMapperCell.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="285670992208410545" varName="editorContext" />
-      <varInfo nodeId="285670992208410547" varName="node" />
+    <scopeInfo nodeId="5374841768509055401" fileName="PropertyMapperCell.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="5374841768507050824" fileName="PropertyMapperCell.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="5374841768503423249" fileName="PropertyMapperCell.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="5374841768503423249" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="7535322512157735071" fileName="PropertyMapperCell.java" startLine="40" startPosition="29" endLine="45" endPosition="90" />
-    <scopeInfo nodeId="285670992208410594" fileName="PropertyMapperCell.java" startLine="57" startPosition="42" endLine="62" endPosition="22" />
-    <scopeInfo nodeId="7535322512157735070" fileName="PropertyMapperCell.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="285670992208410591" fileName="PropertyMapperCell.java" startLine="56" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1357648881830306909" fileName="PropertyMapperCell.java" startLine="38" startPosition="25" endLine="47" endPosition="11" />
-    <scopeInfo nodeId="1357648881830306907" fileName="PropertyMapperCell.java" startLine="38" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1357648881829924170" fileName="PropertyMapperCell.java" startLine="31" startPosition="109" endLine="49" endPosition="8" />
-    <scopeInfo nodeId="1357648881829924167" fileName="PropertyMapperCell.java" startLine="31" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1357648881829924167" fileName="PropertyMapperCell.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1357648881826884279" varName="configuration" />
       <varInfo nodeId="1357648881829983421" varName="viewProperty" />
     </scopeInfo>
-    <unitInfo nodeId="7535322512157574865" fileName="PropertyMapperCell.java" startLine="41" startPosition="63" endLine="45" endPosition="13" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$3" />
-    <unitInfo nodeId="7535322512157735070" fileName="PropertyMapperCell.java" startLine="39" startPosition="44" endLine="47" endPosition="9" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$2" />
-    <unitInfo nodeId="1357648881830306907" fileName="PropertyMapperCell.java" startLine="37" startPosition="66" endLine="49" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$1" />
-    <unitInfo nodeId="285670992208410529" fileName="PropertyMapperCell.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" />
+    <scopeInfo nodeId="5374841768503078082" fileName="PropertyMapperCell.java" startLine="59" startPosition="30" endLine="63" endPosition="11" />
+    <scopeInfo nodeId="285670992208410544" fileName="PropertyMapperCell.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="285670992208410545" varName="editorContext" />
+      <varInfo nodeId="285670992208410547" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="285670992208410591" fileName="PropertyMapperCell.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="5374841768509009341" fileName="PropertyMapperCell.java" startLine="70" startPosition="28" endLine="75" endPosition="13" />
+    <scopeInfo nodeId="5374841768507050819" fileName="PropertyMapperCell.java" startLine="82" startPosition="27" endLine="87" endPosition="88" />
+    <scopeInfo nodeId="5374841768503078080" fileName="PropertyMapperCell.java" startLine="59" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5374841768509009340" fileName="PropertyMapperCell.java" startLine="70" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5374841768507050818" fileName="PropertyMapperCell.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="5374841768503358071" fileName="PropertyMapperCell.java" startLine="97" startPosition="31" endLine="105" endPosition="32">
+      <varInfo nodeId="5374841768503390609" varName="caller" />
+      <varInfo nodeId="5374841768503463405" varName="event" />
+      <varInfo nodeId="5374841768503672719" varName="newValue" />
+    </scopeInfo>
+    <scopeInfo nodeId="5374841768508908447" fileName="PropertyMapperCell.java" startLine="68" startPosition="20" endLine="77" endPosition="9" />
+    <scopeInfo nodeId="5374841768507035685" fileName="PropertyMapperCell.java" startLine="80" startPosition="32" endLine="89" endPosition="9" />
+    <scopeInfo nodeId="5374841768503337831" fileName="PropertyMapperCell.java" startLine="96" startPosition="45" endLine="106" endPosition="7" />
+    <scopeInfo nodeId="5374841768508908432" fileName="PropertyMapperCell.java" startLine="68" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5374841768507035660" fileName="PropertyMapperCell.java" startLine="80" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="5374841768507035664" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="5374841768502969738" fileName="PropertyMapperCell.java" startLine="53" startPosition="90" endLine="65" endPosition="8">
+      <varInfo nodeId="5374841768503044687" varName="registration" />
+    </scopeInfo>
+    <scopeInfo nodeId="5374841768503337828" fileName="PropertyMapperCell.java" startLine="96" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="5374841768502969710" fileName="PropertyMapperCell.java" startLine="53" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="5374841768502969714" varName="handler" />
+    </scopeInfo>
+    <unitInfo nodeId="5374841768509055401" fileName="PropertyMapperCell.java" startLine="71" startPosition="79" endLine="75" endPosition="11" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$3" />
+    <unitInfo nodeId="5374841768507050824" fileName="PropertyMapperCell.java" startLine="83" startPosition="61" endLine="87" endPosition="11" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$4" />
+    <unitInfo nodeId="5374841768503423249" fileName="PropertyMapperCell.java" startLine="100" startPosition="82" endLine="104" endPosition="9" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$4" />
+    <unitInfo nodeId="5374841768503078080" fileName="PropertyMapperCell.java" startLine="58" startPosition="17" endLine="65" endPosition="7" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$1" />
+    <unitInfo nodeId="5374841768509009340" fileName="PropertyMapperCell.java" startLine="69" startPosition="54" endLine="77" endPosition="7" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$2" />
+    <unitInfo nodeId="5374841768507050818" fileName="PropertyMapperCell.java" startLine="81" startPosition="42" endLine="89" endPosition="7" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$3" />
+    <unitInfo nodeId="5374841768502710291" fileName="PropertyMapperCell.java" startLine="50" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell$WritableModelProperty" />
+    <unitInfo nodeId="285670992208410529" fileName="PropertyMapperCell.java" startLine="23" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784369">
     <nodeInfo nodeId="718530200791455140" fileName="JetpadUtils.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCE" />

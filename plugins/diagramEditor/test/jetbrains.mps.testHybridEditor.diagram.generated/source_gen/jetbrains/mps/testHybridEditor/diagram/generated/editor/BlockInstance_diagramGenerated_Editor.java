@@ -9,11 +9,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
-import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.mps.util.Computable;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -54,29 +53,29 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createDiagramNode_gju6mh_a(final EditorContext editorContext, final SNode node) {
     final PropertyMapperCell parameterPropertyCell_gju6mh_a0a = new PropertyMapperCell(editorContext, node) {
-      protected ReadableProperty createModelProperty() {
-        return JetpadUtils.modelProperty(new Computable<String>() {
-          public String compute() {
+      protected PropertyMapperCell.WritableModelProperty createModelProperty() {
+        return new PropertyMapperCell.WritableModelProperty<String>() {
+          protected String getModelPropertyValue() {
             return SPropertyOperations.getString(node, "name");
           }
-        });
-      }
 
-      protected void setModelPropertyValue(String value) {
-        SPropertyOperations.set(node, "name", value);
+          protected void setModelPropertyValue(String value) {
+            SPropertyOperations.set(node, "name", value);
+          }
+        };
       }
     };
     final PropertyMapperCell parameterPropertyCell_gju6mh_a1a = new PropertyMapperCell(editorContext, node) {
-      protected ReadableProperty createModelProperty() {
-        return JetpadUtils.modelProperty(new Computable<Boolean>() {
-          public Boolean compute() {
+      protected PropertyMapperCell.WritableModelProperty createModelProperty() {
+        return new PropertyMapperCell.WritableModelProperty<Boolean>() {
+          protected Boolean getModelPropertyValue() {
             return SPropertyOperations.getBoolean(node, "myBooleanProperty");
           }
-        });
-      }
 
-      protected void setModelPropertyValue(String value) {
-        SPropertyOperations.set(node, "myBooleanProperty", value);
+          protected void setModelPropertyValue(Boolean value) {
+            SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
+          }
+        };
       }
     };
     BlockCell editorCell = new BlockCell(editorContext, node, JetpadUtils.modelProperty(new Computable<Integer>() {
