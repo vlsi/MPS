@@ -23,9 +23,12 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.psi.PsiDirectory;
+import com.intellij.psi.PsiElement;
 import jetbrains.mps.ide.editor.actions.ImportHelper;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -153,7 +156,10 @@ public class NewRootAction extends AnAction {
   public void update(AnActionEvent e) {
     updateFields(e);
 
-    e.getPresentation().setVisible(isEnabled());
+    final boolean isEnabled = isEnabled(e);
+    e.getPresentation().setVisible(isEnabled);
+    if(!isEnabled) return;
+
     if(myConceptFqNameToNodePointerMap.isEmpty()) {
       e.getPresentation().setText("Add Language Import");
       e.getPresentation().setIcon(IdeIcons.LANGUAGE_ICON);
@@ -229,7 +235,25 @@ public class NewRootAction extends AnAction {
     }
   }
 
-  public boolean isEnabled() {
-    return myOperationContext != null && (myModelDescriptor != null || myNewModel) && myProject != null;
+  public boolean isEnabled(AnActionEvent e) {
+    PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
+    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
+      //Can be used only on package
+      return false;
+    }
+    VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
+
+    Module m = e.getData(LangDataKeys.MODULE);
+    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(m).getSourceRoots(true);
+    boolean isUnderSourceRoot = false;
+    for (VirtualFile root : sourceRoots) {
+      if (targetDir.getPath().equals(root.getPath())) {
+        //Can't be source or test folder
+        return false;
+      }
+      isUnderSourceRoot =  isUnderSourceRoot || targetDir.getPath().startsWith(root.getPath().endsWith(File.separator) ? root.getPath() : root.getPath() + File.separator);
+    }
+
+    return isUnderSourceRoot && myOperationContext != null && (myModelDescriptor != null || myNewModel) && myProject != null;
   }
 }
