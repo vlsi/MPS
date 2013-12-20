@@ -20,6 +20,8 @@ import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.SourceFolder;
+import com.intellij.openapi.roots.impl.ContentEntryImpl;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
@@ -81,11 +83,13 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
             if(path instanceof FileBasedModelRoot) {
               for(String file : ((FileBasedModelRoot) path).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
                 for(ContentEntry contentEntry : modifiableRootModel.getContentEntries()) {
-                  if(!file.contains(contentEntry.getFile().getPath()))
-                    continue;
-                  //Just add new source folder - do not watch after delete
-                  contentEntry.addSourceFolder(VirtualFileUtils.getVirtualFile(file), false);
-                  break;
+                  if(!(contentEntry instanceof ContentEntryImpl)) continue;
+                  for(SourceFolder source : contentEntry.getSourceFolders()) {
+                    if(!file.contains(source.getFile().getPath()))
+                      continue;
+                    //Just add new source/test folder - do not watch after delete
+                    contentEntry.addSourceFolder(VirtualFileUtils.getVirtualFile(file), source.isTestSource());
+                  }
                 }
               }
             }
