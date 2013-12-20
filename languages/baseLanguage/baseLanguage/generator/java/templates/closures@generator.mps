@@ -909,10 +909,6 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpea.1170874151016" resolveInfo="getTypeVars_from_Closure_enclosingClass" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpea.1170730182541" resolveInfo="QueriesUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1170874432276" nodeInfo="nn" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216945740557" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1216945738978" nodeInfo="nn" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetScope" typeId="tpf3.1216945228272" id="1216945743435" nodeInfo="nn" />
-                  </node>
                 </node>
               </node>
             </node>
