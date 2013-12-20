@@ -6,10 +6,11 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.project.MPSProject;
@@ -34,8 +35,11 @@ public class DeleteNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((ActionPlace) MapSequence.fromMap(_params).get("place")) != ActionPlace.PROJECT_PANE_SNODE) {
+      return false;
+    }
     for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
-      if (check_v2o7qu_a0a0a0(node.getModel())) {
+      if (check_v2o7qu_a0a1a0(node.getModel())) {
         return false;
       }
     }
@@ -66,6 +70,10 @@ public class DeleteNode_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("nodes", event.getData(MPSCommonDataKeys.NODES));
     if (MapSequence.fromMap(_params).get("nodes") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
+    if (MapSequence.fromMap(_params).get("place") == null) {
       return false;
     }
     return true;
@@ -101,7 +109,7 @@ public class DeleteNode_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(DeleteNode_Action.class);
 
-  private static boolean check_v2o7qu_a0a0a0(SModel checkedDotOperand) {
+  private static boolean check_v2o7qu_a0a1a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }

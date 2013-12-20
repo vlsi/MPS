@@ -7,12 +7,12 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import java.util.ArrayList;
@@ -39,16 +39,16 @@ public class CutNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((ActionPlace) MapSequence.fromMap(_params).get("place")) != ActionPlace.PROJECT_PANE_SNODE) {
+      return false;
+    }
     for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
       if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first())) {
         return false;
       }
-      if (check_n39602_a1a0a0(SNodeOperations.getModel(node))) {
+      if (check_n39602_a1a1a0(SNodeOperations.getModel(node))) {
         return false;
       }
-    }
-    if (((ActionPlace) MapSequence.fromMap(_params).get("place")) != ActionPlace.PROJECT_PANE) {
-      return false;
     }
     return CutNode_Action.this.getProjectPane(_params) != null;
   }
@@ -122,7 +122,7 @@ public class CutNode_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(CutNode_Action.class);
 
-  private static boolean check_n39602_a1a0a0(SModel checkedDotOperand) {
+  private static boolean check_n39602_a1a1a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }

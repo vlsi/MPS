@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -133,7 +134,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   // TODO: move to open API
   @Override
-  Style getStyle();
+  StyleImpl getStyle();
 
   boolean isLeaf();
 

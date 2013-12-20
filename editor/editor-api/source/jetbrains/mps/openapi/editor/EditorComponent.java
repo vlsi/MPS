@@ -68,6 +68,8 @@ public interface EditorComponent {
 
   boolean isReadOnly();
 
+  boolean isCellReadOnly(EditorCell editorCell);
+
   void update();
 
   ActionHandler getActionHandler();

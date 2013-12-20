@@ -47,7 +47,6 @@ public interface Style {
 
   <T> int getHighestPriority(StyleAttribute<T> attribute);
 
-  @Nullable
   <T> T get(StyleAttribute<T> attribute);
 
   /**

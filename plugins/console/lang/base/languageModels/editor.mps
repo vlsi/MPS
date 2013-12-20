@@ -90,9 +90,14 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="351968380916616970" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.351968380916615460" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="4721360224325271728" resolveInfo="CommandHolder_Actions" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="4122848433161955705" nodeInfo="ng">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="351968380916616960" nodeInfo="nn" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="4122848433161955602" nodeInfo="ng">
+        <property name="flag" nameId="tpc2.1186414551515" value="true" />
+      </node>
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8927119896327927250" nodeInfo="ng">
@@ -260,8 +265,18 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1583916890557947371" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930417" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.DiscardStylePrioriryGroup" typeId="tpc2.1950447826686048995" id="4122848433161827164" nodeInfo="ng">
+          <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="4122848433161827169" nodeInfo="ng">
+            <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+          </node>
+        </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="9053534423438002677" nodeInfo="nn" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStylePriorityGroup" typeId="tpc2.1950447826681509042" id="795210086019063122" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StylePriorityGroupReference" typeId="tpc2.3383245079137422349" id="795210086019063127" nodeInfo="ng">
+          <link role="stylePriorityGroup" roleId="tpc2.3383245079137422350" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+        </node>
+      </node>
     </node>
   </root>
   <root type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="4721360224325271728" nodeInfo="ng">
@@ -360,6 +375,15 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2197843344736290287" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="}" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215091331565" resolveInfo="RightBrace" />
+      </node>
+    </node>
+  </root>
+  <root type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="7409036893176441835" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="Console_Styles" />
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StylePriorityGroup" typeId="tpc2.3383245079137382180" id="7409036893176441979" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="readOnly" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="795210086018976096" nodeInfo="ng">
+        <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>
     </node>
   </root>

@@ -7,8 +7,9 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -49,6 +50,9 @@ public class PasteNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((ActionPlace) MapSequence.fromMap(_params).get("place")) != ActionPlace.PROJECT_PANE_SNODE && ((ActionPlace) MapSequence.fromMap(_params).get("place")) != ActionPlace.PROJECT_PANE_SMODEL) {
+      return false;
+    }
     boolean searchPanelInactive = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null || !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible());
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     return searchPanelInactive && ((SModel) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModel && PasteNode_Action.this.canPasteNodes(modelAccess, _params);
@@ -90,6 +94,10 @@ public class PasteNode_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
+    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
+    if (MapSequence.fromMap(_params).get("place") == null) {
+      return false;
+    }
     return true;
   }
 

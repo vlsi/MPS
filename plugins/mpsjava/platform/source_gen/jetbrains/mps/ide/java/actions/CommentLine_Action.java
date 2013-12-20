@@ -40,13 +40,13 @@ public class CommentLine_Action extends BaseAction {
     }
     SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
     if (singleLineComment != null) {
-      return (int) ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+      return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isCellReadOnly(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(singleLineComment))) && (int) ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
     }
     SNode statement = CommentLine_Action.this.getStatement(_params);
     if (statement == null) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList") && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isCellReadOnly(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(statement).getParent()));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

@@ -4,6 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import java.util.Iterator;
@@ -32,8 +33,16 @@ public class EditorActionUtils {
     return editorComponent.isFocusOwner() && !(editorComponent.getNodeSubstituteChooser().isVisible()) && editorComponent.getSelectionManager().getSelection() != null;
   }
 
-  /*package*/ static boolean isWriteActionEnabled(EditorComponent editorComponent) {
-    return isReadonlyActionEnabled(editorComponent) && !(editorComponent.isReadOnly());
+  public static boolean isWriteActionEnabled(EditorComponent editorComponent, Iterable<EditorCell> changingCells) {
+    if (!((isReadonlyActionEnabled(editorComponent) && !((editorComponent.isReadOnly()))))) {
+      return false;
+    }
+    for (EditorCell cell : changingCells) {
+      if (cell.getStyle().get(StyleAttributes.READ_ONLY)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   /*package*/ static EditorCell getEditorCellToInsert(EditorComponent editorComponent) {
