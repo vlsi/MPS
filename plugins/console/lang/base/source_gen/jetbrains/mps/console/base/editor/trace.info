@@ -854,48 +854,7 @@
     <unitInfo nodeId="4457873968123391941" fileName="History_Editor.java" startLine="41" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.console.base.editor.History_Editor$itemListHandler_ff9cd8_a0" />
     <unitInfo nodeId="4457873968123391941" fileName="History_Editor.java" startLine="20" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.console.base.editor.History_Editor" />
   </root>
-  <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/4721360224325271728">
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="14" startPosition="95" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="21" startPosition="53" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8986839757679863159" fileName="CommandHolder_Actions.java" startLine="30" startPosition="111" endLine="31" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4721360224325271735" fileName="CommandHolder_Actions.java" startLine="32" startPosition="7" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8986839757679862887" fileName="CommandHolder_Actions.java" startLine="36" startPosition="64" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommandHolder_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="8986839757679857611" fileName="CommandHolder_Actions.java" startLine="29" startPosition="75" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8986839757679862887" fileName="CommandHolder_Actions.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_5bkq2_a0a0d1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="14" startPosition="95" endLine="15" endPosition="110" />
-    <scopeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="21" startPosition="53" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="8986839757679857614" fileName="CommandHolder_Actions.java" startLine="30" startPosition="111" endLine="31" endPosition="85" />
-    <scopeInfo nodeId="8986839757679862887" fileName="CommandHolder_Actions.java" startLine="36" startPosition="64" endLine="37" endPosition="48" />
-    <scopeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="4721360224325271728" varName="context" />
-      <varInfo nodeId="4721360224325271728" varName="editorCell" />
-      <varInfo nodeId="4721360224325271728" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="4721360224325271728" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="4721360224325271728" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="8986839757679862887" fileName="CommandHolder_Actions.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="8986839757679862887" varName="a" />
-      <varInfo nodeId="8986839757679862887" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="4721360224325271731" fileName="CommandHolder_Actions.java" startLine="29" startPosition="75" endLine="33" endPosition="45" />
-    <scopeInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="4721360224325271728" varName="editorContext" />
-      <varInfo nodeId="4721360224325271728" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="18" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.console.base.editor.CommandHolder_Actions$CommandHolder_Actions_DELETE" />
-    <unitInfo nodeId="4721360224325271728" fileName="CommandHolder_Actions.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.console.base.editor.CommandHolder_Actions" />
-  </root>
+  <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/4721360224325271728" />
   <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/529843215038987958">
     <nodeInfo nodeId="529843215038987958" fileName="TextResultPart_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="529843215038987959" fileName="TextResultPart_Editor.java" startLine="19" startPosition="87" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -35,12 +35,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.PasteProvider;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
@@ -55,8 +49,11 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.KeyStroke;
 import com.intellij.openapi.actionSystem.ShortcutSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -173,34 +170,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               return new ConsoleTool.MyPasteProvider((PasteProvider) super.getData(key));
             }
             return super.getData(key);
-          }
-
-          @Override
-          public boolean isReadOnly() {
-            final SNode selectedNode = getSelectedNode();
-            final Wrappers._boolean editable = new Wrappers._boolean(false);
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                if (selectedNode != null) {
-                  EditorCell selectedCell = getSelectedCell();
-                  if (eq_xg3v07_a0a1a0a0a0a0a2a1a0a0e0a0a0a0b0y(check_xg3v07_a0a1a0a0c0b0a0a4a0b0y(selectedCell), SLinkOperations.getTarget(myRoot, "commandHolder", true)) && check_xg3v07_a0b0a0a2a1a0a0e0a1a42(selectedCell)) {
-                    editable.value = false;
-                  } else {
-                    editable.value = SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.console.base.structure.CommandHolder", true, false) == SLinkOperations.getTarget(myRoot, "commandHolder", true);
-                  }
-                } else {
-                  List<SNode> selectedNodes = getSelectedNodes();
-                  if (selectedNodes != null) {
-                    editable.value = ListSequence.fromList(selectedNodes).all(new IWhereFilter<SNode>() {
-                      public boolean accept(SNode it) {
-                        return SNodeOperations.getAncestor(it, "jetbrains.mps.console.base.structure.CommandHolder", false, false) == SLinkOperations.getTarget(myRoot, "commandHolder", true);
-                      }
-                    });
-                  }
-                }
-              }
-            });
-            return !(editable.value);
           }
         };
 
@@ -352,7 +321,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             myEditor.selectNode(SLinkOperations.getTarget(myRoot, "commandHolder", true));
-            jetbrains.mps.nodeEditor.cells.EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) myEditor.getSelectedCell()).getLastLeaf();
+            EditorCell lastLeaf = ((EditorCell) myEditor.getSelectedCell()).getLastLeaf();
             myEditor.changeSelection(lastLeaf);
             if (lastLeaf instanceof EditorCell_Label) {
               ((EditorCell_Label) lastLeaf).end();
@@ -582,7 +551,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           } catch (UnsupportedFlavorException ignored) {
           } catch (IOException ignored) {
           }
-          EditorCell currentCell = myEditor.getSelectedCell();
+          jetbrains.mps.openapi.editor.cells.EditorCell currentCell = myEditor.getSelectedCell();
           SNode referenceTarget = check_xg3v07_a0d0a0a5kc(pastingNodeReference);
           if (referenceTarget != null && currentCell != null && !(check_xg3v07_a0a4a0a0f26(check_xg3v07_a0a0e0a0a5kc(pastingNodeReference), myModel))) {
             SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.PastedNodeReference", null);
@@ -689,20 +658,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   protected static Logger LOG = LogManager.getLogger(ConsoleTool.class);
 
-  private static boolean check_xg3v07_a0b0a0a2a1a0a0e0a1a42(EditorCell checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isBig();
-    }
-    return false;
-  }
-
-  private static SNode check_xg3v07_a0a1a0a0c0b0a0a4a0b0y(EditorCell checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNode();
-    }
-    return null;
-  }
-
   private static Highlighter check_xg3v07_a0n0y(Project checkedDotOperand, ConsoleTool checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
@@ -744,9 +699,5 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       return checkedDotOperand.getModelReference();
     }
     return null;
-  }
-
-  private static boolean eq_xg3v07_a0a1a0a0a0a0a2a1a0a0e0a0a0a0b0y(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }
