@@ -153,7 +153,7 @@ public class IntentionsSupport {
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
-    if (myEditor.isReadOnly() || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) return;
+    if (myEditor.isSelectionReadOnly() || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) return;
 
     showIntentionsMenu();
   }
@@ -178,7 +178,7 @@ public class IntentionsSupport {
           final IntentionType intentionType = ModelAccess.instance().runReadAction(new Computable<IntentionType>() {
             @Override
             public IntentionType compute() {
-              if (isInconsistentEditor() || myEditor.isReadOnly()) return null;
+              if (isInconsistentEditor() || myEditor.isSelectionReadOnly()) return null;
               // TODO check for ActionsAsIntentions
               return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(),
                   new Computation<IntentionType>() {
@@ -197,7 +197,7 @@ public class IntentionsSupport {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             @Override
             public void run() {
-              if (isInconsistentEditor() || myEditor.isReadOnly() || interrupted()) return;
+              if (isInconsistentEditor() || myEditor.isSelectionReadOnly() || interrupted()) return;
 
               if (myEditor.getSelectedCell() == null) {
                 hideLightBulb();

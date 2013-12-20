@@ -2550,6 +2550,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!isCellReadOnly(getSelectedCell())) {
       return true;
     }
+    boolean result = true;
+    for (jetbrains.mps.openapi.editor.cells.EditorCell cell : getSelectionManager().getSelection().getSelectedCells()) {
+      if (isCellReadOnly(cell)) {
+        result = false;
+      }
+    }
+    if (result) {
+      return true;
+    }
     jetbrains.mps.openapi.editor.cells.CellActionType actionType = getActionType(keyEvent, getEditorContext());
     if (actionType != null) {
       switch (actionType) {
@@ -2888,12 +2897,32 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean isCellReadOnly(@Nullable jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     if (isReadOnly()) {
-      return false;
-    }
-    if (cell == null) {
       return true;
     }
+    if (cell == null) {
+      return isSelectionReadOnly();
+    }
     return cell.getStyle().get(StyleAttributes.READ_ONLY);
+  }
+
+  public boolean isCellsReadOnly(Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> changingCells) {
+    if (isReadOnly()) {
+      return false;
+    }
+    for (jetbrains.mps.openapi.editor.cells.EditorCell cell : changingCells) {
+      if (isCellReadOnly(cell)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public boolean isSelectionReadOnly() {
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = getSelectedCell();
+    if (cell != null) {
+      return isCellReadOnly(cell);
+    }
+    return isCellsReadOnly(getSelectionManager().getSelection().getSelectedCells());
   }
 
   public void setPopupMenuEnabled(boolean popupMenuEnabled) {
@@ -3511,19 +3540,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public boolean isCutEnabled(@NotNull DataContext dataContext) {
-      if (isDisposed() ||
+      return !(isDisposed() ||
           isInvalidLightweight() ||
-          isReadOnly() ||
-          getSelectionManager().getSelection() == null) {
-        return false;
-      }
-      List<jetbrains.mps.openapi.editor.cells.EditorCell> selectedCells = getSelectionManager().getSelection().getSelectedCells();
-      for (jetbrains.mps.openapi.editor.cells.EditorCell cell : selectedCells) {
-        if (isCellReadOnly(cell)) {
-          return false;
-        }
-      }
-      return true;
+          isSelectionReadOnly() ||
+          getSelectionManager().getSelection() == null);
     }
 
     @Override
@@ -3585,19 +3605,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public boolean isPastePossible(@NotNull DataContext dataContext) {
-      if (isDisposed() ||
+      return !(isDisposed() ||
           isInvalidLightweight() ||
-          isReadOnly() ||
-          getSelectionManager().getSelection() == null) {
-        return false;
-      }
-      List<jetbrains.mps.openapi.editor.cells.EditorCell> selectedCells = getSelectionManager().getSelection().getSelectedCells();
-      for (jetbrains.mps.openapi.editor.cells.EditorCell cell : selectedCells) {
-        if (isCellReadOnly(cell)) {
-          return false;
-        }
-      }
-      return true;
+          isSelectionReadOnly() ||
+          getSelectionManager().getSelection() == null);
     }
 
     @Override
