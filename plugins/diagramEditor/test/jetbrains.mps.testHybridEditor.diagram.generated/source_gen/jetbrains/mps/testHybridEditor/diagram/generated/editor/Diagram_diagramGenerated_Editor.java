@@ -123,7 +123,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
                 EditorCell blockCell = editorContext.createNodeCell(node);
                 if (blockCell instanceof BlockCell) {
                   addEditorCell(blockCell);
-                  return ((BlockCell) blockCell).getMapper();
+                  return ((BlockCell) blockCell).createMapper();
                 }
                 return null;
 
@@ -214,7 +214,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
                 EditorCell blockCell = editorContext.createNodeCell(node);
                 if (blockCell instanceof BlockCell) {
                   addEditorCell(blockCell);
-                  return ((BlockCell) blockCell).getMapper();
+                  return ((BlockCell) blockCell).createMapper();
                 }
                 return null;
 

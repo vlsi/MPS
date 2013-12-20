@@ -49,7 +49,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
                 EditorCell blockCell = editorContext.createNodeCell(node);
                 if (blockCell instanceof BlockCell) {
                   addEditorCell(blockCell);
-                  return ((BlockCell) blockCell).getMapper();
+                  return ((BlockCell) blockCell).createMapper();
                 }
                 return null;
               }

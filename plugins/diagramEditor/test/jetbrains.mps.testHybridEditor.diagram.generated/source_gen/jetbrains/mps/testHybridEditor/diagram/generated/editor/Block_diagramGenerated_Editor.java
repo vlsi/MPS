@@ -11,8 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
@@ -30,8 +28,8 @@ import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -64,16 +62,21 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
         SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
       }
     };
-    BlockCell editorCell = new BlockCell(editorContext, node, JetpadUtils.modelProperty(new Computable<Integer>() {
-      public Integer compute() {
+    BlockCell editorCell = new BlockCell(editorContext, node) {
+      protected Integer getXPositionFromModel() {
         return SNodeOperations.getIndexInParent(node) / 2 * 150 + 10;
       }
-    }), JetpadUtils.modelProperty(new Computable<Integer>() {
-      public Integer compute() {
+
+      protected Integer getYPositionFromModel() {
         return SPropertyOperations.getInteger(node, "y");
       }
-    })) {
-      public Mapper<SNode, DiagramNodeView> getMapper() {
+
+      @Override
+      protected void setYPositionToModel(Integer y) {
+        SPropertyOperations.set(node, "y", "" + (y));
+      }
+
+      public Mapper<SNode, DiagramNodeView> createMapper() {
         final Mapper<SNode, DiagramNodeView> mapper = new Mapper<SNode, DiagramNodeView>(node, createDiagramNodeView_70mnj_a(editorContext, node, this)) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
@@ -134,23 +137,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
     blockView.moveTo(new Vector(blockCell.getXProperty().get(), blockCell.getYProperty().get()));
     blockView.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
-      public void move(final Vector delta) {
-        String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
-          public String compute() {
-            return blockCell.getCellId() + "_" + node.getNodeId().toString();
-          }
-        });
-        editorContext.flushEvents();
-
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-          }
-        }, null, groupId, false, editorContext.getOperationContext().getProject());
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SPropertyOperations.set(node, "y", "" + (SPropertyOperations.getInteger(node, "y") + delta.y));
-          }
-        }, null, groupId, false, editorContext.getOperationContext().getProject());
+      public void move(Vector delta) {
+        blockCell.getXProperty().set(blockCell.getXProperty().get() + delta.x);
+        blockCell.getYProperty().set(blockCell.getYProperty().get() + delta.y);
 
         blockView.moveTo(new Vector(blockCell.getXProperty().get(), blockCell.getYProperty().get()));
         blockView.invalidate();

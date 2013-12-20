@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
@@ -40,18 +39,16 @@ public class BlockEditor extends AbstractJetpadEditor {
 
   @Override
   public EditorCell createEditorCell(final EditorContext context, final SNode node) {
-    final BlockCell blockCell = new BlockCell(context, node, modelProperty(new Computable<Integer>() {
-      public Integer compute() {
+    final BlockCell blockCell = new BlockCell(context, node) {
+      protected Integer getXPositionFromModel() {
         return SPropertyOperations.getInteger(node, "x");
       }
-    }), modelProperty(new Computable<Integer>() {
-      public Integer compute() {
+
+      protected Integer getYPositionFromModel() {
         return SPropertyOperations.getInteger(node, "y");
       }
-    })) {
 
-
-      public Mapper<SNode, DiagramNodeView> getMapper() {
+      public Mapper<SNode, DiagramNodeView> createMapper() {
         final BlockCell bc = this;
         final Mapper<SNode, DiagramNodeView> mapper = new Mapper<SNode, DiagramNodeView>(node, new BlockView()) {
           @Override

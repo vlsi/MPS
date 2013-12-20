@@ -11,8 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.mps.util.Computable;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -23,6 +21,7 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -35,7 +34,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -70,16 +68,26 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
         SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
       }
     };
-    BlockCell editorCell = new BlockCell(editorContext, node, JetpadUtils.modelProperty(new Computable<Integer>() {
-      public Integer compute() {
+    BlockCell editorCell = new BlockCell(editorContext, node) {
+      protected Integer getXPositionFromModel() {
         return SPropertyOperations.getInteger(node, "x");
       }
-    }), JetpadUtils.modelProperty(new Computable<Integer>() {
-      public Integer compute() {
+
+      protected Integer getYPositionFromModel() {
         return SPropertyOperations.getInteger(node, "y");
       }
-    })) {
-      public Mapper<SNode, DiagramNodeView> getMapper() {
+
+      @Override
+      protected void setXPositionToModel(Integer x) {
+        SPropertyOperations.set(node, "x", "" + (x));
+      }
+
+      @Override
+      protected void setYPositionToModel(Integer y) {
+        SPropertyOperations.set(node, "y", "" + (y));
+      }
+
+      public Mapper<SNode, DiagramNodeView> createMapper() {
         final Mapper<SNode, DiagramNodeView> mapper = new Mapper<SNode, DiagramNodeView>(node, createDiagramNodeView_gju6mh_a(editorContext, node, this)) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
@@ -180,24 +188,9 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
     blockView.moveTo(new Vector(blockCell.getXProperty().get(), blockCell.getYProperty().get()));
     blockView.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
-      public void move(final Vector delta) {
-        String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
-          public String compute() {
-            return blockCell.getCellId() + "_" + node.getNodeId().toString();
-          }
-        });
-        editorContext.flushEvents();
-
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SPropertyOperations.set(node, "x", "" + (SPropertyOperations.getInteger(node, "x") + delta.x));
-          }
-        }, null, groupId, false, editorContext.getOperationContext().getProject());
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SPropertyOperations.set(node, "y", "" + (SPropertyOperations.getInteger(node, "y") + delta.y));
-          }
-        }, null, groupId, false, editorContext.getOperationContext().getProject());
+      public void move(Vector delta) {
+        blockCell.getXProperty().set(blockCell.getXProperty().get() + delta.x);
+        blockCell.getYProperty().set(blockCell.getYProperty().get() + delta.y);
 
         blockView.moveTo(new Vector(blockCell.getXProperty().get(), blockCell.getYProperty().get()));
         blockView.invalidate();
