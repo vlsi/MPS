@@ -18,9 +18,11 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class VisibleModules {
   private List<SNode> allModules = new ArrayList<SNode>();
@@ -49,7 +51,13 @@ public class VisibleModules {
           continue;
         }
 
-        SNode depproj = SNodeOperations.as(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(projectDependency, "script", false), genContext), "jetbrains.mps.build.structure.BuildProject");
+        SNode depproj = SLinkOperations.getTarget(projectDependency, "script", false);
+        if ((depproj == null)) {
+          SReference ref = SNodeOperations.getReference(projectDependency, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", "script"));
+          report("cannot find dependency build script " + SLinkOperations.getResolveInfo(ref) + " in model " + check_xuwpka_a0a1a4a1a3a6(ref.getTargetSModelReference()), projectDependency);
+        } else {
+          depproj = SNodeOperations.as(DependenciesHelper.getOriginalNode(depproj, genContext), "jetbrains.mps.build.structure.BuildProject");
+        }
         if (depproj != null && seen.add(depproj)) {
           QueueSequence.fromQueue(queue).addLastElement(depproj);
         }
@@ -83,5 +91,12 @@ public class VisibleModules {
       result = moduleByName.get(moduleName);
     }
     return result;
+  }
+
+  private static String check_xuwpka_a0a1a4a1a3a6(SModelReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelName();
+    }
+    return null;
   }
 }

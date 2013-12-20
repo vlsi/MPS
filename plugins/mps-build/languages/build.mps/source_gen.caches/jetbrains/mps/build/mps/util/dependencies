@@ -265,7 +265,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
 </dependenciesRoot>
 
