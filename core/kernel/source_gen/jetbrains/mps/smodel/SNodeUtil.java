@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
@@ -27,11 +26,11 @@ public class SNodeUtil {
 
   public static final String link_ConceptDeclaration_extends = "extends";
   public static final String link_ConceptDeclaration_implements = "implements";
-  public static final String link_AbstractConceptDeclaration_conceptProperty = "conceptProperty";
   public static final String link_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
   public static final String link_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
 
-  public static String property_INamedConcept_name = "name";
+  public static final String property_AbstractConceptDeclaration_abstract = "abstract";
+  public static final String property_INamedConcept_name = "name";
   public static final String property_LinkDeclaration_role = "role";
   public static final String property_IResolveInfo_resolveInfo = "resolveInfo";
   public static final String property_BaseConcept_virtualPackage = "virtualPackage";
@@ -95,30 +94,6 @@ public class SNodeUtil {
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
-  public static boolean isInstanceOfConceptProperty(SNode node) {
-    if (node == null) {
-      return false;
-    }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptProperty");
-  }
-
-  public static SNode getConceptProperty_Declaration(SNode property) {
-    return SLinkOperations.getTarget(property, "conceptPropertyDeclaration", false);
-  }
-
-  public static boolean getConceptPropertyDeclaration_IsInheritable(SNode propertyDeclaration) {
-    return SPropertyOperations.getBoolean(propertyDeclaration, "inheritable");
-  }
-
-  public static boolean isInstanceOfConceptPropertyDeclaration(SNode node) {
-    if (node == null) {
-      return false;
-    }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration");
-  }
-
   public static boolean getConceptDeclaration_IsRootable(SNode concept) {
     return SPropertyOperations.getBoolean(concept, "rootable");
   }
@@ -147,16 +122,8 @@ public class SNodeUtil {
     return SLinkOperations.getTargets(concept, "propertyDeclaration", true);
   }
 
-  public static Iterable<SNode> getConcept_ConceptProperties(SNode concept) {
-    return SLinkOperations.getTargets(concept, "conceptProperty", true);
-  }
-
   public static Iterable<SNode> getConcept_ConceptLinks(SNode concept) {
     return SLinkOperations.getTargets(concept, "conceptLink", true);
-  }
-
-  public static Iterable<SNode> getConcept_ConceptPropertyDeclarations(SNode concept) {
-    return SLinkOperations.getTargets(concept, "conceptPropertyDeclaration", true);
   }
 
   public static Iterable<SNode> getConcept_ConceptLinkDeclarations(SNode concept) {
@@ -243,51 +210,16 @@ public class SNodeUtil {
     return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{});
   }
 
-  public static boolean isInstanceOfIntegerConceptProperty(SNode node) {
-    if (node == null) {
-      return false;
-    }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration");
-  }
-
-  public static boolean isInstanceOfStringConceptProperty(SNode node) {
-    if (node == null) {
-      return false;
-    }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration");
-  }
-
-  public static boolean isInstanceOfBooleanConceptProperty(SNode node) {
-    if (node == null) {
-      return false;
-    }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration");
-  }
-
   public static boolean isInstanceOfConceptLink(SNode node) {
     if (node == null) {
       return false;
     }
     String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.AggregationConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ReferenceConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptLink");
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.AggregationConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptLink");
   }
 
   public static SNode getConceptLink_Declaration(SNode link) {
     return SLinkOperations.getTarget(link, "conceptLinkDeclaration", false);
-  }
-
-  public static Object getConceptPropertyValue(SNode property) {
-    if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.structure.structure.StringConceptProperty")) {
-      return SPropertyOperations.getString(SNodeOperations.cast(property, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value");
-    } else if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty")) {
-      return SPropertyOperations.getInteger(SNodeOperations.cast(property, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value");
-    } else if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.structure.structure.BooleanConceptProperty")) {
-      return Boolean.TRUE;
-    }
-    return null;
   }
 
   public static boolean hasReferenceMacro(SNode node, String role) {

@@ -247,8 +247,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7v1nzk_g1c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7v1nzk_h1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7v1nzk_i1c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7v1nzk_j1c0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_7v1nzk_k1c0(editorContext, node));
     return editorCell;
   }
 
@@ -508,22 +506,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "new reference";
     }
-  }
-
-  private EditorCell createConstant_7v1nzk_j1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7v1nzk_j1c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createComponent_7v1nzk_k1c0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff");
-    return editorCell;
   }
 
   private EditorCell createCollection_7v1nzk_a_0(EditorContext editorContext, SNode node) {

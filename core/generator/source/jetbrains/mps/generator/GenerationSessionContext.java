@@ -20,6 +20,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -30,12 +31,14 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * Igor Alshannikov
@@ -69,8 +72,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final Map<Object, Object> mySessionObjects;
 
   // these objects survive through all steps of generation
-  private final Set<String> myUsedNames;
+  private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SAbstractConcept myNamedConcept;
+  private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
+  private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
 
   public GenerationSessionContext(IOperationContext invocationContext,
                                   IGenerationTracer generationTracer,
@@ -87,7 +92,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
-    myUsedNames = new ConcurrentHashSet<String>();
+    myUsedNames = new ConcurrentHashMap<SNodeReference, Set<String>>();
   }
 
   // copy cons
@@ -241,15 +246,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     String uniqueName;
     int count = 0;
+    final Set<String> usedNames = getUsedNames(null);
     while (true) {
       uniqueName = roughName + (count++);
-      if (!myUsedNames.contains(uniqueName)) break;
+      if (!usedNames.contains(uniqueName)) break;
     }
-    myUsedNames.add(uniqueName);
+    usedNames.add(uniqueName);
     return uniqueName;
   }
-
-  private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
 
   public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
     if (useOldStyleUniqueName) {
@@ -281,12 +285,18 @@ public class GenerationSessionContext extends StandaloneMPSContext {
         } else {
           String name = topmostNamed.getName();
           if (name != null) {
+            // In fact, ("v2".hashCode >>> 1) == ("v3".hashCode >>> 1) and "unique" names
+            // in two distinct roots (and distinct contextNode) happen to share top suffix.
+            // When such two roots were generated in parallel, unique names weren't truly unique, and got mixed up.
+            // Can't simply get rid of >>>1 as it would require rebuilding all the models where unique names were
+            // used (i.e. almost every model out there).
             suffix = Integer.toString(name.hashCode() >>> 1, Character.MAX_RADIX);
             topToSuffix.put(topmostNamed, suffix);
             uniqueNameBuffer.append('_');
             uniqueNameBuffer.append(suffix);
           }
         }
+        contextNode = topmostNamed;
       }
     } // if(contextNode != null)
 
@@ -299,18 +309,29 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     final boolean suffixAdded = roughName.length() < uniqueNameBuffer.length();
     String uniqueName = uniqueNameBuffer.toString();
 
-    if (!suffixAdded || myUsedNames.contains(uniqueName)) {
+    final Set<String> usedNames = getUsedNames(contextNode);
+
+    if (!suffixAdded || usedNames.contains(uniqueName)) {
       uniqueNameBuffer.append('_');
       final int trimPos = uniqueNameBuffer.length();
       for (int count = 0; ; count++) {
         uniqueNameBuffer.append(count);
         uniqueName = uniqueNameBuffer.toString();
-        if (!myUsedNames.contains(uniqueName)) break;
+        if (!usedNames.contains(uniqueName)) break;
         uniqueNameBuffer.setLength(trimPos);
       }
     }
-    myUsedNames.add(uniqueName);
+    usedNames.add(uniqueName);
     return uniqueName;
+  }
+
+  /**
+   * names are unique within given context, not globally in the session
+   */
+  private Set<String> getUsedNames(SNode contextNode) {
+    SNodeReference key = contextNode == null ? myFakeNameTopContextNode : contextNode.getReference();
+    Set<String> rv = myUsedNames.putIfAbsent(key, new ConcurrentHashSet<String>());
+    return rv == null ? myUsedNames.get(key) : rv;
   }
 
 
@@ -331,10 +352,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public boolean isCopiedRoot(SNode inputNode) {
     Set<SNode> set = getCopiedRoots(false);
-    if (set == null) {
-      return false;
-    }
-    return set.contains(inputNode);
+    return set != null && set.contains(inputNode);
   }
 
   private Set<SNode> getCopiedRoots(boolean create) {

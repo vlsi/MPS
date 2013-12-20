@@ -234,7 +234,6 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="6235310215814037927" nodeInfo="nn" />
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="6235310215814037928" nodeInfo="nn">
                             <link role="concept" roleId="tp25.1182511038750" targetNodeId="uigu.1894531970723270160" resolveInfo="TypeExtension" />
-                            <node role="scope" roleId="tp25.1182511038749" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="6235310215814037929" nodeInfo="nn" />
                           </node>
                         </node>
                       </node>
@@ -246,7 +245,6 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="6235310215814037933" nodeInfo="nn" />
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesIncludingImportedOperation" typeId="tp25.1182511038748" id="6235310215814037934" nodeInfo="nn">
                             <link role="concept" roleId="tp25.1182511038750" targetNodeId="uigu.8022092943109322131" resolveInfo="SimpleExtensionMethodsContainer" />
-                            <node role="scope" roleId="tp25.1182511038749" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="6235310215814037935" nodeInfo="nn" />
                           </node>
                         </node>
                         <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="6235310215814037936" nodeInfo="sn">

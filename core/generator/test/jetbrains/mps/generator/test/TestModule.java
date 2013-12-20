@@ -170,18 +170,13 @@ public class TestModule extends AbstractModule {
     public jetbrains.mps.smodel.SModel createModel() {
       Document document = ModelPersistence.saveModel(((SModelBase) myToCopy).getSModelInternal());
       Element rootElement = document.getRootElement();
-      rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
+      rootElement.setAttribute(ModelPersistence.MODEL_UID, getReference().toString());
       String modelContent = JDOMUtil.asString(document);
       try {
         return ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
         return new StubModel(PersistenceFacade.getInstance().createModelReference(myLongName), e);
       }
-    }
-
-    @Override
-    public SModel resolveModel(SModelReference reference) {
-      throw new UnsupportedOperationException("not supported since 3.0");
     }
   }
 

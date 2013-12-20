@@ -49,14 +49,13 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a;
-        nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_6v72fr_a0a = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_6v72fr_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getReferenceTarget("concept")))) {
+          SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v72fr_a0a.getReferenceTarget("concept")))) {
             return false;
           }
         }
@@ -86,5 +85,5 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 }

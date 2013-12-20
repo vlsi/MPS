@@ -1676,7 +1676,7 @@
       <varInfo nodeId="7178287329507719936" varName="targetFunType" />
       <varInfo nodeId="7178287329507719931" varName="tvr" />
     </scopeInfo>
-    <unitInfo nodeId="7178287329507699737" fileName="ClosureLiteralAdapterBuilder.java" startLine="78" startPosition="362" endLine="83" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder$1" />
+    <unitInfo nodeId="7178287329507699737" fileName="ClosureLiteralAdapterBuilder.java" startLine="78" startPosition="339" endLine="83" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder$1" />
     <unitInfo nodeId="7178287329507699514" fileName="ClosureLiteralAdapterBuilder.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590339(jetbrains.mps.baseLanguage.closures.helper)/7178287329507732246">

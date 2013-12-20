@@ -61,13 +61,6 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationsExcludingOverridden();
   }
 
-  public SNode getConceptPropertyByName(final String name) {
-    if (myTopConcept == null) {
-      return null;
-    }
-    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConceptPropertyByName(name);
-  }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

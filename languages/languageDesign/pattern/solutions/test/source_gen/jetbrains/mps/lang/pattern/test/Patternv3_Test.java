@@ -68,51 +68,48 @@ public class Patternv3_Test extends BaseTransformationTest4 {
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_v3_1fi_a0;
-          nodeToMatch_v3_1fi_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_v3_1fi_a0.getConcept().getQualifiedName()))) {
+          SNode nodeToMatch_1fi_a0 = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_1fi_a0.getConcept().getQualifiedName()))) {
             return false;
           }
           {
-            String childRole_v3_1fi_ = "operand";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_v3_1fi_a0, childRole_v3_1fi_, 1))) {
+            String childRole_1fi_ = "operand";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_1fi_a0, childRole_1fi_, 1))) {
               return false;
             }
             {
-              SNode childVar_v3_1fi_a0a = IterableUtil.get(nodeToMatch_v3_1fi_a0.getChildren(childRole_v3_1fi_), 0);
+              SNode childVar_1fi_a0a = IterableUtil.get(nodeToMatch_1fi_a0.getChildren(childRole_1fi_), 0);
               {
-                SNode nodeToMatch_v3_1fi_a0a;
-                nodeToMatch_v3_1fi_a0a = childVar_v3_1fi_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v3_1fi_a0a.getConcept().getQualifiedName()))) {
+                SNode nodeToMatch_1fi_a0a = childVar_1fi_a0a;
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1fi_a0a.getConcept().getQualifiedName()))) {
                   return false;
                 }
-                patternVar_className = nodeToMatch_v3_1fi_a0a.getReferenceTarget("classifier");
-                patternVar_field = nodeToMatch_v3_1fi_a0a.getReferenceTarget("variableDeclaration");
+                patternVar_className = nodeToMatch_1fi_a0a.getReferenceTarget("classifier");
+                patternVar_field = nodeToMatch_1fi_a0a.getReferenceTarget("variableDeclaration");
               }
             }
           }
           {
-            String childRole_v3_1fi__0 = "operation";
-            if (!(PatternUtil.hasNChildren(nodeToMatch_v3_1fi_a0, childRole_v3_1fi__0, 1))) {
+            String childRole_1fi__0 = "operation";
+            if (!(PatternUtil.hasNChildren(nodeToMatch_1fi_a0, childRole_1fi__0, 1))) {
               return false;
             }
             {
-              SNode childVar_v3_1fi_a0a_0 = IterableUtil.get(nodeToMatch_v3_1fi_a0.getChildren(childRole_v3_1fi__0), 0);
+              SNode childVar_1fi_a0a_0 = IterableUtil.get(nodeToMatch_1fi_a0.getChildren(childRole_1fi__0), 0);
               {
-                SNode nodeToMatch_v3_1fi_a0a_0;
-                nodeToMatch_v3_1fi_a0a_0 = childVar_v3_1fi_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_v3_1fi_a0a_0.getConcept().getQualifiedName()))) {
+                SNode nodeToMatch_1fi_a0a_0 = childVar_1fi_a0a_0;
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_1fi_a0a_0.getConcept().getQualifiedName()))) {
                   return false;
                 }
-                patternVar_method = nodeToMatch_v3_1fi_a0a_0.getReferenceTarget("baseMethodDeclaration");
+                patternVar_method = nodeToMatch_1fi_a0a_0.getReferenceTarget("baseMethodDeclaration");
                 {
-                  String childRole_v3_1fi__1 = "actualArgument";
-                  if (!(PatternUtil.hasNChildren(nodeToMatch_v3_1fi_a0a_0, childRole_v3_1fi__1, 1))) {
+                  String childRole_1fi__1 = "actualArgument";
+                  if (!(PatternUtil.hasNChildren(nodeToMatch_1fi_a0a_0, childRole_1fi__1, 1))) {
                     return false;
                   }
                   {
-                    SNode childVar_v3_1fi_a0a0 = IterableUtil.get(nodeToMatch_v3_1fi_a0a_0.getChildren(childRole_v3_1fi__1), 0);
-                    this.patternVar_printed = childVar_v3_1fi_a0a0;
+                    SNode childVar_1fi_a0a0 = IterableUtil.get(nodeToMatch_1fi_a0a_0.getChildren(childRole_1fi__1), 0);
+                    this.patternVar_printed = childVar_1fi_a0a0;
                   }
                 }
               }

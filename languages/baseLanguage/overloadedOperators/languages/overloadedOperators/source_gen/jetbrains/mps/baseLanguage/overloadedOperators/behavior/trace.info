@@ -11,30 +11,30 @@
   <unitInfo fileName="OverloadedOperatorContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedOperatorContainer_BehaviorDescriptor" />
   <unitInfo fileName="RightOperand_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.RightOperand_BehaviorDescriptor" />
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/1141736782992984502">
-    <nodeInfo nodeId="1141736782992986318" fileName="CustomOperatorUsage_Behavior.java" startLine="19" startPosition="124" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1141736782992986333" fileName="CustomOperatorUsage_Behavior.java" startLine="20" startPosition="48" endLine="21" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1141736782993465854" fileName="CustomOperatorUsage_Behavior.java" startLine="22" startPosition="40" endLine="23" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1141736782992986474" fileName="CustomOperatorUsage_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1141736782992986380" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="194" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVisibleCustomOperators_1141736782992984505#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <scopeInfo nodeId="1141736782992984504" fileName="CustomOperatorUsage_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="1141736782992986381" fileName="CustomOperatorUsage_Behavior.java" startLine="22" startPosition="40" endLine="23" endPosition="135" />
-    <scopeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="1141736782992986318" fileName="CustomOperatorUsage_Behavior.java" startLine="18" startPosition="124" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1141736782992986333" fileName="CustomOperatorUsage_Behavior.java" startLine="19" startPosition="48" endLine="20" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1141736782993465854" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="40" endLine="22" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1141736782992986474" fileName="CustomOperatorUsage_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1141736782992986380" fileName="CustomOperatorUsage_Behavior.java" startLine="20" startPosition="167" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVisibleCustomOperators_1141736782992984505#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <scopeInfo nodeId="1141736782992984504" fileName="CustomOperatorUsage_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1141736782992986381" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="40" endLine="22" endPosition="135" />
+    <scopeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1141736782992984502" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1141736782992986380" fileName="CustomOperatorUsage_Behavior.java" startLine="21" startPosition="194" endLine="24" endPosition="5">
+    <scopeInfo nodeId="1141736782992986380" fileName="CustomOperatorUsage_Behavior.java" startLine="20" startPosition="167" endLine="23" endPosition="5">
       <varInfo nodeId="1141736782992986405" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="1141736782992984508" fileName="CustomOperatorUsage_Behavior.java" startLine="19" startPosition="124" endLine="25" endPosition="18">
+    <scopeInfo nodeId="1141736782992984508" fileName="CustomOperatorUsage_Behavior.java" startLine="18" startPosition="124" endLine="24" endPosition="18">
       <varInfo nodeId="1141736782992986334" varName="containers" />
       <varInfo nodeId="1141736782992986319" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1141736782992986276" varName="model" />
       <varInfo nodeId="1141736782992984502" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="15" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior" />
+    <unitInfo nodeId="1141736782992984502" fileName="CustomOperatorUsage_Behavior.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior" />
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/6677452554239147646">
     <nodeInfo nodeId="6677452554239174321" fileName="OverloadedBinaryOperator_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

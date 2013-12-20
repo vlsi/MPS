@@ -36,7 +36,7 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer");
+            return SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer");
           }
 
           @Override

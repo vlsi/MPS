@@ -57,14 +57,13 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a;
-        nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_rtu2iv_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_rtu2iv_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_v5k8je_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_rtu2iv_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -87,5 +86,5 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
     }
   }
 
-  private static SNodePointer SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
+  private static SNodePointer SNODE_POINTER_v5k8je_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
 }

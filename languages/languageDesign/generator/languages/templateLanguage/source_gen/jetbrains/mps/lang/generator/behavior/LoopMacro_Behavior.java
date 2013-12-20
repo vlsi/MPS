@@ -34,25 +34,23 @@ public class LoopMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0;
-        nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_cdqxf8_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_cdqxf8_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_LoopMacro_Behavior_cdqxf8_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0, childRole_LoopMacro_Behavior_cdqxf8_, 1))) {
+          String childRole_cdqxf8_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_cdqxf8_a0a0a0, childRole_cdqxf8_, 1))) {
             return false;
           }
           {
-            SNode childVar_LoopMacro_Behavior_cdqxf8_a0a0a0a = IterableUtil.get(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0.getChildren(childRole_LoopMacro_Behavior_cdqxf8_), 0);
+            SNode childVar_cdqxf8_a0a0a0a = IterableUtil.get(nodeToMatch_cdqxf8_a0a0a0.getChildren(childRole_cdqxf8_), 0);
             {
-              SNode nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a;
-              nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a = childVar_LoopMacro_Behavior_cdqxf8_a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_cdqxf8_a0a0a0a = childVar_cdqxf8_a0a0a0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_cdqxf8_a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0a.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_cdqxf8_a0a0a0a.getReferenceTarget("concept");
             }
           }
         }

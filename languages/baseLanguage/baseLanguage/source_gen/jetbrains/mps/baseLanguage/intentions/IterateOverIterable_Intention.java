@@ -118,25 +118,24 @@ public class IterateOverIterable_Intention implements IntentionFactory {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0;
-        nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_6isygg_a0a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_IterateOverIterable_6isygg__0 = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0, childRole_IterateOverIterable_6isygg__0, 1))) {
+          String childRole_6isygg__0 = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_6isygg_a0a0a0a0, childRole_6isygg__0, 1))) {
             return false;
           }
           {
-            SNode childVar_IterateOverIterable_6isygg_a0a0a0a0a = IterableUtil.get(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildren(childRole_IterateOverIterable_6isygg__0), 0);
-            this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a0a;
+            SNode childVar_6isygg_a0a0a0a0a = IterableUtil.get(nodeToMatch_6isygg_a0a0a0a0.getChildren(childRole_6isygg__0), 0);
+            this.patternVar_elem = childVar_6isygg_a0a0a0a0a;
           }
         }
       }
@@ -172,25 +171,24 @@ public class IterateOverIterable_Intention implements IntentionFactory {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_IterateOverIterable_6isygg_a0a0a0;
-        nodeToMatch_IterateOverIterable_6isygg_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_6isygg_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_IterateOverIterable_6isygg_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_IterateOverIterable_6isygg_a0a0a0, childRole_IterateOverIterable_6isygg_, 1))) {
+          String childRole_6isygg_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_6isygg_a0a0a0, childRole_6isygg_, 1))) {
             return false;
           }
           {
-            SNode childVar_IterateOverIterable_6isygg_a0a0a0a = IterableUtil.get(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildren(childRole_IterateOverIterable_6isygg_), 0);
-            this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a;
+            SNode childVar_6isygg_a0a0a0a = IterableUtil.get(nodeToMatch_6isygg_a0a0a0.getChildren(childRole_6isygg_), 0);
+            this.patternVar_elem = childVar_6isygg_a0a0a0a;
           }
         }
       }
@@ -218,6 +216,6 @@ public class IterateOverIterable_Intention implements IntentionFactory {
     }
   }
 
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

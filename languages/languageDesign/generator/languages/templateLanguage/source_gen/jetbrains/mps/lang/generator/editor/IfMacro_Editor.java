@@ -66,7 +66,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t4g6n2_a0a");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyMacroStart(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -129,7 +128,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_t4g6n2_a1a");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyMacroStart(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -98,11 +98,10 @@ public class CreateRootNodeGroup extends BaseGroup {
       return;
     }
 
-    IScope scope = event.getData(MPSCommonDataKeys.SCOPE);
     IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
 
     boolean isStubModel = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
-    if (scope == null || context == null || isStubModel) {
+    if (context == null || isStubModel) {
       setEnabledState(event.getPresentation(), false);
       return;
     }
@@ -137,12 +136,12 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     setEnabledState(event.getPresentation(), true);
 
-    List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor, scope);
+    List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor);
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
     if (aspect != null) {
       SModuleReference ref = aspect.getMainLanguage();
-      Language lang = scope.getLanguage(ref);
+      Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
       if (lang != null) {
         modelLanguages.remove(lang);
 

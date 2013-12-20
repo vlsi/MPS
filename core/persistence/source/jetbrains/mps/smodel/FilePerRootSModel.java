@@ -87,7 +87,7 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
       result = FilePerRootFormatUtil.readModel(myHeader, source, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
+      DefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 

@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.StringUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -26,22 +28,28 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+@Immutable
 public class SNodePointer implements SNodeReference {
-  private SModelReference myModelReference;
-  private SNodeId myNodeId;
+  @Nullable
+  private final SModelReference myModelReference;
+  @Nullable
+  private final SNodeId myNodeId;
 
   public SNodePointer(String modelUID, String nodeId) {
     this(PersistenceFacade.getInstance().createModelReference(modelUID), PersistenceFacade.getInstance().createNodeId(nodeId));
   }
 
   public SNodePointer(SNode node) {
-    if (node == null) return;
-    if (node.getModel() == null) return;
+    if (node == null || node.getModel() == null) {
+      myModelReference = null;
+      myNodeId = null;
+      return;
+    }
     myModelReference = node.getModel().getReference();
     myNodeId = node.getNodeId();
   }
 
-  public SNodePointer(SModelReference modelReference, SNodeId nodeId) {
+  public SNodePointer(@Nullable SModelReference modelReference, @Nullable SNodeId nodeId) {
     myModelReference = modelReference;
     myNodeId = nodeId;
   }

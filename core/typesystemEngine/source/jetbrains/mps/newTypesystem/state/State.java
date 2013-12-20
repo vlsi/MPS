@@ -20,12 +20,12 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
+import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
@@ -47,7 +47,6 @@ import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.IterableUtil;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -55,6 +54,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.ManyToManyMap;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.lang.reflect.Array;
@@ -90,7 +91,7 @@ public class State {
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
-    new THashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
+      new THashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
 
   @StateObject
   private final BlockSet myBlocks = new BlockSet();
@@ -298,7 +299,7 @@ public class State {
       if (!myOperationStack.empty()) {
         myOperationStack.pop();
       } else {
-       LOG.warning("Operation stack in type system state was empty");
+        LOG.warning("Operation stack in type system state was empty");
       }
     } else {
       operation.execute(this);   //do not store unneeded operations
@@ -378,9 +379,10 @@ public class State {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
             SNode concept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
-            if (!SConceptPropertyOperations.getBoolean(concept, "abstract")) {
+            boolean isAbstract = SPropertyOperations.getBoolean(concept, SNodeUtil.property_AbstractConceptDeclaration_abstract);
+            if (!isAbstract) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
-                wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
+                  wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
             }
           }
         }
@@ -434,7 +436,7 @@ public class State {
 
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
-      null, GlobalScope.getInstance(), false);
+        null, GlobalScope.getInstance(), false);
     //todo this code should be moved into MPS
     SNodeAccessUtil.setProperty(typeVar, SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;

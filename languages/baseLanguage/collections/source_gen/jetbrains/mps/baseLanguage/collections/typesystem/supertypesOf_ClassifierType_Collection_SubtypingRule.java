@@ -53,25 +53,24 @@ public class supertypesOf_ClassifierType_Collection_SubtypingRule extends Subtyp
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a;
-        nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_g8re64_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_g8re64_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_832k9i_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_832k9i_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_g8re64_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_supertypesOf_ClassifierType_Collection_g8re64_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a, childRole_supertypesOf_ClassifierType_Collection_g8re64_, 1))) {
+          String childRole_g8re64_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_g8re64_a0a, childRole_g8re64_, 1))) {
             return false;
           }
           {
-            SNode childVar_supertypesOf_ClassifierType_Collection_g8re64_a0a0 = IterableUtil.get(nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getChildren(childRole_supertypesOf_ClassifierType_Collection_g8re64_), 0);
-            this.patternVar_ELEMENT = childVar_supertypesOf_ClassifierType_Collection_g8re64_a0a0;
+            SNode childVar_g8re64_a0a0 = IterableUtil.get(nodeToMatch_g8re64_a0a.getChildren(childRole_g8re64_), 0);
+            this.patternVar_ELEMENT = childVar_g8re64_a0a0;
           }
         }
       }
@@ -111,5 +110,5 @@ public class supertypesOf_ClassifierType_Collection_SubtypingRule extends Subtyp
     return quotedNode_2;
   }
 
-  private static SNodePointer SNODE_POINTER_832k9i_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Collection");
+  private static SNodePointer SNODE_POINTER_832k9i_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Collection");
 }

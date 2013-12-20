@@ -5,7 +5,8 @@ package jetbrains.mps.tool.builder.make;
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.tool.common.ScriptProperties;
+import jetbrains.mps.tool.common.GeneratorProperties;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -67,16 +68,22 @@ public class BaseGeneratorWorker extends MpsWorker {
   }
 
   protected void setGenerationProperties() {
-    boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.STRICT_MODE));
-    GenerationSettingsProvider.getInstance().getGenerationSettings().setStrictMode(strictMode);
+    GeneratorProperties gp = new GeneratorProperties(myWhatToDo);
+    IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+    boolean strictMode = gp.isStrictMode();
+    boolean parallelMode = gp.isParallelMode();
+    boolean inplace = gp.isInplaceTransform();
+    int threadCount = gp.getParallelThreads();
+    settings.setStrictMode(strictMode);
     if (strictMode) {
-      boolean parallelMode = Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.PARALLEL_MODE));
-      GenerationSettingsProvider.getInstance().getGenerationSettings().setParallelGenerator(parallelMode);
+      settings.setParallelGenerator(parallelMode);
       if (parallelMode) {
-        GenerationSettingsProvider.getInstance().getGenerationSettings().setNumberOfParallelThreads(8);
+        settings.setNumberOfParallelThreads(threadCount);
       }
-      info("Generating in strict mode, parallel generation = " + ((parallelMode ? "on" : "off")));
     }
+    String[] onoff = new String[]{"on", "off"};
+    settings.enableInplaceTransformations(gp.isInplaceTransform());
+    info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)]));
   }
 
   @Override

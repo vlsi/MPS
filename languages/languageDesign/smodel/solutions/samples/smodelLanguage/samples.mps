@@ -3995,11 +3995,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150323523" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1171315708426" resolveInfo="model" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="1224251172304" nodeInfo="nn">
-              <node role="scope" roleId="tp25.1176109762787" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151599212" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1225936311254" resolveInfo="scope" />
-              </node>
-            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="1224251172304" nodeInfo="nn" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1171321797074" nodeInfo="nn">
@@ -4089,9 +4085,6 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="1177021470467" nodeInfo="nn">
               <link role="concept" roleId="tp25.1176109685394" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
-              <node role="scope" roleId="tp25.1176109762787" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151394818" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1180635538871" resolveInfo="scope" />
-              </node>
             </node>
           </node>
         </node>

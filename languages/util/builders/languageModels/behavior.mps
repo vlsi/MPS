@@ -2316,9 +2316,6 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="5199967550912479786" nodeInfo="nn">
               <link role="concept" roleId="tp25.1176109685394" targetNodeId="pmg0.7288041816792374843" resolveInfo="SimpleBuilders" />
-              <node role="scope" roleId="tp25.1176109762787" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151604373" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5199967550912479759" resolveInfo="scope" />
-              </node>
             </node>
           </node>
         </node>

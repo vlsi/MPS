@@ -18,7 +18,6 @@ package jetbrains.mps.persistence.binary;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -179,7 +178,7 @@ public class BinaryPersistence {
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
     os.writeInt((model).getVersion());
-    SModelDescriptor md = model.getModelDescriptor();
+    org.jetbrains.mps.openapi.model.SModel md = model.getModelDescriptor();
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 

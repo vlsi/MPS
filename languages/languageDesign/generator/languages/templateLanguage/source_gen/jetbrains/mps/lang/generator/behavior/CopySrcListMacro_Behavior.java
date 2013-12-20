@@ -50,25 +50,23 @@ public class CopySrcListMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0;
-        nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_26ny8p_a0a1a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_26ny8p_a0a1a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_CopySrcListMacro_Behavior_26ny8p_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0, childRole_CopySrcListMacro_Behavior_26ny8p_, 1))) {
+          String childRole_26ny8p_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_26ny8p_a0a1a0, childRole_26ny8p_, 1))) {
             return false;
           }
           {
-            SNode childVar_CopySrcListMacro_Behavior_26ny8p_a0a0b0a = IterableUtil.get(nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0.getChildren(childRole_CopySrcListMacro_Behavior_26ny8p_), 0);
+            SNode childVar_26ny8p_a0a0b0a = IterableUtil.get(nodeToMatch_26ny8p_a0a1a0.getChildren(childRole_26ny8p_), 0);
             {
-              SNode nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a;
-              nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a = childVar_CopySrcListMacro_Behavior_26ny8p_a0a0b0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_26ny8p_a0a0b0a = childVar_26ny8p_a0a0b0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_26ny8p_a0a0b0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a0b0a.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferenceTarget("concept");
             }
           }
         }
