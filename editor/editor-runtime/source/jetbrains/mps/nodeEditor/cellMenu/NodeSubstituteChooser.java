@@ -693,7 +693,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       pack();
 
       if (getPosition() == PopupWindowPosition.TOP) {
-        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
+        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myPatternEditor.getHeight());
       }
 
       if (getWidth() >= deviceBounds.width) {

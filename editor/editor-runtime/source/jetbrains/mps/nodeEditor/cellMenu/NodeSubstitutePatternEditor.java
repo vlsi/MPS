@@ -156,6 +156,10 @@ public class NodeSubstitutePatternEditor {
     return location;
   }
 
+  public int getHeight() {
+    return myEditorWindow.getSize().height;
+  }
+
   public void done() {
     if (myEditorActivated) {
       myEditorWindow.dispose();
