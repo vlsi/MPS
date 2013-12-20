@@ -39,6 +39,11 @@ public class AbstractJetpadCell extends EditorCell_Collection {
   }
 
   @Override
+  public int getAscent() {
+    return getHeight();
+  }
+
+  @Override
   public void synchronizeViewWithModel() {
     if (myModelProperties != null) {
       for (WritableModelProperty nextModelProperty : myModelProperties) {
