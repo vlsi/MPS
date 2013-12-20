@@ -110,7 +110,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "blocks", true), editorContext, blocks, connectors);
     createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "connectors", true), editorContext, blocks, connectors);
 
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
       public Mapper<SNode, DiagramView> createMapper() {
@@ -201,7 +201,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, blocks, connectors);
     createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, blocks, connectors);
 
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
       public Mapper<SNode, DiagramView> createMapper() {
