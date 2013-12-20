@@ -39,7 +39,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
 
 
 
-      public Mapper<SNode, PolyLineConnection> getMapper() {
+      public Mapper<SNode, PolyLineConnection> createMapper() {
         return new Mapper<SNode, PolyLineConnection>(node, new PolyLineConnection()) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {

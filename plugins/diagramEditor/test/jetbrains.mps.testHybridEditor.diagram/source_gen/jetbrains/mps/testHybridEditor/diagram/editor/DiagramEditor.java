@@ -37,7 +37,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
     final DiagramCell diagramCell = new DiagramCell(editorContext, diagramNode) {
 
 
-      public Mapper<SNode, DiagramView> getMapper() {
+      public Mapper<SNode, DiagramView> createMapper() {
         return new Mapper<SNode, DiagramView>(diagramNode, new ConnectionRoutingView(new OrthogonalRouter())) {
 
 
@@ -59,7 +59,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
                 EditorCell connectorCell = editorContext.createNodeCell(node);
                 if (connectorCell instanceof ConnectorCell) {
                   addEditorCell(connectorCell);
-                  return ((ConnectorCell) connectorCell).getMapper();
+                  return ((ConnectorCell) connectorCell).createMapper();
                 }
                 return null;
               }
@@ -77,7 +77,7 @@ public class DiagramEditor extends AbstractJetpadEditor {
       }
     })}));
 
-    RootMapper mapper = new RootMapper(diagramNode, diagramCell.getMapper(), ((ViewContainerComponent) diagramCell.getComponent()).container());
+    RootMapper mapper = new RootMapper(diagramNode, diagramCell.createMapper(), ((ViewContainerComponent) diagramCell.getComponent()).container());
     mapper.attachRoot();
 
     return diagramCell;

@@ -113,7 +113,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createIndent2(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
-      public Mapper<SNode, DiagramView> getMapper() {
+      public Mapper<SNode, DiagramView> createMapper() {
         return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
@@ -134,7 +134,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
                 EditorCell connectorCell = editorContext.createNodeCell(node);
                 if (connectorCell instanceof ConnectorCell) {
                   addEditorCell(connectorCell);
-                  return ((ConnectorCell) connectorCell).getMapper();
+                  return ((ConnectorCell) connectorCell).createMapper();
                 }
                 return null;
 
@@ -204,7 +204,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createIndent2(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
-      public Mapper<SNode, DiagramView> getMapper() {
+      public Mapper<SNode, DiagramView> createMapper() {
         return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
@@ -225,7 +225,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
                 EditorCell connectorCell = editorContext.createNodeCell(node);
                 if (connectorCell instanceof ConnectorCell) {
                   addEditorCell(connectorCell);
-                  return ((ConnectorCell) connectorCell).getMapper();
+                  return ((ConnectorCell) connectorCell).createMapper();
                 }
                 return null;
 

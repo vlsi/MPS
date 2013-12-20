@@ -31,7 +31,7 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createDiagramPort_cfffa6_a(final EditorContext editorContext, final SNode node) {
     final EditorCell editorCell = new PortCell(editorContext, node) {
-      public Mapper<SNode, RectView> getMapper() {
+      public Mapper<SNode, RectView> createMapper() {
         Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(node, new RectView()) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {

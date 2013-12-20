@@ -21,8 +21,8 @@
     <nodeInfo nodeId="7839772582272735180" fileName="ConnectorEditor.java" startLine="42" startPosition="15" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7839772582273127629" fileName="ConnectorEditor.java" startLine="47" startPosition="16" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7839772582272638506" fileName="ConnectorEditor.java" startLine="30" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="7839772582272622869" fileName="ConnectorEditor.java" startLine="28" startPosition="60" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7839772582272617203" fileName="ConnectorEditor.java" startLine="28" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="7839772582272622869" fileName="ConnectorEditor.java" startLine="28" startPosition="63" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7839772582272617203" fileName="ConnectorEditor.java" startLine="28" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
     <nodeInfo nodeId="6365639112244609669" fileName="ConnectorEditor.java" startLine="23" startPosition="79" endLine="57" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1865267285000745556" fileName="ConnectorEditor.java" startLine="22" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="7839772582272762924" fileName="ConnectorEditor.java" startLine="34" startPosition="38" endLine="35" endPosition="75" />
@@ -46,7 +46,7 @@
     <scopeInfo nodeId="7839772582272638506" fileName="ConnectorEditor.java" startLine="30" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7839772582272638510" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="7839772582272617213" fileName="ConnectorEditor.java" startLine="28" startPosition="60" endLine="55" endPosition="10" />
+    <scopeInfo nodeId="7839772582272617213" fileName="ConnectorEditor.java" startLine="28" startPosition="63" endLine="55" endPosition="10" />
     <scopeInfo nodeId="7839772582272617203" fileName="ConnectorEditor.java" startLine="28" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="1865267285000745563" fileName="ConnectorEditor.java" startLine="23" startPosition="79" endLine="60" endPosition="16">
       <varInfo nodeId="6365639112244609670" varName="cell" />
@@ -323,15 +323,15 @@
     <nodeInfo nodeId="7839772582271232454" fileName="DiagramEditor.java" startLine="53" startPosition="17" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7839772582272207138" fileName="DiagramEditor.java" startLine="58" startPosition="93" endLine="59" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7839772582273664343" fileName="DiagramEditor.java" startLine="60" startPosition="61" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7839772582272207152" fileName="DiagramEditor.java" startLine="61" startPosition="47" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7839772582272207152" fileName="DiagramEditor.java" startLine="61" startPosition="47" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7839772582272207162" fileName="DiagramEditor.java" startLine="63" startPosition="17" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5204867329700782841" fileName="DiagramEditor.java" startLine="72" startPosition="60" endLine="73" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5204867329700782846" fileName="DiagramEditor.java" startLine="73" startPosition="99" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5204867329700782852" fileName="DiagramEditor.java" startLine="74" startPosition="59" endLine="75" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5204867329700782858" fileName="DiagramEditor.java" startLine="75" startPosition="54" endLine="76" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8637855680470296566" fileName="DiagramEditor.java" startLine="78" startPosition="10" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7594581796303322100" fileName="DiagramEditor.java" startLine="79" startPosition="0" endLine="80" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7594581796303349267" fileName="DiagramEditor.java" startLine="80" startPosition="144" endLine="81" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594581796303322100" fileName="DiagramEditor.java" startLine="79" startPosition="0" endLine="80" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7594581796303349267" fileName="DiagramEditor.java" startLine="80" startPosition="147" endLine="81" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7594581796302149297" fileName="DiagramEditor.java" startLine="81" startPosition="24" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4602140408527255670" fileName="DiagramEditor.java" startLine="82" startPosition="0" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="725186580886632906" fileName="DiagramEditor.java" startLine="87" startPosition="47" endLine="88" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -345,13 +345,13 @@
     <nodeInfo nodeId="7839772582270492843" fileName="DiagramEditor.java" startLine="46" startPosition="55" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7839772582272207108" fileName="DiagramEditor.java" startLine="56" startPosition="16" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7857969036576411619" fileName="DiagramEditor.java" startLine="44" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
-    <nodeInfo nodeId="7839772582271015049" fileName="DiagramEditor.java" startLine="40" startPosition="53" endLine="68" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7839772582271010416" fileName="DiagramEditor.java" startLine="40" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="7839772582271015049" fileName="DiagramEditor.java" startLine="40" startPosition="56" endLine="68" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7839772582271010416" fileName="DiagramEditor.java" startLine="40" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
     <nodeInfo nodeId="8168571518999182198" fileName="DiagramEditor.java" startLine="36" startPosition="0" endLine="70" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="725186580886525250" fileName="DiagramEditor.java" startLine="34" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="725186580886631945" fileName="DiagramEditor.java" startLine="87" startPosition="47" endLine="88" endPosition="98" />
     <scopeInfo nodeId="7839772582271169994" fileName="DiagramEditor.java" startLine="50" startPosition="53" endLine="52" endPosition="64" />
-    <scopeInfo nodeId="7839772582272207146" fileName="DiagramEditor.java" startLine="60" startPosition="61" endLine="62" endPosition="69" />
+    <scopeInfo nodeId="7839772582272207146" fileName="DiagramEditor.java" startLine="60" startPosition="61" endLine="62" endPosition="72" />
     <scopeInfo nodeId="5204867329700782840" fileName="DiagramEditor.java" startLine="72" startPosition="60" endLine="76" endPosition="54">
       <varInfo nodeId="5204867329700782842" varName="block" />
     </scopeInfo>
@@ -377,7 +377,7 @@
     <scopeInfo nodeId="7857969036576411619" fileName="DiagramEditor.java" startLine="44" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="7857969036576411623" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="7839772582271010427" fileName="DiagramEditor.java" startLine="40" startPosition="53" endLine="68" endPosition="10" />
+    <scopeInfo nodeId="7839772582271010427" fileName="DiagramEditor.java" startLine="40" startPosition="56" endLine="68" endPosition="10" />
     <scopeInfo nodeId="7839772582271010416" fileName="DiagramEditor.java" startLine="40" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="725186580886525258" fileName="DiagramEditor.java" startLine="35" startPosition="98" endLine="83" endPosition="23">
       <varInfo nodeId="8168571518999182199" varName="diagramCell" />

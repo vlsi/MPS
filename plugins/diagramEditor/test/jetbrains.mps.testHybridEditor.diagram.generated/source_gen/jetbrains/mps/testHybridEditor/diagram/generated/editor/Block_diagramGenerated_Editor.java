@@ -86,7 +86,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
                 EditorCell portCell = editorContext.createNodeCell(mapperNode);
                 if (portCell instanceof PortCell) {
                   addEditorCell(portCell);
-                  return ((PortCell) portCell).getMapper();
+                  return ((PortCell) portCell).createMapper();
                 }
                 return null;
               }
@@ -96,7 +96,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
                 EditorCell portCell = editorContext.createNodeCell(mapperNode);
                 if (portCell instanceof PortCell) {
                   addEditorCell(portCell);
-                  return ((PortCell) portCell).getMapper();
+                  return ((PortCell) portCell).createMapper();
                 }
                 return null;
               }
