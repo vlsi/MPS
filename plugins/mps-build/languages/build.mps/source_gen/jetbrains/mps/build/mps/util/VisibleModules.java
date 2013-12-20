@@ -54,9 +54,10 @@ public class VisibleModules {
         SNode depproj = SLinkOperations.getTarget(projectDependency, "script", false);
         if ((depproj == null)) {
           SReference ref = SNodeOperations.getReference(projectDependency, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", "script"));
-          report("cannot find dependent build script " + SLinkOperations.getResolveInfo(ref) + " in model " + check_xuwpka_a0a1a4a1a3a6(ref.getTargetSModelReference()), projectDependency);
+          report("cannot find dependency build script " + SLinkOperations.getResolveInfo(ref) + " in model " + check_xuwpka_a0a1a4a1a3a6(ref.getTargetSModelReference()), projectDependency);
+        } else {
+          depproj = SNodeOperations.as(DependenciesHelper.getOriginalNode(depproj, genContext), "jetbrains.mps.build.structure.BuildProject");
         }
-        depproj = SNodeOperations.as(DependenciesHelper.getOriginalNode(depproj, genContext), "jetbrains.mps.build.structure.BuildProject");
         if (depproj != null && seen.add(depproj)) {
           QueueSequence.fromQueue(queue).addLastElement(depproj);
         }
