@@ -34,9 +34,8 @@ public class DeleteNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    // <node> 
     for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
-      if (check_v2o7qu_a0a1a0(node.getModel())) {
+      if (check_v2o7qu_a0a0a0(node.getModel())) {
         return false;
       }
     }
@@ -67,10 +66,6 @@ public class DeleteNode_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("nodes", event.getData(MPSCommonDataKeys.NODES));
     if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
-    if (MapSequence.fromMap(_params).get("place") == null) {
       return false;
     }
     return true;
@@ -106,7 +101,7 @@ public class DeleteNode_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(DeleteNode_Action.class);
 
-  private static boolean check_v2o7qu_a0a1a0(SModel checkedDotOperand) {
+  private static boolean check_v2o7qu_a0a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }
