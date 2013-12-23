@@ -97,7 +97,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       // hack before actions are refactored 
       List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
         @Override
-        protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
+        protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           SNode sourceNode = (SNode) oldChild;
           SNode result = (SNode) newChild;
           SNodeOperations.replaceWithAnother(sourceNode, result);
