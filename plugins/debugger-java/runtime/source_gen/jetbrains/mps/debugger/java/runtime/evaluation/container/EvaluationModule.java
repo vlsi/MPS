@@ -15,9 +15,11 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.module.SDependency;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
@@ -61,9 +63,15 @@ public class EvaluationModule extends AbstractModule implements SModule {
     return path;
   }
 
-  @NotNull
+
+
   @Override
-  public IScope getScope() {
-    return GlobalScope.getInstance();
+  public Iterable<SDependency> getDeclaredDependencies() {
+    return ((Iterable) MPSModuleRepository.getInstance().getModules());
+  }
+
+  @Override
+  public Set<SLanguage> getUsedLanguages() {
+    return ((Set) new HashSet<Language>(ModuleRepositoryFacade.getInstance().getAllModules(Language.class)));
   }
 }
