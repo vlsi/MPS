@@ -442,12 +442,6 @@
         <property name="name" nameId="tpck.1169194664001" value="propertyValue" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225195654871" nodeInfo="in" />
       </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1198586147819" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="scope" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198586150165" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~IScope" resolveInfo="IScope" />
-        </node>
-      </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1198585361818" nodeInfo="nn" />
     </node>
   </root>
@@ -486,12 +480,6 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1198766482157" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="propertyValue" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225195654523" nodeInfo="in" />
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1198766482159" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="scope" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1198766482160" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~IScope" resolveInfo="IScope" />
-        </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1198766482161" nodeInfo="nn" />
     </node>
@@ -3276,13 +3264,13 @@
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5979740912231381158" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="BaseReferenceScopeProvider" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Constraints" />
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5979740912231397697" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5979740912231397697" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="factory" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5979740912231422655" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp1t.1148684180339" resolveInfo="ConstraintFunction_ReferentSearchScope_Factory" />
       </node>
     </node>
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5979740912231422653" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5979740912231422653" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="presentation" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5979740912231422656" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp1t.3906442776579556545" resolveInfo="ConstraintFunction_ReferentSearchScope_Presentation" />
@@ -4015,13 +4003,13 @@
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5934496548013422420" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="BaseScopeProvider" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Constraints" />
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5934496548013422422" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5934496548013422422" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="factory" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5934496548013422423" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp1t.8401916545537438634" resolveInfo="NodeScopeFactory" />
       </node>
     </node>
-    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5934496548013422424" nodeInfo="ng">
+    <node role="parameter" roleId="tpf8.982871510064032342" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5934496548013422424" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="presentation" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5934496548013422425" nodeInfo="in">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp1t.3906442776579556545" resolveInfo="ConstraintFunction_ReferentSearchScope_Presentation" />

@@ -1672,6 +1672,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2400318052852908806">
     <nodeInfo nodeId="2400318052852908860" fileName="TemplateQueryBase_Behavior.java" startLine="13" startPosition="112" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2400318052852908860" fileName="TemplateQueryBase_Behavior.java" startLine="13" startPosition="112" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2400318052852908860" fileName="TemplateQueryBase_Behavior.java" startLine="13" startPosition="112" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2400318052852908865" fileName="TemplateQueryBase_Behavior.java" startLine="17" startPosition="101" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2400318052852908865" fileName="TemplateQueryBase_Behavior.java" startLine="17" startPosition="101" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2400318052852908865" fileName="TemplateQueryBase_Behavior.java" startLine="17" startPosition="101" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2400318052852908806" fileName="TemplateQueryBase_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2400318052852908806" fileName="TemplateQueryBase_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_7722139651431880752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />

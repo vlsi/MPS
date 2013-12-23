@@ -1824,10 +1824,6 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1239207076969" resolveInfo="get_SPropertyAccess_simple_getterMethod" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1239208995674" nodeInfo="nn" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1239208995676" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1239208995677" nodeInfo="nn" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetScope" typeId="tpf3.1216945228272" id="1239208995678" nodeInfo="nn" />
-                </node>
               </node>
             </node>
           </node>
@@ -4360,10 +4356,6 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1239207301822" resolveInfo="get_SPropertyAccess_enum_getterMethod" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1239208876318" nodeInfo="nn" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1239208876320" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1239208876321" nodeInfo="nn" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetScope" typeId="tpf3.1216945228272" id="1239208876322" nodeInfo="nn" />
-                </node>
               </node>
             </node>
           </node>

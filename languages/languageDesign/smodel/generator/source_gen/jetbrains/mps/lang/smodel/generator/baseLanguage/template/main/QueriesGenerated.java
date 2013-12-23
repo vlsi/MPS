@@ -866,11 +866,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170457360268(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode(), _context.getScope());
+    return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1170461142999(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return QueriesUtil.get_SPropertyAccess_enum_getterMethod(_context.getNode(), _context.getScope());
+    return QueriesUtil.get_SPropertyAccess_enum_getterMethod(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_6082414168447114553(final IOperationContext operationContext, final ReferenceMacroContext _context) {

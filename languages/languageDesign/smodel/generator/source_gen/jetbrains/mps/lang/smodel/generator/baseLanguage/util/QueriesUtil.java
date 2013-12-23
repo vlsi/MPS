@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -56,7 +55,7 @@ public class QueriesUtil {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Root")) != null;
   }
 
-  public static SNode get_SPropertyAccess_simple_getterMethod(SNode operation, IScope scope) {
+  public static SNode get_SPropertyAccess_simple_getterMethod(SNode operation) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     String methodName = "getString";
     if (SNodeOperations.isInstanceOf(datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
@@ -76,7 +75,7 @@ public class QueriesUtil {
     return null;
   }
 
-  public static SNode get_SPropertyAccess_enum_getterMethod(SNode operation, IScope scope) {
+  public static SNode get_SPropertyAccess_enum_getterMethod(SNode operation) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     SNode primitiveDatatype = SLinkOperations.getTarget((SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "memberDataType", false);
     String methodName = "getString_def";
