@@ -64,7 +64,6 @@ public class TestModule extends AbstractModule {
 
   private SModule myPeer;
   private Map<String, SModel> myModels = new ConcurrentHashMap<String, SModel>();
-  private Map<SModel, SModel> myOriginalModels = new HashMap<SModel, SModel>();
 
   public TestModule(String namespace, String moduleId, SModule peer) {
     myPeer = peer;
@@ -86,7 +85,6 @@ public class TestModule extends AbstractModule {
   private void clearAll() {
     myPeer = null;
     myModels.clear();
-    myOriginalModels.clear();
     dependenciesChanged();
   }
 
@@ -105,7 +103,6 @@ public class TestModule extends AbstractModule {
     SModel result = new TestSModelDescriptor(newModelName, originalModel);
 
     myModels.put(result.getReference().getModelName(), result);
-    myOriginalModels.put(result, originalModel);
     return result;
   }
 
@@ -117,18 +114,10 @@ public class TestModule extends AbstractModule {
     return "Test Transient models";
   }
 
-  public List<SModel> getTestModels() {
-    return new ArrayList<SModel>(myModels.values());
-  }
-
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
     return ((AbstractModule) myPeer).getModuleDescriptor();
-  }
-
-  public SModule getPeer() {
-    return myPeer;
   }
 
   @Override
