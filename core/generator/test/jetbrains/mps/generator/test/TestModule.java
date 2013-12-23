@@ -23,11 +23,13 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
@@ -35,11 +37,13 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -118,11 +122,6 @@ public class TestModule extends AbstractModule {
   }
 
   @Override
-  protected ModuleScope createScope() {
-    return new TestModuleScope();
-  }
-
-  @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
     return ((AbstractModule) myPeer).getModuleDescriptor();
@@ -139,21 +138,16 @@ public class TestModule extends AbstractModule {
     return myModels.get(reference.getModelName());
   }
 
-  public class TestModuleScope extends ModuleScope {
-    @Override
-    protected Set<SModule> getInitialModules() {
-      Set<SModule> result = new HashSet<SModule>();
-      result.add(TestModule.this);
-      for (SModule m : GlobalScope.getInstance().getVisibleModules()) {
-        result.add(m);
-      }
-      return result;
-    }
+  @Override
+  public Iterable<SDependency> getDeclaredDependencies() {
+    //todo make scope more precise. Was left untouched since Evgeny wrote this class
+    return (Iterable)MPSModuleRepository.getInstance().getAllModules();
+  }
 
-    @Override
-    protected Set<Language> getInitialUsedLanguages() {
-      return CollectionUtil.filter(Language.class, getInitialModules());
-    }
+  @Override
+  public Set<SLanguage> getUsedLanguages() {
+    //todo make scope more precise. Was left untouched since Evgeny wrote this class
+    return (Set)CollectionUtil.filter(Language.class, MPSModuleRepository.getInstance().getAllModules());
   }
 
   class TestSModelDescriptor extends BaseSpecialModelDescriptor {
