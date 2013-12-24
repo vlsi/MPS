@@ -36,11 +36,13 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -62,6 +64,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,9 +83,12 @@ public class NewRootAction extends AnAction {
   @Override
   public void actionPerformed(AnActionEvent e) {
     if(myModelDescriptor == null && myNewModel) {
-      final VirtualFile[] virtualFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
-      if(virtualFiles.length != 1 || !virtualFiles[0].isDirectory())
+      PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
+      if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
+        //Can be used only on package
         return;
+      }
+      final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
       myModelDescriptor = (EditableSModelDescriptor)ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
         @Override
@@ -93,20 +99,33 @@ public class NewRootAction extends AnAction {
             if (!(root instanceof DefaultModelRoot)) continue;
             DefaultModelRoot modelRoot = (DefaultModelRoot) root;
             for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-              if (virtualFiles[0].getPath().startsWith(sourceRoot)) {
+              final String prefix = sourceRoot.endsWith(File.separator) ? sourceRoot : (sourceRoot + File.separator);
+              if (targetDir.getPath().startsWith(prefix)) {
                 useModelRoot = root;
-                useSourceRoot = sourceRoot.endsWith("/") ? sourceRoot : sourceRoot + "/";
+                useSourceRoot = sourceRoot;
                 break;
               }
             }
           }
           if(useModelRoot == null) return null;
 
-          final String modelName = virtualFiles[0].getPath().replace(useSourceRoot,"").replace("/", ".");
-          EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, useModelRoot,
-            PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
-          descriptor.save();
-          return descriptor;
+          final String prefix = useSourceRoot.endsWith(File.separator) ? useSourceRoot : (useSourceRoot + File.separator);
+          final String modelName = targetDir.getPath().replace(prefix,"").replace("/", ".");
+          EditableSModel model = null;
+          try {
+            model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot,
+              PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
+          } catch (IOException e1) {
+            e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+          }
+
+          model.setChanged(true);
+          model.save();
+
+          ModelsAutoImportsManager.doAutoImport(useModelRoot.getModule(), model);
+          MissingDependenciesFixer.fixDependencies(model);
+
+          return model;
         }
       }, ProjectHelper.toMPSProject(myProject));
     }
@@ -243,15 +262,20 @@ public class NewRootAction extends AnAction {
     }
     VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
-    Module m = e.getData(LangDataKeys.MODULE);
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(m).getSourceRoots(true);
     boolean isUnderSourceRoot = false;
-    for (VirtualFile root : sourceRoots) {
-      if (targetDir.getPath().equals(root.getPath())) {
-        //Can't be source or test folder
-        return false;
+    if(psiElement instanceof MPSPsiModel) {
+      isUnderSourceRoot = true;
+    } else {
+      Module m = e.getData(LangDataKeys.MODULE);
+      VirtualFile[] sourceRoots = ModuleRootManager.getInstance(m).getSourceRoots(true);
+      for (VirtualFile root : sourceRoots) {
+        if (targetDir.getPath().equals(root.getPath())) {
+          //Can't be source or test folder
+          return false;
+        }
+        final String prefix = root.getPath().endsWith(File.separator) ? root.getPath() : root.getPath() + File.separator;
+        isUnderSourceRoot =  isUnderSourceRoot || targetDir.getPath().startsWith(prefix);
       }
-      isUnderSourceRoot =  isUnderSourceRoot || targetDir.getPath().startsWith(root.getPath().endsWith(File.separator) ? root.getPath() : root.getPath() + File.separator);
     }
 
     return isUnderSourceRoot && myOperationContext != null && (myModelDescriptor != null || myNewModel) && myProject != null;

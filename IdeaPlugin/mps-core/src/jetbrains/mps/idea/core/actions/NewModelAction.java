@@ -36,8 +36,11 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -51,10 +54,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.lang.model.SourceVersion;
 import javax.swing.Icon;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -131,7 +136,7 @@ public class NewModelAction extends AnAction {
   }
 
   @Override
-  public void actionPerformed(AnActionEvent anActionEvent) {
+  public void actionPerformed(final AnActionEvent anActionEvent) {
     CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
       protected void doOKAction() {
@@ -141,18 +146,32 @@ public class NewModelAction extends AnAction {
           return;
         }
 
-        SModel newModelDescriptor = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+        SModel newModel = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
             // TODO create model in myModelRoot/mySourceRoot, fix literal
-            EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, myModelRoot/*,
-              PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root")*/);
-            template.preConfigure(descriptor, mySolution);
-            descriptor.save();
-            return descriptor;
+            final String path = ((PsiDirectory) anActionEvent.getData(LangDataKeys.PSI_ELEMENT)).getVirtualFile().getPath();
+
+            EditableSModel model = null;
+            try {
+              model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+            } catch (IOException e) {
+              e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+
+            // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
+            // model.getSModel() ?
+            template.preConfigure(model, mySolution);
+            model.setChanged(true);
+            model.save();
+
+            ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
+            MissingDependenciesFixer.fixDependencies(model);
+
+            return model;
           }
         }, ProjectHelper.toMPSProject(myProject));
-        if (newModelDescriptor == null) {
+        if (newModel == null) {
           return;
         }
 
@@ -185,7 +204,6 @@ public class NewModelAction extends AnAction {
         return true;
       }
     };
-
 
     dialog.setTitle(MPSBundle.message("create.new.model.dialog.title"));
     for (ModelTemplates template : ModelTemplates.values()) {
