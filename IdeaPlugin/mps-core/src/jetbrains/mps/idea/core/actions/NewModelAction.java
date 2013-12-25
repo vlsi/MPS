@@ -41,7 +41,6 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -49,6 +48,9 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -58,7 +60,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.lang.model.SourceVersion;
 import javax.swing.Icon;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +70,8 @@ public class NewModelAction extends AnAction {
   private ModelRoot myModelRoot;
   private String mySourceRoot;
   private Solution mySolution;
+
+  private static Logger LOG = LogManager.getLogger(NewModelAction.class);
 
   public NewModelAction() {
     super(MPSBundle.message("new.model.action"), null, FileIcons.MODEL_ICON);
@@ -113,7 +116,7 @@ public class NewModelAction extends AnAction {
       if (!(root instanceof DefaultModelRoot)) continue;
       DefaultModelRoot modelRoot = (DefaultModelRoot) root;
       for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-        if ((path.endsWith(File.separator) ? path : (path + File.separator)).startsWith(sourceRoot.endsWith(File.separator) ? sourceRoot : (sourceRoot + File.separator) )) {
+        if (FileUtil.isSubPath(sourceRoot, path)) {
           mySolution = mpsFacet.getSolution();
           myModelRoot = modelRoot;
           mySourceRoot = sourceRoot;
@@ -156,7 +159,7 @@ public class NewModelAction extends AnAction {
             try {
               model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
             } catch (IOException e) {
-              e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+              LOG.error("Can't create per-root model " + modelName + " under " + path, e);
             }
 
             // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
@@ -226,8 +229,7 @@ public class NewModelAction extends AnAction {
     boolean isUnderSourceRoot = false;
     for (VirtualFile root : sourceRoots) {
       isUnderSourceRoot =  isUnderSourceRoot
-        || targetDir.getPath().equals(root.getPath())
-        || targetDir.getPath().startsWith(root.getPath().endsWith(File.separator) ? root.getPath() : root.getPath() + File.separator);
+        || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
     }
 
     return isUnderSourceRoot && myModelRoot != null && myProject != null;

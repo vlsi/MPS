@@ -55,8 +55,11 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -76,6 +79,8 @@ public class NewRootAction extends AnAction {
   private Map<String, SNodeReference> myConceptFqNameToNodePointerMap = new LinkedHashMap<String, SNodeReference>();
   private boolean myNewModel = false;
 
+  private static Logger LOG = LogManager.getLogger(NewRootAction.class);
+
   public NewRootAction() {
     super(MPSBundle.message("new.root.action"), null, IdeIcons.DEFAULT_ROOT_ICON);
   }
@@ -83,51 +88,7 @@ public class NewRootAction extends AnAction {
   @Override
   public void actionPerformed(AnActionEvent e) {
     if(myModelDescriptor == null && myNewModel) {
-      PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-      if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
-        //Can be used only on package
-        return;
-      }
-      final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
-
-      myModelDescriptor = (EditableSModelDescriptor)ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
-        @Override
-        public SModel compute() {
-          ModelRoot useModelRoot = null;
-          String useSourceRoot = null;
-          for (ModelRoot root : myOperationContext.getModule().getModelRoots()) {
-            if (!(root instanceof DefaultModelRoot)) continue;
-            DefaultModelRoot modelRoot = (DefaultModelRoot) root;
-            for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-              final String prefix = sourceRoot.endsWith(File.separator) ? sourceRoot : (sourceRoot + File.separator);
-              if (targetDir.getPath().startsWith(prefix)) {
-                useModelRoot = root;
-                useSourceRoot = sourceRoot;
-                break;
-              }
-            }
-          }
-          if(useModelRoot == null) return null;
-
-          final String prefix = useSourceRoot.endsWith(File.separator) ? useSourceRoot : (useSourceRoot + File.separator);
-          final String modelName = targetDir.getPath().replace(prefix,"").replace("/", ".");
-          EditableSModel model = null;
-          try {
-            model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot,
-              PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
-          } catch (IOException e1) {
-            e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-          }
-
-          model.setChanged(true);
-          model.save();
-
-          ModelsAutoImportsManager.doAutoImport(useModelRoot.getModule(), model);
-          MissingDependenciesFixer.fixDependencies(model);
-
-          return model;
-        }
-      }, ProjectHelper.toMPSProject(myProject));
+      if (createPerRootModel(e)) return;
     }
 
     if(myModelDescriptor == null)
@@ -169,6 +130,55 @@ public class NewRootAction extends AnAction {
       }
     });
     dialog.show();
+  }
+
+  private boolean createPerRootModel(AnActionEvent e) {
+    PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
+    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
+      //Can be used only on package
+      return true;
+    }
+    final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
+
+    myModelDescriptor = (EditableSModelDescriptor) ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+      @Override
+      public SModel compute() {
+        ModelRoot useModelRoot = null;
+        String useSourceRoot = null;
+        for (ModelRoot root : myOperationContext.getModule().getModelRoots()) {
+          if (!(root instanceof DefaultModelRoot)) continue;
+          DefaultModelRoot modelRoot = (DefaultModelRoot) root;
+          for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+            if (FileUtil.isSubPath(sourceRoot, targetDir.getPath())) {
+              useModelRoot = root;
+              useSourceRoot = sourceRoot;
+              break;
+            }
+          }
+        }
+        if(useModelRoot == null) return null;
+
+        final String prefix = useSourceRoot.endsWith(File.separator) ? useSourceRoot : (useSourceRoot + File.separator);
+        final String modelName = targetDir.getPath().replace(prefix,"").replace("/", ".");
+        EditableSModel model = null;
+        try {
+          model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot,
+            PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
+        } catch (IOException ioException) {
+          LOG.error("Can't create per-root model " + modelName + " under " + useSourceRoot, ioException);
+        }
+
+        model.setChanged(true);
+        model.save();
+
+        //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
+        ModelsAutoImportsManager.doAutoImport(useModelRoot.getModule(), model);
+        MissingDependenciesFixer.fixDependencies(model);
+
+        return model;
+      }
+    }, ProjectHelper.toMPSProject(myProject));
+    return false;
   }
 
   @Override
@@ -273,8 +283,7 @@ public class NewRootAction extends AnAction {
           //Can't be source or test folder
           return false;
         }
-        final String prefix = root.getPath().endsWith(File.separator) ? root.getPath() : root.getPath() + File.separator;
-        isUnderSourceRoot =  isUnderSourceRoot || targetDir.getPath().startsWith(prefix);
+        isUnderSourceRoot =  isUnderSourceRoot || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
       }
     }
 

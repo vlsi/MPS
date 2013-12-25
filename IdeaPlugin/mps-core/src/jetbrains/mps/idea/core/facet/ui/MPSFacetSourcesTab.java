@@ -21,7 +21,6 @@ import com.intellij.openapi.Disposable;
 import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.SourceFolder;
-import com.intellij.openapi.roots.impl.ContentEntryImpl;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
@@ -29,6 +28,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryConta
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.ui.SModuleConfigurationTab;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry.ModelRootEntryListener;
 
@@ -83,10 +83,8 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
             if(path instanceof FileBasedModelRoot) {
               for(String file : ((FileBasedModelRoot) path).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
                 for(ContentEntry contentEntry : modifiableRootModel.getContentEntries()) {
-                  if(!(contentEntry instanceof ContentEntryImpl)) continue;
                   for(SourceFolder source : contentEntry.getSourceFolders()) {
-                    if(!file.contains(source.getFile().getPath()))
-                      continue;
+                    if(FileUtil.isSubPath(source.getFile().getPath(), file)) continue;
                     //Just add new source/test folder - do not watch after delete
                     contentEntry.addSourceFolder(VirtualFileUtils.getVirtualFile(file), source.isTestSource());
                   }
