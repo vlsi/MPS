@@ -2922,7 +2922,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (cell != null) {
       return isCellReadOnly(cell);
     }
-    return isCellsReadOnly(getSelectionManager().getSelection().getSelectedCells());
+    Selection selection = getSelectionManager().getSelection();
+    return selection == null || isCellsReadOnly(selection.getSelectedCells());
   }
 
   public void setPopupMenuEnabled(boolean popupMenuEnabled) {
