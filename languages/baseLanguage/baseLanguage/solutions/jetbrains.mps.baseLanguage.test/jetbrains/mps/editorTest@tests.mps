@@ -6950,6 +6950,10 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189701039" nodeInfo="nn">
                 <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
               </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8120915332598685902" nodeInfo="ng">
+                <property name="cellId" nameId="tp5g.1229194968595" value="Collection_t2jtrp_a" />
+                <property name="caretPosition" nameId="tp5g.1229194968596" value="42" />
+              </node>
             </node>
           </node>
         </node>
@@ -6980,6 +6984,10 @@
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189677882" nodeInfo="nn">
                 <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8120915332598673600" nodeInfo="ng">
+                <property name="cellId" nameId="tp5g.1229194968595" value="Collection_t2jtrp_a" />
+                <property name="caretPosition" nameId="tp5g.1229194968596" value="43" />
               </node>
             </node>
           </node>
