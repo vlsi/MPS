@@ -23,9 +23,12 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.psi.PsiDirectory;
+import com.intellij.psi.PsiElement;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -33,10 +36,11 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,14 +48,19 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.lang.model.SourceVersion;
 import javax.swing.Icon;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +71,8 @@ public class NewModelAction extends AnAction {
   private String mySourceRoot;
   private Solution mySolution;
 
+  private static Logger LOG = LogManager.getLogger(NewModelAction.class);
+
   public NewModelAction() {
     super(MPSBundle.message("new.model.action"), null, FileIcons.MODEL_ICON);
   }
@@ -71,7 +82,7 @@ public class NewModelAction extends AnAction {
     setModelRoot(e);
     setProject(e);
 
-    boolean enabled = isEnabled();
+    boolean enabled = isEnabled(e);
     e.getPresentation().setVisible(enabled);
     e.getPresentation().setEnabled(enabled);
   }
@@ -99,12 +110,13 @@ public class NewModelAction extends AnAction {
     if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) {
       return;
     }
+    //TODO: clean up this
     String path = VirtualFileManager.extractPath(url);
     for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
       if (!(root instanceof DefaultModelRoot)) continue;
       DefaultModelRoot modelRoot = (DefaultModelRoot) root;
       for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-        if (path.startsWith(sourceRoot)) {
+        if (FileUtil.isSubPath(sourceRoot, path)) {
           mySolution = mpsFacet.getSolution();
           myModelRoot = modelRoot;
           mySourceRoot = sourceRoot;
@@ -127,7 +139,7 @@ public class NewModelAction extends AnAction {
   }
 
   @Override
-  public void actionPerformed(AnActionEvent anActionEvent) {
+  public void actionPerformed(final AnActionEvent anActionEvent) {
     CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
       protected void doOKAction() {
@@ -137,18 +149,32 @@ public class NewModelAction extends AnAction {
           return;
         }
 
-        SModel newModelDescriptor = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+        SModel newModel = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
             // TODO create model in myModelRoot/mySourceRoot, fix literal
-            EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, myModelRoot/*,
-              PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root")*/);
-            template.preConfigure(descriptor, mySolution);
-            descriptor.save();
-            return descriptor;
+            final String path = ((PsiDirectory) anActionEvent.getData(LangDataKeys.PSI_ELEMENT)).getVirtualFile().getPath();
+
+            EditableSModel model = null;
+            try {
+              model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+            } catch (IOException e) {
+              LOG.error("Can't create per-root model " + modelName + " under " + path, e);
+            }
+
+            // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
+            // model.getSModel() ?
+            template.preConfigure(model, mySolution);
+            model.setChanged(true);
+            model.save();
+
+            ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
+            MissingDependenciesFixer.fixDependencies(model);
+
+            return model;
           }
         }, ProjectHelper.toMPSProject(myProject));
-        if (newModelDescriptor == null) {
+        if (newModel == null) {
           return;
         }
 
@@ -182,7 +208,6 @@ public class NewModelAction extends AnAction {
       }
     };
 
-
     dialog.setTitle(MPSBundle.message("create.new.model.dialog.title"));
     for (ModelTemplates template : ModelTemplates.values()) {
       dialog.getKindCombo().addItem(template.getPresentation(), template.getIcon(), template.name());
@@ -191,8 +216,23 @@ public class NewModelAction extends AnAction {
     dialog.show();
   }
 
-  public boolean isEnabled() {
-    return myModelRoot != null && myProject != null;
+  public boolean isEnabled(AnActionEvent e) {
+    PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
+    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
+      //Can be used only on package
+      return false;
+    }
+    VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
+
+    Module m = e.getData(LangDataKeys.MODULE);
+    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(m).getSourceRoots(true);
+    boolean isUnderSourceRoot = false;
+    for (VirtualFile root : sourceRoots) {
+      isUnderSourceRoot =  isUnderSourceRoot
+        || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
+    }
+
+    return isUnderSourceRoot && myModelRoot != null && myProject != null;
   }
 
   private enum ModelTemplates {

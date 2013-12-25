@@ -7261,85 +7261,107 @@
     <unitInfo nodeId="2533953941693774358" fileName="ForcedSaveAll_Action.java" startLine="26" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.ForcedSaveAll_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2557058267217516060">
-    <nodeInfo nodeId="2557058267217525595" fileName="FindUsagesHelper.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="2557058267217525624" fileName="FindUsagesHelper.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWithDialog" />
-    <nodeInfo nodeId="2557058267217525601" fileName="FindUsagesHelper.java" startLine="29" startPosition="69" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217525629" fileName="FindUsagesHelper.java" startLine="30" startPosition="24" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516648" fileName="FindUsagesHelper.java" startLine="34" startPosition="57" endLine="35" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557058267217516661" fileName="FindUsagesHelper.java" startLine="38" startPosition="36" endLine="39" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557058267217565873" fileName="FindUsagesHelper.java" startLine="42" startPosition="38" endLine="43" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557058267217516263" fileName="FindUsagesHelper.java" startLine="46" startPosition="134" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2557058267217516265" fileName="FindUsagesHelper.java" startLine="47" startPosition="16" endLine="48" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1766758229455160656" fileName="FindUsagesHelper.java" startLine="48" startPosition="70" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5938312768539992439" fileName="FindUsagesHelper.java" startLine="49" startPosition="66" endLine="50" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5938312768539988267" fileName="FindUsagesHelper.java" startLine="50" startPosition="84" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2557058267217516271" fileName="FindUsagesHelper.java" startLine="53" startPosition="25" endLine="54" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1766758229455160661" fileName="FindUsagesHelper.java" startLine="54" startPosition="96" endLine="55" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516288" fileName="FindUsagesHelper.java" startLine="57" startPosition="7" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2557058267217516290" fileName="FindUsagesHelper.java" startLine="58" startPosition="19" endLine="59" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2557058267217516298" fileName="FindUsagesHelper.java" startLine="60" startPosition="23" endLine="61" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2557058267217516313" fileName="FindUsagesHelper.java" startLine="61" startPosition="114" endLine="62" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516322" fileName="FindUsagesHelper.java" startLine="63" startPosition="33" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557058267217516327" fileName="FindUsagesHelper.java" startLine="65" startPosition="7" endLine="66" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516333" fileName="FindUsagesHelper.java" startLine="67" startPosition="8" endLine="68" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516340" fileName="FindUsagesHelper.java" startLine="70" startPosition="5" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2557058267217516342" fileName="FindUsagesHelper.java" startLine="71" startPosition="13" endLine="72" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2557058267217516345" fileName="FindUsagesHelper.java" startLine="72" startPosition="85" endLine="73" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2557058267217516348" fileName="FindUsagesHelper.java" startLine="73" startPosition="74" endLine="74" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2557058267217516354" fileName="FindUsagesHelper.java" startLine="76" startPosition="25" endLine="77" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516363" fileName="FindUsagesHelper.java" startLine="77" startPosition="83" endLine="78" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516379" fileName="FindUsagesHelper.java" startLine="78" startPosition="113" endLine="79" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516386" fileName="FindUsagesHelper.java" startLine="81" startPosition="7" endLine="82" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217525607" fileName="FindUsagesHelper.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultOptions#()Ljetbrains/mps/ide/findusages/view/optionseditor/DefaultOptionsContainer;" />
-    <nodeInfo nodeId="2557058267217525610" fileName="FindUsagesHelper.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#()Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
-    <nodeInfo nodeId="2557058267217565863" fileName="FindUsagesHelper.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#()Z" />
-    <nodeInfo nodeId="2557058267217516317" fileName="FindUsagesHelper.java" startLine="62" startPosition="20" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4412078972281690875" fileName="FindUsagesHelper.java" startLine="66" startPosition="41" endLine="69" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
-    <nodeInfo nodeId="2557058267217516062" fileName="FindUsagesHelper.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindUsagesHelper#(Lcom/intellij/openapi/project/Project;Z)V" />
-    <nodeInfo nodeId="5938312768540041334" fileName="FindUsagesHelper.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5938312768540050150" fileName="FindUsagesHelper.java" startLine="76" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5938312768540036627" fileName="FindUsagesHelper.java" startLine="51" startPosition="0" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5938312768540045158" fileName="FindUsagesHelper.java" startLine="74" startPosition="80" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557058267217516311" fileName="FindUsagesHelper.java" startLine="59" startPosition="146" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2557058267217525617" fileName="FindUsagesHelper.java" startLine="46" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Frame;Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <scopeInfo nodeId="2557058267217516643" fileName="FindUsagesHelper.java" startLine="34" startPosition="57" endLine="35" endPosition="91" />
-    <scopeInfo nodeId="2557058267217516660" fileName="FindUsagesHelper.java" startLine="38" startPosition="36" endLine="39" endPosition="56" />
-    <scopeInfo nodeId="2557058267217565865" fileName="FindUsagesHelper.java" startLine="42" startPosition="38" endLine="43" endPosition="60" />
-    <scopeInfo nodeId="2557058267217516321" fileName="FindUsagesHelper.java" startLine="63" startPosition="33" endLine="64" endPosition="15" />
-    <scopeInfo nodeId="2557058267217516065" fileName="FindUsagesHelper.java" startLine="29" startPosition="69" endLine="31" endPosition="30" />
-    <scopeInfo nodeId="5938312768540041335" fileName="FindUsagesHelper.java" startLine="53" startPosition="25" endLine="55" endPosition="76" />
-    <scopeInfo nodeId="2557058267217525607" fileName="FindUsagesHelper.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2557058267217525610" fileName="FindUsagesHelper.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="2557058267217565863" fileName="FindUsagesHelper.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5938312768540050151" fileName="FindUsagesHelper.java" startLine="76" startPosition="25" endLine="79" endPosition="71" />
-    <scopeInfo nodeId="2557058267217516062" fileName="FindUsagesHelper.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <nodeInfo nodeId="2557058267217525595" fileName="FindUsagesHelper.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="2557058267217525624" fileName="FindUsagesHelper.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWithDialog" />
+    <nodeInfo nodeId="2557058267217525601" fileName="FindUsagesHelper.java" startLine="34" startPosition="69" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217525629" fileName="FindUsagesHelper.java" startLine="35" startPosition="24" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516648" fileName="FindUsagesHelper.java" startLine="39" startPosition="57" endLine="40" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217516661" fileName="FindUsagesHelper.java" startLine="43" startPosition="36" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217565873" fileName="FindUsagesHelper.java" startLine="47" startPosition="38" endLine="48" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217516263" fileName="FindUsagesHelper.java" startLine="51" startPosition="134" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2557058267217516265" fileName="FindUsagesHelper.java" startLine="52" startPosition="16" endLine="53" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1766758229455160656" fileName="FindUsagesHelper.java" startLine="53" startPosition="70" endLine="54" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5938312768539992439" fileName="FindUsagesHelper.java" startLine="54" startPosition="66" endLine="55" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5938312768539988267" fileName="FindUsagesHelper.java" startLine="55" startPosition="84" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2557058267217516271" fileName="FindUsagesHelper.java" startLine="58" startPosition="25" endLine="59" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1766758229455160661" fileName="FindUsagesHelper.java" startLine="59" startPosition="96" endLine="60" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6549907336953196257" fileName="FindUsagesHelper.java" startLine="62" startPosition="7" endLine="63" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6549907336953216178" fileName="FindUsagesHelper.java" startLine="63" startPosition="80" endLine="64" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6549907336953234050" fileName="FindUsagesHelper.java" startLine="64" startPosition="86" endLine="65" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516290" fileName="FindUsagesHelper.java" startLine="65" startPosition="98" endLine="66" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6549907336953273000" fileName="FindUsagesHelper.java" startLine="66" startPosition="146" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6549907336953255402" fileName="FindUsagesHelper.java" startLine="69" startPosition="25" endLine="70" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6549907336953255428" fileName="FindUsagesHelper.java" startLine="74" startPosition="10" endLine="75" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6549907336952860982" fileName="FindUsagesHelper.java" startLine="77" startPosition="7" endLine="78" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6549907336953432662" fileName="FindUsagesHelper.java" startLine="78" startPosition="146" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2557058267217516298" fileName="FindUsagesHelper.java" startLine="80" startPosition="23" endLine="81" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516313" fileName="FindUsagesHelper.java" startLine="81" startPosition="114" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516322" fileName="FindUsagesHelper.java" startLine="83" startPosition="33" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2557058267217516327" fileName="FindUsagesHelper.java" startLine="85" startPosition="7" endLine="86" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516333" fileName="FindUsagesHelper.java" startLine="87" startPosition="8" endLine="88" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516340" fileName="FindUsagesHelper.java" startLine="90" startPosition="5" endLine="91" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2557058267217516342" fileName="FindUsagesHelper.java" startLine="91" startPosition="13" endLine="92" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516345" fileName="FindUsagesHelper.java" startLine="92" startPosition="85" endLine="93" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516348" fileName="FindUsagesHelper.java" startLine="93" startPosition="74" endLine="94" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2557058267217516354" fileName="FindUsagesHelper.java" startLine="96" startPosition="25" endLine="97" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516363" fileName="FindUsagesHelper.java" startLine="97" startPosition="83" endLine="98" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516379" fileName="FindUsagesHelper.java" startLine="98" startPosition="113" endLine="99" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516386" fileName="FindUsagesHelper.java" startLine="101" startPosition="7" endLine="102" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6549907336953390373" fileName="FindUsagesHelper.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToFinder#(Ljetbrains/mps/ide/findusages/findalgorithm/finders/ReloadableFinder;)V" />
+    <nodeInfo nodeId="2557058267217525607" fileName="FindUsagesHelper.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultOptions#()Ljetbrains/mps/ide/findusages/view/optionseditor/DefaultOptionsContainer;" />
+    <nodeInfo nodeId="2557058267217525610" fileName="FindUsagesHelper.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTool#()Ljetbrains/mps/ide/findusages/view/UsagesViewTool;" />
+    <nodeInfo nodeId="2557058267217565863" fileName="FindUsagesHelper.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#()Z" />
+    <nodeInfo nodeId="2557058267217516317" fileName="FindUsagesHelper.java" startLine="82" startPosition="20" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4412078972281690875" fileName="FindUsagesHelper.java" startLine="86" startPosition="41" endLine="89" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
+    <nodeInfo nodeId="2557058267217516062" fileName="FindUsagesHelper.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindUsagesHelper#(Lcom/intellij/openapi/project/Project;Z)V" />
+    <nodeInfo nodeId="5938312768540041334" fileName="FindUsagesHelper.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6549907336953255409" fileName="FindUsagesHelper.java" startLine="70" startPosition="89" endLine="74" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5938312768540050150" fileName="FindUsagesHelper.java" startLine="96" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5938312768540036627" fileName="FindUsagesHelper.java" startLine="56" startPosition="0" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5938312768540045158" fileName="FindUsagesHelper.java" startLine="94" startPosition="80" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6549907336953186549" fileName="FindUsagesHelper.java" startLine="69" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6549907336953125259" fileName="FindUsagesHelper.java" startLine="67" startPosition="0" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2557058267217516311" fileName="FindUsagesHelper.java" startLine="79" startPosition="0" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2557058267217525617" fileName="FindUsagesHelper.java" startLine="51" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/awt/Frame;Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <scopeInfo nodeId="6549907336953390380" fileName="FindUsagesHelper.java" startLine="72" startPosition="59" endLine="72" endPosition="59" />
+    <scopeInfo nodeId="2557058267217516643" fileName="FindUsagesHelper.java" startLine="39" startPosition="57" endLine="40" endPosition="91" />
+    <scopeInfo nodeId="2557058267217516660" fileName="FindUsagesHelper.java" startLine="43" startPosition="36" endLine="44" endPosition="56" />
+    <scopeInfo nodeId="2557058267217565865" fileName="FindUsagesHelper.java" startLine="47" startPosition="38" endLine="48" endPosition="60" />
+    <scopeInfo nodeId="2557058267217516321" fileName="FindUsagesHelper.java" startLine="83" startPosition="33" endLine="84" endPosition="15" />
+    <scopeInfo nodeId="2557058267217516065" fileName="FindUsagesHelper.java" startLine="34" startPosition="69" endLine="36" endPosition="30" />
+    <scopeInfo nodeId="5938312768540041335" fileName="FindUsagesHelper.java" startLine="58" startPosition="25" endLine="60" endPosition="76" />
+    <scopeInfo nodeId="6549907336953390373" fileName="FindUsagesHelper.java" startLine="72" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="6549907336953390377" varName="finder" />
+    </scopeInfo>
+    <scopeInfo nodeId="2557058267217525607" fileName="FindUsagesHelper.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2557058267217525610" fileName="FindUsagesHelper.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="2557058267217565863" fileName="FindUsagesHelper.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="5938312768540050151" fileName="FindUsagesHelper.java" startLine="96" startPosition="25" endLine="99" endPosition="71" />
+    <scopeInfo nodeId="2557058267217516062" fileName="FindUsagesHelper.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2557058267217525599" varName="project" />
       <varInfo nodeId="2557058267217525621" varName="withDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="5938312768540041334" fileName="FindUsagesHelper.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="5938312768540050150" fileName="FindUsagesHelper.java" startLine="76" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="2557058267217516312" fileName="FindUsagesHelper.java" startLine="60" startPosition="23" endLine="69" endPosition="8">
+    <scopeInfo nodeId="5938312768540041334" fileName="FindUsagesHelper.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="5938312768540050150" fileName="FindUsagesHelper.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="6549907336953186550" fileName="FindUsagesHelper.java" startLine="69" startPosition="25" endLine="75" endPosition="100" />
+    <scopeInfo nodeId="6549907336953186549" fileName="FindUsagesHelper.java" startLine="69" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="2557058267217516312" fileName="FindUsagesHelper.java" startLine="80" startPosition="23" endLine="89" endPosition="8">
       <varInfo nodeId="2557058267217516299" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="2557058267217516072" fileName="FindUsagesHelper.java" startLine="46" startPosition="134" endLine="82" endPosition="150">
+    <scopeInfo nodeId="2557058267217516072" fileName="FindUsagesHelper.java" startLine="51" startPosition="134" endLine="102" endPosition="150">
       <varInfo nodeId="1766758229455160657" varName="concept" />
+      <varInfo nodeId="6549907336953216177" varName="findersEditor" />
       <varInfo nodeId="5938312768539992440" varName="modelAccess" />
       <varInfo nodeId="2557058267217516266" varName="operationNode" />
       <varInfo nodeId="2557058267217516291" varName="options" />
       <varInfo nodeId="2557058267217516343" varName="provider" />
       <varInfo nodeId="2557058267217516346" varName="query" />
+      <varInfo nodeId="6549907336953196256" varName="scopeEditor" />
       <varInfo nodeId="2557058267217516349" varName="viewOptions" />
+      <varInfo nodeId="6549907336953234049" varName="viewOptionsEditor" />
     </scopeInfo>
-    <scopeInfo nodeId="2557058267217525617" fileName="FindUsagesHelper.java" startLine="46" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="2557058267217525617" fileName="FindUsagesHelper.java" startLine="51" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="2557058267217516402" varName="cell" />
       <varInfo nodeId="2557058267217525648" varName="context" />
       <varInfo nodeId="2557058267217525640" varName="frame" />
       <varInfo nodeId="2557058267217525651" varName="model" />
       <varInfo nodeId="2557058267217516634" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5938312768540041334" fileName="FindUsagesHelper.java" startLine="52" startPosition="34" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$1" />
-    <unitInfo nodeId="5938312768540050150" fileName="FindUsagesHelper.java" startLine="75" startPosition="34" endLine="81" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$2" />
-    <unitInfo nodeId="2557058267217516060" fileName="FindUsagesHelper.java" startLine="25" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.FindUsagesHelper" />
+    <unitInfo nodeId="6549907336953386979" fileName="FindUsagesHelper.java" startLine="71" startPosition="34" endLine="74" endPosition="9" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$3" />
+    <unitInfo nodeId="5938312768540041334" fileName="FindUsagesHelper.java" startLine="57" startPosition="34" endLine="62" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$1" />
+    <unitInfo nodeId="5938312768540050150" fileName="FindUsagesHelper.java" startLine="95" startPosition="34" endLine="101" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$3" />
+    <unitInfo nodeId="6549907336953186549" fileName="FindUsagesHelper.java" startLine="68" startPosition="93" endLine="77" endPosition="5" unitName="jetbrains.mps.ide.actions.FindUsagesHelper$2" />
+    <unitInfo nodeId="2557058267217516060" fileName="FindUsagesHelper.java" startLine="30" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ide.actions.FindUsagesHelper" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2589658255268083871">
     <nodeInfo nodeId="2589658255268083871" fileName="RenameFileOrDirectory_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
