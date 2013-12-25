@@ -37,7 +37,6 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
@@ -625,9 +624,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -658,9 +657,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -689,9 +688,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -720,9 +719,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -1155,9 +1154,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -1312,9 +1311,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -1338,9 +1337,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -1789,9 +1788,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -1867,9 +1866,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -1893,9 +1892,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -1923,9 +1922,9 @@ public class QueriesGenerated {
           }
 
           @Override
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, editorContext);
             return (returnSmallPart(nc) ? nc : wrappedNode);
           }
         };
@@ -2329,7 +2328,7 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
 
@@ -2359,7 +2358,7 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
 
@@ -2394,7 +2393,7 @@ public class QueriesGenerated {
         }
       }.compute();
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(targetNode, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, targetNode, lastPattern[0], editorContext);
         }
 
@@ -2429,7 +2428,7 @@ public class QueriesGenerated {
         }
       }.compute();
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(targetNode, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, targetNode, lastPattern[0], editorContext);
         }
 
@@ -2460,7 +2459,7 @@ public class QueriesGenerated {
         }
       }.compute();
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(targetNode, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, targetNode, lastPattern[0], editorContext);
         }
 
@@ -2566,7 +2565,7 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
 
@@ -2594,7 +2593,7 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
 
@@ -4077,7 +4076,7 @@ __switch__:
         }
       }.compute();
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(targetNode, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, targetNode, lastPattern[0], editorContext);
         }
 
@@ -4114,7 +4113,7 @@ __switch__:
         }
       }.compute();
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(targetNode, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, targetNode, lastPattern[0], editorContext);
         }
 
@@ -5105,7 +5104,7 @@ __switch__:
     {
       final String[] lastPattern = new String[1];
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
 
@@ -5137,7 +5136,7 @@ __switch__:
     {
       final String[] lastPattern = new String[1];
       List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
 

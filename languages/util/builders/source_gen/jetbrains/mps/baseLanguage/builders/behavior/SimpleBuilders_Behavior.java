@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,7 +24,7 @@ public class SimpleBuilders_Behavior {
     return SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(SLinkOperations.getTarget(thisNode, "extendsBuilder", false), b);
   }
 
-  public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context, IScope scope) {
+  public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode sb : SModelOperations.getRootsIncludingImported(context, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")) {
       if (SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(sb, thisNode)) {

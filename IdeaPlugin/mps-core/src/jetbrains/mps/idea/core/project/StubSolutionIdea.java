@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.project;
 
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkModificator;
@@ -29,8 +28,6 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
@@ -178,30 +175,28 @@ public abstract class StubSolutionIdea extends StubSolution {
   }
 
   @Override
-  protected ModuleScope createScope() {
-    return new StubSolutionScope();
-  }
+  public Iterable<SDependency> getDeclaredDependencies() {
+    Set<SDependency> deps = new HashSet<SDependency>();
 
-  @Nullable
-  public static Solution getJdkSolution() {
-    return ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.jdkRef(), Solution.class);
-  }
-
-  private class StubSolutionScope extends ModuleScope {
-    @Override
-    protected Set<SModule> getInitialModules() {
-      Set<SModule> modules = new HashSet<SModule>();
-
-      // explicitly add jdk
-      // todo: remove when sdk are loaded correctly
+    // explicitly add jdk
+    // todo: remove when sdk are loaded correctly
 //      Solution jdkSolutionReference = getJdkSolution();
 //      if (jdkSolutionReference != null) {
 //        modules.add(jdkSolutionReference);
 //      }
 
-      modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(StubSolutionIdea.class));
-      return modules;
+    for (SModule module : ModuleRepositoryFacade.getInstance().getAllModules(StubSolutionIdea.class)) {
+      Dependency dep = new Dependency();
+      dep.setModuleRef(module.getModuleReference());
+      dep.setReexport(false);
+      deps.add(new SDependencyAdapter(dep));
     }
+    return deps;
+  }
+
+  @Nullable
+  public static Solution getJdkSolution() {
+    return ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.jdkRef(), Solution.class);
   }
 
   private static class LibraryStubSolution extends StubSolutionIdea {

@@ -54,7 +54,7 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
               contextBuilder = Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") ? SNodeOperations.getParent(_context.getContextNode()) : _context.getContextNode()));
             }
             if (SNodeOperations.isInstanceOf(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) {
-              return SimpleBuilder_Behavior.call_getPossibleChildren_8969040284892300232(SNodeOperations.cast(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), _context.getModel(), operationContext.getScope());
+              return SimpleBuilder_Behavior.call_getPossibleChildren_8969040284892300232(SNodeOperations.cast(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), _context.getModel());
             } else if (contextBuilder == null && (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"))) {
 
               List<SNode> result = new ArrayList<SNode>();
