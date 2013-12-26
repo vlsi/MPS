@@ -8,13 +8,15 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +24,7 @@ import jetbrains.mps.project.GlobalScope;
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
+  private static final Logger LOG = LogManager.getLogger(EvaluationModule.class);
 
   public EvaluationModule() {
     SModuleReference reference = new ModuleReference("Evaluation Container Module", ModuleId.regular());
@@ -43,8 +46,13 @@ public class EvaluationModule extends AbstractModule implements SModule {
   protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
     for (String stub : SetSequence.fromSet(myClassPaths)) {
-      FolderModelRootBase modelRoot = (FolderModelRootBase) PersistenceFacade.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
-      modelRoot.setPath(stub);
+      ModelRoot modelRoot = PersistenceFacade.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
+      if (modelRoot instanceof FileBasedModelRoot) {
+        ((FileBasedModelRoot) modelRoot).setContentRoot(stub);
+        ((FileBasedModelRoot) modelRoot).addFile(FileBasedModelRoot.SOURCE_ROOTS, stub);
+      } else {
+        LOG.error("Unexpected model root type: " + modelRoot.getType() + " but need 'java_classes' model root");
+      }
       result.add(modelRoot);
     }
     return result;
