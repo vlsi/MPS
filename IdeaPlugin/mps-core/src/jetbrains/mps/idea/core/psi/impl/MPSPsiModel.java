@@ -44,6 +44,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -388,8 +389,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         rootName = extractName(root);
         MPSPsiRootNode rootNode = null;
         if(model.getSource() instanceof FilePerRootDataSource) {
-          final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource)model.getSource()).getFile(rootName + MPSExtentions.DOT_MODEL_ROOT));
-          PsiFile psiFile = getManager().findFile(virtualFile);
+          final IFile iFile = ((FilePerRootDataSource) model.getSource()).getFile(rootName + MPSExtentions.DOT_MODEL_ROOT);
+          VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(iFile);
+          if(virtualFile == null) virtualFile = VirtualFileUtils.getVirtualFile(iFile.getPath());
+          PsiFile psiFile = virtualFile != null ? getManager().findFile(virtualFile) : null;
           rootNode = psiFile != null && psiFile instanceof MPSPsiRootNode
             ? (MPSPsiRootNode)psiFile :
             new MPSPsiRootNode(root.getNodeId(), rootName, getManager(), virtualFile);

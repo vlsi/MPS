@@ -31,6 +31,7 @@ import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -80,7 +81,9 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       @Override
       public Icon compute() {
-        return IconManager.getIconFor(getSNodeReference().resolve(MPSModuleRepository.getInstance()), true);
+        final SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
+        if(node == null) return IdeIcons.UNKNOWN_ICON;
+        return IconManager.getIconFor(node, true);
       }
     });
   }
