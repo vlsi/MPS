@@ -36,7 +36,7 @@ public class EditorActionUtils {
     if (!(isReadonlyActionEnabled(editorComponent))) {
       return false;
     }
-    return editorComponent.isCellsReadOnly(changingCells);
+    return !(editorComponent.isCellsReadOnly(changingCells));
   }
 
   /*package*/ static EditorCell getEditorCellToInsert(EditorComponent editorComponent) {

@@ -2896,16 +2896,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return cell.getStyle().get(StyleAttributes.READ_ONLY);
   }
 
-  public boolean isCellsReadOnly(Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> changingCells) {
+  public boolean isCellsReadOnly(Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> cells) {
     if (isReadOnly()) {
-      return false;
+      return true;
     }
-    for (jetbrains.mps.openapi.editor.cells.EditorCell cell : changingCells) {
+    for (jetbrains.mps.openapi.editor.cells.EditorCell cell : cells) {
       if (isCellReadOnly(cell)) {
-        return false;
+        return true;
       }
     }
-    return true;
+    return false;
   }
 
   public boolean isSelectionReadOnly() {

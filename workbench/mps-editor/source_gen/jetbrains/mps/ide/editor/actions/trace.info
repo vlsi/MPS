@@ -3629,7 +3629,7 @@
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/7791284463049113795">
     <nodeInfo nodeId="130230197973334068" fileName="EditorActionUtils.java" startLine="31" startPosition="87" endLine="32" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="795210086019271320" fileName="EditorActionUtils.java" startLine="36" startPosition="54" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="795210086019271338" fileName="EditorActionUtils.java" startLine="38" startPosition="5" endLine="39" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="795210086019271338" fileName="EditorActionUtils.java" startLine="38" startPosition="5" endLine="39" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6786694707189028631" fileName="EditorActionUtils.java" startLine="42" startPosition="88" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6786694707189037808" fileName="EditorActionUtils.java" startLine="43" startPosition="79" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6786694707189037804" fileName="EditorActionUtils.java" startLine="45" startPosition="52" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3777,7 +3777,7 @@
     <scopeInfo nodeId="7791284463049114112" fileName="EditorActionUtils.java" startLine="213" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="7791284463049114113" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="795210086019136656" fileName="EditorActionUtils.java" startLine="35" startPosition="115" endLine="39" endPosition="58" />
+    <scopeInfo nodeId="795210086019136656" fileName="EditorActionUtils.java" startLine="35" startPosition="115" endLine="39" endPosition="61" />
     <scopeInfo nodeId="6671928847437098611" fileName="EditorActionUtils.java" startLine="192" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="6671928847437102717" varName="cell" />
     </scopeInfo>
