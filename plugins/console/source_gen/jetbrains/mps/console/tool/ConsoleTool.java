@@ -129,6 +129,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       ((SModelInternal) myModel).addLanguage(l.getModuleReference());
       ((AbstractModule) myModel.getModule()).addUsedLanguage(l.getModuleReference());
       ((SModelInternal) (myModel)).addModelImport(l.getStructureModelDescriptor().getReference(), false);
+      ((AbstractModule) myModel.getModule()).addDependency(l.getModuleReference(), false);
     }
     ((SModelInternal) myModel).addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
     ((AbstractModule) myModel.getModule()).addUsedDevkit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
