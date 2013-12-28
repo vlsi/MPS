@@ -4,7 +4,8 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Make_Behavior {
@@ -16,7 +17,7 @@ public class Make_Behavior {
   }
 
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
-    return Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.RequiredOnly"));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.RequiredOnly"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.WithDependencies"));
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {

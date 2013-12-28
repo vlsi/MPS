@@ -9,10 +9,16 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import java.util.Map;
@@ -30,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
 public class IdeCommandUtil {
-  public static void make(Project project, final Iterable<SModel> models_, final Iterable<? extends Iterable<SModel>> models__, final Iterable<SModule> modules_, final Iterable<? extends Iterable<SModule>> modules__, final boolean dirtyOnly) {
+  public static void make(Project project, final Iterable<SModel> models_, final Iterable<? extends Iterable<SModel>> models__, final Iterable<SModule> modules_, final Iterable<? extends Iterable<SModule>> modules__, final boolean dirtyOnly, final boolean depClosure) {
     ProjectOperationContext context = new ProjectOperationContext(project);
     final Iterable<SModel> models = Sequence.fromIterable(models_).concat(Sequence.fromIterable(models__).translate(new ITranslator2<Iterable<SModel>, SModel>() {
       public Iterable<SModel> translate(Iterable<SModel> it) {
@@ -43,26 +49,52 @@ public class IdeCommandUtil {
       }
     }));
 
-    final Wrappers._T<Iterable<SModel>> modelsToGenerate = new Wrappers._T<Iterable<SModel>>();
+    final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (Sequence.fromIterable(models_).isEmpty() && Sequence.fromIterable(models__).isEmpty() && Sequence.fromIterable(modules_).isEmpty() && Sequence.fromIterable(modules__).isEmpty()) {
-          modelsToGenerate.value = ((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors());
+          modelsToGenerate.value = SModelRepository.getInstance().getModelDescriptors();
         } else {
           modelsToGenerate.value = Sequence.fromIterable(models).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
             public Iterable<SModel> translate(SModule it) {
               return it.getModels();
             }
-          }));
+          })).toListSequence();
+        }
+        if (depClosure) {
+          Iterable<SModel> dependencies = modelsToGenerate.value;
+          int oldSize;
+          do {
+            dependencies = Sequence.fromIterable(dependencies).translate(new ITranslator2<SModel, SModel>() {
+              public Iterable<SModel> translate(SModel it) {
+                return Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a5a0(it, SModelInternal.class).importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModel>() {
+                  public SModel select(jetbrains.mps.smodel.SModel.ImportElement it) {
+                    return it.getModelReference().resolve(MPSModuleRepository.getInstance());
+                  }
+                });
+              }
+            }).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel it) {
+                return SNodeOperations.isGeneratable(it);
+              }
+            }).distinct().subtract(ListSequence.fromList(modelsToGenerate.value)).toListSequence();
+            oldSize = ListSequence.fromList(modelsToGenerate.value).count();
+            ListSequence.fromList(modelsToGenerate.value).addSequence(Sequence.fromIterable(dependencies));
+          } while (ListSequence.fromList(modelsToGenerate.value).count() > oldSize);
         }
         if (dirtyOnly) {
           final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
-          modelsToGenerate.value = Sequence.fromIterable(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
+          modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
               return mgsm.generationRequired(it);
             }
-          });
+          }).toListSequence();
         }
+        modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return SNodeOperations.isGeneratable(it);
+          }
+        }).toListSequence();
       }
     });
     new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), dirtyOnly).executeAction();
@@ -91,4 +123,8 @@ public class IdeCommandUtil {
   }
 
 
+
+  private static <T> T as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a5a0(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
 }
