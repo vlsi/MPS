@@ -9,8 +9,8 @@
   <unitInfo fileName="GlobalStatisticTarget_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" />
   <unitInfo fileName="INodeSetReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_BehaviorDescriptor" />
   <unitInfo fileName="IStatisticsTarget_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
-  <unitInfo fileName="Make_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Make_BehaviorDescriptor" />
-  <unitInfo fileName="ModelProperties_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelProperties_BehaviorDescriptor" />
+  <unitInfo fileName="Make_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Make_BehaviorDescriptor" />
+  <unitInfo fileName="ModelProperties_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelProperties_BehaviorDescriptor" />
   <unitInfo fileName="ModelReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelReference_BehaviorDescriptor" />
   <unitInfo fileName="ModelStatisticsTarget_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_BehaviorDescriptor" />
   <unitInfo fileName="ModuleProperties_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModuleProperties_BehaviorDescriptor" />
@@ -380,14 +380,17 @@
     <nodeInfo nodeId="5582028874771853138" fileName="Make_Behavior.java" startLine="14" startPosition="86" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5582028874771853147" fileName="Make_Behavior.java" startLine="18" startPosition="114" endLine="19" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="748410583119628796" fileName="Make_Behavior.java" startLine="22" startPosition="94" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="617513640566863466" fileName="Make_Behavior.java" startLine="26" startPosition="94" endLine="27" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="5582028874771853143" fileName="Make_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="5582028874771853137" fileName="Make_Behavior.java" startLine="14" startPosition="86" endLine="15" endPosition="16" />
     <scopeInfo nodeId="5582028874771853146" fileName="Make_Behavior.java" startLine="18" startPosition="114" endLine="19" endPosition="140" />
     <scopeInfo nodeId="748410583119628584" fileName="Make_Behavior.java" startLine="22" startPosition="94" endLine="23" endPosition="32" />
+    <scopeInfo nodeId="617513640566799402" fileName="Make_Behavior.java" startLine="26" startPosition="94" endLine="27" endPosition="145" />
     <scopeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="5582028874771853135" varName="thisNode" />
     </scopeInfo>
@@ -400,7 +403,10 @@
     <scopeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5582028874771853135" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Make_Behavior" />
+    <scopeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="5582028874771853135" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Make_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6147624293055083871" />
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134025442">

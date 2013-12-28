@@ -22,4 +22,8 @@ public class Make_Behavior {
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "make custom models";
   }
+
+  public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
+    return "Without option requiredOnly acts like \"Make\" action,\nwith option requiredOnly - like \"Rebuild Required Models\" internal action";
+  }
 }

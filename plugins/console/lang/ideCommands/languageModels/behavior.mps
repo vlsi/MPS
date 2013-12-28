@@ -2228,6 +2228,20 @@
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="748410583119628585" nodeInfo="in" />
     </node>
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="617513640566788568" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="getHelpPage" />
+      <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="zyb2.7006261637493125297" resolveInfo="getHelpPage" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="617513640566799402" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="617513640566863466" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="617513640566863465" nodeInfo="nn">
+            <property name="value" nameId="tpee.1070475926801" value="Without option requiredOnly acts like \&quot;Make\&quot; action,\nwith option requiredOnly - like \&quot;Rebuild Required Models\&quot; internal action" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="617513640566863272" nodeInfo="in" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="617513640566863273" nodeInfo="nn" />
+    </node>
   </root>
 </model>
 

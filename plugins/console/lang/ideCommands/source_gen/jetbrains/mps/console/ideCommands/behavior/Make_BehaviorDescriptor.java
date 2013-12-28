@@ -10,6 +10,10 @@ public class Make_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor 
   public Make_BehaviorDescriptor() {
   }
 
+  public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
+    return Make_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
+  }
+
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return Make_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
