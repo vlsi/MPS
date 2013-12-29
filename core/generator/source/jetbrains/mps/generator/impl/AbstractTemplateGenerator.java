@@ -250,7 +250,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     } else {
       if (!myShowBadChildWarning) {
         // ignore
-        validator = (!link.isReference() && ((SContainmentLink) link).isMultiple()) ? successValidatorMany : successValidatorOne;
+        validator = link.isMultiple() ? successValidatorMany : successValidatorOne;
       } else {
         validator = new AcceptableTargetValidator(myLogger, link);
       }
@@ -300,6 +300,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     private final SAbstractConcept myLinkTarget;
 
     AcceptableTargetValidator(@NotNull IGeneratorLogger logger, @NotNull SAbstractLink link) {
+      super(link.isMultiple());
       myLogger = logger;
       myLink = link;
       myLinkTarget = link.getTargetConcept();
@@ -319,11 +320,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       String relationKind = myLink.isReference() ? "referent" : "child";
       String msg = String.format("%s '%s' is expected for role '%s' but was '%s'", relationKind, expected, myLink.getRole(), was);
       return new RoleValidationStatus(myLogger, msg, GeneratorUtil.describe(targetNode, relationKind));
-    }
-
-    @Override
-    public boolean isMultipleSource() {
-      return !myLink.isReference() && ((SContainmentLink) myLink).isMultiple();
     }
   }
 
