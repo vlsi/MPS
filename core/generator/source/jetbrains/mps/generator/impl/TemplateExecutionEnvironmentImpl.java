@@ -47,6 +47,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -185,13 +186,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   private void validateReferences(SNode node, final SNode inputNode) {
+    SModelReference inputModelRef = generator.getInputModel().getReference();
     for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
-      if (generator.getInputModel().getReference().equals(ref.getTargetSModelReference())) {
+      if (inputModelRef.equals(ref.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           ref.getRole(),
-          ref.getSourceNode(),
+          ref.getSourceNode(), // XXX shall I use 'node' here?
           inputNode,
           ref.getTargetNode());
         PostponedReference postponedReference = new PostponedReference(refInfo);

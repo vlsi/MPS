@@ -20,13 +20,11 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
 import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
@@ -37,8 +35,6 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
@@ -275,27 +271,6 @@ public final class TemplateProcessor {
     return Collections.singletonList(outputNode);
   }
 
-  // FIXME identical code to TEEI.validateReferences
-  private void validateReferences(SNode node, final SNode inputNode) {
-    for (SReference ref : node.getReferences()) {
-      // reference to input model - illegal
-      if (myGenerator.getInputModel().getReference().equals(ref.getTargetSModelReference())) {
-        // replace
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-            ref.getRole(),
-            ref.getSourceNode(),
-            inputNode,
-            ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(refInfo);
-        postponedReference.setReferenceInOutputSourceNode();
-      }
-    }
-
-    for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
-      validateReferences(child, inputNode);
-    }
-  }
-
   private void weaveMacro(SNode template, SNode outputContextNode, @NotNull TemplateContext context, SNode macro)
       throws GenerationFailureException, GenerationCanceledException {
 
@@ -468,26 +443,8 @@ public final class TemplateProcessor {
       // $INSERT$
       SNode child = InputQueryUtil.getNodeToInsert(macro, templateContext, myTemplateProcessor.myEnv);
       if (child != null) {
-        // check node languages : prevent 'insert' query from returning node, which language was not counted when
-        // planning the generation steps.
-        Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
-        if (!getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
-          if (!childLang.getGenerators().isEmpty()) {
-            getLogger().error(child.getReference(),
-                "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
-                GeneratorUtil.describe(macro, "template"),
-                GeneratorUtil.describe(templateContext.getInput(), "input"),
-                new ProblemDescription("workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
-          }
-        }
-
-        if (child.getModel() != null) {
-          // must be "in air"
-          child = CopyUtil.copy(child);
-        }
-        // replace references back to input model
-        myTemplateProcessor.validateReferences(child, templateContext.getInput());
-
+        myTemplateProcessor.myEnv.insertNode(child, macro.getReference(), templateContext);
+        // XXX TEEI.insertNode doesn't register ML, perhaps shall to behave the same as this code? Or it's done in generated code?
         // label
         getGenerator().registerMappingLabel(templateContext.getInput(), templateContext.getInputName(), child);
         return Collections.singletonList(child);
