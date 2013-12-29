@@ -188,7 +188,7 @@ public final class TemplateProcessor {
           linksHandledWithMacro.add(refMacroRole);
           MacroResolver mr = new MacroResolver(myEnv.getQueryExecutor(), templateChildNode, templateNode.getReferenceTarget(refMacroRole));
           ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, outputNode, refMacroRole, context);
-          PostponedReference postponedReference = new PostponedReference(refInfo, myGenerator);
+          PostponedReference postponedReference = new PostponedReference(refInfo);
           postponedReference.setReferenceInOutputSourceNode();
         }
       } else {
@@ -237,10 +237,7 @@ public final class TemplateProcessor {
             GeneratorUtil.getTemplateNodeId(templateReferentNode),
             resolveInfo,
             context);
-        PostponedReference postponedReference = new PostponedReference(
-            refInfo,
-            myGenerator
-        );
+        PostponedReference postponedReference = new PostponedReference(refInfo);
         postponedReference.setReferenceInOutputSourceNode();
       } else {
         outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
@@ -278,6 +275,7 @@ public final class TemplateProcessor {
     return Collections.singletonList(outputNode);
   }
 
+  // FIXME identical code to TEEI.validateReferences
   private void validateReferences(SNode node, final SNode inputNode) {
     for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
@@ -288,12 +286,12 @@ public final class TemplateProcessor {
             ref.getSourceNode(),
             inputNode,
             ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(refInfo, myGenerator);
+        PostponedReference postponedReference = new PostponedReference(refInfo);
         postponedReference.setReferenceInOutputSourceNode();
       }
     }
 
-    for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
+    for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
       validateReferences(child, inputNode);
     }
   }

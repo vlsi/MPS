@@ -261,7 +261,7 @@ public abstract class DeltaBuilder {
                 // reference points elsewhere in this model under a replaced node.
                 // reference needs update, its target is among replaced nodes
                 ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), target);
-                PostponedReference pr = new PostponedReference(refInfo, generator);
+                PostponedReference pr = new PostponedReference(refInfo);
                 pr.setReferenceInOutputSourceNode();
                 break; // while target
               }

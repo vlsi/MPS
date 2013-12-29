@@ -162,7 +162,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
-    // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
+    // check node languages : prevent 'mapping func' query from returning node, which language was not counted when
     // planning the generation steps.
     Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
     if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
@@ -194,7 +194,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           ref.getSourceNode(),
           inputNode,
           ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+        PostponedReference postponedReference = new PostponedReference(refInfo);
         postponedReference.setReferenceInOutputSourceNode();
       }
     }
@@ -296,7 +296,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       parentIndex,
       resolveInfo,
       context);
-    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
+    new PostponedReference(refInfo).setReferenceInOutputSourceNode();
   }
 
   @Override
@@ -308,13 +308,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       templateNodeId,
       resolveInfo,
       context);
-    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
+    new PostponedReference(refInfo).setReferenceInOutputSourceNode();
   }
 
   @Override
   public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, outputNode, role, context);
-    PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+    PostponedReference postponedReference = new PostponedReference(refInfo);
     postponedReference.setReferenceInOutputSourceNode();
   }
 
