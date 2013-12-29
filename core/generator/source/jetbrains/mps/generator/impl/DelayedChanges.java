@@ -118,7 +118,7 @@ public class DelayedChanges {
         }
         SNode templateNode = getMapSrcMacro();
         // FIXME shall pass TEE right away (i.e. instead of QEC) or extract insertNode functionality outside of TEEI
-        new TemplateExecutionEnvironmentImpl(myGenerator, myExecContext).insertNode(child, templateNode == null ? null : templateNode.getReference(), myContext);
+        child = new TemplateExecutionEnvironmentImpl(myGenerator, myExecContext).insertNode(child, templateNode == null ? null : templateNode.getReference(), myContext);
 
         // check new child
         SNode parent = myChildToReplace.getParent();

@@ -443,7 +443,7 @@ public final class TemplateProcessor {
       // $INSERT$
       SNode child = InputQueryUtil.getNodeToInsert(macro, templateContext, myTemplateProcessor.myEnv);
       if (child != null) {
-        myTemplateProcessor.myEnv.insertNode(child, macro.getReference(), templateContext);
+        child = myTemplateProcessor.myEnv.insertNode(child, macro.getReference(), templateContext);
         // XXX TEEI.insertNode doesn't register ML, perhaps shall to behave the same as this code? Or it's done in generated code?
         // label
         getGenerator().registerMappingLabel(templateContext.getInput(), templateContext.getInputName(), child);
