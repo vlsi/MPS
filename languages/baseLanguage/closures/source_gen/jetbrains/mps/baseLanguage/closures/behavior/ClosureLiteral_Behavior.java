@@ -83,13 +83,13 @@ public class ClosureLiteral_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isClosure_3262277503800835449(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isClosure_3262277503800835439", new Object[]{});
+  public static SNode callSuper_getType_1229718192182(SNode thisNode, String callerConceptFqName, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), callerConceptFqName, "virtual_getType_1229718192182", new Class[]{SNode.class, List.class, SNode.class, SNode.class, SNode.class, List.class}, new Object[]{paramTypes, resultType, returnType, termType, throwsTypes});
   }
 
   @Deprecated
-  public static SNode callSuper_getType_1229718192182(SNode thisNode, String callerConceptFqName, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), callerConceptFqName, "virtual_getType_1229718192182", new Class[]{SNode.class, List.class, SNode.class, SNode.class, SNode.class, List.class}, new Object[]{paramTypes, resultType, returnType, termType, throwsTypes});
+  public static boolean call_isClosure_3262277503800835449(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isClosure_3262277503800835439", new Object[]{});
   }
 
   @Deprecated

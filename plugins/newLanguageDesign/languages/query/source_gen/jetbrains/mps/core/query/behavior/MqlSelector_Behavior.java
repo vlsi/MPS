@@ -46,13 +46,13 @@ public class MqlSelector_Behavior {
   }
 
   @Deprecated
-  public static Object call_evaluate_7862448911997337721(SNode thisNode, Object object, EvaluationEnvironment env, EvaluationContext context) {
-    return BehaviorReflection.invokeVirtual(Object.class, thisNode, "virtual_evaluate_7862448911997337721", new Object[]{object, env, context});
+  public static SNode callSuper_getType_228266671027867010(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlSelector"), callerConceptFqName, "virtual_getType_228266671027867010", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getType_228266671027867010(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlSelector"), callerConceptFqName, "virtual_getType_228266671027867010", new Class[]{SNode.class}, new Object[]{});
+  public static Object call_evaluate_7862448911997337721(SNode thisNode, Object object, EvaluationEnvironment env, EvaluationContext context) {
+    return BehaviorReflection.invokeVirtual(Object.class, thisNode, "virtual_evaluate_7862448911997337721", new Object[]{object, env, context});
   }
 
   @Deprecated

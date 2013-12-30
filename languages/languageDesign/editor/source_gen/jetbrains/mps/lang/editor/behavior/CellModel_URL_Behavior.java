@@ -31,13 +31,13 @@ public class CellModel_URL_Behavior {
   }
 
   @Deprecated
-  public static String call_getClosingText_3696012239575646509(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClosingText_1220339738643", new Object[]{});
+  public static String callSuper_getOpeningText_3696012239575646497(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getOpeningText_1220339714057", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_getOpeningText_3696012239575646497(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_URL"), callerConceptFqName, "virtual_getOpeningText_1220339714057", new Class[]{SNode.class}, new Object[]{});
+  public static String call_getClosingText_3696012239575646509(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClosingText_1220339738643", new Object[]{});
   }
 
   @Deprecated

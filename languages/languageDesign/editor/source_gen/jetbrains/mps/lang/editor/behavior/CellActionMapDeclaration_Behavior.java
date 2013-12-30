@@ -26,13 +26,13 @@ public class CellActionMapDeclaration_Behavior {
   }
 
   @Deprecated
-  public static void call_setBaseConcept_6261424444345978736(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
+  public static SNode callSuper_getBaseConcept_5270353093116096517(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getBaseConcept_5270353093116096517(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
+  public static void call_setBaseConcept_6261424444345978736(SNode thisNode, SNode baseConcept) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
   }
 
   @Deprecated

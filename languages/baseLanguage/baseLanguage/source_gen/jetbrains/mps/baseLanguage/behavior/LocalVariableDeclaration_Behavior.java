@@ -104,23 +104,23 @@ public class LocalVariableDeclaration_Behavior {
   }
 
   @Deprecated
-  public static String call_getSuffix_3012473318495506430(SNode thisNode, Project project) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_3012473318495499856", new Object[]{project});
-  }
-
-  @Deprecated
-  public static SNode call_getValue_4163393263914882931(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getValue_1224857430232", new Object[]{});
-  }
-
-  @Deprecated
   public static String callSuper_getPrefix_3012473318495506424(SNode thisNode, String callerConceptFqName, Project project) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, new Object[]{project});
   }
 
   @Deprecated
+  public static String call_getSuffix_3012473318495506430(SNode thisNode, Project project) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_3012473318495499856", new Object[]{project});
+  }
+
+  @Deprecated
   public static String callSuper_getSuffix_3012473318495506430(SNode thisNode, String callerConceptFqName, Project project) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, new Object[]{project});
+  }
+
+  @Deprecated
+  public static SNode call_getValue_4163393263914882931(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getValue_1224857430232", new Object[]{});
   }
 
   @Deprecated

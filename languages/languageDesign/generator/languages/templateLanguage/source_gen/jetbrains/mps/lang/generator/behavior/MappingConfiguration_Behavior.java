@@ -67,13 +67,13 @@ public class MappingConfiguration_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isApplicable_390427525177434695(SNode thisNode, SNode candidate) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
+  public static List<SNode> callSuper_getBaseConceptCollection_8360039740498071265(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getBaseConceptCollection_8360039740498071265(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_isApplicable_390427525177434695(SNode thisNode, SNode candidate) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
   }
 
   @Deprecated

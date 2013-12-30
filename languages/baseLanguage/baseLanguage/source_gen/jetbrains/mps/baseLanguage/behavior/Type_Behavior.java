@@ -169,103 +169,13 @@ public class Type_Behavior {
   }
 
   @Deprecated
-  public static boolean call_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getErasureSignature_1213877337313(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getErasureSignature_1213877337313", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getErasure_702942408396803226(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getErasure_702942408396803226", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isReifiable_2817265908000464118(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReifiable_2817265908000464118", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isValueType_4836112446988592019(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValueType_4836112446988592019", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getBoxedType_1213877337320(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBoxedType_1213877337320", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getAbstractCreator_1213877337340(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAbstractCreator_1213877337340", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getAbstractCreators_1226945293888(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_1226945293888", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});
-  }
-
-  @Deprecated
-  public static SNode call_getJavaType_1213877337345(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaType_1213877337345", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_selectOnVariableCreation_1213877337352(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_selectOnVariableCreation_1213877337352", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getClassExpression_1213877337357(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getClassExpression_1213877337357", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_1220438914705", new Object[]{t});
-  }
-
-  @Deprecated
-  public static boolean call_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
-  }
-
-  @Deprecated
-  public static SNode call_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_hasMissingParameters_3508583411997314206(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasMissingParameters_3508583411997314206", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes});
-  }
-
-  @Deprecated
-  public static String call_jniSignature_8847328628797633411(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797633411", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canBeCoerced_6321644624958501287", new Object[]{conceptFqName});
-  }
-
-  @Deprecated
   public static List<String> callSuper_getVariableSuffixes_1213877337304(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<String>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{});
   }
 
   @Deprecated
@@ -274,8 +184,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static String call_getErasureSignature_1213877337313(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getErasureSignature_1213877337313", new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getErasureSignature_1213877337313(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getErasureSignature_1213877337313", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_getErasure_702942408396803226(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getErasure_702942408396803226", new Object[]{});
   }
 
   @Deprecated
@@ -284,8 +204,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static boolean call_isReifiable_2817265908000464118(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReifiable_2817265908000464118", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isReifiable_2817265908000464118(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isReifiable_2817265908000464118", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isValueType_4836112446988592019(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValueType_4836112446988592019", new Object[]{});
   }
 
   @Deprecated
@@ -294,8 +224,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getBoxedType_1213877337320(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBoxedType_1213877337320", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getBoxedType_1213877337320(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getBoxedType_1213877337320", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_getAbstractCreator_1213877337340(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAbstractCreator_1213877337340", new Object[]{});
   }
 
   @Deprecated
@@ -304,8 +244,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static List<SNode> call_getAbstractCreators_1226945293888(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_1226945293888", new Object[]{});
+  }
+
+  @Deprecated
   public static List<SNode> callSuper_getAbstractCreators_1226945293888(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getAbstractCreators_1226945293888", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static List<SNode> call_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});
   }
 
   @Deprecated
@@ -314,8 +264,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getJavaType_1213877337345(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaType_1213877337345", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getJavaType_1213877337345(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getJavaType_1213877337345", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_selectOnVariableCreation_1213877337352(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_selectOnVariableCreation_1213877337352", new Object[]{});
   }
 
   @Deprecated
@@ -324,8 +284,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getClassExpression_1213877337357(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getClassExpression_1213877337357", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getClassExpression_1213877337357(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getClassExpression_1213877337357", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_1220438914705", new Object[]{t});
   }
 
   @Deprecated
@@ -334,8 +304,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static boolean call_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
+  }
+
+  @Deprecated
   public static boolean callSuper_isSupersetOf_9029841626175335449(SNode thisNode, String callerConceptFqName, SNode t, Map<SNode, SNode> substitutions) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isSupersetOf_9029841626175335449", new Class[]{SNode.class, SNode.class, Map.class}, new Object[]{t, substitutions});
+  }
+
+  @Deprecated
+  public static SNode call_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
   }
 
   @Deprecated
@@ -344,8 +324,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static boolean call_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasMissingParameters_3508583411997314206", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_hasMissingParameters_3508583411997314206(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_hasMissingParameters_3508583411997314206", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes});
   }
 
   @Deprecated
@@ -354,8 +344,18 @@ public class Type_Behavior {
   }
 
   @Deprecated
+  public static String call_jniSignature_8847328628797633411(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797633411", new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_jniSignature_8847328628797633411(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_jniSignature_8847328628797633411", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canBeCoerced_6321644624958501287", new Object[]{conceptFqName});
   }
 
   @Deprecated

@@ -47,23 +47,13 @@ public class ICheckedNamePolicy_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getDescendantToCheck_4844813484172611439(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDescendantToCheck_4844813484172611439", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<PropertyReference> call_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) Object.class), thisNode, "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{});
-  }
-
-  @Deprecated
-  public static PropertyReference call_getPropertyToCheck_4844813484172611473(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<PropertyReference>) ((Class) Object.class), thisNode, "virtual_getPropertyToCheck_4844813484172611473", new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> callSuper_getDescendantsToCheck_4844813484172611413(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getDescendantsToCheck_4844813484172611413", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_getDescendantToCheck_4844813484172611439(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDescendantToCheck_4844813484172611439", new Object[]{});
   }
 
   @Deprecated
@@ -72,8 +62,18 @@ public class ICheckedNamePolicy_Behavior {
   }
 
   @Deprecated
+  public static List<PropertyReference> call_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) Object.class), thisNode, "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{});
+  }
+
+  @Deprecated
   public static List<PropertyReference> callSuper_getPropertiesToCheck_4844813484172611445(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<PropertyReference>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getPropertiesToCheck_4844813484172611445", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static PropertyReference call_getPropertyToCheck_4844813484172611473(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<PropertyReference>) ((Class) Object.class), thisNode, "virtual_getPropertyToCheck_4844813484172611473", new Object[]{});
   }
 
   @Deprecated

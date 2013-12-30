@@ -29,23 +29,23 @@ public class MqlType_Behavior {
   }
 
   @Deprecated
-  public static String call_getSignature_270269450479785729(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSignature_270269450479785729", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getText_270269450479797040(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getText_270269450479797040", new Object[]{});
-  }
-
-  @Deprecated
   public static boolean callSuper_isSubtypeOf_2852142168179579064(SNode thisNode, String callerConceptFqName, SNode type) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlType"), callerConceptFqName, "virtual_isSubtypeOf_2852142168179579064", new Class[]{SNode.class, SNode.class}, new Object[]{type});
   }
 
   @Deprecated
+  public static String call_getSignature_270269450479785729(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSignature_270269450479785729", new Object[]{});
+  }
+
+  @Deprecated
   public static String callSuper_getSignature_270269450479785729(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.query.structure.MqlType"), callerConceptFqName, "virtual_getSignature_270269450479785729", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static String call_getText_270269450479797040(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getText_270269450479797040", new Object[]{});
   }
 
   @Deprecated

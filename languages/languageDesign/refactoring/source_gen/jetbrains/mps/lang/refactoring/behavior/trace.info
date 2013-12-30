@@ -374,15 +374,15 @@
     <nodeInfo nodeId="6261424444345979562" fileName="Refactoring_Behavior.java" startLine="25" startPosition="73" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1347577327951509207" fileName="Refactoring_Behavior.java" startLine="29" startPosition="77" endLine="30" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="34" startPosition="79" endLine="35" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="39" startPosition="97" endLine="40" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="44" startPosition="112" endLine="45" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="39" startPosition="112" endLine="40" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="44" startPosition="97" endLine="45" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="49" startPosition="130" endLine="50" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4205271146524200412" fileName="Refactoring_Behavior.java" startLine="16" startPosition="82" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isLoggable_1347577327951509202#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBaseConcept_4205271146524200392#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setBaseConcept_6261424444345979536#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBaseConcept_4205271146524200392#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBaseConcept_4205271146524200392#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setBaseConcept_6261424444345979536#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setBaseConcept_6261424444345979536#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -390,8 +390,8 @@
     <scopeInfo nodeId="4205271146524200413" fileName="Refactoring_Behavior.java" startLine="17" startPosition="150" endLine="18" endPosition="18" />
     <scopeInfo nodeId="1347577327951509205" fileName="Refactoring_Behavior.java" startLine="29" startPosition="77" endLine="30" endPosition="83" />
     <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="34" startPosition="79" endLine="35" endPosition="155" />
-    <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="39" startPosition="97" endLine="40" endPosition="132" />
-    <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="44" startPosition="112" endLine="45" endPosition="289" />
+    <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="39" startPosition="112" endLine="40" endPosition="289" />
+    <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="44" startPosition="97" endLine="45" endPosition="132" />
     <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="49" startPosition="130" endLine="50" endPosition="279" />
     <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="4205271146524200389" varName="thisNode" />
@@ -407,11 +407,11 @@
       <varInfo nodeId="4205271146524200389" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="6261424444345979539" varName="baseConcept" />
+      <varInfo nodeId="4205271146524200389" varName="callerConceptFqName" />
       <varInfo nodeId="4205271146524200389" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="4205271146524200389" varName="callerConceptFqName" />
+      <varInfo nodeId="6261424444345979539" varName="baseConcept" />
       <varInfo nodeId="4205271146524200389" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="48" startPosition="0" endLine="52" endPosition="0">

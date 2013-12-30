@@ -72,28 +72,13 @@ public class XmlContent_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isLastPositionAllowed_6999033275467334895(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_onNewLine_6999033275467469862(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_onNewLine_2133624044437631588", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_hasNewLineAfter_6999033275467469870(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
-  }
-
-  @Deprecated
   public static boolean callSuper_isOneLineBlock_1622293396949044231(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlContent"), callerConceptFqName, "virtual_isOneLineBlock_2133624044437631438", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
 
   @Deprecated
@@ -102,13 +87,28 @@ public class XmlContent_Behavior {
   }
 
   @Deprecated
+  public static boolean call_isLastPositionAllowed_6999033275467334895(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isLastPositionAllowed_6999033275467334895(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlContent"), callerConceptFqName, "virtual_isLastPositionAllowed_2133624044437631519", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static boolean call_onNewLine_6999033275467469862(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_onNewLine_2133624044437631588", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_onNewLine_6999033275467469862(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlContent"), callerConceptFqName, "virtual_onNewLine_2133624044437631588", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_hasNewLineAfter_6999033275467469870(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 
   @Deprecated
