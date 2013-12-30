@@ -7,12 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -28,10 +26,10 @@ public class SimpleBuilder_Behavior {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "declaration", false), "leaf");
   }
 
-  public static List<SNode> call_getPossibleChildren_8969040284892300232(SNode thisNode, SModel model, IScope scope) {
+  public static List<SNode> call_getPossibleChildren_8969040284892300232(SNode thisNode, SModel model) {
     List<SNode> builders = new ArrayList<SNode>();
-    for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, "declaration", false), model, scope)) {
-      ListSequence.fromList(builders).addSequence(ListSequence.fromList(SimpleBuilderDeclaration_Behavior.call_getDescendants_3816167865390609214(SLinkOperations.getTarget(child, "child", false), model, scope)).where(new IWhereFilter<SNode>() {
+    for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, "declaration", false), model)) {
+      ListSequence.fromList(builders).addSequence(ListSequence.fromList(SimpleBuilderDeclaration_Behavior.call_getDescendants_3816167865390609214(SLinkOperations.getTarget(child, "child", false), model)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SPropertyOperations.getBoolean(it, "isAbstract"));
         }
@@ -61,7 +59,7 @@ public class SimpleBuilder_Behavior {
 
     if (SNodeOperations.isInstanceOf(childBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) {
       SNode simpleBuilder = SNodeOperations.cast(childBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder");
-      for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, "declaration", false), SNodeOperations.getModel(thisNode), GlobalScope.getInstance())) {
+      for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, "declaration", false), SNodeOperations.getModel(thisNode))) {
         if (SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SLinkOperations.getTarget(simpleBuilder, "declaration", false), SLinkOperations.getTarget(child, "child", false))) {
           SNode result = SNodeOperations.copyNode(SLinkOperations.getTarget(child, "attachStatement", true));
           for (SNode parent : SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", false, new String[]{})) {

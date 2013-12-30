@@ -46,12 +46,11 @@ public class CopySrcNodeMacro_Behavior {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0;
-        nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_7c1mz_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_7c1mz_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0.getReferenceTarget("concept");
+        patternVar_concept = nodeToMatch_7c1mz_a0a0a0.getReferenceTarget("concept");
       }
       return true;
     }

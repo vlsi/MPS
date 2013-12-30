@@ -60,25 +60,24 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_list_type_comparableWith_List_ho857w_a0a;
-        nodeToMatch_list_type_comparableWith_List_ho857w_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_ho857w_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ho857w_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_ovtchh_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_ovtchh_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ho857w_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_list_type_comparableWith_List_ho857w_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_list_type_comparableWith_List_ho857w_a0a, childRole_list_type_comparableWith_List_ho857w_, 1))) {
+          String childRole_ho857w_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_ho857w_a0a, childRole_ho857w_, 1))) {
             return false;
           }
           {
-            SNode childVar_list_type_comparableWith_List_ho857w_a0a0 = IterableUtil.get(nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getChildren(childRole_list_type_comparableWith_List_ho857w_), 0);
-            this.patternVar_ELEMENT = childVar_list_type_comparableWith_List_ho857w_a0a0;
+            SNode childVar_ho857w_a0a0 = IterableUtil.get(nodeToMatch_ho857w_a0a.getChildren(childRole_ho857w_), 0);
+            this.patternVar_ELEMENT = childVar_ho857w_a0a0;
           }
         }
       }
@@ -106,5 +105,5 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
     }
   }
 
-  private static SNodePointer SNODE_POINTER_ovtchh_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List");
+  private static SNodePointer SNODE_POINTER_ovtchh_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List");
 }

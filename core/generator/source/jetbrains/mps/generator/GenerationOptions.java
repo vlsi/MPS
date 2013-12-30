@@ -17,7 +17,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 

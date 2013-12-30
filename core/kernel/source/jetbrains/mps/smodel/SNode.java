@@ -794,12 +794,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private SModelBase getRealModel() {
     SModel persistentModel = getPersistentModel();
-    if (persistentModel == null) return null;
-
-    SModelDescriptor modelDescriptor = persistentModel.getModelDescriptor();
-    if (!(modelDescriptor instanceof SModelBase)) return null;
-
-    return (SModelBase) modelDescriptor;
+    return persistentModel == null ? null : persistentModel.getModelDescriptor();
   }
 
   void nodeRead() {
@@ -1036,74 +1031,32 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   void fireNodeUnclassifiedReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-    if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
-      try {
-        ourReadAccessHandlingInProgress.set(Boolean.TRUE);
         NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
-      } finally {
-        ourReadAccessHandlingInProgress.set(Boolean.FALSE);
-      }
-    }
   }
 
   void fireNodeReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-    if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
-      try {
-        ourReadAccessHandlingInProgress.set(Boolean.TRUE);
         NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
-      } finally {
-        ourReadAccessHandlingInProgress.set(Boolean.FALSE);
-      }
-    }
   }
 
   private void fireNodeChildReadAccess(String role, SNode child) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-    if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
-      try {
-        ourReadAccessHandlingInProgress.set(Boolean.TRUE);
         NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
-      } finally {
-        ourReadAccessHandlingInProgress.set(Boolean.FALSE);
-      }
-    }
   }
 
   private void fireNodePropertyReadAccess(String propertyName, String propertyValue) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-    if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
-      try {
-        ourReadAccessHandlingInProgress.set(Boolean.TRUE);
         NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
-      } finally {
-        ourReadAccessHandlingInProgress.set(Boolean.FALSE);
-      }
-    }
   }
 
   private void fireNodeReferentReadAccess(String referentRole, SNode referent) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-    if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
-      try {
-        ourReadAccessHandlingInProgress.set(Boolean.TRUE);
         NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
-      } finally {
-        ourReadAccessHandlingInProgress.set(Boolean.FALSE);
-      }
-    }
   }
 
   private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
-    if (myModel == null || !myModel.canFireEvent()) return;
-    if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
-      try {
-        ourReadAccessHandlingInProgress.set(Boolean.TRUE);
+    if (myModel == null || !myModel.canFireReadEvent()) return;
         NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
-      } finally {
-        ourReadAccessHandlingInProgress.set(Boolean.FALSE);
-      }
-    }
   }
 
   //--------private classes-------

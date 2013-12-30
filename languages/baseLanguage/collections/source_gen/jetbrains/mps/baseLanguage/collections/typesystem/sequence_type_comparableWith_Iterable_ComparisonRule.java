@@ -60,25 +60,24 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a;
-        nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_wnlwmt_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_wnlwmt_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_sh3asd_a0a0a0a0b0c0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_sh3asd_a0a0a0a0b0b0a0a0a0a0a0f;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_wnlwmt_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_sequence_type_comparableWith_Iterable_wnlwmt_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a, childRole_sequence_type_comparableWith_Iterable_wnlwmt_, 1))) {
+          String childRole_wnlwmt_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_wnlwmt_a0a, childRole_wnlwmt_, 1))) {
             return false;
           }
           {
-            SNode childVar_sequence_type_comparableWith_Iterable_wnlwmt_a0a0 = IterableUtil.get(nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getChildren(childRole_sequence_type_comparableWith_Iterable_wnlwmt_), 0);
-            this.patternVar_ELEMENT = childVar_sequence_type_comparableWith_Iterable_wnlwmt_a0a0;
+            SNode childVar_wnlwmt_a0a0 = IterableUtil.get(nodeToMatch_wnlwmt_a0a.getChildren(childRole_wnlwmt_), 0);
+            this.patternVar_ELEMENT = childVar_wnlwmt_a0a0;
           }
         }
       }
@@ -106,5 +105,5 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
     }
   }
 
-  private static SNodePointer SNODE_POINTER_sh3asd_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_sh3asd_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

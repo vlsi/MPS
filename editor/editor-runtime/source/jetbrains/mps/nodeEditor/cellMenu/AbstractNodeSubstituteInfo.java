@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -116,9 +114,9 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
     List<SubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
     if (inequalitiesSystem == null) return substituteActionList;
 
-    ourModelForTypechecking =  TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-    for (SModuleReference l: ((SModelDescriptor) getEditorContext().getModel()).getSModel().getModelDepsManager().getAllImportedLanguages()){
-      ((SModelDescriptor) ourModelForTypechecking).getSModel().addLanguage(l);
+    ourModelForTypechecking = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
+    for (SModuleReference l : ((SModelBase) getEditorContext().getModel()).getSModel().getModelDepsManager().getAllImportedLanguages()) {
+      ((SModelBase) ourModelForTypechecking).getSModel().addLanguage(l);
     }
 
     List<SubstituteAction> result = new ArrayList<SubstituteAction>();

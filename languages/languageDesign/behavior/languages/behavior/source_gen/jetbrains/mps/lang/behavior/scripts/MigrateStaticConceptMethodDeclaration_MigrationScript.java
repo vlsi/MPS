@@ -12,12 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import java.util.List;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MigrateStaticConceptMethodDeclaration_MigrationScript extends BaseMigrationScript {
   public MigrateStaticConceptMethodDeclaration_MigrationScript(IOperationContext operationContext) {
@@ -64,53 +58,5 @@ public class MigrateStaticConceptMethodDeclaration_MigrationScript extends BaseM
       }
     });
     // whitespace 
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "Migrate StaticConceptMethodDeclaration calls";
-      }
-
-      public String getAdditionalInfo() {
-        return "Migrate StaticConceptMethodDeclaration calls";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return true;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode result = _quotation_createNode_63ygf9_a0a0a2(SLinkOperations.getTargets(node, "actualArgument", true), SLinkOperations.getTarget(node, "baseMethodDeclaration", false), SLinkOperations.getTarget(node, "concept", false));
-        SNodeOperations.replaceWithAnother(node, result);
-      }
-
-      public boolean isShowAsIntention() {
-        return true;
-      }
-    });
-  }
-
-  private static SNode _quotation_createNode_63ygf9_a0a0a2(Object parameter_1, Object parameter_2, Object parameter_3) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_4 = null;
-    SNode quotedNode_5 = null;
-    SNode quotedNode_6 = null;
-    SNode quotedNode_7 = null;
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "baseMethodDeclaration", (SNode) parameter_2);
-    {
-      List<SNode> nodes = (List<SNode>) parameter_1;
-      for (SNode child : nodes) {
-        quotedNode_5.addChild("actualArgument", HUtil.copyIfNecessary(child));
-      }
-    }
-    quotedNode_4.addChild("operation", quotedNode_5);
-    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptRefExpression", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "conceptDeclaration", (SNode) parameter_3);
-    quotedNode_4.addChild("operand", quotedNode_6);
-    return quotedNode_4;
   }
 }

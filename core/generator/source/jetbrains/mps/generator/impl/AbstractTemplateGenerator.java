@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
@@ -54,9 +55,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final boolean myShowBadChildWarning;
   private final RoleValidator successValidatorOne = new RoleValidator(false);
   private final RoleValidator successValidatorMany = new RoleValidator(true);
-  // not concurrent - I don't care if few threads instantiate validators - it's cheap.
-  // besides, the code shall be refactored to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
-  private final Map<String, Map<String, RoleValidator>> validators = new HashMap<String, Map<String, RoleValidator>>();
+  // the code might need refactoring to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
+  private final Map<String, Map<String, RoleValidator>> validators = new ConcurrentHashMap<String, Map<String, RoleValidator>>();
 
   protected AbstractTemplateGenerator(GenerationSessionContext operationContext,
       ProgressMonitor progressMonitor, IGeneratorLogger logger,
@@ -250,7 +250,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     } else {
       if (!myShowBadChildWarning) {
         // ignore
-        validator = (!link.isReference() && ((SContainmentLink) link).isMultiple()) ? successValidatorMany : successValidatorOne;
+        validator = link.isMultiple() ? successValidatorMany : successValidatorOne;
       } else {
         validator = new AcceptableTargetValidator(myLogger, link);
       }
@@ -300,6 +300,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     private final SAbstractConcept myLinkTarget;
 
     AcceptableTargetValidator(@NotNull IGeneratorLogger logger, @NotNull SAbstractLink link) {
+      super(link.isMultiple());
       myLogger = logger;
       myLink = link;
       myLinkTarget = link.getTargetConcept();
@@ -319,11 +320,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       String relationKind = myLink.isReference() ? "referent" : "child";
       String msg = String.format("%s '%s' is expected for role '%s' but was '%s'", relationKind, expected, myLink.getRole(), was);
       return new RoleValidationStatus(myLogger, msg, GeneratorUtil.describe(targetNode, relationKind));
-    }
-
-    @Override
-    public boolean isMultipleSource() {
-      return !myLink.isReference() && ((SContainmentLink) myLink).isMultiple();
     }
   }
 

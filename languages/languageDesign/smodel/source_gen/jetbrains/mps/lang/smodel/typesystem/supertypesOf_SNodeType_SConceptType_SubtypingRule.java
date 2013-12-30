@@ -56,14 +56,13 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a;
-        nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_auyr2c_a0a = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_auyr2c_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a.getReferenceTarget("concept")))) {
+          SNodeReference pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_auyr2c_a0a.getReferenceTarget("concept")))) {
             return false;
           }
         }
@@ -101,5 +100,5 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
+  private static SNodePointer SNODE_POINTER_6gcjzy_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
 }

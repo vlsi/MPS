@@ -24,7 +24,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
@@ -115,7 +114,7 @@ public class RunTestInMPS_Action extends BaseAction {
       System.out.println("Test " + className + "." + testName);
       final Class c = ClassLoaderManager.getInstance().getClass(((SModel) MapSequence.fromMap(_params).get("model")).getModule(), BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{}));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
-      Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
+      Constructor ctor = c.getConstructor(Project.class, SModel.class);
       final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")));
       Thread thread = new Thread(new Runnable() {
         @Override

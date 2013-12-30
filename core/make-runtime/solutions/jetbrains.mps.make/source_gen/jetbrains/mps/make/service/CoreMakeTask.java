@@ -193,14 +193,12 @@ public class CoreMakeTask {
     public RelayingLoggingHandler(IMessageHandler mh) {
       this.messageHandler.set(mh);
       GROUP_HANDLER = MultiTuple.<ThreadGroup,IMessageHandler>from(Thread.currentThread().getThreadGroup(), mh);
-    }
-
-    public void startRelaying() {
       this.register();
     }
 
-    public void stopRelaying() {
+    public void dispose() {
       this.unregister();
+      messageHandler.remove();
     }
 
     @Override

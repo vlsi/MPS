@@ -2460,40 +2460,37 @@
     <nodeInfo nodeId="6819753748925026244" fileName="MacroIntentionsUtil.java" startLine="101" startPosition="116" endLine="102" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6819753748924554836" fileName="MacroIntentionsUtil.java" startLine="102" startPosition="44" endLine="103" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_concept" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="113" startPosition="7" endLine="114" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="114" startPosition="62" endLine="115" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="116" startPosition="153" endLine="117" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="118" startPosition="9" endLine="119" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="118" startPosition="9" endLine="119" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="120" startPosition="7" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="124" startPosition="40" endLine="125" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="129" startPosition="69" endLine="130" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="135" startPosition="51" endLine="136" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="137" startPosition="7" endLine="138" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="146" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_concept" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="152" startPosition="7" endLine="153" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="153" startPosition="63" endLine="154" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="155" startPosition="170" endLine="156" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="158" startPosition="9" endLine="159" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="160" startPosition="136" endLine="161" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="163" startPosition="11" endLine="164" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="165" startPosition="13" endLine="166" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="166" startPosition="70" endLine="167" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="168" startPosition="161" endLine="169" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="170" startPosition="15" endLine="171" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="170" startPosition="15" endLine="171" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="175" startPosition="7" endLine="176" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="179" startPosition="40" endLine="180" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="184" startPosition="69" endLine="185" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="190" startPosition="51" endLine="191" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="192" startPosition="7" endLine="193" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="113" startPosition="7" endLine="114" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="115" startPosition="133" endLine="116" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="117" startPosition="9" endLine="118" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="117" startPosition="9" endLine="118" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="119" startPosition="7" endLine="120" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="123" startPosition="40" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="128" startPosition="69" endLine="129" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="51" endLine="135" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="136" startPosition="7" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="145" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_concept" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="151" startPosition="7" endLine="152" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="153" startPosition="150" endLine="154" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="156" startPosition="9" endLine="157" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="158" startPosition="96" endLine="159" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="161" startPosition="11" endLine="162" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="163" startPosition="13" endLine="164" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="165" startPosition="141" endLine="166" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="167" startPosition="15" endLine="168" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="167" startPosition="15" endLine="168" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="172" startPosition="7" endLine="173" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="176" startPosition="40" endLine="177" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="181" startPosition="69" endLine="182" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="187" startPosition="51" endLine="188" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="189" startPosition="7" endLine="190" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2659827026790868379" fileName="MacroIntentionsUtil.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacroIntentionsUtil#()V" />
     <nodeInfo nodeId="2925366645633385711" fileName="MacroIntentionsUtil.java" startLine="47" startPosition="14" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2925366645633385697" fileName="MacroIntentionsUtil.java" startLine="57" startPosition="14" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="109" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_iiuth6_a0a0a0a3a2#()V" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="141" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="148" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_iiuth6_a0a0a0a0d0c#()V" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="196" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="140" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="147" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_iiuth6_a0a0a0a0d0c#()V" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="193" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
     <nodeInfo nodeId="2925366645633424064" fileName="MacroIntentionsUtil.java" startLine="27" startPosition="55" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2925366645633424072" fileName="MacroIntentionsUtil.java" startLine="30" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2925366645633385725" fileName="MacroIntentionsUtil.java" startLine="61" startPosition="10" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2502,52 +2499,52 @@
     <nodeInfo nodeId="3644457381597287286" fileName="MacroIntentionsUtil.java" startLine="77" startPosition="78" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3644457381597319618" fileName="MacroIntentionsUtil.java" startLine="83" startPosition="25" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3644457381597319645" fileName="MacroIntentionsUtil.java" startLine="87" startPosition="14" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="115" startPosition="70" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="128" startPosition="71" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="51" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="51" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="154" startPosition="71" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="159" startPosition="71" endLine="162" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="167" startPosition="113" endLine="170" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="179" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="183" startPosition="71" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="189" startPosition="51" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="189" startPosition="51" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="114" startPosition="56" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="127" startPosition="71" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="51" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="51" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="152" startPosition="57" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="157" startPosition="51" endLine="160" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="164" startPosition="79" endLine="167" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="176" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="180" startPosition="71" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="186" startPosition="51" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="186" startPosition="51" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3644457381597319643" fileName="MacroIntentionsUtil.java" startLine="87" startPosition="12" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="115" startPosition="70" endLine="119" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="167" startPosition="113" endLine="171" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="114" startPosition="56" endLine="118" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="164" startPosition="79" endLine="168" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2925366645633385711" fileName="MacroIntentionsUtil.java" startLine="44" startPosition="129" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2925366645633385697" fileName="MacroIntentionsUtil.java" startLine="54" startPosition="131" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="128" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="183" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="189" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="45" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="164" startPosition="188" endLine="172" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="127" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="180" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="186" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="45" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="162" startPosition="128" endLine="169" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2925366645633385711" fileName="MacroIntentionsUtil.java" startLine="41" startPosition="126" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2925366645633385697" fileName="MacroIntentionsUtil.java" startLine="51" startPosition="134" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1980960612890669637" fileName="MacroIntentionsUtil.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findOuterMacro#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3644457381597319595" fileName="MacroIntentionsUtil.java" startLine="82" startPosition="112" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6819753748924554104" fileName="MacroIntentionsUtil.java" startLine="96" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPresentaion#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1980960612890493321" fileName="MacroIntentionsUtil.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContextNodeConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="160" startPosition="11" endLine="170" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3644457381597287300" fileName="MacroIntentionsUtil.java" startLine="81" startPosition="71" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="162" startPosition="11" endLine="173" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="159" startPosition="71" endLine="173" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="157" startPosition="9" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="157" startPosition="9" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="157" startPosition="51" endLine="170" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="155" startPosition="9" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="155" startPosition="9" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3644457381597284169" fileName="MacroIntentionsUtil.java" startLine="77" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinks#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/List;" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="154" startPosition="71" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="152" startPosition="57" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="150" startPosition="45" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2925366645633375838" fileName="MacroIntentionsUtil.java" startLine="40" startPosition="14" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="151" startPosition="45" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="151" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="150" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1980960612890669631" fileName="MacroIntentionsUtil.java" startLine="37" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptFrom#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="2659827026790868382" fileName="MacroIntentionsUtil.java" startLine="23" startPosition="32" endLine="23" endPosition="32" />
     <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="109" startPosition="40" endLine="109" endPosition="40" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="141" startPosition="42" endLine="141" endPosition="42" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="148" startPosition="41" endLine="148" endPosition="41" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="196" startPosition="42" endLine="196" endPosition="42" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="140" startPosition="42" endLine="140" endPosition="42" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="147" startPosition="41" endLine="147" endPosition="41" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="193" startPosition="42" endLine="193" endPosition="42" />
     <scopeInfo nodeId="2925366645633424065" fileName="MacroIntentionsUtil.java" startLine="28" startPosition="35" endLine="29" endPosition="75" />
     <scopeInfo nodeId="2925366645633424073" fileName="MacroIntentionsUtil.java" startLine="31" startPosition="119" endLine="32" endPosition="130" />
     <scopeInfo nodeId="2925366645633385717" fileName="MacroIntentionsUtil.java" startLine="45" startPosition="47" endLine="46" endPosition="84" />
@@ -2559,58 +2556,58 @@
     <scopeInfo nodeId="3644457381597287287" fileName="MacroIntentionsUtil.java" startLine="78" startPosition="29" endLine="79" endPosition="18" />
     <scopeInfo nodeId="3644457381597319619" fileName="MacroIntentionsUtil.java" startLine="84" startPosition="163" endLine="85" endPosition="58" />
     <scopeInfo nodeId="3644457381597319646" fileName="MacroIntentionsUtil.java" startLine="88" startPosition="160" endLine="89" endPosition="58" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="116" startPosition="153" endLine="117" endPosition="23" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="118" startPosition="9" endLine="119" endPosition="107" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="124" startPosition="40" endLine="125" endPosition="19" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="129" startPosition="69" endLine="130" endPosition="81" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="135" startPosition="51" endLine="136" endPosition="34" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="155" startPosition="170" endLine="156" endPosition="23" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="160" startPosition="136" endLine="161" endPosition="25" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="168" startPosition="161" endLine="169" endPosition="29" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="170" startPosition="15" endLine="171" endPosition="115" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="179" startPosition="40" endLine="180" endPosition="19" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="184" startPosition="69" endLine="185" endPosition="81" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="190" startPosition="51" endLine="191" endPosition="34" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="115" startPosition="133" endLine="116" endPosition="23" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="117" startPosition="9" endLine="118" endPosition="87" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="123" startPosition="40" endLine="124" endPosition="19" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="128" startPosition="69" endLine="129" endPosition="81" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="51" endLine="135" endPosition="34" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="153" startPosition="150" endLine="154" endPosition="23" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="158" startPosition="96" endLine="159" endPosition="25" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="165" startPosition="141" endLine="166" endPosition="29" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="167" startPosition="15" endLine="168" endPosition="95" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="176" startPosition="40" endLine="177" endPosition="19" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="181" startPosition="69" endLine="182" endPosition="81" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="187" startPosition="51" endLine="188" endPosition="34" />
     <scopeInfo nodeId="2659827026790868379" fileName="MacroIntentionsUtil.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="2925366645633385726" fileName="MacroIntentionsUtil.java" startLine="61" startPosition="12" endLine="63" endPosition="51">
       <varInfo nodeId="5326391607741351105" varName="macroOuterNode" />
     </scopeInfo>
     <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="109" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="141" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="140" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="2925366645633385713" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="148" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="196" startPosition="0" endLine="198" endPosition="0">
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="147" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="193" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="2925366645633385699" varName="o" />
     </scopeInfo>
     <scopeInfo nodeId="3644457381597319597" fileName="MacroIntentionsUtil.java" startLine="83" startPosition="25" endLine="86" endPosition="9" />
     <scopeInfo nodeId="3644457381597319644" fileName="MacroIntentionsUtil.java" startLine="87" startPosition="14" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="128" startPosition="71" endLine="131" endPosition="7" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="51" endLine="137" endPosition="7" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="179" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="183" startPosition="71" endLine="186" endPosition="7" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="189" startPosition="51" endLine="192" endPosition="7" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="115" startPosition="70" endLine="119" endPosition="107" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="51" endLine="138" endPosition="18" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="167" startPosition="113" endLine="171" endPosition="115" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="189" startPosition="51" endLine="193" endPosition="18" />
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="128" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="123" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="127" startPosition="71" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="51" endLine="136" endPosition="7" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="176" startPosition="0" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="180" startPosition="71" endLine="183" endPosition="7" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="186" startPosition="51" endLine="189" endPosition="7" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="114" startPosition="56" endLine="118" endPosition="87" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="51" endLine="137" endPosition="18" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="164" startPosition="79" endLine="168" endPosition="95" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="186" startPosition="51" endLine="190" endPosition="18" />
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="113" startPosition="7" endLine="118" endPosition="87">
+      <varInfo nodeId="2925366645633385713" varName="nodeToMatch_iiuth6_a0a0a3a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="127" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="2925366645633385713" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="183" startPosition="0" endLine="188" endPosition="0">
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="163" startPosition="13" endLine="168" endPosition="95">
+      <varInfo nodeId="2925366645633385699" varName="nodeToMatch_iiuth6_a0a0a0a3a2" />
+    </scopeInfo>
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="180" startPosition="0" endLine="185" endPosition="0">
       <varInfo nodeId="2925366645633385699" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="113" startPosition="7" endLine="119" endPosition="107">
-      <varInfo nodeId="2925366645633385713" varName="nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2" />
-    </scopeInfo>
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="134" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="133" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="2925366645633385713" varName="fieldName" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="165" startPosition="13" endLine="171" endPosition="115">
-      <varInfo nodeId="2925366645633385699" varName="nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2" />
-    </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="189" startPosition="0" endLine="195" endPosition="0">
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="186" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="2925366645633385699" varName="fieldName" />
     </scopeInfo>
     <scopeInfo nodeId="2925366645633385711" fileName="MacroIntentionsUtil.java" startLine="42" startPosition="7" endLine="49" endPosition="9">
@@ -2626,6 +2623,10 @@
     <scopeInfo nodeId="1980960612890493324" fileName="MacroIntentionsUtil.java" startLine="26" startPosition="64" endLine="34" endPosition="16">
       <varInfo nodeId="2925366645633424060" varName="enclosingMacro" />
     </scopeInfo>
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="45" endLine="120" endPosition="18" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="161" startPosition="11" endLine="169" endPosition="13">
+      <varInfo nodeId="2925366645633385699" varName="childVar_iiuth6_a0a0a0a3a2" />
+    </scopeInfo>
     <scopeInfo nodeId="2925366645633375839" fileName="MacroIntentionsUtil.java" startLine="41" startPosition="126" endLine="50" endPosition="7" />
     <scopeInfo nodeId="2925366645633385690" fileName="MacroIntentionsUtil.java" startLine="51" startPosition="134" endLine="60" endPosition="7" />
     <scopeInfo nodeId="1980960612890669637" fileName="MacroIntentionsUtil.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
@@ -2635,49 +2636,45 @@
     <scopeInfo nodeId="6819753748924554104" fileName="MacroIntentionsUtil.java" startLine="96" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="6819753748924554631" varName="intentionParam" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="45" endLine="121" endPosition="18" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="163" startPosition="11" endLine="172" endPosition="13">
-      <varInfo nodeId="2925366645633385699" varName="childVar_MacroIntentionsUtil_iiuth6_a0a0a0a3a2" />
-    </scopeInfo>
     <scopeInfo nodeId="1980960612890493321" fileName="MacroIntentionsUtil.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1980960612890494618" varName="contextNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="2925366645633385713" varName="nodeToMatch" />
     </scopeInfo>
     <scopeInfo nodeId="3644457381597287300" fileName="MacroIntentionsUtil.java" startLine="81" startPosition="71" endLine="92" endPosition="5">
       <varInfo nodeId="3644457381597287322" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="112" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="2925366645633385713" varName="nodeToMatch" />
-    </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="159" startPosition="71" endLine="173" endPosition="11" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="158" startPosition="9" endLine="173" endPosition="11">
-      <varInfo nodeId="2925366645633385699" varName="childRole_MacroIntentionsUtil_iiuth6_" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="157" startPosition="51" endLine="170" endPosition="11" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="156" startPosition="9" endLine="170" endPosition="11">
+      <varInfo nodeId="2925366645633385699" varName="childRole_iiuth6_" />
     </scopeInfo>
     <scopeInfo nodeId="3644457381597284172" fileName="MacroIntentionsUtil.java" startLine="77" startPosition="78" endLine="93" endPosition="18">
       <varInfo nodeId="3644457381597287294" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="157" startPosition="9" endLine="174" endPosition="9" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="155" startPosition="9" endLine="171" endPosition="9" />
     <scopeInfo nodeId="3644457381597284169" fileName="MacroIntentionsUtil.java" startLine="77" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="3644457381597319613" varName="inCollection" />
       <varInfo nodeId="3644457381597287280" varName="sourceNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="154" startPosition="71" endLine="174" endPosition="9" />
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="152" startPosition="7" endLine="174" endPosition="9">
-      <varInfo nodeId="2925366645633385699" varName="nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="152" startPosition="57" endLine="171" endPosition="9" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="151" startPosition="7" endLine="171" endPosition="9">
+      <varInfo nodeId="2925366645633385699" varName="nodeToMatch_iiuth6_a0a0a0d0c" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="151" startPosition="45" endLine="176" endPosition="18" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="150" startPosition="45" endLine="173" endPosition="18" />
+    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="150" startPosition="0" endLine="175" endPosition="0">
+      <varInfo nodeId="2925366645633385699" varName="nodeToMatch" />
+    </scopeInfo>
     <scopeInfo nodeId="1980960612890669634" fileName="MacroIntentionsUtil.java" startLine="37" startPosition="52" endLine="64" endPosition="5">
       <varInfo nodeId="2925366645633375809" varName="query" />
       <varInfo nodeId="2925366645633375822" varName="returnType" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="151" startPosition="0" endLine="178" endPosition="0">
-      <varInfo nodeId="2925366645633385699" varName="nodeToMatch" />
-    </scopeInfo>
     <scopeInfo nodeId="1980960612890669631" fileName="MacroIntentionsUtil.java" startLine="37" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="2925366645633370440" varName="macro" />
     </scopeInfo>
-    <unitInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="106" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a3a2" />
-    <unitInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="145" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a0d0c" />
-    <unitInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="22" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" />
+    <unitInfo nodeId="2925366645633385713" fileName="MacroIntentionsUtil.java" startLine="106" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a3a2" />
+    <unitInfo nodeId="2925366645633385699" fileName="MacroIntentionsUtil.java" startLine="144" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil$Pattern_iiuth6_a0a0a0a0d0c" />
+    <unitInfo nodeId="1980960612890491907" fileName="MacroIntentionsUtil.java" startLine="22" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.lang.generator.intentions.MacroIntentionsUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)/2357139912674486242">
     <nodeInfo nodeId="2357139912674486242" fileName="CreateScript_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />

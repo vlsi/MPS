@@ -30,7 +30,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.resources.structure.IconResourceDeclaration");
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.lang.resources.structure.IconResourceDeclaration");
           }
         }.compute();
         if (queryResult != null) {

@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface IChildNodeSetter {
 
   @Deprecated
-  public SNode execute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope);
+  public SNode execute(SNode parentNode, SNode oldChild, SNode newChild);
 
-  public SNode execute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext);
+  public SNode execute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext);
 }

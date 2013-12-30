@@ -3592,7 +3592,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/8802842484753224561">
     <nodeInfo nodeId="8802842484753224561" fileName="Quotation_quotedNode.java" startLine="23" startPosition="33" endLine="24" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8802842484753224594" fileName="Quotation_quotedNode.java" startLine="31" startPosition="134" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8802842484753224604" fileName="Quotation_quotedNode.java" startLine="33" startPosition="189" endLine="34" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8802842484753224604" fileName="Quotation_quotedNode.java" startLine="33" startPosition="160" endLine="34" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8802842484753224621" fileName="Quotation_quotedNode.java" startLine="35" startPosition="7" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8802842484753224591" fileName="Quotation_quotedNode.java" startLine="39" startPosition="162" endLine="40" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8802842484753224625" fileName="Quotation_quotedNode.java" startLine="43" startPosition="163" endLine="44" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3609,7 +3609,7 @@
     <nodeInfo nodeId="8802842484753224591" fileName="Quotation_quotedNode.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="8802842484753224591" fileName="Quotation_quotedNode.java" startLine="28" startPosition="51" endLine="28" endPosition="51" />
     <scopeInfo nodeId="8802842484753224561" fileName="Quotation_quotedNode.java" startLine="23" startPosition="33" endLine="24" endPosition="104" />
-    <scopeInfo nodeId="8802842484753224603" fileName="Quotation_quotedNode.java" startLine="33" startPosition="189" endLine="34" endPosition="70" />
+    <scopeInfo nodeId="8802842484753224603" fileName="Quotation_quotedNode.java" startLine="33" startPosition="160" endLine="34" endPosition="70" />
     <scopeInfo nodeId="8802842484753224591" fileName="Quotation_quotedNode.java" startLine="39" startPosition="162" endLine="40" endPosition="107" />
     <scopeInfo nodeId="8802842484753224640" fileName="Quotation_quotedNode.java" startLine="46" startPosition="32" endLine="47" endPosition="48" />
     <scopeInfo nodeId="8802842484753224591" fileName="Quotation_quotedNode.java" startLine="51" startPosition="45" endLine="52" endPosition="18" />

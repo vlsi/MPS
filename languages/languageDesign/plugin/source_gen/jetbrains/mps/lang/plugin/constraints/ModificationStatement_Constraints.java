@@ -73,7 +73,7 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> actionGroupDeclarations = SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
+            List<SNode> actionGroupDeclarations = SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
             SNode groupDeclaration = SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false);
             List<SNode> thisGroupChildGroups = ((List<SNode>) ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

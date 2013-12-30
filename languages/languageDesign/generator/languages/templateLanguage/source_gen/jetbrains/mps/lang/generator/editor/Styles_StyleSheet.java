@@ -49,6 +49,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 
@@ -115,6 +116,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
   }
 
   public static void applyNodeUnderMacro(Style style, EditorCell editorCell) {

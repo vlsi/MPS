@@ -43,6 +43,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   public final Object LISTENERS_LOCK = new Object();
 
+  //TypeChecker is a singleton, so we can omit remove() here though the field is not static
   private ThreadLocal<TypesReadListener> myTypesReadListener = new ThreadLocal<TypesReadListener>();
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 

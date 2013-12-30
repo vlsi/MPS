@@ -150,7 +150,7 @@
     <nodeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="20" startPosition="44" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="25" startPosition="83" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="29" startPosition="44" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1919086248986845086" fileName="NamedFacetReference_Constraints.java" startLine="38" startPosition="142" endLine="39" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1919086248986845086" fileName="NamedFacetReference_Constraints.java" startLine="38" startPosition="142" endLine="39" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="43" startPosition="63" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="48" startPosition="7" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a1" />
@@ -164,7 +164,7 @@
     <nodeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="24" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="20" startPosition="44" endLine="21" endPosition="68" />
     <scopeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="29" startPosition="44" endLine="30" endPosition="20" />
-    <scopeInfo nodeId="1919086248986845085" fileName="NamedFacetReference_Constraints.java" startLine="38" startPosition="142" endLine="39" endPosition="167" />
+    <scopeInfo nodeId="1919086248986845085" fileName="NamedFacetReference_Constraints.java" startLine="38" startPosition="142" endLine="39" endPosition="138" />
     <scopeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="43" startPosition="63" endLine="44" endPosition="58" />
     <scopeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1919086248986845080" fileName="NamedFacetReference_Constraints.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />

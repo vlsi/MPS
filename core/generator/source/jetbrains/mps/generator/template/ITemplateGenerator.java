@@ -68,5 +68,6 @@ public interface ITemplateGenerator {
 
   void showErrorMessage(SNode inputNode, SNode templateNode, String message);
 
+  // FIXME switch to SNodeReference (templateNode and ruleNode) and move to IGeneratorLogger
   void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
 }

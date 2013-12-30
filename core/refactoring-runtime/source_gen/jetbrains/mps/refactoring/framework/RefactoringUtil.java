@@ -58,11 +58,7 @@ public class RefactoringUtil {
       public void run() {
         SAbstractConcept c1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.Refactoring");
         Set<SNode> newRefactorings = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c1), false, new EmptyProgressMonitor());
-
-        SAbstractConcept c2 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.OldRefactoring");
-        Set<SNode> oldRefactorings = ((Set) FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c2), false, new EmptyProgressMonitor()));
         availableRefactorings.addAll(newRefactorings);
-        availableRefactorings.addAll(oldRefactorings);
       }
     });
     return availableRefactorings;
@@ -83,22 +79,6 @@ public class RefactoringUtil {
       if (scriptsModelDescriptor != null) {
         SModel scriptsModel = scriptsModelDescriptor;
         String packageName = SNodeOperations.getModelLongName(scriptsModel);
-        for (SNode refactoring : SModelOperations.getRoots(scriptsModel, "jetbrains.mps.lang.refactoring.structure.OldRefactoring")) {
-          try {
-            String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
-            Class<AbstractLoggableRefactoring> cls = ClassLoaderManager.getInstance().getClass(language, fqName);
-            if (cls == null) {
-              LOG.error("Can't find " + fqName);
-              continue;
-            }
-            Constructor<AbstractLoggableRefactoring> constructor = cls.getConstructor();
-            constructor.setAccessible(false);
-            AbstractLoggableRefactoring oldRefactoring = constructor.newInstance();
-            result.add(OldRefactoringAdapter.createAdapterFor(oldRefactoring));
-          } catch (Throwable t) {
-            LOG.error(null, t);
-          }
-        }
       }
     }
     SModel refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);

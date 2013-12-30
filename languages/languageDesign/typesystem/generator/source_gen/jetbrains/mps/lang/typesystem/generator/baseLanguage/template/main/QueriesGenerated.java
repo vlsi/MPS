@@ -2469,19 +2469,21 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1223389174474(final IOperationContext operationContext, final MappingScriptContext _context) {
+    final SNode csInferenceMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a964(), "classifier", false);
+    final SNode csCheckingMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a1a964(), "classifier", false);
     for (SNode methodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
       boolean toProcess = false;
       List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
       for (SNode annotationInstance : annotationInstances) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0b0d0a0bs_0(), "classifier", false) || annotation == SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0b0d0a0bs(), "classifier", false)) {
+        if (annotation == csInferenceMethod || annotation == csCheckingMethod) {
           toProcess = true;
           break;
         }
       }
       if (toProcess) {
-        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a4a0a964());
+        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a4a2a964());
       }
     }
     for (SNode baseMethodDeclaration : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -2489,13 +2491,13 @@ public class QueriesGenerated {
       List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
       for (SNode annotationInstance : annotationInstances) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0b0c0b0bs_0(), "classifier", false) || annotation == SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0b0c0b0bs(), "classifier", false)) {
+        if (annotation == csInferenceMethod || annotation == csCheckingMethod) {
           toProcess = true;
           break;
         }
       }
       if (toProcess) {
-        ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a3a1a964());
+        ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a3a3a964());
       }
     }
   }
@@ -2507,7 +2509,13 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1224237349196(final IOperationContext operationContext, final MappingScriptContext _context) {
+    final SNode getRTSupportExpression = _quotation_createNode_x583g4_a0a0ds();
+    final SNode csTypeCheckingContext = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a1a174(), "classifier", false);
     for (SNode instanceMethodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+      SNode instanceMethodDeclaration = SLinkOperations.getTarget(instanceMethodCall, "baseMethodDeclaration", false);
+      if (!("coerce_".equals(SPropertyOperations.getString(instanceMethodDeclaration, "name")))) {
+        continue;
+      }
       SNode baseMethodDeclaration = SNodeOperations.getAncestor(instanceMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
       // anonymous inner classes 
       SNode oldBMD = null;
@@ -2517,21 +2525,17 @@ public class QueriesGenerated {
       }
       baseMethodDeclaration = oldBMD;
       if ((baseMethodDeclaration != null)) {
-        SNode instanceMethodDeclaration = SLinkOperations.getTarget(instanceMethodCall, "baseMethodDeclaration", false);
-        if (!("coerce_".equals(SPropertyOperations.getString(instanceMethodDeclaration, "name")))) {
-          continue;
-        }
         SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(instanceMethodCall), "jetbrains.mps.baseLanguage.structure.DotExpression");
-        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(dotExpression, "operand", true), _quotation_createNode_x583g4_a0a3a5a0a174()))) {
+        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(dotExpression, "operand", true), getRTSupportExpression))) {
           continue;
         }
 parametersLoop:
         for (SNode parameterDeclaration : SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)) {
           SNode lastParameterType = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).last(), "type", true);
-          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0b0e0f0a0ds(), "classifier", false)) {
-            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0a1a4a5a0a174(), "classifier", false);
+          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == csTypeCheckingContext) {
+            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == csTypeCheckingContext;
             if (!(alreadyProcessed)) {
-              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addElement(_quotation_createNode_x583g4_a0a0a1a1a4a5a0a174());
+              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addElement(_quotation_createNode_x583g4_a0a0a1a1a2a7a2a174());
             }
             break parametersLoop;
           }
@@ -2734,15 +2738,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0b0d0a0bs() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1223644778913")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_x583g4_a0a0b0d0a0bs_0() {
+  private static SNode _quotation_createNode_x583g4_a0a0a964() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -2750,7 +2746,15 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a4a0a964() {
+  private static SNode _quotation_createNode_x583g4_a0a1a964() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1223644778913")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_x583g4_a0a0a4a2a964() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2762,23 +2766,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0b0c0b0bs() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1223644778913")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_x583g4_a0a0b0c0b0bs_0() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1196177069451")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_x583g4_a0a0a3a1a964() {
+  private static SNode _quotation_createNode_x583g4_a0a0a3a3a964() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2856,15 +2844,15 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a3a5a0a174() {
+  private static SNode _quotation_createNode_x583g4_a0a0ds() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), facade.createNodeId("~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker")));
     quotedNode_2.setReference("classConcept", SReference.create("classConcept", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), facade.createNodeId("~TypeChecker")));
+    quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), facade.createNodeId("~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker")));
     quotedNode_1.addChild("operand", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), facade.createNodeId("~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport")));
@@ -2872,7 +2860,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a0a1a4a5a0a174() {
+  private static SNode _quotation_createNode_x583g4_a0a1a174() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -2880,7 +2868,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a1a1a4a5a0a174() {
+  private static SNode _quotation_createNode_x583g4_a0a0a1a1a2a7a2a174() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2889,14 +2877,6 @@ parametersLoop:
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), facade.createNodeId("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_x583g4_a0a0b0e0f0a0ds() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), facade.createNodeId("~TypeCheckingContext")));
     return quotedNode_1;
   }
 

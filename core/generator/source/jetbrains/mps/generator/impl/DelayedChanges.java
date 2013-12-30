@@ -16,22 +16,16 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
-import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -122,24 +116,9 @@ public class DelayedChanges {
         if (child == null) {
           return;
         }
-        // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
-        // planning the generation steps.
-        Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
-        if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
-          if (!childLang.getGenerators().isEmpty()) {
-            myLogger.error(child.getReference(), "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
-              GeneratorUtil.describe(myContext.getInput(), "input"),
-              GeneratorUtil.describe(getMapSrcMacro(), "template"),
-              new ProblemDescription("workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
-          }
-        }
-
-        if (child.getModel() != null) {
-          // must be "in air"
-          child = CopyUtil.copy(child);
-        }
-        // replace references back to input model
-        validateReferences(child);
+        SNode templateNode = getMapSrcMacro();
+        // FIXME shall pass TEE right away (i.e. instead of QEC) or extract insertNode functionality outside of TEEI
+        child = new TemplateExecutionEnvironmentImpl(myGenerator, myExecContext).insertNode(child, templateNode == null ? null : templateNode.getReference(), myContext);
 
         // check new child
         SNode parent = myChildToReplace.getParent();
@@ -168,29 +147,6 @@ public class DelayedChanges {
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myContext.getInput(), getMapSrcMacro(), "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);
-      }
-    }
-
-    private void validateReferences(SNode node) {
-      for (SReference reference : node.getReferences()) {
-        validateReference(reference);
-      }
-            for (SNode child : node.getChildren()) {
-        validateReferences(child);
-      }
-    }
-
-    private void validateReference(SReference reference) {
-      // reference to input model - illegal
-      if (myGenerator.getInputModel().getReference().equals(reference.getTargetSModelReference())) {
-        // replace
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          reference.getRole(),
-          reference.getSourceNode(),
-          myContext.getInput(),
-          reference.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(refInfo, myGenerator);
-        postponedReference.setReferenceInOutputSourceNode();
       }
     }
 

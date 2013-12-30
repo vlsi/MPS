@@ -20,12 +20,12 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
+import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
@@ -46,17 +46,26 @@ import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.ManyToManyMap;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
+import java.lang.reflect.Array;
+import java.util.AbstractSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -82,10 +91,10 @@ public class State {
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
-    new THashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
+      new THashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
 
   @StateObject
-  private final Set<Block> myBlocks = new THashSet<Block>();
+  private final BlockSet myBlocks = new BlockSet();
 
   public State(TypeCheckingContext tcc, AbstractOperation operation) {
     myTypeCheckingContext = tcc;
@@ -290,7 +299,7 @@ public class State {
       if (!myOperationStack.empty()) {
         myOperationStack.pop();
       } else {
-       LOG.warning("Operation stack in type system state was empty");
+        LOG.warning("Operation stack in type system state was empty");
       }
     } else {
       operation.execute(this);   //do not store unneeded operations
@@ -370,9 +379,10 @@ public class State {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
             SNode concept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
-            if (!SConceptPropertyOperations.getBoolean(concept, "abstract")) {
+            boolean isAbstract = SPropertyOperations.getBoolean(concept, SNodeUtil.property_AbstractConceptDeclaration_abstract);
+            if (!isAbstract) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
-                wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
+                  wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
             }
           }
         }
@@ -426,7 +436,7 @@ public class State {
 
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
-      null, GlobalScope.getInstance(), false);
+        null, GlobalScope.getInstance(), false);
     //todo this code should be moved into MPS
     SNodeAccessUtil.setProperty(typeVar, SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;
@@ -437,13 +447,7 @@ public class State {
   }
 
   public Set<Block> getBlocks(BlockKind kind) {
-    Set<Block> result = new THashSet<Block>();
-    for (Block block : getBlocks()) {
-      if (block.getBlockKind() == kind) {
-        result.add(block);
-      }
-    }
-    return result;
+    return myBlocks.getBlocks(kind);
   }
 
   private void executeOperationsFromTo(int from, int to) {
@@ -472,5 +476,77 @@ public class State {
       executeOperationsFromTo(fromIndex, toIndex);
     }
   }
+
+  /** Nulls are not allowed. Not serializable. Not cloneable. */
+  private static class BlockSet extends AbstractSet<Block> {
+
+    private EnumMap<BlockKind, Set<Block>> myBlockKindsToBlocks = new EnumMap<BlockKind, Set<Block>>(BlockKind.class);
+    private Iterable<Block>[] myBlockSetArray;
+
+    @SuppressWarnings("unchecked")
+    BlockSet () {
+      for(BlockKind bk: BlockKind.values()) {
+        myBlockKindsToBlocks.put(bk, new THashSet<Block>());
+      }
+      ArrayList<Iterable<Block>> sets = new ArrayList<Iterable<Block>>();
+      for(BlockKind bk: BlockKind.values()) {
+        sets.add(myBlockKindsToBlocks.get(bk));
+      }
+      final Iterable<Block>[] arr = (Iterable<Block>[]) Array.newInstance(Iterable.class, BlockKind.values().length);
+      myBlockSetArray = sets.toArray(arr);
+    }
+
+    public Set<Block> getBlocks(BlockKind bk) {
+      return Collections.unmodifiableSet(myBlockKindsToBlocks.get(bk));
+    }
+
+    @Override
+    public int size() {
+      int count = 0;
+      for(BlockKind bk: BlockKind.values()) {
+        count += myBlockKindsToBlocks.get(bk).size();
+      }
+      return count;
+    }
+
+    @Override
+    @NotNull
+    public Iterator<Block> iterator() {
+      return IterableUtil.merge(myBlockSetArray).iterator();
+    }
+
+    @Override
+    public boolean contains(Object o) {
+      if (!(o instanceof Block)) return false;
+      final Block blk = (Block) o;
+      return myBlockKindsToBlocks.get(blk.getBlockKind()).contains(blk);
+    }
+
+    @Override
+    public boolean add(Block block) {
+      if (block == null) throw new IllegalArgumentException("nulls not aloowed");
+      return myBlockKindsToBlocks.get(block.getBlockKind()).add(block);
+    }
+
+    @Override
+    public boolean remove(Object o) {
+      if (!(o instanceof Block)) return false;
+      final Block blk = (Block) o;
+      return myBlockKindsToBlocks.get(blk.getBlockKind()).remove(blk);
+    }
+
+    @Override
+    public void clear() {
+      for(BlockKind bk: BlockKind.values()) {
+        myBlockKindsToBlocks.get(bk).clear();
+      }
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+      throw new CloneNotSupportedException();
+    }
+  }
+
 
 }

@@ -36,7 +36,7 @@ public class NamedFacetReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration");
           }
 
           @Override

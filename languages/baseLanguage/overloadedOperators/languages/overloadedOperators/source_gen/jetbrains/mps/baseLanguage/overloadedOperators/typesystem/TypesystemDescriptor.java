@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil;
@@ -17,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
@@ -44,7 +44,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }
@@ -53,7 +53,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
+      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "operators", true);
         }

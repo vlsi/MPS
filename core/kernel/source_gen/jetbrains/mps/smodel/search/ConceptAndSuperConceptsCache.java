@@ -104,11 +104,6 @@ import java.util.List;
     return dataSet.getLinkDeclarationsExcludingOverridden();
   }
 
-  public SNode getConceptPropertyByName(String name) {
-    Datasets.ConceptPropertiesDataSet dataSet = (Datasets.ConceptPropertiesDataSet) getDataSet(Datasets.ConceptPropertiesDataSet.ID, Datasets.CONCEPTPROPS_CACHE_CREATOR);
-    return dataSet.getConceptPropertyByName(name);
-  }
-
   public static ConceptAndSuperConceptsCache getInstance(SNode topConcept) {
     if (topConcept == null) {
       return null;

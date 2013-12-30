@@ -211,7 +211,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/devkit/devkit.devkit" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/jetbrains.mps.execution.impl/jetbrains.mps.execution.impl.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/jetbrains.mps.execution.sandbox.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/library/jetbrains.mps.execution.library.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/plugin/jetbrains.mps.execution.languages.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" folder="workbench.execution" />
@@ -258,7 +257,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/basePlatform/jetbrains.mps.ide.java.basePlatform.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/jetbrains.mps.ide.java.testMaterial/jetbrains.mps.ide.java.testMaterial.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/jetbrains.mps.ide.java.tests/jetbrains.mps.ide.java.tests.msd" folder="platform.mpsjava" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmake/jetbrains.mps.ide.make.msd" folder="platform" />

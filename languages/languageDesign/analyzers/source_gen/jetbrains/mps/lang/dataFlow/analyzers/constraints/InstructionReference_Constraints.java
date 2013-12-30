@@ -42,7 +42,7 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            for (SNode analyzer : SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer")) {
+            for (SNode analyzer : SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer")) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(analyzer, "instruction", true)));
             }
             return result;

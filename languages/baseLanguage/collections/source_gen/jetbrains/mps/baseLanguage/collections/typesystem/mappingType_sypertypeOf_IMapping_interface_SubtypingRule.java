@@ -54,29 +54,28 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a;
-        nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_6v7ed2_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6v7ed2_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_y1o6nk_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v7ed2_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a, childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_, 2))) {
+          String childRole_6v7ed2_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_6v7ed2_a0a, childRole_6v7ed2_, 2))) {
             return false;
           }
           {
-            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a0 = IterableUtil.get(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_), 0);
-            this.patternVar_KEY = childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a0;
+            SNode childVar_6v7ed2_a0a0 = IterableUtil.get(nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_), 0);
+            this.patternVar_KEY = childVar_6v7ed2_a0a0;
           }
           {
-            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_b0a0 = IterableUtil.get(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_), 1);
-            this.patternVar_VALUE = childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_b0a0;
+            SNode childVar_6v7ed2_b0a0 = IterableUtil.get(nodeToMatch_6v7ed2_a0a.getChildren(childRole_6v7ed2_), 1);
+            this.patternVar_VALUE = childVar_6v7ed2_b0a0;
           }
         }
       }
@@ -125,5 +124,5 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     return quotedNode_3;
   }
 
-  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
+  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
 }

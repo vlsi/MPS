@@ -83,7 +83,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     SNode parentNode = getSourceNode();
     SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
     if (newChild != null) {
-      SNode result = mySetter.execute(parentNode, myCurrentChild, newChild, getScope(), editorContext);
+      SNode result = mySetter.execute(parentNode, myCurrentChild, newChild, editorContext);
       if (result != newChild) {
         // node was wrapped by mySetter
         return result;

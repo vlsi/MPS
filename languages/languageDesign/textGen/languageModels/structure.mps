@@ -11,7 +11,6 @@
   <import index="zrid" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="12" implicit="yes" />
-  <import index="wbvt" modelUID="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" version="0" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233670071145" nodeInfo="ig">
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
     <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/textGen.png" />
@@ -106,14 +105,6 @@
     <property name="name" nameId="tpck.1169194664001" value="LanguageTextGenDeclaration" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="root" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1234281982537" resolveInfo="AbstractTextGenDeclaration" />
-    <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="1234799334167" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="applicableHiddenParameter" />
-      <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717096" nodeInfo="ig" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717095" nodeInfo="ig">
-        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="wbvt.3044950653914717099" resolveInfo="getApplicableHiddenParameter" />
-      </node>
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1234781160172" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="baseTextGen" />

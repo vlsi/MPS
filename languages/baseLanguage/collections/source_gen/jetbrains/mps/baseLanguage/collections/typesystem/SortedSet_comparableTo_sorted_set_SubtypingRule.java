@@ -53,25 +53,24 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a;
-        nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_h9rz5k_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_h9rz5k_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_9omwya_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_h9rz5k_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_SortedSet_comparableTo_sorted_set_h9rz5k_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a, childRole_SortedSet_comparableTo_sorted_set_h9rz5k_, 1))) {
+          String childRole_h9rz5k_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_h9rz5k_a0a, childRole_h9rz5k_, 1))) {
             return false;
           }
           {
-            SNode childVar_SortedSet_comparableTo_sorted_set_h9rz5k_a0a0 = IterableUtil.get(nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getChildren(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_), 0);
-            this.patternVar_ELEMENT = childVar_SortedSet_comparableTo_sorted_set_h9rz5k_a0a0;
+            SNode childVar_h9rz5k_a0a0 = IterableUtil.get(nodeToMatch_h9rz5k_a0a.getChildren(childRole_h9rz5k_), 0);
+            this.patternVar_ELEMENT = childVar_h9rz5k_a0a0;
           }
         }
       }
@@ -111,5 +110,5 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
     return quotedNode_2;
   }
 
-  private static SNodePointer SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedSet");
+  private static SNodePointer SNODE_POINTER_9omwya_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedSet");
 }

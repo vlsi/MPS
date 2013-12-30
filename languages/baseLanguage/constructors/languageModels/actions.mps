@@ -36,7 +36,6 @@
                     <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="1592896280557720158" nodeInfo="nn" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="1592896280557720159" nodeInfo="nn">
                       <link role="concept" roleId="tp25.1176109685394" targetNodeId="fbxt.526936149311701953" resolveInfo="CustomConstructorContainer" />
-                      <node role="scope" roleId="tp25.1176109762787" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="1592896280557720160" nodeInfo="nn" />
                     </node>
                   </node>
                 </node>

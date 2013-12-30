@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.tool.builder.make.BaseGeneratorWorker" file="BaseGeneratorWorker.java">
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -21,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
+    <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -42,8 +42,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.BuildMakeService" />
+    <classNode dependClassName="jetbrains.mps.tool.common.GeneratorProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
-    <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />

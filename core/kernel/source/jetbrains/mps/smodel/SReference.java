@@ -200,7 +200,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   protected static SNodeReference validNode(SNodeReference node) {
-    if (node == null) {
+    if (node == null || node.getModelReference() == null) {
       return null;
     }
 

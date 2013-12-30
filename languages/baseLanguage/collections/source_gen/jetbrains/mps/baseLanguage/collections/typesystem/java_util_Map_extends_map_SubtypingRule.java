@@ -54,29 +54,28 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a;
-        nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_4xhv5l_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_4xhv5l_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_cwf9bn_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_cwf9bn_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_4xhv5l_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
         {
-          String childRole_java_util_Map_extends_map_4xhv5l_ = "parameter";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a, childRole_java_util_Map_extends_map_4xhv5l_, 2))) {
+          String childRole_4xhv5l_ = "parameter";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_4xhv5l_a0a, childRole_4xhv5l_, 2))) {
             return false;
           }
           {
-            SNode childVar_java_util_Map_extends_map_4xhv5l_a0a0 = IterableUtil.get(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_), 0);
-            this.patternVar_keyType = childVar_java_util_Map_extends_map_4xhv5l_a0a0;
+            SNode childVar_4xhv5l_a0a0 = IterableUtil.get(nodeToMatch_4xhv5l_a0a.getChildren(childRole_4xhv5l_), 0);
+            this.patternVar_keyType = childVar_4xhv5l_a0a0;
           }
           {
-            SNode childVar_java_util_Map_extends_map_4xhv5l_b0a0 = IterableUtil.get(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_), 1);
-            this.patternVar_valueType = childVar_java_util_Map_extends_map_4xhv5l_b0a0;
+            SNode childVar_4xhv5l_b0a0 = IterableUtil.get(nodeToMatch_4xhv5l_a0a.getChildren(childRole_4xhv5l_), 1);
+            this.patternVar_valueType = childVar_4xhv5l_b0a0;
           }
         }
       }
@@ -125,5 +124,5 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
     return quotedNode_3;
   }
 
-  private static SNodePointer SNODE_POINTER_cwf9bn_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
+  private static SNodePointer SNODE_POINTER_cwf9bn_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
 }

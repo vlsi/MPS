@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
@@ -22,8 +23,6 @@ import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -35,8 +34,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class ReferenceInfo_Macro extends ReferenceInfo {
-  private static Logger LOG = LogManager.getLogger(ReferenceInfo_Macro.class);
-
   @NotNull
   private final ReferenceResolver myResolver;
   @NotNull
@@ -62,7 +59,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     if (myResolveInfoForDynamicResolve != null) {
       return createDynamicReference(myResolveInfoForDynamicResolve, getMacroNodeRef());
     }
-    if (isRequired()) {
+    if (isRequired(generator.getLogger())) {
       return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
     }
     return null;
@@ -78,15 +75,14 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
-  protected final boolean isRequired() {
+  protected final boolean isRequired(IGeneratorLogger log) {
     String role = getReferenceRole();
     SConcept concept = getOutputSourceNode().getConcept();
     SAbstractLink link = concept.getLink(role);
     if (link == null) {
-      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + concept.getQualifiedName());
+      log.error(String.format("couldn't find link declaration for role \"%s\" in hierarchy of concept %s", role, concept.getQualifiedName()));
       return false;
     }
-
     return !link.isOptional();
   }
 

@@ -47,6 +47,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -162,7 +163,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
-    // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
+    // check node languages : prevent 'mapping func' query from returning node, which language was not counted when
     // planning the generation steps.
     Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
     if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
@@ -185,16 +186,17 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   private void validateReferences(SNode node, final SNode inputNode) {
+    SModelReference inputModelRef = generator.getInputModel().getReference();
     for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
-      if (generator.getInputModel().getReference().equals(ref.getTargetSModelReference())) {
+      if (inputModelRef.equals(ref.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           ref.getRole(),
-          ref.getSourceNode(),
+          ref.getSourceNode(), // XXX shall I use 'node' here?
           inputNode,
           ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+        PostponedReference postponedReference = new PostponedReference(refInfo);
         postponedReference.setReferenceInOutputSourceNode();
       }
     }
@@ -296,7 +298,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       parentIndex,
       resolveInfo,
       context);
-    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
+    new PostponedReference(refInfo).setReferenceInOutputSourceNode();
   }
 
   @Override
@@ -308,13 +310,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       templateNodeId,
       resolveInfo,
       context);
-    new PostponedReference(refInfo, generator).setReferenceInOutputSourceNode();
+    new PostponedReference(refInfo).setReferenceInOutputSourceNode();
   }
 
   @Override
   public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, outputNode, role, context);
-    PostponedReference postponedReference = new PostponedReference(refInfo, generator);
+    PostponedReference postponedReference = new PostponedReference(refInfo);
     postponedReference.setReferenceInOutputSourceNode();
   }
 

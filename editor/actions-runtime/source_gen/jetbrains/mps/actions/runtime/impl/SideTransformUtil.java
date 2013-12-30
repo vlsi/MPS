@@ -55,7 +55,7 @@ public class SideTransformUtil {
     }
 
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
-    for (Language language : ListSequence.fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node), context.getScope()))) {
+    for (Language language : ListSequence.fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node)))) {
       SModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
       if (actionsModelDescriptor == null) {
         continue;

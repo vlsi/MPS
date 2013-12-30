@@ -12,7 +12,6 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class TestContext extends Context {
@@ -65,12 +64,12 @@ public class TestContext extends Context {
     }
 
     @Override
-    public SNode getRuleNodeForLogging() {
+    protected SNodeReference getRuleNode() {
       throw new UnsupportedOperationException();
     }
 
     @Override
-    public SNode getTemplateNodeForLogging() {
+    protected SNodeReference getTemplateNodeRef() {
       throw new UnsupportedOperationException();
     }
 
@@ -171,11 +170,6 @@ public class TestContext extends Context {
     }
 
     @Override
-    public IScope getScope() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
     public ITemplateGenerator getGenerator() {
       throw new UnsupportedOperationException();
     }
@@ -203,11 +197,6 @@ public class TestContext extends Context {
 
     @Override
     public SNode getOutputNode() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public SNode getTemplateNode() {
       throw new UnsupportedOperationException();
     }
 

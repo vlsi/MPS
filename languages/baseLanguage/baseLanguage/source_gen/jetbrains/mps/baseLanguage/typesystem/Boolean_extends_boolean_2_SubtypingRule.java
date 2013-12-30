@@ -49,14 +49,13 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a;
-        nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_7vgvj3_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_7vgvj3_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a.getReferenceTarget("classifier")))) {
+          SNodeReference pointer = SNODE_POINTER_9ehkah_a0a0a0a0b0b0a0a0a0a0a0e;
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_7vgvj3_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
         }
@@ -86,5 +85,5 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
+  private static SNodePointer SNODE_POINTER_9ehkah_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
 }

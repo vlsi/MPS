@@ -103,7 +103,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
-  private ModuleScope myScope = createScope();
+  private ModuleScope myScope = new ModuleScope();
 
   protected boolean myChanged = false;
 
@@ -726,20 +726,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
-  public final boolean needReloading() {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return SModuleOperations.needReloading(AbstractModule.this);
-      }
-    });
-  }
-
-  @Deprecated
-  public final void reloadFromDisk(boolean reloadClasses) {
-    SModuleOperations.reloadFromDisk(this, reloadClasses);
-  }
-
   public static void handleReadProblem(AbstractModule module, Exception e, boolean isInConflict) {
     SuspiciousModelHandler.getHandler().handleSuspiciousModule(module, isInConflict);
     LOG.error(e.getMessage());
@@ -775,10 +761,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   protected ModuleDescriptor loadDescriptor() {
     return null;
-  }
-
-  protected ModuleScope createScope() {
-    return new ModuleScope();
   }
 
   @Override

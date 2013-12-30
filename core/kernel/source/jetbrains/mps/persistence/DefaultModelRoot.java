@@ -107,7 +107,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     Map<String, String> options = new HashMap<String, String>();
     DataSource source = factory instanceof FolderModelFactory
         ? ((FolderModelFactory) factory).createNewSource(this, sourceRoot, modelName, options)
-        : createSource(modelName, factory.getFileExtension(), null, options);
+        : createSource(modelName, factory.getFileExtension(), sourceRoot, options);
     if (source == null) {
       return null;
     }

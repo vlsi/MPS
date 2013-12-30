@@ -605,8 +605,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
     for (SReference ref : node.getReferences()) {
-      if (!(ref instanceof PostponedReference)) continue;
-      ((PostponedReference) ref).validateAndReplace();
+      if (ref instanceof PostponedReference) {
+        PostponedReference pr = (PostponedReference) ref;
+        pr.validateAndReplace(this);
+      }
     }
 
     for (SNode child : node.getChildren()) {
@@ -929,7 +931,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               outputNode,
               inputReference.getSourceNode(),
               inputTargetNode);
-          PostponedReference reference = new PostponedReference(refInfo, myGenerator);
+          PostponedReference reference = new PostponedReference(refInfo);
           reference.setReferenceInOutputSourceNode();
         } else if (inputTargetNode.getModel() != null) {
           SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);

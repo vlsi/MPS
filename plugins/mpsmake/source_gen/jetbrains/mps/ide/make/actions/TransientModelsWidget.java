@@ -16,17 +16,17 @@ import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import javax.swing.JComponent;
 
-/*package*/ class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.IconPresentation, StatusBarWidget.WidgetPresentation {
+/*package*/ class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.TextPresentation, StatusBarWidget.WidgetPresentation {
   public static final String WIDGET_ID = "TransientModelsWidget";
   @NotNull
   private final StatusBar myStatusBar;
   private final Icon myIcon = IconContainer.ICON_a2;
   private final Icon myIconDisable = IconContainer.ICON_a3;
-  private CustomIconWrapper myComponent;
+  private TransientModelsPanel myComponent;
 
   public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
-    myComponent = new CustomIconWrapper(this);
+    myComponent = new TransientModelsPanel(this);
   }
 
   @Override
@@ -79,8 +79,7 @@ import javax.swing.JComponent;
   }
 
   @NotNull
-  @Override
-  public Icon getIcon() {
+  /*package*/ Icon getIcon() {
     if (isSaveTransientModels()) {
       return myIcon;
     }
@@ -102,5 +101,22 @@ import javax.swing.JComponent;
   @Override
   public JComponent getComponent() {
     return this.myComponent;
+  }
+
+  @NotNull
+  public String getText() {
+    if (isSaveTransientModels()) {
+      return ":ON ";
+    }
+    return ":OFF";
+  }
+
+  @NotNull
+  public String getMaxPossibleText() {
+    return ":OFF";
+  }
+
+  public float getAlignment() {
+    return JComponent.RIGHT_ALIGNMENT;
   }
 }

@@ -111,12 +111,11 @@ public class MacroIntentionsUtil {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2;
-        nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_iiuth6_a0a0a3a2 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a3a2.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2.getReferenceTarget("concept");
+        patternVar_concept = nodeToMatch_iiuth6_a0a0a3a2.getReferenceTarget("concept");
       }
       return true;
     }
@@ -150,25 +149,23 @@ public class MacroIntentionsUtil {
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c;
-        nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_iiuth6_a0a0a0d0c = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_iiuth6_a0a0a0d0c.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_MacroIntentionsUtil_iiuth6_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c, childRole_MacroIntentionsUtil_iiuth6_, 1))) {
+          String childRole_iiuth6_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_iiuth6_a0a0a0d0c, childRole_iiuth6_, 1))) {
             return false;
           }
           {
-            SNode childVar_MacroIntentionsUtil_iiuth6_a0a0a0a3a2 = IterableUtil.get(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c.getChildren(childRole_MacroIntentionsUtil_iiuth6_), 0);
+            SNode childVar_iiuth6_a0a0a0a3a2 = IterableUtil.get(nodeToMatch_iiuth6_a0a0a0d0c.getChildren(childRole_iiuth6_), 0);
             {
-              SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2;
-              nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2 = childVar_MacroIntentionsUtil_iiuth6_a0a0a0a3a2;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2.getConcept().getQualifiedName()))) {
+              SNode nodeToMatch_iiuth6_a0a0a0a3a2 = childVar_iiuth6_a0a0a0a3a2;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a0a3a2.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_iiuth6_a0a0a0a3a2.getReferenceTarget("concept");
             }
           }
         }

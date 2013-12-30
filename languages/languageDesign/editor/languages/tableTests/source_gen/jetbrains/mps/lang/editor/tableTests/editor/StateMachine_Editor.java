@@ -28,7 +28,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
@@ -177,7 +176,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
               protected DefaultChildNodeSetter createDefaultNodeSetter() {
                 return new DefaultChildNodeSetter(getLinkDeclaration()) {
                   @Override
-                  public SNode doExecute(SNode parentSNode, SNode oldChildSNode, SNode newChildSNode, IScope scope, @Nullable EditorContext editorContext) {
+                  public SNode doExecute(SNode parentSNode, SNode oldChildSNode, SNode newChildSNode, @Nullable EditorContext editorContext) {
                     SNode stateMachine = (SNode) parentSNode;
                     SNode oldChildNode = oldChildSNode;
                     SNode newChildNode = newChildSNode;

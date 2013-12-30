@@ -50,7 +50,7 @@ public class SimpleBuilderPropertyBuilder_Constraints extends BaseConstraintsDes
             SNode contextBuilder = SNodeOperations.as(Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), _context.getEnclosingNode()), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder");
             for (SNode dcl = SLinkOperations.getTarget(contextBuilder, "declaration", false); (dcl != null); dcl = SLinkOperations.getTarget(dcl, "extends", false)) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(dcl, "property", true)));
-              for (SNode builders : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
+              for (SNode builders : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
                 for (SNode basedecl : ListSequence.fromList(SLinkOperations.getTargets(builders, "builder", true))) {
                   SNode extdecl = SNodeOperations.as(basedecl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration");
                   if (dcl == SLinkOperations.getTarget(extdecl, "extended", false)) {

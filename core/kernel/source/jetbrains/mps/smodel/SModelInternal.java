@@ -37,8 +37,6 @@ public interface SModelInternal {
   //todo cast if can be
   StackTraceElement[] getDisposedStacktrace();
 
-  void setModelDescriptor(SModel modelDescriptor);
-
   boolean canFireEvent();
 
   void dispose();
@@ -81,10 +79,6 @@ public interface SModelInternal {
   void removeEngagedOnGenerationLanguage(SModuleReference ref);
 
   List<ImportElement> getAdditionalModelVersions();
-
-  void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion);
-
-  void addAdditionalModelVersion(@NotNull ImportElement element);
 
   int getVersion();
 

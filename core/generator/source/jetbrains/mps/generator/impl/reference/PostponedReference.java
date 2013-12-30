@@ -28,20 +28,18 @@ import org.jetbrains.mps.openapi.model.SReference;
  */
 public class PostponedReference extends jetbrains.mps.smodel.SReference {
 
-  private final TemplateGenerator myGenerator;
   private ReferenceInfo myReferenceInfo;
   private SReference myReplacementReference;
 
 
-  public PostponedReference(ReferenceInfo referenceInfo, TemplateGenerator generator) {
+  public PostponedReference(ReferenceInfo referenceInfo) {
     super(referenceInfo.getReferenceRole(), referenceInfo.getOutputSourceNode());
     myReferenceInfo = referenceInfo;
-    myGenerator = generator;
   }
 
   // shorthand:
   // ReferenceInfo ri = new ReferenceInfo(outputSourceNode, role);
-  // PostponedReference pr = new PostponedReference(pr);
+  // PostponedReference pr = new PostponedReference(ri);
   // outputSourceNode.setReference(role, pr);
   public void setReferenceInOutputSourceNode() {
     getSourceNode().setReference(getRole(), this);
@@ -56,9 +54,8 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
   @Override
   @Nullable
   public synchronized SModelReference getTargetSModelReference() {
-    SReference ref = getReplacementReference();
-    if (ref != null) {
-      return ref.getTargetSModelReference();
+    if (myReplacementReference != null) {
+      return myReplacementReference.getTargetSModelReference();
     }
     // ok, reference is unresolved and not required
     return null;
@@ -76,27 +73,26 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
 
   @Override
   protected SNode getTargetNode_internal() {
-    SReference ref = getReplacementReference();
-    if (ref == null) {
+    if (myReplacementReference == null) {
       return null;
     }
-    return ref.getTargetNode();
+    return myReplacementReference.getTargetNode();
   }
 
   /**
    * @return null is not resolved and not required.
    */
-  private SReference getReplacementReference() {
+  private SReference initReplacementReference(TemplateGenerator generator) {
     if (myReplacementReference != null) {
       return myReplacementReference;
     }
 
     synchronized (this) {
       if (myReferenceInfo == null) {
-        return null; // already processed
+        return myReplacementReference; // already processed
       }
 
-      myReplacementReference = myReferenceInfo.create(myGenerator);
+      myReplacementReference = myReferenceInfo.create(generator);
       // release resources
       myReferenceInfo = null;
     }
@@ -107,7 +103,7 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
    * replaces this instance with ether StaticReference or with DynamicReference. (only static so far)
    * removes reference in case of error.
    */
-  public void validateAndReplace() {
-    getSourceNode().setReference(getRole(), getReplacementReference());
+  public void validateAndReplace(TemplateGenerator generator) {
+    getSourceNode().setReference(getRole(), initReplacementReference(generator));
   }
 }

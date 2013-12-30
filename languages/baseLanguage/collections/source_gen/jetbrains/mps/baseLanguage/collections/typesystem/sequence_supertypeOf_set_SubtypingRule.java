@@ -51,19 +51,18 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_sequence_supertypeOf_set_twopzc_a0a;
-        nodeToMatch_sequence_supertypeOf_set_twopzc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_twopzc_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_twopzc_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
-          String childRole_sequence_supertypeOf_set_twopzc_ = "elementType";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a, childRole_sequence_supertypeOf_set_twopzc_, 1))) {
+          String childRole_twopzc_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_twopzc_a0a, childRole_twopzc_, 1))) {
             return false;
           }
           {
-            SNode childVar_sequence_supertypeOf_set_twopzc_a0a0 = IterableUtil.get(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getChildren(childRole_sequence_supertypeOf_set_twopzc_), 0);
-            this.patternVar_elementType = childVar_sequence_supertypeOf_set_twopzc_a0a0;
+            SNode childVar_twopzc_a0a0 = IterableUtil.get(nodeToMatch_twopzc_a0a.getChildren(childRole_twopzc_), 0);
+            this.patternVar_elementType = childVar_twopzc_a0a0;
           }
         }
       }

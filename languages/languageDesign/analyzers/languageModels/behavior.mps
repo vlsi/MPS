@@ -557,10 +557,6 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsIncludingImportedOperation" typeId="tp25.1176109685393" id="4130591939054438366" nodeInfo="nn">
               <link role="concept" roleId="tp25.1176109685394" targetNodeId="bj1v.430844094082168520" resolveInfo="Rule" />
-              <node role="scope" roleId="tp25.1176109762787" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4130591939054438367" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vsqj.~GlobalScope" resolveInfo="GlobalScope" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
-              </node>
             </node>
           </node>
         </node>

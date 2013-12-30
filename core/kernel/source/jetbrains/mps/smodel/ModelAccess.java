@@ -37,6 +37,8 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   /* support of temporary downgrading write lock to shared read lock */
   protected final ReentrantReadWriteLock mySharedReadInWriteLock = new ReentrantReadWriteLock();
   protected volatile boolean mySharedReadInWriteMode = false;
+
+  //ModelAccess is a singleton, so we can omit remove() here though the field is not static
   private ThreadLocal<Boolean> myReadEnabledFlag = new ThreadLocal<Boolean>() {
     @Override
     protected Boolean initialValue() {
