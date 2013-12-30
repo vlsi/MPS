@@ -3556,14 +3556,15 @@ public class QueriesGenerated {
         if ((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
           _context.showInformationMessage(imco, "Actual arguments count != parameter declarations count");
         }
+        SNode deOperandType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true));
+        SNode operandType = SNodeOperations.as(deOperandType, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+        if ((operandType == null)) {
+          operandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(deOperandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+        }
         Iterator<SNode> argsItr = ListSequence.fromList(args).iterator();
         for (SNode pdecl : pdecls) {
           if (argsItr.hasNext()) {
             SNode arg = argsItr.next();
-            SNode operandType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-            if ((operandType == null)) {
-              operandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-            }
             SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), operandType);
             FunctionTypeUtil.prepAdaptations(_context, FunctionTypeUtil.unmeet(pdeclType), arg);
           }
