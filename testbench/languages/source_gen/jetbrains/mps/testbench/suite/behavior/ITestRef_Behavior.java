@@ -17,13 +17,13 @@ public class ITestRef_Behavior {
   }
 
   @Deprecated
-  public static Iterable<String> call_testNames_4089647634160960707(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) Object.class), thisNode, "virtual_testNames_4089647634160960707", new Object[]{});
+  public static String callSuper_fqClassName_2956932267233324537(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_fqClassName_2956932267233324537", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_fqClassName_2956932267233324537(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.ITestRef"), callerConceptFqName, "virtual_fqClassName_2956932267233324537", new Class[]{SNode.class}, new Object[]{});
+  public static Iterable<String> call_testNames_4089647634160960707(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<String>>) ((Class) Object.class), thisNode, "virtual_testNames_4089647634160960707", new Object[]{});
   }
 
   @Deprecated

@@ -36,13 +36,13 @@ public class TemplateSwitch_Behavior {
   }
 
   @Deprecated
-  public static void call_setBaseConcept_7656801780400891052(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
+  public static List<SNode> callSuper_getBaseConceptCollection_8360039740498070955(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getBaseConceptCollection_8360039740498070955(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
+  public static void call_setBaseConcept_7656801780400891052(SNode thisNode, SNode baseConcept) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
   }
 
   @Deprecated

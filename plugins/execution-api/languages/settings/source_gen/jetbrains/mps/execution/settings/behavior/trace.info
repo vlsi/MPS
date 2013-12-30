@@ -341,24 +341,24 @@
     <nodeInfo nodeId="203908296139519703" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646613" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="28" startPosition="77" endLine="29" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="38" startPosition="110" endLine="39" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="43" startPosition="116" endLine="44" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaMethod_946964771156066804#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519699#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066804#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066804#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519699#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPublicJavaMethod_203908296139519699#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="946964771156066812" fileName="CreateEditor_Function_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="946964771156066806" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="113" />
     <scopeInfo nodeId="203908296139519701" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="113" />
     <scopeInfo nodeId="1262430001741646612" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="16" />
     <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="28" startPosition="77" endLine="29" endPosition="153" />
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="159" />
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="38" startPosition="110" endLine="39" endPosition="299" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="299" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="159" />
     <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="43" startPosition="116" endLine="44" endPosition="305" />
     <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="thisNode" />
@@ -376,10 +376,10 @@
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="946964771156066803" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="946964771156066803" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
@@ -393,24 +393,24 @@
     <nodeInfo nodeId="203908296139519717" fileName="Dispose_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703080" fileName="Dispose_Function_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="28" startPosition="77" endLine="29" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="38" startPosition="110" endLine="39" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="43" startPosition="116" endLine="44" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaMethod_946964771156066814#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519713#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066814#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066814#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519713#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPublicJavaMethod_203908296139519713#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="946964771156066822" fileName="Dispose_Function_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="946964771156066816" fileName="Dispose_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="108" />
     <scopeInfo nodeId="203908296139519715" fileName="Dispose_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="16" />
     <scopeInfo nodeId="1262430001741703079" fileName="Dispose_Function_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="16" />
     <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="28" startPosition="77" endLine="29" endPosition="153" />
-    <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="159" />
-    <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="38" startPosition="110" endLine="39" endPosition="294" />
+    <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="294" />
+    <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="159" />
     <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="43" startPosition="116" endLine="44" endPosition="300" />
     <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="946964771156066813" varName="thisNode" />
@@ -428,10 +428,10 @@
       <varInfo nodeId="946964771156066813" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="946964771156066813" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066813" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="946964771156066813" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066813" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
@@ -610,16 +610,16 @@
     <nodeInfo nodeId="3044950653914723444" fileName="ApplyTo_Function_Behavior.java" startLine="30" startPosition="278" endLine="31" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914723448" fileName="ApplyTo_Function_Behavior.java" startLine="31" startPosition="178" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="36" startPosition="77" endLine="37" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="41" startPosition="83" endLine="42" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="46" startPosition="110" endLine="47" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="41" startPosition="110" endLine="42" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="46" startPosition="83" endLine="47" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="51" startPosition="116" endLine="52" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaMethod_946964771156066981#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519015#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066981#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066981#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519015#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPublicJavaMethod_203908296139519015#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="946964771156066980" fileName="ApplyTo_Function_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
@@ -627,8 +627,8 @@
     <scopeInfo nodeId="203908296139519017" fileName="ApplyTo_Function_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="106" />
     <scopeInfo nodeId="1262430001741718744" fileName="ApplyTo_Function_Behavior.java" startLine="25" startPosition="92" endLine="26" endPosition="16" />
     <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="36" startPosition="77" endLine="37" endPosition="153" />
-    <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="41" startPosition="83" endLine="42" endPosition="159" />
-    <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="46" startPosition="110" endLine="47" endPosition="294" />
+    <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="41" startPosition="110" endLine="42" endPosition="294" />
+    <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="46" startPosition="83" endLine="47" endPosition="159" />
     <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="51" startPosition="116" endLine="52" endPosition="300" />
     <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="946964771156066978" varName="thisNode" />
@@ -649,10 +649,10 @@
       <varInfo nodeId="946964771156066978" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="946964771156066978" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066978" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="946964771156066978" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066978" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
@@ -667,22 +667,22 @@
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066990">
     <nodeInfo nodeId="946964771156067011" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="39" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="27" startPosition="77" endLine="28" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="32" startPosition="83" endLine="33" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="37" startPosition="110" endLine="38" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="32" startPosition="110" endLine="33" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="37" startPosition="83" endLine="38" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="42" startPosition="116" endLine="43" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="946964771156067009" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156067003" fileName="EditorOperationDeclaration_Behavior.java" startLine="18" startPosition="98" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMethodbyName_946964771156066997#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="946964771156066996" fileName="EditorOperationDeclaration_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="946964771156067010" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="39" endLine="21" endPosition="70" />
     <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="27" startPosition="77" endLine="28" endPosition="153" />
-    <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="32" startPosition="83" endLine="33" endPosition="159" />
-    <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="37" startPosition="110" endLine="38" endPosition="304" />
+    <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="32" startPosition="110" endLine="33" endPosition="304" />
+    <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="37" startPosition="83" endLine="38" endPosition="159" />
     <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="42" startPosition="116" endLine="43" endPosition="310" />
     <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="946964771156066990" varName="thisNode" />
@@ -694,10 +694,10 @@
       <varInfo nodeId="946964771156066990" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="946964771156066990" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066990" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="946964771156066990" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066990" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
@@ -720,16 +720,16 @@
     <nodeInfo nodeId="3044950653914719737" fileName="ResetFrom_Function_Behavior.java" startLine="30" startPosition="278" endLine="31" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914719741" fileName="ResetFrom_Function_Behavior.java" startLine="31" startPosition="178" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="36" startPosition="77" endLine="37" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="41" startPosition="83" endLine="42" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="46" startPosition="110" endLine="47" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="41" startPosition="110" endLine="42" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="46" startPosition="83" endLine="47" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="51" startPosition="116" endLine="52" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaMethod_946964771156067021#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519720#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156067021#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156067021#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519720#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPublicJavaMethod_203908296139519720#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="946964771156067029" fileName="ResetFrom_Function_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
@@ -737,8 +737,8 @@
     <scopeInfo nodeId="203908296139519722" fileName="ResetFrom_Function_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="110" />
     <scopeInfo nodeId="1262430001741643128" fileName="ResetFrom_Function_Behavior.java" startLine="25" startPosition="92" endLine="26" endPosition="16" />
     <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="36" startPosition="77" endLine="37" endPosition="153" />
-    <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="41" startPosition="83" endLine="42" endPosition="159" />
-    <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="46" startPosition="110" endLine="47" endPosition="296" />
+    <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="41" startPosition="110" endLine="42" endPosition="296" />
+    <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="46" startPosition="83" endLine="47" endPosition="159" />
     <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="51" startPosition="116" endLine="52" endPosition="302" />
     <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="946964771156067020" varName="thisNode" />
@@ -759,10 +759,10 @@
       <varInfo nodeId="946964771156067020" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="946964771156067020" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156067020" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="946964771156067020" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156067020" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0">

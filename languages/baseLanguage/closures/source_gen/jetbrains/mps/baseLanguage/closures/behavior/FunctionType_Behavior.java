@@ -255,23 +255,13 @@ with_throws:
   }
 
   @Deprecated
-  public static String call_getRuntimeClassName_1230472987259(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getResultType_1230475757059(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getTerminateType_1232032188607(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{});
-  }
-
-  @Deprecated
   public static String callSuper_getRuntimeSignature_1213877404927(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static String call_getRuntimeClassName_1230472987259(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{});
   }
 
   @Deprecated
@@ -280,8 +270,18 @@ with_throws:
   }
 
   @Deprecated
+  public static SNode call_getResultType_1230475757059(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getResultType_1230475757059(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), callerConceptFqName, "virtual_getResultType_1230475757059", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode call_getTerminateType_1232032188607(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{});
   }
 
   @Deprecated

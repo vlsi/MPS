@@ -28,13 +28,13 @@ public class BooleanStyleSheetItem_Behavior {
   }
 
   @Deprecated
-  public static StyleAttribute<Boolean> call_getStyleAttribute_3639065570239132541(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<StyleAttribute<Boolean>>) ((Class) Object.class), thisNode, "virtual_getStyleAttribute_3639065570239132541", new Object[]{});
+  public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", new Class[]{SNode.class}, new Object[]{});
+  public static StyleAttribute<Boolean> call_getStyleAttribute_3639065570239132541(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<StyleAttribute<Boolean>>) ((Class) Object.class), thisNode, "virtual_getStyleAttribute_3639065570239132541", new Object[]{});
   }
 
   @Deprecated

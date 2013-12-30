@@ -2469,8 +2469,16 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1223389174474(final IOperationContext operationContext, final MappingScriptContext _context) {
-    final SNode csInferenceMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a964(), "classifier", false);
-    final SNode csCheckingMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a1a964(), "classifier", false);
+    // Inference and Checking methods are for typesystem use, don't look for them in models that simply 
+    // utilize (not define) type system. 
+    // The right way to accomplish would be refactoring of main and Inequations map configurations, to 
+    // split generation of TS definition from TS use (i.e. everything related to rules including this script 
+    // goes to former, while .type, coerce() and others go to latter) 
+    if (Language.getModelAspect(_context.getOriginalInputModel()) != LanguageAspect.TYPESYSTEM) {
+      return;
+    }
+    final SNode csInferenceMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a6a964(), "classifier", false);
+    final SNode csCheckingMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a7a964(), "classifier", false);
     for (SNode methodCall : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
       boolean toProcess = false;
@@ -2483,7 +2491,7 @@ public class QueriesGenerated {
         }
       }
       if (toProcess) {
-        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a4a2a964());
+        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a4a8a964());
       }
     }
     for (SNode baseMethodDeclaration : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -2497,7 +2505,7 @@ public class QueriesGenerated {
         }
       }
       if (toProcess) {
-        ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a3a3a964());
+        ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).insertElement(0, _quotation_createNode_x583g4_a0a0a3a9a964());
       }
     }
   }
@@ -2738,7 +2746,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a964() {
+  private static SNode _quotation_createNode_x583g4_a0a6a964() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -2746,7 +2754,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a1a964() {
+  private static SNode _quotation_createNode_x583g4_a0a7a964() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -2754,7 +2762,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a4a2a964() {
+  private static SNode _quotation_createNode_x583g4_a0a0a4a8a964() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2766,7 +2774,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a3a3a964() {
+  private static SNode _quotation_createNode_x583g4_a0a0a3a9a964() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

@@ -36,13 +36,13 @@ public class NodeSubstituteActions_Behavior {
   }
 
   @Deprecated
-  public static void call_setBaseConcept_6261424444345978468(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
+  public static List<SNode> callSuper_getBaseConceptCollection_5270353093116089664(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getBaseConceptCollection_5270353093116089664(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
+  public static void call_setBaseConcept_6261424444345978468(SNode thisNode, SNode baseConcept) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
   }
 
   @Deprecated

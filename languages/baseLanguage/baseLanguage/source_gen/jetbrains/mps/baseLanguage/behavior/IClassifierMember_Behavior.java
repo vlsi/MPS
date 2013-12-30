@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class IClassifierMember_Behavior {
   public static void init(SNode thisNode) {
@@ -18,23 +18,23 @@ public class IClassifierMember_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_6145907390641297352", new Object[]{contextClassifierType, contextNode});
-  }
-
-  @Deprecated
-  public static void call_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_populateMember_7405920559687254644", new Object[]{context, classifier});
-  }
-
-  @Deprecated
   public static boolean callSuper_isStatic_7405920559687241224(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), callerConceptFqName, "virtual_isStatic_7405920559687241224", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static boolean call_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_6145907390641297352", new Object[]{contextClassifierType, contextNode});
+  }
+
+  @Deprecated
   public static boolean callSuper_isVisible_6145907390641297352(SNode thisNode, String callerConceptFqName, SNode contextClassifierType, SNode contextNode) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), callerConceptFqName, "virtual_isVisible_6145907390641297352", new Class[]{SNode.class, SNode.class, SNode.class}, new Object[]{contextClassifierType, contextNode});
+  }
+
+  @Deprecated
+  public static void call_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_populateMember_7405920559687254644", new Object[]{context, classifier});
   }
 
   @Deprecated

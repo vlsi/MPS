@@ -36,13 +36,13 @@ public class SymbolClassRegexp_Behavior {
   }
 
   @Deprecated
-  public static String call_getRepresentation_8173814113624650627(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
+  public static String callSuper_getString_1222857578599(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
   }
 
   @Deprecated
-  public static String callSuper_getString_1222857578599(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
+  public static String call_getRepresentation_8173814113624650627(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }
 
   @Deprecated

@@ -47,23 +47,23 @@ public class ConceptEditorDeclaration_Behavior {
   }
 
   @Deprecated
-  public static void call_setBaseConcept_6261424444345979340(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
-
-  @Deprecated
-  public static boolean call_isApplicable_7839831476331825169(SNode thisNode, SNode candidate) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
-  }
-
-  @Deprecated
   public static SNode callSuper_getBaseConcept_8952337903384629359(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static void call_setBaseConcept_6261424444345979340(SNode thisNode, SNode baseConcept) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
+  }
+
+  @Deprecated
   public static void callSuper_setBaseConcept_6261424444345979340(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
     BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
+  }
+
+  @Deprecated
+  public static boolean call_isApplicable_7839831476331825169(SNode thisNode, SNode candidate) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
   }
 
   @Deprecated

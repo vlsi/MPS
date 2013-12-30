@@ -65,23 +65,13 @@ public class BuildLayout_Node_Behavior {
   }
 
   @Deprecated
-  public static boolean call_exports_6547494638219603457(SNode thisNode, Object artifactId) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_exports_6547494638219603457", new Object[]{artifactId});
-  }
-
-  @Deprecated
-  public static boolean call_isFolder_1368030936106753980(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFolder_1368030936106753980", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isFile_1368030936106753986(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFile_1368030936106753986", new Object[]{});
-  }
-
-  @Deprecated
   public static void callSuper_unpack_7128123785277723766(SNode thisNode, String callerConceptFqName, UnpackHelper helper, Iterable<Object> artifacts) {
     BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_unpack_7128123785277710736", new Class[]{SNode.class, UnpackHelper.class, Iterable.class}, new Object[]{helper, artifacts});
+  }
+
+  @Deprecated
+  public static boolean call_exports_6547494638219603457(SNode thisNode, Object artifactId) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_exports_6547494638219603457", new Object[]{artifactId});
   }
 
   @Deprecated
@@ -90,8 +80,18 @@ public class BuildLayout_Node_Behavior {
   }
 
   @Deprecated
+  public static boolean call_isFolder_1368030936106753980(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFolder_1368030936106753980", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isFolder_1368030936106753980(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_isFolder_1368030936106753980", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isFile_1368030936106753986(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFile_1368030936106753986", new Object[]{});
   }
 
   @Deprecated

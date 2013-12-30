@@ -36,13 +36,13 @@ public class NodeOperation_Behavior {
   }
 
   @Deprecated
-  public static void call_perform_1215601182156(SNode thisNode, SNode node) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_1215601182156", new Object[]{node});
+  public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", new Class[]{SNode.class}, new Object[]{});
+  public static void call_perform_1215601182156(SNode thisNode, SNode node) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_1215601182156", new Object[]{node});
   }
 
   @Deprecated
