@@ -505,7 +505,7 @@
       <varInfo nodeId="473081947980702288" varName="context" />
       <varInfo nodeId="473081947980701637" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6928665434436790709" fileName="HelpCommand_Behavior.java" startLine="39" startPosition="265" endLine="43" endPosition="7" unitName="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$1" />
+    <unitInfo nodeId="6928665434436790709" fileName="HelpCommand_Behavior.java" startLine="39" startPosition="281" endLine="43" endPosition="7" unitName="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$1" />
     <unitInfo nodeId="6928665434441795895" fileName="HelpCommand_Behavior.java" startLine="43" startPosition="18" endLine="47" endPosition="7" unitName="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$2" />
     <unitInfo nodeId="6928665434441908595" fileName="HelpCommand_Behavior.java" startLine="47" startPosition="28" endLine="51" endPosition="7" unitName="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$3" />
     <unitInfo nodeId="748410583115907546" fileName="HelpCommand_Behavior.java" startLine="76" startPosition="71" endLine="80" endPosition="7" unitName="jetbrains.mps.console.base.behavior.HelpCommand_Behavior$5" />

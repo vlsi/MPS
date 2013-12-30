@@ -4,47 +4,36 @@ package jetbrains.mps.console.scripts.runtime.util;
 
 import jetbrains.mps.console.tool.ConsoleContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.console.tool.ConsoleTool;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.project.Project;
 
 public class ScriptsUtil {
 
 
-  public static void executeScript(ConsoleContext context, SNode script) {
-    final ConsoleTool consoleTool = check_bb8vid_a0a0b(ProjectHelper.toIdeaProject(context.getProject()));
+  public static void executeScript(final ConsoleContext context, SNode script) {
     final Iterable<SNode> commands = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), script, "virtual_getCommands_1734392475491235554", new Object[]{});
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        executeCommands(consoleTool, Sequence.fromIterable(commands).toListSequence(), 0);
+        executeCommands(context, Sequence.fromIterable(commands).toListSequence(), 0);
       }
     });
   }
 
 
 
-  public static void executeCommands(final ConsoleTool consoleTool, final List<SNode> commands, final int startWith) {
+  public static void executeCommands(final ConsoleContext context, final List<SNode> commands, final int startWith) {
     if (startWith == ListSequence.fromList(commands).count()) {
       return;
     }
-    consoleTool.executeCommand(ListSequence.fromList(commands).getElement(startWith), new Runnable() {
+    context.getConsoleTab().executeCommand(ListSequence.fromList(commands).getElement(startWith), new Runnable() {
       public void run() {
-        executeCommands(consoleTool, commands, startWith + 1);
+        executeCommands(context, commands, startWith + 1);
       }
     });
   }
 
 
-
-  private static ConsoleTool check_bb8vid_a0a0b(Project checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getComponent(ConsoleTool.class);
-    }
-    return null;
-  }
 }
