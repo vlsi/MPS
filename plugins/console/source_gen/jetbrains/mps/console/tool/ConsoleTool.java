@@ -616,7 +616,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   private void loadHistory() {
     SModel loadedModel = null;
     if (loadedState != null) {
-      loadedModel = PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL);
+      try {
+        loadedModel = PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL);
+      } catch (Exception e) {
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Error on loading console history. Maybe this project was opened in other MPS version?", e);
+        }
+      }
     }
     myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.ConsoleRoot", null);
     if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.ConsoleRoot")).isEmpty()) {
