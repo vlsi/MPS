@@ -10,6 +10,19 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ScriptsUtil {
 
@@ -41,4 +54,53 @@ public class ScriptsUtil {
   }
 
 
+
+  public static void refactor(Project mpsProject, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> closure) {
+    com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(mpsProject);
+    SearchResults sr = nodesToRefactoringResult(nodes);
+    RefactoringAccess.getInstance().showRefactoringView(project, new RefactoringViewAction() {
+      public void performAction(final RefactoringViewItem refactoringViewItem) {
+        refactoringViewItem.close();
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            Iterable<SNode> includedNodes;
+            if (refactoringViewItem instanceof RefactoringViewItemImpl) {
+              List<SNodeReference> nodeRefs = as_bb8vid_a0a0a0a1a0a0a0a1a0a0b0a2a5(refactoringViewItem, RefactoringViewItemImpl.class).getUsagesView().getIncludedResultNodes();
+              includedNodes = ListSequence.fromList(nodeRefs).select(new ISelector<SNodeReference, SNode>() {
+                public SNode select(SNodeReference it) {
+                  return it.resolve(MPSModuleRepository.getInstance());
+                }
+              });
+            } else {
+              includedNodes = nodes;
+            }
+            for (SNode resultNode : Sequence.fromIterable(includedNodes)) {
+              if (resultNode != null) {
+                closure.invoke(resultNode);
+              }
+            }
+          }
+        });
+      }
+    }, sr, false, "refactor");
+  }
+
+
+
+  private static SearchResults<SNode> nodesToRefactoringResult(Iterable<SNode> nodes) {
+    final SearchResults<SNode> result = new SearchResults<SNode>();
+    Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        result.getSearchResults().add(new SearchResult<SNode>(it, "Nodes to refactor"));
+      }
+    });
+    return result;
+  }
+
+
+
+
+  private static <T> T as_bb8vid_a0a0a0a1a0a0a0a1a0a0b0a2a5(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
 }

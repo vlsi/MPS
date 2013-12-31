@@ -4,12 +4,32 @@ package jetbrains.mps.console.scripts.generator.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
 @Generated
 public class QueriesGenerated {
+  public static boolean baseMappingRule_Condition_1672541786946118133(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.console.scripts.structure.RefactorOperation");
+  }
+
   public static Object referenceMacro_GetReferent_1734392475491234406(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);
+  }
+
+  public static Object referenceMacro_GetReferent_2377091791518659475(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.console.blCommand.structure.BLCommand", false, false), "contextParameter");
+  }
+
+  public static SNode sourceNodeQuery_2377091791518076320(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_2377091791518083960(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.console.scripts.structure.RefactorOperation"), "closure", true);
   }
 }
