@@ -594,8 +594,10 @@
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="6111547859872778735" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="isClicked" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="6111547859872778741" nodeInfo="ng">
-          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="adck.6111547859872065951" resolveInfo="myBooleanProperty" />
+        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterBLQuery" typeId="gbdf.285670992213637367" id="3413486940941566964" nodeInfo="ng">
+          <node role="query" roleId="gbdf.285670992213637368" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3413486940941569079" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
         </node>
       </node>
       <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="285670992218954143" nodeInfo="ng">

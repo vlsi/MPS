@@ -10,6 +10,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Map;
+import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
@@ -28,6 +32,8 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -36,6 +42,7 @@ import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 
 public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -59,15 +66,9 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
         SPropertyOperations.set(node, "name", value);
       }
     };
-    final PropertyMapperCell parameterPropertyCell_gju6mh_a1a = new PropertyMapperCell<Boolean>(editorContext, node) {
-      protected Boolean getModelPropertyValueImpl() {
-        return SPropertyOperations.getBoolean(node, "myBooleanProperty");
-      }
+    final Map<SNode, PortCell> inputPortToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, PortCell>(16, (float) 0.75, false));
+    final Map<SNode, PortCell> outputPortToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, PortCell>(16, (float) 0.75, false));
 
-      protected void setModelPropertyValueImpl(Boolean value) {
-        SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
-      }
-    };
     BlockCell editorCell = new BlockCell(editorContext, node) {
       protected Integer getXPositionFromModel() {
         return SPropertyOperations.getInteger(node, "x");
@@ -159,7 +160,11 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
                   protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                     super.registerSynchronizers(configuration);
                     parameterPropertyCell_gju6mh_a0a.registerSynchronizers(configuration, getTarget().text());
-                    parameterPropertyCell_gju6mh_a1a.registerSynchronizers(configuration, getTarget().isClicked);
+                    configuration.add(Synchronizers.forProperty(JetpadUtils.modelProperty(new Computable<Boolean>() {
+                      public Boolean compute() {
+                        return true;
+                      }
+                    }), getTarget().isClicked));
                   }
                 };
               }
@@ -170,9 +175,14 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       }
     };
     editorCell.addEditorCell(parameterPropertyCell_gju6mh_a0a);
-    editorCell.addEditorCell(parameterPropertyCell_gju6mh_a1a);
+    for (PortCell cell : Sequence.fromIterable(MapSequence.fromMap(outputPortToCellMap).values())) {
+      editorCell.addEditorCell(cell);
+    }
+    for (PortCell cell : Sequence.fromIterable(MapSequence.fromMap(inputPortToCellMap).values())) {
+      editorCell.addEditorCell(cell);
+    }
+
     parameterPropertyCell_gju6mh_a0a.getEditor().addCellDependentOnNodeProperty(parameterPropertyCell_gju6mh_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
-    parameterPropertyCell_gju6mh_a1a.getEditor().addCellDependentOnNodeProperty(parameterPropertyCell_gju6mh_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
     editorCell.getEditor().addCellDependentOnNodeProperty(editorCell, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
 
@@ -191,9 +201,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       public void move(Vector delta) {
         blockCell.getXProperty().set(blockCell.getXProperty().get() + delta.x);
         blockCell.getYProperty().set(blockCell.getYProperty().get() + delta.y);
-
-        blockView.moveTo(new Vector(blockCell.getXProperty().get(), blockCell.getYProperty().get()));
-        blockView.invalidate();
       }
     });
 
@@ -216,5 +223,14 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     blockView.rect.prop(JetpadUtils.SOURCE).set(node);
 
     return blockView;
+  }
+
+  public static void createPortCells(List<SNode> nlist, EditorContext editorContext, Map<SNode, PortCell> portToCellMap) {
+    for (SNode contentNode : ListSequence.fromList(nlist)) {
+      EditorCell cell = editorContext.createNodeCell(contentNode);
+      if (cell instanceof PortCell) {
+        MapSequence.fromMap(portToCellMap).put(contentNode, ((PortCell) cell));
+      }
+    }
   }
 }
