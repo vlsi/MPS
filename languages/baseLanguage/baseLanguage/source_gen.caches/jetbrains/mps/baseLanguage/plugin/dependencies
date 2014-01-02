@@ -11,7 +11,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconContainer" />
-    <classNode extendsClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
+    <classNode dependClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility" file="IconResourceBundle_Visibility.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -20,7 +20,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconContainer" />
-    <classNode extendsClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
+    <classNode dependClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
   </dependency>
 </dependenciesRoot>
 
