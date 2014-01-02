@@ -36,23 +36,23 @@ public class ReportErrorStatement_Behavior {
   }
 
   @Deprecated
-  public static void call_collectUncaughtMethodThrowables_856705193941282185(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
-  }
-
-  @Deprecated
-  public static boolean call_isGuardClauseStatement_856705193941282217(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isGuardClauseStatement_1237547327995", new Object[]{});
-  }
-
-  @Deprecated
   public static SNode callSuper_getException_856705193941282181(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_getException_856705193941282181", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
+  public static void call_collectUncaughtMethodThrowables_856705193941282185(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
+  }
+
+  @Deprecated
   public static void callSuper_collectUncaughtMethodThrowables_856705193941282185(SNode thisNode, String callerConceptFqName, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportErrorStatement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Class[]{SNode.class, Set.class, Boolean.TYPE}, new Object[]{throwables, ignoreMayBeThrowables});
+  }
+
+  @Deprecated
+  public static boolean call_isGuardClauseStatement_856705193941282217(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isGuardClauseStatement_1237547327995", new Object[]{});
   }
 
   @Deprecated

@@ -35,13 +35,13 @@ public class IContainsStatementList_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isStatementListCompact_1237546693016(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatementListCompact_1237546693016", new Object[]{});
+  public static boolean callSuper_isStatementListCompactable_1237546012856(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompactable_1237546012856", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_isStatementListCompactable_1237546012856(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompactable_1237546012856", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_isStatementListCompact_1237546693016(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatementListCompact_1237546693016", new Object[]{});
   }
 
   @Deprecated

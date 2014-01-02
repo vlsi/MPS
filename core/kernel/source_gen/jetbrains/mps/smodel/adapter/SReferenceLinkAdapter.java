@@ -26,6 +26,13 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
 
 
 
+  @Override
+  public boolean isMultiple() {
+    return false;
+  }
+
+
+
   public SScope getScope(SNode referenceNode) {
     // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role).getScope() 
     Scope scope = null;

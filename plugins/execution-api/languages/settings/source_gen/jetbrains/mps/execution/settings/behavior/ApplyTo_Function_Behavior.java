@@ -38,13 +38,13 @@ public class ApplyTo_Function_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getPublicJavaMethod_203908296139519015(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
+  public static SNode callSuper_getJavaMethod_946964771156066981(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getJavaMethod_946964771156066981(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", new Class[]{SNode.class}, new Object[]{});
+  public static SNode call_getPublicJavaMethod_203908296139519015(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
   }
 
   @Deprecated

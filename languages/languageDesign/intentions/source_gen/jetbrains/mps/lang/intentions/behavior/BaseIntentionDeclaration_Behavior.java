@@ -67,23 +67,13 @@ public class BaseIntentionDeclaration_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isParameterized_6263518417926802310(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isParameterized_6263518417926802310", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getBaseConcept_6263518417926802384(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_setBaseConcept_6261424444345979509(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
-
-  @Deprecated
   public static String callSuper_getGeneratedName_6263518417926802289(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getGeneratedName_6263518417926802289", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_isParameterized_6263518417926802310(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isParameterized_6263518417926802310", new Object[]{});
   }
 
   @Deprecated
@@ -92,8 +82,18 @@ public class BaseIntentionDeclaration_Behavior {
   }
 
   @Deprecated
+  public static SNode call_getBaseConcept_6263518417926802384(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getBaseConcept_6263518417926802384(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static void call_setBaseConcept_6261424444345979509(SNode thisNode, SNode baseConcept) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
   }
 
   @Deprecated

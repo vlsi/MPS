@@ -129,28 +129,13 @@ public class IMethodCall_Behavior {
   }
 
   @Deprecated
-  public static Map<SNode, SNode> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), thisNode, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
-  }
-
-  @Deprecated
-  public static boolean call_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{});
-  }
-
-  @Deprecated
   public static SNode callSuper_getInstanceType_8008512149545154471(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getInstanceType_8008512149545154471", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static Map<SNode, SNode> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), thisNode, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
   }
 
   @Deprecated
@@ -159,13 +144,28 @@ public class IMethodCall_Behavior {
   }
 
   @Deprecated
+  public static Iterable<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
+  }
+
+  @Deprecated
   public static Iterable<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
     return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, new Object[]{methodName});
   }
 
   @Deprecated
+  public static boolean call_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_isInTypeInferenceContext_4837286298388660615(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_isInTypeInferenceContext_4837286298388660615", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean call_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{});
   }
 
   @Deprecated

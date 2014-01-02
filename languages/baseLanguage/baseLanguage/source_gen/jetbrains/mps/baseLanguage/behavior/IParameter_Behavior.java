@@ -17,13 +17,13 @@ public class IParameter_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getDeclaration_1225282371351(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDeclaration_1225282371351", new Object[]{});
+  public static String callSuper_getParameterName_1225280611056(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getParameterName_1225280611056", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_getParameterName_1225280611056(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getParameterName_1225280611056", new Class[]{SNode.class}, new Object[]{});
+  public static SNode call_getDeclaration_1225282371351(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDeclaration_1225282371351", new Object[]{});
   }
 
   @Deprecated

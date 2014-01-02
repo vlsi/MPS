@@ -103,7 +103,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
-  private ModuleScope myScope = createScope();
+  private ModuleScope myScope = new ModuleScope();
 
   protected boolean myChanged = false;
 
@@ -761,10 +761,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   protected ModuleDescriptor loadDescriptor() {
     return null;
-  }
-
-  protected ModuleScope createScope() {
-    return new ModuleScope();
   }
 
   @Override

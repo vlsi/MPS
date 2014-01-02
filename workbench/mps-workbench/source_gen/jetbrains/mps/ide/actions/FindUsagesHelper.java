@@ -14,13 +14,18 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 
 /*package*/ class FindUsagesHelper {
   private Project myProject;
@@ -55,8 +60,23 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
         concept.value = operationNode.value.getConcept().getQualifiedName();
       }
     });
-    // show dialog 
+    final Wrappers._T<ScopeEditor> scopeEditor = new Wrappers._T<ScopeEditor>();
+    final Wrappers._T<FindersEditor> findersEditor = new Wrappers._T<FindersEditor>();
+    final Wrappers._T<ViewOptionsEditor> viewOptionsEditor = new Wrappers._T<ViewOptionsEditor>();
     final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(getDefaultOptions().getDefaultSearchOptions(concept.value));
+
+    ProjectHelper.toMPSProject(myProject).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        scopeEditor.value = new ScopeEditor(options.value.getOption(ScopeOptions.class));
+        findersEditor.value = new FindersEditor(options.value.getOption(FindersOptions.class), node) {
+          public void goToFinder(ReloadableFinder finder) {
+          }
+        };
+        viewOptionsEditor.value = new ViewOptionsEditor(options.value.getOption(ViewOptions.class));
+      }
+    });
+    options.value = new FindUsagesOptions(findersEditor.value.getOptions(), scopeEditor.value.getOptions(), viewOptionsEditor.value.getOptions());
+
     if (myWithDialog) {
       FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, myProject, myWithDialog);
       dialog.show();

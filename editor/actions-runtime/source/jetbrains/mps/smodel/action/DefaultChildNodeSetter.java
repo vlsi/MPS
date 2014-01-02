@@ -20,7 +20,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -47,7 +46,7 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   }
 
   @Override
-  public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
+  public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
     if (newChild != null && !SModelUtil.isAcceptableTarget(myLinkDeclaration, newChild)) {
       LOG.error("couldn't set instance of " + newChild.getConcept().getQualifiedName() +
         " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + SNodeUtil.getDebugText(parentNode));

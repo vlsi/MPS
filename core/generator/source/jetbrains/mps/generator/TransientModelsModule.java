@@ -20,9 +20,10 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -31,9 +32,11 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
@@ -61,6 +64,8 @@ public class TransientModelsModule extends AbstractModule {
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
   private Map<String, SModel> myModels = new ConcurrentHashMap<String, SModel>();
   private Set<SModel> myPublished = new ConcurrentHashSet<SModel>();
+
+  private Set<SDependency> myCachedDependencies = null;
 
   //the second parameter is needed because there is a time dependency -
   //MPSProject must be disposed after TransientModelsModule for
@@ -205,11 +210,6 @@ public class TransientModelsModule extends AbstractModule {
     return new ArrayList<SModel>(myModels.values());
   }
 
-  @Override
-  protected ModuleScope createScope() {
-    return new TransientModuleScope();
-  }
-
   public SModule getOriginalModule() {
     return myOriginalModule;
   }
@@ -227,19 +227,23 @@ public class TransientModelsModule extends AbstractModule {
     return modelRef != null && myModels.containsKey(modelRef.getModelName());
   }
 
-  public class TransientModuleScope extends ModuleScope {
-    @Override
-    protected Set<SModule> getInitialModules() {
-      Set<SModule> result = new HashSet<SModule>();
-      result.add(TransientModelsModule.this);
-      result.addAll(new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE));
-      return result;
-    }
+  @Override
+  public Set<SLanguage> getUsedLanguages() {
+    return myOriginalModule.getUsedLanguages();
+  }
 
-    @Override
-    protected Set<Language> getInitialUsedLanguages() {
-      return new HashSet<Language>(new GlobalModuleDependenciesManager(myOriginalModule).getUsedLanguages());
+  @Override
+  public Iterable<SDependency> getDeclaredDependencies() {
+    if (myCachedDependencies == null) {
+      myCachedDependencies = new HashSet<SDependency>();
+      for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
+        Dependency dep = new Dependency();
+        dep.setModuleRef(module.getModuleReference());
+        dep.setReexport(false);
+        myCachedDependencies.add(new SDependencyAdapter(dep));
+      }
     }
+    return myCachedDependencies;
   }
 
   public class TransientSModelDescriptor extends EditableSModelBase {

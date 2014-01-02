@@ -1669,12 +1669,6 @@
                                                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SNode" resolveInfo="SNode" />
                                                 </node>
                                               </node>
-                                              <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6645285158565208835" nodeInfo="ir">
-                                                <property name="name" nameId="tpck.1169194664001" value="scope" />
-                                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6645285158565208836" nodeInfo="in">
-                                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~IScope" resolveInfo="IScope" />
-                                                </node>
-                                              </node>
                                               <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3989345719604881950" nodeInfo="ir">
                                                 <property name="name" nameId="tpck.1169194664001" value="editorContext" />
                                                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3989345719605487332" nodeInfo="in">

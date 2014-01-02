@@ -156,13 +156,13 @@ public class ConstructorDeclaration_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459842(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
+  public static Icon callSuper_getAdditionalIcon_8884554759541375762(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static Icon callSuper_getAdditionalIcon_8884554759541375762(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459842(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
   }
 
   @Deprecated

@@ -1438,5 +1438,21 @@
     <unitInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test$TestBody" />
     <unitInfo nodeId="9092976468699800028" fileName="ForBreakUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/966837649722289098">
+    <nodeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="16" startPosition="68" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="23" startPosition="70" endLine="24" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="24" startPosition="140" endLine="25" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck966837649722301965#()V" />
+    <nodeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypesCheck966837649722301965#()V" />
+    <scopeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="16" startPosition="68" endLine="18" endPosition="156" />
+    <scopeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="23" startPosition="70" endLine="25" endPosition="153">
+      <varInfo nodeId="966837649722289098" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test$TestBody" />
+    <unitInfo nodeId="966837649722289098" fileName="NonStaticInnerClassInstantiatedInStaticContext_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NonStaticInnerClassInstantiatedInStaticContext_Test" />
+  </root>
 </debugInfo>
 

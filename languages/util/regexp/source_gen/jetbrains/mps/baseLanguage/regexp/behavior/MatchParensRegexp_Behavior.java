@@ -37,13 +37,13 @@ public class MatchParensRegexp_Behavior {
   }
 
   @Deprecated
-  public static SNode call_getValue_4204903511793602684(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getValue_1224857430232", new Object[]{});
+  public static String callSuper_getString_1222435297321(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
   }
 
   @Deprecated
-  public static String callSuper_getString_1222435297321(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
+  public static SNode call_getValue_4204903511793602684(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getValue_1224857430232", new Object[]{});
   }
 
   @Deprecated

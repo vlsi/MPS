@@ -93,13 +93,13 @@ public class StringLiteralRegexp_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isValid_4759120547781297313(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValid_4759120547781297301", new Object[]{});
+  public static String callSuper_getString_1222431822198(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
   }
 
   @Deprecated
-  public static String callSuper_getString_1222431822198(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
+  public static boolean call_isValid_4759120547781297313(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValid_4759120547781297301", new Object[]{});
   }
 
   @Deprecated

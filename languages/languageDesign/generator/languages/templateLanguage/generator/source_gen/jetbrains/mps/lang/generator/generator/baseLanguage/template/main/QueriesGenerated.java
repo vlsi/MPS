@@ -3860,32 +3860,51 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> nodes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef")).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+    /*
+      List<SNode> nodes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
+      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef")).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+        }
+      }));
+      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef")).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+        }
+      }));
+      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef")).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+        }
+      }));
+      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef")).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+        }
+      }));
+      for (SNode node : nodes) {
+        SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
+        SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
+        SNodeOperations.replaceWithAnother(node, replacement);
+        SLinkOperations.setTarget(replacement, "expression", node, true);
       }
-    }));
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef")).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return IOperation_Behavior.call_getDotExpression_1224687669172(it);
-      }
-    }));
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef")).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return IOperation_Behavior.call_getDotExpression_1224687669172(it);
-      }
-    }));
-    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef")).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return IOperation_Behavior.call_getDotExpression_1224687669172(it);
-      }
-    }));
-    for (SNode node : nodes) {
-      SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
-      SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
-      SNodeOperations.replaceWithAnother(node, replacement);
-      SLinkOperations.setTarget(replacement, "expression", node, true);
+    */
+    // There seems to be no reason to keep hint for TemplateFunctionParameter_sourceNode as it gets translated 
+    // at the first step, with TLB_main. GenerationContextOp IOperations listed below, however, are processed 
+    // when generator model is dropped and only QueriesGenerated class is present - hence can't access types from 
+    //  referenced elements (e.g. _VarRef can't reach VarMacro to find out its type and name (which, by the way, got 
+    // into name_intern with ReduceReferenceToText neighbour script)) 
+    List<SNode> nodes = new ArrayList<SNode>();
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef")));
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef")));
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef")));
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef")));
+    for (SNode n : nodes) {
+      SNode replacement = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression");
+      SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(n)), "jetbrains.mps.baseLanguage.structure.Type"), true);
+      SNode de = IOperation_Behavior.call_getDotExpression_1224687669172(n);
+      SNodeOperations.replaceWithAnother(de, replacement);
+      SLinkOperations.setTarget(replacement, "expression", de, true);
     }
   }
 

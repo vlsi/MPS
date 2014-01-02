@@ -50,13 +50,13 @@ public class SNonTerm_Behavior {
   }
 
   @Deprecated
-  public static boolean call_isList_1030525575875844509(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isList_1030525575875844509", new Object[]{});
+  public static boolean callSuper_isMultiline_1030525575875839456(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.syntax.structure.SNonTerm"), callerConceptFqName, "virtual_isMultiline_1030525575875839456", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static boolean callSuper_isMultiline_1030525575875839456(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.syntax.structure.SNonTerm"), callerConceptFqName, "virtual_isMultiline_1030525575875839456", new Class[]{SNode.class}, new Object[]{});
+  public static boolean call_isList_1030525575875844509(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isList_1030525575875844509", new Object[]{});
   }
 
   @Deprecated

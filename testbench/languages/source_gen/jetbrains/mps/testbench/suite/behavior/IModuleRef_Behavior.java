@@ -18,13 +18,13 @@ public class IModuleRef_Behavior {
   }
 
   @Deprecated
-  public static String call_presentation_1280144168199745474(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_presentation_1280144168199745474", new Object[]{});
+  public static SModuleReference callSuper_moduleReference_1280144168199513544(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(SModuleReference.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_moduleReference_1280144168199513544", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SModuleReference callSuper_moduleReference_1280144168199513544(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(SModuleReference.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_moduleReference_1280144168199513544", new Class[]{SNode.class}, new Object[]{});
+  public static String call_presentation_1280144168199745474(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_presentation_1280144168199745474", new Object[]{});
   }
 
   @Deprecated

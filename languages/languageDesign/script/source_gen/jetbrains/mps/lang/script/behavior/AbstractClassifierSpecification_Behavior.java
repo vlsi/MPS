@@ -17,13 +17,13 @@ public class AbstractClassifierSpecification_Behavior {
   }
 
   @Deprecated
-  public static String call_getSModelReference_5434557751113441014(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSModelReference_5434557751113441014", new Object[]{});
+  public static String callSuper_getClassifierFqName_5434557751112930827(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.script.structure.AbstractClassifierSpecification"), callerConceptFqName, "virtual_getClassifierFqName_5434557751112930827", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_getClassifierFqName_5434557751112930827(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.script.structure.AbstractClassifierSpecification"), callerConceptFqName, "virtual_getClassifierFqName_5434557751112930827", new Class[]{SNode.class}, new Object[]{});
+  public static String call_getSModelReference_5434557751113441014(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSModelReference_5434557751113441014", new Object[]{});
   }
 
   @Deprecated

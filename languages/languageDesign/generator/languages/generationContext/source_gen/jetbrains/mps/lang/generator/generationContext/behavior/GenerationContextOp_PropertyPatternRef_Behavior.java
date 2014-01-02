@@ -26,13 +26,13 @@ public class GenerationContextOp_PropertyPatternRef_Behavior {
   }
 
   @Deprecated
-  public static void call_setTarget_1758784108620254578(SNode thisNode, SNode target) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setTarget_1758784108620254533", new Object[]{target});
+  public static SNode callSuper_getTarget_1758784108620115432(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getTarget_1758784108620115432(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef"), callerConceptFqName, "virtual_getTarget_1758784108620114792", new Class[]{SNode.class}, new Object[]{});
+  public static void call_setTarget_1758784108620254578(SNode thisNode, SNode target) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setTarget_1758784108620254533", new Object[]{target});
   }
 
   @Deprecated
