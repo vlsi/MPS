@@ -119,7 +119,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
-    myDelayedChanges = new DelayedChanges(this);
+    myDelayedChanges = new DelayedChanges();
     myDependenciesBuilder = dependenciesBuilder;
     ttrace = performanceTracer;
     myOutputRoots = new ArrayList<SNode>();
@@ -195,7 +195,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
     ttrace.push("delayed mappings", false);
-    myDelayedChanges.doAllChanges();
+    myDelayedChanges.doAllChanges(this);
     ttrace.pop();
 
     if (myChanged || isPrimary) {
