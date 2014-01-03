@@ -61,13 +61,22 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-                                   IGeneratorLogger logger, RuleManager ruleManager,
-                                   SModel inputModel, SModel outputModel, GenerationOptions options,
+                                   RuleManager ruleManager, SModel inputModel, SModel outputModel,
                                    DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
-    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, options, dependenciesBuilder, performanceTracer);
+    super(operationContext, progressMonitor, ruleManager, inputModel, outputModel, dependenciesBuilder, performanceTracer);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();
+  }
+
+  @Override
+  public boolean apply(final boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
+    return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
+      @Override
+      public Boolean compute() throws GenerationCanceledException, GenerationFailureException {
+        return ParallelTemplateGenerator.super.apply(isPrimary);
+      }
+    });
   }
 
   @Override

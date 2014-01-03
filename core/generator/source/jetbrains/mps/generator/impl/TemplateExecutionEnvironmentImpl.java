@@ -19,8 +19,8 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
+import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
+import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
@@ -346,7 +346,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
     // check child
     RoleValidator v = generator.getChildRoleValidator(contextParentNode, childRole);
-    RoleValidationStatus status = v.validate(outputNodeToWeave);
+    Status status = v.validate(outputNodeToWeave);
     if (status != null) {
       status.reportProblem(false, contextParentNode, "",
         GeneratorUtil.describe(inputNode, "input"),

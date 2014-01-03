@@ -25,6 +25,8 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.CloneUtil.Factory;
 import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
+import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
+import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
@@ -109,13 +111,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected List<SNode> myNewAddedRoots; // protected for PTG.registerAddedRoots
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-                           IGeneratorLogger logger, RuleManager ruleManager,
-                           SModel inputModel, SModel outputModel, GenerationOptions options,
+                           RuleManager ruleManager, SModel inputModel, SModel outputModel,
                            DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
 
-    super(operationContext, progressMonitor, logger, inputModel, outputModel, options.isShowBadChildWarning());
+    super(operationContext, progressMonitor, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
+    GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
     myDelayedChanges = new DelayedChanges(this);
     myDependenciesBuilder = dependenciesBuilder;
@@ -213,8 +215,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     try {
       getDefaultExecutionContext(null).executeScript(script, myInputModel);
     } catch (Exception t) {
-      myLogger.handleException(t);
-      myLogger.error(script.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format("error executing script %s (see exception)", script.getLongName()));
+      getLogger().handleException(t);
+      getLogger().error(script.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format("error executing script %s (see exception)", script.getLongName()));
       throw new GenerationFailureException(t);
     }
   }
@@ -246,9 +248,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     if (myInplaceChangeEnabled) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
-        myLogger.info("Could have had delta builder here, but can't due to active weavings");
+        getLogger().info("Could have had delta builder here, but can't due to active weavings");
       } else {
-        myLogger.info("Active in-place model transformation");
+        getLogger().info("Active in-place model transformation");
         myDeltaBuilder = createDeltaBuilder();
       }
     }
@@ -526,11 +528,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         SNode ruleNode = reductionRule.getRuleNode().resolve(MPSModuleRepository.getInstance());
         String messageText = "-- dismissed reduction rule: " + (ruleNode != null ? org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(ruleNode) : "unknown");
         if (ex.isInfo()) {
-          myLogger.info(ruleNode, messageText);
+          getLogger().info(ruleNode, messageText);
         } else if (ex.isWarning()) {
-          myLogger.warning(ruleNode, messageText);
+          getLogger().warning(ruleNode, messageText);
         } else {
-          myLogger.error(ruleNode, messageText);
+          getLogger().error(ruleNode, messageText);
         }
       }
     } catch (GenerationFailureException ex) {
@@ -954,7 +956,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             RoleValidator rv = myGenerator.getChildRoleValidator(outputNode, childRole);
             for (SNode outputChildNode : outputChildNodes) {
               // check child
-              RoleValidationStatus status = rv.validate(outputChildNode);
+              Status status = rv.validate(outputChildNode);
               if (status != null) {
                 status.reportProblem(false, outputNode, "", GeneratorUtil.describe(inputNode, "input"));
               }

@@ -20,8 +20,8 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
+import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
+import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
 import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
@@ -253,7 +253,7 @@ public final class TemplateProcessor {
           final boolean notSubConcept = !(outputChildNode.getConcept().isSubConceptOf(originalConcept));
           if (notSubConcept) {
             // check child
-            RoleValidationStatus status = validator.validate(outputChildNode);
+            Status status = validator.validate(outputChildNode);
             if (status != null) {
               status.reportProblem(false, outputNode, "",
                   GeneratorUtil.describe(context.getInput(), "input"),
