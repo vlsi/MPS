@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.datatransfer.PasteWrapperContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PasteWrappers {
   public static List<PasteWrapper> createPasteWrappers() {
@@ -67,6 +68,156 @@ public class PasteWrappers {
       public SNode wrap(PasteWrapperContext _context) {
         SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
         SLinkOperations.setTarget(statement, "localVariableDeclaration", _context.getSourceNode(), true);
+        return statement;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(_context.getSourceNode(), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(_context.getSourceNode(), "isFinal")));
+        return variable;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "isFinal")));
+        return variable;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "isFinal")));
+        return variable;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(_context.getSourceNode(), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(_context.getSourceNode(), "isFinal")));
+        return variable;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Statement";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(_context.getSourceNode(), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(_context.getSourceNode(), "isFinal")));
+        SLinkOperations.setTarget(statement, "localVariableDeclaration", variable, true);
+        return statement;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(_context.getSourceNode(), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(_context.getSourceNode(), "isFinal")));
+        return variable;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Statement";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(_context.getSourceNode(), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(_context.getSourceNode(), "isFinal")));
+        SLinkOperations.setTarget(statement, "localVariableDeclaration", variable, true);
+        return statement;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Statement";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+        SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+        SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
+        SLinkOperations.setTarget(variable, "type", SLinkOperations.getTarget(_context.getSourceNode(), "type", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(variable, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
+        SPropertyOperations.set(variable, "isFinal", "" + (SPropertyOperations.getBoolean(_context.getSourceNode(), "isFinal")));
+        SLinkOperations.setTarget(statement, "localVariableDeclaration", variable, true);
         return statement;
       }
     });
