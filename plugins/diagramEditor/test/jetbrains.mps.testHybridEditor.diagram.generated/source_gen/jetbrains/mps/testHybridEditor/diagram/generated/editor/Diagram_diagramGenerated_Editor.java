@@ -14,25 +14,21 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import java.util.Map;
-import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.LinkedHashMap;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.jetpad.mapper.MapperFactory;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -41,7 +37,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -109,27 +104,59 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, final SNode node) {
-    final Map<SNode, BlockCell> blockToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, BlockCell>(16, (float) 0.75, false));
-    final Map<SNode, ConnectorCell> connectorToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, ConnectorCell>(16, (float) 0.75, false));
-    createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "blocks", true), editorContext, blockToCellMap, connectorToCellMap);
-    createChildCells_tb7paq_c0(SLinkOperations.getTargets(node, "connectors", true), editorContext, blockToCellMap, connectorToCellMap);
-
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
+      protected void init() {
+        for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(node, "blocks", true))) {
+          EditorCell cell = getContext().createNodeCell(diagramElement);
+          if (cell instanceof BlockCell) {
+            myBlocks.add(diagramElement);
+            addEditorCell(cell);
+          } else if (cell instanceof ConnectorCell) {
+            myConnectors.add(diagramElement);
+            addEditorCell(cell);
+          }
+        }
+        for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(node, "connectors", true))) {
+          EditorCell cell = getContext().createNodeCell(diagramElement);
+          if (cell instanceof BlockCell) {
+            myBlocks.add(diagramElement);
+            addEditorCell(cell);
+          } else if (cell instanceof ConnectorCell) {
+            myConnectors.add(diagramElement);
+            addEditorCell(cell);
+          }
+        }
+      }
+
       public Mapper<SNode, DiagramView> createMapper() {
         return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.<SNode,View>forSimpleRole(this, ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(blockToCellMap).keySet()), getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+            configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
               public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
-                return MapSequence.fromMap(blockToCellMap).get(node).createMapper();
+                // TODO: use more effitient way of getting port cell (by ID) 
+                for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
+                  if (childCell.getSNode() == node) {
+                    return ((BlockCell) childCell).createMapper();
+                  }
+                }
+                assert false : "No port cell found for: " + node;
+                return null;
               }
             }));
-            configuration.add(Synchronizers.<SNode,Connection>forSimpleRole(this, ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(connectorToCellMap).keySet()), getTarget().connections, new MapperFactory<SNode, Connection>() {
+            configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
               public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
-                return MapSequence.fromMap(connectorToCellMap).get(node).createMapper();
+                // TODO: use more effitient way of getting port cell (by ID) 
+                for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
+                  if (childCell.getSNode() == node) {
+                    return ((ConnectorCell) childCell).createMapper();
+                  }
+                }
+                assert false : "No port cell found for: " + node;
+                return null;
               }
             }));
             configuration.add(Synchronizers.forObservableRole(this, myConnectionSingleList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
@@ -141,12 +168,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         };
       }
     };
-    for (BlockCell cell : Sequence.fromIterable(MapSequence.fromMap(blockToCellMap).values())) {
-      editorCell.addEditorCell(cell);
-    }
-    for (ConnectorCell cell : Sequence.fromIterable(MapSequence.fromMap(connectorToCellMap).values())) {
-      editorCell.addEditorCell(cell);
-    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{editorCell.createNewDiagramNodeActions(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
       public void invoke(SNode node, Integer x, Integer y) {
         SNode a = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
@@ -175,17 +196,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   }
 
-  public static void createChildCells_tb7paq_c0(List<SNode> nlist, EditorContext editorContext, Map<SNode, BlockCell> blockToCellMap, Map<SNode, ConnectorCell> connectorToCellMap) {
-    for (SNode contentNode : ListSequence.fromList(nlist)) {
-      EditorCell cell = editorContext.createNodeCell(contentNode);
-      if (cell instanceof BlockCell) {
-        MapSequence.fromMap(blockToCellMap).put(contentNode, ((BlockCell) cell));
-      } else if (cell instanceof ConnectorCell) {
-        MapSequence.fromMap(connectorToCellMap).put(contentNode, ((ConnectorCell) cell));
-      }
-    }
-  }
-
   private EditorCell createConstant_tb7paq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version-2:");
     editorCell.setCellId("Constant_tb7paq_d0");
@@ -194,27 +204,59 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, final SNode node) {
-    final Map<SNode, BlockCell> blockToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, BlockCell>(16, (float) 0.75, false));
-    final Map<SNode, ConnectorCell> connectorToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, ConnectorCell>(16, (float) 0.75, false));
-    createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newBlocks", true), editorContext, blockToCellMap, connectorToCellMap);
-    createChildCells_tb7paq_e0(SLinkOperations.getTargets(node, "newConnectors", true), editorContext, blockToCellMap, connectorToCellMap);
-
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new DiagramCell(editorContext, node) {
+      protected void init() {
+        for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(node, "newBlocks", true))) {
+          EditorCell cell = getContext().createNodeCell(diagramElement);
+          if (cell instanceof BlockCell) {
+            myBlocks.add(diagramElement);
+            addEditorCell(cell);
+          } else if (cell instanceof ConnectorCell) {
+            myConnectors.add(diagramElement);
+            addEditorCell(cell);
+          }
+        }
+        for (SNode diagramElement : ListSequence.fromList(SLinkOperations.getTargets(node, "newConnectors", true))) {
+          EditorCell cell = getContext().createNodeCell(diagramElement);
+          if (cell instanceof BlockCell) {
+            myBlocks.add(diagramElement);
+            addEditorCell(cell);
+          } else if (cell instanceof ConnectorCell) {
+            myConnectors.add(diagramElement);
+            addEditorCell(cell);
+          }
+        }
+      }
+
       public Mapper<SNode, DiagramView> createMapper() {
         return new Mapper<SNode, DiagramView>(node, new ConnectionRoutingView(new OrthogonalRouter())) {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.<SNode,View>forSimpleRole(this, ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(blockToCellMap).keySet()), getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
+            configuration.add(Synchronizers.forObservableRole(this, myBlocks, getTarget().itemsView.children(), new MapperFactory<SNode, View>() {
               public Mapper<? extends SNode, ? extends View> createMapper(SNode node) {
-                return MapSequence.fromMap(blockToCellMap).get(node).createMapper();
+                // TODO: use more effitient way of getting port cell (by ID) 
+                for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
+                  if (childCell.getSNode() == node) {
+                    return ((BlockCell) childCell).createMapper();
+                  }
+                }
+                assert false : "No port cell found for: " + node;
+                return null;
               }
             }));
-            configuration.add(Synchronizers.<SNode,Connection>forSimpleRole(this, ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(connectorToCellMap).keySet()), getTarget().connections, new MapperFactory<SNode, Connection>() {
+            configuration.add(Synchronizers.forObservableRole(this, myConnectors, getTarget().connections, new MapperFactory<SNode, Connection>() {
               public Mapper<? extends SNode, ? extends Connection> createMapper(SNode node) {
-                return MapSequence.fromMap(connectorToCellMap).get(node).createMapper();
+                // TODO: use more effitient way of getting port cell (by ID) 
+                for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
+                  if (childCell.getSNode() == node) {
+                    return ((ConnectorCell) childCell).createMapper();
+                  }
+                }
+                assert false : "No port cell found for: " + node;
+                return null;
               }
             }));
             configuration.add(Synchronizers.forObservableRole(this, myConnectionSingleList, getTarget().connections, new MapperFactory<PolyLineConnection, Connection>() {
@@ -226,12 +268,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         };
       }
     };
-    for (BlockCell cell : Sequence.fromIterable(MapSequence.fromMap(blockToCellMap).values())) {
-      editorCell.addEditorCell(cell);
-    }
-    for (ConnectorCell cell : Sequence.fromIterable(MapSequence.fromMap(connectorToCellMap).values())) {
-      editorCell.addEditorCell(cell);
-    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{editorCell.createNewDiagramNodeActions(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.BlockInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
       public void invoke(SNode node, Integer x, Integer y) {
         SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "name", "block");
@@ -249,7 +285,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         final SNode port = ((SNode) fromId);
         SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "metaPort", ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "metaBlock", false), "outMetaPorts", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a01a11(it, port);
+            return eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a3a01(it, port);
           }
         }), false);
         SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "block", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
@@ -265,18 +301,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
 
   }
 
-  public static void createChildCells_tb7paq_e0(List<SNode> nlist, EditorContext editorContext, Map<SNode, BlockCell> blockToCellMap, Map<SNode, ConnectorCell> connectorToCellMap) {
-    for (SNode contentNode : ListSequence.fromList(nlist)) {
-      EditorCell cell = editorContext.createNodeCell(contentNode);
-      if (cell instanceof BlockCell) {
-        MapSequence.fromMap(blockToCellMap).put(contentNode, ((BlockCell) cell));
-      } else if (cell instanceof ConnectorCell) {
-        MapSequence.fromMap(connectorToCellMap).put(contentNode, ((ConnectorCell) cell));
-      }
-    }
-  }
-
-  private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a01a11(Object a, Object b) {
+  private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0e0b0c0a0a3a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

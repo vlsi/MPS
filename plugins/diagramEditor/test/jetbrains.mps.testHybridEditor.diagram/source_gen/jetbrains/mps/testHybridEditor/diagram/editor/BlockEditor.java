@@ -40,6 +40,9 @@ public class BlockEditor extends AbstractJetpadEditor {
   @Override
   public EditorCell createEditorCell(final EditorContext context, final SNode node) {
     final BlockCell blockCell = new BlockCell(context, node) {
+      protected void initPorts() {
+      }
+
       protected Integer getXPositionFromModel() {
         return SPropertyOperations.getInteger(node, "x");
       }

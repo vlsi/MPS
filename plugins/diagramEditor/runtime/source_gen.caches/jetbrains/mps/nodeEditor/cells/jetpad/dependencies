@@ -72,6 +72,8 @@
     <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
+    <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
+    <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableSingleItemList" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />

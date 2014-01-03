@@ -5,10 +5,12 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.cells.jetpad.mappers.RootMapper;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
+import jetbrains.jetpad.model.collections.list.ObservableList;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.mapper.Mapper;
@@ -52,6 +54,8 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private boolean mySubstituteEditorVisible = false;
   private int myPatternEditorX;
   private int myPatternEditorY;
+  protected ObservableList<SNode> myBlocks = new ObservableArrayList<SNode>();
+  protected ObservableList<SNode> myConnectors = new ObservableArrayList<SNode>();
   protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
 
 
@@ -63,7 +67,10 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     setupRootView(myComponent.container().root());
     myComponent.container().root().addTrait(RootTrait.ROOT_TRAIT);
     myComponent.container().root().addTrait(getEventHandlingTrate());
+    init();
   }
+
+  protected abstract void init();
 
   public abstract Mapper<SNode, DiagramView> createMapper();
 

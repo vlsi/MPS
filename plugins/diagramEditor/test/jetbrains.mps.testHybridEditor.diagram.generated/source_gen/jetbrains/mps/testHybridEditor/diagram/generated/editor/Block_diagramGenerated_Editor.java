@@ -10,22 +10,20 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Map;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.LinkedHashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.jetpad.model.collections.list.ObservableList;
+import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -36,7 +34,6 @@ import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import java.util.List;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -69,12 +66,26 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
         SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
       }
     };
-    final Map<SNode, PortCell> inputPortToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, PortCell>(16, (float) 0.75, false));
-    final Map<SNode, PortCell> outputPortToCellMap = MapSequence.fromMap(new LinkedHashMap<SNode, PortCell>(16, (float) 0.75, false));
-    createPortCells(SLinkOperations.getTargets(node, "inputPorts", true), editorContext, inputPortToCellMap);
-    createPortCells(SLinkOperations.getTargets(node, "outputPorts", true), editorContext, outputPortToCellMap);
-
+    final ObservableList<SNode> inputPorts = new ObservableArrayList<SNode>();
+    final ObservableList<SNode> outputPorts = new ObservableArrayList<SNode>();
     BlockCell editorCell = new BlockCell(editorContext, node) {
+      protected void initPorts() {
+        for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
+          EditorCell childNodeCell = editorContext.createNodeCell(port);
+          if (childNodeCell instanceof PortCell) {
+            inputPorts.add(port);
+            this.addEditorCell(childNodeCell);
+          }
+        }
+        for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
+          EditorCell childNodeCell = editorContext.createNodeCell(port);
+          if (childNodeCell instanceof PortCell) {
+            outputPorts.add(port);
+            this.addEditorCell(childNodeCell);
+          }
+        }
+      }
+
       protected Integer getXPositionFromModel() {
         return SNodeOperations.getIndexInParent(node) / 2 * 150 + 10;
       }
@@ -93,14 +104,28 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           @Override
           protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
             super.registerSynchronizers(configuration);
-            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(inputPortToCellMap).keySet()), getTarget().inputs.children(), new MapperFactory<SNode, View>() {
+            configuration.add(Synchronizers.forObservableRole(this, inputPorts, getTarget().inputs.children(), new MapperFactory<SNode, View>() {
               public Mapper<? extends SNode, ? extends View> createMapper(SNode mapperNode) {
-                return MapSequence.fromMap(inputPortToCellMap).get(mapperNode).createMapper();
+                // TODO: use more effitient way of getting port cell (by ID) 
+                for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
+                  if (childCell.getSNode() == mapperNode) {
+                    return ((PortCell) childCell).createMapper();
+                  }
+                }
+                assert false : "No port cell found for: " + mapperNode;
+                return null;
               }
             }));
-            configuration.add(Synchronizers.forSimpleRole(this, ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(outputPortToCellMap).keySet()), getTarget().outputs.children(), new MapperFactory<SNode, View>() {
+            configuration.add(Synchronizers.forObservableRole(this, outputPorts, getTarget().outputs.children(), new MapperFactory<SNode, View>() {
               public Mapper<? extends SNode, ? extends View> createMapper(SNode mapperNode) {
-                return MapSequence.fromMap(outputPortToCellMap).get(mapperNode).createMapper();
+                // TODO: use more effitient way of getting port cell (by ID) 
+                for (EditorCell childCell : Sequence.fromIterable(getContentCells())) {
+                  if (childCell.getSNode() == mapperNode) {
+                    return ((PortCell) childCell).createMapper();
+                  }
+                }
+                assert false : "No port cell found for: " + mapperNode;
+                return null;
               }
             }));
 
@@ -121,14 +146,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
         return mapper;
       }
     };
+    // TODO: move this registeration to the runtime code 
     editorCell.addEditorCell(parameterPropertyCell_70mnj_a0a);
     editorCell.addEditorCell(parameterPropertyCell_70mnj_a1a);
-    for (PortCell cell : Sequence.fromIterable(MapSequence.fromMap(outputPortToCellMap).values())) {
-      editorCell.addEditorCell(cell);
-    }
-    for (PortCell cell : Sequence.fromIterable(MapSequence.fromMap(inputPortToCellMap).values())) {
-      editorCell.addEditorCell(cell);
-    }
 
     parameterPropertyCell_70mnj_a0a.getEditor().addCellDependentOnNodeProperty(parameterPropertyCell_70mnj_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
     parameterPropertyCell_70mnj_a1a.getEditor().addCellDependentOnNodeProperty(parameterPropertyCell_70mnj_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
@@ -171,14 +191,5 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     blockView.rect.prop(JetpadUtils.SOURCE).set(node);
 
     return blockView;
-  }
-
-  public static void createPortCells(List<SNode> nlist, EditorContext editorContext, Map<SNode, PortCell> portToCellMap) {
-    for (SNode contentNode : ListSequence.fromList(nlist)) {
-      EditorCell cell = editorContext.createNodeCell(contentNode);
-      if (cell instanceof PortCell) {
-        MapSequence.fromMap(portToCellMap).put(contentNode, ((PortCell) cell));
-      }
-    }
   }
 }

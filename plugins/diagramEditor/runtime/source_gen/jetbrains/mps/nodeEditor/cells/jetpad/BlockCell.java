@@ -37,7 +37,10 @@ public abstract class BlockCell extends AbstractJetpadCell {
     });
     addModelProperty(getXProperty());
     addModelProperty(getYProperty());
+    initPorts();
   }
+
+  protected abstract void initPorts();
 
   protected abstract Integer getXPositionFromModel();
 
