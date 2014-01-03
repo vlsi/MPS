@@ -86,11 +86,6 @@ public class RoleValidation {
     private final Status myStatus;
     private final boolean myMultipleSource;
 
-    protected RoleValidator() {
-      myStatus = null;
-      myMultipleSource = false;
-    }
-
     public RoleValidator(boolean isMultipleSource) {
       myStatus = null;
       myMultipleSource = isMultipleSource;
@@ -134,7 +129,7 @@ public class RoleValidation {
       if (targetNode.getConcept().isSubConceptOf(myLinkTarget)) {
         return null;
       }
-      if (!myLink.isReference() && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {
+      if (!myLink.isReference() && DelayedChanges.isTempNode(targetNode)) {
         // temporary child node, ignore
         return null;
       }

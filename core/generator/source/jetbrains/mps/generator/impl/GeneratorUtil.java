@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -160,6 +161,16 @@ public class GeneratorUtil {
       msg = SNodeUtil.getDebugText(node);
     }
     return new ProblemDescription(nr, String.format("-- was %s: %s", nodeRole, msg));
+  }
+
+  public static ProblemDescription describe(@Nullable SNodeReference node, String nodeRole) {
+    String msg;
+    if (node == null) {
+      msg = String.format("-- was %s: <unknown node reference>", nodeRole);
+    } else {
+      msg = String.format("-- was %s: %s", nodeRole, node.toString());
+    }
+    return new ProblemDescription(node, msg);
   }
 
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
