@@ -38,7 +38,6 @@ public class OverrideConceptMethodsHelper {
     int index = (myContextMethod != null && SNodeOperations.getParent(myContextMethod) == myClassConcept ? ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1 : -1);
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
-
       SNode method = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept}), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
       SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
