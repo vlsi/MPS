@@ -106,7 +106,7 @@ class GenerationSession {
     myLogger = logger;
     ttrace = tracer;
     myGenerationOptions = generationOptions;
-    mySessionContext = new GenerationSessionContext(invocationContext, generationOptions.getGenerationTracer(), transientModelsModule, myOriginalInputModel);
+    mySessionContext = new GenerationSessionContext(invocationContext, generationOptions, logger, transientModelsModule, myOriginalInputModel);
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -305,8 +305,7 @@ class GenerationSession {
 
     // -- filter mapping configurations
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, null, inputModel, null, myGenerationOptions,
-        myDependenciesBuilder, ttrace);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, null, inputModel, null, myDependenciesBuilder, ttrace);
     LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
     while (it.hasNext()) {
       TemplateMappingConfiguration c = it.next();
@@ -455,20 +454,11 @@ class GenerationSession {
     final TemplateGenerator tg =
         myGenerationOptions.isGenerateInParallel()
             ?
-            new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel,
-                myGenerationOptions, myDependenciesBuilder, ttrace)
-            : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions,
-            myDependenciesBuilder, ttrace);
-    if (tg instanceof ParallelTemplateGenerator) {
-      hasChanges = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
-        @Override
-        public Boolean compute() throws GenerationCanceledException, GenerationFailureException {
-          return tg.apply(isPrimary);
-        }
-      });
-    } else {
-      hasChanges = tg.apply(isPrimary);
-    }
+            new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel,
+                myDependenciesBuilder, ttrace)
+            : new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder, ttrace);
+
+    hasChanges = tg.apply(isPrimary);
     ttrace.pop();
     SModel outputModel = tg.getOutputModel();
     if (myNewCache != null && (isPrimary || hasChanges)) {
@@ -509,8 +499,8 @@ class GenerationSession {
     }
 
     boolean preProcessed = false;
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel,
-        currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel,
+        currentInputModel, myDependenciesBuilder, ttrace);
     for (TemplateMappingScript preMappingScript : ruleManager.getScripts().getPreMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
@@ -557,8 +547,8 @@ class GenerationSession {
     }
 
     boolean postProcessed = false;
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel,
-        myGenerationOptions, myDependenciesBuilder, ttrace);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentModel, currentModel,
+        myDependenciesBuilder, ttrace);
     for (TemplateMappingScript postMappingScript : ruleManager.getScripts().getPostMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());

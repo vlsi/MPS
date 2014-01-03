@@ -16,8 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
+import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -131,8 +130,7 @@ public class DelayedChanges {
           }
         } else {
           String childRole = myChildToReplace.getRoleInParent();
-          final RoleValidator roleValidator = myGenerator.getChildRoleValidator(parent, childRole);
-          RoleValidationStatus status = roleValidator.validate(child);
+          final Status status = myGenerator.getChildRoleValidator(parent, childRole).validate(child);
           if (status != null) {
             status.reportProblem(false, parent, "",
               GeneratorUtil.describe(myContext.getInput(), "input"),

@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
+import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.DynamicReference;
@@ -109,7 +109,7 @@ public abstract class ReferenceInfo {
 
   // XXX in fact, the only use is in ReferenceInfo_CopiedInputNode, might be worth moving there
   protected final boolean checkResolvedTarget(AbstractTemplateGenerator generator, SNode outputTargetNode) {
-    RoleValidationStatus status = generator.getReferentRoleValidator(myOutputSourceNode, myReferenceRole).validate(outputTargetNode);
+    Status status = generator.getReferentRoleValidator(myOutputSourceNode, myReferenceRole).validate(outputTargetNode);
     if (status != null) {
       status.reportProblem(true, myOutputSourceNode, "bad reference: ", getErrorDescriptions());
       return false;
