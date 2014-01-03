@@ -18,18 +18,14 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.impl.GeneratorUtilEx.ConsequenceDispatch;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -142,6 +138,7 @@ public class RuleConsequenceProcessor {
 
     @Override
     public void templateDeclarationReference(SNode ruleConsequence) {
+      // XXX for unknown reason we don't use TemplateDeclarationInterpreted here.
       myTemplateContext = GeneratorUtil.createConsequenceContext(myTemplateContext, getEnvironment(), ruleConsequence);
       processTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
     }
