@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class PasteWrappers {
   public static List<PasteWrapper> createPasteWrappers() {
@@ -304,7 +305,7 @@ public class PasteWrappers {
         ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
         ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "throwsItem", true)));
         ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true)));
-        SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", SLinkOperations.getTarget(_context.getSourceNode(), "visibility", true), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", (SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IVisible") ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null)), true);
         ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(method, "body", true), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", false, new String[]{})).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression");
@@ -338,7 +339,7 @@ public class PasteWrappers {
         ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "annotation", true)));
         ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "throwsItem", true)));
         ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true)));
-        SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", SLinkOperations.getTarget(_context.getSourceNode(), "visibility", true), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", (SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IVisible") ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null)), true);
         ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(method, "body", true), "jetbrains.mps.lang.behavior.structure.ThisNodeExpression", false, new String[]{})).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");

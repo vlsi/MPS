@@ -11209,10 +11209,30 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="9114410699313825123" nodeInfo="nn">
-                <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3326258076142481469" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="3326258076142481470" nodeInfo="nn" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3326258076142481471" nodeInfo="nn">
-                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1178549979242" />
+                <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="3326258076152530539" nodeInfo="nn">
+                  <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3326258076152763140" nodeInfo="nn">
+                    <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="3326258076152872811" nodeInfo="nn">
+                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3326258076152872813" nodeInfo="in">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1146644623116" resolveInfo="PrivateVisibility" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3326258076152302129" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="3326258076152298023" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="3326258076152314564" nodeInfo="nn">
+                      <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3326258076152421365" nodeInfo="nn">
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1178549954367" resolveInfo="IVisible" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3326258076142481469" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3326258076152641087" nodeInfo="nn">
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1178549954367" resolveInfo="IVisible" />
+                      <node role="leftExpression" roleId="tp25.1140138123956" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="3326258076142481470" nodeInfo="nn" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3326258076152649822" nodeInfo="nn">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1178549979242" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -11522,10 +11542,30 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="9114410699314032032" nodeInfo="nn">
-                <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3326258076142605992" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="3326258076142605993" nodeInfo="nn" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3326258076142605994" nodeInfo="nn">
-                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1178549979242" />
+                <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="3326258076152975179" nodeInfo="nn">
+                  <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3326258076152975180" nodeInfo="nn">
+                    <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="3326258076152975181" nodeInfo="nn">
+                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3326258076152975182" nodeInfo="in">
+                        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1146644623116" resolveInfo="PrivateVisibility" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3326258076152975183" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="3326258076152975184" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="3326258076152975185" nodeInfo="nn">
+                      <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3326258076152975186" nodeInfo="nn">
+                        <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1178549954367" resolveInfo="IVisible" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3326258076152975187" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="3326258076152975188" nodeInfo="nn">
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1178549954367" resolveInfo="IVisible" />
+                      <node role="leftExpression" roleId="tp25.1140138123956" type="tpdg.ConceptFunctionParameter_nodeToPasteWrap" typeId="tpdg.1221137268788" id="3326258076152975189" nodeInfo="nn" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3326258076152975190" nodeInfo="nn">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1178549979242" />
+                    </node>
                   </node>
                 </node>
               </node>
