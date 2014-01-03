@@ -92,6 +92,32 @@ public class Styles_StyleSheet {
     return style;
   }
 
+  @Deprecated
+  public static Style getParenthesis(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
+    return style;
+  }
+
+  @Deprecated
+  public static Style getLeftParen(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
+  }
+
+  @Deprecated
+  public static Style getRightParen(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(Styles_StyleSheet.getParenthesis(editorCell));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
+  }
+
   public static void applyGeneratorKeyWord(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -141,5 +167,22 @@ public class Styles_StyleSheet {
 
   public static void applyMappingRuleReference(Style style, EditorCell editorCell) {
     Styles_StyleSheet.applyMappingRuleDeclaration(style, editorCell);
+  }
+
+  public static void applyParenthesis(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
+  }
+
+  public static void applyLeftParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.applyParenthesis(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+  }
+
+  public static void applyRightParen(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.applyParenthesis(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
 }
