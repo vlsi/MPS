@@ -1,50 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.StaticScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure.TrimKind" file="TrimKind.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" file="TrimKind_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TrimKind" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._CharConstant_String_PropertySupport" file="_CharConstant_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._FPNumber_String_PropertySupport" file="_FPNumber_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._FloatNumberValue_PropertySupport" file="_FloatNumberValue_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._HexNumberValue_PropertySupport" file="_HexNumberValue_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._Identifier_String_PropertySupport" file="_Identifier_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.structure._LongType_String_PropertySupport" file="_LongType_String_PropertySupport.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
-  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure.TrimKind" file="TrimKind.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" file="TrimKind_PropertySupport.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure._CharConstant_String_PropertySupport" file="_CharConstant_String_PropertySupport.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure._FPNumber_String_PropertySupport" file="_FPNumber_String_PropertySupport.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure._FloatNumberValue_PropertySupport" file="_FloatNumberValue_PropertySupport.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure._HexNumberValue_PropertySupport" file="_HexNumberValue_PropertySupport.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure._Identifier_String_PropertySupport" file="_Identifier_String_PropertySupport.java" />
+  <dependency className="jetbrains.mps.baseLanguage.structure._LongType_String_PropertySupport" file="_LongType_String_PropertySupport.java" />
 </dependenciesRoot>
 

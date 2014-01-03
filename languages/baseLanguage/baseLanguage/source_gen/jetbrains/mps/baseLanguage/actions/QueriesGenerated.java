@@ -2091,7 +2091,7 @@ public class QueriesGenerated {
                 name = name.substring(0, name.length() - 1);
               }
               if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                return name + ((pattern.endsWith("=") ? "=" : ";"));
+                return name + ((pattern.endsWith("=") ? "=" : ""));
               }
             }
             return null;
