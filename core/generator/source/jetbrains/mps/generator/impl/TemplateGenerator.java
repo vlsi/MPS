@@ -216,7 +216,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       getDefaultExecutionContext(null).executeScript(script, myInputModel);
     } catch (Exception t) {
       getLogger().handleException(t);
-      getLogger().error(script.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format("error executing script %s (see exception)", script.getLongName()));
+      getLogger().error(script.getScriptNode(), String.format("error executing script %s (see exception)", script.getLongName()));
       throw new GenerationFailureException(t);
     }
   }
@@ -525,8 +525,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       if (ex.isLoggingNeeded() && reductionRule != null) {
-        SNode ruleNode = reductionRule.getRuleNode().resolve(MPSModuleRepository.getInstance());
-        String messageText = "-- dismissed reduction rule: " + (ruleNode != null ? org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(ruleNode) : "unknown");
+        SNodeReference ruleNode = reductionRule.getRuleNode();
+        String messageText = String.format("-- dismissed reduction rule: %s", ruleNode);
         if (ex.isInfo()) {
           getLogger().info(ruleNode, messageText);
         } else if (ex.isWarning()) {

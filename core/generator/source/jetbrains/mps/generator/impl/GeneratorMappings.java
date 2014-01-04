@@ -48,7 +48,7 @@ public final class GeneratorMappings {
   private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<String, Map<SNode, Object>>();
 
   /* input -> output */
-  private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode;
+  private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>();
 
   /* new style map: Object means multiple nodes for the template */
   private final ConcurrentMap<String, Object> myTemplateNodeIdToOutputNodeMap = new ConcurrentHashMap<String, Object>();
@@ -56,9 +56,8 @@ public final class GeneratorMappings {
   /* new style map: template,input -> output */
   private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<String, SNode>, SNode>();
 
-  public GeneratorMappings(IGeneratorLogger log, int numberOfNodesInModel) {
+  public GeneratorMappings(IGeneratorLogger log) {
     myLog = log;
-    myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>(numberOfNodesInModel / 4);
   }
 
   // add methods

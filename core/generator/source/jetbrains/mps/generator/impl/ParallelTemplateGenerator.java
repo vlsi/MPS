@@ -16,9 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
@@ -28,7 +26,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -58,7 +55,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode, SNodeReference>, RootGenerationTask> myInputToTask;
   private Map<SNode, DefaultQueryExecutionContext> myRootContext;
-  private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
+  private final Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                                    RuleManager ruleManager, SModel inputModel, SModel outputModel,
@@ -70,22 +67,12 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  public boolean apply(final boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
-    return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
-      @Override
-      public Boolean compute() throws GenerationCanceledException, GenerationFailureException {
-        return ParallelTemplateGenerator.super.apply(isPrimary);
-      }
-    });
-  }
-
-  @Override
   protected void applyReductions(boolean isPrimary)
     throws GenerationCanceledException, GenerationFailureException {
     super.applyReductions(isPrimary);
 
     myPool.waitForCompletion();
-    contextToTask = null;
+    contextToTask.clear();
     myRootContext = null;
     for (RootGenerationTask task : myTasks) {
       task.registerGeneratedRoot();
@@ -196,7 +183,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
     RootGenerationTask task = myInputToTask.get(new Pair<SNode, SNodeReference>(inputNode, templateNode));
     if (task == null) {
-      showErrorMessage(inputNode, templateNode.resolve(MPSModuleRepository.getInstance()), "internal: cannot find task for generated root");
+      getLogger().error(templateNode, "internal: cannot find task for generated root", GeneratorUtil.describe(inputNode, "input node"));
     } else {
       task.addGeneratedRoot(new GeneratedRootDescriptor(outputRoot, inputNode, templateNode, isCopied));
     }
