@@ -35,7 +35,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -161,22 +160,6 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       contextToTask.put(executionContext, compositeTask);
     }
     myPool.addTask(compositeTask);
-  }
-
-  @Override
-  protected void registerAddedRoots(@NotNull Collection<SNode> newRoots) {
-    // ParallelTemplateGenerator shall handle this similar to #registerRoot to ensure order is preserved
-    if (!myInplaceChangeEnabled) {
-      return;
-    }
-    if (myNewAddedRoots == null) {
-      synchronized (this) {
-        if (myNewAddedRoots == null) {
-          myNewAddedRoots = Collections.synchronizedList(new ArrayList<SNode>());
-        }
-      }
-    }
-    myNewAddedRoots.addAll(newRoots);
   }
 
   @Override
