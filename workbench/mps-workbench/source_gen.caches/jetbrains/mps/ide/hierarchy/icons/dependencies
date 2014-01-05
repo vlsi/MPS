@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.hierarchy.icons.Icons" file="Icons.java">
-    <classNode dependClassName="com.intellij.icons.AllIcons" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
-  </dependency>
+  <dependency className="jetbrains.mps.ide.hierarchy.icons.Icons" file="Icons.java" />
 </dependenciesRoot>
 
