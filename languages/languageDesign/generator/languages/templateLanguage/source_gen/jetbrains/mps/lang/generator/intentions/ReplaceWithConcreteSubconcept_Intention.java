@@ -16,7 +16,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -86,10 +85,9 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
   }
 
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(selectedNodeConcept, SNodeOperations.getModel(node), GlobalScope.getInstance())).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(node), SNodeOperations.getModel(node), editorContext.getScope())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(it), "abstract"));
+        return !(SPropertyOperations.getBoolean(it, "abstract"));
       }
     }).toListSequence();
   }
