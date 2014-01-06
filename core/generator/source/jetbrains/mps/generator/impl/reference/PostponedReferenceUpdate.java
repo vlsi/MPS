@@ -29,40 +29,27 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class PostponedReferenceUpdate {
-  private final SModel myModel;
   private final TemplateGenerator myGenerator;
-  private List<PostponedReference> myRefs;
+  private final List<PostponedReference> myRefs;
 
-  public PostponedReferenceUpdate(@NotNull SModel model, @NotNull TemplateGenerator generator) {
-    myModel = model;
+  public PostponedReferenceUpdate(@NotNull TemplateGenerator generator) {
     myGenerator = generator;
+    myRefs = new ArrayList<PostponedReference>(100);
+  }
+
+  public synchronized void add(@NotNull PostponedReference pr) {
+    myRefs.add(pr);
   }
 
   public void prepare() {
-    myRefs = new ArrayList<PostponedReference>(100);
-    for (SNode root : myModel.getRootNodes()) {
-      prepare(root);
+    for (PostponedReference ref : myRefs) {
+      ref.initReplacementReference(myGenerator);
     }
   }
 
   public void replace() {
-    assert myRefs != null : "call prepare() first";
     for (PostponedReference ref : myRefs) {
       ref.replace();
-    }
-  }
-
-  private void prepare(SNode node) {
-    for (SReference ref : node.getReferences()) {
-      if (ref instanceof PostponedReference) {
-        PostponedReference pr = (PostponedReference) ref;
-        pr.initReplacementReference(myGenerator);
-        myRefs.add(pr);
-      }
-    }
-
-    for (SNode child : node.getChildren()) {
-      prepare(child);
     }
   }
 }

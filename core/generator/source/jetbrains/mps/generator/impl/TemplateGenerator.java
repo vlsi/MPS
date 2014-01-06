@@ -109,6 +109,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private boolean myInplaceModelChange = false;
   private WeavingProcessor myWeavingProcessor;
   private final boolean myInplaceChangeEnabled;
+  private final PostponedReferenceUpdate myPostponedRefs;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            RuleManager ruleManager, SModel inputModel, SModel outputModel,
@@ -127,6 +128,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ? new QueryExecutionContextWithTracing(new DefaultQueryExecutionContext(this), performanceTracer)
       : new DefaultQueryExecutionContext(this);
     myInplaceChangeEnabled = options.applyTransformationsInplace();
+    myPostponedRefs = new PostponedReferenceUpdate(this);
   }
 
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
@@ -198,9 +200,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (myChanged || isPrimary) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
       ttrace.push("restoring references", false);
-      PostponedReferenceUpdate ru = new PostponedReferenceUpdate(getOutputModel(), this);
-      ru.prepare();
-      ru.replace();
+      myPostponedRefs.prepare();
+      myPostponedRefs.replace();
       ttrace.pop();
 
       // advance blocked reduction data
@@ -635,6 +636,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myIsStrict;
   }
 
+  public PostponedReference register(@NotNull PostponedReference ref) {
+    myPostponedRefs.add(ref);
+    return ref;
+  }
+
   void setChanged() {
     myChanged = true;
   }
@@ -898,7 +904,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               outputNode,
               inputReference.getSourceNode(),
               inputTargetNode);
-          PostponedReference reference = new PostponedReference(refInfo);
+          PostponedReference reference = myGenerator.register(new PostponedReference(refInfo));
           reference.setReferenceInOutputSourceNode();
         } else if (inputTargetNode.getModel() != null) {
           SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);

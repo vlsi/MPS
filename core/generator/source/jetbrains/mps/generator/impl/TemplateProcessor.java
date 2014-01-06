@@ -184,7 +184,7 @@ public final class TemplateProcessor {
           linksHandledWithMacro.add(refMacroRole);
           MacroResolver mr = new MacroResolver(myEnv.getQueryExecutor(), templateChildNode, templateNode.getReferenceTarget(refMacroRole));
           ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, outputNode, refMacroRole, context);
-          PostponedReference postponedReference = new PostponedReference(refInfo);
+          PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
           postponedReference.setReferenceInOutputSourceNode();
         }
       } else {
@@ -233,7 +233,7 @@ public final class TemplateProcessor {
             GeneratorUtil.getTemplateNodeId(templateReferentNode),
             resolveInfo,
             context);
-        PostponedReference postponedReference = new PostponedReference(refInfo);
+        PostponedReference postponedReference = myGenerator.register(new PostponedReference(refInfo));
         postponedReference.setReferenceInOutputSourceNode();
       } else {
         outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);

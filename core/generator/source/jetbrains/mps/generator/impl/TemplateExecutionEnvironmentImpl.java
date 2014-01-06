@@ -195,7 +195,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           ref.getSourceNode(), // XXX shall I use 'node' here?
           inputNode,
           ref.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(refInfo);
+        PostponedReference postponedReference = generator.register(new PostponedReference(refInfo));
         postponedReference.setReferenceInOutputSourceNode();
       }
     }
@@ -297,7 +297,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       parentIndex,
       resolveInfo,
       context);
-    new PostponedReference(refInfo).setReferenceInOutputSourceNode();
+    generator.register(new PostponedReference(refInfo)).setReferenceInOutputSourceNode();
   }
 
   @Override
@@ -309,13 +309,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       templateNodeId,
       resolveInfo,
       context);
-    new PostponedReference(refInfo).setReferenceInOutputSourceNode();
+    generator.register(new PostponedReference(refInfo)).setReferenceInOutputSourceNode();
   }
 
   @Override
   public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver, outputNode, role, context);
-    PostponedReference postponedReference = new PostponedReference(refInfo);
+    PostponedReference postponedReference = generator.register(new PostponedReference(refInfo));
     postponedReference.setReferenceInOutputSourceNode();
   }
 
