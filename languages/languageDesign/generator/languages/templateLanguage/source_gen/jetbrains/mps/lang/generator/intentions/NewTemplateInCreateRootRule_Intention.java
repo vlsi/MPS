@@ -19,8 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInCreateRootRule_Intention implements IntentionFactory {
@@ -116,7 +114,7 @@ public class NewTemplateInCreateRootRule_Intention implements IntentionFactory {
             return;
           }
           SPropertyOperations.set(SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", name.value);
-          SNodeAccessUtil.setProperty(root, SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
+          MacroIntentionsUtil.copyVirtualPackage(root, node);
           SLinkOperations.setTarget(rule, "templateNode", SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
         }
       });

@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
@@ -74,7 +75,7 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       }).isNotEmpty()) {
         return false;
       }
-      if (QueriesUtil.isInsideTemplateFragment(node)) {
+      if (EditingUtil.isInsideTemplateFragment(node)) {
         return false;
       }
       return true;
@@ -87,7 +88,7 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
           return !(SNodeOperations.isAttribute(it));
         }
       }).first();
-      QueriesUtil.createTemplateFragment(applyToNode);
+      EditingUtil.createTemplateFragment(applyToNode);
     }
 
     public String getKeyStroke() {
@@ -129,11 +130,11 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isNodeMacroApplicable(node);
+      return EditingUtil.isNodeMacroApplicable(node);
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode nodeMacro = QueriesUtil.addNodeMacro(node);
+      SNode nodeMacro = EditingUtil.addNodeMacro(node);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, nodeMacro, SelectionManager.FIRST_CELL, 1);
     }
@@ -177,11 +178,11 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
+      return EditingUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
+      SNode propertyMacro = EditingUtil.addPropertyMacro(node, editorContext.getSelectedCell());
       // set caret 
       SelectionUtil.selectCell(editorContext, propertyMacro, SelectionManager.FIRST_CELL);
       EditorInspector inspector = editorContext.getInspector();
@@ -228,11 +229,11 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());
+      return EditingUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
+      SNode referenceMacro = EditingUtil.addReferenceMacro(node, editorContext.getSelectedCell());
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, referenceMacro, SelectionManager.FIRST_CELL, 2);
       EditorInspector inspector = editorContext.getInspector();

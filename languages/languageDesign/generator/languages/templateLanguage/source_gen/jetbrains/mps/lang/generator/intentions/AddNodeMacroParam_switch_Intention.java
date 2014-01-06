@@ -6,10 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
@@ -18,6 +15,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -60,11 +58,10 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node);
-    if (sm == null || !(sm.getModule() instanceof Generator)) {
+    if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
-    return QueriesUtil.isNodeMacroApplicable(node);
+    return EditingUtil.isNodeMacroApplicable(node);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -102,7 +99,7 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode nodeMacro = QueriesUtil.addNodeMacro(node);
+      SNode nodeMacro = EditingUtil.addNodeMacro(node);
       SNode switchMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro", null);
       SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
       SLinkOperations.setTarget(switchMacro, "template", myParameter, false);

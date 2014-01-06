@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -87,8 +87,8 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       EditorCell cell = editorContext.getSelectedCell();
-      String linkRole = QueriesUtil.getEditedLinkRole(cell);
-      SNode referentNode = QueriesUtil.getEditedLinkReferentNode(cell);
+      String linkRole = EditingUtil.getEditedLinkRole(cell);
+      SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
       SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", linkRole), "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion");
     }
 

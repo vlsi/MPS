@@ -6,9 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -61,8 +59,7 @@ public class ReplaceWithConcreteSubconcept_Intention implements IntentionFactory
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node);
-    if (sm == null || !(sm.getModule() instanceof Generator)) {
+    if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);

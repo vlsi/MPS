@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.generator.editor.QueriesUtil;
+import jetbrains.mps.lang.generator.helper.EditingUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -86,7 +86,7 @@ public class AddContext_Intention implements IntentionFactory {
       } else {
         SLinkOperations.setTarget(result, "contentNode", tNode, true);
       }
-      QueriesUtil.createTemplateFragment(tNode);
+      EditingUtil.createTemplateFragment(tNode);
     }
 
     public IntentionDescriptor getDescriptor() {
