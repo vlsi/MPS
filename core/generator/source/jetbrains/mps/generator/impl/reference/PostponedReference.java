@@ -82,7 +82,7 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
   /**
    * @return null is not resolved and not required.
    */
-  private SReference initReplacementReference(TemplateGenerator generator) {
+  public SReference initReplacementReference(TemplateGenerator generator) {
     if (myReplacementReference != null) {
       return myReplacementReference;
     }
@@ -103,7 +103,7 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
    * replaces this instance with ether StaticReference or with DynamicReference. (only static so far)
    * removes reference in case of error.
    */
-  public void validateAndReplace(TemplateGenerator generator) {
-    getSourceNode().setReference(getRole(), initReplacementReference(generator));
+  public void replace() {
+    getSourceNode().setReference(getRole(), myReplacementReference);
   }
 }

@@ -33,6 +33,7 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.PostponedReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
@@ -174,6 +175,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ttrace.pop();
     } // XXX if in-place change, every required root has been reloaded on previous step, imo
 
+    checkMonitorCanceled();
+
     // weaving
     ttrace.push("weavings", false);
     myWeavingProcessor.apply();
@@ -190,15 +193,19 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDelayedChanges.doAllChanges(this);
     ttrace.pop();
 
+    checkMonitorCanceled();
+
     if (myChanged || isPrimary) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
       ttrace.push("restoring references", false);
-      revalidateAllReferences();
+      PostponedReferenceUpdate ru = new PostponedReferenceUpdate(getOutputModel(), this);
+      ru.prepare();
+      ru.replace();
       ttrace.pop();
-      checkMonitorCanceled();
 
       // advance blocked reduction data
       getBlockedReductionsData().advanceStep();
+      checkMonitorCanceled();
     }
     return myChanged;
   }
@@ -259,6 +266,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         copyRootInputNode(rootToCopy, rootenv);
       }
     }
+    checkMonitorCanceled();
   }
 
   private void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
@@ -579,27 +587,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (myDeltaBuilder != null) {
         myDeltaBuilder.leaveNestedCopySrc(inputNode);
       }
-    }
-  }
-
-  private void revalidateAllReferences() throws GenerationCanceledException {
-    // replace all postponed references
-    for (SNode root : getOutputModel().getRootNodes()) {
-      checkMonitorCanceled();
-      revalidateAllReferences(root);
-    }
-  }
-
-  private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
-    for (SReference ref : node.getReferences()) {
-      if (ref instanceof PostponedReference) {
-        PostponedReference pr = (PostponedReference) ref;
-        pr.validateAndReplace(this);
-      }
-    }
-
-    for (SNode child : node.getChildren()) {
-      revalidateAllReferences(child);
     }
   }
 
