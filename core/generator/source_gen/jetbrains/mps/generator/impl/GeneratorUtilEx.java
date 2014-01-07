@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public final class GeneratorUtilEx {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(GeneratorUtilEx.class));
@@ -116,26 +115,6 @@ public final class GeneratorUtilEx {
     return templateFragments;
   }
 
-  public static boolean checkIfOneOrMaryAdjacentFragments(List<SNode> fragments, SNode templateContainer, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-    if (fragments.isEmpty()) {
-      generator.showErrorMessage(inputNode, templateContainer, ruleNode, "couldn't process template: no template fragments found");
-      return false;
-    }
-    if (fragments.size() > 1) {
-      SNode templateNode = SNodeOperations.getParent(fragments.get(0));
-      SNode parent = SNodeOperations.getParent(templateNode);
-      String role = templateNode.getRoleInParent();
-      for (SNode fragment : fragments) {
-        templateNode = SNodeOperations.getParent(fragment);
-        if (!((parent == SNodeOperations.getParent(templateNode) && role.equals(templateNode.getRoleInParent())))) {
-          generator.showErrorMessage(inputNode, templateContainer, ruleNode, "couldn't process template: all template fragments must reside in the same parent node");
-          return false;
-        }
-      }
-    }
-    return true;
-  }
-
   public static void dispatchRuleConsequence(@NotNull SNode ruleConsequence, @NotNull GeneratorUtilEx.ConsequenceDispatch dispatch) {
     if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
       dispatch.templateDeclarationReference(ruleConsequence);
@@ -154,27 +133,6 @@ public final class GeneratorUtilEx {
     } else {
       dispatch.unknown(ruleConsequence);
     }
-  }
-
-
-
-  public static DismissTopMappingRuleException.MessageType processGeneratorMessage(SNode message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
-    DismissTopMappingRuleException.MessageType messageType = null;
-    if (message != null) {
-      String text = SPropertyOperations.getString(message, "messageText");
-      if (SPropertyOperations.hasValue(message, "messageType", "error", "info")) {
-        messageType = DismissTopMappingRuleException.MessageType.error;
-        generator.showErrorMessage(inputNode, templateNode, ruleNode, text);
-      } else
-      if (SPropertyOperations.hasValue(message, "messageType", "warning", "info")) {
-        messageType = DismissTopMappingRuleException.MessageType.warning;
-        generator.getLogger().warning(inputNode, text);
-      } else {
-        messageType = DismissTopMappingRuleException.MessageType.info;
-        generator.getLogger().info(inputNode, text);
-      }
-    }
-    return messageType;
   }
 
   public static String getGeneratorMessage_text(SNode generatorMessage) {

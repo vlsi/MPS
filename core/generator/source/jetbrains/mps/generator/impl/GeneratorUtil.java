@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -176,6 +177,17 @@ public class GeneratorUtil {
       return new ProblemDescription(node.getReference(), String.format("-- was %s: %s", nodeRole, SNodeUtil.getDebugText(node)));
     }
     return null;
+  }
+
+  public static void log(@NotNull IGeneratorLogger log, @NotNull SNodeReference templateNode, @Nullable MessageType messageType, @Nullable String text,
+      @Nullable ProblemDescription... extra) {
+    if (messageType == MessageType.error) {
+      log.error(templateNode, String.valueOf(text), extra);
+    } else if (messageType == MessageType.warning) {
+      log.warning(templateNode, String.valueOf(text), extra);
+    } else {
+      log.info(templateNode, String.valueOf(text));
+    }
   }
 
   public static <T> T[] concat(T[] arr1, T[] arr2) {

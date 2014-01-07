@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
 import jetbrains.mps.generator.impl.RuleUtil;
@@ -24,7 +26,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -102,12 +103,11 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   @Override
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
 
-    SNode generatorMessage = RuleUtil.getSwitch_NullInputMessage(mySwitch);
-    if (generatorMessage != null) {
-      // TODO there's little value in GeneratorUtilEx.processGeneratorMessage per se, and once the code to process consequences moved out from
-      // GeneratorUtilEx to RuleConsequenceProcessor, and doesn't use processGeneratorMessage any longer, there's no justification for this method to survive in
-      // its present state
-      GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), null, environment.getGenerator());
+    SNode message = RuleUtil.getSwitch_NullInputMessage(mySwitch);
+    if (message != null) {
+      DismissTopMappingRuleException.MessageType messageType = GeneratorUtilEx.getGeneratorMessage_kind(message);
+      String text = GeneratorUtilEx.getGeneratorMessage_text(message);
+      GeneratorUtil.log(environment.getLogger(), templateSwitch, messageType, text, GeneratorUtil.describeIfExists(context.getInput(), "input node"));
     }
   }
 }
