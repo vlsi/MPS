@@ -340,7 +340,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
     } catch (TemplateProcessingFailureException ex) {
-      getLogger().error(rule.getRuleNode(), "couldn't create root node", ex.asProblemDescription());
+      getLogger().error(rule.getRuleNode(), String.format("couldn't create root node: %s", ex.getMessage()), ex.asProblemDescription());
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
@@ -375,7 +375,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
     } catch (TemplateProcessingFailureException ex) {
-      getLogger().error(rule.getRuleNode(), "couldn't create root node", ex.asProblemDescription());
+      getLogger().error(rule.getRuleNode(), String.format("couldn't create root node: %s", ex.getMessage()), ex.asProblemDescription());
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
@@ -529,8 +529,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
     } catch (TemplateProcessingFailureException ex) {
-      if (!myFailedRules.contains(reductionRule.getRuleNode())) {
-        getLogger().error(reductionRule.getRuleNode(), "Reduction rule failed", ex.asProblemDescription());
+      SNodeReference ruleNode = reductionRule.getRuleNode();
+      if (myFailedRules.add(ruleNode)) {
+        getLogger().error(ruleNode, String.format("Reduction rule failed: %s", ex.getMessage()), ex.asProblemDescription());
       }
     } catch (GenerationFailureException ex) {
       throw ex;

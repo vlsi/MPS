@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -81,12 +82,15 @@ public class TemplateContainer {
       throw new TemplateProcessingFailureException(myTemplateNode, "couldn't process template: no template fragments found");
     }
     if (fragments.size() > 1) {
-      final SNode parent = myTemplateNode.getParent();
-      final String role = myTemplateNode.getRoleInParent();
-      for (SNode fragment : fragments) {
-        SNode templateNode = fragment.getParent(); // GeneratorUtilEx.getTemplateFragments() shall not return null
+      // GeneratorUtilEx.getTemplateFragments() shall not return null
+      Iterator<SNode> it = fragments.iterator();
+      SNode templateNode = it.next().getParent();
+      final SNode commonParent = templateNode.getParent();
+      final String role = templateNode.getRoleInParent();
+      while (it.hasNext()) {
+        templateNode = it.next().getParent();
         assert templateNode != null; // free-floating fragment would be odd
-        if (parent != templateNode.getParent() || !role.equals(templateNode.getRoleInParent())) {
+        if (commonParent != templateNode.getParent() || !role.equals(templateNode.getRoleInParent())) {
           String msg = "Couldn't process template: all template fragments must reside in the same parent node. Roles: expected %s, met %s";
           throw new TemplateProcessingFailureException(myTemplateNode, String.format(msg, role, templateNode.getRoleInParent()));
         }
