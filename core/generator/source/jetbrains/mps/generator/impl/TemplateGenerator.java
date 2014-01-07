@@ -21,7 +21,6 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.CloneUtil.Factory;
 import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
@@ -64,6 +63,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -827,6 +827,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
+    private void reportBrokenRef(@NotNull SNode inputNode, @NotNull SReference ref) {
+      getLogger().error(inputNode.getReference(),
+          String.format("broken reference '%s' in %s (target model is null)", ref.getRole(), SNodeUtil.getDebugText(inputNode)),
+          GeneratorUtil.describeIfExists(inputNode, "input node"));
+    }
+
     public SNode copyInputNode(@NotNull SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       // no reduction found - do node copying
       myGenerationTracer.pushCopyOperation();
@@ -859,10 +865,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : myOutputModelRef;
             if (inputReference instanceof StaticReference) {
               if (targetModelReference == null) {
-                getLogger().error(inputNode,
-                    "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) +
-                        " (target model is null)",
-                    GeneratorUtil.describeIfExists(inputNode, "input node"));
+                reportBrokenRef(inputNode, inputReference);
                 continue;
               }
 
@@ -882,9 +885,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
               outputNode.setReference(outputReference.getRole(), outputReference);
             } else {
-              getLogger().error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " +
-                  org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode),
-                  new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
+              String msg = "internal error: can't clone reference '%s' in %s. Reference class: %s";
+              getLogger().error(inputNode.getReference(),
+                  String.format(msg, inputReference.getRole(), SNodeUtil.getDebugText(inputNode), inputReference.getClass().getName()));
             }
             continue;
           }
@@ -892,9 +895,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
         SNode inputTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(inputReference);
         if (inputTargetNode == null) {
-          getLogger().error(inputNode,
-              "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode),
-              GeneratorUtil.describeIfExists(inputNode, "input node"));
+          reportBrokenRef(inputNode, inputReference);
           continue;
         }
 
@@ -909,10 +910,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         } else if (inputTargetNode.getModel() != null) {
           SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);
         } else {
-          getLogger().error(inputNode,
-              "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) +
-                  " (unregistered target node)",
-              GeneratorUtil.describeIfExists(inputNode, "input node"));
+          reportBrokenRef(inputNode, inputReference);
         }
       }
 
