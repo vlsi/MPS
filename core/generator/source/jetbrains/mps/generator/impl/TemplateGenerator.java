@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
@@ -340,8 +339,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
-    } catch (TemplateProcessingFailureException e) {
-      getLogger().error(rule.getRuleNode(), "couldn't create root node");
+    } catch (TemplateProcessingFailureException ex) {
+      getLogger().error(rule.getRuleNode(), "couldn't create root node", ex.asProblemDescription());
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
@@ -375,8 +374,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           setChanged();
         }
       }
-    } catch (TemplateProcessingFailureException e) {
-      getLogger().error(rule.getRuleNode(), "couldn't create root node", GeneratorUtil.describe(inputNode, "input node"));
+    } catch (TemplateProcessingFailureException ex) {
+      getLogger().error(rule.getRuleNode(), "couldn't create root node", ex.asProblemDescription());
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
@@ -528,6 +527,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         } else {
           getLogger().error(ruleNode, messageText);
         }
+      }
+    } catch (TemplateProcessingFailureException ex) {
+      if (!myFailedRules.contains(reductionRule.getRuleNode())) {
+        getLogger().error(reductionRule.getRuleNode(), "Reduction rule failed", ex.asProblemDescription());
       }
     } catch (GenerationFailureException ex) {
       throw ex;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.List;
@@ -42,7 +43,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final RoleValidation myValidation;
   private final GeneratorMappings myMappings;
 
-  private Set<SNode> myFailedRules = new ConcurrentHashSet<SNode>();
+  protected final Set<SNodeReference> myFailedRules = new ConcurrentHashSet<SNodeReference>();
 
   protected AbstractTemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor, SModel inputModel, SModel outputModel) {
     myOperationContext = operationContext;
@@ -94,7 +95,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   @Override
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    if (ruleNode != null && !myFailedRules.add(ruleNode)) {
+    if (ruleNode != null && !myFailedRules.add(ruleNode.getReference())) {
       // do not show duplicating messages
       return;
     }

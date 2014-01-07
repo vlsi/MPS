@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,48 +226,32 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException {
-    TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
-    if (templateModel == null) {
-      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
-        GeneratorUtil.describeIfExists(context.getInput(), "input"),
-        GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
-        GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
-      return Collections.emptyList();
-    }
-
-    TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
+    TemplateDeclaration templateDeclarationInstance = loadTemplateDeclaration(templateDeclaration, templateNode, context, arguments);
     if (templateDeclarationInstance == null) {
-      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
-        GeneratorUtil.describeIfExists(context.getInput(), "input"),
-        GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
-        GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
       return Collections.emptyList();
     }
-
     return templateDeclarationInstance.apply(this, context);
   }
 
   @Override
   public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException {
-    TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
-    if (templateModel == null) {
-      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
-        GeneratorUtil.describeIfExists(context.getInput(), "input"),
-        GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
-        GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
-      return Collections.emptyList();
-    }
-
-    TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
-    if (templateDeclarationInstance == null || !(templateDeclarationInstance instanceof TemplateDeclarationWeavingAware)) {
-      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
-        GeneratorUtil.describeIfExists(context.getInput(), "input"),
-        GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
-        GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
-      return Collections.emptyList();
-    }
-
+    TemplateDeclaration templateDeclarationInstance = loadTemplateDeclaration(templateDeclaration, templateNode, context, arguments);
     return ((TemplateDeclarationWeavingAware) templateDeclarationInstance).weave(this, context, outputContextNode);
+  }
+
+
+  private TemplateDeclaration loadTemplateDeclaration(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) {
+    TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
+    TemplateDeclaration templateDeclarationInstance = templateModel == null ? null : templateModel.loadTemplate(templateDeclaration, arguments);
+    if (templateModel == null || templateDeclarationInstance == null) {
+      String msg = "%s not found: cannot apply template declaration, try to check & regenerate affected generators";
+      getLogger().error(templateNode, String.format(msg, templateModel == null ? "template model" : "declaration"),
+          GeneratorUtil.describeIfExists(context.getInput(), "input"),
+          GeneratorUtil.describe(templateNode, "template"),
+          GeneratorUtil.describe(templateDeclaration, "template declaration"));
+      return null;
+    }
+    return templateDeclarationInstance;
   }
 
 

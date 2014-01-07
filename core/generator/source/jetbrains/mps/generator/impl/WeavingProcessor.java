@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
@@ -121,7 +120,7 @@ public class WeavingProcessor {
           someOutputGenerated = myRule.apply(myEnv, context, outputContextNode);
 
         } catch (DismissTopMappingRuleException e) {
-          myEnv.getGenerator().showErrorMessage(context.getInput(), null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "wrong template: dismission of weaving rule is not supported");
+          myEnv.getGenerator().showErrorMessage(context.getInput(), null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "wrong template: dismiss in weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
           myEnv.getGenerator().showErrorMessage(context.getInput(), null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "weaving rule: error processing template fragment");
         } finally {

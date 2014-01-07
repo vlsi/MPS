@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,19 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
 import jetbrains.mps.generator.impl.RuleUtil;
-import jetbrains.mps.generator.impl.TemplateProcessor;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, Nov 29, 2010
@@ -90,11 +90,9 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     try {
       RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
-      if (!rcp.prepare(defaultConsequence, templateSwitch.resolve(MPSModuleRepository.getInstance()), context)) {
-          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), defaultConsequence, "error processing $SWITCH$/default");
-          return null;
-      }
-      return rcp.processRuleConsequence(mappingName);
+      context = context.subContext(mappingName);
+      rcp.prepare(defaultConsequence, context);
+      return rcp.processRuleConsequence();
     } catch (AbandonRuleInputException ex) {
       // it's ok. just ignore
       return Collections.emptyList();

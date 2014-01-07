@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -38,8 +34,6 @@ public class TemplateContainer {
   private final TemplateProcessor myTemplateProcessor;
   private final SNode myTemplateNode;
   private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
-  private TemplateContext myConsequenceContext;
-  private SNode myRuleNode;
 
   public TemplateContainer(@NotNull TemplateProcessor templateProcessor, @NotNull SNode templateContainer) {
     myTemplateProcessor = templateProcessor;
@@ -52,66 +46,52 @@ public class TemplateContainer {
     myNodeAndMappingNamePairs = Collections.singletonList(fragment);
   }
 
-  // FIXME ctx and ruleNode are here for error reporting only, once I minimize number of checkIfOneOrMaryAdjacentFragments
-  // calls, shall refactor so that template fragments can be extracted and checked only once
-  public boolean initialize(@NotNull TemplateContext ctx, @Nullable SNode ruleNode) {
-    myConsequenceContext = ctx;
-    myRuleNode = ruleNode;
+  /*
+   * Although the method is easy to merge into apply now, I left it looking forward
+   * to container initialization done once for a template, while applied multiple times.
+   */
+  public void initialize() throws TemplateProcessingFailureException {
     if (myNodeAndMappingNamePairs != null) {
-      return true;
+      return;
     }
-    List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(myTemplateNode);
-    if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, myTemplateNode, ctx.getInput(), myRuleNode, getGenerator())) {
-      List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
-      for (SNode fragment : fragments) {
-        result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
-      }
-      myNodeAndMappingNamePairs = result;
-      return true;
+    List<SNode> fragments = checkAdjacentFragments();
+    List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
+    for (SNode fragment : fragments) {
+      result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null)));
     }
-    return false;
+    myNodeAndMappingNamePairs = result;
   }
 
-  // FIXME exception handling need attention, at last
-  public List<SNode> apply(String mappingName) {
-    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
-      SNode templateNode = nodeAndMappingNamePair.o1;
-      String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-      try {
-        List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, myConsequenceContext.subContext(innerMappingName), null);
-        if (_outputNodes != null) {
-          outputNodes.addAll(_outputNodes);
-        }
-      } catch (TemplateProcessingFailureException ex) {
-        TemplateExecutionEnvironment env = myTemplateProcessor.getEnvironment();
-        env.getGenerator().showErrorMessage(myConsequenceContext.getInput(), myRuleNode, "error processing template fragment");
-      } catch (Throwable t) {
-        // XXX I got no idea why Throwable was catched in Reduction[Pattern]RuleInterpreted
-        // but silently propagated in IfMacro.else and in switch.default. Use it here
-        // for consistency (and likely for later removal)
-        TemplateExecutionEnvironment env = myTemplateProcessor.getEnvironment();
-        env.getLogger().handleException(t);
-        env.getGenerator().showErrorMessage(myConsequenceContext.getInput(), templateNode, myRuleNode, "error processing template fragment");
-      }
-    }
-    return outputNodes;
-  }
-
-  public List<SNode> applyFailFast() throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+  public List<SNode> apply(@NotNull TemplateContext ctx)
+      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
     for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String innerMappingName = nodeAndMappingNamePair.o2;
-      List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, myConsequenceContext.subContext(innerMappingName), null);
-      if (_outputNodes != null) {
-        outputNodes.addAll(_outputNodes);
-      }
+      List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, ctx.subContext(innerMappingName), null);
+      outputNodes.addAll(_outputNodes);
     }
     return outputNodes;
   }
 
-  private ITemplateGenerator getGenerator() {
-    return myTemplateProcessor.getEnvironment().getGenerator();
+  @NotNull
+  private List<SNode> checkAdjacentFragments() throws TemplateProcessingFailureException {
+    List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(myTemplateNode);
+    if (fragments.isEmpty()) {
+      throw new TemplateProcessingFailureException(myTemplateNode, "couldn't process template: no template fragments found");
+    }
+    if (fragments.size() > 1) {
+      final SNode parent = myTemplateNode.getParent();
+      final String role = myTemplateNode.getRoleInParent();
+      for (SNode fragment : fragments) {
+        SNode templateNode = fragment.getParent(); // GeneratorUtilEx.getTemplateFragments() shall not return null
+        assert templateNode != null; // free-floating fragment would be odd
+        if (parent != templateNode.getParent() || !role.equals(templateNode.getRoleInParent())) {
+          String msg = "Couldn't process template: all template fragments must reside in the same parent node. Roles: expected %s, met %s";
+          throw new TemplateProcessingFailureException(myTemplateNode, String.format(msg, role, templateNode.getRoleInParent()));
+        }
+      }
+    }
+    return fragments;
   }
 }

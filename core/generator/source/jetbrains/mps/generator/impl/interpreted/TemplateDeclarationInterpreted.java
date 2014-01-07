@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,15 +69,12 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
 
     if (myTemplateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration))) {
       TemplateContainer tc = new TemplateContainer(new TemplateProcessor(environment), myTemplateNode);
-      if (!tc.initialize(context, null)) {
-        environment.getGenerator().showErrorMessage(context.getInput(), myTemplateNode, "error processing template declaration");
-        return null;
-      }
+      tc.initialize();
 
       final SNodePointer templateNodeRef = new SNodePointer(myTemplateNode);
       environment.getTracer().pushTemplateNode(templateNodeRef);
       try {
-        return tc.applyFailFast();
+        return tc.apply(context);
       } finally {
         environment.getTracer().closeTemplateNode(templateNodeRef);
       }
