@@ -4,6 +4,7 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -11,46 +12,23 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
+import java.util.ListIterator;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
 
     String commandId = getCellId() + "_" + node.getNodeId().toString();
-    setXProperty(new WritableModelProperty<Integer>(commandId, getContext().getOperationContext().getProject()) {
-      protected Integer getModelPropertyValue() {
-        return getXPositionFromModel();
-      }
-
-      protected void setModelPropertyValue(Integer value) {
-        setXPositionToModel(value);
-      }
-    });
-    setYProperty(new WritableModelProperty<Integer>(commandId, getContext().getOperationContext().getProject()) {
-      protected Integer getModelPropertyValue() {
-        return getYPositionFromModel();
-      }
-
-      protected void setModelPropertyValue(Integer value) {
-        setYPositionToModel(value);
-      }
-    });
-    addModelProperty(getXProperty());
-    addModelProperty(getYProperty());
     initPorts();
   }
 
   protected abstract void initPorts();
 
-  protected abstract Integer getXPositionFromModel();
+  public abstract ReadableProperty<Integer> getXProperty();
 
-  protected void setXPositionToModel(Integer value) {
-  }
-
-  protected abstract Integer getYPositionFromModel();
-
-  protected void setYPositionToModel(Integer value) {
-  }
+  public abstract ReadableProperty<Integer> getYProperty();
 
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
 
@@ -74,23 +52,23 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }
   }
 
-  private WritableModelProperty<Integer> myXProperty;
-
-  public WritableModelProperty<Integer> getXProperty() {
-    return this.myXProperty;
+  protected static boolean skipNextIfSame(ListIterator listIterator, Object nextElement) {
+    if (listIterator.hasNext()) {
+      if (listIterator.next() == nextElement) {
+        return true;
+      }
+      listIterator.previous();
+    }
+    return false;
   }
 
-  private void setXProperty(WritableModelProperty<Integer> value) {
-    this.myXProperty = value;
-  }
-
-  private WritableModelProperty<Integer> myYProperty;
-
-  public WritableModelProperty<Integer> getYProperty() {
-    return this.myYProperty;
-  }
-
-  private void setYProperty(WritableModelProperty<Integer> value) {
-    this.myYProperty = value;
+  protected EditorCell getDirectChildCell(SNode node) {
+    // TODO: use more effitient way of getting port cell (by ID) 
+    for (EditorCell nextCell : Sequence.fromIterable(getContentCells())) {
+      if (nextCell.getSNode() == node) {
+        return nextCell;
+      }
+    }
+    return null;
   }
 }

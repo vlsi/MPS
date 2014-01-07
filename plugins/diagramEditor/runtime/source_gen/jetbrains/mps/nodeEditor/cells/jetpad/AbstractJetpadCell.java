@@ -36,6 +36,7 @@ public class AbstractJetpadCell extends EditorCell_Collection {
       myModelProperties = new LinkedList<WritableModelProperty>();
     }
     myModelProperties.add(modelProperty);
+    modelProperty.get();
   }
 
   @Override

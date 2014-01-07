@@ -37,6 +37,9 @@ public class DiagramEditor extends AbstractJetpadEditor {
     final DiagramCell diagramCell = new DiagramCell(editorContext, diagramNode) {
 
 
+      protected void init() {
+      }
+
       public Mapper<SNode, DiagramView> createMapper() {
         return new Mapper<SNode, DiagramView>(diagramNode, new ConnectionRoutingView(new OrthogonalRouter())) {
 

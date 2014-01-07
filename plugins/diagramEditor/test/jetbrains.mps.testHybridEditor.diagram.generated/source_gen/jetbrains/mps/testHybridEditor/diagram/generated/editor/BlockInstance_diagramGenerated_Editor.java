@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.model.collections.list.ObservableList;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
+import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -35,10 +37,12 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
+import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ListIterator;
 
 public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -64,26 +68,38 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     };
     final ObservableList<SNode> inputPorts = new ObservableArrayList<SNode>();
     final ObservableList<SNode> outputPorts = new ObservableArrayList<SNode>();
+
     BlockCell editorCell = new BlockCell(editorContext, node) {
+      private final WritableModelProperty<Integer> myXPropery = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
+        protected Integer getModelPropertyValue() {
+          return SPropertyOperations.getInteger(node, "x");
+        }
+
+        protected void setModelPropertyValue(Integer x) {
+          SPropertyOperations.set(node, "x", "" + (x));
+        }
+      };
+      private final WritableModelProperty<Integer> myYPropery = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
+        protected Integer getModelPropertyValue() {
+          return SPropertyOperations.getInteger(node, "y");
+        }
+
+        protected void setModelPropertyValue(Integer y) {
+          SPropertyOperations.set(node, "y", "" + (y));
+        }
+      };
+
       protected void initPorts() {
       }
 
-      protected Integer getXPositionFromModel() {
-        return SPropertyOperations.getInteger(node, "x");
+
+
+      public ReadableProperty<Integer> getXProperty() {
+        return myXPropery;
       }
 
-      protected Integer getYPositionFromModel() {
-        return SPropertyOperations.getInteger(node, "y");
-      }
-
-      @Override
-      protected void setXPositionToModel(Integer x) {
-        SPropertyOperations.set(node, "x", "" + (x));
-      }
-
-      @Override
-      protected void setYPositionToModel(Integer y) {
-        SPropertyOperations.set(node, "y", "" + (y));
+      public ReadableProperty<Integer> getYProperty() {
+        return myYPropery;
       }
 
       public Mapper<SNode, DiagramNodeView> createMapper() {
@@ -189,11 +205,11 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     blockView.rect.background().set(Color.TRANSPARENT);
     blockView.padding().set(0);
 
-    blockView.moveTo(new Vector(blockCell.getXProperty().get(), blockCell.getYProperty().get()));
+    blockView.moveTo(new Vector(((Property<Integer>) blockCell.getXProperty()).get(), ((Property<Integer>) blockCell.getYProperty()).get()));
     blockView.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
       public void move(Vector delta) {
-        blockCell.getXProperty().set(blockCell.getXProperty().get() + delta.x);
-        blockCell.getYProperty().set(blockCell.getYProperty().get() + delta.y);
+        ((Property<Integer>) blockCell.getXProperty()).set(((Property<Integer>) blockCell.getXProperty()).get() + delta.x);
+        ((Property<Integer>) blockCell.getYProperty()).set(((Property<Integer>) blockCell.getYProperty()).get() + delta.y);
       }
     });
 
@@ -216,5 +232,101 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     blockView.rect.prop(JetpadUtils.SOURCE).set(node);
 
     return blockView;
+  }
+
+  private class BlockCellImpl_gju6mh_a extends BlockCell {
+    private final PropertyMapperCell<String> myPropertyCell_gju6mh_a0a;
+    private final ReadableProperty<Boolean> myProperty_gju6mh_a1a;
+    private final Property<Integer> myXProperty;
+    private final Property<Integer> myYProperty;
+    private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
+    private final ObservableList<SNode> myOutputPorts = new ObservableArrayList<SNode>();
+
+    private BlockCellImpl_gju6mh_a(EditorContext editorContext, final SNode node) {
+      super(editorContext, node);
+      myPropertyCell_gju6mh_a0a = new PropertyMapperCell<String>(editorContext, node) {
+        protected String getModelPropertyValueImpl() {
+          return SPropertyOperations.getString(node, "name");
+        }
+
+        protected void setModelPropertyValueImpl(String value) {
+          SPropertyOperations.set(node, "name", value);
+        }
+      };
+      addEditorCell(myPropertyCell_gju6mh_a0a);
+      myPropertyCell_gju6mh_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_gju6mh_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+      myProperty_gju6mh_a1a = JetpadUtils.modelProperty(new Computable<Boolean>() {
+        public Boolean compute() {
+          return true;
+        }
+      });
+      myProperty_gju6mh_a1a.get();
+      myXProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
+        protected Integer getModelPropertyValue() {
+          return SPropertyOperations.getInteger(node, "x");
+        }
+
+        protected void setModelPropertyValue(Integer value) {
+          SPropertyOperations.set(node, "x", "" + (value));
+        }
+      };
+      myXProperty.get();
+      getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myYProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
+        protected Integer getModelPropertyValue() {
+          return SPropertyOperations.getInteger(node, "y");
+        }
+
+        protected void setModelPropertyValue(Integer value) {
+          SPropertyOperations.set(node, "y", "" + (value));
+        }
+      };
+      myYProperty.get();
+      getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      synchronize();
+    }
+
+    protected void initPorts() {
+    }
+
+    protected void synchronize() {
+      SNode node = getSNode();
+      boolean inputPortDiffFound = false;
+      ListIterator<SNode> inputPortsIterator = myInputPorts.listIterator();
+      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "inMetaPorts", true))) {
+        inputPortDiffFound = inputPortDiffFound || !(BlockCell.skipNextIfSame(inputPortsIterator, port));
+        if (inputPortDiffFound) {
+          inputPortsIterator.add(port);
+        }
+      }
+      while (inputPortsIterator.hasNext()) {
+        inputPortsIterator.next();
+        inputPortsIterator.remove();
+      }
+      boolean outputPortDiffFound = false;
+      ListIterator<SNode> outputPortsIterator = myOutputPorts.listIterator();
+      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "outMetaPorts", true))) {
+        outputPortDiffFound = outputPortDiffFound || !(BlockCell.skipNextIfSame(outputPortsIterator, port));
+        if (outputPortDiffFound) {
+          outputPortsIterator.add(port);
+        }
+      }
+      while (outputPortsIterator.hasNext()) {
+        outputPortsIterator.next();
+        outputPortsIterator.remove();
+      }
+    }
+
+    public ReadableProperty<Integer> getXProperty() {
+      return myXProperty;
+    }
+
+    public ReadableProperty<Integer> getYProperty() {
+      return myYProperty;
+    }
+
+    public Mapper<SNode, DiagramNodeView> createMapper() {
+      return null;
+    }
   }
 }

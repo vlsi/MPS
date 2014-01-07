@@ -9,7 +9,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
@@ -40,15 +42,34 @@ public class BlockEditor extends AbstractJetpadEditor {
   @Override
   public EditorCell createEditorCell(final EditorContext context, final SNode node) {
     final BlockCell blockCell = new BlockCell(context, node) {
+      private final WritableModelProperty<Integer> myXPropery = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
+        protected Integer getModelPropertyValue() {
+          return SPropertyOperations.getInteger(node, "x");
+        }
+
+        protected void setModelPropertyValue(Integer x) {
+          SPropertyOperations.set(node, "x", "" + (x));
+        }
+      };
+      private final WritableModelProperty<Integer> myYPropery = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
+        protected Integer getModelPropertyValue() {
+          return SPropertyOperations.getInteger(node, "y");
+        }
+
+        protected void setModelPropertyValue(Integer y) {
+          SPropertyOperations.set(node, "y", "" + (y));
+        }
+      };
+
+      public ReadableProperty<Integer> getXProperty() {
+        return myXPropery;
+      }
+
+      public ReadableProperty<Integer> getYProperty() {
+        return myYPropery;
+      }
+
       protected void initPorts() {
-      }
-
-      protected Integer getXPositionFromModel() {
-        return SPropertyOperations.getInteger(node, "x");
-      }
-
-      protected Integer getYPositionFromModel() {
-        return SPropertyOperations.getInteger(node, "y");
       }
 
       public Mapper<SNode, DiagramNodeView> createMapper() {
