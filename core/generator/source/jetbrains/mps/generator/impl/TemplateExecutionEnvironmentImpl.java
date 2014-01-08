@@ -141,7 +141,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         templateId = GeneratorUtil.getTemplateNodeId(template);
       }
       Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateId, newInputNode, this);
-      assert _outputNodes != null; // copySrc contract
       // check node languages : prevent 'input node' query from returning node, which language was not counted when
       // planning the generation steps.
       for (SNode outputNode : _outputNodes) {

@@ -115,7 +115,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     SNode function = RuleUtil.getIfMacro_ConditionFunction(ifMacro);
     if (function == null) {
       myGenerator.showErrorMessage(inputNode, ifMacro, null, "cannot evaluate if-macro condition");
-      throw new GenerationFailureException();
+      throw new GenerationFailureException("cannot evaluate if-macro condition");
     }
 
     String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
@@ -184,7 +184,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
     if (propertyName == null || function == null) {
       myGenerator.showErrorMessage(inputNode, templateNode, propertyMacro, "cannot evaluate property macro");
-      throw new GenerationFailureException();
+      throw new GenerationFailureException("cannot evaluate property macro");
     }
 
     String templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);

@@ -549,6 +549,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /**
    * @return never null
    */
+  @NotNull
   Collection<SNode> copySrc(String mappingName, @NotNull String templateNodeId, SNode inputNode, TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
     assert this == env.getGenerator();
     if (inputNode.getModel() != getInputModel() || inputNode.getModel() == null) {
