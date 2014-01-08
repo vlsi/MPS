@@ -106,7 +106,7 @@ class GenerationSession {
     myLogger = logger;
     ttrace = tracer;
     myGenerationOptions = generationOptions;
-    mySessionContext = new GenerationSessionContext(invocationContext, generationOptions, logger, transientModelsModule, myOriginalInputModel);
+    mySessionContext = new GenerationSessionContext(invocationContext, generationOptions, logger, transientModelsModule, myOriginalInputModel, tracer);
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -310,7 +310,7 @@ class GenerationSession {
 
     // -- filter mapping configurations
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, null, inputModel, null, myDependenciesBuilder, ttrace);
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, null, inputModel, null, myDependenciesBuilder);
     try {
       LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
       while (it.hasNext()) {
@@ -459,8 +459,8 @@ class GenerationSession {
         myGenerationOptions.isGenerateInParallel()
             ?
             new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel,
-                myDependenciesBuilder, ttrace)
-            : new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder, ttrace);
+                myDependenciesBuilder)
+            : new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel, currentOutputModel, myDependenciesBuilder);
 
     hasChanges = tg.apply(isPrimary);
     ttrace.pop();
@@ -504,7 +504,7 @@ class GenerationSession {
 
     boolean preProcessed = false;
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentInputModel,
-        currentInputModel, myDependenciesBuilder, ttrace);
+        currentInputModel, myDependenciesBuilder);
     for (TemplateMappingScript preMappingScript : ruleManager.getScripts().getPreMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
@@ -552,7 +552,7 @@ class GenerationSession {
 
     boolean postProcessed = false;
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, ruleManager, currentModel, currentModel,
-        myDependenciesBuilder, ttrace);
+        myDependenciesBuilder);
     for (TemplateMappingScript postMappingScript : ruleManager.getScripts().getPostMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());

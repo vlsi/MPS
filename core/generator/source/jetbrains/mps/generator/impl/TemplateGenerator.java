@@ -101,7 +101,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private BlockedReductionsData myReductionData;
 
   private final IGenerationTracer myGenerationTracer;
-  private final IPerformanceTracer ttrace;
   private final DependenciesBuilder myDependenciesBuilder;
 
   private DeltaBuilder myDeltaBuilder;
@@ -111,8 +110,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final PostponedReferenceUpdate myPostponedRefs;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-                           RuleManager ruleManager, SModel inputModel, SModel outputModel,
-                           DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
+      RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder) {
 
     super(operationContext, progressMonitor, inputModel, outputModel);
     myRuleManager = ruleManager;
@@ -121,17 +119,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myIsStrict = options.isStrictMode();
     myDelayedChanges = new DelayedChanges();
     myDependenciesBuilder = dependenciesBuilder;
-    ttrace = performanceTracer;
     myOutputRoots = new ArrayList<SNode>();
+    DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this);
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
-      ? new QueryExecutionContextWithTracing(new DefaultQueryExecutionContext(this), performanceTracer)
-      : new DefaultQueryExecutionContext(this);
+      ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
+      : ctx;
     myInplaceChangeEnabled = options.applyTransformationsInplace();
     myPostponedRefs = new PostponedReferenceUpdate(this);
   }
 
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
+    final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
     myAreMappingsReady = false;
     // prepare weaving
     ttrace.push("weavings", false);
@@ -229,6 +228,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         myDeltaBuilder = createDeltaBuilder();
       }
     }
+    final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
     // create all roots
     if (isPrimary) {
       ttrace.push("create roots", false);
@@ -676,10 +676,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public boolean isIncremental() {
     return myDependenciesBuilder instanceof IncrementalDependenciesBuilder;
-  }
-
-  public IPerformanceTracer getPerformanceTracer() {
-    return ttrace;
   }
 
   private abstract static class NodeCopyFacility {
