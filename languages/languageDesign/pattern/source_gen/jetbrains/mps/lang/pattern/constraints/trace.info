@@ -246,6 +246,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)/4413230749907802465">
     <nodeInfo nodeId="4413230749907802465" fileName="ActionStatement_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4413230749907802465" fileName="ActionStatement_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4413230749907802465" fileName="ActionStatement_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ActionStatement_Constraints#()V" />
     <scopeInfo nodeId="4413230749907802465" fileName="ActionStatement_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="66" />
     <scopeInfo nodeId="4413230749907802465" fileName="ActionStatement_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
