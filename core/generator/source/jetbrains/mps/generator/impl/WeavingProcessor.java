@@ -99,7 +99,7 @@ public class WeavingProcessor {
     @NotNull
     private final SNode myApplicableNode;
 
-    public ArmedWeavingRule(TemplateWeavingRule rule, TemplateExecutionEnvironment env, SNode applicableNode) {
+    public ArmedWeavingRule(@NotNull TemplateWeavingRule rule, @NotNull TemplateExecutionEnvironment env, @NotNull SNode applicableNode) {
       myRule = rule;
       myEnv = env;
       myApplicableNode = applicableNode;
@@ -120,7 +120,7 @@ public class WeavingProcessor {
           someOutputGenerated = myRule.apply(myEnv, context, outputContextNode);
 
         } catch (DismissTopMappingRuleException e) {
-          myEnv.getGenerator().showErrorMessage(context.getInput(), null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "wrong template: dismiss in weaving rule is not supported");
+          myEnv.getLogger().error(myRule.getRuleNode(), "wrong template: dismiss in weaving rule is not supported", GeneratorUtil.describeIfExists(context.getInput(), "input node"));
         } catch (TemplateProcessingFailureException e) {
           myEnv.getGenerator().showErrorMessage(context.getInput(), null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "weaving rule: error processing template fragment");
         } finally {

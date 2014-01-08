@@ -28,7 +28,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Container for Template Fragments, collects them and applies through supplied TemplateProcessor
+ * Container for Template Fragments, collects them and applies through supplied TemplateProcessor.
+ * <p>For weave rule/macro there's {@link jetbrains.mps.generator.impl.WeaveTemplateContainer} counterpart.
  * @author Artem Tikhomirov
  */
 public class TemplateContainer {

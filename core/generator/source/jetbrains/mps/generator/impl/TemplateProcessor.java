@@ -20,10 +20,8 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
-import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
 import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
@@ -271,60 +269,6 @@ public final class TemplateProcessor {
     return Collections.singletonList(outputNode);
   }
 
-  private void weaveMacro(SNode template, SNode outputContextNode, @NotNull TemplateContext context, SNode macro)
-      throws GenerationFailureException, GenerationCanceledException {
-
-    if (template == null) {
-      myGenerator.showErrorMessage(context.getInput(), macro, "couldn't evaluate weave macro: no template");
-      return;
-    }
-
-    List<SNode> templateFragments = GeneratorUtilEx.getTemplateFragments(template);
-    if (templateFragments.isEmpty()) {
-      myGenerator.showErrorMessage(context.getInput(), template, macro, "nothing to weave: no template fragments found in template");
-      return;
-    }
-
-    // check fragments: all fragments with <default context> should have the same parent
-    TemplateWeavingRuleInterpreted.checkTemplateFragmentsForWeaving(template, templateFragments, myGenerator.getLogger());
-
-    // for each template fragment create output nodes
-    TemplateProcessor templateProcessor = new TemplateProcessor(myEnv);
-    for (SNode templateFragment : templateFragments) {
-      SNode templateFragmentNode = templateFragment.getParent();
-      SNode contextParentNode = null;
-      try {
-        contextParentNode = myEnv.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
-      } catch (Exception e) {
-        myGenerator.getLogger().handleException(e);
-      }
-      if (contextParentNode != null) {
-        try {
-          String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
-          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel));
-          String childRole = templateFragmentNode.getRoleInParent();
-
-          for (SNode outputNodeToWeave : outputNodesToWeave) {
-            myEnv.weaveNode(contextParentNode, childRole, outputNodeToWeave, new jetbrains.mps.smodel.SNodePointer(templateFragment),
-                context.getInput());
-          }
-        } catch (DismissTopMappingRuleException e) {
-          myGenerator.showErrorMessage(context.getInput(), templateFragment, macro, "wrong template: dismiss in weave macro is not supported");
-        } catch (TemplateProcessingFailureException ex) {
-          ProblemDescription[] pd = new ProblemDescription[] {
-              GeneratorUtil.describe(templateFragmentNode, "template fragment"),
-              GeneratorUtil.describe(context.getInput(), "input node"),
-              GeneratorUtil.describe(contextParentNode, "output context node")
-          };
-          myGenerator.getLogger().error(macro.getReference(), "error processing template fragment", GeneratorUtil.concat(pd, ex.asProblemDescription()));
-        }
-      } else {
-        myGenerator.showErrorMessage(context.getInput(), templateFragment, macro, "couldn't define 'context' for template fragment");
-      }
-    }
-  }
-
-
   private void initMacroMap() {
     macroImplMap.put(RuleUtil.concept_LoopMacro, new LoopMacro(this));
     CopySrcMacros m1 = new CopySrcMacros(this);
@@ -467,31 +411,39 @@ public final class TemplateProcessor {
       if (_outputNodes.isEmpty()) {
         return Collections.emptyList();
       }
-      if (_outputNodes.size() == 1) {
-        SNode contextNode = _outputNodes.get(0);
-
-        List<SNode> nodesToWeave = getNewInputNodes(macro, templateContext);
-        for (SNode node : nodesToWeave) {
-          try {
-            myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(node));
-            myTracer.pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(macro));
-            SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
-            if (consequence == null) {
-              showErrorMessage(templateContext.getInput(), null, macro, "couldn't evaluate weave macro: no consequence");
-              break;
-            }
-
-            SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
-            myTemplateProcessor.weaveMacro(template, contextNode, templateContext.subContext(null, node), macro);
-          } finally {
-            myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(node));
-          }
-        }
-
-      } else {
-        getLogger().error(templateContext.getInput().getReference(), "cannot apply $WEAVE$ to a list of nodes",
-            GeneratorUtil.describe(macro, "template"),
+      if (_outputNodes.size() > 1) {
+        getLogger().error(macro.getReference(), "cannot apply $WEAVE$ to a list of nodes",
             GeneratorUtil.describe(templateContext.getInput(), "input"));
+        return _outputNodes;
+      }
+      SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
+      if (consequence == null) {
+        getLogger().error(macro.getReference(), "couldn't evaluate weave macro: no consequence",
+            GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
+        return _outputNodes;
+      }
+
+      SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
+      ////
+      if (template == null) {
+        getLogger().error(macro.getReference(), "couldn't evaluate weave macro: no template",
+            GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
+        return _outputNodes;
+      }
+      WeaveTemplateContainer wtc = new WeaveTemplateContainer(template);
+      wtc.initialize(getLogger());
+
+      SNode contextNode = _outputNodes.get(0);
+      List<SNode> nodesToWeave = getNewInputNodes(macro, templateContext);
+      for (SNode node : nodesToWeave) {
+        try {
+          myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(node));
+          myTracer.pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(macro));
+
+          wtc.apply(contextNode, templateContext.subContext(node), myTemplateProcessor.getEnvironment());
+        } finally {
+          myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(node));
+        }
       }
       return _outputNodes;
     }
