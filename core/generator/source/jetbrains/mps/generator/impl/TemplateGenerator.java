@@ -148,6 +148,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 //      myDeltaBuilder.dump();
       myInplaceModelChange = true;
       if (myDeltaBuilder.hasChanges()) {
+        myDeltaBuilder.prepareReferences(getInputModel(), this);
         myDeltaBuilder.applyInplace(getInputModel(), this);
       }
       myOutputRoots.clear();
@@ -159,7 +160,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged |= myDependenciesBuilder.isStepRequired(); // TODO optimize: if step is required, it should be the last step
 
     // optimization: no changes? quit
-    if (!isPrimary && !myChanged && myDelayedChanges.isEmpty() && !myRuleManager.hasWeavings()) {
+    if (!isPrimary && !myChanged && myDelayedChanges.isEmpty() && !myWeavingProcessor.hasWeavingRulesToApply()) {
       return false;
     }
 
@@ -177,15 +178,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     checkMonitorCanceled();
 
-    // weaving
-    ttrace.push("weavings", false);
-    myWeavingProcessor.apply();
-    myWeavingProcessor = null;
-    ttrace.pop();
-
-    // optimization: no changes? quit
-    if (!isPrimary && !myChanged && myDelayedChanges.isEmpty()) {
-      return false;
+    if (myWeavingProcessor.hasWeavingRulesToApply()) {
+      ttrace.push("weavings", false);
+      myWeavingProcessor.apply();
+      myWeavingProcessor = null;
+      ttrace.pop();
     }
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
@@ -195,13 +192,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     checkMonitorCanceled();
 
-    if (myChanged || isPrimary) {
+    if (!myPostponedRefs.isEmpty()) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
       ttrace.push("restoring references", false);
       myPostponedRefs.prepare();
       myPostponedRefs.replace();
       ttrace.pop();
+    }
 
+    if (myChanged || isPrimary) {
       // advance blocked reduction data
       getBlockedReductionsData().advanceStep();
       checkMonitorCanceled();
