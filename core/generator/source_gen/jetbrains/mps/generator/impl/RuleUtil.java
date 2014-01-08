@@ -82,12 +82,6 @@ public final class RuleUtil {
     NodeMacroConcepts.add(concept_NodeMacro);
   }
 
-
-  public RuleUtil() {
-  }
-
-
-
   public static boolean isNodeMacro(SNode n) {
     return isNodeMacro(n.getConcept().getQualifiedName());
   }
