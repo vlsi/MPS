@@ -68,12 +68,12 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
     } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().error(getRuleNode(), "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -83,9 +83,9 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
   public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, TemplateProcessingFailureException, GenerationFailureException, DismissTopMappingRuleException {
     SNode templateNode = RuleUtil.getCreateRootRuleTemplateNode(ruleNode);
     if (templateNode != null) {
-      return new TemplateProcessor(environment).apply(ruleMappingName, templateNode, new DefaultTemplateContext(null));
+      return new TemplateProcessor(environment).apply(templateNode, new DefaultTemplateContext(ruleMappingName, null));
     } else {
-      environment.getGenerator().showErrorMessage(null, null, ruleNode, "'create root' rule has no template");
+      environment.getLogger().error(getRuleNode(), "'create root' rule has no template");
       return null;
     }
   }

@@ -22,7 +22,10 @@ import jetbrains.mps.util.annotation.ImmutableObject;
 import java.util.Map;
 
 /**
- * Evgeny Gryaznov, Mar 26, 2010
+ * Holds input and accompanying parameters (including mapping label) as we walk through template.
+ * Analogous to stack frames that keep method parameters; hierarchical with implicit
+ * access to outer scope ({@link #getVariable(String)} looks up variable in super contexts) and
+ * explicit access to history of input nodes ({@link #getInputHistory()})
  */
 @ImmutableObject
 public interface TemplateContext {

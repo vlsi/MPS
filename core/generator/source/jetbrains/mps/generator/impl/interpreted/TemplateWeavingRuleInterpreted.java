@@ -171,7 +171,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
   }
 
-  // FIXME pretty much identical to TemplateProcessor.weaveMacro, refactor to get rid of duplicted code
+  // FIXME pretty much identical to TemplateProcessor.weaveMacro, refactor to get rid of duplicated code
   private void weaveTemplateDeclaration_intern(SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
     throws GenerationException {
 
@@ -199,9 +199,8 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       }
       if (contextParentNode != null) {
         try {
-          List<SNode> outputNodesToWeave = templateProcessor.apply(
-            GeneratorUtilEx.getMappingName(templateFragment, ruleMappingName),
-            templateFragmentNode, context);
+          String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, ruleMappingName);
+          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel));
           String childRole = templateFragmentNode.getRoleInParent();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
             environment.weaveNode(contextParentNode, childRole, outputNodeToWeave, new jetbrains.mps.smodel.SNodePointer(templateFragment), context.getInput());

@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -87,12 +89,12 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
     } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().error(getRuleNode(), "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -101,9 +103,13 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
   @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     if (templateNode != null) {
-      return new TemplateProcessor(environment).apply(ruleMappingName, templateNode, context);
+      // subContext(null) doesn't update mapping label, while we'd like to reset it for the rule.
+      // It's possible to do it another way: context = ruleMappingName == null ? context.subContext() : context.subContext(ruleMappingName);
+      // but it seems better to start rule with a fresh context anyway (unless we'd need to pass parameters - which would be odd as users
+      // have no control on which rules get applied and hence can't expect parameters present)
+      return new TemplateProcessor(environment).apply(templateNode, new DefaultTemplateContext(ruleMappingName, context.getInput()));
     } else {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "no template is defined for the rule");
+      environment.getLogger().error(getRuleNode(), "no template is defined for the rule", GeneratorUtil.describeIfExists(context.getInput(), "input node"));
     }
     return null;
   }

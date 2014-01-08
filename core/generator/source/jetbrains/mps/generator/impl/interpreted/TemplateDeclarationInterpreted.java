@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
 import jetbrains.mps.generator.impl.TemplateProcessor;
@@ -65,7 +66,10 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
 
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    TemplateContext applyContext = myArguments.length == 0 ? context : context.subContext(getArgumentsAsMap());
+    TemplateContext applyContext = new DefaultTemplateContext(context.getInput());
+    if (myArguments.length > 0) {
+      applyContext = applyContext.subContext(getArgumentsAsMap());
+    }
 
     if (myTemplateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration))) {
       TemplateContainer tc = new TemplateContainer(new TemplateProcessor(environment), myTemplateNode);
@@ -79,7 +83,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
         environment.getTracer().closeTemplateNode(templateNodeRef);
       }
     } else {
-      return new TemplateProcessor(environment).apply(null, myTemplateNode, applyContext);
+      return new TemplateProcessor(environment).apply(myTemplateNode, applyContext);
     }
   }
 

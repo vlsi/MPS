@@ -42,7 +42,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -80,7 +79,7 @@ public final class TemplateProcessor {
   }
 
   @NotNull
-  public List<SNode> apply(@Nullable String mappingName, @NotNull SNode templateNode, @NotNull TemplateContext context)
+  public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
     IGeneratorLogger logger = myGenerator.getLogger();
     if (myGenerator.isIncremental()) {
@@ -97,7 +96,7 @@ public final class TemplateProcessor {
       }
 
       try {
-        return applyTemplate(templateNode, context.subContext(mappingName), null);
+        return applyTemplate(templateNode, context, null);
       } catch (StackOverflowError e) {
         // this is critical
         logger.error("generation thread run out of stack space :(");
@@ -301,9 +300,8 @@ public final class TemplateProcessor {
       }
       if (contextParentNode != null) {
         try {
-          List<SNode> outputNodesToWeave = templateProcessor.apply(
-              GeneratorUtilEx.getMappingName(templateFragment, null),
-              templateFragmentNode, context);
+          String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
+          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel));
           String childRole = templateFragmentNode.getRoleInParent();
 
           for (SNode outputNodeToWeave : outputNodesToWeave) {
