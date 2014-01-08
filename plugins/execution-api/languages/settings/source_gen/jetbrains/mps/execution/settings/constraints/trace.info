@@ -3,7 +3,6 @@
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)/203908296139530389">
     <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="8" startPosition="51" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="8" startPosition="51" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorOperationDeclaration_Constraints#()V" />
     <scopeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="8" startPosition="51" endLine="9" endPosition="83" />
     <scopeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
