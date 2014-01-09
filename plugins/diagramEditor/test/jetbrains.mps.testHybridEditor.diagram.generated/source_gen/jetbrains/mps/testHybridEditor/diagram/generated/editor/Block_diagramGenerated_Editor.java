@@ -33,8 +33,8 @@ import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
-import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
@@ -193,11 +193,12 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
     private DiagramNodeView createDiagramNodeView() {
       final BlockView blockView = new BlockView();
+      blockView.minimalSize().set(new Vector(10, 10));
       blockView.rect.background().set(Color.TRANSPARENT);
       blockView.padding().set(0);
 
       blockView.moveTo(new Vector(myXProperty.get(), myYProperty.get()));
-      blockView.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+      blockView.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
         public void move(Vector delta) {
           myYProperty.set(myYProperty.get() + delta.y);
         }

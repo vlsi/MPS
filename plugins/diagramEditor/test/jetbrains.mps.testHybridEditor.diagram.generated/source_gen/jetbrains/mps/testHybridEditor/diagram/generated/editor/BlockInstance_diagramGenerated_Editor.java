@@ -233,11 +233,12 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
     private DiagramNodeView createDiagramNodeView() {
       final BlockView blockView = new BlockView();
+      blockView.minimalSize().set(new Vector(10, 10));
       blockView.rect.background().set(Color.TRANSPARENT);
       blockView.padding().set(0);
 
       blockView.moveTo(new Vector(myXProperty.get(), myYProperty.get()));
-      blockView.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+      blockView.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
         public void move(Vector delta) {
           myXProperty.set(myXProperty.get() + delta.x);
           myYProperty.set(myYProperty.get() + delta.y);
