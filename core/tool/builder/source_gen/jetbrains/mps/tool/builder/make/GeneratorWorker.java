@@ -59,7 +59,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     for (String jar : myWhatToDo.getLibraryJars()) {
       File jarFile = new File(jar);
       if (!(jarFile.exists())) {
-        error("Library " + jar + " does not exist.");
+        warning("Library " + jar + " does not exist.");
       }
       config = config.addLib(jar, jarFile);
     }
