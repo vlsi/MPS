@@ -24,6 +24,10 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
     return this.createCollection_rubh59_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_rubh59_a_0(editorContext, node);
+  }
+
   private EditorCell createCollection_rubh59_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rubh59_a");
@@ -134,6 +138,22 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_rubh59_i0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_rubh59_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_rubh59_a_0");
+    editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createComponent_rubh59_a0_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_rubh59_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
 }

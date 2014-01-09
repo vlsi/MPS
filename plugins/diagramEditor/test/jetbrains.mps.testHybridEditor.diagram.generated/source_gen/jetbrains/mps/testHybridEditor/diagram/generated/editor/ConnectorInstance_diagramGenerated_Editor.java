@@ -11,16 +11,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
-import jetbrains.jetpad.projectional.diagram.view.RootTrait;
-import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
+import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -35,84 +36,96 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
   }
 
   private EditorCell createDiagramConnector_5733l5_a(final EditorContext editorContext, final SNode node) {
-    final ConnectorCell editorCell = new ConnectorCell(editorContext, node) {
-
-
-
-      public Mapper<SNode, PolyLineConnection> createMapper() {
-        return new Mapper<SNode, PolyLineConnection>(node, new PolyLineConnection()) {
-          @Override
-          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-            super.registerSynchronizers(configuration);
-            ReadableProperty<SNode> port_5733l5_a0 = JetpadUtils.modelProperty(new Computable<SNode>() {
-              public SNode compute() {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
-              }
-            });
-            configuration.add(Synchronizers.forProperty(port_5733l5_a0, new WritableProperty<SNode>() {
-              public void set(SNode port) {
-                getTarget().toView().set(getTargetView(port));
-              }
-
-              private View getTargetView(SNode port) {
-                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                if (descendantMapper == null) {
-                  return null;
-                }
-                Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false));
-                if (mappers.size() > 0) {
-                  return (View) mappers.iterator().next().getTarget();
-                }
-                return (View) descendantMapper.getTarget();
-              }
-            }));
-            ReadableProperty<SNode> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
-              public SNode compute() {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
-              }
-            });
-            configuration.add(Synchronizers.forProperty(port_5733l5_a0_0, new WritableProperty<SNode>() {
-              public void set(SNode port) {
-                getTarget().fromView().set(getTargetView(port));
-                if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
-                  getTarget().fromView().set(null);
-                  getTarget().toView().set(null);
-                }
-              }
-
-              private View getTargetView(SNode port) {
-                Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
-                if (descendantMapper == null) {
-                  return null;
-                }
-                Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "metaPort", false));
-                if (mappers.size() > 0) {
-                  return (View) mappers.iterator().next().getTarget();
-                }
-                return (View) descendantMapper.getTarget();
-              }
-            }));
-
-            getTarget().view().focusable().set(true);
-            getTarget().view().prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
-              public boolean canDelete() {
-                return true;
-              }
-
-              public void delete() {
-                System.out.println("Connection Delete Called!");
-              }
-            });
-
-          }
-        };
-      }
-    };
-    editorCell.setBig(true);
-
+    final ConnectorCell editorCell = new ConnectorInstance_diagramGenerated_Editor.ConnectorCellImpl_5733l5_a(editorContext, node);
     editorCell.setCellId("DiagramConnector_5733l5_a");
     editorCell.setBig(true);
-
+    ConnectorActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
+  }
+
+  private class ConnectorCellImpl_5733l5_a extends ConnectorCell {
+    private ConnectorCellImpl_5733l5_a(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+      synchronize();
+    }
+
+    public Mapper<SNode, PolyLineConnection> createMapper() {
+      return new Mapper<SNode, PolyLineConnection>(getSNode(), createConnection()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          configuration.add(Synchronizers.forProperty(getTarget().view().focused(), new Runnable() {
+            public void run() {
+              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+            }
+          }));
+          final SNode node = getSNode();
+          ReadableProperty<SNode> port_5733l5_a0 = JetpadUtils.modelProperty(new Computable<SNode>() {
+            public SNode compute() {
+              return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
+            }
+          });
+          configuration.add(Synchronizers.forProperty(port_5733l5_a0, new WritableProperty<SNode>() {
+            public void set(SNode port) {
+              getTarget().toView().set(getTargetView(port));
+            }
+
+            private View getTargetView(SNode port) {
+              Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+              if (descendantMapper == null) {
+                return null;
+              }
+              Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false));
+              if (mappers.size() > 0) {
+                return (View) mappers.iterator().next().getTarget();
+              }
+              return (View) descendantMapper.getTarget();
+            }
+          }));
+          ReadableProperty<SNode> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
+            public SNode compute() {
+              return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
+            }
+          });
+          configuration.add(Synchronizers.forProperty(port_5733l5_a0_0, new WritableProperty<SNode>() {
+            public void set(SNode port) {
+              getTarget().fromView().set(getTargetView(port));
+              if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
+                getTarget().fromView().set(null);
+                getTarget().toView().set(null);
+              }
+            }
+
+            private View getTargetView(SNode port) {
+              Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+              if (descendantMapper == null) {
+                return null;
+              }
+              Set<Mapper<? super SNode, ?>> mappers = descendantMapper.getMappingContext().getMappers(descendantMapper, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "metaPort", false));
+              if (mappers.size() > 0) {
+                return (View) mappers.iterator().next().getTarget();
+              }
+              return (View) descendantMapper.getTarget();
+            }
+          }));
+        }
+      };
+    }
+
+    protected void synchronize() {
+    }
+
+
+
+    private PolyLineConnection createConnection() {
+      PolyLineConnection connection = new PolyLineConnection();
+      AbstractJetpadCell.configureView(connection.view(), ConnectorCellImpl_5733l5_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return true;
+        }
+      });
+
+      return connection;
+    }
   }
 }

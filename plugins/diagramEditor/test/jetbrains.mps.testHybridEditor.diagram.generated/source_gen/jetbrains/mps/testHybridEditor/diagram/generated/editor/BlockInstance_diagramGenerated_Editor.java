@@ -38,11 +38,13 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
+import jetbrains.jetpad.model.property.Properties;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
-import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -60,6 +62,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     BlockCell editorCell = new BlockInstance_diagramGenerated_Editor.BlockCellImpl_gju6mh_a(editorContext, node);
     editorCell.setCellId("DiagramNode_gju6mh_a");
     editorCell.setBig(true);
+    BlockActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 
@@ -227,6 +230,12 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
+          configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
+            public void run() {
+              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+            }
+          }));
         }
       };
     }
@@ -243,19 +252,9 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           myYProperty.set(myYProperty.get() + delta.y);
         }
       });
-
-      blockView.focusable().set(true);
-      blockView.prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
-        public boolean canDelete() {
+      AbstractJetpadCell.configureView(blockView, BlockCellImpl_gju6mh_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
           return true;
-        }
-
-        public void delete() {
-          getContext().getRepository().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              SNodeOperations.deleteNode(((SNode) getSNode()));
-            }
-          });
         }
       });
 

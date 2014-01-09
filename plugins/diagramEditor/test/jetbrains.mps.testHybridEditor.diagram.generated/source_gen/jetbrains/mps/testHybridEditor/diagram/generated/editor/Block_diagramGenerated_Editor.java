@@ -32,12 +32,15 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
-import jetbrains.mps.diagram.dataflow.view.BlockView;
+import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.values.Color;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
-import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
+import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -187,6 +190,12 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
+          configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
+            public void run() {
+              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+            }
+          }));
         }
       };
     }
@@ -202,19 +211,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
           myYProperty.set(myYProperty.get() + delta.y);
         }
       });
-
-      blockView.focusable().set(true);
-      blockView.prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
-        public boolean canDelete() {
+      AbstractJetpadCell.configureView(blockView, BlockCellImpl_70mnj_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
           return true;
-        }
-
-        public void delete() {
-          getContext().getRepository().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              SNodeOperations.deleteNode(((SNode) getSNode()));
-            }
-          });
         }
       });
 

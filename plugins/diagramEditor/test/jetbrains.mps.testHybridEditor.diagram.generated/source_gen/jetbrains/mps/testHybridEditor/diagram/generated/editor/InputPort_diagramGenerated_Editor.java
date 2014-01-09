@@ -14,8 +14,10 @@ import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.jetpad.projectional.diagram.view.RootTrait;
-import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -30,40 +32,50 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramPort_cfffa6_a(final EditorContext editorContext, final SNode node) {
-    final EditorCell editorCell = new PortCell(editorContext, node) {
-      public Mapper<SNode, RectView> createMapper() {
-        Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(node, new RectView()) {
-          @Override
-          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-            super.registerSynchronizers(configuration);
-            getTarget().background().set(Color.LIGHT_GRAY);
-            getTarget().dimension().set(new Vector(10, 10));
-            getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
-            getTarget().prop(JetpadUtils.SOURCE).set(getSource());
-
-            getTarget().focusable().set(true);
-            getTarget().prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
-              public boolean canDelete() {
-                return true;
-              }
-
-              public void delete() {
-                System.out.println("Port Delete Called!");
-              }
-            });
-
-          }
-        };
-
-        return mapper;
-      }
-    };
-    editorCell.setBig(true);
-
-
+    final EditorCell editorCell = new InputPort_diagramGenerated_Editor.PortCellImpl_cfffa6_a(editorContext, node);
     editorCell.setCellId("DiagramPort_cfffa6_a");
     editorCell.setBig(true);
-
     return editorCell;
+  }
+
+  private class PortCellImpl_cfffa6_a extends PortCell {
+    private PortCellImpl_cfffa6_a(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+      synchronize();
+    }
+
+    public Mapper<SNode, RectView> createMapper() {
+      return new Mapper<SNode, RectView>(getSNode(), createPortView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          getTarget().background().set(Color.LIGHT_GRAY);
+          getTarget().dimension().set(new Vector(10, 10));
+          getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
+            public void run() {
+              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+            }
+          }));
+        }
+      };
+    }
+
+    protected void synchronize() {
+    }
+
+
+
+    private RectView createPortView() {
+      RectView portView = new RectView();
+      AbstractJetpadCell.configureView(portView, PortCellImpl_cfffa6_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return true;
+        }
+      });
+      portView.prop(JetpadUtils.SOURCE).set(getSNode());
+
+      return portView;
+    }
   }
 }

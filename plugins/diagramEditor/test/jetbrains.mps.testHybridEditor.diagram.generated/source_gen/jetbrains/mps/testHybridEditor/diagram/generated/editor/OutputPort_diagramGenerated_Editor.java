@@ -20,8 +20,10 @@ import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.jetpad.projectional.diagram.view.RootTrait;
-import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -36,63 +38,73 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramPort_16y7ix_a(final EditorContext editorContext, final SNode node) {
-    final EditorCell editorCell = new PortCell(editorContext, node) {
-      public Mapper<SNode, RectView> createMapper() {
-        Mapper<SNode, RectView> mapper = new Mapper<SNode, RectView>(node, new RectView()) {
-          @Override
-          protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-            super.registerSynchronizers(configuration);
-            getTarget().background().set(Color.GRAY);
-            getTarget().dimension().set(new Vector(10, 10));
-            getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
-              @Override
-              public void handle(View view, MouseEvent e) {
-                DiagramCell diagramCell = getDiagramCell();
-                if (diagramCell == null) {
-                  return;
-                }
-                if (!(diagramCell.hasConnectionDragFeedback())) {
-                  diagramCell.showConnectionDragFeedback(getTarget());
-                }
-                diagramCell.updateConnectionDragFeedback(e.location());
-              }
-            }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
-              @Override
-              public void handle(View view, MouseEvent e) {
-                DiagramCell diagramCell = getDiagramCell();
-                if (diagramCell == null || !(diagramCell.hasConnectionDragFeedback())) {
-                  return;
-                }
-                diagramCell.updateConnectionDragFeedback(e.location());
-                diagramCell.createNewDiagramElement(e.location().x, e.location().y);
-              }
-            }).build());
-            getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
-            getTarget().prop(JetpadUtils.SOURCE).set(getSource());
-
-            getTarget().focusable().set(true);
-            getTarget().prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
-              public boolean canDelete() {
-                return true;
-              }
-
-              public void delete() {
-                System.out.println("Port Delete Called!");
-              }
-            });
-
-          }
-        };
-
-        return mapper;
-      }
-    };
-    editorCell.setBig(true);
-
-
+    final EditorCell editorCell = new OutputPort_diagramGenerated_Editor.PortCellImpl_16y7ix_a(editorContext, node);
     editorCell.setCellId("DiagramPort_16y7ix_a");
     editorCell.setBig(true);
-
     return editorCell;
+  }
+
+  private class PortCellImpl_16y7ix_a extends PortCell {
+    private PortCellImpl_16y7ix_a(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+      synchronize();
+    }
+
+    public Mapper<SNode, RectView> createMapper() {
+      return new Mapper<SNode, RectView>(getSNode(), createPortView()) {
+        @Override
+        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+          super.registerSynchronizers(configuration);
+          getTarget().background().set(Color.GRAY);
+          getTarget().dimension().set(new Vector(10, 10));
+          getTarget().addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
+            @Override
+            public void handle(View view, MouseEvent e) {
+              DiagramCell diagramCell = getDiagramCell();
+              if (diagramCell == null) {
+                return;
+              }
+              if (!(diagramCell.hasConnectionDragFeedback())) {
+                diagramCell.showConnectionDragFeedback(getTarget());
+              }
+              diagramCell.updateConnectionDragFeedback(e.location());
+            }
+          }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+            @Override
+            public void handle(View view, MouseEvent e) {
+              DiagramCell diagramCell = getDiagramCell();
+              if (diagramCell == null || !(diagramCell.hasConnectionDragFeedback())) {
+                return;
+              }
+              diagramCell.updateConnectionDragFeedback(e.location());
+              diagramCell.createNewDiagramElement(e.location().x, e.location().y);
+            }
+          }).build());
+          getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
+            public void run() {
+              SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+            }
+          }));
+        }
+      };
+    }
+
+    protected void synchronize() {
+    }
+
+
+
+    private RectView createPortView() {
+      RectView portView = new RectView();
+      AbstractJetpadCell.configureView(portView, PortCellImpl_16y7ix_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return true;
+        }
+      });
+      portView.prop(JetpadUtils.SOURCE).set(getSNode());
+
+      return portView;
+    }
   }
 }

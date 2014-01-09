@@ -35,6 +35,7 @@
     <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetpad)</dependency>
   </dependencies>
   <usedLanguages>
+    <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>
     <usedLanguage>aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</usedLanguage>
     <usedLanguage>6106f611-7a74-42d1-80de-edc5c602bfd1(jetbrains.mps.lang.editor.diagram)</usedLanguage>
   </usedLanguages>

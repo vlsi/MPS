@@ -10,6 +10,12 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
 import java.util.LinkedList;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
+import jetbrains.jetpad.projectional.diagram.view.DeleteHandler;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class AbstractJetpadCell extends EditorCell_Collection {
   private List<WritableModelProperty> myModelProperties;
@@ -52,5 +58,20 @@ public class AbstractJetpadCell extends EditorCell_Collection {
       }
       requestRelayout();
     }
+  }
+
+
+
+  protected static void configureView(final View view, final EditorCell editorCell, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
+    view.focusable().set(true);
+    view.prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
+      public boolean canDelete() {
+        return canDelete.invoke();
+      }
+
+      public void delete() {
+        editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
+      }
+    });
   }
 }

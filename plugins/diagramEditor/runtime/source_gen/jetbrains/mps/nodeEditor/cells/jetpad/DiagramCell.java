@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.model.collections.list.ObservableArrayList;
 import jetbrains.jetpad.model.collections.list.ObservableSingleItemList;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
@@ -17,7 +18,6 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import javax.swing.JComponent;
 import java.awt.Dimension;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.jetpad.projectional.view.ViewTrait;
@@ -57,6 +57,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   protected ObservableList<SNode> myBlocks = new ObservableArrayList<SNode>();
   protected ObservableList<SNode> myConnectors = new ObservableArrayList<SNode>();
   protected ObservableSingleItemList<PolyLineConnection> myConnectionSingleList = new ObservableSingleItemList<PolyLineConnection>();
+  protected ObservableSingleItemList<View> mySelectedViewSingleList = new ObservableSingleItemList<View>();
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
@@ -370,6 +371,10 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   private void hideConnectionDragFeedback() {
     myConnectionSingleList.setItem(null);
+  }
+
+  public void setSelectedView(View view) {
+    mySelectedViewSingleList.setItem(view);
   }
 
   private class ConnectionInfo {
