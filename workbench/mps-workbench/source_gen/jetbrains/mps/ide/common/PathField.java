@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 
 public class PathField extends JPanel {
   public PathField myThis;
@@ -127,7 +128,7 @@ public class PathField extends JPanel {
     }
     IFile result = chooser.showDialog();
     if (result != null) {
-      myThis.setPath(result.getPath());
+      myThis.setPath(IFileUtils.getCanonicalPath(result));
     }
   }
 
