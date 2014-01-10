@@ -247,7 +247,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       blockView.padding().set(0);
 
       blockView.moveTo(new Vector(myXProperty.get(), myYProperty.get()));
-      blockView.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+      blockView.contentView.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
         public void move(Vector delta) {
           myXProperty.set(myXProperty.get() + delta.x);
           myYProperty.set(myYProperty.get() + delta.y);

@@ -37,7 +37,6 @@ import jetbrains.jetpad.values.Color;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.diagram.dataflow.view.BlockView;
 import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
@@ -208,7 +207,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       blockView.padding().set(0);
 
       blockView.moveTo(new Vector(myXProperty.get(), myYProperty.get()));
-      blockView.rect.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+      blockView.contentView.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
         public void move(Vector delta) {
           myYProperty.set(myYProperty.get() + delta.y);
         }
