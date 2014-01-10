@@ -7,6 +7,7 @@ import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
+import com.intellij.psi.impl.light.LightMethod;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.MethodReferencesSearch.SearchParameters;
 import com.intellij.util.Processor;
@@ -65,6 +66,15 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
       public void run() {
 
         if (DumbService.getInstance(method.getProject()).isDumb()) {
+          return;
+        }
+
+        if (method instanceof LightMethod) {
+          if (method.getContainingClass().isEnum()
+            && ("values".equals(method.getName()) || "valueOf".equals(method.getName()))) {
+            // TODO find usages of EnumValuesExpression and EnumValueOfExpression
+          }
+          // we don't handle light elements we don't know about
           return;
         }
 
