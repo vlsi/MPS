@@ -95,7 +95,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       myPropertyCell_70mnj_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_70mnj_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
       myXProperty = JetpadUtils.modelProperty(new Computable<Integer>() {
         public Integer compute() {
-          return SNodeOperations.getIndexInParent(node) / 2 * 150 + 10;
+          return SNodeOperations.getIndexInParent(getSNode()) / 2 * 150 + 10;
         }
       });
       myXProperty.get();
@@ -117,10 +117,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     }
 
     protected void synchronize() {
-      SNode node = getSNode();
       boolean inputPortDiffFound = false;
       ListIterator<SNode> inputPortsIterator = myInputPorts.listIterator();
-      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
+      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "inputPorts", true))) {
         inputPortDiffFound = inputPortDiffFound || !(BlockCell.skipNextIfSame(inputPortsIterator, port));
         if (inputPortDiffFound) {
           EditorCell portCell = getContext().createNodeCell(port);
@@ -137,7 +136,7 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       }
       boolean outputPortDiffFound = false;
       ListIterator<SNode> outputPortsIterator = myOutputPorts.listIterator();
-      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
+      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "outputPorts", true))) {
         outputPortDiffFound = outputPortDiffFound || !(BlockCell.skipNextIfSame(outputPortsIterator, port));
         if (outputPortDiffFound) {
           EditorCell portCell = getContext().createNodeCell(port);

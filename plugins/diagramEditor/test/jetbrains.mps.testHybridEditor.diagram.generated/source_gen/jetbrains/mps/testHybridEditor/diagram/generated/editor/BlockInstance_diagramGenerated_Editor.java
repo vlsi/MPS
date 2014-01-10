@@ -122,10 +122,9 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
     }
 
     protected void synchronize() {
-      SNode node = getSNode();
       boolean inputPortDiffFound = false;
       ListIterator<SNode> inputPortsIterator = myInputPorts.listIterator();
-      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "inMetaPorts", true))) {
+      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "inMetaPorts", true))) {
         inputPortDiffFound = inputPortDiffFound || !(BlockCell.skipNextIfSame(inputPortsIterator, port));
         if (inputPortDiffFound) {
           inputPortsIterator.add(port);
@@ -137,7 +136,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       }
       boolean outputPortDiffFound = false;
       ListIterator<SNode> outputPortsIterator = myOutputPorts.listIterator();
-      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "metaBlock", false), "outMetaPorts", true))) {
+      for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "outMetaPorts", true))) {
         outputPortDiffFound = outputPortDiffFound || !(BlockCell.skipNextIfSame(outputPortsIterator, port));
         if (outputPortDiffFound) {
           outputPortsIterator.add(port);

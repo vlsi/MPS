@@ -57,10 +57,9 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
               SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
             }
           }));
-          final SNode node = getSNode();
           ReadableProperty<SNode> port_9iys9b_a0 = JetpadUtils.modelProperty(new Computable<SNode>() {
             public SNode compute() {
-              return SLinkOperations.getTarget(node, "inputPort", false);
+              return SLinkOperations.getTarget(getSNode(), "inputPort", false);
             }
           });
           configuration.add(Synchronizers.forProperty(port_9iys9b_a0, new WritableProperty<SNode>() {
@@ -78,7 +77,7 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
           }));
           ReadableProperty<SNode> port_9iys9b_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
             public SNode compute() {
-              return SLinkOperations.getTarget(node, "outputPort", false);
+              return SLinkOperations.getTarget(getSNode(), "outputPort", false);
             }
           });
           configuration.add(Synchronizers.forProperty(port_9iys9b_a0_0, new WritableProperty<SNode>() {
