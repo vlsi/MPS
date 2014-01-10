@@ -1096,7 +1096,7 @@ public class FullASTConverter extends ASTConverter {
 
     if ((call != null)) {
       addCallArgs(call, x.arguments);
-      // TODO add type arguments 
+      addTypeArgs(x.typeArguments, SLinkOperations.getTargets(call, "typeArgument", true));
     }
     return result;
   }
