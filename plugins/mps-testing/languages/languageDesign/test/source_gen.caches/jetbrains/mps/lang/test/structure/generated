@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7cf5mbs6r7l7w6l3mzm1xim6xwzt321">
+<dependencies version="2" modelHash="-5wk0ye39dsd1moy2yynij11y229wrud">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5zq5adg1flcjn4abinmhk7kwg85jz1w" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
   <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="-5kctb7b7jnlp1h0duovrvgm0c42ily4" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
-  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-7c144kqc2jnjr4hoi06x3ow7i4x04cl" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="13kqsy3d6o6790lacsl9jkbzj30hut9" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="4dtk0loxidcpr3ihu4wqy93kgnhutka" dependsOnNodes="true">
+  <common hash="-31z288obcsio0vu2rqzzr7skeqeqx0i" dependsOnNodes="true">
     <dep root="1101347953350122484" />
     <dep root="1101347953350122758" />
     <dep root="1210673684636" />
@@ -17,7 +17,6 @@
     <dep root="1214846310980" />
     <dep root="1215075719096" />
     <dep root="1215507532627" />
-    <dep root="1215507599032" />
     <dep root="1215507671101" />
     <dep root="1215511704609" />
     <dep root="1215525678776" />
@@ -65,25 +64,24 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1210673684636" name="TestNodeAnnotation" hash="-82yrjis08fkjkt6ofsyodvem9ufl4ww" />
+  <source id="1210673684636" name="TestNodeAnnotation" hash="-7g6o2fc3aoyr9djvp9lnvnfg6sudpxh" />
   <source id="1210674524691" name="TestNodeReference" hash="98i0067ad2se0yhn3ime0cob2choe0f" />
   <source id="1211979288880" name="AssertMatch" hash="8dapivr4bhuhmnlfunyikh3905cc38c" />
   <source id="1214846310980" name="AbstractNodeAssert" hash="2jnhylo1w15uew5j7ubj0xg0o8eptw3" />
   <source id="1215075719096" name="CheckNodeForErrors" hash="akiop1hles0wo1105vb1cs4a42ee1xm" />
-  <source id="1215507532627" name="NodePropertiesContainer" hash="-58e9jkr3ajmz2xeq38d2xyf3y0okebt" />
-  <source id="1215507599032" name="NodeProperty" hash="esfoqva1smc53dc9cum8jy2m9bwmtxa" />
-  <source id="1215507671101" name="NodeErrorPropety" hash="bthhcledzbzq74klqdiaeizxm54pu4g" />
-  <source id="1215511704609" name="NodeWarningProperty" hash="-2vtfhk38j11taikh2howrcl4v8r6fma" />
-  <source id="1215525678776" name="NodeReachable" hash="-9tn8375q4av4t0sg99d0g32xvd4sw7d" />
-  <source id="1215526290564" name="NodeTypeProperty" hash="-cda2amgxilsloa51sqg6o760iyg3n97" />
-  <source id="1215601147424" name="NodeOperation" hash="-b106drz1uubat4q0bbibhirg61yehla" />
-  <source id="1215603922101" name="NodeOperationsContainer" hash="30tmohb9y71n89mes68f27do5mj22h9" />
-  <source id="1215607067978" name="TypesCheckOperation" hash="-46s597dcgd40433ge88wkeczkqjc0an" />
-  <source id="1215611834554" name="CheckDataFlowOperation" hash="7damoksp51wiw56v3q9g2kfup3p0ngh" />
-  <source id="1215612918969" name="NodeUnreachable" hash="7zryrd38zofcyr9hnwffcyql6auku1a" />
-  <source id="1215614394933" name="VariableInialized" hash="e49xus7lhqpg02ykektx3i565fx4cez" />
-  <source id="1215616993394" name="VariableLive" hash="-6eabane8dqg723oc0c3r9oiir6sgrug" />
-  <source id="1216913645126" name="NodesTestCase" hash="bvf7591q5y076xshph6tur9v60a0e4s" />
+  <source id="1215507532627" name="NodeCheckOperationsContainer" hash="-903jndpl6dlrpm3dp507epgh7ws4bhy" />
+  <source id="1215507671101" name="NodeErrorProperty" hash="8sfxsqna5rqurbs90ld6urarjyv4jzz" />
+  <source id="1215511704609" name="NodeWarningProperty" hash="-8m1z7bdeygf7sbeqye785rw7yi3vshh" />
+  <source id="1215525678776" name="NodeReachable" hash="cstpjr3qvzdbr5thu8q7l4g4rq81ssf" />
+  <source id="1215526290564" name="NodeTypeProperty" hash="-7r8o64le29abvqvbxebrcs917vhyby0" />
+  <source id="1215601147424" name="NodeCheckOperation" hash="-7xzrgon047wmtftdcxpylm5kmq459l3" />
+  <source id="1215603922101" name="NodeOperationsContainer" hash="atdr960spowydgazfvi323ilua630oi" />
+  <source id="1215607067978" name="TypesCheckOperation" hash="-b1wa52cvqyo9764ele2hofsr7b3g3im" />
+  <source id="1215611834554" name="CheckDataFlowOperation" hash="-1raqh5025ziljp5lsazfapentk728kq" />
+  <source id="1215612918969" name="NodeUnreachable" hash="-9l3buv1nbu38vbjpzi8xmry32ff59ir" />
+  <source id="1215614394933" name="VariableInitialized" hash="-6o494x83ds18yajw496bbqpepji13w3" />
+  <source id="1215616993394" name="VariableAlive" hash="zdcepteetdptwbhwekwkghjbsggjaj" />
+  <source id="1216913645126" name="NodesTestCase" hash="-9u70500ebgizbppb2alr30wj6etlp39" />
   <source id="1216913689992" name="NodesTestMethod" hash="-23yu79nktdt9ltv7o5t3hvoswks7xe2" />
   <source id="1216989428737" name="TestNode" hash="7xn7s70t8lbnf43610mmblensxh15a7" />
   <source id="1217425837708" name="CheckNodeDataflow" hash="-75bk57wt264jb5ei8n411ow5nv2ylsj" />
@@ -93,13 +91,13 @@
   <source id="1225983109083" name="EditorExpression" hash="-7gg2zaa7165d8izfans61kamws0ey36" />
   <source id="1225989773458" name="InvokeIntentionStatement" hash="-cnzpng9ky7le81vj4gy97oyjqq0sbq4" />
   <source id="1227003183644" name="EditorOperation" hash="9jjb1kjgm1axm6lo06i0xdr3qzdnaap" />
-  <source id="1228584180295" name="INodeAnnotattion" hash="1kzylxexqacqirpj3aflc66vmxynf6h" />
+  <source id="1228584180295" name="INodeAnnotation" hash="d51yyoi4me2jynx0oh1ctboa09uel3x" />
   <source id="1227182079811" name="TypeKeyStatement" hash="-bpivaaa7ks0otbovmaggo4lu584sc7b" />
   <source id="1228934484974" name="PressKeyStatement" hash="avv137usly7hoy950s3o0fx0q0kzttq" />
   <source id="1229187653856" name="EditorTestCase" hash="-3fwv5uqgno2ke6dfh0uxye7897fh2z2" />
-  <source id="1229194968594" name="AnonymousCellAnnotation" hash="169g12ypx1qok5sv0ch3o9n773aqxk3" />
+  <source id="1229194968594" name="AnonymousCellAnnotation" hash="-eduowg70y7i3wgjaeyoecso4i2scbjl" />
   <source id="1230224281548" name="MockAnnotation" hash="-10ukw8c5x4uhwzvebhigtxal3a1c39x" />
-  <source id="95706764259116183" name="NodeTypeSetProperty" hash="-47nlcfy076vlstbv6hmupsmzcgsijko" />
+  <source id="95706764259116183" name="NodeTypeSetProperty" hash="-1238bqkr1jqdprnzm6l4mxghay4t0au" />
   <source id="2685915532175039858" name="ExpressionContainer" hash="-anorsldzsdpc766cfeslo5atkxiew8b" />
   <source id="5773579205429617809" name="SwitchToInspector" hash="8z5891ui6af73bjjpafhkqytbtab48q" />
   <source id="5773579205429866751" name="EditorComponentExpression" hash="7t1vow25z61n8u9n1x169jw2yhylb9" />

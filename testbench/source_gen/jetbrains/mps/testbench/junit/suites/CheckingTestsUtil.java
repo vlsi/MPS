@@ -81,12 +81,12 @@ public class CheckingTestsUtil {
   }
 
   public static boolean filterIssue(SNode node) {
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"));
+    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"));
     if (container == null) {
       return true;
     }
-    for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
+    for (SNode property : SLinkOperations.getTargets(container, "nodeCheckOperations", true)) {
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorProperty")) {
         return false;
       }
     }

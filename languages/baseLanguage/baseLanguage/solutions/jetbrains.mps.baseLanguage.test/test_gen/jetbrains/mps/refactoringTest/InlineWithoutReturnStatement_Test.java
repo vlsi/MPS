@@ -29,7 +29,7 @@ public class InlineWithoutReturnStatement_Test extends BaseTransformationTest4 {
       this.addNodeById("1230053187938");
       InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053187934"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053187918"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053187939"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1230053187918"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' and '" + SNodeOperations.cast(this.getNodeById("1230053187939"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053187918"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053187939"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

@@ -86,8 +86,8 @@ public class AddPropertiesMark_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodePropertiesContainer", null);
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"), newAnnotation);
+      SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer", null);
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"), newAnnotation);
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }
 

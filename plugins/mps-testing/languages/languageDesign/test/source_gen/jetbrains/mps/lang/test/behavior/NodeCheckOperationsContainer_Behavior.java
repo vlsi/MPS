@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class INodeAnnotattion_Behavior {
+public class NodeCheckOperationsContainer_Behavior {
   public static void init(SNode thisNode) {
   }
 }

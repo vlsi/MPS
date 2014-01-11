@@ -29,7 +29,7 @@ public class InlineInBehaviorWithThis_Test extends BaseTransformationTest4 {
       this.addNodeById("1230053040907");
       InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053040904"), "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040890"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040908"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1230053040890"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior") + "' and '" + SNodeOperations.cast(this.getNodeById("1230053040908"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040890"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053040908"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
     }
   }
 }

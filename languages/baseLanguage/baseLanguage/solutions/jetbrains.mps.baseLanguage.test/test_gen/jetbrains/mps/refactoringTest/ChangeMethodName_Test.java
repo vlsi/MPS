@@ -33,7 +33,7 @@ public class ChangeMethodName_Test extends BaseTransformationTest4 {
       SPropertyOperations.set(params.getDeclaration(), "name", "foo");
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052902980"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902979"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902988"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1230052902979"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' and '" + SNodeOperations.cast(this.getNodeById("1230052902988"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902979"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902988"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

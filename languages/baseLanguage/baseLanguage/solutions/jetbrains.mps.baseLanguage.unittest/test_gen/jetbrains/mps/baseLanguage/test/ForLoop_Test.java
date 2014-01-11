@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.SubtreeChecker;
+import jetbrains.mps.lang.test.runtime.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -21,7 +21,7 @@ public class ForLoop_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_ForLoop() throws Exception {
       this.addNodeById("1217271585525");
-      SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1215444253196"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1215444253196"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
     }
   }
 }

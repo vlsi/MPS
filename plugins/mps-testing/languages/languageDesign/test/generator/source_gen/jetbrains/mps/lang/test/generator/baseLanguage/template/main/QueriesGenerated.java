@@ -225,11 +225,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "keyStrokes", true);
   }
 
-  public static Iterable sourceNodesQuery_1215702462324(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_3200641626717975126(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "before", true);
   }
 
-  public static Iterable sourceNodesQuery_1215702462336(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_3200641626717975138(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "after", true);
   }
 
@@ -242,7 +242,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1221567884870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{});
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeCheckOperation", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_1221567898689(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

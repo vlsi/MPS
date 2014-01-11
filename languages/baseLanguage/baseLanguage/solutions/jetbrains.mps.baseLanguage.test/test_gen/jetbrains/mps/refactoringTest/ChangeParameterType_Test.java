@@ -36,7 +36,7 @@ public class ChangeParameterType_Test extends BaseTransformationTest4 {
       SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).first(), "type", _quotation_createNode_iyo2tl_a0b0a(), true);
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943886"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943885"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943898"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1230052943885"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' and '" + SNodeOperations.cast(this.getNodeById("1230052943898"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943885"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943898"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
     private static SNode _quotation_createNode_iyo2tl_a0b0a() {

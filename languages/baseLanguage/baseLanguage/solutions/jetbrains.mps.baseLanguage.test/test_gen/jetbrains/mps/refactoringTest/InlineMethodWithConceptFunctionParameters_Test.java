@@ -30,7 +30,7 @@ public class InlineMethodWithConceptFunctionParameters_Test extends BaseTransfor
       this.addNodeById("4412735672780116642");
       InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("4412735672780109165"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       ref.doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780109162"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780116650"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("4412735672780109162"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock") + "' and '" + SNodeOperations.cast(this.getNodeById("4412735672780116650"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780109162"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780116650"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock"))));
     }
   }
 }

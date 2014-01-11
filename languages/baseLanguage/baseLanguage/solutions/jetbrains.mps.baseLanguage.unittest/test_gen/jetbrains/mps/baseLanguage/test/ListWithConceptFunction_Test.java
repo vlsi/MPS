@@ -21,7 +21,7 @@ public class ListWithConceptFunction_Test extends BaseTransformationTest4 {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck1222443330005() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1222443330005"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("1222443330005"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1222443280871")});
     }
   }

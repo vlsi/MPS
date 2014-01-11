@@ -29,7 +29,7 @@ public class ConvertAnonymousWithLocalVariablesTest_Test extends BaseTransformat
       this.addNodeById("3145818413496050433");
       this.addNodeById("3145818413496504287");
       new ConvertAnonymousRefactoring(SNodeOperations.cast(this.getNodeById("3145818413496050467"), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "MyIField").doRefactor();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3145818413496050438"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3145818413496504288"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("3145818413496050438"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' and '" + SNodeOperations.cast(this.getNodeById("3145818413496504288"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3145818413496050438"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3145818413496504288"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

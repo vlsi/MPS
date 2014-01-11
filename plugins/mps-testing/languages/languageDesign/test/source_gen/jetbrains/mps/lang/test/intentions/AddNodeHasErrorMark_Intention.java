@@ -86,9 +86,9 @@ public class AddNodeHasErrorMark_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodePropertiesContainer", null);
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"), newAnnotation);
-      SNodeFactoryOperations.addNewChild(newAnnotation, "properties", "jetbrains.mps.lang.test.structure.NodeErrorPropety");
+      SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer", null);
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"), newAnnotation);
+      SNodeFactoryOperations.addNewChild(newAnnotation, "nodeCheckOperations", "jetbrains.mps.lang.test.structure.NodeErrorProperty");
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }
 

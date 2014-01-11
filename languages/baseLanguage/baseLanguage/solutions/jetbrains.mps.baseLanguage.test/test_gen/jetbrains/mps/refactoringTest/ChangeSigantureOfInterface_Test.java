@@ -34,7 +34,7 @@ public class ChangeSigantureOfInterface_Test extends BaseTransformationTest4 {
       SPropertyOperations.set(parameters.getDeclaration(), "name", "myMethod");
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(parameters, SNodeOperations.cast(this.getNodeById("418758558327028802"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327028812"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327019475"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("418758558327028812"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' and '" + SNodeOperations.cast(this.getNodeById("418758558327019475"), "jetbrains.mps.baseLanguage.structure.ClassConcept") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327028812"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("418758558327019475"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }
 }

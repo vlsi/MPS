@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2ec5b3bsm26dkcbwe0wajlopky92e8j">
+<dependencies version="2" modelHash="1o0aped6y5tr7mju5avsp5wp3j9afgc">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="73i4kh54xsgdn4e49nimc20rbpbjghx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-a9qp6tb2eva1mros70qa0tynlaehi5n" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ungqs4bw4iarv5x0w54gskv8zva7o4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9j9njikjpbm0mdlpt71l8bk62lhmpac" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-c06t0p64e1pwugw1ioimfr3mxtpke0v" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="7uy0q3kirgdwbps1ji91cpmiltydqbr" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
-  <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="9317tiys12jvz3s4luhm109sc3cq5d3" />
-  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="7cf5mbs6r7l7w6l3mzm1xim6xwzt321" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-zttxhpc4iix3xpfv1j0msfpvjln643" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-h7l8al7gendgvizvpx5caoaarj34lr" />
+  <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="-428f3h6lieo0hfd1xh6tjy8ktsg5kdi" />
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-5wk0ye39dsd1moy2yynij11y229wrud" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-4hnioy4az3bj6oqvvif64xcnyt6r7kl" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-cxbkdocoo1yjcb80afpvwyaggb3sqra" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-9me5p75f1826h5u07cs0oo97ya4ywre" dependsOnNodes="true" />
-  <source id="1217271585456" name="OnlyStatementsCanUnreachable" hash="4r90vdvr1r6v1gfeeq8i1aytczhp6rd" dependsOnNodes="true">
+  <common hash="-eaj8z9yg6me5c2map32ecbf8u5nf9kj" dependsOnNodes="true" />
+  <source id="1217271585456" name="OnlyStatementsCanUnreachable" hash="-cq68h0eu8ka8pjochsi5hm73qvxdsij" dependsOnNodes="true">
     <dep root="1217271585523" />
     <dep root="1217271585641" />
     <dep root="1217271585692" />
@@ -134,7 +134,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ForLoop_Test.java" />
   </source>
-  <source id="1217271585641" name="MethodParametersTest" hash="ddni7y07er8d4azs5jw4wlan8jidu81" dependsOnNodes="true">
+  <source id="1217271585641" name="MethodParametersTest" hash="-4zz8dx2gsg9s05fju4dii142j8lyoy1" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585692" />
@@ -186,15 +186,17 @@
     <dep root="8187342170694467176" />
     <dep root="843236768048177679" />
     <dep root="9092976468699800028" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="MethodParametersTest_Test.java" />
   </source>
-  <source id="1217271585692" name="UnusedAssignment" hash="4wjt8ixa393jbwj96cuuninxpq5828a" dependsOnNodes="true">
+  <source id="1217271585692" name="UnusedAssignment" hash="1fcqwhhwm5p4vaf89bhqetvayyjxsbn" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -246,15 +248,17 @@
     <dep root="8187342170694467176" />
     <dep root="843236768048177679" />
     <dep root="9092976468699800028" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedAssignment_Test.java" />
   </source>
-  <source id="1217271586138" name="UnreachableStatements" hash="8f1xi9jc9rpzoqt9vktyj8xlg7hnigb" dependsOnNodes="true">
+  <source id="1217271586138" name="UnreachableStatements" hash="6he32owf8cqg99sn6uyhmlh3yftlfp5" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -316,7 +320,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnreachableStatements_Test.java" />
   </source>
-  <source id="1217271586324" name="ReadAction" hash="-43py0off3glxruhi7jzyzo9nga5qa17" dependsOnNodes="true">
+  <source id="1217271586324" name="ReadAction" hash="-18nhfmitzeh3y74yn21n0bkgmu0kt3w" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -378,7 +382,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ReadAction_Test.java" />
   </source>
-  <source id="1217271586411" name="DataFlowInClosure" hash="-c5jowyis3gu5aooyfj5y2245atp594f" dependsOnNodes="true">
+  <source id="1217271586411" name="DataFlowInClosure" hash="-6wjs6pif459waocktvivdkw7vp5fnlx" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -430,15 +434,17 @@
     <dep root="8187342170694467176" />
     <dep root="843236768048177679" />
     <dep root="9092976468699800028" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="DataFlowInClosure_Test.java" />
   </source>
-  <source id="1217271586585" name="UnexpectedReturnInAnonymousClass" hash="-b8ve8fpxdlx7ttn63ss5x51un8y1tem" dependsOnNodes="true">
+  <source id="1217271586585" name="UnexpectedReturnInAnonymousClass" hash="-ctofdd42lbmkfolw0tn7n8c5rse0miv" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -490,15 +496,17 @@
     <dep root="8187342170694467176" />
     <dep root="843236768048177679" />
     <dep root="9092976468699800028" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnexpectedReturnInAnonymousClass_Test.java" />
   </source>
-  <source id="1217271587023" name="UnusedVariableDeclaration" hash="-albuew39mqv065n6d58dtad57vc9qjv" dependsOnNodes="true">
+  <source id="1217271587023" name="UnusedVariableDeclaration" hash="-8da7d7wau67pn9uar0pajg4rrimjd0b" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -560,7 +568,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedVariableDeclaration_Test.java" />
   </source>
-  <source id="1217271587074" name="AnonymousClass" hash="-3t9yhmhfopj4ht196lhl0bbkr31rgd8" dependsOnNodes="true">
+  <source id="1217271587074" name="AnonymousClass" hash="4sptlrbd01mwuhg67ps1efk668x1a5l" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -612,15 +620,17 @@
     <dep root="8187342170694467176" />
     <dep root="843236768048177679" />
     <dep root="9092976468699800028" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="AnonymousClass_Test.java" />
   </source>
-  <source id="1217271587656" name="VariableUninitialized" hash="bjy7395horpkimif9npfghf8xh7007k" dependsOnNodes="true">
+  <source id="1217271587656" name="VariableUninitialized" hash="-dge2gl0n7sjlifrexinskhd5hysn0wu" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -682,7 +692,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="VariableUninitialized_Test.java" />
   </source>
-  <source id="1217271587918" name="IfStatementDataFlow" hash="2ljvxpmcwt6bzzabumncy6w2rzrqla0" dependsOnNodes="true">
+  <source id="1217271587918" name="IfStatementDataFlow" hash="dtpql4v99so28g687l223v13a4cci9h" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -734,15 +744,17 @@
     <dep root="8187342170694467176" />
     <dep root="843236768048177679" />
     <dep root="9092976468699800028" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IfStatementDataFlow_Test.java" />
   </source>
-  <source id="1217861204623" name="IfStatementWrongUnreachable" hash="eikn4sa17nimfk4qk980frpgo4fnrrp" dependsOnNodes="true">
+  <source id="1217861204623" name="IfStatementWrongUnreachable" hash="ax263prb4la6vwnlf9bxcss6kbxemtx" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -804,7 +816,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IfStatementWrongUnreachable_Test.java" />
   </source>
-  <source id="1217866056908" name="UnusedAssignmentWithIF" hash="-2pdkw5xfsz7istl9sa6593eirv37nh5" dependsOnNodes="true">
+  <source id="1217866056908" name="UnusedAssignmentWithIF" hash="599r597k82tn838uahq20pj7kosctdh" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -866,7 +878,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedAssignmentWithIF_Test.java" />
   </source>
-  <source id="1220012417777" name="CatchingUnthrownException" hash="-1rdge0u8sjbmdftlzqnvzcff3zcn5l4" dependsOnNodes="true">
+  <source id="1220012417777" name="CatchingUnthrownException" hash="-42vi6fcpu6ipiwlihm9zf2bfhdwtdww" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -928,7 +940,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="CatchingUnthrownException_Test.java" />
   </source>
-  <source id="1220013369431" name="IfStatementWithReturns" hash="-d93xpxbt76uqskm1uiu7rrsga731gx9" dependsOnNodes="true">
+  <source id="1220013369431" name="IfStatementWithReturns" hash="9v7jggadrc5ylvscqs0ws0or4jf4twk" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -990,7 +1002,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IfStatementWithReturns_Test.java" />
   </source>
-  <source id="1220265193995" name="UnusedParameters" hash="3mhy0aw74nn8fdzxoxpzo16wmcu2a8k" dependsOnNodes="true">
+  <source id="1220265193995" name="UnusedParameters" hash="-8z274pculctscvdsp4w5dqlqd1pzyyc" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1052,7 +1064,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedParameters_Test.java" />
   </source>
-  <source id="1222443174371" name="ListWithConceptFunction" hash="-4jvox3xftkxyt28g89s7zqcd3x59ybv" dependsOnNodes="true">
+  <source id="1222443174371" name="ListWithConceptFunction" hash="-de8bvixd4egzitoiigq8f6oj8i93k8f" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1114,7 +1126,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ListWithConceptFunction_Test.java" />
   </source>
-  <source id="1226936033402" name="CommentCanBeUnreachable" hash="-1qubrnh5j9fzpjhfan0gtde3k134srq" dependsOnNodes="true">
+  <source id="1226936033402" name="CommentCanBeUnreachable" hash="-d37db7n281lif4xfdoz4w93mufnif7y" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1176,7 +1188,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="CommentCanBeUnreachable_Test.java" />
   </source>
-  <source id="1229349783966" name="CommandDataflowWithReturn" hash="-d06u21cso9pv8bl6ecpaw30ducukvub" dependsOnNodes="true">
+  <source id="1229349783966" name="CommandDataflowWithReturn" hash="9j3vuliyorhoqkraoyl9o09tjrza84s" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1246,7 +1258,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TestSafeEquals_Test.java" />
   </source>
-  <source id="6011730950863071455" name="NullableAnalyzer" hash="cjjnq3ivrz3w3jsj3cq3w7jb77791tu" dependsOnNodes="true">
+  <source id="6011730950863071455" name="NullableAnalyzer" hash="-daldau1oel0y1pjax1gol7x81pk8hc6" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1308,7 +1320,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="NullableAnalyzer_Test.java" />
   </source>
-  <source id="9092976468699800028" name="ForBreakUnreachable" hash="-59rtfepzukjgkulnqaju5fa21jg5oe0" dependsOnNodes="true">
+  <source id="9092976468699800028" name="ForBreakUnreachable" hash="-bd3p61aug4qcb0935gwpkotv3gir6up" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1370,7 +1382,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ForBreakUnreachable_Test.java" />
   </source>
-  <source id="7970711249077196600" name="PrivateField" hash="ap2c3zqmc8igw0nkvyei69b170luswu" dependsOnNodes="true">
+  <source id="7970711249077196600" name="PrivateField" hash="-6pel93cpqvylo0zdpo36wks9niy60r5" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1432,7 +1444,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="PrivateField_Test.java" />
   </source>
-  <source id="843236768048177679" name="FinalFieldWasAssigned" hash="-2gpvpkf09m5vdf68iz3f9isxji1uwem" dependsOnNodes="true">
+  <source id="843236768048177679" name="FinalFieldWasAssigned" hash="1yg1654csjht0ys5qnvezzzkxg6ve38" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1614,7 +1626,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="RollBacksNewTypeSystem_Test.java" />
   </source>
-  <source id="7868761255934329294" name="Validation" hash="bezycy04tx698wj85e2bmvsm8662hto" dependsOnNodes="true">
+  <source id="7868761255934329294" name="Validation" hash="793je3d7sn8n2u59z8gcn62lrsum4a5" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1676,7 +1688,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="Validation_Test.java" />
   </source>
-  <source id="5113180367541522955" name="TypesTest_BL" hash="89f71v6uzlveabt5g6jh8y77tp235ps" dependsOnNodes="true">
+  <source id="5113180367541522955" name="TypesTest_BL" hash="-1uiwrz1hgbgtftvguy87urxm08ovq9" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1800,7 +1812,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="hasSameSignatureTest_Test.java" />
   </source>
-  <source id="4395293866213195826" name="TestExpectedType" hash="dc5uu6kvgc0my12vnkelpoa7gcnx2j" dependsOnNodes="true">
+  <source id="4395293866213195826" name="TestExpectedType" hash="7njefxo6av3zmy7fdx2v4xeclho11kb" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1862,7 +1874,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="TestExpectedType_Test.java" />
   </source>
-  <source id="4705425356438246924" name="FinalVarRefs" hash="-dw2t9zdgqj8u7mexch55i455mdb0226" dependsOnNodes="true">
+  <source id="4705425356438246924" name="FinalVarRefs" hash="-1u4u8awpa9ta9ynpd95sasytqs82xig" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1936,7 +1948,7 @@
   <source id="4246614868164066980" name="Mapper" hash="-cwf7lxm1aiidp1y951t0ozdwq8kcnrx">
     <file name="Mapper.java" />
   </source>
-  <source id="4246614868164066709" name="Generics" hash="-87ijxszn5ycg2o211njqayiy1sfncso" dependsOnNodes="true">
+  <source id="4246614868164066709" name="Generics" hash="9h0tho9hc7rz32feoupux2cvvnihdud" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2058,7 +2070,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ReturnFromTry_Test.java" />
   </source>
-  <source id="4632498131795732451" name="InvalidUseOfBoundTypes" hash="-6pii0ddulmepvrnpwxkqmfnpuzwi254" dependsOnNodes="true">
+  <source id="4632498131795732451" name="InvalidUseOfBoundTypes" hash="-brjgvueohec10h8zkgfqhwdhycvqq66" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2120,7 +2132,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="InvalidUseOfBoundTypes_Test.java" />
   </source>
-  <source id="8187342170692126565" name="WildcardsInClassDefinition" hash="14pc9ppemwm5zy5jwdd226xr6odl1rv" dependsOnNodes="true">
+  <source id="8187342170692126565" name="WildcardsInClassDefinition" hash="-au4vhex58yyzqh1wmcaujmrugr61jhy" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2182,7 +2194,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="WildcardsInClassDefinition_Test.java" />
   </source>
-  <source id="4817790028254995038" name="InstanceMethodTypeArgumentMatch" hash="-7rarmsml6m0exdlk6yl1sxv7lssdauk" dependsOnNodes="true">
+  <source id="4817790028254995038" name="InstanceMethodTypeArgumentMatch" hash="-9934tlfvzwm28f00dujp4menmmqbzwk" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2244,7 +2256,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="InstanceMethodTypeArgumentMatch_Test.java" />
   </source>
-  <source id="6640766779615010044" name="FieldCanBeLocalVar" hash="-99yty4afej1zgedvpid6j1haw5jpg6w" dependsOnNodes="true">
+  <source id="6640766779615010044" name="FieldCanBeLocalVar" hash="b6j2cz2q7kmuasnsi25p5e0uwetum9" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2306,7 +2318,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="FieldCanBeLocalVar_Test.java" />
   </source>
-  <source id="4853049144093343618" name="GenericNewExpressionTypeParameters" hash="-cmw7gkurwy18ctig1w214ggm00uvuj0" dependsOnNodes="true">
+  <source id="4853049144093343618" name="GenericNewExpressionTypeParameters" hash="-pjwcm76ldjgtdog3ngepb8eh75qm55" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2368,7 +2380,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="GenericNewExpressionTypeParameters_Test.java" />
   </source>
-  <source id="488298296050326101" name="TypeInference" hash="2mg0dz0vtseqqviiusyl6ns0od9fupi" dependsOnNodes="true">
+  <source id="488298296050326101" name="TypeInference" hash="-7h6heu67fyuiddnm31eme4czvqhur1m" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2430,7 +2442,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="TypeInference_Test.java" />
   </source>
-  <source id="2970924421778354240" name="typeParameterDuplicationAndMisorder" hash="cfehm0mhawf9vvhychznfryqdoax3yw" dependsOnNodes="true">
+  <source id="2970924421778354240" name="typeParameterDuplicationAndMisorder" hash="-53wl09temsitys7o68ljzjsyq7aodi1" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2492,7 +2504,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="typeParameterDuplicationAndMisorder_Test.java" />
   </source>
-  <source id="8187342170694467176" name="WildCardsInAnonymousClassCreators" hash="eor41dco4cf96t81edd12d81jebtqme" dependsOnNodes="true">
+  <source id="8187342170694467176" name="WildCardsInAnonymousClassCreators" hash="5baqnc2kfnyfvhjdszib2dwf89n59n1" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2554,7 +2566,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="WildCardsInAnonymousClassCreators_Test.java" />
   </source>
-  <source id="4914675704512523356" name="FieldDeclarationCanBeLocalVariable" hash="-cww6pxg0l0k7r9l2d3jmor85a0pgaiv" dependsOnNodes="true">
+  <source id="4914675704512523356" name="FieldDeclarationCanBeLocalVariable" hash="eux9ahfm356vwzout098fv2rqkjdnvs" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2616,7 +2628,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="FieldDeclarationCanBeLocalVariable_Test.java" />
   </source>
-  <source id="7430872850884076050" name="UnusedMethodTypeVariableDeclaration" hash="49673wc7qxdmbe53swuuyx06j2m2vgs" dependsOnNodes="true">
+  <source id="7430872850884076050" name="UnusedMethodTypeVariableDeclaration" hash="9laems1z12z8obbfdqj1bceoc79t260" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2678,7 +2690,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedMethodTypeVariableDeclaration_Test.java" />
   </source>
-  <source id="2176128700705692341" name="BoundedTypeOnIllegalPositions" hash="2kvesc6bem27qy4xa9pkq6b8azp2fom" dependsOnNodes="true">
+  <source id="2176128700705692341" name="BoundedTypeOnIllegalPositions" hash="-9qybmygwl9n4f568ibjap6jxavsc7ae" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2740,7 +2752,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="BoundedTypeOnIllegalPositions_Test.java" />
   </source>
-  <source id="7430872850884066230" name="StaticMethodTypeArgumentsMatch" hash="7kdrokk2cqhuiqwy5t7gms96b6iwt48" dependsOnNodes="true">
+  <source id="7430872850884066230" name="StaticMethodTypeArgumentsMatch" hash="-36vg1ea65b97lcyn1jddxfgs7mrasj0" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -2802,7 +2814,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="StaticMethodTypeArgumentsMatch_Test.java" />
   </source>
-  <source id="5679018521759262129" name="GetElementOperationFollowedByPropertyAccess" hash="dv66uqj9rcmgfcbswhffmqpnm2hwu8" dependsOnNodes="true">
+  <source id="5679018521759262129" name="GetElementOperationFollowedByPropertyAccess" hash="3to03hx9ig2xtvh84j9gwmzcok65gls" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />

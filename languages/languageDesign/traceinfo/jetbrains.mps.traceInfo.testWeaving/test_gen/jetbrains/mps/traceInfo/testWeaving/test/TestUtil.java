@@ -8,11 +8,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
-import java.util.ArrayList;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.ArrayList;
 
 public class TestUtil {
   public TestUtil() {
@@ -23,7 +23,7 @@ public class TestUtil {
     final int delta = 4;
     ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), it), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value))));
+        Assert.assertNull("nodes '" + it + "' and '" + (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value) + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), it), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value))));
         line.value += delta;
       }
     });
@@ -36,7 +36,7 @@ public class TestUtil {
     ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         for (int i = 0; i < howMany; i++) {
-          Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), it), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value))));
+          Assert.assertNull("nodes '" + it + "' and '" + (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value) + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), it), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value))));
           line.value += delta;
         }
       }

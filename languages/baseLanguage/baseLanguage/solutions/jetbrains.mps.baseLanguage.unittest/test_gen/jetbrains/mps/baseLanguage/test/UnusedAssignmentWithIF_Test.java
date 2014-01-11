@@ -21,7 +21,7 @@ public class UnusedAssignmentWithIF_Test extends BaseTransformationTest4 {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck1217866439753() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1217866439753"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("1217866439753"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1217866140840")});
     }
   }

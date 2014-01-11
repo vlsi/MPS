@@ -125,7 +125,7 @@ public class Utils {
     // <node> 
     // <node> 
 
-    Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
+    Assert.assertNull("nodes '" + expected + "' and '" + result + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
 
   }
 

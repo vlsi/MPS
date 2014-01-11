@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CheckDataFlowOperation_BehaviorDescriptor extends NodeOperation_BehaviorDescriptor {
+public class CheckDataFlowOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor {
   public CheckDataFlowOperation_BehaviorDescriptor() {
   }
 

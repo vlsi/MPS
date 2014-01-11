@@ -14,7 +14,8 @@ public class TypesCheckOperation_Behavior {
 
   public static void virtual_perform_1215601182156(SNode thisNode, SNode node) {
     try {
-      Class<?> cls = Class.forName("jetbrains.mps.lang.test.runtime.SubtreeChecker");
+      // <node> 
+      Class<?> cls = Class.forName("jetbrains.mps.lang.test.runtime.TypeChecker");
       Method meth = cls.getMethod("checkNodeForErrors", SNode.class);
       meth.invoke(null, node);
     } catch (Exception ex) {
@@ -29,7 +30,7 @@ public class TypesCheckOperation_Behavior {
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "operationName") == null || SPropertyOperations.getString(thisNode, "operationName").length() == 0) {
-      return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", "virtual_getTestName_1216136419751", new Object[]{});
+      return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", "virtual_getTestName_1216136419751", new Object[]{});
     } else {
       return SPropertyOperations.getString(thisNode, "operationName");
     }

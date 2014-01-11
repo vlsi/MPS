@@ -4,7 +4,11 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodePropertiesContainer_Behavior {
+public class NodeUnreachable_Behavior {
   public static void init(SNode thisNode) {
+  }
+
+  public static String virtual_getName_1217435265700(SNode thisNode) {
+    return "NodeUnreachableCheck";
   }
 }

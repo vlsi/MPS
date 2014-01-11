@@ -16,23 +16,23 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class VariableLive_Editor extends DefaultNodeEditor {
+public class VariableInitialized_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_nbf2a_a(editorContext, node);
+    return this.createCollection_vx851m_a(editorContext, node);
   }
 
-  private EditorCell createCollection_nbf2a_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vx851m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_nbf2a_a");
+    editorCell.setCellId("Collection_vx851m_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_nbf2a_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_nbf2a_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vx851m_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vx851m_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_nbf2a_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "live");
-    editorCell.setCellId("Constant_nbf2a_a0");
+  private EditorCell createConstant_vx851m_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "init");
+    editorCell.setCellId("Constant_vx851m_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -40,7 +40,7 @@ public class VariableLive_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_nbf2a_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vx851m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("var");
     provider.setNoTargetText("<no var>");

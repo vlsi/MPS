@@ -6,8 +6,10 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.SubtreeChecker;
+import jetbrains.mps.lang.test.runtime.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @MPSLaunch
 public class AnonymousClass_Test extends BaseTransformationTest4 {
@@ -17,11 +19,22 @@ public class AnonymousClass_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_AnonymousClass", true);
   }
 
+  @Test
+  public void test_NodeWarningCheck963887337804206807() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeWarningCheck963887337804206807", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_AnonymousClass() throws Exception {
       this.addNodeById("1217271587076");
-      SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1215444376214"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1215444376214"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+    }
+
+    public void test_NodeWarningCheck963887337804206807() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804206807"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4265636116363094392")});
     }
   }
 }

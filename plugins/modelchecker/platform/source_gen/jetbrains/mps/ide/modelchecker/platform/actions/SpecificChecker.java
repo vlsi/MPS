@@ -49,12 +49,12 @@ public abstract class SpecificChecker {
   }
 
   public static boolean filterIssue(SNode node) {
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"));
+    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"));
     if (container == null) {
       return true;
     }
-    for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
-      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
+    for (SNode property : SLinkOperations.getTargets(container, "nodeCheckOperations", true)) {
+      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorProperty")) {
         return false;
       }
     }

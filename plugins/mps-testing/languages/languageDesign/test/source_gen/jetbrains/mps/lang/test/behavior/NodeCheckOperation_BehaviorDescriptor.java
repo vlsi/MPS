@@ -6,32 +6,32 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class NodeOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestMethod_BehaviorDescriptor {
-  public NodeOperation_BehaviorDescriptor() {
+public abstract class NodeCheckOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestMethod_BehaviorDescriptor {
+  public NodeCheckOperation_BehaviorDescriptor() {
   }
 
   public String virtual_getName_1217435265700(SNode thisNode) {
-    return NodeOperation_Behavior.virtual_getName_1217435265700(thisNode);
+    return NodeCheckOperation_Behavior.virtual_getName_1217435265700(thisNode);
   }
 
   public SNode virtual_getTestCase_1216134500045(SNode thisNode) {
-    return NodeOperation_Behavior.virtual_getTestCase_1216134500045(thisNode);
+    return NodeCheckOperation_Behavior.virtual_getTestCase_1216134500045(thisNode);
   }
 
   public String virtual_getTestName_1216136419751(SNode thisNode) {
-    return NodeOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
+    return NodeCheckOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
 
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
-    return NodeOperation_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
+    return NodeCheckOperation_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
   public void virtual_perform_1215601182156(SNode thisNode, SNode node) {
-    NodeOperation_Behavior.virtual_perform_1215601182156(thisNode, node);
+    NodeCheckOperation_Behavior.virtual_perform_1215601182156(thisNode, node);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.test.structure.NodeOperation";
+    return "jetbrains.mps.lang.test.structure.NodeCheckOperation";
   }
 }

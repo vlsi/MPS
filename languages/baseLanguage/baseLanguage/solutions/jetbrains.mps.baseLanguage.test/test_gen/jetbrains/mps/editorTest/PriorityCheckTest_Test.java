@@ -37,7 +37,7 @@ public class PriorityCheckTest_Test extends BaseTransformationTest4 {
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), op);
       SLinkOperations.setTarget(op, "rightExpression", SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), true);
       ParenthesisUtil.checkOperationWRTPriority(op);
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449702"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
+      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") + "' and '" + SNodeOperations.cast(this.getNodeById("3852894662483449702"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449702"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
   }
 }

@@ -10,10 +10,10 @@ import junit.framework.TestCase;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import java.util.List;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -57,9 +57,17 @@ public class Patternv1_Test extends BaseTransformationTest4 {
       {
         List<SNode> list = (List<SNode>) pattern.getFieldValue("patternVar_list");
         int i = 0;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a2a6a2c())));
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a2a6a2c());
+          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        }
         i++;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a3a6a2c())));
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a3a6a2c());
+          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        }
         i++;
       }
       return true;

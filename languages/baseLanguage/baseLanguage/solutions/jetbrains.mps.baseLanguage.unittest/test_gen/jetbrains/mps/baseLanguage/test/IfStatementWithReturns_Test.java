@@ -21,7 +21,7 @@ public class IfStatementWithReturns_Test extends BaseTransformationTest4 {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck1220013512724() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1220013512724"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("1220013512724"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1220013400783")});
     }
   }

@@ -19,13 +19,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ActionReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation").super_("jetbrains.mps.lang.test.structure.INodeAnnotattion").parents("jetbrains.mps.lang.test.structure.INodeAnnotattion", "jetbrains.mps.lang.core.structure.INamedConcept").properties("cellId", "caretPosition", "isLastPosition", "useLabelSelection", "selectionStart", "selectionEnd", "isInInspector").references("nodeRangeSelectionStart", "nodeRangeSelectionEnd").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation").super_("jetbrains.mps.lang.test.structure.INodeAnnotation").parents("jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.core.structure.INamedConcept").properties("cellId", "caretPosition", "isLastPosition", "useLabelSelection", "selectionStart", "selectionEnd", "isInInspector").references("nodeRangeSelectionStart", "nodeRangeSelectionEnd").create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.AssertMatch").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"before", "after"}, new boolean[]{true, true}).alias("assert match", "").staticScope(StaticScope.NONE).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.BootstrapActionReference").super_("jetbrains.mps.lang.test.structure.ActionReference").parents("jetbrains.mps.lang.test.structure.ActionReference").properties("actionId").alias("by id:", "").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckDataFlowOperation").super_("jetbrains.mps.lang.test.structure.NodeOperation").parents("jetbrains.mps.lang.test.structure.NodeOperation").alias("check dataflow", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckDataFlowOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("check dataflow", "").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.CheckNodeDataflow").super_("jetbrains.mps.lang.test.structure.AbstractNodeAssert").parents("jetbrains.mps.lang.test.structure.AbstractNodeAssert").alias("check node dataflow", "").staticScope(StaticScope.NONE).create();
       case 7:
@@ -41,7 +41,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ExpressionContainer").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"expression"}, new boolean[]{false}).alias("{ expr }", "expression container (used inside test nodes)").staticScope(StaticScope.NONE).create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.INodeAnnotattion").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.INodeAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.InvokeActionStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"actionReference"}, new boolean[]{false}).alias("invoke action", "").staticScope(StaticScope.NONE).create();
       case 15:
@@ -53,63 +53,61 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ModelExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("model", "").staticScope(StaticScope.NONE).create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeErrorPropety").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").alias("node has error", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeCheckOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod").abstract_().create();
       case 20:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty").super_("jetbrains.mps.lang.test.structure.NodeTypeProperty").parents("jetbrains.mps.lang.test.structure.NodeTypeProperty").alias("has expected type", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").children(new String[]{"nodeCheckOperations"}, new boolean[]{true}).create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeOperation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeErrorProperty").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("node has error", "").create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeOperationsContainer").super_("jetbrains.mps.lang.test.structure.INodeAnnotattion").parents("jetbrains.mps.lang.test.structure.INodeAnnotattion").children(new String[]{"operations"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty").super_("jetbrains.mps.lang.test.structure.NodeTypeProperty").parents("jetbrains.mps.lang.test.structure.NodeTypeProperty").alias("has expected type", "").create();
       case 23:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodePropertiesContainer").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").children(new String[]{"properties"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeOperationsContainer").super_("jetbrains.mps.lang.test.structure.INodeAnnotation").parents("jetbrains.mps.lang.test.structure.INodeAnnotation").children(new String[]{"nodeCheckOperations"}, new boolean[]{true}).create();
       case 24:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeProperty").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeReachable").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("reachable", "").create();
       case 25:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeReachable").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").alias("reachable", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeProperty").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"type"}, new boolean[]{false}).alias("has type", "").create();
       case 26:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeProperty").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").children(new String[]{"type"}, new boolean[]{false}).alias("has type", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeSetProperty").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"type"}, new boolean[]{true}).alias("type in", "").create();
       case 27:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeTypeSetProperty").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").children(new String[]{"type"}, new boolean[]{true}).alias("type in", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeUnreachable").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("unreachable", "").create();
       case 28:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeUnreachable").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").alias("unreachable", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeWarningProperty").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("node has warning", "").create();
       case 29:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeWarningProperty").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").alias("node has warning", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodesTestCase").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").children(new String[]{"nodesToCheck", "testMethods", "methods"}, new boolean[]{true, true, true}).create();
       case 30:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodesTestCase").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").children(new String[]{"nodesToCheck", "testMethods", "methods"}, new boolean[]{true, true, true}).create();
-      case 31:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodesTestMethod").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod").abstract_().create();
-      case 32:
+      case 31:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.PressKeyStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"keyStrokes"}, new boolean[]{true}).alias("press keys", "").staticScope(StaticScope.NONE).create();
-      case 33:
+      case 32:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ProjectExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("project", "").staticScope(StaticScope.NONE).create();
-      case 34:
+      case 33:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ScopesExpectedNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("ref").create();
-      case 35:
+      case 34:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ScopesTest").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").references("checkingReference").children(new String[]{"nodes"}, new boolean[]{true}).create();
-      case 36:
+      case 35:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.SimpleNodeTest").super_("jetbrains.mps.lang.test.structure.NodesTestMethod").parents("jetbrains.mps.lang.test.structure.NodesTestMethod").alias("test method", "").create();
-      case 37:
+      case 36:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.SwitchToInspector").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").alias("switch to inspector", "").staticScope(StaticScope.NONE).create();
-      case 38:
+      case 37:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestInfo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("projectPath", "uiTest", "reOpenProject").create();
-      case 39:
+      case 38:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"nodeToCheck"}, new boolean[]{false}).alias("test node", "").create();
+      case 39:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestNodeAnnotation").super_("jetbrains.mps.lang.test.structure.INodeAnnotation").parents("jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 40:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestNodeAnnotation").super_("jetbrains.mps.lang.test.structure.INodeAnnotattion").parents("jetbrains.mps.lang.test.structure.INodeAnnotattion", "jetbrains.mps.lang.core.structure.INamedConcept").create();
-      case 41:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TestNodeReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").staticScope(StaticScope.NONE).create();
-      case 42:
+      case 41:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TypeKeyStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").properties("keys").alias("type", "").staticScope(StaticScope.NONE).create();
+      case 42:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TypesCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").properties("operationName", "allowErrors", "allowWarnings").alias("check types", "").create();
       case 43:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.TypesCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeOperation").parents("jetbrains.mps.lang.test.structure.NodeOperation").properties("operationName", "allowErrors", "allowWarnings").alias("check types", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.VariableAlive").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"var"}, new boolean[]{false}).alias("variable live", "").create();
       case 44:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.VariableInialized").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").children(new String[]{"var"}, new boolean[]{false}).alias("variable initalized", "").create();
-      case 45:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.VariableLive").super_("jetbrains.mps.lang.test.structure.NodeProperty").parents("jetbrains.mps.lang.test.structure.NodeProperty").children(new String[]{"var"}, new boolean[]{false}).alias("variable live", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.VariableInitialized").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").children(new String[]{"var"}, new boolean[]{false}).alias("variable initialized", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.AbstractNodeAssert", "jetbrains.mps.lang.test.structure.ActionReference", "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorOperation", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.INodeAnnotattion", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeErrorPropety", "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty", "jetbrains.mps.lang.test.structure.NodeOperation", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodePropertiesContainer", "jetbrains.mps.lang.test.structure.NodeProperty", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeProperty", "jetbrains.mps.lang.test.structure.NodeTypeSetProperty", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningProperty", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.NodesTestMethod", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.TypesCheckOperation", "jetbrains.mps.lang.test.structure.VariableInialized", "jetbrains.mps.lang.test.structure.VariableLive"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.AbstractNodeAssert", "jetbrains.mps.lang.test.structure.ActionReference", "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorOperation", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeCheckOperation", "jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer", "jetbrains.mps.lang.test.structure.NodeErrorProperty", "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeProperty", "jetbrains.mps.lang.test.structure.NodeTypeSetProperty", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningProperty", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.NodesTestMethod", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.TypesCheckOperation", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized"};
 }

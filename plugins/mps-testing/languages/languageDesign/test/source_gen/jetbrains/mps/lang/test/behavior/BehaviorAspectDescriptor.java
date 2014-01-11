@@ -20,17 +20,17 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new AssertMatch_BehaviorDescriptor();
       case 5:
         return new CheckNodeForErrors_BehaviorDescriptor();
-      case 19:
-        return new NodePropertiesContainer_BehaviorDescriptor();
       case 16:
-        return new NodeErrorPropety_BehaviorDescriptor();
+        return new NodeCheckOperationsContainer_BehaviorDescriptor();
+      case 17:
+        return new NodeErrorProperty_BehaviorDescriptor();
       case 24:
         return new NodeWarningProperty_BehaviorDescriptor();
       case 20:
         return new NodeReachable_BehaviorDescriptor();
       case 21:
         return new NodeTypeProperty_BehaviorDescriptor();
-      case 18:
+      case 19:
         return new NodeOperationsContainer_BehaviorDescriptor();
       case 37:
         return new TypesCheckOperation_BehaviorDescriptor();
@@ -38,10 +38,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CheckDataFlowOperation_BehaviorDescriptor();
       case 23:
         return new NodeUnreachable_BehaviorDescriptor();
-      case 38:
-        return new VariableInialized_BehaviorDescriptor();
       case 39:
-        return new VariableLive_BehaviorDescriptor();
+        return new VariableInitialized_BehaviorDescriptor();
+      case 38:
+        return new VariableAlive_BehaviorDescriptor();
       case 25:
         return new NodesTestCase_BehaviorDescriptor();
       case 33:
@@ -59,7 +59,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
       case 12:
         return new InvokeIntentionStatement_BehaviorDescriptor();
       case 10:
-        return new INodeAnnotattion_BehaviorDescriptor();
+        return new INodeAnnotation_BehaviorDescriptor();
       case 36:
         return new TypeKeyStatement_BehaviorDescriptor();
       case 26:
@@ -86,7 +86,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BootstrapActionReference_BehaviorDescriptor();
       case 13:
         return new MPSActionReference_BehaviorDescriptor();
-      case 17:
+      case 18:
         return new NodeExpectedTypeProperty_BehaviorDescriptor();
       case 29:
         return new ScopesTest_BehaviorDescriptor();
@@ -97,5 +97,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.INodeAnnotattion", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeErrorPropety", "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodePropertiesContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeProperty", "jetbrains.mps.lang.test.structure.NodeTypeSetProperty", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningProperty", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.TypesCheckOperation", "jetbrains.mps.lang.test.structure.VariableInialized", "jetbrains.mps.lang.test.structure.VariableLive"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer", "jetbrains.mps.lang.test.structure.NodeErrorProperty", "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeProperty", "jetbrains.mps.lang.test.structure.NodeTypeSetProperty", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningProperty", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.TypesCheckOperation", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized"};
 }
