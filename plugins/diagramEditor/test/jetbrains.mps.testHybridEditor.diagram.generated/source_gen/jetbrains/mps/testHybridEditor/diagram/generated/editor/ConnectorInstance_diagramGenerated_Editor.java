@@ -13,13 +13,10 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.jetpad.model.property.ReadableProperty;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -59,12 +56,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
             }
           }));
-          ReadableProperty<SNode> port_5733l5_a0 = JetpadUtils.modelProperty(new Computable<SNode>() {
-            public SNode compute() {
-              return SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "block", false);
-            }
-          });
-          configuration.add(Synchronizers.forProperty(port_5733l5_a0, new WritableProperty<SNode>() {
+          configuration.add(Synchronizers.forProperty(myInputPort, new WritableProperty<SNode>() {
             public void set(SNode port) {
               getTarget().toView().set(getTargetView(port));
             }
@@ -81,12 +73,7 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               return (View) descendantMapper.getTarget();
             }
           }));
-          ReadableProperty<SNode> port_5733l5_a0_0 = JetpadUtils.modelProperty(new Computable<SNode>() {
-            public SNode compute() {
-              return SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "block", false);
-            }
-          });
-          configuration.add(Synchronizers.forProperty(port_5733l5_a0_0, new WritableProperty<SNode>() {
+          configuration.add(Synchronizers.forProperty(myOutputPort, new WritableProperty<SNode>() {
             public void set(SNode port) {
               getTarget().fromView().set(getTargetView(port));
               if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
@@ -112,6 +99,8 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
     }
 
     protected void synchronize() {
+      myInputPort.set(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "block", false));
+      myOutputPort.set(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "block", false));
     }
 
 
