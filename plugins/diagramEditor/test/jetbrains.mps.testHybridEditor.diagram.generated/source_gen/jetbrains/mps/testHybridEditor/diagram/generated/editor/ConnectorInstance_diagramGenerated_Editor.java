@@ -9,6 +9,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
+import jetbrains.jetpad.model.property.Property;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -17,6 +20,7 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -40,7 +44,10 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private class ConnectorCellImpl_5733l5_a extends ConnectorCell {
+  public class ConnectorCellImpl_5733l5_a extends ConnectorCell {
+    protected Property<Tuples._2<SNode, SNode>> myInputPort = new ValueProperty<Tuples._2<SNode, SNode>>();
+    protected Property<Tuples._2<SNode, SNode>> myOutputPort = new ValueProperty<Tuples._2<SNode, SNode>>();
+
     private ConnectorCellImpl_5733l5_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
@@ -56,13 +63,13 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
             }
           }));
-          configuration.add(Synchronizers.forProperty(myInputPort, new WritableProperty<SNode>() {
-            public void set(SNode port) {
+          configuration.add(Synchronizers.forProperty(myInputPort, new WritableProperty<Tuples._2<SNode, SNode>>() {
+            public void set(Tuples._2<SNode, SNode> port) {
               getTarget().toView().set(getTargetView(port));
             }
 
-            private View getTargetView(SNode port) {
-              Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+            private View getTargetView(Tuples._2<SNode, SNode> port) {
+              Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
                 return null;
               }
@@ -73,8 +80,8 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               return (View) descendantMapper.getTarget();
             }
           }));
-          configuration.add(Synchronizers.forProperty(myOutputPort, new WritableProperty<SNode>() {
-            public void set(SNode port) {
+          configuration.add(Synchronizers.forProperty(myOutputPort, new WritableProperty<Tuples._2<SNode, SNode>>() {
+            public void set(Tuples._2<SNode, SNode> port) {
               getTarget().fromView().set(getTargetView(port));
               if (getTarget().fromView().get() == null || getTarget().toView().get() == null) {
                 getTarget().fromView().set(null);
@@ -82,8 +89,8 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
               }
             }
 
-            private View getTargetView(SNode port) {
-              Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port);
+            private View getTargetView(Tuples._2<SNode, SNode> port) {
+              Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
                 return null;
               }
@@ -99,8 +106,8 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
     }
 
     protected void synchronize() {
-      myInputPort.set(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "block", false));
-      myOutputPort.set(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "block", false));
+      myInputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "block", false), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "metaPort", false)));
+      myOutputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "block", false), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "metaPort", false)));
     }
 
 

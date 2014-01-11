@@ -319,18 +319,16 @@
     <unitInfo nodeId="6365639112243901492" fileName="AbstractJetpadEditor.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadEditor" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6365639112244092433">
-    <nodeInfo nodeId="9028489334869166577" fileName="ConnectorCell.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInputPort" />
-    <nodeInfo nodeId="9028489334869166684" fileName="ConnectorCell.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputPort" />
-    <nodeInfo nodeId="6365639112244137339" fileName="ConnectorCell.java" startLine="16" startPosition="65" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5374841768520796202" fileName="ConnectorCell.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
-    <nodeInfo nodeId="6365639112244130179" fileName="ConnectorCell.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="6365639112244130183" fileName="ConnectorCell.java" startLine="16" startPosition="65" endLine="17" endPosition="31" />
-    <scopeInfo nodeId="5374841768520796202" fileName="ConnectorCell.java" startLine="20" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="6365639112244130179" fileName="ConnectorCell.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="6365639112244137339" fileName="ConnectorCell.java" startLine="11" startPosition="65" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5374841768520796202" fileName="ConnectorCell.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="6365639112244130179" fileName="ConnectorCell.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="6365639112244130183" fileName="ConnectorCell.java" startLine="11" startPosition="65" endLine="12" endPosition="31" />
+    <scopeInfo nodeId="5374841768520796202" fileName="ConnectorCell.java" startLine="15" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6365639112244130179" fileName="ConnectorCell.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="6365639112244135790" varName="editorContext" />
       <varInfo nodeId="6365639112244135792" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6365639112244092433" fileName="ConnectorCell.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
+    <unitInfo nodeId="6365639112244092433" fileName="ConnectorCell.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6763610584514195731" />
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/7839772582269268412" />
