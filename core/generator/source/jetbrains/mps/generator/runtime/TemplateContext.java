@@ -78,7 +78,7 @@ public interface TemplateContext {
    * Shorthand for {@link #subContext(String, org.jetbrains.mps.openapi.model.SNode) ctx.subContext(ctx.getInputName(), newInputNode)},
    * to update input node while preserving current input name
    * @param newInputNode new input
-   * @return context with desired input and
+   * @return context with desired input and present input name
    */
   TemplateContext subContext(SNode newInputNode);
 }
