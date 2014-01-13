@@ -142,29 +142,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.push("reductions", false);
     applyReductions(isPrimary);
     ttrace.pop();
-
-    if (myDeltaBuilder != null) {
-      ttrace.push("apply delta changes", false);
-//      myDeltaBuilder.dump();
-      myInplaceModelChange = true;
-      if (myDeltaBuilder.hasChanges()) {
-        myDeltaBuilder.prepareReferences(getInputModel(), this);
-        myDeltaBuilder.applyInplace(getInputModel(), this);
-      }
-      myOutputRoots.clear();
-      myDeltaBuilder = null;
-      ttrace.pop();
-    }
+    myInplaceModelChange = myDeltaBuilder != null;
 
     myAreMappingsReady = true;
     myChanged |= myDependenciesBuilder.isStepRequired(); // TODO optimize: if step is required, it should be the last step
 
-    // optimization: no changes? quit
-    if (!isPrimary && !myChanged && myDelayedChanges.isEmpty() && !myWeavingProcessor.hasWeavingRulesToApply()) {
-      return false;
-    }
-
-    if (!myInplaceModelChange) {
+    if (myDeltaBuilder == null) {
       // publish roots
       for (SNode outputRoot : myOutputRoots) {
         myOutputModel.addRootNode(outputRoot);
@@ -176,21 +159,33 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ttrace.pop();
     } // XXX if in-place change, every required root has been reloaded on previous step, imo
 
-    checkMonitorCanceled();
-
     if (myWeavingProcessor.hasWeavingRulesToApply()) {
+      checkMonitorCanceled();
       ttrace.push("weavings", false);
       myWeavingProcessor.apply();
       myWeavingProcessor = null;
       ttrace.pop();
     }
 
-    // execute mapper in all $MAP_SRC$/$MAP_SRCL$
-    ttrace.push("delayed mappings", false);
-    myDelayedChanges.doAllChanges(this);
-    ttrace.pop();
+    if (!myDelayedChanges.isEmpty()) {
+      checkMonitorCanceled();
+      // execute mapper in all $MAP_SRC$/$MAP_SRCL$
+      ttrace.push("delayed mappings", false);
+      myDelayedChanges.doAllChanges(this);
+      ttrace.pop();
+    }
 
-    checkMonitorCanceled();
+    if (myDeltaBuilder != null) {
+      ttrace.push("apply delta changes", false);
+//      myDeltaBuilder.dump();
+      if (myDeltaBuilder.hasChanges()) {
+        myDeltaBuilder.prepareReferences(getInputModel(), this);
+        myDeltaBuilder.applyInplace(getInputModel());
+      }
+      myOutputRoots.clear();
+      myDeltaBuilder = null;
+      ttrace.pop();
+    }
 
     if (!myPostponedRefs.isEmpty()) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
@@ -665,7 +660,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     assert placeholder.getModel() != null || placeholder.getParent() != null : "Can't replace node that is not part of another structure (hangs in the air)";
     // check new child
     SNode parent = placeholder.getParent();
-    final boolean isRoot = placeholder.getModel() != null && parent == null;
     if (parent != null) {
       String childRole = placeholder.getRoleInParent();
       final Status status = getChildRoleValidator(parent, childRole).validate(actual);
@@ -675,8 +669,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             GeneratorUtil.describe(templateNode, "template"));
       }
     }
-    SNodeUtil.replaceWithAnother(placeholder, actual);
-    if (isRoot) {
+    if (myDeltaBuilder != null) {
+      myDeltaBuilder.replacePlaceholderNode(placeholder, actual);
+    } else {
+      SNodeUtil.replaceWithAnother(placeholder, actual);
+    }
+    if (parent == null) {
       myDependenciesBuilder.rootReplaced(placeholder, actual);
     }
     getGenerationTracer().replaceOutputNode(placeholder, actual);

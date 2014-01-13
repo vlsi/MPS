@@ -45,8 +45,9 @@ import java.util.Set;
  */
 public abstract class DeltaBuilder {
   private final List<DeltaRoot> myDelta = new ArrayList<DeltaRoot>();
-  private final List<ReplacedRoot> myReplacedRoots = new ArrayList<ReplacedRoot>();
-  private final List<CopyRoot> myCopyRoots;
+  private final List<ReplacedRoot> myReplacedRoots = new ArrayList<ReplacedRoot>(); // view: myDelta.select(ReplacedRoot)
+  private final List<NewRoot> myNewRoots = new ArrayList<NewRoot>(); // view: myDelta.select(NewRoot)
+  private final List<CopyRoot> myCopyRoots; // view: myDelta.select(CopyRoot)
 
   protected DeltaBuilder(List<CopyRoot> rootsStorage) {
     myCopyRoots = rootsStorage;
@@ -212,7 +213,9 @@ public abstract class DeltaBuilder {
 
   public void registerRoot(@Nullable SNode oldRoot, @NotNull SNode newRoot) {
     if (oldRoot == null) {
-      myDelta.add(new NewRoot(newRoot));
+      NewRoot r = new NewRoot(newRoot);
+      myDelta.add(r);
+      myNewRoots.add(r);
     } else if (oldRoot == newRoot) {
       CopyRoot cr = null;
       for (CopyRoot r : myCopyRoots) {
@@ -239,6 +242,34 @@ public abstract class DeltaBuilder {
       } else {
         rr.myReplacements.add(newRoot);
       }
+    }
+  }
+
+  /**
+   * Delayed/postponed changes may replace nodes created earlier, and we shall update
+   * delta accordingly.
+   */
+  public void replacePlaceholderNode(@NotNull SNode placeholder, @NotNull SNode actual) {
+    if (placeholder.getParent() == null) {
+      // e.g. MAP-SRC with mapper function at root node in CreateRootRule or MapRootRule
+      for (NewRoot r : myNewRoots) {
+        if (r.myRoot == placeholder) {
+          myNewRoots.remove(r);
+          int i = myDelta.indexOf(r);
+          myDelta.set(i, new NewRoot(actual));
+          return;
+        }
+      }
+      for (ReplacedRoot r : myReplacedRoots) {
+        int i = r.myReplacements.indexOf(placeholder);
+        if (i != -1) {
+          r.myReplacements.set(i, actual);
+          return;
+        }
+      }
+    } else {
+      // it's a child, go ahead and replace it. Once delta is applied, actual would get where expected.
+      SNodeUtil.replaceWithAnother(placeholder, actual);
     }
   }
 
@@ -324,7 +355,7 @@ public abstract class DeltaBuilder {
     }
   }
 
-  public void applyInplace(SModel inputModel, TemplateGenerator generator) {
+  public void applyInplace(SModel inputModel) {
     // make the structure change, at last
     for (DeltaRoot dr : myDelta) {
       // additions from NewRoot and ReplacedRoot come in the order they were scheduled to be applied
@@ -363,6 +394,7 @@ public abstract class DeltaBuilder {
     }
   }
 
+  @SuppressWarnings("unused")
   public void dump() {
     for (DeltaRoot dr : myDelta) {
       if (dr instanceof NewRoot) {
@@ -413,7 +445,7 @@ public abstract class DeltaBuilder {
   }
   private static class CopyRoot implements DeltaRoot {
     public final SNode myRoot;
-    public boolean deleted = false;
+    public boolean deleted = false; // FIXME make it full-fledged DropRoot
     private SubTree[] mySubTrees;
 
     CopyRoot(SNode root) {
