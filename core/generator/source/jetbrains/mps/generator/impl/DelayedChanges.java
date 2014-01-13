@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -124,26 +123,7 @@ public class DelayedChanges {
         ca.checkIsExpectedLanguage(child, getMapSrcMacro(), myContext);
         child = ca.adopt(child, myContext);
 
-        // check new child
-        SNode parent = myChildToReplace.getParent();
-        if (parent == null) {
-          // root?
-          if (myChildToReplace.getModel() != null && myChildToReplace.getParent() == null) {
-            myChildToReplace.getModel().addRootNode(child);
-            myChildToReplace.getModel().removeRootNode(myChildToReplace);
-            generator.rootReplaced(myChildToReplace, child);
-          }
-        } else {
-          String childRole = myChildToReplace.getRoleInParent();
-          final Status status = generator.getChildRoleValidator(parent, childRole).validate(child);
-          if (status != null) {
-            status.reportProblem(false, parent, "",
-              GeneratorUtil.describe(myContext.getInput(), "input"),
-              GeneratorUtil.describe(getMapSrcMacro(), "template"));
-          }
-          org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(myChildToReplace, child);
-        }
-        generator.getGenerationTracer().replaceOutputNode(myChildToReplace, child);
+        generator.replacePlaceholderNode(myChildToReplace, child, myContext, getMapSrcMacro());
 
         // post-processing
         postProcess(child);
