@@ -2068,7 +2068,7 @@
   </root>
   <root type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="1200397549879" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="_CharConstant_String" />
-    <property name="constraint" nameId="tpce.1083066089218" value="[^\\\\]|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
+    <property name="constraint" nameId="tpce.1083066089218" value="[^\\\\'&quot;]|(\\\\([btnfr\&quot;'\\\\]|([0-3]?[0-7]{1,2})|(u[0-9a-fA-F]{4})))" />
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1201183863028" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TypeDerivable" />
