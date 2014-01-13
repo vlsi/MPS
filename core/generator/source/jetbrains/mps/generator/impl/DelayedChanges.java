@@ -120,8 +120,9 @@ public class DelayedChanges {
         if (child == null) {
           return;
         }
-        // FIXME extract insertNode functionality outside of TEEI
-        child = new TemplateExecutionEnvironmentImpl(generator, myExecContext).insertNode(child, getMapSrcMacro(), myContext);
+        ChildAdopter ca = new ChildAdopter(generator);
+        ca.checkIsExpectedLanguage(child, getMapSrcMacro(), myContext);
+        child = ca.adopt(child, myContext);
 
         // check new child
         SNode parent = myChildToReplace.getParent();
