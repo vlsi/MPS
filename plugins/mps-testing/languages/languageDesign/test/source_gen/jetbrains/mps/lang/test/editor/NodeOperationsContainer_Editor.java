@@ -56,9 +56,9 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_62u4bw_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new NodeOperationsContainer_Editor.nodeCheckOperationsListHandler_62u4bw_b0(node, "nodeCheckOperations", editorContext);
+    AbstractCellListHandler handler = new NodeOperationsContainer_Editor.nodeOperationsListHandler_62u4bw_b0(node, "nodeOperations", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
-    editorCell.setCellId("refNodeList_nodeCheckOperations");
+    editorCell.setCellId("refNodeList_nodeOperations");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -67,8 +67,8 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class nodeCheckOperationsListHandler_62u4bw_b0 extends RefNodeListHandler {
-    public nodeCheckOperationsListHandler_62u4bw_b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class nodeOperationsListHandler_62u4bw_b0 extends RefNodeListHandler {
+    public nodeOperationsListHandler_62u4bw_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

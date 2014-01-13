@@ -108,6 +108,24 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.editor.CheckNodeForErrorMessagesOperation_Editor" file="CheckNodeForErrorMessagesOperation_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.editor.CheckNodeForErrors_Editor" file="CheckNodeForErrors_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
@@ -135,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.BootstrapActionReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.CheckDataFlowOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.CheckNodeDataflow_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.CheckNodeForErrorMessagesOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.CheckNodeForErrors_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.EditorComponentExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.EditorExpression_Editor" />
@@ -146,13 +165,13 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.MockAnnotation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.ModelExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeCheckOperationsContainer_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeErrorProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeErrorCheckOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeOperationsContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeReachable_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeTypeProperty_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeTypeSetProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeTypeCheckOperation_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeTypeSetCheckOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeUnreachable_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeWarningProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeWarningCheckOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.PressKeyStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.ProjectExpression_Editor" />
@@ -165,7 +184,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.TestNodeReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.TestNode_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.TypeKeyStatement_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.editor.TypesCheckOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.VariableAlive_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.VariableInitialized_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
@@ -309,7 +327,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.editor.NodeErrorProperty_Editor" file="NodeErrorProperty_Editor.java">
+  <dependency className="jetbrains.mps.lang.test.editor.NodeErrorCheckOperation_Editor" file="NodeErrorCheckOperation_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.transformationTest_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
@@ -358,7 +376,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.editor.NodeTypeProperty_Editor" file="NodeTypeProperty_Editor.java">
+  <dependency className="jetbrains.mps.lang.test.editor.NodeTypeCheckOperation_Editor" file="NodeTypeCheckOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -373,7 +391,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.editor.NodeTypeSetProperty_Editor" file="NodeTypeSetProperty_Editor.java">
+  <dependency className="jetbrains.mps.lang.test.editor.NodeTypeSetCheckOperation_Editor" file="NodeTypeSetCheckOperation_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
@@ -406,7 +424,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.editor.NodeWarningProperty_Editor" file="NodeWarningProperty_Editor.java">
+  <dependency className="jetbrains.mps.lang.test.editor.NodeWarningCheckOperation_Editor" file="NodeWarningCheckOperation_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.transformationTest_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
@@ -649,24 +667,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.test.editor.TypesCheckOperation_Editor" file="TypesCheckOperation_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.editor.VariableAlive_Editor" file="VariableAlive_Editor.java">

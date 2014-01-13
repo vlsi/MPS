@@ -60,5 +60,59 @@
     </dependencies>
     <rename id="tp5g.1215616993394" type="CONCEPT" from="VariableLive" to="VariableAlive" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="25" />
+    </dependencies>
+    <rename id="tp5g.1215507671101" type="CONCEPT" from="NodeErrorProperty" to="NodeErrorCheckOperation" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="26" />
+    </dependencies>
+    <rename id="tp5g.1215526290564" type="CONCEPT" from="NodeTypeProperty" to="NodeTypeCheckOperation" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="27" />
+    </dependencies>
+    <rename id="tp5g.4395293866213195846" type="CONCEPT" from="NodeExpectedTypeProperty" to="NodeExpectedCheckOperation" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="28" />
+    </dependencies>
+    <rename id="tp5g.95706764259116183" type="CONCEPT" from="NodeTypeSetProperty" to="NodeTypeSetCheckOperation" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="29" />
+    </dependencies>
+    <rename id="tp5g.1215511704609" type="CONCEPT" from="NodeWarningProperty" to="NodeWarningCheckOperation" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="30" />
+    </dependencies>
+    <rename id="tp5g.1215607067978" type="CONCEPT" from="TypesCheckOperation" to="CheckNodeForErrorMessagesOperation" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="31" />
+    </dependencies>
+    <rename id="tp5g.501631557342352972" type="PROPERTY" from="operationName" to="name" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="32" />
+    </dependencies>
+    <rename id="tp5g.1215604436604" type="CHILD" from="nodeCheckOperations" to="nodeOperations" />
+  </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="33" />
+    </dependencies>
+    <rename id="tp5g.4395293866213195846" type="CONCEPT" from="NodeExpectedCheckOperation" to="NodeExpectedTypeCheckOperation" />
+  </StructureModification>
 </history>
 

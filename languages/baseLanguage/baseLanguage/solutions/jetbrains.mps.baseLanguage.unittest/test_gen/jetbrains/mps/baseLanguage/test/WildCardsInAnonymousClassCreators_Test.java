@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTest4 {
   @Test
-  public void test_TypesCheck8187342170694474094() throws Throwable {
+  public void test_ErrorMessagesCheck8187342170694474094() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_TypesCheck8187342170694474094", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694474094", true);
   }
 
   @Test
@@ -25,20 +25,20 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
   }
 
   @Test
-  public void test_TypesCheck8187342170694475514() throws Throwable {
+  public void test_ErrorMessagesCheck8187342170694475514() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_TypesCheck8187342170694475514", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694475514", true);
   }
 
   @Test
-  public void test_TypesCheck8187342170694479318() throws Throwable {
+  public void test_ErrorMessagesCheck8187342170694479318() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_TypesCheck8187342170694479318", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694479318", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_TypesCheck8187342170694474094() throws Exception {
+    public void test_ErrorMessagesCheck8187342170694474094() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8187342170694474094"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8187342170694472081")});
     }
@@ -48,12 +48,12 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8187342170694476014")});
     }
 
-    public void test_TypesCheck8187342170694475514() throws Exception {
+    public void test_ErrorMessagesCheck8187342170694475514() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8187342170694475514"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8187342170694475499")});
     }
 
-    public void test_TypesCheck8187342170694479318() throws Exception {
+    public void test_ErrorMessagesCheck8187342170694479318() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8187342170694479318"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8187342170694479303")});
     }

@@ -31,7 +31,7 @@ public class VariableAlive_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_p9fr1_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "live");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alive");
     editorCell.setCellId("Constant_p9fr1_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);

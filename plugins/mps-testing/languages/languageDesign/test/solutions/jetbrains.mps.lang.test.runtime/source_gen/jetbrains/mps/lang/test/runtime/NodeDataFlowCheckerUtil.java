@@ -21,10 +21,10 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
-public class SubtreeChecker {
+public class NodeDataFlowCheckerUtil {
 
 
-  public SubtreeChecker() {
+  public NodeDataFlowCheckerUtil() {
   }
 
 
@@ -73,7 +73,7 @@ public class SubtreeChecker {
     for (SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (nodeToCheck != null) {
         if (AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null) {
-          for (SNode operation : SLinkOperations.getTargets(AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")), "nodeCheckOperations", true)) {
+          for (SNode operation : SLinkOperations.getTargets(AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")), "nodeOperations", true)) {
             BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{nodeToCheck});
           }
         }

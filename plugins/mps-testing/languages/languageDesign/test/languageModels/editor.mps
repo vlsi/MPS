@@ -7,7 +7,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="c0080a47-7e37-4558-bee9-9ae18e690549(jetbrains.mps.lang.extension)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="25" />
+  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="34" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="rliy" modelUID="r:00a69138-8767-4011-a710-463511eae7a6(jetbrains.mps.lang.test.plugin)" version="-1" />
@@ -142,7 +142,7 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.1214846370530" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215076096329" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="type errors" />
+        <property name="text" nameId="tpc2.1073389577007" value="error messages" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215076105964" nodeInfo="nn">
@@ -154,7 +154,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215507692910" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215507671101" resolveInfo="NodeErrorProperty" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215507671101" resolveInfo="NodeErrorCheckOperation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215507702924" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="has error" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215705076737" resolveInfo="NodeProperty" />
@@ -194,7 +194,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215515356354" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215511704609" resolveInfo="NodeWarningProperty" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215511704609" resolveInfo="NodeWarningCheckOperation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215515361840" nodeInfo="nn">
       <property name="text" nameId="tpc2.1073389577007" value="has warning" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215705076737" resolveInfo="NodeProperty" />
@@ -226,7 +226,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215526335114" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215526290564" resolveInfo="NodeTypeProperty" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215526290564" resolveInfo="NodeTypeCheckOperation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1215526424302" nodeInfo="nn">
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400238" nodeInfo="ng">
@@ -283,26 +283,26 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1215607090776" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215607067978" resolveInfo="TypesCheckOperation" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.1215607067978" resolveInfo="CheckNodeForErrorMessagesOperation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1381629087548445812" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1381629087548445813" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="check types" />
+        <property name="text" nameId="tpc2.1073389577007" value="check error messages" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198596447279" resolveInfo="Annotation" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_NonEmptyProperty" typeId="tpc2.1184319644772" id="1381629087548449153" nodeInfo="ng">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.501631557342352972" resolveInfo="operationName" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.501631557342352972" resolveInfo="name" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1381629087548445814" nodeInfo="nn" />
     </node>
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="852155438140865204" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="501631557342352978" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="operation name:" />
+        <property name="text" nameId="tpc2.1073389577007" value="name:" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="501631557342352975" nodeInfo="ng">
         <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <property name="noTargetText" nameId="tpc2.1139852716018" value="default" />
         <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.501631557342352972" resolveInfo="operationName" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.501631557342352972" resolveInfo="name" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="501631557342352976" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -365,7 +365,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1215617031291" nodeInfo="nn">
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215617035871" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="live" />
+        <property name="text" nameId="tpc2.1073389577007" value="alive" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198596447279" resolveInfo="Annotation" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1215617041233" nodeInfo="ng">
@@ -896,7 +896,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="95706764259118090" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.95706764259116183" resolveInfo="NodeTypeSetProperty" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.95706764259116183" resolveInfo="NodeTypeSetCheckOperation" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="95706764259118092" nodeInfo="nn">
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400589" nodeInfo="ng">

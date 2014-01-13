@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.TypeChecker;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -59,22 +59,22 @@ public class Test_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_testError() throws Exception {
       this.addNodeById("6594325605663717987");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("6594325605663831239"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("6594325605663831239"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, false);
     }
 
     public void test_hasType() throws Exception {
       this.addNodeById("6594325605663717987");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("6594325605663848570"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("6594325605663848570"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), false, false);
     }
 
     public void test_hasError() throws Exception {
       this.addNodeById("6594325605663717987");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("6594325605663849632"), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("6594325605663849632"), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), false, false);
     }
 
     public void test_hasTypeInSet() throws Exception {
       this.addNodeById("6594325605663717987");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("6594325605663849719"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("6594325605663849719"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), false, false);
     }
 
     public void test_NodeTypeCheck6594325605663849546() throws Exception {

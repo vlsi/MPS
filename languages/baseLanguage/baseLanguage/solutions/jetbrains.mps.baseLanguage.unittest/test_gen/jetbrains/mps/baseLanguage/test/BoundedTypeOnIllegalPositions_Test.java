@@ -55,9 +55,9 @@ public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest4 
   }
 
   @Test
-  public void test_TypesCheck6510041824235646887() throws Throwable {
+  public void test_ErrorMessagesCheck6510041824235646887() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_TypesCheck6510041824235646887", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_ErrorMessagesCheck6510041824235646887", true);
   }
 
   @MPSLaunch
@@ -97,7 +97,7 @@ public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest4 
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("2176128700706054398")});
     }
 
-    public void test_TypesCheck6510041824235646887() throws Exception {
+    public void test_ErrorMessagesCheck6510041824235646887() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6510041824235646887"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("2176128700705692344")});
     }

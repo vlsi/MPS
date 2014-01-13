@@ -63,7 +63,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ue6gv5_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type errors");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error messages");
     editorCell.setCellId("Constant_ue6gv5_c0");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.applyAssertStyle(style, editorCell);

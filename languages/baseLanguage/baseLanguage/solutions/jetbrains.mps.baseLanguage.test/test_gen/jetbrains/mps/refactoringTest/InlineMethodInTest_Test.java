@@ -8,11 +8,12 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class InlineMethodInTest_Test extends BaseTransformationTest4 {
@@ -29,7 +30,11 @@ public class InlineMethodInTest_Test extends BaseTransformationTest4 {
       this.addNodeById("1230057984833");
       InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230057984830"), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"));
       ref.doRefactor();
-      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1230057984818"), "jetbrains.mps.lang.test.structure.NodesTestCase") + "' and '" + SNodeOperations.cast(this.getNodeById("1230057984834"), "jetbrains.mps.lang.test.structure.NodesTestCase") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230057984818"), "jetbrains.mps.lang.test.structure.NodesTestCase")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230057984834"), "jetbrains.mps.lang.test.structure.NodesTestCase"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230057984818"), "jetbrains.mps.lang.test.structure.NodesTestCase"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230057984834"), "jetbrains.mps.lang.test.structure.NodesTestCase"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }

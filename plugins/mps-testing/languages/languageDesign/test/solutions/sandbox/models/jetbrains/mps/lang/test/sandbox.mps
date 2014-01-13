@@ -6,7 +6,7 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="24" implicit="yes" />
+  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="30" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="6594325605663717986" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Test" />
@@ -86,7 +86,7 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363108492" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6594325605663831239" resolveInfo="i" />
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="6594325605663849544" nodeInfo="ng">
-                      <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6594325605663849546" nodeInfo="ng">
+                      <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeTypeCheckOperation" typeId="tp5g.1215526290564" id="6594325605663849546" nodeInfo="ng">
                         <node role="type" roleId="tp5g.1215526393912" type="tpee.DoubleType" typeId="tpee.1070534513062" id="6594325605663849548" nodeInfo="in" />
                       </node>
                     </node>
@@ -102,7 +102,7 @@
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6594325605663849635" nodeInfo="nn">
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="6594325605663849636" nodeInfo="ng">
-                    <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorProperty" typeId="tp5g.1215507671101" id="6594325605663849637" nodeInfo="ng" />
+                    <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="6594325605663849637" nodeInfo="ng" />
                   </node>
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363072129" nodeInfo="nn">
@@ -121,7 +121,7 @@
                   <property name="value" nameId="tpee.1113006610751" value="0.1" />
                 </node>
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="6594325605663852575" nodeInfo="ng">
-                  <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeTypeSetProperty" typeId="tp5g.95706764259116183" id="6594325605663852576" nodeInfo="ng">
+                  <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeTypeSetCheckOperation" typeId="tp5g.95706764259116183" id="6594325605663852576" nodeInfo="ng">
                     <node role="type" roleId="tp5g.95706764259116184" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6594325605663852582" nodeInfo="in" />
                     <node role="type" roleId="tp5g.95706764259116184" type="tpee.StringType" typeId="tpee.1225271177708" id="6594325605663852578" nodeInfo="in" />
                   </node>

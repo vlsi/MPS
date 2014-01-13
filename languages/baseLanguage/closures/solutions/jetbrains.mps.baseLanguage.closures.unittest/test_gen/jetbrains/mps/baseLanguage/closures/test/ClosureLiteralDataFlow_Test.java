@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.TypeChecker;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -21,7 +21,7 @@ public class ClosureLiteralDataFlow_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_ClosureLiteralDataFlow() throws Exception {
       this.addNodeById("1227886714784");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1227886714787"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1227886714787"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
   }
 }

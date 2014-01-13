@@ -10,14 +10,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 
-public class NodeWarningProperty_Editor extends DefaultNodeEditor {
+public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_d847y_a(editorContext, node);
+    return this.createConstant_kzyi6r_a(editorContext, node);
   }
 
-  private EditorCell createConstant_d847y_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has warning");
-    editorCell.setCellId("Constant_d847y_a");
+  private EditorCell createConstant_kzyi6r_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has error");
+    editorCell.setCellId("Constant_kzyi6r_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     transformationTest_StyleSheet.applyNodeProperty(style, editorCell);

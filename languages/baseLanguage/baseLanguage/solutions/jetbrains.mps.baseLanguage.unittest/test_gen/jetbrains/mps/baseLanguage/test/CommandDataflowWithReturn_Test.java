@@ -13,14 +13,14 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class CommandDataflowWithReturn_Test extends BaseTransformationTest4 {
   @Test
-  public void test_TypesCheck1229350096076() throws Throwable {
+  public void test_ErrorMessagesCheck1229350096076() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test$TestBody", "test_TypesCheck1229350096076", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test$TestBody", "test_ErrorMessagesCheck1229350096076", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_TypesCheck1229350096076() throws Exception {
+    public void test_ErrorMessagesCheck1229350096076() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1229350096076"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1229349840377")});
     }

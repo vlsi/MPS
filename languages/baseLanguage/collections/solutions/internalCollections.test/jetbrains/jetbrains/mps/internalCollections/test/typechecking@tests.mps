@@ -12,7 +12,7 @@
   <import index="urs3" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="24" implicit="yes" />
+  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="30" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="1301553664999174713" nodeInfo="ng">
@@ -277,7 +277,7 @@
                     <property name="value" nameId="tpee.1068580320021" value="5" />
                   </node>
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeCheckOperationsContainer" typeId="tp5g.1215507532627" id="1089557578630058013" nodeInfo="ng">
-                    <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorProperty" typeId="tp5g.1215507671101" id="1089557578630058014" nodeInfo="ng" />
+                    <node role="nodeCheckOperations" roleId="tp5g.1215507909023" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="1089557578630058014" nodeInfo="ng" />
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1089557578627278160" nodeInfo="nn">

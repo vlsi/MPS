@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @MPSLaunch
 public class FinalVarRefs_Test extends BaseTransformationTest4 {
   @Test
-  public void test_TypesCheck4705425356438246964() throws Throwable {
+  public void test_ErrorMessagesCheck4705425356438246964() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_TypesCheck4705425356438246964", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_ErrorMessagesCheck4705425356438246964", true);
   }
 
   @Test
@@ -56,7 +56,7 @@ public class FinalVarRefs_Test extends BaseTransformationTest4 {
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_TypesCheck4705425356438246964() throws Exception {
+    public void test_ErrorMessagesCheck4705425356438246964() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4705425356438246964"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4705425356438246926")});
     }

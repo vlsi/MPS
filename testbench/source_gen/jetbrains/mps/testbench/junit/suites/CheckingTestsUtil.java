@@ -86,7 +86,7 @@ public class CheckingTestsUtil {
       return true;
     }
     for (SNode property : SLinkOperations.getTargets(container, "nodeCheckOperations", true)) {
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorProperty")) {
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
         return false;
       }
     }

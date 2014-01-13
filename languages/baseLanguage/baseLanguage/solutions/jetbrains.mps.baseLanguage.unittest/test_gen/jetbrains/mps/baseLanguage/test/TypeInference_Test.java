@@ -127,9 +127,9 @@ public class TypeInference_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_TypesCheck488298296050687637() throws Throwable {
+  public void test_ErrorMessagesCheck488298296050687637() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_TypesCheck488298296050687637", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_ErrorMessagesCheck488298296050687637", true);
   }
 
   @MPSLaunch
@@ -229,7 +229,7 @@ public class TypeInference_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("6476133814156496908")});
     }
 
-    public void test_TypesCheck488298296050687637() throws Exception {
+    public void test_ErrorMessagesCheck488298296050687637() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("488298296050687637"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("488298296050356721")});
     }

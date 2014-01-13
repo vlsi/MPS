@@ -13,7 +13,7 @@
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="25" />
+  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="34" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tp6m" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="0" />
@@ -89,8 +89,8 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4277730795458344027" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4277730795458378990" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="4277730795458378992" nodeInfo="nn">
-            <property name="fqClassName" nameId="tp68.1173992483054" value="jetbrains.mps.lang.test.runtime.TypeChecker" />
-            <property name="methodName" nameId="tp68.1173992444083" value="checkNodeForErrors" />
+            <property name="fqClassName" nameId="tp68.1173992483054" value="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
+            <property name="methodName" nameId="tp68.1173992444083" value="checkNodeForErrorMessages" />
             <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4277730795458378993" nodeInfo="nn">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="4277730795458378994" nodeInfo="nn">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="4277730795458378995" nodeInfo="nn">
@@ -107,6 +107,12 @@
                 </node>
               </node>
             </node>
+            <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3736908325003435575" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+            <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3736908325003441375" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
             <node role="returnType" roleId="tp68.1175794062018" type="tpee.VoidType" typeId="tpee.1068581517677" id="4277730795458379001" nodeInfo="in" />
           </node>
         </node>
@@ -117,8 +123,8 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4277730795458344045" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4277730795458379002" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="4277730795458379004" nodeInfo="nn">
-            <property name="fqClassName" nameId="tp68.1173992483054" value="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
             <property name="methodName" nameId="tp68.1173992444083" value="checkDataFlow" />
+            <property name="fqClassName" nameId="tp68.1173992483054" value="jetbrains.mps.lang.test.runtime.NodeDataFlowCheckerUtil" />
             <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4277730795458379005" nodeInfo="nn">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="4277730795458379006" nodeInfo="nn">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="4277730795458379007" nodeInfo="nn">

@@ -8,11 +8,12 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class InlineMethodWithConceptFunctionParameters_Test extends BaseTransformationTest4 {
@@ -30,7 +31,11 @@ public class InlineMethodWithConceptFunctionParameters_Test extends BaseTransfor
       this.addNodeById("4412735672780116642");
       InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("4412735672780109165"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       ref.doRefactor();
-      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("4412735672780109162"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock") + "' and '" + SNodeOperations.cast(this.getNodeById("4412735672780116650"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780109162"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780116650"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780109162"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4412735672780116650"), "jetbrains.mps.lang.intentions.structure.DescriptionBlock"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }

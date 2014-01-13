@@ -54,7 +54,7 @@ public abstract class SpecificChecker {
       return true;
     }
     for (SNode property : SLinkOperations.getTargets(container, "nodeCheckOperations", true)) {
-      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorProperty")) {
+      if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
         return false;
       }
     }

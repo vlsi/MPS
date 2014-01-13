@@ -22,21 +22,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
+public class NodeTypeSetCheckOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_aow2dk_a(editorContext, node);
+    return this.createCollection_95e583_a(editorContext, node);
   }
 
-  private EditorCell createCollection_aow2dk_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_95e583_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_aow2dk_a");
+    editorCell.setCellId("Collection_95e583_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_aow2dk_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_aow2dk_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_95e583_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_95e583_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_aow2dk_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_95e583_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
@@ -44,16 +44,16 @@ public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_aow2dk_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new NodeTypeSetProperty_Editor.typeListHandler_aow2dk_b0(node, "type", editorContext);
+  private EditorCell createRefNodeList_95e583_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new NodeTypeSetCheckOperation_Editor.typeListHandler_95e583_b0(node, "type", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_type");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class typeListHandler_aow2dk_b0 extends RefNodeListHandler {
-    public typeListHandler_aow2dk_b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class typeListHandler_95e583_b0 extends RefNodeListHandler {
+    public typeListHandler_95e583_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

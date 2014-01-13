@@ -6,13 +6,14 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import junit.framework.Assert;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.impl.cache.FileSwapOwner;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.impl.cache.FileSwapOwner;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.io.IOException;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -94,7 +95,11 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
     public void test_justWrite() throws Exception {
       this.addNodeById("1732396662099564446");
       try {
-        Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement") + "' and '" + FileSwapOwner.writeAndReadNode(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), FileSwapOwner.writeAndReadNode(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")))));
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), FileSwapOwner.writeAndReadNode(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        }
       } catch (IOException e) {
         e.printStackTrace();
         org.junit.Assert.fail(e.getMessage());
@@ -196,7 +201,11 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
         }
 
         SNode readNode = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
-        Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement") + "' and '" + readNode + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode)));
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode);
+          Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        }
 
         for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {
           if (MapSequence.fromMap(userObjectsToLoose).contains(object)) {

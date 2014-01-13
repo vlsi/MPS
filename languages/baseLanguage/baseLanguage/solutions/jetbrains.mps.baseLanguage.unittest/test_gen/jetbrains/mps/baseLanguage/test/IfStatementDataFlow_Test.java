@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.TypeChecker;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -29,7 +29,7 @@ public class IfStatementDataFlow_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_IfStatementDataFlow() throws Exception {
       this.addNodeById("1217271587920");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1215444237453"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444237453"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false);
     }
 
     public void test_NodeErrorCheck1239365538955() throws Exception {

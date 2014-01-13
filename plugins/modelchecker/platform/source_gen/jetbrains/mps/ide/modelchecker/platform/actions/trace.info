@@ -1575,7 +1575,7 @@
     <nodeInfo nodeId="3719390199795290647" fileName="SpecificChecker.java" startLine="46" startPosition="14" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199795290666" fileName="SpecificChecker.java" startLine="51" startPosition="49" endLine="52" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3719390199795290675" fileName="SpecificChecker.java" startLine="53" startPosition="28" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3719390199795290690" fileName="SpecificChecker.java" startLine="57" startPosition="106" endLine="58" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3719390199795290690" fileName="SpecificChecker.java" startLine="57" startPosition="112" endLine="58" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199795290695" fileName="SpecificChecker.java" startLine="60" startPosition="5" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199795290578" fileName="SpecificChecker.java" startLine="64" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3719390199795290579" fileName="SpecificChecker.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SpecificChecker#()V" />
@@ -1602,7 +1602,7 @@
     <scopeInfo nodeId="3719390199795290660" fileName="SpecificChecker.java" startLine="44" startPosition="14" endLine="45" endPosition="42" />
     <scopeInfo nodeId="3719390199795290646" fileName="SpecificChecker.java" startLine="46" startPosition="14" endLine="47" endPosition="43" />
     <scopeInfo nodeId="3719390199795290674" fileName="SpecificChecker.java" startLine="53" startPosition="28" endLine="54" endPosition="18" />
-    <scopeInfo nodeId="3719390199795290689" fileName="SpecificChecker.java" startLine="57" startPosition="106" endLine="58" endPosition="21" />
+    <scopeInfo nodeId="3719390199795290689" fileName="SpecificChecker.java" startLine="57" startPosition="112" endLine="58" endPosition="21" />
     <scopeInfo nodeId="3719390199795290579" fileName="SpecificChecker.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="3719390199795290608" fileName="SpecificChecker.java" startLine="29" startPosition="60" endLine="32" endPosition="9" />
     <scopeInfo nodeId="3719390199795290609" fileName="SpecificChecker.java" startLine="29" startPosition="60" endLine="32" endPosition="9" />

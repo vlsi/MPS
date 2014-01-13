@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.lang.test.runtime.TypeChecker;
+import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -51,8 +51,8 @@ public class TypecheckingErrors_Test extends BaseTransformationTest4 {
       this.addNodeById("1089557578627272135");
       this.addNodeById("360223900466871399");
       this.addNodeById("5532302989585163343");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1301553664997476018"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("3441689827373215907"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1301553664997476018"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("3441689827373215907"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), false, false);
     }
 
     public void test_varar_raw() throws Exception {
@@ -61,7 +61,7 @@ public class TypecheckingErrors_Test extends BaseTransformationTest4 {
       this.addNodeById("1089557578627272135");
       this.addNodeById("360223900466871399");
       this.addNodeById("5532302989585163343");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1089557578627275112"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1089557578627275112"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
     }
 
     public void test_lbt_subtypeof_param() throws Exception {
@@ -70,7 +70,7 @@ public class TypecheckingErrors_Test extends BaseTransformationTest4 {
       this.addNodeById("1089557578627272135");
       this.addNodeById("360223900466871399");
       this.addNodeById("5532302989585163343");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("360223900466887047"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("360223900466887047"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
     }
 
     public void test_meet_with_variable_excluded_from_lcs() throws Exception {
@@ -79,7 +79,7 @@ public class TypecheckingErrors_Test extends BaseTransformationTest4 {
       this.addNodeById("1089557578627272135");
       this.addNodeById("360223900466871399");
       this.addNodeById("5532302989585163343");
-      TypeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("6368058149914761648"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("6368058149914761648"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false, false);
     }
 
     public void test_NodeErrorCheck1089557578630058014() throws Exception {

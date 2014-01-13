@@ -217,9 +217,9 @@ public class InstanceMethodTypeArgumentMatch_Test extends BaseTransformationTest
   }
 
   @Test
-  public void test_TypesCheck4817790028255000239() throws Throwable {
+  public void test_ErrorMessagesCheck4817790028255000239() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_TypesCheck4817790028255000239", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_ErrorMessagesCheck4817790028255000239", true);
   }
 
   @MPSLaunch
@@ -394,7 +394,7 @@ public class InstanceMethodTypeArgumentMatch_Test extends BaseTransformationTest
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4817790028255386531")});
     }
 
-    public void test_TypesCheck4817790028255000239() throws Exception {
+    public void test_ErrorMessagesCheck4817790028255000239() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4817790028255000239"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4817790028254999918")});
     }

@@ -31,9 +31,9 @@ public class VariableUninitialized_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_TypesCheck1216893950801() throws Throwable {
+  public void test_ErrorMessagesCheck1216893950801() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_TypesCheck1216893950801", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_ErrorMessagesCheck1216893950801", true);
   }
 
   @MPSLaunch
@@ -52,7 +52,7 @@ public class VariableUninitialized_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4265636116363102686")});
     }
 
-    public void test_TypesCheck1216893950801() throws Exception {
+    public void test_ErrorMessagesCheck1216893950801() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1216893950801"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1215444156811")});
     }

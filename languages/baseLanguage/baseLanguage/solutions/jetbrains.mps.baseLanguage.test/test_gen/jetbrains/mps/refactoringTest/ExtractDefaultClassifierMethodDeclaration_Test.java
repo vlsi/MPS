@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
+import java.util.List;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -40,7 +41,11 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
       params.setName("bar");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration") + "' and '" + SNodeOperations.cast(this.getNodeById("1230052509278"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509278"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509278"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
 
     public void test_extractFromExecute() throws Exception {
@@ -51,7 +56,11 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
       params.setName("boo");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.doRefactor();
-      Assert.assertNull("nodes '" + SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration") + "' and '" + SNodeOperations.cast(this.getNodeById("1230052509302"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration") + "' do not match!", NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509302"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"))));
+      {
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509260"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052509302"), "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
+        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+      }
     }
   }
 }
