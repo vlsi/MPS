@@ -2346,12 +2346,6 @@
     <property name="name" nameId="tpck.1169194664001" value="ISModule" />
     <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
     <property name="title" nameId="tp33.1177457669450" value="Migrate IModule to SModule" />
-    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114071252" nodeInfo="ng">
-      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="88zw.~SModule" resolveInfo="SModule" />
-      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114071428" nodeInfo="ng">
-        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
-      </node>
-    </node>
     <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114071450" nodeInfo="ng">
       <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="88zw.~SModuleReference" resolveInfo="SModuleReference" />
       <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114071456" nodeInfo="ng">
