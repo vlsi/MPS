@@ -645,7 +645,7 @@ public final class TemplateProcessor {
 
     @Override
     protected TemplateContext prepareContext(SNode macro, TemplateContext templateContext, SNode newInputNode) {
-      return GeneratorUtil.createTemplateCallContext(templateContext.subContext(newInputNode), myTemplateProcessor.myEnv, macro);
+      return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
     }
   }
 
@@ -746,7 +746,7 @@ public final class TemplateProcessor {
 
     @Override
     protected TemplateContext prepareContext(SNode macro, SNode invokedTemplate, TemplateContext templateContext, SNode newInputNode) {
-      return GeneratorUtil.createTemplateCallContext(templateContext.subContext(newInputNode), myTemplateProcessor.myEnv, macro);
+      return GeneratorUtil.createTemplateCallContext(templateContext, myTemplateProcessor.myEnv, macro, newInputNode);
     }
   }
 

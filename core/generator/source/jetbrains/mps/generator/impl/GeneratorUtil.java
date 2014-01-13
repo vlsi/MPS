@@ -64,23 +64,23 @@ public class GeneratorUtil {
   public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env,
       @NotNull SNode consequence) {
     if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
-      return createTemplateCallContext(outerContext, env, consequence);
+      return createTemplateCallContext(outerContext, env, consequence, outerContext.getInput());
     }
     return outerContext;
   }
 
   @NotNull
-  static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall) {
+  static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall, SNode newInputNode) {
     final SNode[] arguments = getArguments(templateCall);
     final ITemplateGenerator generator = env.getGenerator();
     final String[] parameters = getParameters(templateCall, generator);
 
     if (arguments == null && parameters == null) {
-      return outerContext;
+      return outerContext.subContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(outerContext.getInput(), templateCall, "number of arguments doesn't match template");
-      return outerContext;
+      return outerContext.subContext(newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
@@ -89,14 +89,14 @@ public class GeneratorUtil {
       String name = parameters[i];
       Object value = null;
 
-      if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression))) {
+      if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression)) && outerContext != null) {
         SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
         if (parameter == null) {
           generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
         } else {
           value = outerContext.getVariable(parameter.getName());
         }
-      } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef))) {
+      } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef)) && outerContext != null) {
         String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
         if (patternVar == null) {
           generator.showErrorMessage(outerContext.getInput(), exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
@@ -116,9 +116,11 @@ public class GeneratorUtil {
           }
         }
       }
+
       vars.put(name, value);
     }
-    return outerContext.subContext(vars);
+    // variables drop mapping label, hence need to reinstall it
+    return outerContext.subContext(vars).subContext(outerContext.getInputName(), newInputNode);
   }
 
 
