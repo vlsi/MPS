@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -57,9 +56,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private final Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
   public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-                                   RuleManager ruleManager, SModel inputModel, SModel outputModel,
-                                   DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
-    super(operationContext, progressMonitor, ruleManager, inputModel, outputModel, dependenciesBuilder, performanceTracer);
+      RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder) {
+    super(operationContext, progressMonitor, ruleManager, inputModel, outputModel, dependenciesBuilder);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();

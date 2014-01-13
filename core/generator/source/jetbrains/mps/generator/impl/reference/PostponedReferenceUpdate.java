@@ -41,6 +41,10 @@ public class PostponedReferenceUpdate {
     myRefs.add(pr);
   }
 
+  public boolean isEmpty() {
+    return myRefs.isEmpty();
+  }
+
   public void prepare() {
     for (PostponedReference ref : myRefs) {
       ref.initReplacementReference(myGenerator);

@@ -76,11 +76,11 @@ public class GeneratorUtil {
     final String[] parameters = getParameters(templateCall, generator);
 
     if (arguments == null && parameters == null) {
-      return outerContext.subContext(null, newInputNode);
+      return outerContext.subContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(outerContext.getInput(), templateCall, "number of arguments doesn't match template");
-      return outerContext.subContext(null, newInputNode);
+      return outerContext.subContext(newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
@@ -119,7 +119,8 @@ public class GeneratorUtil {
 
       vars.put(name, value);
     }
-    return new DefaultTemplateContext(null, vars, newInputNode);
+    // variables drop mapping label, hence need to reinstall it
+    return outerContext.subContext(vars).subContext(outerContext.getInputName(), newInputNode);
   }
 
 
