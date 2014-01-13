@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.annotations.NotNull;
@@ -24,9 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Evgeny Gryaznov, 10/22/10
- */
 @ImmutableObject
 public class DefaultTemplateContext implements TemplateContext {
 
@@ -41,41 +39,40 @@ public class DefaultTemplateContext implements TemplateContext {
    * Only context node.
    */
   public DefaultTemplateContext(SNode inputNode) {
-    this((GeneratedMatchingPattern) null, null, inputNode);
+    this(null, null, inputNode, null, null);
+  }
+
+  public DefaultTemplateContext(@Nullable String inputName, SNode inputNode) {
+    this(null, inputName, inputNode, null, null);
   }
 
   /**
    * Creates a new context for template declaration.
    */
   public DefaultTemplateContext(GeneratedMatchingPattern pattern, Map<String, Object> variables, SNode inputNode) {
-    this.pattern = pattern;
-    this.variables = variables;
-    this.myParent = null;
-
-    this.myInputName = null;
-    this.myInputNode = inputNode;
+    this(null, null, inputNode, pattern, variables);
   }
 
   /**
-   * Creates a new context for loop.
+   * Creates a new context with given named input node, while preserving reference to originating context.
    */
   private DefaultTemplateContext(@NotNull DefaultTemplateContext parent, String inputName, SNode inputNode) {
-    this.myParent = parent;
-    this.pattern = null;
-    this.variables = null;
-    this.myInputName = inputName;
-    this.myInputNode = inputNode;
+    this(parent, inputName, inputNode, null, null);
   }
 
   /**
    * Creates a new context for template declaration.
    */
-  private DefaultTemplateContext(DefaultTemplateContext parent, Map<String, Object> variables) {
-    this.myParent = parent;
-    this.variables = variables;
-    this.pattern = null;
-    this.myInputName = null;
-    this.myInputNode = parent.getInput();
+  private DefaultTemplateContext(@NotNull DefaultTemplateContext parent, Map<String, Object> variables) {
+    this(parent, null, parent.getInput(), null, variables);
+  }
+
+  private DefaultTemplateContext(DefaultTemplateContext parent, String inputName, SNode inputNode, GeneratedMatchingPattern pattern, Map<String,Object> vars) {
+    myParent = parent;
+    myInputName = inputName;
+    myInputNode = inputNode;
+    this.pattern = pattern;
+    variables = vars;
   }
 
   public DefaultTemplateContext getParent() {
@@ -210,8 +207,7 @@ public class DefaultTemplateContext implements TemplateContext {
 
   @Override
   public TemplateContext subContext(GeneratedMatchingPattern pattern) {
-    // TODO parent = this
-    return new DefaultTemplateContext(pattern, null, getInput());
+    return new DefaultTemplateContext(this, null, getInput(), pattern, null);
   }
 
   @Override

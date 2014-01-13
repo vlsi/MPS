@@ -16,13 +16,11 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
+import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -36,17 +34,12 @@ import java.util.List;
  */
 public class DelayedChanges {
 
-  public static final String MAP_SRC_TEMP_NODE = "mapSrcTempNode";
+  private static final String MAP_SRC_TEMP_NODE = "mapSrcTempNode";
 
-  private List<Change> myExecuteMapSrcNodeMacroChanges = new ArrayList<Change>();
-  private List<Change> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<Change>();
+  private final List<Change> myExecuteMapSrcNodeMacroChanges = new ArrayList<Change>();
+  private final List<Change> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<Change>();
 
-  private IGeneratorLogger myLogger;
-  private TemplateGenerator myGenerator;
-
-  public DelayedChanges(TemplateGenerator generator) {
-    myGenerator = generator;
-    myLogger = generator.getLogger();
+  public DelayedChanges() {
   }
 
   public boolean isEmpty() {
@@ -54,6 +47,10 @@ public class DelayedChanges {
   }
 
   public void addExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
+    // XXX in fact, may replace this one with NodeMapper and PostProcessor implementations based on QEC.executeMapSrcNodeMacro code -
+    // the same I did for ReferenceInfo_Macro. There seems to be little value to keep two almost identical approaches (the only difference is in the way
+    // methods from QueriesGenerated are invoked - either directly (compiled, NodeMapper) or indirectly (via reflection in QueryMethodGenerated). The only
+    // benefit I can see is that it's easy to distinguish calls (executeInContext is less informative than executeMapSrcNodeMacro) - but do I care that much?
     markNodeAsTemp(childToReplace);
     synchronized (this) {
       myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context, execContext));
@@ -62,7 +59,9 @@ public class DelayedChanges {
 
   public void addExecuteNodeMapper(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
     markNodeAsTemp(childToReplace);
-    myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, execContext));
+    synchronized (this) {
+      myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, execContext));
+    }
   }
 
   public void addExecuteMapSrcNodeMacroPostProcChange(SNode mapSrcMacro, SNode outputNode, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
@@ -79,14 +78,19 @@ public class DelayedChanges {
     }
   }
 
-  public void doAllChanges() {
+  public void doAllChanges(@NotNull TemplateGenerator generator) {
     for (Change executeMapSrcNodeMacroChange : myExecuteMapSrcNodeMacroChanges) {
-      executeMapSrcNodeMacroChange.doChange();
+      executeMapSrcNodeMacroChange.doChange(generator);
     }
-    myExecuteMapSrcNodeMacroChanges = null;
+    myExecuteMapSrcNodeMacroChanges.clear();
     for (Change executeMapSrcNodeMacroPostProcChange : myExecuteMapSrcNodeMacroPostProcChanges) {
-      executeMapSrcNodeMacroPostProcChange.doChange();
+      executeMapSrcNodeMacroPostProcChange.doChange(generator);
     }
+    myExecuteMapSrcNodeMacroPostProcChanges.clear();
+  }
+
+  public static boolean isTempNode(@NotNull SNode node) {
+    return node.getUserObject(MAP_SRC_TEMP_NODE) != null;
   }
 
   private void markNodeAsTemp(SNode childToReplace) {
@@ -94,10 +98,10 @@ public class DelayedChanges {
   }
 
   private interface Change {
-    void doChange();
+    void doChange(@NotNull TemplateGenerator generator);
   }
 
-  private abstract class BaseMapNodeChange implements Change {
+  private static abstract class BaseMapNodeChange implements Change {
 
     protected final SNode myChildToReplace;
     protected final TemplateContext myContext;
@@ -110,15 +114,14 @@ public class DelayedChanges {
     }
 
     @Override
-    public void doChange() {
+    public void doChange(@NotNull TemplateGenerator generator) {
       try {
         SNode child = mapNode();
         if (child == null) {
           return;
         }
-        SNode templateNode = getMapSrcMacro();
-        // FIXME shall pass TEE right away (i.e. instead of QEC) or extract insertNode functionality outside of TEEI
-        child = new TemplateExecutionEnvironmentImpl(myGenerator, myExecContext).insertNode(child, templateNode == null ? null : templateNode.getReference(), myContext);
+        // FIXME extract insertNode functionality outside of TEEI
+        child = new TemplateExecutionEnvironmentImpl(generator, myExecContext).insertNode(child, getMapSrcMacro(), myContext);
 
         // check new child
         SNode parent = myChildToReplace.getParent();
@@ -127,12 +130,11 @@ public class DelayedChanges {
           if (myChildToReplace.getModel() != null && myChildToReplace.getParent() == null) {
             myChildToReplace.getModel().addRootNode(child);
             myChildToReplace.getModel().removeRootNode(myChildToReplace);
-            myGenerator.rootReplaced(myChildToReplace, child);
+            generator.rootReplaced(myChildToReplace, child);
           }
         } else {
           String childRole = myChildToReplace.getRoleInParent();
-          final RoleValidator roleValidator = myGenerator.getChildRoleValidator(parent, childRole);
-          RoleValidationStatus status = roleValidator.validate(child);
+          final Status status = generator.getChildRoleValidator(parent, childRole).validate(child);
           if (status != null) {
             status.reportProblem(false, parent, "",
               GeneratorUtil.describe(myContext.getInput(), "input"),
@@ -140,17 +142,18 @@ public class DelayedChanges {
           }
           org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(myChildToReplace, child);
         }
-        myGenerator.getGenerationTracer().replaceOutputNode(myChildToReplace, child);
+        generator.getGenerationTracer().replaceOutputNode(myChildToReplace, child);
 
         // post-processing
         postProcess(child);
       } catch (Throwable t) {
-        myGenerator.showErrorMessage(myContext.getInput(), getMapSrcMacro(), "mapping failed: '" + t.getMessage() + "'");
-        myLogger.handleException(t);
+        IGeneratorLogger log = generator.getLogger();
+        log.error(getMapSrcMacro(), String.format("mapping failed: '%s'", t.getMessage()), GeneratorUtil.describe(myContext.getInput(), "input"));
+        log.handleException(t);
       }
     }
 
-    protected abstract SNode getMapSrcMacro();
+    protected abstract SNodeReference getMapSrcMacro();
 
     protected abstract SNode mapNode() throws GenerationFailureException;
 
@@ -166,13 +169,13 @@ public class DelayedChanges {
     }
 
     @Override
-    protected SNode getMapSrcMacro() {
-      return myMapSrcMacro;
+    protected SNodeReference getMapSrcMacro() {
+      return myMapSrcMacro.getReference();
     }
 
     @Override
     protected SNode mapNode() throws GenerationFailureException {
-      return myExecContext.executeMapSrcNodeMacro(myContext.getInput(), getMapSrcMacro(), myChildToReplace.getParent(), myContext);
+      return myExecContext.executeMapSrcNodeMacro(myContext.getInput(), myMapSrcMacro, myChildToReplace.getParent(), myContext);
     }
 
     @Override
@@ -192,12 +195,8 @@ public class DelayedChanges {
     }
 
     @Override
-    protected SNode getMapSrcMacro() {
-      SNodeReference templateNode = myMapper.getTemplateNode();
-      if(templateNode != null) {
-        return templateNode.resolve(MPSModuleRepository.getInstance());
-      }
-      return null;
+    protected SNodeReference getMapSrcMacro() {
+      return myMapper.getTemplateNode();
     }
 
     @Override
@@ -213,7 +212,7 @@ public class DelayedChanges {
     }
   }
 
-  private class ExecuteMapSrcNodeMacroPostProcChange implements Change {
+  private static class ExecuteMapSrcNodeMacroPostProcChange implements Change {
     private final SNode myMapSrcMacro;
     private final SNode myOutputChild;
     private final TemplateContext myContext;
@@ -227,17 +226,17 @@ public class DelayedChanges {
     }
 
     @Override
-    public void doChange() {
+    public void doChange(@NotNull TemplateGenerator generator) {
       try {
         myExecContext.executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
       } catch (Throwable t) {
-        myGenerator.showErrorMessage(myContext.getInput(), myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
-        myLogger.handleException(t);
+        generator.showErrorMessage(myContext.getInput(), myMapSrcMacro, String.format("mapping failed: '%s'", t.getMessage()));
+        generator.getLogger().handleException(t);
       }
     }
   }
 
-  private class PostProcessorChange implements Change {
+  private static class PostProcessorChange implements Change {
     private final PostProcessor myProcessor;
     private final SNode myOutputChild;
     private final TemplateContext myContext;
@@ -251,12 +250,12 @@ public class DelayedChanges {
     }
 
     @Override
-    public void doChange() {
+    public void doChange(@NotNull TemplateGenerator generator) {
       try {
         myExecContext.executeInContext(myOutputChild, myContext, myProcessor);
       } catch (Throwable t) {
-        myGenerator.showErrorMessage(myContext.getInput(), null, "mapping failed: '" + t.getMessage() + "'");
-        myLogger.handleException(t);
+        generator.showErrorMessage(myContext.getInput(), null, String.format("mapping failed: '%s'", t.getMessage()));
+        generator.getLogger().handleException(t);
       }
     }
   }

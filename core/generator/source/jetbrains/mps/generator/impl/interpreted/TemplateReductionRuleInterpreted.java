@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.*;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -27,18 +28,15 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, 11/23/10
@@ -119,22 +117,21 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
         true);
     } catch (ClassNotFoundException e) {
       String msg = String.format("cannot find condition method '%s' : evaluate to FALSE", myConditionMethodName);
-      generator.getLogger().warning(baseRuleCondition, msg);
+      generator.getLogger().warning(baseRuleCondition.getReference(), msg);
     } catch (NoSuchMethodException e) {
       String msg = String.format("cannot find condition method '%s' : evaluate to FALSE", myConditionMethodName);
-      generator.getLogger().warning(baseRuleCondition, msg);
+      generator.getLogger().warning(baseRuleCondition.getReference(), msg);
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
       String msg = String.format("error executing condition '%s', see exception", myConditionMethodName);
-      generator.getLogger().error(baseRuleCondition, msg);
+      generator.getLogger().error(baseRuleCondition.getReference(), msg);
       throw new GenerationFailureException(t);
     }
     return false;
   }
 
   @Nullable
-  private Collection<SNode> apply(TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
-    throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
+  private Collection<SNode> apply(TemplateContext context, @NotNull TemplateExecutionEnvironment environment) throws GenerationException {
 
     if (myRuleConsequence == null) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
@@ -142,13 +139,8 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     }
 
     RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
-    if (!rcp.prepare(myRuleConsequence, ruleNode, context)) {
-      environment.getGenerator().showErrorMessage(context.getInput(), null, myRuleConsequence, "error processing reduction rule consequence");
-      return null;
-    }
-
-    List<SNode> result = rcp.processRuleConsequence(ruleMappingName);
-    return result;
+    context = context.subContext(ruleMappingName);
+    rcp.prepare(myRuleConsequence, context);
+    return rcp.processRuleConsequence();
   }
-
 }

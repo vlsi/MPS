@@ -18,14 +18,25 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
-import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateDropRootRule;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.FlattenIterable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Manages rules/templates of major step.
@@ -39,8 +50,6 @@ public class RuleManager {
 
   private TemplateSwitchGraph myTemplateSwitchGraph;
 
-  private List<TemplateMappingConfiguration> myMappings;
-
   private Map<SModelReference, TemplateModel> myModelMap;
 
   private ScriptManager myScripts;
@@ -48,11 +57,10 @@ public class RuleManager {
   private final FastRuleFinder myRuleFinder;
 
   public RuleManager(GenerationPlan plan, List<TemplateMappingConfiguration> configurations, IGeneratorLogger logger) {
-    myMappings = configurations;
     myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
     if (myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
-    initialize(myMappings, logger);
-    myRuleFinder = initRules(myMappings);
+    initialize(configurations, logger);
+    myRuleFinder = initRules(configurations);
 
     myModelMap = new HashMap<SModelReference, TemplateModel>();
     for(TemplateModel m : plan.getTemplateModels()) {
@@ -61,10 +69,10 @@ public class RuleManager {
   }
 
   private void initialize(List<TemplateMappingConfiguration> list, IGeneratorLogger logger) {
-    myCreateRootRules = new FlattenIterable(new ArrayList<List<TemplateCreateRootRule>>(list.size()));
-    myRoot_MappingRules = new FlattenIterable(new ArrayList<List<TemplateRootMappingRule>>(list.size()));
-    myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<TemplateWeavingRule>>(list.size()));
-    myDropRootRules = new FlattenIterable(new ArrayList<List<TemplateDropRootRule>>(list.size()));
+    myCreateRootRules = new FlattenIterable<TemplateCreateRootRule>(list.size());
+    myRoot_MappingRules = new FlattenIterable<TemplateRootMappingRule>(list.size());
+    myWeaving_MappingRules = new FlattenIterable<TemplateWeavingRule>(list.size());
+    myDropRootRules = new FlattenIterable<TemplateDropRootRule>(list.size());
 
     for (TemplateMappingConfiguration mappingConfig : list) {
       myCreateRootRules.add(mappingConfig.getCreateRules());
@@ -79,14 +87,14 @@ public class RuleManager {
     for (TemplateMappingConfiguration mappingConfigs : list) {
       for (TemplateMappingScript postMappingScript : mappingConfigs.getPostScripts()) {
         if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
-          logger.warning(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format(warnMsg, postMappingScript.getLongName()));
+          logger.warning(postMappingScript.getScriptNode(), String.format(warnMsg, postMappingScript.getLongName()));
           continue;
         }
         postScripts.add(postMappingScript);
       }
       for (TemplateMappingScript preMappingScript :mappingConfigs.getPreScripts()) {
         if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
-          logger.warning(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format(warnMsg, preMappingScript.getLongName()));
+          logger.warning(preMappingScript.getScriptNode(), String.format(warnMsg, preMappingScript.getLongName()));
           continue;
         }
         preScripts.add(preMappingScript);
@@ -97,7 +105,7 @@ public class RuleManager {
 
 
   private FastRuleFinder initRules(List<TemplateMappingConfiguration> configuration) {
-    FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>(new ArrayList<Iterable<TemplateReductionRule>>());
+    FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>();
     for (TemplateMappingConfiguration c : configuration) {
       rules.add(c.getReductionRules());
     }

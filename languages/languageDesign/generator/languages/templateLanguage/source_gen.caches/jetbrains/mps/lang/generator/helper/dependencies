@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.generator.helper.EditingUtil" file="EditingUtil.java" />
+  <dependency className="jetbrains.mps.lang.generator.helper.QueriesUtil" file="QueriesUtil.java" />
+</dependenciesRoot>
+

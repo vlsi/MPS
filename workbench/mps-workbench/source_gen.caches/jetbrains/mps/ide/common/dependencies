@@ -1,57 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.common.FileOpenUtil" file="FileOpenUtil.java">
-    <classNode dependClassName="com.intellij.navigation.ChooseByNameContributor" />
-    <classNode dependClassName="com.intellij.navigation.NavigationItem" />
-    <classNode dependClassName="com.intellij.openapi.editor.LogicalPosition" />
-    <classNode dependClassName="com.intellij.openapi.editor.ScrollType" />
-    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
-    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
-    <classNode dependClassName="com.intellij.openapi.fileEditor.TextEditor" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.MPSGoToFileContributor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.common.JavaConsoleCreator" file="JavaConsoleCreator.java">
-    <classNode dependClassName="com.intellij.execution.filters.Filter" />
-    <classNode dependClassName="com.intellij.execution.filters.TextConsoleBuilder" />
-    <classNode dependClassName="com.intellij.execution.filters.TextConsoleBuilderFactory" />
-    <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
-    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.unscramble.AnalyzeStacktraceUtil" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.common.LayoutUtil" file="LayoutUtil.java">
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.Insets" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.common.ReadComboBoxEditor" file="ReadComboBoxEditor.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode extendsClassName="javax.swing.plaf.basic.BasicComboBoxEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.common.ReadComboBoxRenderrer" file="ReadComboBoxRenderrer.java">
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="javax.swing.JList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode extendsClassName="javax.swing.DefaultListCellRenderer" />
-  </dependency>
+  <dependency className="jetbrains.mps.ide.common.FileOpenUtil" file="FileOpenUtil.java" />
+  <dependency className="jetbrains.mps.ide.common.JavaConsoleCreator" file="JavaConsoleCreator.java" />
+  <dependency className="jetbrains.mps.ide.common.LayoutUtil" file="LayoutUtil.java" />
+  <dependency className="jetbrains.mps.ide.common.ReadComboBoxEditor" file="ReadComboBoxEditor.java" />
+  <dependency className="jetbrains.mps.ide.common.ReadComboBoxRenderrer" file="ReadComboBoxRenderrer.java" />
 </dependenciesRoot>
 

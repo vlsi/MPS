@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.impl.GenerationSessionLogger;
+import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -55,6 +57,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
   private final Map<String, Object> myParameters;
+  private final GenerationOptions myGenerationOptions;
+  private final GenerationSessionLogger myLogger;
+  private final RoleValidation myValidation;
 
   private final Object NULL_OBJECT = new Object();
 
@@ -78,16 +83,20 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
 
   public GenerationSessionContext(IOperationContext invocationContext,
-                                  IGenerationTracer generationTracer,
+                                  GenerationOptions generationOptions,
+                                  GenerationSessionLogger logger,
                                   TransientModelsModule transientModule,
                                   SModel inputModel) {
 
     myInvocationContext = invocationContext;
-    myGenerationTracer = generationTracer;
+    myGenerationOptions = generationOptions;
+    myGenerationTracer = generationOptions.getGenerationTracer();
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
+    myLogger = logger;
     myGenerationPlan = null;
     myParameters = null;
+    myValidation = new RoleValidation(logger, generationOptions.isShowBadChildWarning());
     myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
@@ -98,11 +107,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // copy cons
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan, @Nullable Map<String, Object> parameters) {
     myInvocationContext = prevContext.myInvocationContext;
+    myGenerationOptions = prevContext.myGenerationOptions;
     myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
+    myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
+    myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = generationPlan;
     myParameters = parameters;
@@ -116,11 +128,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
    */
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext) {
     myInvocationContext = prevContext.myInvocationContext;
+    myGenerationOptions = prevContext.myGenerationOptions;
     myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
+    myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
+    myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
     myParameters = prevContext.myParameters;
@@ -392,5 +407,21 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public Object getGenerationParameter(String name) {
     return myParameters == null ? null : myParameters.get(name);
+  }
+
+  public GenerationOptions getGenerationOptions() {
+    return myGenerationOptions;
+  }
+
+  public IGeneratorLogger getLogger() {
+    return myLogger;
+  }
+
+  public RoleValidation getRoleValidationFacility() {
+    // XXX in fact, GenerationSessionContext seems to serve as an API (resides in public package and provides public services
+    // to genContext, like unique name), while RoleValidation is implementation class.
+    // However, don't want to refactor GSC now (split iface and impl) - there's e.g. GenerationPlan (impl class) exposed here as well, so it doesn't
+    // look like that intention was to keep it API, rather a facility to keep everything handy.
+    return myValidation;
   }
 }

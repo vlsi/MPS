@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,20 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.*;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
+import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.Collection;
 
@@ -64,12 +68,12 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
     } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().error(getRuleNode(), "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -79,9 +83,9 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
   public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, TemplateProcessingFailureException, GenerationFailureException, DismissTopMappingRuleException {
     SNode templateNode = RuleUtil.getCreateRootRuleTemplateNode(ruleNode);
     if (templateNode != null) {
-      return new TemplateProcessor(environment).apply(ruleMappingName, templateNode, new DefaultTemplateContext(null));
+      return new TemplateProcessor(environment).apply(templateNode, new DefaultTemplateContext(ruleMappingName, null));
     } else {
-      environment.getGenerator().showErrorMessage(null, null, ruleNode, "'create root' rule has no template");
+      environment.getLogger().error(getRuleNode(), "'create root' rule has no template");
       return null;
     }
   }

@@ -15,17 +15,17 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -162,11 +162,32 @@ public class GeneratorUtil {
     return new ProblemDescription(nr, String.format("-- was %s: %s", nodeRole, msg));
   }
 
+  public static ProblemDescription describe(@Nullable SNodeReference node, String nodeRole) {
+    String msg;
+    if (node == null) {
+      msg = String.format("-- was %s: <unknown node reference>", nodeRole);
+    } else {
+      msg = String.format("-- was %s: %s", nodeRole, node.toString());
+    }
+    return new ProblemDescription(node, msg);
+  }
+
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
     if (node != null) {
       return new ProblemDescription(node.getReference(), String.format("-- was %s: %s", nodeRole, SNodeUtil.getDebugText(node)));
     }
     return null;
+  }
+
+  public static void log(@NotNull IGeneratorLogger log, @NotNull SNodeReference templateNode, @Nullable MessageType messageType, @Nullable String text,
+      @Nullable ProblemDescription... extra) {
+    if (messageType == MessageType.error) {
+      log.error(templateNode, String.valueOf(text), extra);
+    } else if (messageType == MessageType.warning) {
+      log.warning(templateNode, String.valueOf(text), extra);
+    } else {
+      log.info(templateNode, String.valueOf(text));
+    }
   }
 
   public static <T> T[] concat(T[] arr1, T[] arr2) {
@@ -175,35 +196,6 @@ public class GeneratorUtil {
     T[] result = Arrays.copyOf(arr1, arr1.length + arr2.length);
     System.arraycopy(arr2, 0, result, arr1.length, arr2.length);
     return result;
-  }
-
-  public static <T> T runReadInWrite(final GenerationComputable<T> c) throws GenerationCanceledException, GenerationFailureException {
-    if (ModelAccess.instance().canRead() && !ModelAccess.instance().canWrite()) {
-      return c.compute();
-    }
-    throw new UnsupportedOperationException("no read from write");
-//    try {
-//      return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {
-//        @Override
-//        public T compute() {
-//          try {
-//            return c.compute();
-//          } catch (GenerationFailureException e) {
-//            throw new RuntimeException(e);
-//          } catch (GenerationCanceledException e) {
-//            throw new RuntimeException(e);
-//          }
-//        }
-//      });
-//    } catch (RuntimeException th) {
-//      Throwable inner = th.getCause();
-//      if (inner instanceof GenerationFailureException) {
-//        throw (GenerationFailureException) inner;
-//      } else if (inner instanceof GenerationCanceledException) {
-//        throw (GenerationCanceledException) inner;
-//      }
-//      throw th;
-//    }
   }
 
   public static String getTemplateNodeId(SNode templateNode) {

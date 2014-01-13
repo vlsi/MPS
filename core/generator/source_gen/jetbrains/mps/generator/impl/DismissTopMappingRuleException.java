@@ -8,6 +8,11 @@ public class DismissTopMappingRuleException extends GenerationException {
   private DismissTopMappingRuleException.MessageType myMessageType;
 
   public DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType messageType) {
+    this(messageType, null);
+  }
+
+  public DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType messageType, String message) {
+    super(message);
     myMessageType = messageType;
   }
 
@@ -32,7 +37,5 @@ public class DismissTopMappingRuleException extends GenerationException {
     warning(),
     error();
 
-    MessageType() {
-    }
   }
 }
