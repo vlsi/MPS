@@ -42,6 +42,7 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
@@ -90,6 +91,8 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getEffectiveSearchScope();
 
     final PsiElement psiTarget = queryParameters.getElementToSearch();
+    if (psiTarget instanceof MPSPsiNodeBase) return;
+
     final Project project = psiTarget.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
 
