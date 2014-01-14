@@ -1,6 +1,6 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <id>jetbrains.mps.jetpad</id>
+  <id>jetbrains.jetpad</id>
   <name>Jetpad</name>
   <description>Provides Jetpad libraries</description>
   <version>3.1</version>
