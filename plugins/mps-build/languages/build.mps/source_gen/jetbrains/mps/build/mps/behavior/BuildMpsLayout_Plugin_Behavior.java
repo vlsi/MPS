@@ -79,13 +79,19 @@ public class BuildMpsLayout_Plugin_Behavior {
           if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule") && SPropertyOperations.getBoolean(SNodeOperations.as(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), "customPackaging")) {
             return null;
           }
-          return helper.locations().get(thisNode) + "/languages/" + ((group != null ?
+          String baseLocation = helper.locations().get(thisNode) + "/languages/" + ((group != null ?
             SPropertyOperations.getString(SLinkOperations.getTarget(group, "group", false), "name") + "/" :
             ""
-          )) + SPropertyOperations.getString(module.value, "name") + ((isGenerator ?
-            "-generator" :
-            ""
-          )) + ".jar";
+          ));
+          if (SNodeOperations.isInstanceOf(module.value, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
+            // devkits are just copied to languages/ from source 
+            return baseLocation + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(module.value, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
+          } else {
+            return baseLocation + SPropertyOperations.getString(module.value, "name") + ((isGenerator ?
+              "-generator" :
+              ""
+            )) + ".jar";
+          }
         }
         return null;
       }
