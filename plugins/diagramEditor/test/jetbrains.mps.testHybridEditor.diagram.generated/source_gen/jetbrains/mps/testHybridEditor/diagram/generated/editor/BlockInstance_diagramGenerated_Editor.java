@@ -45,6 +45,9 @@ import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.jetpad.event.KeyEvent;
+import jetbrains.jetpad.event.Key;
+import jetbrains.jetpad.event.ModifierKey;
 
 public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -260,6 +263,19 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
 
       blockView.prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
       blockView.rect.prop(JetpadUtils.SOURCE).set(getSNode());
+      blockView.addTrait(new ViewTraitBuilder().on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
+        @Override
+        public void handle(View view, KeyEvent e) {
+          if (!(blockView.focused().get())) {
+            return;
+          }
+          if (e.is(Key.T)) {
+            blockView.setPortsDirection(blockView.getPortsDirection().turnClockwise());
+          } else if (e.is(Key.T, ModifierKey.SHIFT)) {
+            blockView.setPortsDirection(blockView.getPortsDirection().turnCounterclockwise());
+          }
+        }
+      }).build());
 
       return blockView;
     }
