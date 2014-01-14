@@ -42,110 +42,140 @@
     <unitInfo nodeId="2370003301081570" fileName="IntroduceConstantDialog.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.IntroduceConstantDialog" />
   </root>
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/2370003301081680">
-    <nodeInfo nodeId="2370003301081681" fileName="IntroduceFieldDialog.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoring" />
-    <nodeInfo nodeId="2370003301081689" fileName="IntroduceFieldDialog.java" startLine="25" startPosition="116" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2370003301081693" fileName="IntroduceFieldDialog.java" startLine="26" startPosition="53" endLine="27" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081699" fileName="IntroduceFieldDialog.java" startLine="27" startPosition="37" endLine="28" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081712" fileName="IntroduceFieldDialog.java" startLine="32" startPosition="56" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2370003301081720" fileName="IntroduceFieldDialog.java" startLine="36" startPosition="51" endLine="37" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081727" fileName="IntroduceFieldDialog.java" startLine="37" startPosition="52" endLine="38" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081734" fileName="IntroduceFieldDialog.java" startLine="38" startPosition="56" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081739" fileName="IntroduceFieldDialog.java" startLine="39" startPosition="42" endLine="40" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081749" fileName="IntroduceFieldDialog.java" startLine="40" startPosition="95" endLine="41" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081759" fileName="IntroduceFieldDialog.java" startLine="41" startPosition="93" endLine="42" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081771" fileName="IntroduceFieldDialog.java" startLine="43" startPosition="60" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081783" fileName="IntroduceFieldDialog.java" startLine="45" startPosition="12" endLine="46" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081788" fileName="IntroduceFieldDialog.java" startLine="46" startPosition="30" endLine="47" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081793" fileName="IntroduceFieldDialog.java" startLine="48" startPosition="5" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081798" fileName="IntroduceFieldDialog.java" startLine="49" startPosition="29" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2370003301081812" fileName="IntroduceFieldDialog.java" startLine="53" startPosition="116" endLine="54" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081820" fileName="IntroduceFieldDialog.java" startLine="54" startPosition="66" endLine="55" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081825" fileName="IntroduceFieldDialog.java" startLine="55" startPosition="52" endLine="56" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081831" fileName="IntroduceFieldDialog.java" startLine="56" startPosition="45" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081837" fileName="IntroduceFieldDialog.java" startLine="57" startPosition="16" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081843" fileName="IntroduceFieldDialog.java" startLine="58" startPosition="20" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081849" fileName="IntroduceFieldDialog.java" startLine="59" startPosition="26" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081873" fileName="IntroduceFieldDialog.java" startLine="64" startPosition="34" endLine="65" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081880" fileName="IntroduceFieldDialog.java" startLine="68" startPosition="7" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2370003301081887" fileName="IntroduceFieldDialog.java" startLine="74" startPosition="44" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081889" fileName="IntroduceFieldDialog.java" startLine="75" startPosition="16" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081893" fileName="IntroduceFieldDialog.java" startLine="76" startPosition="18" endLine="77" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2370003301081896" fileName="IntroduceFieldDialog.java" startLine="77" startPosition="25" endLine="78" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081901" fileName="IntroduceFieldDialog.java" startLine="78" startPosition="33" endLine="79" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081907" fileName="IntroduceFieldDialog.java" startLine="79" startPosition="43" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081913" fileName="IntroduceFieldDialog.java" startLine="80" startPosition="16" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081919" fileName="IntroduceFieldDialog.java" startLine="81" startPosition="16" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081922" fileName="IntroduceFieldDialog.java" startLine="82" startPosition="18" endLine="83" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081927" fileName="IntroduceFieldDialog.java" startLine="83" startPosition="33" endLine="84" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081933" fileName="IntroduceFieldDialog.java" startLine="84" startPosition="37" endLine="85" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081944" fileName="IntroduceFieldDialog.java" startLine="85" startPosition="38" endLine="86" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081950" fileName="IntroduceFieldDialog.java" startLine="86" startPosition="16" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081956" fileName="IntroduceFieldDialog.java" startLine="87" startPosition="20" endLine="88" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081962" fileName="IntroduceFieldDialog.java" startLine="88" startPosition="18" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081968" fileName="IntroduceFieldDialog.java" startLine="89" startPosition="18" endLine="90" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081974" fileName="IntroduceFieldDialog.java" startLine="90" startPosition="49" endLine="91" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081979" fileName="IntroduceFieldDialog.java" startLine="91" startPosition="33" endLine="92" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081985" fileName="IntroduceFieldDialog.java" startLine="92" startPosition="37" endLine="93" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081991" fileName="IntroduceFieldDialog.java" startLine="93" startPosition="16" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081998" fileName="IntroduceFieldDialog.java" startLine="94" startPosition="22" endLine="95" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301082003" fileName="IntroduceFieldDialog.java" startLine="96" startPosition="43" endLine="97" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301082010" fileName="IntroduceFieldDialog.java" startLine="98" startPosition="5" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301082015" fileName="IntroduceFieldDialog.java" startLine="99" startPosition="33" endLine="100" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301082021" fileName="IntroduceFieldDialog.java" startLine="100" startPosition="20" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301082027" fileName="IntroduceFieldDialog.java" startLine="101" startPosition="18" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301082034" fileName="IntroduceFieldDialog.java" startLine="102" startPosition="33" endLine="103" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2370003301081781" fileName="IntroduceFieldDialog.java" startLine="45" startPosition="10" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2370003301081868" fileName="IntroduceFieldDialog.java" startLine="63" startPosition="48" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2370003301082001" fileName="IntroduceFieldDialog.java" startLine="95" startPosition="26" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2370003301081708" fileName="IntroduceFieldDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoring#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceVariableRefactoring;" />
-    <nodeInfo nodeId="2370003301081685" fileName="IntroduceFieldDialog.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceFieldDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceFieldRefactoring;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2370003301081769" fileName="IntroduceFieldDialog.java" startLine="42" startPosition="104" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2370003301081862" fileName="IntroduceFieldDialog.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
-    <nodeInfo nodeId="2370003301081854" fileName="IntroduceFieldDialog.java" startLine="60" startPosition="22" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2370003301081716" fileName="IntroduceFieldDialog.java" startLine="36" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInitDestinationPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="2370003301081800" fileName="IntroduceFieldDialog.java" startLine="53" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButton#(ILjetbrains/mps/baseLanguage/util/plugin/refactorings/FieldInitializationPlace;Ljavax/swing/JPanel;Ljavax/swing/ButtonGroup;)Ljavax/swing/JRadioButton;" />
-    <nodeInfo nodeId="2370003301081882" fileName="IntroduceFieldDialog.java" startLine="72" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="2370003301081711" fileName="IntroduceFieldDialog.java" startLine="32" startPosition="56" endLine="33" endPosition="30" />
-    <scopeInfo nodeId="2370003301081770" fileName="IntroduceFieldDialog.java" startLine="43" startPosition="60" endLine="44" endPosition="30" />
-    <scopeInfo nodeId="2370003301081872" fileName="IntroduceFieldDialog.java" startLine="64" startPosition="34" endLine="65" endPosition="85" />
-    <scopeInfo nodeId="2370003301082002" fileName="IntroduceFieldDialog.java" startLine="96" startPosition="43" endLine="97" endPosition="31" />
-    <scopeInfo nodeId="2370003301081782" fileName="IntroduceFieldDialog.java" startLine="45" startPosition="12" endLine="47" endPosition="35" />
-    <scopeInfo nodeId="2370003301081688" fileName="IntroduceFieldDialog.java" startLine="25" startPosition="116" endLine="28" endPosition="11" />
-    <scopeInfo nodeId="2370003301081867" fileName="IntroduceFieldDialog.java" startLine="63" startPosition="48" endLine="66" endPosition="9" />
-    <scopeInfo nodeId="2370003301081708" fileName="IntroduceFieldDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="2370003301081685" fileName="IntroduceFieldDialog.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+    <nodeInfo nodeId="2370003301081681" fileName="IntroduceFieldDialog.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoring" />
+    <nodeInfo nodeId="2668308514871232698" fileName="IntroduceFieldDialog.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isStatic" />
+    <nodeInfo nodeId="2370003301081689" fileName="IntroduceFieldDialog.java" startLine="28" startPosition="134" endLine="29" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2370003301081693" fileName="IntroduceFieldDialog.java" startLine="29" startPosition="53" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668308514871204481" fileName="IntroduceFieldDialog.java" startLine="30" startPosition="37" endLine="31" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081699" fileName="IntroduceFieldDialog.java" startLine="31" startPosition="29" endLine="32" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081712" fileName="IntroduceFieldDialog.java" startLine="36" startPosition="56" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2370003301081720" fileName="IntroduceFieldDialog.java" startLine="40" startPosition="51" endLine="41" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081727" fileName="IntroduceFieldDialog.java" startLine="41" startPosition="52" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081734" fileName="IntroduceFieldDialog.java" startLine="42" startPosition="56" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081739" fileName="IntroduceFieldDialog.java" startLine="43" startPosition="42" endLine="44" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081749" fileName="IntroduceFieldDialog.java" startLine="44" startPosition="95" endLine="45" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668308514871121755" fileName="IntroduceFieldDialog.java" startLine="45" startPosition="93" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668308514871121768" fileName="IntroduceFieldDialog.java" startLine="48" startPosition="49" endLine="49" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668308514871491148" fileName="IntroduceFieldDialog.java" startLine="55" startPosition="22" endLine="56" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081771" fileName="IntroduceFieldDialog.java" startLine="66" startPosition="33" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081783" fileName="IntroduceFieldDialog.java" startLine="68" startPosition="12" endLine="69" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081788" fileName="IntroduceFieldDialog.java" startLine="69" startPosition="30" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081793" fileName="IntroduceFieldDialog.java" startLine="71" startPosition="5" endLine="72" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081798" fileName="IntroduceFieldDialog.java" startLine="72" startPosition="29" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2370003301081812" fileName="IntroduceFieldDialog.java" startLine="76" startPosition="116" endLine="77" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081820" fileName="IntroduceFieldDialog.java" startLine="77" startPosition="66" endLine="78" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081825" fileName="IntroduceFieldDialog.java" startLine="78" startPosition="52" endLine="79" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081831" fileName="IntroduceFieldDialog.java" startLine="79" startPosition="45" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081837" fileName="IntroduceFieldDialog.java" startLine="80" startPosition="16" endLine="81" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081843" fileName="IntroduceFieldDialog.java" startLine="81" startPosition="20" endLine="82" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081849" fileName="IntroduceFieldDialog.java" startLine="82" startPosition="26" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081873" fileName="IntroduceFieldDialog.java" startLine="87" startPosition="34" endLine="88" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081880" fileName="IntroduceFieldDialog.java" startLine="91" startPosition="7" endLine="92" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2370003301081887" fileName="IntroduceFieldDialog.java" startLine="97" startPosition="44" endLine="98" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081889" fileName="IntroduceFieldDialog.java" startLine="98" startPosition="16" endLine="99" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081893" fileName="IntroduceFieldDialog.java" startLine="99" startPosition="18" endLine="100" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2370003301081896" fileName="IntroduceFieldDialog.java" startLine="100" startPosition="25" endLine="101" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081901" fileName="IntroduceFieldDialog.java" startLine="101" startPosition="33" endLine="102" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081907" fileName="IntroduceFieldDialog.java" startLine="102" startPosition="43" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081913" fileName="IntroduceFieldDialog.java" startLine="103" startPosition="16" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081919" fileName="IntroduceFieldDialog.java" startLine="104" startPosition="16" endLine="105" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081922" fileName="IntroduceFieldDialog.java" startLine="105" startPosition="18" endLine="106" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081927" fileName="IntroduceFieldDialog.java" startLine="106" startPosition="33" endLine="107" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081933" fileName="IntroduceFieldDialog.java" startLine="107" startPosition="37" endLine="108" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081944" fileName="IntroduceFieldDialog.java" startLine="108" startPosition="38" endLine="109" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081950" fileName="IntroduceFieldDialog.java" startLine="109" startPosition="16" endLine="110" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081956" fileName="IntroduceFieldDialog.java" startLine="110" startPosition="20" endLine="111" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081962" fileName="IntroduceFieldDialog.java" startLine="111" startPosition="18" endLine="112" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081968" fileName="IntroduceFieldDialog.java" startLine="112" startPosition="18" endLine="113" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081974" fileName="IntroduceFieldDialog.java" startLine="113" startPosition="49" endLine="114" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081979" fileName="IntroduceFieldDialog.java" startLine="114" startPosition="33" endLine="115" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081985" fileName="IntroduceFieldDialog.java" startLine="115" startPosition="37" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081991" fileName="IntroduceFieldDialog.java" startLine="116" startPosition="16" endLine="117" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301081998" fileName="IntroduceFieldDialog.java" startLine="117" startPosition="22" endLine="118" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301082003" fileName="IntroduceFieldDialog.java" startLine="119" startPosition="43" endLine="120" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301082010" fileName="IntroduceFieldDialog.java" startLine="121" startPosition="5" endLine="122" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301082015" fileName="IntroduceFieldDialog.java" startLine="122" startPosition="33" endLine="123" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301082021" fileName="IntroduceFieldDialog.java" startLine="123" startPosition="20" endLine="124" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301082027" fileName="IntroduceFieldDialog.java" startLine="124" startPosition="18" endLine="125" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2370003301082034" fileName="IntroduceFieldDialog.java" startLine="125" startPosition="33" endLine="126" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668308514871121761" fileName="IntroduceFieldDialog.java" startLine="47" startPosition="94" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2370003301081781" fileName="IntroduceFieldDialog.java" startLine="68" startPosition="10" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2370003301081868" fileName="IntroduceFieldDialog.java" startLine="86" startPosition="48" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2370003301082001" fileName="IntroduceFieldDialog.java" startLine="118" startPosition="26" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2370003301081708" fileName="IntroduceFieldDialog.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoring#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceVariableRefactoring;" />
+    <nodeInfo nodeId="2370003301081759" fileName="IntroduceFieldDialog.java" startLine="51" startPosition="5" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668308514871491153" fileName="IntroduceFieldDialog.java" startLine="57" startPosition="9" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668308514871121758" fileName="IntroduceFieldDialog.java" startLine="46" startPosition="48" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2370003301081685" fileName="IntroduceFieldDialog.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntroduceFieldDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/util/plugin/refactorings/IntroduceFieldRefactoring;Ljetbrains/mps/openapi/editor/EditorContext;Z)V" />
+    <nodeInfo nodeId="2370003301081769" fileName="IntroduceFieldDialog.java" startLine="65" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2370003301081862" fileName="IntroduceFieldDialog.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljavax/swing/event/ChangeEvent;)V" />
+    <nodeInfo nodeId="2370003301081854" fileName="IntroduceFieldDialog.java" startLine="83" startPosition="22" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668308514871491191" fileName="IntroduceFieldDialog.java" startLine="56" startPosition="43" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2370003301081800" fileName="IntroduceFieldDialog.java" startLine="76" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButton#(ILjetbrains/mps/baseLanguage/util/plugin/refactorings/FieldInitializationPlace;Ljavax/swing/JPanel;Ljavax/swing/ButtonGroup;)Ljavax/swing/JRadioButton;" />
+    <nodeInfo nodeId="2370003301081882" fileName="IntroduceFieldDialog.java" startLine="95" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="2370003301081716" fileName="IntroduceFieldDialog.java" startLine="40" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInitDestinationPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="2668308514871491192" fileName="IntroduceFieldDialog.java" startLine="62" startPosition="0" endLine="62" endPosition="40">
+      <varInfo nodeId="2668308514871491176" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2668308514871491186" fileName="IntroduceFieldDialog.java" startLine="62" startPosition="40" endLine="62" endPosition="40" />
+    <scopeInfo nodeId="2668308514871491193" fileName="IntroduceFieldDialog.java" startLine="63" startPosition="0" endLine="63" endPosition="43">
+      <varInfo nodeId="2668308514871491179" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2668308514871491188" fileName="IntroduceFieldDialog.java" startLine="63" startPosition="43" endLine="63" endPosition="43" />
+    <scopeInfo nodeId="2668308514871491194" fileName="IntroduceFieldDialog.java" startLine="64" startPosition="0" endLine="64" endPosition="39">
+      <varInfo nodeId="2668308514871491182" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2668308514871491190" fileName="IntroduceFieldDialog.java" startLine="64" startPosition="39" endLine="64" endPosition="39" />
+    <scopeInfo nodeId="2370003301081711" fileName="IntroduceFieldDialog.java" startLine="36" startPosition="56" endLine="37" endPosition="30" />
+    <scopeInfo nodeId="2668308514871121767" fileName="IntroduceFieldDialog.java" startLine="48" startPosition="49" endLine="49" endPosition="28" />
+    <scopeInfo nodeId="2370003301081770" fileName="IntroduceFieldDialog.java" startLine="66" startPosition="33" endLine="67" endPosition="30" />
+    <scopeInfo nodeId="2370003301081872" fileName="IntroduceFieldDialog.java" startLine="87" startPosition="34" endLine="88" endPosition="85" />
+    <scopeInfo nodeId="2370003301082002" fileName="IntroduceFieldDialog.java" startLine="119" startPosition="43" endLine="120" endPosition="31" />
+    <scopeInfo nodeId="2370003301081782" fileName="IntroduceFieldDialog.java" startLine="68" startPosition="12" endLine="70" endPosition="35" />
+    <scopeInfo nodeId="2668308514871121760" fileName="IntroduceFieldDialog.java" startLine="47" startPosition="94" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="2370003301081867" fileName="IntroduceFieldDialog.java" startLine="86" startPosition="48" endLine="89" endPosition="9" />
+    <scopeInfo nodeId="2370003301081688" fileName="IntroduceFieldDialog.java" startLine="28" startPosition="134" endLine="32" endPosition="11" />
+    <scopeInfo nodeId="2370003301081708" fileName="IntroduceFieldDialog.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2668308514871491152" fileName="IntroduceFieldDialog.java" startLine="57" startPosition="9" endLine="61" endPosition="36" />
+    <scopeInfo nodeId="2668308514871121758" fileName="IntroduceFieldDialog.java" startLine="46" startPosition="48" endLine="51" endPosition="5">
+      <varInfo nodeId="2668308514871121772" varName="place" />
+    </scopeInfo>
+    <scopeInfo nodeId="2370003301081685" fileName="IntroduceFieldDialog.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="2370003301081705" varName="editorContext" />
+      <varInfo nodeId="2668308514871261396" varName="isStatic" />
       <varInfo nodeId="2370003301081701" varName="project" />
       <varInfo nodeId="2370003301081703" varName="refactoring" />
     </scopeInfo>
-    <scopeInfo nodeId="2370003301081862" fileName="IntroduceFieldDialog.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="2370003301081862" fileName="IntroduceFieldDialog.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="2370003301081865" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="2370003301081719" fileName="IntroduceFieldDialog.java" startLine="36" startPosition="51" endLine="50" endPosition="18">
-      <varInfo nodeId="2370003301081760" varName="contructor" />
-      <varInfo nodeId="2370003301081750" varName="field" />
-      <varInfo nodeId="2370003301081735" varName="group" />
-      <varInfo nodeId="2370003301081740" varName="method" />
-      <varInfo nodeId="2370003301081721" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="2370003301081716" fileName="IntroduceFieldDialog.java" startLine="36" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="2370003301081811" fileName="IntroduceFieldDialog.java" startLine="53" startPosition="116" endLine="69" endPosition="18">
+    <scopeInfo nodeId="2370003301081811" fileName="IntroduceFieldDialog.java" startLine="76" startPosition="116" endLine="92" endPosition="18">
       <varInfo nodeId="2370003301081813" varName="button" />
       <varInfo nodeId="2370003301081821" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="2370003301081800" fileName="IntroduceFieldDialog.java" startLine="53" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="2370003301081800" fileName="IntroduceFieldDialog.java" startLine="76" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="2370003301081809" varName="group" />
       <varInfo nodeId="2370003301081805" varName="place" />
       <varInfo nodeId="2370003301081807" varName="result" />
       <varInfo nodeId="2370003301081803" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="2370003301081886" fileName="IntroduceFieldDialog.java" startLine="74" startPosition="44" endLine="103" endPosition="19">
+    <scopeInfo nodeId="2370003301081886" fileName="IntroduceFieldDialog.java" startLine="97" startPosition="44" endLine="126" endPosition="19">
       <varInfo nodeId="2370003301081894" varName="c" />
       <varInfo nodeId="2370003301081890" varName="gridy" />
     </scopeInfo>
-    <scopeInfo nodeId="2370003301081882" fileName="IntroduceFieldDialog.java" startLine="72" startPosition="0" endLine="105" endPosition="0" />
-    <unitInfo nodeId="2370003301081860" fileName="IntroduceFieldDialog.java" startLine="61" startPosition="33" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog$1" />
-    <unitInfo nodeId="2370003301081680" fileName="IntroduceFieldDialog.java" startLine="22" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog" />
+    <scopeInfo nodeId="2370003301081719" fileName="IntroduceFieldDialog.java" startLine="40" startPosition="51" endLine="73" endPosition="18">
+      <varInfo nodeId="2370003301081760" varName="contructor" />
+      <varInfo nodeId="2370003301081750" varName="field" />
+      <varInfo nodeId="2370003301081735" varName="group" />
+      <varInfo nodeId="2668308514871491147" varName="isInitInFieldAvailable" />
+      <varInfo nodeId="2370003301081740" varName="method" />
+      <varInfo nodeId="2370003301081721" varName="result" />
+      <varInfo nodeId="2668308514871121754" varName="staticPlace" />
+    </scopeInfo>
+    <scopeInfo nodeId="2370003301081882" fileName="IntroduceFieldDialog.java" startLine="95" startPosition="0" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="2370003301081716" fileName="IntroduceFieldDialog.java" startLine="40" startPosition="0" endLine="75" endPosition="0" />
+    <unitInfo nodeId="2370003301081860" fileName="IntroduceFieldDialog.java" startLine="84" startPosition="33" endLine="91" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog$1" />
+    <unitInfo nodeId="2370003301081680" fileName="IntroduceFieldDialog.java" startLine="24" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog" />
   </root>
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/2370003301082036">
     <nodeInfo nodeId="2370003301082327" fileName="IntroduceVariableDialog.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
@@ -1606,172 +1636,186 @@
     <unitInfo nodeId="4507335185602814391" fileName="VisibilityPanel.java" startLine="22" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.VisibilityPanel" />
   </root>
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/4507335185602817336">
-    <nodeInfo nodeId="4507335185602817339" fileName="BaseChooseNodeDialog.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="4507335185602817342" fileName="BaseChooseNodeDialog.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVisibleModels" />
-    <nodeInfo nodeId="4507335185602817346" fileName="BaseChooseNodeDialog.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="4507335185602817349" fileName="BaseChooseNodeDialog.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedNode" />
-    <nodeInfo nodeId="4507335185602817363" fileName="BaseChooseNodeDialog.java" startLine="47" startPosition="135" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4507335185602817366" fileName="BaseChooseNodeDialog.java" startLine="48" startPosition="25" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817369" fileName="BaseChooseNodeDialog.java" startLine="49" startPosition="20" endLine="50" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817373" fileName="BaseChooseNodeDialog.java" startLine="50" startPosition="24" endLine="51" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817376" fileName="BaseChooseNodeDialog.java" startLine="51" startPosition="36" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602817377" fileName="BaseChooseNodeDialog.java" startLine="52" startPosition="0" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817380" fileName="BaseChooseNodeDialog.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAcceptable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4507335185602817392" fileName="BaseChooseNodeDialog.java" startLine="58" startPosition="58" endLine="59" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817398" fileName="BaseChooseNodeDialog.java" startLine="59" startPosition="65" endLine="60" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817406" fileName="BaseChooseNodeDialog.java" startLine="61" startPosition="96" endLine="62" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817419" fileName="BaseChooseNodeDialog.java" startLine="63" startPosition="5" endLine="64" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817429" fileName="BaseChooseNodeDialog.java" startLine="65" startPosition="77" endLine="66" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817443" fileName="BaseChooseNodeDialog.java" startLine="67" startPosition="44" endLine="68" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817454" fileName="BaseChooseNodeDialog.java" startLine="73" startPosition="51" endLine="74" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817475" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="40" endLine="77" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817486" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="39" endLine="81" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817463" fileName="BaseChooseNodeDialog.java" startLine="83" startPosition="15" endLine="84" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817495" fileName="BaseChooseNodeDialog.java" startLine="85" startPosition="5" endLine="86" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817501" fileName="BaseChooseNodeDialog.java" startLine="89" startPosition="37" endLine="90" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817508" fileName="BaseChooseNodeDialog.java" startLine="95" startPosition="44" endLine="96" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817512" fileName="BaseChooseNodeDialog.java" startLine="96" startPosition="61" endLine="97" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817520" fileName="BaseChooseNodeDialog.java" startLine="97" startPosition="60" endLine="98" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817527" fileName="BaseChooseNodeDialog.java" startLine="98" startPosition="90" endLine="99" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817533" fileName="BaseChooseNodeDialog.java" startLine="99" startPosition="56" endLine="100" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817538" fileName="BaseChooseNodeDialog.java" startLine="100" startPosition="33" endLine="101" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817573" fileName="BaseChooseNodeDialog.java" startLine="108" startPosition="31" endLine="109" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817585" fileName="BaseChooseNodeDialog.java" startLine="115" startPosition="83" endLine="116" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817620" fileName="BaseChooseNodeDialog.java" startLine="118" startPosition="43" endLine="119" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817594" fileName="BaseChooseNodeDialog.java" startLine="121" startPosition="15" endLine="122" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817599" fileName="BaseChooseNodeDialog.java" startLine="122" startPosition="91" endLine="123" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817605" fileName="BaseChooseNodeDialog.java" startLine="123" startPosition="42" endLine="124" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817625" fileName="BaseChooseNodeDialog.java" startLine="125" startPosition="9" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602817626" fileName="BaseChooseNodeDialog.java" startLine="126" startPosition="0" endLine="127" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817650" fileName="BaseChooseNodeDialog.java" startLine="132" startPosition="58" endLine="133" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817660" fileName="BaseChooseNodeDialog.java" startLine="134" startPosition="52" endLine="135" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817669" fileName="BaseChooseNodeDialog.java" startLine="136" startPosition="67" endLine="137" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817678" fileName="BaseChooseNodeDialog.java" startLine="137" startPosition="71" endLine="138" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817683" fileName="BaseChooseNodeDialog.java" startLine="138" startPosition="43" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817692" fileName="BaseChooseNodeDialog.java" startLine="141" startPosition="9" endLine="142" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817697" fileName="BaseChooseNodeDialog.java" startLine="142" startPosition="40" endLine="143" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817701" fileName="BaseChooseNodeDialog.java" startLine="145" startPosition="7" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4507335185602817702" fileName="BaseChooseNodeDialog.java" startLine="146" startPosition="0" endLine="147" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602817707" fileName="BaseChooseNodeDialog.java" startLine="147" startPosition="72" endLine="148" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817715" fileName="BaseChooseNodeDialog.java" startLine="148" startPosition="57" endLine="149" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817723" fileName="BaseChooseNodeDialog.java" startLine="155" startPosition="45" endLine="156" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817403" fileName="BaseChooseNodeDialog.java" startLine="60" startPosition="69" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4507335185602817438" fileName="BaseChooseNodeDialog.java" startLine="66" startPosition="83" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4507335185602817497" fileName="BaseChooseNodeDialog.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4507335185602817618" fileName="BaseChooseNodeDialog.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4507335185602817569" fileName="BaseChooseNodeDialog.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4507335185602817667" fileName="BaseChooseNodeDialog.java" startLine="135" startPosition="66" endLine="140" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602817425" fileName="BaseChooseNodeDialog.java" startLine="64" startPosition="35" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4507335185602817561" fileName="BaseChooseNodeDialog.java" startLine="105" startPosition="53" endLine="111" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817717" fileName="BaseChooseNodeDialog.java" startLine="152" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4507335185602817352" fileName="BaseChooseNodeDialog.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseChooseNodeDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4507335185602817554" fileName="BaseChooseNodeDialog.java" startLine="104" startPosition="61" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602817658" fileName="BaseChooseNodeDialog.java" startLine="133" startPosition="69" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507335185602817591" fileName="BaseChooseNodeDialog.java" startLine="116" startPosition="35" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4507335185602817460" fileName="BaseChooseNodeDialog.java" startLine="74" startPosition="55" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4507335185602817548" fileName="BaseChooseNodeDialog.java" startLine="103" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
-    <nodeInfo nodeId="4507335185602817386" fileName="BaseChooseNodeDialog.java" startLine="58" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initVisibleModels#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="4507335185602817581" fileName="BaseChooseNodeDialog.java" startLine="115" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initModelDescriptorNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="4507335185602817644" fileName="BaseChooseNodeDialog.java" startLine="131" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
-    <nodeInfo nodeId="4507335185602817450" fileName="BaseChooseNodeDialog.java" startLine="73" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootNode#()Ljavax/swing/tree/DefaultMutableTreeNode;" />
-    <nodeInfo nodeId="4507335185602817634" fileName="BaseChooseNodeDialog.java" startLine="129" startPosition="6" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817543" fileName="BaseChooseNodeDialog.java" startLine="101" startPosition="37" endLine="129" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4507335185602817503" fileName="BaseChooseNodeDialog.java" startLine="93" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="4507335185602817380" fileName="BaseChooseNodeDialog.java" startLine="56" startPosition="0" endLine="57" endPosition="0">
+    <nodeInfo nodeId="4507335185602817339" fileName="BaseChooseNodeDialog.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
+    <nodeInfo nodeId="4507335185602817342" fileName="BaseChooseNodeDialog.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVisibleModels" />
+    <nodeInfo nodeId="4507335185602817346" fileName="BaseChooseNodeDialog.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="4507335185602817349" fileName="BaseChooseNodeDialog.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedNode" />
+    <nodeInfo nodeId="4507335185602817363" fileName="BaseChooseNodeDialog.java" startLine="49" startPosition="135" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4507335185602817366" fileName="BaseChooseNodeDialog.java" startLine="50" startPosition="25" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817369" fileName="BaseChooseNodeDialog.java" startLine="51" startPosition="20" endLine="52" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817373" fileName="BaseChooseNodeDialog.java" startLine="52" startPosition="24" endLine="53" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817376" fileName="BaseChooseNodeDialog.java" startLine="53" startPosition="36" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602817377" fileName="BaseChooseNodeDialog.java" startLine="54" startPosition="0" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817380" fileName="BaseChooseNodeDialog.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAcceptable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4507335185602817392" fileName="BaseChooseNodeDialog.java" startLine="60" startPosition="58" endLine="61" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817398" fileName="BaseChooseNodeDialog.java" startLine="61" startPosition="65" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817406" fileName="BaseChooseNodeDialog.java" startLine="63" startPosition="96" endLine="64" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817419" fileName="BaseChooseNodeDialog.java" startLine="65" startPosition="5" endLine="66" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817429" fileName="BaseChooseNodeDialog.java" startLine="67" startPosition="77" endLine="68" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817443" fileName="BaseChooseNodeDialog.java" startLine="69" startPosition="44" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817454" fileName="BaseChooseNodeDialog.java" startLine="75" startPosition="51" endLine="76" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817475" fileName="BaseChooseNodeDialog.java" startLine="78" startPosition="40" endLine="79" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817486" fileName="BaseChooseNodeDialog.java" startLine="82" startPosition="39" endLine="83" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817463" fileName="BaseChooseNodeDialog.java" startLine="85" startPosition="15" endLine="86" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817495" fileName="BaseChooseNodeDialog.java" startLine="87" startPosition="5" endLine="88" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817501" fileName="BaseChooseNodeDialog.java" startLine="91" startPosition="37" endLine="92" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817508" fileName="BaseChooseNodeDialog.java" startLine="97" startPosition="44" endLine="98" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817512" fileName="BaseChooseNodeDialog.java" startLine="98" startPosition="61" endLine="99" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817520" fileName="BaseChooseNodeDialog.java" startLine="99" startPosition="60" endLine="100" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817527" fileName="BaseChooseNodeDialog.java" startLine="100" startPosition="90" endLine="101" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817533" fileName="BaseChooseNodeDialog.java" startLine="101" startPosition="56" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817538" fileName="BaseChooseNodeDialog.java" startLine="102" startPosition="33" endLine="103" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817573" fileName="BaseChooseNodeDialog.java" startLine="110" startPosition="31" endLine="111" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817585" fileName="BaseChooseNodeDialog.java" startLine="117" startPosition="83" endLine="118" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817620" fileName="BaseChooseNodeDialog.java" startLine="120" startPosition="43" endLine="121" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817594" fileName="BaseChooseNodeDialog.java" startLine="123" startPosition="15" endLine="124" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817605" fileName="BaseChooseNodeDialog.java" startLine="133" startPosition="11" endLine="134" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817625" fileName="BaseChooseNodeDialog.java" startLine="135" startPosition="9" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602817626" fileName="BaseChooseNodeDialog.java" startLine="136" startPosition="0" endLine="137" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817650" fileName="BaseChooseNodeDialog.java" startLine="142" startPosition="58" endLine="143" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817660" fileName="BaseChooseNodeDialog.java" startLine="144" startPosition="52" endLine="145" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817669" fileName="BaseChooseNodeDialog.java" startLine="146" startPosition="67" endLine="147" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817678" fileName="BaseChooseNodeDialog.java" startLine="147" startPosition="71" endLine="148" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817683" fileName="BaseChooseNodeDialog.java" startLine="148" startPosition="43" endLine="149" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817692" fileName="BaseChooseNodeDialog.java" startLine="151" startPosition="9" endLine="152" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817697" fileName="BaseChooseNodeDialog.java" startLine="152" startPosition="40" endLine="153" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817701" fileName="BaseChooseNodeDialog.java" startLine="155" startPosition="7" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4507335185602817702" fileName="BaseChooseNodeDialog.java" startLine="156" startPosition="0" endLine="157" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602817707" fileName="BaseChooseNodeDialog.java" startLine="157" startPosition="72" endLine="158" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817715" fileName="BaseChooseNodeDialog.java" startLine="158" startPosition="57" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817723" fileName="BaseChooseNodeDialog.java" startLine="165" startPosition="45" endLine="166" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817403" fileName="BaseChooseNodeDialog.java" startLine="62" startPosition="69" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602817438" fileName="BaseChooseNodeDialog.java" startLine="68" startPosition="83" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4507335185602817497" fileName="BaseChooseNodeDialog.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="4507335185602817618" fileName="BaseChooseNodeDialog.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4507335185602817569" fileName="BaseChooseNodeDialog.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2668308514871756011" fileName="BaseChooseNodeDialog.java" startLine="125" startPosition="15" endLine="129" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817667" fileName="BaseChooseNodeDialog.java" startLine="145" startPosition="66" endLine="150" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4507335185602817425" fileName="BaseChooseNodeDialog.java" startLine="66" startPosition="35" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602817561" fileName="BaseChooseNodeDialog.java" startLine="107" startPosition="53" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817717" fileName="BaseChooseNodeDialog.java" startLine="162" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4507335185602817352" fileName="BaseChooseNodeDialog.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseChooseNodeDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4507335185602817554" fileName="BaseChooseNodeDialog.java" startLine="106" startPosition="61" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4507335185602817658" fileName="BaseChooseNodeDialog.java" startLine="143" startPosition="69" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668308514871940304" fileName="BaseChooseNodeDialog.java" startLine="124" startPosition="91" endLine="133" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4507335185602817460" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="55" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602817548" fileName="BaseChooseNodeDialog.java" startLine="105" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
+    <nodeInfo nodeId="4507335185602817386" fileName="BaseChooseNodeDialog.java" startLine="60" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initVisibleModels#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="4507335185602817644" fileName="BaseChooseNodeDialog.java" startLine="141" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/TreeSelectionEvent;)V" />
+    <nodeInfo nodeId="4507335185602817450" fileName="BaseChooseNodeDialog.java" startLine="75" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRootNode#()Ljavax/swing/tree/DefaultMutableTreeNode;" />
+    <nodeInfo nodeId="4507335185602817634" fileName="BaseChooseNodeDialog.java" startLine="139" startPosition="6" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817591" fileName="BaseChooseNodeDialog.java" startLine="118" startPosition="35" endLine="135" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602817581" fileName="BaseChooseNodeDialog.java" startLine="117" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initModelDescriptorNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="4507335185602817543" fileName="BaseChooseNodeDialog.java" startLine="103" startPosition="37" endLine="139" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602817503" fileName="BaseChooseNodeDialog.java" startLine="95" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="2668308514871940307" fileName="BaseChooseNodeDialog.java" startLine="130" startPosition="0" endLine="130" endPosition="46">
+      <varInfo nodeId="2668308514871940309" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2668308514871940313" fileName="BaseChooseNodeDialog.java" startLine="130" startPosition="46" endLine="130" endPosition="46" />
+    <scopeInfo nodeId="2668308514871989503" fileName="BaseChooseNodeDialog.java" startLine="131" startPosition="0" endLine="131" endPosition="49">
+      <varInfo nodeId="2668308514871989504" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2668308514871989506" fileName="BaseChooseNodeDialog.java" startLine="131" startPosition="49" endLine="131" endPosition="49" />
+    <scopeInfo nodeId="2668308514872012190" fileName="BaseChooseNodeDialog.java" startLine="132" startPosition="0" endLine="132" endPosition="45">
+      <varInfo nodeId="2668308514872012191" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2668308514872012193" fileName="BaseChooseNodeDialog.java" startLine="132" startPosition="45" endLine="132" endPosition="45" />
+    <scopeInfo nodeId="4507335185602817380" fileName="BaseChooseNodeDialog.java" startLine="58" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="4507335185602817383" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817405" fileName="BaseChooseNodeDialog.java" startLine="61" startPosition="96" endLine="62" endPosition="68" />
-    <scopeInfo nodeId="4507335185602817442" fileName="BaseChooseNodeDialog.java" startLine="67" startPosition="44" endLine="68" endPosition="81" />
-    <scopeInfo nodeId="4507335185602817474" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="40" endLine="77" endPosition="93" />
-    <scopeInfo nodeId="4507335185602817485" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="39" endLine="81" endPosition="44" />
-    <scopeInfo nodeId="4507335185602817462" fileName="BaseChooseNodeDialog.java" startLine="83" startPosition="15" endLine="84" endPosition="70" />
-    <scopeInfo nodeId="4507335185602817500" fileName="BaseChooseNodeDialog.java" startLine="89" startPosition="37" endLine="90" endPosition="26" />
-    <scopeInfo nodeId="4507335185602817572" fileName="BaseChooseNodeDialog.java" startLine="108" startPosition="31" endLine="109" endPosition="75" />
-    <scopeInfo nodeId="4507335185602817619" fileName="BaseChooseNodeDialog.java" startLine="118" startPosition="43" endLine="119" endPosition="36" />
-    <scopeInfo nodeId="4507335185602817722" fileName="BaseChooseNodeDialog.java" startLine="155" startPosition="45" endLine="156" endPosition="32" />
-    <scopeInfo nodeId="4507335185602817403" fileName="BaseChooseNodeDialog.java" startLine="60" startPosition="69" endLine="63" endPosition="5">
+    <scopeInfo nodeId="4507335185602817405" fileName="BaseChooseNodeDialog.java" startLine="63" startPosition="96" endLine="64" endPosition="68" />
+    <scopeInfo nodeId="4507335185602817442" fileName="BaseChooseNodeDialog.java" startLine="69" startPosition="44" endLine="70" endPosition="81" />
+    <scopeInfo nodeId="4507335185602817474" fileName="BaseChooseNodeDialog.java" startLine="78" startPosition="40" endLine="79" endPosition="93" />
+    <scopeInfo nodeId="4507335185602817485" fileName="BaseChooseNodeDialog.java" startLine="82" startPosition="39" endLine="83" endPosition="44" />
+    <scopeInfo nodeId="4507335185602817462" fileName="BaseChooseNodeDialog.java" startLine="85" startPosition="15" endLine="86" endPosition="70" />
+    <scopeInfo nodeId="4507335185602817500" fileName="BaseChooseNodeDialog.java" startLine="91" startPosition="37" endLine="92" endPosition="26" />
+    <scopeInfo nodeId="4507335185602817572" fileName="BaseChooseNodeDialog.java" startLine="110" startPosition="31" endLine="111" endPosition="75" />
+    <scopeInfo nodeId="4507335185602817619" fileName="BaseChooseNodeDialog.java" startLine="120" startPosition="43" endLine="121" endPosition="36" />
+    <scopeInfo nodeId="4507335185602817722" fileName="BaseChooseNodeDialog.java" startLine="165" startPosition="45" endLine="166" endPosition="32" />
+    <scopeInfo nodeId="4507335185602817403" fileName="BaseChooseNodeDialog.java" startLine="62" startPosition="69" endLine="65" endPosition="5">
       <varInfo nodeId="4507335185602817404" varName="nextOwnModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="4507335185602817473" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="4507335185602817484" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817497" fileName="BaseChooseNodeDialog.java" startLine="89" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="4507335185602817618" fileName="BaseChooseNodeDialog.java" startLine="118" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="4507335185602817497" fileName="BaseChooseNodeDialog.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="4507335185602817618" fileName="BaseChooseNodeDialog.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="4507335185602817618" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817593" fileName="BaseChooseNodeDialog.java" startLine="121" startPosition="15" endLine="124" endPosition="136">
-      <varInfo nodeId="4507335185602817595" varName="modelRootTreeNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4507335185602817668" fileName="BaseChooseNodeDialog.java" startLine="136" startPosition="67" endLine="139" endPosition="19" />
-    <scopeInfo nodeId="4507335185602817428" fileName="BaseChooseNodeDialog.java" startLine="65" startPosition="77" endLine="69" endPosition="7">
+    <scopeInfo nodeId="4507335185602817668" fileName="BaseChooseNodeDialog.java" startLine="146" startPosition="67" endLine="149" endPosition="19" />
+    <scopeInfo nodeId="4507335185602817428" fileName="BaseChooseNodeDialog.java" startLine="67" startPosition="77" endLine="71" endPosition="7">
       <varInfo nodeId="4507335185602817430" varName="importedModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817569" fileName="BaseChooseNodeDialog.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="4507335185602817362" fileName="BaseChooseNodeDialog.java" startLine="47" startPosition="135" endLine="53" endPosition="11" />
-    <scopeInfo nodeId="4507335185602817425" fileName="BaseChooseNodeDialog.java" startLine="64" startPosition="35" endLine="70" endPosition="5">
+    <scopeInfo nodeId="4507335185602817569" fileName="BaseChooseNodeDialog.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="2668308514871940306" fileName="BaseChooseNodeDialog.java" startLine="125" startPosition="15" endLine="129" endPosition="62" />
+    <scopeInfo nodeId="4507335185602817362" fileName="BaseChooseNodeDialog.java" startLine="49" startPosition="135" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="4507335185602817425" fileName="BaseChooseNodeDialog.java" startLine="66" startPosition="35" endLine="72" endPosition="5">
       <varInfo nodeId="4507335185602817426" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817560" fileName="BaseChooseNodeDialog.java" startLine="105" startPosition="53" endLine="111" endPosition="13" />
-    <scopeInfo nodeId="4507335185602817659" fileName="BaseChooseNodeDialog.java" startLine="134" startPosition="52" endLine="140" endPosition="11">
+    <scopeInfo nodeId="4507335185602817560" fileName="BaseChooseNodeDialog.java" startLine="107" startPosition="53" endLine="113" endPosition="13" />
+    <scopeInfo nodeId="4507335185602817659" fileName="BaseChooseNodeDialog.java" startLine="144" startPosition="52" endLine="150" endPosition="11">
       <varInfo nodeId="4507335185602817661" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817717" fileName="BaseChooseNodeDialog.java" startLine="152" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="4507335185602817352" fileName="BaseChooseNodeDialog.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="4507335185602817717" fileName="BaseChooseNodeDialog.java" startLine="162" startPosition="0" endLine="168" endPosition="0" />
+    <scopeInfo nodeId="4507335185602817352" fileName="BaseChooseNodeDialog.java" startLine="49" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="4507335185602817356" varName="context" />
       <varInfo nodeId="4507335185602817358" varName="contextModel" />
       <varInfo nodeId="4507335185602817354" varName="project" />
       <varInfo nodeId="4507335185602817360" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817553" fileName="BaseChooseNodeDialog.java" startLine="104" startPosition="61" endLine="112" endPosition="9" />
-    <scopeInfo nodeId="4507335185602817591" fileName="BaseChooseNodeDialog.java" startLine="116" startPosition="35" endLine="125" endPosition="9">
-      <varInfo nodeId="4507335185602817592" varName="nextRoot" />
-    </scopeInfo>
-    <scopeInfo nodeId="4507335185602817460" fileName="BaseChooseNodeDialog.java" startLine="74" startPosition="55" endLine="85" endPosition="5">
+    <scopeInfo nodeId="4507335185602817553" fileName="BaseChooseNodeDialog.java" startLine="106" startPosition="61" endLine="114" endPosition="9" />
+    <scopeInfo nodeId="4507335185602817460" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="55" endLine="87" endPosition="5">
       <varInfo nodeId="4507335185602817461" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817548" fileName="BaseChooseNodeDialog.java" startLine="103" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="4507335185602817548" fileName="BaseChooseNodeDialog.java" startLine="105" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="4507335185602817549" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817649" fileName="BaseChooseNodeDialog.java" startLine="132" startPosition="58" endLine="143" endPosition="30">
+    <scopeInfo nodeId="4507335185602817593" fileName="BaseChooseNodeDialog.java" startLine="123" startPosition="15" endLine="134" endPosition="136">
+      <varInfo nodeId="4507335185602817595" varName="modelRootTreeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4507335185602817649" fileName="BaseChooseNodeDialog.java" startLine="142" startPosition="58" endLine="153" endPosition="30">
       <varInfo nodeId="4507335185602817651" varName="selectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817391" fileName="BaseChooseNodeDialog.java" startLine="58" startPosition="58" endLine="70" endPosition="5">
+    <scopeInfo nodeId="4507335185602817391" fileName="BaseChooseNodeDialog.java" startLine="60" startPosition="58" endLine="72" endPosition="5">
       <varInfo nodeId="4507335185602817420" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817584" fileName="BaseChooseNodeDialog.java" startLine="115" startPosition="83" endLine="127" endPosition="41">
-      <varInfo nodeId="4507335185602817586" varName="sModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="4507335185602817453" fileName="BaseChooseNodeDialog.java" startLine="73" startPosition="51" endLine="86" endPosition="20">
+    <scopeInfo nodeId="4507335185602817453" fileName="BaseChooseNodeDialog.java" startLine="75" startPosition="51" endLine="88" endPosition="20">
       <varInfo nodeId="4507335185602817455" varName="rootNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817386" fileName="BaseChooseNodeDialog.java" startLine="58" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="4507335185602817386" fileName="BaseChooseNodeDialog.java" startLine="60" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="4507335185602817387" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817581" fileName="BaseChooseNodeDialog.java" startLine="115" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="4507335185602817644" fileName="BaseChooseNodeDialog.java" startLine="141" startPosition="0" endLine="155" endPosition="0">
+      <varInfo nodeId="4507335185602817647" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4507335185602817450" fileName="BaseChooseNodeDialog.java" startLine="75" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4507335185602817591" fileName="BaseChooseNodeDialog.java" startLine="118" startPosition="35" endLine="135" endPosition="9">
+      <varInfo nodeId="4507335185602817592" varName="nextRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="4507335185602817584" fileName="BaseChooseNodeDialog.java" startLine="117" startPosition="83" endLine="137" endPosition="41">
+      <varInfo nodeId="4507335185602817586" varName="sModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="4507335185602817581" fileName="BaseChooseNodeDialog.java" startLine="117" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="4507335185602817631" varName="descriptor" />
       <varInfo nodeId="4507335185602817629" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817644" fileName="BaseChooseNodeDialog.java" startLine="131" startPosition="0" endLine="145" endPosition="0">
-      <varInfo nodeId="4507335185602817647" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="4507335185602817450" fileName="BaseChooseNodeDialog.java" startLine="73" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="4507335185602817507" fileName="BaseChooseNodeDialog.java" startLine="95" startPosition="44" endLine="149" endPosition="22">
+    <scopeInfo nodeId="4507335185602817507" fileName="BaseChooseNodeDialog.java" startLine="97" startPosition="44" endLine="159" endPosition="22">
       <varInfo nodeId="4507335185602817509" varName="rootNode" />
       <varInfo nodeId="4507335185602817703" varName="scrollPane" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817503" fileName="BaseChooseNodeDialog.java" startLine="93" startPosition="0" endLine="151" endPosition="0" />
-    <unitInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="75" startPosition="76" endLine="79" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$1" />
-    <unitInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="79" startPosition="16" endLine="83" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$2" />
-    <unitInfo nodeId="4507335185602817618" fileName="BaseChooseNodeDialog.java" startLine="117" startPosition="250" endLine="121" endPosition="9" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
-    <unitInfo nodeId="4507335185602817567" fileName="BaseChooseNodeDialog.java" startLine="106" startPosition="50" endLine="111" endPosition="11" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
-    <unitInfo nodeId="4507335185602817642" fileName="BaseChooseNodeDialog.java" startLine="130" startPosition="60" endLine="145" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
-    <unitInfo nodeId="4507335185602817546" fileName="BaseChooseNodeDialog.java" startLine="102" startPosition="8" endLine="129" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$3" />
-    <unitInfo nodeId="4507335185602817336" fileName="BaseChooseNodeDialog.java" startLine="41" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog" />
+    <scopeInfo nodeId="4507335185602817503" fileName="BaseChooseNodeDialog.java" startLine="95" startPosition="0" endLine="161" endPosition="0" />
+    <unitInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="77" startPosition="76" endLine="81" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$1" />
+    <unitInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="81" startPosition="16" endLine="85" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$2" />
+    <unitInfo nodeId="4507335185602817618" fileName="BaseChooseNodeDialog.java" startLine="119" startPosition="250" endLine="123" endPosition="9" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
+    <unitInfo nodeId="4507335185602817567" fileName="BaseChooseNodeDialog.java" startLine="108" startPosition="50" endLine="113" endPosition="11" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
+    <unitInfo nodeId="4507335185602817642" fileName="BaseChooseNodeDialog.java" startLine="140" startPosition="60" endLine="155" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$4" />
+    <unitInfo nodeId="4507335185602817546" fileName="BaseChooseNodeDialog.java" startLine="104" startPosition="8" endLine="139" endPosition="5" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog$3" />
+    <unitInfo nodeId="4507335185602817336" fileName="BaseChooseNodeDialog.java" startLine="43" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog" />
   </root>
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/4507335185602819506">
     <nodeInfo nodeId="4507335185602819637" fileName="DuplicatesProcessor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />

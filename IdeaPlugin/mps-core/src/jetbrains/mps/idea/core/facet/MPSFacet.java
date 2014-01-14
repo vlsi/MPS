@@ -23,10 +23,8 @@ import com.intellij.ide.plugins.PluginManager;
 import com.intellij.internal.statistic.UsageTrigger;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -39,10 +37,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * evgeny, 10/26/11
@@ -79,7 +75,12 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
             repository.registerModule(mySolution = solution, myMpsProject);
             myMpsProject.addModule(mySolution.getModuleReference());
-            LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleName()));
+            try {
+              LOG.info(MPSBundle.message("facet.module.loaded",
+                Solution.class.getDeclaredMethod(ApplicationInfo.getInstance().getMajorVersion().equals("12") ? "getModuleFqName" : "getModuleName").invoke(MPSFacet.this.mySolution)));
+            } catch (IllegalAccessException e) {
+            } catch (InvocationTargetException e) {
+            } catch (NoSuchMethodException e) {}
             IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
             String version = descriptor == null ? null : descriptor.getVersion();
             UsageTrigger.trigger("MPS.initFacet."+version);
@@ -97,7 +98,12 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleName()));
+        try {
+          LOG.info(MPSBundle.message("facet.module.loaded",
+            Solution.class.getDeclaredMethod(ApplicationInfo.getInstance().getMajorVersion().equals("12") ? "getModuleFqName" : "getModuleName").invoke(mySolution)));
+        } catch (IllegalAccessException e) {
+        } catch (InvocationTargetException e) {
+        } catch (NoSuchMethodException e) {}
         MPSModuleRepository.getInstance().unregisterModule(mySolution, myMpsProject);
         mySolution = null;
       }

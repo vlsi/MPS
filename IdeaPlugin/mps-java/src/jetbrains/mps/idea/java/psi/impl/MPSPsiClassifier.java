@@ -1,10 +1,10 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.navigation.ItemPresentation;
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.util.Pair;
-import com.intellij.openapi.util.Ref;
+import com.intellij.pom.java.LanguageLevel;
 import com.intellij.psi.HierarchicalMethodSignature;
-import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiClassInitializer;
 import com.intellij.psi.PsiClassType;
@@ -21,12 +21,10 @@ import com.intellij.psi.PsiTypeParameterList;
 import com.intellij.psi.ResolveState;
 import com.intellij.psi.impl.InheritanceImplUtil;
 import com.intellij.psi.impl.PsiClassImplUtil;
-import com.intellij.psi.impl.PsiImplUtil;
 import com.intellij.psi.impl.PsiSuperMethodImplUtil;
 import com.intellij.psi.impl.light.JavaIdentifier;
 import com.intellij.psi.javadoc.PsiDocComment;
 import com.intellij.psi.scope.PsiScopeProcessor;
-import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.util.PsiUtil;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
@@ -36,8 +34,6 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.java.util.ClassUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -46,10 +42,12 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 /**
  * evgeny, 1/28/13
@@ -337,7 +335,25 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
                                      @NotNull ResolveState state,
                                      PsiElement lastParent,
                                      @NotNull PsiElement place) {
-    return PsiClassImplUtil.processDeclarationsInClass(this, processor, state, null, lastParent, place, PsiUtil.getLanguageLevel(place), false);
+    try {
+      Class<?> psiClassImplUtil = Class.forName("PsiClassImplUtil");
+      Method method;
+      if(ApplicationInfo.getInstance().getMajorVersion().equals("12")) {
+        method = psiClassImplUtil.getDeclaredMethod("processDeclarationsInClass", PsiClass.class, PsiScopeProcessor.class, ResolveState.class, Set.class, PsiElement.class, PsiElement.class, boolean.class);
+      } else {
+        method = psiClassImplUtil.getDeclaredMethod("processDeclarationsInClass", PsiClass.class, PsiScopeProcessor.class, ResolveState.class, Set.class, PsiElement.class, PsiElement.class, LanguageLevel.class, boolean.class);
+      }
+      if(ApplicationInfo.getInstance().getMajorVersion().equals("12")) {
+        return (Boolean) method.invoke(null, this, processor, state, null, lastParent, place, false);
+      } else {
+        return (Boolean) method.invoke(null, this, processor, state, null, lastParent, place, PsiUtil.getLanguageLevel(place), false);
+      }
+    } catch (ClassNotFoundException e) {
+    } catch (NoSuchMethodException e) {
+    } catch (InvocationTargetException e) {
+    } catch (IllegalAccessException e) {
+    }
+    return false;
   }
 
   @Nullable

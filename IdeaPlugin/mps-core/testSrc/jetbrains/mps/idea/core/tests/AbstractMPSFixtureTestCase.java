@@ -23,6 +23,7 @@ import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.ide.highlighter.ModuleFileType;
 import com.intellij.idea.LoggerFactory;
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
@@ -30,9 +31,6 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.StdModuleTypes;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectBundle;
-import com.intellij.openapi.projectRoots.JavaSdk;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.testFramework.PlatformTestUtil;
 import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
@@ -43,7 +41,6 @@ import com.intellij.testFramework.fixtures.JavaTestFixtureFactory;
 import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import com.intellij.testFramework.fixtures.impl.JavaTestFixtureFactoryImpl;
 import com.intellij.util.PathUtil;
-import com.intellij.util.SystemProperties;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -53,6 +50,8 @@ import org.apache.log4j.BasicConfigurator;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   private static int ourIndex = 0;
@@ -102,10 +101,18 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myFixture.setTestDataPath(getTestDataPath());
     myModule = moduleFixtureBuilder.getFixture().getModule();
 
-    CompilerWorkspaceConfiguration.getInstance(myModule.getProject()).USE_OUT_OF_PROCESS_BUILD = false;
+    CompilerWorkspaceConfiguration.class.getDeclaredField(
+      ApplicationInfo.getInstance().getMajorVersion().equals("12") ? "USE_COMPILE_SERVER" : "USE_OUT_OF_PROCESS_BUILD"
+    ).setBoolean(CompilerWorkspaceConfiguration.getInstance(myModule.getProject()), false);
     myFacet = addMPSFacet(myModule);
 
-    if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);
+    if (TRACE_ON_HACK){
+      final Method method = ApplicationInfo.getInstance().getMajorVersion().equals("12")
+          ? Logger.class.getDeclaredMethod("setFactory", Logger.Factory.class) : Logger.class.getDeclaredMethod("setFactory", Class.class);
+      method.invoke(null,
+          ApplicationInfo.getInstance().getMajorVersion().equals("12")
+              ? LoggerFactory.class.getDeclaredMethod("getInstance").invoke(null) : LoggerFactory.class);
+    }
   }
 
   @Override
@@ -174,7 +181,18 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     @Override
     protected void initModule(Module module) {
       // turn on trace
-      if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);
+      if (TRACE_ON_HACK) {
+        try {
+          final Method method = ApplicationInfo.getInstance().getMajorVersion().equals("12")
+              ? Logger.class.getDeclaredMethod("setFactory", Logger.Factory.class) : Logger.class.getDeclaredMethod("setFactory", Class.class);
+          method.invoke(null,
+              ApplicationInfo.getInstance().getMajorVersion().equals("12")
+                  ? LoggerFactory.class.getDeclaredMethod("getInstance").invoke(null) : LoggerFactory.class);
+        } catch (IllegalAccessException e) {
+        } catch (InvocationTargetException e) {
+        } catch (NoSuchMethodException e) {
+        }
+      }
       super.initModule(module);
     }
 

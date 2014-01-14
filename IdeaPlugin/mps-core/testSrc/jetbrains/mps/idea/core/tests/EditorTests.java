@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.tests;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.diagnostic.Logger;
@@ -29,11 +30,13 @@ import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -100,7 +103,11 @@ public class EditorTests extends DataMPSFixtureTestCase {
       }
     });
     // restore test logger factory
-    Logger.setFactory(TestLoggerFactory.class);
+    final Method method = ApplicationInfo.getInstance().getMajorVersion().equals("12")
+        ? Logger.class.getDeclaredMethod("setFactory", Logger.Factory.class) : Logger.class.getDeclaredMethod("setFactory", Class.class);
+    method.invoke(null,
+      ApplicationInfo.getInstance().getMajorVersion().equals("12")
+        ? TestLoggerFactory.class.getDeclaredMethod("getInstance").invoke(null) : TestLoggerFactory.class);
     if (thrown[0] != null) throw thrown[0];
   }
 

@@ -37,7 +37,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -305,7 +307,22 @@ public class MergeSession {
     // clear UnregisteredNodes pool to avoid a lot of ERRORs in log: 
     UnregisteredNodes.instance().clear();
 
-    CopyUtil.copyModelProperties(((SModelDescriptor) stateCopy.myResultModel).getSModel(), ((SModelDescriptor) myResultModel).getSModel());
+    Method copyModelProperties = null;
+    try {
+      for (Method method : CopyUtil.class.getDeclaredMethods()) {
+        if (method.getName().contains("copyModelProperties") && method.getParameterTypes().length == 2) {
+          if (method.getParameterTypes()[0].equals(SModel.class) && method.getParameterTypes()[1].equals(SModel.class)) {
+            copyModelProperties.invoke(null, stateCopy.myResultModel, myResultModel);
+          } else
+          if (method.getParameterTypes()[0].equals(jetbrains.mps.smodel.SModel.class) && method.getParameterTypes()[1].equals(jetbrains.mps.smodel.SModel.class)) {
+            copyModelProperties.invoke(null, ((SModelDescriptor) stateCopy.myResultModel).getSModel(), ((SModelDescriptor) myResultModel).getSModel());
+          }
+          break;
+        }
+      }
+    } catch (InvocationTargetException e) {
+    } catch (IllegalAccessException e) {
+    }
     ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SModelOperations.addRootNode(myResultModel, r);

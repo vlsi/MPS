@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.make;
 import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.compiler.impl.CompilerUtil;
 import com.intellij.compiler.server.CustomBuilderMessageHandler;
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileScope;
@@ -79,7 +80,16 @@ public class MPSCompilerComponent implements ProjectComponent {
         final CompileScope compileScope = context.getCompileScope();
         if (compileScope == null) return true;
 
-        if (!CompilerWorkspaceConfiguration.getInstance(project).USE_OUT_OF_PROCESS_BUILD) {
+        final boolean compileFlag[] = new boolean[1];
+        try {
+          compileFlag[0] = CompilerWorkspaceConfiguration.class.getDeclaredField(
+            ApplicationInfo.getInstance().getMajorVersion().equals("12") ? "USE_COMPILE_SERVER" : "USE_OUT_OF_PROCESS_BUILD"
+          ).getBoolean(CompilerWorkspaceConfiguration.getInstance(project));
+        } catch (IllegalAccessException e) {
+        } catch (NoSuchFieldException e) {
+        }
+
+        if (!compileFlag[0]) {
           final VirtualFile[] files = compileScope.getFiles(MPSFileTypeFactory.MPS_FILE_TYPE, true);
           final VirtualFile[] rootFiles = compileScope.getFiles(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE, true);
           if (files.length > 0 || rootFiles.length > 0) {

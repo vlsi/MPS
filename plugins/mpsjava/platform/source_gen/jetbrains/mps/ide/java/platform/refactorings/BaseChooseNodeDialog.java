@@ -29,6 +29,8 @@ import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.application.ApplicationInfo;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -120,7 +122,15 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
           }
         })))) {
           ModelTreeNode modelRootTreeNode = ModelTreeBuilder.createSNodeTreeNode(nextRoot);
-          modelRootTreeNode.setLeafPosition(true);
+          try {
+            ModelTreeNode.class.getDeclaredMethod((ApplicationInfo.getInstance().getMajorVersion().equals("12") ?
+              "setLeaf" :
+              "setLeafPosition"
+            ), boolean.class).invoke(modelRootTreeNode, true);
+          } catch (IllegalAccessException e) {
+          } catch (InvocationTargetException e) {
+          } catch (NoSuchMethodException e) {
+          }
           ModelTreeBuilder.insertChildSNodeTreeNode(node, modelRootTreeNode, SPropertyOperations.getString(nextRoot, "virtualPackage"));
         }
 

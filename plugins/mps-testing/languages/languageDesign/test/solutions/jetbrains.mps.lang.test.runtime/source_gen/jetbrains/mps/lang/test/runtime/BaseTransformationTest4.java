@@ -4,8 +4,12 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
+import java.lang.reflect.Method;
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.application.ex.ApplicationInfoEx;
 import com.intellij.idea.LoggerFactory;
+import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
@@ -19,7 +23,20 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   private Project myProject;
 
   public BaseTransformationTest4() {
-    Logger.setFactory(LoggerFactory.class);
+    try {
+      Method method = (ApplicationInfo.getInstance().getMajorVersion().equals("12") ?
+        Logger.class.getDeclaredMethod("setFactory", Logger.Factory.class) :
+        Logger.class.getDeclaredMethod("setFactory", Class.class)
+      );
+      method.invoke(null, (ApplicationInfoEx.getInstance().getMajorVersion().equals("12") ?
+        LoggerFactory.class.getDeclaredMethod("getInstance").invoke(null) :
+        LoggerFactory.class
+      ));
+    } catch (IllegalAccessException e) {
+    } catch (InvocationTargetException e) {
+    } catch (NoSuchMethodException e) {
+    }
+
   }
 
   public BaseTransformationTest4(Project project, SModel modelDescriptor) {

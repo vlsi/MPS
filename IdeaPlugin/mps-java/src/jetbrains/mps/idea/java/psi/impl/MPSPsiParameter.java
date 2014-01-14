@@ -130,6 +130,10 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
+  public PsiType getTypeNoResolve() {
+    return getType();
+  }
+
   @Nullable
   @Override
   public PsiModifierList getModifierList() {

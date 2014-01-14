@@ -76,7 +76,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.ide.CopyPasteManager;
-import com.intellij.util.ui.TextTransferable;
+import java.awt.datatransfer.Transferable;
+import com.intellij.openapi.application.ApplicationInfo;
+import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -559,7 +561,17 @@ __switch__:
         @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
-          CopyPasteManager.getInstance().setContents(new TextTransferable(asString, asString));
+          try {
+            CopyPasteManager.getInstance().setContents((Transferable) Class.forName((ApplicationInfo.getInstance().getMajorVersion().equals("12") ?
+              "TextTransferrable" :
+              "TextTransferable"
+            )).getDeclaredConstructor(String.class, String.class).newInstance(asString, asString));
+          } catch (InstantiationException e1) {
+          } catch (IllegalAccessException e1) {
+          } catch (InvocationTargetException e1) {
+          } catch (NoSuchMethodException e1) {
+          } catch (ClassNotFoundException e1) {
+          }
         }
       });
     }

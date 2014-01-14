@@ -11,11 +11,11 @@ import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.util.containers.hash.HashMap;
 import com.intellij.util.io.TestFileSystemBuilder;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.jps.api.BuildType;
 import org.jetbrains.jps.api.CanceledStatus;
 import org.jetbrains.jps.builders.impl.BuildDataPathsImpl;
 import org.jetbrains.jps.builders.impl.BuildRootIndexImpl;
 import org.jetbrains.jps.builders.impl.BuildTargetIndexImpl;
+import org.jetbrains.jps.builders.java.dependencyView.Callbacks.ConstantAffectionResolver;
 import org.jetbrains.jps.builders.logging.BuildLoggingManager;
 import org.jetbrains.jps.builders.storage.BuildDataPaths;
 import org.jetbrains.jps.cmdline.ClasspathBootstrap;
@@ -34,7 +34,11 @@ import org.jetbrains.jps.model.JpsDummyElement;
 import org.jetbrains.jps.model.JpsElementFactory;
 import org.jetbrains.jps.model.JpsModel;
 import org.jetbrains.jps.model.JpsProject;
-import org.jetbrains.jps.model.java.*;
+import org.jetbrains.jps.model.java.JavaSourceRootType;
+import org.jetbrains.jps.model.java.JpsJavaExtensionService;
+import org.jetbrains.jps.model.java.JpsJavaModuleExtension;
+import org.jetbrains.jps.model.java.JpsJavaModuleType;
+import org.jetbrains.jps.model.java.JpsJavaSdkType;
 import org.jetbrains.jps.model.library.JpsOrderRootType;
 import org.jetbrains.jps.model.library.JpsTypedLibrary;
 import org.jetbrains.jps.model.library.sdk.JpsSdk;
@@ -45,8 +49,8 @@ import org.jetbrains.jps.util.JpsPathUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Map;
 
@@ -268,7 +272,22 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
 
   protected BuildResult doBuild(final ProjectDescriptor descriptor, CompileScopeTestBuilder scopeBuilder) {
     Map<String, String> builderParams = getBuilderParams();
-    IncProjectBuilder builder = new IncProjectBuilder(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null, false);
+    Constructor<IncProjectBuilder> declaredConstructor;
+    IncProjectBuilder builder = null;
+    try {
+      //Here ApplicationInfo.getInstance() == null so need to check IDEA version other way
+      if(IncProjectBuilder.class.getDeclaredConstructors()[0].getParameterTypes().length == 5) {
+        declaredConstructor = IncProjectBuilder.class.getDeclaredConstructor(ProjectDescriptor.class, BuilderRegistry.class, Map.class, CanceledStatus.class, ConstantAffectionResolver.class);
+        builder = declaredConstructor.newInstance(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null);
+      } else {
+        declaredConstructor = IncProjectBuilder.class.getDeclaredConstructor(ProjectDescriptor.class, BuilderRegistry.class, Map.class, CanceledStatus.class, ConstantAffectionResolver.class, boolean.class);
+        builder = declaredConstructor.newInstance(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null, false);
+      }
+    } catch (NoSuchMethodException e) {
+    } catch (IllegalAccessException e) {
+    } catch (InstantiationException e) {
+    } catch (InvocationTargetException e) {
+    }
     BuildResult result = new BuildResult();
     builder.addMessageHandler(result);
     try {

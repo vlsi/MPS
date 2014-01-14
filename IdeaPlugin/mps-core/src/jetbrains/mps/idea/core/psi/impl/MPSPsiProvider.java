@@ -1,4 +1,5 @@
 /*
+/*
  * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +18,7 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorDataProvider;
@@ -53,6 +55,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -230,7 +233,13 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
     PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
     event.setParent(node != null ? node : model);
-    event.setGenericChange(false);
+    try {
+      PsiTreeChangeEventImpl.class.getDeclaredMethod(ApplicationInfo.getInstance().getMajorVersion().equals("12") ? "setGeneric" : "setGenericChange").
+        invoke(event, false);
+    } catch (IllegalAccessException e) {
+    } catch (InvocationTargetException e) {
+    } catch (NoSuchMethodException e) {
+    }
 
     ((PsiManagerImpl) manager).childrenChanged(event);
   }

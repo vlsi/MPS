@@ -15,15 +15,19 @@
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapperAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog" file="BaseChooseNodeDialog.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationInfo" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.ui.treeStructure.SimpleTree" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.HeadlessException" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.JComponent" />
@@ -220,11 +224,16 @@
     <classNode extendsClassName="jetbrains.mps.ide.java.platform.refactorings.IntroduceVariableDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.IntroduceFieldDialog" file="IntroduceFieldDialog.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationInfo" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="javax.swing.ButtonGroup" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
