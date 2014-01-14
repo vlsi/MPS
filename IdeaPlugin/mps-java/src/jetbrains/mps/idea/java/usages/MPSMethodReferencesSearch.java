@@ -18,6 +18,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
@@ -51,6 +52,8 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
     }
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
     final PsiMethod method = queryParameters.getMethod();
+
+    if (method instanceof MPSPsiNodeBase) return;
 
     final GeneratedFinder finder = method.isConstructor() ?
       FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder")) :
