@@ -197,7 +197,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       node = editorComponent.getEditedNode();
     } else {
       MPSNodeVirtualFile file = editor.getFile();
-      node = file.isValid() ? file.getNode() : null;
+      node = file != null && file.isValid() ? file.getNode() : null;
     }
     if (node == null) return;
 
