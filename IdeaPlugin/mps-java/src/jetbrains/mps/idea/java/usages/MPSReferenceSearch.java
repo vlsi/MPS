@@ -31,6 +31,7 @@ import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
+import com.intellij.psi.impl.light.LightElement;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.psi.search.searches.ReferencesSearch.SearchParameters;
@@ -98,6 +99,13 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       public void run() {
 
         if (DumbService.getInstance(project).isDumb()) {
+          return;
+        }
+
+        if (psiTarget instanceof LightElement) {
+          // we don't handle light psi elements we don't know about
+          // we may not be able to compute their node id and their Java meaning can be represented in baseLanguage
+          // in a special way
           return;
         }
 
