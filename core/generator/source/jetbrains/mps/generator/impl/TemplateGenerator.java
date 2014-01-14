@@ -661,8 +661,25 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  void rootReplaced(SNode old, SNode new_) {
-    myDependenciesBuilder.rootReplaced(old, new_);
+  void replacePlaceholderNode(@NotNull SNode placeholder, @NotNull SNode actual, @NotNull TemplateContext ctx, SNodeReference templateNode) {
+    assert placeholder.getModel() != null || placeholder.getParent() != null : "Can't replace node that is not part of another structure (hangs in the air)";
+    // check new child
+    SNode parent = placeholder.getParent();
+    final boolean isRoot = placeholder.getModel() != null && parent == null;
+    if (parent != null) {
+      String childRole = placeholder.getRoleInParent();
+      final Status status = getChildRoleValidator(parent, childRole).validate(actual);
+      if (status != null) {
+        status.reportProblem(false, parent, "",
+            GeneratorUtil.describe(ctx.getInput(), "input"),
+            GeneratorUtil.describe(templateNode, "template"));
+      }
+    }
+    SNodeUtil.replaceWithAnother(placeholder, actual);
+    if (isRoot) {
+      myDependenciesBuilder.rootReplaced(placeholder, actual);
+    }
+    getGenerationTracer().replaceOutputNode(placeholder, actual);
   }
 
   public SNode getOriginalRootByGenerated(SNode root) {

@@ -18,11 +18,9 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateParent;
@@ -39,18 +37,14 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -141,19 +135,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         templateId = GeneratorUtil.getTemplateNodeId(template);
       }
       Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateId, newInputNode, this);
-      // check node languages : prevent 'input node' query from returning node, which language was not counted when
-      // planning the generation steps.
+      ChildAdopter a = new ChildAdopter(generator);
       for (SNode outputNode : _outputNodes) {
-        Language outputNodeLang = jetbrains.mps.util.SNodeOperations.getLanguage(outputNode);
-        if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
-          if (!outputNodeLang.getGenerators().isEmpty()) {
-            SNode tNode = templateNode.resolve(MPSModuleRepository.getInstance());
-            getLogger().error(outputNode.getReference(), "language of output node is '" + outputNodeLang.getModuleName() + "' - this language did not show up when computing generation steps!",
-              GeneratorUtil.describe(tNode, "template"),
-              GeneratorUtil.describe(templateContext.getInput(), "input"),
-              new ProblemDescription("workaround: add the language '" + outputNodeLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
-          }
-        }
+        a.checkIsExpectedLanguage(outputNode, templateNode, templateContext);
       }
       outputNodes.addAll(_outputNodes);
     }
@@ -162,45 +146,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
-    // check node languages : prevent 'mapping func' query from returning node, which language was not counted when
-    // planning the generation steps.
-    Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
-    if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
-      if (!childLang.getGenerators().isEmpty()) {
-        getLogger().error(child.getReference(), "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
-          GeneratorUtil.describe(templateNode, "template"),
-          GeneratorUtil.describe(templateContext.getInput(), "input"),
-          new ProblemDescription("workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
-      }
-    }
-
-    if (child.getModel() != null) {
-      // must be "in air"
-      child = CopyUtil.copy(child);
-    }
-    // replace references back to input model
-    validateReferences(child, templateContext.getInput());
-    return child;
-  }
-
-  private void validateReferences(SNode node, final SNode inputNode) {
-    SModelReference inputModelRef = generator.getInputModel().getReference();
-    for (SReference ref : node.getReferences()) {
-      // reference to input model - illegal
-      if (inputModelRef.equals(ref.getTargetSModelReference())) {
-        // replace
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          ref.getRole(),
-          ref.getSourceNode(), // XXX shall I use 'node' here?
-          inputNode,
-          ref.getTargetNode());
-        PostponedReference postponedReference = generator.register(new PostponedReference(refInfo));
-        postponedReference.setReferenceInOutputSourceNode();
-      }
-    }
-    for (SNode child : node.getChildren()) {
-      validateReferences(child, inputNode);
-    }
+    ChildAdopter a = new ChildAdopter(generator);
+    a.checkIsExpectedLanguage(child, templateNode, templateContext);
+    return a.adopt(child, templateContext);
   }
 
   @Override
