@@ -61,6 +61,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -175,26 +176,41 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ttrace.pop();
     }
 
-    if (myDeltaBuilder != null) {
+    //////////////////////////////////////////////////////////////
+    // replace references with PostponedReference to respect model changes up to this point
+    if (myDeltaBuilder != null && myDeltaBuilder.hasChanges()) {
       ttrace.push("apply delta changes", false);
 //      myDeltaBuilder.dump();
-      if (myDeltaBuilder.hasChanges()) {
-        myDeltaBuilder.prepareReferences(getInputModel(), this);
-        myDeltaBuilder.applyInplace(getInputModel());
-      }
-      myOutputRoots.clear();
-      myDeltaBuilder = null;
+      myDeltaBuilder.prepareReferences(getInputModel(), this);
       ttrace.pop();
     }
 
+    // resolve PostponedReferences, but do not replace them in the model yet
     if (!myPostponedRefs.isEmpty()) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
       ttrace.push("restoring references", false);
       myPostponedRefs.prepare();
+      ttrace.pop();
+    }
+
+    // apply structural change delta onto input model
+    if (myDeltaBuilder != null && myDeltaBuilder.hasChanges()) {
+      ttrace.push("apply delta changes", false);
+      myDeltaBuilder.applyInplace(getInputModel());
+      ttrace.pop();
+    }
+
+    // replace reference placeholders (PostponedReference) with resolved
+    if (!myPostponedRefs.isEmpty()) {
+      ttrace.push("restoring references", false);
       myPostponedRefs.replace();
       ttrace.pop();
     }
 
+    myOutputRoots.clear();
+    myDeltaBuilder = null;
+
+    /////////////////////////////////////////////////////////////^^^
     if (myChanged || isPrimary) {
       // advance blocked reduction data
       getBlockedReductionsData().advanceStep();
@@ -202,6 +218,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     return myChanged;
   }
+
+  public static void dump(SModel m) {
+    dump("", m.getRootNodes());
+    System.out.println();
+  }
+   private static void dump(String prefix, Iterable<? extends SNode> nodes) {
+     String nextPrefix = prefix + "  ";
+     for (SNode n : nodes) {
+       System.out.printf("%s%s\n", prefix, n.toString());
+       dump(nextPrefix, n.getChildren());
+     }
+   }
 
   public void executeScript(TemplateMappingScript script) throws GenerationFailureException {
     try {
@@ -445,6 +473,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   protected DeltaBuilder createDeltaBuilder() {
     return DeltaBuilder.newSingleThreadDeltaBuilder();
+  }
+
+  @Override
+  public SNode findOutputNodeById(SNodeId nodeId) {
+    SNode rv;
+    if (myDeltaBuilder != null) {
+      return myDeltaBuilder.findOutputNodeById(nodeId);
+    }
+    return super.findOutputNodeById(nodeId);
   }
 
   @Nullable
@@ -774,11 +811,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       try {
         visitInputNode(inputRootNode);
-        myGenerator.registerRoot(inputRootNode, inputRootNode, null, true); // weaving rules need myNewToOldRoot mapping
       } finally {
         myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
         myDeltaBuilder.leaveInputRoot(inputRootNode);
       }
+      // for now, registerRoot shall go *after* leaveInputRoot, as deltaBuilder expects CopyRoot to be full of replacing nodes
+      // at the moment root is registered (to fill id map of new nodes)
+      // TODO make map building an explicit step in DeltaBuilder so that ordering won't matter that much.
+      // (the question is what if anyone calls findOutputNode while rules are applied (seems !strict model allows that)
+      myGenerator.registerRoot(inputRootNode, inputRootNode, null, true); // weaving rules need myNewToOldRoot mapping
     }
 
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
