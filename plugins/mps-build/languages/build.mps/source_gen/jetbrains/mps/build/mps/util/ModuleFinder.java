@@ -34,9 +34,6 @@ public class ModuleFinder {
         if (layoutNode == null && SNodeOperations.isInstanceOf(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
           layoutNode = helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true));
         }
-        if (SNodeOperations.isInstanceOf(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
-          return null;
-        }
         if (layoutNode == null) {
           genContext.showErrorMessage(node, "mps module " + SPropertyOperations.getString(module, "name") + " was not found in the layout of `" + SPropertyOperations.getString(project, "name") + "'");
           return null;
