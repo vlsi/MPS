@@ -20,6 +20,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -47,22 +49,34 @@ public class MatchingUtil {
     propertyNames.addAll(IterableUtil.asCollection(node1.getPropertyNames()));
     propertyNames.addAll(IterableUtil.asCollection(node2.getPropertyNames()));
 
-    SNode typeDeclaration = ((jetbrains.mps.smodel.SNode) node1).getConceptDeclarationNode();
+    final HashMap<String, SProperty> propertyDeclarations = new HashMap<String, SProperty>();
+    for (SProperty p : node1.getConcept().getProperties()) {
+      propertyDeclarations.put(p.getName(), p);
+    }
 
     for (String propertyName : propertyNames) {
-      SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
-      String propertyValue1 = SNodeAccessUtil.getProperty(node1, propertyName);
-      String propertyValue2 = SNodeAccessUtil.getProperty(node2, propertyName);
+      SProperty propertyDeclaration = propertyDeclarations.get(propertyName);
+      // use of SNode.getProperty() directly (not SNodeAccessUtil.getProperty())
+      // as we are checking for structural equality. If there's e.g. a 'derived' property
+      // == getName() + getNodeId(), its values from SNodeAccessUtil would differ and nodes would not match
+      // (assuming NodeId is different and nodes otherwise match).
+      String stringValue1 = node1.getProperty(propertyName);
+      String stringValue2 = node2.getProperty(propertyName);
+      Object propertyValue1 = stringValue1;
+      Object propertyValue2 = stringValue2;
       if (propertyDeclaration == null) {
-        SNode diagnosticsNode = SNodeAccessUtil.getProperty(node1, propertyName) != null ? node1 : node2;
-        LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration, diagnosticsNode);
+        SNode diagnosticsNode = stringValue1 != null ? node1 : node2;
+        LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + diagnosticsNode.getConcept().getQualifiedName(), diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
-        if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;
-      } else {
-        PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
-        if (!EqualUtil.equals(propertySupport.fromInternalValue(propertyValue1),
-          propertySupport.fromInternalValue(propertyValue2))) return false;
       }
+      else {
+        SDataType dataType = propertyDeclaration.getType();
+        if (dataType != null) {
+          propertyValue1 = dataType.fromString(stringValue1);
+          propertyValue2 = dataType.fromString(stringValue2);
+        }
+      }
+      if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;
     }
 
     //-- matching references
