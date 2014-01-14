@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetpad" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6" compileInMPS="true">
+<solution name="jetbrains.jetpad" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6" compileInMPS="true">
   <models>
     <modelRoot contentPath="${mps_home}/plugins/jetpad/lib" type="java_classes">
       <sourceRoot location="base-1.0-SNAPSHOT.jar" />
