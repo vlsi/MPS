@@ -68,10 +68,10 @@ public class AddRemoveFigureParameterAttributeField_Intention implements Intenti
     }
 
     Set<SNode> allExtendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false));
-    if (SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetpad/jetbrains.jetpad.model.property@java_stub)", "~Property")) || SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~GroupView"))) {
+    if (SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)", "~Property")) || SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~GroupView"))) {
       return true;
     }
-    if (SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.collections(jetpad/jetbrains.jetpad.model.collections@java_stub)", "~ObservableCollection"))) {
+    if (SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.collections(jetbrains.jetpad/jetbrains.jetpad.model.collections@java_stub)", "~ObservableCollection"))) {
       return true;
     }
     return false;

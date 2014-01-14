@@ -34,6 +34,6 @@ public class ExternalViewClassifierScope extends FilteringScope {
     if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, classConcept, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
       return true;
     }
-    return !(ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(classConcept)).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~View")));
+    return !(ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(classConcept)).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~View")));
   }
 }

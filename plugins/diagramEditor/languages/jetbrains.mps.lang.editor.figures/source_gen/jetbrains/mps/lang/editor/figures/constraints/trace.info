@@ -141,7 +141,7 @@
     <nodeInfo nodeId="5422656561916551127" fileName="ExternalViewClassifierScope.java" startLine="28" startPosition="158" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5422656561916623210" fileName="ExternalViewClassifierScope.java" startLine="31" startPosition="213" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5422656561917461440" fileName="ExternalViewClassifierScope.java" startLine="34" startPosition="199" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561917939131" fileName="ExternalViewClassifierScope.java" startLine="36" startPosition="5" endLine="37" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561917939131" fileName="ExternalViewClassifierScope.java" startLine="36" startPosition="5" endLine="37" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5422656561916513587" fileName="ExternalViewClassifierScope.java" startLine="27" startPosition="105" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5422656561916580637" fileName="ExternalViewClassifierScope.java" startLine="30" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5422656561916645435" fileName="ExternalViewClassifierScope.java" startLine="33" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -154,7 +154,7 @@
     <scopeInfo nodeId="5422656561916287817" fileName="ExternalViewClassifierScope.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="229277139747455555" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="5422656561916371327" fileName="ExternalViewClassifierScope.java" startLine="26" startPosition="41" endLine="37" endPosition="304">
+    <scopeInfo nodeId="5422656561916371327" fileName="ExternalViewClassifierScope.java" startLine="26" startPosition="41" endLine="37" endPosition="314">
       <varInfo nodeId="5422656561916379086" varName="classConcept" />
     </scopeInfo>
     <scopeInfo nodeId="5422656561916371319" fileName="ExternalViewClassifierScope.java" startLine="25" startPosition="0" endLine="39" endPosition="0">
