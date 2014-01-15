@@ -336,7 +336,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
                                      PsiElement lastParent,
                                      @NotNull PsiElement place) {
     try {
-      Class<?> psiClassImplUtil = Class.forName("PsiClassImplUtil");
+      Class<?> psiClassImplUtil = Class.forName("com.intellij.psi.impl.PsiClassImplUtil");
       Method method;
       if(ApplicationInfo.getInstance().getMajorVersion().equals("12")) {
         method = psiClassImplUtil.getDeclaredMethod("processDeclarationsInClass", PsiClass.class, PsiScopeProcessor.class, ResolveState.class, Set.class, PsiElement.class, PsiElement.class, boolean.class);

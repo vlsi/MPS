@@ -71,6 +71,7 @@ import java.lang.reflect.Method;
   @Override
   public JPopupMenu getPopupMenu() {
     DefaultActionGroup actions = (DefaultActionGroup) myBreakpoint.getHighlighter().getGutterIconRenderer().getPopupMenuActions();
+    if(actions == null) actions = new DefaultActionGroup();
     for (AnAction action : actions.getChildActionsOrStubs()) {
       if (action instanceof ContextAction) {
         actions.remove(action);
@@ -135,14 +136,14 @@ import java.lang.reflect.Method;
             public void run() {
               try {
                 if (ApplicationInfo.getInstance().getMajorVersion().equals("12")) {
-                  final Class<?> bpMDPopupFactory = Class.forName("BreakpointsMasterDetailPopupFactory");
+                  final Class<?> bpMDPopupFactory = Class.forName("com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsMasterDetailPopupFactory");
                   final Object bpMDPopupFactoryInstance = bpMDPopupFactory.getDeclaredMethod("getInstance", Project.class).invoke(null, myBreakpoint.getProject());
                   final JBPopup popup = (JBPopup) bpMDPopupFactory.getDeclaredMethod("createPopup", BreakpointWithHighlighter.class).invoke(bpMDPopupFactoryInstance, myBreakpoint);
                   if (popup != null) {
                     popup.showCenteredInCurrentWindow(myBreakpoint.getProject());
                   }
                 } else {
-                  Class<?> bpDFactory = Class.forName("BreakpointsDialogFactory");
+                  Class<?> bpDFactory = Class.forName("com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory");
                   final Object bpDFactoryInstance = bpDFactory.getDeclaredMethod("getInstance", Project.class).invoke(null, myBreakpoint.getProject());
                   bpDFactory.getDeclaredMethod("showDialog", BreakpointWithHighlighter.class).invoke(bpDFactoryInstance, myBreakpoint);
                 }
@@ -160,7 +161,7 @@ import java.lang.reflect.Method;
       Balloon balloon[] = new Balloon[1];
 
       try {
-        final Class<?> debuggerUIUtil = Class.forName("DebuggerUIUtil");
+        final Class<?> debuggerUIUtil = Class.forName("com.intellij.xdebugger.impl.ui.DebuggerUIUtil");
         Method showBreakpointMethod = null;
         if(ApplicationInfo.getInstance().getMajorVersion().equals("12")) {
           showBreakpointMethod = debuggerUIUtil.getDeclaredMethod("showBreakpointEditor", Project.class, JComponent.class, String.class, Point.class, JComponent.class, Runnable.class, Object.class);
