@@ -107,10 +107,6 @@ public class QueriesGenerated {
     });
   }
 
-  public static SNode sourceNodeQuery_1228681296807(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static Iterable sourceNodesQuery_1228680239721(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
   }

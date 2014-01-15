@@ -299,14 +299,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "innerRef", true);
   }
 
-  public static SNode sourceNodeQuery_1820665478710840051(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
-  public static SNode sourceNodeQuery_1820665478710839754(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static Iterable sourceNodesQuery_2229091780083588954(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "language", true), "extendedLanguages", true);
   }
@@ -334,7 +326,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3829836699771395556(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0jc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0hc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -391,7 +383,7 @@ public class QueriesGenerated {
     return str == null || str.length() == 0;
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0jc(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0hc(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

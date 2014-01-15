@@ -23,9 +23,9 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -143,7 +143,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           Collection<SNode> tlist2 = null;
           try {
             environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a5r);
-            final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1209604320455(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a4a2a5r, environment.getGenerator()));
+            final SNode copySrcInput2 = context.getInput();
             tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a5r, "tpl/r:00000000-0000-4000-0000-011c89590606/1209604251671", null, context);
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a5r);
@@ -273,7 +273,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           Collection<SNode> tlist2 = null;
           try {
             environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a1a4a2a5t);
-            final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_1209662301920(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context, copySrcMacro_417xrn_a0a0a1a4a2a5t, environment.getGenerator()));
+            final SNode copySrcInput2 = context.getInput();
             tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_417xrn_a0a0a1a4a2a5t, "tpl/r:00000000-0000-4000-0000-011c89590606/1209662301918", null, context);
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a5t);

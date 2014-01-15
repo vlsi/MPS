@@ -646,7 +646,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 Collection<SNode> tlist3 = null;
                 try {
                   environment.getTracer().pushMacro(copySrcMacro_417xrn_a0a0a3a2a2a1a5a2a5w);
-                  final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_1820665478710840051(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context2, copySrcMacro_417xrn_a0a0a3a2a2a1a5a2a5w, environment.getGenerator()));
+                  final SNode copySrcInput3 = context2.getInput();
                   tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_417xrn_a0a0a3a2a2a1a5a2a5w, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840044", null, context2);
                 } finally {
                   environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a3a2a2a1a5a2a5w);

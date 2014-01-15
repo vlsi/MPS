@@ -1815,14 +1815,6 @@ public class QueriesGenerated {
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_1215446402993(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
-  public static SNode sourceNodeQuery_1215446443664(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_1199644437387(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "function", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true);
   }
@@ -2145,10 +2137,6 @@ public class QueriesGenerated {
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
   }
 
-  public static SNode sourceNodeQuery_8665905049776863641(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_8665905049776863680(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlMethod", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(parameters).count() - 1), "type", true);
@@ -2187,10 +2175,6 @@ public class QueriesGenerated {
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "baseMethodDeclaration", false), "parameter", true);
     SNode type = SLinkOperations.getTarget(ListSequence.fromList(parameters).getElement(ListSequence.fromList(siblings).indexOf(_context.getNode())), "type", true);
     return FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(type);
-  }
-
-  public static SNode sourceNodeQuery_8665905049776865556(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_8665905049776865604(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

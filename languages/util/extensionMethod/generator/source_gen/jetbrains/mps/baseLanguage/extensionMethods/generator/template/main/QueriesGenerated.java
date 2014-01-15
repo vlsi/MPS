@@ -93,10 +93,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_5900641530600623412(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static Iterable sourceNodesQuery_4525411394274030104(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "typeArgument", true);
   }

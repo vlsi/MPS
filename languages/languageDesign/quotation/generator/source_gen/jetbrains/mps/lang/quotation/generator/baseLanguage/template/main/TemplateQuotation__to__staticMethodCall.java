@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
-import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 
@@ -65,7 +65,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                   Collection<SNode> tlist4 = null;
                   try {
                     environment.getTracer().pushMacro(copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2);
-                    final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_1025590056396691788(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context3, copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2, environment.getGenerator()));
+                    final SNode copySrcInput4 = context3.getInput();
                     tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396691722", null, context3);
                   } finally {
                     environment.getTracer().closeMacro(copySrcMacro_3njegt_a0a0a3a2a2a1a4a1a3a1a2);
