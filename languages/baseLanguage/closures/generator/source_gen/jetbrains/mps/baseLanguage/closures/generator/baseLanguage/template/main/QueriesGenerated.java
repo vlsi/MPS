@@ -1224,7 +1224,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7001216437968760495(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
   public static Object referenceMacro_GetReferent_2857237956452412443(final IOperationContext operationContext, final ReferenceMacroContext _context) {
