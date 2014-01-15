@@ -36,10 +36,10 @@ public class NodeCheckerUtil {
 
     public void run(TypeCheckingContext context) {
       context.checkIfNotChecked(nodeToCheck, true);
-      SNode container = AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"));
+      SNode container = AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
       assert container != null;
 
-      for (SNode operation : SLinkOperations.getTargets(container, "nodeCheckOperations", true)) {
+      for (SNode operation : SLinkOperations.getTargets(container, "nodeOperations", true)) {
         checkOperation(context, operation);
       }
     }
@@ -174,11 +174,11 @@ public class NodeCheckerUtil {
 
 
   private static boolean hasErrorOrWarningCheckOperationTag(SNode node) {
-    if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer")) == null) {
+    if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) == null) {
       return false;
     }
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"));
-    for (SNode property : SLinkOperations.getTargets(container, "nodeCheckOperations", true)) {
+    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
+    for (SNode property : SLinkOperations.getTargets(container, "nodeOperations", true)) {
       if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation") || SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation")) {
         return true;
       }

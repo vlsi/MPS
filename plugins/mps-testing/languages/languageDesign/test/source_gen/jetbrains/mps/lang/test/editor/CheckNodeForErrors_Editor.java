@@ -36,7 +36,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_ue6gv5_a0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    transformationTest_StyleSheet.applyNodeOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -66,7 +66,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error messages");
     editorCell.setCellId("Constant_ue6gv5_c0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    transformationTest_StyleSheet.applyNodeOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

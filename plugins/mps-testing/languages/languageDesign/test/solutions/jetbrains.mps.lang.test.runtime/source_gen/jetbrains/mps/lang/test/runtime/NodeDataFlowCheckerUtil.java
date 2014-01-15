@@ -34,9 +34,9 @@ public class NodeDataFlowCheckerUtil {
     Set<Instruction> unreachable = program.getUnreachableInstructions();
     AnalysisResult<VarSet> initialized = program.analyze(new InitializedVariablesAnalyzer());
     AnalysisResult<VarSet> live = program.analyze(new LivenessAnalyzer());
-    assert AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer")) != null;
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"));
-    for (SNode operation : SLinkOperations.getTargets(container, "nodeCheckOperations", true)) {
+    assert AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null;
+    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
+    for (SNode operation : SLinkOperations.getTargets(container, "nodeOperations", true)) {
       Instruction instruction;
       List<Instruction> instructions = program.getInstructionsFor(node);
       if (ListSequence.fromList(instructions).isNotEmpty()) {

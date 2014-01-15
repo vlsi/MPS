@@ -85,27 +85,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention" file="AddPropertiesMark_Intention.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention" file="AddScopeExpectedNodes_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -176,7 +155,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention" />
-    <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />

@@ -2,17 +2,14 @@
 <model modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="34">
   <persistence version="8" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <import index="tp3j" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" />
-  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="34" implicit="yes" />
+  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1210673684636" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TestNodeAnnotation" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1228584180295" resolveInfo="INodeAnnotation" />
@@ -93,13 +90,14 @@
         <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
       </node>
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1613202924904655816" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215507671101" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="NodeErrorCheckOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node has error" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="has error" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215511704609" nodeInfo="ig">
@@ -107,7 +105,7 @@
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="NodeWarningCheckOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node has warning" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="has warning" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215525678776" nodeInfo="ig">
@@ -138,6 +136,10 @@
     <property name="name" nameId="tpck.1169194664001" value="NodeCheckOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6090235207264577790" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1217511329647" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpe3.1216134482493" resolveInfo="ITestMethod" />
     </node>
@@ -145,7 +147,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215603922101" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="NodeOperationsContainer" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1228584180295" resolveInfo="INodeAnnotation" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1215604436604" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="nodeOperations" />
@@ -166,10 +168,6 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="check error messages" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="501631557342352972" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="name" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="852155438140865197" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="allowErrors" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />

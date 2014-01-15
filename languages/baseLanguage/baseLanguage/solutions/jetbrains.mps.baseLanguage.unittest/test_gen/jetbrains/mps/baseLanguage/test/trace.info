@@ -289,26 +289,38 @@
     <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="18" startPosition="114" endLine="19" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="23" startPosition="74" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="24" startPosition="114" endLine="25" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="30" startPosition="56" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215444376244" fileName="AnonymousClass_Test.java" startLine="31" startPosition="40" endLine="32" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="35" startPosition="76" endLine="36" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="36" startPosition="145" endLine="37" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AnonymousClass#()V" />
-    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeWarningCheck963887337804206807#()V" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="29" startPosition="75" endLine="30" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="30" startPosition="114" endLine="31" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="36" startPosition="56" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215444376244" fileName="AnonymousClass_Test.java" startLine="37" startPosition="40" endLine="38" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="41" startPosition="76" endLine="42" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="42" startPosition="145" endLine="43" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="46" startPosition="77" endLine="47" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="47" startPosition="146" endLine="48" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AnonymousClass#()V" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeWarningCheck963887337804206807#()V" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeWarningCheck6090235207266878835#()V" />
     <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AnonymousClass#()V" />
     <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeWarningCheck963887337804206807#()V" />
+    <nodeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeWarningCheck6090235207266878835#()V" />
     <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="17" startPosition="54" endLine="19" endPosition="110" />
     <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="23" startPosition="74" endLine="25" endPosition="130" />
-    <scopeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="30" startPosition="56" endLine="32" endPosition="182" />
-    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="35" startPosition="76" endLine="37" endPosition="154">
+    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="29" startPosition="75" endLine="31" endPosition="131" />
+    <scopeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="36" startPosition="56" endLine="38" endPosition="182" />
+    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="41" startPosition="76" endLine="43" endPosition="154">
       <varInfo nodeId="1217271587074" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="46" startPosition="77" endLine="48" endPosition="154">
+      <varInfo nodeId="1217271587074" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225979303691" fileName="AnonymousClass_Test.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <unitInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody" />
-    <unitInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test" />
+    <scopeInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="34" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody" />
+    <unitInfo nodeId="1217271587074" fileName="AnonymousClass_Test.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.AnonymousClass_Test" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587656">
     <nodeInfo nodeId="1217271587656" fileName="VariableUninitialized_Test.java" startLine="16" startPosition="61" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
