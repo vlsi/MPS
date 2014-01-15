@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d35767hhd6j95qsd28u7q7cxcmzu60r">
+<dependencies version="2" modelHash="-5lcg97wwj7gs3d9suskf90v6t3g0ko7">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
@@ -91,7 +91,7 @@
   <source id="5668645347099288944" name="FeatureForestMapListener" hash="93aor0thmkmb5idi2h06ul4hid43vu8">
     <file name="FeatureForestMapListener.java" />
   </source>
-  <source id="9200516641177001205" name="TreeHighlighter" hash="-dehk6jqh3h6y8ofwas10j2p1mt5hmyu">
+  <source id="9200516641177001205" name="TreeHighlighter" hash="bm0ev9syuydr6au8u9io8ld6keio5s0">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />

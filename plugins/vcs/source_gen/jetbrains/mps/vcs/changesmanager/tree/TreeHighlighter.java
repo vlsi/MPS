@@ -222,7 +222,6 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
 
-
   private final Update rehighlightAllFeaturesUpdate = new Update(this) {
     @Override
     public void run() {
