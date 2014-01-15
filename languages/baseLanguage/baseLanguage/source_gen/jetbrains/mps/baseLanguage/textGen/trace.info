@@ -4847,6 +4847,43 @@
     </scopeInfo>
     <unitInfo nodeId="4269842503727610175" fileName="LongLiteral_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LongLiteral_TextGen" />
   </root>
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/4308362244627186488">
+    <nodeInfo nodeId="4308362244627121207" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4308362244627172997" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="15" startPosition="86" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4308362244627194633" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="17" startPosition="5" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="18" startPosition="0" endLine="19" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="18" startPosition="0" endLine="19" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="19" startPosition="155" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="20" startPosition="23" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="23" startPosition="78" endLine="24" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="25" startPosition="104" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="29" startPosition="5" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4308362244627153236" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="14" startPosition="22" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="24" startPosition="109" endLine="27" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="22" startPosition="98" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="21" startPosition="21" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="18" startPosition="0" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4308362244627186488" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="13" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="4308362244627153239" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="15" startPosition="86" endLine="16" endPosition="20" />
+    <scopeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="18" startPosition="0" endLine="19" endPosition="155" />
+    <scopeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="25" startPosition="104" endLine="26" endPosition="28" />
+    <scopeInfo nodeId="4308362244627153236" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="14" startPosition="22" endLine="17" endPosition="5">
+      <varInfo nodeId="4308362244627153242" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="23" startPosition="78" endLine="27" endPosition="9" />
+    <scopeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="22" startPosition="98" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="22" startPosition="98" endLine="28" endPosition="7">
+      <varInfo nodeId="4308362244627191989" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="4308362244627191989" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="18" startPosition="0" endLine="30" endPosition="21" />
+    <scopeInfo nodeId="4308362244627186488" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="13" startPosition="42" endLine="30" endPosition="21">
+      <varInfo nodeId="4308362244627121208" varName="label" />
+    </scopeInfo>
+    <scopeInfo nodeId="4308362244627186488" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="13" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4308362244627186488" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4308362244627186488" fileName="ArrayCreatorWithInitializerAndMultipleDimensions_TextGen.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayCreatorWithInitializerAndMultipleDimensions_TextGen" />
+  </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/4564374268190746435">
     <nodeInfo nodeId="4564374268190746438" fileName="PrimitiveClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4564374268190746438" fileName="PrimitiveClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -3089,9 +3089,19 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
-        SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
-        return newNode;
+        int numOfDimensions = ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "dimensionExpression", true)).count();
+        if (numOfDimensions > 1) {
+          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions");
+          SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
+          SPropertyOperations.set(newNode, "dimensionCount", "" + (numOfDimensions));
+          SelectionUtil.selectCell(editorContext, newNode, "init");
+          return newNode;
+        } else {
+          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
+          SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
+          SelectionUtil.selectCell(editorContext, newNode, "init");
+          return newNode;
+        }
       }
 
       public String getMatchingText(String pattern) {
