@@ -907,7 +907,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return _quotation_createNode_peg1jq_a0a0a0a();
+            ModuleDependencyUtils.addDependencyOnJDKIfMissing(model.getModule());
+            return _quotation_createNode_peg1jq_a1a0a0a();
           }
 
           public String getDescriptionText(String pattern) {
@@ -934,7 +935,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return _quotation_createNode_peg1jq_a0a0b0a();
+            ModuleDependencyUtils.addDependencyOnJDKIfMissing(model.getModule());
+            return _quotation_createNode_peg1jq_a1a0b0a();
           }
 
           public String getDescriptionText(String pattern) {
@@ -966,7 +968,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return _quotation_createNode_peg1jq_a0a0a0b();
+            ModuleDependencyUtils.addDependencyOnJDKIfMissing(model.getModule());
+            return _quotation_createNode_peg1jq_a1a0a0b();
           }
 
           public String getMatchingText(String pattern) {
@@ -5892,7 +5895,7 @@ __switch__:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_peg1jq_a0a0a0a() {
+  private static SNode _quotation_createNode_peg1jq_a1a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -5912,7 +5915,7 @@ __switch__:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_peg1jq_a0a0b0a() {
+  private static SNode _quotation_createNode_peg1jq_a1a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -5932,7 +5935,7 @@ __switch__:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_peg1jq_a0a0a0b() {
+  private static SNode _quotation_createNode_peg1jq_a1a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
