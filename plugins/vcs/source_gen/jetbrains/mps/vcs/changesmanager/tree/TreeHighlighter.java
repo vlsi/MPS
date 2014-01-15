@@ -226,6 +226,10 @@ public class TreeHighlighter implements TreeMessageOwner {
     myQueue.queue(new Update(myUpdateId) {
       @Override
       public void run() {
+        if (myRegistry.getProject().isDisposed()) {
+          return;
+        }
+
         if (IMakeService.INSTANCE.isSessionActive()) {
           new Thread(new Runnable() {
             public void run() {
