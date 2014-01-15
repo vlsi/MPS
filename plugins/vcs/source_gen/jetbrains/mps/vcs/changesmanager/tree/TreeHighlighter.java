@@ -69,7 +69,6 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeHighlighter.MyModelListener myGlobalModelListener;
   private final TreeHighlighter.FeaturesHolder myFeaturesHolder = new TreeHighlighter.FeaturesHolder();
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("MPS Changes Manager RehighlightAll Watcher Queue", 500, true, null);
-  private final Object myUpdateId = new Object();
 
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor, boolean removeNodesOnModelDisposal) {
     myRegistry = registry;
@@ -222,34 +221,33 @@ public class TreeHighlighter implements TreeMessageOwner {
     });
   }
 
-  private void rehighlightAllFeaturesLater() {
-    myQueue.queue(new Update(myUpdateId) {
-      @Override
-      public void run() {
-        if (myRegistry.getProject().isDisposed()) {
-          return;
-        }
 
-        if (IMakeService.INSTANCE.isSessionActive()) {
-          new Thread(new Runnable() {
-            public void run() {
-              // for safety in another thread, should be started with delay as MergingUpdatingQueue has delay 
-              rehighlightAllFeaturesLater();
-            }
-          }).start();
-          return;
-        }
 
+  private final Update rehighlightAllFeaturesUpdate = new Update(this) {
+    @Override
+    public void run() {
+      if (myRegistry.getProject().isDisposed()) {
+        return;
+      }
+
+      if (IMakeService.INSTANCE.isSessionActive()) {
+        // re-queue, it will be executed in next batch after delay 
+        rehighlightAllFeaturesLater();
+      } else {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             rehighlightAllFeaturesNow();
           }
         });
       }
-    });
+    }
+  };
+
+  private void rehighlightAllFeaturesLater() {
+    myQueue.queue(rehighlightAllFeaturesUpdate);
   }
 
-  public void rehighlightAllFeaturesNow() {
+  private void rehighlightAllFeaturesNow() {
     ModelAccess.assertLegalRead();
     synchronized (myFeaturesHolder) {
       for (Feature f : ListSequence.fromList(myFeaturesHolder.getAllModelFeatures())) {
@@ -257,6 +255,8 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
     }
   }
+
+
 
   @NotNull
   private TreeMessage getMessage(@NotNull FileStatus fileStatus) {

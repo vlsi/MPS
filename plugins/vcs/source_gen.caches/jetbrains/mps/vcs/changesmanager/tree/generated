@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1vkzjtqk6qiox6em45z5v31i69bjliu">
+<dependencies version="2" modelHash="-d35767hhd6j95qsd28u7q7cxcmzu60r">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
@@ -47,7 +47,7 @@
   <dep model="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)" hash="d0iyj4klhwpquajn66e7o9zitlmqz17" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
-  <common hash="ajcaya6ss1xwvzh6ymg9mvl4sa5vx63" />
+  <common hash="3t6wjlmrlnjjope5thr5tyzovscpb6s" />
   <source id="3751911615136891847" name="FeatureForestMap" hash="60mqx4zb6hqm5glq66gc1ntdeks5cmy">
     <dep root="5668645347099288944" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -91,7 +91,7 @@
   <source id="5668645347099288944" name="FeatureForestMapListener" hash="93aor0thmkmb5idi2h06ul4hid43vu8">
     <file name="FeatureForestMapListener.java" />
   </source>
-  <source id="9200516641177001205" name="TreeHighlighter" hash="-1vrh7648bkvr6ogytokfwu88ove5438">
+  <source id="9200516641177001205" name="TreeHighlighter" hash="-dehk6jqh3h6y8ofwas10j2p1mt5hmyu">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
