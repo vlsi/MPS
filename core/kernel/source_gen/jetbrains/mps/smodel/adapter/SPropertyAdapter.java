@@ -19,7 +19,7 @@ public class SPropertyAdapter implements SProperty {
 
 
   public SPropertyAdapter(String conceptName, String name) {
-    this.conceptName = name;
+    this.conceptName = conceptName;
     this.propertyName = name;
   }
 

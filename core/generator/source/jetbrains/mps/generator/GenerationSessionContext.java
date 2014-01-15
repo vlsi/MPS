@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -60,6 +61,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final GenerationOptions myGenerationOptions;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
+  /*
+   * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
+   * but there's no more global context available right now.
+   */
+  private final IPerformanceTracer myPerfTrace;
 
   private final Object NULL_OBJECT = new Object();
 
@@ -86,13 +92,15 @@ public class GenerationSessionContext extends StandaloneMPSContext {
                                   GenerationOptions generationOptions,
                                   GenerationSessionLogger logger,
                                   TransientModelsModule transientModule,
-                                  SModel inputModel) {
+                                  SModel inputModel,
+                                  IPerformanceTracer performanceTracer) {
 
     myInvocationContext = invocationContext;
     myGenerationOptions = generationOptions;
     myGenerationTracer = generationOptions.getGenerationTracer();
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
+    myPerfTrace = performanceTracer;
     myLogger = logger;
     myGenerationPlan = null;
     myParameters = null;
@@ -111,6 +119,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
+    myPerfTrace = prevContext.myPerfTrace;
     myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
@@ -132,6 +141,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
+    myPerfTrace = prevContext.myPerfTrace;
     myLogger = prevContext.myLogger;
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
@@ -423,5 +433,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     // However, don't want to refactor GSC now (split iface and impl) - there's e.g. GenerationPlan (impl class) exposed here as well, so it doesn't
     // look like that intention was to keep it API, rather a facility to keep everything handy.
     return myValidation;
+  }
+
+  public IPerformanceTracer getPerformanceTracer() {
+    return myPerfTrace;
   }
 }

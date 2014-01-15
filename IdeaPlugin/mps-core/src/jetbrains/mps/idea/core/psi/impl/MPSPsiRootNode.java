@@ -147,6 +147,13 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
 
   @NotNull
   @Override
+  public PsiFile getContainingFile() {
+    // PsiFileImpl does the same
+    return this;
+  }
+
+  @NotNull
+  @Override
   public PsiFile getOriginalFile() {
     return this;
   }

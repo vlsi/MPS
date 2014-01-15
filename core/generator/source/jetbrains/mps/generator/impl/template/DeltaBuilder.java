@@ -254,7 +254,7 @@ public abstract class DeltaBuilder {
     return false;
   }
 
-  public void applyInplace(SModel inputModel, TemplateGenerator generator) {
+  public void prepareReferences(SModel inputModel, TemplateGenerator generator) {
     HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
     for (CopyRoot root : myCopyRoots) {
       if (root.deleted) {
@@ -322,6 +322,9 @@ public abstract class DeltaBuilder {
         }
       }
     }
+  }
+
+  public void applyInplace(SModel inputModel, TemplateGenerator generator) {
     // make the structure change, at last
     for (DeltaRoot dr : myDelta) {
       // additions from NewRoot and ReplacedRoot come in the order they were scheduled to be applied

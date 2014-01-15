@@ -194,6 +194,9 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
       if (!(fsItem instanceof PsiJavaFile)) {
         return false;
       }
+      if (!(fsItem.isValid())) {
+        return false;
+      }
       if (!(myDirectory.equals(fsItem.getParent()))) {
         return false;
       }
