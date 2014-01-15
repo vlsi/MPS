@@ -219,18 +219,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myChanged;
   }
 
-  public static void dump(SModel m) {
-    dump("", m.getRootNodes());
-    System.out.println();
-  }
-   private static void dump(String prefix, Iterable<? extends SNode> nodes) {
-     String nextPrefix = prefix + "  ";
-     for (SNode n : nodes) {
-       System.out.printf("%s%s\n", prefix, n.toString());
-       dump(nextPrefix, n.getChildren());
-     }
-   }
-
   public void executeScript(TemplateMappingScript script) throws GenerationFailureException {
     try {
       getDefaultExecutionContext(null).executeScript(script, myInputModel);
@@ -477,7 +465,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   @Override
   public SNode findOutputNodeById(SNodeId nodeId) {
-    SNode rv;
     if (myDeltaBuilder != null) {
       return myDeltaBuilder.findOutputNodeById(nodeId);
     }
@@ -694,10 +681,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   void replacePlaceholderNode(@NotNull SNode placeholder, @NotNull SNode actual, @NotNull TemplateContext ctx, SNodeReference templateNode) {
-    assert placeholder.getModel() != null || placeholder.getParent() != null : "Can't replace node that is not part of another structure (hangs in the air)";
-    // check new child
     SNode parent = placeholder.getParent();
     if (parent != null) {
+      // check new child
       String childRole = placeholder.getRoleInParent();
       final Status status = getChildRoleValidator(parent, childRole).validate(actual);
       if (status != null) {
@@ -707,11 +693,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
     if (myDeltaBuilder != null) {
+      // placeholders with active inplace may lack both model and parent (top of MAP-SRC-injected subtree)
       myDeltaBuilder.replacePlaceholderNode(placeholder, actual);
     } else {
+      assert placeholder.getModel() != null || parent != null : "Can't replace node that is not part of another structure (hangs in the air)";
       SNodeUtil.replaceWithAnother(placeholder, actual);
     }
-    if (parent == null) {
+    if (parent == null && placeholder.getModel() != null) {
       myDependenciesBuilder.rootReplaced(placeholder, actual);
     }
     getGenerationTracer().replaceOutputNode(placeholder, actual);

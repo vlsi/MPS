@@ -279,6 +279,22 @@ public abstract class DeltaBuilder {
           return;
         }
       }
+      // mapper func in MAP-SRC for top node of in-place change
+      for (CopyRoot r : myCopyRoots) {
+        if (r.deleted) {
+          continue;
+        }
+        for (SubTree t : r.mySubTrees) {
+          if (t.isSourceCopy()) {
+            continue;
+          }
+          int i = t.myReplacement.indexOf(placeholder);
+          if (i != -1) {
+            t.myReplacement.set(i, actual);
+            return;
+          }
+        }
+      }
     } else {
       // it's a child, go ahead and replace it. Once delta is applied, actual would get where expected.
       SNodeUtil.replaceWithAnother(placeholder, actual);
@@ -546,12 +562,12 @@ public abstract class DeltaBuilder {
     @NotNull
     private final SNode myInputNode;
     private final String myRoleInParent;
-    private final Collection<SNode> myReplacement;
+    private final List<SNode> myReplacement; // we need to ensure order doesn't change if we later alter new nodes (MAP-SRC replacements)
 
     public SubTree(@NotNull SNode inputNode, @NotNull String roleInParent, @NotNull Collection<SNode> subTree) {
       myInputNode = inputNode;
       myRoleInParent = roleInParent;
-      myReplacement = subTree;
+      myReplacement = subTree instanceof List ? (List<SNode>) subTree : new ArrayList<SNode>(subTree);
     }
 
     public SubTree(@NotNull SNode inputNode) {
