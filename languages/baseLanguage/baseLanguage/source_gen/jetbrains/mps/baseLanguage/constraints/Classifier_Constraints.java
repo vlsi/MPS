@@ -55,7 +55,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
 
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), true, operationContext.getScope());
+        return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), true);
       }
     };
   }

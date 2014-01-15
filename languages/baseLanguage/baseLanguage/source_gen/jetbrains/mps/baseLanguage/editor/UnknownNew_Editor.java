@@ -25,10 +25,9 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -85,7 +84,7 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false, ((AbstractModule) SNodeOperations.getModel(node).getModule()).getScope());
+      Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false);
       return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");

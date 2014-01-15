@@ -1364,7 +1364,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleClassesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleClassesScope(_context.getParentNode()).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal"));
               }
@@ -1399,7 +1399,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode()).getAvailableElements(null)).toListSequence();
           }
         }.compute();
         if (queryResult != null) {
@@ -1430,7 +1430,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode()).getAvailableElements(null)).toListSequence();
           }
         }.compute();
         if (queryResult != null) {
@@ -1485,7 +1485,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getThrowablesScope(_context.getParentNode(), operationContext.getScope()).getAvailableElements(null)).toListSequence();
+            return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getThrowablesScope(_context.getParentNode()).getAvailableElements(null)).toListSequence();
           }
         }.compute();
         if (queryResult != null) {

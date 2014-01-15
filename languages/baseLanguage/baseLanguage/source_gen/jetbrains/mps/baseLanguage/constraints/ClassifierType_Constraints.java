@@ -47,7 +47,7 @@ public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
               // TEMP doing it not through ScopeProvider for now 
               boolean resolvingSuperClass = SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass") || SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface");
 
-              return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), !(resolvingSuperClass), operationContext.getScope());
+              return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), !(resolvingSuperClass));
             }
           }
         };

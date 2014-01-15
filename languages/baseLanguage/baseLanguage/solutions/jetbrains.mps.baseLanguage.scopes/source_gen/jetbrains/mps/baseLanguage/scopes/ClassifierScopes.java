@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.util.DefaultConstructorUtils;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -52,21 +51,12 @@ public class ClassifierScopes {
     return new ClassifiersScope(model, clas, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors);
   }
 
-  public static Scope getReachableClassifiersScope(@NotNull SModel model, SNode clas, boolean includeAncestors, IScope scope) {
-    return new ClassifiersScope(model, clas, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors, scope);
-  }
-
   public static Scope getVisibleClassifiersScope(@NotNull final SNode contextNode, boolean includeAncestors) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), clas, includeAncestors));
   }
 
-  public static Scope getVisibleClassifiersScope(@NotNull final SNode contextNode, boolean includeAncestors, IScope scope) {
-    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
-    return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), clas, includeAncestors, scope));
-  }
-
-  public static Scope getVisibleClassifiersWithDefaultConstructors(@NotNull final SNode contextNode, @NotNull IScope scope) {
+  public static Scope getVisibleClassifiersWithDefaultConstructors(@NotNull final SNode contextNode) {
     return new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, false)) {
       @Override
       public boolean isExcluded(SNode node) {
@@ -84,27 +74,27 @@ public class ClassifierScopes {
     };
   }
 
-  public static Scope getVisibleClassesScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
+  public static Scope getVisibleClassesScope(@NotNull final SNode contextNode) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
-  public static Scope getVisibleInterfacesScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
+  public static Scope getVisibleInterfacesScope(@NotNull final SNode contextNode) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
-  public static Scope getWithClassExpressionClassifiers(@NotNull SNode contextNode, @NotNull IScope scope) {
+  public static Scope getWithClassExpressionClassifiers(@NotNull SNode contextNode) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     return filterVisibleClassifiersScope(contextNode, filterWithClassExpressionClassifiers(getReachableClassifiersScope(SNodeOperations.getModel(contextNode), clas, false)));
   }
 
-  public static Scope getAnnotationClassifiersScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
+  public static Scope getAnnotationClassifiersScope(@NotNull final SNode contextNode) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
-    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.Annotation", true, scope));
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.Annotation", true));
   }
 
-  public static Scope getThrowablesScope(@NotNull SNode contextNode, @NotNull IScope scope) {
+  public static Scope getThrowablesScope(@NotNull SNode contextNode) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     return new FilteringScope(new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       @Override
@@ -115,7 +105,7 @@ public class ClassifierScopes {
     };
   }
 
-  public static Scope getClassesForExtends(@NotNull SNode contextNode, @NotNull IScope scope) {
+  public static Scope getClassesForExtends(@NotNull SNode contextNode) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     // not final ClassConcepts 
     return new FilteringScope(ClassifierScopes.filterWithClassExpressionClassifiers(new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
@@ -126,7 +116,7 @@ public class ClassifierScopes {
     };
   }
 
-  public static Scope getClassesForStaticFieldReference(@NotNull SNode contextNode, @NotNull IScope scope) {
+  public static Scope getClassesForStaticFieldReference(@NotNull SNode contextNode) {
     final Set<SNode> enclosingClassifierAncestors = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(enclosingClassifierAncestors).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", false)));
 
