@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -35,7 +34,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_axvdb8_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlDeclaration_Editor.renderingCondition_axvdb8_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlDeclaration_Editor.renderingCondition_axvdb8_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_axvdb8_a0a(editorContext, node);
@@ -45,7 +44,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
 
@@ -320,7 +319,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_axvdb8_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlDeclaration_Editor.renderingCondition_axvdb8_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlDeclaration_Editor.renderingCondition_axvdb8_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_axvdb8_a2a(editorContext, node);
@@ -330,7 +329,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 

@@ -50,7 +50,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_n78otj_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_n78otj_a0(editorContext, node));
-    if (renderingCondition_n78otj_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_n78otj_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_n78otj_b0(editorContext, node));
     }
     return editorCell;
@@ -109,7 +109,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_n78otj_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_n78otj_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "tail", true) != null);
   }
 

@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,6 +27,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -49,13 +49,13 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_9mcqjq_e0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9mcqjq_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9mcqjq_g0(editorContext, node));
-    if (renderingCondition_9mcqjq_a7a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_9mcqjq_a7a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_9mcqjq_h0(editorContext, node));
     }
-    if (renderingCondition_9mcqjq_a8a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_9mcqjq_a8a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_9mcqjq_i0(editorContext, node));
     }
-    if (renderingCondition_9mcqjq_a9a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_9mcqjq_a9a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_9mcqjq_j0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_9mcqjq_k0(editorContext, node));
@@ -197,7 +197,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9mcqjq_a7a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9mcqjq_a7a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable");
   }
 
@@ -256,7 +256,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9mcqjq_a8a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9mcqjq_a8a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable");
   }
 
@@ -342,7 +342,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9mcqjq_a9a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9mcqjq_a9a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable");
   }
 

@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -31,7 +30,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_uc5iyq_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_uc5iyq_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_uc5iyq_a0(editorContext, node));
     }
     return editorCell;
@@ -53,7 +52,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 

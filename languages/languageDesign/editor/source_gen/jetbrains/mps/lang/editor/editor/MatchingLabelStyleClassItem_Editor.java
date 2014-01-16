@@ -16,11 +16,11 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -38,13 +38,13 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_uvxm5p_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uvxm5p_b0(editorContext, node));
-    if (renderingCondition_uvxm5p_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_uvxm5p_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_uvxm5p_c0(editorContext, node));
     }
-    if (renderingCondition_uvxm5p_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_uvxm5p_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_uvxm5p_d0(editorContext, node));
     }
-    if (renderingCondition_uvxm5p_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_uvxm5p_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_uvxm5p_e0(editorContext, node));
     }
     return editorCell;
@@ -83,7 +83,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_uvxm5p_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_uvxm5p_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) == null && !(SPropertyOperations.getBoolean(node, "hasNoLabel"));
   }
 
@@ -111,7 +111,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_uvxm5p_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_uvxm5p_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "query", true) == null) && SPropertyOperations.getBoolean(node, "hasNoLabel");
   }
 
@@ -151,7 +151,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) != null;
   }
 }

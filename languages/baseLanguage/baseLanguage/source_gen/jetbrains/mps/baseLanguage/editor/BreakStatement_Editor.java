@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -21,6 +20,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -40,10 +40,10 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_xk0l2m_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xk0l2m_a0(editorContext, node));
-    if (renderingCondition_xk0l2m_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xk0l2m_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xk0l2m_b0(editorContext, node));
     }
-    if (renderingCondition_xk0l2m_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xk0l2m_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xk0l2m_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_xk0l2m_d0(editorContext, node));
@@ -71,7 +71,7 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xk0l2m_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xk0l2m_a1a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -172,7 +172,7 @@ __switch__:
     return editorCell;
   }
 
-  private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabelReference", true) != null);
   }
 

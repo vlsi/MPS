@@ -18,10 +18,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -62,10 +62,10 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_o92gz8_a1a(editorContext, node));
-    if (renderingCondition_o92gz8_a1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_o92gz8_a1b0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_o92gz8_b1a(editorContext, node));
     }
-    if (renderingCondition_o92gz8_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_o92gz8_a2b0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_o92gz8_c1a(editorContext, node));
     }
     return editorCell;
@@ -87,7 +87,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_o92gz8_a1b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_o92gz8_a1b0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "canRun");
   }
 
@@ -115,7 +115,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_o92gz8_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_o92gz8_a2b0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "canRun"));
   }
 
@@ -145,10 +145,10 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_o92gz8_a0d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_o92gz8_a0d0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_o92gz8_a3a(editorContext, node));
     }
-    if (renderingCondition_o92gz8_a1d0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_o92gz8_a1d0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_o92gz8_b3a(editorContext, node));
     }
     return editorCell;
@@ -165,7 +165,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_o92gz8_a0d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_o92gz8_a0d0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "canDebug");
   }
 
@@ -193,7 +193,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_o92gz8_a1d0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_o92gz8_a1d0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "canDebug"));
   }
 

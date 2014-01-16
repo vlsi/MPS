@@ -96,7 +96,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_nphvgz_h2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nphvgz_i2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_nphvgz_j2a(editorContext, node));
-    if (renderingCondition_nphvgz_a01c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nphvgz_a01c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_nphvgz_k2a(editorContext, node));
     }
     return editorCell;
@@ -279,7 +279,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_nphvgz_a01c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nphvgz_a01c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "copyResources");
   }
 

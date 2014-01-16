@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -29,10 +28,10 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x7b2gi_a");
     editorCell.setBig(true);
-    if (renderingCondition_x7b2gi_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_x7b2gi_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_x7b2gi_a0(editorContext, node));
     }
-    if (renderingCondition_x7b2gi_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_x7b2gi_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_x7b2gi_b0(editorContext, node));
     }
     return editorCell;
@@ -51,7 +50,7 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_x7b2gi_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_x7b2gi_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "position", true), "jetbrains.mps.lang.pattern.structure.InsertAfterPosition"));
   }
 
@@ -131,7 +130,7 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_x7b2gi_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_x7b2gi_a1a(SNode node, EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "position", true), "jetbrains.mps.lang.pattern.structure.InsertAfterPosition");
   }
 

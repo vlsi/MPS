@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -43,7 +42,7 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_904nkf_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_904nkf_b0(editorContext, node));
-    if (renderingCondition_904nkf_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_904nkf_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_904nkf_c0(editorContext, node));
     }
     return editorCell;
@@ -56,7 +55,7 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_904nkf_a0a(editorContext, node));
-    if (renderingCondition_904nkf_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_904nkf_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_904nkf_b0a(editorContext, node));
     }
     return editorCell;
@@ -110,7 +109,7 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_904nkf_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_904nkf_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -257,7 +256,7 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_904nkf_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_904nkf_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.core.notation.behavior.SNotationPartList_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -25,7 +24,7 @@ public class SNotationPartList_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_df1uz7_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SNotationPartList_Editor.renderingCondition_df1uz7_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SNotationPartList_Editor.renderingCondition_df1uz7_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_df1uz7_a0(editorContext, node);
@@ -36,7 +35,7 @@ public class SNotationPartList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_df1uz7_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_df1uz7_a0(SNode node, EditorContext editorContext) {
     return SNotationPartList_Behavior.call_isMultiline_7465902928068862404(node);
   }
 
@@ -46,7 +45,7 @@ public class SNotationPartList_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR, true);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_df1uz7_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_df1uz7_a0a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_df1uz7_a0a(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_df1uz7_b0a(editorContext, node));
@@ -63,7 +62,7 @@ public class SNotationPartList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_df1uz7_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_df1uz7_a0a0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "predicate", true) != null);
   }
 
@@ -99,7 +98,7 @@ public class SNotationPartList_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_df1uz7_a0a0_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_df1uz7_a0a0_0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_df1uz7_a0a_0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_df1uz7_b0a_0(editorContext, node));
@@ -116,7 +115,7 @@ public class SNotationPartList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_df1uz7_a0a0_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_df1uz7_a0a0_0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "predicate", true) != null);
   }
 

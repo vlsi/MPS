@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
@@ -40,7 +39,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_pxqe0v_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pxqe0v_b0(editorContext, node));
-    if (renderingCondition_pxqe0v_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_pxqe0v_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_pxqe0v_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefCell_pxqe0v_d0(editorContext, node));
@@ -290,7 +289,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_pxqe0v_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_pxqe0v_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 

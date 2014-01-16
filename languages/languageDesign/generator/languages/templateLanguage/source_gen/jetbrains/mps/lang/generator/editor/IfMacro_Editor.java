@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -44,7 +43,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_t4g6n2_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_t4g6n2_a0(editorContext, node));
-    if (renderingCondition_t4g6n2_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_t4g6n2_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_t4g6n2_b0(editorContext, node));
     }
     return editorCell;
@@ -55,7 +54,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_t4g6n2_a0");
     editorCell.addEditorCell(this.createConstant_t4g6n2_a0a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_t4g6n2_b0a(editorContext, node));
-    if (renderingCondition_t4g6n2_a2a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_t4g6n2_a2a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_t4g6n2_c0a(editorContext, node));
     }
     return editorCell;
@@ -103,7 +102,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_t4g6n2_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_t4g6n2_a2a0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
   }
 
@@ -119,7 +118,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_t4g6n2_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_t4g6n2_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
   }
 

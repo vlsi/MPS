@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
@@ -65,7 +64,7 @@ public class JavaImport_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_cbnorm_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = JavaImport_Editor.renderingCondition_cbnorm_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = JavaImport_Editor.renderingCondition_cbnorm_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_cbnorm_a2a(editorContext, node);
@@ -75,7 +74,7 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "onDemand");
   }
 

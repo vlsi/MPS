@@ -137,17 +137,17 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_6h6dhy_a2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6h6dhy_b2a(editorContext, node));
-    if (renderingCondition_6h6dhy_a2c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a2c0(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_6h6dhy_c2a(editorContext, node));
     }
-    if (renderingCondition_6h6dhy_a3c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a3c0(node, editorContext)) {
       editorCell.addEditorCell(this.createReadOnlyModelAccessor_6h6dhy_d2a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_6h6dhy_e2a(editorContext, node));
-    if (renderingCondition_6h6dhy_a5c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a5c0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_6h6dhy_f2a(editorContext, node));
     }
-    if (renderingCondition_6h6dhy_a6c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_6h6dhy_a6c0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_6h6dhy_g2a(editorContext, node));
     }
     return editorCell;
@@ -245,7 +245,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a2c0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "specializedLink", false) == null;
   }
 
@@ -289,7 +289,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a3c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a3c0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "specializedLink", false) != null;
   }
 
@@ -316,7 +316,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a5c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a5c0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "specializedLink", false) != null);
   }
 
@@ -395,7 +395,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_6h6dhy_a6c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6h6dhy_a6c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "unordered");
   }
 

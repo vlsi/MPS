@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -23,6 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -38,7 +38,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_nmve34_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_nmve34_a0(editorContext, node));
-    if (renderingCondition_nmve34_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nmve34_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_nmve34_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_nmve34_c0(editorContext, node));
@@ -63,7 +63,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_nmve34_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nmve34_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "final");
   }
 

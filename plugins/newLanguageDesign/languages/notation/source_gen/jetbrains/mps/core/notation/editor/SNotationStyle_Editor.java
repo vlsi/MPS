@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.structure.editor.default_StyleSheet;
 
@@ -118,7 +117,7 @@ public class SNotationStyle_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_10lhbs_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SNotationStyle_Editor.renderingCondition_10lhbs_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SNotationStyle_Editor.renderingCondition_10lhbs_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_10lhbs_a2a(editorContext, node);
@@ -128,7 +127,7 @@ public class SNotationStyle_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_10lhbs_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_10lhbs_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isNotEmpty();
   }
 

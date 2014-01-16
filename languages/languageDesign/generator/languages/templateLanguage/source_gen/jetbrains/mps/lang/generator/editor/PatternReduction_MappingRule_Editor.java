@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -147,7 +146,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_o2w2pr_a1a(editorContext, node));
-    if (renderingCondition_o2w2pr_a1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_o2w2pr_a1b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_o2w2pr_b1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_o2w2pr_c1a(editorContext, node));
@@ -175,7 +174,7 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_o2w2pr_a1b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_o2w2pr_a1b0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 

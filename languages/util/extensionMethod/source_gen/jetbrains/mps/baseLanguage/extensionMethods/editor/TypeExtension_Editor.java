@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -41,7 +40,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_tbgpz7_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tbgpz7_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tbgpz7_c0(editorContext, node));
-    if (renderingCondition_tbgpz7_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tbgpz7_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_tbgpz7_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_tbgpz7_e0(editorContext, node));
@@ -90,7 +89,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_tbgpz7_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tbgpz7_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 

@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.core.structure.editor.default_StyleSheet;
@@ -27,6 +26,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.core.notation.behavior.SNotationConceptContext_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -47,7 +47,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_tvsk60_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_tvsk60_a0(editorContext, node));
-    if (renderingCondition_tvsk60_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tvsk60_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_tvsk60_b0(editorContext, node));
     }
     return editorCell;
@@ -125,7 +125,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_tvsk60_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tvsk60_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "id") != null;
   }
 

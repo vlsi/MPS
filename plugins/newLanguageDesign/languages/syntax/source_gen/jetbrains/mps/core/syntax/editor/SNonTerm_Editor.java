@@ -15,7 +15,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -81,7 +80,7 @@ public class SNonTerm_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_9v4a5v_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SNonTerm_Editor.renderingCondition_9v4a5v_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SNonTerm_Editor.renderingCondition_9v4a5v_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_9v4a5v_a2a(editorContext, node);
@@ -91,7 +90,7 @@ public class SNonTerm_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9v4a5v_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9v4a5v_a2a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMultiline_1030525575875839456", new Object[]{});
   }
 

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -38,7 +37,7 @@ public class SSymbolRef_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mdkd4i_a");
     editorCell.setBig(true);
-    if (renderingCondition_mdkd4i_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_mdkd4i_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_mdkd4i_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefCell_mdkd4i_b0(editorContext, node));
@@ -56,7 +55,7 @@ public class SSymbolRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_mdkd4i_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_mdkd4i_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "refalias") != null;
   }
 

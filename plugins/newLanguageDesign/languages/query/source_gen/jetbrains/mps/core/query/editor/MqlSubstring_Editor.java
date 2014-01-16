@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MqlSubstring_Editor extends DefaultNodeEditor {
@@ -31,7 +30,7 @@ public class MqlSubstring_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_2hsz0h_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2hsz0h_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2hsz0h_c0(editorContext, node));
-    if (renderingCondition_2hsz0h_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2hsz0h_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2hsz0h_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_2hsz0h_e0(editorContext, node));
@@ -98,7 +97,7 @@ public class MqlSubstring_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2hsz0h_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2hsz0h_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "endIndex", true) != null);
   }
 

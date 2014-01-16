@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -33,10 +32,10 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nyg1sl_a");
     editorCell.setBig(true);
-    if (renderingCondition_nyg1sl_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nyg1sl_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefCell_nyg1sl_a0(editorContext, node));
     }
-    if (renderingCondition_nyg1sl_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_nyg1sl_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefCell_nyg1sl_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_nyg1sl_c0(editorContext, node));
@@ -103,7 +102,7 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_nyg1sl_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nyg1sl_a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "configuration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
   }
 
@@ -165,7 +164,7 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_nyg1sl_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_nyg1sl_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "configuration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) != null);
   }
 

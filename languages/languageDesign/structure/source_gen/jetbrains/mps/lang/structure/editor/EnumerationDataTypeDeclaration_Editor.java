@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -134,10 +133,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_tm8wum_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_tm8wum_b1b1a(editorContext, node));
-    if (renderingCondition_tm8wum_a2b1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tm8wum_a2b1b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_tm8wum_c1b1a(editorContext, node));
     }
-    if (renderingCondition_tm8wum_a3b1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_tm8wum_a3b1b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_tm8wum_d1b1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_tm8wum_e1b1a(editorContext, node));
@@ -293,7 +292,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_tm8wum_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tm8wum_a2b1b0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "hasNoDefaultMember");
   }
 
@@ -351,7 +350,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_tm8wum_a3b1b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_tm8wum_a3b1b0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "hasNoDefaultMember"));
   }
 

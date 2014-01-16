@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -24,6 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,7 +47,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4607in_a");
     editorCell.setBig(true);
-    if (renderingCondition_4607in_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4607in_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_4607in_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_4607in_b0(editorContext, node));
@@ -71,7 +71,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4607in_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4607in_a0a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getIndexInParent(node) != 0;
   }
 

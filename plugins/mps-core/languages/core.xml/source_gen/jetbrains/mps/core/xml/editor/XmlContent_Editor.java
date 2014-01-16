@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 
 public class XmlContent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -28,7 +27,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_91idit_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCustom_91idit_a0(editorContext, node));
-    if (renderingCondition_91idit_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_91idit_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_91idit_b0(editorContext, node));
     }
     return editorCell;
@@ -71,7 +70,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 }

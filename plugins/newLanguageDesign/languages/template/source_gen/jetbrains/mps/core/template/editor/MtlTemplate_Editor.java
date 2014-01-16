@@ -36,7 +36,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -363,7 +362,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_c4w2e_a21a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = MtlTemplate_Editor.renderingCondition_c4w2e_a0m0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = MtlTemplate_Editor.renderingCondition_c4w2e_a0m0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNode_c4w2e_a0m0(editorContext, node);
@@ -373,7 +372,7 @@ public class MtlTemplate_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_c4w2e_a0m0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_c4w2e_a0m0(SNode node, EditorContext editorContext) {
     return MtlTemplate_Behavior.call_getTemplateRoot_3373821274546492156(node) == SLinkOperations.getTarget(node, "template", true);
   }
 

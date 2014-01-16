@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -50,7 +49,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_31t0mi_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_31t0mi_a0(editorContext, node));
-    if (renderingCondition_31t0mi_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_31t0mi_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createReadOnlyModelAccessor_31t0mi_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_31t0mi_c0(editorContext, node));
@@ -108,7 +107,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_31t0mi_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_31t0mi_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "templateSwitch", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "templateSwitch", false), "name"));
   }
 

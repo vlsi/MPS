@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -48,7 +47,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_4f8got_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4f8got_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4f8got_c0(editorContext, node));
-    if (renderingCondition_4f8got_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4f8got_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_4f8got_d0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_4f8got_e0(editorContext, node));
@@ -110,7 +109,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4f8got_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4f8got_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 

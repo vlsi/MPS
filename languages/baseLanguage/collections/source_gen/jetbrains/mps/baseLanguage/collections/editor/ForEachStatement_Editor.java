@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -38,10 +37,10 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kov3ab_a");
     editorCell.setBig(true);
-    if (renderingCondition_kov3ab_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kov3ab_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_kov3ab_a0(editorContext, node));
     }
-    if (renderingCondition_kov3ab_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_kov3ab_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_kov3ab_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_kov3ab_c0(editorContext, node));
@@ -65,7 +64,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kov3ab_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
@@ -113,7 +112,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kov3ab_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
 
@@ -198,7 +197,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("inputSequence");
     }
-    if (renderingCondition_kov3ab_a5a(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_kov3ab_a5a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -212,7 +211,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kov3ab_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a5a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "inputSequence", true) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 

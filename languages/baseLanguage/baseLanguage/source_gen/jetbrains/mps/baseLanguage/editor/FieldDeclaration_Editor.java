@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -44,18 +43,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_2sbeba_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2sbeba_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2sbeba_c0(editorContext, node));
-    if (renderingCondition_2sbeba_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2sbeba_d0(editorContext, node));
     }
-    if (renderingCondition_2sbeba_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2sbeba_e0(editorContext, node));
     }
-    if (renderingCondition_2sbeba_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a5a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_2sbeba_f0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_2sbeba_g0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2sbeba_h0(editorContext, node));
-    if (renderingCondition_2sbeba_a8a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2sbeba_a8a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2sbeba_i0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_2sbeba_j0(editorContext, node));
@@ -88,7 +87,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
@@ -103,7 +102,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a4a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
 
@@ -118,7 +117,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a5a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isVolatile");
   }
 
@@ -161,7 +160,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2sbeba_a8a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2sbeba_a8a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 

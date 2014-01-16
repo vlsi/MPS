@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -23,7 +22,7 @@ public class SortDirection_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_hdhct1_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SortDirection_Editor.renderingCondition_hdhct1_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = SortDirection_Editor.renderingCondition_hdhct1_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_hdhct1_a0(editorContext, node);
@@ -34,7 +33,7 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_hdhct1_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_hdhct1_a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "value");
   }
 

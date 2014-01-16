@@ -15,7 +15,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor {
@@ -28,10 +27,10 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     editorCell.setCellId("Collection_c9bxgq_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_c9bxgq_a0(editorContext, node));
-    if (renderingCondition_c9bxgq_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_c9bxgq_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_c9bxgq_b0(editorContext, node));
     }
-    if (renderingCondition_c9bxgq_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_c9bxgq_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_c9bxgq_c0(editorContext, node));
     }
     return editorCell;
@@ -74,7 +73,7 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private static boolean renderingCondition_c9bxgq_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_c9bxgq_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) == null);
   }
 
@@ -102,7 +101,7 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private static boolean renderingCondition_c9bxgq_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_c9bxgq_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
   }
 }

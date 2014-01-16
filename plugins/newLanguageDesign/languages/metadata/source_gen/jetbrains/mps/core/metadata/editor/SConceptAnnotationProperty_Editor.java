@@ -19,7 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.core.structure.editor.default_StyleSheet;
@@ -35,7 +34,7 @@ public class SConceptAnnotationProperty_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_b5ax6h_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_b5ax6h_b0(editorContext, node));
-    if (renderingCondition_b5ax6h_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_b5ax6h_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_b5ax6h_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_b5ax6h_d0(editorContext, node));
@@ -108,7 +107,7 @@ public class SConceptAnnotationProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_b5ax6h_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_b5ax6h_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "defaultValue", true) != null);
   }
 

@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -50,7 +49,7 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_bmlzqh_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bmlzqh_k0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bmlzqh_l0(editorContext, node));
-    if (renderingCondition_bmlzqh_a21a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bmlzqh_a21a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bmlzqh_m0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_bmlzqh_n0(editorContext, node));
@@ -485,7 +484,7 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bmlzqh_a21a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bmlzqh_a21a(SNode node, EditorContext editorContext) {
     return InternalFlag.isInternalMode();
   }
 

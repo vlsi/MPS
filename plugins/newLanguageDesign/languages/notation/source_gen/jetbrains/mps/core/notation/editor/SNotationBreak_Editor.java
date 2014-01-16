@@ -13,7 +13,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SNotationBreak_Editor extends DefaultNodeEditor {
@@ -26,7 +25,7 @@ public class SNotationBreak_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_bu8i29_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_bu8i29_a0(editorContext, node));
-    if (renderingCondition_bu8i29_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bu8i29_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bu8i29_b0(editorContext, node));
     }
     return editorCell;
@@ -55,7 +54,7 @@ public class SNotationBreak_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bu8i29_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bu8i29_a1a(SNode node, EditorContext editorContext) {
     return (SNodeOperations.getNextSibling(node) == null);
   }
 

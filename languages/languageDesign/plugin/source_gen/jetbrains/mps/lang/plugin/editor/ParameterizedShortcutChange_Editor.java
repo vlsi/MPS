@@ -28,7 +28,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -113,7 +112,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_ecw4ny_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ecw4ny_b1a(editorContext, node));
-    if (renderingCondition_ecw4ny_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ecw4ny_a2b0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ecw4ny_c1a(editorContext, node));
     }
     return editorCell;
@@ -126,7 +125,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_ecw4ny_a0b0(editorContext, node));
-    if (renderingCondition_ecw4ny_a1a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_ecw4ny_a1a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_ecw4ny_b0b0(editorContext, node));
     }
     return editorCell;
@@ -176,7 +175,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ecw4ny_a1a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ecw4ny_a1a1a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 
@@ -228,7 +227,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ecw4ny_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ecw4ny_a2b0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -58,7 +57,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_bndx6c_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_bndx6c_b0a(editorContext, node));
-    if (renderingCondition_bndx6c_a2a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_bndx6c_a2a0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_bndx6c_c0a(editorContext, node));
     }
     return editorCell;
@@ -101,7 +100,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_bndx6c_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bndx6c_a2a0(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "alias"));
   }
 

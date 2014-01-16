@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -22,6 +21,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -42,7 +42,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_kqvvq_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a0a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a0a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_kqvvq_a0a(editorContext, node);
@@ -52,7 +52,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
 
@@ -181,7 +181,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_kqvvq_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlDoctypeDeclaration_Editor.renderingCondition_kqvvq_a2a(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_kqvvq_a2a(editorContext, node);
@@ -191,7 +191,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 

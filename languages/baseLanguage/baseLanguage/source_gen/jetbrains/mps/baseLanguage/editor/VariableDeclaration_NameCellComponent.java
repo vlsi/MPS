@@ -18,13 +18,13 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
@@ -50,7 +50,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
     BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_j36akn_a0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_j36akn_a0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_j36akn_a0a()}));
@@ -64,7 +64,7 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
     return editorCell;
   }
 
-  private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext) {
     boolean condition = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.Type")) {
       return condition && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "type", true), "virtual_hasMissingParameters_3508583411997314206", new Object[]{}));

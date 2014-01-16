@@ -46,10 +46,10 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     delete_sourcesKind.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SourcesKindComponent.BuildMps_Solution_generic_cellMenu_qubgco_a0a()}));
     editorCell.addEditorCell(this.createConstant_qubgco_a0(editorContext, node));
-    if (renderingCondition_qubgco_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qubgco_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_qubgco_b0(editorContext, node));
     }
-    if (renderingCondition_qubgco_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_qubgco_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_qubgco_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_qubgco_d0(editorContext, node));
@@ -117,7 +117,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qubgco_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qubgco_a1a(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString_def(node, "sourcesKind", null));
   }
 
@@ -133,7 +133,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_qubgco_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_qubgco_a2a(SNode node, EditorContext editorContext) {
     return isEmptyString(SPropertyOperations.getString_def(node, "sourcesKind", null));
   }
 

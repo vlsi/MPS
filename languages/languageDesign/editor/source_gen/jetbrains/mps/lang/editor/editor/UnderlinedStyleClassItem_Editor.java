@@ -18,10 +18,10 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
@@ -42,10 +42,10 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4fi5xp_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4fi5xp_b0(editorContext, node));
-    if (renderingCondition_4fi5xp_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4fi5xp_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_4fi5xp_c0(editorContext, node));
     }
-    if (renderingCondition_4fi5xp_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_4fi5xp_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_4fi5xp_d0(editorContext, node));
     }
     return editorCell;
@@ -94,7 +94,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4fi5xp_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4fi5xp_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
@@ -143,7 +143,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_4fi5xp_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4fi5xp_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 }

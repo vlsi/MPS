@@ -19,10 +19,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -39,10 +39,10 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_xqkmqp_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xqkmqp_b0(editorContext, node));
-    if (renderingCondition_xqkmqp_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xqkmqp_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createProperty_xqkmqp_c0(editorContext, node));
     }
-    if (renderingCondition_xqkmqp_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xqkmqp_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_xqkmqp_d0(editorContext, node));
     }
     return editorCell;
@@ -94,7 +94,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xqkmqp_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xqkmqp_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
@@ -134,7 +134,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xqkmqp_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xqkmqp_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 }

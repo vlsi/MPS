@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -22,7 +21,7 @@ public class Expression_Editor extends DefaultNodeEditor {
 
   private EditorCell createAlternation_1ltshm_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Expression_Editor.renderingCondition_1ltshm_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = Expression_Editor.renderingCondition_1ltshm_a0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCustom_1ltshm_a0(editorContext, node);
@@ -33,7 +32,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") == null;
   }
 

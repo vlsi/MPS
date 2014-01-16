@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -45,7 +44,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_xpsq7t_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_xpsq7t_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_xpsq7t_a0(editorContext, node));
     }
     return editorCell;
@@ -60,7 +59,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     return editorCell;
   }
 
-  private static boolean renderingCondition_xpsq7t_a0a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_xpsq7t_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}) != null;
   }
 

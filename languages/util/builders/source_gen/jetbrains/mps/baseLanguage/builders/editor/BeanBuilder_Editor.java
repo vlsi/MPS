@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -34,7 +33,7 @@ public class BeanBuilder_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_2z05lc_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2z05lc_b0(editorContext, node));
-    if (renderingCondition_2z05lc_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition_2z05lc_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_2z05lc_c0(editorContext, node));
     }
     return editorCell;
@@ -115,7 +114,7 @@ public class BeanBuilder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_2z05lc_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_2z05lc_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
   }
 
