@@ -27,7 +27,7 @@ public interface ReferenceConstraintsDescriptor {
   @Nullable
   ReferenceScopeProvider getScopeProvider();
 
-  boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope);
+  boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode);
 
-  void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope);
+  void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode);
 }

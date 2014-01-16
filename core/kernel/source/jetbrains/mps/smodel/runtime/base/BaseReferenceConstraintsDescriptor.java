@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
@@ -99,22 +98,14 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
   }
 
   @Override
-  public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
-    return validate(referenceNode, oldReferentNode, newReferentNode);
-  }
-
   public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
-    return onReferenceSetHandlerDescriptor == null || onReferenceSetHandlerDescriptor.validate(referenceNode, oldReferentNode, newReferentNode,null);
+    return onReferenceSetHandlerDescriptor == null || onReferenceSetHandlerDescriptor.validate(referenceNode, oldReferentNode, newReferentNode);
   }
 
   @Override
-  public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
-    onReferenceSet(referenceNode, oldReferentNode, newReferentNode);
-  }
-
   public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
     if (onReferenceSetHandlerDescriptor != null) {
-      onReferenceSetHandlerDescriptor.onReferenceSet(referenceNode, oldReferentNode, newReferentNode,null);
+      onReferenceSetHandlerDescriptor.onReferenceSet(referenceNode, oldReferentNode, newReferentNode);
     }
   }
 

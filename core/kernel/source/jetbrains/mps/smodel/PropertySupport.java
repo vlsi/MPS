@@ -48,7 +48,7 @@ public abstract class PropertySupport {
 
   public boolean canSetValue(PropertyConstraintsDescriptor descriptor, SNode node, String propertyName, String value, IScope scope) {
     if (value == null) value = "";
-    return descriptor.validateValue(node, value, scope);
+    return descriptor.validateValue(node, value);
   }
 
   public boolean canSetValue(SNode node, String propertyName, String value, IScope scope) {

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -24,6 +22,7 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
   private final String name;
@@ -67,7 +66,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
     // 'bootstrap' properties
     if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.property_INamedConcept_name)
-      && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
+        && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
       return true;
     }
 
@@ -80,7 +79,8 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   }
 
   @Nullable
-  private static PropertyConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String propertyName, InheritanceCalculateParameters parameters) {
+  private static PropertyConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String propertyName,
+      InheritanceCalculateParameters parameters) {
     for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
       if (!ConceptRegistry.getInstance().getConceptDescriptor(parent).hasProperty(propertyName)) {
         continue;
@@ -148,35 +148,24 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     return container;
   }
 
-  @Override
-  public Object getValue(SNode node, IScope scope) {
-    return getValue(node);
-  }
 
+  @Override
   public Object getValue(SNode node) {
-    return getterDescriptor != null ? getterDescriptor.getValue(node,null) : node.getProperty(getName());
+    return getterDescriptor != null ? getterDescriptor.getValue(node) : node.getProperty(getName());
   }
 
   @Override
-  public void setValue(SNode node, String value, IScope scope) {
-   setValue(node,value);
-  }
-
   public void setValue(SNode node, String value) {
     if (setterDescriptor != null) {
-      setterDescriptor.setValue(node, value,null);
+      setterDescriptor.setValue(node, value);
     } else {
       node.setProperty(getName(), value);
     }
   }
 
   @Override
-  public boolean validateValue(SNode node, String value, IScope scope) {
-     return validateValue(node, value);
-  }
-
   public boolean validateValue(SNode node, String value) {
-    return validatorDescriptor == null || validatorDescriptor.validateValue(node, value,null);
+    return validatorDescriptor == null || validatorDescriptor.validateValue(node, value);
   }
 
   @Override

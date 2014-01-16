@@ -48,12 +48,12 @@ public class IllegalReferenceConstraintsDescriptor implements ReferenceConstrain
   }
 
   @Override
-  public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
     return false;
   }
 
   @Override
-  public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+  public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
     throw new UnsupportedOperationException();
   }
 }
