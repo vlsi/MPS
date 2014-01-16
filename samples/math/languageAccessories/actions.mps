@@ -434,7 +434,6 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_GetAllSubConcepts" typeId="tp25.1181952871644" id="7388416617631603382" nodeInfo="nn">
                     <node role="smodel" roleId="tp25.1182506816063" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="7388416617631603383" nodeInfo="nn" />
-                    <node role="scope" roleId="tp25.1182506966389" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="7388416617631603384" nodeInfo="nn" />
                   </node>
                 </node>
               </node>

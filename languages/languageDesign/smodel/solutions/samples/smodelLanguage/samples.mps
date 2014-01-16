@@ -4832,9 +4832,6 @@
                 <node role="smodel" roleId="tp25.1182506816063" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150323579" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206984437899" resolveInfo="model" />
                 </node>
-                <node role="scope" roleId="tp25.1182506966389" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151712214" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206984441334" resolveInfo="scope" />
-                </node>
               </node>
             </node>
           </node>
@@ -4862,9 +4859,6 @@
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_GetAllSubConcepts" typeId="tp25.1181952871644" id="1181953601293" nodeInfo="nn">
                 <node role="smodel" roleId="tp25.1182506816063" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151520473" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206984437899" resolveInfo="model" />
-                </node>
-                <node role="scope" roleId="tp25.1182506966389" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151471750" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206984441334" resolveInfo="scope" />
                 </node>
               </node>
             </node>
