@@ -305,140 +305,136 @@
     <unitInfo nodeId="3796137614137558190" fileName="MatchVariableReferenceReplacement_Constraints.java" startLine="26" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/3796137614137565252">
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="15" startPosition="43" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="29" startPosition="84" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3796137614137565256" fileName="LiteralReplacement_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LiteralReplacement_Constraints#()V" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="15" startPosition="43" endLine="16" endPosition="76" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="3796137614137565255" fileName="LiteralReplacement_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="29" startPosition="84" endLine="31" endPosition="79">
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="43" endLine="15" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="28" startPosition="70" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3796137614137565256" fileName="LiteralReplacement_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LiteralReplacement_Constraints#()V" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="43" endLine="15" endPosition="76" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="3796137614137565255" fileName="LiteralReplacement_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="28" startPosition="70" endLine="30" endPosition="79">
       <varInfo nodeId="3796137614137565252" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="3796137614137565252" varName="node" />
       <varInfo nodeId="3796137614137565252" varName="propertyValue" />
-      <varInfo nodeId="3796137614137565252" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
       <varInfo nodeId="3796137614137565252" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints$1" />
-    <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints" />
+    <scopeInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints$1" />
+    <unitInfo nodeId="3796137614137565252" fileName="LiteralReplacement_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/5533535376639427526">
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="15" startPosition="57" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="29" startPosition="56" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5533535376639427530" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PredefinedSymbolClassDeclaration_Constraints#()V" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="15" startPosition="57" endLine="16" endPosition="90" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="5533535376639427529" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="66" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="66">
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="57" endLine="15" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="28" startPosition="42" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5533535376639427530" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PredefinedSymbolClassDeclaration_Constraints#()V" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="57" endLine="15" endPosition="90" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="5533535376639427529" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="66" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="28" startPosition="42" endLine="30" endPosition="66">
       <varInfo nodeId="5533535376639427526" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="5533535376639427526" varName="node" />
-      <varInfo nodeId="5533535376639427526" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
       <varInfo nodeId="5533535376639427526" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="22" startPosition="43" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints$1" />
-    <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints" />
+    <scopeInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="21" startPosition="43" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints$1" />
+    <unitInfo nodeId="5533535376639427526" fileName="PredefinedSymbolClassDeclaration_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/5533535376639522935">
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="15" startPosition="42" endLine="16" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="29" startPosition="56" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5533535376639522940" fileName="RegexpDeclaration_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="37" startPosition="55" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RegexpDeclaration_Constraints#()V" />
-    <nodeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="15" startPosition="42" endLine="16" endPosition="75" />
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="5533535376639522938" fileName="RegexpDeclaration_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="162" />
-    <scopeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="37" startPosition="55" endLine="38" endPosition="43" />
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="162">
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="14" startPosition="42" endLine="15" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="28" startPosition="42" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5533535376639522940" fileName="RegexpDeclaration_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="36" startPosition="55" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RegexpDeclaration_Constraints#()V" />
+    <nodeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="14" startPosition="42" endLine="15" endPosition="75" />
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="5533535376639522938" fileName="RegexpDeclaration_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="162" />
+    <scopeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="36" startPosition="55" endLine="37" endPosition="43" />
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="28" startPosition="42" endLine="30" endPosition="162">
       <varInfo nodeId="5533535376639522935" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="5533535376639522951" fileName="RegexpDeclaration_Constraints.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5533535376639522951" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="5533535376639522935" varName="node" />
-      <varInfo nodeId="5533535376639522935" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
       <varInfo nodeId="5533535376639522935" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="22" startPosition="43" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints$1" />
-    <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints" />
+    <scopeInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="21" startPosition="43" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints$1" />
+    <unitInfo nodeId="5533535376639522935" fileName="RegexpDeclaration_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/698920857052391451">
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="15" startPosition="44" endLine="16" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="29" startPosition="84" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="698920857052391455" fileName="StringLiteralRegexp_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringLiteralRegexp_Constraints#()V" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="15" startPosition="44" endLine="16" endPosition="77" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="698920857052391454" fileName="StringLiteralRegexp_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="79" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="29" startPosition="84" endLine="31" endPosition="79">
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="44" endLine="15" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="28" startPosition="70" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="698920857052391455" fileName="StringLiteralRegexp_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringLiteralRegexp_Constraints#()V" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="44" endLine="15" endPosition="77" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="698920857052391454" fileName="StringLiteralRegexp_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="28" startPosition="70" endLine="30" endPosition="79">
       <varInfo nodeId="698920857052391451" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="698920857052391451" varName="node" />
       <varInfo nodeId="698920857052391451" varName="propertyValue" />
-      <varInfo nodeId="698920857052391451" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
       <varInfo nodeId="698920857052391451" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints$1" />
-    <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints" />
+    <scopeInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints$1" />
+    <unitInfo nodeId="698920857052391451" fileName="StringLiteralRegexp_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)/8030573611853647771">
     <nodeInfo nodeId="8030573611853647782" fileName="RegexUtil.java" startLine="16" startPosition="73" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

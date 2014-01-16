@@ -107,36 +107,35 @@
     <unitInfo nodeId="1280144168199519457" fileName="TestCaseRef_Constraints.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints" />
   </root>
   <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/1280144168199745453">
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="16" startPosition="36" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="21" startPosition="82" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="30" startPosition="56" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="31" startPosition="37" endLine="32" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1280144168199745458" fileName="ModuleSuite_Constraints.java" startLine="31" startPosition="37" endLine="32" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="34" startPosition="7" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSuite_Constraints#()V" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="22" startPosition="74" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="20" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="16" startPosition="36" endLine="17" endPosition="65" />
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="1280144168199745456" fileName="ModuleSuite_Constraints.java" startLine="31" startPosition="37" endLine="32" endPosition="174" />
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="30" startPosition="56" endLine="32" endPosition="174">
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="36" endLine="16" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="29" startPosition="42" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1280144168199745458" fileName="ModuleSuite_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSuite_Constraints#()V" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="36" endLine="16" endPosition="65" />
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" />
+    <scopeInfo nodeId="1280144168199745456" fileName="ModuleSuite_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="174" />
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="29" startPosition="42" endLine="31" endPosition="174">
       <varInfo nodeId="1280144168199745453" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1280144168199745453" varName="node" />
-      <varInfo nodeId="1280144168199745453" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="21" startPosition="82" endLine="35" endPosition="22">
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
       <varInfo nodeId="1280144168199745453" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="20" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="23" startPosition="31" endLine="34" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints$1" />
-    <unitInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints" />
+    <scopeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints$1" />
+    <unitInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints" />
   </root>
   <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/4504141816188599490">
     <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="34" startPosition="42" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

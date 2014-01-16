@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildTextStringPart_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -29,7 +28,7 @@ public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return SPropertyOperations.getString(node, "text");
       }
@@ -41,7 +40,7 @@ public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public boolean validateValue(SNode node, String propertyValue, IScope scope) {
+      public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "text";
         {
           SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);

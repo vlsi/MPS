@@ -18,7 +18,6 @@ import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
@@ -69,7 +68,7 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "isStatic";
         return !(SPropertyOperations.getBoolean(node, "nonStatic"));
       }
@@ -80,7 +79,7 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public void setValue(SNode node, String propertyValue, IScope scope) {
+      public void setValue(SNode node, String propertyValue) {
         String propertyName = "isStatic";
         SPropertyOperations.set(node, "nonStatic", "" + (!((SPropertyOperations.getBoolean(propertyValue)))));
       }

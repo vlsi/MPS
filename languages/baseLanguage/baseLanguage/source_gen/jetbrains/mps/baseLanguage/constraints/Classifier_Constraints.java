@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -70,7 +69,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "nestedName";
         return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getNestedName_8540045600162184125", new Object[]{});
       }
@@ -82,7 +81,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "resolveInfo";
         return SPropertyOperations.getString(node, "nestedName");
       }
@@ -94,7 +93,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "shortDescription";
         return NodePresentationUtil.getAliasOrConceptName(node) + " (" + NameUtil.compactModelName(SNodeOperations.getModel(node).getReference()) + ")";
       }

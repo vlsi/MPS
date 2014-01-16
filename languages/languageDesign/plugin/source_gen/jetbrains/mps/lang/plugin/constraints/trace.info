@@ -741,36 +741,35 @@
     <unitInfo nodeId="1821622352985038319" fileName="ActionParameterReference_Constraints.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionParameterReference_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)/203415309825738290">
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="15" startPosition="50" endLine="16" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="29" startPosition="56" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="203415309825738294" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaInitializerDescriptor_Constraints#()V" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="15" startPosition="50" endLine="16" endPosition="75" />
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="24" startPosition="37" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="203415309825738293" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="57" />
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="29" startPosition="56" endLine="31" endPosition="57">
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="14" startPosition="50" endLine="15" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="28" startPosition="42" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="203415309825738294" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaInitializerDescriptor_Constraints#()V" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="14" startPosition="50" endLine="15" endPosition="75" />
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="203415309825738293" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="29" startPosition="49" endLine="30" endPosition="57" />
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="28" startPosition="42" endLine="30" endPosition="57">
       <varInfo nodeId="203415309825738290" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="203415309825738290" varName="node" />
-      <varInfo nodeId="203415309825738290" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
       <varInfo nodeId="203415309825738290" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="22" startPosition="43" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.IdeaInitializerDescriptor_Constraints$1" />
-    <unitInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.IdeaInitializerDescriptor_Constraints" />
+    <scopeInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="21" startPosition="43" endLine="32" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.IdeaInitializerDescriptor_Constraints$1" />
+    <unitInfo nodeId="203415309825738290" fileName="IdeaInitializerDescriptor_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.IdeaInitializerDescriptor_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)/3339131993542058155">
     <nodeInfo nodeId="3339131993542058155" fileName="BaseProjectOperation_Constraints.java" startLine="20" startPosition="45" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -17,7 +17,6 @@ import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -64,7 +63,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "name";
         return check_kwfdao_a0a0a(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(node));
       }
@@ -76,7 +75,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public Object getValue(SNode node, IScope scope) {
+      public Object getValue(SNode node) {
         String propertyName = "shortDescription";
         {
           List<SNode> requiredParameters = ExecuteCommandPart_Behavior.call_getRequiredParameters_6129022259108621289(node);
