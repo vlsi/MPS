@@ -16,10 +16,14 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.*;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDispatchable;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsDispatchable {
   private final String role;
@@ -96,13 +100,21 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
 
   @Override
   public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
-    return onReferenceSetHandlerDescriptor == null || onReferenceSetHandlerDescriptor.validate(referenceNode, oldReferentNode, newReferentNode, scope);
+    return validate(referenceNode, oldReferentNode, newReferentNode);
+  }
+
+  public boolean validate(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
+    return onReferenceSetHandlerDescriptor == null || onReferenceSetHandlerDescriptor.validate(referenceNode, oldReferentNode, newReferentNode,null);
   }
 
   @Override
   public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode, IScope scope) {
+    onReferenceSet(referenceNode, oldReferentNode, newReferentNode);
+  }
+
+  public void onReferenceSet(SNode referenceNode, SNode oldReferentNode, SNode newReferentNode) {
     if (onReferenceSetHandlerDescriptor != null) {
-      onReferenceSetHandlerDescriptor.onReferenceSet(referenceNode, oldReferentNode, newReferentNode, scope);
+      onReferenceSetHandlerDescriptor.onReferenceSet(referenceNode, oldReferentNode, newReferentNode,null);
     }
   }
 

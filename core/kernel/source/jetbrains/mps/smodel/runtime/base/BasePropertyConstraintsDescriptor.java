@@ -150,13 +150,21 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public Object getValue(SNode node, IScope scope) {
-    return getterDescriptor != null ? getterDescriptor.getValue(node, scope) : node.getProperty(getName());
+    return getValue(node);
+  }
+
+  public Object getValue(SNode node) {
+    return getterDescriptor != null ? getterDescriptor.getValue(node,null) : node.getProperty(getName());
   }
 
   @Override
   public void setValue(SNode node, String value, IScope scope) {
+   setValue(node,value);
+  }
+
+  public void setValue(SNode node, String value) {
     if (setterDescriptor != null) {
-      setterDescriptor.setValue(node, value, scope);
+      setterDescriptor.setValue(node, value,null);
     } else {
       node.setProperty(getName(), value);
     }
@@ -164,7 +172,11 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public boolean validateValue(SNode node, String value, IScope scope) {
-    return validatorDescriptor == null || validatorDescriptor.validateValue(node, value, scope);
+     return validateValue(node, value);
+  }
+
+  public boolean validateValue(SNode node, String value) {
+    return validatorDescriptor == null || validatorDescriptor.validateValue(node, value,null);
   }
 
   @Override
