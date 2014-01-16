@@ -11,6 +11,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -47,6 +51,26 @@ public class JUnit4TestCaseRef_Behavior {
     });
   }
 
+  public static Iterable<SNode> call_getTestClassesForModule_1514755338276096458(SAbstractConcept thisConcept, SNode module) {
+    return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(module)).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return ListSequence.fromList(SModelOperations.getRoots(((SModel) it), "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(it)).translate(new ITranslator2<SNode, SNode>() {
+              public Iterable<SNode> translate(SNode m) {
+                return SLinkOperations.getTargets(m, "annotation", true);
+              }
+            }).any(new IWhereFilter<SNode>() {
+              public boolean accept(SNode ann) {
+                return SLinkOperations.getTarget(ann, "annotation", false) == SLinkOperations.getTarget(_quotation_createNode_856esj_a0a0a0a0a0a0a0a0a0a0c(), "annotation", false);
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+
   private static SNode _quotation_createNode_856esj_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -60,6 +84,14 @@ public class JUnit4TestCaseRef_Behavior {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_856esj_a0a0a0a0a0a0a0a0a0a0c() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
     return quotedNode_1;
   }
 }

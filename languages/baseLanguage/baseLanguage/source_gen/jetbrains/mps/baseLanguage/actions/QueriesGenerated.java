@@ -39,10 +39,11 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -993,9 +994,9 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            VisibleClassifiersScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
-            List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
-            return ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
+            Scope scope = ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false);
+            Iterable<SNode> list = SNodeOperations.ofConcept(scope.getAvailableElements(null), "jetbrains.mps.baseLanguage.structure.Classifier");
+            return Sequence.fromIterable(list).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass"));
               }
@@ -1090,10 +1091,10 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            VisibleClassifiersScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.ANYTHING, operationContext.getScope());
-            List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
+            Scope scope = ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false);
+            Iterable<SNode> list = SNodeOperations.ofConcept(scope.getAvailableElements(null), "jetbrains.mps.baseLanguage.structure.Classifier");
             List<SNode> types = new ArrayList<SNode>();
-            for (SNode classifier : ListSequence.fromList(list)) {
+            for (SNode classifier : Sequence.fromIterable(list)) {
               SNode type = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
               SLinkOperations.setTarget(type, "classifier", classifier, false);
               ListSequence.fromList(types).addElement(type);

@@ -2,72 +2,41 @@
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/1280144168199457725">
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="34" startPosition="42" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="39" startPosition="83" endLine="40" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="43" startPosition="44" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8756160028287768597" fileName="JUnit3TestCaseRef_Constraints.java" startLine="52" startPosition="142" endLine="53" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8756160028287893833" fileName="JUnit3TestCaseRef_Constraints.java" startLine="57" startPosition="51" endLine="58" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="66" startPosition="63" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="71" startPosition="7" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="75" startPosition="74" endLine="76" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="76" startPosition="63" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="77" startPosition="30" endLine="78" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="78" startPosition="165" endLine="79" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="79" startPosition="290" endLine="80" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="83" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="77" startPosition="30" endLine="79" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="77" startPosition="30" endLine="79" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit3TestCaseRef_Constraints#()V" />
-    <nodeInfo nodeId="8756160028287889836" fileName="JUnit3TestCaseRef_Constraints.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8756160028287796829" fileName="JUnit3TestCaseRef_Constraints.java" startLine="55" startPosition="59" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8756160028287794490" fileName="JUnit3TestCaseRef_Constraints.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_qx1fe9_a0a0a0a0a0a0a0b0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8756160028287784154" fileName="JUnit3TestCaseRef_Constraints.java" startLine="53" startPosition="152" endLine="62" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="51" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="49" startPosition="56" endLine="69" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="47" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="40" startPosition="75" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="38" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="34" startPosition="42" endLine="35" endPosition="71" />
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="43" startPosition="44" endLine="44" endPosition="20" />
-    <scopeInfo nodeId="8756160028287889837" fileName="JUnit3TestCaseRef_Constraints.java" startLine="57" startPosition="51" endLine="58" endPosition="235" />
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="66" startPosition="63" endLine="67" endPosition="58" />
-    <scopeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="77" startPosition="30" endLine="79" endPosition="290" />
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="8756160028287889836" fileName="JUnit3TestCaseRef_Constraints.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="8756160028287889836" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="8756160028287794491" fileName="JUnit3TestCaseRef_Constraints.java" startLine="55" startPosition="59" endLine="60" endPosition="19" />
-    <scopeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="75" startPosition="74" endLine="80" endPosition="24">
-      <varInfo nodeId="8756160028287925074" varName="facade" />
-      <varInfo nodeId="8756160028287925074" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8756160028287794490" fileName="JUnit3TestCaseRef_Constraints.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="8756160028287794490" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="8756160028287925074" fileName="JUnit3TestCaseRef_Constraints.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1280144168199457730" fileName="JUnit3TestCaseRef_Constraints.java" startLine="52" startPosition="142" endLine="62" endPosition="15">
-      <varInfo nodeId="8756160028287768598" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="51" startPosition="0" endLine="64" endPosition="0">
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="24" startPosition="42" endLine="25" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1514755338276131170" fileName="JUnit3TestCaseRef_Constraints.java" startLine="42" startPosition="142" endLine="43" endPosition="391" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="47" startPosition="63" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit3TestCaseRef_Constraints#()V" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="39" startPosition="56" endLine="50" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="37" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="30" startPosition="75" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="28" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="24" startPosition="42" endLine="25" endPosition="71" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="1280144168199457730" fileName="JUnit3TestCaseRef_Constraints.java" startLine="42" startPosition="142" endLine="43" endPosition="391" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="47" startPosition="63" endLine="48" endPosition="58" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1280144168199457725" varName="_context" />
       <varInfo nodeId="1280144168199457725" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="49" startPosition="56" endLine="69" endPosition="10" />
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="47" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="39" startPosition="83" endLine="72" endPosition="22">
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="39" startPosition="56" endLine="50" endPosition="10" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="37" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="29" startPosition="83" endLine="53" endPosition="22">
       <varInfo nodeId="1280144168199457725" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="38" startPosition="0" endLine="74" endPosition="0" />
-    <unitInfo nodeId="8756160028287889836" fileName="JUnit3TestCaseRef_Constraints.java" startLine="56" startPosition="150" endLine="60" endPosition="17" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$4" />
-    <unitInfo nodeId="8756160028287794490" fileName="JUnit3TestCaseRef_Constraints.java" startLine="54" startPosition="117" endLine="62" endPosition="13" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$3" />
-    <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="50" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$2" />
-    <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="41" startPosition="32" endLine="71" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$1" />
-    <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="33" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints" />
+    <scopeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="28" startPosition="0" endLine="55" endPosition="0" />
+    <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="40" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$2" />
+    <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="31" startPosition="32" endLine="52" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$1" />
+    <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="23" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints" />
   </root>
   <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/1280144168199519457">
     <nodeInfo nodeId="1280144168199519457" fileName="TestCaseRef_Constraints.java" startLine="20" startPosition="36" endLine="21" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -138,86 +107,41 @@
     <unitInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints" />
   </root>
   <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/4504141816188599490">
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="34" startPosition="42" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="39" startPosition="83" endLine="40" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="43" startPosition="44" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8756160028287949008" fileName="JUnit4TestCaseRef_Constraints.java" startLine="52" startPosition="142" endLine="53" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1280144168199457854" fileName="JUnit4TestCaseRef_Constraints.java" startLine="59" startPosition="65" endLine="60" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199457861" fileName="JUnit4TestCaseRef_Constraints.java" startLine="63" startPosition="56" endLine="64" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="74" startPosition="63" endLine="75" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="79" startPosition="7" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="83" startPosition="78" endLine="84" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="84" startPosition="63" endLine="85" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="85" startPosition="30" endLine="86" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="86" startPosition="169" endLine="87" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="87" startPosition="274" endLine="88" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_qd3c0x_a0a1a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="85" startPosition="30" endLine="87" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="85" startPosition="30" endLine="87" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit4TestCaseRef_Constraints#()V" />
-    <nodeInfo nodeId="1280144168199457850" fileName="JUnit4TestCaseRef_Constraints.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1280144168199457833" fileName="JUnit4TestCaseRef_Constraints.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_qd3c0x_a0a0a0a0a0a0a0a0a0b0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8756160028287949036" fileName="JUnit4TestCaseRef_Constraints.java" startLine="57" startPosition="51" endLine="66" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8756160028287949034" fileName="JUnit4TestCaseRef_Constraints.java" startLine="57" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8756160028287949025" fileName="JUnit4TestCaseRef_Constraints.java" startLine="55" startPosition="59" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8756160028287949023" fileName="JUnit4TestCaseRef_Constraints.java" startLine="55" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8756160028287949017" fileName="JUnit4TestCaseRef_Constraints.java" startLine="53" startPosition="152" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="51" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="49" startPosition="56" endLine="77" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="47" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="40" startPosition="75" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="38" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="34" startPosition="42" endLine="35" endPosition="71" />
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="43" startPosition="44" endLine="44" endPosition="20" />
-    <scopeInfo nodeId="1280144168199457851" fileName="JUnit4TestCaseRef_Constraints.java" startLine="59" startPosition="65" endLine="60" endPosition="81" />
-    <scopeInfo nodeId="1280144168199457834" fileName="JUnit4TestCaseRef_Constraints.java" startLine="63" startPosition="56" endLine="64" endPosition="188" />
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="74" startPosition="63" endLine="75" endPosition="58" />
-    <scopeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="85" startPosition="30" endLine="87" endPosition="274" />
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1280144168199457850" fileName="JUnit4TestCaseRef_Constraints.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="1280144168199457850" varName="m" />
-    </scopeInfo>
-    <scopeInfo nodeId="1280144168199457833" fileName="JUnit4TestCaseRef_Constraints.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="1280144168199457833" varName="ann" />
-    </scopeInfo>
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="83" startPosition="78" endLine="88" endPosition="24">
-      <varInfo nodeId="1280144168199457820" varName="facade" />
-      <varInfo nodeId="1280144168199457820" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1280144168199457820" fileName="JUnit4TestCaseRef_Constraints.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="8756160028287949035" fileName="JUnit4TestCaseRef_Constraints.java" startLine="57" startPosition="51" endLine="66" endPosition="23" />
-    <scopeInfo nodeId="8756160028287949034" fileName="JUnit4TestCaseRef_Constraints.java" startLine="57" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="8756160028287949034" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="8756160028287949024" fileName="JUnit4TestCaseRef_Constraints.java" startLine="55" startPosition="59" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="8756160028287949023" fileName="JUnit4TestCaseRef_Constraints.java" startLine="55" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="8756160028287949023" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="4504141816188599493" fileName="JUnit4TestCaseRef_Constraints.java" startLine="52" startPosition="142" endLine="70" endPosition="15">
-      <varInfo nodeId="8756160028287949009" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="51" startPosition="0" endLine="72" endPosition="0">
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="24" startPosition="42" endLine="25" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1514755338276152681" fileName="JUnit4TestCaseRef_Constraints.java" startLine="42" startPosition="142" endLine="43" endPosition="391" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="47" startPosition="63" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_qd3c0x_a0a1a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnit4TestCaseRef_Constraints#()V" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="39" startPosition="56" endLine="50" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="37" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="30" startPosition="75" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="28" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="24" startPosition="42" endLine="25" endPosition="71" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="4504141816188599493" fileName="JUnit4TestCaseRef_Constraints.java" startLine="42" startPosition="142" endLine="43" endPosition="391" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="47" startPosition="63" endLine="48" endPosition="58" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="4504141816188599490" varName="_context" />
       <varInfo nodeId="4504141816188599490" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="49" startPosition="56" endLine="77" endPosition="10" />
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="47" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="39" startPosition="83" endLine="80" endPosition="22">
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="39" startPosition="56" endLine="50" endPosition="10" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="37" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="29" startPosition="83" endLine="53" endPosition="22">
       <varInfo nodeId="4504141816188599490" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="38" startPosition="0" endLine="82" endPosition="0" />
-    <unitInfo nodeId="1280144168199457850" fileName="JUnit4TestCaseRef_Constraints.java" startLine="58" startPosition="121" endLine="62" endPosition="21" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$5" />
-    <unitInfo nodeId="1280144168199457833" fileName="JUnit4TestCaseRef_Constraints.java" startLine="62" startPosition="31" endLine="66" endPosition="21" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$5" />
-    <unitInfo nodeId="8756160028287949034" fileName="JUnit4TestCaseRef_Constraints.java" startLine="56" startPosition="150" endLine="68" endPosition="17" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$4" />
-    <unitInfo nodeId="8756160028287949023" fileName="JUnit4TestCaseRef_Constraints.java" startLine="54" startPosition="117" endLine="70" endPosition="13" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$3" />
-    <unitInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="50" startPosition="19" endLine="77" endPosition="9" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$2" />
-    <unitInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="41" startPosition="32" endLine="79" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$1" />
-    <unitInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="33" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints" />
+    <scopeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="28" startPosition="0" endLine="55" endPosition="0" />
+    <unitInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="40" startPosition="19" endLine="50" endPosition="9" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$2" />
+    <unitInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="31" startPosition="32" endLine="52" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$1" />
+    <unitInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="23" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints" />
   </root>
 </debugInfo>
 

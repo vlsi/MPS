@@ -17,17 +17,16 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -63,9 +62,9 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return (List<SNode>) new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
-              public boolean met(SNode node) {
-                return TupleIntefaceUtils.isTupleInterface((SNode) node);
+            return Sequence.fromIterable(SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false).getAvailableElements(null), "jetbrains.mps.baseLanguage.structure.Interface")).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return TupleIntefaceUtils.isTupleInterface(it);
               }
             });
           }

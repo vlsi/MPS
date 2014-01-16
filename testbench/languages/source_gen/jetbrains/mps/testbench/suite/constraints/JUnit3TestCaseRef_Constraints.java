@@ -12,22 +12,12 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
@@ -50,16 +40,7 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode module = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(module)).translate(new ITranslator2<SModel, SNode>() {
-              public Iterable<SNode> translate(SModel it) {
-                return ListSequence.fromList(SModelOperations.getRoots(((SModel) it), "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_qx1fe9_a0a0a0a0a0a0a0b0a0(), "classifier", false)});
-                  }
-                });
-              }
-            });
+            return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
           }
 
           @Override
@@ -70,14 +51,6 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
       }
     });
     return references;
-  }
-
-  private static SNode _quotation_createNode_qx1fe9_a0a0a0a0a0a0a0b0a0() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), facade.createNodeId("~TestCase")));
-    return quotedNode_1;
   }
 
   private static SNodePointer breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199457729");
