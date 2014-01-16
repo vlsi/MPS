@@ -52,7 +52,7 @@ public class WildcardsInClassDefinition_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_NodeErrorCheck8187342170692129949() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8187342170692129949"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8187342170692129840")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451229706")});
     }
 
     public void test_ErrorMessagesCheck8187342170692700619() throws Exception {
@@ -67,7 +67,7 @@ public class WildcardsInClassDefinition_Test extends BaseTransformationTest4 {
 
     public void test_NodeErrorCheck8187342170694398405() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8187342170694398405"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8187342170694398306")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230464")});
     }
 
     public void test_ErrorMessagesCheck8187342170694398489() throws Exception {

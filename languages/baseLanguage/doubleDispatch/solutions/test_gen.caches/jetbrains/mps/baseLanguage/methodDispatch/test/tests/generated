@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8expg9k4irokb5j8m5vzhcfjzyduajw">
+<dependencies version="2" modelHash="7o6wlg1mrtkomf2krhr1cvyfdhmxla7">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-49z6ix1osbf4bcfsrs690f77hhwnlqa" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="7uy0q3kirgdwbps1ji91cpmiltydqbr" />
@@ -7,9 +7,9 @@
   <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="6hefhklhc490rx3akpktsxo3og11i2u" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-9oaogz38um8doa4id6cvlxbi7k95ilf" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="8s5fycq63phu988q27ltpdt1a8k3jeg" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-d3v1ts04vo76zs5thkge1axcccvo58d" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="2v0hz2mps8yjctljtg36wnbum2jvil0" />
   <common hash="9q1vpg8hkmfkk03koisxugynvg9qzg9" dependsOnNodes="true" />
-  <source id="3813896760029572858" name="TypeCheckingErros" hash="5h0oywe7m1s8nvtv5ihnje22g1zb1lx" dependsOnNodes="true">
+  <source id="3813896760029572858" name="DispatchTypeCheckingErrors" hash="cu2y2eofmrrwlpvr4sd343mid9gk7dw" dependsOnNodes="true">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -18,7 +18,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
-    <file name="TypeCheckingErros_Test.java" />
+    <file name="DispatchTypeCheckingErrors_Test.java" />
   </source>
 </dependencies>
 

@@ -51,22 +51,22 @@ public class Validation_Test extends BaseTransformationTest4 {
 
     public void test_NodeErrorCheck4456514995149638912() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4456514995149638912"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("7868761255934329311")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451229135")});
     }
 
     public void test_NodeErrorCheck4456514995149638910() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4456514995149638910"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("698255809163041337")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451229787")});
     }
 
     public void test_NodeErrorCheck4456514995149638908() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4456514995149638908"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("698255809163062087")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451228860")});
     }
 
     public void test_NodeErrorCheck2319519288049976971() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2319519288049976971"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("7868761255934329334")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231039")});
     }
   }
 }

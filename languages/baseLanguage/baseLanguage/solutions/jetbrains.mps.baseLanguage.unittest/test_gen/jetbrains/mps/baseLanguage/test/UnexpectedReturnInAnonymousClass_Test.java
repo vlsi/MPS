@@ -34,7 +34,7 @@ public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTes
 
     public void test_NodeErrorCheck1215522876408() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1215522876408"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1215522863563")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230829")});
     }
   }
 }

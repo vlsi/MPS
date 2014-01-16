@@ -28,7 +28,7 @@ public class CommentCanBeUnreachable_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_NodeWarningCheck2736903840391132362() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2736903840391132362"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1239288457694")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451227675")});
     }
 
     public void test_ErrorMessagesCheck1226936244308() throws Exception {

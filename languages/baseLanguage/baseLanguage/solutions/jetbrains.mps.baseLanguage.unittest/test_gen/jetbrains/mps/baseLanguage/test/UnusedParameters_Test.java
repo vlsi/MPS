@@ -39,12 +39,12 @@ public class UnusedParameters_Test extends BaseTransformationTest4 {
 
     public void test_NodeWarningCheck1220265454238() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1220265454238"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1220265325479")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231454")});
     }
 
     public void test_NodeWarningCheck1220265482494() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1220265482494"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1220265310509")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230984")});
     }
   }
 }

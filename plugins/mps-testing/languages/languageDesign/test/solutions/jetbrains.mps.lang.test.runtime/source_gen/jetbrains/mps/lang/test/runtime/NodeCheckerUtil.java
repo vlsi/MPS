@@ -53,8 +53,8 @@ public class NodeCheckerUtil {
 
 
 
-  private static void assertTypesAreTheSame(final SNode type1, final SNode type2) {
-    Assert.assertNull("nodes '" + nodeWithIdToString(type1) + "' and '" + nodeWithIdToString(type2) + "' do not match!", NodesMatcher.matchNodes(type1, type2));
+  private static void assertTypesAreTheSame(SNode node, final SNode type1, final SNode type2) {
+    Assert.assertNull("node '" + nodeWithIdToString(node) + "' does not have type '" + nodeWithIdToString(type2) + "'!", NodesMatcher.matchNodes(type1, type2));
   }
 
 
@@ -66,7 +66,7 @@ public class NodeCheckerUtil {
       public void checkOperation(TypeCheckingContext context, SNode operation) {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
           Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected error message", context.getTypeMessageDontCheck(node) != null);
-          Assert.assertFalse("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has warning", context.getTypeMessageDontCheck(node).getMessageStatus() == MessageStatus.WARNING);
+          Assert.assertFalse("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> has warning instead of error", context.getTypeMessageDontCheck(node).getMessageStatus() == MessageStatus.WARNING);
         }
       }
     });
@@ -96,7 +96,7 @@ public class NodeCheckerUtil {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation")) {
           SNode type1 = context.getTypeDontCheck(node);
           SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation"), "type", true);
-          NodeCheckerUtil.assertTypesAreTheSame(type1, type2);
+          NodeCheckerUtil.assertTypesAreTheSame(node, type1, type2);
         }
       }
     });
@@ -110,7 +110,7 @@ public class NodeCheckerUtil {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation")) {
           SNode type1 = TypeChecker.getInstance().getInequalitiesForHole(node, false).getExpectedType();
           SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation"), "type", true);
-          NodeCheckerUtil.assertTypesAreTheSame(type1, type2);
+          NodeCheckerUtil.assertTypesAreTheSame(node, type1, type2);
         }
       }
     });
@@ -149,7 +149,7 @@ public class NodeCheckerUtil {
           if (!(NodeCheckerUtil.hasErrorOrWarningCheckOperationTag(child))) {
             IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
             if (reporter != null) {
-              String reportError = reporter.reportError();
+              String reportError = reporter.reportError() + ". Node " + NodeCheckerUtil.nodeWithIdToString(node);
               if (!(allowErrors)) {
                 Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
               }

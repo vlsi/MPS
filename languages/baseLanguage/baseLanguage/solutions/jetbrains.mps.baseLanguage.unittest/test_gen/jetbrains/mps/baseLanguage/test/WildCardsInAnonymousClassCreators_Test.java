@@ -45,7 +45,7 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
 
     public void test_NodeErrorCheck8187342170694476943() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8187342170694476943"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("8187342170694476014")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451228371")});
     }
 
     public void test_ErrorMessagesCheck8187342170694475514() throws Exception {

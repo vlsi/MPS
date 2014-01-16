@@ -34,12 +34,12 @@ public class CatchingUnthrownException_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_NodeErrorCheck354371747683307893() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("354371747683307893"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1220012491335")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230336")});
     }
 
     public void test_NodeErrorCheck354371747683324364() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("354371747683324364"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("354371747683324361")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231640")});
     }
 
     public void test_ErrorMessagesCheck1220012521451() throws Exception {

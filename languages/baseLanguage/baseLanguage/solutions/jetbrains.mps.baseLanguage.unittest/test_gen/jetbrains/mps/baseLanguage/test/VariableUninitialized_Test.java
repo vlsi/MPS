@@ -44,12 +44,12 @@ public class VariableUninitialized_Test extends BaseTransformationTest4 {
 
     public void test_NodeErrorCheck1215522927829() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1215522927829"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4265636116363104046")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451229641")});
     }
 
     public void test_NodeWarningCheck963887337804206810() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804206810"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4265636116363102686")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231463")});
     }
 
     public void test_ErrorMessagesCheck1216893950801() throws Exception {

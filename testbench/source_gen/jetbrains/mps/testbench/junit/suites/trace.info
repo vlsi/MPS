@@ -528,7 +528,7 @@
     <nodeInfo nodeId="9170334376386466235" fileName="CheckingTestsUtil.java" startLine="69" startPosition="40" endLine="70" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376386466260" fileName="CheckingTestsUtil.java" startLine="72" startPosition="78" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376386466278" fileName="CheckingTestsUtil.java" startLine="79" startPosition="7" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2050748146933621360" fileName="CheckingTestsUtil.java" startLine="83" startPosition="49" endLine="84" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2050748146933621360" fileName="CheckingTestsUtil.java" startLine="83" startPosition="49" endLine="84" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2050748146933621371" fileName="CheckingTestsUtil.java" startLine="85" startPosition="28" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2050748146933621417" fileName="CheckingTestsUtil.java" startLine="89" startPosition="162" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2050748146933621422" fileName="CheckingTestsUtil.java" startLine="92" startPosition="5" endLine="93" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -609,8 +609,8 @@
     <nodeInfo nodeId="9170334376386466216" fileName="CheckingTestsUtil.java" startLine="61" startPosition="76" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9170334376386466227" fileName="CheckingTestsUtil.java" startLine="65" startPosition="49" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9170334376386466253" fileName="CheckingTestsUtil.java" startLine="71" startPosition="15" endLine="74" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2050748146933619480" fileName="CheckingTestsUtil.java" startLine="84" startPosition="167" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2050748146933621405" fileName="CheckingTestsUtil.java" startLine="88" startPosition="95" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2050748146933619480" fileName="CheckingTestsUtil.java" startLine="84" startPosition="162" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2050748146933621405" fileName="CheckingTestsUtil.java" startLine="88" startPosition="90" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9170334376386466359" fileName="CheckingTestsUtil.java" startLine="113" startPosition="24" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9170334376386466437" fileName="CheckingTestsUtil.java" startLine="134" startPosition="34" endLine="137" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9170334376386466451" fileName="CheckingTestsUtil.java" startLine="138" startPosition="56" endLine="141" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -722,7 +722,7 @@
     <scopeInfo nodeId="9170334376386466484" fileName="CheckingTestsUtil.java" startLine="148" startPosition="32" endLine="150" endPosition="21" />
     <scopeInfo nodeId="9170334376386466502" fileName="CheckingTestsUtil.java" startLine="153" startPosition="33" endLine="155" endPosition="21" />
     <scopeInfo nodeId="9170334376386466721" fileName="CheckingTestsUtil.java" startLine="217" startPosition="28" endLine="219" endPosition="17" />
-    <scopeInfo nodeId="2050748146933621393" fileName="CheckingTestsUtil.java" startLine="88" startPosition="95" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="2050748146933621393" fileName="CheckingTestsUtil.java" startLine="88" startPosition="90" endLine="91" endPosition="7" />
     <scopeInfo nodeId="9170334376386466731" fileName="CheckingTestsUtil.java" startLine="221" startPosition="51" endLine="224" endPosition="9" />
     <scopeInfo nodeId="9170334376386466844" fileName="CheckingTestsUtil.java" startLine="245" startPosition="0" endLine="248" endPosition="0" />
     <scopeInfo nodeId="9170334376386466874" fileName="CheckingTestsUtil.java" startLine="251" startPosition="44" endLine="254" endPosition="35" />

@@ -38,7 +38,7 @@ public class CheckDataFlowOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_olvqde_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check dataflow");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for dataflow errors");
     editorCell.setCellId("Constant_olvqde_a0");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.applyNodeOperation(style, editorCell);

@@ -69,7 +69,7 @@ public class FieldDeclarationCanBeLocalVariable_Test extends BaseTransformationT
 
     public void test_NodeWarningCheck4914675704512541153() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4914675704512541153"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4914675704512538442")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231004")});
     }
 
     public void test_ErrorMessagesCheck4914675704512538465() throws Exception {
@@ -79,7 +79,7 @@ public class FieldDeclarationCanBeLocalVariable_Test extends BaseTransformationT
 
     public void test_NodeWarningCheck4914675704512554933() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4914675704512554933"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4914675704512541539")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230872")});
     }
 
     public void test_ErrorMessagesCheck4914675704512541562() throws Exception {
@@ -94,7 +94,7 @@ public class FieldDeclarationCanBeLocalVariable_Test extends BaseTransformationT
 
     public void test_NodeWarningCheck4914675704512612881() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4914675704512612881"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4914675704512587943")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451227978")});
     }
 
     public void test_ErrorMessagesCheck4914675704512587973() throws Exception {

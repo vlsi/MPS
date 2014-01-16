@@ -79,7 +79,7 @@ public class Generics_Test extends BaseTransformationTest4 {
 
     public void test_NodeWarningCheck5977092449933271691() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("5977092449933271691"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("5977092449933267862")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451227887")});
     }
 
     public void test_ErrorMessagesCheck4246614868164066940() throws Exception {
@@ -89,7 +89,7 @@ public class Generics_Test extends BaseTransformationTest4 {
 
     public void test_NodeErrorCheck4246614868164066924() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4246614868164066924"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4246614868164066921")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451228046")});
     }
 
     public void test_ErrorMessagesCheck4246614868164066979() throws Exception {
@@ -99,7 +99,7 @@ public class Generics_Test extends BaseTransformationTest4 {
 
     public void test_NodeErrorCheck4246614868164066959() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4246614868164066959"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4246614868164066957")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231549")});
     }
   }
 }
