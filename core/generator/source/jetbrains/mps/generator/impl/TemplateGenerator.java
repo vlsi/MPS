@@ -72,6 +72,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -564,16 +565,63 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
-  /**
-   * @return never null
-   */
+  // in fact, it's reasonable to keep this method in TEEI, to reflect narrowing scope of
+  // generator -> TEEI -> TemplateProcessor. This would take another round of refactoring, though
+  // (first of all, shall update TEEI API)
   @NotNull
-  Collection<SNode> copySrc(String mappingName, @NotNull String templateNodeId, SNode inputNode, TemplateExecutionEnvironment env) throws GenerationFailureException, GenerationCanceledException {
+  List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull TemplateContext ctx,
+      SNodeReference templateNode, @NotNull String templateId, @NotNull TemplateExecutionEnvironment env) throws GenerationCanceledException, GenerationFailureException {
     assert this == env.getGenerator();
-    if (inputNode.getModel() != getInputModel() || inputNode.getModel() == null) {
+
+    final Iterator<SNode> it = inputNodes.iterator();
+    if (!it.hasNext()) {
+      return Collections.emptyList();
+    }
+    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+    final String mappingName = ctx.getInputName();
+    while(it.hasNext()) {
+      SNode newInputNode = adoptIfForeign(it.next());
+
+      if (myDeltaBuilder != null) {
+        myDeltaBuilder.enterNestedCopySrc(newInputNode);
+      }
+      final SNodeReference newNodePtr = GenerationTracerUtil.getSNodePointer(newInputNode);
+      myGenerationTracer.pushInputNode(newNodePtr);
+      try {
+        Collection<SNode> _outputNodes = tryToReduce(newInputNode, env);
+        if (_outputNodes != null) {
+          if (mappingName != null && _outputNodes.size() == 1) {
+            registerMappingLabel(newInputNode, mappingName, _outputNodes.iterator().next());
+          }
+          outputNodes.addAll(_outputNodes);
+        } else {
+          FullCopyFacility copyFacility = new FullCopyFacility(this, env, new HashSet<SNode>(myAdditionalInputNodes.keySet()));
+          SNode copiedNode = copyFacility.copyInputNode(newInputNode);
+          addOutputNodeByInputAndTemplateNode(newInputNode, templateId, copiedNode);
+          if (mappingName != null) {
+            registerMappingLabel(newInputNode, mappingName, copiedNode);
+          }
+          outputNodes.add(copiedNode);
+        }
+      } finally {
+        myGenerationTracer.closeInputNode(newNodePtr);
+        if (myDeltaBuilder != null) {
+          myDeltaBuilder.leaveNestedCopySrc(newInputNode);
+        }
+      }
+    }
+    new ChildAdopter(this).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
+    return outputNodes;
+
+  }
+
+  @NotNull
+  SNode adoptIfForeign(@NotNull SNode inputNode) {
+    SModel model = inputNode.getModel();
+    if (model != getInputModel() || model == null) {
 
       // adapt external node
-      if (inputNode.getModel() != null) {
+      if (model != null) {
         // TODO fail in strict mode
         inputNode = CopyUtil.copy(inputNode);
         // TODO inputNode.changeModel();
@@ -588,32 +636,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
     }
-
-    if (myDeltaBuilder != null) {
-      myDeltaBuilder.enterNestedCopySrc(inputNode);
-    }
-    myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
-    try {
-      Collection<SNode> outputNodes = tryToReduce(inputNode, env);
-      if (outputNodes != null) {
-        if (mappingName != null && outputNodes.size() == 1) {
-          registerMappingLabel(inputNode, mappingName, outputNodes.iterator().next());
-        }
-        return outputNodes;
-      }
-      FullCopyFacility copyFacility = new FullCopyFacility(this, env, new HashSet<SNode>(myAdditionalInputNodes.keySet()));
-      SNode copiedNode = copyFacility.copyInputNode(inputNode);
-      addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, copiedNode);
-      registerMappingLabel(inputNode, mappingName, copiedNode);
-      return Collections.singletonList(copiedNode);
-    } finally {
-      myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
-      if (myDeltaBuilder != null) {
-        myDeltaBuilder.leaveNestedCopySrc(inputNode);
-      }
-    }
+    return inputNode;
   }
-
   /**
    * prevents applying of reduction rules which have already been applied to the input node.
    */

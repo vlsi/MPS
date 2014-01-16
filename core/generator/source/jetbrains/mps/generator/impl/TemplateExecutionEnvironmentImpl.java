@@ -46,10 +46,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 
 /**
  * Evgeny Gryaznov, 11/10/10
@@ -122,32 +120,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodeReference templateNode, String templateId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
-    final Iterator<SNode> it = inputNodes.iterator();
-    if (!it.hasNext()) {
-      return Collections.emptyList();
-    }
-    ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    while(it.hasNext()) {
-      SNode newInputNode = it.next();
-      if (templateId == null) {
-        SNode template = templateNode.resolve(MPSModuleRepository.getInstance());
-        templateId = GeneratorUtil.getTemplateNodeId(template);
-      }
-      Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateId, newInputNode, this);
-      ChildAdopter a = new ChildAdopter(generator);
-      for (SNode outputNode : _outputNodes) {
-        a.checkIsExpectedLanguage(outputNode, templateNode, templateContext);
-      }
-      outputNodes.addAll(_outputNodes);
-    }
-    return outputNodes;
+  public Collection<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId, String mappingName, TemplateContext templateContext)
+      throws GenerationCanceledException, GenerationFailureException {
+    // earlier approach to mappingName here used to hide mappingName from the context (null down to generator.copySrc => no mapping label
+    // however, interpreted templates keep context mappingName (common approach for all node macros - ctx.subContext(newNameOrNullIfNone))
+    // hence here's the same code to ensure mappingName propagation is the same either for interpreted or generated.
+    return generator.copyNodes(inputNodes, templateContext.subContext(mappingName), templateNode, templateId, this);
   }
 
   @Override
   public SNode insertNode(SNode child, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
     ChildAdopter a = new ChildAdopter(generator);
-    a.checkIsExpectedLanguage(child, templateNode, templateContext);
+    a.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
     return a.adopt(child, templateContext);
   }
 

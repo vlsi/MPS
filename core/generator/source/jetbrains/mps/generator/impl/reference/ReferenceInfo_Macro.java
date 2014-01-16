@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -93,6 +92,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
     // check referent because it's manual and thus error prone mapping
     if (myOutputTargetNode.getModel() == generator.getInputModel()) {
+      // There are RM that return input node from getReferent (e.g. in closures). The code below handles these cases, although I'm not
+      // quite confident it's a nice idea in the first place (getReferent shall not return input nodes, imo)
       // try to find copy in output model and replace target
       SNode outputTargetNode_output = generator.findCopiedOutputNodeForInputNode(myOutputTargetNode);
       if (outputTargetNode_output != null) {
