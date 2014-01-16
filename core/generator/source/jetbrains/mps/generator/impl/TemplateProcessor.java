@@ -253,7 +253,7 @@ public final class TemplateProcessor {
             // check child
             Status status = validator.validate(outputChildNode);
             if (status != null) {
-              status.reportProblem(false, outputNode, "",
+              status.reportProblem(false, outputNode, "apply template: ",
                   GeneratorUtil.describe(context.getInput(), "input"),
                   GeneratorUtil.describe(templateNode, "parent in template"),
                   GeneratorUtil.describe(templateChildNode, "child in template"));

@@ -419,8 +419,13 @@ public abstract class DeltaBuilder {
       } else {
         CopyRoot root = (CopyRoot) dr;
         if (root.deleted) {
-          assert root.myRoot.getModel() == inputModel;
-          inputModel.removeRootNode(root.myRoot);
+          SModel rootModel = root.myRoot.getModel();
+          if (rootModel != null) {
+            // it's possible for the root to be deleted already, e.g. when there are rootMapRules with keepSourceRoot==true and
+            // a drop rule to clear origin root once all desired targets have been created.
+            assert root.myRoot.getModel() == inputModel;
+            inputModel.removeRootNode(root.myRoot);
+          }
           continue;
         }
         // replace nodes

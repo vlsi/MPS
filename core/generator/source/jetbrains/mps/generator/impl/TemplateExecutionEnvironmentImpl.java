@@ -262,7 +262,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     RoleValidator v = generator.getChildRoleValidator(contextParentNode, childRole);
     Status status = v.validate(outputNodeToWeave);
     if (status != null) {
-      status.reportProblem(false, contextParentNode, "",
+      status.reportProblem(false, contextParentNode, "weave: ",
         GeneratorUtil.describe(inputNode, "input"),
         GeneratorUtil.describe(templateNode.resolve(MPSModuleRepository.getInstance()), "template"));
       // spit out the warning, but try to add anyway

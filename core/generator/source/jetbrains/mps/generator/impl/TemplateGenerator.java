@@ -711,7 +711,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       String childRole = placeholder.getRoleInParent();
       final Status status = getChildRoleValidator(parent, childRole).validate(actual);
       if (status != null) {
-        status.reportProblem(false, parent, "",
+        status.reportProblem(false, parent, "delayed changed: ",
             GeneratorUtil.describe(ctx.getInput(), "input"),
             GeneratorUtil.describe(templateNode, "template"));
       }
@@ -995,7 +995,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               // check child
               Status status = rv.validate(outputChildNode);
               if (status != null) {
-                status.reportProblem(false, outputNode, "", GeneratorUtil.describe(inputNode, "input"));
+                status.reportProblem(false, outputNode, "copy: ", GeneratorUtil.describe(inputChildNode, "input"));
               }
               outputNode.addChild(childRole, outputChildNode);
             }
