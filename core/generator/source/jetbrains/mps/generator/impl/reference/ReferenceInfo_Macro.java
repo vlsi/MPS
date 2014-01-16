@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,21 +57,14 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return createStaticReference(myOutputTargetNode);
     }
     if (myResolveInfoForDynamicResolve != null) {
-      return createDynamicReference(myResolveInfoForDynamicResolve, getMacroNodeRef());
+      // It's not quite obvious whether dynamic references require null or non null - from DR cons it seems non-null
+      // is relevant for links to Classifiers.
+      // null is here as it the way it was prior to refactoring.
+      return createDynamicReference(myResolveInfoForDynamicResolve, null, getMacroNodeRef());
     }
     if (isRequired(generator.getLogger())) {
       return createInvalidReference(generator, myResolver.getDefaultResolveInfo());
     }
-    return null;
-  }
-
-  @Nullable
-  @Override
-  protected SModelReference getTargetModelReference() {
-    // getTargetModelReference is there for dynamic references. It's not quite obvious
-    // whether dynamic references require null or non null - from DR cons it seems non-null
-    // is relevant for links to Classifiers. It's odd to keep it non-null in base ReferenceInfo, then?
-    // For now, keep it the way it was prior to refactoring.
     return null;
   }
 
