@@ -91,7 +91,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{scope});
+      return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{});
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

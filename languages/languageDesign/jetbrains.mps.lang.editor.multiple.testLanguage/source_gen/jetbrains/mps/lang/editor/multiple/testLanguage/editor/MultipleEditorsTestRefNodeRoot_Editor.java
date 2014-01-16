@@ -295,10 +295,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
   }
 
   private Iterable<String> getEditorHints_fxz4pq_a9c0(SNode node, EditorContext editorContext, IScope scope) {
-    boolean checkParametersAvailability = editorContext != null;
-    checkParametersAvailability &= scope != null;
-    checkParametersAvailability &= node != null;
-
     if (SPropertyOperations.hasValue(node, "projectionType", "rich", null)) {
       return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
     } else if (SPropertyOperations.hasValue(node, "projectionType", "compact", null)) {
@@ -423,10 +419,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
   }
 
   private Iterable<String> getEditorHints_fxz4pq_a3m2a_0(SNode node, EditorContext editorContext, IScope scope) {
-    boolean checkParametersAvailability = editorContext != null;
-    checkParametersAvailability &= scope != null;
-    checkParametersAvailability &= node != null;
-
     return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
   }
 
