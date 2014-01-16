@@ -32,7 +32,7 @@ public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> others = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedSetType"));
       SNode act = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType");
-      return ListSequence.fromList(SConceptOperations.getAllSubConcepts(act, SNodeOperations.getModel(node), scope)).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(SConceptOperations.getAllSubConcepts(act, SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SPropertyOperations.getBoolean(it, "abstract"));
         }

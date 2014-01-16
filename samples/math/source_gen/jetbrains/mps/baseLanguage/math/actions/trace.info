@@ -145,7 +145,7 @@
     <nodeInfo nodeId="963844843316088781" fileName="QueriesGenerated.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="963844843316088781" fileName="QueriesGenerated.java" startLine="185" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="963844843316088781" fileName="QueriesGenerated.java" startLine="189" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7388416617631603392" fileName="QueriesGenerated.java" startLine="210" startPosition="252" endLine="213" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7388416617631603392" fileName="QueriesGenerated.java" startLine="210" startPosition="223" endLine="213" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7388416617632092630" fileName="QueriesGenerated.java" startLine="251" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7388416617632092630#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
     <nodeInfo nodeId="6389121991274660127" fileName="QueriesGenerated.java" startLine="258" startPosition="30" endLine="261" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6389121991274660127" fileName="QueriesGenerated.java" startLine="258" startPosition="30" endLine="261" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -211,7 +211,7 @@
     <scopeInfo nodeId="963844843316088781" fileName="QueriesGenerated.java" startLine="189" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="963844843316088781" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="7388416617631603373" fileName="QueriesGenerated.java" startLine="210" startPosition="252" endLine="213" endPosition="13" />
+    <scopeInfo nodeId="7388416617631603373" fileName="QueriesGenerated.java" startLine="210" startPosition="223" endLine="213" endPosition="13" />
     <scopeInfo nodeId="7388416617632092630" fileName="QueriesGenerated.java" startLine="251" startPosition="0" endLine="254" endPosition="0">
       <varInfo nodeId="7388416617632092630" varName="_context" />
       <varInfo nodeId="7388416617632092630" varName="operationContext" />

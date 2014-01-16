@@ -82,7 +82,7 @@
       <varInfo nodeId="1216861714162" varName="_context" />
       <varInfo nodeId="1216861714162" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1227876800485" fileName="QueriesGenerated.java" startLine="74" startPosition="265" endLine="78" endPosition="11" unitName="jetbrains.mps.lang.generator.generationContext.actions.QueriesGenerated$2" />
+    <unitInfo nodeId="1227876800485" fileName="QueriesGenerated.java" startLine="74" startPosition="236" endLine="78" endPosition="11" unitName="jetbrains.mps.lang.generator.generationContext.actions.QueriesGenerated$2" />
   </root>
 </debugInfo>
 

@@ -11169,7 +11169,7 @@
       <varInfo nodeId="7246115176735615083" varName="operationContext" />
       <varInfo nodeId="7246115176735615083" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="5686963296372870424" fileName="replace_withAnotherSequenceType.java" startLine="35" startPosition="127" endLine="39" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$1" />
+    <unitInfo nodeId="5686963296372870424" fileName="replace_withAnotherSequenceType.java" startLine="35" startPosition="120" endLine="39" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$1" />
     <unitInfo nodeId="7246115176735615083" fileName="replace_withAnotherSequenceType.java" startLine="28" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$Type_customReplace_cellMenu_qhej2e_a0" />
     <unitInfo nodeId="7246115176735615080" fileName="replace_withAnotherSequenceType.java" startLine="23" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType" />
   </root>

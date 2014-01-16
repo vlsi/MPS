@@ -17358,7 +17358,7 @@
     <scopeInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="69" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="2265407187494399848" varName="parameterObject" />
     </scopeInfo>
-    <unitInfo nodeId="8399143188353015585" fileName="replace_node_macro.java" startLine="35" startPosition="217" endLine="39" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro$1" />
+    <unitInfo nodeId="8399143188353015585" fileName="replace_node_macro.java" startLine="35" startPosition="210" endLine="39" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro$1" />
     <unitInfo nodeId="2265407187494399848" fileName="replace_node_macro.java" startLine="30" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro$NodeMacro_generic_cellMenu_f12orh_a0" />
     <unitInfo nodeId="2265407187494399846" fileName="replace_node_macro.java" startLine="25" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.replace_node_macro" />
   </root>
