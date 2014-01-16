@@ -371,17 +371,18 @@ public abstract class DeltaBuilder {
           if (!inputModelRef.equals(reference.getTargetSModelReference())) {
             continue;
           }
-          SNode target = reference.getTargetNode();
-          while (target != null) {
-            if (allReplacedNodes.contains(target)) {
+          final SNode referenceTarget = reference.getTargetNode();
+          SNode outputTarget = referenceTarget;
+          while (outputTarget != null) {
+            if (allReplacedNodes.contains(outputTarget)) {
               // reference points elsewhere in this model under a replaced node.
-              // reference needs update, its target is among replaced nodes
-              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), target);
+              // reference needs update, its outputTarget is among replaced nodes
+              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), referenceTarget);
               PostponedReference pr = generator.register(new PostponedReference(refInfo));
               pr.setReferenceInOutputSourceNode();
-              break; // while target
+              break; // while outputTarget
             }
-            target = target.getParent();
+            outputTarget = outputTarget.getParent();
           }
         }
       }
