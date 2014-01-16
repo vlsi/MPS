@@ -60,7 +60,6 @@ public class QueriesGenerated {
     tmpVar = tmpVar && _context.getWrapped();
     tmpVar = tmpVar && _context.getModel() != null;
     tmpVar = tmpVar && operationContext != null;
-    tmpVar = tmpVar && operationContext.getScope() != null;
 
     return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "conceptSubstitutePart");
   }
@@ -76,7 +75,6 @@ public class QueriesGenerated {
           tmpVar = tmpVar && _context.getChildConcept() != null;
           tmpVar = tmpVar && _context.getModel() != null;
           tmpVar = tmpVar && operationContext != null;
-          tmpVar = tmpVar && operationContext.getScope() != null;
 
           List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
           ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
@@ -145,7 +143,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
 
             return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -166,7 +163,6 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getChildConcept() != null;
                 tmpVar = tmpVar && model != null;
                 tmpVar = tmpVar && operationContext != null;
-                tmpVar = tmpVar && operationContext.getScope() != null;
 
                 SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
                 if ((item) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")) {
@@ -185,7 +181,6 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getChildConcept() != null;
                 tmpVar = tmpVar && model != null;
                 tmpVar = tmpVar && operationContext != null;
-                tmpVar = tmpVar && operationContext.getScope() != null;
                 tmpVar = tmpVar && editorContext != null;
 
                 if ((item) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2")) {
@@ -217,7 +212,6 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getChildConcept() != null;
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
-                tmpVar = tmpVar && operationContext.getScope() != null;
 
                 return SPropertyOperations.getString((item), "name");
               }
@@ -235,7 +229,6 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getChildConcept() != null;
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
-                tmpVar = tmpVar && operationContext.getScope() != null;
 
                 return "Create new instance of concept: " + SPropertyOperations.getString((item), "name");
               }
@@ -249,7 +242,6 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getChildConcept() != null;
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
-                tmpVar = tmpVar && operationContext.getScope() != null;
 
                 return (item);
               }
@@ -263,10 +255,9 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getChildConcept() != null;
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
-                tmpVar = tmpVar && operationContext.getScope() != null;
 
                 boolean useNodeType = (item) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept");
-                return (useNodeType ? _quotation_createNode_qp9nsj_a0l0a0a0_0() : _quotation_createNode_qp9nsj_a0l0a0a0((SNode) (item)));
+                return (useNodeType ? _quotation_createNode_qp9nsj_a0k0a0a0_0() : _quotation_createNode_qp9nsj_a0k0a0a0((SNode) (item)));
               }
             });
           }
@@ -290,7 +281,6 @@ public class QueriesGenerated {
         tmpVar = tmpVar && _context.getChildConcept() != null;
         tmpVar = tmpVar && _context.getModel() != null;
         tmpVar = tmpVar && operationContext != null;
-        tmpVar = tmpVar && operationContext.getScope() != null;
 
         return new StringHolder();
       }
@@ -302,7 +292,6 @@ public class QueriesGenerated {
       tmpVar = tmpVar && _context.getChildConcept() != null;
       tmpVar = tmpVar && _context.getModel() != null;
       tmpVar = tmpVar && operationContext != null;
-      tmpVar = tmpVar && operationContext.getScope() != null;
 
       firstMatchingText.matchingText = "newChild1";
     }
@@ -319,7 +308,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && model != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
 
             SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", null);
             SLinkOperations.addNewChild(result, "child1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child");
@@ -345,7 +333,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
 
             return (strictly ? firstMatchingText.matchingText.equals(pattern) : firstMatchingText.matchingText.startsWith(pattern));
           }
@@ -358,7 +345,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
 
             return "Description of " + firstMatchingText.matchingText;
           }
@@ -371,7 +357,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
 
             return firstMatchingText.matchingText;
           }
@@ -388,7 +373,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
 
             return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1");
           }
@@ -401,9 +385,8 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
 
-            return _quotation_createNode_mw8afp_a9a0a0a();
+            return _quotation_createNode_mw8afp_a8a0a0a();
           }
         });
       }
@@ -453,7 +436,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && model != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
             tmpVar = tmpVar && editorContext != null;
 
             // selecting a custom cell 
@@ -512,7 +494,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && model != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
             tmpVar = tmpVar && editorContext != null;
 
             // Check if we have read access here 
@@ -528,7 +509,6 @@ public class QueriesGenerated {
             boolean tmpVar = _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
             tmpVar = tmpVar && _context.getModel() != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && operationContext != null;
             tmpVar = tmpVar && nodeToWrap != null;
@@ -564,7 +544,6 @@ public class QueriesGenerated {
               tmpVar = tmpVar && _context.getChildConcept() != null;
               tmpVar = tmpVar && model != null;
               tmpVar = tmpVar && operationContext != null;
-              tmpVar = tmpVar && operationContext.getScope() != null;
               tmpVar = tmpVar && editorContext != null;
 
               // Check if we have read access here 
@@ -660,7 +639,6 @@ public class QueriesGenerated {
           tmpVar = tmpVar && _context.getChildConcept() != null;
           tmpVar = tmpVar && _context.getModel() != null;
           tmpVar = tmpVar && operationContext != null;
-          tmpVar = tmpVar && operationContext.getScope() != null;
 
           return concept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1");
         }
@@ -705,7 +683,6 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && model != null;
             tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
             tmpVar = tmpVar && editorContext != null;
 
             SNode wrapperNode = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", null);
@@ -906,7 +883,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  private static SNode _quotation_createNode_qp9nsj_a0l0a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_qp9nsj_a0k0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
@@ -914,14 +891,14 @@ public class QueriesGenerated {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_qp9nsj_a0l0a0a0_0() {
+  private static SNode _quotation_createNode_qp9nsj_a0k0a0a0_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_mw8afp_a9a0a0a() {
+  private static SNode _quotation_createNode_mw8afp_a8a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
