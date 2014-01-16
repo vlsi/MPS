@@ -66,7 +66,7 @@ import java.util.concurrent.ConcurrentMap;
 public class MPSPsiProvider extends AbstractProjectComponent {
 
   // TODO softReference..
-  ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
+  private final ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
   private final PsiModificationTrackerImpl myModificationTracker;
 
   public static MPSPsiProvider getInstance(@NotNull Project project) {
@@ -187,20 +187,30 @@ public class MPSPsiProvider extends AbstractProjectComponent {
   private MPSPsiModel getMPSPsiModel(SModel model, SModelReference modelRef) {
     if (MPS2PsiMapperUtil.hasCorrespondingPsi(model)) return null;
 
-    MPSPsiModel result;
-    result = new MPSPsiModel(modelRef, PsiManager.getInstance(myProject));
-    final MPSPsiModel existing = models.putIfAbsent(modelRef, result);
-    result.reload(model);
-    if (existing != null) {
-      result = existing;
+    // synchronizing be model:
+    // we guard MPSPsiModel.reload() exactly by model,
+    // on the other hand, the key in models is modelRef, but different models in one repo seem to always have
+    // different modelRefs
+    synchronized (model) {
+      MPSPsiModel result = models.get(modelRef);
+      if (result == null) {
+        result = new MPSPsiModel(modelRef, PsiManager.getInstance(myProject));
+        // since some time ago we have to guard MPSPsiModel in this way:
+        // MPSPsiModel.reload() should not happen for different instances, which are connected
+        // to one SModel, because root nodes are re-used in case of file-per-root persistence.
+        // I.e. those root nodes cannot be added as children to a model when they are already children of another
+        result.reload(model);
+        models.put(modelRef, result);
+      }
+      return result;
     }
-    return result;
   }
 
   private SModelEventProcessor createEventProcessor() {
     return new SModelEventProcessor(new ModelProvider() {
       @Override
       public ReloadableModel lookupModel(SModelReference modelReference) {
+        // must be alright concurrency-wise, because ConcurrentHashMap creates a memory barrier
         final MPSPsiModel psiModel = models.get(modelReference);
         if (psiModel == null) return null;
 
