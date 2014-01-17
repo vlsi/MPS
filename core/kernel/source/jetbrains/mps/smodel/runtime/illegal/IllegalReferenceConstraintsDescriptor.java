@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class IllegalReferenceConstraintsDescriptor implements ReferenceConstraintsDescriptor {
   private final String role;

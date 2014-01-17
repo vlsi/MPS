@@ -21,15 +21,15 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IScope;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,9 +40,7 @@ import java.util.List;
  */
 public abstract class BaseNode implements IResultProvider {
   private static final Logger LOG = LogManager.getLogger(BaseNode.class);
-
   private static final String CHILDREN = "children";
-
   protected BaseNode myParent;
   protected List<BaseNode> myChildren = new ArrayList<BaseNode>();
 
@@ -52,12 +50,12 @@ public abstract class BaseNode implements IResultProvider {
 
   //----TREE STUFF----
 
-  public void setParent(BaseNode parent) {
-    myParent = parent;
-  }
-
   public BaseNode getParent() {
     return myParent;
+  }
+
+  public void setParent(BaseNode parent) {
+    myParent = parent;
   }
 
   public void addChild(BaseNode child) {
@@ -118,7 +116,7 @@ public abstract class BaseNode implements IResultProvider {
   public abstract SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor);
 
   @Override
-  public long getEstimatedTime(IScope scope) {
+  public long getEstimatedTime(SearchScope scope) {
     long sumTime = 0;
     for (BaseNode child : myChildren) {
       sumTime = sumTime + child.getEstimatedTime(scope);

@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class IllegalPropertyConstraintsDescriptor implements PropertyConstraintsDescriptor {
   private final String name;

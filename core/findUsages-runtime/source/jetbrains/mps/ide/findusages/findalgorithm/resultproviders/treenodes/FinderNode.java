@@ -27,7 +27,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -35,6 +34,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
@@ -92,7 +92,7 @@ public class FinderNode extends BaseLeaf {
   }
 
   @Override
-  public long getEstimatedTime(IScope scope) {
+  public long getEstimatedTime(SearchScope scope) {
     return 1;
   }
 

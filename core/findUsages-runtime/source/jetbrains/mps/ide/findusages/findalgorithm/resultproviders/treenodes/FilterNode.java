@@ -21,15 +21,15 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public class FilterNode extends BaseNode {
   private static final String FILTER = "filter";
@@ -86,7 +86,7 @@ public class FilterNode extends BaseNode {
   }
 
   @Override
-  public long getEstimatedTime(IScope scope) {
+  public long getEstimatedTime(SearchScope scope) {
     return 1;
   }
 

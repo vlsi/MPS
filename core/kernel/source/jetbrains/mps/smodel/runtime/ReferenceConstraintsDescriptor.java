@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface ReferenceConstraintsDescriptor {
   String getRole();
