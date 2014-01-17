@@ -27,22 +27,22 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Setter;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.Icon;
 import java.awt.Component;
@@ -75,7 +75,8 @@ public final class CreateFromUsageUtil {
   }
 
 
-  public static void showCreateNewRootMenu(final jetbrains.mps.openapi.editor.EditorContext editorContext, final Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
+  public static void showCreateNewRootMenu(final jetbrains.mps.openapi.editor.EditorContext editorContext, final Condition<SNode> conceptsFilter,
+      final Setter<SNode> newRootHandler) {
     final EditorCell selectedCell = editorContext.getSelectedCell();
     int x = selectedCell.getX();
     int y = selectedCell.getY();
@@ -87,15 +88,15 @@ public final class CreateFromUsageUtil {
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
       @Override
       public ListPopup compute() {
-        ActionGroup group = getQuickCreateGroup(selectedCell.getSNode().getModel(), editorContext.getScope(), conceptsFilter, newRootHandler);
+        ActionGroup group = getQuickCreateGroup(selectedCell.getSNode().getModel(), conceptsFilter, newRootHandler);
         ListPopup popup = null;
         if (group != null) {
           popup = JBPopupFactory.getInstance()
-            .createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
-              group,
-              dataContext,
-              JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
-              false);
+              .createActionGroupPopup(IdeBundle.message("title.popup.new.element"),
+                  group,
+                  dataContext,
+                  JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+                  false);
         }
         return popup;
       }
@@ -104,7 +105,7 @@ public final class CreateFromUsageUtil {
     popup.show(new RelativePoint(editorComponent, new Point(x, y)));
   }
 
-  private static BaseGroup getQuickCreateGroup(final SModel model, final IScope scope, Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
+  private static BaseGroup getQuickCreateGroup(final SModel model, Condition<SNode> conceptsFilter, final Setter<SNode> newRootHandler) {
     BaseGroup group = new BaseGroup("");
 
     List<Language> modelLanguages = SModelOperations.getLanguages(model);
@@ -119,7 +120,7 @@ public final class CreateFromUsageUtil {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 @Override
                 public void run() {
-                  SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);
+                  SNode result = NodeFactoryManager.createNode(concept, null, null, model, GlobalScope.getInstance());
                   model.addRootNode(result);
                   if (newRootHandler != null) {
                     newRootHandler.set(result);

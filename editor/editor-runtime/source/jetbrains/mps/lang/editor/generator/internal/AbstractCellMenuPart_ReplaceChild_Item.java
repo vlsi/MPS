@@ -60,7 +60,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
             SNode parameterNode = (SNode) parameterConcept;
             if (isCustomCreateChildNode()) {
               SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild,
-                  parentNode.getModel(), getScope(), context, editorContext);
+                  parentNode.getModel(),  context, editorContext);
               if (newChild != null) {
                 NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model, getScope());
               }
@@ -80,20 +80,8 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
     return false;
   }
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>customCreateChildNode(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope,
-      IOperationContext operationContext) {
-    return null;
-  }
-
-  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope,
-      IOperationContext operationContext, EditorContext editorContext) {
-    return customCreateChildNode(node, currentChild, defaultConceptOfChild, model, scope, operationContext);
-  }
+  protected abstract  SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
+      IOperationContext operationContext, EditorContext editorContext);
 
   protected abstract String getMatchingText();
 
