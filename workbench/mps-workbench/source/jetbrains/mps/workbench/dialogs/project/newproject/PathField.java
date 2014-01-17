@@ -1,27 +1,29 @@
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
 
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.util.List;
-import org.jdesktop.beansbinding.AutoBinding;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import java.awt.BorderLayout;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import org.jdesktop.beansbinding.Property;
-import org.jdesktop.beansbinding.BeanProperty;
-import org.jdesktop.beansbinding.Bindings;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
+import org.jdesktop.beansbinding.AutoBinding;
+import org.jdesktop.beansbinding.BeanProperty;
+import org.jdesktop.beansbinding.Bindings;
+import org.jdesktop.beansbinding.Property;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PathField extends JPanel {
   public PathField myThis;
-  private JTextField myPathField_d96i1m_b0;
-  private JButton myButton_d96i1m_c0;
+  private JTextField myPathField;
+  private JButton myButton;
   private String myPath;
   private int myMode;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
@@ -30,8 +32,8 @@ public class PathField extends JPanel {
     this.myThis = this;
     PathField component = this;
     component.setLayout(new BorderLayout());
-    component.add(this.createComponent_d96i1m_b0(), BorderLayout.CENTER);
-    component.add(this.createComponent_d96i1m_c0(), BorderLayout.EAST);
+    component.add(this.createPathField(), BorderLayout.CENTER);
+    component.add(this.createButton(), BorderLayout.EAST);
     myThis.setMode(TreeFileChooser.MODE_DIRECTORIES);
   }
 
@@ -49,9 +51,10 @@ public class PathField extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("path");
-      Object targetObject = this.myPathField_d96i1m_b0;
+      Object targetObject = this.myPathField;
       Property targetProperty = BeanProperty.create("text");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
+      AutoBinding binding = Bindings.createAutoBinding(
+          AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
       ListSequence.fromList(this.myBindings).addElement(binding);
     }
@@ -65,16 +68,16 @@ public class PathField extends JPanel {
     }
   }
 
-  private JTextField createComponent_d96i1m_b0() {
+  private JTextField createPathField() {
     JTextField component = new JTextField();
-    this.myPathField_d96i1m_b0 = component;
+    this.myPathField = component;
     component.setColumns(40);
     return component;
   }
 
-  private JButton createComponent_d96i1m_c0() {
+  private JButton createButton() {
     JButton component = new JButton();
-    this.myButton_d96i1m_c0 = component;
+    this.myButton = component;
     component.setText("...");
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -105,7 +108,7 @@ public class PathField extends JPanel {
   }
 
   /*package*/ void choosePathClicked() {
-    String oldPath = myThis.myPathField_d96i1m_b0.getText();
+    String oldPath = myThis.myPathField.getText();
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(myThis.getMode());
     if (oldPath != null) {
@@ -113,12 +116,12 @@ public class PathField extends JPanel {
     }
     IFile result = chooser.showDialog();
     if (result != null) {
-      myThis.setPath(result.getPath());
+      myThis.setPath(IFileUtils.getCanonicalPath(result));
     }
   }
 
   public void setEnabled(boolean enabled) {
-    myThis.myPathField_d96i1m_b0.setEnabled(enabled);
-    myThis.myButton_d96i1m_c0.setEnabled(enabled);
+    myThis.myPathField.setEnabled(enabled);
+    myThis.myButton.setEnabled(enabled);
   }
 }
