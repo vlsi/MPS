@@ -64,7 +64,7 @@ public class SModelOperations {
     if (conceptFqName == null) {
       return allNodesIncludingImported(model, true, null);
     }
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (concept == null) {
       return Collections.emptyList();
     }
@@ -79,7 +79,7 @@ public class SModelOperations {
     if (conceptFqName == null) {
       return allNodesIncludingImported(model, false, null);
     }
-    final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (concept == null) {
       return Collections.emptyList();
     }
@@ -134,7 +134,7 @@ public class SModelOperations {
       return null;
     }
 
-    SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (jetbrains.mps.smodel.SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
       if (id != null) {

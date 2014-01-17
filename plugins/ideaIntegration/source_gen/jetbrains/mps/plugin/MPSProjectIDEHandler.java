@@ -145,7 +145,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
+        SNode concept = SModelUtil.findConceptDeclaration(fqName);
         NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), concept, true, false);
         FrameUtil.activateFrame(getMainFrame());
       }

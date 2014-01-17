@@ -9,7 +9,6 @@ import java.util.List;
 import jetbrains.mps.util.NameUtil;
 import java.util.HashSet;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -30,7 +29,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     List<String> parents = LanguageHierarchyCache.getParentsNames(NameUtil.nodeFQName(node));
     Set<SNode> result = new HashSet<SNode>();
     for (String s : parents) {
-      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(s, GlobalScope.getInstance());
+      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(s);
       result.add(conceptDeclaration);
     }
     return result;
@@ -57,7 +56,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     }
     Set<SNode> result = new HashSet<SNode>();
     for (String s : myCache.getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration))) {
-      SNode abstractConceptDeclaration = SModelUtil.findConceptDeclaration(s, GlobalScope.getInstance());
+      SNode abstractConceptDeclaration = SModelUtil.findConceptDeclaration(s);
       result.add(abstractConceptDeclaration);
     }
     return result;

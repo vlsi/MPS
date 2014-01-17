@@ -25,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 
 public class ReferenceableConceptsChecker extends SpecificChecker {
   public ReferenceableConceptsChecker() {
@@ -98,7 +97,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
 
 
   private void checkNode(List<SearchResult<ModelCheckerIssue>> results, SNode node, SNode refNode, boolean isAncestor, SNode anchor) {
-    SNode conceptDecl = SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance());
+    SNode conceptDecl = SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName());
     if (conceptDecl == null) {
       addIssue(results, node, "No concept found for " + node.toString(), ModelChecker.SEVERITY_ERROR, "no concept", null);
     }

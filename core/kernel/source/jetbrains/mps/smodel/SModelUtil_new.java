@@ -164,7 +164,7 @@ public class SModelUtil_new implements CoreComponent {
     if (fullNodeStructure &&
       isNotProjectModel) { //project models can be created and used
       //before project language is loaded
-      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
+      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName);
       createNodeStructure(conceptDeclaration, newNode, model);
     }
     return newNode;

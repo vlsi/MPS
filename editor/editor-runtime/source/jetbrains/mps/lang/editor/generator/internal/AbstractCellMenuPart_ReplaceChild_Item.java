@@ -23,7 +23,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.*;
 
 import java.util.Collections;
@@ -44,7 +46,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
 
     final IOperationContext context = editorContext.getOperationContext();
     return Collections.<SubstituteAction>singletonList(
-        new DefaultChildNodeSubstituteAction(defaultConceptOfChild, parentNode, currentChild, setter, context.getScope()) {
+        new DefaultChildNodeSubstituteAction(defaultConceptOfChild, parentNode, currentChild, setter) {
           @Override
           protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
             return AbstractCellMenuPart_ReplaceChild_Item.this.getMatchingText();
@@ -62,11 +64,11 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
               SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild,
                   parentNode.getModel(),  context, editorContext);
               if (newChild != null) {
-                NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model, getScope());
+                NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model);
               }
               return newChild;
             }
-            return NodeFactoryManager.createNode(parameterNode, currentChild, parentNode, parentNode.getModel(), getScope());
+            return NodeFactoryManager.createNode(parameterNode, currentChild, parentNode, parentNode.getModel());
           }
         });
   }

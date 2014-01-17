@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
 public abstract class SAbstractLinkAdapter implements SAbstractLink {
@@ -69,7 +68,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
 
 
   protected final SNode getLinkNode() {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptName);
     if ((concept == null)) {
       return null;
     }

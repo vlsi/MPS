@@ -62,7 +62,7 @@ public final class SConceptOperations {
   }
 
   public static SNode findConceptDeclaration(@NotNull String conceptFqName) {
-    return SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    return SModelUtil.findConceptDeclaration(conceptFqName);
   }
 
   @Deprecated
@@ -117,7 +117,7 @@ public final class SConceptOperations {
     Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
-      SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
+      SNode declaration = SModelUtil.findConceptDeclaration(descendant);
       Language lang = SModelUtil.getDeclaringLanguage(declaration);
       if (SetSequence.fromSet(availableLanguages).contains(lang)) {
         result.add(declaration);

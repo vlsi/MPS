@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.Iterator;
 import jetbrains.mps.util.SNodeOperations;
@@ -21,7 +20,7 @@ public class SLinkOperations {
   }
 
   public static SNode findLinkDeclaration(String conceptFqName, String linkRole) {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
     return linkDeclaration;
   }

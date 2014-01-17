@@ -31,7 +31,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -168,7 +167,7 @@ public class IconManager {
   }
 
   public static Icon getIconForConceptFQName(String conceptFQName) {
-    SNode acd = SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    SNode acd = SModelUtil.findConceptDeclaration(conceptFQName);
     SNode cd = null;
     Icon icon = null;
     if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {

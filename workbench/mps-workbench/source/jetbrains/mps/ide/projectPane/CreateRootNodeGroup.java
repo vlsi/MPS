@@ -236,8 +236,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor,
-              myScope);
+          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor);
           SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myPackage);
           myModelDescriptor.addRootNode(node);
 

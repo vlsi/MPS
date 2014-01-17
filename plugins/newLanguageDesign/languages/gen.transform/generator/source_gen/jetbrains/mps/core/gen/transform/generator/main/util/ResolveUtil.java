@@ -34,7 +34,7 @@ public class ResolveUtil {
     }
 
     String qualifiedName = SAbstractConcept_Behavior.call_getQualifiedName_7891765471710491510(concept);
-    return SModelUtil.findConceptDeclaration(qualifiedName, null);
+    return SModelUtil.findConceptDeclaration(qualifiedName);
   }
 
   public static SNode resolveEnum(TemplateQueryContext genContext, SNode enumeration) {

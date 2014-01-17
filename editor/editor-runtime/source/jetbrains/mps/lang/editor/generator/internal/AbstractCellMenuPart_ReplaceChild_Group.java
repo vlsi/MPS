@@ -59,7 +59,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
 
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>(parameterObjects.size());
     for (final Object parameterObject : parameterObjects) {
-      actions.add(new DefaultChildNodeSubstituteAction(parameterObject, parentNode, currentChild, setter, context.getScope()) {
+      actions.add(new DefaultChildNodeSubstituteAction(parameterObject, parentNode, currentChild, setter) {
         @Override
         protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
           return AbstractCellMenuPart_ReplaceChild_Group.this.getMatchingText(parameterObject);

@@ -58,7 +58,7 @@ import java.util.List;
   private String getAssertionMessage(Object element, SNode concept) {
     String conceptFQName = NameUtil.nodeFQName(concept);
     GlobalScope scope = GlobalScope.getInstance();
-    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName, scope);
+    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName);
     String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
     String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
     Language language = scope.getLanguage(new ModuleReference(languageFqName));

@@ -100,7 +100,7 @@ public class QuickQueryUtils {
 
   public static SearchQuery createNodeInstancesSearchQuery(Query query, FindUsagesScope scope) {
     if (isNotEmptyString(query.getConcept())) {
-      return new SearchQuery(new NodeHolder(SModelUtil.findConceptDeclaration(query.getConcept(), null)), scope);
+      return new SearchQuery(new NodeHolder(SModelUtil.findConceptDeclaration(query.getConcept())), scope);
     } else {
       return new SearchQuery(scope);
     }

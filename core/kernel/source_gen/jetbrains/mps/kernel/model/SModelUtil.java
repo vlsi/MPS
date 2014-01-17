@@ -74,7 +74,7 @@ public class SModelUtil {
     return null;
   }
 
-  public static SNode findConceptDeclaration(@NotNull final String conceptFQName, final IScope scope) {
+  public static SNode findConceptDeclaration(@NotNull final String conceptFQName) {
     SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
     if (cd != null) {
       return cd;
@@ -91,7 +91,7 @@ public class SModelUtil {
           return null;
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-        SNode result = (SNode) language.findConceptDeclaration(conceptName);
+        SNode result = language.findConceptDeclaration(conceptName);
         if (result != null) {
           SModelUtil.myFQNameToConcepDecl.putIfAbsent(InternUtil.intern(conceptFQName), result);
         }
