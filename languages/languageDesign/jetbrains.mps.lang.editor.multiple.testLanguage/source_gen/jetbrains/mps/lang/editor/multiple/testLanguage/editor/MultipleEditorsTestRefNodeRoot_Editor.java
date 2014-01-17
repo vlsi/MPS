@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Collections;
 
@@ -264,7 +263,7 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       protected EditorCell createRefCell(EditorContext editorContext, SNode referencedNode, SNode node) {
         try {
           editorContext.getCellFactory().pushCellContext();
-          editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a9c0(node, editorContext, editorContext.getOperationContext().getScope())).toGenericArray(String.class));
+          editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a9c0(node, editorContext)).toGenericArray(String.class));
           editorContext.getCellFactory().removeCellContextHints();
           return super.createRefCell(editorContext, referencedNode, node);
         } finally {
@@ -294,7 +293,7 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private Iterable<String> getEditorHints_fxz4pq_a9c0(SNode node, EditorContext editorContext, IScope scope) {
+  private Iterable<String> getEditorHints_fxz4pq_a9c0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.hasValue(node, "projectionType", "rich", null)) {
       return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
     } else if (SPropertyOperations.hasValue(node, "projectionType", "compact", null)) {
@@ -384,8 +383,8 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       protected EditorCell createRefCell(EditorContext editorContext, SNode referencedNode, SNode node) {
         try {
           editorContext.getCellFactory().pushCellContext();
-          editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a(node, editorContext, editorContext.getOperationContext().getScope())).toGenericArray(String.class));
-          editorContext.getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a_0(node, editorContext, editorContext.getOperationContext().getScope())).toGenericArray(String.class));
+          editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a(node, editorContext)).toGenericArray(String.class));
+          editorContext.getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a_0(node, editorContext)).toGenericArray(String.class));
           return super.createRefCell(editorContext, referencedNode, node);
         } finally {
           editorContext.getCellFactory().popCellContext();
@@ -414,11 +413,11 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private Iterable<String> getEditorHints_fxz4pq_a3m2a(SNode node, EditorContext editorContext, IScope scope) {
+  private Iterable<String> getEditorHints_fxz4pq_a3m2a(SNode node, EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
   }
 
-  private Iterable<String> getEditorHints_fxz4pq_a3m2a_0(SNode node, EditorContext editorContext, IScope scope) {
+  private Iterable<String> getEditorHints_fxz4pq_a3m2a_0(SNode node, EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, "projectAsCompact") ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
   }
 

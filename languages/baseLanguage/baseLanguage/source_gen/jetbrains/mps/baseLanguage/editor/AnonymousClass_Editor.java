@@ -41,7 +41,6 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AnonymousClass_Editor extends DefaultNodeEditor {
@@ -739,7 +738,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
 
@@ -752,7 +751,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     }
 
@@ -765,7 +764,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
     }
 

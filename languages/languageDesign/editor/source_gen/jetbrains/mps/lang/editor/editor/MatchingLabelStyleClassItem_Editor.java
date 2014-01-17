@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -91,7 +90,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "hasNoLabel", "" + (true));
     }
 
@@ -119,7 +118,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "hasNoLabel", "" + (false));
     }
 

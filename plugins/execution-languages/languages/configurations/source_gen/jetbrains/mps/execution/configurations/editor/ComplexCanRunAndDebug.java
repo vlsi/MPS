@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -103,7 +102,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (false));
     }
 
@@ -131,7 +130,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (true));
     }
 
@@ -191,7 +190,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0a1c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "debuggerConfiguration", true));
     }
 
@@ -239,7 +238,7 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "debuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration");
     }
 

@@ -39,7 +39,6 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
@@ -616,7 +615,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
 
@@ -629,7 +628,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     }
 
@@ -642,7 +641,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     public InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
     }
 

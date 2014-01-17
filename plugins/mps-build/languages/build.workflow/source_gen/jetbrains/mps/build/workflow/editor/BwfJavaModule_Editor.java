@@ -28,7 +28,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import java.util.Arrays;
 
 public class BwfJavaModule_Editor extends DefaultNodeEditor {
@@ -539,7 +538,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     public BwfJavaModule_compiler_cellMenu_y27sly_a0h0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
     }
   }

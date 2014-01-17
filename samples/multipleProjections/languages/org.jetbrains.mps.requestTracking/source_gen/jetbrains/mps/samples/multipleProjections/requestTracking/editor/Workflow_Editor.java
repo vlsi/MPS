@@ -16,7 +16,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -91,7 +90,7 @@ public class Workflow_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yhw0dy_d0");
     try {
       editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_yhw0dy_a3a(node, editorContext, editorContext.getOperationContext().getScope())).toGenericArray(String.class));
+      editorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_yhw0dy_a3a(node, editorContext)).toGenericArray(String.class));
       editorCell.addEditorCell(this.createRefNode_yhw0dy_a3a(editorContext, node));
     } finally {
       editorContext.getCellFactory().popCellContext();
@@ -99,7 +98,7 @@ public class Workflow_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private Iterable<String> getEditorHints_yhw0dy_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private Iterable<String> getEditorHints_yhw0dy_a3a(SNode node, EditorContext editorContext) {
     return (SPropertyOperations.hasValue(node, "presentation", "tabular", "structural") ? ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular") : Collections.<String>emptyList());
   }
 

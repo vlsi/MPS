@@ -32,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -309,7 +308,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public IfStatement_generic_cellMenu_eb7h0d_a0a6a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
     }
 
     public String getMatchingText() {
@@ -321,7 +320,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public IfStatement_generic_cellMenu_eb7h0d_b0a6a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
     }
 

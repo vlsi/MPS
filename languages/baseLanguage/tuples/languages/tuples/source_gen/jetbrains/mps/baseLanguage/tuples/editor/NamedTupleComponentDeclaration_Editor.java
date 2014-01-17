@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -112,7 +111,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     public NamedTupleComponentDeclaration_name_postfixCellMenu_nmve34_a0d0() {
     }
 
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       //  copied from VariableDeclaration's editor 
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);

@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -95,7 +94,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (false));
     }
 
@@ -123,7 +122,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (true));
     }
 
@@ -173,7 +172,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canDebug", "" + (false));
     }
 
@@ -201,7 +200,7 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canDebug", "" + (true));
     }
 

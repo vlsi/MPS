@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -301,7 +300,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     public ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_a0c8a() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration");
     }
 
@@ -314,15 +313,15 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     public ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_b0c8a() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Sequence.fromIterable(((Iterable<String>) Charset.availableCharsets().keySet())).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingLiteral");
       SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(node, "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingLiteral"), "encoding", parameterObject);
     }

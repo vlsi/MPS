@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 
@@ -80,7 +79,7 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     public XmlEntityRef_entityName_cellMenu_40aq2x_a0b0() {
     }
 
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Sequence.fromIterable(Sequence.fromArray(XmlNameUtil.getDefaultEntities())).toListSequence();
     }
   }

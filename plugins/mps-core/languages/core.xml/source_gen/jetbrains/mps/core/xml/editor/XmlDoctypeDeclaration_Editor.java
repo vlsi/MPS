@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -153,7 +152,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
 
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (true));
       return newId;
@@ -172,7 +171,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
 
-    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode newId = SLinkOperations.setNewChild(node, "externalId", "jetbrains.mps.core.xml.structure.XmlExternalId");
       SPropertyOperations.set(newId, "isPublic", "" + (false));
       return newId;

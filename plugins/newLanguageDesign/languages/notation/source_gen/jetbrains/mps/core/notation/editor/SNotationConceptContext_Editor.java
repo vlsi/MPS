@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.core.notation.behavior.SNotationConceptContext_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -170,7 +169,7 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
     public SNotationConceptContext_generic_cellMenu_tvsk60_a0b1a() {
     }
 
-    public List<?> createParameterObjects(final SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(final SNode node, IOperationContext operationContext, EditorContext editorContext) {
       if (SLinkOperations.getTarget(node, "element", false) == null) {
         return null;
       }
@@ -196,11 +195,11 @@ public class SNotationConceptContext_Editor extends DefaultNodeEditor {
       return Sequence.fromIterable(result).toListSequence();
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "id", parameterObject);
     }
 

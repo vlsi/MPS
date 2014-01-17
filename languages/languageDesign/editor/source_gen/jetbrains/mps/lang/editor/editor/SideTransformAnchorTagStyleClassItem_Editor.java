@@ -22,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -110,15 +109,15 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0() {
     }
 
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "RightTransformAnchorTag"));
     }
 
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).clear();
       SPropertyOperations.set(node, "tag", SEnumOperations.getEnumMemberValue(parameterObject));
     }
@@ -132,7 +131,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0() {
     }
 
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode tagWrapper = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", null);
       SPropertyOperations.set(tagWrapper, "tag", SPropertyOperations.getString_def(node, "tag", null));
       ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).addElement(tagWrapper);

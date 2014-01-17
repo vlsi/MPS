@@ -118,50 +118,47 @@
     <unitInfo nodeId="119022571401949656" fileName="ResourceTypeDeclaration_Editor.java" startLine="24" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.editor.ResourceTypeDeclaration_Editor" />
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/1675547159918502560">
-    <nodeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="18" startPosition="46" endLine="19" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1675547159918599397" fileName="TargetDeclaration_resourcesPolicy.java" startLine="26" startPosition="134" endLine="27" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="30" startPosition="162" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1675547159918601439" fileName="TargetDeclaration_resourcesPolicy.java" startLine="34" startPosition="163" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="38" startPosition="45" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_generic_cellMenu_2gyyww_a0#()V" />
-    <nodeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_resourcesPolicy#()V" />
-    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="23" startPosition="59" endLine="23" endPosition="59" />
-    <scopeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="18" startPosition="46" endLine="19" endPosition="125" />
-    <scopeInfo nodeId="1675547159918562577" fileName="TargetDeclaration_resourcesPolicy.java" startLine="26" startPosition="134" endLine="27" endPosition="166" />
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="30" startPosition="162" endLine="31" endPosition="107" />
-    <scopeInfo nodeId="1675547159918562579" fileName="TargetDeclaration_resourcesPolicy.java" startLine="34" startPosition="163" endLine="35" endPosition="108" />
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="38" startPosition="45" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <nodeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="17" startPosition="46" endLine="18" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1675547159918599397" fileName="TargetDeclaration_resourcesPolicy.java" startLine="25" startPosition="120" endLine="26" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="29" startPosition="148" endLine="30" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1675547159918601439" fileName="TargetDeclaration_resourcesPolicy.java" startLine="33" startPosition="149" endLine="34" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="37" startPosition="45" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_generic_cellMenu_2gyyww_a0#()V" />
+    <nodeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_resourcesPolicy#()V" />
+    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction_impl#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="22" startPosition="59" endLine="22" endPosition="59" />
+    <scopeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="17" startPosition="46" endLine="18" endPosition="125" />
+    <scopeInfo nodeId="1675547159918562577" fileName="TargetDeclaration_resourcesPolicy.java" startLine="25" startPosition="120" endLine="26" endPosition="166" />
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="29" startPosition="148" endLine="30" endPosition="100" />
+    <scopeInfo nodeId="1675547159918562579" fileName="TargetDeclaration_resourcesPolicy.java" startLine="33" startPosition="149" endLine="34" endPosition="108" />
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="37" startPosition="45" endLine="38" endPosition="19" />
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1675547159918562575" varName="editorContext" />
       <varInfo nodeId="1675547159918562575" varName="node" />
       <varInfo nodeId="1675547159918562575" varName="operationContext" />
-      <varInfo nodeId="1675547159918562575" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1675547159918562575" varName="editorContext" />
-      <varInfo nodeId="1675547159918562575" varName="model" />
-      <varInfo nodeId="1675547159918562575" varName="node" />
-      <varInfo nodeId="1675547159918562575" varName="operationContext" />
-      <varInfo nodeId="1675547159918562575" varName="parameterObject" />
-      <varInfo nodeId="1675547159918562575" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1675547159918562575" varName="editorContext" />
       <varInfo nodeId="1675547159918562575" varName="model" />
       <varInfo nodeId="1675547159918562575" varName="node" />
       <varInfo nodeId="1675547159918562575" varName="operationContext" />
       <varInfo nodeId="1675547159918562575" varName="parameterObject" />
-      <varInfo nodeId="1675547159918562575" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <unitInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="22" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy$TargetDeclaration_generic_cellMenu_2gyyww_a0" />
-    <unitInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy" />
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1675547159918562575" varName="editorContext" />
+      <varInfo nodeId="1675547159918562575" varName="model" />
+      <varInfo nodeId="1675547159918562575" varName="node" />
+      <varInfo nodeId="1675547159918562575" varName="operationContext" />
+      <varInfo nodeId="1675547159918562575" varName="parameterObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="1675547159918562575" fileName="TargetDeclaration_resourcesPolicy.java" startLine="21" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy$TargetDeclaration_generic_cellMenu_2gyyww_a0" />
+    <unitInfo nodeId="1675547159918502560" fileName="TargetDeclaration_resourcesPolicy.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_resourcesPolicy" />
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/1894767564088417788">
     <nodeInfo nodeId="1894767564088417788" fileName="FacetJavaClassExpression_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
