@@ -268,32 +268,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     getNodeEditorComponent().selectNode(node, cellId);
   }
 
-  @Override
-  public void selectBefore(final SNode node) {
-    flushEvents();
-
-    getNodeEditorComponent().selectNode(node);
-    EditorCell cell = getNodeEditorComponent().getSelectedCell();
-
-    if (cell instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label) cell;
-      label.home();
-    }
-  }
-
-  @Override
-  public void selectAfter(final SNode node) {
-    flushEvents();
-
-    getNodeEditorComponent().selectNode(node);
-    EditorCell cell = getNodeEditorComponent().getSelectedCell();
-
-    if (cell instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label) cell;
-      label.end();
-    }
-
-  }
 
   @Override
   public void selectWRTFocusPolicy(final SNode node) {
