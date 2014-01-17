@@ -711,9 +711,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       String childRole = placeholder.getRoleInParent();
       final Status status = getChildRoleValidator(parent, childRole).validate(actual);
       if (status != null) {
-        status.reportProblem(false, parent, "delayed changed: ",
-            GeneratorUtil.describe(ctx.getInput(), "input"),
-            GeneratorUtil.describe(templateNode, "template"));
+        getLogger().warning(templateNode, status.getMessage("delayed changes"), status.describe(
+            GeneratorUtil.describe(ctx.getInput(), "input"), GeneratorUtil.describe(parent, "parent")
+        ));
       }
     }
     if (myDeltaBuilder != null) {
@@ -995,7 +995,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               // check child
               Status status = rv.validate(outputChildNode);
               if (status != null) {
-                status.reportProblem(false, outputNode, "copy: ", GeneratorUtil.describe(inputChildNode, "input"));
+                myGenerator.getLogger().warning(outputNode.getReference(), status.getMessage("copy input node"),                    status.describe(GeneratorUtil.describe(inputChildNode, "input")));
               }
               outputNode.addChild(childRole, outputChildNode);
             }

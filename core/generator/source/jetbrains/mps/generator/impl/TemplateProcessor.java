@@ -253,10 +253,11 @@ public final class TemplateProcessor {
             // check child
             Status status = validator.validate(outputChildNode);
             if (status != null) {
-              status.reportProblem(false, outputNode, "apply template: ",
+              myGenerator.getLogger().warning(templateChildNode.getReference(), status.getMessage("apply template"), status.describe(
                   GeneratorUtil.describe(context.getInput(), "input"),
-                  GeneratorUtil.describe(templateNode, "parent in template"),
-                  GeneratorUtil.describe(templateChildNode, "child in template"));
+                  GeneratorUtil.describe(outputNode, "output"),
+                  GeneratorUtil.describe(templateNode, "template node")
+              ));
             }
           }
           outputNode.addChild(role, outputChildNode);

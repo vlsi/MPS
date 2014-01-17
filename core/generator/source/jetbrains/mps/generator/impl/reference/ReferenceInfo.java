@@ -111,7 +111,7 @@ public abstract class ReferenceInfo {
   protected final boolean checkResolvedTarget(AbstractTemplateGenerator generator, SNode outputTargetNode) {
     Status status = generator.getReferentRoleValidator(myOutputSourceNode, myReferenceRole).validate(outputTargetNode);
     if (status != null) {
-      status.reportProblem(true, myOutputSourceNode, "bad reference: ", getErrorDescriptions());
+      generator.getLogger().error(myOutputSourceNode.getReference(), status.getMessage(getClass().getSimpleName()), getErrorDescriptions());
       return false;
     }
 

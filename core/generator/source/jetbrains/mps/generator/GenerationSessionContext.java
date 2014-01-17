@@ -104,7 +104,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myLogger = logger;
     myGenerationPlan = null;
     myParameters = null;
-    myValidation = new RoleValidation(logger, generationOptions.isShowBadChildWarning());
+    myValidation = new RoleValidation(generationOptions.isShowBadChildWarning());
     myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
