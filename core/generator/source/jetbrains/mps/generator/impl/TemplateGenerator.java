@@ -995,7 +995,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               // check child
               Status status = rv.validate(outputChildNode);
               if (status != null) {
-                myGenerator.getLogger().warning(outputNode.getReference(), status.getMessage("copy input node"),                    status.describe(GeneratorUtil.describe(inputChildNode, "input")));
+                myGenerator.getLogger().warning(inputChildNode.getReference(), status.getMessage("copy input node"),
+                    status.describe(GeneratorUtil.describeIfExists(TracingUtil.getInput(inputNode), "origin")));
               }
               outputNode.addChild(childRole, outputChildNode);
             }
