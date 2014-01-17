@@ -31,7 +31,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="dtu3wabqm8f4974sa083e8ufybslb8f" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="ijgbwu4rjplrnb3m32nhcx5nf12sw9" />
   <dep model="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" hash="17t4a3eq8mmx2c3tubygvpephzh28y5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4uzx1nhde8jd8bhqitss4qixqgnmq5q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="ekvrykzi36widkyyu5gpy2e9okbzvlk" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-ebobxdfmisv6kyf6trpo1dft5nxuacp" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-2eb3p6cnl5yqiz9lud7dzegwxic3w8p" />
@@ -294,6 +294,7 @@
     <file name="ArrayCreatorWithInitializerAndMultipleDimensions_BehaviorDescriptor.java" />
     <file name="ArrayCreatorWithInitializer_BehaviorDescriptor.java" />
     <file name="ArrayCreator_BehaviorDescriptor.java" />
+    <file name="ArrayInitializers_BehaviorDescriptor.java" />
     <file name="ArrayLengthOperation_BehaviorDescriptor.java" />
     <file name="ArrayLiteral_BehaviorDescriptor.java" />
     <file name="ArrayType_BehaviorDescriptor.java" />

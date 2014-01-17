@@ -3800,10 +3800,35 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
     <property name="name" nameId="tpck.1169194664001" value="ArrayCreatorWithInitializerAndMultipleDimensions" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="array creator with initializer and multiple dimensions" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1154542696413" resolveInfo="ArrayCreatorWithInitializer" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7150822681946777338" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="componentType" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7150822681946777342" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="arrayInitializers" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7150822681946779388" resolveInfo="ArrayInitializers" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4308362244626829252" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="dimensionCount" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7150822681946779388" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="array" />
+    <property name="name" nameId="tpck.1169194664001" value="ArrayInitializers" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{}" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Array initializer" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7150822681946780949" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="initValue" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
   </root>
 </model>

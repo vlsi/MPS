@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ArrayCreatorWithInitializerAndMultipleDimensions_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -18,15 +17,6 @@ public class ArrayCreatorWithInitializerAndMultipleDimensions_TextGen extends SN
 
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "componentType", true), this.getSNode());
     this.append(label);
-    this.append("{");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "initValue", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).last()) {
-          this.append(", ");
-        }
-      }
-    }
-    this.append("}");
+    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "arrayInitializers", true), this.getSNode());
   }
 }
