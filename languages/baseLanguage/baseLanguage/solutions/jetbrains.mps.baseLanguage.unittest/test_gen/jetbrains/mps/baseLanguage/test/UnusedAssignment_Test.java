@@ -34,7 +34,7 @@ public class UnusedAssignment_Test extends BaseTransformationTest4 {
 
     public void test_NodeWarningCheck963887337804206804() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804206804"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451228055")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228055")});
     }
   }
 }

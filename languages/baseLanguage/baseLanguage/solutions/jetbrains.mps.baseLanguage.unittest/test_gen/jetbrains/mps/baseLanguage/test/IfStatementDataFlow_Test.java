@@ -34,7 +34,7 @@ public class IfStatementDataFlow_Test extends BaseTransformationTest4 {
 
     public void test_NodeErrorCheck1239365538955() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1239365538955"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451228488")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228488")});
     }
   }
 }

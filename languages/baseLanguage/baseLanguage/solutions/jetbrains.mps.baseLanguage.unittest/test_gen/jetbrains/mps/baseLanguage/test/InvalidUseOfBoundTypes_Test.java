@@ -106,77 +106,77 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_NodeErrorCheck4632498131795767331() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795767331"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451229232")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451229232")});
     }
 
     public void test_ErrorMessagesCheck4632498131795767328() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795767328"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4632498131795753567")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795753567")});
     }
 
     public void test_NodeErrorCheck4632498131795771479() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795771479"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230402")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230402")});
     }
 
     public void test_ErrorMessagesCheck4632498131795771260() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795771260"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4632498131795771253")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795771253")});
     }
 
     public void test_NodeErrorCheck4632498131795771938() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795771938"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451228926")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228926")});
     }
 
     public void test_ErrorMessagesCheck4632498131795771535() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795771535"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4632498131795771528")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795771528")});
     }
 
     public void test_NodeErrorCheck4632498131795772414() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795772414"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231394")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231394")});
     }
 
     public void test_ErrorMessagesCheck4632498131795772004() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795772004"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4632498131795771997")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795771997")});
     }
 
     public void test_NodeErrorCheck4632498131795772928() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795772928"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230908")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230908")});
     }
 
     public void test_ErrorMessagesCheck4632498131795772509() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795772509"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4632498131795772500")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795772500")});
     }
 
     public void test_NodeErrorCheck4632498131795773515() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795773515"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451227426")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451227426")});
     }
 
     public void test_ErrorMessagesCheck4632498131795773025() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795773025"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4632498131795773016")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795773016")});
     }
 
     public void test_ErrorMessagesCheck4632498131795773624() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795773624"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("4632498131795773615")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795773615")});
     }
 
     public void test_NodeErrorCheck4632498131795790347() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795790347"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231649")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231649")});
     }
 
     public void test_NodeErrorCheck4632498131795796410() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4632498131795796410"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451231445")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231445")});
     }
   }
 }

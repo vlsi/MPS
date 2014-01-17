@@ -59,7 +59,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").children(new String[]{"nodeCheckOperations"}, new boolean[]{true}).create();
       case 22:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").alias("has error", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeErrorCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeCheckOperation").references("ruleRef").alias("has error", "").create();
       case 23:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation").super_("jetbrains.mps.lang.test.structure.NodeTypeCheckOperation").parents("jetbrains.mps.lang.test.structure.NodeTypeCheckOperation").alias("has expected type", "").create();
       case 24:

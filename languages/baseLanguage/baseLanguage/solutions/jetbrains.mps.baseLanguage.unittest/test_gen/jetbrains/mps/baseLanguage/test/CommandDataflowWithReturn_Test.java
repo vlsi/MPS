@@ -22,7 +22,7 @@ public class CommandDataflowWithReturn_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_ErrorMessagesCheck1229350096076() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1229350096076"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1229349840377")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1229349840377")});
     }
   }
 }

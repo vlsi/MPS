@@ -9,7 +9,7 @@ public class NodeWarningCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_perform_1215601182156(SNode thisNode, SNode node) {
+  public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     try {
       NodeCheckerUtil.checkNodeWarningForErrors(node);
     } catch (Exception ex) {

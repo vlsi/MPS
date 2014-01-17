@@ -7,7 +7,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" hash="-5c8wkyxnpm8oxrdl56wjxiaigyl15de" />
   <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" hash="9du5l9wwvgvvop8lr7zh2yotw9x12w1" />
-  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-8fmktvaecjs32zz0mu2ei2yor7wh348" />
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="8b36qmxuhplwj2xpjc0jgvw0xa5n6qk" />
   <common hash="-6xztsvdhyjv8u7u3f2w0mg03gognl1z" dependsOnNodes="true">
     <dep root="1215198781211" />
     <dep root="1230135277005" />

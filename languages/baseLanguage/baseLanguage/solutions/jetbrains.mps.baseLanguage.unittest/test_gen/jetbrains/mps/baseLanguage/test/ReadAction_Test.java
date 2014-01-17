@@ -32,7 +32,7 @@ public class ReadAction_Test extends BaseTransformationTest4 {
 
     public void test_ErrorMessagesCheck1216549241562() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1216549241562"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1216549152296")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1216549152296")});
     }
   }
 }

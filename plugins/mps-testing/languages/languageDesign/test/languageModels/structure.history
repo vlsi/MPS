@@ -114,5 +114,11 @@
     </dependencies>
     <rename id="tp5g.4395293866213195846" type="CONCEPT" from="NodeExpectedCheckOperation" to="NodeExpectedTypeCheckOperation" />
   </StructureModification>
+  <StructureModification>
+    <dependencies>
+      <model index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="34" />
+    </dependencies>
+    <rename id="tp5g.7344575040114288302" type="REFERENCE" from="errorRef" to="ruleRef" />
+  </StructureModification>
 </history>
 

@@ -20,8 +20,8 @@ public class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends NodeC
     return CheckNodeForErrorMessagesOperation_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
 
-  public void virtual_perform_1215601182156(SNode thisNode, SNode node) {
-    CheckNodeForErrorMessagesOperation_Behavior.virtual_perform_1215601182156(thisNode, node);
+  public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
+    CheckNodeForErrorMessagesOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
   }
 
   @Override

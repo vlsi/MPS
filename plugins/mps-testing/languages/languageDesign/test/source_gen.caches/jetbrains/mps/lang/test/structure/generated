@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1svxgjwkcvzgqtnkryc6vx6mcz9cl9l">
+<dependencies version="2" modelHash="-ev5n7tay6mp516mc3fnh6xef3g6aw19">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -8,7 +8,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="3o1u5zqpl0y3uzzfiounih1jeir2hjx" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="13kqsy3d6o6790lacsl9jkbzj30hut9" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-47xkh2erp15j7dmw1f1o5a0zn8y1xuo" dependsOnNodes="true">
+  <common hash="d0jejaxcf3zw3hpjhm0dml4ix700c9q" dependsOnNodes="true">
     <dep root="1101347953350122484" />
     <dep root="1101347953350122758" />
     <dep root="1210673684636" />
@@ -70,7 +70,7 @@
   <source id="1214846310980" name="AbstractNodeAssert" hash="2jnhylo1w15uew5j7ubj0xg0o8eptw3" />
   <source id="1215075719096" name="CheckNodeForErrors" hash="-5omux3vpv5hm8v1gst6709bmaap23r0" />
   <source id="1215507532627" name="NodeCheckOperationsContainer" hash="5jl9l2uyffvj4ubcyxtsfykok1pkrev" />
-  <source id="1215507671101" name="NodeErrorCheckOperation" hash="2m5b8us1rpepthuo7vkojuol07h2ick" />
+  <source id="1215507671101" name="NodeErrorCheckOperation" hash="-apq9t92b30lkn7efvekmc5ivauxp4ak" />
   <source id="1215511704609" name="NodeWarningCheckOperation" hash="3uiga90rwcjvwce98jibjidvgl5vri8" />
   <source id="1215525678776" name="NodeReachable" hash="cstpjr3qvzdbr5thu8q7l4g4rq81ssf" />
   <source id="1215526290564" name="NodeTypeCheckOperation" hash="-4069p22tvrsejd4s7dln6n9c2nac6sj" />
@@ -79,8 +79,8 @@
   <source id="1215607067978" name="CheckNodeForErrorMessagesOperation" hash="8kdotjbamgedmjo10m1qwxakzpf8zcm" />
   <source id="1215611834554" name="CheckDataFlowOperation" hash="8t5mvedepcs3mh14apntiz9zta1vm7n" />
   <source id="1215612918969" name="NodeUnreachable" hash="-9l3buv1nbu38vbjpzi8xmry32ff59ir" />
-  <source id="1215614394933" name="VariableInitialized" hash="-6o494x83ds18yajw496bbqpepji13w3" />
-  <source id="1215616993394" name="VariableAlive" hash="9pjc5ousu6sf145qhyhah9me5smubu8" />
+  <source id="1215614394933" name="VariableInitialized" hash="-8f8bzthqiaaczwafdmcdbg24w5t483j" />
+  <source id="1215616993394" name="VariableAlive" hash="3xf04aw54sno750s2z4v66gjqorw6vi" />
   <source id="1216913645126" name="NodesTestCase" hash="-9u70500ebgizbppb2alr30wj6etlp39" />
   <source id="1216913689992" name="NodesTestMethod" hash="-23yu79nktdt9ltv7o5t3hvoswks7xe2" />
   <source id="1216989428737" name="TestNode" hash="7xn7s70t8lbnf43610mmblensxh15a7" />

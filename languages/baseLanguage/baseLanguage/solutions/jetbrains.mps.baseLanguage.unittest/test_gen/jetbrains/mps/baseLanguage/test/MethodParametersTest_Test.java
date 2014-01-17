@@ -40,12 +40,12 @@ public class MethodParametersTest_Test extends BaseTransformationTest4 {
 
     public void test_NodeErrorCheck3951985765451230146() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("3951985765451230146"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230144")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230144")});
     }
 
     public void test_NodeWarningCheck963887337804134458() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804134458"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3951985765451230141")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230141")});
     }
   }
 }

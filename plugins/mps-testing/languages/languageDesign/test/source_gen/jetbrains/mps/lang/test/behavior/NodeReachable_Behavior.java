@@ -4,12 +4,15 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeDataFlowCheckerUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeReachable_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_perform_1215601182156(SNode thisNode, SNode node) {
+  public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     try {
       NodeDataFlowCheckerUtil.checkDataFlow(node);
     } catch (Exception ex) {
@@ -19,5 +22,15 @@ public class NodeReachable_Behavior {
 
   public static String virtual_getName_1217435265700(SNode thisNode) {
     return "NodeReachableCheck";
+  }
+
+  @Deprecated
+  public static void call_perform_2702384151998373447(SNode thisNode, SNode node) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_245688835340859348", new Object[]{node});
+  }
+
+  @Deprecated
+  public static void callSuper_perform_2702384151998373447(SNode thisNode, String callerConceptFqName, SNode node) {
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeReachable"), callerConceptFqName, "virtual_perform_245688835340859348", new Class[]{SNode.class, SNode.class}, new Object[]{node});
   }
 }

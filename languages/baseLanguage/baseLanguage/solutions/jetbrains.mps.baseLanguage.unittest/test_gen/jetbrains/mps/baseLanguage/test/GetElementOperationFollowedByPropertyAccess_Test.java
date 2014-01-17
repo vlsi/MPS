@@ -22,7 +22,7 @@ public class GetElementOperationFollowedByPropertyAccess_Test extends BaseTransf
   public static class TestBody extends BaseTestBody {
     public void test_ErrorMessagesCheck5679018521759346994() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("5679018521759346994"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("1654036798276541486")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("1654036798276541486")});
     }
   }
 }

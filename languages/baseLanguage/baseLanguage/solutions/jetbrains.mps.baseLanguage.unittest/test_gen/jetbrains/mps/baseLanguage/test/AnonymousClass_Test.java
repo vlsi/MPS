@@ -40,12 +40,12 @@ public class AnonymousClass_Test extends BaseTransformationTest4 {
 
     public void test_NodeWarningCheck963887337804206807() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("963887337804206807"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("6090235207266878331")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6090235207266878331")});
     }
 
     public void test_NodeWarningCheck6090235207266878835() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6090235207266878835"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("6090235207266878711")});
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6090235207266878711")});
     }
   }
 }

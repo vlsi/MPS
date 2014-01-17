@@ -12,6 +12,10 @@ public class NodeUnreachable_BehaviorDescriptor extends NodeCheckOperation_Behav
     return NodeUnreachable_Behavior.virtual_getName_1217435265700(thisNode);
   }
 
+  public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
+    NodeUnreachable_Behavior.virtual_perform_245688835340859348(thisNode, node);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeUnreachable";
