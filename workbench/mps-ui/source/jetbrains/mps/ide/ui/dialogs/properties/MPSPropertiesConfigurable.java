@@ -398,7 +398,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     protected TableCellRenderer getTableCellRender() {
-      return new DependencyTableCellRender(getScope());
+      return new DependencyTableCellRender();
     }
 
     protected boolean confirmRemove(final Object value) {

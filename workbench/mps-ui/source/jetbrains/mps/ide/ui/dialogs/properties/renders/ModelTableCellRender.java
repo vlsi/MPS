@@ -24,11 +24,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JTable;
 
 public class ModelTableCellRender extends ColoredTableCellRenderer {
-  protected IScope myScope;
-  public ModelTableCellRender(IScope scope) {
-    super();
-    myScope = scope;
-  }
   @Override
   protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
     setPaintFocusBorder(false);

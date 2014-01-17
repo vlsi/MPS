@@ -178,10 +178,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       init();
     }
 
-    protected IScope getScope() {
-      return ((AbstractModule) myModelDescriptor.getModule()).getScope();
-    }
-
     protected boolean confirmRemove(final Object value) {
       if (value instanceof SModelReference) {
         final SModelReference modelReference = (SModelReference) value;
@@ -217,13 +213,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setModel(myImportedModels);
 
       importedModelsTable.setDefaultRenderer(SModelReference.class,
-          new ModelTableCellRender(getScope()) {
+          new ModelTableCellRender() {
             @Override
             protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
               if (!StateUtil.isAvailable(modelReference)) {
                 return DependencyCellState.NOT_AVALIABLE;
               }
-              if (!StateUtil.isInScope(myScope, modelReference)) {
+              if (!StateUtil.isInScope(myModelDescriptor, modelReference)) {
                 return DependencyCellState.NOT_IN_SCOPE;
               }
               if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {

@@ -29,9 +29,9 @@ public class DependencyTableCellRender extends SimpleColoredRenderer implements 
   private ModuleTableCellRender myModuleTableCellRender = null;
   private ModelTableCellRender myModelTableCellRender = null;
 
-  public DependencyTableCellRender(IScope scope) {
+  public DependencyTableCellRender() {
     myModuleTableCellRender = getModuleTableCellRender();
-    myModelTableCellRender = getModelTableCellRender(scope);
+    myModelTableCellRender = getModelTableCellRender();
   }
 
   @Override
@@ -47,20 +47,11 @@ public class DependencyTableCellRender extends SimpleColoredRenderer implements 
     return render.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
   }
 
-  protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
-    if(value instanceof SModuleReference) {
-      myModuleTableCellRender.customizeCellRenderer(table, value, selected, hasFocus, row, column);
-    }
-    else if(value instanceof SModelReference) {
-      myModelTableCellRender.customizeCellRenderer(table, value, selected, hasFocus, row, column);
-    }
-  }
-
   protected ModuleTableCellRender getModuleTableCellRender() {
     return new ModuleTableCellRender();
   }
 
-  protected ModelTableCellRender getModelTableCellRender(IScope scope) {
-    return new ModelTableCellRender(scope);
+  protected ModelTableCellRender getModelTableCellRender() {
+    return new ModelTableCellRender();
   }
 }
