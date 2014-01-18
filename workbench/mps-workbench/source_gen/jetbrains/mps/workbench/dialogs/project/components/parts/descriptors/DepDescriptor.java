@@ -4,9 +4,10 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.descriptors;
 
 import jetbrains.mps.ide.ui.dialogs.properties.descriptors.VoidColumnDescriptor;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import javax.swing.table.TableCellRenderer;
-import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRendererAdapter;
+import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer;
+
+import javax.swing.table.TableCellRenderer;
 
 public class DepDescriptor extends VoidColumnDescriptor {
   private final IBindedDialog myOwner;
@@ -18,7 +19,7 @@ public class DepDescriptor extends VoidColumnDescriptor {
 
   @Override
   public TableCellRenderer createRenderer() {
-    ModuleRenderer renderer = new ModuleRenderer(myOwner.getModuleScope(), myOwner.getProjectScope());
+    ModuleRenderer renderer = new ModuleRenderer(myOwner.getModule(), myOwner.getProject());
     return new ListRendererAdapter(renderer);
   }
 }
