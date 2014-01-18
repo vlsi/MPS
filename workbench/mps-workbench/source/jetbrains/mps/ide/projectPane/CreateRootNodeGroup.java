@@ -201,7 +201,6 @@ public class CreateRootNodeGroup extends BaseGroup {
 
   private class NewRootNodeAction extends BaseAction implements DumbAware {
     private Project myProject;
-    private IScope myScope;
     public IOperationContext myContext;
     private final SNodeReference myNodeConcept;
     private final SModel myModelDescriptor;
@@ -224,8 +223,6 @@ public class CreateRootNodeGroup extends BaseGroup {
     protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
       if (!super.collectActionData(e, _params)) return false;
       myProject = MPSCommonDataKeys.PROJECT.getData(e.getDataContext());
-      myScope = MPSCommonDataKeys.SCOPE.getData(e.getDataContext());
-      if (myScope == null) return false;
       myContext = MPSCommonDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
       if (myContext == null) return false;
       return true;

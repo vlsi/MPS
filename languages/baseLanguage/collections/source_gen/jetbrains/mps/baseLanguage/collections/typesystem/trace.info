@@ -2192,130 +2192,128 @@
     <nodeInfo nodeId="7376433222636454341" fileName="TypeUtil_Collections.java" startLine="40" startPosition="18" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7376433222636453301" fileName="TypeUtil_Collections.java" startLine="41" startPosition="18" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7376433222636453987" fileName="TypeUtil_Collections.java" startLine="42" startPosition="24" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1179161332949" fileName="TypeUtil_Collections.java" startLine="43" startPosition="42" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179161049687" fileName="TypeUtil_Collections.java" startLine="44" startPosition="50" endLine="45" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179255447717" fileName="TypeUtil_Collections.java" startLine="46" startPosition="25" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1179161049696" fileName="TypeUtil_Collections.java" startLine="48" startPosition="5" endLine="49" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179161049702" fileName="TypeUtil_Collections.java" startLine="49" startPosition="117" endLine="50" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179161049709" fileName="TypeUtil_Collections.java" startLine="50" startPosition="71" endLine="51" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179161049718" fileName="TypeUtil_Collections.java" startLine="51" startPosition="249" endLine="52" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179161049724" fileName="TypeUtil_Collections.java" startLine="52" startPosition="123" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179161049731" fileName="TypeUtil_Collections.java" startLine="53" startPosition="83" endLine="54" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179161049740" fileName="TypeUtil_Collections.java" startLine="55" startPosition="92" endLine="56" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453357" fileName="TypeUtil_Collections.java" startLine="57" startPosition="5" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1179161049748" fileName="TypeUtil_Collections.java" startLine="58" startPosition="18" endLine="59" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179161049757" fileName="TypeUtil_Collections.java" startLine="59" startPosition="278" endLine="60" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179161049763" fileName="TypeUtil_Collections.java" startLine="60" startPosition="125" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179161049772" fileName="TypeUtil_Collections.java" startLine="62" startPosition="94" endLine="63" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453623" fileName="TypeUtil_Collections.java" startLine="64" startPosition="5" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7376433222636453889" fileName="TypeUtil_Collections.java" startLine="65" startPosition="15" endLine="66" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1179161450845" fileName="TypeUtil_Collections.java" startLine="66" startPosition="18" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="70" startPosition="80" endLine="71" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="71" startPosition="63" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="72" startPosition="30" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="30" endLine="74" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="74" startPosition="175" endLine="75" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="76" startPosition="31" endLine="77" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="78" startPosition="5" endLine="79" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="82" startPosition="81" endLine="83" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="83" startPosition="63" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="84" startPosition="30" endLine="85" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="30" endLine="86" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="86" startPosition="175" endLine="87" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="88" startPosition="31" endLine="89" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="90" startPosition="5" endLine="91" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="94" startPosition="81" endLine="95" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="95" startPosition="63" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="96" startPosition="30" endLine="97" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="30" endLine="98" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="98" startPosition="175" endLine="99" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="100" startPosition="31" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="102" startPosition="5" endLine="103" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179161049687" fileName="TypeUtil_Collections.java" startLine="43" startPosition="42" endLine="44" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179255447717" fileName="TypeUtil_Collections.java" startLine="45" startPosition="25" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179161049696" fileName="TypeUtil_Collections.java" startLine="47" startPosition="5" endLine="48" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179161049702" fileName="TypeUtil_Collections.java" startLine="48" startPosition="117" endLine="49" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179161049709" fileName="TypeUtil_Collections.java" startLine="49" startPosition="71" endLine="50" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179161049718" fileName="TypeUtil_Collections.java" startLine="50" startPosition="242" endLine="51" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179161049724" fileName="TypeUtil_Collections.java" startLine="51" startPosition="123" endLine="52" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179161049731" fileName="TypeUtil_Collections.java" startLine="52" startPosition="83" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179161049740" fileName="TypeUtil_Collections.java" startLine="54" startPosition="92" endLine="55" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453357" fileName="TypeUtil_Collections.java" startLine="56" startPosition="5" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1179161049748" fileName="TypeUtil_Collections.java" startLine="57" startPosition="18" endLine="58" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179161049757" fileName="TypeUtil_Collections.java" startLine="58" startPosition="271" endLine="59" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179161049763" fileName="TypeUtil_Collections.java" startLine="59" startPosition="125" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179161049772" fileName="TypeUtil_Collections.java" startLine="61" startPosition="94" endLine="62" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453623" fileName="TypeUtil_Collections.java" startLine="63" startPosition="5" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7376433222636453889" fileName="TypeUtil_Collections.java" startLine="64" startPosition="15" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1179161450845" fileName="TypeUtil_Collections.java" startLine="65" startPosition="18" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="69" startPosition="80" endLine="70" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="70" startPosition="63" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="71" startPosition="30" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="72" startPosition="30" endLine="73" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="175" endLine="74" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="75" startPosition="31" endLine="76" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="77" startPosition="5" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="81" startPosition="81" endLine="82" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="82" startPosition="63" endLine="83" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="83" startPosition="30" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="84" startPosition="30" endLine="85" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="175" endLine="86" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="87" startPosition="31" endLine="88" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="89" startPosition="5" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="93" startPosition="81" endLine="94" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="94" startPosition="63" endLine="95" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="95" startPosition="30" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="96" startPosition="30" endLine="97" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="175" endLine="98" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="99" startPosition="31" endLine="100" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="101" startPosition="5" endLine="102" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7292875354317936749" fileName="TypeUtil_Collections.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeUtil_Collections#()V" />
     <nodeInfo nodeId="1179160433086" fileName="TypeUtil_Collections.java" startLine="22" startPosition="200" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1179955110728" fileName="TypeUtil_Collections.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1179160694849" fileName="TypeUtil_Collections.java" startLine="29" startPosition="44" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1179255439739" fileName="TypeUtil_Collections.java" startLine="45" startPosition="262" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1179161049738" fileName="TypeUtil_Collections.java" startLine="54" startPosition="114" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1179161049770" fileName="TypeUtil_Collections.java" startLine="61" startPosition="87" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="75" startPosition="39" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="87" startPosition="39" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="99" startPosition="39" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1179255439739" fileName="TypeUtil_Collections.java" startLine="44" startPosition="255" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1179161049738" fileName="TypeUtil_Collections.java" startLine="53" startPosition="114" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1179161049770" fileName="TypeUtil_Collections.java" startLine="60" startPosition="87" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="74" startPosition="39" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="86" startPosition="39" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="98" startPosition="39" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1179160721395" fileName="TypeUtil_Collections.java" startLine="34" startPosition="26" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="74" startPosition="175" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="74" startPosition="175" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="86" startPosition="175" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="86" startPosition="175" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="98" startPosition="175" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="98" startPosition="175" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="30" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="30" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="30" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="30" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="30" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="30" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="70" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kv7ms9_a1a7a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="82" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kv7ms9_a0a22a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="94" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kv7ms9_a0a72a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1179160336886" fileName="TypeUtil_Collections.java" startLine="21" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="coerceTo_SequenceType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="175" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="175" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="175" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="175" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="175" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="175" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="72" startPosition="30" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="72" startPosition="30" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="84" startPosition="30" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="84" startPosition="30" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="96" startPosition="30" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="96" startPosition="30" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="69" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kv7ms9_a1a7a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="81" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kv7ms9_a0a12a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="93" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kv7ms9_a0a62a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1179160336886" fileName="TypeUtil_Collections.java" startLine="21" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="coerceTo_SequenceType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="7292875354317936751" fileName="TypeUtil_Collections.java" startLine="18" startPosition="33" endLine="18" endPosition="33" />
     <scopeInfo nodeId="1179160433087" fileName="TypeUtil_Collections.java" startLine="23" startPosition="31" endLine="24" endPosition="26" />
     <scopeInfo nodeId="1179955110729" fileName="TypeUtil_Collections.java" startLine="26" startPosition="31" endLine="27" endPosition="18" />
     <scopeInfo nodeId="1179160694850" fileName="TypeUtil_Collections.java" startLine="30" startPosition="23" endLine="31" endPosition="18" />
-    <scopeInfo nodeId="1179255439740" fileName="TypeUtil_Collections.java" startLine="46" startPosition="25" endLine="47" endPosition="18" />
-    <scopeInfo nodeId="1179161049739" fileName="TypeUtil_Collections.java" startLine="55" startPosition="92" endLine="56" endPosition="84" />
-    <scopeInfo nodeId="1179161049771" fileName="TypeUtil_Collections.java" startLine="62" startPosition="94" endLine="63" endPosition="84" />
-    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="76" startPosition="31" endLine="77" endPosition="80" />
-    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="88" startPosition="31" endLine="89" endPosition="80" />
-    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="100" startPosition="31" endLine="101" endPosition="80" />
+    <scopeInfo nodeId="1179255439740" fileName="TypeUtil_Collections.java" startLine="45" startPosition="25" endLine="46" endPosition="18" />
+    <scopeInfo nodeId="1179161049739" fileName="TypeUtil_Collections.java" startLine="54" startPosition="92" endLine="55" endPosition="84" />
+    <scopeInfo nodeId="1179161049771" fileName="TypeUtil_Collections.java" startLine="61" startPosition="94" endLine="62" endPosition="84" />
+    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="75" startPosition="31" endLine="76" endPosition="80" />
+    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="87" startPosition="31" endLine="88" endPosition="80" />
+    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="99" startPosition="31" endLine="100" endPosition="80" />
     <scopeInfo nodeId="7292875354317936749" fileName="TypeUtil_Collections.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1179160721396" fileName="TypeUtil_Collections.java" startLine="35" startPosition="99" endLine="37" endPosition="91">
       <varInfo nodeId="1179160837005" varName="classifierType" />
     </scopeInfo>
-    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="74" startPosition="175" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="86" startPosition="175" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="98" startPosition="175" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="30" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="30" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="30" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="70" startPosition="80" endLine="79" endPosition="24">
+    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="73" startPosition="175" endLine="77" endPosition="5" />
+    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="85" startPosition="175" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="97" startPosition="175" endLine="101" endPosition="5" />
+    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="72" startPosition="30" endLine="77" endPosition="5" />
+    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="84" startPosition="30" endLine="89" endPosition="5" />
+    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="96" startPosition="30" endLine="101" endPosition="5" />
+    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="69" startPosition="80" endLine="78" endPosition="24">
       <varInfo nodeId="1196777966153" varName="facade" />
       <varInfo nodeId="1196777966153" varName="quotedNode_2" />
       <varInfo nodeId="1196777966153" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="82" startPosition="81" endLine="91" endPosition="24">
+    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="81" startPosition="81" endLine="90" endPosition="24">
       <varInfo nodeId="1196777966164" varName="facade" />
       <varInfo nodeId="1196777966164" varName="quotedNode_2" />
       <varInfo nodeId="1196777966164" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="94" startPosition="81" endLine="103" endPosition="24">
+    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="93" startPosition="81" endLine="102" endPosition="24">
       <varInfo nodeId="1196777966175" varName="facade" />
       <varInfo nodeId="1196777966175" varName="quotedNode_2" />
       <varInfo nodeId="1196777966175" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="70" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1196777966153" fileName="TypeUtil_Collections.java" startLine="69" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1196777966153" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="82" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1196777966164" fileName="TypeUtil_Collections.java" startLine="81" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1196777966164" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="94" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="1196777966175" fileName="TypeUtil_Collections.java" startLine="93" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="1196777966175" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1179160336889" fileName="TypeUtil_Collections.java" startLine="21" startPosition="57" endLine="67" endPosition="16">
+    <scopeInfo nodeId="1179160336889" fileName="TypeUtil_Collections.java" startLine="21" startPosition="57" endLine="66" endPosition="16">
       <varInfo nodeId="1179161049688" varName="entity" />
       <varInfo nodeId="1179161049749" varName="entityIterable" />
       <varInfo nodeId="1179161049758" varName="entityIterableType" />
       <varInfo nodeId="1179161049697" varName="entityType" />
       <varInfo nodeId="1179161049710" varName="javaIterable" />
       <varInfo nodeId="1179161049719" varName="javaIterableType" />
-      <varInfo nodeId="1179161332950" varName="scope" />
       <varInfo nodeId="1179160424193" varName="sequenceType" />
     </scopeInfo>
-    <scopeInfo nodeId="1179160336886" fileName="TypeUtil_Collections.java" startLine="21" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1179160336886" fileName="TypeUtil_Collections.java" startLine="21" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1179160363852" varName="type" />
     </scopeInfo>
-    <unitInfo nodeId="1179160244196" fileName="TypeUtil_Collections.java" startLine="17" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypeUtil_Collections" />
+    <unitInfo nodeId="1179160244196" fileName="TypeUtil_Collections.java" startLine="17" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.TypeUtil_Collections" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1179262299939">
     <nodeInfo nodeId="1944196602935396574" fileName="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java" startLine="23" startPosition="114" endLine="24" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

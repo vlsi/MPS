@@ -9,7 +9,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.core.structure.behavior.SEnumeration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -48,7 +47,7 @@ public class ResolveUtil {
     }
 
     String qualifiedName = SEnumeration_Behavior.call_getQualifiedName_2541782749654946768(enumeration);
-    return SNodeOperations.as(SModelUtil.findNodeByFQName(qualifiedName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), GlobalScope.getInstance()), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+    return SNodeOperations.as(SModelUtil.findNodeByFQName(qualifiedName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   }
 
 

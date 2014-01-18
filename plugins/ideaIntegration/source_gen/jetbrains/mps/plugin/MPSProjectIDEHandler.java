@@ -157,7 +157,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode cls = SModelUtil.findNodeByFQName(fqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance());
+        SNode cls = SModelUtil.findNodeByFQName(fqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + fqName);
           return;
@@ -178,7 +178,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
 
         }
-        SNode cls = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelUtil.findNodeByFQName(classFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
+        SNode cls = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelUtil.findNodeByFQName(classFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier")), "jetbrains.mps.baseLanguage.structure.Classifier");
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
           return;

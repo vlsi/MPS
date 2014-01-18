@@ -15,7 +15,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
@@ -53,10 +53,6 @@ public class FindModelUsages_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("scope", event.getData(MPSCommonDataKeys.SCOPE));
-    if (MapSequence.fromMap(_params).get("scope") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
@@ -77,7 +73,7 @@ public class FindModelUsages_Action extends BaseAction {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final SModel model = ((SModel) MapSequence.fromMap(_params).get("model"));
-      final SearchScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
+      final SearchScope scope = GlobalScope.getInstance();
 
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {

@@ -157,7 +157,7 @@ __switch__:
     if (nodeName == null) {
       return null;
     }
-    SNode node = SModelUtil.findNodeByFQName(nodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), GlobalScope.getInstance());
+    SNode node = SModelUtil.findNodeByFQName(nodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
     if (node == null) {
       return null;
     }

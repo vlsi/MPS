@@ -7,10 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -54,10 +54,10 @@ public class SModelUtil {
   }
 
   @Deprecated
-  public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
+  public static SNode findNodeByFQName(String nodeFQName, SNode concept) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for (SModel descriptor : Sequence.fromIterable(scope.getModelDescriptors())) {
+    for (SModel descriptor : Sequence.fromIterable(GlobalScope.getInstance().getModelDescriptors())) {
       if (!(modelName.equals(SNodeOperations.getModelLongName(descriptor)))) {
         continue;
       }
@@ -91,7 +91,7 @@ public class SModelUtil {
           return null;
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-        SNode result = language.findConceptDeclaration(conceptName);
+        SNode result = (SNode) language.findConceptDeclaration(conceptName);
         if (result != null) {
           SModelUtil.myFQNameToConcepDecl.putIfAbsent(InternUtil.intern(conceptFQName), result);
         }

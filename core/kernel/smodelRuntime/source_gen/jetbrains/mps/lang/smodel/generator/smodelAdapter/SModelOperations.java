@@ -12,7 +12,6 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.ConditionalIterable;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,6 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
@@ -125,18 +125,18 @@ public class SModelOperations {
     return result;
   }
 
-  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, String conceptFqName) {
+  public static SNode createNewNode(SModel model, String conceptFqName) {
     return createNewNode(model, null, conceptFqName);
   }
 
-  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
+  public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
     if (conceptFqName == null) {
       return null;
     }
 
     SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (jetbrains.mps.smodel.SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
+      SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
       if (id != null) {
         ((jetbrains.mps.smodel.SNode) node).setId(id);
       }
@@ -147,16 +147,16 @@ public class SModelOperations {
       return null;
     }
     BehaviorReflection.initNode(result);
-    return ((jetbrains.mps.smodel.SNode) result);
+    return ((SNode) result);
   }
 
   @Deprecated
-  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
+  public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
     return createNewNode(model, conceptFqName);
   }
 
-  public static jetbrains.mps.smodel.SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    jetbrains.mps.smodel.SNode newNode = createNewNode(model, conceptFqName);
+  public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
+    SNode newNode = createNewNode(model, conceptFqName);
     model.addRootNode(newNode);
     return newNode;
 
