@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.project.GlobalScope;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -33,6 +32,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConceptBehavior_Behavior {
@@ -147,7 +147,7 @@ public class ConceptBehavior_Behavior {
     if ((baseNode == null)) {
       return new ArrayList<SNode>();
     }
-    return AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(baseNode, GlobalScope.getInstance());
+    return AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(baseNode);
   }
 
   public static List<SNode> call_getAllSuperBehaviors_1818770337282950280(SNode thisNode) {

@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,7 +22,7 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
   }
 
   public void applyRule(final SNode abstractConceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(abstractConceptDeclaration, GlobalScope.getInstance());
+    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(abstractConceptDeclaration);
     if (SPropertyOperations.getBoolean(abstractConceptDeclaration, "abstract")) {
       return;
     }

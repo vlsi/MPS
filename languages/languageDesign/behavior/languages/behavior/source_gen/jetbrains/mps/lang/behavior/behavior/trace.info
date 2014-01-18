@@ -51,7 +51,7 @@
     <nodeInfo nodeId="5418393554803775760" fileName="ConceptBehavior_Behavior.java" startLine="141" startPosition="5" endLine="142" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7648674000049568633" fileName="ConceptBehavior_Behavior.java" startLine="145" startPosition="95" endLine="146" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7648674000049568651" fileName="ConceptBehavior_Behavior.java" startLine="147" startPosition="29" endLine="148" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7648674000049573674" fileName="ConceptBehavior_Behavior.java" startLine="149" startPosition="5" endLine="150" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7648674000049573674" fileName="ConceptBehavior_Behavior.java" startLine="149" startPosition="5" endLine="150" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4892662966716496800" fileName="ConceptBehavior_Behavior.java" startLine="153" startPosition="91" endLine="154" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4892662966716496813" fileName="ConceptBehavior_Behavior.java" startLine="154" startPosition="64" endLine="155" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4892662966716496843" fileName="ConceptBehavior_Behavior.java" startLine="155" startPosition="55" endLine="156" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -235,7 +235,7 @@
     <scopeInfo nodeId="1240544041071409909" fileName="ConceptBehavior_Behavior.java" startLine="120" startPosition="79" endLine="125" endPosition="9">
       <varInfo nodeId="1240544041071409921" varName="baseMeth" />
     </scopeInfo>
-    <scopeInfo nodeId="7648674000049565613" fileName="ConceptBehavior_Behavior.java" startLine="145" startPosition="95" endLine="150" endPosition="135">
+    <scopeInfo nodeId="7648674000049565613" fileName="ConceptBehavior_Behavior.java" startLine="145" startPosition="95" endLine="150" endPosition="108">
       <varInfo nodeId="7648674000049568634" varName="baseNode" />
     </scopeInfo>
     <scopeInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
