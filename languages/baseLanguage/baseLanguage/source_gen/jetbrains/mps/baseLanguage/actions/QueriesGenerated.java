@@ -3094,7 +3094,7 @@ public class QueriesGenerated {
           SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions");
           SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
           SPropertyOperations.set(newNode, "dimensionCount", "" + (numOfDimensions));
-          SelectionUtil.selectCell(editorContext, newNode, "init");
+          SelectionUtil.selectCell(editorContext, newNode, "");
           return newNode;
         } else {
           SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
@@ -5881,6 +5881,37 @@ __switch__:
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_5027805959595976132(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ArrayCreatorWithInitializer_8820682311103172168(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode replacing = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions");
+        SPropertyOperations.set(replacing, "dimensionCount", "" + (2));
+        SLinkOperations.setTarget(replacing, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(replacing, "arrayInitializers", true), "initValue", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)));
+        editorContext.selectWRTFocusPolicy(SLinkOperations.getTarget(replacing, "arrayInitializers", true));
+        return replacing;
+      }
+
+      public String getMatchingText(String pattern) {
+        return "[";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions"), null));
+      }
+    });
+    return result;
   }
 
   private static SNode _quotation_createNode_ns07og_a0a0a0x() {

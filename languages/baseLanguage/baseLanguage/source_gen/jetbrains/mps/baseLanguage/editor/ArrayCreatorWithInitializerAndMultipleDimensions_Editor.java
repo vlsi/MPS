@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 
 public class ArrayCreatorWithInitializerAndMultipleDimensions_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -75,6 +76,7 @@ public class ArrayCreatorWithInitializerAndMultipleDimensions_Editor extends Def
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyBracket(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -87,6 +89,9 @@ public class ArrayCreatorWithInitializerAndMultipleDimensions_Editor extends Def
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setRole("arrayInitializers");
+    }
+    if (true) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
     }
     ArrayInitializers_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
