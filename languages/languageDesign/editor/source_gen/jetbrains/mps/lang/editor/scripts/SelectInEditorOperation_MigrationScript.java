@@ -6,10 +6,9 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.StaticReference;
@@ -19,32 +18,6 @@ import jetbrains.mps.project.AbstractModule;
 public class SelectInEditorOperation_MigrationScript extends BaseMigrationScript {
   public SelectInEditorOperation_MigrationScript(IOperationContext operationContext) {
     super("SelectOperation -> SelectInEditorOperation");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "SelectOperation without parameters";
-      }
-
-      public String getAdditionalInfo() {
-        return "SelectOperation without parameters";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.editor.structure.SelectOperation";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return ListSequence.fromList(SLinkOperations.getTargets(node, "selectLaterParameter", true)).isEmpty();
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode selectInEditorOperation = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
-        SLinkOperations.setTarget(selectInEditorOperation, "editorContext", SLinkOperations.getTarget(node, "editorContext", true), true);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.nodeEditor.selection.SelectionManager classified with static fields from jetbrains.mps.openapi.editor.selection.SelectionManager";
