@@ -40,7 +40,6 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
@@ -543,7 +542,7 @@ public class RefactoringContext {
     mySelectedModules = modules;
   }
 
-  public void setCurrentScope(IScope currentScope) {
+  public void setCurrentScope(SearchScope currentScope) {
     myCurrentScope = currentScope;
   }
 
