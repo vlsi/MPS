@@ -13,6 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -31,7 +34,7 @@ public class typeof_ArrayInitializers_InferenceRule extends AbstractInferenceRul
         typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(elementType_typevar_7150822681946998394), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7150822681947062538", true), false, true, _info_12389875345);
       }
       if (!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.baseLanguage.structure.ArrayInitializers"))) {
-        SNode surroundingArrayCreator = SNodeOperations.getAncestor(arrayInitializers, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions", false, false);
+        final SNode surroundingArrayCreator = SNodeOperations.getAncestor(arrayInitializers, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions", false, false);
         if ((surroundingArrayCreator == null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
@@ -50,6 +53,16 @@ public class typeof_ArrayInitializers_InferenceRule extends AbstractInferenceRul
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8820682311078305949", 0, null);
             typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8820682311078305955", true), (SNode) SLinkOperations.getTarget(surroundingArrayCreator, "componentType", true), true, true, _info_12389875345);
           }
+        }
+
+        int levelOfNesting = ListSequence.fromList(SNodeOperations.getAncestors(arrayInitializers, "jetbrains.mps.baseLanguage.structure.ArrayInitializers", false)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return eq_986eq1_a0a0a0a0a0a0a5a1a1a1(SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializerAndMultipleDimensions", false, false), surroundingArrayCreator);
+          }
+        }).count() + 1;
+        if (!(levelOfNesting == SPropertyOperations.getInteger(surroundingArrayCreator, "dimensionCount"))) {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(surroundingArrayCreator, "The initializer does not cover all the expected dimensions", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2260576595920583857", null, errorTarget);
         }
       }
     }
@@ -85,5 +98,9 @@ public class typeof_ArrayInitializers_InferenceRule extends AbstractInferenceRul
       quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
+  }
+
+  private static boolean eq_986eq1_a0a0a0a0a0a0a5a1a1a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
