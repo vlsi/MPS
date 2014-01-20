@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
@@ -194,7 +193,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     public boolean canSubstitute(String pattern) {
       if (myPostfixGroup.canSubstitute(pattern, myPostfix)) {
         String text = myPostfixGroup.getMatchingText(pattern, myPostfix);
-        return myPropertySupport.canSetValue(getSourceNode(), myPropertyName, text, GlobalScope.getInstance());
+        return myPropertySupport.canSetValue(getSourceNode(), myPropertyName, text);
       } else {
         return false;
       }

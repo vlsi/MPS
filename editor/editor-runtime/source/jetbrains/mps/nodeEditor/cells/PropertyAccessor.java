@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -114,7 +113,7 @@ public class PropertyAccessor implements ModelAccessor {
     SNode node = getPropertyDeclaration();
     if (node != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
-      return propertySupport.canSetValue(myNode, myPropertyName, text, GlobalScope.getInstance());
+      return propertySupport.canSetValue(myNode, myPropertyName, text);
     }
     return true;
   }
