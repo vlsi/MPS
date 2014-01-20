@@ -38,7 +38,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.util.Computable;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
@@ -204,7 +204,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
-  private void findUsages(@NotNull final SNode node, final IScope scope, final IResultProvider provider) {
+  private void findUsages(@NotNull final SNode node, final SearchScope scope, final IResultProvider provider) {
     new Thread() {
       @Override
       public void run() {

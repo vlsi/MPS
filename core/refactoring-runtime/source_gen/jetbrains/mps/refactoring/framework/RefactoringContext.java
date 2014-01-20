@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.StructureModificationData;
@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
@@ -64,7 +65,7 @@ public class RefactoringContext {
   private SNode mySelectedNode;
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   private IOperationContext myCurrentOperationContext;
-  private IScope myCurrentScope;
+  private SearchScope myCurrentScope;
   private final Project myProject;
   private SModule mySelectedModule;
   private List<SModel> mySelectedModels;
@@ -554,7 +555,7 @@ public class RefactoringContext {
     return myProject;
   }
 
-  public IScope getCurrentScope() {
+  public SearchScope getCurrentScope() {
     return myCurrentScope;
   }
 
