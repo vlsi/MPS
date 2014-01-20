@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.QueriesUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -38,6 +37,7 @@ import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Beha
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -100,11 +100,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1168979597371(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_1168979716443(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_6960953357954081795(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
