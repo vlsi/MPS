@@ -75,7 +75,7 @@ public class ArrayCreatorWithInitializerAndMultipleDimensions_Editor extends Def
     editorCell.setCellId("Custom_mt0wuo_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyBracket(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     return editorCell;

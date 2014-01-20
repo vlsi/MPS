@@ -22415,7 +22415,7 @@
           </node>
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="8820682311093061268" nodeInfo="nn">
-          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="2260576595910190825" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
