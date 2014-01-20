@@ -817,16 +817,6 @@
           <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a9.~EditorContext%dselect(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="select" />
         </node>
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841679" nodeInfo="ng">
-        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476844" nodeInfo="ng">
-          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a9.~EditorContext%dselectBefore(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectBefore" />
-        </node>
-      </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841680" nodeInfo="ng">
-        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476845" nodeInfo="ng">
-          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a9.~EditorContext%dselectAfter(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectAfter" />
-        </node>
-      </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841681" nodeInfo="ng">
         <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476846" nodeInfo="ng">
           <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a9.~EditorContext%dselectAndSetCaret(org%djetbrains%dmps%dopenapi%dmodel%dSNode,int)%cvoid" resolveInfo="selectAndSetCaret" />
@@ -866,11 +856,6 @@
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841688" nodeInfo="ng">
         <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476853" nodeInfo="ng">
           <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a9.~EditorContext%dflushEvents()%cvoid" resolveInfo="flushEvents" />
-        </node>
-      </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841689" nodeInfo="ng">
-        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476854" nodeInfo="ng">
-          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a9.~EditorContext%dgetScope()%cjetbrains%dmps%dsmodel%dIScope" resolveInfo="getScope" />
         </node>
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841690" nodeInfo="ng">
