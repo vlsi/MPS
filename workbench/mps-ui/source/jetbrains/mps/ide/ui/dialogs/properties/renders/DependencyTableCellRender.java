@@ -18,7 +18,6 @@ package jetbrains.mps.ide.ui.dialogs.properties.renders;
 import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.SimpleColoredRenderer;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import javax.swing.JTable;
