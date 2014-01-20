@@ -51,7 +51,7 @@ public class ArrayInitializers_Editor extends DefaultNodeEditor {
   private EditorCell createRefNodeList_xlg31d_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ArrayInitializers_Editor.initValueListHandler_xlg31d_b0(node, "initValue", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("initializers");
+    editorCell.setCellId("refNodeList_initValue");
     ArrayInitializers_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

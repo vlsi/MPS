@@ -44,6 +44,7 @@ public class ArrayCreatorWithInitializerAndMultipleDimensions_Editor extends Def
     if (editorCell.getRole() == null) {
       editorCell.setRole("componentType");
     }
+    MultiDimension2OneDimensionArrayCreator.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,6 +78,7 @@ public class ArrayCreatorWithInitializerAndMultipleDimensions_Editor extends Def
     BaseLanguageStyle_StyleSheet.applyBracket(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
