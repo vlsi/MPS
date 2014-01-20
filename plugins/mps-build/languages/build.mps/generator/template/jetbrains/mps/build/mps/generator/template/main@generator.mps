@@ -4272,7 +4272,7 @@
             </node>
           </node>
           <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8654221991637412118" nodeInfo="ng">
-            <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.mps, **/*.metadata, **/*.history" />
+            <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
           </node>
         </node>
         <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="8654221991637263175" nodeInfo="ng">
