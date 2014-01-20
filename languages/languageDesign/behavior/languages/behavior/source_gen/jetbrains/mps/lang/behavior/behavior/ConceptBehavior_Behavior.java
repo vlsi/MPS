@@ -27,7 +27,6 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -188,19 +187,6 @@ public class ConceptBehavior_Behavior {
       }
     }
     return result;
-  }
-
-  public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
-    List<SNode> methods = new ArrayList<SNode>();
-    for (SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {
-      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
-      if (behavior != null) {
-        for (SNode method : SLinkOperations.getTargets(behavior, "method", true)) {
-          ListSequence.fromList(methods).addElement(method);
-        }
-      }
-    }
-    return methods;
   }
 
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
