@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -51,6 +52,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
   private final SNode myRuleConsequence;
   private final boolean myApplyToInheritors;
   private final SNodePointer myNodePointer;
+  private final ReductionRuleCondition myCondition;
 
   public TemplateReductionRuleInterpreted(SNode ruleNode) {
     this.ruleNode = ruleNode;
@@ -61,6 +63,28 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     myRuleConsequence = RuleUtil.getReductionRuleConsequence(ruleNode);
     myApplyToInheritors = RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode);
     myNodePointer = new SNodePointer(ruleNode);
+    if (myConditionMethodName != null) {
+      myCondition = tryConditionFactory(ruleNode, myConditionMethodName);
+    } else {
+      myCondition = null;
+    }
+  }
+
+  public static ReductionRuleCondition tryConditionFactory(SNode ruleNode, String conditionMethodName) {
+    try {
+      Class<?> qg = QueryMethodGenerated.getQueriesGeneratedClassFor(ruleNode.getModel(), false);
+      if (qg != null && ReductionRuleCondition.Factory.class.isAssignableFrom(qg)) {
+        ReductionRuleCondition.Factory f = ((Class<ReductionRuleCondition.Factory>) qg).newInstance();
+        return f.getReductionRuleCondition(conditionMethodName);
+      }
+    } catch (ClassNotFoundException ex) {
+      // ignore, the error has been reported
+    } catch (InstantiationException e) {
+      // FIXME ignore now, shall report
+    } catch (IllegalAccessException e) {
+      // FIXME ignore now, shall report
+    }
+    return null;
   }
 
   @Override
@@ -106,6 +130,9 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
   private boolean checkCondition(TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
     if (baseRuleCondition == null) {
       return true;
+    }
+    if (myCondition != null) {
+      return myCondition.check(new ReductionRuleQueryContext(context, ruleNode, generator));
     }
 
     try {

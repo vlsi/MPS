@@ -33,6 +33,8 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   private List<MappingPriorityRule> myPriorityRules;
 
   private boolean myGenerateTemplates = false;
+  private boolean myQueriesViaReflection = true;
+  private boolean myNeedsOpContext = true;
 
   public GeneratorDescriptor() {
     super();
@@ -62,6 +64,27 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   public void setGenerateTemplates(boolean generateTemplates) {
     myGenerateTemplates = generateTemplates;
+  }
+
+  /**
+   * @return <code>true</code> to execute method in QueriesGenerated via reflection,
+   * <code>false</code> to provide mechanism for direct calls
+   */
+  public boolean isReflectiveQueries() {
+    return myQueriesViaReflection;
+  }
+  public void setReflectiveQueries(boolean value) {
+    myQueriesViaReflection = value;
+  }
+
+  /**
+   * @return <code>true</code> if query methods in QueriesGenerated require IOperationContext parameter.
+   */
+  public boolean needsOperationContext() {
+    return myNeedsOpContext;
+  }
+  public void setNeedOperationContext(boolean value) {
+    myNeedsOpContext = value;
   }
 
   @Override
