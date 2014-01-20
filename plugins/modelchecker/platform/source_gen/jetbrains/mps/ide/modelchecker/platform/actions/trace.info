@@ -1171,63 +1171,43 @@
     <unitInfo nodeId="3719390199793467248" fileName="ConstraintsChecker.java" startLine="24" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ConstraintsChecker" />
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793467569">
-    <nodeInfo nodeId="3719390199793467576" fileName="ModelPropertiesChecker.java" startLine="24" startPosition="134" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3719390199793467588" fileName="ModelPropertiesChecker.java" startLine="25" startPosition="41" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3719390199793467589" fileName="ModelPropertiesChecker.java" startLine="26" startPosition="0" endLine="27" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3719390199793467598" fileName="ModelPropertiesChecker.java" startLine="27" startPosition="124" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3719390199793467599" fileName="ModelPropertiesChecker.java" startLine="28" startPosition="0" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3719390199793467604" fileName="ModelPropertiesChecker.java" startLine="29" startPosition="35" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3719390199793467618" fileName="ModelPropertiesChecker.java" startLine="31" startPosition="16" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3719390199793467634" fileName="ModelPropertiesChecker.java" startLine="33" startPosition="55" endLine="34" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3719390199793467642" fileName="ModelPropertiesChecker.java" startLine="35" startPosition="57" endLine="36" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3719390199793467657" fileName="ModelPropertiesChecker.java" startLine="37" startPosition="63" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3719390199793467666" fileName="ModelPropertiesChecker.java" startLine="39" startPosition="9" endLine="40" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3719390199793467692" fileName="ModelPropertiesChecker.java" startLine="42" startPosition="5" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3719390199793467696" fileName="ModelPropertiesChecker.java" startLine="43" startPosition="19" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3719390199793467607" fileName="ModelPropertiesChecker.java" startLine="48" startPosition="36" endLine="49" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3719390199793467607" fileName="ModelPropertiesChecker.java" startLine="50" startPosition="5" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3719390199793467611" fileName="ModelPropertiesChecker.java" startLine="55" startPosition="36" endLine="56" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3719390199793467611" fileName="ModelPropertiesChecker.java" startLine="57" startPosition="5" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3719390199793467570" fileName="ModelPropertiesChecker.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelPropertiesChecker#()V" />
-    <nodeInfo nodeId="3719390199793467607" fileName="ModelPropertiesChecker.java" startLine="47" startPosition="78" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3719390199793467611" fileName="ModelPropertiesChecker.java" startLine="54" startPosition="74" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3719390199793467640" fileName="ModelPropertiesChecker.java" startLine="34" startPosition="74" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3719390199793467607" fileName="ModelPropertiesChecker.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_t4d01o_a0f0b#(Ljetbrains/mps/project/AbstractModule;)Ljetbrains/mps/smodel/IScope;" />
-    <nodeInfo nodeId="3719390199793467611" fileName="ModelPropertiesChecker.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_t4d01o_a0a0a5a1#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-    <nodeInfo nodeId="3719390199793467628" fileName="ModelPropertiesChecker.java" startLine="32" startPosition="75" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3719390199793467615" fileName="ModelPropertiesChecker.java" startLine="30" startPosition="97" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3719390199793467574" fileName="ModelPropertiesChecker.java" startLine="23" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
-    <scopeInfo nodeId="3719390199793467571" fileName="ModelPropertiesChecker.java" startLine="20" startPosition="35" endLine="20" endPosition="35" />
-    <scopeInfo nodeId="3719390199793467641" fileName="ModelPropertiesChecker.java" startLine="35" startPosition="57" endLine="36" endPosition="77" />
-    <scopeInfo nodeId="3719390199793467656" fileName="ModelPropertiesChecker.java" startLine="37" startPosition="63" endLine="38" endPosition="34" />
-    <scopeInfo nodeId="3719390199793467607" fileName="ModelPropertiesChecker.java" startLine="48" startPosition="36" endLine="49" endPosition="42" />
-    <scopeInfo nodeId="3719390199793467611" fileName="ModelPropertiesChecker.java" startLine="55" startPosition="36" endLine="56" endPosition="43" />
-    <scopeInfo nodeId="3719390199793467570" fileName="ModelPropertiesChecker.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3719390199793467607" fileName="ModelPropertiesChecker.java" startLine="47" startPosition="78" endLine="51" endPosition="16" />
-    <scopeInfo nodeId="3719390199793467611" fileName="ModelPropertiesChecker.java" startLine="54" startPosition="74" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="3719390199793467607" fileName="ModelPropertiesChecker.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="3719390199793467607" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="3719390199793467611" fileName="ModelPropertiesChecker.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="3719390199793467611" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="3719390199793467633" fileName="ModelPropertiesChecker.java" startLine="33" startPosition="55" endLine="40" endPosition="347">
+    <nodeInfo nodeId="3719390199793467576" fileName="ModelPropertiesChecker.java" startLine="21" startPosition="134" endLine="22" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793467588" fileName="ModelPropertiesChecker.java" startLine="22" startPosition="41" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3719390199793467589" fileName="ModelPropertiesChecker.java" startLine="23" startPosition="0" endLine="24" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3719390199793467598" fileName="ModelPropertiesChecker.java" startLine="24" startPosition="124" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3719390199793467599" fileName="ModelPropertiesChecker.java" startLine="25" startPosition="0" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3719390199793467618" fileName="ModelPropertiesChecker.java" startLine="27" startPosition="16" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3719390199793467634" fileName="ModelPropertiesChecker.java" startLine="29" startPosition="55" endLine="30" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3719390199793467642" fileName="ModelPropertiesChecker.java" startLine="31" startPosition="57" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793467657" fileName="ModelPropertiesChecker.java" startLine="33" startPosition="63" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793467666" fileName="ModelPropertiesChecker.java" startLine="35" startPosition="9" endLine="36" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793467692" fileName="ModelPropertiesChecker.java" startLine="38" startPosition="5" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793467696" fileName="ModelPropertiesChecker.java" startLine="39" startPosition="19" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3719390199793467570" fileName="ModelPropertiesChecker.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelPropertiesChecker#()V" />
+    <nodeInfo nodeId="3719390199793467640" fileName="ModelPropertiesChecker.java" startLine="30" startPosition="74" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3719390199793467628" fileName="ModelPropertiesChecker.java" startLine="28" startPosition="75" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3719390199793467615" fileName="ModelPropertiesChecker.java" startLine="26" startPosition="35" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3719390199793467574" fileName="ModelPropertiesChecker.java" startLine="20" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <scopeInfo nodeId="3719390199793467571" fileName="ModelPropertiesChecker.java" startLine="17" startPosition="35" endLine="17" endPosition="35" />
+    <scopeInfo nodeId="3719390199793467641" fileName="ModelPropertiesChecker.java" startLine="31" startPosition="57" endLine="32" endPosition="77" />
+    <scopeInfo nodeId="3719390199793467656" fileName="ModelPropertiesChecker.java" startLine="33" startPosition="63" endLine="34" endPosition="34" />
+    <scopeInfo nodeId="3719390199793467570" fileName="ModelPropertiesChecker.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3719390199793467633" fileName="ModelPropertiesChecker.java" startLine="29" startPosition="55" endLine="36" endPosition="347">
       <varInfo nodeId="3719390199793467635" varName="extraMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="3719390199793467617" fileName="ModelPropertiesChecker.java" startLine="31" startPosition="16" endLine="41" endPosition="7">
+    <scopeInfo nodeId="3719390199793467617" fileName="ModelPropertiesChecker.java" startLine="27" startPosition="16" endLine="37" endPosition="7">
       <varInfo nodeId="3719390199793467619" varName="errors" />
     </scopeInfo>
-    <scopeInfo nodeId="3719390199793467575" fileName="ModelPropertiesChecker.java" startLine="24" startPosition="134" endLine="44" endPosition="19">
+    <scopeInfo nodeId="3719390199793467575" fileName="ModelPropertiesChecker.java" startLine="21" startPosition="134" endLine="40" endPosition="19">
       <varInfo nodeId="3719390199793467600" varName="modelDescriptor" />
       <varInfo nodeId="3719390199793467590" varName="results" />
-      <varInfo nodeId="3719390199793467605" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3719390199793467574" fileName="ModelPropertiesChecker.java" startLine="23" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="3719390199793467574" fileName="ModelPropertiesChecker.java" startLine="20" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="3719390199793467698" varName="model" />
       <varInfo nodeId="3719390199793467700" varName="monitor" />
       <varInfo nodeId="3719390199793467702" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="3719390199793467569" fileName="ModelPropertiesChecker.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelPropertiesChecker" />
+    <unitInfo nodeId="3719390199793467569" fileName="ModelPropertiesChecker.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelPropertiesChecker" />
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199793467711">
     <nodeInfo nodeId="3719390199793467721" fileName="UnavailableConceptsChecker.java" startLine="22" startPosition="134" endLine="23" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
