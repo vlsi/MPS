@@ -76,7 +76,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

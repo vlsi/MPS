@@ -12613,8 +12613,8 @@
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7759108129870360724" nodeInfo="ir">
                       <property name="name" nameId="tpck.1169194664001" value="scope" />
                       <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7759108129870360725" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2d.~IScope" resolveInfo="IScope" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2855296803410770552" nodeInfo="in">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zx.~SearchScope" resolveInfo="SearchScope" />
                       </node>
                     </node>
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7759108129870360726" nodeInfo="sn">
@@ -12732,7 +12732,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7759108129870360724" resolveInfo="scope" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7759108129870360741" nodeInfo="nn">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~IScope%dgetModelDescriptors()%cjava%dlang%dIterable" resolveInfo="getModelDescriptors" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="88zx.~SearchScope%dgetModels()%cjava%dlang%dIterable" resolveInfo="getModels" />
                                 </node>
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363082730" nodeInfo="nn">
@@ -13084,8 +13084,8 @@
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7759108129870525705" nodeInfo="ir">
                       <property name="name" nameId="tpck.1169194664001" value="scope" />
                       <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7759108129870525706" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2d.~IScope" resolveInfo="IScope" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2855296803410791635" nodeInfo="in">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zx.~SearchScope" resolveInfo="SearchScope" />
                       </node>
                     </node>
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7759108129870525707" nodeInfo="sn">
@@ -13112,7 +13112,7 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="7759108129870525714" nodeInfo="nn">
                         <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7759108129870525715" nodeInfo="nn">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7759108129870525717" nodeInfo="nn">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~IScope%dgetVisibleModules()%cjava%dlang%dIterable" resolveInfo="getVisibleModules" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="88zx.~SearchScope%dgetModules()%cjava%dlang%dIterable" resolveInfo="getModules" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151670529" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7759108129870525705" resolveInfo="scope" />
@@ -14426,9 +14426,9 @@
                     <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                     <property name="name" nameId="tpck.1169194664001" value="find" />
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2777079932569210173" nodeInfo="ir">
-                      <property name="name" nameId="tpck.1169194664001" value="p0" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2777079932569210174" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2d.~IScope" resolveInfo="IScope" />
+                      <property name="name" nameId="tpck.1169194664001" value="scope" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2855296803410799202" nodeInfo="in">
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zx.~SearchScope" resolveInfo="SearchScope" />
                       </node>
                     </node>
                     <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2777079932569210175" nodeInfo="sn">

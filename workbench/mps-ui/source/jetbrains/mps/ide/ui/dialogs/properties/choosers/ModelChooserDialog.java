@@ -17,12 +17,12 @@ package jetbrains.mps.ide.ui.dialogs.properties.choosers;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.awt.HeadlessException;
 import java.util.List;
@@ -66,7 +66,7 @@ class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
       }
 
       @Override
-      public SModelReference[] find(IScope scope) {
+      public SModelReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 

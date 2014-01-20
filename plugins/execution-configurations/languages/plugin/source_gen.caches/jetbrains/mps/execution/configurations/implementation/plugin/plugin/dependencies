@@ -807,7 +807,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -822,6 +821,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.ListPanel" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectChooser" file="ProjectChooser.java">

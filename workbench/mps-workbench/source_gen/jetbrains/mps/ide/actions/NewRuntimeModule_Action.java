@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
@@ -109,7 +109,7 @@ public class NewRuntimeModule_Action extends BaseAction {
 
       BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("ideaProject")), "runtime module") {
         @Override
-        public SModuleReference[] find(IScope p0) {
+        public SModuleReference[] find(SearchScope scope) {
           return ListSequence.fromList(modules).select(new ISelector<SModule, SModuleReference>() {
             public SModuleReference select(SModule it) {
               return it.getModuleReference();

@@ -1466,7 +1466,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
@@ -1480,6 +1479,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -1502,7 +1502,6 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleItem" />
@@ -1515,6 +1514,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GoToNamedNode_Action" file="GoToNamedNode_Action.java">
@@ -2405,7 +2405,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.modules.BaseModuleItem" />
@@ -2418,6 +2417,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NewSolution_Action" file="NewSolution_Action.java">

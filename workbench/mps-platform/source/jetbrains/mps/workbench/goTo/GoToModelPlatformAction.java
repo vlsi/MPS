@@ -29,6 +29,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.ModelUtil;
@@ -72,7 +73,7 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
       }
 
       @Override
-      public SModelReference[] find(IScope scope) {
+      public SModelReference[] find(SearchScope scope) {
         Condition<SModel> cond = new Condition<SModel>() {
           @Override
           public boolean met(SModel modelDescriptor) {
@@ -82,7 +83,7 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
             return rightStereotype && hasModule;
           }
         };
-        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
+        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModels(), cond);
         List<SModelReference> result = new ArrayList<SModelReference>();
         for (SModel md : iter) {
           result.add(md.getReference());
