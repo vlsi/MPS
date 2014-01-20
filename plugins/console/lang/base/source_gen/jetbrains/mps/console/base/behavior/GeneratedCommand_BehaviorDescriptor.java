@@ -10,8 +10,8 @@ public abstract class GeneratedCommand_BehaviorDescriptor extends Command_Behavi
   public GeneratedCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
-    GeneratedCommand_Behavior.virtual_execute_6854397602732226506(thisNode, c, console, beforeCallback, afterCallback);
+  public void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
+    GeneratedCommand_Behavior.virtual_execute_6854397602732226506(thisNode, context, console, beforeCallback, afterCallback);
   }
 
   @Override

@@ -241,5 +241,10 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1377757278865717087" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="OutputConsoleRoot" />
+    <property name="rootable" nameId="tpce.1096454100552" value="true" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1583916890557930028" resolveInfo="ConsoleRoot" />
+  </root>
 </model>
 

@@ -4,6 +4,7 @@ package jetbrains.mps.console.tool;
 
 import javax.swing.JPanel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -23,14 +24,24 @@ import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import com.intellij.openapi.actionSystem.ShortcutSet;
+import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.ide.PasteProvider;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.apache.log4j.Priority;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.ide.PasteProvider;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.DataContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -39,18 +50,11 @@ import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -66,6 +70,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -75,6 +80,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public abstract class BaseConsoleTab extends JPanel {
   protected ConsoleTool myTool;
   protected SModel myModel;
+  protected SNode myRoot;
   protected FileEditor myFileEditor;
   protected UIEditorComponent myEditor;
   protected Highlighter myHighlighter;
@@ -136,6 +142,54 @@ public abstract class BaseConsoleTab extends JPanel {
     a.registerCustomShortcutSet(shortcutSet, myEditor);
     return a;
   }
+
+
+
+  protected void createEditor() {
+    this.myEditor = new UIEditorComponent(check_6q36mf_a0a0a0a91(ProjectHelper.toMPSProject(myTool.getProject())), null) {
+      @Nullable
+      @Override
+      public Object getData(@NonNls String key) {
+        if (PlatformDataKeys.FILE_EDITOR.is(key)) {
+          return myFileEditor;
+        }
+        if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
+          return new BaseConsoleTab.MyPasteProvider((PasteProvider) super.getData(key));
+        }
+        return super.getData(key);
+      }
+
+      @Override
+      public boolean isReadOnly() {
+        final SNode selectedNode = getSelectedNode();
+        final Wrappers._boolean editable = new Wrappers._boolean(false);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (selectedNode != null) {
+              EditorCell selectedCell = getSelectedCell();
+              if (eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0t(check_6q36mf_a0a1a0a0c0b0a0a0a91(selectedCell), SLinkOperations.getTarget(myRoot, "commandHolder", true)) && check_6q36mf_a0b0a0a2a1a0a0a0t(selectedCell)) {
+                editable.value = false;
+              } else {
+                editable.value = SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.console.base.structure.CommandHolder", true, false) == SLinkOperations.getTarget(myRoot, "commandHolder", true);
+              }
+            } else {
+              List<SNode> selectedNodes = getSelectedNodes();
+              if (selectedNodes != null) {
+                editable.value = ListSequence.fromList(selectedNodes).all(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return SNodeOperations.getAncestor(it, "jetbrains.mps.console.base.structure.CommandHolder", false, false) == SLinkOperations.getTarget(myRoot, "commandHolder", true);
+                  }
+                });
+              }
+            }
+          }
+        });
+        return !(editable.value);
+      }
+    };
+    myEditor.editNode(myRoot);
+  }
+
 
 
 
@@ -203,8 +257,8 @@ public abstract class BaseConsoleTab extends JPanel {
           } catch (IOException ignored) {
           }
           EditorCell currentCell = myEditor.getSelectedCell();
-          SNode referenceTarget = check_6q36mf_a0d0a0a5y(pastingNodeReference);
-          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a4a0a0f42(check_6q36mf_a0a0e0a0a5y(pastingNodeReference), myModel))) {
+          SNode referenceTarget = check_6q36mf_a0d0a0a5cb(pastingNodeReference);
+          if (referenceTarget != null && currentCell != null && !(check_6q36mf_a0a4a0a0f82(check_6q36mf_a0a0e0a0a5cb(pastingNodeReference), myModel))) {
             SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.PastedNodeReference", null);
             SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
@@ -269,16 +323,12 @@ public abstract class BaseConsoleTab extends JPanel {
 
 
 
-  protected abstract SNode getHistory();
-
-
-
   protected SNode getLastReponse() {
-    SNode last = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(getHistory(), "item", true)).last(), "jetbrains.mps.console.base.structure.Response");
+    SNode last = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).last(), "jetbrains.mps.console.base.structure.Response");
     if (last != null) {
       return last;
     }
-    return SLinkOperations.addNewChild(getHistory(), "item", "jetbrains.mps.console.base.structure.Response");
+    return SLinkOperations.addNewChild(SLinkOperations.getTarget(myRoot, "history", true), "item", "jetbrains.mps.console.base.structure.Response");
   }
 
 
@@ -309,7 +359,7 @@ public abstract class BaseConsoleTab extends JPanel {
         while (scanner.hasNextLine()) {
           String line = scanner.nextLine();
           if ((line != null && line.length() > 0)) {
-            ListSequence.fromList(SLinkOperations.getTargets(getLastReponse(), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a1a1a0a0a0a83(line));
+            ListSequence.fromList(SLinkOperations.getTargets(getLastReponse(), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a1a1a0a0a0a04(line));
           }
           if (scanner.hasNextLine() || text.charAt(text.length() - 1) == '\n') {
             SLinkOperations.addNewChild(getLastReponse(), "item", "jetbrains.mps.console.base.structure.NewLineResponseItem");
@@ -376,26 +426,23 @@ public abstract class BaseConsoleTab extends JPanel {
     this.add(scrollPane, BorderLayout.CENTER);
     this.add(myEditor.getUpperPanel(), BorderLayout.NORTH);
 
-    myHighlighter = check_6q36mf_a0t0tb(myTool.getProject());
+    myHighlighter = check_6q36mf_a0t0vb(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
 
 
-  protected abstract void createEditor();
-
-
-
   public void execute(final SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
     addNodeImports(command);
+    SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(command), true);
     BehaviorReflection.invokeVirtual(Void.class, command, "virtual_execute_6854397602732226506", new Object[]{getConsoleContext(), getConsoleStream(), new Runnable() {
       public void run() {
-        ListSequence.fromList(SLinkOperations.getTargets(getHistory(), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a0a0c0a1a94(command));
-        check_6q36mf_a1a0a0c0a1a94(executeBefore);
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).addElement(_quotation_createNode_6q36mf_a0a0a0a0c0a2a94(command));
+        check_6q36mf_a1a0a0c0a2a94(executeBefore);
       }
     }, new Runnable() {
       public void run() {
-        check_6q36mf_a0a0a0d0a1a94(executeAfter);
+        check_6q36mf_a0a0a0d0a2a94(executeAfter);
       }
     }});
   }
@@ -403,28 +450,49 @@ public abstract class BaseConsoleTab extends JPanel {
 
   protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
 
-  private static SNode check_6q36mf_a0d0a0a5y(SNodeReference checkedDotOperand) {
+  private static SRepository check_6q36mf_a0a0a0a91(Project checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRepository();
+    }
+    return null;
+  }
+
+  private static boolean check_6q36mf_a0b0a0a2a1a0a0a0t(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.isBig();
+    }
+    return false;
+  }
+
+  private static SNode check_6q36mf_a0a1a0a0c0b0a0a0a91(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNode();
+    }
+    return null;
+  }
+
+  private static SNode check_6q36mf_a0d0a0a5cb(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
 
-  private static boolean check_6q36mf_a0a4a0a0f42(SModelReference checkedDotOperand, SModel myModel) {
+  private static boolean check_6q36mf_a0a4a0a0f82(SModelReference checkedDotOperand, SModel myModel) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(myModel.getReference());
     }
     return false;
   }
 
-  private static SModelReference check_6q36mf_a0a0e0a0a5y(SNodeReference checkedDotOperand) {
+  private static SModelReference check_6q36mf_a0a0e0a0a5cb(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelReference();
     }
     return null;
   }
 
-  private static SNode _quotation_createNode_6q36mf_a0a0a1a1a0a0a0a83(Object parameter_1) {
+  private static SNode _quotation_createNode_6q36mf_a0a0a1a1a0a0a0a04(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResponseItem", null, null, GlobalScope.getInstance(), false);
@@ -432,14 +500,14 @@ public abstract class BaseConsoleTab extends JPanel {
     return quotedNode_2;
   }
 
-  private static Highlighter check_6q36mf_a0t0tb(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0t0vb(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }
     return null;
   }
 
-  private static SNode _quotation_createNode_6q36mf_a0a0a0a0c0a1a94(Object parameter_1) {
+  private static SNode _quotation_createNode_6q36mf_a0a0a0a0c0a2a94(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -451,17 +519,21 @@ public abstract class BaseConsoleTab extends JPanel {
     return quotedNode_2;
   }
 
-  private static void check_6q36mf_a1a0a0c0a1a94(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a1a0a0c0a2a94(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
 
-  private static void check_6q36mf_a0a0a0d0a1a94(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a0a0a0d0a2a94(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
+  }
+
+  private static boolean eq_6q36mf_a0a1a0a0a0a0a2a1a0a0a0t(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

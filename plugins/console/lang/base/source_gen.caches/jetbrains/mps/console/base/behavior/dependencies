@@ -102,12 +102,10 @@
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.CommandHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleUtil" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QuickQueryUtils" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
