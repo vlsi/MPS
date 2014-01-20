@@ -12,8 +12,4 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1199881492477(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_getFromParameterObject_1213877522908", new Object[]{}));
   }
-
-  public static boolean baseMappingRule_Condition_1199881537813(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_getFromParameterObject_1213877522908", new Object[]{});
-  }
 }
