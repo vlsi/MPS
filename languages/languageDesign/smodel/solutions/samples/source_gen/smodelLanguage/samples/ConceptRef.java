@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.IScope;
 
 public class ConceptRef {
   public void concept_ref_1(SNode node) {
@@ -78,7 +77,7 @@ public class ConceptRef {
     SConceptOperations.isSuperConceptOf(concept, NameUtil.nodeFQName(concept));
   }
 
-  public void concept_hierarchy2(SModel model, IScope scope) {
+  public void concept_hierarchy2(SModel model) {
     List<SNode> subConcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), model);
     SNode n = null;
     List<SNode> subConcepts1 = SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(n), model);

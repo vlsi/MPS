@@ -17,15 +17,10 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.scope.ModelPlusImportedScope;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
@@ -35,10 +30,14 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModuleScope;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
 public abstract class ReferenceDescriptor {
@@ -84,9 +83,9 @@ public abstract class ReferenceDescriptor {
     private final ReferenceScopeProvider scopeProvider;
 
     OkReferenceDescriptor(
-      SNode sourceNodeConcept, String genuineRole,
-      boolean exists, String contextRole, int position, SNode referenceNode, SNode linkTarget, SNode enclosingNode, SNode containingLink,
-      @Nullable SReference reference
+        SNode sourceNodeConcept, String genuineRole,
+        boolean exists, String contextRole, int position, SNode referenceNode, SNode linkTarget, SNode enclosingNode, SNode containingLink,
+        @Nullable SReference reference
     ) {
       this.sourceNodeConcept = sourceNodeConcept;
       this.genuineRole = genuineRole;
@@ -107,7 +106,8 @@ public abstract class ReferenceDescriptor {
     @Override
     @NotNull
     public Scope getScope() {
-      final ReferentConstraintContext context = new ReferentConstraintContext(getModel(), exists, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
+      final ReferentConstraintContext context =
+          new ReferentConstraintContext(getModel(), exists, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
 
       return TypeContextManager.getInstance().runResolveAction(new Computable<Scope>() {
         @Override
@@ -141,8 +141,9 @@ public abstract class ReferenceDescriptor {
       }
 
       return scopeProvider.getPresentation(
-        getOperationContext(getModule()),
-        new PresentationReferentConstraintContext(getModel(), enclosingNode, referenceNode, linkTarget, targetNode, containingLink, visible, smartRef, inEditor)
+          getOperationContext(getModule()),
+          new PresentationReferentConstraintContext(getModel(), enclosingNode, referenceNode, linkTarget, targetNode, containingLink, visible, smartRef,
+              inEditor)
       );
     }
 
@@ -155,7 +156,8 @@ public abstract class ReferenceDescriptor {
     @Nullable
     static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
       // todo: should be private
-      ReferenceScopeProvider result = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
+      ReferenceScopeProvider result =
+          ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole).getScopeProvider();
       if (result != null) return result;
       SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
       if (linkDeclaration == null) {

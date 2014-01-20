@@ -15,15 +15,11 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.project.AbstractModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.smodel.IScope;
-import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ConstraintsOperationContext extends StandaloneMPSContext {
   protected static Logger LOG = LogManager.getLogger(ConstraintsOperationContext.class);
