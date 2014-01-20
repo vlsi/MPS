@@ -26,7 +26,7 @@ public class BlockContentView extends CenterVerticalLayoutView {
 
   public BlockContentView() {
     super(false);
-    background().set(Color.LIGHT_BLUE);
+    background().set(Color.BLUE);
 
     CellView cellView = new CellView();
     cellView.background().set(Color.LIGHT_BLUE);

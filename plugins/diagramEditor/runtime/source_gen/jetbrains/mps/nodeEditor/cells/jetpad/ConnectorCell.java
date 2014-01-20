@@ -6,6 +6,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
+import jetbrains.jetpad.model.property.Property;
+import jetbrains.jetpad.model.property.ValueProperty;
 
 public abstract class ConnectorCell extends AbstractJetpadCell {
   public ConnectorCell(EditorContext editorContext, SNode node) {
@@ -13,4 +15,20 @@ public abstract class ConnectorCell extends AbstractJetpadCell {
   }
 
   public abstract Mapper<SNode, PolyLineConnection> createMapper();
+
+  public Property<Integer> myX = new ValueProperty<Integer>();
+  public Property<Integer> myY = new ValueProperty<Integer>();
+
+
+  @Override
+  public int getX() {
+    return getDiagramCell().getX() + myX.get();
+  }
+
+
+
+  @Override
+  public int getY() {
+    return getDiagramCell().getY() + myY.get();
+  }
 }

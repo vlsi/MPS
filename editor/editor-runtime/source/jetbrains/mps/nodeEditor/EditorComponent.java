@@ -1231,7 +1231,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     showPopupMenu(e.getX(), e.getY());
   }
 
-  private void showPopupMenu(int x, int y) {
+  public void showPopupMenu(int x, int y) {
     if (!myPopupMenuEnabled) {
       return;
     }

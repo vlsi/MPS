@@ -54,4 +54,27 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }
     return false;
   }
+
+
+
+
+  @Override
+  public int getX() {
+    return getDiagramCell().getX() + getXProperty().get();
+  }
+
+  @Override
+  public int getY() {
+    return getDiagramCell().getY() + getYProperty().get();
+  }
+
+  protected EditorCell getDirectChildCell(SNode node) {
+    // TODO: use more effitient way of getting port cell (by ID) 
+    for (EditorCell nextCell : Sequence.fromIterable(getContentCells())) {
+      if (nextCell.getSNode() == node) {
+        return nextCell;
+      }
+    }
+    return null;
+  }
 }

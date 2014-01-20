@@ -121,6 +121,7 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
       myYProperty.get();
       getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       synchronize();
+      myError.set(true);
     }
 
     protected void synchronize() {
@@ -229,7 +230,9 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
               };
             }
           }));
+          // <node> 
           configuration.add(Synchronizers.forProperty(Properties.ifProp(getTarget().focused(), Properties.constant(Color.BLACK), Properties.constant(Color.TRANSPARENT)), getTarget().rect.border()));
+          Color background = getTarget().background().get();
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {
               SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
@@ -273,7 +276,6 @@ public class BlockInstance_diagramGenerated_Editor extends DefaultNodeEditor {
           }
         }
       }).build());
-
       return blockView;
     }
   }

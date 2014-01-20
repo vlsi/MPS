@@ -91,6 +91,12 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
               return (View) descendantMapper.getTarget();
             }
           }));
+          configuration.add(Synchronizers.forProperty(getTarget().view().bounds(), new Runnable() {
+            public void run() {
+              myX.set(getTarget().view().bounds().get().origin.x);
+              myY.set(getTarget().view().bounds().get().origin.y);
+            }
+          }));
         }
       };
     }
