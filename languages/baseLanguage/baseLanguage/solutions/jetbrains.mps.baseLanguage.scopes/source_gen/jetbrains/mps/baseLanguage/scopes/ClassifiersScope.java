@@ -7,11 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.AbstractModule;
 
 public class ClassifiersScope extends FilteringScope {
   private boolean myInlcudeAncestors;
@@ -42,7 +41,7 @@ public class ClassifiersScope extends FilteringScope {
     }
     // end of hack 
     // TODO Must be done through ScopeProvider 
-    return ClassifierResolveUtils.resolveAndCache(refText, contextNode, getScope(), (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
+    return ClassifierResolveUtils.resolveAndCache(refText, contextNode, ((AbstractModule) myModel.getModule()).getScope(), (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
   }
 
   @Override
@@ -60,9 +59,5 @@ public class ClassifiersScope extends FilteringScope {
     }
 
     return false;
-  }
-
-  private IScope getScope() {
-    return ((AbstractModule) myModel.getModule()).getScope();
   }
 }
