@@ -8,12 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_ArrayCreatorWithInitializerAndMultipleDimensions_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ArrayCreatorWithInitializerAndMultipleDimensions_InferenceRule() {
@@ -23,7 +19,7 @@ public class typeof_ArrayCreatorWithInitializerAndMultipleDimensions_InferenceRu
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7150822681947111042", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7150822681947111044", true), (SNode) _quotation_createNode_j1741j_a0a0b(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7150822681947111044", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(arrayCreator, "arrayInitializers", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8820682311079985962", true), _info_12389875345);
     }
   }
 
@@ -40,17 +36,5 @@ public class typeof_ArrayCreatorWithInitializerAndMultipleDimensions_InferenceRu
 
   public boolean overrides() {
     return false;
-  }
-
-  private static SNode _quotation_createNode_j1741j_a0a0b(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
   }
 }
