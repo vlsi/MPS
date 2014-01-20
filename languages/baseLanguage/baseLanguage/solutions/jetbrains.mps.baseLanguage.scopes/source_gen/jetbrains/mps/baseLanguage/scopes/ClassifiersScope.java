@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -41,7 +40,7 @@ public class ClassifiersScope extends FilteringScope {
     }
     // end of hack 
     // TODO Must be done through ScopeProvider 
-    return ClassifierResolveUtils.resolveAndCache(refText, contextNode, ((AbstractModule) myModel.getModule()).getScope(), (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
+    return ClassifierResolveUtils.resolveAndCache(refText, contextNode, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
   }
 
   @Override
