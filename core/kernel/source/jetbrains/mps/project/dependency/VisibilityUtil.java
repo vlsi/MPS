@@ -1,6 +1,7 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -20,4 +21,10 @@ public class VisibilityUtil {
     if (fromModule == null) return false;
     return isVisible(fromModule, what);
   }
+
+  public static boolean isVisibleLanguage(SModule from, SLanguage lang) {
+    return new GlobalModuleDependenciesManager(from).getUsedLanguages().contains(lang.getSourceModule());
+  }
+
+
 }
