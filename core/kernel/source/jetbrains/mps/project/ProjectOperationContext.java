@@ -45,12 +45,6 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return myProject;
   }
 
-  @Override
-  @NotNull
-  public IScope getScope() {
-    return getProject().getScope();
-  }
-
   public String toString() {
     return "project context";
   }

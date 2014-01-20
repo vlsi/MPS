@@ -25,9 +25,6 @@ public interface IOperationContext {
 
   SModule getModule();
 
-  @NotNull
-  IScope getScope();
-
   boolean isValid();
 
   boolean isTestMode();

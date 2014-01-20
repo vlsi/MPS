@@ -178,12 +178,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myInvocationContext.getProject();
   }
 
-  @Override
-  @NotNull
-  public IScope getScope() {
-    return getModule().getScope();
-  }
-
   public IOperationContext getInvocationContext() {
     return myInvocationContext;
   }

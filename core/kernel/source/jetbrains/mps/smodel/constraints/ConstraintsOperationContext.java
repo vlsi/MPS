@@ -46,10 +46,4 @@ public class ConstraintsOperationContext extends StandaloneMPSContext {
   public SModule getModule() {
     return module;
   }
-
-  @NotNull
-  @Override
-  public IScope getScope() {
-    return module != null ? ((AbstractModule) module).getScope() : GlobalScope.getInstance() /* FIXME */;
-  }
 }
