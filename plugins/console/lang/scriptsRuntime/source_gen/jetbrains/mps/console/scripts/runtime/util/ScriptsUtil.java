@@ -9,6 +9,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class ScriptsUtil {
 
@@ -28,9 +29,13 @@ public class ScriptsUtil {
     if (startWith == ListSequence.fromList(commands).count()) {
       return;
     }
-    context.getConsoleTab().executeCommand(ListSequence.fromList(commands).getElement(startWith), new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        executeCommands(context, commands, startWith + 1);
+        context.getConsoleTab().execute(ListSequence.fromList(commands).getElement(startWith), null, new Runnable() {
+          public void run() {
+            executeCommands(context, commands, startWith + 1);
+          }
+        });
       }
     });
   }

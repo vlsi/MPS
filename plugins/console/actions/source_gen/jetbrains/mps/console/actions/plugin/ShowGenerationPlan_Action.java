@@ -77,7 +77,7 @@ public class ShowGenerationPlan_Action extends BaseAction {
           SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "stereotype", SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
         }
       });
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command.value, null);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command.value);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowGenerationPlan", t);

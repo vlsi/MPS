@@ -22,7 +22,7 @@
     <nodeInfo nodeId="561032641968388644" fileName="ShowGenerationPlan_Action.java" startLine="74" startPosition="174" endLine="75" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="561032641968647279" fileName="ShowGenerationPlan_Action.java" startLine="75" startPosition="176" endLine="76" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="561032641968821333" fileName="ShowGenerationPlan_Action.java" startLine="76" startPosition="193" endLine="77" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7411114809157046572" fileName="ShowGenerationPlan_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7411114809157046572" fileName="ShowGenerationPlan_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="82" startPosition="45" endLine="83" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -71,7 +71,7 @@
       <varInfo nodeId="3366942412399973391" varName="_params" />
       <varInfo nodeId="3366942412399973391" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="69" startPosition="9" endLine="80" endPosition="130">
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="69" startPosition="9" endLine="80" endPosition="124">
       <varInfo nodeId="561032641967744119" varName="command" />
     </scopeInfo>
     <scopeInfo nodeId="3366942412399973391" fileName="ShowGenerationPlan_Action.java" startLine="53" startPosition="95" endLine="65" endPosition="16" />

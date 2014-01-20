@@ -6,5 +6,5 @@ import jetbrains.mps.project.Project;
 
 public interface ConsoleContext {
   public Project getProject();
-  public ConsoleTab getConsoleTab();
+  public BaseConsoleTab getConsoleTab();
 }
