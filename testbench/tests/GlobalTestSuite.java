@@ -34,7 +34,6 @@ import org.junit.runners.Suite;
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
     jetbrains.mps.ide.moduleDependencyViewer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
-    jetbrains.mps.project.DependenciesTests.class,
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
     jetbrains.mps.make.dependencies.GraphTestCase.class,
     jetbrains.mps.packaged.PackagedLanguageTest.class,
