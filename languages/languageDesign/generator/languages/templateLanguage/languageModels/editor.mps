@@ -6783,8 +6783,14 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3118009927543458383" nodeInfo="nn">
           <property name="vertical" nameId="tpc2.1073389446425" value="false" />
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3118009927543458385" nodeInfo="nn">
-            <property name="text" nameId="tpc2.1073389577007" value="input node:" />
+            <property name="text" nameId="tpc2.1073389577007" value="input node" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="3118009927543458386" nodeInfo="nn">
+              <property name="flag" nameId="tpc2.1186414551515" value="false" />
+            </node>
+          </node>
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4210905328927892369" nodeInfo="nn">
+            <property name="text" nameId="tpc2.1073389577007" value=":" />
+            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="2650228013650579527" nodeInfo="nn">
               <property name="flag" nameId="tpc2.1186414551515" value="false" />
             </node>
           </node>
