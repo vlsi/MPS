@@ -54,12 +54,6 @@ public interface ITemplateGenerator {
 
   GenerationSessionContext getGeneratorSessionContext();
 
-  /**
-   * @deprecated This method is no longer used, and needs to be removed
-   */
-  @Deprecated
-  IScope getScope();
-
   boolean isStrict();
 
   boolean isDirty(SNode node);

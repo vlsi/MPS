@@ -109,13 +109,6 @@ public class TemplateQueryContext {
     return myGenerator;
   }
 
-  /**
-   * 'scope' mapping
-   */
-  public IScope getScope() {
-    return myGenerator.getGeneratorSessionContext().getScope();
-  }
-
   public SNode getOutputNodeByMappingLabel(String label) {
     if (!myGenerator.areMappingsAvailable()) {
       myGenerator.getLogger().error(getTemplateNodeRef(), "'get output by label' cannot be used here");

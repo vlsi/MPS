@@ -60,14 +60,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   @Override
-  public IScope getScope() {
-    if (myOperationContext != null) {
-      return myOperationContext.getScope();
-    }
-    return null;
-  }
-
-  @Override
   public ProgressMonitor getProgressMonitor() {
     return myProgressMonitor;
   }
