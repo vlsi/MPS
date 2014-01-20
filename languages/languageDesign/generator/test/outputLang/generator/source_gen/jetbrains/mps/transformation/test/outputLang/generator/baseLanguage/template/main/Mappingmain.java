@@ -1175,7 +1175,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a6fb);
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6fb, null, environment.getGenerator()));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), weavingConseq_417xrn_a0a1a6fb, null, context, environment.getGenerator()));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;

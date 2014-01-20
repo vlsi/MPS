@@ -632,7 +632,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_417xrn_a0a0a1a5a2a5w);
-            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1820665478710840047(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_417xrn_a0a0a1a5a2a5w, environment.getGenerator()));
+            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1820665478710840047(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_417xrn_a0a0a1a5a2a5w, environment.getGenerator()));
             for (SNode itnode2 : loopList2) {
               if (itnode2 == null) {
                 continue;

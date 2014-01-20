@@ -51,7 +51,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
             final List<SNode> tlist3 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_3njegt_a0a0a1a4a1a3a1a2);
-              final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1025590056396691724(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_3njegt_a0a0a1a4a1a3a1a2, environment.getGenerator()));
+              final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1025590056396691724(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_3njegt_a0a0a1a4a1a3a1a2, environment.getGenerator()));
               for (SNode itnode3 : loopList3) {
                 if (itnode3 == null) {
                   continue;
@@ -137,7 +137,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
             final List<SNode> tlist9 = new ArrayList<SNode>();
             try {
               environment.getTracer().pushMacro(loopMacroRef_3njegt_a0a0a1a6a1a4a1a2);
-              final Iterable<SNode> loopList9 = QueriesGenerated.sourceNodesQuery_1025590056396672113(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_3njegt_a0a0a1a6a1a4a1a2, environment.getGenerator()));
+              final Iterable<SNode> loopList9 = QueriesGenerated.sourceNodesQuery_1025590056396672113(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_3njegt_a0a0a1a6a1a4a1a2, environment.getGenerator()));
               for (SNode itnode9 : loopList9) {
                 if (itnode9 == null) {
                   continue;
@@ -266,7 +266,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                 final List<SNode> tlist18 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_3njegt_a0a0a1a4a1a7a1a4a1a2);
-                  final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_1025590056396681241(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_3njegt_a0a0a1a4a1a7a1a4a1a2, environment.getGenerator()));
+                  final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_1025590056396681241(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_3njegt_a0a0a1a4a1a7a1a4a1a2, environment.getGenerator()));
                   for (SNode itnode18 : loopList18) {
                     if (itnode18 == null) {
                       continue;
@@ -410,7 +410,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                 final List<SNode> tlist29 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_3njegt_a0a0a1a6a1a7a1a4a1a2);
-                  final Iterable<SNode> loopList29 = QueriesGenerated.sourceNodesQuery_1025590056396681374(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_3njegt_a0a0a1a6a1a7a1a4a1a2, environment.getGenerator()));
+                  final Iterable<SNode> loopList29 = QueriesGenerated.sourceNodesQuery_1025590056396681374(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_3njegt_a0a0a1a6a1a7a1a4a1a2, environment.getGenerator()));
                   for (SNode itnode29 : loopList29) {
                     if (itnode29 == null) {
                       continue;

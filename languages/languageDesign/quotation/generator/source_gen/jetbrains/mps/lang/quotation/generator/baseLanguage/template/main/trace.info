@@ -40,7 +40,7 @@
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="57" startPosition="229" endLine="58" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="58" startPosition="132" endLine="59" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="60" startPosition="19" endLine="61" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="61" startPosition="90" endLine="62" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="61" startPosition="90" endLine="62" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="64" startPosition="40" endLine="65" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="66" startPosition="19" endLine="67" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="69" startPosition="40" endLine="70" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -204,7 +204,7 @@
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="372" startPosition="201" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="374" startPosition="11" endLine="375" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="376" startPosition="17" endLine="377" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="377" startPosition="86" endLine="378" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="377" startPosition="86" endLine="378" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="380" startPosition="39" endLine="381" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="382" startPosition="17" endLine="383" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="385" startPosition="39" endLine="386" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -314,7 +314,7 @@
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="313" startPosition="129" endLine="334" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="383" startPosition="72" endLine="404" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="73" startPosition="131" endLine="98" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="378" startPosition="257" endLine="405" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="378" startPosition="251" endLine="405" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="311" startPosition="0" endLine="339" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="375" startPosition="63" endLine="408" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="307" startPosition="127" endLine="343" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -323,7 +323,7 @@
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="373" startPosition="0" endLine="413" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="235" startPosition="136" endLine="277" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="305" startPosition="15" endLine="348" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="62" startPosition="261" endLine="108" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="62" startPosition="255" endLine="108" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="166" startPosition="0" endLine="212" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="233" startPosition="0" endLine="282" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="368" startPosition="142" endLine="417" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -504,7 +504,7 @@
     <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="312" startPosition="19" endLine="338" endPosition="43">
       <varInfo nodeId="1006429225401295242" varName="tnode24" />
     </scopeInfo>
-    <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="378" startPosition="257" endLine="405" endPosition="15">
+    <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="378" startPosition="251" endLine="405" endPosition="15">
       <varInfo nodeId="1006429225401295242" varName="itnode26" />
     </scopeInfo>
     <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="376" startPosition="17" endLine="405" endPosition="15">
@@ -530,7 +530,7 @@
       <varInfo nodeId="1006429225401295242" varName="tnode13" />
     </scopeInfo>
     <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="369" startPosition="13" endLine="413" endPosition="11" />
-    <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="62" startPosition="261" endLine="108" endPosition="17">
+    <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="62" startPosition="255" endLine="108" endPosition="17">
       <varInfo nodeId="1006429225401295242" varName="itnode4" />
     </scopeInfo>
     <scopeInfo nodeId="1006429225401295242" fileName="TemplateNodeBuilder__to__methodCall.java" startLine="234" startPosition="19" endLine="281" endPosition="43">
@@ -671,7 +671,7 @@
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="48" startPosition="212" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="50" startPosition="11" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="52" startPosition="17" endLine="53" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="53" startPosition="86" endLine="54" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="53" startPosition="86" endLine="54" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="56" startPosition="38" endLine="57" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="58" startPosition="17" endLine="59" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="61" startPosition="38" endLine="62" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -713,7 +713,7 @@
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="133" startPosition="13" endLine="134" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="136" startPosition="11" endLine="137" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="138" startPosition="17" endLine="139" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="139" startPosition="86" endLine="140" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="139" startPosition="86" endLine="140" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="142" startPosition="38" endLine="143" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="144" startPosition="17" endLine="145" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="147" startPosition="38" endLine="148" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -782,7 +782,7 @@
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="262" startPosition="17" endLine="263" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="265" startPosition="15" endLine="266" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="267" startPosition="21" endLine="268" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="268" startPosition="94" endLine="269" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="268" startPosition="94" endLine="269" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="271" startPosition="43" endLine="272" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="273" startPosition="21" endLine="274" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="276" startPosition="43" endLine="277" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -856,7 +856,7 @@
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="406" startPosition="17" endLine="407" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="409" startPosition="15" endLine="410" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="411" startPosition="21" endLine="412" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="412" startPosition="94" endLine="413" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="412" startPosition="94" endLine="413" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="415" startPosition="43" endLine="416" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="417" startPosition="21" endLine="418" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="420" startPosition="43" endLine="421" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1071,7 +1071,7 @@
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="546" startPosition="129" endLine="567" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="151" startPosition="130" endLine="176" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="369" startPosition="53" endLine="394" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="54" startPosition="257" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="54" startPosition="251" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="436" startPosition="0" endLine="464" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="480" startPosition="29" endLine="508" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="544" startPosition="0" endLine="572" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1084,7 +1084,7 @@
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="363" startPosition="122" endLine="403" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="208" startPosition="136" endLine="250" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="538" startPosition="15" endLine="581" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="140" startPosition="257" endLine="186" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="140" startPosition="251" endLine="186" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="361" startPosition="15" endLine="408" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="44" startPosition="141" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="206" startPosition="0" endLine="255" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1098,13 +1098,13 @@
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="280" startPosition="147" endLine="344" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="274" startPosition="76" endLine="352" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="430" startPosition="134" endLine="512" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="269" startPosition="266" endLine="353" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="269" startPosition="260" endLine="353" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="428" startPosition="0" endLine="517" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="266" startPosition="67" endLine="356" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="264" startPosition="15" endLine="361" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="424" startPosition="133" endLine="521" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="418" startPosition="76" endLine="529" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="413" startPosition="266" endLine="530" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="413" startPosition="260" endLine="530" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="410" startPosition="67" endLine="533" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="408" startPosition="15" endLine="538" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="196" startPosition="117" endLine="585" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -1400,7 +1400,7 @@
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="545" startPosition="19" endLine="571" endPosition="43">
       <varInfo nodeId="1025590056396628814" varName="tnode37" />
     </scopeInfo>
-    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="54" startPosition="257" endLine="81" endPosition="15">
+    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="54" startPosition="251" endLine="81" endPosition="15">
       <varInfo nodeId="1025590056396628814" varName="itnode3" />
     </scopeInfo>
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="52" startPosition="17" endLine="81" endPosition="15">
@@ -1434,7 +1434,7 @@
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="362" startPosition="15" endLine="407" endPosition="39">
       <varInfo nodeId="1025590056396628814" varName="tnode26" />
     </scopeInfo>
-    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="140" startPosition="257" endLine="186" endPosition="15">
+    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="140" startPosition="251" endLine="186" endPosition="15">
       <varInfo nodeId="1025590056396628814" varName="itnode9" />
     </scopeInfo>
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="207" startPosition="19" endLine="254" endPosition="43">
@@ -1465,7 +1465,7 @@
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="270" startPosition="53" endLine="352" endPosition="21">
       <varInfo nodeId="1025590056396628814" varName="inputChanged18" />
     </scopeInfo>
-    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="269" startPosition="266" endLine="353" endPosition="19">
+    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="269" startPosition="260" endLine="353" endPosition="19">
       <varInfo nodeId="1025590056396628814" varName="itnode18" />
     </scopeInfo>
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="267" startPosition="21" endLine="353" endPosition="19">
@@ -1485,7 +1485,7 @@
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="414" startPosition="53" endLine="529" endPosition="21">
       <varInfo nodeId="1025590056396628814" varName="inputChanged29" />
     </scopeInfo>
-    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="413" startPosition="266" endLine="530" endPosition="19">
+    <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="413" startPosition="260" endLine="530" endPosition="19">
       <varInfo nodeId="1025590056396628814" varName="itnode29" />
     </scopeInfo>
     <scopeInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="411" startPosition="21" endLine="530" endPosition="19">
@@ -1832,7 +1832,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="405" startPosition="23" endLine="406" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="408" startPosition="21" endLine="409" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="410" startPosition="27" endLine="411" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="411" startPosition="106" endLine="412" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="411" startPosition="106" endLine="412" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="414" startPosition="49" endLine="415" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="416" startPosition="27" endLine="417" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="419" startPosition="49" endLine="420" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1897,7 +1897,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="538" startPosition="23" endLine="539" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="541" startPosition="21" endLine="542" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="543" startPosition="27" endLine="544" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="544" startPosition="106" endLine="545" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="544" startPosition="106" endLine="545" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="547" startPosition="49" endLine="548" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="549" startPosition="27" endLine="550" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="552" startPosition="49" endLine="553" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1980,7 +1980,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="713" startPosition="23" endLine="714" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="716" startPosition="21" endLine="717" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="718" startPosition="27" endLine="719" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="719" startPosition="106" endLine="720" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="719" startPosition="106" endLine="720" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="722" startPosition="49" endLine="723" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="724" startPosition="27" endLine="725" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="727" startPosition="49" endLine="728" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2151,7 +2151,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1046" startPosition="23" endLine="1047" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1049" startPosition="21" endLine="1050" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1051" startPosition="27" endLine="1052" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1052" startPosition="106" endLine="1053" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1052" startPosition="106" endLine="1053" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1055" startPosition="49" endLine="1056" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1057" startPosition="27" endLine="1058" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1060" startPosition="49" endLine="1061" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2234,7 +2234,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1221" startPosition="23" endLine="1222" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1224" startPosition="21" endLine="1225" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1226" startPosition="27" endLine="1227" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1227" startPosition="106" endLine="1228" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1227" startPosition="106" endLine="1228" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1230" startPosition="49" endLine="1231" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1232" startPosition="27" endLine="1233" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1235" startPosition="49" endLine="1236" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3204,7 +3204,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1076" startPosition="0" endLine="1119" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="48" startPosition="76" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1709" startPosition="43" endLine="1754" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1228" startPosition="273" endLine="1276" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1228" startPosition="267" endLine="1276" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="46" startPosition="40" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="629" startPosition="142" endLine="680" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1137" startPosition="142" endLine="1188" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -3259,7 +3259,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1288" startPosition="104" endLine="1403" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1456" startPosition="0" endLine="1572" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2014" startPosition="144" endLine="2130" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="412" startPosition="273" endLine="532" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="412" startPosition="267" endLine="532" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1652" startPosition="0" endLine="1772" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2012" startPosition="116" endLine="2132" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1286" startPosition="55" endLine="1407" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -3284,8 +3284,8 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="550" startPosition="83" endLine="706" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1058" startPosition="83" endLine="1214" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1636" startPosition="23" endLine="1796" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="545" startPosition="273" endLine="707" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1053" startPosition="273" endLine="1215" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="545" startPosition="267" endLine="707" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1053" startPosition="267" endLine="1215" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="542" startPosition="73" endLine="710" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1050" startPosition="73" endLine="1218" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="540" startPosition="21" endLine="715" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3308,7 +3308,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="735" startPosition="0" endLine="1027" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="731" startPosition="139" endLine="1031" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="725" startPosition="83" endLine="1039" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="720" startPosition="273" endLine="1040" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="720" startPosition="267" endLine="1040" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1841" startPosition="122" endLine="2163" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="717" startPosition="73" endLine="1043" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1839" startPosition="0" endLine="2168" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4229,7 +4229,7 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1876" startPosition="33" endLine="1922" endPosition="31" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="177" startPosition="43" endLine="224" endPosition="41" />
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="258" startPosition="43" endLine="305" endPosition="41" />
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1228" startPosition="273" endLine="1276" endPosition="25">
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1228" startPosition="267" endLine="1276" endPosition="25">
       <varInfo nodeId="1196351886726" varName="itnode78" />
     </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1331" startPosition="39" endLine="1379" endPosition="37" />
@@ -4339,7 +4339,7 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="2013" startPosition="229" endLine="2131" endPosition="80">
       <varInfo nodeId="1196351886726" varName="tnode131" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="412" startPosition="273" endLine="532" endPosition="25">
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="412" startPosition="267" endLine="532" endPosition="25">
       <varInfo nodeId="1196351886726" varName="itnode30" />
     </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="410" startPosition="27" endLine="532" endPosition="25">
@@ -4395,10 +4395,10 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1054" startPosition="59" endLine="1214" endPosition="27">
       <varInfo nodeId="1196351886726" varName="inputChanged68" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="545" startPosition="273" endLine="707" endPosition="25">
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="545" startPosition="267" endLine="707" endPosition="25">
       <varInfo nodeId="1196351886726" varName="itnode38" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1053" startPosition="273" endLine="1215" endPosition="25">
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="1053" startPosition="267" endLine="1215" endPosition="25">
       <varInfo nodeId="1196351886726" varName="itnode68" />
     </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="543" startPosition="27" endLine="707" endPosition="25">
@@ -4454,7 +4454,7 @@
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="721" startPosition="59" endLine="1039" endPosition="27">
       <varInfo nodeId="1196351886726" varName="inputChanged48" />
     </scopeInfo>
-    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="720" startPosition="273" endLine="1040" endPosition="25">
+    <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="720" startPosition="267" endLine="1040" endPosition="25">
       <varInfo nodeId="1196351886726" varName="itnode48" />
     </scopeInfo>
     <scopeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="718" startPosition="27" endLine="1040" endPosition="25">
@@ -5018,7 +5018,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="258" startPosition="116" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="260" startPosition="11" endLine="261" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="262" startPosition="17" endLine="263" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="263" startPosition="86" endLine="264" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="263" startPosition="86" endLine="264" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="266" startPosition="39" endLine="267" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="268" startPosition="17" endLine="269" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="271" startPosition="39" endLine="272" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5086,7 +5086,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="390" startPosition="13" endLine="391" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="393" startPosition="11" endLine="394" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="395" startPosition="17" endLine="396" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="396" startPosition="86" endLine="397" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="396" startPosition="86" endLine="397" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="399" startPosition="39" endLine="400" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="401" startPosition="17" endLine="402" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="404" startPosition="39" endLine="405" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5174,7 +5174,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="567" startPosition="13" endLine="568" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="570" startPosition="11" endLine="571" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="572" startPosition="17" endLine="573" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="573" startPosition="86" endLine="574" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="573" startPosition="86" endLine="574" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="576" startPosition="39" endLine="577" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="578" startPosition="17" endLine="579" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="581" startPosition="39" endLine="582" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5259,7 +5259,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="731" startPosition="13" endLine="732" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="734" startPosition="11" endLine="735" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="736" startPosition="17" endLine="737" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="737" startPosition="86" endLine="738" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="737" startPosition="86" endLine="738" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="740" startPosition="39" endLine="741" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="742" startPosition="17" endLine="743" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="745" startPosition="39" endLine="746" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5344,7 +5344,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="895" startPosition="13" endLine="896" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="898" startPosition="11" endLine="899" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="900" startPosition="17" endLine="901" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="901" startPosition="86" endLine="902" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="901" startPosition="86" endLine="902" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="904" startPosition="39" endLine="905" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="906" startPosition="17" endLine="907" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="909" startPosition="39" endLine="910" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5503,7 +5503,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1189" startPosition="13" endLine="1190" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1192" startPosition="11" endLine="1193" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1194" startPosition="17" endLine="1195" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1195" startPosition="86" endLine="1196" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1195" startPosition="86" endLine="1196" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1198" startPosition="39" endLine="1199" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1200" startPosition="17" endLine="1201" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1203" startPosition="39" endLine="1204" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5591,7 +5591,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1366" startPosition="13" endLine="1367" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1369" startPosition="11" endLine="1370" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1371" startPosition="17" endLine="1372" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1372" startPosition="86" endLine="1373" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1372" startPosition="86" endLine="1373" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1375" startPosition="39" endLine="1376" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1377" startPosition="17" endLine="1378" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1380" startPosition="39" endLine="1381" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5679,7 +5679,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1543" startPosition="13" endLine="1544" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1546" startPosition="11" endLine="1547" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1548" startPosition="17" endLine="1549" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1549" startPosition="87" endLine="1550" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1549" startPosition="87" endLine="1550" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1552" startPosition="40" endLine="1553" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1554" startPosition="17" endLine="1555" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1557" startPosition="40" endLine="1558" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5817,7 +5817,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1812" startPosition="13" endLine="1813" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1815" startPosition="11" endLine="1816" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1817" startPosition="17" endLine="1818" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1818" startPosition="87" endLine="1819" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1818" startPosition="87" endLine="1819" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1821" startPosition="40" endLine="1822" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1823" startPosition="17" endLine="1824" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1826" startPosition="40" endLine="1827" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5828,7 +5828,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1833" startPosition="247" endLine="1834" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1834" startPosition="138" endLine="1835" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1836" startPosition="25" endLine="1837" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1837" startPosition="103" endLine="1838" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1837" startPosition="103" endLine="1838" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1840" startPosition="48" endLine="1841" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1842" startPosition="25" endLine="1843" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1845" startPosition="48" endLine="1846" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5923,14 +5923,14 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2036" startPosition="13" endLine="2037" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2039" startPosition="11" endLine="2040" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2041" startPosition="17" endLine="2042" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2042" startPosition="91" endLine="2043" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2043" startPosition="268" endLine="2044" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2042" startPosition="91" endLine="2043" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2043" startPosition="262" endLine="2044" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2045" startPosition="23" endLine="2046" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2048" startPosition="69" endLine="2049" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2050" startPosition="13" endLine="2051" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2053" startPosition="11" endLine="2054" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2055" startPosition="17" endLine="2056" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2056" startPosition="87" endLine="2057" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2056" startPosition="87" endLine="2057" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2059" startPosition="40" endLine="2060" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2061" startPosition="17" endLine="2062" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2064" startPosition="40" endLine="2065" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6002,7 +6002,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2197" startPosition="13" endLine="2198" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2200" startPosition="11" endLine="2201" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2202" startPosition="17" endLine="2203" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2203" startPosition="87" endLine="2204" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2203" startPosition="87" endLine="2204" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2206" startPosition="40" endLine="2207" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2208" startPosition="17" endLine="2209" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2211" startPosition="40" endLine="2212" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6013,7 +6013,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2218" startPosition="247" endLine="2219" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2219" startPosition="138" endLine="2220" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2221" startPosition="25" endLine="2222" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2222" startPosition="103" endLine="2223" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2222" startPosition="103" endLine="2223" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2225" startPosition="48" endLine="2226" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2227" startPosition="25" endLine="2228" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2230" startPosition="48" endLine="2231" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6686,7 +6686,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="755" startPosition="127" endLine="871" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1567" startPosition="128" endLine="1684" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2238" startPosition="0" endLine="2356" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="264" startPosition="257" endLine="384" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="264" startPosition="251" endLine="384" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="589" startPosition="0" endLine="712" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="753" startPosition="0" endLine="876" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1565" startPosition="0" endLine="1689" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6699,7 +6699,7 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="585" startPosition="129" endLine="716" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="749" startPosition="129" endLine="880" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="259" startPosition="0" endLine="392" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2057" startPosition="259" endLine="2191" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2057" startPosition="253" endLine="2191" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="412" startPosition="0" endLine="548" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1211" startPosition="0" endLine="1347" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1388" startPosition="0" endLine="1524" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -6713,11 +6713,11 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="579" startPosition="72" endLine="724" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="743" startPosition="72" endLine="888" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="76" startPosition="15" endLine="222" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2223" startPosition="278" endLine="2369" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2223" startPosition="272" endLine="2369" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2052" startPosition="11" endLine="2199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1853" startPosition="0" endLine="2001" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="574" startPosition="257" endLine="725" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="738" startPosition="257" endLine="889" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="574" startPosition="251" endLine="725" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="738" startPosition="251" endLine="889" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2220" startPosition="72" endLine="2372" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1849" startPosition="138" endLine="2005" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="571" startPosition="63" endLine="728" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -6726,11 +6726,11 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1201" startPosition="72" endLine="1359" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1378" startPosition="72" endLine="1536" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2215" startPosition="52" endLine="2376" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="397" startPosition="257" endLine="561" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="397" startPosition="251" endLine="561" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="569" startPosition="11" endLine="733" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="733" startPosition="11" endLine="897" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1196" startPosition="257" endLine="1360" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1373" startPosition="257" endLine="1537" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1196" startPosition="251" endLine="1360" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1373" startPosition="251" endLine="1537" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="979" startPosition="138" endLine="1147" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="56" startPosition="127" endLine="226" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="394" startPosition="63" endLine="564" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -6739,12 +6739,12 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1843" startPosition="85" endLine="2013" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="977" startPosition="29" endLine="1152" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2209" startPosition="74" endLine="2384" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1838" startPosition="278" endLine="2014" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1838" startPosition="272" endLine="2014" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="392" startPosition="11" endLine="569" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1191" startPosition="11" endLine="1368" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1368" startPosition="11" endLine="1545" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="52" startPosition="42" endLine="231" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2204" startPosition="259" endLine="2385" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2204" startPosition="253" endLine="2385" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1835" startPosition="72" endLine="2017" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="50" startPosition="0" endLine="236" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2201" startPosition="64" endLine="2388" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -6756,19 +6756,19 @@
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1824" startPosition="74" endLine="2029" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="40" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="954" startPosition="25" endLine="1161" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1819" startPosition="259" endLine="2030" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1819" startPosition="253" endLine="2030" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1816" startPosition="64" endLine="2033" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1814" startPosition="11" endLine="2038" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1561" startPosition="127" endLine="1797" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="919" startPosition="127" endLine="1165" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1555" startPosition="74" endLine="1805" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="917" startPosition="0" endLine="1170" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1550" startPosition="259" endLine="1806" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1550" startPosition="253" endLine="1806" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="913" startPosition="129" endLine="1174" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1547" startPosition="64" endLine="1809" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1545" startPosition="11" endLine="1814" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="907" startPosition="72" endLine="1182" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="902" startPosition="257" endLine="1183" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="902" startPosition="251" endLine="1183" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="899" startPosition="63" endLine="1186" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="897" startPosition="11" endLine="1191" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="255" startPosition="113" endLine="2397" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -7896,7 +7896,7 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="265" startPosition="49" endLine="383" endPosition="17">
       <varInfo nodeId="429601079676709776" varName="inputChanged19" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="264" startPosition="257" endLine="384" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="264" startPosition="251" endLine="384" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode19" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="590" startPosition="21" endLine="711" endPosition="45">
@@ -7937,7 +7937,7 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1389" startPosition="21" endLine="1523" endPosition="45">
       <varInfo nodeId="429601079676709776" varName="tnode96" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2057" startPosition="259" endLine="2191" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2057" startPosition="253" endLine="2191" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode137" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2229" startPosition="29" endLine="2363" endPosition="27">
@@ -7971,7 +7971,7 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1854" startPosition="29" endLine="2000" endPosition="53">
       <varInfo nodeId="429601079676709776" varName="tnode126" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2223" startPosition="278" endLine="2369" endPosition="23">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2223" startPosition="272" endLine="2369" endPosition="23">
       <varInfo nodeId="429601079676709776" varName="itnode148" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2221" startPosition="25" endLine="2369" endPosition="23">
@@ -7983,10 +7983,10 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="739" startPosition="49" endLine="888" endPosition="17">
       <varInfo nodeId="429601079676709776" varName="inputChanged52" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="574" startPosition="257" endLine="725" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="574" startPosition="251" endLine="725" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode40" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="738" startPosition="257" endLine="889" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="738" startPosition="251" endLine="889" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode52" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1850" startPosition="31" endLine="2001" endPosition="29" />
@@ -8029,13 +8029,13 @@
       <varInfo nodeId="429601079676709776" varName="inputChanged94" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="980" startPosition="35" endLine="1143" endPosition="33" />
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="397" startPosition="257" endLine="561" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="397" startPosition="251" endLine="561" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode29" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1196" startPosition="257" endLine="1360" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1196" startPosition="251" endLine="1360" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode83" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1373" startPosition="257" endLine="1537" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1373" startPosition="251" endLine="1537" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode94" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1844" startPosition="29" endLine="2008" endPosition="27">
@@ -8075,7 +8075,7 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1369" startPosition="11" endLine="1544" endPosition="35">
       <varInfo nodeId="429601079676709776" varName="tlist94" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1838" startPosition="278" endLine="2014" endPosition="23">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1838" startPosition="272" endLine="2014" endPosition="23">
       <varInfo nodeId="429601079676709776" varName="itnode124" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1836" startPosition="25" endLine="2014" endPosition="23">
@@ -8084,7 +8084,7 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2205" startPosition="51" endLine="2384" endPosition="17">
       <varInfo nodeId="429601079676709776" varName="inputChanged146" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2204" startPosition="259" endLine="2385" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2204" startPosition="253" endLine="2385" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode146" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="2202" startPosition="17" endLine="2385" endPosition="15">
@@ -8125,7 +8125,7 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1820" startPosition="51" endLine="2029" endPosition="17">
       <varInfo nodeId="429601079676709776" varName="inputChanged122" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1819" startPosition="259" endLine="2030" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1819" startPosition="253" endLine="2030" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode122" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1817" startPosition="17" endLine="2030" endPosition="15">
@@ -8147,7 +8147,7 @@
       <varInfo nodeId="429601079676709776" varName="inputChanged105" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="914" startPosition="23" endLine="1170" endPosition="21" />
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1550" startPosition="259" endLine="1806" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1550" startPosition="253" endLine="1806" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode105" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="1548" startPosition="17" endLine="1806" endPosition="15">
@@ -8163,7 +8163,7 @@
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="903" startPosition="49" endLine="1182" endPosition="17">
       <varInfo nodeId="429601079676709776" varName="inputChanged64" />
     </scopeInfo>
-    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="902" startPosition="257" endLine="1183" endPosition="15">
+    <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="902" startPosition="251" endLine="1183" endPosition="15">
       <varInfo nodeId="429601079676709776" varName="itnode64" />
     </scopeInfo>
     <scopeInfo nodeId="429601079676709776" fileName="Templatereduce__NodeBuilderNode.java" startLine="900" startPosition="17" endLine="1183" endPosition="15">

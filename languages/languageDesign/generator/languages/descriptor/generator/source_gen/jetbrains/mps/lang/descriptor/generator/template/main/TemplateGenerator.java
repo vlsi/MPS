@@ -642,7 +642,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 final List<SNode> tlist48 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2);
-                                  final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1820665478710839750(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2, environment.getGenerator()));
+                                  final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1820665478710839750(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2, environment.getGenerator()));
                                   for (SNode itnode48 : loopList48) {
                                     if (itnode48 == null) {
                                       continue;
@@ -771,7 +771,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 final List<SNode> tlist58 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2);
-                                  final Iterable<SNode> loopList58 = QueriesGenerated.sourceNodesQuery_3829836699771395556(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2, environment.getGenerator()));
+                                  final Iterable<SNode> loopList58 = QueriesGenerated.sourceNodesQuery_3829836699771395556(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2, environment.getGenerator()));
                                   for (SNode itnode58 : loopList58) {
                                     if (itnode58 == null) {
                                       continue;
@@ -902,7 +902,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 final List<SNode> tlist68 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2);
-                                  final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1250389701475344450(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2, environment.getGenerator()));
+                                  final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1250389701475344450(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2, environment.getGenerator()));
                                   for (SNode itnode68 : loopList68) {
                                     if (itnode68 == null) {
                                       continue;
@@ -1029,7 +1029,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                             final List<SNode> tlist77 = new ArrayList<SNode>();
                             try {
                               environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2);
-                              final Iterable<SNode> loopList77 = QueriesGenerated.sourceNodesQuery_1250389701475431822(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2, environment.getGenerator()));
+                              final Iterable<SNode> loopList77 = QueriesGenerated.sourceNodesQuery_1250389701475431822(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2, environment.getGenerator()));
                               for (SNode itnode77 : loopList77) {
                                 if (itnode77 == null) {
                                   continue;

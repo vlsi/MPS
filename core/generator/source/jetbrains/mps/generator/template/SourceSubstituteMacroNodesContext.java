@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * Despite the name, the context serves not only to 'sourceNodesQuery' in macros but also to similar queries in
  * rules (any sourceNodesQuery) in fact.
+ * For transition period (I don't like the idea of templates instantiating these context classes directly) I leave this
+ * class and its usages as is (i.e. both from rules and macros), although have changed superclass to fulfil geContext.templateNode
+ * contract.
  */
-public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
+public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithMacro {
   private final SNodeReference myRulePointer;
 
   public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
@@ -32,9 +35,8 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
     myRulePointer = ruleNode == null ? null : ruleNode.getReference();
   }
 
-
   /**
-   * @deprecated use {@link #SourceSubstituteMacroNodesContext(TemplateContext, SNodeReference, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #SourceSubstituteMacroNodesContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
@@ -44,11 +46,12 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContext {
   }
 
   /**
+   * Intended for use from macros only
    * @since 3.1
    */
-  public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, SNodeReference ruleNode, SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(macroNode, context, generator);
-    myRulePointer = ruleNode;
+  public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
+    super(context, macroNode, generator);
+    myRulePointer = null;
   }
 
   @Override

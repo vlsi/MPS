@@ -38,7 +38,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         Collection<SNode> tlist2 = null;
         try {
           environment.getTracer().pushMacro(copySrcListMacro_q702qm_a0a0a1a5a1a2);
-          final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, copySrcListMacro_q702qm_a0a0a1a5a1a2, environment.getGenerator()));
+          final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_a0a0a1a5a1a2, environment.getGenerator()));
           tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_q702qm_a0a0a1a5a1a2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414086888", null, context);
         } finally {
           environment.getTracer().closeMacro(copySrcListMacro_q702qm_a0a0a1a5a1a2);

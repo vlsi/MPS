@@ -37,7 +37,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
     try {
       environment.getTracer().pushMacro(mapsrclMacroRef_ewlaka_a0a0a1a2);
 
-      final Iterable<SNode> sourceList1 = QueriesGenerated.sourceNodesQuery_1233603475878(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, null, mapsrclMacroRef_ewlaka_a0a0a1a2, environment.getGenerator()));
+      final Iterable<SNode> sourceList1 = QueriesGenerated.sourceNodesQuery_1233603475878(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context, mapsrclMacroRef_ewlaka_a0a0a1a2, environment.getGenerator()));
       for (SNode itnode1 : sourceList1) {
         if (itnode1 == null) {
           continue;
@@ -51,7 +51,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
           final List<SNode> tlist2 = new ArrayList<SNode>();
           try {
             environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a2a3a3a1a2);
-            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202256587517(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context1, null, loopMacroRef_ewlaka_a0a0a2a3a3a1a2, environment.getGenerator()));
+            final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202256587517(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context1, loopMacroRef_ewlaka_a0a0a2a3a3a1a2, environment.getGenerator()));
             for (SNode itnode2 : loopList2) {
               if (itnode2 == null) {
                 continue;
@@ -65,7 +65,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                 final List<SNode> tlist3 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2);
-                  final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202256594380(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2, null, loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2, environment.getGenerator()));
+                  final Iterable<SNode> loopList3 = QueriesGenerated.sourceNodesQuery_1202256594380(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context2, loopMacroRef_ewlaka_a0a0a3a2a2a2a3a3a1a2, environment.getGenerator()));
                   for (SNode itnode3 : loopList3) {
                     if (itnode3 == null) {
                       continue;

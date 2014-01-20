@@ -487,7 +487,7 @@
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1171" startPosition="100" endLine="1172" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1175" startPosition="163" endLine="1176" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1176" startPosition="56" endLine="1177" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1177" startPosition="81" endLine="1178" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1177" startPosition="81" endLine="1178" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1180" startPosition="30" endLine="1181" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1182" startPosition="9" endLine="1183" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1185" startPosition="30" endLine="1186" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -762,7 +762,7 @@
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1015" startPosition="13" endLine="1035" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1089" startPosition="76" endLine="1109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="207" startPosition="114" endLine="228" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1178" startPosition="241" endLine="1199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1178" startPosition="261" endLine="1199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="603" startPosition="118" endLine="625" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="632" startPosition="118" endLine="654" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="136" startPosition="125" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -1706,7 +1706,7 @@
       <varInfo nodeId="1209603916390" varName="inputChanged1" />
     </scopeInfo>
     <scopeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1088" startPosition="11" endLine="1109" endPosition="9" />
-    <scopeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1178" startPosition="241" endLine="1199" endPosition="7">
+    <scopeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1178" startPosition="261" endLine="1199" endPosition="7">
       <varInfo nodeId="1209603916390" varName="itnode1" />
     </scopeInfo>
     <scopeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1175" startPosition="163" endLine="1200" endPosition="51">
