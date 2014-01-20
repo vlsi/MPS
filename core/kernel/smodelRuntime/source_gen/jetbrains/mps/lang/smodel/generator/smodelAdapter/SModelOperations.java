@@ -21,7 +21,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
@@ -142,7 +141,7 @@ public class SModelOperations {
       }
       return node;
     }
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, GlobalScope.getInstance(), false);
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, false);
     if (result == null) {
       return null;
     }

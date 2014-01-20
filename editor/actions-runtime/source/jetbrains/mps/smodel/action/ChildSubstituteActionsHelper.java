@@ -19,7 +19,6 @@ import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -325,7 +324,7 @@ public class ChildSubstituteActionsHelper {
 
     @Override
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-      SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(mySmartConcept), model, GlobalScope.getInstance());
+      SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(mySmartConcept), model);
       String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);
       SNodeAccessUtil.setReferenceTarget(childNode, referentRole, myReferentNode);
       NodeFactoryManager.setupNode(mySmartConcept, childNode, myCurrentChild, myParentNode, model);

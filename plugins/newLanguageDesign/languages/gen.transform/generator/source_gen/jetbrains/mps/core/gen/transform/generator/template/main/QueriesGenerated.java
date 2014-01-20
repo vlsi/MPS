@@ -30,7 +30,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -1167,14 +1166,14 @@ public class QueriesGenerated {
 
   private static SNode createMqlStringType_x583g4_a0a0a65() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlStringType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlStringType", null, false);
     return n1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0a0a0qc() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.metadata.structure.SConceptAnnotationInstance", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.metadata.structure.SConceptAnnotationInstance", null, null, false);
     quotedNode_1.setReference("type", SReference.create("type", quotedNode_1, facade.createModelReference("r:7828b85a-5771-4321-a557-44fc5258c152(jetbrains.mps.core.stubs)"), facade.createNodeId("2024350793557759556")));
     return quotedNode_1;
   }
@@ -1182,7 +1181,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0a0a0a0a0rc() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.metadata.structure.SConceptAnnotationInstance", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.metadata.structure.SConceptAnnotationInstance", null, null, false);
     quotedNode_1.setReference("type", SReference.create("type", quotedNode_1, facade.createModelReference("r:7828b85a-5771-4321-a557-44fc5258c152(jetbrains.mps.core.stubs)"), facade.createNodeId("2024350793557759920")));
     return quotedNode_1;
   }
@@ -1190,7 +1189,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0b0a0ld() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "aa");
     quotedNode_1.setReference("dataType", SReference.create("dataType", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1082983657063")));
     return quotedNode_1;
@@ -1199,7 +1198,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0a1a0a98() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "aa");
     quotedNode_1.setReference("dataType", SReference.create("dataType", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1082983657062")));
     return quotedNode_1;
@@ -1208,7 +1207,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0b1a0a98() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "aa");
     quotedNode_1.setReference("dataType", SReference.create("dataType", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1082983041843")));
     return quotedNode_1;
@@ -1217,7 +1216,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0b0a0td() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "aa");
     quotedNode_1.setReference("dataType", SReference.create("dataType", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1082983657063")));
     return quotedNode_1;
@@ -1226,7 +1225,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0a1a0a79() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "aa");
     quotedNode_1.setReference("dataType", SReference.create("dataType", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1082983657062")));
     return quotedNode_1;
@@ -1235,7 +1234,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0b1a0a79() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "aa");
     quotedNode_1.setReference("dataType", SReference.create("dataType", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1082983041843")));
     return quotedNode_1;

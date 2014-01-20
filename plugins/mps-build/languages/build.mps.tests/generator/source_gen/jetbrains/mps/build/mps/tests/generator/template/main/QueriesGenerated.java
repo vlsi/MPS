@@ -26,7 +26,6 @@ import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.build.mps.tests.util.ModulePlugins;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 @Generated
 public class QueriesGenerated {
@@ -189,14 +188,14 @@ public class QueriesGenerated {
 
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0o(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", (String) p0);
     return n1;
   }
 
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0q(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, false);
     n1.setProperty("path", (String) p0);
     return n1;
   }

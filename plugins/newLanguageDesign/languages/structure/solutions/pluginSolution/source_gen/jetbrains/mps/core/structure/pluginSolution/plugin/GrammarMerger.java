@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class GrammarMerger {
@@ -49,11 +48,11 @@ public class GrammarMerger {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.structure.SStructureContainer", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.structure.SStructureContainer", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, "name", "a");
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.structure.SStructureEmptyLine", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.structure.SStructureEmptyLine", null, null, false);
     quotedNode_2.addChild("structure", quotedNode_3);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.structure.SInterfaceConcept", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.structure.SInterfaceConcept", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_1);
     quotedNode_2.addChild("structure", quotedNode_4);
     return quotedNode_2;

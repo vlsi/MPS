@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.structure.behavior.SAbstractLink_Behavior;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class MqlLinkSelector_Behavior {
   public static void init(SNode thisNode) {
@@ -23,9 +22,9 @@ public class MqlLinkSelector_Behavior {
 
   private static SNode createMqlListType_71mfo8_a0c0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlListType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.query.structure.MqlListType", null, false);
     {
-      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeType", null, GlobalScope.getInstance(), false);
+      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeType", null, false);
       n2.setReferenceTarget("concept", (SNode) p0);
       n1.addChild("inner", n2);
     }
@@ -34,7 +33,7 @@ public class MqlLinkSelector_Behavior {
 
   private static SNode createMqlNodeType_71mfo8_a0c0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeType", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeType", null, false);
     n1.setReferenceTarget("concept", (SNode) p0);
     return n1;
   }
