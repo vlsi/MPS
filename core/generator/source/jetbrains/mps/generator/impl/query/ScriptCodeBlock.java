@@ -15,15 +15,11 @@
  */
 package jetbrains.mps.generator.impl.query;
 
-import jetbrains.mps.generator.template.ReductionRuleQueryContext;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.generator.template.MappingScriptContext;
 
 /**
  * @author Artem Tikhomirov
  */
-public interface ReductionRuleCondition extends Query {
-  boolean check(@NotNull ReductionRuleQueryContext ctx);
-  interface Factory {
-    ReductionRuleCondition getReductionRuleCondition(String methodName);
-  }
+public interface ScriptCodeBlock extends Query {
+  void invoke(MappingScriptContext ctx);
 }

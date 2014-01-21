@@ -13,17 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl.query;
+package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * @author Artem Tikhomirov
  */
-public interface ReductionRuleCondition extends Query {
-  boolean check(@NotNull ReductionRuleQueryContext ctx);
-  interface Factory {
-    ReductionRuleCondition getReductionRuleCondition(String methodName);
+public class MapRootRuleContext extends BaseMappingRuleContext {
+  public MapRootRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
+    super(ctx, ruleNode, generator);
   }
 }

@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.generator.impl.query;
 
-import jetbrains.mps.generator.template.ReductionRuleQueryContext;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author Artem Tikhomirov
  */
-public interface ReductionRuleCondition extends Query {
-  boolean check(@NotNull ReductionRuleQueryContext ctx);
-  interface Factory {
-    ReductionRuleCondition getReductionRuleCondition(String methodName);
-  }
+public interface WeaveRuleQuery {
+  SNode contextNode(WeavingMappingRuleContext ctx);
 }

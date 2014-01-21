@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
@@ -51,10 +52,12 @@ public interface TemplateExecutionEnvironment {
   IGeneratorLogger getLogger();
 
   @NotNull
+  GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode);
+  @NotNull
   QueryExecutionContext getQueryExecutor();
 
   /**
-   * ReductuionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
+   * ReductionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
    */
   @Deprecated
   @NotNull

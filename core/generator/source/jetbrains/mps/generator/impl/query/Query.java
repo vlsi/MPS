@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.query;
 
 /**
+ * Abstract marker to denote condition/query functions
  * @author Artem Tikhomirov
  */
 public interface Query {

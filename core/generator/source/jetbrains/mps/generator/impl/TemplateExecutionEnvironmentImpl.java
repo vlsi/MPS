@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
@@ -86,8 +87,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return generator.getOutputModel().createNode(c);
   }
 
-  @Override
   @NotNull
+  @Override
   public TemplateGenerator getGenerator() {
     return generator;
   }
@@ -102,10 +103,16 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return generator.getLogger();
   }
 
-  @Override
   @NotNull
+  @Override
   public ReductionContext getReductionContext() {
     return reductionContext;
+  }
+
+  @NotNull
+  @Override
+  public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
+    return generator.getGeneratorSessionContext().getQueryProvider(ruleNode);
   }
 
   @NotNull

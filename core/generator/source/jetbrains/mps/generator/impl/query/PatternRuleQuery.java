@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.generator.impl.query;
 
-import jetbrains.mps.generator.template.ReductionRuleQueryContext;
+import jetbrains.mps.generator.template.PatternRuleContext;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Artem Tikhomirov
  */
-public interface ReductionRuleCondition extends Query {
-  boolean check(@NotNull ReductionRuleQueryContext ctx);
-  interface Factory {
-    ReductionRuleCondition getReductionRuleCondition(String methodName);
-  }
+public interface PatternRuleQuery extends Query {
+  GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx);
 }

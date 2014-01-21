@@ -22,25 +22,23 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
-/**
- * Evgeny Gryaznov, Nov 30, 2010
- */
 public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule {
 
   private final SNode ruleNode;
   private final String conditionMethod;
   private final String ruleMappingName;
+  private CreateRootCondition myCondition;
 
   public TemplateCreateRootRuleInterpreted(SNode ruleNode) {
     this.ruleNode = ruleNode;
@@ -59,24 +57,16 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
     if (conditionMethod == null) {
       return true;
     }
-
     try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        conditionMethod,
-        environment.getGenerator().getGeneratorSessionContext(),
-        new CreateRootRuleContext(ruleNode, environment.getGenerator()),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
-    } catch (NoSuchMethodException e) {
-      environment.getLogger().warning(getRuleNode(), String.format("cannot find condition method '%s' : evaluate to FALSE", conditionMethod));
+      if (myCondition == null) {
+        myCondition = environment.getQueryProvider(getRuleNode()).getCreateRootRuleCondition(conditionMethod);
+      }
+      return myCondition.check(new CreateRootRuleContext(ruleNode, environment.getGenerator()));
     } catch (Throwable t) {
       environment.getLogger().handleException(t);
-      environment.getLogger().error(getRuleNode(), "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().error(getRuleNode(), String.format("error executing condition %s (see exception)", conditionMethod));
       throw new GenerationFailureException(t);
     }
-    return false;
   }
 
   @Override
