@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.HashSet;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -140,11 +141,18 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return new SLanguageAdapter(NameUtil.namespaceFromConceptFQName(myConceptName));
   }
 
+  private static final Set<String> reportedLanguages = new HashSet<String>();
 
 
   protected void illegalConceptDescriptorWarning() {
+    String languageName = NameUtil.namespaceFromConceptFQName(myConceptName);
+    // report each language only once 
+    if (reportedLanguages.contains(languageName)) {
+      return;
+    }
+    reportedLanguages.add(languageName);
     if (LOG.isEnabledFor(Priority.WARN)) {
-      LOG.warn("using of IllegalConceptDescriptor: " + myConceptName, new Throwable());
+      LOG.warn("No concept found for name " + myConceptName + ". Please check the language " + languageName + " is built and compiled.", new Throwable());
     }
   }
 
