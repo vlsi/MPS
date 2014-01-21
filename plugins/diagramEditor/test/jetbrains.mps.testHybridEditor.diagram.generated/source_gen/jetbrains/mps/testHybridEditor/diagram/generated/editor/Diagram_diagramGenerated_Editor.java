@@ -107,8 +107,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_c0(editorContext, node);
-    editorCell.getRootMapper().attachRoot();
-
     editorCell.setCellId("Diagram_tb7paq_c0");
     wrappingCollection.addEditorCell(editorCell);
     return wrappingCollection;
@@ -224,8 +222,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection wrappingCollection = EditorCell_Collection.createHorizontal(editorContext, node);
     wrappingCollection.setSelectable(false);
     final DiagramCell editorCell = new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0(editorContext, node);
-    editorCell.getRootMapper().attachRoot();
-
     editorCell.setCellId("Diagram_tb7paq_e0");
     wrappingCollection.addEditorCell(editorCell);
     return wrappingCollection;
