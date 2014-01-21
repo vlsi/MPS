@@ -34,7 +34,6 @@
         <library jar="../../lib/model-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/diagram-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/view-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/core-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/mapper-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/base-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/values-1.0-SNAPSHOT.jar" />
@@ -46,6 +45,11 @@
         <library jar="../../lib/gwt-util-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/json-1.0-SNAPSHOT.jar" />
         <library jar="../../lib/test-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/cell-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/completion-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/gwt-framework-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/websocket-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/persistence-1.0-SNAPSHOT.jar" />
         <sources jar="jetpad-src.jar" descriptor="jetpad.msd" />
       </module>
     </echoxml>
@@ -65,7 +69,10 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar" />
+      <fileset file="${mps_home}/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
@@ -86,6 +93,9 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
@@ -98,6 +108,9 @@
       <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
@@ -108,6 +121,9 @@
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
+    </copy>
+    <copy todir="${build.layout}/jetpad/lib">
+      <fileset file="${mps_home}/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
     </copy>
     <copy todir="${build.layout}/jetpad/lib">
       <fileset file="${mps_home}/plugins/jetpad/lib/jetpadBuildNumber.txt" />
