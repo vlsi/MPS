@@ -99,13 +99,7 @@
     <property name="name" nameId="tpck.1169194664001" value="NodeErrorCheckOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="has error" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7344575040114288302" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="ruleRef" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpd4.1175517767210" resolveInfo="ReportErrorStatement" />
-    </node>
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307182653741890820" resolveInfo="NodeRuleCheckOperation" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215511704609" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -113,7 +107,7 @@
     <property name="name" nameId="tpck.1169194664001" value="NodeWarningCheckOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeProperties" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="has warning" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307182653741890820" resolveInfo="NodeRuleCheckOperation" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215525678776" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -142,6 +136,7 @@
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="NodeCheckOperation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="tag for checking either type errors or error messages, attached to some node" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6090235207264577790" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="name" />
@@ -641,6 +636,17 @@
       <property name="role" nameId="tpce.1071599776563" value="ref" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4307182653741890820" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeOperation" />
+    <property name="name" nameId="tpck.1169194664001" value="NodeRuleCheckOperation" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215601147424" resolveInfo="NodeCheckOperation" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4307182653741890940" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="ruleRef" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpd4.3148295837107465606" resolveInfo="MessageStatementReference" />
     </node>
   </root>
 </model>

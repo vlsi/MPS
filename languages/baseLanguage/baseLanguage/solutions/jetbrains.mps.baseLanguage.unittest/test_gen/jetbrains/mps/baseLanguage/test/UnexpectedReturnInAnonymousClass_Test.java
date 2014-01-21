@@ -20,9 +20,9 @@ public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTes
   }
 
   @Test
-  public void test_NodeErrorCheck1215522876408() throws Throwable {
+  public void test_NodeErrorCheck4307182653745276439() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_NodeErrorCheck1215522876408", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test$TestBody", "test_NodeErrorCheck4307182653745276439", true);
   }
 
   @MPSLaunch
@@ -32,8 +32,8 @@ public class UnexpectedReturnInAnonymousClass_Test extends BaseTransformationTes
       NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444400359"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     }
 
-    public void test_NodeErrorCheck1215522876408() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1215522876408"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+    public void test_NodeErrorCheck4307182653745276439() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4307182653745276439"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230829")});
     }
   }

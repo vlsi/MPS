@@ -38,7 +38,7 @@
     <nodeInfo nodeId="5532302989585240183" fileName="TypeCheckingErrors_Test.java" startLine="80" startPosition="45" endLine="81" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5532302989585254474" fileName="TypeCheckingErrors_Test.java" startLine="81" startPosition="46" endLine="82" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="85" startPosition="75" endLine="86" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="86" startPosition="146" endLine="87" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="86" startPosition="146" endLine="87" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck1089557578630058014#()V" />
     <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps18720#()V" />
     <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_varar_raw#()V" />
@@ -54,7 +54,7 @@
     <scopeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="29" startPosition="59" endLine="31" endPosition="139" />
     <scopeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="35" startPosition="76" endLine="37" endPosition="156" />
     <scopeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="41" startPosition="73" endLine="43" endPosition="153" />
-    <scopeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="85" startPosition="75" endLine="87" endPosition="154">
+    <scopeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="85" startPosition="75" endLine="87" endPosition="159">
       <varInfo nodeId="1301553664999174713" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />

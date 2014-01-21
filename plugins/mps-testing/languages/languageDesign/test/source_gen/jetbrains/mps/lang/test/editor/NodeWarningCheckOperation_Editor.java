@@ -11,9 +11,10 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
@@ -31,8 +32,9 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_sh9o09_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_sh9o09_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_sh9o09_b0(editorContext, node));
     if (SNodeAccessUtil.hasProperty(node, "name")) {
-      editorCell.addEditorCell(this.createNonEmptyProperty_sh9o09_b0(editorContext, node));
+      editorCell.addEditorCell(this.createNonEmptyProperty_sh9o09_c0(editorContext, node));
     }
     return editorCell;
   }
@@ -45,7 +47,27 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createNonEmptyProperty_sh9o09_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_sh9o09_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("ruleRef");
+    provider.setNoTargetText("<no ruleRef>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("ruleRef");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createNonEmptyProperty_sh9o09_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

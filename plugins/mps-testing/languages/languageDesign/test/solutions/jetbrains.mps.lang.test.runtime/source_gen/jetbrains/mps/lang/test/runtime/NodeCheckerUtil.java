@@ -61,8 +61,6 @@ public class NodeCheckerUtil {
 
   public static void checkNodeErrorForErrors(final SNode node) {
     checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(node) {
-
-
       public void checkOperation(TypeCheckingContext context, SNode operation) {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
           Assert.assertTrue("node <" + NodeCheckerUtil.nodeWithIdToString(node) + "> does not have expected error message", context.getTypeMessageDontCheck(node) != null);
@@ -90,8 +88,6 @@ public class NodeCheckerUtil {
 
   public static void checkNodeTypeForErrors(final SNode node) {
     checkNodeWithCheckingAction(node, new NodeCheckerUtil.CheckingAction(node) {
-
-
       public void checkOperation(TypeCheckingContext context, SNode operation) {
         if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation")) {
           SNode type1 = context.getTypeDontCheck(node);

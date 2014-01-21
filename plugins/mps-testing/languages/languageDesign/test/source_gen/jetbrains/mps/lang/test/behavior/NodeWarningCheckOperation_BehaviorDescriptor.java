@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodeWarningCheckOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor {
+public class NodeWarningCheckOperation_BehaviorDescriptor extends NodeRuleCheckOperation_BehaviorDescriptor {
   public NodeWarningCheckOperation_BehaviorDescriptor() {
   }
 

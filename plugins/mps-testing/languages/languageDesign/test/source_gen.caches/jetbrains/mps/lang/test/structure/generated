@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ev5n7tay6mp516mc3fnh6xef3g6aw19">
+<dependencies version="2" modelHash="-c7s1879r3o9jadwkpcvp4mkrn6om2jr">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -47,6 +47,7 @@
     <dep root="2685915532175039858" />
     <dep root="3655334166513314291" />
     <dep root="4239542196496927193" />
+    <dep root="4307182653741890820" />
     <dep root="4395293866213195846" />
     <dep root="5097124989038916362" />
     <dep root="511191073233700873" />
@@ -70,11 +71,11 @@
   <source id="1214846310980" name="AbstractNodeAssert" hash="2jnhylo1w15uew5j7ubj0xg0o8eptw3" />
   <source id="1215075719096" name="CheckNodeForErrors" hash="-5omux3vpv5hm8v1gst6709bmaap23r0" />
   <source id="1215507532627" name="NodeCheckOperationsContainer" hash="5jl9l2uyffvj4ubcyxtsfykok1pkrev" />
-  <source id="1215507671101" name="NodeErrorCheckOperation" hash="-apq9t92b30lkn7efvekmc5ivauxp4ak" />
-  <source id="1215511704609" name="NodeWarningCheckOperation" hash="3uiga90rwcjvwce98jibjidvgl5vri8" />
+  <source id="1215507671101" name="NodeErrorCheckOperation" hash="h64o59n5q5x6mtxki23nb5f6w2v3yw" />
+  <source id="1215511704609" name="NodeWarningCheckOperation" hash="-8s0kpw7ge56yeyehyi0rn3pe0zll4pf" />
   <source id="1215525678776" name="NodeReachable" hash="cstpjr3qvzdbr5thu8q7l4g4rq81ssf" />
   <source id="1215526290564" name="NodeTypeCheckOperation" hash="-4069p22tvrsejd4s7dln6n9c2nac6sj" />
-  <source id="1215601147424" name="NodeCheckOperation" hash="-bb2mib0jv6p0cqnvjj4q7296ntjz08h" />
+  <source id="1215601147424" name="NodeCheckOperation" hash="bpkwvn6kj34f4w7bkedxuzuvywwkkye" />
   <source id="1215603922101" name="NodeOperationsContainer" hash="-umomxkjw0cwrwe058ol5pldwxiiiua" />
   <source id="1215607067978" name="CheckNodeForErrorMessagesOperation" hash="8kdotjbamgedmjo10m1qwxakzpf8zcm" />
   <source id="1215611834554" name="CheckDataFlowOperation" hash="8t5mvedepcs3mh14apntiz9zta1vm7n" />
@@ -109,5 +110,6 @@
   <source id="4395293866213195846" name="NodeExpectedTypeCheckOperation" hash="-4h233pwkp2wluijzqxbco33ov32uvly" />
   <source id="511191073233700873" name="ScopesTest" hash="-dklbfqj7k8xr6eavrxlvt7veql9rc15" />
   <source id="3655334166513314291" name="ScopesExpectedNode" hash="8ynnf1k92us5xfyqiul988a1c1kbcdz" />
+  <source id="4307182653741890820" name="NodeRuleCheckOperation" hash="e5ugms3sqsad4u2g9woh8ilrpwf44yq" />
 </dependencies>
 
