@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9m7ro182okz10ugb5yr7b069vps3m5y">
+<dependencies version="2" modelHash="-6oyv7tnt4nf6c1pzlrjh3zjmz3impyp">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.generator.internal(MPS.Editor/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
@@ -51,7 +51,7 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-93h02qd3mfz4hhspvng20fqnxkp0qxy" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="-4apo84nls03txfwq4dh8egrihff6eze" dependsOnNodes="true">
+  <common hash="camqegu3g0f1wwz0089ahgrcjhxg68p" dependsOnNodes="true">
     <dep root="1073416106125" />
     <dep root="1074794490343" />
     <dep root="1075139052656" />
@@ -3905,7 +3905,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="PropertyValueReference_Editor.java" />
   </source>
-  <source id="4308362244626819959" name="ArrayCreatorWithInitializerAndMultipleDimensions_Editor" hash="4dzhohv7qzlhqxvguhi0km1tf0k7jhx">
+  <source id="4308362244626819959" name="ArrayCreatorWithInitializerAndMultipleDimensions_Editor" hash="9ovk1dhz4ymhahtjel75gy6scxkmik8">
     <dep root="1186415538255" />
     <dep root="2260576595931759443" />
     <dep root="8820682311094672046" />
@@ -3936,7 +3936,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="ArrayInitializers_Editor.java" />
   </source>
-  <source id="8820682311094672046" name="ArrayInitializers_Delete" hash="-eb6lyjwbdegnn0zkexbprwbd5bd2pel">
+  <source id="8820682311094672046" name="ArrayInitializers_Delete" hash="-qoequb7e59echtcxk35p1jkb0qcpqk">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -3970,12 +3970,13 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ArrayCreator_Delete.java" />
   </source>
-  <source id="2260576595931759443" name="MultiDimension2OneDimensionArrayCreator" hash="8c6nuqybgjfv10yrz1un8krd0a09jc1">
+  <source id="2260576595931759443" name="MultiDimension2OneDimensionArrayCreator" hash="-c5b4l3ru77xsgmrs19v6658ft2micvh">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,15 +30,19 @@ public class MultiDimension2OneDimensionArrayCreator {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
-      SLinkOperations.setTarget(replacing, "componentType", SLinkOperations.getTarget(node, "componentType", true), true);
-      SNode initValues = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "arrayInitializers", true), "initValue", true)).getElement(0);
-      if (SNodeOperations.isInstanceOf(initValues, "jetbrains.mps.baseLanguage.structure.ArrayInitializers")) {
-        ListSequence.fromList(SLinkOperations.getTargets(replacing, "initValue", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(initValues, "jetbrains.mps.baseLanguage.structure.ArrayInitializers"), "initValue", true)));
+      if (SPropertyOperations.getInteger(node, "dimensionCount") == 2) {
+        SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
+        SLinkOperations.setTarget(replacing, "componentType", SLinkOperations.getTarget(node, "componentType", true), true);
+        SNode initValues = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "arrayInitializers", true), "initValue", true)).getElement(0);
+        if (SNodeOperations.isInstanceOf(initValues, "jetbrains.mps.baseLanguage.structure.ArrayInitializers")) {
+          ListSequence.fromList(SLinkOperations.getTargets(replacing, "initValue", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(initValues, "jetbrains.mps.baseLanguage.structure.ArrayInitializers"), "initValue", true)));
+        } else {
+          ListSequence.fromList(SLinkOperations.getTargets(replacing, "initValue", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "arrayInitializers", true), "initValue", true)));
+        }
+        editorContext.selectWRTFocusPolicy(replacing);
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(replacing, "initValue", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "arrayInitializers", true), "initValue", true)));
+        SPropertyOperations.set(node, "dimensionCount", "" + (SPropertyOperations.getInteger(node, "dimensionCount") - 1));
       }
-      editorContext.selectWRTFocusPolicy(replacing);
     }
   }
 }

@@ -34,7 +34,7 @@ public class ArrayInitializers_Delete {
       if ((creator != null)) {
         SNode replacingCreator = SNodeFactoryOperations.replaceWithNewChild(creator, "jetbrains.mps.baseLanguage.structure.ArrayCreator");
         SLinkOperations.setTarget(replacingCreator, "componentType", SLinkOperations.getTarget(creator, "componentType", true), true);
-        for (int i = 0; i < SPropertyOperations.getInteger(creator, "dimensionCount"); i++) {
+        for (int i = 1; i < SPropertyOperations.getInteger(creator, "dimensionCount"); i++) {
           ListSequence.fromList(SLinkOperations.getTargets(replacingCreator, "dimensionExpression", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DimensionExpression", null));
         }
       }
