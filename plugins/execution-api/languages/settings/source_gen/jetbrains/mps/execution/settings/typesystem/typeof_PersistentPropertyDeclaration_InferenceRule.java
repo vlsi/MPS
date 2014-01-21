@@ -72,8 +72,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
     if (quotedNode_6 != null) {
       quotedNode_2.addChild("argument", HUtil.copyIfNecessary(quotedNode_6));
     }
-    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null,
-        false);
+    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, false);
     quotedNode_2.addChild("argument", quotedNode_7);
     return quotedNode_2;
   }

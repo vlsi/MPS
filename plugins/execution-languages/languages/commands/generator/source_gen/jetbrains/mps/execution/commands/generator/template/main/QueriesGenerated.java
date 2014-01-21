@@ -544,8 +544,7 @@ public class QueriesGenerated {
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("operand", HUtil.copyIfNecessary(quotedNode_5));
     }
-    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null,
-        false);
+    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_6, "methodName", (String) parameter_3);
     quotedNode_8 = (SNode) parameter_2;
     if (quotedNode_8 != null) {

@@ -408,8 +408,7 @@ __switch__:
   private static SNode _quotation_createNode_59frgq_a0d0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null,
-        false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "component", (SNode) parameter_1);
     return quotedNode_2;
   }
@@ -425,8 +424,7 @@ __switch__:
   private static SNode _quotation_createNode_gb3jz3_a0b0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null,
-        false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "component", (SNode) parameter_1);
     return quotedNode_2;
   }

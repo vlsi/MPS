@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="6wajqhjcwhd09bny98is26v4x70w9vv">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-dbiaw8tn8w6h3jsnoee3deweamx6cps" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <common hash="-dbiaw8tn8w6h3jsnoee3deweamx6cps" dependsOnNodes="true" />
   <source id="6877931680625740132" name="Controller" hash="-2aftt0cn1vyrhpsfdqu5c8djwa97qqk">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Controller.java" />

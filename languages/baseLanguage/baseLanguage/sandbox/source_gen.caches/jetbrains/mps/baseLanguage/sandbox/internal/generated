@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="db9fxf4oz3vl87alvu65f0sim9opcps">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-17f8hok06sbpz50fbsjc70emudvm0lc" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <common hash="-17f8hok06sbpz50fbsjc70emudvm0lc" dependsOnNodes="true" />
   <source id="3769619919556058555" name="InternalAnonymousClassUsage" hash="-6skz4lgnmd9h8qdl0r6sa97727pqu1m">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="InternalAnonymousClassUsage.java" />

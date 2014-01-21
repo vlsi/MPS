@@ -154,8 +154,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
   private static SNode _quotation_createNode_kx76k7_a0a0a0a0d0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", null, null,
-        false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variable", (SNode) parameter_1);
     return quotedNode_2;
   }

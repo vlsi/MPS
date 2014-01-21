@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="15qwnpo0nqillmodw5b2le6d474dp0w">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="st6x0ks9gro7wf7xvfqcrqu5u1mtyn" />
-  <common hash="-1vc0j29c1dxo0lnwiq001ily6fukqyn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5a742y6bk0v0z4h60jmdg9rho9xt37" />
+  <common hash="-1vc0j29c1dxo0lnwiq001ily6fukqyn" dependsOnNodes="true" />
   <source id="5231630840089786268" name="TypesystemChecker" hash="4picmtb1sca0g1np56ixatyurphcj7u">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TypesystemChecker.java" />
