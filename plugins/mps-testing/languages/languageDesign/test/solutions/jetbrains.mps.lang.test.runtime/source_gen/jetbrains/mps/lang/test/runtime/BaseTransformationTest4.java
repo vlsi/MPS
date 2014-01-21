@@ -5,9 +5,7 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
 import java.lang.reflect.Method;
-import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.application.ex.ApplicationInfoEx;
 import com.intellij.idea.LoggerFactory;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.annotations.NotNull;
@@ -24,11 +22,16 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   public BaseTransformationTest4() {
     try {
-      Method method = (ApplicationInfo.getInstance().getMajorVersion().equals("12") ?
-        Logger.class.getDeclaredMethod("setFactory", Logger.Factory.class) :
-        Logger.class.getDeclaredMethod("setFactory", Class.class)
-      );
-      method.invoke(null, (ApplicationInfoEx.getInstance().getMajorVersion().equals("12") ?
+      Method method = null;
+      boolean isIDEA12 = true;
+      for (Method m : Logger.class.getDeclaredMethods()) {
+        if (m.getName().equals("setFactory")) {
+          method = m;
+          isIDEA12 = method.getParameterTypes()[0].equals(Logger.Factory.class);
+          break;
+        }
+      }
+      method.invoke(null, (isIDEA12 ?
         LoggerFactory.class.getDeclaredMethod("getInstance").invoke(null) :
         LoggerFactory.class
       ));
