@@ -29,6 +29,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializerAndMultipleDimensions_DataFlow" file="ArrayCreatorWithInitializerAndMultipleDimensions_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializer_DataFlow" file="ArrayCreatorWithInitializer_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -38,6 +45,13 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ArrayCreator_DataFlow" file="ArrayCreator_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.ArrayInitializers_DataFlow" file="ArrayInitializers_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -173,8 +187,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AbstractUnaryNumberOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AnonymousClassCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayAccessExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializerAndMultipleDimensions_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializer_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreator_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayInitializers_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayLiteral_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AsExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AssertStatement_DataFlow" />
