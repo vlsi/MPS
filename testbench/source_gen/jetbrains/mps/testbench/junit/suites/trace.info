@@ -518,7 +518,7 @@
     <nodeInfo nodeId="9170334376386466168" fileName="CheckingTestsUtil.java" startLine="45" startPosition="52" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="9170334376386466173" fileName="CheckingTestsUtil.java" startLine="48" startPosition="54" endLine="49" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="9170334376386466176" fileName="CheckingTestsUtil.java" startLine="50" startPosition="11" endLine="51" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9170334376386466184" fileName="CheckingTestsUtil.java" startLine="52" startPosition="66" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9170334376386466184" fileName="CheckingTestsUtil.java" startLine="52" startPosition="77" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9170334376386466190" fileName="CheckingTestsUtil.java" startLine="54" startPosition="17" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376386466201" fileName="CheckingTestsUtil.java" startLine="56" startPosition="47" endLine="57" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376386466221" fileName="CheckingTestsUtil.java" startLine="61" startPosition="79" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
@@ -853,7 +853,7 @@
     <scopeInfo nodeId="9170334376386466588" fileName="CheckingTestsUtil.java" startLine="180" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="9170334376386466589" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="9170334376386466182" fileName="CheckingTestsUtil.java" startLine="52" startPosition="66" endLine="74" endPosition="13">
+    <scopeInfo nodeId="9170334376386466182" fileName="CheckingTestsUtil.java" startLine="52" startPosition="77" endLine="74" endPosition="13">
       <varInfo nodeId="9170334376386466183" varName="errorReporters" />
     </scopeInfo>
     <scopeInfo nodeId="9170334376386466711" fileName="CheckingTestsUtil.java" startLine="214" startPosition="62" endLine="237" endPosition="7">

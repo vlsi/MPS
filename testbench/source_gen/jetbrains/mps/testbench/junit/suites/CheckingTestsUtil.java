@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
@@ -48,7 +49,7 @@ public class CheckingTestsUtil {
             continue;
           }
           ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
-          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sm, null)) {
+          for (SNode root : SModelOperations.getRoots(((SModel) sm), null)) {
             Set<IErrorReporter> errorReporters = null;
             try {
               errorReporters = checker.getErrors(root, operationContext);
